@@ -3,16 +3,16 @@ author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: Créer des groupes d’utilisateurs connus
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, groupe ciblé, clients, groupe de versions d’évaluation, groupes d’utilisateurs connus, utilisateurs connus
 ms.localizationpriority: medium
-ms.openlocfilehash: eec9c214bcd4ac63406ec7681e66762356a0c1cf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 44f0ea17d1034ae617b4b8c96cf61cc4829a6704
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764692"
+ms.locfileid: "5818740"
 ---
 # <a name="create-known-user-groups"></a>Créer des groupes d’utilisateurs connus
 
@@ -22,7 +22,7 @@ Pour être comptabilisée en tant que membre du groupe, chaque personne doit êt
 
 ## <a name="to-create-a-known-user-group"></a>Pour créer un groupe d’utilisateurs connus
 
-1. Dans le tableau de bord du Centre de développement Windows, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Groupes de clients**. 
+1. Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), développez **engager** dans le menu de navigation de gauche, puis sélectionnez **les groupes de clients**. 
 2. Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe**.
 3. Sur la page suivante, entre un nom pour votre groupe dans la zone **Nom du groupe**.
 4. Assurez-vous que la case d’option **Groupe d'utilisateurs connus** est sélectionnée.
@@ -38,7 +38,7 @@ Vous pouvez également créer un groupe d’utilisateurs connus en sélectionnan
 
 ## <a name="to-edit-a-known-user-group"></a>Pour modifier un groupe d’utilisateurs connus
 
-Vous ne pouvez pas supprimer un groupe d’utilisateurs connus de votre tableau de bord (ou en modifier le nom) après sa création, mais vous pouvez en modifier l’appartenance à tout moment.
+Vous ne pouvez pas supprimer un groupe d’utilisateurs connus à partir de l’espace partenaires (ou modifiez son nom) après sa création, mais vous pouvez modifier l’appartenance à tout moment.
 
 Pour examiner et modifier vos groupes d’utilisateurs connus, développez le menu **Engager** dans le menu de navigation de gauche, puis sélectionnez **Groupes de clients**. Sous **Mes groupes de clients**, sélectionnez le nom du groupe que vous souhaitez modifier. Vous pouvez également modifier un groupe d’utilisateurs connus de la page de création de version d’évaluation de package en sélectionnant **Afficher et gérer les groupes existants** lorsque vous créez une version d’évaluation, ou en sélectionnant le nom du groupe sur la page de présentation d’une version d’évaluation de package. 
 

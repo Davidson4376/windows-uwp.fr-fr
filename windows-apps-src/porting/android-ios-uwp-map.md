@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 821a28109c511bb2bd96bf5cbccb190cbe928abc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f7e211ebfa28421340e716c0176cab80a9511671
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741574"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818453"
 ---
 #<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
@@ -300,7 +300,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Cycle de vie de l’application.</strong> <br><br>Gestion des événements lors du lancement, de la suspension, de la reprise et de la fermeture d’une application permettant d’enregistrer/de restaurer l’état de l’application et d’exécuter d’autres tâches.</td>
-<td align="left">Chaque activité possède son propre <strong>cycle de vie d’activité</strong> avec des états de type <strong>reprise</strong>. Les <strong>rappels de cycle de vie</strong> tels que <strong>onResume</strong> sont implémentés dans vos <strong>classes d’activité</strong>.</td>
+<td align="left">Chaque activité possède son propre <strong>cycle de vie d’activité</strong> avec des états de type <strong>reprise</strong>. <strong>Les rappels de cycle de vie</strong> tels que <strong>onResume</strong> sont implémentés dans vos <strong>classes d’activité</strong>.</td>
 <td align="left">Le <strong>cycle de vie de l’application</strong> peut avoir des états de type <strong>suspendue</strong>. Les méthodes telles que <strong>applicationDidEnterBackground:</strong> sont implémentées dans l’<strong>objet délégué d’application</strong> pour exécuter du code lors d’un changement d’état.</td>
 <td align="left">Votre application dispose des <strong>états d’exécution</strong> suivants : NotRunning, Activated, Running, Suspending, Suspended et Resuming.<br/><br/>Vous pouvez implémenter les méthodes de <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">classe d’application</a></strong> OnLaunched, OnActivated, Suspending ou Resuming dans votre application afin d’exécuter du code lors d’un changement d’état.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">Cycle de vie de l’application</a></td>
 </tr>

@@ -4,16 +4,16 @@ Description: Learn how to promote your apps and content in the Microsoft Store. 
 title: Recommandations pour les applications de marketing de Microsoft Store
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d065504385a5e7a743bd4936e9240565d3207a36
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745269"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5821093"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations pour les applications de marketing de Microsoft Store
 
@@ -47,9 +47,9 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 -   Avoir votre application ou autres contenus disponibles dans le Microsoft Store, ou faire partie du [Programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
--   si vous êtes inscrit au Centre de développement, vous conformer à la section [Licence d’utilisation de la marque Microsoft](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) du Contrat du développeur de l’application ;
+-   Si vous êtes inscrit en tant que développeur d’applications dans l’espace partenaires, vous conformer à la section [«marques de licence pour Microsoft»](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) de l’accord de développeur d’application.
 
--   Si vous n’êtes pas inscrit au centre de développement Windows, Microsoft vous accorde une licence dans le monde entier, non exclusive, non transférable, redevance pour l’utilisation des badges comme décrit dans les recommandations en matière de Badge Microsoft Store. Microsoft peut modifier ces recommandations, mais si tel est le cas, Microsoft utilisera tous les moyens raisonnables afin de vous rediriger vers les nouvelles URL auxquelles ces spécifications sont publiées. Microsoft se réserve tous les droits non expressément accordés ici.
+-   Si vous n’êtes pas inscrit en tant que développeur d’applications dans l’espace partenaires, Microsoft vous accorde une licence dans le monde entier, non exclusive, non transférable, redevance pour l’utilisation des badges comme décrit dans les recommandations en matière de Badge Microsoft Store. Microsoft peut modifier ces recommandations, mais si tel est le cas, Microsoft utilisera tous les moyens raisonnables afin de vous rediriger vers les nouvelles URL auxquelles ces spécifications sont publiées. Microsoft se réserve tous les droits non expressément accordés ici.
 
 -   Suivez les spécifications d’utilisation décrites dans les [Recommandations en matière de Badge Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 

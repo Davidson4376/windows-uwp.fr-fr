@@ -4,19 +4,18 @@ Description: When submitting an add-on, the options on the Properties page help 
 title: Saisir les propriétés d’une extension
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f616e4da96c1a2c59822d1370b49016dbca1bb7
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745555"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816468"
 ---
 # <a name="enter-add-on-properties"></a>Saisir les propriétés d’une extension
-
 
 Quand vous envoyez une extension, les options de la page **Propriétés** vous aident à déterminer le comportement de cette extension lorsqu’elle est proposée aux clients.
 
@@ -32,7 +31,7 @@ Les champs visibles sur cette page varient selon le type de produit de votre ext
 
 ## <a name="product-lifetime"></a>Durée de vie du produit
 
-Si vous avez sélectionné un type de produit **Durable**, le champ **Durée de vie du produit** s’affiche ici. Par défaut, le champ **Durée de vie du produit** d’un extension durable affiche la valeur **Toujours**, ce qui signifie que l’extension n’expire jamais. Selon votre gré, vous pouvez définir le champ **Durée de vie du produit** pour que l'extension arrive à expiration au bout d’un laps de temps défini (compris entre1 et 365jours).
+Si vous avez sélectionné un type de produit **Durable**, le champ **Durée de vie du produit** s’affiche ici. Par défaut, le champ **Durée de vie du produit** d’un extension durable affiche la valeur **Toujours**, ce qui signifie que l’extension n’expire jamais. Si vous préférez, vous pouvez modifier la **durée de vie du produit** , afin que le module complémentaire arrive à expiration après un laps de temps défini (compris entre 1 et 365 jours).
 
 
 ## <a name="quantity"></a>Quantité

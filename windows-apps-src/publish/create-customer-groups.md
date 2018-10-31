@@ -3,23 +3,23 @@ author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Créer des groupes de clients
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, groupes de clients, segment, groupe de versions d’évaluation, groupe d’utilisateurs connus
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a2a1454baa1d5b1f09226e501233aa4c076373
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 381953c51bfeb04625b452bd278ea09a4c9a8368
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5739933"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814245"
 ---
 # <a name="create-customer-groups"></a>Créer des groupes de clients
 
 Vous pouvez créer des *groupes de clients* qui incluent un sous-ensemble de clients de votre application. Ces groupes peuvent être utilisés pour cibler les clients pour les promotions, les tests et autres fins.
 
-Pour afficher et créer des groupes de clients, développez **engager** dans le menu de navigation de gauche du [Centre de développement Windows](https://partner.microsoft.com/dashboard), puis sélectionnez les **groupes de clients**.
+Pour afficher et créer des groupes de clients, développez **engager** dans le menu de navigation de gauche de [L’espace partenaires](https://partner.microsoft.com/dashboard), puis sélectionnez les **groupes de clients**.
 
 Actuellement, deux types de groupes de clients sont pris en charge:
 

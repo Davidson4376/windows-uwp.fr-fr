@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, supprimer, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: db8c394cac29afabba5229e21712320c82b89364
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750364"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5821133"
 ---
 # <a name="delete-an-add-on"></a>Supprime une extension
 

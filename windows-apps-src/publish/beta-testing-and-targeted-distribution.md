@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
+Description: Partner Center gives you several options to let testers try out your app before you offer it to the public.
 title: Tests bêta et distribution ciblée
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, test bêta, distribution limitée, bêta, test, testeurs
 ms.localizationpriority: medium
-ms.openlocfilehash: e57490e2ad9c3991baf40b6c4d15d35def59f94f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746742"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813867"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Tests bêta et distribution ciblée
 
 Quel que soit le soin avec lequel vous testez votre application, rien ne vaut un test dans des conditions réelles, avec d’autres utilisateurs. Les testeurs peuvent détecter des problèmes qui vous auraient échappé, comme des fautes d’orthographe, un flux d’application peu clair ou des erreurs pouvant entraîner un blocage de l’application. Vous pouvez ensuite résoudre ces problèmes avant de mettre à la disposition du public un produit finalement irréprochable. 
 
-Le tableau de bord du Centre de développementWindows vous offre plusieurs options pour rendre une soumission d’application accessible uniquement à des utilisateurs spécifiés. Vous pouvez ainsi demander à des testeurs de l’essayer avant de la proposer au public. 
+L’espace partenaires vous offre plusieurs options pour permettre aux testeurs de tester votre application avant de la proposer au public.
 
 Quelle que soit la méthode choisie, voici quelques éléments à garder à l’esprit au moment de réaliser des tests bêta sur votre application.
 
@@ -33,7 +33,7 @@ Quelle que soit la méthode choisie, voici quelques éléments à garder à l’
 
 Si vous souhaitez permettre aux testeurs d’utiliser votre application avant qu’elle ne soit disponible pour les autres utilisateurs, tout en vous assurant que personne d’autre ne peut voir sa description, utilisez l’option **Public privé** sous [Visibilité](choose-visibility-options.md) (sur la page **Tarification et disponibilité** de votre soumission). Il s’agit de la seule méthode vous permettant de distribuer votre application aux testeurs tout en empêchant complètement toute autre utilisateur de voir la description du Store pour l’application, même s’il a été en mesure d’entrer son lien direct. 
 
-L’option **public privé** peut peut uniquement être utilisée lorsque vous n’avez pas déjà publié votre application à un public non privé. Vous pouvez utiliser cette option avec les applications destinées à n’importe quelle version du système d’exploitation, mais vos testeurs doivent exécuter Windows 10, version 1607 ou ultérieure (y compris Xbox One) et vous doivent être connectés avec le compte Microsoft associé à l’adresse de messagerie que vous fournissez.
+L’option **public privé** peut uniquement être utilisée lorsque vous n’avez pas déjà publié votre application à un public non privé. Vous pouvez utiliser cette option avec les applications destinées à n’importe quelle version du système d’exploitation, mais vos testeurs doivent exécuter Windows 10, version 1607 ou ultérieure (y compris Xbox One) et vous doivent être connectés avec le compte Microsoft associé à l’adresse de messagerie que vous fournissez.
 
 Pour plus d’informations, voir [Public privé](choose-visibility-options.md#audience).
 
@@ -71,6 +71,8 @@ Pour utiliser cette option:
 - Après la publication de votre produit, distribuez le lien (l’**URL** sur la [page Identité des applications](view-app-identity-details.md)) à vos testeurs afin qu’ils puissent l’essayer.
 - Lorsque vous êtes prêt à rendre l’application accessible au public, créez une soumission et redéfinissez l’option **Visibilité** sur **Rendre ce produit disponible et détectable dans le Store** (en plus d’autres modifications que vous souhaitez apporter).
 
+> [!IMPORTANT]
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>Distribution ciblée à des clients WindowsPhone disposant d’adresses de messagerie spécifiées
 

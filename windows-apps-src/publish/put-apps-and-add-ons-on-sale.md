@@ -4,20 +4,20 @@ Description: You can promote your app or add-on in the Microsoft Store by puttin
 title: Commercialiser des applications et des extensions
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a815a5ba233808abb0c6159893ed306ddc96c51e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749908"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814500"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et des extensions
 
-Vous pouvez promouvoir votre application ou votre extension dans le MicrosoftStore en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage.
+Vous pouvez promouvoir votre application ou votre extension dans le MicrosoftStore en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage. Et vous pouvez choisir si vous souhaitez proposer la vente à tout le monde, ou en faire une offre exclusive pour les clients qui possèdent l’une de vos autres produits.
 
 > [!NOTE]
 > Prix de vente n’est pas pris en charge pour les extensions d’abonnement.
@@ -27,7 +27,7 @@ Lorsque vous utilisez la section **Prix de vente** de la page **Tarification et 
 Pendant la période de commercialisation de votre produit, les clients peuvent acheter ce dernier au prix inférieur au cours de la période que vous avez sélectionnée. Si vous définissez le prix sur **Gratuit**, les clients peuvent télécharger le produit sans rien payer pendant la période de vente.
 
 > [!IMPORTANT]
-> Prix de vente s’affiche uniquement pour vos clients sur les appareils Windows 10, y compris Xbox One. Les ventes proposées aux possesseurs de l’un de vos autres produits sont uniquement présentées aux clients qui utilisent Windows10, version1607 ou ultérieure.
+> Prix de vente s’affiche uniquement pour vos clients sur les appareils Windows 10, y compris Xbox One. Ventes que vous proposez uniquement aux possesseurs de l’un de vos autres produits sont affichent uniquement pour les clients sur Windows 10, version 1607 ou ultérieure.
 > 
 > Sur les autres systèmes d’exploitation, les clients voient le prix normal de votre application ou de votre extension et ne seront pas en mesure d’acheter ces dernières au prix de vente. Vous pouvez toujours modifier un prix en choisissant un autre niveau de prix dans une nouvelle soumission, mais il ne sera pas affiché en tant que vente à prix réduit limitée dans le temps.
 

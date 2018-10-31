@@ -3,16 +3,16 @@ author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configurer une planification précise de la publication
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: 910f0aea10e763316bedab7b96b21705c537282c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6474fc334922d49489c377a0c29841fc45889e1d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749034"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816923"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -30,7 +30,7 @@ Notez que vous ne serez pas en mesure de configurer des dates dans la section **
 > [!IMPORTANT]
 > Les dates que vous spécifiez dans la section Planification s’appliquent uniquement aux clients sous Windows10.
 >
->Si votre application prend en charge les versions antérieures du système d’exploitation, les clients qui les utilisent voient la description de votre application dès que celle-ci obtient la certification et termine le processus de publication, même si vous avez sélectionné une date de publication ultérieure. Si vous sélectionnez une date **Empêcher l'acquisition**, elle ne s’applique pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [Visibilité](choose-visibility-options.md#discoverability) ou si vous sélectionnez **Rendre votre application indisponible** à partir de la page **vue d’ensemble de l’application**).
+>Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, n’importe quelle date **empêcher l’acquisition** que vous sélectionnez ne s’applique pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [visibilité](choose-visibility-options.md#discoverability) , ou si vous sélectionnez **rendre votre application indisponible** à partir de la page de **Présentation de l’application** ).
 
 
 ## <a name="base-schedule"></a>Planification de base
@@ -60,7 +60,7 @@ Dans la liste déroulante **Empêcher l'acquisition**, vous pouvez définir une 
 
 Par défaut, l'option **Empêcher l'acquisition** est configurée sur jamais. Pour modifier ce paramètre, sélectionnez **à** dans le menu déroulant et spécifiez une date et une heure, comme décrit ci-dessus. À la date et à l'heure que vous sélectionnez, les clients ne seront plus en mesure d’acquérir l’application.
 
-Il est important de comprendre que cette option a le même effet que de sélectionner **Rendre votre application détectable mais indisponible** dans la section [Visibilité](choose-visibility-options.md#discoverability) et de choisir **Empêcher l'acquisition: tout client disposant d'un lien direct peut voir la description du produit dans le Store, mais ne peut le télécharger que s'il possède déjà le produit ou dispose d'un code promotionnel et utilise un appareil Windows10.** Pour arrêter de proposer une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+Il est important de comprendre que cette option a le même effet que la sélection de **rendre votre application détectable mais ne sont pas disponibles** dans la section [visibilité](choose-visibility-options.md#discoverability) et en choisissant **empêcher l’acquisition: tout client ayant un lien direct peut voir Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10.** Pour arrêter de proposer une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
 > Si vous sélectionnez une date pour **Empêcher l'acquisition** et décidez ultérieurement que vous souhaitez la rendre disponible à nouveau, vous pouvez créer une nouvelle soumission et reconfigurer **Empêcher l'acquisition** sur **Jamais**. L’application sera à nouveau disponible après la publication de votre soumission mise à jour.

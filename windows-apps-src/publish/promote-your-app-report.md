@@ -2,22 +2,22 @@
 author: JnHs
 title: Rapport de campagne de publicité
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: Le rapport de campagne de publicité, accessible à partir du tableau de bord du Centre de développement Windows, vous permet d’évaluer les performances des campagnes de publicité de votre application.
+description: Le rapport de campagne de publicité dans l’espace partenaires vous permet de visualiser les performances de vos campagnes de promotion d’annonce.
 ms.author: wdg-dev-content
-ms.date: 11/21/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e7bb2a4d592ae8201d27e45eb0f05d7fbca76a7
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752714"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819680"
 ---
 # <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 
-Le rapport de **campagne de publicité** dans le tableau de bord du centre de développement Windows vous permet de visualiser les performances de vos [campagnes de publicité](create-an-ad-campaign-for-your-app.md) de promotion d’application. Pour afficher le rapport, développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**.
+Le rapport de **campagne de publicité** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de visualiser les performances de vos [campagnes de publicité](create-an-ad-campaign-for-your-app.md) de promotion d’application. Pour afficher le rapport, développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**.
 
 ## <a name="definitions"></a>Définitions
 
@@ -50,7 +50,7 @@ Vous pouvez afficher des données de performances concernant jusqu’à six camp
 
 ## <a name="install-tracking"></a>Suivi d’installation
 
-L’exécution d’une campagne de publicité d’installation par le biais du Centre de développement offre une exposition dont vous avez grandement besoin pour promouvoir vos applications. Les expositions publicitaires sont proposées aux clients les plus susceptibles d’être intéressés par l’application, et ces clients peuvent cliquer sur la publicité et installer l’application à partir du WindowsStore. Auparavant, il était difficile de distinguer les installations provenant d’une campagne de publicité de celles issues d’autres sources.
+Exécution d’une campagne de publicité d’installation par le biais de l’espace partenaires fournit une exposition de grandement besoin pour promouvoir vos applications. Les expositions publicitaires sont proposées aux clients les plus susceptibles d’être intéressés par l’application, et ces clients peuvent cliquer sur la publicité et installer l’application à partir du WindowsStore. Auparavant, il était difficile de distinguer les installations provenant d’une campagne de publicité de celles issues d’autres sources.
 
 Ce rapport affiche le nombre d’installations que vous avez obtenues en exécutant vos campagnes de publicité. Il s’agit uniquement des téléchargements qui sont une source directe de revenus dans le cadre de vos campagnes de publicité, et non des téléchargements provenant d’autres sources.
 
@@ -69,7 +69,7 @@ Le suivi de l’installation s’effectue dans le WindowsStore sur un téléphon
 2.  Le client est connecté à un compte Microsoft.
 3.  Le client répond aux exigences [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) (aucun suivi n’est possible pour les clients qui ne répondent pas aux exigences COPPA).
 
-Par conséquent, il est possible que le suivi d’installation d’application sous-estime le nombre réel d’installations générées par une campagne de publicité. Notez que vous pouvez visualiser le nombre total d’installations d’une application (par le biais de campagnes ou autres) dans le rapport [Acquisitions](acquisitions-report.md) du Centre de développement.
+Par conséquent, il est possible que le suivi d’installation d’application sous-estime le nombre réel d’installations générées par une campagne de publicité. Veuillez noter que vous pouvez visualiser le nombre total d’installations d’une application (par le biais de campagnes de publicité et dans le cas contraire) dans le rapport [Acquisitions](acquisitions-report.md) disponible dans l’espace partenaires.
 
 
 ## <a name="account-billing-history"></a>Historique de facturation du compte

@@ -10,11 +10,11 @@ keywords: windows10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e39e8e2cf1caa5673a925481848147cf445188
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751365"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814381"
 ---
 # <a name="page-transitions"></a>Transitions de page
 

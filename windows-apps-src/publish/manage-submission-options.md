@@ -3,16 +3,16 @@ author: jnHs
 Description: Manage submission options such as publishing hold options, notes for certification, and more.
 title: Gérer les options de soumission
 ms.author: wdg-dev-content
-ms.date: 05/09/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, mise en attente de publication, date de publication, envoi de la soumission à publier, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b816ece884f1464d0dbf039aef5d80e2ca7341
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 8f7d58989035db1a14aba685c8951d23d2f94b52
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755959"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814295"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 

@@ -4,16 +4,16 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: Résoudre les erreurs d’envoi
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d997d2523012588348512311980f9bb4a7160b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758440"
+ms.locfileid: "5811976"
 ---
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
@@ -31,6 +31,9 @@ Si vous prévoyez de soumettre un package qui contient les fichiers binaires Win
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x et versions antérieures
 
+> [!IMPORTANT]
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+
 L’**erreur 2001** peut se produire lorsque des problèmes sont détectés pendant le prétraitement des packages Windows Phone. Dans la plupart des cas, vous devez régénérer le package de votre application pour corriger l’erreur. Remplacez ensuite l'ancien package par le nouveau sur la page [Packages](upload-app-packages.md) de la soumission avant de cliquer de nouveau sur **Soumettre au Windows Store**.
 
 Cette erreur peut avoir un certain nombre de causes. Passez en revue la liste ci-dessous pour identifier les problèmes qui peuvent s'appliquer à vos packages.
@@ -45,7 +48,7 @@ Vous pouvez également rencontrer l’**erreur 1300** après avoir soumis votre 
 
 ## <a name="nameidentity-errors"></a>Erreurs de nom/identité
 
-Si vous voyez une erreur indiquant: **Le nom trouvé dans le package ne fait pas partie de vos noms d’application réservés. Veuillez réserver le nom de l’application et/ou mettre à jour votre package avec le nom d’application approprié pour cette langue**, il se peut que vous ayez saisi un nom incorrect dans votre package. Cette erreur peut également se produire si vous utilisez un nom d’application que vous n’avez pas réservé dans le Centre de développement. Vous pouvez généralement corriger cette erreur en procédant comme suit:
+Si vous voyez une erreur indiquant: **Le nom trouvé dans le package ne fait pas partie de vos noms d’application réservés. Veuillez réserver le nom de l’application et/ou mettre à jour votre package avec le nom d’application approprié pour cette langue**, il se peut que vous ayez saisi un nom incorrect dans votre package. Cette erreur peut également se produire si vous utilisez un nom d’application que vous n’avez pas réservé dans l’espace partenaires. Vous pouvez généralement corriger cette erreur en procédant comme suit:
 
 - Accédez à la page [Identité des applications](view-app-identity-details.md) pour votre application (sous **Gestion des applications**) pour vérifier si une identité est affectée à votre application. Si ce n’est pas le cas, une option vous permettra d’en créer une. Vous devez réserver un nom pour votre application afin de créer l’identité. Assurez-vous qu’il s’agit du nom que vous avez utilisé dans votre package.
 - Si votre application possède déjà une identité, vous devrez peut-être quand même réserver le nom que vous voulez utiliser dans votre package. Sous **Gestion des applications**, cliquez sur [Gestion des noms d’application](manage-app-names.md). Entrez le nom que vous souhaitez utiliser, puis cliquez sur **Réserver le nom d’application**.

@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Rapport Acquisitions
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 09/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769225"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813306"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
 
-Le rapport **Acquisitions** disponible dans le tableau de bord du centre de développement Windows vous permet de déterminer qui acquiert et installe votre application, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations sur la façon dont les clients sur Windows 10 (y compris Xbox) sont arrivés à de votre application Description. Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures. 
+Le rapport **Acquisitions** disponible dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de déterminer qui acquiert et installe votre application, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations sur la façon dont les clients sur Windows 10 (y compris Xbox) sont arrivés à de votre application. Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures. 
 
-Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
+Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Dans ce rapport, une **acquisition** signifie qu’un nouveau client a obtenu une licence pour votre application (qu’elle soit payante ou gratuite). Une **installation** fait référence à l’application installée sur un appareil Windows10.
 

@@ -4,16 +4,16 @@ Description: Common questions about ad campaigns
 title: Questions courantes sur les campagnes de publicité
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c73e51cac3823be7c1abcce223c9d7fecfc58ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745915"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5811923"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
 
@@ -63,10 +63,3 @@ Si vous ne voulez pas attendre d’être facturé, payez votre facture immédiat
 
 Accédez à <http://commerce.microsoft.com>, ouvrez une session avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
 
-### <a name="related-topics"></a>Rubriques connexes
-
-* [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
-* [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
-* [À propos des publicités maison](about-house-ads.md)
-* [À propos des annonces de la communauté](about-community-ads.md)
-* [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)

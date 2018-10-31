@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: Here’s some important info you’ll need to ensure that you receive payment for your apps, in-app products (IAPs), and advertising earnings.
+Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Rémunération
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
-ms.date: 02/05/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: e7a5736c48232d3fa080d13fbcbbbdb70bfa9c92
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 96845e81b093b7cddb6d334286e9cfa468a43b28
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767112"
+ms.locfileid: "5816832"
 ---
 # <a name="getting-paid"></a>Rémunération
-Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et extensions, ainsi que vos revenus publicitaires.
+Voici quelques informations importantes sur la réception de paiement pour vos applications, d’extensions et vos revenus publicitaires.
 
 > [!IMPORTANT]
-> Pour recevoir l’argent des ventes d’applications dans le MicrosoftStore, vous devez [configurer votre compte de paiement et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
+> Avant de recevoir l’argent des ventes dans le Microsoft Store, vous devez [configurer votre compte de revenu et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
@@ -48,7 +48,7 @@ N'oubliez pas que le prix que vous sélectionnez peut inclure la taxe de vente o
 
 ## <a name="payout-reporting"></a>Rapports sur les paiements
 
-Vous pouvez accéder à vos informations de paiement et télécharger des rapports dans la page **Synthèse des paiements** dans le tableau de bord du Centre de développement Windows. Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
+Vous pouvez accéder à vos informations de paiement et télécharger les rapports dans le **Résumé du paiement** de [L’espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
 
 
 ## <a name="payout-timeframe"></a>Période de paiement
@@ -65,7 +65,7 @@ Pour mettre des paiements en attente, accédez à **Paramètres du compte**. Sou
 Une fois que vous avez configuré l’état de mise en attente des paiements sur **Activé**, tous les paiements sont mis en attente jusqu’à ce que vous basculiez à nouveau le curseur sur **Désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
 
 > [!NOTE]
-> La valeur que vous sélectionnez dans **État de mise en attente des paiements** s’applique à **toutes** les sources de revenus payées par le biais du Centre de développement Windows (MicrosoftStore, publicité, Place de marché MicrosoftAzure, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
+> Votre sélection de **l’état de mise en attente du paiement** s’applique à **toutes les** sources de revenus payées par le biais du programme pour les développeurs Windows dans l’espace partenaires (Microsoft Store, publicité, Azure Marketplace, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
 
 
  

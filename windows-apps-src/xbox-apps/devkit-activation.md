@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e497eb404129a7d8cc8ce9784c2e28a9c9456fc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756171"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819949"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Activation du mode développeur XboxOne
 

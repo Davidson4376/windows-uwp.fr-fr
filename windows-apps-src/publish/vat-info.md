@@ -1,24 +1,24 @@
 ---
 author: jnHs
-Description: If you’re required to provide a VAT ID number during the Dev Center registration process, here’s some info to get you started.
+Description: If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
 title: Informations sur la TVA
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe2643aa5acfc666ad2cd714f1b5aa762622206
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 872d3967e48a9c8122e3cc3043a1440950f70e9b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759086"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5812433"
 ---
 # <a name="vat-info"></a>Informations sur la TVA
 
 
-Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer.
+Si vous devez fournir un numéro de TVA au cours du processus d’inscription de l’espace partenaires, voici quelques informations pour vous aider à démarrer.
 
 ## <a name="understanding-vat-numbers"></a>Description des numéros de TVA
 

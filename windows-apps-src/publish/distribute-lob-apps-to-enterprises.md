@@ -4,16 +4,16 @@ Description: You can publish line-of-business (LOB) apps directly to enterprises
 title: Distribuer des applications métier aux entreprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: c491e5db7b5cea0a1b2a6bb9387f1432d007bed2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d90a3b3b0eb216dbc07bbc331d7d461ed0f825c4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758143"
+ms.locfileid: "5816478"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
@@ -24,7 +24,7 @@ Vous pouvez publier des applications métiers directement à l’attention des e
 > Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
 
 > [!IMPORTANT]
-> Vous ne pouvez pas utiliser l'[API de soumission au MicrosoftStore](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions d'applications métier doivent être effectuées à l’aide du tableau de bord du Centre de développement Windows.
+> Vous ne pouvez pas utiliser l'[API de soumission au MicrosoftStore](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions d’applications cœur de métier doivent être publiées par le biais de l’espace partenaires.
 
 
 ## <a name="set-up-the-enterprise-association"></a>Configurer l’association d’entreprise
@@ -94,7 +94,7 @@ Une fois le processus de certification appliqué à la soumission, l’applicati
 
 En mettant vos applications à la disposition d’une entreprise par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation, vous offrez l’assurance que ces applications ont été signées par le WindowsStore et qu’elles sont conformes aux politiques standard du WindowsStore.
 
-Dans certains cas, les entreprises ne souhaitent pas soumettre leurs applications métiers par le biais du Centre de développement Windows (par exemple, pour des raisons de conformité ou lorsque les applications requièrent des fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser MicrosoftStore pour Entreprises ni MicrosoftStore pour Éducation.
+Dans certains cas, les entreprises ne souhaitent pas leurs applications cœur de métier par le biais de l’espace partenaires (par exemple, pour des raisons de conformité ou lorsque les applications qui requièrent des fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser MicrosoftStore pour Entreprises ni MicrosoftStore pour Éducation.
 
 Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
 

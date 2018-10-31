@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions de version d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 213c68a7e633d7084934120bf3438709701b5cb3
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 31b3379d66485fcd5ab417ecb2782b06f6e80e67
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759129"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818486"
 ---
 # <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation du package
 
@@ -303,7 +303,7 @@ Cette ressource donne accès aux données du rapport de certification d’une so
 
 | Valeur           | Type    | Description         |
 |-----------------|---------|------|
-|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO8601.    |
+|     date            |    chaîne     |  La date et l’heure de que génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 

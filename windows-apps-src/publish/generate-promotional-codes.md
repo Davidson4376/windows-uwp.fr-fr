@@ -4,21 +4,21 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: Générer des codes promotionnels
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 08/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a29b38ebb0e00e2c65b9050868ad1e11cc2ab2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2fe89f65ff4f3278b0ba88ef4c5ca9d22bc67817
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762648"
+ms.locfileid: "5817961"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
 
-Vous pouvez générer des codes promotionnels pour une application ou un module complémentaire que vous avez publiés dans le Microsoft Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre module complémentaire. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client en offrant aux utilisateurs un accès gratuit à votre application ou extension, ou pour le [bêta-test](beta-testing-and-targeted-distribution.md) avec Windows 10. 
+[L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de générer des codes promotionnels pour une application ou module complémentaire que vous avez publiés dans le Microsoft Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre module complémentaire. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client en offrant aux utilisateurs un accès gratuit à votre application ou extension, ou pour le [bêta-test](beta-testing-and-targeted-distribution.md) avec Windows 10. 
 
 Chaque code promotionnel dispose d’une URL donnant droit unique correspondante laquelle un client peut cliquer pour pouvoir utiliser le code et installer votre application ou module complémentaire à partir du Microsoft Store.  Notez que votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les clients ne puissent utiliser un code promotionnel pour l’installer.
 
@@ -45,7 +45,7 @@ Tenez compte des stratégies suivantes relatives aux codes promotionnels:
 
 Pour commander des codes promotionnels pour une application ou module complémentaire:
 
-1.  Dans le menu de navigation de gauche du tableau de bord du Centre de développement Windows, développez **Attract**, puis sélectionnez **Promo codes**.
+1.  Dans le menu de navigation de gauche de [L’espace partenaires](https://partner.microsoft.com/dashboard), développez **Attract** , puis sélectionnez **codes promotionnels**.
 
 2.   Dans la page **Codes promotionnels**, cliquez sur **Commander des codes**.
 
@@ -64,7 +64,7 @@ Pour commander des codes promotionnels pour une application ou module complémen
 
 Pour télécharger une commande de codes promotionnels complétée et distribuer les codes aux clients:
 
-1.  Dans le menu de navigation de gauche du tableau de bord du Centre de développement Windows, développez **Attract**, puis sélectionnez **Promo codes**.
+1.  Dans le menu de navigation de gauche de [L’espace partenaires](https://partner.microsoft.com/dashboard), développez **Attract** , puis sélectionnez **codes promotionnels.**
 2.  Cliquez sur le lien **Télécharger** correspondant à la commande de codes promotionnels, puis enregistrez le fichier généré sur votre ordinateur. Ce fichier contient des informations sur votre commande de codes promotionnels sous la forme de valeurs séparées par des tabulations (.tsv).
 3.  Ouvrez le fichier.tsv dans l’éditeur de votre choix. Pour bénéficier d’une expérience optimale, ouvrez le fichier.tsv dans une application pouvant afficher les données dans une structure tabulaire, telle que MicrosoftExcel. Toutefois, vous pouvez ouvrir ce fichier dans tout éditeur de texte.
 
@@ -103,7 +103,7 @@ Lorsque le client clique sur **Utiliser**, le MicrosoftStore s’ouvre à la pag
 
 ## <a name="review-your-promotional-codes"></a>Passer en revue vos codes promotionnels
 
-Pour consulter un récapitulatif détaillé des commandes de codes promotionnels pour vos applications et modules complémentaires, accédez à la page **Codes promotionnels** de l'application (dans le menu de navigation de gauche du tableau de bord du Centre de développement, développez **Attract**, puis sélectionnez **Promo codes**). Vous pouvez consulter les détails suivants pour tous vos codes promotionnels actifs et inactifs:
+Pour consulter un récapitulatif détaillé des commandes de codes promotionnels pour vos applications et modules complémentaires, accédez à la page de **codes promotionnels** (dans le menu de navigation de gauche de l’espace partenaires, développez **Attract** , puis sélectionnez **codes promotionnels**). Vous pouvez consulter les détails suivants pour tous vos codes promotionnels actifs et inactifs:
 -   Nom de la commande
 -   Application ou module complémentaire
 -   Date de début

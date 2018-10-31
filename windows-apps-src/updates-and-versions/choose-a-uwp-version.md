@@ -9,11 +9,11 @@ keywords: windows10, uwp, version, build, versions, windows, choisir, mettre à 
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756376"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5820324"
 ---
 # <a name="choose-a-uwp-version"></a>Choisir une version d’UWP
 

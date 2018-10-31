@@ -4,16 +4,16 @@ Description: As you submit your app, you have the option to use the Notes for ce
 title: Remarques pour la certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ms.author: wdg-dev-content
-ms.date: 04/03/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, remarques aux testeurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 9348b7ef7c8754b63c284c0479f37dde0b297ad8
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab3ba2eb08c01bac3b9c0536ce11b8e2bea96054
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755876"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818942"
 ---
 # <a name="notes-for-certification"></a>Remarques pour la certification
 
@@ -22,24 +22,26 @@ Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser
 
 Prenez soin d’inclure les éléments suivants (s’ils sont applicables à votre application) :
 
--   **Les noms d’utilisateur et mots de passe pour les comptes de test** Si votre application nécessite que les utilisateurs se connectent à un service ou un compte de réseau social, fournissez le nom d’utilisateur et le mot de passe d’un compte de test. Les testeurs de certification utiliseront ce compte lors de l’examen de votre application.
+-   **Nom d’utilisateur et mots de passe pour les comptes de test**: Si votre application nécessite que les utilisateurs se connectent à un service ou un compte de médias sociaux, fournissez le nom d’utilisateur et mot de passe d’un compte de test. Les testeurs de certification utiliseront ce compte lors de l’examen de votre application.
 
--   **Les étapes à suivre pour accéder aux fonctionnalités masquées ou verrouillées** Décrivez brièvement comment les testeurs peuvent accéder aux fonctionnalités, modes ou contenus les plus subtiles. Les applications incomplètes risquent de ne pas obtenir de certification.
+-   **Étapes pour accéder aux fonctionnalités masquées ou verrouillées**: Décrivez brièvement comment les testeurs peuvent accéder à des fonctionnalités, modes ou du contenu qui ne peut-être pas être évident. Les applications incomplètes risquent de ne pas obtenir de certification.
 
--   **La procédure de vérification de l’utilisation du contenu audio en arrière-plan** Si votre application autorise l’exécution d'un contenu audio en arrière-plan, les testeurs peuvent avoir besoin de connaître la procédure à suivre pour accéder à cette fonctionnalité afin de vérifier qu’elle fonctionne correctement.
+-   **Procédure de vérification d’utilisation du contenu audio en arrière-plan**: Si votre application autorise l’audio à s’exécuter en arrière-plan, testeurs peuvent avoir besoin de savoir comment accéder à cette fonctionnalité afin de vérifier qu’elle fonctionne correctement.
 
--  **Les différences de comportement attendues en fonction des zones géographiques ou d’autres paramètres clients** Par exemple, si des clients de régions différentes verront des contenus différents, assurez-vous de le signaler afin que les testeurs comprennent les différences et procèdent à un examen approprié.
+-  **Différences d’attendue de comportement en fonction de la région ou d’autres paramètres clients**: par exemple, si des clients de régions différentes verront des contenus différents, assurez-vous d’effectuer votre appel afin que les testeurs comprennent les différences et procèdent à un examen.
 
--   **Les informations sur les modifications apportées dans le cadre de la mise à jour d’une application** Pour les mises à jour d’applications déjà publiées, il est bon de signaler aux testeurs ce qui a changé, surtout si vos packages sont les mêmes et que vous modifiez simplement la description de votre application (ajout de captures d’écran, changement de catégorie de l’application ou modification de la description, par exemple).
+-   **Plus d’informations sur ce qui a changé dans une mise à jour de l’application**: les mises à jour des applications déjà publiées, vous voudrez peut-être indiquer les testeurs ce qui a changé, surtout si vos packages sont les mêmes et que vous modifiez simplement description (par exemple, l’ajout de plus de votre application captures d’écran, la modification de catégorie de votre application ou modification de la description).
 
--   **La date de saisie des remarques** Cela est particulièrement important si vous utilisez un bac à sable de développement dans le Centre de développement (comme c’est le cas pour tous les jeux s’intégrant à XboxLive), puisque les remarques que vous entrez lors de la publication dans un bac à sable resteront lorsque vous demanderez la certification. L’affichage de la date aide les testeurs à évaluer s’il existe des problèmes temporaires susceptibles de ne plus s’appliquer.
+-   **La date que vous saisissez les notes**: cela est particulièrement important si vous utilisez un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live), puisque les remarques que vous entrez lors sera publication dans un bac à sable rester lorsque vous demandez la certification. L’affichage de la date aide les testeurs à évaluer s’il existe des problèmes temporaires susceptibles de ne plus s’appliquer.
 
 -  **Tout autre élément que les testeurs auront besoin de comprendre, selon vous, au sujet de votre soumission.**
 
 Prenez en considération les points suivants lors de la rédaction des remarques:
 
 -   **Une personne réelle lira ces remarques.** Les testeurs apprécieront des remarques polies et claires ainsi que des instructions utiles.
+
 -   **Soyez succinct et donnez des instructions simples.** Si vous devez vraiment fournir des instructions détaillées, vous pouvez indiquer l’URL vers une page contenant d’autres informations. Toutefois, gardez à l’esprit que les clients de votre application ne verront pas ces remarques. Si vous pensez avoir besoin de fournir des instructions complexes pour le test de votre application, peut-être devez-vous envisager de simplifier l’utilisation de votre application pour les clients (et les testeurs).
+
 -   **Les services et les composants externes doivent être en ligne et disponibles.** Si votre application doit se connecter à un service pour pouvoir fonctionner, assurez-vous que ce service sera en ligne et disponible. Incluez toutes les informations relatives au service dont les testeurs auront besoin, comme les informations de connexion. Si votre application ne peut pas se connecter à un service nécessaire au cours du test, elle risque de ne pas obtenir sa certification.
 
  

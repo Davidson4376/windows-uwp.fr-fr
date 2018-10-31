@@ -9,11 +9,11 @@ keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement de pa
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
 ms.openlocfilehash: e943e27275f5938960f673ac68572593cf4ece57
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750916"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819750"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>Met à jour le pourcentage de lancement d’une soumission d'application
 
