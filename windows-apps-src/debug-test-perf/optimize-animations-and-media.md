@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831633"
+ms.locfileid: "5861531"
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédias et les images
 

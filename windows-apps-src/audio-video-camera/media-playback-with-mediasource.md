@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 73b6a19e2385f1a9b8afa4672df50d17ac16ec97
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5816377"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5863933"
 ---
 # <a name="media-items-playlists-and-tracks"></a>Éléments, playlists et pistes multimédias
 

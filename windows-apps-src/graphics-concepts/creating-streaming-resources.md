@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a796897aa786283499c25b0f405e302feeb5f938
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814751"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5867876"
 ---
 # <a name="creating-streaming-resources"></a>Création de ressources de diffusion en continu
 

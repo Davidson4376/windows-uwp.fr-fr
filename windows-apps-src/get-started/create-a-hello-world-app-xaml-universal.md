@@ -8,12 +8,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows10, uwp, première application, hello word
 ms.localizationpriority: medium
-ms.openlocfilehash: b28d0237deda78291816a52affd1fa7b4768640b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839787"
+ms.locfileid: "5864913"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application «Hello World» (XAML)
 
@@ -85,7 +85,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 -   App.xaml est le fichier dans lequel vous déclarez les ressources utilisées dans l’application.
 -   App.xaml.cs est le fichier code-behind d’App.xaml. Comme toutes les pages code-behind, il contient un constructeur qui appelle la méthode `InitializeComponent`. Ce n’est pas vous qui écrivez la méthode `InitializeComponent`. Elle est générée par Visual Studio et vise essentiellement à initialiser les éléments déclarés dans le fichier XAML.
 -   App.xaml.cs est le point d’entrée de votre application.
--   App.xaml.cs contient par ailleurs des méthodes destinées à gérer l’activation et la suspension de l’application.
+-   App.Xaml.cs contient également des méthodes pour gérer [l’activation](../launch-resume/activate-an-app.md) et la [suspension](../launch-resume/suspend-an-app.md) de l’application.
 
 *MainPage.xaml*
 
@@ -95,12 +95,14 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 *Package.appxmanifest*
 -   Fichier manifeste qui décrit votre application: nom, description, vignette, page de démarrage, etc..
--   Comprend la liste des fichiers contenus dans votre application.
+-   Comprend une liste des dépendances, les ressources et les fichiers contenus dans votre application.
 
 *Ensemble d’images de logo*
--   Assets/Square150x150Logo.scale-200.png représente votre application dans le menu Démarrer.
+-   Assets/Square150x150Logo.scale-200.png et Wide310x150Logo.scale-200.png représentent votre application (taille moyenne ou échelle) dans le menu Démarrer.
+-   Assets/Square44x44Logo.png représente votre application dans la liste d’application du menu Démarrer, la barre des tâches et le Gestionnaire des tâches.
 -   Assets/StoreLogo.png représente votre application dans le MicrosoftStore.
 -   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
+-   Assets/LockScreenLogo.scale-200.png peut être utilisé pour représenter l’application sur l’écran de verrouillage lorsque le système est verrouillé.
 
 ## <a name="step-2-adding-a-button"></a>Étape2: Ajouter un bouton
 
