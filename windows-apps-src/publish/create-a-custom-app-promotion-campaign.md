@@ -4,22 +4,22 @@ description: En plus de créer une campagne de publicité pour votre application
 title: Créer une campagne personnalisée de promotion d’applications
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ms.author: wdg-dev-content
-ms.date: 09/27/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
-ms.openlocfilehash: 0349833c012789b55d33575702390f264335aa2f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747460"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824841"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
 En plus de créer une [campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md) qui s'exécute dans des applications Windows, vous pouvez également promouvoir votre application à l'aide d'autres canaux. Par exemple, vous pouvez promouvoir votre application en faisant appel à un fournisseur de commercialisation d’applications tiers, ou en publiant des liens vers votre application sur des médias sociaux. Ces activités sont appelées *campagnes personnalisées*.
 
-Si vous lancez des campagnes personnalisées pour votre application, vous pouvez suivre les performances de chacune d’elles en créant pour chaque campagne personnalisée une URL distincte contenant un *ID de campagne* différent. Lorsqu’un client exécutant Windows 10 clique sur une URL qui contient un ID de campagne, Microsoft associe le clic à la campagne personnalisée correspondante et met ces données à votre disposition.
+Si vous lancez des campagnes personnalisées pour votre application, vous pouvez suivre les performances de chacune d’elles en créant pour chaque campagne personnalisée une URL distincte contenant un *ID de campagne* différent. Lorsqu’un client exécutant Windows 10 clique sur une URL qui contient un ID de campagne, Microsoft associe le clic à la campagne personnalisée correspondante et rend ces données disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard).
 
 > [!IMPORTANT]
 > Ces données sont uniquement suivies pour les clients sur Windows 10. Les clients utilisant d’autres systèmes d’exploitation peuvent suivre le lien vers la description de votre application, mais les données sur les activités de ces clients ne seront pas incluses.
@@ -28,7 +28,7 @@ Il existe deux principaux types de données associés à des campagnes personnal
 
 Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit:
 
-* Vous pouvez visualiser les données relatives aux vues de page et aux conversions de votre application ou extension dans les graphiques **Conversions et accès aux pages de l’application par ID de campagne** et **Conversions totales de campagnes** dans le [rapport Acquisitions](acquisitions-report.md) accessible à partir du tableau de bord du Centre de développement.
+* Vous pouvez afficher les données concernant les vues de page et les conversions de votre application ou module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
 * Si votre application est une application de plateforme Windows universelle (UWP), vous pouvez utiliser les API du SDK Windows pour récupérer par programme l’ID de campagne personnalisée qui a abouti à une conversion.
 
 ## <a name="example-custom-campaign-scenario"></a>Exemple de scénario de campagne personnalisée
@@ -47,9 +47,9 @@ Lorsque les abonnés du développeur sur Facebook et Twitter cliquent sur l’UR
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>Comprendre comment les acquisitions sont éligibles en tant que conversions
 
-Une *conversion* de campagne personnalisée est une acquisition qui résulte d’un clic par un client sur une URL promue par le biais d’une campagne personnalisée. Il existe différents cas de figure pour qu’une acquisition soit éligible en tant que conversion dans les graphiques **Conversions et accès aux pages de l’application par ID de campagne** et **Conversions totales de campagnes** dans le [rapport Acquisitions](acquisitions-report.md) accessible à partir du tableau de bord du Centre de développement, ainsi qu’en tant que conversion lors de la [récupération par programme de l’ID de campagne](#programmatically).
+Une *conversion* de campagne personnalisée est une acquisition qui résulte d’un clic par un client sur une URL promue par le biais d’une campagne personnalisée. Il existe différents scénarios pour qu’elle en tant que conversion pour les graphiques de **vues de page d’application et les conversions par ID de campagne** et **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md) et pour qu’elle en tant que conversion pour [ récupération par programme l’ID de campagne](#programmatically).
 
-### <a name="qualifying-conversions-in-the-dashboard-report"></a>Conversions éligibles dans le rapport du tableau de bord
+### <a name="qualifying-conversions-in-the-acquisitions-report"></a>Conversions éligibles dans le rapport sur les Acquisitions
 
 Les scénarios ci-après permettent de faire figurer une conversion dans les graphiques **Conversions et accès aux pages de l’application par ID de campagne** et **Conversions totales de campagnes** du [rapport Acquisitions](acquisitions-report.md):
 
@@ -195,4 +195,4 @@ Avant de promouvoir une URL de campagne personnalisée, nous vous recommandons d
 
 3.  Cliquez sur l’URL plusieurs fois pour fermer l’applicationUWP ou la page du navigateur après chaque visite de la page de votre application. Lors de **l’une** de ces visites de la page de votre application, procédez à l’acquisition de votre application pour générer une conversion. Comptez le nombre total de fois où vous avez cliqué sur l’URL.
 
-4. Vérifiez si les vues de page et les conversions escomptées s’affichent dans les graphiques **Conversions et accès aux pages de l’application par ID de campagne** et **Conversions totales de campagnes** du [rapport Acquisitions](acquisitions-report.md) dans le tableau de bord du Centre de développement, puis testez le code de votre application pour vérifier s’il peut récupérer l’ID de campagne à l’aide des API décrites ci-dessus.
+4. Vérifiez si les vues de page escomptées et les conversions s’affichent dans les graphiques de **vues de page d’application et les conversions par ID de campagne** et les **conversions totales de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md)et tester le code de votre application pour vérifier si elle peut récupérer l’ID de campagne à l’aide de l’API décrites ci-dessus.

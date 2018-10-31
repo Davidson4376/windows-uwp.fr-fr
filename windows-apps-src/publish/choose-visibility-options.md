@@ -3,16 +3,16 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: Choisir les options de visibilité
 ms.author: wdg-dev-content
-ms.date: 08/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, visibilité, public privé, disponible, détectable
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a83f1ea4547e60547e427cedd5ad5338e450762
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757984"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5826601"
 ---
 # <a name="choose-visibility-options"></a>Choisir les options de visibilité
 
@@ -60,7 +60,7 @@ Voici quelques éléments importants à prendre en considération lorsque vous c
 - Votre application ne sera pas disponible par le biais du MicrosoftStore pour Entreprises et/ou MicrosoftStore pour Éducation, indépendamment de vos paramètres de gestion des licences organisationnelles, même pour les personnes de votre public privé.
 - Alors que le Store s’assurera que votre application n’est visible et disponible que pour les personnes connectées avec un compte Microsoft que vous avez ajouté à votre public privé, nous ne pouvons pas empêcher ces personnes de partager des informations ou des captures d’écran en dehors de votre public privé. Si la confidentialité est une préoccupation majeure, veillez à ce que votre public privé n’inclue que des personnes de confiance qui ne partageront aucune information sur votre application avec d’autres utilisateurs.
 - Veillez à informer vos testeurs sur la façon dont ils peuvent vous transmettre leurs commentaires. Vous ne souhaiterez sans doute pas qu’ils laissent des commentaires dans le Hub de commentaires, car tous les autres clients pourront voir leurs commentaires. Envisagez d’inclure un lien pour leur permettre d’envoyer un e-mail ou de fournir des commentaires de toute autre manière.
-- Les avis rédigés par des individus de votre public privé vous seront disponibles pour une consultation. Toutefois, ces avis ne seront pas publiés dans la description de votre application dans le Store, même si votre soumission est ensuite définie sur **Public non privé**. Vous pouvez lire les avis rédigés par votre public privés en examinant le [Rapport sur les avis](reviews-report.md) dans le centre de développement, mais vous ne pouvez pas télécharger ces données ou utiliser l'[API d'analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md) pour accéder à ces avis sur programmation.
+- Les avis rédigés par des individus de votre public privé vous seront disponibles pour une consultation. Toutefois, ces avis ne seront pas publiés dans la description de votre application dans le Store, même si votre soumission est ensuite définie sur **Public non privé**. Vous pouvez lire les avis rédigés par votre public privé en affichant [rapport avis](reviews-report.md), mais vous ne pouvez pas télécharger ces données ou utiliser [Microsoft Store analytique API](../monetize/access-analytics-data-using-windows-store-services.md) pour accéder par programme à ces avis.
 - Lorsque vous modifiez une application de **Public privé** à **Public non privé**, la **Date de publication** indiquée dans la description dans le Store correspond à la date de sa première publication pour un public non privé.
 
 ## <a name="discoverability"></a>Détectabilité

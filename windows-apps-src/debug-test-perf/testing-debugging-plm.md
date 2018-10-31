@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d03ce30443f6efe8b19f4938b35d4040d7ea70
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5739870"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828575"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Outils de test et de débogage pour la Gestion de la durée de vie des processus (PLM)
 

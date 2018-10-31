@@ -1,25 +1,25 @@
 ---
 author: JnHs
-Description: Get detailed analytics for your Windows apps, in the dashboard or via other methods.
+Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: Analyser les performances de l’application
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 07/17/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, analytique, rapports, tableau de bord, applications, données, les mesures
 ms.localizationpriority: medium
-ms.openlocfilehash: e31ae50a1895c5878a2183b7f63ce3080623f7e9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5768443"
+ms.locfileid: "5824964"
 ---
 # <a name="analyze-app-performance"></a>Analyser les performances de l’application
 
-Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows. Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
+Vous pouvez consulter analytique détaillées de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
 
-Vous pouvez visualiser les rapports d’analyse dans le tableau de bord ou [télécharger les rapports dont vous avez besoin](download-analytic-reports.md) pour analyser les données hors connexion. Nous vous proposerons également plusieurs méthodes vous permettant [d’accéder à vos données d’analyse sans utiliser le tableau de bord](#no-dashboard).
+Vous pouvez afficher les rapports d’analyse directement dans l’espace partenaires ou [télécharger les rapports que vous avez besoin](download-analytic-reports.md) pour analyser les données en mode hors connexion. Nous proposerons également plusieurs méthodes pour vous [accéder](#outside)à vos données d’analytique en dehors de l’espace partenaires.
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>Visualiser les principales analyses de toutes vos applications
 
@@ -45,11 +45,11 @@ Cette section détaille les informations présentées dans chacun des rapports s
 > [!NOTE]
 > Étant donné que les données qui figurent dans ces rapports dépendent des fonctionnalités et de l’implémentation propres à votre application, certains rapports n’en contiennent pas.
 
-<span id="no-dashboard"/>
+<span id="outside"/>
 
-## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>Accéder aux données d’analyse sans utiliser le tableau de bord du Centre de développement
+## <a name="access-analytics-data-outside-of-partner-center"></a>Accéder aux données d’analytique en dehors de l’espace partenaires
 
-En plus de consulter les rapports dans le tableau de bord, vous pouvez accéder aux analyses de vos applications de différentes manières.
+En plus de l’affichage des rapports dans l’espace partenaires, vous pouvez accéder analytique de votre application dans un certain nombre de différentes manières.
 
 ### <a name="microsoft-store-analytics-api"></a>API d'analyse du Microsoft Store
 
@@ -57,7 +57,7 @@ Utilisez [l’API d’analyse du Store](../monetize/access-analytics-data-using-
 
 ### <a name="windows-dev-center-content-pack-for-power-bi"></a>Pack de contenu du Centre de développement Windows pour PowerBI
 
-Utilisez le [pack de contenu du Centre de développement Windows pour Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) pour découvrir et surveiller vos données d’analyse du Centre de développement dans PowerBI. PowerBI est un service d’analyse métier basé sur le cloud qui vous offre une vue unique de vos données d’entreprise.
+Utiliser le [pack de contenu du centre de développement Windows pour Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) pour découvrir et surveiller vos données d’analytique de l’espace partenaires dans Power BI. PowerBI est un service d’analyse métier basé sur le cloud qui vous offre une vue unique de vos données d’entreprise.
 
 Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéder à vos données d’analyse.
 
@@ -66,7 +66,7 @@ Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéd
 * [Découvrez comment utiliser le pack de contenu du Centre de développement Windows pour PowerBI pour se connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Pour connecter le pack de contenu du Centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un répertoire Azure AD associé à votre compte du Centre de développement. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans PowerBI ne sont pas actualisées automatiquement et vous devez vous connecter à PowerBI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur la configuration de l’association, consultez [Associer Azure Active Directory à votre compte du Centre de développement](associate-azure-ad-with-dev-center.md).
+> Pour connecter le pack de contenu du centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un annuaire Azure AD associé à votre compte espace partenaires. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans PowerBI ne sont pas actualisées automatiquement et vous devez vous connecter à PowerBI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur la configuration de l’association, voir [Associer Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md).
 
 ### <a name="dev-center-app"></a>Application Centre de développement
 

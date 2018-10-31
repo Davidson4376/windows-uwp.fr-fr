@@ -4,16 +4,16 @@ Description: Learn how your app's packages are made available to your customers,
 title: Aide sur la gestion des packages d’application
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dd775b1fa653df5aca9b4738249757c052c181ed
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: e625522b0e9fd03fda49eb28bbedb20c00c15634
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764410"
+ms.locfileid: "5840683"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -30,52 +30,10 @@ Découvrez comment les packages de votre application sont mis à la disposition 
 
 Les différents systèmes d’exploitation peuvent exécuter différents types de packages. Si plusieurs de vos packages peuvent s’exécuter sur l’appareil d’un client, le MicrosoftStore fournit la meilleure correspondance disponible.
 
-En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Toutefois, elles n’obtiennent ces packages si l’application n’inclut pas un package ciblant sa version du système d’exploitation en cours.
+En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Windows 10 peuvent exécuter toutes les précédentes versions du système d’exploitation pris en charge (par famille d’appareils). Les appareils de bureau Windows 10 peuvent exécuter des applications qui ont été conçues pour Windows8.1 ou package Windows8; Les appareils mobiles Windows 10 peuvent exécuter des applications qui ont été conçues pour Windows Phone 8.1, WindowsPhone8 et même Windows Phone 7.x. Toutefois, sur Windows 10 elles n’obtiennent ces packages si l’application n’inclut pas les packages UWP ciblant la famille d’appareils applicable.
 
-Par exemple, les appareils Windows 10 peuvent exécuter toutes les précédentes versions du système d’exploitation pris en charge (par famille d’appareils). Les appareils de bureau Windows 10 peuvent exécuter des applications qui ont été conçues pour Windows8.1 ou package Windows8; Les appareils mobiles Windows 10 peuvent exécuter des applications qui ont été conçues pour Windows Phone 8.1, WindowsPhone8 et même Windows Phone 7.x. 
-
-Les exemples suivants illustrent divers scénarios pour une application qui comprend des packages ciblant différentes versions du système d’exploitation (sauf si des contraintes spécifiques de vos packages n'autorisent pas leur exécution sur chaque type de périphérique ou de version du système d’exploitation répertorié ici. Par exemple, le package architecture doit être adaptée à l’appareil). 
-
-### <a name="example-app-1"></a>Exemple d’application1
-
-| Système d’exploitation ciblé du package | Systèmes d’exploitation qui obtiendront ce package |
-|-------------------------------------|----------------------------------------------|
-| Windows8.1                         | Appareils de bureau Windows 10, Windows8.1      |
-| Windows Phone 8.1                   | Appareils mobiles Windows 10, Windows Phone 8.1 |
-| WindowsPhone8                     | WindowsPhone8                              |
-| Windows Phone 7.1                   | Windows Phone 7.x                            |
-
-Dans l’exemple 1, l’application n’a pas encore de packages de plateforme Windows universelle (UWP) spécialement conçus pour les appareils Windows 10, mais les clients sur Windows 10 peuvent toujours obtenir l’application. Ces clients reçoivent les meilleurs packages disponibles pour leur type d’appareil.
-
-### <a name="example-app-2"></a>Exemple d’application2
-
-| Système d’exploitation ciblé du package  | Systèmes d’exploitation qui obtiendront ce package |
-|--------------------------------------|----------------------------------------------|
-| Windows 10 (famille d’appareils universelle) | Windows 10 (toutes les familles d’appareils)             |
-| Windows8.1                          | Windows8.1                                  |
-| Windows Phone 8.1                    | Windows Phone 8.1                            |
-| Windows Phone 7.1                    | Windows Phone 7.x, WindowsPhone8           |
-
-Dans l’exemple 2, il n’existe aucun package pouvant s’exécuter sur le package Windows8. Les clients qui exécutent une autre version du système d'exploitation peuvent télécharger l'application. Tous les clients sous Windows10 obtiennent le même package.
-
-### <a name="example-app-3"></a>Exemple d’application 3
-
-| Système d’exploitation ciblé du package | Systèmes d’exploitation qui obtiendront ce package                  |
-|-------------------------------------|---------------------------------------------------------------|
-| Windows 10 (famille d’appareils de bureau)  | Appareils de bureau Windows 10                                    |
-| WindowsPhone8                     | Appareils mobiles Windows 10, WindowsPhone8, Windows Phone 8.1 |
-
-Dans l’exemple 3, car il n’existe aucun package UWP ciblant la famille d’appareils mobiles, les clients sur les appareils mobiles Windows 10 obtiendront le package WindowsPhone8. Si cette application ajoute ultérieurement un package ciblant la famille d’appareils mobiles (ou la famille d’appareils universelle), ce package puis sera disponible pour les clients sur les appareils mobiles Windows 10 à la place du package WindowsPhone8.
-
-Notez également que cet exemple d’application n’inclut aucun package pouvant s’exécuter sur Windows Phone7.x.
-
-### <a name="example-app-4"></a>Exemple d’application 4
-
-| Système d’exploitation ciblé du package  | Systèmes d’exploitation qui obtiendront ce package |
-|--------------------------------------|----------------------------------------------|
-| Windows 10 (famille d’appareils universelle) | Windows 10 (toutes les familles d’appareils)             |
-
-Dans l’exemple 4, n’importe quel appareil exécutant Windows 10 peut télécharger l’application, mais il ne sera pas disponible pour les clients sur n’importe quelle version du système d’exploitation précédente. Étant donné que le package UWP cible la famille d’appareils universelle, il sera disponible pour n’importe quel appareil Windows 10 (par vos [sélections de disponibilité de la famille d’appareils de périphérique](device-family-availability.md)).
+> [!IMPORTANT]
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
 
 
 ## <a name="removing-an-app-from-the-store"></a>Suppression d'une application du Store
@@ -89,7 +47,7 @@ Cette option a le même effet que si vous avez créé une soumission et choisi l
 
 Notez que les clients ayant déjà l’application pourront encore l’utiliser et la retélécharger (et même recevoir des mises à jour si vous envoyez de nouveaux packages ultérieurement).
 
-Une application rendue indisponible continue à s'afficher sur votre tableau de bord. Si vous décidez de la remettre à disposition des clients, vous pouvez cliquer sur **Rendre votre application indisponible** sur la page Vue d’ensemble de l’application. L’application est mise à disposition des nouveaux clients (sauf paramétrage contraire dans votre dernière soumission) dans les heures suivant votre confirmation.
+Après avoir effectué l’application indisponible, vous verrez toujours il dans l’espace partenaires. Si vous décidez de la remettre à disposition des clients, vous pouvez cliquer sur **Rendre votre application indisponible** sur la page Vue d’ensemble de l’application. L’application est mise à disposition des nouveaux clients (sauf paramétrage contraire dans votre dernière soumission) dans les heures suivant votre confirmation.
 
 > [!NOTE]
 > Si vous souhaitez que votre application reste disponible, mais voulez arrêter de la proposer aux nouveaux clients sur une version spécifique de système d’exploitation, vous pouvez créer une autre soumission et supprimer tous les packages associés à la version de système d’exploitation pour laquelle vous souhaitez empêcher toute nouvelle acquisition. Par exemple, si vous possédiez auparavant des packages pour Windows Phone 8.1 et Windows 10, et que vous ne souhaitez pas continuer à proposer l’application aux nouveaux clients sur WindowsPhone8.1, supprimez tous vos packages WindowsPhone8.1 de la soumission. Une fois la mise à jour est publiée, aucun nouveau client sous WindowsPhone8.1 ne sera en mesure d’acquérir l’application, bien que les clients qui la possèdent continuent à l’utiliser). Toutefois, l’application sera disponible pour les nouveaux clients sur Windows 10.

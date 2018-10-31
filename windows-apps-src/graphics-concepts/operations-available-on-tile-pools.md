@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ec546d467f338bbbe2f4dbf89015a4487e001718
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752249"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828728"
 ---
 # <a name="operations-available-on-tile-pools"></a>Opérations disponibles sur les pools de vignettes
 

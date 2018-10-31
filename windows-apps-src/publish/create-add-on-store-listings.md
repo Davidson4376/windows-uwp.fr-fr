@@ -4,29 +4,28 @@ Description: When submitting an add-on, the info you provide in the Store listin
 title: Créer des descriptions d'extension dans le Store
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b03984bf858d805142ac768ecf8ddd69a6232db
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 811c2c978d04e7636bb5f52a2ebf7587193c4786
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760928"
+ms.locfileid: "5826983"
 ---
 # <a name="create-add-on-store-listings"></a>Créer des descriptions d'extension dans le WindowsStore
 
-
-Quand vous soumettez une extension, les informations que vous entrez à l’étape **Descriptions dans le Windows Store** sont visibles par vos clients lorsque l’option d’acquisition de votre extension s’affiche. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne de l'extension une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
+Lorsque vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les informations que vous fournissez dans l’étape **descriptions du Windows Store** seront affichera à vos clients lorsqu’ils voient s’afficher l’option d’acquisition de votre module complémentaire. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne de l'extension une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
 
 > [!TIP]
-> Vous pouvez également [importer et exporter des descriptions dans le WindowsStore](import-and-export-store-listings.md) pour votre extension si vous souhaitez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations directement dans le tableau de bord. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues. Toutefois, vous pouvez toujours entrer vos informations directement dans le tableau de bord, au lieu d’utiliser la fonctionnalité d’importation/exportation.
+> Vous pouvez également [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md) pour votre extension si vous souhaitez entrer vos informations de description hors connexion dans un fichier .csv, plutôt que de renseigner ces informations directement dans l’espace partenaires. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues. Toutefois, vous pouvez toujours entrer vos informations directement dans [L’espace partenaires](https://partner.microsoft.com/dashboard) , plutôt que d’utiliser la fonctionnalité d’importation/exportation.
 
 
 ## <a name="store-listing-languages"></a>Langues des descriptions dans le WindowsStore
 
-Avant d’entrer les informations de la description dans le WindowsStore, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Vous devez remplir la page **Description dans le WindowsStore** dans une langue au minimum. Nous vous recommandons de fournir une description dans le WindowsStore pour chaque langue prise en charge par votre application.
+Avant d’entrer les informations de la description dans le WindowsStore, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Vous devez remplir la page **Description dans le WindowsStore** dans une langue au minimum. Nous vous recommandons de création des descriptions dans le Windows Store pour chaque langue de votre application prend en charge.
 
 Sous la section **Description dans le WindowsStore** de la soumission de votre extension, cliquez sur **Ajouter/Supprimer des langues**, puis cliquez sur **Préférences linguistiques** sur la page suivante. Cochez les cases des langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues de la description dans le WindowsStore** de la page.
 

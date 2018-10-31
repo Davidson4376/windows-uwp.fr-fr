@@ -3,17 +3,17 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt, impôt sur le revenu, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: e16333b061c3f50d4c0d66b0704bf0977570595e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742149"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5836067"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -25,8 +25,8 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 
 | Déclaration fiscale de l’IRS | Description | Disponibilité |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **31janvier**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
-|1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **15mars**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
+|1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Imprimées des déclarations seront versions avant **le 31 janvier**, et les copies .pdf sont disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) (dans **paramètres du compte > profil fiscal**) en même temps |
+|1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Imprimées des déclarations seront versions avant **le 15 mars**, et les copies .pdf sont disponibles dans l’espace partenaires (dans **paramètres du compte > profil fiscal**) en même temps |
 
 > [!NOTE]
 > L’adresse, que nous utiliserons sur des déclarations fiscales de l’IRS provient de l’adresse figurant dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
@@ -106,7 +106,7 @@ J’ai reçu au moins 600dollars de Microsoft, en paiement d’activités autres
     <td valign="top"><b>Pourquoi des taxes ont-elles été retenues sur mes paiements quand j’ai rempli la déclarationW8?</b></td>
     <td valign="top">Les taxes sont retenues dans les cas suivants:<br>
      1. Vous n’avez pas rempli correctement la section sur la convention fiscale dans la déclarationW8, ou<br>
-     2. Vous résidez dans un pays qui n’a pas signé de convention fiscale avec les États-Unis.<br><br>Vous pouvez visiter le centre de développement à tout moment pour soumettre une déclaration w8.<br><br><b>Remarque</b>: pas tous les revenus sont susceptible d’être retenue d’impôt.</td>
+     2. Vous résidez dans un pays qui n’a pas signé de convention fiscale avec les États-Unis.<br><br>Vous pouvez consulter l’espace partenaires à tout moment pour soumettre une déclaration w8.<br><br><b>Remarque</b>: pas tous les revenus sont susceptible d’être retenue d’impôt.</td>
   </tr>
   <tr>
     <td valign="top"><b>J’ai renseigné et renvoyé une déclarationW8 avec des informations correctes sur la convention fiscale. Puis-je être remboursé par Microsoft des taxes retenues?</b></td>

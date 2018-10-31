@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore
 ms.localizationpriority: medium
-ms.openlocfilehash: f85f586d58d159e9fb4751933f14f6b74cd94f96
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 9e62e2e2b3da4bc8e26f944ca446d11cf55c2c84
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761298"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827379"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
@@ -43,7 +43,7 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 
 Avant d’écrire le code d’appel de l’API de soumission au MicrosoftStore, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un annuaire Azure AD dans le Centre de développement](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un annuaire Azure AD dans le Centre de développement](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
 
 * Vous devez [associer une application Azure AD à votre compte du Centre de développement Windows](#associate-an-azure-ad-application-with-your-windows-dev-center-account) et obtenir vos ID de locataire, ID client et clé. Vous avez besoin de ces valeurs pour obtenir un jeton d’accès Azure AD, qui vous servira dans les appels à l’API de soumission au MicrosoftStore.
 
@@ -70,7 +70,7 @@ Avant de pouvoir utiliser l’API de soumission au MicrosoftStore, vous devez as
 
 1.  Dans le Centre de développement, [associez le compte du Centre de développement de votre organisation à l'annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Ensuite, dans la page **Utilisateurs** dans la section **Paramètres de compte** du Centre de développement, [ajoutez l’application AzureAD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account) qui représente l’application ou le service que vous allez utiliser pour accéder aux soumissions de votre compte du Centre de développement. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre annuaire Azure AD, vous pouvez [créer une application Azure AD dans le Centre de développement](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account).  
+2.  Ensuite, dans la page **Utilisateurs** dans la section **Paramètres de compte** du Centre de développement, [ajoutez l’application AzureAD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour accéder aux soumissions de votre compte du Centre de développement. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre annuaire Azure AD, vous pouvez [créer une application Azure AD dans le Centre de développement](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
 
 3.  Revenez à la page **Utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 

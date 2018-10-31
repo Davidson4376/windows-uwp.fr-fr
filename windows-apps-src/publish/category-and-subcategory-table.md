@@ -4,16 +4,16 @@ Description: Listing your app in the right category and subcategory helps custom
 title: Tableau des catégories et sous-catégories
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, catégorie, sous-catégorie, genre, catégories, genres
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750420"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840814"
 ---
 # <a name="category-and-subcategory-table"></a>Tableau des catégories et sous-catégories
 
@@ -22,7 +22,7 @@ Le classement de votre application dans la catégorie et la sous-catégorie adé
 
 Vous devez choisir la catégorie qui correspond le mieux à votre application. Si vous le souhaitez, vous pouvez choisir une sous-catégorie, le cas échéant. Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, ou que vous n’en trouvez aucune qui corresponde à votre application, choisissez celle que, selon vous, les clients vont très certainement examiner lorsqu’ils rechercheront des applications comme la vôtre.
 
-Si vous choisissez **Jeux** pour la catégorie, vous devez sélectionner au moins une sous-catégorie (également appelé *genre* pour les jeux). Vous pouvez choisir autant de genres que nécessaires pour votre jeu. Notez que pour publier un jeu pour les clients sur Xbox, vous devez activer le [Programme Créateurs XboxLive](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou passer par le processus d’[approbation de concept](../gaming/concept-approval.md). 
+Si vous choisissez des **jeux** pour votre catégorie, vous devez sélectionner au moins une sous-catégorie (appelée *genre* pour les jeux). Vous pouvez choisir autant de genres que nécessaires pour votre jeu. Notez que pour publier un jeu pour les clients sur Xbox, vous devez activer le [Programme Créateurs XboxLive](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou passer par le processus d’[approbation de concept](../gaming/concept-approval.md). 
 
 > [!IMPORTANT] 
 > Si vous publiez l’application dans la catégorie **Jeux**, vous ne serez pas en mesure de sélectionner une autre catégorie dans une nouvelle soumission. Il faudra continuer à la publier dans la catégorie **Jeux** (bien que vous puissiez modifier les genres sélectionnés dans une nouvelle soumission). De même, vous ne pouvez pas sélectionner la catégorie **Jeux** lors de la mise à jour d’une application que vous avez précédemment publiée dans une catégorie différente.
@@ -149,38 +149,6 @@ Le Microsoft Store organise les applications dans les catégories et sous-catég
   </tr>
 </tbody>
 </table>
-
-
-<!--
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Classics <br> Educational <br> Family + kids <br> Fighting <br> Multi-Player Online Battle Arena <br> Music <br> Other <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Tools <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security              |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
--->
 
 > [!NOTE] 
 > Certaines des catégories et sous-catégories utilisées dans le Store pour les clients sous Windows8.x et Windows Phone 8.x et versions antérieures peuvent différer des catégories répertoriées ci-dessus. 

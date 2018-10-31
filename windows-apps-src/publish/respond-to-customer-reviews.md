@@ -4,26 +4,26 @@ Description: You can respond directly to reviews of your app to let customers kn
 title: Répondre aux avis des clients
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 7/17/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, répondre, réponses, passez en revue
 ms.localizationpriority: medium
-ms.openlocfilehash: f4bad59e298ef65cc7aaf6561b77cc86eeff832e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 823ca28618540dbaab1f4e5711ee59d277b0c894
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748372"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824125"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
 Vous pouvez répondre aux avis de votre application pour permettre aux clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichera dans le Microsoft Store pour tous les clients Windows 10 voir. Vous pouvez également choisir d’envoyer votre réponse par courrier électronique au client (si elles n’ont pas refusé et utilisent un appareil exécutant Windows 10, version 1803 ou une version ultérieure).
 
-Pour visualiser les avis concernant votre application et y répondre, recherchez l’application dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d’afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
+Pour visualiser les avis de votre application et y répondre, recherchez l’application dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, **analyser** , puis cliquez sur **avis** pour afficher le [rapport avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
 
 > [!TIP]
-> Outre l’utilisation du tableau de bord pour répondre aux avis, vous pouvez répondre aux avis [par programme](../monetize/submit-responses-to-app-reviews.md)ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+> Outre l’utilisation de l’espace partenaires pour répondre aux avis, vous pouvez répondre aux avis [par programme](../monetize/submit-responses-to-app-reviews.md)ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 Par défaut, votre réponse est publiée dans le Windows Store, juste en dessous de la révision du client d’origine. Ces réponses seront visibles pour tous les clients consultant le Windows Store sur un appareil Windows 10. Si le client qui a rédigé un avis d’un appareil exécutant Windows 10, version 1803 ou une version ultérieure, et ils n’ont pas choisi de ne pas recevoir de réponses de courrier électronique, une copie de votre réponse également sera envoyée à ce client par e-mail.  Vous devez alors fournir une adresse e-mail valide pour envoyer votre réponse, ce qui nous comprendra du message électronique au client. Ils peuvent ensuite utiliser cette adresse de messagerie pour vous contacter directement.
 

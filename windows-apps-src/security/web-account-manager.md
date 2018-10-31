@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: bfec782952ef20dbc496e50d9513febc8dee3248
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740402"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825270"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -337,7 +337,7 @@ Dans la mesure où il est très simple d’obtenir un jeton silencieusement, nou
 
 ## <a name="remove-a-stored-account"></a>Supprimer un compte stocké
 
-Si vous conservez un compte web, vous pouvez permettre à vos utilisateurs de dissocier leur compte de votre application. Ainsi, ils peuvent effectivement «se déconnecter» de l’application: les informations de leur compte ne seront plus chargées automatiquement lors du lancement. Pour ce faire, commencez par supprimer du stockage les comptes enregistrés et les informations sur le fournisseur. Appelez ensuite **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** pour vider le cache et invalider des jetons existants dont votre application dispose. 
+Si vous conservez un compte web, vous pouvez permettre à vos utilisateurs de dissocier leur compte de votre application. De cette façon, ils peuvent effectivement «se déconnecter» de l’application: leurs informations de compte seront n’est plus chargées automatiquement lors du lancement. Pour ce faire, commencez par supprimer du stockage les comptes enregistrés et les informations sur le fournisseur. Appelez ensuite **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** pour vider le cache et invalider des jetons existants dont votre application dispose. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

@@ -4,16 +4,16 @@ Description: The App properties page of the app submission process lets you defi
 title: Entrer les propriétés d’une application
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé, politique de confidentialité, coordonnées du support technique, site web de l’application, support
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7fffe4c687009f71c9908ca9391278a172209a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746054"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5823415"
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
@@ -60,7 +60,7 @@ Entrez l’URL de la page web où vos clients peuvent obtenir un support pour vo
 
 ## <a name="game-settings"></a>Paramètres de jeux
 
-Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Toutes les informations que vous fournissez dans cette section figureront dans la description du produit dans le Windows Store.
+Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Les informations que vous fournissez dans cette section seront affiche sur le Windows Store du produit de description.
 
 Si votre jeu prend en charge des options multijoueurs, veillez à indiquer le nombre minimum et maximum de joueurs pour une session. Vous ne pouvez pas entrer un nombre minimum ou maximum de joueurs supérieur à 1000.
 

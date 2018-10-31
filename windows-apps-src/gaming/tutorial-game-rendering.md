@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
 ms.openlocfilehash: 134c9005a796f52fb61ba628c0a85c8dbd875442
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741272"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5836290"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Infrastructure de renduII: rendu de jeu
 

@@ -8,19 +8,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, noms d’application, modifiez le nom de l’application, nom de l’application mise à jour, jeu, nom de produit
 ms.localizationpriority: medium
-ms.openlocfilehash: c7af04b8509dff57c65bf3a5ce74b4ba9cde4463
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b35db620956e99791d03fb2d25dea8682d4ffaac
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766240"
+ms.locfileid: "5826694"
 ---
 # <a name="manage-app-names"></a>Gestion des noms d’application
 
-Le permet de **gérer des noms d’application** vous permet d’afficher tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires (pour d’autres langues ou pour modifier le nom de votre application) et supprimer des noms que vous n’avez pas besoin. Vous trouverez cette page du tableau de [bord du centre de développement Windows](https://partner.microsoft.com/dashboard) en développant la section **Gestion des applications** dans le menu de navigation de gauche pour vos applications.
+Le permet de **gérer des noms d’application** vous permet d’afficher tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires (pour d’autres langues ou pour modifier le nom de votre application) et supprimer des noms que vous n’avez pas besoin. Vous pouvez trouver cette page dans [L’espace partenaires](https://partner.microsoft.com/dashboard) en développant la section **Gestion des applications** dans le menu de navigation de gauche pour vos applications.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous avez réservé lorsque vous avez créé tout d’abord votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous réservez pour votre produit servira dans certains de votre service informatique d' [informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé tout d’abord est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous avez réservé lorsque vous avez créé tout d’abord votre application dans l’espace partenaires. Toutefois, n’oubliez pas que le premier nom que vous réservez pour votre produit servira dans certains de votre service informatique d' [informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé tout d’abord est approprié pour cette utilisation.
 
 
 ## <a name="reserve-additional-names-for-your-app"></a>Réserver des noms supplémentaires pour votre application
@@ -39,7 +39,7 @@ Si vous ne voulez plus utiliser un nom que vous avez réservé précédemment, v
 
 Pour supprimer l’un des noms réservés de votre application, recherchez ce dernier, puis cliquez sur **Supprimer**. Dans la boîte de dialogue de confirmation, cliquez de nouveau sur **Supprimer** pour confirmer l'opération.
 
-Notez que votre application doit disposer d’au moins un nom réservé. Pour supprimer complètement une application à partir de votre tableau de bord, (et libérer tous les noms que vous avez réservés pour cette application), cliquez sur **Supprimer cette application** à partir de la page de **Présentation de l’application** . Si une soumission de l’application est en cours, vous devez commencer par supprimer cette soumission. Notez que si vous avez déjà publié l’application au Windows Store, vous ne pouvez pas la supprimer de votre tableau de bord (Toutefois, vous pouvez utiliser la fonctionnalité **Afficher/masquer les produits** sur votre page de **présentation** pour masquer l’application). 
+Notez que votre application doit disposer d’au moins un nom réservé. Pour supprimer complètement une application à partir de l’espace partenaires (et libérer tous les noms que vous avez réservés pour cette application), cliquez sur **Supprimer cette application** à partir de la page de **Présentation de l’application** . Si une soumission de l’application est en cours, vous devez commencer par supprimer cette soumission. Notez que si vous avez déjà publié l’application au Windows Store, vous ne pouvez pas la supprimer de l’espace partenaires (Toutefois, vous pouvez utiliser la fonctionnalité **Afficher/masquer les produits** sur votre page de **présentation** pour masquer l’application). 
 
 
 ## <a name="rename-an-app-that-has-already-been-published"></a>Renommer une application qui a déjà été publiée
@@ -60,7 +60,7 @@ Pour mettre à jour une description du Windows Store afin qu’il utilise le nou
 Une fois que votre application a été publiée avec le nouveau nom, vous pouvez supprimer des noms plus anciens que vous n’avez plus besoin d’utiliser.
 
 > [!TIP]
-> Chaque application s’affiche dans votre tableau de bord à l’aide du premier nom que vous avez réservé pour celle-ci. Si vous avez suivi les étapes ci-dessus pour renommer une application et que vous souhaitez voir apparaître dans votre tableau de bord en utilisant le nouveau nom, vous devez supprimer le nom d’origine (en cliquant sur **Supprimer** sur la page **gérer des noms d’application** ). 
+> Chaque application s’affiche dans l’espace partenaires en utilisant le nom de la première dont vous avez réservé pour celle-ci. Si vous avez suivi les étapes ci-dessus pour renommer une application et que vous voulez qu’il apparaisse dans l’espace partenaires en utilisant le nouveau nom, vous devez supprimer le nom d’origine (en cliquant sur **Supprimer** sur la page **gérer des noms d’application** ). 
 
  
 

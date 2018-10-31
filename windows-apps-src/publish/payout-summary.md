@@ -4,16 +4,16 @@ Description: The Payout summary shows you details about the money you’ve earne
 title: Résumé du paiement
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 02/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc0b38c8118a3cfc8b157eacecab91f7ac2b120
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751252"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827428"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 
@@ -29,7 +29,7 @@ Si vous vendez des produits dans Place de marché MicrosoftAzure, la page **Rés
 >
 > Les paiements sont effectués mensuellement (à condition que le seuil de paiement ait été atteint). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement. Pour plus d’informations, consultez la page [Seuils de paiement, méthodes et délais](payment-thresholds-methods-and-timeframes.md).
 
-Pour afficher votre **Résumé du paiement**, cliquez sur l’icône **Revenu** qui s’affiche près de l’angle supérieur droit du Centre de développement, puis sélectionnez **Résumé du paiement**.
+Pour afficher le **Résumé du paiement**, cliquez sur l’icône de **paiement** qui s’affiche près du coin supérieur droit dans l’espace partenaires, puis sélectionnez **Résumé du paiement**.
 
 ## <a name="current-proceeds-and-payments"></a>Revenus et paiements actuels
 

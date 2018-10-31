@@ -7,12 +7,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: d7807b71f1c775493e525284e61c093081eb2c2b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d59fec17c1e8cc340f630ba236f7361325046ea2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5754842"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824486"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 
@@ -258,7 +258,7 @@ Voir également [Vecteurs et tableaux standard](std-cpp-data-types.md#standard-a
 
 Une coroutine est une fonction comme tout autre dans la mesure où un appelant est bloqué jusqu'à ce qu’une fonction retourne l’exécution à celui-ci. Et, en premier lieu la possibilité pour une coroutine renvoyer est le premier `co_await`, `co_return`, ou `co_yield`.
 
-Par conséquent, avant d’effectuer une tâche liée au calcul dans une coroutine, vous devez renvoyer l’exécution à l’appelant (en d’autres termes, présenter un point d’interruption) afin que l’appelant ne soit pas bloqué. Si vous ne soyez pas déjà `co-await`- pour attendre une autre opération, vous pouvez `co-await` la fonction [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) . Cela retourne le contrôle à l’appelant, puis reprend immédiatement l'exécution sur un thread de pool de threads.
+Par conséquent, avant d’effectuer une tâche liée au calcul dans une coroutine, vous devez renvoyer l’exécution à l’appelant (en d’autres termes, présenter un point d’interruption) afin que l’appelant ne soit pas bloqué. Si vous ne soyez pas déjà `co_await`- pour attendre une autre opération, vous pouvez `co_await` la fonction [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) . Cela retourne le contrôle à l’appelant, puis reprend immédiatement l'exécution sur un thread de pool de threads.
 
 Le pool de threads utilisé dans l’implémentation est le [pool de threads Windows](https://msdn.microsoft.com/library/windows/desktop/ms686766) de bas niveau. Son efficacité est donc optimale.
 
@@ -309,7 +309,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 Tant que la coroutine ci-dessus est appelée à partir du thread d’interface utilisateur qui a créé le **TextBlock**, cette technique fonctionne. Vous en serez certain dans de nombreux cas dans votre application.
 
-Pour une solution plus générale pour la mise à jour de l’interface utilisateur, qui traite les cas où vous avez des incertitudes quant au thread appelant, vous pouvez `co-await` la fonction [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) pour basculer vers un thread spécifique au premier plan. Dans l’exemple de code ci-dessous, nous spécifions le thread de premier plan en passant l’objet répartiteur associé au **TextBlock** (en accédant à sa propriété [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). L’implémentation de **winrt::resume_foreground** appelle [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) sur cet objet répartiteur afin d'exécuter la tâche qui apparaît dans la coroutine.
+Pour une solution plus générale pour la mise à jour de l’interface utilisateur, qui traite les cas où vous avez des incertitudes quant au thread appelant, vous pouvez `co_await` la fonction [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) pour basculer vers un thread spécifique au premier plan. Dans l’exemple de code ci-dessous, nous spécifions le thread de premier plan en passant l’objet répartiteur associé au **TextBlock** (en accédant à sa propriété [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). L’implémentation de **winrt::resume_foreground** appelle [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) sur cet objet répartiteur afin d'exécuter la tâche qui apparaît dans la coroutine.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
@@ -328,7 +328,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 De manière générale, après un point d’interruption dans une coroutine, le thread d’origine de l’exécution peut-être disparaître et reprise peut se produire sur n’importe quel thread (en d’autres termes, n’importe quel thread peut appeler la méthode **Completed** pour l’opération asynchrone).
 
-Mais si vous `co-await` tous les types de l’opération asynchrone Windows Runtime quatre (**IAsyncXxx**), puis C++ / WinRT capture le contexte d’appel au niveau du point vous `co-await`. Et s’assure que vous êtes toujours sur ce contexte lorsque la continuation reprend l’exécution. C++ / WinRT effectue cette opération en vérifiant si vous êtes déjà dans le contexte d’appel, dans le cas contraire, en passant à celui-ci. Si vous étiez sur un thread à thread unique cloisonné (STA) avant `co-await`, puis vous serez sur le même que celui ensuite; Si vous étiez sur un thread multithread cloisonné (MTA) avant `co-await`, puis vous serez par la suite sur une.
+Mais si vous `co_await` tous les types de l’opération asynchrone Windows Runtime quatre (**IAsyncXxx**), puis C++ / WinRT capture le contexte d’appel au niveau du point vous `co_await`. Et s’assure que vous êtes toujours sur ce contexte lorsque la continuation reprend l’exécution. C++ / WinRT effectue cette opération en vérifiant si vous êtes déjà dans le contexte d’appel, dans le cas contraire, en passant à celui-ci. Si vous étiez sur un thread à thread unique cloisonné (STA) avant `co_await`, puis vous serez sur le même que celui ensuite; Si vous étiez sur un thread multithread cloisonné (MTA) avant `co_await`, puis vous serez par la suite sur une.
 
 ```cppwinrt
 IAsyncAction ProcessFeedAsync()

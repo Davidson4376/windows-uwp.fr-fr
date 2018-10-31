@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2d84d6892f25dd37ae9a8992238f2fc8fe6a53
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 37d43094ba679ebe5439996373626522590e3fcc
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767132"
+ms.locfileid: "5826372"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame2D
 
@@ -68,7 +68,7 @@ Maintenant que vous avez créé le projet, ouvrez le fichier **Game1.cs** depuis
 
 **protected override void UnloadContent()** Cette méthode est utilisée pour décharger le contenu autre que celui du Gestionnaire de contenu. Nous ne l’utilisons pas du tout.
 
-**protected override void Update(GameTime gameTIme)** Cette méthode est appelée une fois à chaque cycle de la boucle de jeu. Ici, nous mettons à jour les états de n’importe quel objet ou de n’importe quelle variable utilisée dans le jeu. Cela inclut des éléments tels que la position d’un objet, sa vitesse ou sa couleur. C'est également là que les entrées de l’utilisateur sont gérées. Bref, cette méthode traite chaque partie de la logique du jeu à l'exception du dessin des objets à l’écran.
+**protected override void Update (GameTime gameTime)** Cette méthode est appelée une fois pour chaque cycle de la boucle de jeu. Ici, nous mettons à jour les états de n’importe quel objet ou de n’importe quelle variable utilisée dans le jeu. Cela inclut des éléments tels que la position d’un objet, sa vitesse ou sa couleur. Il s’agit également où l’entrée utilisateur est gérée. Bref, cette méthode traite chaque partie de la logique du jeu à l'exception du dessin des objets à l’écran.
 **protected override void Draw(GameTime gameTime)** C'est là que les objets sont dessinés sur l’écran à l’aide des positions données par la méthode Update.
 
 ## <a name="draw-a-sprite"></a>Dessin d'un sprite
@@ -82,7 +82,7 @@ Dans notre cas, ce premier sprite va être parfaitement ennuyeux. [Cliquez ici p
 - Ouvrez l'**Explorateur de solutions**
 - Cliquez avec le bouton droit sur **Content.mgcb** dans le dossier **Contenu** et sélectionnez **Ouvrir avec**. Dans le menu contextuel, sélectionnez **Pipeline Monogame**, puis **OK**.
 - Dans la nouvelle fenêtre, cliquez avec le bouton droit sur l’élément **Contenu** et sélectionnez **Ajouter -> Élément existant**.
-- Recherchez et sélectionnez le rectangle vert dans l’Explorateur de fichiers
+- Recherchez et sélectionnez le rectangle vert dans l’Explorateur de fichiers.
 - Nommez l’élément «grass.png» et sélectionnez **Ajouter**.
 
 ### <a name="3-add-class-variables"></a>3. Ajout des variables de classe
@@ -325,8 +325,8 @@ broccoli = new SpriteClass(GraphicsDevice, "Content/broccoli.png", ScaleToHighDP
 
 La taille de l’image du brocoli est nettement plus grande que celle que nous voulons lui donner dans le jeu. Nous allons donc la ramener à 0,2fois sa taille d’origine.
 
-### <a name="5-program-obstacle-behavior"></a>5. Programmation du comportement d'un obstacle
-Nous voulons que le brocoli soit généré quelque part hors de l'écran et se dirige dans la direction de l’avatar du joueur, qui doit alors les éviter. Pour cela, ajoutez cette méthode à la classe **Game1.cs**:
+### <a name="5-program-obstacle-behaviour"></a>5. comportement d’obstacle programme
+Nous voulons que le brocoli soit généré quelque part hors de l'écran et se dirige dans la direction de l’avatar du joueur, qui doit alors les éviter. Pour ce faire, ajoutez cette méthode à la classe **Game1.cs** :
 
 ```CSharp
 public void SpawnBroccoli()
@@ -430,7 +430,7 @@ La première fait quitter le jeu si la touche **Échappement** est enfoncée.
 
 La seconde démarre le jeu si la touche **Espace** est enfoncée et si le jeu n’a pas déjà démarré.
 
-La troisième fait sauter l’avatar dino si **Espace** est enfoncé, en modifiant sa propriété **dY**. Notez que le joueur ne peut sauter que s’il se trouve sur le «sol» (dino.y = screenHeight * SKYRATIO). Il ne peut pas non plus sauter si la touche espace est maintenue enfoncée au lieu d'être enfoncée une seule fois. Cela empêche le dino de sauter dès que le jeu démarre, puisqu'il utilise la même touche que celle qui démarre le jeu.
+La troisième fait sauter l’avatar dino si **Espace** est enfoncé, en modifiant sa propriété **dY**. Notez que le joueur ne peut sauter que s’ils se trouvent sur le «sol» (dino.y = screenHeight * SKYRATIO) et non plus sauter si la touche espace est maintenue enfoncée au lieu d’enfoncée une seule fois. Cela empêche le dino de sauter dès que le jeu démarre, puisqu'il utilise la même touche que celle qui démarre le jeu.
 
 Enfin, la dernière clause si/alors vérifie si les flèches directionnelles gauche ou droite sont enfoncées. Si tel est le cas, elle modifie la propriété **dX** du dino en conséquence.
 
@@ -484,9 +484,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie que les sprites brocoli et dino s'afficheront tous deux par-dessus le sprite herbe existant, cela afin qu’ils ne puissent jamais être masqués par l'herbe, quelle que soit leur position.
+Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie que les sprites dino et le Brocoli seront affichées sur le sprite herbe existant, afin qu’ils puissent jamais être masqués herbe, quelle que soit leur position.
 
-Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure de faire bouger votre avatar dans la fenêtre de jeu et le brocoli doit se déplacer de plus en plus vite.
+Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure de modifier votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer à une vitesse croissante.
 
 ![Obstacle et avatar du joueur](images/monogame-tutorial-2.png)
 
@@ -602,7 +602,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme cherche à voir s’il existe un espace entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
+Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme fonctionne cherche à voir s’il existe un espace entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
 
 ### <a name="2-load-new-textures"></a>2. Chargement de nouvelles textures
 
@@ -650,7 +650,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 Cela appelle la méthode **RectangleCollision** que nous avons créée dans **SpriteClass**et marque le jeu comme étant terminé si elle retourne true.
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. Ajout de l’entrée utilisateur permettant de réinitialiser le jeu
-Ajoutez ce code à la méthode **KeyboardHandler** pour permettre à l’utilisateur de réinitialiser le jeu en appuyant sur ENTRÉE:
+Ajoutez ce code à la méthode **KeyboardHandler** , pour permettre à l’utilisateur à réinitialiser le jeu si elles appuyez sur ENTRÉE:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

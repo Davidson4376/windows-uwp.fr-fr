@@ -4,16 +4,16 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: Numérotation des versions de packages
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741683"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825033"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
@@ -64,6 +64,9 @@ Pour résoudre le problème pour les clients qui ont déjà reçu le package pro
 
 
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions Windows8.1 (ou version antérieure) et des packages Windows Phone 8.1
+
+> [!IMPORTANT]
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 Pour les packages .appx qui ciblent Windows Phone 8.1, le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package inclus dans la dernière soumission (ou toute soumission précédente).
 

@@ -1,35 +1,35 @@
 ---
 author: jnHs
-Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Créer votre application en réservant un nom
 keywords: windows10, uwp, réservation de noms, nom de l’application, noms d’application, noms, nom du produit, attribution de noms, nom réservé, titre, noms, titres
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b8666d478b59bfb5975150903cf08fc2a43e938c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755763"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827318"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
-La première étape de création d’une application dans votre [tableau de bord du centre de développement Windows](https://partner.microsoft.com/dashboard) consiste à réserver un nom d’application. Chaque nom réservé (parfois appelé *titre* de votre application) doit être unique partout dans le MicrosoftStore.
+La première étape de création d’une application dans votre [Centre de partenaires](https://partner.microsoft.com/dashboard) consiste à réserver un nom d’application. Chaque nom réservé (parfois appelé *titre* de votre application) doit être unique partout dans le MicrosoftStore.
 
 Vous pouvez réserver un nom pour votre application même si vous n'avez pas encore commencé à la générer. Nous vous recommandons de faire dès que possible, pour que personne d’autre ne peut utiliser le nom. Notez que vous devrez soumettre l’application dans les trois mois afin de conserver ce nom réservé pour votre usage.
 
 Lorsque vous [chargez les packages de votre application](upload-app-packages.md), la valeur [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) doit correspondre au nom que vous avez réservé pour votre application. Si vous utilisez Microsoft VisualStudio pour créer le package de votre application, cet attribut est rempli automatiquement.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans l’espace partenaires. Toutefois, n’oubliez pas que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>Création de votre application en réservant un nouveau nom
 
-Pour créer une application dans le tableau de bord, vous devez tout d'abord réserver un nom. 
+Réserver un nom est la première étape de création d’une application dans l’espace partenaires. 
 
 1.  Sur la page **Vue d’ensemble**, cliquez sur **Créer une application**.
 2.  Dans la zone de texte, entrez le nom à utiliser, puis sélectionnez **Vérifier la disponibilité**. Si ce nom est disponible, une coche verte apparaît. (Si le nom que vous avez entré est déjà réservé ou en cours d'utilisation par un autre développeur, vous obtenez un message indiquant que ce nom n'est pas disponible.)
@@ -58,7 +58,7 @@ Il est important de bien choisir le nom de votre application. Choisissez un nom 
 
 ## <a name="manage-additional-app-names"></a>Gérer des noms d’application supplémentaires
 
-Vous pouvez ajouter et gérer des noms supplémentaires sur la page **Gérer les noms d’application** dans la section **Gestion des applications** pour chacune de vos applications figurant dans le tableau de bord du Centre de développement Windows.
+Vous pouvez ajouter et gérer des noms supplémentaires sur la page **gérer des noms d’application** dans la section **Gestion des applications** pour chacune de vos applications dans l’espace partenaires.
 
 Dans certains cas, vous pouvez réserver plusieurs noms à utiliser pour une même application, par exemple lorsque vous voulez proposer cette dernière dans plusieurs langues et utiliser des noms différents pour chaque langue. Si vous voulez modifier complètement le nom d’une application, vous devez réserver un nom supplémentaire.
 
