@@ -3,16 +3,16 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Définir et planifier le prix de l’application
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, tarification, prix de l’application, vente d’applications, modification de prix, prix personnalisé, prix, tarif, coût, remplacer le prix de base, prix au format libre, format libre
 ms.localizationpriority: medium
-ms.openlocfilehash: 99e11e29c5625d528777046075f01a824f1b0b37
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740538"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5866814"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Définir et planifier le prix de l’application
 
@@ -37,23 +37,18 @@ Dans la section **Tarification**, cliquez sur **Afficher la table de conversion*
 N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Nous vous conseillons également de consulter les [considérations de prix pour des marchés spécifiques](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
-> Si vous choisissez l’option **Empêcher l'acquisition** sous **Rendre ce produit disponible mais non détectable dans le Store** dans la section [Visibilité](choose-visibility-options.md#discoverability), vous ne pourrez pas définir la tarification pour votre soumission (comme personne ne sera en mesure d’acquérir l’application, sauf si quelqu’un dispose d’un code promotionnel pour obtenir l’application gratuitement).
+> Si vous choisissez l’option **empêcher l’acquisition** sous **rendre ce produit disponible mais non détectable dans le Windows Store** dans la section [visibilité](choose-visibility-options.md#discoverability) ), vous ne serez pas en mesure de définir la tarification pour votre soumission (comme personne ne sera en mesure d’acquérir l’application à moins d’utiliser un code promotionnel pour obtenir gratuitement l’application).
 
 ## <a name="schedule-price-changes"></a>Planifier des changements de prix
 
 Vous pouvez également planifier un ou plusieurs changements de prix si vous souhaitez que le prix de base de votre application change à une date et à une heure spécifiques. 
 
 > [!IMPORTANT]
-> Les modifications de prix s'affichent uniquement pour les clients utilisant des appareils Windows10 (y compris Xbox). Si votre application prend en charge les versions antérieures du système d’exploitation, les changements de prix ne s'appliquent pas. 
->
-> - Pour les clients sur Windows8, l’application sera toujours proposée à son **Prix de Base** (et non à un prix spécifique au marché), même si vous planifiez des changements de prix supplémentaires. 
-> - Pour les clients sur Windows8.1 ou WindowsPhone8.1 et versions antérieures, l’application sera toujours proposée au premier niveau de prix pour le marché du client, même si vous planifiez des changements de prix supplémentaires sur ce marché.
-> 
-> Tenez-en compte lors de la planification des changements de prix. Par exemple, si vous publiez initialement votre application à un niveau de prix inférieur, puis planifiez une date à laquelle le prix doit augmenter, vos clients qui utilisent des versions antérieures du système d’exploitation achèteront l’application au prix inférieur (d’origine).
+> Les modifications de prix s'affichent uniquement pour les clients utilisant des appareils Windows10 (y compris Xbox). Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, les changements de prix seront appliquent pas à ces clients. Pour les clients sur Windows8, l’application sera toujours proposée à son **Prix de Base** (et non à un prix spécifique au marché), même si vous planifiez des changements de prix supplémentaires. Pour les clients sur Windows 8.1 et Windows Phone 8.1 et versions antérieures, l’application sera toujours proposée au premier niveau de prix pour le marché du client.
 
 Cliquez sur **Planifier un changement de prix** pour afficher les options de changement de prix. Choisissez le niveau de prix que vous souhaitez utiliser (ou entrez un prix au format libre pour les remplacements du prix de base pour un marché unique), puis sélectionnez la date, l’heure et le fuseau horaire.
 
-Vous pouvez cliquer sur **Planifier un nouveau changement de prix** pour planifier autant de changements consécutifs que vous le souhaitez.
+Vous pouvez cliquer sur **planifier un changement de prix** à nouveau pour planifier autant de changements consécutifs que vous le souhaitez.
 
 > [!NOTE]
 > Les changements de prix planifiés fonctionnent différemment du [Prix de vente](put-apps-and-add-ons-on-sale.md). Lorsque vous mettez une application en vente, le prix barré s’affiche dans le Store et les clients peuvent acheter l’application au prix de vente pendant la période que vous avez sélectionnée. Une fois la période de vente terminée, le prix de vente ne s’applique plus et l’application devient disponible à son prix de base (ou à un autre prix que vous avez spécifié pour ce marché, le cas échéant).
@@ -66,7 +61,7 @@ Vous pouvez cliquer sur **Planifier un nouveau changement de prix** pour planifi
 Par défaut, les options que vous sélectionnez ci-dessus s'appliquent à tous les marchés dans lesquels votre application est proposée. Vous pouvez éventuellement modifier le prix pour un ou plusieurs marchés, en choisissant un autre niveau de prix ou en saisissant un prix au format libre dans la devise locale du marché.
 
 > [!IMPORTANT]
-> Les clients sur Windows8 voient toujours l’application à son **Prix de Base**, même si vous sélectionnez un prix différent pour leur marché.
+> Si votre application publiée précédemment prend en charge Windows 8, les clients voient toujours l’application à son **prix de Base**, même si vous sélectionnez un prix différent pour leur marché.
 
 Pour modifier le prix pour des marchés spécifiques, cliquez sur **Select markets for base price override**. La fenêtre contextuelle **Sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. (Si vous avez exclu des marchés dans la section **Marchés**, ces marchés ne seront pas disponibles). 
 

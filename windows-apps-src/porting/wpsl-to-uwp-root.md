@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb2617fc3fbd14d17635435c8bfd6d58817a7a1b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817712"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5864996"
 ---
 #  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Passer de Silverlight pour WindowsPhone vers UWP
 
