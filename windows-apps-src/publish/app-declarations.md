@@ -4,16 +4,16 @@ Description: Product declarations help make sure your app is displayed appropria
 title: Déclarations de produit
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1fc444dbd106f4eeb0996903f71701a96a9735
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747827"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831158"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
@@ -46,16 +46,14 @@ Pour plus d’informations, voir [l’accessibilité](../design/accessibility/ac
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Les clients peuvent installer cette application sur d'autres disques ou dispositifs de stockage amovible.
 
-Cette case est cochée par défaut, pour permettre aux clients d’installer votre application dans le stockage amovible ou externe du lecteur multimédia tel qu’une carte SD ou un volume non système, comme un lecteur externe. (Pour Windows Phone 8.1, cela a été précédemment storemanifest.Xml.)
+Cette case est cochée par défaut, pour permettre aux clients d’installer votre application dans le stockage amovible ou externe du lecteur multimédia tel qu’une carte SD ou un volume non système, comme un lecteur externe.
 
-Si vous souhaitez empêcher l’installation d’autres lecteurs ou le stockage amovible de votre application et autoriser uniquement l’installation sur le disque dur interne sur leur appareil, décochez cette case.
-
-Notez qu’il n’existe aucune option pour restreindre installation afin qu’une application peut *uniquement* être installé sur un support de stockage amovible.
+Si vous souhaitez empêcher l’installation d’autres lecteurs ou le stockage amovible de votre application et autoriser uniquement l’installation sur le disque dur interne sur leur appareil, décochez cette case. (Notez qu’il n’existe aucune option pour restreindre installation afin qu’une application peut *uniquement* être installé sur un support de stockage amovible.)
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows peut intégrer les données de cette application dans les sauvegardes automatiques sur OneDrive.
 
-Cette case est cochée par défaut pour permettre l'insertion des données de votre application quand un client choisit de paramétrer Windows pour des sauvegardes automatiques sur OneDrive. (Pour Windows Phone 8.1, cela a été précédemment storemanifest.Xml.)
+Cette case est cochée par défaut pour permettre l'insertion des données de votre application quand un client choisit de paramétrer Windows pour des sauvegardes automatiques sur OneDrive.
 
 Si vous voulez empêcher l’insertion des données de votre application dans les sauvegardes automatiques, décochez cette case.
 

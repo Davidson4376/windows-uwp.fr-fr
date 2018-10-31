@@ -2,29 +2,29 @@
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: Gérer les paramètres de compte et les informations de profil
-description: Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows.
+description: Vous pouvez afficher et mettre à jour vos paramètres de compte de développeur et les informations de profil dans la section Paramètres du compte de l’espace partenaires.
 ms.author: wdg-dev-content
-ms.date: 03/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
-ms.openlocfilehash: b17281d597ea484c81896abd7efdc7d31fdc8add
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744005"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5837407"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
-Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord du Centre de développement Windows](using-the-windows-dev-center-dashboard.md). 
+Vous pouvez afficher et mettre à jour vos paramètres de compte de développeur et les informations de profil dans la section **paramètres du compte** de l' [Espace partenaires](https://partner.microsoft.com/dashboard). 
 
 > [!NOTE]
-> Les préférences de notification (comme le type de notifications à recevoir et leur mode de réception) peuvent être gérées dans le **Centre de messages** (auquel vous pouvez accéder en sélectionnant l’icône de message dans la partie supérieure de votre tableau de bord).
+> Préférences de notification (par exemple, le type de notifications à recevoir et leur mode de réception) peuvent être gérés dans le **Centre de messages** (auquel vous pouvez accéder en sélectionnant l’icône de message dans la zone supérieure de l’espace partenaires).
 
-## <a name="account-settings"></a>Paramètres du compte
+## <a name="account-settings"></a>Paramètres de compte
 
-Pour afficher vos paramètres de compte, cliquez sur l’icône d’engrenage dans le coin supérieur droit du tableau de bord, puis sélectionnez les **paramètres de développement**. Vous trouverez plus d’informations sur votre compte et des liens vers d’autres pages où vous pouvez afficher les informations et exécuter diverses tâches relatifs au compte.
+Pour afficher vos paramètres de compte, cliquez sur l’icône d’engrenage dans le coin supérieur droit de l’espace partenaires, puis sélectionnez les **paramètres de développement**. Vous trouverez plus d’informations sur votre compte et des liens vers d’autres pages où vous pouvez afficher les informations et exécuter diverses tâches relatifs au compte.
 
 Dans la section **Détails du compte**, vous pouvez visualiser l’état et le type de votre compte. Vous pouvez également afficher votre ID de vendeur et d’autres informations de ID d’éditeur ici. Ces valeurs sont allouées par Microsoft afin d’identifier de manière unique votre compte de développeur et ne peut pas être modifiées.
 
@@ -50,8 +50,8 @@ Voici certains des autres éléments que vous trouverez dans la section **Param�
 - **Programme Insider du centre de développement**: vous pouvez choisir ou en dehors du [Programme Insider du centre de développement](dev-center-insider-program.md) à partir de la main page **paramètres du compte** .
 - **Compte de paiement** et **Profil fiscal**: cet emplacement vous permet de [configurer votre compte de paiement et vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette opération avant de facturer des applications ou des extensions.
 - **Associations d’entreprise**: acceptez les invitations d’entreprises qui souhaitent publier des applications pour leur usage exclusif. Pour plus d’informations, consultez l’article [Distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md).
-- **Utilisateurs**: ajoutez des utilisateurs à votre compte du Centre de développement et attribuez-leur des rôles et des autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
-- **Locataires**: gérer les associations de votre client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
+- **Les utilisateurs**: ajouter des utilisateurs à votre compte et leur affecter des rôles et autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
+- **Locataires**: gérer les associations de votre client Azure AD. Pour plus d’informations, voir [associer Azure AD avec votre compte espace partenaires](associate-azure-ad-with-dev-center.md).
 - **Programmes**: visualisez des détails sur les programmes auxquels vous participez et renseignez-vous sur les autres programmes qui sont susceptibles de vous intéresser.
 - **Contrats**: visualisez les contrats que votre compte a acceptés.
 - **Appareils de développement**: afficher et gérer [les appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 

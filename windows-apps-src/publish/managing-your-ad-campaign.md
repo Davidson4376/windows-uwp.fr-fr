@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: Manage ad campaigns for your apps in the Windows Dev Center dashboard.
+Description: Manage ad campaigns for your apps in Partner Center.
 title: Gérer votre campagne de publicité
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
@@ -8,17 +8,17 @@ ms.date: 06/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 77271d75b29cb13c1d3d1948a9f06a42e940bcb9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748402"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835534"
 ---
 # <a name="manage-your-ad-campaign"></a>Gérer votre campagne de publicité
 
 
-Pour gérer les campagnes de publicité de votre application, développez **Attract** dans le menu de navigation de gauche du tableau de bord, puis sélectionnez **Campagnes de publicité**. Vous voyez apparaître l’ensemble des campagnes de publicité associées à vos applications, ainsi que les expositions, les clics et les installations relatifs à chacune de ces campagnes. Pour plus d’informations sur les expositions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de campagne de publicité](promote-your-app-report.md).
+Pour gérer les campagnes de publicité pour votre application dans [L’espace partenaires](https://partner.microsoft.com/dashboard), développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**. Vous voyez apparaître l’ensemble des campagnes de publicité associées à vos applications, ainsi que les expositions, les clics et les installations relatifs à chacune de ces campagnes. Pour plus d’informations sur les expositions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de campagne de publicité](promote-your-app-report.md).
 
 Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroulante **Filtres de section** et faites votre choix parmi les filtres suivants :
 

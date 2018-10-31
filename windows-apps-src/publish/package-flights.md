@@ -4,16 +4,16 @@ Description: You can use package flights to distribute packages that are only gi
 title: Versions d’évaluation de package
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 ms.author: wdg-dev-content
-ms.date: 6/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, distribution de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: c34aa5f060671341900e25095ee8dc1d2d45a657
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a873b6f6c0d1a35667b47109f5cc2205e5a02158
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757924"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838910"
 ---
 # <a name="package-flights"></a>Versions d’évaluation de package
 
@@ -21,7 +21,7 @@ Vous pouvez utiliser des versions d’évaluation de package pour distribuer des
 
 Avec les versions d’évaluation du package, seuls les packages sont différents; Description des détails du Windows Store sera identique pour tous vos clients. Toute personne de votre groupe de versions d’évaluation recevront les packages que vous incluez dans la version d’évaluation, tandis que les clients qui ne sont pas dans le groupe de versions d’évaluation continuent à recevoir vos packages standard (standard).  Si vous décidez ultérieurement que vous souhaitez rendre des packages à partir d’une version d’évaluation disponible pour tous vos clients, vous pouvez facilement utiliser ces packages mêmes lors d’une soumission standard. Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), exactement le même que toute soumission.
 
-Lorsque vous configurez des versions d’évaluation de package, vous pouvez spécifier les personnes qui doivent bénéficier de packages spécifiques en les ajoutant à un **groupe d’utilisateurs connus** (parfois appelés groupe de versions d’évaluation). Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficie des versions d’évaluation de package que vous attribuez à ce groupe spécifique. (Vos versions d’évaluation de package peuvent inclure des packages ciblant une version quelconque de système d’exploitation, y compris Windows8.1/Windows Phone8.1 ou une version antérieure). Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
+Lorsque vous configurez des versions d’évaluation de package, vous pouvez spécifier les personnes qui doivent bénéficier de packages spécifiques en les ajoutant à un **groupe d’utilisateurs connus** (parfois appelés groupe de versions d’évaluation). Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficie des versions d’évaluation de package que vous attribuez à ce groupe spécifique. (Vos versions d’évaluation de package peuvent inclure des packages ciblant n’importe quelle version du système d’exploitation, y compris Windows 8.1 / Windows Phone 8.1 ou version antérieure si votre application publiée précédemment déjà les prend en charge.) Toute personne qui n’a pas été ajouté à l’un de vos groupes de versions d’évaluation, ou d’un appareil qui ne prennent pas en charge les versions d’évaluation du package, obtiendront les packages de la soumission standard.
 
 > [!IMPORTANT] 
 > Sur les appareils mobiles et de bureau, les membres de vos groupes de versions d’évaluation obtiendront automatiquement les packages de votre version d’évaluation chaque fois que vous fournirez des mises à jour. Toutefois, **les membres de vos groupes de versions d’évaluation qui utilisent des appareils Xbox devront rechercher manuellement les mises à jour** afin d’obtenir les derniers packages. Pour cela, ils devront se connecter à leur appareil à l’aide de leur compte Microsoft (avec l’adresse e-mail associée que vous avez incluse dans votre groupe d’utilisateurs connus).
@@ -51,7 +51,7 @@ Sur la page de création de version d’évaluation de package, vous devez entre
 
 ## <a name="specify-packages-to-include-in-your-package-flight"></a>Indiquez les packages à inclure dans votre version d’évaluation de package.
 
-Une fois que vous avez enregistré les informations de la version d’évaluation de package, la page de synthèse correspondante s’affiche. Cliquez sur **Packages** pour indiquer les packages que vous souhaitez inclure dans la version d’évaluation. Vous pouvez inclure des packages ciblant n’importe quelle version de système d’exploitation, y compris Windows10, Windows8.x et Windows Phone8.x ou une version antérieure.
+Une fois que vous avez enregistré les informations de la version d’évaluation de package, la page de synthèse correspondante s’affiche. Cliquez sur **Packages** pour indiquer les packages que vous souhaitez inclure dans la version d’évaluation. Vous pouvez inclure des packages ciblant n’importe quelle version du système d’exploitation qui prend en charge de votre application.
 
 Vous pouvez sélectionner des packages associés à une soumission précédemment publiée (une soumission standard ou l’une de vos autres versions d’évaluation de package, si vous en possédez plusieurs). Si vous avez besoin charger de nouveaux packages à utiliser pour cette version d’évaluation de package, vous pouvez les télécharger ici (en utilisant le [même processus que lorsque vous téléchargez des packages d’application pour une soumission standard](upload-app-packages.md)). Cliquez sur **Enregistrer** dès que vous avez fini d’indiquer les packages à inclure dans cette version d’évaluation de package.
 

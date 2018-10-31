@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d2317b419a2679d13e846690bbaca0eb212a245e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757569"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833920"
 ---
 # <a name="programmatic-focus-navigation"></a>Navigation en mode focus programmé
 

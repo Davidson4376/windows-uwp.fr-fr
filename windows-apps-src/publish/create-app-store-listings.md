@@ -4,28 +4,28 @@ Description: The Store listings section of the app submission process is where y
 title: Créer des descriptions d’application dans le Store
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 06/18/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
-ms.openlocfilehash: 237642897beb51c9b685068ee714182fa1fe1bb5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec1867e747f3458e3a9cffabe9a45535d4c27489
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766531"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829999"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
 
 La section **Descriptions dans le Store** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Microsoft Store.
 
-Un grand nombre des champs d'une **Description dans le Store** sont facultatifs, mais nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin que votre description soit attrayante. La condition minimale requise pour que l'étape **Description dans le Store** puisse être considérée comme terminée est une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots). Pour certaines soumissions, les champs [Politique de confidentialité](#privacy-policy) et [Coordonnées du support technique](#support-contact-info) sont également requis. 
+Un grand nombre des champs d'une **Description dans le Store** sont facultatifs, mais nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin que votre description soit attrayante. La condition minimale requise pour que l'étape **Description dans le Store** puisse être considérée comme terminée est une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> Vous pouvez, si vous le souhaitez, [importer et exporter des descriptions dans le Store](import-and-export-store-listings.md), si vous préférez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations et de charger les fichiers directement dans le tableau de bord. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois. 
+> Vous pouvez éventuellement [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md) si vous préférez entrer vos informations de description hors connexion dans un fichier .csv, plutôt qu’en fournissant des informations et le chargement de fichiers directement dans l’espace partenaires. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois. 
 
-Par défaut, nous utilisons la même description dans le Store (par langue) pour tous les systèmes d’exploitation que vous ciblez. Si vous souhaitez utiliser une description personnalisée dans le Store pour un système d’exploitation spécifique pris en charge par votre soumission, vous pouvez [créer des descriptions dans le Store spécifiques à la plateforme](create-platform-specific-store-listings.md). Votre description par défaut est toujours affichée pour les clients sur Windows10.
+Si votre application publiée précédemment prend en charge Windows 8.x et/ou Windows Phone 8.x ou version antérieure, vous pouvez [créer des descriptions spécifiques à la plateforme](create-platform-specific-store-listings.md) affiche pour ces clients. 
 
 ## <a name="store-listing-languages"></a>Langues des descriptions dans le Store
 
@@ -38,19 +38,19 @@ Pour ajouter ou supprimer des langues de description dans le Store, cliquez sur 
 
 Dans la section **Langues supplémentaires de description dans le Store**, vous pouvez cliquer sur **Gérer les langues supplémentaires** pour ajouter ou supprimer des langues qui ne sont *pas* incluses dans vos packages. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues supplémentaires de description dans le Store**. Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** (ou cliquez sur **Gérer les langues supplémentaires** et décochez la case pour les langues que vous souhaitez supprimer).
 
-Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission.
+Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission. 
 
 ## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description
 
-Pour modifier une description, sélectionnez le nom de la langue dans la page de présentation de soumission.
+Pour modifier une description, sélectionnez le nom de la langue dans la page de présentation de soumission. Vous devez modifier chaque langue séparément, sauf si vous choisissez d’exporter vos descriptions du Windows Store et travailler hors connexion, puis importer toutes les données de description à la fois. Pour plus d’informations qui fonctionnement, reportez-vous à la section [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md).
 
-Les champs associés à votre description par défaut dans le Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows8.x ou version antérieure; Windows Phone8.x ou version antérieure) ou si vous créez des descriptions dans le Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
+Les champs disponibles sont décrites ci-dessous.
 
 ## <a name="product-name"></a>Nom du produit
 
 Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé dans les descriptions (si vous avez réserver plusieurs noms pour l’application).
 
-Si vous avez chargé des packages dans la même langue que les descriptions sur lequel vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission avec les packages qui utilisent le nouveau nom.
+Si vous avez chargé des packages dans la même langue que la description que vous mettez au point, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission, après avoir chargé les packages qui utilisent le nouveau nom.
 
 Si vous n’avez pas encore chargé les packages de la langue vous travaillez sur et vous avez réservé plusieurs noms, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
@@ -67,14 +67,14 @@ Pour obtenir des conseils sur la rédaction d’une description attrayante, cons
 
 ## <a name="whats-new-in-this-version"></a>Nouveautés de cette version
 
-Si vous soumettez votre application pour la première fois, laissez ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1500 caractères. (Ce champ s’appelait auparavant **Notes de publication**).
+Si vous soumettez votre application pour la première fois, laissez ce champ vide. Pour une mise à jour d’une application existante, il s’agit d’où vous pouvez d’indiquer aux clients ce qui a changé dans la dernière version. Ce champ est limité à 1500 caractères. (Ce champ s’appelait auparavant **Notes de publication**).
 
-## <a name="app-features"></a>Fonctionnalités de l’application
+## <a name="product-features"></a>Fonctionnalités du produit
 
 Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces informations sont présentées au client sous la forme d’une liste à puce dans la section **Fonctionnalités** de la description de votre application dans le Store, en complément de la **Description**. Chacune de ces informations est limitée à 200caractères par fonctionnalité. Vous pouvez spécifier jusqu’à 20fonctionnalités.
 
 > [!NOTE]
-> Les fonctionnalités de votre application apparaissant sous la forme d’une liste à puces dans la description du Store, n’ajoutez pas vos propres puces.
+> Ces fonctionnalités apparaissant puces, n’ajoutez pas vos propres puces.
 
 ## <a name="screenshots"></a>Captures d’écran
 
@@ -93,11 +93,11 @@ Les logos Store sont des images facultatives que vous pouvez charger pour améli
 Pour plus d’informations, voir [Logos Store](app-screenshots-and-images.md#store-logos).
 
 
-## <a name="additional-art-assets"></a>Illustrations supplémentaires
+## <a name="trailers-and-additional-assets"></a>Bandes-annonces et des ressources supplémentaires
 
-Vous pouvez soumettre des ressources supplémentaires pour votre produit, y compris des bandes-annonces et des images publicitaires. Elles sont toutes facultatives, mais nous vous recommandons d'en charger autant que possible. Ces images permettent de donner aux clients une meilleure idée de votre produit et de rendre sa description plus attrayante.
+Vous pouvez soumettre des ressources supplémentaires pour votre produit, y compris des bandes-annonces vidéo et des images publicitaires. Elles sont toutes facultatives, mais nous vous recommandons d'en charger autant que possible. Ces images permettent de donner aux clients une meilleure idée de votre produit et de rendre sa description plus attrayante.
 
-Pour plus d’informations, voir [Illustrations supplémentaires](app-screenshots-and-images.md#additional-art-assets).
+Pour plus d’informations, voir les [bandes-annonces et des ressources supplémentaires](app-screenshots-and-images.md#trailers-and-additional-assets).
 
 <a id="supplemental-information" />
 
@@ -149,7 +149,7 @@ Vous pouvez entrer jusqu’à 11éléments pour les deux champs **Matériel mini
 
 ## <a name="additional-information"></a>Informations complémentaires
 
-Les éléments décrits ci-dessous aident les clients à découvrir et comprendre votre produit. Les informations que vous entrez ici s’appliquent à l’ensemble de vos descriptions du Store dans une langue donnée, quel que soit le système d’exploitation, même si vous [créez des descriptions dans le Store spécifiques à la plateforme](create-platform-specific-store-listings.md). (Cette section était précédemment appelée **Champs partagés**).
+Les éléments décrits ci-dessous aident les clients à découvrir et comprendre votre produit. (Cette section était précédemment appelée **Champs partagés**).
 
 ### <a name="search-terms"></a>Termes de recherche
 

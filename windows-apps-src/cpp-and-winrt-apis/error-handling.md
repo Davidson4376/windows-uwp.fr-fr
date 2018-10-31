@@ -7,12 +7,12 @@ ms.date: 05/21/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, erreur, gestion, exception
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f6248452d97d10b6004067b6c0a973973443db
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752642"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5832448"
 ---
 # <a name="error-handling-with-cwinrt"></a>Gestion des erreurs avec C++/WinRT
 
@@ -77,7 +77,7 @@ winrt::check_bool(::SetEvent(h.get()));
 Si la valeur que vous passez à [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) est false, la séquence d’actions suivante se produit.
 
 - **winrt::check_bool** appelle la fonction [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error).
-- **winrt::throw_last_error** appelle [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) pour récupérer la valeur du dernier code d’erreur du thread appelant et appelle ensuite la fonction [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult).
+- **WinRT::throw_last_error** appelle [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) pour récupérer la valeur du dernier code d’erreur du thread appelant et appelle ensuite la fonction [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) .
 - **winrt::throw_hresult** lève une exception à l'aide d'un objet [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) (ou d'un objet standard) qui représente le code d’erreur.
 
 Étant donné que les API Windows signalent des erreurs d’exécution à l’aide de différents types de valeur de retour, il existe en plus de **winrt::check_bool** de nombreuses autres fonctions d’assistance pour vérifier les valeurs et lever des exceptions.

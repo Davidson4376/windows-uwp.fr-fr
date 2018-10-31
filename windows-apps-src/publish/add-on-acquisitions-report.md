@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Rapport sur les acquisitions d’extensions
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, ventes d’extensions, acquisitions d’extensions, produits in-app, extensions
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b25067104a664cb90ef068749d9e4cd00bcc80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761859"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829796"
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions d’extensions
 
 
-Le rapport **acquisitions de modules complémentaires** dans le tableau de bord du centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations de conversion pour les clients sous Windows 10 (y compris Xbox). Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures.
+Le rapport **acquisitions de modules complémentaires** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations de conversion pour les clients sous Windows 10 (y compris Xbox). Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures.
 
-Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md).
+Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Dans ce rapport, une acquisition d’extension signifie qu’un client vous a acheté une extension (ou l’a acquise sans frais si vous l’avez offerte gratuitement). Plusieurs achats d’une même extension de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions d’extension.
 

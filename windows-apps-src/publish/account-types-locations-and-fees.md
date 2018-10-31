@@ -4,23 +4,23 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Types de compte, emplacements et frais
 description: Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions.
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: 619b245ed6037192fe8b846a20d9fe0fe97baa24
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741620"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831574"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
-Nous proposons des comptes individuels et d’entreprise dans un grand nombre de [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous permettent de publier des applications dans le Store et de participer à d’autres programmes pour développeurs Microsoft.
+Les fenêtres du programme dans [L’espace partenaires](https://partner.microsoft.com/dashboard) propose deux individu et comptes société dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Deux types de compte vous donne qu'accès à publier des applications dans le Windows Store et à participer à d’autres programmes Microsoft.
 
 > [!NOTE]
-> Quand vous vous inscrivez pour obtenir un compte, veillez à vous connecter à l’aide du compte Microsoft que vous voulez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
+> Lorsque vous ouvrez votre compte de développeur, veillez à se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) avec le compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
 
 Au [début du processus d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deuxtypes de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 

@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
+Description: The Reviews report in Partner Center lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: Rapport sur les révisions
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
@@ -8,19 +8,19 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b246ec0127373dba2385f249640c09940105fa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769095"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831445"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
 
-Le rapport **avis** disponible dans le tableau de bord du centre de développement Windows vous permet de voir les avis (commentaires) que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
+Le rapport **avis** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de l’avis (commentaires) que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
 
-Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
+Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Vous pouvez également répondre à client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
@@ -114,7 +114,7 @@ Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origin
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser le tableau de bord du Microsoft Store développement Center, l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour répondre à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard), l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour répondre à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 

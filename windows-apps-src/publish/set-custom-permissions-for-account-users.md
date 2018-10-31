@@ -4,38 +4,38 @@ Description: Set roles or custom permissions for account users.
 title: Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
-ms.openlocfilehash: 753b71d409fd660687af77410f7f5796aa3c8a5c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748647"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835702"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
-Lorsque vous [ajoutez des utilisateurs à votre compte du Centre de développement](add-users-groups-and-azure-ad-applications.md), vous devez spécifier l’accès dont ils disposent dans ce compte. Pour effectuer cette opération, vous pouvez attribuer aux utilisateurs des [rôles standard](#roles) qui s’appliquent à la totalité du compte, ou vous pouvez [personnaliser leurs autorisations](#custom) afin de leur fournir le niveau d’accès approprié. Certaines des autorisations personnalisées s’appliquent à l’ensemble du compte, tandis que d’autres peuvent être limitées à un ou plusieurs produits spécifiques (ou accordées à tous les produits si vous préférez ce cas de figure).
+Lorsque vous [Ajoutez des utilisateurs à votre compte espace partenaires](add-users-groups-and-azure-ad-applications.md), vous devez spécifier l’accès dont ils disposent dans le compte. Pour effectuer cette opération, vous pouvez attribuer aux utilisateurs des [rôles standard](#roles) qui s’appliquent à la totalité du compte, ou vous pouvez [personnaliser leurs autorisations](#custom) afin de leur fournir le niveau d’accès approprié. Certaines des autorisations personnalisées s’appliquent à l’ensemble du compte, tandis que d’autres peuvent être limitées à un ou plusieurs produits spécifiques (ou accordées à tous les produits si vous préférez ce cas de figure).
 
 > [!NOTE] 
 > Vous pouvez appliquer les mêmes rôles et autorisations, que vous ajoutiez un utilisateur, un groupe ou une application AzureAD.
 
 Lorsque vous déterminez le rôle ou les autorisations à appliquer, gardez à l’esprit les points suivants: 
--   Les utilisateurs (y compris les groupes et applications AzureAD) pourront accéder à l’ensemble du compte du Centre de développement avec les autorisations associées au rôle qui leur est attribué, sauf si vous [personnalisez les autorisations](#custom) et attribuez des [autorisations au niveau du produit](#product-level-permissions) afin que les utilisateurs puissent utiliser uniquement des applications et/ou des extensions spécifiques.
+-   Les utilisateurs (y compris les groupes et applications Azure AD) pourront accéder à l’ensemble du compte de l’espace partenaires avec les autorisations associées à leurs rôles affectés, sauf si vous [Personnalisez les autorisations](#custom) et affecter des [autorisations au niveau du produit](#product-level-permissions) afin qu’il puisse utiliser uniquement des applications spécifiques et/ou des extensions.
 -   Vous pouvez autoriser un utilisateur, un groupe ou une application Azure AD à accéder aux fonctionnalités de différents rôles en sélectionnant plusieurs rôles ou en utilisant les autorisations personnalisées pour accorder l’accès de votre choix.
 -   Un utilisateur ayant un certain rôle (ou un ensemble d’autorisations personnalisées) peut également faire partie d’un groupe ayant un rôle différent (ou un ensemble d’autorisations). Dans ce cas, l’utilisateur a accès à toutes les fonctionnalités associées à la fois au groupe et au compte individuel.
 
 > [!TIP]
-> Cette rubrique est spécifique au programme destiné aux développeurs d’applications Windows. Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour développeurs de matériel, voir [Gestion des rôles d’utilisateurs](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour applications de bureau Windows, voir [Programme pour applications de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
+> Cette rubrique est spécifique au programme de développeur d’applications Windows dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour développeurs de matériel, voir [Gestion des rôles d’utilisateurs](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour applications de bureau Windows, voir [Programme pour applications de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
 
 
 <span id="roles" />
 
 ## <a name="assign-roles-to-account-users"></a>Attribuer des rôles aux utilisateurs de compte
 
-Par défaut, un ensemble de rôles standard vous est présenté pour vous permettre d’effectuer une sélection lorsque vous ajoutez un utilisateur, un groupe ou une application AzureAD à votre compte du Centre de développement. Chaque rôle dispose d’un ensemble d’autorisations spécifique lui permettant d’exécuter certaines fonctions dans le cadre du compte. 
+Par défaut, un ensemble de rôles standard est présenté pour vous permettre de lorsque vous ajoutez un utilisateur, groupe ou application Azure AD à votre compte espace partenaires. Chaque rôle dispose d’un ensemble d’autorisations spécifique lui permettant d’exécuter certaines fonctions dans le cadre du compte. 
 
 À moins que vous ne choisissiez de définir des [autorisations personnalisées](#custom) en sélectionnant **Personnaliser les autorisations**, chaque utilisateur, groupe ou application AzureAD que vous ajoutez à un compte doit se voir attribuer au moins l’un des rôles standard ci-après. 
 
@@ -45,7 +45,7 @@ Par défaut, un ensemble de rôles standard vous est présenté pour vous permet
 
 | Rôle                 | Description              |
 |----------------------|--------------------------|
-| Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Ceci inclut la gestion des utilisateurs dans le Centre de développement. Cependant, notez que la possibilité de créer et supprimer des utilisateurs dans le client AzureAD dépend des autorisations du compte dans Azure AD. Ainsi, si le rôle Manager est attribué à un utilisateur, mais que celui-ci ne dispose pas des autorisations d’administrateur global dans le service AzureAD de l’organisation, il ne pourra pas créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (toutefois, il pourra modifier le rôle d’un utilisateur dans le Centre de développement). <p> Notez que si le compte du Centre de développement est associé à plusieurs client AzureAD, un manager ne peut pas voir tous les détails d'un utilisateur (y compris ses prénom, nom, e-mail de récupération de mot de passe, et s’il est un administrateur global Azure AD), sauf s'il est connecté au même client que cet utilisateur avec un compte disposant des autorisations d’administrateur global pour ce client. Toutefois, il peut ajouter et supprimer des utilisateurs dans n’importe quel client qui est associé au compte du Centre de développement. |
+| Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Cela inclut la gestion des utilisateurs dans l’espace partenaires, mais notez que la possibilité de créer et supprimer des utilisateurs du client Azure AD dépend d’autorisations du compte dans Azure AD. Autrement dit, si un utilisateur le rôle Manager est attribué, mais n’a pas d’autorisations d’administrateur global dans l’organisation Azure AD, ils ne pourra à créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (Toutefois, ils peuvent modifier le rôle de l’espace partenaires de l’utilisateur). <p> Notez que si le compte de l’espace partenaires est associé à plusieurs client Azure AD, un Manager ne peut pas voir tous les détails d’un utilisateur (y compris le prénom, nom, e-mail de récupération de mot de passe, et s’il est un administrateur global Azure AD), sauf si elles sont connecté au même client que cet utilisateur avec un compte disposant des autorisations d’administrateur global pour ce client. Toutefois, ils peuvent ajouter et supprimer des utilisateurs dans n’importe quel client qui est associé au compte de l’espace partenaires. |
 | Développeur            | Peut charger des packages, soumettre des applications et extensions et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. La fonctionnalité [Cross-Device expériences](https://go.microsoft.com/fwlink/?linkid=874042) sont accessibles. Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
 | Contributeur professionnel | Peut afficher des rapports [d’intégrité](health-report.md) et [d’utilisation](usage-report.md). Impossible de créer ou soumettre des produits, de modifier des paramètres de compte ou d’afficher des informations financières.   |
 | Contributeur financier  | Peut afficher des [rapports sur les revenus](payout-summary.md), des informations financières et des rapports d’acquisition. Il ne peut apporter aucune modification aux applications, extensions et paramètres de compte.    |
@@ -173,7 +173,6 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les extens
     <tr><td align="left">    <b>Intégrité</b> </td><td>    Peut afficher le <a href="health-report.md">rapport d’intégrité</a> du produit.    </td><td>    Non applicable     </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Retour d’expérience du client</b>    </td><td>    Peut visualiser les rapports <a href="reviews-report.md">Avis</a> et <a href="feedback-report.md">Commentaires</a> concernant le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation <b>Contacter le client</b> doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Analyse Xbox</b> </td><td>    Peut afficher le [rapport d’analytique Xbox](xbox-analytics-report.md) pour le produit.    </td><td>    N/A   </td><td>    N/A       </td><td>    Non applicable          </td></tr>
-    <tr><td align="left">    <b>En temps réel</b>   </td><td>    Peut visualiser le rapport en temps réel du produit. (Remarque: pour l’instant, ce rapport n’est disponible que par le biais du <a href="dev-center-insider-program.md">Programme Insider du Centre de développement</a>.)      </td><td>    Non applicable   </td><td>    N/A     </td><td>    Non applicable                 </td></tr>
     </tbody>
     </table>
 

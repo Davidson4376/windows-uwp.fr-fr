@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
 ms.openlocfilehash: 38f850cfb811260758377d5404e01c8e540e7ec2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756128"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5830089"
 ---
 # <a name="bluetooth-le-advertisements"></a>Annonces publicitaires BluetoothLE
 

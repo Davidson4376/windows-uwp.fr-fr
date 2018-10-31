@@ -1,34 +1,34 @@
 ---
 author: JnHs
-Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: Création d’une campagne de publicité pour votre application
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c6388902322357d27918b6e4b95555785288bc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751525"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833339"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
-Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du Centre de développement pour vous aider à promouvoir votre application et à développer la base des utilisateurs de votre application. Par défaut, nous allons choisir le public cible de vos publicités d’après les paramètres de votre application dans le tableau de bord du Centre de développement. Vous avez toutefois la possibilité de définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
+Vous pouvez créer des campagnes de publicité dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour aider à promouvoir votre application et à développer la base de ses utilisateurs. Par défaut, nous allons choisir le public cible de vos publicités d’après les paramètres de votre application dans l’espace partenaires, mais vous pouvez définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
 
 Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
 
 > [!NOTE]
-> Cette section de la documentation explique comment créer une campagne de publicité dans le tableau de bord du Centre de développement. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
+> Cette section de la documentation explique comment créer une campagne de publicité dans l’espace partenaires. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
 
 ## <a name="instructions"></a>Instructions
 
 Voici comment créer une campagne de publicité pour promouvoir une application:
 
-1.  Dans le menu de navigation de gauche du tableau de bord, développez l’option **Attract**, puis sélectionnez **Campagnes de publicité**.
+1.  Dans le menu de navigation de gauche de [L’espace partenaires](https://partner.microsoft.com/dashboard), développez **Attract** , puis sélectionnez **les campagnes de publicité**.
 2.  Sélectionnez **Créer une campagne** (ou si vous avez déjà créé des campagnes auparavant, sélectionnez **Nouvelle campagne**).
 3.  Sur la page suivante, dans la section **Type d’objectif**, choisissez l’une des options suivantes:
     * **Augmenter les installations de votre application**. Sélectionnez cette option si votre campagne de publicité est conçue pour convaincre les clients d’installer votre application.
@@ -48,7 +48,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
         Le budget mensuel est calculé au prorata du mois au cours duquel vous avez créé la campagne de publicité. En d’autres termes, si vous créez une campagne au milieu du mois, vous êtes facturé la moitié du budget mensuel fixé pour le mois concerné.
 
-    * Spécifiez un mode de paiement pour votre campagne de publicité en cliquant sur **Ajouter un mode de paiement**, puis renseignez les détails de votre compte. Si vous avez déjà fourni un instrument de paiement, vous pouvez sélectionner l’option **Choose a different payment method** si vous devez mettre à jour cette information. Le pays ou la région de l’adresse de facturation de votre mode de paiement doit correspondre au pays ou à la région associés à votre compte du Centre de développement.
+    * Spécifiez un mode de paiement pour votre campagne de publicité en cliquant sur **Ajouter un mode de paiement**, puis renseignez les détails de votre compte. Si vous avez déjà fourni un instrument de paiement, vous pouvez sélectionner l’option **Choose a different payment method** si vous devez mettre à jour cette information. La pays/région d’adresse de facturation de votre mode de paiement doit correspondre au pays ou la région associée à votre compte de développeur.
 
     * Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campagne de publicité, cliquez sur **Utiliser un coupon**, entrez le code du coupon, puis cliquez sur **Appliquer** pour appliquer le coupon à la campagne.
 
@@ -103,10 +103,3 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 Pour vérifier l’efficacité de vos campagnes, revenez à la page **Campagnes de publicité**. Sélectionnez **Filtres de section** pour limiter les éléments inclus dans le rapport par **Date**, **Objectif de campagne**, **Nom d’application**, **Type de campagne** ou **État**. Outre l’accès à des informations sur les **impressions**, les **clics**, les **conversions** et les **dépenses** de votre campagne, vous pouvez utiliser le rapport pour **interrompre** ou **reprendre** une campagne. Pour plus d’informations, consultez l’article [Rapport de campagne de publicité](promote-your-app-report.md).
 
 Pour modifier une campagne, sélectionnez son nom dans la liste.
-
-## <a name="related-topics"></a>Rubriques connexes
-
-* [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
-* [À propos des publicités maison](about-house-ads.md)
-* [Rapport Promouvoir votre application](promote-your-app-report.md)
-* [Questions courantes sur les campagnes de publicité](common-questions.md)

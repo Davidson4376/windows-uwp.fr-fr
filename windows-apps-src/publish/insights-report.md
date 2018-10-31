@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Insights report in the Windows Dev Center dashboard
+Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: Rapport de perspectives
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, insight, tendance, anomalies, des anomalies, les modifications de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 082f6e133217061d319301ec3f65ed035a3eef23
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745039"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5837998"
 ---
 # <a name="insights-report"></a>Rapport de perspectives
 
 
-Le rapport de **perspectives** dans le tableau de bord du centre de développement Windows met en évidence des modifications importantes (augmentations ou baisses significatives dans une unité de mesure spécifique) que nous avons détecté au cours des 30 derniers jours dans vos acquisitions, intégrité, et/ou des données d’utilisation. Cela vous permet d’obtenir un aperçu des modifications importantes potentiellement sans avoir à afficher tous les graphiques dans chacun de ces rapports.
+Le rapport de **perspectives** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) met en évidence des modifications importantes (augmentations ou baisses significatives dans une unité de mesure spécifique) que nous avons détecté au cours des 30 derniers jours dans vos acquisitions, intégrité, et/ou des données d’utilisation. Cela vous permet d’obtenir un aperçu des modifications importantes potentiellement sans avoir à afficher tous les graphiques dans chacun de ces rapports.
 
 > [!NOTE]
 > Données de ce rapport couvrent au cours des 30 derniers jours. Vous ne pouvez pas sélectionner une autre période pour cet état.

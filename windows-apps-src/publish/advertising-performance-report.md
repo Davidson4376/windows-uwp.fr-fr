@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: To view performance data for the ad units in your apps, use the advertising performance report on the Windows Dev Center dashboard.
+Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: Rapport sur les performances publicitaires
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 05/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 562348d5077f29af9a0d0776cb421455d45444dc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742259"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836648"
 ---
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
 
-Le **rapport sur les performances publicitaires** vous renseigne sur l’efficacité de vos [unités publicitaires](in-app-ads.md), comprenant les publicités de la communauté. Ce rapport comporte les données provenant de plusieurs fournisseurs de publicités dans les applications UWP qui utilisent la [médiation publicitaire](in-app-ads.md#mediation).
+Le **rapport sur les performances publicitaires** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) montre l’efficacité de vos [unités publicitaires](in-app-ads.md) , y compris les annonces de la Communauté. Ce rapport comporte les données provenant de plusieurs fournisseurs de publicités dans les applications UWP qui utilisent la [médiation publicitaire](in-app-ads.md#mediation).
 
-Pour visualiser ce rapport, développez **Analyser** dans le menu de navigation de gauche, puis sélectionnez **Performances de la publicité**. Vous pouvez afficher ces données dans votre tableau de bord, ou télécharger les données du rapport pour les consulter hors connexion en cliquant sur les icônes en forme de flèche de la page. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [Obtenir les données relatives aux performances publicitaires](../monetize/get-ad-performance-data.md) dans notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
+Pour visualiser ce rapport, développez **Analyser** dans le menu de navigation de gauche, puis sélectionnez **Performances de la publicité**. Vous pouvez afficher ces données dans l’espace partenaires, ou télécharger les données du rapport à consulter hors connexion en cliquant sur les icônes de flèche sur la page. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [Obtenir les données relatives aux performances publicitaires](../monetize/get-ad-performance-data.md) dans notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Lorsque vous visualisez les rapports sur les performances publicitaires, notez que les données des rapports portant sur les trois derniers jours sont susceptibles de changer à mesure que nous recevons et traitons de nouvelles données provenant de différentes sources. En outre, les données datant de jusqu’à 90jours peuvent faire l’objet d’un ajustement.
 

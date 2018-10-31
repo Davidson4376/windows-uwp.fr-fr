@@ -1,31 +1,31 @@
 ---
 author: jnHs
-Description: Add users to your Dev Center account and assign them roles with specific permissions.
+Description: Add users to your Partner Center account and assign them roles with specific permissions.
 title: Gérer des utilisateurs de compte
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, les utilisateurs de comptes, gérer les utilisateurs, azure ad, multiutilisateur, plusieurs utilisateurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b659a12d972612d07f78504d46af396617513b4
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 01517ebd2cc4b86fa1ac440446a5cc59172014b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755740"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829869"
 ---
 # <a name="manage-account-users"></a>Gérer des utilisateurs de compte
 
-Vous pouvez utiliser Azure ActiveDirectory pour ajouter et gérer des utilisateurs supplémentaires dans votre compte du Centre de développement. Vous pouvez définir le rôle ou les autorisations personnalisées dont doit disposer chaque utilisateur. Vous pouvez également attribuer un rôle à un groupe d’utilisateurs ou à une application Azure AD.
+Vous pouvez utiliser Azure Active Directory pour ajouter et gérer des utilisateurs supplémentaires dans votre compte [Espace partenaires](https://partner.microsoft.com/dashboard) . Vous pouvez définir le rôle ou les autorisations personnalisées dont doit disposer chaque utilisateur. Vous pouvez également attribuer un rôle à un groupe d’utilisateurs ou à une application Azure AD.
 
-Pour ajouter et gérer des utilisateurs de compte, vous devez commencer par associer votre compte du Centre de développement au service Azure Active Directory de votre organisation. 
+Pour ajouter et gérer les utilisateurs de compte, vous devez tout d’abord associer votre compte espace partenaires à Azure Active Directory de votre organisation. 
 
 Cette section décrit la procédure à suivre pour effectuer les opérations suivantes:
 
--   [Associer Azure Active Directory à votre compte du Centre de développement](associate-azure-ad-with-dev-center.md)
--   [Ajouter des utilisateurs, des groupes et des applications AzureAD à votre compte du Centre de développement](add-users-groups-and-azure-ad-applications.md)
+-   [Associer Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md)
+-   [Ajouter des utilisateurs, groupes et applications Azure AD à votre compte espace partenaires](add-users-groups-and-azure-ad-applications.md)
 -   [Définir des rôles et des autorisations personnalisées pour les utilisateurs de compte](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> Cette section est spécifique au programme destiné aux développeurs d’applications Windows, mais l’association d’un client et la gestion des utilisateurs fonctionnent de la même façon pour les comptes dans le Programme pour développeurs de matériel Windows (voir [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) pour plus d’informations) ou dans le Programme pour applications de bureau Windows (voir [Programme pour applications de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) pour plus d’informations).
+> Ces rubriques sont spécifiques au programme de développement d’applications Windows dans l’espace partenaires, mais association d’un client et la gestion des utilisateurs fonctionnent de la même façon pour les comptes dans le programme de développement matériel Windows (pour plus d’informations, consultez [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) ) ou dans le Programme d’Application de bureau Windows (pour plus d’informations, consultez [Programme d’Application de bureau de Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) ).

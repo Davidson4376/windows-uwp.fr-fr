@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, casque
 ms.localizationpriority: medium
 ms.openlocfilehash: f5097af13d0714f30eefd7771f798036d069cdea
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5757964"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5834723"
 ---
 # <a name="headset"></a>Casque
 
