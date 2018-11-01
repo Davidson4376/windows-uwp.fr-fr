@@ -9,11 +9,11 @@ ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fc67e2b48779e7b22f20dc4adfbe28580bc325fc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833696"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883283"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats d’extensions consommables
 

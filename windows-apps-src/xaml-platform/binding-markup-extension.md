@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 02c856fd697bef958eb45a0f0f133e06f63a7f51
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813990"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5878148"
 ---
 # <a name="binding-markup-extension"></a>Extension de balisage {Binding}
 
@@ -22,7 +22,7 @@ ms.locfileid: "5813990"
 
 **Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{Binding}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-L’extension de balisage **{Binding}** est utilisée pour lier les données de propriétés sur des contrôles à des valeurs provenant d’une source de données, comme du code. L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données et la transmet à la propriété sur le contrôle. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et se mettre à jour en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications de la valeur de contrôle à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
+L’extension de balisage **{Binding}** est utilisé pour les propriétés de liaison de données sur les contrôles à des valeurs provenant d’une source de données, comme du code. L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données et la transmet à la propriété sur le contrôle. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et se mettre à jour en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications de la valeur de contrôle à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
 **{Binding}** a la même propriété de dépendance qu’une valeur locale, et définir une valeur locale en code impératif supprime l’effet de tout **{Binding}** défini dans le balisage.
 

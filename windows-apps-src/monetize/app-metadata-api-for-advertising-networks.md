@@ -9,11 +9,11 @@ keywords: Windows10, uwp, réseau publicitaire, métadonnées d’application
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 9533b244174cc5770a68f866c722db1781fdd544
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5825043"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5879679"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>API de métadonnées d’application pour les réseaux publicitaires
 
