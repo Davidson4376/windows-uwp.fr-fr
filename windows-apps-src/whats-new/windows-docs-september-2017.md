@@ -8,11 +8,11 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 436b610be942b33849b6da31cf5f9353a505a700
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5816806"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5871498"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre2017
 

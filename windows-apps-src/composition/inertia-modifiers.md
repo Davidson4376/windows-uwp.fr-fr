@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c10b1cc621da834a8a7c411e75eb92b1944b5a
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5834326"
+ms.locfileid: "5871336"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>Créer des points d’ancrage à l'aide de modificateurs d'inertie
 

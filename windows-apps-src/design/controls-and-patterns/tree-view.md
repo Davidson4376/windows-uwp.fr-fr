@@ -14,12 +14,12 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 36b81cf07b92760235a18f4474a14b7b55e0a7be
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 73f6d8f9c42a632383d52194c83a4fe68261f9a7
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5828509"
+ms.locfileid: "5869770"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -289,7 +289,7 @@ Il existe 2façons de développer ou de réduire un nœud d’arborescence dans 
 
 Vous devrez peut-être afficher un grand nombre de nœuds dans votre arborescence, ou vous ne saurez peut-être pas à l'avance combien de nœuds elle contiendra. Le contrôle TreeView n’est pas virtualisé, donc vous pouvez gérer les ressources en remplissant chaque nœud lorsqu'il est développé et en supprimant les nœuds enfants lorsqu'il est réduit.
 
-Gérez l'événement [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) et utilisez la propriété [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) pour ajouter des enfants à un nœud lorsqu’il est développé. La propriété HasUnrealizedChildren indique si le nœud doit être rempli ou si sa collection Children a déjà été remplie. Il est important de garder à l’esprit que le TreeViewNode ne définit pas cette valeur, vous devez le gérer dans le code de votre application.
+Gérez l'événement [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) et utilisez la propriété [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) pour ajouter des enfants à un nœud lorsqu’il est développé. La propriété HasUnrealizedChildren indique si le nœud doit être rempli ou si sa collection Children a déjà été remplie. Il est important de se souvenir que le TreeViewNode ne définit pas cette valeur, vous devez gérer dans le code de votre application.
 
 Voici un exemple d'utilisation de ces API. Voir l'exemple de code complet à la fin de cet article pour connaître le contexte, notamment l'implémentation du «FillTreeNode».
 

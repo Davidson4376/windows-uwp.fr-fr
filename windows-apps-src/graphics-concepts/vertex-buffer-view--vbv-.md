@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7956c7a03256da04e98a5b8f9a33951d7e0216d3
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840380"
+ms.locfileid: "5874349"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>Affichage d'une mémoire tampon de vertex (VBV) et d’index (IBV)
 

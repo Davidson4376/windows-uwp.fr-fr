@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ece9a25a2fd2892553d66847c39637e7faae70
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829664"
+ms.locfileid: "5873260"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>Contrôle manuel des contrôles de transport de média système
 

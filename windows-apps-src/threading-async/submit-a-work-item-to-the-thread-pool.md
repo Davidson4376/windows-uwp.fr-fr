@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, threads, pool de threads
 ms.localizationpriority: medium
 ms.openlocfilehash: fe73520782b18fb7419807695296bc6487f9c018
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829611"
+ms.locfileid: "5872926"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 

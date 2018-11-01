@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e6f7f838e5640f873593ac2e08c6a9b30f5258e5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839099"
+ms.locfileid: "5870745"
 ---
 # <a name="use-the-light-sensor"></a>Utiliser le capteur de luminosité
 

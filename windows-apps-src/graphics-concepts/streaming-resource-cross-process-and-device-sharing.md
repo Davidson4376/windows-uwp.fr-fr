@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f9bc985b69b71bedfd8d198f2a313f073b81a7
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5820808"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5869563"
 ---
 # <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Partage de ressources de diffusion en continu avec des processus et des appareils
 

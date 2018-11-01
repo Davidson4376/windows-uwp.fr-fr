@@ -12,12 +12,12 @@ keywords: windows10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5f1ded66ce9d41c386fb55ba8a4e609450d20d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5826714"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5874095"
 ---
 # <a name="icons-for-uwp-apps"></a>Icônes pour les applications UWP
 
@@ -137,7 +137,7 @@ Il existe de nombreuses façons de créer une icône. Vous pouvez utiliser une p
 
 ## <a name="make-the-icon-do-something"></a>Faites faire une action à l’icône
 
-Une fois que vous vous disposez d’une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à une commande ou à une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône à un bouton ou une barre de commandes. 
+Une fois que vous avez une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à une commande ou une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône à un bouton ou une barre de commandes. 
 
 ![Image d'une barre de commandes](images/icons/app-bar-desktop.svg)
 

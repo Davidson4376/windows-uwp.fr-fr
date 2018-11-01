@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5834783"
+ms.locfileid: "5875859"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Informations de référence sur les API de sandbox Xbox Live   
 Vous pouvez obtenir et définir vos sandbox Xbox Live à l’aide de cette API REST.

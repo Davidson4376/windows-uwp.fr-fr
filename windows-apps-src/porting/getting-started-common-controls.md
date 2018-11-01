@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: db2b4a74b5b40060779dd82764dcf2ed2799b285
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836781"
+ms.locfileid: "5869991"
 ---
 # <a name="getting-started-common-controls"></a>Prise en main: Contrôles courants
 
 
 ## <a name="common-controls-list"></a>Liste des contrôles courants
 
-Dans la section qui précède, vous utilisiez seulement deux contrôles : les boutons et les blocs de texte. La liste des contrôles à votre disposition est bien entendu beaucoup plus longue. Voici quelques contrôles communs que vous utiliserez dans vos applications et leurs équivalents dans iOS. Les contrôles iOS apparaissent dans l’ordre alphabétique, en regard des contrôles les plus similaires pour la plateforme Windows universelle (UWP).
+Dans la section qui précède, vous utilisiez seulement deux contrôles : les boutons et les blocs de texte. Bien entendu, il existe beaucoup plus de contrôles qui sont offrent à vous. Voici quelques contrôles communs que vous utiliserez dans vos applications et leurs équivalents dans iOS. Les contrôles iOS apparaissent dans l’ordre alphabétique, en regard des contrôles les plus similaires pour la plateforme Windows universelle (UWP).
 
 L’intelligence des contrôles UWP est qu’ils sont capables de détecter le type d’appareil sur lequel ils s’exécutent, et de modifier leur apparence et leurs fonctionnalités en conséquence. Par exemple, si votre projet utilise le contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681), il est capable de s’optimiser lui-même pour adapter son apparence et son comportement à l’appareil sur lequel il opère, qu’il s’agisse d’un ordinateur de bureau ou d’un téléphone. Vous n’avez rien à faire : les contrôles s’ajustent automatiquement au moment de l’exécution.
 

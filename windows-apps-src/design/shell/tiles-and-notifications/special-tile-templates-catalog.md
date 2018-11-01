@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 74b915e4d698503a13c5066348f4e46ebd3125c8
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5816652"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5876269"
 ---
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
  

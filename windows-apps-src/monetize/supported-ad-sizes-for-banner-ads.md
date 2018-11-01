@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces, publicités, tailles, bannière
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f23be9a58a138a82cc4510039a1c0899ef092a2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5822939"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5872110"
 ---
 # <a name="supported-banner-ad-sizes"></a>Tailles des bannières prises en charge
 

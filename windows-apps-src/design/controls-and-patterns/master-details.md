@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b30835e31e86c0c98d0c134ed28adca4413650c9
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839410"
+ms.locfileid: "5868826"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5835534"
+ms.locfileid: "5876819"
 ---
 # <a name="manage-your-ad-campaign"></a>Gérer votre campagne de publicité
 

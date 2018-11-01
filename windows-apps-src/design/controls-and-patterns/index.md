@@ -10,12 +10,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: e28d557280ab253a09d5697f369c694e490d3c7d
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5836100"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5875533"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  
@@ -113,8 +113,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <li style="list-style-type: none;"><a href="split-view.md">Mode Fractionné</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">Contrôles de texte</a></li>
-
-<li style="list-style-type: none;"><a href="index.md">Vignettes, badges et notifications</a></li>
 
 
 <li style="list-style-type: none;"><a href="toggles.md">Bascule</a></li>

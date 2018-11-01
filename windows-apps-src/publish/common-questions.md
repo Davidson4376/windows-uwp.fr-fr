@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5811923"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5872612"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
 

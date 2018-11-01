@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5836464"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5875181"
 ---
 # <a name="staticresource-markup-extension"></a>Extension de balisage {StaticResource}
 

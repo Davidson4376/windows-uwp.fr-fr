@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, monétisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817682"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5869450"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827428"
+ms.locfileid: "5877193"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 

@@ -9,12 +9,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42bc7fdb91a8c7642e132d4ac3d93be1f0927df0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d2f437db1a1792df22fd084cedee31cb6e590d24
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840008"
+ms.locfileid: "5873188"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -287,21 +287,6 @@ Les exemples de code ci-dessus montrent comment gérer toutes ces entrées.
 Auparavant, les applicationsUWP utilisaient [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) pour la navigation vers l’arrière. L’API continuera d’être pris en charge pour garantir la compatibilité descendante, mais nous vous recommandons n’est plus de vous fier [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Au lieu de cela, votre application doit disposer de son propre bouton Précédent.
 
 Si votre application continue à l’aide de [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), puis le système de l’interface utilisateur rendra le système de bouton précédent:
-
-- Si votre application n’est **pas à onglets**, le bouton précédent est rendu à l’intérieur de la barre de titre. Les interactions utilisateur et d’expérience visuelle du bouton précédent restent inchangées à partir des versions précédentes.
-
-    ![Bouton précédent de la barre de titre](images/nav-back-pc.png)
-
-- Si une application est **à onglets**, alors que le bouton précédent s’affiche à l’intérieur d’un nouveau système vers l’arrière barre.
-
-    ![Système dessiné précédent de la barre de boutons](images/back-nav/tabs.png)
-
-### <a name="system-back-bar"></a>Précédent système barre
-
-> [!NOTE]
-> «Précédent système barre» est uniquement une description, pas un nom officiel.
-
-Le système vers l’arrière barre est une «bande» qui est insérée entre la bande d’onglet et la zone de contenu de l’application. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande a une hauteur verticale de 32 pixels pour garantir une taille cible tactile adéquate pour le bouton précédent.
 
 - Si votre application n’est **pas à onglets**, le bouton précédent est rendu à l’intérieur de la barre de titre. Les interactions utilisateur et d’expérience visuelle du bouton précédent restent inchangées à partir des versions précédentes.
 

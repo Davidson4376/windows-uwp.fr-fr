@@ -9,11 +9,11 @@ ms.topic: article
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b1e6a5fce559e9e6bf900bae3e3f83921567e6
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5824775"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5875543"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
