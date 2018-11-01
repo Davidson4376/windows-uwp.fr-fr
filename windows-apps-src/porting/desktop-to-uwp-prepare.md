@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abd10a352243e7c7ca7e665b3fb5ee774e0346e
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 3a0b3a9f5ce7c03b8add9cc459bade684b9daf21
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5840874"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886684"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Préparer le package d’une application de bureau
 
@@ -103,7 +103,7 @@ Les dépendances ne seront pas installées si l’application est installée en 
 
 + __Votre application démarre un utilitaire pour effectuer des tâches__. Évitez de démarrer des utilitaires de commande tels que PowerShell et Cmd.exe. En fait, si les utilisateurs installent votre application sur un système exécutant Windows 10 S, votre application ne sont pas être en mesure de les démarrer. Cela peut bloquer votre application à partir de la soumission au Microsoft Store, car toutes les applications soumises au Microsoft Store doivent être compatibles avec Windows 10 S.
 
-Le démarrage d’un utilitaire constitue souvent un moyen pratique de chercher des informations dans le système d’exploitation, le registre ou les fonctionnalités d’accès au système. Toutefois, vous pouvez tout aussi bien utiliser les API UWP pour accomplir ces types de tâches. Ces API est plus performantes, car ils n’ont pas besoin d’un fichier exécutable séparé à s’exécuter, mais plus important encore, elles empêchent l’application de sortir du package. Conception de l’application reste cohérente avec l’isolation, approbation et de sécurité qui accompagnent une application que vous vous avez empaqueté, et que votre application se comportera comme prévu sur les systèmes exécutant Windows 10 S.
+Le démarrage d’un utilitaire constitue souvent un moyen pratique de chercher des informations dans le système d’exploitation, le registre ou les fonctionnalités d’accès au système. Toutefois, vous pouvez tout aussi bien utiliser les API UWP pour accomplir ces types de tâches. Ces API est plus performantes, car ils n’ont pas besoin d’un fichier exécutable séparé à s’exécuter, mais plus important encore, elles empêchent l’application de sortir du package. Conception de l’application reste cohérente avec l’isolation, approbation et de sécurité qui accompagnent une application que vous avez empaqueté, et votre application se comportera comme prévu sur les systèmes exécutant Windows 10 S.
 
 + __Votre application hôtes modules complémentaires, les plug-ins ou les extensions__.   Dans de nombreux cas, les extensions de type COM continueront probablement à fonctionner tant qu’elles n’auront pas été empaquetées et elles s’installeront en toute confiance. C’est parce que ces programmes d’installation peuvent utiliser leurs capacités de confiance totale pour modifier le Registre et placer les fichiers d’extension partout où votre application hôte s’attend à les trouver.
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0066d38aaa3f5802ff5b1d380d405e60d90cad49
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5828198"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5888045"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu
 

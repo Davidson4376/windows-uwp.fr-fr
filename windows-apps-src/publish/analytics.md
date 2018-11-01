@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, analytique, rapports, tableau de bord, applications, données, les mesures
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5824964"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886631"
 ---
 # <a name="analyze-app-performance"></a>Analyser les performances de l’application
 
