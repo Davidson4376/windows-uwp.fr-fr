@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad667f1da8b14c2ab60fb79369f0f4c51306ff6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5874326"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947900"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>Obtenir les informations sur une erreur de votre application
 

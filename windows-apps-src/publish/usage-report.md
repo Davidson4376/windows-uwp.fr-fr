@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: f07f107a5136ee50cd87032fa3911ab65d33b7c1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: c6f22d9aafada5bab8deaef246f64a7447569c82
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882066"
+ms.locfileid: "5918694"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -41,13 +41,14 @@ Les informations figurant dans tous les graphiques répertoriés ci-après corre
 
 Le graphique **Utilisation** affiche des détails sur la façon dont vos clients utilisent votre application au cours de la période sélectionnée. Notez que ce graphique n’effectue pas le suivi des utilisateurs uniques de votre application ni des sessions utilisateur uniques (autrement dit, les utilisateurs qui figurent dans ce graphique peuvent avoir utilisé votre application une ou plusieurs fois).
 
-Ce graphique comporte quatre onglets visualisables qui vous présentent l’utilisation par jour ou par semaine (selon la durée que vous avez sélectionnée).
+Ce graphique comporte des onglets que vous pouvez afficher, présentent l’utilisation par jour ou par semaine (selon la durée que vous avez sélectionné).
 
 - **Utilisateurs**: affiche le nombre total de **sessions utilisateur** au cours de la période sélectionnée. Chaque session utilisateur représente une période de temps distincte, qui commence au lancement de l’application (début du processus) et qui se termine à l’arrêt de l’application (fin du processus) ou après une période d’inactivité. Pour cette raison, un client unique peut avoir plusieurs sessions utilisateur sur un même jour ou une même semaine. Le nombre total **d’utilisateurs actifs** (tout client utilisant l’application ce jour ou cette semaine-là) et de **nouveaux utilisateurs** (clients ayant utilisé votre application pour la première fois ce jour ou cette semaine-là) est également affiché. Notez que si vous avez appliqué des filtres à la page, la valeur **Nouveaux utilisateurs** n’apparaît pas dans ce graphique.
 - **Appareils**: affiche le nombre d’appareils utilisés quotidiennement par tous les utilisateurs pour interagir avec votre application.
 - **Durée**: indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
 - **Engagement**: indique les minutes d’engagement moyenne par utilisateur (durée moyenne de toutes les sessions utilisateur). 
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
+- **Prévision de l’évolution**: affiche le nombre d’utilisateurs devraient est susceptible d’arrêter l’utilisation de votre application plus tôt, basées sur leur utilisation récente.
 
 Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou une réduction par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 

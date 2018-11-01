@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 9f1e41c3e09d9a711ce9174a5a658a55c7c44abd
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5866414"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921011"
 ---
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 

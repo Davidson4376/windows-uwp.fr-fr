@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f113f47a905e8b542dde4c982a162341fc0196
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886974"
+ms.locfileid: "5920691"
 ---
 # <a name="get-an-add-on-submission"></a>Obtenir une soumission de module complémentaire
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’apps, supprimer
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f23bebd196cb28088bf68e673a17a4c0aebf5a3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865280"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922443"
 ---
 # <a name="delete-an-app-submission"></a>Supprime une soumission d’applications
 

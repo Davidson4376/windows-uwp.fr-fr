@@ -8,11 +8,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 000aa2d8f3684aa813b85076d9124a87a71b6a8c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872336"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5919243"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Didacticiel: Créer des dispositions adaptatives
 

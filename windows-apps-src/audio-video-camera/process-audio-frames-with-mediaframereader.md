@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d69e8d8cca3932045d4b43d727210f84e816f30b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873404"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5931382"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Traiter des trames audio avec MediaFrameReader
 

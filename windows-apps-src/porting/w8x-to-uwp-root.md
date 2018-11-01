@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5888359"
+ms.locfileid: "5920151"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>Passer de Windows Runtime8.x à UWP
 

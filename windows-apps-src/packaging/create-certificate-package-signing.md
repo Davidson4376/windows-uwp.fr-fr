@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 419fa90dfd21c42d256aeea8848862b8c5eb3628
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5863738"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5919071"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Créer un certificat pour la signature de packages
 
