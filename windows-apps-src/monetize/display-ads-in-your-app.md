@@ -8,12 +8,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 738c643f3c83a4f88f5c52c7337c467366ac8fe5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7acf2424a7d2fee322ba799ec670f0576b33a208
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938091"
+ms.locfileid: "5970668"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 
@@ -92,7 +92,7 @@ Pour obtenir des instructions et des exemples de code, voir [cet article](native
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Étape3: Créer une unité publicitaire et configurer une médiation
 
-Après avoir testé votre app, et une fois que vous êtes prêt à la soumettre au MicrosoftStore, créez une unité publicitaire sur la page [Publicités dans l'app](../publish/in-app-ads.md) dans le tableau de bord du Centre de développement Windows. Ensuite, mettez à jour le code de votre app pour utiliser cette unité publicitaire de sorte que votre app reçoive des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+Après avoir testé votre application et vous êtes prêt à la soumettre au Windows Store, créez une unité publicitaire sur la page [publicités dans l’application](../publish/in-app-ads.md) dans l’espace partenaires. Ensuite, mettez à jour le code de votre app pour utiliser cette unité publicitaire de sorte que votre app reçoive des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
 Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la [médiation publicitaire](ad-mediation-service.md) pour votre unité publicitaire afin d'afficher des publicités à partir de réseaux de publicités payées supplémentaires, tels que Taboola et Smaato. Vous pouvez également augmenter vos capacités de promotion d'application en affichant des publicités provenant des campagnes de promotion d'applications Microsoft.
 
@@ -100,9 +100,9 @@ Pour commencer à utiliser la médiation publicitaire dans votre application UWP
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>Étape 4: Soumettre votre app et évaluer ses performances
 
-Une fois que vous avez développé votre application contenant des publicités, vous pouvez [soumettre votre application mise à jour](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans le tableau de bord du Centre de développement pour qu’elle soit disponible dans le Windows Store. Les apps qui affichent des publicités doivent respecter les exigences supplémentaires qui sont spécifiées dans la [section 10.10 des politiques du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) et dans l'[Annexe E du Contrat du développeur d'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+Une fois que vous avez développé votre application avec des publicités, vous pouvez [soumettre votre application mise à jour](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires pour le rendre disponible dans le Windows Store. Les apps qui affichent des publicités doivent respecter les exigences supplémentaires qui sont spécifiées dans la [section 10.10 des politiques du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) et dans l'[Annexe E du Contrat du développeur d'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
 
-Une fois que votre application est publiée et disponible dans le Windows Store, vous pouvez examiner vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans le tableau de bord et continuer à apporter des modifications à vos paramètres de médiation afin d'optimiser les performances de vos annonces. Vos revenus publicitaires sont inclus dans votre [résumé du paiement](../publish/payout-summary.md).
+Une fois que votre application est publiée et disponible dans le Windows Store, vous pouvez passer en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans l’espace partenaires et continuer à apporter des modifications à vos paramètres de médiation pour optimiser les performances de vos annonces. Vos revenus publicitaires sont inclus dans votre [résumé du paiement](../publish/payout-summary.md).
 
 <span id="additional-help" />
 

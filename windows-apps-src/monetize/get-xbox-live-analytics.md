@@ -7,16 +7,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef566ed473c7d65ceeb290ee76bfa043f4766f5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 70a1e5d2105c73e76b974a888e3edb1bcb009aa6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941973"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971508"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Obtenir des données d’analytique Xbox Live
 
-Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données analytiques générales sur les 30derniers pour les clients jouant à votre [jeu Xbox Live](../xbox-live/index.md), y compris concernant l’utilisation des accessoires de l'appareil, le type de connexion Internet, la distribution des gamerscores, les statistiques de jeu et les données sur les amis et abonnés. Ces informations sont également disponibles dans le [rapport d'analyse Xbox](../publish/xbox-analytics-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données analytiques générales sur les 30derniers pour les clients jouant à votre [jeu Xbox Live](../xbox-live/index.md), y compris concernant l’utilisation des accessoires de l'appareil, le type de connexion Internet, la distribution des gamerscores, les statistiques de jeu et les données sur les amis et abonnés. Ces informations sont également disponibles dans le [rapport d’analytique Xbox](../publish/xbox-analytics-report.md) dans l’espace partenaires.
 
 > [!IMPORTANT]
 > Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](../xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).

@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f641ec3333ed0eda1fdfa5ff82ef236b5ec186ba
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927103"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971892"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
 
@@ -169,15 +169,15 @@ Pour créer une liste déroulante «à jour dynamique» pendant que l’utilisat
 
 #### <a name="selected-item-behavior-change"></a>Changement de comportement d’élément sélectionné
 
-Dans RS5 (version du SDK Windows 10.0.NNNNN.0 (Windows 10, version aamm), le comportement des éléments sélectionnés est mis à jour pour prendre en charge des zones de liste déroulante modifiable.
+Dans Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure, le comportement des éléments sélectionnés est mis à jour pour prendre en charge des zones de liste déroulante modifiable.
 
-Avant de RS5, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) a été requis soit dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
+Avant le Kit de développement logiciel 17763, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) a été requis soit dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex = -1
 
-RS5 et versions ultérieures, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) n’est pas nécessaire de se trouver dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
+Dans le Kit de développement logiciel 17763 et versions ultérieur, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) n’est pas nécessaire de se trouver dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
 
 - SelectedItem = rose
 - SelectedValue = rose
@@ -192,7 +192,7 @@ Vous pouvez définir la propriété [IsTextSearchEnabled](/uwp/api/windows.ui.xa
 ## <a name="make-a-combo-box-editable"></a>Configurer une zone de liste déroulante modifiable
 
 > [!IMPORTANT]
-> Cette fonctionnalité nécessite [dernière build de Windows 10 Insider Preview et SDK](https://insider.windows.com/for-developers/).
+> Cette fonctionnalité nécessite Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure.
 
 Par défaut, une zone de liste déroulante permet à l’utilisateur une sélection parmi une liste prédéfinie d’options. Toutefois, il existe des cas où la liste contient uniquement un sous-ensemble de valeurs valides, et l’utilisateur doit être en mesure d’entrer d’autres valeurs qui ne sont pas répertoriés. Pour ce faire, vous pouvez rendre la zone de liste déroulante modifiable.
 
