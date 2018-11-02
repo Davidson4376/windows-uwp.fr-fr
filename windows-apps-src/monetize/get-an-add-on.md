@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur une extension pour une app inscrite dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une extension pour une application inscrite dans votre compte espace partenaires.
 title: Obtenir une extension
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36638c3e3890d5e2bca149d1006469bb97057f05
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9620b0b7cf4d1ecb583215b2ab0fafe0e82712bf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924965"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991681"
 ---
 # <a name="get-an-add-on"></a>Obtenir une extension
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour récupérer des informations sur une extension (également connue sous le nom PIA ou produit in-app) pour une app inscrite dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une extension (également connue sous le nom dans l’application produit ou PIA) pour une application inscrite dans votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -46,7 +46,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | chaîne | Obligatoire. ID Windows Store de l’extension à récupérer. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
+| id | chaîne | Obligatoire. ID Windows Store de l’extension à récupérer. L’ID Windows Store est disponible dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête
@@ -99,7 +99,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | L’extension spécifiée est introuvable. |
-| 409  | L’extension utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | L’extension utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Rubriques associées

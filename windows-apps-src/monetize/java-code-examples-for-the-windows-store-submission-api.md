@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3280b6b9c0f012f36588d6eb0297b415e07f78
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930735"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970793"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -70,13 +70,13 @@ L’exemple suivant indique comment [créer](create-a-flight.md) et [supprimer](
 
 ## <a name="create-an-app-submission"></a>Créer une soumission d’applications
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’apps. Pour ce faire, la méthode ```SubmitNewApplicationSubmission``` crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```SubmitNewApplicationSubmission``` effectue les tâches suivantes:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’apps. Pour ce faire, le ```SubmitNewApplicationSubmission``` méthode crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```SubmitNewApplicationSubmission``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
 4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage BlobAzure.
-5. Ensuite, il [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développementWindows.
+5. Ensuite, il [mises à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md), jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
@@ -85,13 +85,13 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 ## <a name="create-an-add-on-submission"></a>Créer une soumission d’extension
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’extension. Pour ce faire, la méthode ```SubmitNewInAppProductSubmission``` crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```SubmitNewInAppProductSubmission``` effectue les tâches suivantes:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’extension. Pour ce faire, le ```SubmitNewInAppProductSubmission``` méthode crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```SubmitNewInAppProductSubmission``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de l’extension indiquée](get-an-add-on.md).
 2. Ensuite, elle [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge une archive ZIP contenant des icônes associées à la soumission dans le stockage d’objets blob Azure.
-5. Ensuite, elle [met à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+4. Il charge une archiveZIP contenant des icônes associées à la soumission sur le stockage BlobAzure.
+5. Ensuite, il [mises à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
@@ -100,13 +100,13 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 ## <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation du package
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission de version d’évaluation du package. Pour ce faire, la méthode ```SubmitNewFlightSubmission``` crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```SubmitNewFlightSubmission``` effectue les tâches suivantes:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission de version d’évaluation du package. Pour ce faire, le ```SubmitNewFlightSubmission``` méthode crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```SubmitNewFlightSubmission``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, elle [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge un nouveau package associé à la soumission dans le stockage d’objets blob Azure.
-5. Ensuite, elle [met à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+4. Il charge un nouveau package associé à la soumission sur le stockage BlobAzure.
+5. Ensuite, il [mises à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans PartnerCenter.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]

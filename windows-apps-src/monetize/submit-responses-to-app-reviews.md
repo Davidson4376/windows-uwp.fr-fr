@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'avis sur le MicrosoftStore, acquisitions d’extensions
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdfe811a90eae1e67ef7f626815be1ef78a4c61
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928590"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970113"
 ---
 # <a name="submit-responses-to-reviews"></a>Soumettre des réponses aux avis
 
@@ -23,7 +23,7 @@ Utilisez cette méthode dans l'API d'avis sur le MicrosoftStore pour programmer 
 Lorsqu’un client envoie un avis, il peut choisir ne pas de recevoir les réponses concernant ses avis. Si vous essayez de répondre à un avis pour lequel le client a choisi de ne pas recevoir de réponses, le corps de réponse de cette méthode indique que la tentative de réponse a échoué. Avant d’appeler cette méthode, vous pouvez également déterminer si vous êtes autorisé à répondre à un avis donné à l’aide de la méthode [obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md) méthode.
 
 > [!NOTE]
-> Vous pouvez répondre aux avis par programme à l'aide de cette méthode, ou bien via le [tableau de bord du Centre de développement Windows](../publish/respond-to-customer-reviews.md).
+> Outre l’utilisation de cette méthode pour répondre par programmation aux avis, vous pouvez également répondre aux avis [à l’aide de l’espace partenaires](../publish/respond-to-customer-reviews.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -67,7 +67,7 @@ Chaque objet figurant dans le tableau *Réponses* contient les valeurs suivantes
 
 | Valeur        | Type   | Description           |  Obligatoire  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | chaîne |  L’ID Windows Store de l’application qui contient l'avis auquel vous souhaitez répondre. L’ID WindowsStore est disponible sur la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.   |  Oui  |
+| ApplicationId | chaîne |  L’ID Windows Store de l’application qui contient l'avis auquel vous souhaitez répondre. L’ID Windows Store est disponible sur la [page identité des applications](../publish/view-app-identity-details.md) de l’espace partenaires. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.   |  Oui  |
 | ReviewId | chaîne |  L’ID de l’avis auquel vous souhaitez répondre (il s’agit d’un GUID). Les ID d’avis sont disponibles dans les données de réponse de la méthode [Obtenir les avis sur les applications](get-app-reviews.md) dans l’API d’analyse du MicrosoftStore et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).   |  Oui  |
 | ResponseText | chaîne | La réponse que vous souhaitez soumettre. Votre réponse doit suivre [les recommandations suivantes](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Oui  |
 | SupportEmail | chaîne | L'adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Vous devez spécifier une adresse e-mail valide.     |  Oui  |
@@ -144,9 +144,9 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 }
 ```
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
-* [Répondre aux avis des clients à l’aide du tableau de bord du Centre de développement](../publish/respond-to-customer-reviews.md)
+* [Répondre aux avis des clients à l’aide de l’espace partenaires](../publish/respond-to-customer-reviews.md)
 * [Répondre aux avis à l'aide des services MicrosoftStore](respond-to-reviews-using-windows-store-services.md)
 * [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)

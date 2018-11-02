@@ -1,32 +1,32 @@
 ---
 author: Xansky
-Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
-title: Consigner des événements personnalisés pour le Centre de développement
+Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+title: Consigner des événements personnalisés pour l’espace partenaires
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921465"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970342"
 ---
-# <a name="log-custom-events-for-dev-center"></a>Consigner des événements personnalisés pour le Centre de développement
+# <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’espace partenaires
 
-Le [Rapport sur l’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) du tableau de bord du Centre de développement vous permet de récupérer des informations sur les événements personnalisés définis dans votre applicationUWP. Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
+Le [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans l’espace partenaires vous permet d’obtenir des informations sur les événements personnalisés que vous avez définis dans votre application de plateforme Windows universelle (UWP). Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
 
-Pour consigner un événement à partir de votre application, passez la chaîne d’événement à la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) fournie par le Microsoft Store Services SDK. Vous pouvez passer en revue le total d’occurrences de vos événements personnalisés dans la section **Événements personnalisés** du [Rapport sur l’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) du tableau de bord du Centre de développement.
+Pour consigner un événement à partir de votre application, passez la chaîne d’événement à la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) fournie par le Microsoft Store Services SDK. Vous pouvez passer en revue le nombre total d’occurrences de vos événements personnalisés dans la section **événements personnalisés** du [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans l’espace partenaires.
 
 > [!NOTE]
-> Les événements personnalisés que vous enregistrés dans le centre de développement ne sont pas liés aux [événements Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), et ils n'apparaissent pas dans le **Observateur d’événements**.
+> Les événements personnalisés que vous vous connectez à l’espace partenaires ne sont pas liés aux [événements Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), et ils n’apparaissent pas dans **L’Observateur d’événements**.
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour pouvoir passer en revue les événements de journalisation personnalisés relatifs à votre application dans le **Rapport sur l’utilisation** du tableau de bord, vous devez publier votre application dans le WindowsStore.
+Avant que vous pouvez consulter les événements de journalisation personnalisés dans le **rapport sur l’utilisation** de votre application dans l’espace partenaires, votre application doit être publiée dans le Windows Store.
 
 ## <a name="how-to-log-custom-events"></a>Comment consigner des événements personnalisés
 

@@ -8,19 +8,19 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e0d2bed4f2da49596a4859916637225bbbfd97
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945621"
+ms.locfileid: "5968713"
 ---
 # <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
 Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
 
 > [!IMPORTANT]
-> Cet article explique comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour activer les achats de produits dans l’application. Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions et les abonnements consommables gérés par le Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations sur l’activation des achats de produits in-app à l’aide de l’espace de noms **Windows.Services.Store** , consultez [cet article](enable-in-app-purchases-of-apps-and-add-ons.md).
+> Cet article explique comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour activer les achats de produits dans l’application. Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. L’espace de noms **Windows.Services.Store** prend en charge les types de module complémentaire plus récents, tels que les extensions consommables gérés par le Windows Store et des abonnements et est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations sur l’activation des achats de produits in-app à l’aide de l’espace de noms **Windows.Services.Store** , consultez [cet article](enable-in-app-purchases-of-apps-and-add-ons.md).
 
 > [!NOTE]
 > Les produits in-app ne peuvent pas être offerts dans le cadre d’une version d’évaluation d’une application. Les clients qui utilisent une version d’évaluation de votre application ne peuvent acheter un produit in-app que s’ils achètent une version complète de votre application.
@@ -54,7 +54,7 @@ Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit
     * «RainbowThemePack»
 
   > [!NOTE]
-  > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur [ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous spécifiez lorsque vous [définissez le module complémentaire correspondant à votre application dans le tableau de bord du Centre de développement](../publish/add-on-submissions.md).
+  > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur [d’ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous spécifiez lorsque vous [Définissez le module complémentaire correspondant pour votre application dans l’espace partenaires](../publish/add-on-submissions.md).
 
 2.  **Codage de la fonctionnalité dans un bloc conditionnel**
 
@@ -80,10 +80,10 @@ C’est simple: remplacez chaque référence à [CurrentAppSimulator](https://ms
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>Étape4: Configuration dans le Windows Store de l’offre de produit in-app
 
-Dans le tableau de bord du Centre de développement, accédez à votre application et [créez une extension](../publish/add-on-submissions.md) qui correspond à votre offre de produit in-app. Définissez l’ID de produit, le type, le prix et d’autres propriétés pour votre module complémentaire. Veillez à effectuer les différents réglages en respectant la configuration définie dans le fichier WindowsStoreProxy.xml pendant le test.
+Dans l’espace partenaires, accédez à votre application et [créer une extension](../publish/add-on-submissions.md) qui correspond à votre offre de produit dans l’application. Définissez l’ID de produit, le type, le prix et d’autres propriétés pour votre module complémentaire. Veillez à effectuer les différents réglages en respectant la configuration définie dans le fichier WindowsStoreProxy.xml pendant le test.
 
   > [!NOTE]
-  > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur [ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous avez spécifié pour le module complémentaire correspondant dans le tableau de bord.
+  > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur [d’ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous spécifiez pour le module complémentaire correspondant dans l’espace partenaires.
 
 ## <a name="remarks"></a>Notes
 

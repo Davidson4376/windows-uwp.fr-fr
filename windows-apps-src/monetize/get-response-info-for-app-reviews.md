@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, services du MicrosoftStore, API d'avis du MicrosoftStore, informations de réponse
 ms.localizationpriority: medium
-ms.openlocfilehash: 71497a858060109eaac0f593ce03f2ba3cbf03cc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919536"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968643"
 ---
 # <a name="get-response-info-for-reviews"></a>Obtenez des informations sur les réponses concernant les avis
 
@@ -49,7 +49,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   | Description                                     |  Requis  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | chaîne | ID WindowsStore de l’application qui contient l’avis concernant lequel vous souhaitez déterminer si vous disposez d’une possibilité de réponse. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. |  Oui  |
+| applicationId | chaîne | ID WindowsStore de l’application qui contient l’avis concernant lequel vous souhaitez déterminer si vous disposez d’une possibilité de réponse. L’ID Windows Store est disponible sur la [page identité de l’application](../publish/view-app-identity-details.md) dans l’espace partenaires. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. |  Oui  |
 | reviewId | chaîne | L’ID de l’avis auquel vous souhaitez répondre (il s’agit d’un GUID). Les ID d’avis sont disponibles dans les données de réponse de la méthode [Obtenir les avis sur les apps](get-app-reviews.md) dans l’API d’analyse du MicrosoftStore et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md). <br/>Si vous omettez ce paramètre, le corps de la réponse de cette méthode indique si vous êtes autorisé à répondre à n’importe quel avis concernant l’application spécifiée. |  Non  |
 
 
@@ -87,6 +87,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 ## <a name="related-topics"></a>Articles connexes
 
 * [Envoyer des réponses aux avis à l’aide de l’API d’analyse du MicrosoftStore](submit-responses-to-app-reviews.md)
-* [Répondre aux avis des clients à l’aide du tableau de bord du Centre de développement](../publish/respond-to-customer-reviews.md)
+* [Répondre aux avis des clients à l’aide de l’espace partenaires](../publish/respond-to-customer-reviews.md)
 * [Répondre aux avis à l’aide des services du MicrosoftStore](respond-to-reviews-using-windows-store-services.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)

@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur une app spécifique inscrite dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une application spécifique inscrite dans votre compte espace partenaires.
 title: Obtenir une application
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, app
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c46363f75c75bb595b184e5a142e737a32ea50
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933433"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5997648"
 ---
 # <a name="get-an-app"></a>Obtenir une application
 
-Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur une app spécifique inscrite dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une application spécifique inscrite dans votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -93,7 +93,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | L’application spécifiée est introuvable. |
-| 409  | L’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | L’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Rubriques associées

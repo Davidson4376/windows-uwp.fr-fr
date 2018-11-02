@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, mise en réseau, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927285"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971041"
 ---
 # <a name="networking-for-games"></a>Mise en réseau pour les jeux
 

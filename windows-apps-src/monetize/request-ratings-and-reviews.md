@@ -7,12 +7,12 @@ ms.date: 06/15/2018
 ms.topic: article
 keywords: windows10, uwp, évaluations et avis
 ms.localizationpriority: medium
-ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935093"
+ms.locfileid: "5981188"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des avis pour votre app
 
@@ -20,7 +20,7 @@ Vous pouvez ajouter du code à votre app de plateforme Windows universelle (UWP)
 * Vous pouvez afficher une boîte de dialogue d'avis et d'évaluation directement dans le contexte de votre app.
 * Vous pouvez ouvrir par programmation la page d’évaluation et d'avis de votre app dans le MicrosoftStore.
 
-Une fois que vous êtes prêt à analyser les données d'évaluations et d'avis, vous pourrez afficher les données dans le tableau de bord du centre de développement Windows ou utiliser l'API d'analyse du MicrosoftStore pour récupérer ces données via un programme.
+Lorsque vous êtes prêt à analyser vos données d’évaluations et avis, vous pouvez afficher les données dans l’espace partenaires ou utiliser l’API d’analytique Microsoft Store pour récupérer ces données par programme.
 
 > [!IMPORTANT]
 > Lorsque vous ajoutez une fonction de contrôle d’accès au sein de votre application, tous les avis doivent envoyer à l’utilisateur aux mécanismes d’évaluation du magasin, quel que soit le d’étoiles choisie. Si vous collectez des commentaires des utilisateurs, il doit être clair qu’il n’est pas lié à la classification de l’application ou un avis dans le Windows Store, mais est envoyée directement au développeur de l’application. Consultez le développeur de Code de conduite pour plus d’informations relatives à [Fraudulent ou activités malveillants](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
@@ -102,7 +102,7 @@ Pour plus d’informations, voir [Lancer l'app MicrosoftStore](../launch-resume/
 ## <a name="analyze-your-ratings-and-reviews-data"></a>Analyser vos données d'évaluations et avis
 
 Vous pouvez analyser les données d'évaluations et d’avis de vos clients de plusieurs manières:
-* Vous pouvez utiliser le rapport [Évaluations](../publish/reviews-report.md) dans le tableau de bord du centre de développement Windows pour voir les évaluations et les avis de vos clients. Vous pouvez également télécharger ce rapport pour le consulter hors ligne.
+* Vous pouvez utiliser le rapport [avis](../publish/reviews-report.md) dans l’espace partenaires pour voir les évaluations et avis de vos clients. Vous pouvez également télécharger ce rapport pour le consulter hors ligne.
 * Vous pouvez utiliser les méthodes [Obtenir des évaluations de l’app](get-app-ratings.md) et [Obtenir les avis sur les apps](get-app-reviews.md) dans l’API d’analytique du MicrosoftStore pour programmer la récupération des évaluations et avis de vos clients au format JSON.
 
 ## <a name="related-topics"></a>Rubriquesassociées

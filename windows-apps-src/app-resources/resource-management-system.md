@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930854"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970279"
 ---
 # <a name="resource-management-system"></a>Système de gestion des ressources
 Le système de gestion des ressources inclut des fonctionnalités pour la création et l’exécution. Lors de la génération, le système crée un index de toutes les variantes de ressources qui sont incluses dans le package avec votre application. Cet index est l’index de ressource de package, ou PRI (Package Resource Index) et il est également inclus dans le package de votre application. Lors de l’exécution, le système détecte les paramètres en vigueur pour l’utilisateur et l’ordinateur, consulte les informations dans le fichier PRI, puis charge automatiquement les ressources les plus appropriées pour ces paramètres.

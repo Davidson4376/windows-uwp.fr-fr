@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 71247b8e04e63e5f792a872256dd79447c4d36cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6762d31ea7ebaeb966cd60f121591ba1534517a3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927962"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969069"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Envoyer des requêtes au MicrosoftStore
 
@@ -79,7 +79,7 @@ Cette requête récupère les variables distantes pour le groupe de versions d�
 |  *requestKind*                   |  Spécifiez 7 pour retourner le groupe de versions d’évaluation le plus élevé de l’appareil, ou spécifiez 8 pour retourner le groupe de versions d’évaluation le plus élevé de l’utilisateur actuel et du périphérique. Nous vous recommandons d’utiliser la valeur 8 pour le paramètre *requestKind*, dans la mesure où cette valeur renvoie le groupe de versions d’évaluation le plus élevé parmi tous les membres pour l’appareil et l’utilisateur en cours.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON contenant les données montrées dans l’exemple ci-dessous.  |
 
-L’exemple qui suit illustre le format des données JSON à transmettre à *parametersAsJson*. Le champ *type* doit être affecté à la chaîne *GetRemoteVariables*. Affectez le champ *projectId* à l’ID du projet pour lequel vous avez défini les variables distantes dans le tableau de bord du centre de développement Windows.
+L’exemple qui suit illustre le format des données JSON à transmettre à *parametersAsJson*. Le champ *type* doit être affecté à la chaîne *GetRemoteVariables*. Affectez le champ *projectId* à l’ID du projet dans lequel vous avez défini les variables distantes dans l’espace partenaires.
 
 ```json
 { 

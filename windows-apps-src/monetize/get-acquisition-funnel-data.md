@@ -7,18 +7,18 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, acquisitions, synthèse
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c07425542c207c2289c6b512102e10f64bab66
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8aaceb9af3eed04039148bdd863ca3e473c7c245
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924296"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970206"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>Obtenir les données relatives à l'entonnoir d'acquisition d'applications
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données de synthèse d’acquisition d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/acquisitions-report.md#acquisition-funnel) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données de synthèse d’acquisition d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions disponible](../publish/acquisitions-report.md#acquisition-funnel) dans l’espace partenaires.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:

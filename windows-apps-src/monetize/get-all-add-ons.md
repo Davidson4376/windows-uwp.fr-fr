@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer toutes les données d’extension de toutes les apps inscrites dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer toutes les données d’extension de toutes les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Obtenir toutes les extensions
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extensions, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 43875ae33c531e66c288f8b54f74116315715380
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4d58b29a959ed791665af52018062d0cf0a3a969
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922479"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991284"
 ---
 # <a name="get-all-add-ons"></a>Obtenir toutes les extensions
 
-Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer toutes les données d’extension de toutes les apps inscrites dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer les données de toutes les extensions de toutes les applications qui sont enregistrées sur votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -147,7 +147,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | Aucune extension n’a été trouvée. |
-| 409  | Les apps ou extensions utilisent des fonctionnalités du tableau de bord du Centre de développement qui ne sont [actuellement pas prises en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Les applications ou extensions utilisent des fonctionnalités de l’espace partenaires qui sont [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Rubriques connexes

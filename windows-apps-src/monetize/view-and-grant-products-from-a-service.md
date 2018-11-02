@@ -8,12 +8,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e1437e8b55474d3fcc0c34919e23d14a86ea89
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940926"
+ms.locfileid: "5991615"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -32,7 +32,7 @@ Ces API sont constituées des méthodes REST, qui sont conçues pour être utili
 Les étapes suivantes décrivent le processus de bout en bout pour l’utilisation de l’API de collection et de l'API d’achat du MicrosoftStore:
 
 1.  [Configurer une application dans Azure AD](#step-1).
-2.  [Associer votre ID d’application Azure AD à votre application dans le tableau de bord du centre de développement Windows](#step-2).
+2.  [Associer votre ID d’application Azure AD avec votre application dans l’espace partenaires](#step-2).
 3.  Dans votre service, [créez des jetons d’accès Azure AD](#step-3) qui représentent votre identité d’éditeur.
 4.  Dans votre application Windows du client, [créer une clé d’ID du Microsoft Store](#step-4) qui représente l’identité de l’utilisateur actuel et passez cette clé revient à votre service.
 5.  Lorsque vous disposez du jeton d’accès AzureAD et de la clé d’ID du MicrosoftStore requis, [appelez l’API de collection et l’API d’achat du MicrosoftStore à partir de votre service](#step-5).
@@ -72,14 +72,14 @@ Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’a
 
 <span id="step-2"/>
 
-## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-windows-dev-center"></a>Étape 2: Associer votre ID d’application Azure AD à votre application cliente dans le centre de développement Windows
+## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>Étape 2: Associer votre ID d’application Azure AD à votre application cliente dans l’espace partenaires
 
-Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’achat pour configurer le propriétaire et les achats de votre application ou module complémentaire, vous devez associer votre ID d’application Azure AD à l’application (ou l’application qui contient l’extension) dans le tableau de bord du centre de développement.
+Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’achat pour configurer le propriétaire et les achats de votre application ou module complémentaire, vous devez associer votre ID d’application Azure AD à l’application (ou l’application qui contient l’extension) dans l’espace partenaires.
 
 > [!NOTE]
 > Cette tâche ne doit être effectuée qu’une seule fois.
 
-1.  Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview) et sélectionnez votre application.
+1.  Se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) et sélectionnez votre application.
 2.  Accédez aux **Services** &gt; **produit collections et achats de** page et entrez votre ID d’application Azure AD dans l’un des champs **ID Client** disponibles.
 
 <span id="step-3"/>

@@ -7,12 +7,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows10, uwp, pub, publicité, médiation publicitaire
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ebffbd7a2fa209289c99780e0bbbea94afac2e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920628"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971245"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Service de médiation publicitaire de Microsoft
 
@@ -30,7 +30,7 @@ Le service de médiation publicitaire intègre un grand nombre de réseaux publi
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>Gérer la complexité des relations avec le réseau publicitaire  
 
-Le service de médiation publicitaire intègre un grand nombre de réseaux publicitaires pour vous éviter ce travail. Après avoir utilisé le SDK MicrosoftAdvertising pour afficher des publicités dans votre application, vous pouvez modifier vos paramètres de médiation publicitaire [à l’aide du tableau de bord du Centre de développement](../publish/in-app-ads.md#mediation-settings) afin d'afficher des publicités en provenance de plusieurs réseaux publicitaires. Vous pouvez ainsi recevoir des publicités de nouveaux réseaux publicitaires sans avoir besoin de modifier votre code.
+Le service de médiation publicitaire intègre un grand nombre de réseaux publicitaires pour vous éviter ce travail. Une fois que vous utilisez le SDK Microsoft Advertising pour afficher des publicités dans votre application, vous pouvez modifier vos paramètres de médiation publicitaire [dans l’espace partenaires](../publish/in-app-ads.md#mediation-settings) pour afficher des publicités à partir de plusieurs réseaux publicitaires. Vous pouvez ainsi recevoir des publicités de nouveaux réseaux publicitaires sans avoir besoin de modifier votre code.
 
 Nous gérons la relation de bout en bout avec les réseaux publicitaires pour votre compte. Nous prenons en charge toutes les opérations, qu'il s'agisse de l’intégration de réseau publicitaire, de la diffusion des annonces, de la création de rapports ou des paiements, sans effort supplémentaire de votre part.
 
@@ -49,7 +49,7 @@ Le service de médiation publicitaire a pour mission de générer le plus fort r
 
 Les nouveaux réseaux publicitaires sont automatiquement inclus et leurs performances sont évaluées par le biais d’un budget d'apprentissage. Dans un bref délai, ils trouvent leur place dans la cascade. Cela rend les réseaux publicitaires plus compétitifs et permet au développeur de tirer le meilleur parti de la monétisation par le biais des applications.
 
-Nous vous recommandons vivement d'utiliser nos [paramètres de médiation recommandés](../publish/in-app-ads.md#mediation-settings) pour optimiser les revenus issus des publicités dans vos applications. Cela permet à nos algorithmes d'obtenir le meilleur rendement pour votre application. Toutefois, vous avez également la possibilité de choisir vos propres paramètres de médiation dans le tableau de bord du Centre de développement afin de mieux contrôler les réseaux publicitaires qui proposent des publicités, ainsi que l’ordre dans lequel ils le font.
+Nous vous recommandons vivement d'utiliser nos [paramètres de médiation recommandés](../publish/in-app-ads.md#mediation-settings) pour optimiser les revenus issus des publicités dans vos applications. Cela permet à nos algorithmes d'obtenir le meilleur rendement pour votre application. Toutefois, vous avez également la possibilité de choisir vos propres paramètres de médiation dans l’espace partenaires pour mieux contrôler les réseaux publicitaires qui proposent des publicités, ainsi que l’ordre dans lequel ils le font.
 
 ## <a name="rich-data-and-signals"></a>Données et signaux enrichis
 
