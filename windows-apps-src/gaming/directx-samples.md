@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeu, directx, échantillons, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: f5929a0256c7f9808079f902a258b3fd094f241c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867836"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5947436"
 ---
 # <a name="directx-samples"></a>Échantillons DirectX
 
