@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b89cad4c299f7326d0bb7d9ea4b8c6685f70f26c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933111"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973704"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -35,7 +35,7 @@ Les extensions d’abonnement des applications UWP prennent en charge les foncti
 
 Pour activer les achats d'extensions d’abonnement dans votre application, procédez comme suit.
 
-1. [Créez une soumission d’extension](../publish/add-on-submissions.md) pour votre abonnement dans le tableau de bord du Centre de développement et publiez la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
+1. [Créer une soumission d’extension](../publish/add-on-submissions.md) pour votre abonnement dans l’espace partenaires et publier la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
 
     * [Type de produit](../publish/set-your-add-on-product-id.md#product-type): veillez à sélectionner **Abonnement**.
 
@@ -70,8 +70,8 @@ Les exemples de code de cette section montrent comment utiliser les API de l'esp
 
 Les conditions préalables de ces exemples sont les suivantes:
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure.
-* Vous avez [créé une soumission d'application](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans le tableau de bord du Centre de développement Windows, et cette application est publiée dans le Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Windows Store pendant que vous la testez. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
-* Vous avez [créé une extension d'abonnement pour l’application](../publish/add-on-submissions.md) dans le tableau de bord du Centre de développement.
+* Vous avez [créé une soumission d’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et cette application est publiée dans le Windows Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Windows Store pendant que vous la testez. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
+* Vous avez [créé une extension d’abonnement de l’application](../publish/add-on-submissions.md) dans l’espace partenaires.
 
 Le code de ces exemples respecte les présupposés suivants:
 * Le fichier de code contient des instructions **using** pour les espaces de noms **Windows.Services.Store** et **System.Threading.Tasks**.

@@ -8,12 +8,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, exemples de code, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 55843f229252b2f68df096442f27544a59ce69cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 495bf2e58fafd9e321937bd6fdb3be8c8dea68e2
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945238"
+ms.locfileid: "5973611"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code C\#: soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -38,7 +38,7 @@ Ces exemples utilisent les bibliothèques suivantes:
 L’exemple suivant implémente un programme de ligne de commande qui appelle les autres exemples de méthode indiqués dans cet article pour illustrer les différentes façons d’utiliser l’API de soumission au MicrosoftStore. Adaptez ce programme en fonction de vos besoins, comme suit:
 
 * Affectez les propriétés ```ApplicationId```, ```InAppProductId``` et ```FlightId``` à l’ID de l’application, de l’extension et de la version d’évaluation du package que vous souhaitez gérer.
-* Affectez les propriétés ```ClientId``` et ```ClientSecret``` à l’ID client et à la clé de votre application, et remplacez la chaîne *tenantid* dans l’URL ```TokenEndpoint``` par l’ID de locataire pour votre application. Pour plus d’informations, consultez [Comment associer une application AzureAD à votre compte du Centre de développement Windows](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
+* Affectez les propriétés ```ClientId``` et ```ClientSecret``` à l’ID client et à la clé de votre application, et remplacez la chaîne *tenantid* dans l’URL ```TokenEndpoint``` par l’ID de locataire pour votre application. Pour plus d’informations, voir [comment associer une application Azure AD avec votre compte espace partenaires](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
@@ -56,13 +56,13 @@ L’exemple d’app utilise la classe d’assistance ```ClientConfiguration``` p
 
 ## <a name="create-an-app-submission"></a>Crée une soumission d’apps
 
-L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au MicrosoftStore pour mettre à jour une soumission d’app. La méthode ```RunAppSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunAppSubmissionUpdateSample``` effectue les tâches suivantes:
+L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au MicrosoftStore pour mettre à jour une soumission d’app. Le ```RunAppSubmissionUpdateSample``` méthode dans la classe crée une soumission en clonant la dernière soumission publiée, et puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```RunAppSubmissionUpdateSample``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
 4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage BlobAzure.
-5. Ensuite, il [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développementWindows.
+5. Ensuite, il [mises à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md), jusqu’à ce que sa validation aboutisse.
 
 > [!div class="tabbedCodeSnippets"]
@@ -77,7 +77,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 1. Pour commencer, la méthode [crée une extension](create-an-add-on.md).
 2. Ensuite, elle [crée une soumission pour la nouvelle extension](create-an-add-on-submission.md).
 3. Elle charge une archive ZIP contenant des icônes associées à la soumission dans le stockage Blob Azure.
-4. Ensuite, elle [valide la nouvelle soumission dans le Centre de développement Windows](commit-an-add-on-submission.md).
+4. Ensuite, il [valide la nouvelle soumission dans l’espace partenaires](commit-an-add-on-submission.md).
 5. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
 
 > [!div class="tabbedCodeSnippets"]
@@ -87,12 +87,12 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 
 ## <a name="update-an-add-on-submission"></a>Mettre à jour une soumission d’extension
 
-L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au MicrosoftStore pour mettre à jour une soumission d’extension existante. La méthode ```RunInAppProductSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunInAppProductSubmissionUpdateSample``` effectue les tâches suivantes:
+L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au MicrosoftStore pour mettre à jour une soumission d’extension existante. Le ```RunInAppProductSubmissionUpdateSample``` méthode dans la classe crée une soumission en clonant la dernière soumission publiée, et puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```RunInAppProductSubmissionUpdateSample``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de l’extension indiquée](get-an-add-on.md).
 2. Ensuite, elle [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
-3. Après cela, elle crée [une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-5. Ensuite, elle [met à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+3. Cela fait, il [crée une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
+5. Ensuite, il [mises à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
 
 > [!div class="tabbedCodeSnippets"]
@@ -102,13 +102,13 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 
 ## <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation de package
 
-L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au MicrosoftStore pour mettre à jour une soumission de version d’évaluation de package. La méthode ```RunFlightSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunFlightSubmissionUpdateSample``` effectue les tâches suivantes:
+L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au MicrosoftStore pour mettre à jour une soumission de version d’évaluation de package. Le ```RunFlightSubmissionUpdateSample``` méthode dans la classe crée une soumission en clonant la dernière soumission publiée, et puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```RunFlightSubmissionUpdateSample``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, elle [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge un nouveau package associé à la soumission dans le stockage d’objets blob Azure.
-5. Ensuite, elle [met à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+4. Il charge un nouveau package associé à la soumission sur le stockage BlobAzure.
+5. Ensuite, il [mises à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md), jusqu’à ce que sa validation aboutisse.
 
 > [!div class="tabbedCodeSnippets"]

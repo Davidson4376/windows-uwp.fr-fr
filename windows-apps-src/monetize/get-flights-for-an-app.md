@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur une version d’évaluation du package pour une app inscrite dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations de version d’évaluation du package pour une application inscrite dans votre compte espace partenaires.
 title: Obtenir des versions d’évaluation du package pour une application
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, versions d’évaluation, versions d’évaluation de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 847e837c67990b5cbdb3a7a28c0c8115e96c8644
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930390"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5974270"
 ---
 # <a name="get-package-flights-for-an-app"></a>Obtenir des versions d’évaluation du package pour une application
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour répertorier les versions d’évaluation du package pour une app inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour répertorier les versions d’évaluation de package pour une application inscrite dans votre compte espace partenaires. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -115,7 +115,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | Aucune version d’évaluation du package n’a été trouvée. |
-| 409  | L’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | L’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Rubriquesassociées

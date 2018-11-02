@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, conversions des extensions, canal
 ms.localizationpriority: medium
-ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940265"
+ms.locfileid: "5974673"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>Obtenir les conversions d’extensions par canal
 
@@ -21,9 +21,9 @@ Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir 
 * Une *conversion* signifie qu’un nouveau client (connecté avec un compte Microsoft) a obtenu une licence pour votre extension (qu’elle soit payante ou gratuite).
 * Le *canal* est la méthode par laquelle un client est arrivé à la page de description de votre application (par exemple, via le Windows Store ou une [campagne de promotion d'application personnalisée](../publish/create-a-custom-app-promotion-campaign.md)).
 
-Ces informations sont également disponibles dans le [rapport sur les acquisitions d'extensions](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id) du tableau de bord du Centre de développement Windows.
+Ces informations sont également disponibles dans le [rapport sur les acquisitions de modules complémentaires](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id) dans l’espace partenaires.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 

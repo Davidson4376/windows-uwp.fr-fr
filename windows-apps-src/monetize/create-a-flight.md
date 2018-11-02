@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une version d’évaluation de package pour une app inscrite dans le compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une version d’évaluation de package pour une application inscrite dans votre compte espace partenaires.
 title: Créer une version d’évaluation du package
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 57ad1847e8989cb6aed20024d1c13d36e154d834
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933509"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5977559"
 ---
 # <a name="create-a-package-flight"></a>Créer une version d’évaluation du package
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une version d’évaluation de package pour une app inscrite dans le compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une version d’évaluation de package pour une application inscrite dans votre compte espace partenaires.
 
 > [!NOTE]
 > Cette méthode permet de créer une version d’évaluation de package sans soumission. Pour créer une soumission pour une version d’évaluation de package, voir les méthodes présentées dans l’article [Gérer les soumissions de version d’évaluation de package](manage-flight-submissions.md).
@@ -100,7 +100,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par le Centre de développement.  |
+| flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par l’espace partenaires.  |
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié dans la requête.   |  
 | groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation de package, comme spécifié dans la requête. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
 | rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation de package qui est classée juste en dessous de la version d’évaluation de package actuelle, comme spécifié dans la requête. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
@@ -113,7 +113,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 400  | La requête n’est pas valide. |
-| 409  | La version d’évaluation de package n’a pas pu être créée en raison de son état actuel, ou l’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | La version d’évaluation de package n’a pas pu être créée en raison de son état actuel, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Rubriques associées

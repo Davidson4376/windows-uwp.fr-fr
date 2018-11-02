@@ -1,32 +1,32 @@
 ---
 author: Xansky
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Utilisez ces méthodes dans l’API de soumission au MicrosoftStore pour gérer les soumissions de versions d’évaluation de package pour les apps qui sont inscrites dans votre compte du Centre de développement Windows.
+description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les soumissions de version d’évaluation du package pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Gérer les soumissions de versions d’évaluation du package
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions de version d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b3379d66485fcd5ab417ecb2782b06f6e80e67
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926956"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973312"
 ---
 # <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation du package
 
 L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de gérer les soumissions de versions d’évaluation de package, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Si vous utilisez l’API de soumission au MicrosoftStore pour créer une version d’évaluation de package, vous devrez employer exclusivement l’API pour apporter d’autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l'API, vous ne pourrez plus modifier ou valider cette soumission à l'aide de l'API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une version d’évaluation de package, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que l’espace partenaires. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l'API, vous ne pourrez plus modifier ou valider cette soumission à l'aide de l'API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>Méthodes de gestion des soumissions de versions d’évaluation de package
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de version d’évaluation du package, utilisez les méthodes ci-dessous. Pour pouvoir utiliser ces méthodes, vous devez disposer de la version d’évaluation du package dans votre compte du Centre de développement. Vous pouvez créer une version d’évaluation du package en [utilisant le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes de l’API de soumission au MicrosoftStore décrites dans [Gérer les versions d’évaluation de package](manage-flights.md).
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de version d’évaluation du package, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, la version d’évaluation de package doit déjà exister dans l’espace partenaires. Vous pouvez créer un package de version d’évaluation [dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes d’API de soumission au Microsoft Store dans tel que décrit dans le [package de gérer des versions d’évaluation](manage-flights.md).
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de ver
 
 Pour créer une soumission pour une version d’évaluation du package, procédez comme suit.
 
-1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application AzureAD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
+1. Si vous ne le n'avez pas encore fait, remplissez les conditions préalables décrites dans [créer et gérer des soumissions à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD avec votre compte espace partenaires et l’obtention votre ID client et clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
 
 2. [Obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission au MicrosoftStore. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
@@ -121,7 +121,7 @@ Pour créer une soumission pour une version d’évaluation du package, procéde
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Validez la soumission de la version d’évaluation du package](commit-a-flight-submission.md) en exécutant la méthode suivante. Le Centre de développement est ainsi informé que vous avez terminé votre soumission et que vos mises à jour doivent être appliqués à votre compte.
+5. [Validez la soumission de la version d’évaluation du package](commit-a-flight-submission.md) en exécutant la méthode suivante. Cela avertira l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -135,7 +135,7 @@ Pour créer une soumission pour une version d’évaluation du package, procéde
 
     Pour vérifier l’état de la soumission, examinez la valeur *status* dans le corps de la réponse. Cette valeur doit passer de **CommitStarted** à **PreProcessing** si la requête aboutit ou à **CommitFailed** si elle contient des erreurs. S’il existe des erreurs, le champ *statusDetails* contient d’autres détails s’y rapportant.
 
-7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en consultant le tableau de bord du Centre de développement.
+7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en consultant l’espace partenaires.
 
 <span/>
 
@@ -157,7 +157,7 @@ Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https:
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Gérer un lancement de packages progressif pour une soumission de version d’évaluation du package
 
-Vous pouvez publier progressivement les packages mis à jour d’une soumission de version d’évaluation de package pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris des instructions pour l’activation et la gestion d’un lancement de packages progressif dans le tableau de bord du Centre de développement, consultez [cet article](../publish/gradual-package-rollout.md).
+Vous pouvez publier progressivement les packages mis à jour d’une soumission de version d’évaluation de package pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris les instructions pour savoir comment activer et gérer un lancement progressif du package dans l’espace partenaires, consultez [cet article](../publish/gradual-package-rollout.md).
 
 Pour activer par programmation un lancement de packages progressif pour une soumission de version d’évaluation du package, suivez cette procédure à l’aide des méthodes de l’API de soumission au MicrosoftStore:
 
@@ -333,13 +333,13 @@ Cette ressource fournit des détails sur un package d’une soumission.
 Cette ressource a les valeurs suivantes.
 
 > [!NOTE]
-> Quand vous appelez la méthode de [mise à jour d’une soumission de version d’évaluation du package](update-a-flight-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
+> Quand vous appelez la méthode de [mise à jour d’une soumission de version d’évaluation du package](update-a-flight-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par l’espace partenaires.
 
 | Valeur           | Type    | Description              |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
 | fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes: <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par le Centre de développement.   |     
+| id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par l’espace partenaires.   |     
 | version    |  chaîne   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  chaîne   |  Architecture du package d’application (par exemple, ARM).   |     
 | languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
@@ -391,7 +391,7 @@ Cette ressource contient les [paramètres de lancement de packages](#manage-grad
 | fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients qui ne récupèrent pas les packages de lancement progressif.   |          
 
 > [!NOTE]
-> Les valeurs *packageRolloutStatus* et *fallbackSubmissionId* sont attribuées par le centre de développement et ne sont pas censées être définies par le développeur. Si vous incluez ces valeurs dans un corps de requête, celles-ci seront ignorées.
+> Les valeurs *packageRolloutStatus* et *fallbackSubmissionId* sont attribuées par l’espace partenaires et ne sont pas censées être définies par le développeur. Si vous incluez ces valeurs dans un corps de requête, celles-ci seront ignorées.
 
 <span/>
 

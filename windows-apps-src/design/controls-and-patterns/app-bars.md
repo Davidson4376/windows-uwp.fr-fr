@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bbf42acb90d81892fec2788c83c3595f5b6b2f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d3c8aad90e028ece42128e86f5e255be7fd29177
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932945"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972280"
 ---
 # <a name="command-bar"></a>Barre de commandes
 
@@ -35,7 +35,7 @@ Les barres de commandes permettent aux utilisateurs d'accéder facilement aux t�
 Le contrôle CommandBar est un contrôle à usage général, flexible et léger qui permet d’afficher du contenu complexe, comme des images, des barres de progression ou des blocs de texte, ainsi que des commandes simples, comme des contrôles [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx) et [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx).
 
 > [!NOTE]
-XAML fournit les contrôles [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) et [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar). Utilisez le contrôle AppBar uniquement lorsque vous mettez à niveau une application Windows8 universelle qui utilise ce contrôle et si vous avez besoin de réduire les modifications. Pour les nouvelles applications dans Windows10, nous vous recommandons plutôt d’utiliser le contrôle CommandBar. Ce document part du principe que vous utilisez le contrôle CommandBar.
+> XAML fournit les contrôles [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) et [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar). Utilisez le contrôle AppBar uniquement lorsque vous mettez à niveau une application Windows8 universelle qui utilise ce contrôle et si vous avez besoin de réduire les modifications. Pour les nouvelles applications dans Windows10, nous vous recommandons plutôt d’utiliser le contrôle CommandBar. Ce document part du principe que vous utilisez le contrôle CommandBar.
 
 ## <a name="examples"></a>Exemples
 

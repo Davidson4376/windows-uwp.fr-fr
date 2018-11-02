@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API des offres ciblées du Store, obtenir des offres ciblées
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a0e9237c7c803a64ec20df0c501773f690f5e9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931865"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972451"
 ---
 # <a name="get-targeted-offers"></a>Obtenir des offres ciblées
 
@@ -57,7 +57,7 @@ Cette méthode retourne un corps de réponse au format JSON qui contient un tabl
 
 | Champ      | Type   | Description         |
 |------------|--------|------------------|
-| offers      | array  | Un tableau des ID produit des extensions qui sont associées aux offres ciblées, disponibles pour l’utilisateur actuel. Ces ID de produit sont spécifiés sur la page **Offres ciblées** de votre app, dans le tableau de bord du Centre de développement Windows.            |
+| offers      | array  | Un tableau des ID produit des extensions qui sont associées aux offres ciblées, disponibles pour l’utilisateur actuel. Ces ID de produit sont spécifiés dans la page **des offres ciblées** pour votre application dans l’espace partenaires.            |
 | trackingId  | chaîne | Un GUID que vous pouvez éventuellement utiliser pour assurer le suivi de l’offre ciblée dans votre propre code ou vos services. |
 
 
