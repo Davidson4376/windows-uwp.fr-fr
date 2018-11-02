@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, empaqueter une extension, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a782ba90fbf350d9a18098d342c05c75dca6ceb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885469"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940959"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Packages facultatifs et création d’ensembles connexes
 Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Elles sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.

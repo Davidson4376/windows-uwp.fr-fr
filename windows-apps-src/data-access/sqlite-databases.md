@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
 ms.openlocfilehash: 77911b101f488bb7bfef82b9cc480679ce15b1f3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5860643"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943971"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de donnéesSQLite dans une applicationUWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. Ce guide vous explique comment procéder.

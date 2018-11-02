@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, AdControl, contrôle de publicité, javascript, HTML
 ms.localizationpriority: medium
 ms.openlocfilehash: de3ffa9e82687e31c7f91548be953f224975d09a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873884"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936680"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>AdControl en HTML5 et JavaScript
 

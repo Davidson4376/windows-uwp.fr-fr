@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: ad42b62d627dd4a506fc4ff451f6365d4133fd70
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5874946"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5941210"
 ---
 # <a name="game-broadcast-and-capture"></a>Diffusion et capture de jeu
 

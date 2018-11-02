@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c883de1e05b827b6f1c37ad1f911f930b7019ad6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877084"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5939168"
 ---
 # <a name="launch-an-app-through-file-activation"></a>Lancer une application par l’activation de fichiers
 

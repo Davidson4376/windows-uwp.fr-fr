@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5875839"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936759"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 

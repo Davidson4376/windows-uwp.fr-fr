@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cc81fdc03096dd8cac5e844a496b38da78eb6136
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5879026"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936492"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Capture de photos avec plage dynamique étendue (HDR) et en faible luminosité
 

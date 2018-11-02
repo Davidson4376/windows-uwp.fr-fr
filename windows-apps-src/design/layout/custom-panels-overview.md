@@ -15,11 +15,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d9856d564ffd36226a841c38eba65df0b62ee306
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867376"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5944095"
 ---
 # <a name="xaml-custom-panels-overview"></a>Vue d’ensemble des panneaux personnalisés XAML
 

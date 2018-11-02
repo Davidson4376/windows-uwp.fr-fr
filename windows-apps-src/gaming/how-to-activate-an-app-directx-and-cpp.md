@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: b7f700ab97566ad9ec03d0595c55721dd9a9be98
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881784"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943497"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>Activation d’une application (DirectX et C++)
 

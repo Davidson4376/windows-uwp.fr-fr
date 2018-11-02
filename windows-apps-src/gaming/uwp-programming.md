@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, audio, entrée, mise en réseau
 ms.localizationpriority: medium
 ms.openlocfilehash: 190f8a67dc8dc86bdddc1be2e073da9e5969255b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867939"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943162"
 ---
 # <a name="uwp-programming"></a>Programmation UWP
 

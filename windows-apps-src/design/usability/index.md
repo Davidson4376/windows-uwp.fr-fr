@@ -11,11 +11,11 @@ ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
 ms.openlocfilehash: 80f57ba29d31da0b4d49b620e916e39d4ef69842
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888665"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940470"
 ---
 # <a name="usability-for-uwp-apps"></a>Facilité d’utilisation des applications UWP
 

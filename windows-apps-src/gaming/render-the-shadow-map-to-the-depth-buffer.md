@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: a73754fef6d87505751460ec134d853c6bca0530
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5879085"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5935199"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Générer le rendu du mappage d’ombre dans le tampon de profondeur
 

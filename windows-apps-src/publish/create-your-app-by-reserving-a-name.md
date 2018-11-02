@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5859974"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5935718"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 

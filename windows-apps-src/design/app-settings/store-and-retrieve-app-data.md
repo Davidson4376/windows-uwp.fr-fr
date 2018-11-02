@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2af9aec9742a950f7bd35794ff4d10763e6c2c5c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886499"
+ms.locfileid: "5934575"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 

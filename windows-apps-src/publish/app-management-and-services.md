@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 112f69704c502f1aa394aa1dd8d544aa0728477d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881421"
+ms.locfileid: "5933942"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -39,12 +39,9 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 
 ## <a name="maps"></a>Cartes
 
-Pour utiliser les services cartographiques dans des applications précédemment publiées pour Windows Phone 8.1 et versions antérieures, vous avez besoin d’un ID d’application de service carte et un jeton d’inclure dans le code de votre application. Ce jeton est accessible sur la page **Cartes**, dans la section **Services**.
+Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour savoir comment demander une clé d’authentification de cartes à partir du centre de développement Bing cartes et ajoutez-la à votre application, voir [demande une clé d’authentification de cartes](../maps-and-location/authentication-key.md) pour plus d’informations. 
 
-> [!NOTE]
-> Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key).
-
-Pour plus d’informations, voir [Utiliser les services cartographiques](use-map-services.md).
+Utiliser la page **cartes** uniquement pour les applications précédemment publiées pour Windows Phone 8.1 et versions antérieures. Pour utiliser les services de carte dans ces applications, vous devez demander un ID d’application de service carte et un jeton d’inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton**, nous allons générer un service de carte ID d’Application (**ApplicationID**) et mapper service (**AuthenticationToken**) du jeton d’authentification pour votre application. Veillez à ajouter ces valeurs à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
 
 ## <a name="product-collections-and-purchases"></a>Collections et achats de produits
 

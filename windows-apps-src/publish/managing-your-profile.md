@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
 ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881600"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940759"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 

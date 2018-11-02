@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2327036eb53ac34c406aef53163be642468fbddc
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5868716"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936667"
 ---
 # <a name="vertex-and-index-buffers"></a>Mémoires tampons de vertex et d'index
 
