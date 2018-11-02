@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, segment, segments, groupe ciblé, clients
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: b53c3c3480a986e77ad44f95831b1be5ce016808
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882775"
+ms.locfileid: "5929603"
 ---
 # <a name="create-customer-segments"></a>Créer des segments de clients
 
@@ -43,7 +43,7 @@ Nous fournissons quelques modèles de segment pour démarrer, mais vous pouvez d
 4.  Dans la liste **Inclure des clients à partir de cette application**, sélectionnez l’une de vos applications à cibler.
 5.  Dans la section **Définir des conditions d’inclusion**, spécifiez les critères de filtre du segment.
 
-    Vous pouvez choisir parmi différents critères de filtre, dont **Acquisitions**, **Source d’acquisition**, **Utilisation**, **Démographie**, **Évaluation**, **Churn prediction**, **Achats dans WindowsStore**, **Acquisitions dans WindowsStore** et **Dépenses dans WindowsStore**.
+    Vous pouvez choisir parmi plusieurs critères de filtre, y compris les ** **Acquisitions**, Acquisition source**, **Démographie**, **évaluation**, **prévision de l’évolution**, **achats du Windows Store**, **acquisitions de Windows Store**et **Store dépenser**.
 
     Par exemple, si vous voulez créer un segment ne comprenant que les clients de votre application âgés de18à24ans, vous devez sélectionner les critères de filtre [**Démographie**] [**Groupe d’âges**] [**est**] [**18 à 24**] dans les listes déroulantes.
 

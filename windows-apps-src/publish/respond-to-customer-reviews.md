@@ -8,19 +8,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, répondre, réponses, passez en revue
 ms.localizationpriority: medium
-ms.openlocfilehash: 823ca28618540dbaab1f4e5711ee59d277b0c894
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 32ded7cc66cda75fbb6edb9ab9d84c21c2d02cff
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877163"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930808"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
 Vous pouvez répondre aux avis de votre application pour permettre aux clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichera dans le Microsoft Store pour tous les clients Windows 10 voir. Vous pouvez également choisir d’envoyer votre réponse par courrier électronique au client (si elles n’ont pas refusé et utilisent un appareil exécutant Windows 10, version 1803 ou une version ultérieure).
 
-Pour visualiser les avis de votre application et y répondre, recherchez l’application dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, **analyser** , puis cliquez sur **avis** pour afficher le [rapport avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
+Pour visualiser les avis de votre application et y répondre, recherchez l’application dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez *Analytique**, puis cliquez sur **avis** pour afficher le [rapport avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
 
 > [!TIP]
 > Outre l’utilisation de l’espace partenaires pour répondre aux avis, vous pouvez répondre aux avis [par programme](../monetize/submit-responses-to-app-reviews.md)ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).

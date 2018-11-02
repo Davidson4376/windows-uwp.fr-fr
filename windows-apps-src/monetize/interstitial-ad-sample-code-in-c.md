@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, pub, publicités, spots, c#, exemple de code
 ms.localizationpriority: medium
 ms.openlocfilehash: 94baaa490859baf57e0bd12bc5a3800ed3b2312a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873966"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5925365"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Exemple de code pour spot publicitaire en C\# #  
 

@@ -14,11 +14,11 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5859769"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928090"
 ---
 # <a name="motion-for-uwp-apps"></a>Mouvements et animations pour les applications UWP
 

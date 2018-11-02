@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 65887bba125d8d7db1b224c1842da8c9ab34f117
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878629"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928945"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Procédure pas à pas pour la gestion des erreurs dans JavaScript
 
