@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, conversions des apps, canal
 ms.localizationpriority: medium
-ms.openlocfilehash: 60e166b70c6a2aacf20673b30461002f3aa61305
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ecb5d5dfbfcbabbd3fa3004c84e2a1a5fff9f2d6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947650"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987332"
 ---
 # <a name="get-app-conversions-by-channel"></a>Obtenir les conversions d’applications par canal
 
@@ -21,9 +21,9 @@ Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir 
 * Une *conversion* signifie qu’un nouveau client (connecté avec un compte Microsoft) a obtenu une licence pour votre application (qu’elle soit payante ou gratuite).
 * Le *canal* est la méthode par laquelle un client est arrivé à la page de description de votre application (par exemple, via le Windows Store ou une [campagne de promotion d'application personnalisée](../publish/create-a-custom-app-promotion-campaign.md)).
 
-Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) du tableau de bord du Centre de développement Windows.
+Ces informations sont également disponibles dans le [rapport Acquisitions disponible](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) dans l’espace partenaires.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:

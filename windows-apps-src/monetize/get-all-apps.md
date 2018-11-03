@@ -1,24 +1,24 @@
 ---
 author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur toutes les apps inscrites dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur toutes les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Obtenir toutes les applications
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, apps
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f7307e424cebcf52f56e17ad3630f6111bee21
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: a689f540cb939cea3549b6660f2daf9a70f9b1f6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926992"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988107"
 ---
 # <a name="get-all-apps"></a>Obtenir toutes les applications
 
 
-Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des données pour toutes les apps inscrites dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des données pour toutes les applications qui sont enregistrées sur votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -127,7 +127,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | Aucune application n’a été trouvée. |
-| 409  | Les apps utilisent des fonctionnalités du tableau de bord du Centre de développement qui ne sont [actuellement pas prises en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Les applications utilisent des fonctionnalités de l’espace partenaires qui sont [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Rubriques associées

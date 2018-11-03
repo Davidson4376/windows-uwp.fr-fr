@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: 36df4e7d8060b9e4420a5fe1a2144ad29520c7f7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6c86c0d5d1a10442c7addeed11cdbfc37846f337
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920899"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988097"
 ---
 # <a name="manage-ad-campaigns"></a>Gérer les campagnes publicitaires
 
 Appliquez ces méthodes dans l’[API des promotions du MicrosoftStore](run-ad-campaigns-using-windows-store-services.md) pour créer, modifier et obtenir des campagnes publicitaires pour votre app. Chaque campagne créée via cette méthode peut être associée à une application uniquement.
 
->**Remarque**&nbsp;&nbsp;Il est également possible de créer et de gérer des campagnes publicitaires via le tableau de bord du Centre de développement Windows. Le cas échéant, les campagnes générées par programme sont accessibles dans ledit tableau de bord. Pour plus d’informations sur la gestion des campagnes publicitaires dans le tableau de bord, consultez la section [Création d’une campagne de publicité pour votre application](../publish/create-an-ad-campaign-for-your-app.md).
+>**Remarque**&nbsp;&nbsp;vous pouvez également créer et gérer les campagnes publicitaires à l’aide de l’espace partenaires, et les campagnes publicitaires que vous créez par programme sont accessibles dans l’espace partenaires. Pour plus d’informations sur la gestion des campagnes de publicité dans l’espace partenaires, consultez l’article [créer une campagne de publicité pour votre application](../publish/create-an-ad-campaign-for-your-app.md).
 
 Lorsque vous appliquez ces méthodes pour créer ou mettre à jour une campagne, vous appelez généralement l’une des méthodes suivantes pour gérer les *chaînes de distribution*, les *profils de ciblage* et les *contenus* associés à la campagne. Pour plus d’informations sur la relation entre les profils de ciblage et les campagnes publicitaires, les chaînes de distribution et les contenus, consultez la page [Exécuter des campagnes publicitaires à l’aide des services du MicrosoftStore](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
@@ -33,7 +33,7 @@ Pour utiliser ces méthodes, vous devez d’abord effectuer les opérations suiv
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](run-ad-campaigns-using-windows-store-services.md#prerequisites) relatives à l’API de promotions du MicrosoftStore.
 
-  >**Remarque**&nbsp;&nbsp;Dans le cadre des conditions préalables, assurez-vous que vous avez [créé au moins une campagne publicitaire payante dans le tableau de bord du centre de développement](../publish/create-an-ad-campaign-for-your-app.md) et que vous avez ajouté au moins un instrument de paiement pour la campagne publicitaire du tableau de bord. Les lignes de livraison des campagnes publicitaires que vous créez à l’aide de cette API factureront automatiquement l’instrument de paiement sélectionné par défaut sur la page **Promouvoir votre application** du tableau de bord.
+  >**Remarque**&nbsp;&nbsp;dans le cadre des conditions préalables, assurez-vous que vous [créé au moins une campagne publicitaire payante dans l’espace partenaires](../publish/create-an-ad-campaign-for-your-app.md) et que vous ajoutez au moins un instrument de paiement pour la campagne de publicité dans l’espace partenaires. Lignes de livraison des campagnes publicitaires que vous créez à l’aide de cette API factureront automatiquement l’instrument de paiement par défaut sélectionné sur la page de **campagnes de publicité** dans l’espace partenaires.
 
 * [Obtenez un jeton d’accès Azure AD](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de ces méthodes. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 

@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, avis
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ce463be2ef2d5e3328c132302704f50c336105
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 656f00ec8a7711a43c44790b04ea01dace4c4ee2
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926657"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988739"
 ---
 # <a name="get-app-reviews"></a>Obtenir les avis sur les applications
 
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir, au formatJSON, les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Avis](../publish/reviews-report.md) du tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir, au formatJSON, les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport avis](../publish/reviews-report.md) dans l’espace partenaires.
 
 Après avoir récupéré les avis, vous pouvez utiliser les méthodes [obtenir des informations sur les réponse aux avis sur les apps](get-response-info-for-app-reviews.md) et [soumettre des réponses aux avis sur les apps](submit-responses-to-app-reviews.md) dans l'API d'avis du MicrosoftStore pour répondre de manière programmée aux avis.
 
