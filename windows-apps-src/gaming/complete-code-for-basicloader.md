@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, basicloader
 ms.localizationpriority: medium
 ms.openlocfilehash: cde8d7b368fb3ee660bd5696f983070738397b6f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926115"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995767"
 ---
 # <a name="complete-code-for-basicloader"></a>Code complet de BasicLoader
 

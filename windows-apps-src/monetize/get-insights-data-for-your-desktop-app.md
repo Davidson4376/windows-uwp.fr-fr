@@ -7,16 +7,16 @@ ms.date: 07/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1ecdf192f54c0158ce503a58aafb65108b8fdc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8d0e117f8d71593874a7e65bdaf6590507db6456
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931960"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5990891"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des informations sur les données relatives aux mesures d’intégrité pour une application de bureau que vous avez ajoutée au [programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Ces données sont également disponibles dans le [rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) pour les applications de bureau dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des informations sur les données relatives aux mesures d’intégrité pour une application de bureau que vous avez ajoutée au [programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Ces données sont également disponibles dans le [rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) pour les applications de bureau dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -46,7 +46,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir des données d’analyse. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données d’analyse pour toutes les applications inscrites dans votre compte.  |  Non  |
+| applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir des données d’analyse. Pour obtenir l’ID de produit d’une application de bureau, ouvrez n’importe quel [rapport analytique pour votre application de bureau dans l’espace partenaires](https://msdn.microsoft.com/library/windows/desktop/mt826504) (par exemple, le **rapport d’intégrité**) et récupérez l’ID produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données d’analyse pour toutes les applications inscrites dans votre compte.  |  Non  |
 | startDate | date | La date de début dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
 | endDate | date | La date de fin dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est la date actuelle |  Non  |
 | filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter = dataType eq 'acquisition'*. <p/><p/>Cette méthode prend uniquement en **l’intégrité**filtre.  | Non   |

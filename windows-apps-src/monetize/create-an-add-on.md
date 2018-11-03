@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une extension pour une app inscrite dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une extension pour une application inscrite dans votre compte PartnerCenter.
 title: Crée une extension
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b6be05d1efc1cbc23f26a509230750c8896c87
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939294"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992607"
 ---
 # <a name="create-an-add-on"></a>Crée une extension
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une extension (également connue sous le nom PIA, produit in-app) pour une app inscrite dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une extension (également connue sous le nom dans l’application produit ou PIA) pour une application inscrite dans votre compte espace partenaires.
 
 > [!NOTE]
 > Cette méthode permet de créer une extension sans soumission. Pour créer une soumission pour une extension, voir les méthodes décrites dans l’article [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
@@ -99,7 +99,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description                                                                                                                                                                           |
 |--------|------------------|
 | 400  | La requête n’est pas valide. |
-| 409  | L’extension n’a pas pu être créée en raison de son état actuel ou elle utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | L’extension n’a pas pu être créée en raison de son état actuel, ou l’extension utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Rubriques associées

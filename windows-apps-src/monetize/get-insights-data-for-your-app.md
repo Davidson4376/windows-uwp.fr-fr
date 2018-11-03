@@ -7,16 +7,16 @@ ms.date: 07/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
-ms.openlocfilehash: ff70f38ff636b0b1d885981fb9e353ac9afe69c2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3d74d1f9cbdd374dfd363e6da1e98aafcb226d5e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933260"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5997141"
 ---
 # <a name="get-insights-data"></a>Obtenir les données d’analyse
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’analyse en rapport avec les acquisitions, intégrité et les mesures de l’utilisation d’une application au cours d’une plage de dates données et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport de perspectives](../publish/insights-report.md) dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’analyse en rapport avec les acquisitions, intégrité et les mesures de l’utilisation d’une application au cours d’une plage de dates données et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport de perspectives](../publish/insights-report.md) dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 

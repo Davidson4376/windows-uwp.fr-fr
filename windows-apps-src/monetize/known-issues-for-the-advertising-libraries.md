@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 3adbc12b0e891461a97bb90575141517b280be76
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941813"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992558"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 
@@ -42,7 +42,7 @@ Si vous avez créé une publicité récemment (moins d’un jour), elle peut ne 
 
 Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment des erreurs réseau. Autres raisons possibles:
 
-* Vous avez sélectionné une unité publicitaire dans le Centre de développement Windows dont la taille est supérieure ou inférieure à la taille du **AdControl** dans le code de votre application.
+* Sélection d’une unité publicitaire dans l’espace partenaires dont la taille est supérieure ou inférieure à la taille de **AdControl** dans le code de votre application.
 
 * Les publicités ne s’affichent pas si vous utilisez une [valeur du mode test](set-up-ad-units-in-your-app.md#test-ad-units) pour votreID d’unité publicitaire lors de l’exécution d’une application dynamique.
 
@@ -60,7 +60,7 @@ Les publicités de test peuvent s’afficher même lorsque vous attendez des pub
 
 * Les applications chargées indépendamment ou les applications qui sont exécutées dans l’émulateur n’affichent pas de publicités dynamiques.
 
-Si une unité publicitaire dynamique fournit des publicités de test, l’état de l’unité publicitaire indique **Publicités de test actives et fournies** dans le Centre de développement Windows. Pour le moment, cela ne s’applique pas aux applications téléphoniques.
+Si une unité publicitaire dynamique fournit des publicités de test, état de l’unité publicitaire affiche **des publicités de test actives et fournies** dans l’espace partenaires. Pour le moment, cela ne s’applique pas aux applications téléphoniques.
 
 
 <span id="reference_errors"/>

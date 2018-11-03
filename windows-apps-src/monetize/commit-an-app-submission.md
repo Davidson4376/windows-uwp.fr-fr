@@ -1,24 +1,24 @@
 ---
 author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
-description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour valider une soum. d’app. nouvelle ou mise à jour à destination du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’applications nouvelle ou mise à jour à l’espace partenaires.
 title: Valider une soumission d’application
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d'applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 594fb7bdbf1e56243837d2e9e3ebe1aced7eceff
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932105"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995039"
 ---
 # <a name="commit-an-app-submission"></a>Valider une soumission d’application
 
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour valider une soum. d’app. nouvelle ou mise à jour à destination du Centre de développement Windows. L’action de validation alerte le Centre de développement que les données de soumission ont été chargées sur le serveur (y compris les packages et les images associés, le cas échéant). En réponse, le Centre de développement valide les modifications apportées aux données de soumission en vue de leur intégration et publication. Dès lors que l’opération de validation a abouti, les modifications apportées à la soumission s’affichent dans le tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’applications nouvelle ou mise à jour à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les packages associés et les images). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission d’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une app à l’aide de l’API de soumission au MicrosoftStore, voir [Gérer les soumissions d’apps](manage-app-submissions.md).
 
@@ -51,10 +51,10 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à valider. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 
 
-### <a name="request-body"></a>Corps de requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
@@ -92,7 +92,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 |--------|------------------|
 | 400  | Les paramètres de la requête ne sont pas valides. |
 | 404  | La soumission spécifiée est introuvable. |
-| 409  | La soumission spécifiée a été trouvée, mais elle n’a pas pu être validée en raison de son état actuel, ou l’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 409  | La soumission spécifiée a été trouvée, mais il ne peut pas être validée en raison de son état actuel, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 
 ## <a name="related-topics"></a>Rubriques associées

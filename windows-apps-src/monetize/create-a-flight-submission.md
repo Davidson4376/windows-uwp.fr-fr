@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une soumission de version d’évaluation de package pour une app inscrite dans le compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission de version d’évaluation du package pour une application inscrite dans votre compte espace partenaires.
 title: Créer une soumission de version d’évaluation de package
 ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b06f922de1de1dd9943d460672fab218b51a5eb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4cdcc0f06820600523be111d67d3cad5e38b6ceb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925856"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989977"
 ---
 # <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation de package
 
@@ -30,7 +30,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Créez une version d’évaluation de package pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une version d’évaluation de package](create-a-flight.md).
+* Créer une version d’évaluation de package pour une application. Vous pouvez le faire dans l’espace partenaires, ou vous pouvez le faire à l’aide de la méthode de [créer une version d’évaluation](create-a-flight.md) .
 
 ## <a name="request"></a>Requête
 
@@ -119,10 +119,10 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 400  | Impossible de créer la soumission de version d’évaluation de package, car la requête n’est pas valide. |
-| 409  | La soumission de version d’évaluation de package n’a pas pu être créée en raison de l’état actuel de l’app, ou l’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | La soumission de version d’évaluation du package n’a pas pu être créée en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)

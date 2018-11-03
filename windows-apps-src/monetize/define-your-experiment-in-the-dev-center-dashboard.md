@@ -1,23 +1,23 @@
 ---
 author: Xansky
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: Définir votre expérience dans le tableau de bord
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in Partner Center.
+title: Définissez votre expérience dans l’espace partenaires
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acbeb0f67985537524a352507910f5e526ae0bd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 98c1d48524bcc525f57f42e5364d27611602ab52
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939857"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995098"
 ---
-# <a name="define-your-experiment-in-the-dashboard"></a>Définir votre expérience dans le tableau de bord
+# <a name="define-your-experiment-in-partner-center"></a>Définissez votre expérience dans l’espace partenaires
 
-Après avoir [créé un projet et défini des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), puis [codé votre application pour l’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
+Après avoir vous [créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) et [coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
 
 Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -26,7 +26,7 @@ Pour découvrir une procédure pas à pas illustrant le processus de création e
 
 ## <a name="create-your-experiment"></a>Créer votre expérience
 
-1. Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview).
+1. Connectez-vous à l'[Espace partenaires](https://partner.microsoft.com/dashboard).
 2. Sous **Vos applications**, sélectionnez l’application pour laquelle vous voulez créer une expérience.
 3. Dans le volet de navigation, sélectionnez **Services**, puis **Expérimentation**.
 4. Dans la page **Expérimentation**, identifiez le projet dans lequel vous voulez ajouter une expérience dans la table de projets, puis cliquez sur le lien **Add experiment (Ajouter une expérience)** correspondant à ce projet.
@@ -36,7 +36,7 @@ Pour découvrir une procédure pas à pas illustrant le processus de création e
     > Ne cochez pas cette case si vous créez une expérience que vous publierez pour vos clients (autrement dit, une expérience associée à un ID de projet utilisé dans une version de votre application accessible aux clients). La modification d’une expérience alors qu’elle est active rend non valides ses résultats.
 
 7. Dans le menu déroulant **Nom du projet**, le projet actuel est automatiquement sélectionné. Si vous voulez ajouter la nouvelle expérience à un autre projet, vous pouvez le sélectionner ici. Dans le cas contraire, ne touchez pas à cette sélection.
-8.   Notez la valeur [ID de projet](run-app-experiments-with-a-b-testing.md#terms). Quand vous [codez votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous devez indiquer cet ID dans votre code pour pouvoir recevoir des données de variation et signaler des événements d’affichage et de conversion au Centre de développement.
+8.   Notez la valeur [ID de projet](run-app-experiments-with-a-b-testing.md#terms). Lorsque vous [codez votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous devez indiquer cet ID dans votre code afin de pouvoir recevoir des données de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires.
 9. Dans la section **Événement d’affichage**, tapez le nom de l’[événement d’affichage](run-app-experiments-with-a-b-testing.md#terms) pour votre expérience dans le champ **Nom d’événement d’affichage**.
 10. Dans la section **Objectifs et événements de conversion**, définissez au moins un objectif pour votre expérience:
   * Dans le champ **Nom d’objectif**, tapez un nom descriptif pour votre objectif. Après avoir exécuté une expérience, ce nom apparaît dans le résumé des résultats pour l’expérience.
@@ -44,7 +44,7 @@ Pour découvrir une procédure pas à pas illustrant le processus de création e
   * Dans le champ **Objectif**, sélectionnez **Augmenter** ou **Réduire** si vous souhaitez augmenter ou réduire le nombre d’occurrences de l’événement de conversion. Ces informations sont utilisées dans le résumé des résultats de l’expérience.
 
 > [!NOTE]
-> Le Centre de développement signale uniquement le premier événement de conversion pour chaque vue utilisateur sur une période de 24heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs alors que l’objectif est d’optimiser le nombre d’utilisateurs qui effectuent une conversion.
+> L’espace partenaires signale uniquement le premier événement de conversion pour chaque vue utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs alors que l’objectif est d’optimiser le nombre d’utilisateurs qui effectuent une conversion.
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
 
@@ -66,7 +66,7 @@ Ensuite, définissez les [variables](run-app-experiments-with-a-b-testing.md#ter
 
 Lorsque vous avez terminé la saisie des champs obligatoires pour votre expérience, cliquez sur **Enregistrer** pour enregistrer votre expérience.
 
-Si vous êtes satisfait des paramètres de votre expérience et êtes prêt à l’activer afin de pouvoir commencer la collecte des données de l’expérience depuis votre application, cliquez sur **Activer**. Quand l’expérience est active, votre application peut récupérer les variables de variante et signaler les événements d’affichage et de conversion au Centre de développement. Pour plus d’informations, voir [Exécuter et gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md).
+Si vous êtes satisfait des paramètres de votre expérience et êtes prêt à l’activer afin de pouvoir commencer la collecte des données de l’expérience depuis votre application, cliquez sur **Activer**. Quand l’expérience est active, votre application peut récupérer les variables de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires. Pour plus d’informations, voir [exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
 
 > [!IMPORTANT]
 > Un projet peut uniquement comprendre une expérience active à la fois. Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment (Expérience modifiable)** quand vous avez créé l’expérience. Nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
@@ -89,12 +89,12 @@ Pour tester votre expérience avant de la publier pour les clients, suivez ce pr
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Après avoir défini votre expérience dans le tableau de bord du Centre de développement et codé l’expérience dans votre application, vous êtes prêt à [exécuter et à gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md).
+Après avoir défini votre expérience dans l’espace partenaires et coder l’expérience dans votre application, vous êtes prêt à [s’exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriquesconnexes
 
-* [Créer un projet et définir des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
-* [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md)
+* [Gérer votre expérience dans l’espace partenaires](manage-your-experiment.md)
 * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)

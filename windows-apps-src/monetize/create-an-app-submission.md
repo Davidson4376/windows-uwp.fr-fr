@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une soumission pour une app inscrite dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission pour une application inscrite dans votre compte espace partenaires.
 title: Crée une soumission d’applications
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’apps
 ms.localizationpriority: medium
-ms.openlocfilehash: 740e65d79636c9e5451e68fa84ce2eae4e3252c6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: fd97efca42049fd9f5adc4d051688074d91132fa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5935692"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992063"
 ---
 # <a name="create-an-app-submission"></a>Crée une soumission d’applications
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une soumission pour une app inscrite dans votre compte du Centre de développement Windows. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-app-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-app-submission.md) pour permettre son intégration et sa publication.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission pour une application inscrite dans votre compte espace partenaires. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-app-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-app-submission.md) pour permettre son intégration et sa publication.
 
 Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’apps à l’aide de l’API de soumission au MicrosoftStore, voir [Gérer les soumissions d’apps](manage-app-submissions.md).
 
@@ -188,7 +188,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 400  | Impossible de créer la soumission, car la requête n’est pas valide. |
-| 409  | La soumission n’a pas pu être créée en raison de l’état actuel de l’app, ou celle-ci utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | La soumission n’a pas pu être créée en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Rubriques associées

@@ -8,12 +8,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
-ms.openlocfilehash: d35aa246c1eb26751f11132ee5681052ad6e8c2a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935748"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995118"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 
@@ -27,11 +27,11 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 |--------------------|-----------------------------|
 | [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md)      | Découvrez comment utiliser les API du SDK Windows pour ajouter des achats de produits in-app et des fonctionnalités d’évaluation à vos applications.  |
 | [Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising](display-ads-in-your-app.md)      |   Augmentez vos revenus en affichant des bannières ou des spots publicitaires dans votre application. Cette fonctionnalité nécessite le SDK Microsoft Advertising. |
-| [Impliquer les clients avec le MicrosoftStore Services SDK](microsoft-store-services-sdk.md)      | Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à susciter l’intérêt de vos clients. Ces fonctionnalités incluent les notifications ciblées du Centre de développement, les tests A/B et le démarrage du Hub de commentaires depuis votre application. |
+| [Impliquer les clients avec le MicrosoftStore Services SDK](microsoft-store-services-sdk.md)      | Microsoft Store Services SDK contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à susciter l’intérêt de vos clients. Ces fonctionnalités incluent les notifications ciblées, A / B tests et lancement du Hub de commentaires à partir de votre application. |
 | [Exécuter des expériences avec des testsA/B](run-app-experiments-with-a-b-testing.md)      |   Exécutez des tests A/B dans vos applications de plateforme Windows universelle (UWP) pour évaluer l’efficacité de fonctionnalités spécifiques auprès de certains clients avant de les mettre à la disposition de tous. Cette fonctionnalité nécessite Microsoft Store Services SDK.  |
-| [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md)      |   Ajoutez du code dans vos applications UWP pour diriger vos clients Windows10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Ensuite, gérez ces commentaires dans le [Rapport sur les commentaires](../publish/feedback-report.md) affiché dans le tableau de bord du Centre de développement. Cette fonctionnalité nécessite Microsoft Store Services SDK.   |
-| [Configurer votre application pour recevoir des notifications push du Centre de développement](configure-your-app-to-receive-dev-center-notifications.md)  |  Enregistrez un canal de notification pour votre applicationUWP afin qu’elle puisse recevoir les [notificationPush du Centre de développement](../publish/send-push-notifications-to-your-apps-customers.md), et effectuer le suivi de la fréquence des lancements d’applications provoqués par les notificationsPush. Cette fonctionnalité nécessite Microsoft Store Services SDK.  |
-| [Consigner des événements personnalisés pour le Centre de développement](log-custom-events-for-dev-center.md)  | Consignez des événements personnalisés depuis votre applicationUWP et passez en revue les événements dans le [Rapport sur l’utilisation](../publish/usage-report.md) du tableau de bord du Centre de développement. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
+| [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md)      |   Ajoutez du code dans vos applications UWP pour diriger vos clients Windows10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Ensuite, gérez ces commentaires dans le [rapport sur les commentaires](../publish/feedback-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK.   |
+| [Configurer votre application pour recevoir des notifications push l’espace partenaires](configure-your-app-to-receive-dev-center-notifications.md)  |  Inscrire un canal de notification pour votre application UWP afin de pouvoir recevoir des [notifications push de l’espace partenaires](../publish/send-push-notifications-to-your-apps-customers.md)et suivre la fréquence des lancements d’applications provoqués par les notifications push. Cette fonctionnalité nécessite MicrosoftStore Services SDK.  |
+| [Consigner des événements personnalisés pour l’espace partenaires](log-custom-events-for-dev-center.md)  | Consigner des événements personnalisés à partir de votre application UWP et passez en revue les événements dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
 | [Demander des évaluations et des avis](request-ratings-and-reviews.md) |  Incitez vos clients à évaluer ou à donner un avis sur votre app en affichant par programme une interface utilisateur destinée aux avis et évaluations.  |
 | [Services MicrosoftStore](using-windows-store-services.md)    |  Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le WindowsStore et d’autres tâches associées au WindowsStore, et accéder aux données d’analyse.    |
 | [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester le PC et appareils sur le sol vente peuvent aller à droite dans.  |

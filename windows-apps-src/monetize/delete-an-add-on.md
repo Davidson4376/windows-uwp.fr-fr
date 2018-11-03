@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour supprimer une extension pour une app inscrite dans votre compte du Centre de développement Windows.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour supprimer une extension pour une application inscrite dans votre compte espace partenaires.
 title: Supprime une extension
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, supprimer, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: db8c394cac29afabba5229e21712320c82b89364
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935063"
+ms.locfileid: "5989768"
 ---
 # <a name="delete-an-add-on"></a>Supprime une extension
 
-Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour supprimer une extension (également connue sous le nom PIA ou produit in-app) pour une app inscrite dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour supprimer une extension (également connue sous le nom dans l’application produit ou PIA) pour une application inscrite dans votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -46,7 +46,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | chaîne | Obligatoire. ID Windows Store de l’extension à supprimer. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
+| id | chaîne | Obligatoire. ID Windows Store de l’extension à supprimer. L’ID Windows Store est disponible dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête
@@ -75,7 +75,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 |--------|------------------|
 | 400  | La requête n’est pas valide. |
 | 404  | L’extension spécifiée est introuvable.  |
-| 409  | L’extension spécifiée a été trouvée, mais elle n’a pas pu être supprimée en raison de son état actuel, ou l’extension utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | L’extension spécifiée a été trouvée, mais il ne peut pas être supprimé dans son état actuel, ou l’extension utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Rubriques associées

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces, publicitaires
 ms.localizationpriority: medium
 ms.openlocfilehash: 0975749e07d8bdc625820d694d08a6d8f8e29932
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924686"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5993509"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Programme Éditeurs de publicités Premium Windows
 

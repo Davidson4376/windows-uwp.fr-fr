@@ -1,36 +1,36 @@
 ---
 author: Xansky
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
-description: Utilisez ces méthodes dans l’API de soumission au MicrosoftStore pour gérer les soumissions des apps qui sont inscrites dans votre compte du Centre de développement Windows.
+description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les soumissions pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Gérer les soumissions d’applications
 ms.author: mhopkins
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d’app
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f95e91c1ef9e47ab3371a1481237dc510eddae7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921077"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5996672"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
 L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de gérer les soumissions de vos apps, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Si vous utilisez l’API de soumission au MicrosoftStore pour créer une soumission d’app, vous devrez employer exclusivement l’API pour apporter d’autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l'API, vous ne pourrez plus modifier ou valider cette soumission à l'aide de l'API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une application, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 > [!IMPORTANT]
-> Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser le tableau de bord du Centre de développement Windows pou publier la soumission.
+> Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser l’espace partenaires pour publier la soumission.
 
 
 <span id="methods-for-app-submissions" />
 
 ## <a name="methods-for-managing-app-submissions"></a>Méthodes de gestion des soumissions d’apps
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’applications, procédez comme suit. Pour que vous puissiez utiliser ces méthodes, l’application doit exister dans votre compte du Centre de développement. Par ailleurs, vous devez avoir créé une soumission associée à l’application dans le tableau de bord. Pour plus d’informations, consultez les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites).
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’applications, procédez comme suit. Avant de pouvoir utiliser ces méthodes, l’application doit déjà exister dans votre compte espace partenaires et vous devez d’abord créer une soumission pour l’application dans l’espace partenaires. Pour plus d’informations, consultez les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites).
 
 <table>
 <colgroup>
@@ -127,7 +127,7 @@ Pour créer une soumission pour une application, suivez ce processus.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Validez la soumission d’applications](commit-an-app-submission.md) en exécutant la méthode suivante. Le Centre de développement est ainsi informé que vous avez terminé votre soumission et que vos mises à jour doivent être appliqués à votre compte.
+5. [Validez la soumission d’applications](commit-an-app-submission.md) en exécutant la méthode suivante. Cela avertira l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -141,13 +141,13 @@ Pour créer une soumission pour une application, suivez ce processus.
 
     Pour vérifier l’état de la soumission, examinez la valeur *status* dans le corps de la réponse. Cette valeur doit passer de **CommitStarted** à **PreProcessing** si la requête aboutit ou à **CommitFailed** si elle contient des erreurs. S’il existe des erreurs, le champ *statusDetails* contient d’autres détails s’y rapportant.
 
-7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en consultant le tableau de bord du Centre de développement.
+7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en consultant l’espace partenaires.
 
 <span id="manage-gradual-package-rollout">
 
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>Méthodes de gestion d’un lancement de packages progressif
 
-Vous pouvez publier progressivement les packages mis à jour d’une soumission d’applications pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris des instructions pour l’activation et la gestion d’un lancement de packages progressif dans le tableau de bord du Centre de développement, consultez [cet article](../publish/gradual-package-rollout.md).
+Vous pouvez publier progressivement les packages mis à jour d’une soumission d’applications pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris les instructions pour savoir comment activer et gérer un lancement progressif du package dans l’espace partenaires, consultez [cet article](../publish/gradual-package-rollout.md).
 
 Pour activer par programmation un lancement de packages progressif pour une soumission d’apps, suivez cette procédure à l’aide des méthodes de l’API de soumission au MicrosoftStore:
 
@@ -339,7 +339,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur      | Type   | Description      |
 |------------|--------|-------------------|
-| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.  |
+| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 | applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement«_», par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’application.        |   
 | visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -362,7 +362,7 @@ Cette ressource a les valeurs suivantes.
 | enterpriseLicensing           |  chaîne  |  Une des [valeur de gestion des licences d’entreprise](#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’app.  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
 | allowTargetFutureDeviceFamilies           | objet   |  Dictionnaire de paires clé/valeur, où chaque clé est une [famille d’appareils Windows10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) et chaque valeur est une valeur booléenne qui indique si votre application est autorisée à cibler la famille d’appareils spécifiée.     |    
-| friendlyName           |   chaîne  |  Le nom convivial de la soumission, tel que représenté dans le tableau de bord du Centre de développement. La valeur est générée pour vous lorsque vous créez la soumission.       |  
+| friendlyName           |   chaîne  |  Le nom convivial de la soumission, comme illustré dans l’espace partenaires. La valeur est générée pour vous lorsque vous créez la soumission.       |  
 | trailers           |  tableau |   Tableau contenant jusqu'à 15 [ressources de bande-annonce](#trailer-object) qui représentent les bandes-annonces vidéos de la description de l’app.<br/><br/>   |  
 
 
@@ -389,8 +389,8 @@ Cette ressource contient des informations commerciales pour une application.
 
 > [!IMPORTANT]
 > La ressource **Sale** n’est plus prise en charge, et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’une app à l’aide de l’API de soumission au MicrosoftStore. Bientôt, nous allons mettre à jour l’API de soumission au MicrosoftStore pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant les soumissions d’app.
->    * Après avoir appelé la [méthode GET pour soumettre une application](get-an-app-submission.md), la ressource *Sales* est vide. Vous pouvez toujours utiliser le tableau de bord du Centre de développement pour obtenir les données commerciales concernant la soumission de votre application.
->    * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’une application](update-an-app-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez toujours utiliser le tableau de bord du Centre de développement pour changer les données commerciales concernant la soumission de votre application.
+>    * Après avoir appelé la [méthode GET pour soumettre une application](get-an-app-submission.md), la ressource *Sales* est vide. Vous pouvez continuer à utiliser l’espace partenaires pour obtenir les données de vente à prix réduit pour la soumission de votre application.
+>    * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’une application](update-an-app-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez continuer à utiliser l’espace partenaires pour modifier les données commerciales concernant la soumission de votre application.
 
 Cette ressource a les valeurs suivantes.
 
@@ -425,9 +425,9 @@ Cette ressource contient des informations de référencement de base pour une ap
 |  copyrightAndTrademarkInfo                |   chaîne      |  [Informations de copyright et/ou de marque](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info) facultatives.  |
 |  keywords                |  tableau       |  Tableau de [mots clés](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords) facilitant l’apparition de l’application dans les résultats de recherche.    |
 |  licenseTerms                |    chaîne     | [Termes du contrat de licence](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) facultatifs de votre application.     |
-|  privacyPolicy                |   chaîne      |   Cette valeur est obsolète. Pour définir ou modifier l’URL de stratégie de confidentialité de votre app, vous devez accéder à la page [Propriétés](../publish/enter-app-properties.md#privacy-policy-url) du tableau de bord du centre de développement. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.       |
-|  supportContact                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier l’URL ou l'adresse e-mail du contact d'assistance de votre app, vous devez accéder à la page [Propriétés](../publish/enter-app-properties.md#support-contact-info) du tableau de bord du centre de développement. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.        |
-|  websiteUrl                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier l’URL de la page Web de votre app, vous devez accéder à la page [Propriétés](../publish/enter-app-properties.md#website) du tableau de bord du centre de développement. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.      |    
+|  privacyPolicy                |   chaîne      |   Cette valeur est obsolète. Pour définir ou modifier l’URL de politique de confidentialité de votre application, vous devez le faire dans la page de [Propriétés](../publish/enter-app-properties.md#privacy-policy-url) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.       |
+|  supportContact                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier la prise en charge de contact URL ou adresse e-mail de votre application, vous devez le faire dans la page de [Propriétés](../publish/enter-app-properties.md#support-contact-info) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.        |
+|  websiteUrl                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier l’URL de la page web de votre application, vous devez le faire dans la page de [Propriétés](../publish/enter-app-properties.md#website) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.      |    
 |  description               |    chaîne     |   [Description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) du listing de l’application.   |     
 |  fonctionnalités               |    tableau     |  Tableau contenant 20chaînes au maximum qui répertorient les [fonctionnalités](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) de votre application.     |
 |  releaseNotes               |  chaîne       |  [Notes de publication](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) de votre application.    |
@@ -451,7 +451,7 @@ Cette ressource contient les données d’image et d’icône d’une descriptio
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier image dans l’archive ZIP que vous avez chargé pour la soumission.    |     
 |  fileStatus               |   chaîne      |  État du fichier image. Les valeurs possibles sont les suivantes: <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
-|  id  |  chaîne  | ID de l'image. Cette valeur est fournie par le Centre de développement.  |
+|  id  |  chaîne  | ID de l'image. Cette valeur est fournie par l’espace partenaires.  |
 |  description  |  chaîne  | Description de l’image.  |
 |  imageType  |  chaîne  | Indique le type de l'image. Les chaînes suivantes sont actuellement prises en charge. <p/>[Images de capture d’écran](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Capture d’écran (Utilisez cette valeur pour la capture d’écran de bureau)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Logos Windows Store](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icône (utilisez cette valeur pour le logo 1:1 300 x 300pixels)</li></ul><p/>[Images promotionnelles](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Images Xbox](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Images promotionnelles facultatives](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
@@ -460,7 +460,7 @@ Cette ressource contient les données d’image et d’icône d’une descriptio
 
 ### <a name="gaming-options-resource"></a>Ressource d'options de jeu
 
-Cette ressource contient des paramètres relatifs au jeu pour l’application. Les valeurs de cette ressource correspondent aux [paramètres du jeu](../publish/enter-app-properties.md#game-settings) pour les soumissions dans le tableau de bord du Centre de développement.
+Cette ressource contient des paramètres relatifs au jeu pour l’application. Les valeurs figurant dans cette ressource correspondent aux [paramètres de jeu](../publish/enter-app-properties.md#game-settings) pour les soumissions dans l’espace partenaires.
 
 ```json
 {
@@ -567,13 +567,13 @@ Cette ressource contient des détails sur un package d’application pour la sou
 Cette ressource a les valeurs suivantes.  
 
 > [!NOTE]
-> Quand vous appelez la méthode de [mise à jour d’une soumission d’applications](update-an-app-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont obligatoires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
+> Quand vous appelez la méthode de [mise à jour d’une soumission d’applications](update-an-app-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont obligatoires dans le corps de la requête. Les autres valeurs sont renseignées par l’espace partenaires.
 
 | Valeur           | Type    | Description                   |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
 | fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes: <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est fournie par le Centre de développement.   |     
+| id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est fournie par l’espace partenaires.   |     
 | version    |  chaîne   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  chaîne   |  Architecture du package (par exemple, ARM).   |     
 | languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, consultez la page [Langues prises en charge](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
@@ -639,13 +639,13 @@ Cette ressource contient les [paramètres de lancement de packages](#manage-grad
 | fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients qui ne récupèrent pas les packages de lancement progressif.   |          
 
 > [!NOTE]
-> Les valeurs *packageRolloutStatus* et *fallbackSubmissionId* sont attribuées par le centre de développement et ne sont pas censées être définies par le développeur. Si vous incluez ces valeurs dans un corps de requête, celles-ci seront ignorées.
+> Les valeurs *packageRolloutStatus* et *fallbackSubmissionId* sont attribuées par l’espace partenaires et ne sont pas censées être définies par le développeur. Si vous incluez ces valeurs dans un corps de requête, celles-ci seront ignorées.
 
 <span id="trailer-object" />
 
 ### <a name="trailers-resource"></a>Ressource de bande-annonce
 
-Cette ressource représente une vidéo de bande-annonce pour la description de l’app. Les valeurs de cette ressource correspondent aux options [bandes-annonces](../publish/app-screenshots-and-images.md#trailers) des soumissions dans le tableau de bord du Centre de développement.
+Cette ressource représente une vidéo de bande-annonce pour la description de l’app. Les valeurs figurant dans cette ressource correspondent aux options [bandes-annonces](../publish/app-screenshots-and-images.md#trailers) des soumissions dans l’espace partenaires.
 
 Vous pouvez ajouter jusqu'à 15ressources de bande-annonce pour le tableau *trailers* dans une [ressource de soumission d’applications](#app-submission-object). Pour télécharger des fichiers vidéo de bande-annonce et des images miniatures pour une soumission, ajoutez ces fichiers à l'archive ZIP qui contient les packages et les images de description pour la soumission, puis téléchargez cette archive ZIP dans l'URI de la signature d’accès partagé (SAS) de la soumission. Pour plus d’informations sur le téléchargement de l’archive ZIP sur l’URI SAS, voir [créer une soumission d’apps](#create-an-app-submission).
 
@@ -677,9 +677,9 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description        |
 |-----------------|---------|------|
-|  id               |    chaîne     |   ID de la bande-annonce. Cette valeur est fournie par le Centre de développement.   |
+|  id               |    chaîne     |   ID de la bande-annonce. Cette valeur est fournie par l’espace partenaires.   |
 |  videoFileName               |    chaîne     |    Nom du fichier vidéo de bande-annonce dans l’archive ZIP qui contient les fichiers pour la soumission.    |     
-|  videoFileId               |   chaîne      |  ID du fichier vidéo de bande-annonce. Cette valeur est fournie par le Centre de développement.   |     
+|  videoFileId               |   chaîne      |  ID du fichier vidéo de bande-annonce. Cette valeur est fournie par l’espace partenaires.   |     
 |  trailerAssets               |   objet      |  Dictionnaire de paires clé/valeur, où chaque clé est un code de langue et chaque valeur est une [ressource de références de bande-annonce](#trailer-assets-object) qui contient des références supplémentaires spécifiques aux paramètres régionaux pour la bande-annonce. Pour plus d’informations sur les codes de langue pris en charge, voir [Langues prises en charge](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
 > [!NOTE]
@@ -706,7 +706,7 @@ Cette ressource décrit l’image miniature d'une bande-annonce. Cette ressource
 | Valeur           | Type    | Description           |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier d'image miniature dans l’archive ZIP que vous avez chargée pour la soumission.    |     
-|  id  |  chaîne  | ID de l'image miniature. Cette valeur est fournie par le Centre de développement.  |
+|  id  |  chaîne  | ID de l'image miniature. Cette valeur est fournie par l’espace partenaires.  |
 |  description  |  chaîne  | Description de l’image miniature. Cette valeur est en métadonnées uniquement et n'apparaît pas pour les utilisateurs.   |
 
 <span/>
@@ -726,7 +726,7 @@ Les valeurs suivantes représentent les niveaux de prix disponibles dans la [res
 |  Base               |   Le niveau de prix n’est pas défini; utilisez le prix de base de l’application.      |     
 |  NotAvailable              |   L’application n’est pas disponible dans la région spécifiée.    |     
 |  Free              |   L’application est gratuite.    |    
-|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge:<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour consulter le tableau complet des niveaux de prix disponibles pour votre compte de développeur, notamment les prix du marché associés à chaque niveau, accédez à la page **Tarification et disponibilité** des soumissions d’applications dans le tableau de bord du Centre de développement, puis cliquez sur le lien d’**affichage de table** de la section **Marchés et prix personnalisés** (pour certains comptes développeur, ce lien se trouve dans la section **Tarification**).    |
+|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge:<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour voir le tableau complet des prix niveaux qui sont disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour un de vos soumissions d’applications dans l’espace partenaires et Cliquez sur le lien **Afficher la table** dans la section **marchés et prix personnalisés** (pour certains comptes développeur, ce lien est dans la section **tarification** ).    |
 
 
 <span id="enterprise-licensing" />
@@ -736,10 +736,10 @@ Les valeurs suivantes représentent les niveaux de prix disponibles dans la [res
 Les valeurs suivantes représentent le comportement de gestion des licences organisationnelles adopté pour l’app. Pour plus d’informations sur ces options, voir [Options de gestion des licences organisationnelles](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing).
 
 > [!NOTE]
-> Vous pouvez configurer les options de gestion des licences organisationnelles pour une soumission d’apps via l’API de soumission, toutefois vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et MicrosoftStore pour Éducation](../publish/organizational-licensing.md). Pour publier des soumissions sur le MicrosoftStore pour Éducation et le MicrosoftStore pour Entreprises, vous devez utiliser le tableau de bord du Centre de développement Windows.
+> Vous pouvez configurer les options de gestion des licences organisationnelles pour une soumission d’apps via l’API de soumission, toutefois vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et MicrosoftStore pour Éducation](../publish/organizational-licensing.md). Pour publier des soumissions au Microsoft Store pour entreprises et Microsoft Store pour éducation, vous devez utiliser l’espace partenaires.
 
 
-| Value           |  Description      |
+| Valeur           |  Description      |
 |-----------------|---------------|
 | None            |     Ne mets pas votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).         |     
 | Online        |     Mets votre application à la disposition des entreprises dont les licences en volume sont gérées par le Windows Store (en ligne).  |
@@ -775,4 +775,4 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir des données d’app à l’aide de l’API de soumission au MicrosoftStore](get-app-data.md)
-* [Soumissions d’apps dans le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [Soumissions d’applications dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
