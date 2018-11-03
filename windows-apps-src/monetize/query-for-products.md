@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, afficher produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dded9b66fbae4f65b936335eda406d8773420c4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920053"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979104"
 ---
 # <a name="query-for-products"></a>Demander des produits
 
@@ -134,7 +134,7 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 | devOfferId           | chaîne             | ID d’offre d’un achat dans l’application.              | Non       |
 | endDate              | DateHeure           | Date de fin de l’article.              | Oui      |
 | fulfillmentData      | chaîne             | Non applicable         | Non       |
-| inAppOfferToken      | chaîne             | Chaîne d’ID produit spécifiée par le développeur qui est attribuée à l’article dans le tableau de bord du Centre de développement Windows. Exemple d’ID produit: *product123*. | Non       |
+| inAppOfferToken      | chaîne             | La chaîne d’ID de produit spécifié par le développeur qui est attribuée à l’élément dans l’espace partenaires. Un exemple d’ID produit est *product123*. | Non       |
 | itemId               | chaîne             | ID qui identifie cet élément de collection à partir des autres articles dont l’utilisateur est propriétaire. Cet ID est unique par produit.   | Oui      |
 | localTicketReference | chaîne             | L’ID du paramètre *localTicketReference* précédemment fourni dans le corps de la requête.                  | Oui      |
 | modifiedDate         | DateHeure           | Date de la dernière modification de cet article.              | Oui      |

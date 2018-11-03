@@ -8,18 +8,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, évaluations
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e3ae8ffcc8277f09afe8d1aef41e9905c2f85
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922856"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5983703"
 ---
 # <a name="get-app-ratings"></a>Obtenir les évaluations des applications
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données d'évaluation agrégées au format JSON pour une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Avis](../publish/reviews-report.md) du tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données d'évaluation agrégées au format JSON pour une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport avis](../publish/reviews-report.md) dans l’espace partenaires.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:

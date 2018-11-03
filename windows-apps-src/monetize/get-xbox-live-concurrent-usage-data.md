@@ -7,17 +7,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, utilisation simultanée
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e982d7c5eb1ff8365d2aa527f75d181905784a0
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4506176dcd62a4699c57343c50dfc1b0e7a40b14
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927133"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5986151"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>Obtenir les données d’utilisation simultanée Xbox Live
 
 
-Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données d’utilisation en temps quasi-réel (avec une latence de 5 à 15minutes) sur le nombre moyen de clients jouant à votre [jeu Xbox Live](../xbox-live/index.md) toutes les minutes, heures ou chaque jour pendant une période spécifiée. Ces informations sont également disponibles dans le [rapport d'analyse Xbox](../publish/xbox-analytics-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données d’utilisation en temps quasi-réel (avec une latence de 5 à 15minutes) sur le nombre moyen de clients jouant à votre [jeu Xbox Live](../xbox-live/index.md) toutes les minutes, heures ou chaque jour pendant une période spécifiée. Ces informations sont également disponibles dans le [rapport d’analytique Xbox](../publish/xbox-analytics-report.md) dans l’espace partenaires.
 
 > [!IMPORTANT]
 > Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](../xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).

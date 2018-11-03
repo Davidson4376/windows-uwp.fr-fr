@@ -1,25 +1,25 @@
 ---
 author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Utilisez ces méthodes de l’API de soumission au MicrosoftStore pour récupérer des données pour les apps inscrites dans votre compte du Centre de développement Windows.
+description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour récupérer des données pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Obtenir des données d’application
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, données d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f30e38a05eefe3e51f0ba632585f269b96efb8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945119"
+ms.locfileid: "5985979"
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
-Utilisez les méthodes suivantes dans l’API de soumission au MicrosoftStore pour obtenir des données pour les apps existantes dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes suivantes dans l’API de soumission au Microsoft Store pour obtenir des données pour les applications existantes dans votre compte espace partenaires. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
 
-Avant de pouvoir utiliser ces méthodes, l’application doit obligatoirement exister dans votre compte du Centre de développement. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
+Avant de pouvoir utiliser ces méthodes, l’application doit déjà exister dans votre compte espace partenaires. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 <table>
 <colgroup>
@@ -102,7 +102,7 @@ Cette ressource a les valeurs suivantes.
 | primaryName   | chaîne  | Nom principal de l’application.      |
 | packageFamilyName | chaîne  | Nom de la famille de packages de l’application.      |
 | packageIdentityName          | chaîne  | Nom de l’identité du package de l’application.                       |
-| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Celui-ci correspond à la valeur **Package/Identité/Éditeur** qui apparaît dans la page [Identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) de l’application dans le tableau de bord du Centre de développement Windows.       |
+| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Cela correspond à la valeur de **Package/identité/éditeur** qui apparaît sur la page [identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) pour l’application dans l’espace partenaires.       |
 | firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO8601.   |
 | lastPublishedApplicationSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de l’application.    |
 | pendingApplicationSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour l’application.   |   
@@ -157,7 +157,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description           |
 |-----------------|---------|------------------------|
-| flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par le Centre de développement.  |
+| flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par l’espace partenaires.  |
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |
 | lastPublishedFlightSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package.   |
 | pendingFlightSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package.  |    

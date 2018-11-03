@@ -8,17 +8,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, installations d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: 902ff653d0c573ba5ab094fa81607796b4f01aae
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 72efc20e218cdf718b67c949bd7c71108921bf9c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939211"
+ms.locfileid: "5978213"
 ---
 # <a name="get-app-installs"></a>Obtenir des installations d’application
 
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données d’installation agrégées au format JSON d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/acquisitions-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données d’installation agrégées au format JSON d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions disponible](../publish/acquisitions-report.md) dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Prérequis
 

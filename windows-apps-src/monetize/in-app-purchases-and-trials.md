@@ -8,12 +8,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables, abonnement
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a93e10f7b440ac7c1926bc64bba4d9be248710
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927717"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979034"
 ---
 # <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 
@@ -21,7 +21,7 @@ Le WindowsSDK fournit des API que vous pouvez utiliser pour implémenter les fon
 
 * **Achats in-app**&nbsp;&nbsp;Que votre application soit gratuite ou non, vous pouvez vendre du contenu ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application.
 
-* **Fonctionnalité de version d’évaluation**&nbsp;&nbsp;Si vous configurez votre application en tant que [version d’évaluation gratuite dans le tableau de bord du Centre de développement Windows](../publish/set-app-pricing-and-availability.md#free-trial), vous pouvez encourager vos clients à acheter la version complète en excluant ou en limitant certaines fonctionnalités durant la période d’évaluation. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
+* **Fonctionnalités d’évaluation**&nbsp;&nbsp;si vous [Configurez votre application en tant qu’un essai gratuit dans l’espace partenaires](../publish/set-app-pricing-and-availability.md#free-trial), vous pouvez encourager vos clients à acheter la version complète de votre application en excluant ou en limitant certaines fonctionnalités durant la période d’évaluation. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
 Cet article vous fournit une vue d’ensemble du fonctionnement des achats in-app et des versions d’évaluation dans les applicationsUWP.
 
@@ -31,12 +31,12 @@ Cet article vous fournit une vue d’ensemble du fonctionnement des achats in-ap
 
 Il existe deuxespaces de noms différents à utiliser pour ajouter des achats in-app et des fonctionnalités de version d’évaluation dans vos applicationsUWP, en fonction de la version de Windows10 ciblée par vos applications. Bien que les API dans ces espaces de noms servent les mêmes objectifs, elles sont conçues légèrement différemment et leur code n’est pas compatible.
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;À partir de Windows10, version1607, les applications peuvent utiliser l’API dans cet espace de noms pour implémenter les achats in-app et les versions d’évaluation. Nous vous recommandons d’utiliser les membres dans cet espace de noms si votre projet d’application cible **Windows10 Anniversary Edition (version10.0; build 14393)** ou une version ultérieure dans Visual Studio. Celui-ci prend en charge les types d’extension les plus récents, comme les extensions consommables gérées par le WindowsStore. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le WindowsStore. Pour plus d’informations sur cet espace de noms, consultez la section [Achats dans l’application et versions d’évaluation utilisant l’espace de noms Windows.Services.Store](#api_intro) de cet article.
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;À partir de Windows10, version1607, les applications peuvent utiliser l’API dans cet espace de noms pour implémenter les achats in-app et les versions d’évaluation. Nous vous recommandons d’utiliser les membres dans cet espace de noms si votre projet d’application cible **Windows10 Anniversary Edition (version10.0; build 14393)** ou une version ultérieure dans Visual Studio. Cet espace de noms prend en charge les types de module complémentaire plus récents, comme les extensions consommables gérés par le Windows Store et est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. Pour plus d’informations sur cet espace de noms, consultez la section [Achats dans l’application et versions d’évaluation utilisant l’espace de noms Windows.Services.Store](#api_intro) de cet article.
 
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;L’ensemble des versions de Windows10 prennent également en charge une API plus ancienne pour les achats in-app et les versions d’évaluation dans cet espace de noms. Si vous recherchez des informations sur l’espace de noms **Windows.ApplicationModel.Store**, consultez la page [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 > [!IMPORTANT]
-> L'espace de noms **Windows.ApplicationModel.Store** n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms **Windows.Services.Store** pour votre app à la place, si cela est possible. L'espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans les apps ou jeux qui utilisent un développement en bac à sable dans le centre de développement (par exemple, dans le cas des jeux qui s’intègrent à Xbox Live).
+> L'espace de noms **Windows.ApplicationModel.Store** n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms **Windows.Services.Store** pour votre app à la place, si cela est possible. L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans des applications ou jeux qui utilisent un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live).
 
 <span id="concepts" />
 
@@ -46,13 +46,13 @@ En général, chacun des éléments proposés dans le WindowsStore est appelé *
 
 Une extension est un produit ou une fonctionnalité que vous mettez à la disposition de vos clients dans le contexte de votre application: par exemple, la devise à utiliser dans une application ou un jeu, les nouvelles cartes ou armes d’un jeu, la possibilité d’utiliser votre application sans publicité, ou le contenu numérique comme de la musique ou des vidéos pour les applications qui peuvent proposer ce type de contenu. Chaque application ou module complémentaire a une licence qui indique si l’utilisateur est autorisé à l’utiliser. Si l’utilisateur est autorisé à utiliser l’application ou le module complémentaire en tant que version d’évaluation, la licence fournit également des informations supplémentaires sur la version d’évaluation.
 
-Pour proposer un module complémentaire aux clients dans votre application, vous devez [définir le module complémentaire pour votre application dans le tableau de bord du Centre de développement](../publish/add-on-submissions.md) afin de signaler cette information au WindowsStore. Ensuite, votre application peut utiliser les API des espaces de noms **Windows.Services.Store** ou **Windows.ApplicationModel.Store** pour proposer le module complémentaire à la vente à l’utilisateur, en tant qu’achat in-app.
+Pour proposer un module complémentaire aux clients de votre application, vous devez [définir le module complémentaire pour votre application dans l’espace partenaires](../publish/add-on-submissions.md) afin de signaler cette information au Windows Store. Ensuite, votre application peut utiliser les API des espaces de noms **Windows.Services.Store** ou **Windows.ApplicationModel.Store** pour proposer le module complémentaire à la vente à l’utilisateur, en tant qu’achat in-app.
 
 Les applications UWP peuvent offrir des types de modules complémentaires suivants.
 
 | Type de module complémentaire |  Description  |
 |---------|-------------------|
-| Durable  |  Module complémentaire conservé pendant la durée de vie que vous spécifiez dans le [tableau de bord du Centre de développement Windows](../publish/enter-iap-properties.md). <p/><p/>Par défaut, les modules complémentaires durables n’ont pas de date d’expiration et ne peuvent donc être achetés qu’une seule fois. Si vous spécifiez une durée pour le module complémentaire, l’utilisateur peut racheter le module complémentaire après l’expiration de ce dernier. |
+| Durable  |  Un module complémentaire conservé pendant la durée de vie que vous [spécifiez dans l’espace partenaires](../publish/enter-iap-properties.md). <p/><p/>Par défaut, les modules complémentaires durables n’ont pas de date d’expiration et ne peuvent donc être achetés qu’une seule fois. Si vous spécifiez une durée pour le module complémentaire, l’utilisateur peut racheter le module complémentaire après l’expiration de ce dernier. |
 | Consommable géré par le développeur  |  Une extension qu’il est possible d’acheter, d’utiliser, puis d’acheter à nouveau après sa consommation. Vous êtes responsable du suivi du solde d’éléments de l’utilisateur, que l'extension représente.<p/><p/>Quand l'utilisateur consomme des éléments associés à l'extension, vous devez gérer le solde de l’utilisateur et signaler l’achat de l'extension comme épuisé dans le Store une fois que l’utilisateur a consommé tous les éléments. L’utilisateur ne peut pas acheter à nouveau le module complémentaire, tant que votre application n’a pas signalé le module complémentaire précédent comme épuisé. <p/><p/>Par exemple, si votre module complémentaire représente 100pièces dans un jeu et que l’utilisateur en consomme10, votre application ou votre service doit maintenir le nouveau solde restant de 90pièces pour l’utilisateur. Une fois que l’utilisateur a consommé les 100pièces, votre application doit signaler le module complémentaire comme épuisé. Ensuite, l’utilisateur peut racheter le module complémentaire de 100pièces.    |
 | Consommable géré par le Store  |  Extension qu’il est possible d’acheter, d’utiliser et d’acheter à nouveau à tout moment. Le Store gère le solde d’éléments de l’utilisateur, que l'extension représente.<p/><p/>Lorsque l’utilisateur utilise des éléments associés à l'extension, vous devez les déclarer comme consommés dans le Store qui met à jour le solde de l’utilisateur. L’utilisateur peut acheter l'extension autant de fois qu’il le souhaite (il est inutile de consommer les éléments d’abord). Votre application peut demander le solde actuel de l’utilisateur à tout moment. <p/><p/> Par exemple, si votre extension représente une quantité initiale de 100pièces dans un jeu et que l’utilisateur consomme 50pièces, votre application signale au Store que 50unités de l'extension ont été consommées, et le Store met à jour le solde restant. Si l’utilisateur rachète ensuite votre extension pour obtenir 100pièces de plus, il possède alors 150pièces au total. <p/><p/>**Remarque**&nbsp;&nbsp;Pour utiliser les consommables gérés par le Store, votre application doit cibler **Windows10, Anniversary Edition (10.0; Build14393)** ou une version ultérieure dans Visual Studio et utiliser l’espace de noms **Windows.Services.Store** à la place de l’espace de noms **Windows.ApplicationModel.Store**.  |
 | Abonnement | Extension durable dans laquelle le client continue à être facturé à intervalles réguliers pour continuer à utiliser l'extension. Le client peut annuler l’abonnement à tout moment pour éviter d’autres frais. <p/><p/>**Remarque**&nbsp;&nbsp;Pour utiliser les extensions d'abonnement, votre application doit cibler **Windows10 Anniversary Edition (10.0; Build14393)** ou une version ultérieure dans Visual Studio et utiliser l’espace de noms **Windows.Services.Store** à la place de l’espace de noms **Windows.ApplicationModel.Store**.  |
@@ -128,7 +128,7 @@ Pour consulter un exemple d’application illustrant l’utilisation de l’obje
 
 Pour proposer un achat dans l’application aux clients de votre application à l’aide de l’espace de noms **Windows.Services.Store**:
 
-1. Si votre application propose des modules complémentaires pouvant être achetés par vos clients, [créez des soumissions de module complémentaire pour votre application dans le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+1. Si votre application propose des modules complémentaires que les clients peuvent acheter, [créer des soumissions de module complémentaire pour votre application dans l’espace partenaires ](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
 
 2. Écrivez du code dans votre application afin de [récupérer les informations de produit pour votre application ou un module complémentaire offert par votre application](get-product-info-for-apps-and-add-ons.md), puis [déterminez si la licence est active](get-license-info-for-apps-and-add-ons.md) (c’est-à-dire, si l’utilisateur dispose d’une licence lui permettant d’utiliser l’application ou le module complémentaire). Si la licence n’est pas active, affichez une interface utilisateur qui propose à l’utilisateur l’application ou le module complémentaire à la vente en tant qu’achat in-app.
 
@@ -146,7 +146,7 @@ Pour proposer un achat dans l’application aux clients de votre application à 
 
 Pour exclure ou limiter les fonctionnalités d’une version d’évaluation de votre application à l’aide de l’espace de noms **Windows.Services.Store**:
 
-1. [Configurez votre application en tant que version d’évaluation gratuite dans le tableau de bord du Centre de développement Windows](../publish/set-app-pricing-and-availability.md#free-trial).
+1. [Configurer votre application comme une version d’évaluation gratuite dans l’espace partenaires](../publish/set-app-pricing-and-availability.md#free-trial).
 
 2. Écrivez du code dans votre application afin de [récupérer les informations de produit de votre application et d’un module complémentaire pris en charge par votre application](get-product-info-for-apps-and-add-ons.md), puis [déterminez si la licence associée à l’application est une licence d’évaluation](get-license-info-for-apps-and-add-ons.md).
 
@@ -160,15 +160,15 @@ Pour exclure ou limiter les fonctionnalités d’une version d’évaluation de 
 
 Si votre application utilise des API de l'espace de noms **Windows.Services.Store** pour implémenter des achats in-app et la fonctionnalité de version d’évaluation, vous devez la publier dans le Store et télécharger l’application sur votre appareil de développement pour utiliser sa licence à des fins de test. Procédez comme suit pour tester votre code:
 
-1. Si votre application n’est pas encore publiée et rendue disponible dans le WindowsStore, assurez-vous qu’elle respecte les exigences minimum du [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit), [soumettez-la](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans le tableau de bord du Centre de développement Windows, et assurez-vous qu’elle satisfasse au processus de certification. Vous pouvez [configurer votre application pour qu'elle ne soit pas détectable dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant que vous la testez. Notez la configuration correcte des [versions d’évaluation de package](../publish/package-flights.md). Incorrectement package configuré, versions d’évaluation est peut-être ne pas en mesure d’être téléchargées.
+1. Si votre application n’est pas encore publiée et disponible dans le Windows Store, assurez-vous que votre application minimale requise [Kit de Certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) , de [soumettre votre application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et assurez-vous que votre application réussit le processus de certification. Vous pouvez [configurer votre application pour qu'elle ne soit pas détectable dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant que vous la testez. Notez la configuration correcte des [versions d’évaluation de package](../publish/package-flights.md). Incorrectement package configuré, versions d’évaluation est peut-être ne pas en mesure d’être téléchargées.
 
 2. Ensuite, assurez-vous d’exécuter les actions suivantes:
 
     * Écrivez du code dans votre application qui utilise la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) et d’autres types associés dans l’espace de noms **Windows.Services.Store** afin d’implémenter les [achats dans l’application](#implement-iap) ou une [fonctionnalité de version d’évaluation](#implement-trial).
-    * Si votre application propose une extension pouvant être achetée par vos clients, [créez une soumission d’extension pour votre application dans le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
-    * Si vous souhaitez exclure ou limiter certaines fonctionnalités dans une version d’évaluation de votre application, [configurez votre application en tant que version d’évaluation gratuite dans le tableau de bord du Centre de développement Windows](../publish/set-app-pricing-and-availability.md#free-trial).
+    * Si votre application propose un module complémentaire dont les clients peuvent acheter, [créez une soumission d’extension pour votre application dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+    * Si vous souhaitez exclure ou limiter certaines fonctionnalités dans une version d’évaluation de votre application, [Configurez votre application en tant qu’un essai gratuit dans l’espace partenaires](../publish/set-app-pricing-and-availability.md#free-trial).
 
-3. Avec votre projet ouvert dans Visual Studio, cliquez sur le **menu Projet**, pointez sur **Store**, puis cliquez sur **Associer l’application au WindowsStore**. Suivez les instructions de l’Assistant pour associer le projet d’application à l’application dans votre compte du Centre de développement Windows à utiliser pour le test.
+3. Avec votre projet ouvert dans Visual Studio, cliquez sur le **menu Projet**, pointez sur **Store**, puis cliquez sur **Associer l’application au WindowsStore**. Suivez les instructions de l’Assistant pour associer le projet d’application à l’application dans votre compte du centre de l’espace que vous souhaitez utiliser pour le test.
     > [!NOTE]
     > Si vous n’associez pas votre projet à une application du Windows Store, les méthodes [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) attribuent le code d’erreur0x803F6107 à la propriété **ExtendedError** dans la valeur renvoyée. Cette valeur indique que le WindowsStore ne connaît pas l’application.
 4. Si ce n’est déjà fait, installez l’application à partir du WindowsStore que vous avez spécifié à l’étape précédente, exécutez l’application une fois, puis fermez-la. Ceci garantit l’installation d’une licence valide de l’application sur votre appareil de développement.
@@ -227,7 +227,7 @@ Pour configurer un objet **StoreContext** dans une application de bureau qui uti
 
 ### <a name="products-skus-and-availabilities"></a>Produits, références et disponibilités
 
-Chaque produit dans le WindowsStore a au moins une *référence (SKU)*, et chaque référence (SKU) a au moins une *disponibilité*. Ces concepts sont employés par la plupart des développeurs dans le tableau de bord du Centre de développement Windows. La plupart des développeurs ne définissent jamais les références (SKU) ou les disponibilités de leurs applications ou modules complémentaires. Toutefois, comme le modèle d’objet des produits du WindowsStore dans l’espace de noms **Windows.Services.Store** contient des références (SKU) et des disponibilités, la compréhension de ces concepts de base peut être utile pour certains scénarios.
+Chaque produit dans le WindowsStore a au moins une *référence (SKU)*, et chaque référence (SKU) a au moins une *disponibilité*. Ces concepts sont employés par la plupart des développeurs dans l’espace partenaires, et la plupart des développeurs ne définissent jamais les références (SKU) ou les disponibilités de leurs applications ou des modules complémentaires. Toutefois, comme le modèle d’objet des produits du WindowsStore dans l’espace de noms **Windows.Services.Store** contient des références (SKU) et des disponibilités, la compréhension de ces concepts de base peut être utile pour certains scénarios.
 
 | Objet |  Description  |
 |---------|-------------------|
@@ -243,8 +243,8 @@ Chaque application, extension ou autre produit dans le Windows Store est associ�
 
 L’ID Store d’un produit dans le WindowsStore est composé de 12caractères alphanumériques, comme ```9NBLGGH4R315```. Il existe différentes méthodes pour obtenir l’ID Store d'un produit dans le Windows Store:
 
-* Pour une application, vous pouvez obtenir l’ID Store dans la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement.
-* Pour une extension, vous pouvez obtenir l’ID Store dans la page de vue d'ensemble de l'extension dans le tableau de bord.
+* Pour une application, vous pouvez obtenir l’ID Windows Store sur la [page identité de l’application](../publish/view-app-identity-details.md) dans l’espace partenaires.
+* Pour une extension, vous pouvez obtenir l’ID Windows Store sur le de vue d’ensemble page Ajout dans l’espace partenaires.
 * Pour un produit, vous pouvez également obtenir l’ID Store par programme à l’aide de la propriété [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) de l'objet [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) qui représente le produit.
 
 Pour les produits dotés de références (SKU) et de disponibilités, les références (SKU) et les disponibilités ont également leurs propres ID Windows Store avec différents formats.
@@ -258,10 +258,10 @@ Pour les produits dotés de références (SKU) et de disponibilités, les réfé
 
 ## <a name="how-to-use-product-ids-for-add-ons-in-your-code"></a>Comment utiliser l’ID produit pour les extensions dans votre code
 
-Si vous voulez rendre une extension disponible pour vos clients dans le contexte de votre application, vous devez [entrer un ID produit unique](../publish/set-your-add-on-product-id.md#product-id) pour votre extension lorsque vous [créez votre soumission d’extension](../publish/add-on-submissions.md) dans le tableau de bord du Centre de développement. Vous pouvez utiliser cet ID produit pour faire référence à l'extension dans votre code, bien que les scénarios spécifiques dans lesquels vous pouvez utiliser l’ID produit dépendent de l’espace de noms que vous utilisez pour les achats in-app dans votre application.
+Si vous souhaitez rendre une extension disponible pour vos clients dans le contexte de votre application, vous devez [entrer un ID de produit unique](../publish/set-your-add-on-product-id.md#product-id) pour votre extension lorsque vous [créez votre soumission d’extension](../publish/add-on-submissions.md) dans l’espace partenaires. Vous pouvez utiliser cet ID produit pour faire référence à l'extension dans votre code, bien que les scénarios spécifiques dans lesquels vous pouvez utiliser l’ID produit dépendent de l’espace de noms que vous utilisez pour les achats in-app dans votre application.
 
 > [!NOTE]
-> L’ID produit que vous entrez dans le tableau de bord du Centre de développement pour une extension est différente de l'[ID Store](#store-ids) de l'extension. L'ID Store est généré par le Centre de développement.
+> L’ID de produit que vous entrez dans l’espace partenaires pour une extension est différente de l' [ID Windows Store ajouter](#store-ids). L’ID Windows Store est généré par l’espace partenaires.
 
 ### <a name="apps-that-use-the-windowsservicesstore-namespace"></a>Applications qui utilisent l’espace de noms Windows.Services.Store
 
@@ -272,7 +272,7 @@ Si votre application utilise l'espace de noms **Windows.Services.Store**, vous p
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>Applications qui utilisent l’espace de noms Windows.ApplicationModel.Store
 
-Si votre application utilise l'espace de noms **Windows.ApplicationModel.Store**, vous devez utiliser l’ID produit que vous attribuez à une extension dans le tableau de bord du Centre de développement pour la plupart des opérations. Exemple:
+Si votre application utilise l’espace de noms **Windows.ApplicationModel.Store** , vous devez utiliser l’ID de produit que vous attribuez à un module complémentaire dans l’espace partenaires pour la plupart des opérations. Exemple:
 
 * Utilisez l’ID produit pour identifier le [ProductListing](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting) qui représente votre extension ou le [ProductLicense](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense) qui représente la licence de votre extension. L'ID produit est exposé par les propriétés [ProductListing.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.ProductId) et [ProductLicense.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense.ProductId).
 

@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, publicités, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f24b2494470f60371e466bb4d1e1878475d963
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927583"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5982801"
 ---
 # <a name="get-ad-performance-data"></a>Obtenir les données relatives aux performances publicitaires
 
 
 Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données agrégés de performances publicitaires de vos applications pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
-Cette méthode renvoie les données fournies par le [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md) sur le tableau de bord du Centre de développement Windows.
+Cette méthode renvoie les données fournies par le [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
@@ -118,12 +118,12 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | applicationId       | chaîne | IDWindowsStore de l’application pour laquelle vous récupérez les données de performances publicitaires.     |
 | applicationName     | chaîne | Nom d’affichage de l’application.                         |
 | adUnitId           | chaîne | ID de l’unité publicitaire.        |
-| adUnitName           | chaîne | Nom de l’unité publicitaire, tel que spécifié par le développeur dans le tableau de bord du Centre de développement.              |
+| adUnitName           | chaîne | Le nom de l’unité publicitaire, tel que spécifié par le développeur dans l’espace partenaires.              |
 | adProvider           |  chaîne  |  Nom du fournisseur publicitaire.   |
 | deviceType          | chaîne | Nom de l’appareil sur lequel les publicités sont diffusées. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                              |
 | market              | chaîne | Code paysISO3166 du marché au sein duquel les publicités sont diffusées.             |
 | accountCurrencyCode     | chaîne | Code de devise du compte.        |
-| pubCenterAppName       |  chaîne  |   Nom de l’application pubCenter associée à l’application dans le Centre de développement.   |
+| pubCenterAppName       |  chaîne  |   Le nom de l’application pubCenter associée à l’application dans l’espace partenaires.   |
 | adProviderRequests        | entier | Nombre de requêtes publicitaires pour le fournisseur publicitaire spécifié.                 |
 | impressions           | entier | Nombre d’expositions publicitaires.        |
 | clicks            | entier | Nombre de clics sur les publicités.       |

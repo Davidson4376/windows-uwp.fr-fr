@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, AdMediatorControl, AdControl, migrer
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e57cc24554f851ba79cfc47e917b92b3ad3047e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 48fc818c1ae7a9a46912ff52c2b00b07f19c366e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5936522"
+ms.locfileid: "5985662"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Mettre à jour votre application avec les bibliothèques de publicités les plus récentes pour bannières publicitaires
 
@@ -29,7 +29,7 @@ Avant la publication de ce Kit de développement, nous avions créé la classe *
 
 * Lorsque le contrôle **AdControl** de votre application demande une nouvelle publicité, l’événement **ErrorOccurred** du contrôle est déclenché et la propriété **ErrorCode** des arguments d’événement prend la valeur **NoAdAvailable**.
 
-* Toutes les unités publicitaires associées à votre application seront désactivées. Ces unités publicitaires désactivées ne peuvent pas être supprimées de votre compte dans le Centre de développement. Si vous mettez à jour votre application pour qu’elle utilise un [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) pris en charge, ignorez ces unités publicitaires et créez-en de nouvelles.
+* Toutes les unités publicitaires associées à votre application seront désactivées. Vous ne pouvez pas supprimer ces unités publicitaires désactivée à partir de votre compte du centre de DePartnerv. Si vous mettez à jour votre application pour qu’elle utilise un [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) pris en charge, ignorez ces unités publicitaires et créez-en de nouvelles.
 
 * En outre, les bannières publicitaires ne seront plus servies aux unités publicitaires utilisées dans plusieurs applications. Assurez-vous que vos unités publicitaires ne sont utilisées que dans une seule application.
 
@@ -88,4 +88,4 @@ Supprimez du projet toutes les références existantes aux bibliothèques de pub
 
 Testez votre application pour vous assurer qu’elle affiche les bannières publicitaires comme prévu.
 
-Si la version précédente de votre application est déjà disponible dans le WindowsStore, [créez une nouvelle soumission](../publish/app-submissions.md) pour votre application mise à jour dans le tableau de bord du Centre de développement pour republier votre application.
+Si la version précédente de votre application est déjà disponible dans le Windows Store, [créer une nouvelle soumission](../publish/app-submissions.md) pour votre application mise à jour dans l’espace partenaires de republier l’application.

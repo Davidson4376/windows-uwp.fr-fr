@@ -8,26 +8,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f67fe9078d9dc3b73f771f64ee26ce0486f990
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c9212f3a120e03bd436b77e0dd66be4367ded8e1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941441"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980441"
 ---
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 
-Une fois que vous avez [créé un projet et défini des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), vous êtes prêt à mettre à jour le code dans votre application de plateformeWindows universelle (UWP) dans le but de:
-* recevoir des valeurs de variables distances à partir du Centre de développement Windows;
+Après avoir [créé un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), vous êtes prêt à mettre à jour le code de votre application de plateforme Windows universelle (UWP) pour:
+* Recevoir les valeurs des variables distantes à partir de l’espace partenaires.
 * utiliser des variables distantes pour configurer des expériences d’application pour vos utilisateurs;
-* consigner les événements dans le Centre de développement qui indiquent à quels moments les utilisateurs ont visualisé votre expérience et effectué une action désirée (aussi appelée *conversion*).
+* Consigner des événements à l’espace partenaires qui indiquent lorsque les utilisateurs ont visualisé votre expérience et effectué une action désirée (également appelée une *conversion*).
 
 Pour ajouter ce comportement à votre application, vous allez utiliser les API fournies par le Microsoft Store Services SDK.
 
-Les sections suivantes décrivent le processus général d’obtention de variantes pour votre expérience et de consignation des événements dans le Centre de développement. Après avoir codé votre application à des fins d’expérimentation, vous pouvez [définir une expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+Les sections suivantes décrivent le processus général d’obtention de variantes pour votre expérience et de journalisation des événements à l’espace partenaires. Après avoir codé votre application à des fins d’expérimentation, vous pouvez [définir une expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md). Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 > [!NOTE]
-> Certaines des API d’expérimentation dans le Microsoft Store Services SDK utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer les données du centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
+> Certaines des API d’expérimentation dans le Microsoft Store Services SDK utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer des données à partir de l’espace partenaires. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 
@@ -44,7 +44,7 @@ Pour commencer, installez le Kit de développement logiciel Microsoft Store Serv
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>Obtenir des données de variante et consigner l’événement d’affichage pour votre expérience
 
-Dans le projet, recherchez le code de la fonctionnalité que vous souhaitez modifier dans votre expérience. Ajoutez du code qui récupère les données pour une variante, utilisez ces données pour modifier le comportement de la fonctionnalité que vous testez, puis consignez l’événement d’affichage pour votre expérience dans le service de test A/B dans le Centre de développement.
+Dans le projet, recherchez le code de la fonctionnalité que vous souhaitez modifier dans votre expérience. Ajoutez du code qui Récupère les données pour une variante, utilisez ces données pour modifier le comportement de la fonctionnalité que vous testez et puis consignez l’événement d’affichage pour votre expérience dans le test a / B service dans l’espace partenaires.
 
 Le code spécifique requis dépendra de votre application, mais l’exemple suivant illustre le processus de base. Pour obtenir un exemple de code complet, consultez [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -52,13 +52,13 @@ Le code spécifique requis dépendra de votre application, mais l’exemple suiv
 
 Les étapes suivantes décrivent les éléments importants de ce processus en détail.
 
-1. Déclarez un objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’affectation de variante actuelle et un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) que vous utiliserez pour consigner les événements d’affichage et de conversion dans le Centre de développement.
+1. Déclarez un objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’affectation de variante actuelle et un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) que vous utiliserez pour consigner des événements d’affichage et de conversion vers l’espace partenaires.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 2. Déclarez une variable de chaîne affectée à l’[ID de projet](run-app-experiments-with-a-b-testing.md#terms) de l’expérience que vous souhaitez récupérer.
     > [!NOTE]
-    > Vous obtenez un projet ID lorsque vous [créez un projet dans le tableau de bord du centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
+    > Vous obtenez un projet ID lorsque vous [créez un projet dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
@@ -70,7 +70,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
-5. Utilisez les méthodes [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean), [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble), [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) ou [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) de l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) pour obtenir les valeurs de l’affectation de variante. Dans chacune de ces méthodes, le premier paramètre est le nom de la variante que vous voulez récupérer (nom que vous entrez dans le tableau de bord du Centre de développement). Le deuxième paramètre est la valeur par défaut que la méthode doit retourner si elle ne parvient pas à récupérer la valeur spécifiée dans le Centre de développement (par exemple, en cas d’absence de connectivité réseau) et si aucune version mise en cache de la variante n’est disponible.
+5. Utilisez les méthodes [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean), [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble), [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) ou [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) de l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) pour obtenir les valeurs de l’affectation de variante. Dans chacune de ces méthodes, le premier paramètre est le nom de la variante que vous voulez récupérer (c’est le même nom que vous entrez dans l’espace partenaires). Le deuxième paramètre est la valeur par défaut que la méthode doit retourner si elle n’est pas en mesure de récupérer la valeur spécifiée à partir de l’espace partenaires (par exemple, s’il n’existe pas de connectivité réseau) et une version mise en cache de la variante n’est pas disponible.
 
     L’exemple suivant utilise [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) pour obtenir une variable nommée *buttonText* et spécifie la valeur par défaut **Grey Button** à cette variable.
 
@@ -80,17 +80,17 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
-7. Pour finir, consignez l’[événement d’affichage](run-app-experiments-with-a-b-testing.md#terms) de votre expérience dans le service de test A/B dans le Centre de développement. Initialisez le champ ```logger``` sur un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) et appelez la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Transmettez [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’affectation de la variante actuelle (cet objet fournit un contexte pour l’événement au Centre de développement) et le nom de l’événement d’affichage que vous avez défini dans votre expérience. Cela doit correspondre au nom de l’événement d’affichage que vous entrez pour votre expérience dans le tableau de bord du Centre de développement. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience.
+7. Pour finir, consignez l' [événement d’affichage](run-app-experiments-with-a-b-testing.md#terms) pour votre expérience au A test a / B service dans l’espace partenaires. Initialisez le champ ```logger``` sur un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) et appelez la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Passez l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’affectation de variante actuelle (cet objet fournit un contexte pour l’événement à l’espace partenaires) et le nom de l’événement d’affichage pour votre expérience. Cela doit correspondre au nom d’événement de vue que vous entrez pour votre expérience dans l’espace partenaires. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience.
 
     L’exemple suivant montre comment consigner un événement d’affichage nommé **userViewedButton**. Dans cet exemple, l’objectif est d’inciter l’utilisateur à cliquer sur un bouton dans l’application, afin de consigner l’événement d’affichage une fois que l’application a récupéré les données de variante (en l’occurrence, le texte du bouton) et lui a attribué le contenu du bouton.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
 
-## <a name="log-conversion-events-to-dev-center"></a>Consigner les événements de conversion dans le Centre de développement
+## <a name="log-conversion-events-to-partner-center"></a>Consigner les événements de conversion vers l’espace partenaires
 
-Ensuite, ajoutez du code qui consigne les [événements de conversion](run-app-experiments-with-a-b-testing.md#terms) dans le service des testsA/B du Centre de développement. Votre code doit consigner un événement de conversion quand l’utilisateur atteint un objectif pour votre expérience. Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour obtenir un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+Ensuite, ajoutez du code qui enregistre les [événements de conversion](run-app-experiments-with-a-b-testing.md#terms) au A test a / B service dans l’espace partenaires. Votre code doit consigner un événement de conversion quand l’utilisateur atteint un objectif pour votre expérience. Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour obtenir un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-1. Dans le code qui s’exécute quand l’utilisateur atteint un objectif pour l’un des objectifs de l’expérience, appelez de nouveau la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) et transmettez l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) et le nom d’un événement de conversion pour votre expérience. Cela doit correspondre aux noms des événements de conversion que vous entrez pour votre expérience dans le tableau de bord du Centre de développement.
+1. Dans le code qui s’exécute quand l’utilisateur atteint un objectif pour l’un des objectifs de l’expérience, appelez de nouveau la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) et transmettez l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) et le nom d’un événement de conversion pour votre expérience. Cela doit correspondre à un des noms d’événement de conversion que vous entrez pour votre expérience dans l’espace partenaires.
 
     L’exemple suivant consigne un événement de conversion nommé **userClickedButton** à partir du gestionnaire d’événements **Click** pour un bouton. Dans cet exemple, l’objectif de l’expérience est d’obtenir de l’utilisateur qu’il clique sur le bouton.
 
@@ -99,14 +99,14 @@ Ensuite, ajoutez du code qui consigne les [événements de conversion](run-app-e
 ## <a name="next-steps"></a>Étapes suivantes
 
 Dès lors que vous avez codé l’expérience dans votre application, vous êtes prêt pour les étapes suivantes:
-1. [Définissez votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Créez une expérience qui définisse les événements d’affichage, les événements de conversion et les variantes uniques pour votre test A/B.
-2. [Exécutez et gérez votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md).
+1. [Définir votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md). Créez une expérience qui définisse les événements d’affichage, les événements de conversion et les variantes uniques pour votre test A/B.
+2. [Exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
 
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriquesconnexes
 
-* [Créer un projet et définir des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Définir votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md)
+* [Créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Définissez votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Gérer votre expérience dans l’espace partenaires](manage-your-experiment.md)
 * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)

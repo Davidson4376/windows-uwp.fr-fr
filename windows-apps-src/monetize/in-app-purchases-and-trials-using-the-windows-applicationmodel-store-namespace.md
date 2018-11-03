@@ -8,12 +8,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, achats dans l’application, extensions, versions d’évaluation, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 330631afed95c3b0082de69d9369a62aad5a66d5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 28fe27cc4464598414fec11d6812e2e9ea377aff
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945846"
+ms.locfileid: "5978954"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store
 
@@ -22,7 +22,7 @@ Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel
 Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md). Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats dans l'application à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple WindowsStore](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version10.0; Build14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows10, version1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats dans l'application](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). L'espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans les apps ou jeux qui utilisent un développement en bac à sable dans le centre de développement (par exemple, dans le cas des jeux qui s’intègrent à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
+> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version10.0; Build14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows10, version1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats dans l'application](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans des applications ou jeux qui utilisent un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Prise en main des classes CurrentApp et CurrentAppSimulator
 
@@ -390,7 +390,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 |  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le WindowsStore. Cela peut être le GUID utilisé pour le test.        |
 |  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windowsstore. Cela peut être n’importe quel URL valide pour le test.         |
 |  **CurrentMarket**  |    Oui  |  1   |    Pays/région du client.         |
-|  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans le tableau de bord du Centre de développement lorsque vous soumettez l’application. Les valeurs utilisées par le WindowsStore sont: 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
+|  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans l’espace partenaires lorsque vous soumettez l’application. Les valeurs utilisées par le WindowsStore sont: 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
 |  [MarketData](#marketdata-child-of-app)  |    Oui  |  1 ou davantage      |    Contient des informations sur l’application pour un pays/une région donné(e). Pour chaque pays/région où l’application est répertoriée, vous devez inclure un élément **MarketData**.       |    |
 
 <span id="marketdata-child-of-app"/>
