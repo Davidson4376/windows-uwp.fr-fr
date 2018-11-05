@@ -1,6 +1,6 @@
 ---
 author: manoskow
-Description: Learn how to create effective and user-focused notifications that make your users prductive and happy.
+Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: Recommandations d’expérience utilisateur de toast
 label: Toast UX Guidance
 template: detail.hbs
@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, notification, collection, groupe, expérience utilisateur, expérience utilisateur des instructions, recommandations, action, toast, centre de notifications, noninterruptive, notifications efficaces, les notifications non intrusives, exploitables, gérer, organiser
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77719bd45c3169ec02a280099d27e10099a25c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974716"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032700"
 ---
 # <a name="toast-notification-ux-guidance"></a>Conseils d’expérience utilisateur de Notification toast
 Les notifications sont requises de la vie moderne; ils aident les utilisateurs à être plus productifs et commencé avec les applications et sites Web, mais aussi rester en cours avec les mises à jour. Toutefois, les notifications peuvent activer rapidement à partir d’utile à overbearing et intrusif s’ils ne sont pas conçus de manière centrée sur l’utilisateur. Vos notifications sont un clic droit direction opposée en cours est désactivée et il est peu probable une fois qu’ils sont désactivés, ils ne seront activés à nouveau.  Par conséquent, assurez-vous que vos notifications sont de l’espace d’écran de l’utilisateur et l’heure, afin que vous pouvez conserver ce canal d’engagement ouvert.
@@ -57,7 +57,7 @@ Comme mentionné précédemment, le contenu dans le centre de notifications pers
 Les deux de ces notifications Group de manière afin que le contenu pertinent reste ensemble (autrement dit, pensez à séparer ligues sports différentes dans une application sportive, ou le tri des messages par conversation de groupe). Les collections sont un moyen plus évident de groupe notificaitons, tandis que les en-têtes sont plus subtiles, mais les deux permettent aux utilisateurs de trier et de sélectionner les notifications plus rapidement. 
 
 ## <a name="other-resources"></a>Autres ressources
-Ces quatre points ci-dessus sont des conseils que nous avons constaté d’effet par le biais de notre propre analyse de télémétrie et par le biais de la première et expériences de tiers. N’oubliez pas, toutefois, que ces recommandations sont simplement qui: recommandations.  Nous sommes certains de ces règles aideront à augmenter l’engagement et la productivité de vos notifications, mais rien ne remplace centrée sur l’utilisateur et à apprendre à partir de vos propres données.  
+Ces quatre points ci-dessus sont des conseils que nous avons découvert efficaces grâce à notre propre analyse de télémétrie et premier et expériences de tiers. N’oubliez pas, toutefois, que ces recommandations sont simplement qui: recommandations.  Nous sommes certains de ces règles aideront à augmenter l’engagement et la productivité de vos notifications, mais rien ne remplace centrée sur l’utilisateur et à apprendre à partir de vos propres données.  
 
 Si vous envoyez des notifications à votre application UWP aujourd'hui, vous pouvez consulter analytique sur qu’est-il advenu de vos notifications du [Centre](https://developer.microsoft.com/en-us/windows)de développement! Ces données proviennent gratuites lorsque vous utilisez le [Windows Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) ou les [API de WNS](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview). Ces métriques vous donne en plus des informations sur ce qui se produit à vos notifications sur la plateforme windows, ainsi que la manière dont les utilisateurs interagissent avec les notifications. Accéder à ce tableau de bord en accédant au menu sur le côté gauche engager > Notifications, puis en cliquant sur l’onglet «Analyse» au sein de la page Notifications.  Elle se trouve dans le même emplacement que vous souhaitez aller à envoyer des notifications à partir du portail du centre de développement.
 
