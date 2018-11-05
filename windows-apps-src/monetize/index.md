@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995118"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039099"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 

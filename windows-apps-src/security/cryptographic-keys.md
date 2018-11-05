@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: d9a47ba36c84176e83a81dd234d05315aa1e2525
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5990342"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038153"
 ---
 # <a name="cryptographic-keys"></a>Clés de chiffrement
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'avis sur le MicrosoftStore, acquisitions d’extensions
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970113"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039999"
 ---
 # <a name="submit-responses-to-reviews"></a>Soumettre des réponses aux avis
 

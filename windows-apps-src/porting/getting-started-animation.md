@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5979793"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039852"
 ---
 # <a name="getting-started-animation"></a>Prise en main: Animation
 
