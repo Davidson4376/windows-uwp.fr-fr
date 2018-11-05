@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows10, uwp, adaptabilité, localisation, DàG, GàD
 ms.localizationpriority: medium
 ms.openlocfilehash: ac69701eca128d327dfd80cfddc7fad41c50c50e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5985587"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6036819"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG
 Concevez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, notamment le sens du flux DàG (de droite à gauche). Le sens du flux désigne le sens dans lequel le script est rédigé et affiché, et le sens dans lequel les éléments de l'interface utilisateur de la page sont numérisés par l'œil.

@@ -10,11 +10,11 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5984181"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6036087"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 

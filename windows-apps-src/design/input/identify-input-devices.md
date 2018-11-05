@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973834"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6036889"
 ---
 # <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
 
