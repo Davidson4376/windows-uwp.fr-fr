@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux , portage, nuanceur, direct3d, opengl
 ms.localizationpriority: medium
 ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974579"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6042110"
 ---
 # <a name="port-the-shader-objects"></a>Porter les objets nuanceur
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5968462"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6041785"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, clé d’authentification de cartes, contrôle de cartes
 ms.localizationpriority: medium
 ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973332"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046779"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, entrée, exemple
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b7e9a3f655b8be1b93334ed8decf9fe6fa8bbf2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995508"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6041281"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Ajout d’entrées et d’interactivité à l’exemple Marble Maze
 

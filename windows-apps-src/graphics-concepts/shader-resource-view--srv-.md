@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e98b9942dfc14604c061a036cd3c9803abaf3915
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5987562"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046084"
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>Affichage des ressources de nuanceur (SRV) et des accès sans ordre (UAV)
 

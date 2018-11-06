@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c3c4a9e46ce38298d7dcdd50477c4de0e9960c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996880"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6041123"
 ---
 # <a name="animations-in-xaml"></a>Animations en XAML
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, audio, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5990037"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046064"
 ---
 # <a name="audio-for-games"></a>Audio pour les jeux
 

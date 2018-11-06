@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992027"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6040336"
 ---
 # <a name="custom-audio-effects"></a>Effets audio personnalisés
 

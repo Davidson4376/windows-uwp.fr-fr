@@ -8,11 +8,11 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c70d696c1211cfa4f929178f0cf0d9da76ae74c2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5979270"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6041067"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 

@@ -8,12 +8,12 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996854"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045276"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Comment le système de gestion des ressources met en correspondance et sélectionne les ressources
 Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, dans une certaine mesure, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à renvoyer. Pour ce faire, il prend en compte l’ensemble des qualificateurs afin de classer tous les candidats.
@@ -41,7 +41,7 @@ En cas d’égalité, la valeur du qualificateur de contexte ayant la priorité 
 ## <a name="example-of-choosing-a-resource-candidate"></a>Exemple de sélection d’une ressource potentielle
 Prenons ces fichiers.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -53,7 +53,7 @@ de/images/logo.jpg
 
 Et supposons qu’il s’agit des paramètres dans le contexte actuel.
 
-```
+```console
 Application language: en-US; fr-FR;
 Scale: 400
 Contrast: Standard
@@ -61,7 +61,7 @@ Contrast: Standard
 
 Le système de gestion de ressources élimine trois des fichiers, car le contraste élevé et l’allemand ne correspondent pas au contexte défini par les paramètres. Il reste donc ces candidats.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -70,7 +70,7 @@ fr/images/logo.scale-100.jpg
 
 Pour les candidats restants, le système de gestion des ressources utilise le qualificateur de contexte avec la priorité la plus élevée, c’est-à-dire la langue. Les ressources anglaises sont une meilleure correspondance que les ressources françaises, car l’anglais est répertorié avant le français dans les paramètres.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -78,13 +78,13 @@ en/images/logo.scale-100.jpg
 
 Ensuite, le système de gestion des ressources utilise le qualificateur de contexte ayant la priorité la plus élevée suivante, c’est à dire l’échelle. Voici la ressource renvoyée.
 
-```
+```console
 en/images/logo.scale-400.jpg
 ```
 
 Vous pouvez utiliser la méthode avancée [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) pour extraire tous les candidats dans l’ordre dans lequel ils correspondent aux paramètres du contexte. Pour l’exemple que nous venons de détailler, **ResolveAll** renvoie les candidats dans cet ordre.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -94,7 +94,7 @@ fr/images/logo.scale-100.jpg
 ## <a name="example-of-producing-a-fallback-choice"></a>Exemple de production d’une sélection de secours
 Prenons ces fichiers.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -105,7 +105,7 @@ de/images/contrast-standard/logo.jpg
 
 Et supposons qu’il s’agit des paramètres dans le contexte actuel.
 
-```
+```console
 User language: de-DE;
 Scale: 400
 Contrast: High
@@ -113,7 +113,7 @@ Contrast: High
 
 Tous les fichiers sont éliminés, car ils ne correspondent pas au contexte. Par conséquent, nous entrons une passe par défaut, où la valeur par défaut (voir [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)) était la suivante lors de la création du fichier PRI.
 
-```
+```console
 Language: fr-FR;
 Scale: 400
 Contrast: Standard
@@ -121,7 +121,7 @@ Contrast: Standard
 
 Cela conserve toutes les ressources qui correspondent à l’utilisateur actuel ou à la valeur par défaut.
 
-```
+```console
 fr/images/contrast-standard/logo.scale-400.jpg
 fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
@@ -129,7 +129,7 @@ de/images/contrast-standard/logo.jpg
 
 Le système de gestion des ressources utilise le qualificateur de contexte ayant la priorité la plus élevée, c’est-à-dire la langue, pour renvoyer la ressource nommée avec le score le plus élevé.
 
-```
+```console
 de/images/contrast-standard/logo.jpg
 ```
 

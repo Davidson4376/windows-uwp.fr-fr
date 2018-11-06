@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, Xbox One acquisitions de modules complémentaires
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970487"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6043146"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions XboxOne
 

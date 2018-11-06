@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, SQLServer, base de données
 ms.localizationpriority: medium
 ms.openlocfilehash: 8396fb7685a774568b6cd63acb11f78133584f46
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5990182"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6042354"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Utiliser une base de données SQLServer dans une applicationUWP
 Votre application peut se connecter directement à une base de données SQLServer, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).

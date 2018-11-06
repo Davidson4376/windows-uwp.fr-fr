@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5977101"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045083"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
