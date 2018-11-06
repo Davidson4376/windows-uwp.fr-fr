@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, packages, télécharger, disponibilité famille d’appareils
 ms.localizationpriority: medium
 ms.openlocfilehash: 543b5c519e7514ccef397c2bb78eadcc5e3692f5
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996834"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049364"
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 

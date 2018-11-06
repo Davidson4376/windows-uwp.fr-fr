@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumission d’app, état
 ms.localizationpriority: medium
 ms.openlocfilehash: f92911d431579f9408b02680abf1d49f17740903
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5977883"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6050287"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>Obtenir l’état d’une soumission d’applications
 

@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: bad800f3858cdfdf3def3a9a04854f078b3af399
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5984675"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049550"
 ---
 # <a name="guidelines-for-targeting"></a>Recommandations en matière de ciblage
 
@@ -152,20 +152,20 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 
 
 **Exemples**
-* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : exemple d’entrée manuscrite simplifiée](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : exemple de fonctionnalités d’appareils](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple de test de positionnement tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Entrée : exemple de mouvements Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Entrée : exemple de manipulations et de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

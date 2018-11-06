@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5980729"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6051374"
 ---
 # <a name="enterprise"></a>Entreprise
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5971114"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048742"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations pour les applications de marketing de Microsoft Store
 

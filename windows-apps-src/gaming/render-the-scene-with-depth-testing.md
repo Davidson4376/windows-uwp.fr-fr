@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, rendu, scène, test de profondeur, direct3d, ombres
 ms.localizationpriority: medium
 ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5993387"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6051059"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Générer le rendu de la scène avec un test de profondeur
 

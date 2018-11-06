@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’apps
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c220e76cd032f4cf36f0d4ae88c01485f31163
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5994311"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6050516"
 ---
 # <a name="get-an-app-submission"></a>Obtenir une soumission d’application
 
