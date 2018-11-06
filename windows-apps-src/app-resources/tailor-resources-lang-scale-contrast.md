@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 563807798cefe083fa1de85dc1f7e4c3ae679211
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 018740b9ceaa10425ec71f6a2775d547b7c30e82
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992515"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048478"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -39,7 +39,7 @@ Par conséquent, pour le contraste élevé, le jeu de qualificateurs est `contra
 
 Voici un exemple d’utilisation des qualificateurs pour nommer des dossiers contenant des fichiers de ressources. Utilisez des qualificateurs dans les noms de dossier si vous disposez de plusieurs fichiers de ressources par qualificateur. De cette façon, vous définissez le qualificateur une seule fois au niveau du dossier, et le qualificateur s’applique à tous les éléments qui se trouvent à l’intérieur du dossier.
 
-```
+```console
 \Assets\Images\contrast-standard\<logo.png, and other image files>
 \Assets\Images\contrast-high\<logo.png, and other image files>
 \Assets\Images\contrast-black\<logo.png, and other image files>
@@ -52,7 +52,7 @@ Si vous nommez vos dossiers comme dans l’exemple ci-dessus, votre application 
 
 Au lieu de créer et de nommer des dossiers, vous pouvez utiliser un qualificateur pour nommer les fichiers de ressources eux-mêmes. Cette méthode peut être préférable si vous n'avez qu'un seul fichier de ressources par qualificateur. Voici un exemple.
 
-```
+```console
 \Assets\Images\logo.contrast-standard.png
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.contrast-black.png
@@ -68,7 +68,7 @@ Voir [Faire référence à un identificateur de ressource de chaîne à partir d
 ## <a name="actual-and-neutral-qualifier-matches"></a>Le qualificateur réel et neutre correspondent
 Vous n’avez pas besoin de fournir un fichier de ressources pour *chaque* valeur de qualificateur. Par exemple, si vous constatez que vous n'avez besoin que d'une ressource visuelle pour le contraste élevé et que d'une pour le contraste standard, vous pouvez nommer ces ressources comme suit.
 
-```
+```console
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.png
 ```
@@ -81,7 +81,7 @@ Si vous renommiez `logo.png` en `logo.contrast-standard.png`, le nom du fichier 
 
 Si vous avez uniquement besoin d'un ensemble de ressources pour le contraste élevé et d'un autre pour le contraste standard, vous pouvez utiliser des noms de dossier au lieu des noms de fichiers. Dans ce cas, l’omission complète du nom du dossier vous donne la correspondance neutre.
 
-```
+```console
 \Assets\Images\contrast-high\<logo.png, and other images to load when high contrast theme is not None>
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
@@ -92,7 +92,7 @@ Pour plus d’informations sur le fonctionnement de la correspondance de qualifi
 
 Vous pouvez combiner des qualificateurs dans les noms de dossier et de fichier. Par exemple, vous souhaitez peut-être que votre application charge des ressources d’image lorsque le mode contraste élevé est activé *et* que le facteur d’échelle de l’affichage est de400. L’une des méthodes possibles consiste à utiliser des dossiers imbriqués.
 
-```
+```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
 ```
 
@@ -100,7 +100,7 @@ Pour `logo.png` et les autres fichiers à charger, les paramètres doivent corre
 
 Une autre option consiste à associer plusieurs qualificateurs dans le nom d’un dossier.
 
-```
+```console
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
@@ -108,7 +108,7 @@ Dans un nom de dossier, vous combinez plusieurs qualificateurs séparés par un 
 
 Vous pouvez combiner plusieurs qualificateurs dans un nom de fichier dans le même format.
 
-```
+```console
 \Assets\Images\logo.contrast-high_scale-400.png
 ```
 
@@ -160,14 +160,14 @@ Il est peu probable que vous ayez besoin du nom de qualificateur `devicefamily`.
 
 Mais en dernier recours, il est possible d’utiliser des qualificateurs devicefamily pour nommer des dossiers qui contiennent vos vues XAML (une vue XAML est un fichier XAML qui contient une disposition de l’interface utilisateur et des contrôles).
 
-```
+```console
 \devicefamily-desktop\<MainPage.xaml, and other markup files to load when running on a desktop computer>
 \devicefamily-mobile\<MainPage.xaml, and other markup files to load when running on a phone>
 ```
 
 Vous pouvez également nommer des fichiers.
 
-```
+```console
 \MainPage.devicefamily-desktop.xaml
 \MainPage.devicefamily-mobile.xaml
 ```
@@ -203,21 +203,21 @@ Si vous souhaitez que votre application prenne en charge différentes langues d�
 
 Vous utilisez généralement un qualificateur `language` pour nommer les dossiers qui contiennent vos fichiers de ressources (`.resw`).
 
-```
+```console
 \Strings\language-en\Resources.resw
 \Strings\language-ja\Resources.resw
 ```
 
 Vous pouvez omettre la partie `language-` d’un qualificateur `language` (autrement dit, le nom du qualificateur). Vous ne pouvez pas le faire avec les autres types de qualificateurs; et cela n'est possible que dans un nom de dossier.
 
-```
+```console
 \Strings\en\Resources.resw
 \Strings\ja\Resources.resw
 ```
 
 Au lieu de nommer des dossiers, vous pouvez utiliser des qualificateurs `language` pour nommer les fichiers de ressources eux-mêmes.
 
-```
+```console
 \Strings\Resources.language-en.resw
 \Strings\Resources.language-ja.resw
 ```
@@ -234,7 +234,7 @@ Windows sélectionne automatiquement un facteur d’échelle pour chaque afficha
 
 Voici un exemple de définition du qualificateur au niveau du dossier.
 
-```
+```console
 \Assets\Images\scale-100\<logo.png, and other image files>
 \Assets\Images\scale-200\<logo.png, and other image files>
 \Assets\Images\scale-400\<logo.png, and other image files>
@@ -242,7 +242,7 @@ Voici un exemple de définition du qualificateur au niveau du dossier.
 
 Et cet exemple le définit au niveau du fichier.
 
-```
+```console
 \Assets\Images\logo.scale-100.png
 \Assets\Images\logo.scale-200.png
 \Assets\Images\logo.scale-400.png

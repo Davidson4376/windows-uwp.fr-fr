@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 7555f4a61f7798fa32d137928cde8c042a7fcdfc
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5997498"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048782"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Scénario1: Générer un fichier IRP à partir de ressources de chaîne et de fichiers de ressources
 Dans ce scénario, nous allons utiliser les [API d’indexation de ressource de package (IRP)](https://msdn.microsoft.com/library/windows/desktop/mt845690) pour créer une application pour représenter notre système de génération personnalisé. N’oubliez pas que l’objectif de ce système de génération personnalisé est de créer des fichiers PRI pour une application UWP cible. Par conséquent, dans le cadre de cette procédure pas à pas, nous allons créer des exemples de fichiers de ressources (contenant des chaînes et autres types de ressources) pour représenter les ressources de cette application UWP cible.

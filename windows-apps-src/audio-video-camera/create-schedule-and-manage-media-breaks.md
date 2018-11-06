@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995853"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048350"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>Créer, planifier et gérer des coupures de médias
 

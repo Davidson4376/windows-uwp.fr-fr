@@ -10,12 +10,12 @@ ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: a9a9dd4347cc682f384c2d408d30820acf76ce34
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982134"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047504"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et WindowsInk dans les applications UWP
 
@@ -52,7 +52,7 @@ Pour obtenir des recommandations en matière d’expérience utilisateur avec Wi
 | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Un contrôle de plateforme XAMLUI qui, par défaut, reçoit et affiche toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement.<br/>Pour plus d’informations sur l’utilisation de l’élément InkCanvas, consultez [Reconnaître les traits d’encre Windows en tant que texte](convert-ink-to-text.md) et [Stocker et récupérer les données de traits Windows Ink](save-and-load-ink.md). |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément **InkCanvas**, ainsi qu’un ensemble complet d’API pour plus de personnalisation.<br/>Pour plus d’informations sur l’utilisation de l’élément InkPresenter, consultez [Reconnaître les traits d’encre Windows en tant que texte](convert-ink-to-text.md) et [Stocker et récupérer les données de traits Windows Ink](save-and-load-ink.md). |
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Un contrôle de plateforme XAMLUI contenant une collection extensible et personnalisable de boutons qui activent des fonctionnalités d’entrée manuscrite dans un [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)associé.<br/>Pour plus d’informations sur l’utilisation de l’élément InkToolbar, consultez [Ajouter un élément InkToolbar à une application d’entrée manuscrite de plateforme Windows universelle (UWP)](ink-toolbar.md). |
-| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Permet le rendu des traits d’encre sur le contexte d’appareil Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. Cela offre une personnalisation totale de l’expérience d’entrée manuscrite.<br/>Pour plus d’informations, consultez [l’exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314). |
+| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Permet le rendu des traits d’encre sur le contexte d’appareil Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. Cela offre une personnalisation totale de l’expérience d’entrée manuscrite.<br/>Pour plus d’informations, consultez [l’exemple d’entrée manuscrite complexe](https://go.microsoft.com/fwlink/p/?LinkID=620314). |
 
 ## <a name="basic-inking-with-inkcanvas"></a>Entrée manuscrite de base avec InkCanvas
 
@@ -456,7 +456,7 @@ En appelant [**ActivateCustomDrying**](https://msdn.microsoft.com/library/window
 
 Vous pouvez également personnaliser l’encre sèche pour un [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel), mais la synchronisation avec le thread d’interface utilisateur n’est pas garantie et il peut y avoir un délai entre le moment où l’encre est restituée dans votre SwapChainPanel et celui où l’entre est supprimée du InkCanvas.
 
-Pour obtenir un exemple complet de cette fonctionnalité, consultez l’[exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314).
+Pour obtenir un exemple complet de cette fonctionnalité, consultez l’[exemple d’entrée manuscrite complexe](https://go.microsoft.com/fwlink/p/?LinkID=620314).
 
 > [!NOTE]
 > Séchage personnalisé et élément [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
@@ -484,18 +484,18 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez l’[exemple
 
 **Exemples**
 * [Didacticiel de prise en main: Prise en charge des entrées manuscrites dans votre application UWP](https://aka.ms/appsample-ink)
-* [Exemple d’entrée manuscrite simple (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Exemple d’entrée manuscrite complexe (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Exemple d’entrée manuscrite (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Exemple d’entrée manuscrite simple (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Exemple d’entrée manuscrite complexe (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Exemple d’entrée manuscrite (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [Exemple de livre de coloriage](https://aka.ms/cpubsample-coloringbook)
 * [Exemple de notes de famille](https://aka.ms/cpubsample-familynotessample)
-* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Entrée : exemple de fonctionnalités de périphériques](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : mouvements et manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)

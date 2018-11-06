@@ -9,11 +9,11 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970342"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047454"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’espace partenaires
 

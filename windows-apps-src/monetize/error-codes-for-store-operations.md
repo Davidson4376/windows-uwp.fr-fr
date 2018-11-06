@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, achats dans l’application, FAI, extensions, les codes d’erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992343"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047304"
 ---
 # <a name="error-codes-for-store-operations"></a>Codes d’erreur pour les opérations du Store
 

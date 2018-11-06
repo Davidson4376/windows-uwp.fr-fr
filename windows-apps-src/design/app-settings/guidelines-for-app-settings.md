@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 56a952950fa9f2d9d57d5beaed397dd72f64ea54
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996629"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048633"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres d’application
 
