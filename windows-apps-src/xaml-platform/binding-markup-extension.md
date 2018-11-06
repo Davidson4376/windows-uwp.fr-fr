@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02c856fd697bef958eb45a0f0f133e06f63a7f51
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973897"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039109"
 ---
 # <a name="binding-markup-extension"></a>Extension de balisage {Binding}
 
