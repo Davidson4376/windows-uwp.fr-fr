@@ -11,11 +11,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b9148b2d57c55bdff09be9a9d6bb8a6b65d93f12
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027709"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161308"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
@@ -28,13 +28,13 @@ La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API
 
 ## <a name="configure-speech-recognition"></a>Configurer la reconnaissance vocale
 
-Pour prendre en charge la reconnaissance vocale avec votre application, l’utilisateur doit se connecter et activer un microphone sur leur appareil et acceptez la politique de confidentialité Microsoft accorder l’autorisation de votre application pour l’utiliser.
+Pour prendre en charge la reconnaissance vocale avec votre application, l’utilisateur doit se connecter et activer un microphone sur leur appareil et acceptez la politique de confidentialité de Microsoft l’octroi d’autorisation pour votre application pour l’utiliser.
 
-Invite automatiquement l’utilisateur avec une boîte de dialogue système demande d’autorisation d’accès et utiliser le microphone de l’alimentation audio venez de définir (exemple à partir de [reconnaissance vocale et exemple de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897) illustré ci-dessous), le **Microphone** [appareil fonctionnalité](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) dans le [manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Pour plus d’informations, voir les [déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+À l’invite automatiquement l’utilisateur avec une boîte de dialogue système demande d’autorisation d’accès et utiliser le microphone de l’alimentation audio venez de définir (exemple à partir de [reconnaissance vocale et exemple de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897) illustré ci-dessous), le **Microphone** [appareil fonctionnalité](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) dans le [manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Pour plus d’informations, voir les [déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ![Politique de confidentialité pour l’accès au microphone](images/speech/privacy.png)
 
-Si l’utilisateur clique sur Oui pour accorder l’accès au microphone, votre application est ajoutée à la liste des applications approuvées sur les paramètres -> confidentialité -> page Microphone. Toutefois, comme l’utilisateur peut choisir de désactiver ce paramètre à tout moment, vous devez vérifier que votre application a accès au microphone avant de tenter de l’utiliser.
+Si l’utilisateur clique sur Oui pour accorder l’accès au microphone, votre application est ajoutée à la liste des applications approuvées sur les paramètres -> confidentialité -> page du Microphone. Toutefois, comme l’utilisateur peut choisir de désactiver ce paramètre à tout moment, vous devez vérifier que votre application a accès au microphone avant d’essayer de l’utiliser.
 
 Si vous souhaitez également prendre en charge de la dictée, Cortana, ou la reconnaissance vocale autres services (par exemple, une [Grammaire prédéfinie](#predefined-grammars) définies dans une contrainte de rubrique), vous devez également confirmer que **la reconnaissance vocale en ligne** (Paramètres -> confidentialité -> voix) est activée.
 
@@ -222,7 +222,7 @@ La grammaire de dictée de texte libre par défaut peut reconnaître la plupart 
 
 La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-**Remarque**étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineux, et dans la mesure où ils sont en ligne (pas sur l’appareil), performances ne peut pas être aussi bonnes qu’avec une grammaire personnalisée installée sur l’appareil.     
+**Remarque**étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineux, et parce qu’ils sont en ligne (pas sur l’appareil), performances ne peuvent pas être aussi bonnes qu’avec une grammaire personnalisée installée sur l’appareil.     
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037019"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160151"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
@@ -40,7 +40,7 @@ Principales fonctions de la couche visuelle:
 
 ### <a name="content"></a>Contenu
 
-Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. De Visual inclure [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) contenant contenu et peut être peint avec des couleurs unies, personnalisés dessinés contenus ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
+Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Les sous-classes de Visual incluent [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) contenant contenu et peuvent être peint avec des couleurs unies, personnalisés dessinés contenus ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
 
 Pour plus d’informations, consultez la vue d’ensemble [Éléments visuels de composition](composition-visual-tree.md).
 

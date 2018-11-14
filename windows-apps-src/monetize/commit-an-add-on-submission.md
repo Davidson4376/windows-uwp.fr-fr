@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044762"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269230"
 ---
 # <a name="commit-an-add-on-submission"></a>Valider une soumission d’extension
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’extension nouvelle ou mise à jour (produit également appelé in-app ou PIA) à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les icônes associées). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission d’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’extension nouvelle ou mise à jour (produit également connue sous le nom in-app ou PIA) à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les icônes associées). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission pour l’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une extension à l’aide de l’API de soumission au MicrosoftStore, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
@@ -50,7 +50,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension qui contient la soumission à valider. L’ID Windows Store est disponible dans l’espace partenaires, et il est inclus dans les données de réponse des requêtes pour [obtenir toutes les extensions](get-all-add-ons.md) et de [créer une extension](create-an-add-on.md). |
-| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête

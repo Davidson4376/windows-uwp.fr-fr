@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035335"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164462"
 ---
 # <a name="xaml-syntax-guide"></a>Guide de la syntaxe XAML
 
@@ -240,7 +240,7 @@ Tout d’abord, la présence de l’élément objet indique qu’un nouvel objet
 
 Une autre règle du langage XAML est que les attributs d’un élément doivent pouvoir être définis dans n’importe quel ordre. Parexemple, il n’y a pas de différence entre `<Rectangle Height="50" Width="100" />` et `<Rectangle Width="100"  Height="50" />`. L’ordre que vous utilisez est une question de style.
 
-**Remarque**concepteurs XAML effectuent souvent la promotion des conventions relatives à si vous utilisez des aires de conception autres que l’éditeur XML, mais vous pouvez modifier librement ce code XAML ultérieurement, afin de réorganiser les attributs ou introduire de nouveaux.
+**Remarque**concepteurs XAML effectuent souvent la promotion des conventions relatives à si vous utilisez des aires de conception autres que l’éditeur XML, mais vous pouvez modifier librement ce code XAML ultérieurement, pour réorganiser les attributs ou d’en introduire de nouveaux.
 
 ## <a name="attached-properties"></a>Propriétés jointes
 
@@ -288,7 +288,7 @@ Dans de rares cas, vous verrez une syntaxe XAML où le type d’une propriété 
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Conventions sur les espaces réservés XAML dans les informations de référence sur Windows Runtime
 
-Si vous avez examiné une section **Syntaxe** des rubriques de référence pour les API Windows Runtime qui peuvent utiliser XAML, vous avez probablement constaté que la syntaxe inclut un assez grand nombre d’espaces réservés. Syntaxe XAML est différente de celle les extensions de composant c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) syntaxe dans la mesure où la syntaxe XAML est une syntaxe d’utilisation. Elle évoque votre utilisation finale dans vos propres fichiers XAML, mais sans être trop contraignante sur les valeurs que vous pouvez utiliser. Ainsi, l’utilisation décrit en général un type de grammaire qui combine des littéraux et des espaces réservés, et définit certains de ces espaces réservés dans la section **Valeurs XAML**.
+Si vous avez examiné une section **Syntaxe** des rubriques de référence pour les API Windows Runtime qui peuvent utiliser XAML, vous avez probablement constaté que la syntaxe inclut un assez grand nombre d’espaces réservés. Syntaxe XAML est différente de celle les extensions de composant c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) syntaxe, car la syntaxe XAML est une syntaxe d’utilisation. Elle évoque votre utilisation finale dans vos propres fichiers XAML, mais sans être trop contraignante sur les valeurs que vous pouvez utiliser. Ainsi, l’utilisation décrit en général un type de grammaire qui combine des littéraux et des espaces réservés, et définit certains de ces espaces réservés dans la section **Valeurs XAML**.
 
 Lorsque vous voyez des noms de types/noms d’éléments dans une syntaxe XAML pour une propriété, le nom affiché est relatif au type qui définit initialement la propriété. Cependant, la syntaxe XAML Windows Runtime prend en charge un modèle d’héritage de classe pour les classes [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Vous pouvez donc souvent utiliser un attribut sur une classe qui n’est pas littéralement la classe de définition, mais qui dérive d’une classe qui a au préalable défini la propriété/l’attribut. Par exemple, vous pouvez définir [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) en tant qu’attribut sur toute classe dérivée de [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) avec un héritage complet. Par exemple : `<Button Visibility="Visible" />`. Ne considérez donc pas le nom d’élément affiché dans la syntaxe d’utilisation XAML de manière trop littérale. La syntaxe peut être viable pour des éléments représentant cette classe, mais aussi pour des éléments représentant une classe dérivée. Dans les cas où il est rare ou impossible que le type indiqué en tant qu’élément de définition soit dans une utilisation réelle, ce nom de type est délibérément en minuscules dans la syntaxe. Par exemple, la syntaxe affichée pour **UIElement.Visibility** est :
 

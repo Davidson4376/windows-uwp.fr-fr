@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, directx , portage
 ms.localizationpriority: medium
 ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030756"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268409"
 ---
 # <a name="plan-your-directx-port"></a>Planifier votre portage DirectX
 

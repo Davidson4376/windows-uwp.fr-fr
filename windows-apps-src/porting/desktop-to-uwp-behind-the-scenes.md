@@ -9,15 +9,15 @@ keywords: windows10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff5cd40cad43a73a8ba51a25710e2f2cbaf2a7b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041324"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203638"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>Fonctionnement détaillé de votre application de bureau empaquetée
 
-Cet article présente de manière plus approfondie interne sur ce qui se passe aux fichiers et aux entrées de Registre lorsque vous créez un package d’application Windows pour votre application de bureau.
+Cet article présente de manière plus approfondie interne sur ce qui se produit à des fichiers et des entrées de Registre lorsque vous créez un package d’application Windows pour votre application de bureau.
 
 L’objectif principal d’un package modern est de séparer l’état de l’application à partir de l’état du système autant que possible tout en conservant la compatibilité avec d’autres applications. Pour ce faire, le pont place l’application dans un package de plateforme Windows universelle (UWP), puis détecte et redirige certaines modifications qu’il apporte au système de fichiers et au Registre lors de l’exécution.
 
@@ -50,7 +50,7 @@ Lire ou énumérer un fichier ou un dossier Windows connu | Fusion dynamique de 
 
 ### <a name="packaged-vfs-locations"></a>Emplacements de VFS empaquetés
 
-Le tableau suivant montre où les fichiers intégrés à votre package sont superposés sur le système de l’application. Votre application détectera ces fichiers pour présenter les emplacements système répertoriés, en fait, ils se trouvent dans les emplacements redirigés à l’intérieur de *C:\Program files\windowsapps\nom_package\vfs*. Les emplacements FOLDERID proviennent des constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx).
+Le tableau suivant montre où les fichiers intégrés à votre package sont superposés sur le système de l’application. Votre application détectera ces fichiers pour être dans les emplacements système répertoriés, alors qu’ils sont dans les emplacements redirigés à l’intérieur de *C:\Program files\windowsapps\nom_package\vfs*. Les emplacements FOLDERID proviennent des constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx).
 
 Emplacement système | Emplacement redirigé (sous [Racine du package] \VFS\) | Valide sur les architectures
  :--- | :--- | :---
@@ -73,7 +73,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86, amd64
 
 Les packages d’application contiennent un fichier registry.dat, qui est l’équivalent logique de *HKLM\Software* dans le vrai Registre. À l’exécution, ce Registre virtuel fusionne le contenu de cette ruche dans la ruche du système natif afin de fournir un affichage unique des deux. Par exemple, si registry.dat contient une seule clé «Foo», la lecture de *HKLM\Software* à l’exécution semble également contenir «Foo» (en plus de toutes les clés système natives).
 
-Seules les clés sous *HKLM\Software* font partie du package. Les touches sous *HKCU* ou d’autres parties du Registre n’en font pas partie. Les écritures dans les clés ou les valeurs du package ne sont pas autorisées. Écritures dans les clés ou les valeurs pas partie du package sont autorisées tant que l’utilisateur est autorisé.
+Seules les clés sous *HKLM\Software* font partie du package. Les touches sous *HKCU* ou d’autres parties du Registre n’en font pas partie. Les écritures dans les clés ou les valeurs du package ne sont pas autorisées. Écritures dans les clés ou les valeurs pas partie du package sont autorisés en tant que l’utilisateur est autorisé.
 
 Toutes les écritures sous HKCU sont copiées à l’écriture dans un emplacement privé par utilisateur, par application. Traditionnellement, les programmes de désinstallation ne parviennent pas à nettoyer *HKEY_CURRENT_USER* car les données du Registre des utilisateurs déconnectées sont déchargées et inaccessibles.
 
@@ -92,7 +92,7 @@ Lire ou énumérer *HKLM\Software* | Fusion dynamique de la ruche du package ave
 
 ## <a name="uninstallation"></a>Désinstallation
 
-Lorsqu’un package est désinstallé par l’utilisateur, tous les fichiers et dossiers situés dans *C:\Program files\windowsapps\nom_package* sont supprimés, ainsi que les écritures redirigées vers AppData ou le Registre qui ont été capturées au cours du processus de création de packages.
+Lorsqu’un package est désinstallé par l’utilisateur, tous les fichiers et dossiers situés sous *C:\Program files\windowsapps\nom_package* sont supprimés, ainsi que les écritures redirigées vers AppData ou le Registre qui ont été capturées au cours du processus de création de packages.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

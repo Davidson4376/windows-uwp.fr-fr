@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: Porter une tâche en arrière-plan hors processus vers une tâche en arrière-plan in-process
-description: Porter une tâche en arrière-plan out-of-process en une tâche en arrière-plan in-process qui s’exécute dans le processus de votre application au premier plan.
+description: Porter une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process qui s’exécute dans le processus de votre application au premier plan.
 ms.author: twhitney
 ms.date: 09/19/2018
 ms.topic: article
@@ -9,15 +9,15 @@ keywords: Windows 10, uwp, tâche en arrière-plan, le service d’application
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 47008fd7ba0b7724aa8fbdc2dd6cbd55288faea0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036639"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164695"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>Porter une tâche en arrière-plan hors processus vers une tâche en arrière-plan in-process
 
-Le moyen le plus simple de porter votre activité d’en arrière-plan out-of-process (OOP) in-process activité consiste à importer votre code de méthode [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) à l’intérieur de votre application et lancer à partir de [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). La technique décrite ici n’est pas sur la création d’un shim à partir d’une tâche en arrière-plan OOP en une tâche en arrière-plan in-process; sa réécriture sur (ou portage) une version OOP vers une version in-process.
+Le moyen le plus simple à porter votre activité d’en arrière-plan out-of-process (OOP) in-process activité consiste à importer votre code de méthode [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) à l’intérieur de votre application et lancer à partir de [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). La technique décrite ici n’est pas sur la création d’un shim à partir d’une tâche en arrière-plan OOP à une tâche en arrière-plan in-process; sa réécriture sur (ou portage) une version de OOP vers une version in-process.
 
 Si votre application comporte plusieurs tâches en arrière-plan, [l’exemple d’activation en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation) montre comment vous pouvez utiliser `BackgroundActivatedEventArgs.TaskInstance.Task.Name` pour identifier la tâche qui est lancée.
 

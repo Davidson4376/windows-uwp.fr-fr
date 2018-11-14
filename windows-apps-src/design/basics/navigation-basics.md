@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82623a86548866a78f56385ee0a535bfcb822c46
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044248"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6270814"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -56,7 +56,7 @@ Commençons par les principes de base d’une navigation réussie:
 
 ### <a name="consistency"></a>Cohérence
 
-La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont suivant les conventions standard pour les icônes et familier avec, emplacement et son style rendra navigation prévisible et intuitive pour les utilisateurs.
+La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont habitués à et suivant les conventions standard pour les icônes, emplacement et le style seront rendre la navigation prévisible et intuitive pour les utilisateurs.
 
 ![image des composants d'une page](images/nav/page-components.svg)
 
@@ -118,7 +118,7 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
         - Les pages peuvent être affichées dans n’importe quel ordre.
         - Les pages sont clairement distinctes les unes des autres et n’ont aucune relation parent/enfant évidente.
-        - Il existe moins de 8 pages du groupe. <br>
+        - Il existe moins de 8 pages dans le groupe. <br>
         (S’il y a plus de pages, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits.)
 
     :::column-end:::
@@ -186,8 +186,8 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
         Use top navigation when:
 
         - Vous souhaitez afficher toutes les options de navigation à l’écran.
-        - Votre choix davantage d’espace pour le contenu de votre application.
-        - Les icônes ne peuvent pas décrivent clairement vos catégories de navigation.
+        - Vous souhaitez davantage d’espace pour le contenu de votre application.
+        - Les icônes ne peut pas décrivent clairement vos catégories de navigation.
         
         Utilisez les onglets lorsque:
 

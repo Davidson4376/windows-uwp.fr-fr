@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, technologie, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034638"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181565"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Technologies de jeu des applications UWP
 
@@ -24,7 +24,7 @@ Ce guide décrit les technologies disponibles pour le développement de jeux UWP
 ##  <a name="benefits-of-windows10-for-game-development"></a>Avantages de Windows 10 pour le développement de jeux
 
 
-Avec l’introduction des UWP dans Windows 10, vos titres Windows 10 sera en mesure de s’étendre sur toutes les plateformes Microsoft. Avec la migration gratuite à partir de versions antérieures de Windows, il existe un nombre croissant de clients de Windows 10. La combinaison de ces deux aspects signifie que vos titres Windows 10 seront en mesure d’atteindre un nombre considérable de clients par le biais du Microsoft Store.
+Avec l’introduction de UWP dans Windows 10, vos titres Windows 10 sera en mesure de s’étendre sur toutes les plateformes Microsoft. Avec la migration gratuite à partir de versions antérieures de Windows, il existe un nombre croissant de clients de Windows 10. La combinaison de ces deux aspects signifie que vos titres Windows 10 pourront atteindre un nombre considérable de clients par le biais du Microsoft Store.
 
 En outre, Windows 10 offre de nombreuses nouvelles fonctionnalités qui sont particulièrement intéressant de jeux:
 

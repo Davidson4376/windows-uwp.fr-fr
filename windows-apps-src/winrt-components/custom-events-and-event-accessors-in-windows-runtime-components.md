@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050438"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6163903"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
 
@@ -33,7 +33,7 @@ Heureusement, les compilateurs Visual Basic et C# simplifient ce processus: lors
 
 Le code suivant pour l’événement NumberChanged illustre le modèle de base pour les événements UWP. Dans cet exemple, le constructeur de l’objet d’argument d’événement, NumberChangedEventArgs, prend un seul paramètre entier représentant la valeur numérique modifiée.
 
-> **Remarque**le même modèle que les compilateurs pour les événements ordinaires que vous déclarez dans un composant Windows Runtime est utilisé.
+> **Remarque**c’est le même modèle que les compilateurs pour les événements ordinaires que vous déclarez dans un composant Windows Runtime.
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -110,7 +110,7 @@ Les autres membres de la classe EventRegistrationTokenTable&lt;T&gt; utilisés d
 -   La méthode [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) génère un jeton pour le délégué de gestionnaire d’événements, stocke le délégué dans la table, l’ajoute à la liste d’appel, puis retourne le jeton.
 -   La surcharge de méthode [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) supprime le délégué de la table et de la liste d’appel.
 
-    >**Remarque**les méthodes AddEventHandler et RemoveEventHandler (eventregistrationtoken) verrouillent la table afin de garantir la sécurité des threads.
+    >**Remarque**méthodes les méthodes AddEventHandler et RemoveEventHandler verrouillent la table afin de garantir la sécurité des threads.
 
 -   La propriété [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) retourne un délégué qui inclut tous les gestionnaires d’événements actuellement inscrits pour gérer l’événement. Utilisez ce délégué pour déclencher l’événement ou utilisez les méthodes de la classe Delegate pour appeler les gestionnaires individuellement.
 
