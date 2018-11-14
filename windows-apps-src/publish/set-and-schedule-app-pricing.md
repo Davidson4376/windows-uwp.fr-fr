@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows10, uwp, tarification, prix de l’application, vente d’applications, modification de prix, prix personnalisé, prix, tarif, coût, remplacer le prix de base, prix au format libre, format libre
 ms.localizationpriority: medium
 ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026448"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154641"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Définir et planifier le prix de l’application
 
 La section **Tarification** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md) vous permet de sélectionner le prix de base d’une application. Vous pouvez également [planifier des changements de prix](#schedule-price-changes) pour indiquer la date et l’heure auxquelles le prix de votre application doit changer. En outre, vous avez la possibilité de [remplacer le prix de base pour des marchés spécifiques](#override-base-price-for-specific-markets), en sélectionnant un nouveau niveau de prix ou en saisissant un prix au format libre dans la devise locale du marché.
 
 > [!NOTE]
-> Bien que cet article fasse référence aux applications, la sélection du prix des soumissions d’extensions applique le même processus. Notez que pour les [extensions d’abonnement](../monetize/enable-subscription-add-ons-for-your-app.md), le prix de base que vous sélectionnez ne peut jamais être augmenté (que ce soit par modifier le prix de base ou en planifiant un changement de prix), même si elle peut être réduit.
+> Bien que cet article fasse référence aux applications, la sélection du prix des soumissions d’extensions applique le même processus. Notez que pour les [extensions d’abonnement](../monetize/enable-subscription-add-ons-for-your-app.md), le prix de base que vous sélectionnez ne peut jamais être augmenté (que ce soit par modifier le prix de base ou en planifiant un changement de prix), bien qu’il peut être réduit.
 
 ## <a name="base-price"></a>Prix de base
 
@@ -37,7 +37,7 @@ Dans la section **Tarification**, cliquez sur **Afficher la table de conversion*
 N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Nous vous conseillons également de consulter les [considérations de prix pour des marchés spécifiques](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
-> Si vous choisissez l’option **empêcher l’acquisition** sous **rendre ce produit disponible mais non détectable dans le Windows Store** dans la section [visibilité](choose-visibility-options.md#discoverability) ), vous ne serez pas en mesure de définir la tarification pour votre soumission (comme personne ne sera en mesure d’acquérir l’application à moins d’utiliser un code promotionnel pour obtenir gratuitement l’application).
+> Si vous choisissez l’option **empêcher l’acquisition** sous **rendre ce produit disponible mais non détectable dans le Windows Store** dans la section [visibilité](choose-visibility-options.md#discoverability) ), vous ne serez pas en mesure de définir la tarification pour votre soumission (comme personne ne sera en mesure d’acquérir l’application à moins d’utiliser un code promotionnel pour obtenir l’application gratuitement).
 
 ## <a name="schedule-price-changes"></a>Planifier des changements de prix
 

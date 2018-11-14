@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475910adffd24e4484b539f65633dfb8fc054a8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045023"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199500"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 
@@ -337,7 +337,7 @@ Sur un appareil tactile multipoint, un scénario courant consiste à ajuster le 
 
 Dans le gestionnaire pour l’événement **ManipulationDelta**, mettez à jour le facteur de zoom basé sur la modification du mouvement de pincement de l’utilisateur. La valeur [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) représente la modification de l’échelle de pincement (une faible augmentation de la taille du pincement correspondra à un nombre légèrement supérieur à 1 et une faible réduction de la taille du pincement correspondra à un nombre légèrement inférieur à 1). Dans cet exemple, la valeur actuelle du contrôle de zoom est multipliée par le delta de mise à l’échelle.
 
-Avant de définir le facteur de zoom, vous devez vous assurer que la valeur n’est pas inférieure à la valeur minimale prise en charge par l’appareil, comme indiqué par la propriété [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). En outre, assurez-vous que la valeur est inférieure ou égale à la valeur [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Enfin, il se peut que vous devez vous assurer que le facteur de zoom est un multiple de la taille d’étape de zoom prise en charge par l’appareil comme indiqué par la propriété [**étape**](https://msdn.microsoft.com/library/windows/apps/dn633818) . Si le facteur de zoom ne répond pas à ces critères, une exception sera levée lorsque vous tenterez de définir le niveau de zoom sur l’appareil de capture.
+Avant de définir le facteur de zoom, vous devez vous assurer que la valeur n’est pas inférieure à la valeur minimale prise en charge par l’appareil, comme indiqué par la propriété [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). En outre, assurez-vous que la valeur est inférieure ou égale à la valeur [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Enfin, il se peut que vous devez vous assurer que le facteur de zoom est un multiple de la taille d’étape de zoom prise en charge par l’appareil comme indiqué par la propriété de [**l’étape**](https://msdn.microsoft.com/library/windows/apps/dn633818) . Si le facteur de zoom ne répond pas à ces critères, une exception sera levée lorsque vous tenterez de définir le niveau de zoom sur l’appareil de capture.
 
 Définissez le niveau de zoom sur l’appareil de capture en créant un objet [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722). Définissez la propriété [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) sur [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726), puis définissez la propriété [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) sur votre facteur de zoom souhaité. Enfin, appelez [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) pour définir la nouvelle valeur de zoom sur l’appareil. L’appareil fera une transition harmonieuse vers la nouvelle valeur de zoom.
 

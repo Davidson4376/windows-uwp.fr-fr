@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f652ae186ced996c103a60aa8f13956a5da59ca
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033113"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151395"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -74,7 +74,7 @@ Questions courantes concernant l'utilisation de PayPal comme mode de paiement :
 
 -   **Comment configurer les paramètres PayPal pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](http://go.microsoft.com/fwlink/p/?linkid=513139).
 -   **Mon pays ou ma région sont-ils pris en charge?** Pour savoir si PayPal est un mode de paiement pris en charge, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
--   **Mon compte PayPal doit-il être enregistré dans la même pays/région que mon compte du centre de partenaires?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
+-   **Mon compte PayPal doit-il être enregistré dans le même pays/région que mon compte du centre de partenaires?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
 -   **Dois-je accepter les paiements PayPal manuellement?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
 
 
@@ -99,9 +99,9 @@ Si vous êtes un développeur vivant en Russie, vous pouvez avoir besoin de four
 
 Pour garantir le succès du paiement, notez les points suivants :
 
--   Le **nom du titulaire compte** entré pour votre compte de revenu dans l’espace partenaires doit être exactement le même nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire comporte un deuxième prénom, saisissez un deuxième prénom dans le champ **Nom du titulaire du compte**.
+-   Le **nom du titulaire compte** saisi pour votre compte de revenu dans l’espace partenaires doit être exactement le même nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire comporte un deuxième prénom, saisissez un deuxième prénom dans le champ **Nom du titulaire du compte**.
 -   Les paiements sont transférés directement de Microsoft à votre compte bancaire en roubles (RUB).
--   Informations bancaires entrées dans l’espace partenaires en caractères latins sont converties en caractères cyrilliques.
+-   Les informations bancaires entrées dans l’espace partenaires en caractères latins sont converties en caractères cyrilliques.
 -   Les paiements doivent être effectués sur un compte bancaire et non sur une carte bancaire.
 
 #### <a name="ukraine"></a>Ukraine
@@ -116,14 +116,14 @@ Microsoft fournit ces trois documents lors de la première tentative de paiement
 
 Pour garantir le succès du paiement, notez les points suivants :
 
--   Le **nom du titulaire compte** entré pour votre compte de revenu dans l’espace partenaires doit être exactement le même nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire comporte un deuxième prénom, saisissez un deuxième prénom dans le champ **Nom du titulaire du compte**.
+-   Le **nom du titulaire compte** saisi pour votre compte de revenu dans l’espace partenaires doit être exactement le même nom associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire comporte un deuxième prénom, saisissez un deuxième prénom dans le champ **Nom du titulaire du compte**.
 -   Les paiements sont transférés directement de Microsoft vers votre compte bancaire en dollars USD.
--   Informations bancaires entrées dans l’espace partenaires en caractères latins sont converties en caractères cyrilliques.
+-   Les informations bancaires entrées dans l’espace partenaires en caractères latins sont converties en caractères cyrilliques.
 
 
 ## <a name="tax-forms"></a>Déclarations fiscales
 
-Une fois que vous avez [inscrit pour un compte de développeur](opening-a-developer-account.md) et configurer votre [compte de paiement](#payout-account), vous pouvez créer votre *profil fiscal* pour le Microsoft Store en procédant comme suit:
+Une fois que vous avez [inscrit pour un compte de développeur](opening-a-developer-account.md) et configurer votre [compte de revenu](#payout-account), vous pouvez créer votre *profil fiscal* pour le Microsoft Store en procédant comme suit:
 
 -   Spécifiez votre pays de résidence et votre nationalité.
 -   Remplissez les déclarations fiscales appropriées.

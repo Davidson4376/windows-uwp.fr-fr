@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows10, uwp, ventes d’extensions, acquisitions d’extensions, produits in-app, extensions
 ms.localizationpriority: medium
 ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026864"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198093"
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions d’extensions
 
 
-Le rapport **acquisitions de modules complémentaires** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations de conversion pour les clients sous Windows 10 (y compris Xbox). Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures.
+Le rapport **acquisitions de modules complémentaires** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations de conversion pour les clients sur Windows 10 (y compris Xbox). Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures.
 
 Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -30,7 +30,7 @@ Dans ce rapport, une acquisition d’extension signifie qu’un client vous a ac
 
 ## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également sélectionner **1 H** ou **72 H** pour afficher les données d’acquisition en temps quasi réel pour une heure ou soixante-douze heures; ces périodes de temps s’appliquent uniquement à l’onglet **extension tous les jours** du graphique **acquisitions de modules complémentaires** et à l’onglet **Acquisitions** du graphique **des marchés** . 
+Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également sélectionner **1 H** ou **72 H** pour afficher les données d’acquisition en temps quasi réel pour une heure ou de 70-deux heures; ces périodes de temps s’appliquent uniquement à l’onglet de **l’extension de tous les jours** du graphique **acquisitions de modules complémentaires** et à l’onglet **Acquisitions** du graphique **des marchés** . 
 
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par extension, par marché et/ou par type d’appareil.
 

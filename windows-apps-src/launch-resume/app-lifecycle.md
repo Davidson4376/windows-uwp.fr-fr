@@ -9,11 +9,11 @@ ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035641"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198682"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Cycle de vie d’une application de plateforme Windows universelle (UWP) Windows10
 
@@ -85,7 +85,7 @@ La classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/w
 
 Les données d’événement de ces méthodes incluent la propriété [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) que nous avons déjà vue plus haut et qui indique l’état dans lequel se trouvait l’application avant son activation. Interprétez cet état et ce que vous devez faire comme indiqué dans la section [Lancement d’une application](#app-launch).
 
-**Remarque**si vous ouvrez une session à l’aide du compte d’administrateur de l’ordinateur, vous ne pouvez activer les applications UWP.
+**Remarque**si vous ouvrez une session à l’aide du compte d’administrateur de l’ordinateur, vous ne pouvez pas activer les applications UWP.
 
 ## <a name="running-in-the-background"></a>Exécution en arrière-plan ##
 
@@ -183,9 +183,9 @@ Pour des consignes générales, consultez [Lancement, reprise et tâches en arri
 
 En général, les utilisateurs n’ont pas besoin de fermer les applications et peuvent laisser Windows les gérer. Toutefois, ils peuvent décider de fermer une application en effectuant un mouvement de fermeture, en appuyant sur Alt+F4 ou en utilisant le sélecteur de tâche sur Windows Phone.
 
-Aucun événement n’indique que l’utilisateur a fermé l’application. Lorsqu’elle est fermée par l’utilisateur, une application est d’abord suspendue pour lui donner l’occasion d’enregistrer son état. Windows8.1 et versions ultérieures, une application a été fermée par l’utilisateur, l’application est supprimée de l’écran et liste de répartition ne sont pas explicitement être arrêtée.
+Aucun événement n’indique que l’utilisateur a fermé l’application. Lorsqu’elle est fermée par l’utilisateur, une application est d’abord suspendue pour lui donner l’occasion d’enregistrer son état. Windows8.1 et versions ultérieures, une application a été fermée par l’utilisateur, l’application est supprimée de l’écran et basculer la liste, mais ne sont pas explicitement arrêtées.
 
-**Comportement fermée par l’utilisateur:** si votre application doit se comporter différemment lorsqu’elle est fermée par l’utilisateur que quand elle est fermée par Windows, vous pouvez utiliser le Gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
+**Fermée par l’utilisateur:** si votre application doit se comporter différemment lorsqu’elle est fermée par l’utilisateur que quand elle est fermée par Windows, vous pouvez utiliser le Gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
 
 Nous recommandons que les applications ne puissent se fermer par programme qu’en cas d’absolue nécessité. Par exemple, si une application détecte une fuite de mémoire, elle peut se fermer pour sécuriser les données personnelles de l’utilisateur.
 

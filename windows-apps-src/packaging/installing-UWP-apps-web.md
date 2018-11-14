@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029653"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261819"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Installer des applicationsUWP à partir d’une page web
 
@@ -30,10 +30,10 @@ Dans ce mécanisme, le Programme d’installation d’application inscrit un sch
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>Conditions requises pour le schéma d’activation de protocole
 
-1. Les serveurs Web doivent avoir la prise en charge des requêtes de plages d’octets (HTTP/1.1)
+1. Les serveurs Web doivent avoir la prise en charge pour les requêtes de plages d’octets (HTTP/1.1)
     - Les serveurs qui prennent en charge le protocole HTTP/1.1 doivent avoir la prise en charge pour les requêtes de plages d’octets 
-2. Serveurs Web devez connaître sur les types contenus du package d’application Windows 10
-    - Voici comment déclarer les nouveaux types de contenu en tant que partie du [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+2. Les serveurs Web doivent savoir sur les types contenus du package d’application Windows 10
+    - Voici comment déclarer des nouveaux types de contenu en tant que partie du [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Comment activer ce mécanisme sur une page web 
 Les développeurs d’application qui souhaitent héberger des packages de l’application sur leurs sites Web doivent suivre cette étape:

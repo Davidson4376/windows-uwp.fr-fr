@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031990"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194740"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -98,7 +98,7 @@ Ne supposez pas que toutes les langues expriment les paramètres dans le même o
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Assurez-vous que le traducteur connaisse l’intention de chacun des paramètres afin qu’ils peuvent inverser l’ordre des éléments dans la chaîne de format format (par exemple, «{1} {0}») en fonction de la langue cible.
+La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Assurez-vous que le traducteur connaisse l’intention de chacun des paramètres afin qu’ils peuvent inverser l’ordre des éléments de format dans la chaîne de format (par exemple, «{1} {0}») en fonction de la langue cible.
 
 ## <a name="dont-over-localize"></a>Ne sur-localisez pas.
 

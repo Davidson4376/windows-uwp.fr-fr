@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042364"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6257409"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 
@@ -69,7 +69,7 @@ ms.locfileid: "6042364"
 
 
 ¹ mise à jour pour prendre en charge des codes-barres 2D via Honeywell <br/>
-² le microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
+² du microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
 
 
 <hr>
@@ -79,7 +79,7 @@ ms.locfileid: "6042364"
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows10   |
 
-### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Appareils Windows Mobile avec scanneur de codes-barres intégré
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Appareils Windows Mobile avec le scanneur de codes-barres intégré
 | Fabricant   | Modèle | Systèmed’exploitation |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows Mobile   |

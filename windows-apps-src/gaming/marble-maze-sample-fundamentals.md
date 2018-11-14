@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, exemples, directx, principes de base
 ms.localizationpriority: medium
 ms.openlocfilehash: f595c8f429c93a13d6342c281a90f3b0f5741621
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035176"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200705"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Principes de base de l’exemple MarbleMaze
 
@@ -44,9 +44,9 @@ Nous sommes partis d’un projet existant pour la création du projet Visual Stu
 
 2. Dans la fenêtre **Nouveau projet** , dans le volet gauche, sélectionnez **installés > Modèles > Visual C++**.
 
-3. Dans la liste du milieu, sélectionnez **Application DirectX 11 (Windows universel)**. Si vous ne voyez pas cette option, vous devrez pas les composants requis installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou supprimant des charges de travail et les composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur l’installation des composants supplémentaires.
+3. Dans la liste du milieu, sélectionnez **l’Application DirectX 11 (Windows universel)**. Si vous ne voyez pas cette option, vous peut-être pas les composants requis installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou supprimant des charges de travail et les composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur l’installation des composants supplémentaires.
 
-4. Donnez à votre projet un **nom**et un **emplacement** pour les fichiers à stocker un **nom de la Solution**, puis cliquez sur **OK**.
+4. Donnez à votre projet un **nom**, un **emplacement** pour les fichiers de stockage et un **nom de la Solution**, puis cliquez sur **OK**.
 
 ![Nouveau projet](images/marble-maze-sample-fundamentals-1.png)
 
@@ -121,7 +121,7 @@ Utilisez les annotations SAL et les outils d’analyse du code pour découvrir l
 
 Le langage SAL de Microsoft vous permet d’annoter (ou décrire) la façon dont une fonction utilise ses paramètres. Les annotations SAL décrivent également des valeurs de retour. Les annotations SAL peuvent être utilisées conjointement à l’outil d’analyse du code C/C++ pour découvrir les éventuelles erreurs du code source C ou C++. Les erreurs de codage courantes signalées par l’outil sont notamment les dépassements de mémoire tampon, une mémoire non initialisée, les déréférencements du pointeur Null et les fuites de mémoire et de ressources.
 
-Examinons la méthode **BasicLoader::LoadMesh** , qui est déclarée dans [BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h). Cette méthode utilise `_In_` pour spécifier le *nom de fichier* est un paramètre d’entrée (et par conséquent sera uniquement être lue à partir de), `_Out_` pour spécifier que *vertexBuffer* et *indexBuffer* sont des paramètres de sortie (et par conséquent sera uniquement écrit), et `_Out_opt_` pour spécifier que *vertexCount* et *indexCount* sont facultatifs paramètres de sortie (et peuvent être écrits pour). Étant donné que *vertexCount* et *indexCount* sont des paramètres de sortie optionnels, ils peuvent avoir la valeur **nullptr**. L’outil d’analyse du code C/C++ examine les appels à cette méthode pour s’assurer que les paramètres qu’elle transmet répondent à ces critères.
+Envisagez de la méthode **BasicLoader::LoadMesh** , qui est déclarée dans [BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h). Cette méthode utilise `_In_` pour spécifier le *nom de fichier* est un paramètre d’entrée (et par conséquent sera uniquement être lue à partir de), `_Out_` pour spécifier que *vertexBuffer* et *indexBuffer* sont des paramètres de sortie (et par conséquent sera uniquement écrit), et `_Out_opt_` pour spécifier que *vertexCount* et *indexCount* sont facultatifs paramètres de sortie (et peuvent être écrits pour). Étant donné que *vertexCount* et *indexCount* sont des paramètres de sortie optionnels, ils peuvent avoir la valeur **nullptr**. L’outil d’analyse du code C/C++ examine les appels à cette méthode pour s’assurer que les paramètres qu’elle transmet répondent à ces critères.
 
 ```cpp
 void LoadMesh(

@@ -9,24 +9,24 @@ ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: f228cb4783c33bc0ea2acecba79893939cadd91e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025713"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196704"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
 
 
-Pour obtenir la [Certification Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) de votre application ou préparer à la [publication dans le Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), vous devez valider et testez-la tout d’abord. Cette rubrique vous montre comment installer et exécuter le [Kit de Certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) pour vous assurer que votre application est sûre et efficace.
+Pour obtenir la [Certification Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) de votre application ou préparer à la [publication dans le Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), vous devez valider et tester localement tout d’abord. Cette rubrique vous montre comment installer et exécuter le [Kit de Certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) pour vous assurer que votre application est sûre et efficace.
 
 ## <a name="prerequisites"></a>Prérequis
 
 Conditions préalables pour tester une application Windows universelle :
 
 -   Vous devez installer et exécuter Windows 10.
--   Vous devez installer le [Kit de Certification des applications Windows version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
+-   Vous devez installer la [version du Kit de Certification des applications Windows 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
 -   Vous devez [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
@@ -90,7 +90,7 @@ Les seuils du test de performances du Kit de certification des applications Wind
 
 Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répond aux [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur de faible consommation d’énergie, par exemple, un ordinateur Intel Atom basée sur un processeur avec une résolution d’écran de 1366 x 768 (ou une version ultérieure) et une rotation dur lecteur (par opposition à un disque dur SSD).
 
-À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Consultez les plus récentes [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
+À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous à la plus récente [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification d’application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

@@ -14,24 +14,24 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 95d99c41ff2679e3ef3e0471dd583fe78458922c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037754"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199809"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
-Le volant de barre de commande vous permet de fournir aux utilisateurs d’accéder facilement aux tâches courantes en affichant des commandes dans une barre d’outils flottante associé à un élément sur votre zone de dessin de l’interface utilisateur.
+Le volant de barre de commande vous permet de fournir aux utilisateurs d’accéder facilement aux tâches courantes en affichant des commandes dans une barre d’outils flottant relatifs à un élément sur votre zone de dessin de l’interface utilisateur.
 
 ![Un volant de barre de commande texte développée](images/command-bar-flyout-header.png)
 
 > CommandBarFlyout requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou de la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-> - **API de la plateforme**: [classe CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [classe AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **API de bibliothèque de l’interface utilisateur de Windows**: [classe CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [classe TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+> - **API de la plateforme**: [CommandBarFlyout classe](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout classe](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [classe AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [classe AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [classe AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>- **API de bibliothèque de l’interface utilisateur de Windows**: [CommandBarFlyout classe](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), la [classe de TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
-Comme [CommandBar](app-bars.md), CommandBarFlyout possède les propriétés **PrimaryCommands** et **SecondaryCommands** , que vous pouvez utiliser pour ajouter des commandes. Vous pouvez placer les commandes dans une collection de, ou les deux. Quand et comment les commandes principales et secondaires sont affichées varie selon le mode d’affichage.
+Telles que [CommandBar](app-bars.md), CommandBarFlyout a des propriétés **PrimaryCommands** et **SecondaryCommands** , que vous pouvez utiliser pour ajouter des commandes. Vous pouvez placer les commandes dans une collection de, ou les deux. Quand et comment les commandes principales et secondaires sont affichés varie selon le mode d’affichage.
 
 Le volant de barre de commandes possède deux modes d’affichage: *réduit* et *développé*.
 
@@ -40,15 +40,15 @@ Le volant de barre de commandes possède deux modes d’affichage: *réduit* et 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Utiliser le contrôle CommandBarFlyout pour afficher une collection de commandes à l’utilisateur, comme les boutons et éléments de menu, dans le contexte d’un élément sur le canevas d’application.
+Utilisez le contrôle de CommandBarFlyout pour afficher une collection de commandes à l’utilisateur, telles que des boutons et éléments de menu, dans le contexte d’un élément sur le canevas d’application.
 
-Le TextCommandBarFlyout affiche les commandes de texte dans les contrôles TextBox, TextBlock, RichEditBox, RichTextBlock et PasswordBox. Les commandes sont automatiquement configurés correctement pour la sélection de texte en cours. Utilisez un CommandBarFlyout pour remplacer les commandes de texte par défaut sur les contrôles de texte.
+Le TextCommandBarFlyout affiche les commandes de texte dans les contrôles TextBox, TextBlock, RichEditBox, RichTextBlock et PasswordBox. Les commandes sont automatiquement configurés correctement pour la sélection de texte en cours. Utilisez un CommandBarFlyout à remplacer les commandes de texte par défaut sur les contrôles de texte.
 
 Pour afficher les contextuelles les commandes sur des éléments de liste suivent les recommandations de [contextuelles les commandes pour les listes et les collections](collection-commanding.md).
 
 ### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout Visual Studio MenuFlyout
 
-Pour afficher les commandes dans un menu contextuel, vous pouvez utiliser CommandBarFlyout ou MenuFlyout. Nous vous recommandons CommandBarFlyout car elle offre davantage de fonctionnalités que MenuFlyout. Vous pouvez utiliser CommandBarFlyout avec uniquement des commandes secondaires pour obtenir le comportement et recherchez d’un MenuFlyout ou utiliser le menu de volant de barre de commande complète avec les commandes principales et secondaires.
+Pour afficher les commandes dans un menu contextuel, vous pouvez utiliser CommandBarFlyout ou MenuFlyout. Nous vous recommandons de CommandBarFlyout, car il offre davantage de fonctionnalités que MenuFlyout. Vous pouvez utiliser CommandBarFlyout avec uniquement des commandes secondaires pour obtenir le comportement et recherchez d’un MenuFlyout ou utiliser le menu de volant de barre de commande complète avec les commandes principales et secondaires.
 
 > Pour plus d’informations connexes, voir [les menus volants](../controls-and-patterns/dialogs-and-flyouts/flyouts.md), [Menus et menus contextuels](menus.md)et [les barres de commandes](app-bars.md).
 
@@ -59,7 +59,7 @@ Pour afficher les commandes dans un menu contextuel, vous pouvez utiliser Comman
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/CommandBarFlyout">Ouvrir l’application et voir le CommandBarFlyout en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/CommandBarFlyout">Ouvrir l’application et voir le CommandBarFlyout en action.</a></p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -72,13 +72,13 @@ Pour afficher les commandes dans un menu contextuel, vous pouvez utiliser Comman
 
 Il existe généralement deux façons d’appeler un menu volant ou un menu qui est associé à un élément sur votre zone de dessin de l’interface utilisateur: _appel proactive_ ainsi que _l’appel réactive_.
 
-Dans l’appel proactive, commandes s’affiche automatiquement lorsque l’utilisateur interagit avec l’élément qui les commandes sont associés. Par exemple, les commandes de mise en forme de texte peuvent s’affichent quand l’utilisateur sélectionne le texte dans une zone de texte. Dans ce cas, le menu de volant de barre de commandes ne prend pas le focus. Au lieu de cela, elle présente des commandes appropriées proche de l’élément d’avec que l’utilisateur interagit. Si l’utilisateur n’a pas interagir avec les commandes, ils sont rejetés.
+Dans l’appel proactive, les commandes apparaissent automatiquement lorsque l’utilisateur interagit avec l’élément qui les commandes sont associés. Par exemple, les commandes de mise en forme de texte peuvent s’affichent lorsque l’utilisateur sélectionne le texte dans une zone de texte. Dans ce cas, le menu de volant de barre de commandes ne prend pas le focus. Au lieu de cela, elle présente proche de l’élément d’avec que l’utilisateur interagit des commandes appropriées. Si l’utilisateur n’a pas interagir avec les commandes, ils sont rejetés.
 
-Dans appel réactive, les commandes sont affichées en réponse à une action explicite de l’utilisateur pour demander les commandes; par exemple, un clic droit. Cela correspond au concept traditionnel d’un [menu contextuel](menus.md).
+Dans l’appel réactive, les commandes sont affichées en réponse à une action explicite de l’utilisateur pour demander les commandes; par exemple, un clic droit. Cela correspond au concept traditionnel d’un [menu contextuel](menus.md).
 
-Vous pouvez utiliser la CommandBarFlyout dans moyen ou encore un mélange des deux.
+Vous pouvez utiliser la CommandBarFlyout dans moyen ou même un mélange des deux.
 
-## <a name="create-a-command-bar-flyout"></a>Créer un volant de barre de commandes
+## <a name="create-a-command-bar-flyout"></a>Créer un menu de volant de barre de commandes
 
 Cet exemple montre comment créer un menu volant barre de commande et l’utiliser à la fois de façon proactive et réactive. Lorsque l’image est sélectionnée, le menu volant s’affiche en mode réduit. Lorsque apparaît comme un menu contextuel, le menu volant s’affiche dans son mode étendu. Dans les deux cas, l’utilisateur peut développer ou réduire le menu volant qu’il est ouvert.
 
@@ -125,30 +125,30 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-### <a name="show-commands-proactively"></a>Afficher les commandes de manière proactive
+### <a name="show-commands-proactively"></a>Afficher des commandes de manière proactive
 
-Lorsque vous affichez des commandes contextuelles de manière proactive, uniquement les commandes principales doivent être affichées par défaut (le volant de barre de commandes doit être réduit). Placez les commandes les plus importantes dans la collection de commandes principales et des commandes supplémentaires qui est placée traditionnellement dans un menu contextuel dans la collection de commandes secondaires.
+Lorsque vous affichez des commandes contextuelles de manière proactive, uniquement les commandes principales doivent être affichées par défaut (le volant de barre de commandes doit être réduit). Placez les commandes les plus importantes dans la collection de commandes principales et des commandes supplémentaires qui iraient traditionnellement dans un menu contextuel dans la collection de commandes secondaires.
 
-Pour afficher les commandes de manière proactive, vous gérez en général l’événement de [clic](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) ou [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) pour afficher le menu de volant de barre de commande. La valeur du menu volant [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **temporaire** ou **TransientWithDismissOnPointerMoveAway** pour ouvrir le menu volant dans son mode réduit sans mettre le focus.
+Pour afficher les commandes de manière proactive, vous gérez en général l’événement de [clic](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) ou [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) pour afficher le menu de volant de barre de commandes. La valeur de la fenêtre de Mobile [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **temporaire** ou **TransientWithDismissOnPointerMoveAway** pour ouvrir le menu volant en mode réduit, sans mettre le focus.
 
-À compter de Windows 10 Insider Preview, les contrôles de texte ont une propriété **SelectionFlyout** . Lorsque vous affectez un menu volant à cette propriété, elle s’affiche automatiquement lorsque le texte est sélectionné.
+À compter de Windows 10 Insider Preview, les contrôles de texte ont une propriété **SelectionFlyout** . Lorsque vous affectez un menu volant à cette propriété, elle apparaît automatiquement lorsque le texte est sélectionné.
 
 ### <a name="show-commands-reactively"></a>Afficher les commandes de manière réactive
 
-Lorsque vous affichez des commandes contextuelles de manière réactive, comme un menu contextuel, les commandes secondaires sont affichées par défaut (le volant de barre de commandes doit être développé). Dans ce cas, le menu de volant de barre de commandes commandes principales et secondaires, ou peut-être uniquement les commandes secondaires.
+Lorsque vous affichez des commandes contextuelles de manière réactive, un menu contextuel, les commandes secondaires sont affichées par défaut (le volant de barre de commandes doit être développé). Dans ce cas, le menu de volant de barre de commandes commandes principales et secondaires, ou peut-être uniquement les commandes secondaires.
 
 Pour afficher les commandes dans un menu contextuel, vous affectez en règle générale, le menu volant à la propriété [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) d’un élément d’interface utilisateur. De cette façon, vous ouvrez le menu volant est géré par l’élément, et vous n’avez rien à faire plus.
 
-Si vous gérez montrant le menu volant (par exemple, sur un événement [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ), la valeur du menu volant [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **Standard** pour ouvrir le menu volant dans son mode étendu et lui donner le focus.
+Si vous gérez montrant le menu volant (par exemple, sur un événement [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ), la valeur de la fenêtre de Mobile [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **Standard** pour ouvrir le menu volant dans son mode étendu et lui donner le focus.
 
 > [!TIP]
 > Pour plus d’informations sur les options lors de l’affichage d’un menu volant et comment contrôler le positionnement du menu volant, consultez [les menus volants](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).
 
 ## <a name="commands-and-content"></a>Commandes et contenu
 
-Le contrôle de CommandBarFlyout possède 2 propriétés vous pouvez utiliser pour ajouter des commandes et contenu: [Propriétés PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) et [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands).
+Le contrôle CommandBarFlyout a 2 propriétés que vous pouvez utiliser pour ajouter des commandes et du contenu: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) et [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands).
 
-Par défaut, les éléments de la barre de commandes sont ajoutés à la collection **PrimaryCommands**. Ces commandes sont affichées dans la barre de commandes et sont visibles dans les deux modes développés et réduites. Contrairement aux CommandBar, commandes principales ne garantissent pas automatiquement dépassement aux commandes secondaires et risquent d’être tronqués.
+Par défaut, les éléments de la barre de commandes sont ajoutés à la collection **PrimaryCommands**. Ces commandes sont affichées dans la barre de commandes et sont visibles dans les modes réduits et agrandies. Contrairement aux CommandBar, commandes principales ne garantissent pas automatiquement dépassement aux commandes secondaires et risquent d’être tronqués.
 
 Vous pouvez également ajouter des commandes à la collection **SecondaryCommands** . Commandes secondaires sont affichées dans la partie de menu du contrôle et sont visibles uniquement en mode étendu.
 
@@ -162,25 +162,25 @@ Les contrôles des boutons de la barre de l’application sont caractérisés pa
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
-- Les boutons de barre d’application utilisées en tant que commandes secondaires sont affichées dans le menu, avec l’étiquette et icône visible.
+- Les boutons de barre d’application utilisées en tant que commandes secondaires sont affichées dans le menu, avec l’étiquette et l’affichage de l’icône.
 
 ### <a name="other-content"></a>Autre contenu
 
-Vous pouvez ajouter des autres contrôles à un volant de barre de commandes par les encapsuler dans un AppBarElementContainer. Cela vous permet d’ajouter des contrôles comme [DropDownButton]() ou un [bouton partagé](), ou ajouter des conteneurs tels que [StackPanel]() pour créer une interface utilisateur plus complexe.
+Vous pouvez ajouter d’autres contrôles à un volant de barre de commandes par les encapsuler dans un AppBarElementContainer. Cela vous permet d’ajouter des contrôles comme [DropDownButton]() ou un [bouton partagé](), ou ajouter des conteneurs tels que [StackPanel]() pour créer une interface utilisateur plus complexe.
 
-Pour pouvoir être ajoutés aux collections de commande principale ou secondaire d’un volant de barre de commandes, un élément doit implémenter l’interface [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) . AppBarElementContainer est un wrapper qui implémente cette interface, vous pouvez ajouter un élément à une barre de commandes même si elle n’a pas implémenter l’interface proprement dite.
+Pour pouvoir être ajoutées aux collections de commande principale ou secondaire d’un volant de barre de commandes, un élément doit implémenter l’interface [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) . AppBarElementContainer est un wrapper qui implémente cette interface, vous pouvez ajouter un élément à une barre de commandes même si elle n’implémente pas l’interface proprement dite.
 
 Ici, un AppBarElementContainer est utilisé pour ajouter des éléments supplémentaires à un volant de barre de commandes. Un bouton partagé est ajouté aux commandes principales pour autoriser la sélection de couleurs. Un élément StackPanel est ajouté aux commandes secondaires pour permettre à une disposition plus complexe pour les contrôles de zoom.
 
 > [!TIP]
-> Par défaut, éléments conçus pour le canevas d’application ne peuvent pas ressembler droite dans une barre de commandes. Lorsque vous ajoutez un élément à l’aide de AppBarElementContainer, il existe certaines étapes à suivre pour rendre l’élément correspondre les autres éléments de barre de commandes:
+> Par défaut, éléments conçus pour le canevas d’application ne peuvent pas ressembler droite dans une barre de commandes. Lorsque vous ajoutez un élément à l’aide de AppBarElementContainer, il existe certaines étapes à suivre pour rendre l’élément correspondent à d’autres éléments de barre de commandes:
 >
 > - Remplacer les pinceaux par défaut avec le [style léger](/design/controls-and-patterns/xaml-styles#lightweight-styling) pour que l’élément en arrière-plan et bordure correspondent à des boutons de la barre d’application.
 > - Ajuster la taille et la position de l’élément.
-> - Placez les icônes dans une fenêtre avec une largeur et hauteur de 16 px.
+> - Placez les icônes dans une fenêtre avec une largeur et la hauteur de 16 px.
 
 > [!NOTE]
-> Cet exemple ne montre que la commande menu volant de barre l’interface utilisateur, qu'il n’implémente pas une des commandes qui sont affichent. Pour plus d’informations sur l’implémentation des commandes, voir les [boutons](buttons.md) et les [principes fondamentaux de conception de commande](../basics/commanding-basics.md).
+> Cet exemple indique uniquement la commande menu volant de barre l’interface utilisateur, qu'il n’implémente pas les commandes qui sont affichent. Pour plus d’informations sur l’implémentation des commandes, voir les [boutons](buttons.md) et les [principes fondamentaux de conception de commande](../basics/commanding-basics.md).
 
 ![Un menu volant barre de commandes avec un bouton partagé](images/command-bar-flyout-split-button.png)
 
@@ -188,7 +188,7 @@ Ici, un AppBarElementContainer est utilisé pour ajouter des éléments supplém
 
 ![Un volant de barre de commandes avec une interface utilisateur complexe](images/command-bar-flyout-custom-ui.png)
 
-> _Un menu de volant de barre de commandes développée avec l’interface utilisateur de zoom personnalisé dans le menu_
+> _Un menu volant barre de commandes développée avec l’interface utilisateur de zoom personnalisé dans le menu_
 
 
 ```xaml
@@ -325,7 +325,7 @@ Vous pouvez également utiliser un CommandBarFlyout avec un DropDownButton pour 
 
 ![Un volant de barre de commande avec comme un bouton menu déroulant](images/command-bar-flyout-dropdown.png)
 
-> _Une liste déroulante menu du bouton dans un menu de volant de barre de commandes_
+> _Une liste déroulante menu du bouton dans un menu volant barre de commande_
 
 ```xaml
 <CommandBarFlyout>
@@ -372,7 +372,7 @@ Vous pouvez également utiliser un CommandBarFlyout avec un DropDownButton pour 
 
 Le [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) est un menu volant barre de commande spécialisé qui contient des commandes de modification de texte. Chaque contrôle de texte montre le TextCommandBarFlyout automatiquement en tant qu’un menu contextuel (clic droit), ou quand le texte est sélectionné. Le volant de barre de commande de texte s’adapte à la sélection de texte à afficher uniquement les commandes appropriées.
 
-![Un volant de barre de commandes texte réduit](images/command-bar-flyout-text-selection.png)
+![Un volant de barre de commande de texte réduit](images/command-bar-flyout-text-selection.png)
 
 > _Un volant de barre de commande de texte sur la sélection de texte_
 
@@ -392,8 +392,8 @@ Ce tableau indique les commandes qui sont inclus dans un TextCommandBarFlyout, e
 | Souligner | Lorsque le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
 | Vérification | Lorsque IsSpellCheckEnabled a la **valeur true** et mal orthographié texte est sélectionné. |
 | Cut | Lorsque le contrôle de texte n’est pas en lecture seule et texte est sélectionné. |
-| Copy | Lorsque le texte est sélectionné. |
-| Paste | Lorsque le contrôle de texte n’est pas en lecture seule et le Presse-papiers contient du contenu. |
+| Copy | Si le texte n’est sélectionné. |
+| Paste | Lorsque le contrôle de texte n’est pas en lecture seule, et le Presse-papiers contient du contenu. |
 | Annuler | Lorsqu’il existe une action qui peut être annulée. |
 | Tout sélectionner | Lorsque le texte peut être sélectionné. |
 
@@ -401,8 +401,8 @@ Ce tableau indique les commandes qui sont inclus dans un TextCommandBarFlyout, e
 
 TextCommandBarFlyout ne peuvent pas être personnalisée et est gérée automatiquement par chaque contrôle de texte. Toutefois, vous pouvez remplacer la valeur par défaut TextCommandBarFlyout avec des commandes personnalisées.
 
-- Pour remplacer la valeur par défaut TextCommandBarFlyout qui apparaît sur la sélection de texte, vous pouvez créer un CommandBarFlyout personnalisé (ou tout autre type de menu volant) et affectez-le à la propriété **SelectionFlyout** . Si vous définissez SelectionFlyout sur la **valeur null**, aucune commandes ne sont affichées sur la sélection.
-- Pour remplacer la valeur par défaut TextCommandBarFlyout qui s’affiche en tant que le menu contextuel, attribuez un CommandBarFlyout personnalisé (ou tout autre type de menu volant) à la propriété **ContextFlyout** sur un contrôle de texte. Si vous définissez ContextFlyout sur la **valeur null**, le menu volant illustré dans les versions précédentes du contrôle de texte s’affiche au lieu de la TextCommandBarFlyout.
+- Pour remplacer la valeur par défaut TextCommandBarFlyout qui s’affiche sur la sélection de texte, vous pouvez créer un CommandBarFlyout personnalisé (ou tout autre type de menu volant) et affectez-le à la propriété **SelectionFlyout** . Si vous définissez SelectionFlyout sur **null**, aucune commandes ne sont affichées sur la sélection.
+- Pour remplacer la valeur par défaut TextCommandBarFlyout qui s’affiche en tant que le menu contextuel, attribuer un CommandBarFlyout personnalisé (ou un autre type de menu volant) à la propriété **ContextFlyout** sur un contrôle de texte. Si vous définissez ContextFlyout sur **null**, le menu volant illustré dans les versions précédentes du contrôle de texte s’affiche au lieu du TextCommandBarFlyout.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

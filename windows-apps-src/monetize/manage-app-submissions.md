@@ -9,21 +9,21 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d’app
 ms.localizationpriority: medium
 ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026734"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152149"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
 L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de gérer les soumissions de vos apps, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une application, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une application, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que de l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 > [!IMPORTANT]
-> Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser l’espace partenaires pour publier la soumission.
+> Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser l’espace partenaires de publier la soumission.
 
 
 <span id="methods-for-app-submissions" />
@@ -127,7 +127,7 @@ Pour créer une soumission pour une application, suivez ce processus.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Validez la soumission d’applications](commit-an-app-submission.md) en exécutant la méthode suivante. Cela avertira l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte.
+5. [Validez la soumission d’applications](commit-an-app-submission.md) en exécutant la méthode suivante. Cela vous avertit l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -147,7 +147,7 @@ Pour créer une soumission pour une application, suivez ce processus.
 
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>Méthodes de gestion d’un lancement de packages progressif
 
-Vous pouvez publier progressivement les packages mis à jour d’une soumission d’applications pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris les instructions pour savoir comment activer et gérer un lancement progressif du package dans l’espace partenaires, consultez [cet article](../publish/gradual-package-rollout.md).
+Vous pouvez publier progressivement les packages mis à jour d’une soumission d’applications pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris les instructions pour savoir comment activer et gérer un lancement progressif du package dans l’espace partenaires, voir [cet article](../publish/gradual-package-rollout.md).
 
 Pour activer par programmation un lancement de packages progressif pour une soumission d’apps, suivez cette procédure à l’aide des méthodes de l’API de soumission au MicrosoftStore:
 
@@ -339,7 +339,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur      | Type   | Description      |
 |------------|--------|-------------------|
-| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
+| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 | applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement«_», par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’application.        |   
 | visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -460,7 +460,7 @@ Cette ressource contient les données d’image et d’icône d’une descriptio
 
 ### <a name="gaming-options-resource"></a>Ressource d'options de jeu
 
-Cette ressource contient des paramètres relatifs au jeu pour l’application. Les valeurs figurant dans cette ressource correspondent aux [paramètres de jeu](../publish/enter-app-properties.md#game-settings) pour les soumissions dans l’espace partenaires.
+Cette ressource contient des paramètres relatifs au jeu pour l’application. Les valeurs de cette ressource correspondent aux [paramètres de jeu](../publish/enter-app-properties.md#game-settings) pour les soumissions dans l’espace partenaires.
 
 ```json
 {
@@ -592,7 +592,7 @@ Cette ressource donne accès aux données du rapport de certification d’une so
 
 | Valeur           | Type    | Description             |
 |-----------------|---------|------|
-|     date            |    chaîne     |  La date et l’heure de que génération du rapport, au format ISO 8601.    |
+|     date            |    chaîne     |  Date et heure de que génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 
@@ -645,7 +645,7 @@ Cette ressource contient les [paramètres de lancement de packages](#manage-grad
 
 ### <a name="trailers-resource"></a>Ressource de bande-annonce
 
-Cette ressource représente une vidéo de bande-annonce pour la description de l’app. Les valeurs figurant dans cette ressource correspondent aux options [bandes-annonces](../publish/app-screenshots-and-images.md#trailers) des soumissions dans l’espace partenaires.
+Cette ressource représente une vidéo de bande-annonce pour la description de l’app. Les valeurs de cette ressource correspondent aux options [bandes-annonces](../publish/app-screenshots-and-images.md#trailers) des soumissions dans l’espace partenaires.
 
 Vous pouvez ajouter jusqu'à 15ressources de bande-annonce pour le tableau *trailers* dans une [ressource de soumission d’applications](#app-submission-object). Pour télécharger des fichiers vidéo de bande-annonce et des images miniatures pour une soumission, ajoutez ces fichiers à l'archive ZIP qui contient les packages et les images de description pour la soumission, puis téléchargez cette archive ZIP dans l'URI de la signature d’accès partagé (SAS) de la soumission. Pour plus d’informations sur le téléchargement de l’archive ZIP sur l’URI SAS, voir [créer une soumission d’apps](#create-an-app-submission).
 

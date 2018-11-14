@@ -1,21 +1,21 @@
 ---
 author: M-Stahl
-title: Informations sur l’appareil Xbox portail référence d’API
-description: Découvrez comment accéder aux informations sur l’appareil Xbox.
+title: Référence des API portail Xbox informations sur l’appareil
+description: Découvrez comment accéder aux informations d’appareil Xbox.
 ms.author: mstahl
 ms.date: 11/7/2017
 ms.topic: article
 keywords: Windows 10, uwp, xbox, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039294"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198855"
 ---
 # <a name="xbox-info-api-reference"></a>Référence de l’API d’informations Xbox   
-Vous pouvez accéder Xbox One informations sur l’appareil à l’aide de cette API.
+Vous pouvez accéder à Xbox One informations sur l’appareil à l’aide de cette API.
 
 ## <a name="get-xbox-one-device-information"></a>Obtenir des informations sur l’appareil Xbox One
 
@@ -49,7 +49,7 @@ Un objet JSON avec les champs suivants:
 * Numéro de série - numéro de série de (chaîne) la console.
 * DevMode - Active le mode développeur de (chaîne) la console, par exemple, «None» ou «Commercial».
 * ConsoleType - type de (chaîne) la console, par exemple, «Xbox One» ou «Xbox One S».
-* DevkitCertificateExpirationTime - (nombre) de l’heure UTC en secondes la date d’expiration certificat de kit de développement de la console.
+* DevkitCertificateExpirationTime - (nombre) de l’heure UTC en quelques secondes de la date d’expiration du certificat de kit de développement de la console.
 
 **Code d’état**
 

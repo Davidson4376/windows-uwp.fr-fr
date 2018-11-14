@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 63214ce47bffc5a0b13f421e5185d06cd810ea34
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023072"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154085"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Tester les applications de Surface Hub à l’aide de Visual Studio
 Le simulateur de Visual Studio fournit un environnement dans lequel vous pouvez concevoir, développer, déboguer et tester des applications de plateforme Windows universelle (UWP), y compris les applications que vous avez conçues pour Microsoft Surface Hub. Le simulateur n’utilise pas la même interface utilisateur en tant que Surface Hub, mais il est utile pour tester l’apparence et le comporte avec la taille d’écran du Surface Hub et la résolution de votre application.
 
-Pour plus d’informations sur l’outil en règle générale, voir [exécuter les applications UWP dans le simulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator).
+Pour plus d’informations sur l’outil en règle générale, voir [les applications UWP s’exécutent dans le simulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator).
 
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>Ajouter des résolutions de SurfaceHub au simulateur
 Pour ajouter des résolutions de SurfaceHub au simulateur:
@@ -71,7 +71,7 @@ Pour ajouter des résolutions de SurfaceHub au simulateur:
     ![Résolutions du simulateur VisualStudio](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [Activer le mode tablette](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet) pour mieux simuler l’expérience d’un Surface Hub.
+   > [Activer le mode tablette](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet) afin de mieux simuler l’expérience d’un Surface Hub.
 
 ## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>Déployer des applications sur un appareil Surface Hub à partir de Visual Studio
 Le déploiement manuel d’une application sur un Surface Hub est un processus simple.
@@ -80,7 +80,7 @@ Le déploiement manuel d’une application sur un Surface Hub est un processus s
 Par défaut, Surface Hub installe uniquement des applications depuis le Microsoft Store. Pour installer des applications signées par d’autres sources, vous devez activer le mode développeur.
 
 > [!NOTE]
-> Une fois que le mode développeur a été activé, vous devez réinitialiser le Surface Hub si vous le souhaitez pour le désactiver à nouveau. La réinitialisation de l’appareil supprime l’ensemble des configurations et des fichiers utilisateur locaux, puis réinstalle Windows.
+> Une fois que le mode développeur a été activé, vous devrez réinitialiser le Surface Hub, si vous le souhaitez pour le désactiver à nouveau. La réinitialisation de l’appareil supprime l’ensemble des configurations et des fichiers utilisateur locaux, puis réinstalle Windows.
 
 1. À partir du menu **Démarrer** de l’appareil Surface Hub, ouvrez l’application Paramètres.
 
@@ -92,10 +92,10 @@ Par défaut, Surface Hub installe uniquement des applications depuis le Microsof
 3. Choisissez **Mode développeur** et acceptez le message d’avertissement.
 
 ### <a name="deploy-your-app-from-visual-studio"></a>Déployer votre application à partir de VisualStudio
-Pour plus d’informations sur le processus de déploiement en général, consultez le [déploiement et débogage des applications UWP](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+Pour plus d’informations sur le processus de déploiement en général, voir le [déploiement et débogage des applications UWP](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
-   > Cette fonctionnalité nécessite Visual Studio 2015 Update 1 ou version ultérieure, toutefois, nous vous recommandons d’utiliser la dernière version la plus à jour de Visual Studio. Une instance de Visual Studio à jour sera gibe vous tout le développement plus récent et mises à jour de sécurité.
+   > Cette fonctionnalité nécessite Visual Studio 2015 Update 1 ou version ultérieure, toutefois, nous vous recommandons d’utiliser la dernière version la plus à jour de Visual Studio. Une instance de Visual Studio à jour sera gibe vous le dernier développement et mises à jour de sécurité.
 
 1. Accédez à la liste déroulante des cibles de débogage à côté du bouton **Démarrer le débogage**, puis sélectionnez **Ordinateur distant**.
 

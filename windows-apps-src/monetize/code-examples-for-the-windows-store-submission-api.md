@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, API de soumission au Microsoft Store, exemples de code
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b9c2acbdd6c45c00ba96bdc11a8273a66a67116
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034768"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200506"
 ---
 # <a name="code-examples-for-the-submission-api"></a>Exemples de code pour l’API de soumission
 
-Cette section fournit des exemples de code pour utiliser l' [API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md) dans différents langages de programmation.
+Cette section fournit des exemples de code pour l’utilisation de l' [API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md) dans différents langages de programmation.
 
 > [!NOTE]
 > Outre les exemples de code répertoriés ci-dessous, nous fournissons également un module de PowerShell open source qui implémente une interface de ligne de commande sur l’API de soumission au Microsoft Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre app, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission au MicrosoftStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).

@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c05cbf2ce0b2f6288e6beb9c84df9d2b42bd6f2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f964c8ac4a579fe4c360967c6bc9e613659a668b
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026491"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154241"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
 [Obtenir Desktop App Converter](https://aka.ms/converter)
 
-Vous pouvez utiliser l’outil Desktop App Converter (DAC) pour mettre vos applications de bureau sur la plateforme Windows universelle (UWP). Cela inclut les applications Win32 et celles que vous avez créées à l’aide de .NET 4.6.1.
+Desktop App Converter (DAC) crée des packages pour les applications de bureau pour l’intégration avec les dernières fonctionnalités de Windows, y compris la distribution et de maintenance par le biais du Microsoft Store. Cela inclut les applications Win32 et celles que vous avez créées à l’aide de .NET 4.6.1.
 
 ![Icône DAC](images/desktop-to-uwp/dac.png)
 
@@ -31,7 +31,7 @@ Vous pouvez installer ce package sur votre ordinateur de développement à l’a
 Le convertisseur exécute le programme d’installation de bureau dans un environnement Windows isolé à l’aide d’une nouvelle image de base, fournie dans le cadre du téléchargement du convertisseur. Il capture toutes les E/S du Registre et du système de fichiers effectuées par le programme d’installation du bureau et les intègre sous forme de package comme partie intégrante de la sortie.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (également appelé le pont du bureau) a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 > [!NOTE]
 > Obtenez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous expliquent certaines méthodes courantes d’utilisation de Desktop App Converter.
@@ -143,7 +143,7 @@ Vous pouvez en savoir plus sur chacun d’entre eux [ici](#command-reference).
 Voici quelques méthodes courantes pour créer votre package d'application.
 
 * [Package d’une application qui dispose d’un fichier de programme d’installation (.msi)](#installer-conversion)
-* [Une application qui dispose d’un fichier exécutable d’installation de package](#setup-conversion)
+* [Une application qui a un fichier exécutable d’installation de package](#setup-conversion)
 * [Une application qui n’a pas de programme d’installation de package](#no-installer-conversion)
 * [Créer un package d'application, signer et préparer l'application pour la soumission au Store](#optional-parameters)
 
@@ -168,7 +168,7 @@ Si votre programme d'installation comprend des programmes d'installation pour le
 
 <a id="setup-conversion" />
 
-#### <a name="package-an-application-that-has-a-setup-executable-file"></a>Une application qui dispose d’un fichier exécutable d’installation de package
+#### <a name="package-an-application-that-has-a-setup-executable-file"></a>Une application qui a un fichier exécutable d’installation de package
 
 Pointez vers l’exécutable d’installation à l’aide du paramètre ``Installer``.
 
@@ -207,7 +207,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>Créer un package d'application, signer l’application puis exécuter les vérifications de validation sur le package
 
-Cet exemple est similaire au premier près qu’il montre comment vous pouvez signer votre application pour le test local, puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
+Cet exemple est similaire au premier ceci près qu’il montre comment signer votre application pour le test local et puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -269,7 +269,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-InstallerArguments &lt;chaîne&gt; |Facultatif |Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès &lt;log_folder&gt;, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE**: les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation. <br><br>Exemple d’utilisation de ce paramètre: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log". Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci: ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton &lt;log_folder&gt; si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Facultatif |Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple: 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script pour empaqueter la sortie sous la forme d’un Package MSIX. |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script à la sortie sous la forme d’un Package MSIX de package. |
 |<a id="identity-params" /><strong>Paramètres d’identité de package</strong>||
 |-PackageName &lt;chaîne&gt; |Requis |Le nom de votre package d’application Windows universelle. Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre. |
 |-Éditeur &lt;chaîne&gt; |Requis |L’éditeur de votre package d’application Windows universelle |
@@ -332,7 +332,7 @@ Suivez ces étapes pour installer le certificat généré, puis exécutez votre 
 
 ## <a name="modify-the-packaged-app"></a>Modifier l’application empaquetée
 
-Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre les bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
+Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre des bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
 
 Une fois vos modifications accomplies, il n’est pas nécessaire d’effectuer une nouvelle conversion. Dans la plupart des cas, vous pouvez simplement repackager votre application à l’aide de l’outil MakeAppx et du fichier appxmanifest.xml DAC génère pour votre application. Voir [Générer un package d’application Windows](desktop-to-uwp-manual-conversion.md#make-appx).
 

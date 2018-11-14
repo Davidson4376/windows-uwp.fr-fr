@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 9342b4ce35cb50037813ed2210e2d7246411ad92
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032983"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154211"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Création de package à l'aide de la disposition de mise en package  
 
@@ -53,7 +53,7 @@ Voici un exemple de disposition de mise en package simple:
 Décomposons cet exemple pour comprendre son fonctionnement
 
 ### <a name="packagefamily"></a>PackageFamily
-Cette disposition de mise en package créera un fichier d’un ensemble d’applications application plat unique avec une x64 package d’architecture et un package d’actifs «Media». 
+Cette disposition de mise en package crée un fichier d’un ensemble d’applications application plat unique avec une x64 package d’architecture et un package d’actifs «Media». 
 
 L'élément **PackageFamily** est utilisé pour définir un ensemble d'applications. Vous devez utiliser l'attribut **ManifestPath** pour fournir un élément **AppxManifest** à l'ensemble. L'élément **AppxManifest** doit correspondre à l'élément **AppxManifest** pour le package d'architecture de l'ensemble. L'attribut **ID** doit également être fourni. Cet élément est utilisé avec MakeAppx.exe lors de la création de package. Ainsi, vous pouvez créer uniquement ce package si vous le souhaitez, il s'agira alors du nom de fichier pour le package obtenu. L'attribut **FlatBundle** est utilisé pour décrire le type d'ensemble que vous souhaitez créer, l'attribut **true** pour un ensemble plat (vous trouverez plus d'informations ici) et l'attribut **false** pour un ensemble classique. L'attribut **ResourceManager** est utilisé pour spécifier si les packages de ressources dans cet ensemble utiliseront MRT afin d'accéder aux fichiers. La valeur par défaut est **true**, mais à compter de la version 1803 de Windows10, il n'est pas encore prêt. L'attribut doit donc être défini sur **false**.
 
@@ -145,7 +145,7 @@ Les packages de ressources peuvent être spécifiés dans l'élément **Resource
 
 Les packages facultatifs ont leurs propres noms de famille de package distincts et doivent être définis avec des éléments **PackageFamily** tout e spécifiant l'attribut **Facultatif** sur **true**. L'attribut **RelatedSet** est utilisé pour spécifié si le package facultatif se trouve dans l'ensemble connexe (il doit l'être par défaut), peut importe si le package facultatif doit être mis à jour avec le package principal.
 
-L’élément **PrebuiltPackage** est utilisé pour ajouter des packages qui ne sont pas définis dans la disposition de création de packages à inclure ou à référencer dans les fichiers d’un ensemble d’applications application à générer. Dans ce cas, un autre package DLC facultatif est en cours inclus ici afin que le fichier d’un ensemble d’applications application principal puisse le référencer et inclure dans l’ensemble connexe.
+L’élément **PrebuiltPackage** est utilisé pour ajouter des packages qui ne sont pas définis dans la disposition de création de packages à inclure ou à référencer dans les fichiers d’un ensemble d’applications application à générer. Dans ce cas, un autre package DLC facultatif est en cours inclus ici afin que le fichier d’un ensemble d’applications principal application puisse le référencer et inclure dans l’ensemble connexe.
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>Générer des packages d'application avec une disposition de mise en package et l'outil MakeAppx.exe
@@ -161,7 +161,7 @@ Néanmoins, si vous mettez à jour votre application et que certains packages ne
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-L'indicateur `/id` peut être utilisé pour sélectionner les packages à générer à partir de la disposition de mise en package. Il correspond à l'attribut **ID** de la disposition. L'attribut `/ip` est utilisé pour indiquer l'emplacement de la version précédente des packages dans ce cas. La version précédente doit être fournie dans la mesure où le fichier d’un ensemble d’applications application doit tout de même faire référence à la version précédente du package de **média** . L'indicateur `/iv` est utilisé pour incrémenter automatiquement la version des packages en cours de génération (au lieu de modifier la version dans l'élément **AppxManifest**). Sinon, les commutateurs `/pv` et `/bv` peuvent être utilisés pour fournir directement une version de package (pour tous les packages à créer) et une version d'ensemble (pour tous les ensembles à créer) respectivement.
+L'indicateur `/id` peut être utilisé pour sélectionner les packages à générer à partir de la disposition de mise en package. Il correspond à l'attribut **ID** de la disposition. L'attribut `/ip` est utilisé pour indiquer l'emplacement de la version précédente des packages dans ce cas. La version précédente doit être fournie dans la mesure où le fichier d’un ensemble d’applications application doit toujours faire référence à la version précédente du package de **média** . L'indicateur `/iv` est utilisé pour incrémenter automatiquement la version des packages en cours de génération (au lieu de modifier la version dans l'élément **AppxManifest**). Sinon, les commutateurs `/pv` et `/bv` peuvent être utilisés pour fournir directement une version de package (pour tous les packages à créer) et une version d'ensemble (pour tous les ensembles à créer) respectivement.
 À l'aide de l'exemple de disposition de mise en package avancée de cette page, si vous souhaitez uniquement générer l'ensemble facultatif **Themes** et le package d'application **Themes.main** auquel il fait référence, vous pourriez utiliser cette commande:
 
 ``` example 

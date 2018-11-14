@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6137743"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189113"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -29,7 +29,7 @@ Vous pouvez promouvoir et monétiser un jeu UWP de l’une ou de plusieurs des m
 
 ## <a name="worldwide-distribution-channel"></a>Canal de distribution mondial
 
-Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge de la facturation via différentes formes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [Marchés et prix personnalisés](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
+Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge de la facturation via différentes formes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [définir la sélection du marché](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
 
 ## <a name="set-a-price-for-your-game"></a>Définir un prix pour votre jeu
 
@@ -39,8 +39,8 @@ Voici quelques concepts importants concernant la tarification de votre jeu dans 
 
 ### <a name="base-price"></a>Prix de base
 
-Le prix de base du jeu est l’élément qui détermine si votre jeu est classé comme _payant_ ou _gratuit_. Vous pouvez utiliser le [tableau de bord du Centre de développement](https://developer.microsoft.com/windows) pour configurer le prix de base en fonction du pays ou de la région.
-Le processus de détermination du prix peut inclure vos [responsabilités fiscales lors de la vente à différents pays](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps) et des [considérations relatives au coût pour des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). En outre, vous pouvez [définir des prix personnalisés pour des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). Pour plus d’informations, voir l’article [Définition des prix et sélection du marché](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
+Le prix de base du jeu est l’élément qui détermine si votre jeu est classé comme _payant_ ou _gratuit_. Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) pour configurer le prix de base en fonction de pays et région.
+Le processus de détermination du prix peut inclure vos [responsabilités fiscales lors de la vente à différents pays](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps) et des [considérations relatives au coût pour des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). En outre, vous pouvez [définir des prix personnalisés pour des marchés spécifiques](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
 
 ### <a name="sale-price"></a>Prix de vente
 
@@ -49,7 +49,7 @@ Vous pouvez planifier des campagnes de vente à l’avance, en définissant à l
 
 ## <a name="in-game-purchases"></a>Achats dans le jeu
 
-Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont également appelés de manière générique _achats in-app_. Dans le Microsoft Store, ces produits sont appelés des _modules complémentaires_. [Les composants additionnels sont publiés](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) par le biais du tableau de bord du Centre de développement Windows. Vous devrez également activer les composants additionnels dans le code de votre jeu.
+Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont également appelés de manière générique _achats in-app_. Dans le Microsoft Store, ces produits sont appelés des _modules complémentaires_. [Les modules complémentaires sont publiés](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) par le biais de l’espace partenaires. Vous devrez également activer les composants additionnels dans le code de votre jeu.
 
 ### <a name="types-of-add-ons"></a>Types de composants additionnels
 
@@ -60,7 +60,7 @@ Lorsque vous créez des consommables, décidez de la manière dont vous souhaite
 ### <a name="create-in-game-purchases"></a>Créer des achats dans le jeu
 
 Les achats in-app les plus récents et les API d’informations de licence font partie de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) dans le SDK Windows (à partir de Windows10, version 1607). Si vous développez un nouveau jeu qui cible la version1607 ou une version ultérieure, nous vous recommandons d’utiliser l’espace de noms __Windows.Services.Store__, car il prend en charge les types de composants additionnels les plus récents et offre de meilleures performances.
-En outre, il a été conçu pour être compatible avec des types ultérieurs de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le Windows Store. Lors du développement pour de précédentes versions de Windows10, utilisez l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place.
+Il a également conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. Lors du développement pour de précédentes versions de Windows10, utilisez l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place.
 
 Pour plus d’informations, accédez à [Achats in-app et versions d’évaluation](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials).
 
@@ -93,14 +93,14 @@ Pour créer un package qui peut être chargé dans le Windows Store:
 1. Ouvrez votre solution de jeu dans Visual Studio.
 2. Dans Visual Studio, accédez à __Projet__ > __Windows Store__ > __Créer des packages d’application…__
 3. Pour les __Voulez-vous générer des packages à charger dans le Microsoft Store?__ une autre option, sélectionnez __«Oui»__.
-4. Connectez-vous à votre compte de développeur du Centre de développement. Si vous n’avez pas de compte de développeur, [inscrivez-vous](https://developer.microsoft.com/store/register) pour en obtenir un.
+4. Connectez-vous à votre compte de développeur de [L’espace partenaires](https://partner.microsoft.com/dashboard) . Si vous n’avez pas de compte de développeur, [inscrivez-vous](https://developer.microsoft.com/store/register) pour en obtenir un.
 5. Sélectionnez une application pour laquelle créer le package de chargement. Si vous n’avez pas encore créé de soumission d’application, fournissez un nouveau nom d’application pour créer une soumission. Pour plus d’informations, voir [Créer votre application en réservant un nom](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. Une fois le package correctement créé, cliquez sur __Lancer le Kit de certification des applications Windows__ pour démarrer le processus de test.
 7. Corrigez toutes les erreurs pour créer un package de jeu.
 
 #### <a name="publish-the-game-as-hidden"></a>Publier le jeu comme étant masqué
 
-1. Accédez au [Centre de développement](https://developer.microsoft.com/store) et connectez-vous.
+1. Accédez à [L’espace partenaires](https://partner.microsoft.com/dashboard) et connectez-vous.
 2. Depuis la __page de présentation du tableau de bord__ ou la page __Toutes les applications__, cliquez sur l’application avec laquelle vous souhaitez travailler. Si vous n’avez pas encore créé de soumission d’application, cliquez sur __Créer une application__ et réservez un nom.
 3. Sur la page __Vue d’ensemble de l’application__, cliquez sur __Démarrer votre soumission__.
 4. Configurez cette nouvelle soumission. Sur la page de la soumission:
@@ -120,7 +120,7 @@ Une fois que votre jeu est soumis dans le Windows Store, il entre dans le [proce
 Avec votre solution de jeu ouverte dans Visual Studio:
 
 1. Accédez à __Projet__ > __Windows Store__ > __Associer l’application avec le Windows Store…__
-2. Connectez-vous à votre compte de développeur du Centre de développement, puis sélectionnez le nom de l’application à laquelle associer cette solution.
+2. Connectez-vous à votre compte de développeur de l’espace partenaires et sélectionnez le nom de l’application à laquelle associer cette solution.
 3. Double-cliquez sur le __fichier Package.appxmanifest.xml__ et accédez à l’onglet __Empaquetage__ afin de vérifier que le jeu est correctement associé.
 
 Si vous avez associé la solution à un jeu publié qui est actif et répertorié dans le Windows Store, votre solution dispose d’une licence active et vous vous rapprochez de la création de composants additionnels pour votre jeu. Pour plus d’informations, consultez [Empaquetage d’applications](https://msdn.microsoft.com/windows/uwp/packaging/index).
@@ -129,7 +129,7 @@ Si vous avez associé la solution à un jeu publié qui est actif et répertori�
 
 Lorsque vous créez des composants additionnels, assurez-vous que vous les associez à la soumission de jeu appropriée. Pour plus d’informations sur la configuration de toutes les informations diverses associées à un composant additionnel, voir [Soumissions de composants additionnels](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
 
-1. Accédez au [Centre de développement](https://developer.microsoft.com/store) et connectez-vous.
+1. Accédez à [L’espace partenaires](https://partner.microsoft.com/dashboard) et connectez-vous.
 2. Depuis la __page de présentation du tableau de bord__ ou la page __Toutes les applications__, cliquez sur l’application pour laquelle vous souhaitez créer le composant additionnel.
 3. Sur la page __Vue d’ensemble de l’application__, dans la section __Composants additionnels__, sélectionnez __Créer un composant additionnel__.
 4. Sélectionnez le type de produit pour le composant additionnel: __consommable géré par le développeur__, __consommable géré par le Windows Store__ ou __durable__.

@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be6cfbc40fc645bfb66ef2f0fb9b8b5f2976da8
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6142384"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186267"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Exemples d’applications UWP sur XboxOne
 

@@ -5,15 +5,15 @@ description: Cette section explique comment utiliser la plateforme Systèmes dis
 ms.author: pafarley
 ms.date: 06/08/2018
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
+keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c462bb28de23db735b957870cf456d3649282ae
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024878"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152049"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet «Rome»)
 
@@ -37,5 +37,5 @@ Pour plus d’informations sur le projet Rome en général, y compris les ressou
 | [Détecter des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
 | [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment interagir avec une application sur un appareil distant. |
 | [Connecter des appareils par le biais de sessions à distance](remote-sessions.md) | Créez des expériences partagées sur plusieurs appareils en les rejoignant dans une session à distance. |
-| [Poursuivre l’activité utilisateur, même sur différents appareils](useractivities.md)| Permettre aux utilisateurs de reprendre qu’ils étaient en train de faire dans votre application, même sur plusieurs appareils.|
+| [Poursuivre l’activité utilisateur, même sur différents appareils](useractivities.md)| Permettent aux utilisateurs de reprendre qu’ils étaient en train de faire dans votre application, même sur plusieurs appareils.|
 | [Bonnes pratiques des activités utilisateur](useractivities-best-practices.md)| Découvrez les pratiques recommandées pour la création et la mise à jour des activités de l’utilisateur.|

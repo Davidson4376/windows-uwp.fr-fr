@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc557306fe2e5e24ce1210e75ac5f29628306ae
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027749"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197674"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 
-Lorsque vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les options de la page **tarification et disponibilité** déterminent la quantité de facturer les clients pour votre extension et comment elle doit être proposé aux clients.
+Lorsque vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les options de la page **tarification et disponibilité** déterminent la quantité de facturer les clients pour votre extension et la façon dont il doit être proposé aux clients.
 
 ## <a name="markets"></a>Marchés
 
@@ -36,7 +36,7 @@ L’option par défaut est **Can be displayed in the parent product’s Store li
 Pour les extensions que vous ne voulez pas mettre à la disposition générale, sélectionnez **Masquée dans le WindowsStore** et l’une des options suivantes:
 
 -   **Disponible à l’achat à partir du produit parent uniquement**: cette option permet à tout client d’acheter le module complémentaire à partir de votre application, mais le module complémentaire ne sera pas affiché dans la description de votre application ou détectable dans le Windows Store. Utilisez cette option uniquement si l’offre n’est pas mise à la disposition générale, par exemple lors des périodes initiales de test interne.
--   **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le WindowsStore, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows10. This add-on is not displayed in the parent product’s listing**: cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas pris en charge pour les clients sur Windows8.1 ou une version antérieure**. Si votre application publiée précédemment est disponible sur Windows8.1 ou une version antérieure, le module complémentaire sera disponible à l’achat pour ces clients. Pour arrêter de proposer le module complémentaire aux clients Windows8.1 ou une version antérieure, vous devez mettre à jour votre application en supprimant le code proposant le module complémentaire, puis publier une nouvelle soumission pour l’application. Il est recommandé de même si votre application ne cible pas Windows8.1 ou une version antérieure; Il est une meilleure expérience pour vos clients si vous leur proposez jamais un module complémentaire que vous avez choisi de rendre indisponible.
+-   **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le WindowsStore, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows10. This add-on is not displayed in the parent product’s listing**: cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas pris en charge pour les clients sur Windows8.1 ou une version antérieure**. Si votre application publiée précédemment est disponible sur Windows8.1 ou une version antérieure, le module complémentaire sera disponible à l’achat pour ces clients. Pour arrêter de proposer le module complémentaire aux clients Windows8.1 ou une version antérieure, vous devez mettre à jour votre application pour supprimer le code proposant le module complémentaire, puis publier une nouvelle soumission pour l’application. Il est recommandé de même si votre application ne cible pas Windows8.1 ou une version antérieure; Il est une meilleure expérience pour vos clients si vous leur proposez jamais un module complémentaire que vous avez choisi de rendre indisponible.
     
  > [!NOTE] 
  > Le choix de l’option **Empêcher l’acquisition** et/ou la soumission d’une mise à jour d’application supprimant l’extension du code de votre application n’ont pas d’incidence sur les clients qui ont déjà acheté cette extension, quel que soit le système d’exploitation qu’ils utilisent.
@@ -51,12 +51,12 @@ Pour plus d’informations, voir [Configurer le calendrier de publication exact]
 
 ## <a name="pricing"></a>Tarification
 
-Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
+Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **d’empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
 
 Vous pouvez également planifier des modifications de tarifs pour indiquer la date et l’heure auxquelles le prix de l’extension doit changer. En outre, vous pouvez personnaliser ces changements pour des marchés spécifiques. 
 
 > [!TIP]
-> Pour les extensions d’abonnement, vous ne pouvez pas augmenter le prix après la publication de l’extension, en sélectionnant un prix de base supérieure dans une soumission ultérieure ou en planifiant un changement de prix qui augmente le prix. Vous pouvez sélectionner un prix inférieur à l’aide d’une de ces méthodes, mais une fois que le prix est baissé, vous ne serez en mesure de déclencher supérieur à ce nouveau prix. Pour cette raison, il est particulièrement important pour vous assurer que vous avez sélectionné le niveau de prix approprié pour les extensions d’abonnement. 
+> Pour les extensions d’abonnement, vous ne pouvez pas augmenter le prix après la publication de l’extension, en sélectionnant un prix de base supérieure dans une soumission ultérieure ou en planifiant un changement de prix qui augmente le prix. Vous pouvez sélectionner un prix inférieur à l’aide d’une de ces méthodes, mais une fois que le prix est baissé, vous ne serez en mesure de déclencher supérieur à ce nouveau prix. Pour cette raison, il est particulièrement important pour vous assurer que vous sélectionnez le niveau de prix approprié pour les extensions d’abonnement. 
 
 Pour plus d’informations, consultez l’article [Définir et planifier le prix de l’application](set-and-schedule-app-pricing.md).
 

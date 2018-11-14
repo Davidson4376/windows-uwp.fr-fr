@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a398b621ff309af8c6f8252613d3ea106d96485
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048623"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6150184"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
 
 Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 
-Microsoft Visual Studio vous permet de déployer et déboguer vos applications de plateforme Windows universelle (UWP) sur un grand nombre d’appareils Windows 10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
+Microsoft Visual Studio vous permet de déployer et déboguer vos applications de plateforme Windows universelle (UWP) sur un grand nombre d’appareils de Windows 10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
 
 ## <a name="picking-a-deployment-target"></a>Sélection d’une cible de déploiement
 
@@ -32,7 +32,7 @@ Pour sélectionner une cible, accédez à la liste déroulante des cibles de dé
 -   L’**Ordinateur local** déploie l’application sur votre ordinateur de développement actuel. Cette option est disponible uniquement si la **Version minimale de la plateforme cible** de votre application est inférieure ou égale à celle du système d’exploitation de votre ordinateur de développement.
 -   L’**Ordinateur distant** vous permet de spécifier une cible distante pour déployer l’application. Pour plus d’informations sur le déploiement sur un ordinateur distant, voir [Spécification d’un appareil distant](#specifying-a-remote-device).
 -   L’**Appareil** déploie l’application sur un appareil USB connecté. L’appareil doit être déverrouillé par le développeur et son écran doit être déverrouillé.
--   Un **Émulateur** démarre et déploie l’application sur un émulateur avec la configuration spécifiée dans le nom. Émulateurs sont disponibles uniquement sur Hyper-V en cours d’exécution Windows8.1 des ordinateurs ou supérieur.
+-   Un **Émulateur** démarre et déploie l’application sur un émulateur avec la configuration spécifiée dans le nom. Émulateurs sont disponibles uniquement sur Hyper-V en cours d’exécution Windows8.1 des ordinateurs, ou supérieur.
 
 
 ## <a name="debugging-deployed-apps"></a>Débogage des applications déployées
@@ -47,7 +47,7 @@ Si vous sélectionnez **Ne pas lancer, mais déboguer mon code au démarrage**, 
 Les applications UWP peuvent être développées et compilées sur Windows8.1 ou une version ultérieure, mais leur exécution nécessite Windows10. Si vous développez une application UWP sur un PC Windows8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](https://www.visualstudio.com/downloads/) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.   
 
 ## <a name="package-layout"></a>Disposition de package
-À compter de Visual Studio 2015 Update 3, nous avons ajouté la possibilité aux développeurs de spécifier le chemin d’accès de disposition de leurs applications UWP. Cela permet de déterminer l’emplacement sur le disque où est copiée la disposition de package quand vous générez l’application. Par défaut, cette propriété est définie par rapport au répertoire racine du projet. Si vous ne modifiez pas cette propriété, le comportement reste le même que celui des versions antérieures de Visual Studio.
+À compter de Visual Studio 2015 Update 3, nous avons ajouté la possibilité aux développeurs de spécifier le chemin d’accès de la disposition de leurs applications UWP. Cela permet de déterminer l’emplacement sur le disque où est copiée la disposition de package quand vous générez l’application. Par défaut, cette propriété est définie par rapport au répertoire racine du projet. Si vous ne modifiez pas cette propriété, le comportement reste le même que celui des versions antérieures de Visual Studio.
 
 Cette propriété peut être modifiée dans les propriétés de **débogage** du projet.
 
@@ -67,7 +67,7 @@ Pour spécifier un ordinateur distant pour des applications en C# ou Microsoft V
 
 ![Boîte de dialogue Connexions à distance](images/debug-remote-connections.png)
 
-Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accédez à l’onglet **Déboguer** . À partir de là, activez **trouver** à **ordinateur distant:**
+Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accédez à l’onglet **Déboguer** . À partir de là, sélectionnez **trouvez** regard **ordinateur distant:**
 
 ![Onglet Déboguer](images/debug-remote-machine-config.png)
 
@@ -125,7 +125,7 @@ Il existe trois modes d’authentification de déploiement sur un ordinateur dis
 - **Aucun**: Ce mode d’authentification est destiné à être utilisé uniquement pour un PC distant (ordinateur de bureau ou portable) exécutant les outils de contrôle à distance de VisualStudio. Utilisez ce mode d’authentification quand vous disposez d’un ordinateur de test configuré dans un environnement avec un compte de test connecté, et que vous ne pouvez pas entrer les informations d’identification. Vérifiez que les paramètres du débogueur distant sont définis pour n’accepter aucune authentification.
 
 ## <a name="advanced-remote-deployment-options"></a>Options avancées de déploiement distant
-Comme de la version de Visual Studio 2015 Update 3 et la mise à jour anniversaire de Windows 10, il existe des nouvelles avancées de déploiement distant options pour certains appareils Windows 10. Les options avancées de déploiement distant se trouvent dans le menu **Déboguer** des propriétés du projet.
+Comme de la version de Visual Studio 2015 Update 3 et la mise à jour anniversaire de Windows 10, il existe des avancées de déploiement distant nouvelles options pour certains appareils Windows 10. Les options avancées de déploiement distant se trouvent dans le menu **Déboguer** des propriétés du projet.
 
 Les nouvelles propriétés sont notamment:
 * Type de déploiement
@@ -192,7 +192,7 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
 
 - **Autoriser le bouclage réseau local**
 
-  Pour des raisons de sécurité, une application UWP installée de manière standard n’est pas autorisée à effectuer des appels réseau à l’appareil sur lequel elle est installée. Par défaut, le déploiement de Visual Studio crée une exemption à cette règle pour l’application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul et même ordinateur. Avant de soumettre votre application dans le Microsoft Store, vous devez tester votre application sans l’exemption.
+  Pour des raisons de sécurité, une application UWP installée de manière standard n’est pas autorisée à effectuer des appels réseau à l’appareil sur lequel elle est installée. Par défaut, le déploiement de Visual Studio crée une exemption à cette règle pour l’application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul et même ordinateur. Avant de soumettre votre application dans le Microsoft Store, vous devez la tester sans l’exemption.
 
   Pour supprimer l’exemption de bouclage réseau de l’application:
 

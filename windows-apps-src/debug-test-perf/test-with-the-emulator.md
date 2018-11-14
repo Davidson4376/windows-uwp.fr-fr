@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b3b4da17c8e616640205e5b8b9892a41bc2ea647
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037816"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152877"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -633,7 +633,7 @@ Pour résoudre ce problème, exécutez « netcfg -d » à partir d’une invite 
 
 L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Remarque**XDECleanup.exe supprime émulateur tous les ordinateurs virtuels Hyper-V spécifique et il points de contrôle ou les États.
+> **Remarque**XDECleanup.exe supprime l’émulateur tous les ordinateurs virtuels Hyper-V spécifiques et il points de contrôle ou les États.
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Désinstaller l’image système Windows10 pour Mobile
 

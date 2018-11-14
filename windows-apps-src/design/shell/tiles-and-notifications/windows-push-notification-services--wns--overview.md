@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023687"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189396"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS)
  
@@ -53,7 +53,7 @@ Une fois que l’application a créé un URI de canal, elle l’envoie à son se
 
 ### <a name="important-notes"></a>Remarques importantes
 
--   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan vous pouvez télécharger l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows8.1 et réutiliser son code source et/ou le modèle qu'il illustre.
+-   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan vous pouvez télécharger l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows8.1 et réutiliser son code source et/ou le modèle qu’il montre.
 -   C’est vous, le développeur, qui implémentez l’interface entre le service cloud et l’application cliente. Nous recommandons que l’application passe par un processus d’authentification auprès de son propre service et qu’elle transmette les données par le biais d’un protocole sécurisé tel que HTTPS.
 -   Il est important que le service cloud offre toujours la garantie que l’URI de canal utilise le domaine «notify.windows.com». Le service ne doit jamais effectuer une transmission de type push de notifications vers un canal se trouvant sur un autre domaine. Si jamais le rappel pour votre application était compromis, une personne malveillante pourrait soumettre un URI de canal pour tromper WNS. Sans une inspection du domaine, votre service cloud pourrait divulguer des informations à cette personne malveillante sans le savoir.
 -   Si votre service cloud tente d'envoyer une notification à un canal ayant expiré, le service WNS renvoie le [code de réponse410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). En réponse à ce code, votre service ne doit plus chercher à envoyer des notifications à cet URI.
@@ -74,7 +74,7 @@ Au niveau le plus élevé, la chaîne d’informations se présente comme suit :
 
 Dans le cadre de l’authentification auprès de WNS, le service cloud soumet une requête HTTP sur SSL (Secure Sockets Layer). Les paramètres sont fournis au format «application/x-www-for-urlencoded». Entrez votre SID de package dans le champ «client\_id» et votre clé secrète dans le champ «client\_secret». Pour obtenir des détails sur la syntaxe, voir la référence sur la [demande de jeton d’accès](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request).
 
-**Remarque**il s’agit juste un exemple, le code pas couper-coller que vous pouvez utiliser dans votre propre code.
+**Remarque**Ceci est juste un exemple, le code pas couper-coller que vous pouvez utiliser dans votre propre code.
 
  
 
@@ -162,7 +162,7 @@ Par exemple, au cours d’une journée active d’échanges sur le marché bours
 ## <a name="push-notifications-and-battery-saver"></a>Notifications Push et économiseur de batterie
 
 
-L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur d’activer automatiquement lorsque la batterie descend en dessous d’un seuil spécifié. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres de l’économiseur de batterie Windows 10 suivants (disponibles dans l’application **paramètres** ) permettent à votre application recevoir des notifications push même lorsque l’économiseur de batterie est activé.
+L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de définir l’économiseur de batterie pour activer automatiquement lors de la batterie descend en dessous d’un seuil spécifié. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres de l’économiseur de batterie Windows 10 suivants (disponibles dans l’application **paramètres** ) permettent à votre application recevoir des notifications push même lorsque l’économiseur de batterie est activé.
 
 -   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie**: ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Notez que ce paramètre s’applique uniquement à Windows 10 pour éditions de bureau (famille, Professionnel, entreprise et éducation).
 -   **Toujours autoriser**: ce paramètre permet à des applications spécifiques de s’exécuter en arrière-plan lorsque l’économiseur de batterie est activé (réception de notifications Push comprise). Cette liste est mise à jour manuellement par l’utilisateur.
