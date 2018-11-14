@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031856"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191506"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Création de composants Windows Runtime en C# et Visual Basic
 Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime. Vous pouvez utiliser votre composant dans les applications de plateforme Windows universelle (UWP) avec C++, JavaScript, Visual Basic ou C#. Cette rubrique présente les règles de création d’un composant et décrit quelques aspects de prise en charge de .NET Framework pour Windows Runtime. En règle générale, cette prise en charge est conçue pour être transparente pour les programmeurs .NET Framework. Toutefois, lorsque vous créez un composant à utiliser avec JavaScript ou C++, vous devez tenir compte des différences de prise en charge de Windows Runtime par ces langages.
@@ -27,7 +27,7 @@ En interne, les types Windows Runtime de composant peuvent utiliser n’importe 
 
 -   Les champs, paramètres et valeurs de retour de tous les types et membres publics de votre composant doivent être de type Windows Runtime.
 
-    Cette restriction comprend les types Windows Runtime que vous créez, ainsi que les types qui sont fournis directement par Windows Runtime. Elle inclut également un certain nombre de types .NET Framework. L’inclusion de ces types fait partie de la prise en charge fournie par le .NET Framework pour permettre l’utilisation naturelle du Windows Runtime en code managé: votre code utilise les types .NET Framework familiers plutôt que les types Windows Runtime sous-jacents. Par exemple, vous pouvez utiliser les types primitifs .NET Framework tels que Int32 et Double, certains types fondamentaux tels que DateTimeOffset et Uri, et certains types d’interface générique comme IEnumerable&lt;T&gt; (IEnumerable(Of T) en Visual Basic) et IDictionary&lt;TKey,TValue&gt;, couramment utilisés. (Notez que les arguments de type de ces types génériques doivent être des types Windows Runtime). Ce sujet est abordé dans les sections types en passant Windows Runtime au code managé et passage managés types vers le Windows Runtime, plus loin dans cette rubrique.
+    Cette restriction comprend les types Windows Runtime que vous créez, ainsi que les types qui sont fournis directement par Windows Runtime. Elle inclut également un certain nombre de types .NET Framework. L’inclusion de ces types fait partie de la prise en charge fournie par le .NET Framework pour permettre l’utilisation naturelle du Windows Runtime en code managé: votre code utilise les types .NET Framework familiers plutôt que les types Windows Runtime sous-jacents. Par exemple, vous pouvez utiliser les types primitifs .NET Framework tels que Int32 et Double, certains types fondamentaux tels que DateTimeOffset et Uri, et certains types d’interface générique comme IEnumerable&lt;T&gt; (IEnumerable(Of T) en Visual Basic) et IDictionary&lt;TKey,TValue&gt;, couramment utilisés. (Notez que les arguments de type de ces types génériques doivent être des types Windows Runtime). Ce sujet est abordé dans les sections des types de passer de Windows Runtime au code managé et passage managés types Windows Runtime, plus loin dans cette rubrique.
 
 -   Les interfaces et classes publiques peuvent contenir des méthodes, propriétés et événements. Vous pouvez déclarer des délégués pour vos événements ou utiliser le délégué EventHandler&lt;T&gt;. Une classe ou interface publique ne peut pas:
 
@@ -36,7 +36,7 @@ En interne, les types Windows Runtime de composant peuvent utiliser n’importe 
     -   dériver des types qui ne se trouvent pas dans le Windows Runtime, tels que System.Exception et System.EventArgs.
 -   Tous les types publics doivent posséder un espace de noms racine qui correspond au nom de l’assembly, et le nom de l’assembly ne doit pas commencer par «Windows».
 
-    > **Conseil**par défaut, les projets Visual Studio ont des espaces de noms correspondant au nom de l’assembly. En Visual Basic, la déclaration d’espace de noms pour cet espace de noms par défaut n’est pas affichée dans votre code.
+    > **Conseil**par défaut, les projets Visual Studio ont des noms d’espace de noms correspondant au nom de l’assembly. En Visual Basic, la déclaration d’espace de noms pour cet espace de noms par défaut n’est pas affichée dans votre code.
 
 -   Les structures publiques ne peuvent pas avoir d’autres membres que les champs publics, et ces champs doivent être des types de valeur ou des chaînes.
 -   Les classes publiques doivent être **sealed** (**NotInheritable** en Visual Basic). Si votre modèle de programmation nécessite le polymorphisme, vous pouvez créer une interface publique et implémenter cette interface sur les classes qui doivent être polymorphes.
@@ -92,7 +92,7 @@ Pour certains types de collection couramment utilisés, le mappage est compris e
 
 Lorsqu’un type implémente plusieurs interfaces, vous pouvez utiliser n’importe quelle interface qu’il implémente comme type de paramètre ou type de retour d’un membre. Par exemple, vous pouvez passer ou retourner un Dictionary&lt;int, string&gt; (Dictionary (Of Integer, String) en Visual Basic) comme IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, ou IEnumerable&lt; System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
-**Important**JavaScript utilise l’interface qui apparaît en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+**Important**JavaScript utilise l’interface qui s’affiche en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
 Dans le Windows Runtime, IMap&lt;K, V&gt; et IMapView&lt;K, V&gt; sont itérés à l’aide de IKeyValuePair. Lorsque vous les passez à un code managé, ils apparaissent sous la forme IDictionary&lt;TKey, TValue&gt; et IReadOnlyDictionary&lt;TKey, TValue&gt;, donc naturellement vous utilisez System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; pour les énumérer.
 
@@ -210,7 +210,7 @@ function asyncExample(id) {
 
 Pour les actions et opérations asynchrones qui prennent en charge l’annulation ou le rapport de progression, utilisez la classe [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) pour générer une tâche démarrée et pour connecter l’annulation et la progression des fonctionnalités de création de rapports de la tâche avec l’annulation et la progression des fonctionnalités de création de rapports de l’interface appropriée de Windows Runtime. Pour obtenir un exemple qui prend en charge l’annulation et le rapport de progression, voir [Procédure pas à pas : création d’un composant simple en C# ou Visual Basic et appel de ce composant depuis JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si votre méthode asynchrone ne prend pas en charge l’annulation ou le rapport de progression. Si vous utilisez une fonction lambda Visual Basic ou une méthode anonyme C#, ne fournissez pas de paramètres pour le jeton et l’interface [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). Si vous utilisez une fonction lambda en C#, fournissez un paramètre de jeton, mais ignorez-le. L’exemple précédent, qui utilisé la AsAsyncOperation&lt;TResult&gt; méthode, se présente comme suit lorsque vous utilisez la [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) méthode surcharger à la place:
+Notez que vous pouvez utiliser les méthodes de la classe AsyncInfo même si votre méthode asynchrone ne prend pas en charge l’annulation ou le rapport de progression. Si vous utilisez une fonction lambda Visual Basic ou une méthode anonyme C#, ne fournissez pas de paramètres pour le jeton et l’interface [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). Si vous utilisez une fonction lambda en C#, fournissez un paramètre de jeton, mais ignorez-le. L’exemple précédent, qui a utilisé la AsAsyncOperation&lt;TResult&gt; méthode, se présente comme suit lorsque vous utilisez la [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) méthode surcharger à la place:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -251,7 +251,7 @@ Si votre composant ne gère pas l’exception, une exception correspondante est 
 
 Lorsque vous levez une exception de votre composant, vous pouvez permettre plus facilement à l’appelant JavaScript ou C++ de gérer l’exception en levant un type d’exception non public dont la valeur de la propriété HResult est spécifique à votre composant. Le HRESULT est disponible pour un appelant JavaScript via la propriété Number de l’objet d’exception et pour un appelant C++ via la propriété [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx).
 
-> **Remarque**utilisez une valeur négative pour votre HRESULT. Une valeur positive est interprétée comme une réussite et aucune exception n’est levée dans l’appelant JavaScript ou C++.
+> **Remarque**utiliser une valeur négative pour votre HRESULT. Une valeur positive est interprétée comme une réussite et aucune exception n’est levée dans l’appelant JavaScript ou C++.
 
 ## <a name="declaring-and-raising-events"></a>Déclaration et déclenchement des événements
 Lorsque vous déclarez un type pour contenir les données de votre événement, dérivez de Object au lieu de EventArgs, car EventArgs n’est pas un type Windows Runtime. Utilisez [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) comme type de l’événement, et utilisez votre type d’argument d’événement comme argument de type générique. Déclenchez l’événement comme dans une application .NET Framework.

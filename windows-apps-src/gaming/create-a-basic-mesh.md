@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, maillage, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045449"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184566"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 
@@ -35,7 +35,7 @@ Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des
 ### <a name="prerequisites"></a>Prérequis
 
 -   Notions de base d’algèbre linéaire et de systèmes de coordonnées 3D
--   Un Visual Studio 2015 ou version ultérieure modèle Direct3D
+-   Un Visual Studio 2015 ou une version ultérieure modèle Direct3D
 
 ## <a name="instructions"></a>Instructions
 
@@ -259,7 +259,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **Remarque**vous déclarez généralement la matrice de projection lorsque vous configurez les ressources propres au périphérique, car les résultats de la multiplication avec ce dernier doivent correspondre les paramètres de taille de fenêtre d’affichage 2D actuels (qui correspondent souvent à la hauteur en pixels et la largeur de la affichage). Si ceux-ci changent, vous devez mettre à l’échelle les valeurs des coordonnées x et y en conséquence.
+> **Remarque**vous déclarez généralement la matrice de projection lorsque vous configurez les ressources spécifiques de l’appareil, car les résultats de la multiplication avec elle doivent correspondre à des paramètres de taille de fenêtre d’affichage 2D actuels (qui correspondent souvent à la hauteur en pixels et la largeur de la affichage). Si ceux-ci changent, vous devez mettre à l’échelle les valeurs des coordonnées x et y en conséquence.
 
  
 

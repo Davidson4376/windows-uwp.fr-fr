@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: e5a4c3607486a7163648c7aa5a0e1d03d37e421f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043688"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159781"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Créer et exécuter votre première expérience
 
 Dans cette procédure pas à pas, vous allez:
 * Créez un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation dans l’espace partenaires qui définit plusieurs variables distantes qui représentent le texte et la couleur d’un bouton d’application.
-* Créer une application avec du code qui Récupère les valeurs des variables distantes, utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et consigne l’affichage et de données d’événement de conversion vers l’espace partenaires.
+* Créer une application avec du code qui Récupère les valeurs des variables distantes, utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et ouvre une vue et de données d’événement de conversion vers l’espace partenaires.
 * créer une expérience dans le projet pour tester si la modification de la couleur d’arrière-plan du bouton d’application augmente effectivement le nombre de clics de bouton;
 * exécuter l’application pour collecter des données d’expérience;
 * Passez en revue les résultats de l’expérience dans l’espace partenaires, choisissez une variante à activer pour tous les utilisateurs de l’application et terminer l’expérience.
@@ -33,7 +33,7 @@ Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espac
 ## <a name="create-a-project-with-remote-variables-in-partner-center"></a>Créer un projet avec des variables distantes dans l’espace partenaires
 
 1. Connectez-vous à l'[Espace partenaires](https://partner.microsoft.com/dashboard).
-2. Si vous disposez déjà d’une application dans le centre de l’espace que vous souhaitez utiliser pour créer une expérience, sélectionnez-la dans l’espace partenaires. Si vous n’est pas encore avoir une application dans l’espace partenaires, [créez une application en réservant un nom](../publish/create-your-app-by-reserving-a-name.md) , puis sélectionnez cette application dans l’espace partenaires.
+2. Si vous disposez déjà d’une application dans l’espace partenaires et que vous souhaitez utiliser pour créer une expérience, sélectionnez-la dans l’espace partenaires. Si vous n’est pas encore avoir une application dans l’espace partenaires, [créez une application en réservant un nom](../publish/create-your-app-by-reserving-a-name.md) , puis sélectionnez cette application dans l’espace partenaires.
 3. Dans le volet de navigation, cliquez sur **Services**, puis sur **Expérimentation**.
 4. Dans la section **Projets** de la page suivante, cliquez sur le bouton **Nouveau projet**.
 5. Dans la page **Nouveau projet**, entrez le nom **Expériences sur les clics de bouton** pour votre nouveau projet.
@@ -60,7 +60,7 @@ Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espac
 
 ## <a name="create-the-experiment-in-partner-center"></a>Créer l’expérience dans l’espace partenaires
 
-1. Revenez à la page du projet **Bouton expériences sur les clics** dans l’espace partenaires.
+1. Revenir à la page de projet de **Bouton expériences sur les clics** dans l’espace partenaires.
 2. Dans la section **Expériences**, cliquez sur le bouton **Nouvelle expérience**.
 3. Dans la section **Experiment details (Détails de l’expérience)**, tapez le nom **Optimiser les clics de bouton** dans le champ **Experiment name (Nom de l’expérience)**.
 4. Dans la section **View event (Événement d’affichage)**, tapez **userViewedButton** dans le champ **View event name (Nom de l’événement d’affichage)**. Notez que ce nom correspond à la chaîne de l’événement d’affichage enregistré dans le code que vous avez ajoutée dans la section précédente.
@@ -90,7 +90,7 @@ Pour suivre cette procédure pas à pas, vous devez disposer d’un compte espac
 Laissez s’écouler plusieurs heures après avoir terminé la section précédente, puis suivez ces étapes pour passer en revue les résultats de votre expérience et terminer l’expérience.
 
 > [!NOTE]
-> Dès que vous avez activé une expérience, l’espace partenaires lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. Toutefois, il peut prendre plusieurs heures pour les données de l’expérience s’affiche dans l’espace partenaires.
+> Dès que vous activez une expérience, l’espace partenaires lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. Toutefois, il peut prendre plusieurs heures pour les données d’expérience s’affiche dans l’espace partenaires.
 
 1. Dans l’espace partenaires, revenez à la page **d’expérimentation** pour votre application.
 2. Dans la section **Active experiments** (Expériences actives), cliquez sur **Optimize Button Clicks** (Optimiser les clics de bouton) pour accéder à la page de cette expérience.

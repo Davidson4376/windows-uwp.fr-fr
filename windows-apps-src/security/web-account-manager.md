@@ -9,11 +9,11 @@ keywords: Windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028055"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147363"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -177,7 +177,7 @@ Dans cet exemple, nous passons la chaîne «wl.basic» au paramètre d’_étend
 * Pour les étendues OneDrive, consultez [Authentification et connexion OneDrive](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> Si vous le souhaitez, si votre application utilise une indication de connexion (pour remplir le champ utilisateur avec une adresse de messagerie par défaut) ou une autre propriété spéciale liés à l’expérience de connexion, répertorier dans la propriété **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Cela entraînera le système ignorer la propriété lors de la mise en cache du compte web, ce qui empêche les différences de compte dans le cache.
+> Si vous le souhaitez, si votre application utilise une indication de connexion (afin de remplir le champ de l’utilisateur avec une adresse de messagerie par défaut) ou une autre propriété spéciale liés à l’expérience de connexion, répertorier dans la propriété **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Cela entraînera le système ignorer la propriété lors de la mise en cache du compte web, ce qui empêche les différences de compte dans le cache.
 
 Si vous développez une application d’entreprise, vous souhaiterez probablement vous connecter à une instance Azure Active Directory (AAD) et utiliser l’API Microsoft Graph plutôt que les services MSA classiques. Dans ce cas, utilisez le code suivant: 
 

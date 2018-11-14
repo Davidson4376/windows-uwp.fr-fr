@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027659"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6139903"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -58,7 +58,7 @@ Voici quelques recommandations à prendre en compte quand vous ajoutez la foncti
 
 Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
 
-**Remarque**dans les cas où la zone de contenu panoramique dans deux directions, tels que les navigateurs web ou e-des lecteurs, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
+**Remarque**dans les cas où la zone de contenu panoramique dans deux directions, tels que les navigateurs web ou des e-des lecteurs, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
 
  
 

@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024833"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183576"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -35,7 +35,7 @@ Les extensions d’abonnement des applications UWP prennent en charge les foncti
 
 Pour activer les achats d'extensions d’abonnement dans votre application, procédez comme suit.
 
-1. [Créer une soumission d’extension](../publish/add-on-submissions.md) pour votre abonnement dans l’espace partenaires et publier la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
+1. [Créer une soumission d’extension](../publish/add-on-submissions.md) pour laquelle votre abonnement dans l’espace partenaires et publier la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
 
     * [Type de produit](../publish/set-your-add-on-product-id.md#product-type): veillez à sélectionner **Abonnement**.
 
@@ -70,7 +70,7 @@ Les exemples de code de cette section montrent comment utiliser les API de l'esp
 
 Les conditions préalables de ces exemples sont les suivantes:
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure.
-* Vous avez [créé une soumission d’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et cette application est publiée dans le Windows Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Windows Store pendant que vous la testez. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
+* Vous avez [créé une soumission d’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et que cette application est publiée dans le Windows Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Windows Store pendant que vous la testez. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
 * Vous avez [créé une extension d’abonnement de l’application](../publish/add-on-submissions.md) dans l’espace partenaires.
 
 Le code de ces exemples respecte les présupposés suivants:
@@ -126,7 +126,7 @@ Nous n’offrons pas de périodes de grâce pour la facturation de l’abonnemen
 Les scénarios suivants ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 
 * La vente d'abonnements aux clients directement via le Windows Store n’est pas prise en charge pour l’instant. Les abonnements sont disponibles pour les achats in-app de produits numériques uniquement.
-* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](http://account.microsoft.com/services) de leur compte Microsoft. Pour changer de période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
+* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](http://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers la période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
 * Le changement de niveau n’est actuellement pas pris en charge pour les extensions d’abonnement (par exemple, passer un client d'un abonnement de base à un abonnement premium avec plus de fonctionnalités).
 * Les codes de [vente](../publish/put-apps-and-add-ons-on-sale.md) et les [codes promotionnels](../publish/generate-promotional-codes.md) ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, API d'analyse du MicrosoftStore, télécharger le fichier CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 047340d180e3de9f963dc76c85edaa6abea67327
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037446"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6143385"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>Téléchargez le fichier CAB pour une erreur dans votre application
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour télécharger le fichier CAB associé à une erreur spécifique dans votre application qui a été signalée au centre de l’espace. Cette méthode ne permet de télécharger que le fichier CAB concernant une erreur d’application survenue dans les 30derniers jours. Téléchargements de fichier CAB sont également disponibles dans la section **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour télécharger le fichier CAB associé à une erreur spécifique dans votre application qui a été signalée au centre de l’espace. Cette méthode ne permet de télécharger que le fichier CAB concernant une erreur d’application survenue dans les 30derniers jours. Téléchargements de fichier CAB sont également disponibles dans la section des **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
 
 Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) afin de récupérer l’ID du fichier CAB à télécharger.
 

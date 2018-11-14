@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10s, toujours connecté, résolution des problèmes de compatibilité, windows sur ARM
 ms.localizationpriority: medium
 ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045033"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183521"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>Utilitairede résolution de problèmes de compatibilité des programmes sur ARM
 L'émulation visant à la prises en charge des applications x86 constitue la nouvelle fonctionnalité, créée pour Windows10 sur ARM64. Il arrive que l'émulation réalise des tâches d'optimisation qui ne parviennent pas à rendre la meilleure expérience. Vous pouvez utiliser l'utilitaire de résolution des problèmes de compatibilité des programmes pour permuter les paramètres d'émulation de votre application x86 et ainsi réduire les optimisations par défaut et potentiellement augmenter la compatibilité.

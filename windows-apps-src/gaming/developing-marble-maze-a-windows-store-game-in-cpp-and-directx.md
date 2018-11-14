@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, exemple, directx, 3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a808c36ab319d76f16c653c5812ebe4b269ec59
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041304"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161655"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de MarbleMaze, jeu pour UWP en C++ et DirectX
 
@@ -53,7 +53,7 @@ Marble Maze offre à l’utilisateur plusieurs moyens d’interagir avec le tabl
 ## <a name="who-should-read-this"></a>Public concerné par cette documentation
 
 
-Si vous êtes intéressé de la création de jeux en 3D ou autres applications gourmandes en graphiques pour Windows 10, c’est pour vous. Nous espérons que vous utiliserez les principes et les pratiques décrits dans cette documentation pour créer votre propre jeu pour UWP. Une expérience ou un intérêt prononcé pour la programmation en C++ et DirectX vous aidera à exploiter au mieux cette documentation. Si DirectX ne vous est pas familier, vous pouvez quand même en tirer parti si vous connaissez les environnements de programmation graphique 3D de même type.
+Si vous êtes intéressé par la création de jeux 3D ou autres applications gourmandes en graphiques pour Windows 10, il s’agit pour vous. Nous espérons que vous utiliserez les principes et les pratiques décrits dans cette documentation pour créer votre propre jeu pour UWP. Une expérience ou un intérêt prononcé pour la programmation en C++ et DirectX vous aidera à exploiter au mieux cette documentation. Si DirectX ne vous est pas familier, vous pouvez quand même en tirer parti si vous connaissez les environnements de programmation graphique 3D de même type.
 
 Le document [Procédure pas à pas: créer un jeu UWP simple avec DirectX](tutorial--create-your-first-uwp-directx-game.md) décrit un autre exemple qui implémente un jeu de tir 3D de base en DirectX et C++.
 

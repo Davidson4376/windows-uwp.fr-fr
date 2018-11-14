@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, évaluations et avis
 ms.localizationpriority: medium
 ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050454"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186748"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des avis pour votre app
 
@@ -23,7 +23,7 @@ Vous pouvez ajouter du code à votre app de plateforme Windows universelle (UWP)
 Lorsque vous êtes prêt à analyser vos données d’évaluations et avis, vous pouvez afficher les données dans l’espace partenaires ou utiliser l’API d’analytique Microsoft Store pour récupérer ces données par programme.
 
 > [!IMPORTANT]
-> Lorsque vous ajoutez une fonction de contrôle d’accès au sein de votre application, tous les avis doivent envoyer à l’utilisateur aux mécanismes d’évaluation du magasin, quel que soit le d’étoiles choisie. Si vous collectez des commentaires des utilisateurs, il doit être clair qu’il n’est pas lié à la classification de l’application ou un avis dans le Windows Store, mais est envoyée directement au développeur de l’application. Consultez le développeur de Code de conduite pour plus d’informations relatives à [Fraudulent ou activités malveillants](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> Lorsque vous ajoutez une fonction de contrôle d’accès au sein de votre application, tous les avis doivent envoyer à l’utilisateur aux mécanismes d’évaluation du magasin, quel que soit le d’étoiles choisie. Si vous collectez des commentaires des utilisateurs, il doit être clair qu’il n’est pas lié à la classification de l’application ou un avis dans le Windows Store, mais est envoyée directement au développeur de l’application. Voir le développeur de Code de conduite pour plus d’informations relatives à [Fraudulent ou des activités malveillants](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Afficher une boîte de dialogue d'évaluation et d'avis dans votre app
 

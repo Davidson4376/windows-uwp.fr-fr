@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6050105"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185452"
 ---
 # <a name="commit-an-app-submission"></a>Valider une soumission d’application
 
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’applications nouvelle ou mise à jour à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les packages associés et les images). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission d’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’applications nouvelle ou mise à jour à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les packages associés et les images). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission pour l’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une app à l’aide de l’API de soumission au MicrosoftStore, voir [Gérer les soumissions d’apps](manage-app-submissions.md).
 
@@ -51,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à valider. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête

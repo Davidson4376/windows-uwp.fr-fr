@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, stick arcade, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040824"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146513"
 ---
 # <a name="arcade-stick"></a>Stick arcade
 
@@ -30,7 +30,7 @@ Voici ce que vous allez apprendre à la lecture de cet article:
 
 Les sticks arcade sont des périphériques d’entrée appréciés pour leur capacité à reproduire la sensation des machines d’arcade autonomes et pour leurs contrôles numériques de haute précision. Les sticks arcade constituent le périphérique d’entrée parfait pour les combats tête à tête ou d’autres jeux de type arcade. Ils conviennent à tous les jeux qui fonctionnent bien avec des contrôles entièrement numériques. Les sticks arcade sont pris en charge dans les applications UWP Windows10 et XboxOne par l’espace de noms [Windows.Gaming.Input][].
 
-Sticks arcade Xbox One sont dotés d’une manette de jeu numérique 8 voies, six boutons **d’Action** (représentées en tant que A1-A6 dans l’image ci-dessous) et deux boutons **spéciaux** (représentées en tant que S1 et S2); elles sont des périphériques d’entrée entièrement numériques qui ne prennent en charge les contrôles analogiques ni la vibration. Sticks arcade Xbox One sont également dotés de boutons **d’affichage** et de **Menu** prennent en charge la navigation d’interface utilisateur, mais ils ne sont pas conçus pour prendre en charge les commandes de jeu et ne peut pas être utilisables en tant que les boutons de manette de jeu.
+Sticks arcade Xbox One sont dotés d’une manette de jeu numérique 8 voies, six boutons **d’Action** (représentées en tant que A1-A6 dans l’image ci-dessous) et deux boutons **spéciaux** (représentées en tant que S1 et S2); ils sont des périphériques d’entrée entièrement numériques qui ne prennent en charge les contrôles analogiques ni la vibration. Sticks arcade Xbox One sont également dotés de boutons **d’affichage** et de **Menu** prennent en charge la navigation d’interface utilisateur, mais ils ne sont pas conçus pour prendre en charge les commandes de jeu et ne peut pas être utilisables en tant que les boutons de manette de jeu.
 
 ![Stick avec 4 directionnelle de manette de jeu, arcade 6 boutons d’action (A1-A6) et les boutons spéciaux 2 (S1 et S2)](images/arcade-stick-1.png)
 
@@ -143,7 +143,7 @@ En plus de l’état du stick arcade, chaque valeur comprend un horodatage qui i
 
 ### <a name="reading-the-buttons"></a>Lecture des entrées des boutons
 
-Chacun des boutons de stick arcade&mdash;quatre directions de la manette de jeu, six boutons **d’Action** et deux boutons **spéciaux** &mdash;fournit une lecture numérique qui indique s’il est enfoncé (bas) ou relâché (haut). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes; au lieu de cela, elles sont toutes regroupées dans un seul champ de bits représenté par l’énumération [ArcadeStickButtons][] .
+Chacun des boutons de stick arcade&mdash;quatre directions de la manette de jeu, six boutons **d’Action** et deux boutons **spéciaux** &mdash;fournit une lecture numérique qui indique s’il est enfoncé (bas) ou relâché (haut). Pour plus d’efficacité, les lectures de bouton ne sont pas représentées sous forme de valeurs booléennes; au lieu de cela, elles sont toutes regroupées dans un seul champ de bits représenté par l’énumération [ArcadeStickButtons][] .
 
 > [!NOTE]
 > Les sticks arcade sont dotés de boutons supplémentaires, utilisés pour la navigation dans l’interface utilisateur tels que les boutons **d’affichage** et de **Menu** . Ces boutons ne figurent pas dans l’énumération `ArcadeStickButtons`. Leurs entrées sont lues uniquement quand le stick arcade est utilisé comme périphérique de navigation d’interface utilisateur. Pour plus d’informations, consultez [Périphérique de navigation d’interface utilisateur](ui-navigation-controller.md).

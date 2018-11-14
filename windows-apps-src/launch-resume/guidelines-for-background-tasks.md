@@ -6,14 +6,14 @@ ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: fd98a3019efc8f2774fb7a1b52f5dcd27778cd2a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033390"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189063"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -61,7 +61,7 @@ Les tâches en arrière-plan qui s’exécutent dans le même processus que l’
 
 **Demander l’exécution des tâches en arrière-plan:**
 
-> **Important**à compter de Windows 10, les applications ne sont plus requis à figurer dans l’écran de verrouillage pour exécuter des tâches en arrière-plan.
+> **Important**à compter de Windows 10, les applications ne sont plus requis pour figurer sur l’écran de verrouillage pour exécuter des tâches en arrière-plan.
 
 Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de tâche en arrière-plan. Cette méthode retourne [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439) si l’utilisateur a explicitement refusé des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil. Pour plus d’informations sur le choix de l’utilisateur autour de l’activité en arrière-plan et l’économiseur de batterie, voir [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Liste de vérifications relatives aux tâches en arrière-plan

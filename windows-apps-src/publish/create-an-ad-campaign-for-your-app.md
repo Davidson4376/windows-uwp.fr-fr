@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
 ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047717"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161443"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
@@ -22,7 +22,7 @@ Vous pouvez créer des campagnes de publicité dans [L’espace partenaires](htt
 Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
 
 > [!NOTE]
-> Cette section de la documentation explique comment créer une campagne de publicité dans l’espace partenaires. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
+> Cette section de la documentation décrit comment créer une campagne de publicité dans l’espace partenaires. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
 
 ## <a name="instructions"></a>Instructions
 
@@ -48,7 +48,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
         Le budget mensuel est calculé au prorata du mois au cours duquel vous avez créé la campagne de publicité. En d’autres termes, si vous créez une campagne au milieu du mois, vous êtes facturé la moitié du budget mensuel fixé pour le mois concerné.
 
-    * Spécifiez un mode de paiement pour votre campagne de publicité en cliquant sur **Ajouter un mode de paiement**, puis renseignez les détails de votre compte. Si vous avez déjà fourni un instrument de paiement, vous pouvez sélectionner l’option **Choose a different payment method** si vous devez mettre à jour cette information. La pays/région d’adresse de facturation de votre mode de paiement doit correspondre au pays ou la région associée à votre compte de développeur.
+    * Spécifiez un mode de paiement pour votre campagne de publicité en cliquant sur **Ajouter un mode de paiement**, puis renseignez les détails de votre compte. Si vous avez déjà fourni un instrument de paiement, vous pouvez sélectionner l’option **Choose a different payment method** si vous devez mettre à jour cette information. Le pays ou la région de l’adresse de facturation de votre mode de paiement doit correspondre au pays ou la région associée à votre compte de développeur.
 
     * Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campagne de publicité, cliquez sur **Utiliser un coupon**, entrez le code du coupon, puis cliquez sur **Appliquer** pour appliquer le coupon à la campagne.
 
@@ -72,7 +72,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez l’article [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes de publicité maison, car elles s’exécutent uniquement dans vos propres applications.
 
 11.  Dans la page **Conception d’annonces**, choisissez l’une des options suivantes:
-    * **Auto-généré**. Il s’agit de l’option par défaut, et il vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
+    * **Auto-généré**. Il s’agit de l’option par défaut, et vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge MicrosoftStore s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035588"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197743"
 ---
 # <a name="xclass-attribute"></a>Attribut x:Class
 

@@ -8,19 +8,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aaacee011b3732b8d1456935239d7a4a5405a4d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bc5873486bdd9c4adf4ea74b10a240617143ad23
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035166"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193613"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, un PC équipé d’une manette Xbox, ou le dernier jeu rayon avec une souris et un clavier. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
+Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, un PC équipé d’une manette Xbox, ou le dernier jeu rayon avec une souris et un clavier de jeu. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
 
 > [!NOTE]
 > Pour plus d’informations sur les contrôles, consultez [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) et [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md).
@@ -401,7 +401,7 @@ Vous pouvez voir le code complet de la méthode **MoveLookController::OnPointerP
 
 
 
-Ici, **MoveLookController** attribue l’ID de pointeur du pointeur qui a déclenché l’événement à une variable spécifique qui correspond à la zone de vue. Si un contact survient dans la zone de vue, la variable **m\_lookPointerID** est définie sur l'ID de pointeur qui a déclenché l'événement. Une variable booléenne, **m\_lookInUse**, est également définie pour indiquer que le contrôle n’a pas encore été relâché.
+Ici, **MoveLookController** attribue l’ID de pointeur du pointeur qui a déclenché l’événement à une variable spécifique qui correspond à la zone de vue. Dans le cas d’une entrée tactile qui se produisent dans la zone de vue, la variable **m\_lookPointerID** est définie sur l’ID de pointeur qui a déclenché l’événement. Une variable booléenne, **m\_lookInUse**, est également définie pour indiquer que le contrôle n’a pas encore été relâché.
 
 Examinons maintenant la façon dont l’exemple de jeu gère l’événement d’écran tactile [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276).
 

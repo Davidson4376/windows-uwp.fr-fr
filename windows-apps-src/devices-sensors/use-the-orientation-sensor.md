@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050386"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148339"
 ---
 # <a name="use-the-orientation-sensor"></a>Utiliser le capteur d’orientation
 
@@ -46,7 +46,7 @@ L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Il se peut que vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur d’orientation.
 

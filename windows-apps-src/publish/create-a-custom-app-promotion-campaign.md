@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
 ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037835"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157229"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
@@ -28,7 +28,7 @@ Il existe deux principaux types de données associés à des campagnes personnal
 
 Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit:
 
-* Vous pouvez afficher les données concernant les vues de page et les conversions de votre application ou module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
+* Vous pouvez afficher les données sur les vues de page et les conversions de votre application ou un module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
 * Si votre application est une application de plateforme Windows universelle (UWP), vous pouvez utiliser les API du SDK Windows pour récupérer par programme l’ID de campagne personnalisée qui a abouti à une conversion.
 
 ## <a name="example-custom-campaign-scenario"></a>Exemple de scénario de campagne personnalisée
@@ -47,7 +47,7 @@ Lorsque les abonnés du développeur sur Facebook et Twitter cliquent sur l’UR
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>Comprendre comment les acquisitions sont éligibles en tant que conversions
 
-Une *conversion* de campagne personnalisée est une acquisition qui résulte d’un clic par un client sur une URL promue par le biais d’une campagne personnalisée. Il existe différents scénarios pour qu’elle en tant que conversion pour les graphiques de **vues de page d’application et les conversions par ID de campagne** et **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md) et pour qu’elle en tant que conversion pour [ récupération par programme l’ID de campagne](#programmatically).
+Une *conversion* de campagne personnalisée est une acquisition qui résulte d’un clic par un client sur une URL promue par le biais d’une campagne personnalisée. Il existe différents scénarios pour qu’elle en tant que conversion pour les graphiques de **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md) et pour qu’elle en tant que conversion pour [ récupération par programme l’ID de campagne](#programmatically).
 
 ### <a name="qualifying-conversions-in-the-acquisitions-report"></a>Conversions éligibles dans le rapport sur les Acquisitions
 

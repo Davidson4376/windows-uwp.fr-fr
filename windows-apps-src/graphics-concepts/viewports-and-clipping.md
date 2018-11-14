@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030068"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148470"
 ---
 # <a name="viewports-and-clipping"></a>Fenêtres d’affichage et découpage
 
@@ -59,7 +59,7 @@ Direct3D utilise l’emplacement et les dimensions de la fenêtre d’affichage 
 
 Cette matrice adapte les vertex en fonction des dimensions de la fenêtre d’affichage et de la plage de profondeur désirée et les translate vers l’emplacement approprié sur la surface de la cible de rendu. La matrice renverse également la coordonnéey afin de refléter une origine de l’écran dans le coin supérieur gauche avec ycroissant vers le bas. Une fois cette matrice appliquée, les vertex sont toujours homogènes (autrement dit, ils existent toujours en tant que sommets \[x,y,z,w\]) et doivent être convertis en coordonnées non homogènes avant d’être envoyés vers le rastériseur.
 
-**Remarque**  Applications attribuent généralement les MinZ et MaxZ à 0,0 et 1,0 respectivement afin que le système pour le rendu à la plage de profondeur entière. Vous pouvez cependant utiliser d'autres valeurs pour obtenir certains effets. Par exemple, vous pouvez attribuer 0,0 aux deux valeurs pour forcer tous les objets au premier plan, ou leur attribuer 1,0 pour afficher tous les objets à l'arrière-plan.
+**Remarque**  Applications attribuent généralement MinZ et MaxZ à 0,0 et 1,0 respectivement afin que le système pour le rendu à la plage de profondeur entière. Vous pouvez cependant utiliser d'autres valeurs pour obtenir certains effets. Par exemple, vous pouvez attribuer 0,0 aux deux valeurs pour forcer tous les objets au premier plan, ou leur attribuer 1,0 pour afficher tous les objets à l'arrière-plan.
 
  
 

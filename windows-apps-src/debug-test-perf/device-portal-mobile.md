@@ -6,14 +6,14 @@ description: Découvrez comment Windows Device Portal vous permet de configurer 
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, portail d’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f267fbcaecfdf9f1888e47d8dbe35d9cc469f4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046680"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146249"
 ---
 # <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
 

@@ -6,14 +6,14 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ms.author: twhitney
 ms.date: 08/21/2017
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048037"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145219"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
@@ -33,7 +33,7 @@ Il existe deux approches pour implémenter des tâches en arrière-plan:
 
 L’approche in-process a été introduite dans Windows10 version1607 pour simplifier l’écriture des tâches en arrière-plan. Toutefois, vous pouvez toujours écrire des tâches en arrière-plan hors processus. Consultez la rubrique [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md) pour savoir quand utiliser une approche hors processus ou intra-processus pour écrire une tâche en arrière-plan.
 
-Les tâches en arrière-plan out-of-process sont plus résistants, car le processus en arrière-plan ne peut pas bloquer le processus de votre application en cas de problème. Mais la résilience implique le prix d’une plus grande complexité pour gérer la communication interprocessus entre l’application et la tâche en arrière-plan.
+Tâches en arrière-plan out-of-process sont plus résistants, car le processus en arrière-plan ne peut pas bloquer le processus de votre application en cas de problème. Mais la résilience implique le prix d’une plus grande complexité pour gérer la communication interprocessus entre l’application et de la tâche en arrière-plan.
 
 Tâches en arrière-plan out-of-process sont implémentées en tant que classes légères qui implémentent l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) que le système d’exploitation s’exécute dans un processus distinct (backgroundtaskhost.exe). Inscrire une tâche en arrière-plan à l’aide de la classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) . Le nom de la classe est utilisé pour spécifier le point d’entrée lors de l’inscription de la tâche en arrière-plan.
 
@@ -44,7 +44,7 @@ Pour savoir comment créer des tâches en arrière-plan in-process, consultez la
 Pour savoir comment créer des tâches en arrière-plan hors processus, consultez la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 > [!TIP]
-> À compter de Windows 10, vous n’avez plus besoin de placer une application sur l’écran de verrouillage qu’inscrive une tâche en arrière-plan pour celui-ci.
+> À compter de Windows 10, vous n’avez plus besoin de placer une application sur l’écran de verrouillage en tant qu’inscrive une tâche en arrière-plan pour celui-ci.
 
 ## <a name="background-tasks-for-system-events"></a>Tâches en arrière-plan pour événements système
 
@@ -141,7 +141,7 @@ Sur les appareils à faible capacité de mémoire, le nombre d’applications po
 
 Sauf si vous appliquez une exception à votre application pour qu’elle puisse continuer à exécuter des tâches en arrière-plan et à recevoir des notifications push lorsque l’Économiseur de batterie est activé, la fonctionnalité Économiseur de batterie, lorsqu’elle est activée, empêche l’exécution de tâches en arrière-plan quand l’appareil n’est pas connecté à une source d’énergie externe et que la batterie passe sous une quantité d’énergie restante spécifiée. Cela ne vous empêche pas d’inscrire des tâches en arrière-plan.
 
-Toutefois, pour les applications d’entreprise et les applications qui ne seront pas publiées dans le Microsoft Store, consultez [Exécuter en arrière-plan pendant une période indéfinie](run-in-the-background-indefinetly.md) pour savoir comment utiliser un capacités pour exécuter indéfiniment une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan.
+Toutefois, pour les applications d’entreprise et les applications qui ne seront pas publiées dans le Microsoft Store, voir [Exécuter en arrière-plan pendant une période indéfinie](run-in-the-background-indefinetly.md) pour savoir comment utiliser des fonctionnalités pour exécuter indéfiniment une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan.
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>Garanties de ressources des tâches en arrière-plan pour la communication en temps réel
 

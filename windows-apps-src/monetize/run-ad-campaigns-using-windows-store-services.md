@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
 ms.openlocfilehash: 81e77fb01347c2a6ec2630e08f3a00ee6cf47de7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046014"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152532"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Gérer des campagnes publicitaires à l’aide des services du Windows Store
 
@@ -25,10 +25,10 @@ Les étapes suivantes décrivent le processus de bout en bout:
 2.  Avant d’appeler une méthode dans l’API de promotions du MicrosoftStore, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60minutes pour l’utiliser dans les appels à l’API des promotions du MicrosoftStore. Passé ce délai, le jeton n’est plus valable. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.
 3.  [Appelez l’API de promotions du MicrosoftStore](#call-the-windows-store-promotions-api).
 
-Vous pouvez également créer et gérer des campagnes publicitaires à l’aide de l’espace partenaires et toutes les campagnes publicitaires que vous créez programmatiquement via l’API est également accessibles dans l’espace partenaires de promotions Microsoft Store. Pour plus d’informations sur la gestion des campagnes de publicité dans l’espace partenaires, consultez l’article [créer une campagne de publicité pour votre application](../publish/create-an-ad-campaign-for-your-app.md).
+Vous pouvez également créer et gérer des campagnes publicitaires à l’aide de l’espace partenaires et toutes les campagnes publicitaires que vous créez programmatiquement via l’API sont également accessibles dans l’espace partenaires de promotions Microsoft Store. Pour plus d’informations sur la gestion des campagnes de publicité dans l’espace partenaires, consultez l’article [créer une campagne de publicité pour votre application](../publish/create-an-ad-campaign-for-your-app.md).
 
 > [!NOTE]
-> Tous les développeurs disposant d’un compte de l’espace partenaires peuvent utiliser l’API des promotions Microsoft Store pour gérer les campagnes publicitaires pour leurs applications. Les agences média peuvent également demander l’accès à cette API pour diffuser des campagnes publicitaires pour le compte de leurs annonceurs. Si vous êtes une agence média et que vous souhaitez en savoir plus sur cette API ou en demander l'accès, faites parvenir votre demande à l'adresse storepromotionsapi@microsoft.com.
+> Tous les développeurs disposant d’un compte espace partenaires peuvent utiliser l’API de promotions Microsoft Store pour gérer les campagnes publicitaires pour leurs applications. Les agences média peuvent également demander l’accès à cette API pour diffuser des campagnes publicitaires pour le compte de leurs annonceurs. Si vous êtes une agence média et que vous souhaitez en savoir plus sur cette API ou en demander l'accès, faites parvenir votre demande à l'adresse storepromotionsapi@microsoft.com.
 
 <span id="prerequisites" />
 
@@ -38,17 +38,17 @@ Avant d’écrire le code d’appel de l’API de promotions du MicrosoftStore, 
 
 * Avant de pouvoir créer et démarrer une campagne de publicité à l’aide de cette API, vous devez d’abord [créer une campagne de publicité payée à l’aide de la page de **campagnes de publicité** dans l’espace partenaires](../publish/create-an-ad-campaign-for-your-app.md), et vous devez ajouter au moins un instrument de paiement sur cette page. Après cela, vous serez en mesure de créer des lignes de livraison facturables pour les campagnes publicitaires à l’aide de cette API. Lignes de livraison des campagnes publicitaires que vous créez à l’aide de cette API factureront automatiquement l’instrument de paiement par défaut sélectionné sur la page de **campagnes de publicité** dans l’espace partenaires.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
-* Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API de promotions du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
+* Vous devez associer une application Azure AD avec votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API de promotions du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]
     > Cette tâche ne doit être effectuée qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
-Pour associer une application Azure AD à votre compte espace partenaires et récupérer les valeurs nécessaires:
+Pour associer une application Azure AD avec votre compte espace partenaires et récupérer les valeurs nécessaires:
 
-1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec l’annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
+1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec un annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Ensuite, à partir de la page **utilisateurs** dans la section **paramètres du compte** de l’espace partenaires, [Ajoutez l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour gérer les campagnes de promotion de votre compte espace partenaires. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure Active directory, vous pouvez [créer une nouvelle application Azure AD dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  Ensuite, à partir de la page **utilisateurs** dans la section **paramètres du compte** de l’espace partenaires, [Ajoutez l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour gérer les campagnes de promotion pour votre compte espace partenaires. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure Active directory, vous pouvez [créer une nouvelle application Azure AD dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Revenez à la page **Utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 

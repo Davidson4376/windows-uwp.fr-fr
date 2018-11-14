@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6b063bf5997bbb1fc082c8d9fefcf0f435262bf1
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023003"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6143653"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -22,12 +22,12 @@ Cette rubrique vous montre comment créer un package de votre application sans l
 
 Pour créer manuellement un package de votre application, créez un fichier manifeste de package, puis exécutez un outil en ligne de commande pour générer un package d’application Windows.
 
-Envisagez Empaquetage manuel si vous installez votre application à l’aide de la commande xcopy ou si vous êtes familiarisé avec les modifications apportées au système par programme d’installation de votre application et souhaitez un contrôle plus précis sur le processus.
+Envisagez d’empaquetage manuel si vous installez votre application à l’aide de la commande xcopy ou si vous êtes familiarisé avec les modifications apportées au système par programme d’installation de votre application et souhaitez un contrôle plus précis sur le processus.
 
 Si vous n’êtes pas certain des modifications apportées au système par votre programme d’installation, ou si vous préférez utiliser des outils automatisés pour générer votre manifeste de package, envisager l’une de [ces](desktop-to-uwp-root.md#convert) options.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (également appelé le pont du bureau) a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
@@ -132,7 +132,7 @@ Remplissez ce modèle avec les informations décrivant votre application.
 
 ### <a name="application-element"></a>Élément d’application
 
-Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément Application est toujours ``Windows.FullTrustApplication``.
+Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément de l’Application est toujours ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -199,14 +199,14 @@ Voir [Créer un package d’application avec l’outil MakeAppx.exe](https://doc
 
 ## <a name="run-the-packaged-app"></a>Exécuter l’application empaquetée
 
-Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
+Vous pouvez exécuter votre application de la tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez les fichiers existants dans votre package par les nouveaux, augmentez le nombre de versions dans AppxManifest.xml, puis exécutez à nouveau la commande ci-dessus.
 
 > [!NOTE]
-> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et tout lecteur sur lequel vous installez votre application empaquetée à doit être formaté au format NTFS.
+> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et que vous installez votre application empaquetée à n’importe quel lecteur doit être formaté au format NTFS.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

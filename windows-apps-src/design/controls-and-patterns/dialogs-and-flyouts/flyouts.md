@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e68f8f48ca9ba67a29c8a52a5d59767a080f642b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026075"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196189"
 ---
 # <a name="flyouts"></a>Menus volants
 
@@ -32,7 +32,7 @@ Un menu volant est un conteneur d’abandon interactif capable d’afficher l’
 
 * N’utilisez pas de menu volant à la place d’une [info-bulle](../tooltips.md) ou d’un [menu contextuel](../menus.md). Utilisez une info-bulle pour afficher une brève description qui disparaît après une durée spécifiée. Utilisez un menu contextuel pour les actions contextuelles liées à un élément de l’interface utilisateur, comme copier et coller.
 
-Pour savoir à quel moment utiliser un menu volant et quand utiliser une boîte de dialogue (un contrôle similaire), consultez [les boîtes de dialogue et menus volants](index.md). 
+Pour savoir à quel moment utiliser un menu volant et quand utiliser une boîte de dialogue (un contrôle similaire), consultez les [boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 

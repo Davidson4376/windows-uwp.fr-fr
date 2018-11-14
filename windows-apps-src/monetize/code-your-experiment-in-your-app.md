@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: c9212f3a120e03bd436b77e0dd66be4367ded8e1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035255"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155353"
 ---
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 
@@ -44,7 +44,7 @@ Pour commencer, installez le Kit de développement logiciel Microsoft Store Serv
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>Obtenir des données de variante et consigner l’événement d’affichage pour votre expérience
 
-Dans le projet, recherchez le code de la fonctionnalité que vous souhaitez modifier dans votre expérience. Ajoutez du code qui Récupère les données pour une variante, utilisez ces données pour modifier le comportement de la fonctionnalité que vous testez et puis consignez l’événement d’affichage pour votre expérience dans le test a / B service dans l’espace partenaires.
+Dans le projet, recherchez le code de la fonctionnalité que vous souhaitez modifier dans votre expérience. Ajoutez le code qui Récupère les données pour une variante, utilisez ces données pour modifier le comportement de la fonctionnalité que vous testez et puis consignez l’événement d’affichage pour votre expérience dans le A test a / B service dans l’espace partenaires.
 
 Le code spécifique requis dépendra de votre application, mais l’exemple suivant illustre le processus de base. Pour obtenir un exemple de code complet, consultez [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -80,7 +80,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
-7. Pour finir, consignez l' [événement d’affichage](run-app-experiments-with-a-b-testing.md#terms) pour votre expérience au A test a / B service dans l’espace partenaires. Initialisez le champ ```logger``` sur un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) et appelez la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Passez l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’affectation de variante actuelle (cet objet fournit un contexte pour l’événement à l’espace partenaires) et le nom de l’événement d’affichage pour votre expérience. Cela doit correspondre au nom d’événement de vue que vous entrez pour votre expérience dans l’espace partenaires. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience.
+7. Pour finir, consignez l' [événement d’affichage](run-app-experiments-with-a-b-testing.md#terms) pour votre expérience au A test a / B service dans l’espace partenaires. Initialisez le champ ```logger``` sur un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) et appelez la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Passez l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) qui représente l’affectation de variante actuelle (cet objet fournit un contexte pour l’événement à l’espace partenaires) et le nom de l’événement d’affichage pour votre expérience. Cela doit correspondre au nom d’événement vue que vous entrez pour votre expérience dans l’espace partenaires. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience.
 
     L’exemple suivant montre comment consigner un événement d’affichage nommé **userViewedButton**. Dans cet exemple, l’objectif est d’inciter l’utilisateur à cliquer sur un bouton dans l’application, afin de consigner l’événement d’affichage une fois que l’application a récupéré les données de variante (en l’occurrence, le texte du bouton) et lui a attribué le contenu du bouton.
 
@@ -88,7 +88,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
 
 ## <a name="log-conversion-events-to-partner-center"></a>Consigner les événements de conversion vers l’espace partenaires
 
-Ensuite, ajoutez du code qui enregistre les [événements de conversion](run-app-experiments-with-a-b-testing.md#terms) au A test a / B service dans l’espace partenaires. Votre code doit consigner un événement de conversion quand l’utilisateur atteint un objectif pour votre expérience. Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour obtenir un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+Ensuite, ajoutez le code qui enregistre les [événements de conversion](run-app-experiments-with-a-b-testing.md#terms) au A test a / B service dans l’espace partenaires. Votre code doit consigner un événement de conversion quand l’utilisateur atteint un objectif pour votre expérience. Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour obtenir un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 1. Dans le code qui s’exécute quand l’utilisateur atteint un objectif pour l’un des objectifs de l’expérience, appelez de nouveau la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) et transmettez l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) et le nom d’un événement de conversion pour votre expérience. Cela doit correspondre à un des noms d’événement de conversion que vous entrez pour votre expérience dans l’espace partenaires.
 

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032953"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154105"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -66,7 +66,7 @@ Avec un format appelant à une action de rotation (ou un mouvement), Surface Dia
 
 ## <a name="cortana"></a>Cortana
 
-Dans Windows 10, l’extensibilité **de Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une action unique.
+Dans Windows 10, l’extensibilité **de Cortana** vous permet de gérer les commandes vocales à partir d’un utilisateur et lancer votre application pour effectuer une action unique.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -236,7 +236,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et clavier leurs téléphones pour utiliser comme un ordinateur portable.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour leurs téléphones utiliser comme un ordinateur portable.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 

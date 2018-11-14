@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows10, uwp, données, base de données relationnelle, tables, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048217"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146678"
 ---
 # <a name="data-access"></a>Accès aux données
 
-Vous pouvez stocker des données sur l’appareil de l’utilisateur à l’aide d’une base de données SQLite. Vous pouvez également connecter votre application directement à une base de données SQL Server sans avoir à utiliser de couche de service quelconque.
+Vous pouvez stocker les données sur l’appareil de l’utilisateur à l’aide d’une base de données SQLite. Vous pouvez également connecter votre application directement à une base de données SQL Server sans avoir à utiliser de la couche de service quelconque.
 
 | Rubrique | Description|
 |-------|------------|

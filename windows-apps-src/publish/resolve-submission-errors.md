@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052004"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145025"
 ---
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
@@ -21,13 +21,13 @@ Si vous rencontrez des erreurs après avoir envoyé votre application au Windows
 
 ## <a name="uwp-apps"></a>Applications UWP
 
-Si vous soumettez une application UWP, vous pouvez voir une erreur au cours de prétraitement si votre fichier de package n’est pas un fichier .msixupload ou .appxupload généré par Visual Studio pour le Windows Store. N’oubliez pas que vous suivez les étapes décrites dans le [Package d’une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md) lors de la création du fichier de package de votre application et uniquement chargez le fichier .msixupload ou .appxupload sur la page de [Packages](upload-app-packages.md) de la soumission, non sur un appx/.msix ou .msixbundle/appxbundle .
+Si vous soumettez une application UWP, vous pouvez voir une erreur au cours de prétraitement si votre fichier de package n’est pas un fichier .msixupload ou .appxupload généré par Visual Studio pour le Windows Store. N’oubliez pas que vous suivez les étapes décrites dans le [Package d’une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md) lors de la création du fichier de package de votre application et uniquement Téléchargez le fichier .msixupload ou .appxupload sur la page de [Packages](upload-app-packages.md) de la soumission, pas un .msix/appx ou .msixbundle/appxbundle .
 
 Si une erreur de compilation s'affiche, assurez-vous que vous êtes en mesure de générer correctement votre application en mode Release. Pour plus d'informations, voir [Erreurs du compilateur natif interne .NET](http://go.microsoft.com/fwlink/p/?LinkID=613098).
 
 ## <a name="desktop-application"></a>Application de bureau
 
-Si vous prévoyez de soumettre un package qui contient les fichiers binaires Win32 et UWP, vérifiez que vous créez ce package à l’aide du projet de création de packages Windows qui est disponible dans Visual Studio 2017 mise à jour de 4. Si vous créez le package à l’aide d’un modèle de projet UWP, vous ne pouvez pas être en mesure de soumettre qui package au Windows Store ou charger de manière indépendante sur autres ordinateurs. Même si le package publie correctement, qu’elle peut se comporter de façon inattendue sur PC de l’utilisateur. Pour plus d’informations, voir le [Package d’une application à l’aide de Visual Studio (pont du bureau)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+Si vous prévoyez de soumettre un package qui contient les fichiers binaires Win32 et UWP, vérifiez que vous créez ce package à l’aide du projet de création de packages de Windows qui est disponible dans Visual Studio 2017 mise à jour de 4. Si vous créez le package à l’aide d’un modèle de projet UWP, vous ne pouvez pas être en mesure de soumettre qui package au Windows Store ou charger de manière indépendante sur d’autres PC. Même si le package publie avec succès, il peut se comporter de façon inattendue sur les PC de l’utilisateur. Pour plus d’informations, voir le [Package d’une application à l’aide de Visual Studio (pont du bureau)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x et versions antérieures
 

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, analytique, rapports, tableau de bord, applications, données, les mesures
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042716"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6163810"
 ---
 # <a name="analyze-app-performance"></a>Analyser les performances de l’application
 
-Vous pouvez consulter analytique détaillées de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
+Vous pouvez afficher analytique détaillées de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
 
 Vous pouvez afficher les rapports d’analyse directement dans l’espace partenaires ou [télécharger les rapports que vous avez besoin](download-analytic-reports.md) pour analyser les données en mode hors connexion. Nous proposerons également plusieurs méthodes pour vous [accéder](#outside)à vos données d’analytique en dehors de l’espace partenaires.
 

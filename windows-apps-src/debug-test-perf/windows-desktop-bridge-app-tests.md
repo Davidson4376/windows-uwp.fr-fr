@@ -9,18 +9,18 @@ ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 8363bc3085e9d6ec4e1a86751b691266b12b365c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029547"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6135977"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
 [Les applications pont du bureau](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications de plateforme Windows universelle (UWP) à l’aide du [Pont du bureau](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier.appx ou .appxbundle) ciblant Windows10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
-Tests facultatifs des applications pont du bureau Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
+Les tests facultatifs des applications pont du bureau de Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
 
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 

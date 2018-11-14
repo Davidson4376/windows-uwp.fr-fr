@@ -8,11 +8,11 @@ ms.topic: article
 keywords: prise en main, uwp, windows10, piste d'apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d1018857d727d1cc96ded813390a397c6d94e44
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027256"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6136310"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 
@@ -46,7 +46,7 @@ Lisez [cette documentation sur les panneaux de disposition](../design/layout/lay
 
 ## <a name="what-goes-in-a-form"></a>Contenu d'un formulaire
 
-Vous devez remplir votre formulaire avec une sélection de [contrôles XAML](../design/controls-and-patterns/controls-and-events-intro.md). Vous les connaissez sans doute déjà, mais n’hésitez pas à les passer en revue pour rafraîchir vos connaissances. En particulier, vos contrôles devront permettent à votre utilisateur de saisir du texte ou de choisir une valeur dans une liste. Il s’agit d’une liste d’options que vous pouvez ajouter de base: vous n’êtes pas obligé de lire tous les concernant, il vous suffit de savoir à quoi elles ressemblent et comment elles fonctionnent.
+Vous devez remplir votre formulaire avec une sélection de [contrôles XAML](../design/controls-and-patterns/controls-and-events-intro.md). Vous les connaissez sans doute déjà, mais n’hésitez pas à les passer en revue pour rafraîchir vos connaissances. En particulier, vos contrôles devront permettent à votre utilisateur de saisir du texte ou de choisir une valeur dans une liste. Il s’agit d’une liste des options que vous pouvez ajouter de base: vous n’avez pas besoin de lire tous les concernant, il vous suffit de savoir quoi elles ressemblent et comment elles fonctionnent.
 
 * [TextBox](../design/controls-and-patterns/text-box.md) permet à un utilisateur d’entrée de texte dans votre application.
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) permet à un utilisateur de choisir entre deux options.

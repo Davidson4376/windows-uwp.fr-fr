@@ -2,7 +2,7 @@
 author: v-angraf
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
 title: Page des paramètres (Dev Home)
-description: Fournit des informations sur la page Paramètres de l’application Dev Home pour Xbox One.
+description: Fournit des informations sur la page des paramètres de l’application accueil du développeur pour Xbox One.
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
@@ -10,11 +10,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031451"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6162059"
 ---
 # <a name="settings-page-dev-home"></a>Page des paramètres (Dev Home)
    
@@ -39,7 +39,7 @@ La page **paramètres** contient les volets suivants:
 ## <a name="console-settings"></a>Paramètres de la console  
    
   
-Le volet **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, bac à sable et les paramètres de clé de l’accès de sécurité.   
+Le volet de **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, sandbox et les paramètres de clé de l’accès de sécurité.   
   
 <a id="ID4EOB"></a>
 
@@ -48,7 +48,7 @@ Le volet **paramètres de la Console** fournit une vue «en un coup de œil» de
 ## <a name="os-recovery-update-settings"></a>Paramètres de mise à jour de récupération du système d’exploitation  
    
   
-Le volet de **récupération du système d’exploitation mettre à jour les paramètres** configure les paramètres de mise à jour automatique de la console. Notez que les modifications apportées à ces paramètres peut prendre jusqu'à 24 heures prennent effet.   
+Le volet de **récupération de système d’exploitation mettre à jour les paramètres** configure les paramètres de mise à jour automatique de la console. Notez que les modifications apportées à ces paramètres peut prendre jusqu'à 24 heures prennent effet.   
   
 <a id="ID4EYB"></a>
 
@@ -75,7 +75,7 @@ Le volet **paramètres de débogage** est utilisé pour afficher et activer/dés
 ## <a name="unattended-script-configuration"></a>Configuration de script sans assistance  
    
   
-Le volet **assistance script de configuration** gère les scripts d’installation pour les consoles Xbox One.   
+Le volet **sans assistance script de configuration** gère les scripts d’installation pour les consoles Xbox One.   
   
 <a id="ID4E3C"></a>
 
@@ -84,7 +84,7 @@ Le volet **assistance script de configuration** gère les scripts d’installati
 ## <a name="default-home-experience"></a>Expérience d’accueil par défaut  
    
   
-Le volet **Par défaut l’expérience Home** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
+Le volet **Par défaut de l’expérience domestique** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
   
 <a id="ID4EJD"></a>
 

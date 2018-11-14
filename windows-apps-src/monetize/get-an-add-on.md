@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9620b0b7cf4d1ecb583215b2ab0fafe0e82712bf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028960"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191241"
 ---
 # <a name="get-an-add-on"></a>Obtenir une extension
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une extension (également connue sous le nom dans l’application produit ou PIA) pour une application inscrite dans votre compte espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une extension (également connue sous le nom dans l’application PIA, produit) pour une application inscrite dans votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 

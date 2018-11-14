@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e0e73f4224b1577a5219d239f8c11bf5ecc0b73
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032973"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186430"
 ---
 # <a name="sockets"></a>Sockets
 Les sockets constituent une technologie de transfert de données de faible niveau en priorité du nombre de protocoles de réseau implémentés. UWP offre les classes TCP et socket UDP pour les applications de serveur client ou pair à paire, que les connexions soient de longue durée ou qu'une connexion établie ne soit pas requise.
@@ -1204,7 +1204,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-L’exemple suivant est adéquat pour n’importe quel langage UWP et pas seulement pour C#. Il repose sur le comportement dans [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) et [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) qui envoient les lots ensemble. La technique appelle [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) sur ce flux de sortie qui, à compter de Windows 10, est assuré de revenir uniquement une fois toutes les opérations sur le flux de sortie terminées.
+L’exemple suivant est adéquat pour n’importe quel langage UWP et pas seulement pour C#. Il repose sur le comportement dans [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) et [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) qui envoient les lots ensemble. La technique appelle [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) sur ce flux de sortie qui, à compter de Windows 10, est assuré de revenir uniquement après que toutes les opérations sur le flux de sortie terminées.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1278,7 +1278,7 @@ Certaines limitations importantes découlent de l’utilisation d’envoi par lo
 
 -   Vous ne pouvez pas modifier le contenu des instances **IBuffer** en cours d’écriture tant que l’écriture asynchrone n’est pas terminée.
 -   Le modèle **FlushAsync** fonctionne uniquement sur **StreamSocket.OutputStream** et **DatagramSocket.OutputStream**.
--   Le modèle **FlushAsync** fonctionne uniquement dans Windows 10 à partir.
+-   Le modèle de **FlushAsync** fonctionne uniquement dans Windows 10 à partir.
 -   Dans les autres cas, utilisez [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) au lieu du modèle **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Partage de port pour DatagramSocket

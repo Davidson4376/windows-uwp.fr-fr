@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d43094ba679ebe5439996373626522590e3fcc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042130"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160360"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame2D
 
@@ -484,9 +484,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie que les sprites dino et le Brocoli seront affichées sur le sprite herbe existant, afin qu’ils puissent jamais être masqués herbe, quelle que soit leur position.
+Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie qu’à la fois le sprites Brocoli et dino seront dessinées sur le sprite herbe existant, afin qu’ils puissent jamais être masqués herbe, quelle que soit leur position.
 
-Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure de modifier votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer à une vitesse croissante.
+Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure d’effectuer votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer à une vitesse croissante.
 
 ![Obstacle et avatar du joueur](images/monogame-tutorial-2.png)
 
@@ -602,7 +602,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme fonctionne cherche à voir s’il existe un espace entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
+Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme fonctionne en testant pour voir s’il existe un écart entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
 
 ### <a name="2-load-new-textures"></a>2. Chargement de nouvelles textures
 
@@ -694,4 +694,4 @@ Vous devez utiliser la [liste de vérification de soumission d’applications](h
 
 L’application doit être soumise pour [certification](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process).
 
-Pour plus d’informations, consultez [la publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).
+Pour plus d’informations, voir la [publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).

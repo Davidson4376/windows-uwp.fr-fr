@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035518"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6144385"
 ---
 # <a name="create-an-add-on"></a>Crée une extension
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une extension (également connue sous le nom dans l’application produit ou PIA) pour une application inscrite dans votre compte espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une extension (également connue sous le nom dans l’application PIA, produit) pour une application inscrite dans votre compte espace partenaires.
 
 > [!NOTE]
 > Cette méthode permet de créer une extension sans soumission. Pour créer une soumission pour une extension, voir les méthodes décrites dans l’article [Gérer les soumissions d’extensions](manage-add-on-submissions.md).

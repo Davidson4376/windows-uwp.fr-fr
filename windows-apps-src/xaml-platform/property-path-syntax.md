@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045389"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158392"
 ---
 # <a name="property-path-syntax"></a>Syntaxe de Property-path
 
@@ -56,7 +56,7 @@ Un chemin de propriété pour la liaison de données peut inclure des référenc
 
 Prenons par exemple un objet métier qui contient une liste de «Teams» (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de «Players» où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe: «Teams\[1\].Players\[Smith\]». (Vous utilisez1 pour indiquer le deuxième élément de «Teams», car la liste est indexée à partir de zéro.)
 
-**Remarque**prise en charge de l’indexation pour les sources de données C++ est limitée. Regardez la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**prise en charge de l’indexation pour les sources de données C++ est limitée. voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="attached-properties"></a>Propriétés jointes
 

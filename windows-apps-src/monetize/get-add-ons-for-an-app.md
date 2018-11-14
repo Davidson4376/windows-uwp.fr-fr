@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
-description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur les achats dans l’application d’une application inscrite dans votre espace partenaires.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur les achats dans l’application pour une application inscrite dans votre espace partenaires.
 title: Obtenir des extensions pour une application
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extensions, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027266"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164815"
 ---
 # <a name="get-add-ons-for-an-app"></a>Obtenir des extensions pour une application
 

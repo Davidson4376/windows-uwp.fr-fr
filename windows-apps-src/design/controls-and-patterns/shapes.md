@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040534"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161639"
 ---
 # <a name="draw-shapes"></a>Dessiner des formes
 
@@ -171,7 +171,7 @@ layoutRoot.Children.Add(line1);
 
 Les formes [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) sont semblables aux formes [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) en ce que leur limite est définie par un ensemble de points, à la différence que le dernier point d’une forme **Polyline** n’est pas relié au premier.
 
-**Remarque**  vous pourriez avoir explicitement un point de départ identiques et point de terminaison dans les [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) défini pour la [**polyligne**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), mais dans ce cas vous probablement aurait pouvez utiliser un [**Polygone**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à la place.
+**Remarque**  vous pourriez avoir explicitement un point de départ identiques et point de terminaison dans les [**Points de**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) la valeur de la [**polyligne**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), mais dans ce cas vous probablement aurait pouvez utiliser un [**Polygone**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à la place.
 
 Si vous spécifiez une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) d’un objet [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), la propriété **Fill** peint l’espace intérieur de la forme, même si les points de départ et de fin de la propriété [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définie pour l’objet **Polyline** ne se recoupent pas. Si vous ne spécifiez pas de propriété **Fill**, l’objet **Polyline** est similaire à celui qui serait restitué si vous indiquiez plusieurs éléments [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) avec intersection des points de départ et de fin de lignes consécutives.
 

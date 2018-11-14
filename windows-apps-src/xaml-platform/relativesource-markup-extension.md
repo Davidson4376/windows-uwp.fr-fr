@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023527"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159574"
 ---
 # <a name="relativesource-markup-extension"></a>Extension de balisage {RelativeSource}
 
@@ -62,7 +62,7 @@ Voici un exemple: Ce [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 
 
 Une autre utilisation de `RelativeSource={RelativeSource Self}` sert à définir le [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) d’un objet sur lui-même.  Vous pourrez, par exemple, vois cette technique dans certains exemples de Kit de développement logiciel (SDK), où la classe [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) est étendue avec une propriété personnalisée qui fournit déjà un modèle d’affichage prêt à l’emploi pour sa propre liaison de données, tel que: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Remarque**l’utilisation XAML le pour **RelativeSource** indique uniquement l’utilisation pour laquelle il est prévu: définition d’une valeur pour [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) en XAML dans le cadre d’une expression de liaison. En théorie, d’autres utilisations sont possibles s’il s’agit de définir une propriété dont la valeur est [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Remarque**l’utilisation XAML le pour **RelativeSource** affiche uniquement l’utilisation pour laquelle il est prévu: définition d’une valeur pour [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) en XAML dans le cadre d’une expression de liaison. En théorie, d’autres utilisations sont possibles s’il s’agit de définir une propriété dont la valeur est [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

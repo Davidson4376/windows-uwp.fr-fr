@@ -10,11 +10,11 @@ keywords: windows10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: 041bf37072b595c0889bd1493857e508e27c510c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043588"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149759"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Exécuter, déboguer et tester une application de bureau empaquetée
 
@@ -24,7 +24,7 @@ Exécutez votre application empaquetée et examinez-la sans avoir à vous connec
 
 ## <a name="run-your-application"></a>Exécutez votre application
 
-Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et la signer. Votre manière d’exécuter l’application dépend de l’outil utilisé pour créer le package.
+Vous pouvez exécuter votre application de la tester localement sans avoir à obtenir un certificat et la signer. Votre manière d’exécuter l’application dépend de l’outil utilisé pour créer le package.
 
 ### <a name="you-created-the-package-by-using-visual-studio"></a>Vous avez créé le package à l'aide de VisualStudio
 
@@ -42,7 +42,7 @@ Pour démarrer votre application, sélectionnez-la dans le menu Démarrer de Win
 ![Application empaquetée dans le menu Démarrer](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
-> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et tout lecteur sur lequel vous installez votre application empaquetée à doit être formaté au format NTFS.
+> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et que vous installez votre application empaquetée à n’importe quel lecteur doit être formaté au format NTFS.
 
 ## <a name="debug-your-app"></a>Déboguer votre application
 
@@ -52,7 +52,7 @@ Si vous avez créé votre package à l’aide d’un [nouveau projet de mise en 
 
 Si vous avez créé votre package à l'autre d'un autre outil, appliquez les étapes suivantes.
 
-1. Vérifiez que vous démarrez votre application empaquetée au moins une fois pour qu’il est installé sur votre ordinateur local.
+1. Assurez-vous que vous démarrez votre application empaquetée au moins une fois pour qu’il est installé sur votre ordinateur local.
 
    Consultez la section [Exécuter votre application](#run-app) ci-dessus.
 
@@ -82,7 +82,7 @@ Pour tester votre application dans un paramètre réaliste lorsque vous vous pr�
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>Tester une application qui vous un package à l’aide de Visual Studio
 
-Visual Studio signe votre application à l’aide d’un certificat de test. Vous trouverez ce certificat dans le dossier de sortie généré par l'assistant **Créer des packages d’application**. Le fichier de certificat présente l’extension *.cer* et vous devrez installer ce certificat dans le magasin **d’Autorités de Certification racine de confiance** sur le PC auquel vous souhaitez tester votre application sur. Consultez [Chargez de manière indépendante votre package d’application](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
+Visual Studio signe votre application à l’aide d’un certificat de test. Vous trouverez ce certificat dans le dossier de sortie généré par l'assistant **Créer des packages d’application**. Le fichier de certificat présente l’extension *.cer* et vous devrez installer ce certificat dans le magasin **d’Autorités de Certification racine de confiance** sur l’ordinateur que vous souhaitez tester votre application sur. Consultez [Chargez de manière indépendante votre package d’application](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>Tester une application qui vous un package à l’aide de Desktop App Converter (DAC)
 
@@ -97,7 +97,7 @@ Vous pouvez également signer votre application manuellement. Voici comment proc
 
 2. Installez ce certificat dans le magasin de certificats **racine de confiance** ou **personnes autorisées** sur votre système.
 
-3. Signer votre application à l’aide de ce certificat, voir [signer un package d’application à l’aide de SignTool](../packaging/sign-app-package-using-signtool.md).
+3. Signer votre application à l’aide de ce certificat, voir la [connexion d’un package d’application à l’aide de SignTool](../packaging/sign-app-package-using-signtool.md).
 
   > [!IMPORTANT]
   > Assurez-vous que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.

@@ -8,12 +8,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: Windows10, uwp, approbation de concept
 ms.localizationpriority: medium
-ms.openlocfilehash: a14a9b3f1e059019afa042a47dcaeb9373a69934
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 9b63e3002d6816b30a71c775cfcf87817d4f9879
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025004"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183960"
 ---
 # <a name="concept-approval"></a>Approbation de concept
 
@@ -23,7 +23,7 @@ L’approbation de concept consiste à soumettre une proposition de jeu à Micro
 
 Ce processus est requis uniquement si vous publiez un jeu sur Xbox par le biais de [ID@Xbox](http://www.xbox.com/Developers/id)ou en tant que partenaire. Vous n’avez pas besoin de passer par ce processus si vous rejoignez le [programme Créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) et créez un jeu pour plateforme Windows universelle (UWP), que vous pouvez ensuite publier vous-même sur Xbox. Toutefois, les jeux créés par le biais de ce programme seront disponibles dans une section distincte du Windows Store. Si vous souhaitez que votre jeu apparaisse à côté des grands jeux AAA, ou si vous souhaitez créer un jeu plus intensif à l’aide du Kit de développement Xbox (XDK), vous devez passer par le processus d’approbation de concept.
 
-Vous n’avez pas à vous soumettre à ce processus si vous développez un jeu UWP pour appareils de bureau ou mobiles Windows (ou si vous publiez une application UWP qui n’est *pas* un jeu, en ciblant n’importe quel appareil). Il vous suffit d’un [compte de développeur](https://go.microsoft.com/fwlink/?LinkId=817223) pour configurer et soumettre librement votre application au Windows Store par le biais du tableau de bord.
+Vous n’avez pas à vous soumettre à ce processus si vous développez un jeu UWP pour appareils de bureau ou mobiles Windows (ou si vous publiez une application UWP qui n’est *pas* un jeu, en ciblant n’importe quel appareil). Il vous suffit d’un [compte de développeur](https://go.microsoft.com/fwlink/?LinkId=817223), et vous pouvez librement configurer et soumettre votre application au Windows Store par le biais de l’espace partenaires.
 
 ## <a name="submit-your-concept-for-approval"></a>Soumettre votre concept pour approbation
 

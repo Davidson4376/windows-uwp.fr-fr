@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040751"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149851"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers
 
@@ -135,7 +135,7 @@ Si vous réalisez plusieurs opérations sur des objets Windows.Storage tels que 
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Mise en mémoire tampon entre des flux UWP et .NET
 
-Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour ce faire, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer des conversions entre les types de flux UWP et .NET. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour ce faire, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer une conversion entre les types de flux UWP et .NET. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
 Quand vous convertissez un flux UWP en flux .NET, vous créez en fait un adaptateur pour le flux UWP sous-jacent. Dans certaines circonstances, un coût d’exécution est associé à l’appel de méthodes sur des flux UWP. Ceci peut affecter la rapidité de votre application, notamment lorsque vous effectuez de nombreuses et fréquentes opérations de lecture ou écriture de faible taille.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, asynchrone, threads, de thread
 ms.localizationpriority: medium
 ms.openlocfilehash: f01142695b676ebadea2f227cf5f8beb65ba6f9c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030058"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192110"
 ---
 # <a name="threading-and-async-programming"></a>Threads et programmation asynchrone
 Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.
@@ -32,7 +32,7 @@ Le pool de threads est plus efficace pour la gestion des threads car il réduit 
 
 | Rubrique                                                                                                          | Description                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [Programmation asynchrone (applications UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP) ainsi que sa représentation dans les langages c#, Microsoft Visual Basic.NET, les extensions de composant Visual c++ (C++ / CX) et JavaScript. |
+| [Programmation asynchrone (applications UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP) et sa représentation dans c#, Microsoft Visual Basic.NET, les extensions de composant Visual c++ (C++ / CX) et JavaScript. |
 | [Programmation asynchrone en C++/CX (applications UWP)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones en C++/CX à l’aide de la classe <code>task</code> qui est définie dans l’espace de noms <code>concurrency</code> dans ppltasks.h. |
 | [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)                         | Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads. |
 | [Appeler des API asynchrones en C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues. Cette rubrique décrit comment utiliser les méthodes asynchrones de l’UWP en C# ou Microsoft Visual Basic. |

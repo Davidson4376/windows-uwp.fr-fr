@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, package
 ms.localizationpriority: medium
 ms.openlocfilehash: 252f67a3cb307f10b1a973a17144f211c9c676b0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030214"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189894"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Créer un package pour votre jeu de plateforme Windows universelle (UWP) DirectX
 
@@ -53,7 +53,7 @@ Les ressources utilisées pour la création de packs de ressources sont spécifi
 
 -   Les fichiers de ressources portent le même nom de fichier et les versions spécifiques du pack de ressources sont placées dans des répertoires nommés particuliers. Ces noms de répertoires sont réservés par le système. Par exemple, \\en-us, \\scale-140, \\dxfl-dx11.
 -   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement («\_»). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Remarque**  lorsqu’il est utilisé dans un nom de fichier plutôt que seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme «lang -<tag>», par exemple, «lang-fr-fr» comme décrit dans [personnaliser vos ressources pour la langue, échelle et d’autres qualificateurs](../app-resources/tailor-resources-lang-scale-contrast.md).
+    > **Remarque**  lorsqu’il est utilisé dans un nom de fichier plutôt que seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme «lang -<tag>», par exemple, «lang-fr-fr» comme décrit dans la [personnaliser vos ressources pour la langue, échelle et d’autres qualificateurs](../app-resources/tailor-resources-lang-scale-contrast.md).
 
      
 
@@ -86,7 +86,7 @@ Lorsque vous configurez votre application pour prendre en charge les ressources 
      
 
 -   Utilisez les API dans [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) et [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour spécifier et charger les ressources spécifiques aux paramètres régionaux de votre application. En outre, utilisez des références de ressources qui n’incluent pas les paramètres régionaux spécifiques, car ces API déterminent les paramètres régionaux appropriés en fonction des paramètres de l’utilisateur, puis récupèrent la ressource appropriée pour l’utilisateur.
--   Dans Microsoft Visual Studio2015, sélectionnez **projet-& gt; Windows Store-& gt; créer un Package d’application …** et créer le package.
+-   Dans Studio2015 visuelle de Microsoft, sélectionnez **projet-& gt; Windows Store-& gt; créer un Package d’application …** et créer le package.
 
 ## <a name="defining-scaling-factor-resource-packs"></a>Définition des packs de ressources du facteur d’échelle
 

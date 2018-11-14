@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052224"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158995"
 ---
 # <a name="template-settings-classes"></a>Classes de paramètres du modèle
 
@@ -97,7 +97,7 @@ Voici un autre exemple d’utilisation des modèles de contrôles XAML par défa
 
 À nouveau, comme le code XAML contient de nombreuses lignes dans le modèle, il ne s’agit là que d’un extrait. Et ce n’est là que l’un des états et des animations de thème qui utilisent chacun les mêmes propriétés [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Pour [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), l’utilisation des valeurs **ComboBoxTemplateSettings** par le biais des liaisons impose que les animations associées dans le modèle s’arrêteront et commenceront aux positions qui sont basées sur les valeurs partagées. La transition sera donc parfaite.
 
-**Remarque**  lorsque vous utilisez des valeurs **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous que vous définissez les propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Remarque**  lorsque vous utilisez des valeurs de **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous que vous définissez les propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

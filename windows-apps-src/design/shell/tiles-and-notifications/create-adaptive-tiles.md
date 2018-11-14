@@ -11,17 +11,17 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0af7dc153f75826444a517d4958bfeba53b103d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045143"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6150719"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
-Modèles de vignette adaptative sont une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](../tiles-and-notifications/tile-schema.md).
+Modèles de vignette adaptative sont une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible qui s’adapte à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](../tiles-and-notifications/tile-schema.md).
 
-(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette de package Windows8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception des notifications pour Windows 10.)
+(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette de package Windows8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception de notifications pour Windows 10.)
 
 
 ## <a name="getting-started"></a>Prise en main
@@ -210,7 +210,7 @@ TileContent content = new TileContent()
 
 Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur «none»), d’afficher uniquement le nom (valeur «name»), d’afficher uniquement le logo (valeur «logo») ou d’afficher à la fois le nom et le logo (valeur «nameAndLogo»).
 
-**Remarque**Windows Mobile ne prend pas en charge le logo d’angle, c’est le cas «logo» et «nameandlogo» sont par défaut sur «name» sur un appareil Mobile.
+**Remarque**Windows Mobile ne prend pas en charge le logo d’angle, la «logo» c’est le cas et la valeur par défaut «nameandlogo» sont sur «name» sur un appareil Mobile.
 
  
 

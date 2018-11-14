@@ -13,11 +13,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026204"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191147"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -46,7 +46,7 @@ Les raccourcis clavier ne sont pas disponibles pour chaque action, mais sont sou
 
 Nous vous recommandons de spécifier les raccourcis clavier chaque fois que cela est approprié dans votre interface utilisateur, et de prendre en charge les raccourcis dans tous les contrôles personnalisés.
 
-- Les raccourcis clavier rendent votre application plus accessiblefor aux utilisateurs souffrant de troubles psychomoteurs, y compris ceux qui peuvent appuyer sur une seule clé à la fois ou qui ont des difficultés à utiliser une souris.* *
+- Les raccourcis clavier rendent votre application plus accessiblefor les utilisateurs souffrant de troubles psychomoteurs, y compris ceux qui peuvent appuyer sur une seule clé à la fois ou qui ont des difficultés à utiliser une souris.* *
 
   Une interface utilisateur de clavier bien conçue représente un aspect important de l’accessibilité logicielle. Elle permet aux utilisateurs malvoyants ou souffrant d’un handicap moteur de naviguer dans une application et d’interagir avec ses fonctionnalités. Les utilisateurs qui ne sont pas en mesure d’utiliser une souris peuvent avoir recours à diverses technologies d’assistance, telles que les outils de clavier amélioré, les claviers visuels, les écrans élargis, les lecteurs d’écran et les utilitaires d’entrée vocale. Pour ces utilisateurs, une couverture complète de la commande est essentielle.
 
@@ -250,7 +250,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Remplacer le comportement de clavier par défaut
 
-Dans certains cas, vous devrez peut-être substituer le comportement par défaut de clés spécifiques telles que la touche Retour arrière ou la touche ENTRÉE. Par exemple: 
+Dans certains cas, vous devrez remplacer le comportement par défaut des clés spécifiques telles que la touche Retour arrière ou la touche ENTRÉE. Par exemple: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Désactiver un raccourci clavier 
 
@@ -362,7 +362,7 @@ Comme les raccourcis clavier ne sont généralement pas décrit directement dans
 Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (sauf [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
 
 > [!NOTE] 
-> Si plusieurs raccourcis sont définis par un contrôle, seul le premier est présenté.
+> Si plusieurs raccourcis sont définis pour un contrôle, seul le premier est présenté.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators_tooltip_savebutton_small.png)
 

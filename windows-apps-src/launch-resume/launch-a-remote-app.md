@@ -5,15 +5,15 @@ description: Apprenez à lancer un appareil sur un appareil distant à l'aide du
 ms.author: pafarley
 ms.date: 02/12/2018
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
+keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: cbd548e0c591c679ecfbee88793c51e2a2ca2b37
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026650"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183501"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 

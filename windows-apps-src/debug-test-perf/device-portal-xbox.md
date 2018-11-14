@@ -6,14 +6,14 @@ description: Découvrez comment activer Device Portal pour XboxOne.
 ms.author: pafarley
 ms.date: 02/12/2017
 ms.topic: article
-keywords: Windows 10, uwp, portail d’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 7182f67a7bffc303b9c3067d8b746f1b4f27b809
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048491"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147333"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -197,7 +197,7 @@ Espace de travail vide que vous pouvez personnaliser à votre convenance. Vous p
 
 ### <a name="game-event-data"></a>Données d’événement de jeu
 
-Sur la page de **données d’événement de jeu** , vous pouvez afficher un graphique en temps réel à ce flux dans le nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre console Xbox One. S’il existe des événements du jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre de jeu) qui décrit chaque événement dans une table de données sous le graphique de données. Le tableau est uniquement disponible s’il existe des événements enregistrés.
+Sur la page de **données d’événement de jeu** , vous pouvez afficher un graphique en temps réel à ce flux dans le nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre console Xbox One. S’il existe des événements du jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre de jeu) qui décrit chaque événement dans une table de données sous le graphique de données. Le tableau est uniquement disponible si l’événement n’est enregistré.
 
 ![Données d’événement de jeu](images/device-portal-xbox-22.PNG)
 

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: 98c1d48524bcc525f57f42e5364d27611602ab52
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033149"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149785"
 ---
 # <a name="define-your-experiment-in-partner-center"></a>Définissez votre expérience dans l’espace partenaires
 
-Après avoir vous [créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) et [coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
+Après vous [créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) et le [code de votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
 
 Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -66,7 +66,7 @@ Ensuite, définissez les [variables](run-app-experiments-with-a-b-testing.md#ter
 
 Lorsque vous avez terminé la saisie des champs obligatoires pour votre expérience, cliquez sur **Enregistrer** pour enregistrer votre expérience.
 
-Si vous êtes satisfait des paramètres de votre expérience et êtes prêt à l’activer afin de pouvoir commencer la collecte des données de l’expérience depuis votre application, cliquez sur **Activer**. Quand l’expérience est active, votre application peut récupérer les variables de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires. Pour plus d’informations, voir [exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
+Si vous êtes satisfait des paramètres de votre expérience et êtes prêt à l’activer afin de pouvoir commencer la collecte des données de l’expérience depuis votre application, cliquez sur **Activer**. Quand l’expérience est active, votre application peut récupérer les variables de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires. Pour plus d’informations, voir [s’exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
 
 > [!IMPORTANT]
 > Un projet peut uniquement comprendre une expérience active à la fois. Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment (Expérience modifiable)** quand vous avez créé l’expérience. Nous vous recommandons de coder l’expérience dans votre application avant de l’activer.

@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042249"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151026"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Didacticiel: prendre en charge l’entrée manuscrite dans votre application UWP
 
@@ -40,7 +40,7 @@ Avec Windows Ink, vous pouvez fournir à vos clients l’équivalent numérique 
 * Un ordinateur (ou un appareil virtuel) exécutant la version actuelle de Windows 10
 * [Visual Studio2017 et RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* En fonction de votre configuration, vous devrez peut-être installer le package NuGet [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/6.1.9) et activer le **mode développeur** dans vos paramètres système (Paramètres -> mise à jour et sécurité-& gt; pour les développeurs-& gt; Utiliser les fonctionnalités de développement).
+* En fonction de votre configuration, vous devrez peut-être installer le package NuGet [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/6.1.9) et activer le **mode développeur** dans vos paramètres système (Paramètres -> mise à jour et sécurité-& gt; pour les développeurs -> Utiliser les fonctionnalités de développement).
 * Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP) avec Visual Studio, consultez les rubriques suivantes avant de démarrer ce didacticiel:  
     * [Préparation](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [Créer une application «Hello World» (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
@@ -70,7 +70,7 @@ Ces objets fournissent la majeure partie de l’expérience d’entrée manuscri
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Un contrôle de plateforme XAMLUI qui, par défaut, reçoit et affiche toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement. |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), ainsi qu’un ensemble complet d’API pour plus de personnalisation. |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Un contrôle de plateforme XAMLUI contenant une collection extensible et personnalisable de boutons qui activent des fonctionnalités d’entrée manuscrite dans un [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)associé. |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Un contrôle de plateforme XAMLUI contenant une collection extensible et personnalisable de boutons qui activent des fonctionnalités d’entrée manuscrite dans un associé [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263)<br/>Nous n'abordons pas cette fonctionnalité ici; pour plus d’informations, consultez [Exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314). | Permet le rendu des traits d’encre sur le contexte d’appareil Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. |
 
 ## <a name="step-1-run-the-sample"></a>Étape1: exécution de l’exemple

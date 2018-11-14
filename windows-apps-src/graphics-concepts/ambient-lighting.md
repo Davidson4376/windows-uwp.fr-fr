@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035222"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142093"
 ---
 # <a name="ambient-lighting"></a>Éclairage ambiant
 
@@ -46,7 +46,7 @@ Cₐ possède l'une des valeurs suivantes:
 -   couleur2 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2, et si la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur ambiante du matériau.
 
-**Remarque**  si aucune des deux options AMBIENTMATERIALSOURCE sont utilisée, la couleur du vertex n’est pas fournie, puis la couleur ambiante du matériau est utilisée.
+**Remarque**  si aucune des deux options AMBIENTMATERIALSOURCE sont utilisée et la couleur du vertex n’est pas fournie, la couleur ambiante du matériau est utilisée.
 
  
 

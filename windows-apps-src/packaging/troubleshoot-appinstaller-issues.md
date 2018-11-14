@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
 ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032597"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6139703"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Résoudre les problèmes d’installation avec le fichier du programme d'installation d'application
 
@@ -74,7 +74,7 @@ Si l'application App Installer ne peut pas installer l'application ces étapes p
 
 ### <a name="verify-app-package-file-installation"></a>Vérifier l’installation de fichier de package app
 
-- Téléchargez le fichier de package d’application dans un dossier local et essayez d’installer à l’aide de la commande PowerShell [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) .
+- Télécharger le fichier de package d’application dans un dossier local et tentez de l’installer à l’aide de la commande PowerShell [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) .
 
 - Téléchargez le fichier `.appinstaller` dans un dossier local et tentez de l'installer à l'aide de la commande PowerShell `Add-AppxPackage -Appinstaller`.
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b38dc50f38276fb367402b230e6199fbabdcef80
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043512"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164785"
 ---
 # <a name="swap-chains"></a>Chaînes de permutation
 

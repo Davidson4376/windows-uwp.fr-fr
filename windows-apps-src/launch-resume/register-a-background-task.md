@@ -6,14 +6,14 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: faed3f762594ae46b617831615df2448391e1c7d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040934"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145743"
 ---
 # <a name="register-a-background-task"></a>Inscrire une tâche en arrière-plan
 

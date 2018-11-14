@@ -10,22 +10,22 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 6035463473eb6ddb1a3ec7fa554f9a12b8f764fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037079"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146463"
 ---
 # <a name="performance-page-dev-home"></a>Page des performances (Dev Home)
    
   
-La page d’accueil du développeur des **performances** simule différents activité du disque et des conditions d’utilisation du processeur pour résoudre des problèmes.   
+La page des **performances** de l’outil accueil du développeur simule différents activité du disque et des conditions d’utilisation du processeur pour résoudre des problèmes.   
  ![Page d’accueil du développeur des performances](images/devhome_performance.png)   
   
 La page de **performances** contient les volets suivants:   
  
    *  [Simulation de disque](#ID4EEB)  
-   *  [Simulation de processeur](#ID4EOB)  
+   *  [Simulation de l’UC](#ID4EOB)  
 
  
 <a id="ID4EEB"></a>
@@ -41,7 +41,7 @@ Le volet de **simulation de disque** simule l’activité du disque du système 
 
    
 
-## <a name="cpu-simulation"></a>Simulation de processeur  
+## <a name="cpu-simulation"></a>Simulation de l’UC  
    
   
 Le volet de **Simulation de processeur** simule l’activité sur CPU6 (le noyau partagé).   

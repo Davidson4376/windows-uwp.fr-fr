@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, directx, lancement, reprise
 ms.localizationpriority: medium
 ms.openlocfilehash: ebcec430c4fc916e77ebdf25ee53deb23b02185d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024564"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157759"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Lancement et reprise des applications (DirectX et C++)
 

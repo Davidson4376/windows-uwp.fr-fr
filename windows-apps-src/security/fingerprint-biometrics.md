@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ccd2efee17c7f1205bcac6f05b016af7e6c6dae
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028214"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182648"
 ---
 # <a name="fingerprint-biometrics"></a>Empreinte digitale biométrique
 

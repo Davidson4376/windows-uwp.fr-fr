@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: L’extension de balisage est une alternative de hautes performances à la liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
+description: L’extension de balisage est une solution de hautes performances de liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9674aeed846fab53de3ecb057ebcc46dbda560c3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034606"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191799"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
-**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour plus d’informations sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{x: Bind}** — nouveauté de Windows 10, est une alternative aux **{Binding}**. **{x: Bind}** s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}** et prend en charge le débogage de mieux.
 
@@ -87,7 +87,7 @@ Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\[Bindable\]** ne doit pas être nécessaire.
 
-Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin de la liaison dans la mesure où les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
+Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin de la liaison, car les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
 
 
 ### <a name="collections"></a>Collections
@@ -113,7 +113,7 @@ _Remarque: la syntaxe de cast de type C# est plus souple que la syntaxe de propr
 
 ## <a name="functions-in-binding-paths"></a>Fonctions dans les chemins de liaison
 
-À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante de liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
+À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante pour la liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
 
 ## <a name="event-binding"></a>Liaison d’événement
 

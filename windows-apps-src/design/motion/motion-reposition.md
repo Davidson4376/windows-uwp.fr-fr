@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ec7d57e75d00f3418d4ff176c1ae4256eeab6983
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033532"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149168"
 ---
 # <a name="reposition-animations"></a>Animations de repositionnement
 

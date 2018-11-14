@@ -9,11 +9,11 @@ keywords: windows10, uwp, création de packages
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d5cc0d73975b591d7584b1ac606aa3323cd6da3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042761"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148122"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 
@@ -80,14 +80,14 @@ La liste suivante contient les arguments possibles:
 
 | **Argument**                          | **Description**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;Nom du package de sortie&gt;           | Nom du package créé. C’est le nom de fichier suivi de l’extension .msix ou .appx. |
-| &lt;Nom du package de sortie chiffré&gt; | Nom du package chiffré créé. C’est le nom de fichier suivi de l’extension .emsix ou .eappx. |
-| &lt;Nom du package d’entrée&gt;            | Nom du package. C’est le nom de fichier suivi de l’extension .msix ou .appx. |
-| &lt;Nom du package d’entrée chiffré&gt;  | Nom du package chiffré. C’est le nom de fichier suivi de l’extension .emsix ou .eappx. |
-| &lt;Nom de l’ensemble d’applications de sortie&gt;            | Nom de l’ensemble d’applications créé. C’est le nom de fichier suivi de l’extension .msixbundle ou .appxbundle. |
-| &lt;Nom de l’ensemble d’applications de sortie chiffré&gt;  | Nom de l’ensemble d’applications chiffré créé. C’est le nom de fichier suivi de l’extension .emsixbundle ou .eappxbundle. |
-| &lt;Nom de l’ensemble d’applications d’entrée&gt;             | Nom de l’ensemble d’applications. C’est le nom de fichier suivi de l’extension .msixbundle ou .appxbundle. |
-| &lt;Nom de l’ensemble d’applications d’entrée chiffré&gt;   | Nom de l’ensemble d’applications chiffré. C’est le nom de fichier suivi de l’extension .emsixbundle ou .eappxbundle. |
+| &lt;Nom du package de sortie&gt;           | Nom du package créé. Cela est le nom du fichier suivi de l’extension .msix ou .appx. |
+| &lt;Nom du package de sortie chiffré&gt; | Nom du package chiffré créé. Cela est le nom du fichier suivi de l’extension .emsix ou .eappx. |
+| &lt;Nom du package d’entrée&gt;            | Nom du package. Cela est le nom du fichier suivi de l’extension .msix ou .appx. |
+| &lt;Nom du package d’entrée chiffré&gt;  | Nom du package chiffré. Cela est le nom du fichier suivi de l’extension .emsix ou .eappx. |
+| &lt;Nom de l’ensemble d’applications de sortie&gt;            | Nom de l’ensemble d’applications créé. Cela est le nom du fichier suivi de l’extension .msixbundle ou .appxbundle. |
+| &lt;Nom de l’ensemble d’applications de sortie chiffré&gt;  | Nom de l’ensemble d’applications chiffré créé. Cela est le nom du fichier suivi de l’extension .emsixbundle ou .eappxbundle. |
+| &lt;Nom de l’ensemble d’applications d’entrée&gt;             | Nom de l’ensemble d’applications. Cela est le nom du fichier suivi de l’extension .msixbundle ou .appxbundle. |
+| &lt;Nom de l’ensemble d’applications d’entrée chiffré&gt;   | Nom de l’ensemble d’applications chiffré. Cela est le nom du fichier suivi de l’extension .emsixbundle ou .eappxbundle. |
 | &lt;Répertoire de contenu&gt;             | Chemin d’accès au contenu du package d’application ou de l’ensemble d’applications. |
 | &lt;Fichier de mappage&gt;                  | Nom du fichier qui spécifie la source et la cible du package. |
 | &lt;Répertoire de sortie&gt;              | Chemin d’accès au répertoire des packages et ensembles d’applications de sortie. |

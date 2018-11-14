@@ -13,21 +13,21 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: aa235086f2410fb97ea60e35fb03c586824928a2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025083"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194173"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Saisie de texte avec l’affichage de l’écriture manuscrite
 
 ![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
-Personnaliser l’affichage de l’écriture manuscrite intégrée de l’encre à l’entrée de texte pris en charge par les contrôles de texte UWP tels que le [contrôle TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), et les contrôles dérivés de ces tels que [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
+Personnaliser l’affichage de l’écriture manuscrite intégrée pour l’entrée manuscrite en entrée de texte pris en charge par les contrôles de texte UWP tels que [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox), et les contrôles dérivés de ces telles que [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox).
 
 ## <a name="overview"></a>Présentation
 
-Zones de saisie de texte XAML présentent prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte se transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
+Les zones de saisie de texte XAML dotés d’une prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
 
 Le texte est reconnu à mesure que l’utilisateur écrit n’importe où dans la zone de texte et un candidat fenêtre affiche les résultats de reconnaissance. L’utilisateur peut appuyer sur un résultat pour le choisir ou continuer à écrire pour accepter le candidat proposé. Les résultats de la reconnaissance littérale (lettre par lettre) sont inclus dans la fenêtre candidate, donc la reconnaissance ne se limite pas aux mots d'un dictionnaire. À mesure que l’utilisateur écrit, la saisie de texte acceptée est convertie en police de script qui conserve l’apparence de l’écriture naturelle.
 
@@ -100,15 +100,15 @@ Si votre application déjà fournit robuste, la fonctionnalité de reconnaissanc
 
 ## <a name="use-handwriting-font-preferences"></a>Utiliser les préférences de police de l’écriture manuscrite
 
-Un utilisateur peut choisir à partir d’une collection prédéfinie de polices basées sur l’écriture manuscrite à utiliser lorsque le rendu du texte basé sur reconnaissance d’entrée manuscrite (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
+Un utilisateur peut choisir d’une collection prédéfinie de basée sur l’écriture manuscrite des polices à utiliser lorsque rendu du texte basé sur la reconnaissance des entrées manuscrites (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
 
 > [!NOTE]
-> Les utilisateurs peuvent encore créer une police en fonction de leur propre l’écriture manuscrite.
+> Les utilisateurs peuvent créer même une police en fonction de leur propre l’écriture manuscrite.
 > [!VIDEO https://www.youtube.com/embed/YRR4qd4HCw8]
 
 Votre application peut accéder à ce paramètre et utiliser la police sélectionnée pour le texte reconnu dans le contrôle de texte.
 
-Dans cet exemple, nous écouter l’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) d’un [contrôle TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) et appliquer la police sélectionnée de l’utilisateur si la modification de texte provenance de la HandwritingView (ou une police par défaut, dans le cas contraire).
+Dans cet exemple, nous écouter l’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) d’une [zone de texte](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) et appliquer la police sélectionnée de l’utilisateur si la modification de texte provenance de la HandwritingView (ou une police par défaut, dans le cas contraire).
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -149,7 +149,7 @@ Dans le code-behind, correspondant, nous montrons comment désactiver le [Handwr
     }
     ```
 
-2. Ensuite, nous allons commencer itération au sein de l’arborescence visuelle (qui commencent à un objet AutoSuggestBox) dans la fonction FindInnerTextBox avec un appel à FindVisualChildByName.
+2. Ensuite, nous allons commencer itération au sein de l’arborescence visuelle (commençant à un objet AutoSuggestBox) dans la fonction FindInnerTextBox avec un appel à FindVisualChildByName.
 
     ```csharp
     private bool FindInnerTextBox(AutoSuggestBox autoSuggestBox)
@@ -228,7 +228,7 @@ Pour contourner ce problème, définissez la propriété de PlacementTarget de l
 
 ## <a name="resize-the-handwritingview"></a>Redimensionner la HandwritingView
 
-Vous pouvez également définir la taille de la [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), qui peut être utile lorsque vous devez vous assurer que l’affichage ne prend pas masquer l’interface utilisateur important.
+Vous pouvez également définir la taille de la [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), qui peut être utile lorsque vous avez besoin pour garantir que l’affichage ne prend pas masquer l’interface utilisateur important.
 
 Comme dans l’exemple précédent, nous créons une zone de texte qui prend en charge de la dictée (implémentée en plaçant une zone de texte et un bouton de la dictée dans un élément StackPanel).
 
@@ -272,7 +272,7 @@ Pour ce faire, nous lions la propriété MaxWidth de la [HandwritingView](https:
 
 ## <a name="reposition-custom-ui"></a>Repositionner l’interface utilisateur personnalisée
 
-Si vous disposez d’interface utilisateur personnalisée qui s’affiche en réponse à la saisie de texte, par exemple, un menu contextuel d’information, vous devrez peut-être repositionner cette interface utilisateur afin qu’il n’a pas masquer l’affichage de l’écriture manuscrite.
+Si vous disposez d’interface utilisateur personnalisée qui s’affiche en réponse à la saisie de texte, par exemple, une fenêtre contextuelle d’information, vous devrez repositionner cette interface utilisateur afin qu’il n’a pas de masquer l’affichage de l’écriture manuscrite.
 
 ![Élément TextBox avec l’interface utilisateur personnalisée](images/handwritingview/textbox-with-customui.png)
 
@@ -317,7 +317,7 @@ private double GetPopupVerticalOffset()
 
 Comme avec tous les contrôles d’infrastructure XAML, vous pouvez personnaliser la structure visuelle et le comportement visuel d’un [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) à vos besoins spécifiques.
 
-Pour voir un exemple complet de création d’un modèle personnalisé d’extraction la procédure de [créer des contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls) ou si l' [exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
+Pour voir un exemple complet de création d’un modèle personnalisé d’extraction la procédure de [créer des contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls) ou de l' [exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
 
 
 

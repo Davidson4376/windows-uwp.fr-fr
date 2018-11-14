@@ -2,25 +2,25 @@
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Créer un Hello application World en C++ / CX (Windows 10)
-description: Avec Microsoft Visual Studio2017, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
+description: Avec Studio2017 visuelle de Microsoft, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
 ms.author: jken
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045758"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187649"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application «Hello world» en C++ / CX
 
 > [!IMPORTANT]
-> Ce didacticiel utilise C++ / CX. Microsoft a publié C++ / WinRT: une entièrement standard C ++ 17 projection de langage moderne API Windows Runtime (WinRT). Pour plus d’informations sur cette langue, veuillez consulter [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
+> Ce didacticiel utilise C++ / CX. Microsoft a publié C++ / WinRT: une projection moderne entièrement standard C ++ 17 langue pour les API Windows Runtime (WinRT). Pour plus d’informations sur cette langue, veuillez consulter [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
 
-Avec Microsoft Visual Studio2017, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10 avec une interface utilisateur qui est définie dans le balisage langage XAML (Extensible Application).
+Avec Studio2017 visuelle de Microsoft, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10 avec une interface utilisateur qui est définie dans le balisage langage XAML (Extensible Application).
 
 > [!NOTE]
 > Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
@@ -67,7 +67,7 @@ Notre première application, intitulée « Hello World », présente certaines f
 
 Commençons par les bases:
 
--   Découvrez comment créer un projet Windows universel dans Visual Studio2017.
+-   Comment créer un projet Windows universel dans Visual Studio2017.
 
 -   Comprendre les projets et fichiers qui sont créés.
 
@@ -336,7 +336,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-    **Conseil**bien qu’il n’existe aucun texte dans ce [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit afin que vous pouvez le sélectionner.  
+    **Conseil**bien qu’il n’existe aucun texte dans ce [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit d’afin que vous pouvez le sélectionner.  
 
     Votre code XAML doit maintenant se présenter ainsi:
 

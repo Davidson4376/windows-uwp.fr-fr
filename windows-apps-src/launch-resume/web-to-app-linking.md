@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034965"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185271"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 
@@ -25,7 +25,7 @@ Pour activer le web-la liaison application-vous devez:
 - gérer l’activation dans l’application.
 
 > [!Note]
-> À partir de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge seront lance l’application concernée. Prise en charge des liens a cliqué dans d’autres navigateurs (par exemple, Internet Explorer, etc.), vous gardera dans l’expérience de navigation.
+> À partir de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge lance l’application correspondante. Prise en charge des liens a cliqué dans d’autres navigateurs (par exemple, Internet Explorer, etc.), vous gardera dans l’expérience de navigation.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>S’inscrire pour bénéficier du traitement des liens http et https dans le manifeste de l’application
 
@@ -78,7 +78,7 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, pour `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par adresse de votre site Web (par exemple, msn.com), **sauf** ceux sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
+Par exemple, pour `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui démarrent avec l’adresse de votre site Web (par exemple, msn.com), **sauf** ceux sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
 
 ### <a name="multiple-apps"></a>Applications multiples
 
@@ -166,9 +166,9 @@ Testez la configuration de votre application et de votre site web en exécutant 
 -   Package Family Name: le nom de la famille de packages (PFN) de votre application
 -   File path: le fichier JSON utilisé pour la validation locale (par exemple, C:\\SomeFolder\\windows-app-web-link)
 
-Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lorsqu’il est chargé. S’il existe un code d’erreur, il fonctionnera pas.
+Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il fonctionnera pas.
 
-Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de validation locale:
+Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de la validation locale:
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
@@ -200,4 +200,4 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 [Web application-exemple de projet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [Gérer l’Activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[lancement d’Association exemple](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) montre comment utiliser l’API LaunchUriAsync().
+[Lancement d’Association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().

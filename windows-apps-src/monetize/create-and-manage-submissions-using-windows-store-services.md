@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore
 ms.localizationpriority: medium
 ms.openlocfilehash: c91c7b42642df9a03aab1324f074799b63157e62
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041987"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6144048"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
 
-Utilisez l' *API de soumission au Microsoft Store* pour interroger et de créer des soumissions d’applications, des modules complémentaires et des versions d’évaluation de package pour votre compte d’ou votre organisation l’espace partenaires par programmation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+L' *API de soumission au Microsoft Store* permet d’interroger et de créer des soumissions d’applications, des modules complémentaires et des versions d’évaluation de package pour votre compte d’ou votre organisation l’espace partenaires par programmation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus complet d’utilisation de l’API de soumission au MicrosoftStore:
 
@@ -29,7 +29,7 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> Si vous utilisez cette API pour créer une soumission pour une application, une version d’évaluation ou un module complémentaire, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que dans l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez cette API pour créer une soumission pour une application, version d’évaluation, ou un module complémentaire, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que dans l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 > [!IMPORTANT]
 > Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser publier la soumission dans l’espace partenaires.
@@ -43,13 +43,13 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 
 Avant d’écrire le code d’appel de l’API de soumission au MicrosoftStore, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
-* Vous devez [associer une application Azure AD avec votre compte espace partenaires](#associate-an-azure-ad-application-with-your-windows-dev-center-account) et obtenez votre client l’ID client et clé. Vous avez besoin de ces valeurs pour obtenir un jeton d’accès Azure AD, qui vous servira dans les appels à l’API de soumission au MicrosoftStore.
+* Vous devez [associer une application Azure AD avec votre compte espace partenaires](#associate-an-azure-ad-application-with-your-windows-dev-center-account) et obtenez votre client, l’ID client et clé. Vous avez besoin de ces valeurs pour obtenir un jeton d’accès Azure AD, qui vous servira dans les appels à l’API de soumission au MicrosoftStore.
 
 * Préparez votre app en vue de l’utiliser avec l’API de soumission au MicrosoftStore:
 
-  * Si votre application n’existe pas encore dans l’espace partenaires, vous devez [créer votre application en réservant son nom dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Vous ne pouvez pas utiliser l’API de soumission au Microsoft Store pour créer une application dans l’espace partenaires; Vous devez travailler dans l’espace partenaires à sa création, et ensuite une fois que vous pouvez utiliser l’API pour accéder à l’application et créer par programmation des soumissions pour celle-ci. En revanche, vous pouvez vous servir de l’API pour créer des extensions et des versions d’évaluation de package par programmation avant de créer des soumissions pour ces ressources.
+  * Si votre application n’existe pas encore dans l’espace partenaires, vous devez [créer votre application en réservant son nom dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Vous ne pouvez pas utiliser l’API de soumission au Microsoft Store pour créer une application dans l’espace partenaires; Vous devez travailler dans l’espace partenaires pour la créer et puis après que vous pouvez utiliser l’API pour accéder à l’application et créer par programmation des soumissions pour celle-ci. En revanche, vous pouvez vous servir de l’API pour créer des extensions et des versions d’évaluation de package par programmation avant de créer des soumissions pour ces ressources.
 
   * Avant de pouvoir créer une soumission pour une application donnée à l’aide de cette API, vous devez d’abord [créer une soumission pour l’application dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/app-submissions), y compris répondre au questionnaire de [classification par âge](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) . Après quoi, vous pourrez créer des soumissions par programmation pour cette application à l’aide de l’API. Vous n’avez pas besoin de créer une soumission d’extension ou de version d’évaluation de package avant d’utiliser l’API pour ces types de soumission.
 
@@ -61,14 +61,14 @@ Avant d’écrire le code d’appel de l’API de soumission au MicrosoftStore, 
 
 <span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
 
-### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Comment associer une application Azure AD à votre compte espace partenaires
+### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Comment associer une application Azure AD avec votre compte espace partenaires
 
-Avant de pouvoir utiliser l’API de soumission au Microsoft Store, vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API de soumission au MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
+Avant de pouvoir utiliser l’API de soumission au Microsoft Store, vous devez associer une application Azure AD avec votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API de soumission au MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
 
 > [!NOTE]
 > Cette tâche ne doit être effectuée qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
-1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec l’annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
+1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec un annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
 
 2.  Ensuite, à partir de la page **utilisateurs** dans la section **paramètres du compte** de l’espace partenaires, [Ajoutez l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour accéder aux soumissions pour votre compte espace partenaires. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure Active directory, vous pouvez [créer une nouvelle application Azure AD dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
 
@@ -146,7 +146,7 @@ Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://
 Si vous avez des questions sur l’API de soumission au MicrosoftStore ou si vous avez besoin d’aide pour gérer vos soumissions avec cette API, utilisez les ressources suivantes:
 
 * Posez vos questions sur nos [forums](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
-* Visitez notre [page de support](https://developer.microsoft.com/windows/support) et demander l’une des options de support assisté pour l’espace partenaires. Si vous êtes invité à choisir un type de problème et une catégorie, choisissez respectivement **Soumission d’application et certification** et **Soumission d’une application**.  
+* Visitez notre [page de support](https://developer.microsoft.com/windows/support) et demander une des options de support assisté pour l’espace partenaires. Si vous êtes invité à choisir un type de problème et une catégorie, choisissez respectivement **Soumission d’application et certification** et **Soumission d’une application**.  
 
 ## <a name="related-topics"></a>Rubriques connexes
 

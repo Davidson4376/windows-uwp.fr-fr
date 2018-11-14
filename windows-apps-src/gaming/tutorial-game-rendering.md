@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
 ms.openlocfilehash: 134c9005a796f52fb61ba628c0a85c8dbd875442
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036419"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6140217"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Infrastructure de renduII: rendu de jeu
 
@@ -583,7 +583,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>Méthode CreateWindowSizeDependentResource
 
-Les méthodes CreateWindowSizeDependentResources sont appelées à chaque modification de la taille de la fenêtre, de l’orientation, du rendu avec stéréo ou de la résolution. Dans l’exemple de jeu, elle met à jour la matrice de projection dans __ConstantBufferChangeOnResize__.
+Les méthodes CreateWindowSizeDependentResources sont appelées à chaque modification de la taille de la fenêtre, de l’orientation, du rendu avec stéréo ou de la résolution. Dans l’exemple de jeu, il met à jour la matrice de projection dans __ConstantBufferChangeOnResize__.
 
 Les ressources de taille de la fenêtre sont mises à jour comme suit: 
 * L’infrastructure de l’application obtient un des événements possibles indiquant un changement de l’état de la fenêtre. 

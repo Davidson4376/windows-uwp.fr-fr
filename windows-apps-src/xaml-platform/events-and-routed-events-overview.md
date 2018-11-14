@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026395"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151069"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 
@@ -151,7 +151,7 @@ End Sub
 
 **Remarque**Visual Studio et son aire de conception XAML promeuvent généralement la technique de gestion d’instance plutôt que le mot clé **Handles** . Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
 
-En C++ / CX, vous également utiliser le **+=** syntaxe, mais il existe des différences au formulaire de base en c#:
+En C++ / CX, également utiliser le **+=** syntaxe, mais il existe des différences au formulaire de base en c#:
 
 -   Il n’existe aucune inférence de délégué, donc vous devez utiliser **ref new** pour l’instance de délégué.
 -   Le constructeur du délégué possède deux paramètres et requiert que l’objet cible soit le premier d’entre eux. En général, vous spécifiez **this**.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 378841414f97abb313584e6bcd033914440713a6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036276"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159435"
 ---
 # <a name="style-for-uwp-apps"></a>Style des applications UWP
 
@@ -30,7 +30,7 @@ Le style permet à votre application de se démarquer. Les instructions de style
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes se concentrer sur l’utilisation de typographie pour aider les utilisateurs à comprendre facilement le contenu. 
+       En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes vous concentrer sur l’utilisation de typographie pour aider les utilisateurs à comprendre facilement le contenu. 
     :::column-end:::
 :::row-end:::
 

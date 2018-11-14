@@ -1,26 +1,26 @@
 ---
-author: normesta
+author: hickeys
 Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
 Search.Product: eADQiWindows 10XVcnh
 title: Intégrer votre application avec Windows10 (Pont du bureau)
-ms.author: normesta
+ms.author: hickeys
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 252b1309f1218a872ea49dcce7048b890a6139b4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6761ec38b470b798740cbabc72a648f51557edbc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041579"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196395"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 
 Utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
 
-Par exemple, utilisez une extension pour créer une exception de pare-feu, que votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
+Par exemple, utilisez une extension pour créer une exception de pare-feu, que votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage sur la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 
 Cette rubrique décrit ces extensions et les tâches que vous pouvez effectuer en les utilisant.
 
@@ -86,6 +86,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
   </Applications>
 </Package>
 ```
+
 #### <a name="related-sample"></a>Exemple connexe
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -146,6 +147,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
   </Applications>
 </Package>
 ```
+
 #### <a name="related-sample"></a>Exemple connexe
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -154,7 +156,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Associer votre application empaquetée à un ensemble de types de fichiers
 
-Vous pouvez associer votre application empaquetée à des extensions de type de fichier. Si un utilisateur clique un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste de suggestions.
+Vous pouvez associer votre application empaquetée avec des extensions de type de fichier. Si un utilisateur clique un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste de suggestions.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
@@ -194,8 +196,8 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="Contoso">
             <uap:SupportedFileTypes>
-              <uap:FileType>.txt</uap:FileType>
-              <uap:FileType>.avi</uap:FileType>
+            <uap:FileType>.txt</uap:FileType>
+            <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
         </uap:Extension>
@@ -223,14 +225,13 @@ Vous pouvez ajouter des options à ce menu. Ces options donnent aux utilisateurs
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/2
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
-
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
     <FileTypeAssociation Name="[AppID]">
         <SupportedVerbs>
-              <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
+           <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
     </FileTypeAssociation>
 </Extension>
@@ -243,7 +244,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Catégorie | Toujours: ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
 |Verbe |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
-|Id |L’ID unique du verbe. Si votre application est une application UWP, cela est passée à votre application dans le cadre de ses arguments d’événement d’activation afin qu’elle puisse gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
+|Id |L’ID unique du verbe. Si votre application est une application UWP, cela est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin qu’il puisse gérer la sélection de l’utilisateur de façon appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
 |Parameters |La liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application empaquetée de confiance totale, ces paramètres sont transmis à l’application en tant qu’arguments d’événement lorsque l’application est activée. Vous pouvez personnaliser le comportement de votre application en fonction de différents verbes d’activation. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. Si votre application est une application UWP, vous ne pouvez pas transmettre de paramètres. L’application reçoit l’ID à la place (voir la puce précédente).|
 |Extended |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et est défini par défaut sur la valeur **False** (c’est-à-dire que le verbe est toujours affiché) s’il n’est pas répertorié. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de «Ouvrir», qui est toujours défini sur **False**).|
 
@@ -272,6 +273,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
   </Applications>
 </Package>
 ```
+
 #### <a name="related-sample"></a>Exemple connexe
 
 [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -294,7 +296,7 @@ Il se peut que vous pouvez vous assurer que les utilisateurs ouvrent votre nouve
     <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
-        </SupportedFileTypes> 
+        </SupportedFileTypes>
     </FileTypeAssociation>
 </Extension>
 ```
@@ -305,7 +307,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |-------|-------------|
 |Catégorie |Toujours: ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
-|UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, lors de tentatives par votre application pour ouvrir un fichier aide d’une URL, le système téléchargera d’abord le fichier localement. |
+|UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, lors de tentatives par votre application pour ouvrir un fichier aide une URL, le système téléchargera d’abord le fichier localement. |
 |Parameters |Paramètres facultatifs. |
 |FileType |Les extensions de fichier appropriées. |
 
@@ -324,7 +326,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
-              </uap:SupportedFileTypes> 
+              </uap:SupportedFileTypes>
             </uap3:FileTypeAssociation>
           </uap:Extension>
         </Extensions>
@@ -342,7 +344,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="create-firewall-exception-for-your-app"></a>Créer une exception de pare-feu pour votre application
 
-Si votre application requiert une communication via un port, vous pouvez ajouter votre application à la liste des exceptions du pare-feu.
+Si votre application requiert une communication via un port, vous pouvez ajouter votre application à la liste des exceptions de pare-feu.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
@@ -351,8 +353,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
 ```XML
-<Extension Category="windows.firewallRules">  
-  <FirewallRules Executable="[executable file name]">  
+<Extension Category="windows.firewallRules">
+  <FirewallRules Executable="[executable file name]">
     <Rule
       Direction="[Direction]"
       IPProtocol="[Protocol]"
@@ -360,10 +362,11 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
       LocalPortMax="LocalPortMax"
       RemotePortMin="RemotePortMin"
       RemotePortMax="RemotePortMax"
-      Profile="[Profile]"/>  
-  </FirewallRules>  
+      Profile="[Profile]"/>
+  </FirewallRules>
 </Extension>
 ```
+
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
 
 |Nom |Description |
@@ -378,8 +381,6 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |RemotePortMax |Le numéro de port le plus élevé d’une plage de numéros de ports distants. |
 |Profil |Le type de réseau |
 
-
-
 #### <a name="example"></a>Exemple
 
 ```XML
@@ -387,15 +388,15 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="desktop2">
   <Extensions>
-    <desktop2:Extension Category="windows.firewallRules">  
-      <desktop2:FirewallRules Executable="Contoso.exe">  
-          <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>  
-          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>  
-          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="public"/>  
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="Contoso.exe">
+          <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>
+          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>
+          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="public"/>
           <desktop2:Rule Direction="out" IPProtocol="UDP" LocalPortMin="1339" LocalPortMax="1340" RemotePortMin="15"
-                         RemotePortMax="19" Profile="domainAndPrivate"/>  
-          <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>  
-      </desktop2:FirewallRules>  
+                         RemotePortMax="19" Profile="domainAndPrivate"/>
+          <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>
+      </desktop2:FirewallRules>
   </desktop2:Extension>
 </Extensions>
 </Package>
@@ -416,6 +417,7 @@ Chaque package peut contenir uniquement l'une de ces extensions. En d'autres ter
 http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
+
 Déclarez cette extension au niveau du package de votre manifeste d'application.
 
 ```XML
@@ -483,11 +485,12 @@ Spécifier le comporte de votre application lorsqu’un utilisateur ouvre plusie
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
-          <SupportedFileTypes>
-                <FileType>"[FileExtension]"</FileType>
+        <SupportedFileTypes>
+            <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
 </Extension>
 ```
+
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Nom |Description |
@@ -501,9 +504,9 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Les applications de bureau empaquetées présentent les trois mêmes options que les applications de bureau standard.
 
- * ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont transmis à votre application en tant que paramètres d’argument.
- * ``Single``: Votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés.
- * ``Document``: Une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
+* ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont transmis à votre application en tant que paramètres d’argument.
+* ``Single``: Votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés.
+* ``Document``: Une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
 
  Vous pouvez définir des préférences spécifiques pour les différents types de fichiers et d’actions. Par exemple, il se peut que vous souhaitiez ouvrir les *documents* en mode *Document* et les *images* en mode *Player*.
 
@@ -525,7 +528,7 @@ Les applications de bureau empaquetées présentent les trois mêmes options que
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
             </uap2:SupportedVerbs>
             <uap:SupportedFileTypes>
-                <uap:FileType>.txt</uap:FileType>
+              <uap:FileType>.txt</uap:FileType>
             </uap:SupportedFileTypes>
         </uap:Extension>
       </Extensions>
@@ -689,6 +692,7 @@ Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez 
     </FileTypeAssociation>
 </Extension>
 ```
+
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Nom |Description |
@@ -726,6 +730,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
   </Applications>
 </Package>
 ```
+
 <a id="make-file-properties" />
 
 ### <a name="make-file-properties-available-to-search-index-property-dialogs-and-the-details-pane"></a>Mettre à disposition les propriétés du fichier pour la recherche, les index, les boîtes de dialogue des propriétés et le volet d’informations
@@ -748,6 +753,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     </uap:FileTypeAssociation>
 </uap:Extension>
 ```
+
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Nom |Description |
@@ -833,7 +839,7 @@ Inscrivez les gestionnaires que vous souhaitez implémenter dans votre applicati
                 <ThumbnailProviderHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
                 <ExtendedPropertyhandler Clsid ="20000000-0000-0000-0000-000000000001"/>
                 <desktop:CloudFilesContextMenus>
-                    <desktop:Verb Id ="keep" Clsid=     
+                    <desktop:Verb Id ="keep" Clsid=
                        "20000000-0000-0000-0000-000000000001">
                        Always keep on this device</desktop:Verb>
                 </desktop:CloudFilesContextMenus>
@@ -859,19 +865,18 @@ Inscrivez les gestionnaires que vous souhaitez implémenter dans votre applicati
 
 ### <a name="start-your-application-by-using-a-protocol"></a>Démarrer votre application à l’aide d’un protocole
 
-Les associations de protocole permettent l’interopérabilité entre votre application empaquetée et les autres programmes et composants système. Lorsque votre application empaquetée est démarrée à l’aide d’un protocole, vous pouvez spécifier des paramètres spécifiques à transmettre à ses arguments d’événement d’activation afin qu’il puisse se comporter en conséquence. Les paramètres sont pris en charge uniquement pour les applications empaquetées et de confiance totale. Les applications UWP ne peuvent pas utiliser de paramètres.  
+Les associations de protocole permettent l’interopérabilité entre votre application empaquetée et les autres programmes et composants système. Lorsque votre application empaquetée est démarrée à l’aide d’un protocole, vous pouvez spécifier des paramètres spécifiques à transmettre à ses arguments d’événement d’activation afin qu’il puisse se comporter en conséquence. Les paramètres sont pris en charge uniquement pour les applications empaquetées et de confiance totale. Les applications UWP ne peuvent pas utiliser de paramètres.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
 http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
 ```XML
 <Extension
     Category="windows.protocol">
-    <Protocol
+  <Protocol
       Name="[Protocol name]"
       Parameters="[Parameters]" />
 </Extension>
@@ -896,26 +901,26 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
       <Extensions>
         <uap3:Extension
           Category="windows.protocol">
-        <uap3:Protocol
-          Name="myapp-cmd"
-          Parameters="/p &quot;%1&quot;" />
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
         </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
 </Package>
 ```
+
 <a id="alias" />
 
 ### <a name="start-your-application-by-using-an-alias"></a>Démarrer votre application à l’aide d’un alias
 
-Les utilisateurs et des autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
+Les utilisateurs et les autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 * http://schemas.microsoft.com/appx/manifest/desktop/windows10
-
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -925,8 +930,8 @@ Les utilisateurs et des autres processus peuvent utiliser un alias pour démarre
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
     <AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="[AliasName]" />
-      </AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </AppExecutionAlias>
 </Extension>
 ```
 
@@ -949,9 +954,9 @@ Les utilisateurs et des autres processus peuvent utiliser un alias pour démarre
         Category="windows.appExecutionAlias"
         Executable="exes\launcher.exe"
         EntryPoint="Windows.FullTrustApplication">
-        <uap3:AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="Contoso.exe" />
-        </uap3:AppExecutionAlias>
+      <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="Contoso.exe" />
+      </uap3:AppExecutionAlias>
   </uap3:Extension>
 ...
 </Package>
@@ -983,7 +988,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
     Category="windows.startupTask"
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
-    <StartupTask
+  <StartupTask
       TaskId="[TaskID]"
       Enabled="true"
       DisplayName="[DisplayName]" />
@@ -1011,7 +1016,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
           Category="windows.startupTask"
           Executable="bin\MyStartupTask.exe"
           EntryPoint="Windows.FullTrustApplication">
-          <desktop:StartupTask
+        <desktop:StartupTask
           TaskId="MyStartupTask"
           Enabled="true"
           DisplayName="My App Service" />
@@ -1021,6 +1026,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
  </Package>
 ```
+
 <a id="autoplay" />
 
 ### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>Permettre aux utilisateurs de démarrer votre application lorsqu’ils connectent à un périphérique à son PC
@@ -1030,7 +1036,6 @@ Lecture automatique peut présenter votre application en tant qu’option lorsqu
 #### <a name="xml-namespace"></a>Espace de noms XML
 
 http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
-
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 
@@ -1080,6 +1085,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
   </Applications>
 </Package>
 ```
+
 <a id="updates" />
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>Redémarrer automatiquement après avoir reçu une mise à jour à partir du MicrosoftStore
@@ -1093,7 +1099,7 @@ Chaque fenêtre active dans votre application reçoit un message [WM_QUERYENDSES
 Lorsque chaque fenêtre active dans votre application reçoit le message [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) , votre application doit enregistrer les données et arrêter.
 
 >[!NOTE]
-Votre active reçoit également le message [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) au cas où l’application ne gère pas le message [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) .
+Votre windows actives également le message [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) au cas où l’application ne gère pas le message [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) .
 
 À ce stade, votre application dispose de 30 secondes pour fermer ses propres processus ou la plateforme les arrête de manière forcée.
 
@@ -1111,9 +1117,9 @@ Intégration avec d’autres applications, démarrer d’autres processus ou par
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>Afficher votre application en tant que cible d’impression dans les applications qui prennent en charge l’impression
 
-Lorsque les utilisateurs souhaitent imprimer des données à partir d’une autre application, comme le bloc-notes, vous pouvez rendre votre application apparaissent en tant que cible d’impression dans la liste de l’application des cibles d’impression disponibles.
+Lorsque les utilisateurs souhaitent imprimer des données à partir d’une autre application, comme le bloc-notes, vous pouvez rendre votre application s’affichent en tant que cible d’impression dans la liste de l’application des cibles d’impression disponibles.
 
-Vous devrez modifier votre application afin qu’elle reçoive les données d’impression au format XML Paper Specification (XPS).
+Vous devez modifier votre application afin qu’elle reçoive les données d’impression au format de fichier XML Paper Specification (XPS).
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
@@ -1156,6 +1162,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 </Applications>
 </Package>
 ```
+
 Trouver un exemple qui utilise cette extension [ici](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
 <a id="fonts" />
@@ -1179,7 +1186,6 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 ```
 
 Vous trouverez la référence de schéma complète [ici](https://review.docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
-
 
 |Nom |Description |
 |-------|-------------|
@@ -1206,6 +1212,7 @@ Vous trouverez la référence de schéma complète [ici](https://review.docs.mic
   </Applications>
 </Package>
 ```
+
 <a id="win32-process" />
 
 ### <a name="start-a-win32-process-from-a-universal-windows-platform-uwp-app"></a>Démarrer un processus Win32 à partir d’une application de plateforme Windows universelle (UWP)
@@ -1258,6 +1265,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
+
 Cette extension peut être utile si vous souhaitez créer une interface utilisateur de la plateforme Windows universelle qui s’exécute sur tous les appareils, mais que vous souhaitez que les composants de votre application Win32 poursuivent leur exécution en mode de confiance totale.
 
 Créez simplement un package d’application Windows pour votre application Win32. Ensuite, ajoutez cette extension au fichier de package de votre application UWP. Cette extension indique que vous souhaitez démarrer un fichier exécutable dans le package d’application Windows.  Si vous souhaitez communiquer entre votre application UWP et votre application Win32, vous pouvez configurer un ou plusieurs [services d’application](../launch-resume/app-services.md) pour ce faire. Pour en savoir plus sur ce scénario, reportez-vous [ici](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: def755f868c7ea30679f19877cec84b20faa44f5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030158"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145922"
 ---
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 

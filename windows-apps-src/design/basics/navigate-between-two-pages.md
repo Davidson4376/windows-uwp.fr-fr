@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034708"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6163086"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implémenter la navigation entre deux pages
 
@@ -298,7 +298,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> Le code ici utilise la valeur de retour de [**Naviguer**](https://msdn.microsoft.com/library/windows/apps/br242694) pour lever une exception d’application en cas d’échec de la navigation vers fenêtre initiale de l’application. Quand **Navigate** retourne **true**, la navigation a lieu.
+> Le code ici utilise la valeur de retour de [**Naviguer**](https://msdn.microsoft.com/library/windows/apps/br242694) pour lever une exception d’application en cas d’échec de la navigation vers le cadre de la fenêtre initiale de l’application. Quand **Navigate** retourne **true**, la navigation a lieu.
 
 À présent, générez et exécutez l’application. Cliquez sur le lien «Click to go to page2». La deuxième page indiquant «Page2» en haut doit être chargée et affichée dans la trame.
 
@@ -332,7 +332,7 @@ Ici, nous ajoutons une étiquette [**TextBlock**](https://msdn.microsoft.com/lib
 </StackPanel>
 ```
 
-Dans le `HyperlinkButton_Click` Gestionnaire d’événements du fichier code-behind Page1.xaml, ajoutez un paramètre faisant référence la `Text` propriété de la `name` **TextBox** pour le `Navigate` méthode.
+Dans le `HyperlinkButton_Click` Gestionnaire d’événements du fichier code-behind Page1.xaml, ajoutez un paramètre faisant référence la `Text` propriété de le `name` **TextBox** pour le `Navigate` méthode.
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, entrée, contrôleur de jeu brut
 ms.localizationpriority: medium
 ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041566"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159821"
 ---
 # <a name="raw-game-controller"></a>Contrôleur de jeu brut
 

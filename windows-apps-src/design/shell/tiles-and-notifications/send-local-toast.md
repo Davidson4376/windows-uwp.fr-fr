@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: 95f72180038b6ccbed5f399c2cd58081915baf2c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023233"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184789"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
@@ -48,7 +48,7 @@ Nous allons examiner les étapes suivantes:
 
 Pour bien comprendre cette rubrique, il est utile de disposer de ce qui suit...
 
-* Une connaissance pratique des concepts et des termes relatifs aux notifications toast. Pour plus d’informations, voir[Toast et notifications du centre de vue d’ensemble](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* Une connaissance pratique des concepts et des termes relatifs aux notifications toast. Pour plus d’informations, voir[Toast et l’action du centre de vue d’ensemble](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
 * Une bonne connaissance du contenu d’une notification toast Windows10. Pour plus d’informations, voir la [documentation sur le contenu des toasts](adaptive-interactive-toasts.md).
 * Un projet d’application UWP Windows10
 

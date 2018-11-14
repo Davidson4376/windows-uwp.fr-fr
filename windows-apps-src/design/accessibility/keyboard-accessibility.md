@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c5e018ee56b6a0d26bf2159f62801aa4ab5c3c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048047"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6162629"
 ---
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 

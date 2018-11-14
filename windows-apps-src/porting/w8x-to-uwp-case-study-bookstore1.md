@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cec8171b381a607616e2054784fa888074d3f90e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033344"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142955"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime8.x vers UWP : Bookstore1
 
@@ -48,7 +48,7 @@ Bookstore1\_81 sur WindowsPhone
 
 La solution Bookstore1\_81 est un projet d’application universelle version 8.1. Elle contient les projets suivants:
 
--   Bookstore1\_81.Windows. Il s’agit du projet qui crée le package d’application pour Windows8.1.
+-   Bookstore1\_81.Windows. Il s’agit du projet qui génère le package d’application pour Windows8.1.
 -   Bookstore1\_81.WindowsPhone. Il s’agit du projet qui crée le package d’application pour WindowsPhone8.1.
 -   Bookstore1\_81.Shared. Il s’agit du projet qui contient le code source, les fichiers de balisage et d’autres actifs et ressources qui sont utilisés par les deux autres projets.
 
@@ -64,11 +64,11 @@ La procédure consistant à créer un projet dans VisualStudio, puis à copier d
 
 **Dans le projet Windows**
 
--   Copiez le fichier BookstoreStyles.xaml. Nous allons utiliser celle-ci comme un bon point de départ, car toutes les clés de ressources dans ce fichier seront résolu dans une application Windows 10; certains de ces éléments dans le fichier WindowsPhone équivalent ne seront pas le cas.
+-   Copiez le fichier BookstoreStyles.xaml. Nous allons utiliser celle-ci comme un bon point de départ, car toutes les clés de ressources dans ce fichier seront résolu dans une application Windows 10; certaines de ces éléments dans le fichier WindowsPhone équivalent ne seront pas le cas.
 
 Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1\_81 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Aucune modification du code n’est nécessaire dans le modèle d’affichage, ni dans tout autre code impératif. Toutefois, pour simplifier l’identification de la version de l’application en cours d’exécution, modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** « BOOKSTORE1\_81 » en « BOOKSTORE1UNIVERSAL\_10 ».
 
-Vous pouvez maintenant générer l’application et l’exécuter. Voici comment notre nouvelle application UWP à ressemble aucun travail explicite encore pour porter vers Windows 10.
+Vous pouvez maintenant générer l’application et l’exécuter. Voici comment notre nouvelle application UWP à ressemble aucun travail explicite encore pour le portage vers Windows 10.
 
 ![Application Windows10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
@@ -82,7 +82,7 @@ L’association de l’affichage et du modèle d’affichage fonctionne correcte
 
 ## <a name="universal-styling"></a>Stylisation universelle
 
-L’application Bookstore1\_81 utilisait deux dictionnaires de ressources différents (BookstoreStyles.xaml) pour personnaliser ses styles pour les systèmes d’exploitation Windows8.1 et Windows Phone 8.1. Aucun de ces deux fichiers bookstorestyles.XAML ne contient exactement les styles que nous avons besoin pour notre application Windows 10. Or, la bonne nouvelle est que nous voulons un mécanisme beaucoup plus simple que l’un ou l’autre de ces fichiers. Par conséquent, les étapes suivantes impliquent principalement la suppression et la simplification de nos fichiers de projet et du balisage. Les étapes sont les suivantes. Et vous pouvez utiliser les liens en haut de cette rubrique pour télécharger les projets et afficher les résultats de toutes les modifications entre ce stade et la fin de l’étude de cas.
+L’application Bookstore1\_81 utilisait deux dictionnaires de ressources différents (BookstoreStyles.xaml) pour personnaliser ses styles pour les systèmes d’exploitation Windows8.1 et Windows Phone 8.1. Aucune de ces deux fichiers BookstoreStyles.xaml ne contient exactement les styles que nous avons besoin pour notre application Windows 10. Or, la bonne nouvelle est que nous voulons un mécanisme beaucoup plus simple que l’un ou l’autre de ces fichiers. Par conséquent, les étapes suivantes impliquent principalement la suppression et la simplification de nos fichiers de projet et du balisage. Les étapes sont les suivantes. Et vous pouvez utiliser les liens en haut de cette rubrique pour télécharger les projets et afficher les résultats de toutes les modifications entre ce stade et la fin de l’étude de cas.
 
 -   Pour bien faire la différence entre les éléments, recherchez le modèle de données `BookTemplate` dans le fichier MainPage.xaml et supprimez la chaîne `Margin="0,0,0,8"` de l’élément **Grid** racine.
 -   Également dans `BookTemplate`, il existe des références à `BookTemplateTitleTextBlockStyle` et `BookTemplateAuthorTextBlockStyle`. Bookstore1\_81 utilisait ces clés comme une indirection afin qu’une seule clé ait des implémentations différentes dans les deux applications. Nous n’avons plus besoin de cette indirection; nous pouvons référencer directement les styles du système. Par conséquent, remplacez ces références par `TitleTextBlockStyle` et `SubtitleTextBlockStyle`, respectivement.
@@ -122,7 +122,7 @@ Pour finir, copiez l’élément `BookstoreListBoxStyle` dans BookstoreStyles.xa
 
 ![Application Windows10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil Mobile
+Application Windows 10 portée, exécutée sur un appareil Mobile
 
 ## <a name="conclusion"></a>Conclusion
 

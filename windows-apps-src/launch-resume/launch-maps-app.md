@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042384"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142176"
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
@@ -249,7 +249,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </ul>
 <p>Dans Windows10, les styles vue aérienne et affichage3D sont identiques.</p>
 <div class="alert">
-**Remarque**l’omission du paramètre **sty** génère les mêmes résultats que sty = r.
+**Remarque**omettez le paramètre **sty** génère les mêmes résultats que sty = r.
 </div>
 <div>
  

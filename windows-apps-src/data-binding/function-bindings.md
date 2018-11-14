@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: L’extension de balisage permet aux fonctions à utiliser dans le balisage.
+description: L’extension de balisage permet aux fonctions d’être utilisé dans le balisage.
 title: Fonctions dans x:Bind
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028831"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192707"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
-**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour plus d’informations sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de:
 
@@ -86,7 +86,7 @@ public class MyPage : Page
 }
 ```
 
-Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir des scénarios simples, comme la date de mise en forme, la mise en forme de texte, concaténations de texte, etc., par exemple:
+Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir des scénarios simples tels que la date de mise en forme, la mise en forme de texte, concaténations de texte, etc., par exemple:
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -161,7 +161,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> Vous pouvez utiliser des fonctions dans x: Bind afin d’obtenir les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
+> Vous pouvez utiliser des fonctions dans x: Bind pour atteindre les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
 
 ## <a name="function-arguments"></a>Arguments de la fonction
 

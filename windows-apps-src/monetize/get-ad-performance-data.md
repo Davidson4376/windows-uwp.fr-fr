@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, publicités, performances
 ms.localizationpriority: medium
 ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6050125"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155197"
 ---
 # <a name="get-ad-performance-data"></a>Obtenir les données relatives aux performances publicitaires
 
 
 Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données agrégés de performances publicitaires de vos applications pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
-Cette méthode renvoie les données fournies par le [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires.
+Cette méthode renvoie les données fournies par le [rapport de performances des publicités](../publish/advertising-performance-report.md) dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 

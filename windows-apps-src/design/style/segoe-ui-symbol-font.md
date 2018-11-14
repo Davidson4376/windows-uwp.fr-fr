@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d24f40c32cfcf3d0efe8597c4d955ae4146cf9e8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035777"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164825"
 ---
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
@@ -57,14 +57,14 @@ Si vous souhaitez utiliser un glyphe de la police **Segoe MDL2 Assets** qui n’
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 Assets**, au lieu de spécifier la police par nom:
+Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 Assets**, au lieu de spécifier la police par son nom:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police?
-* Sur Windows 10: Il n’avez rien à faire, la police est fourni avec Windows.
+* Sur Windows 10: Il n’existe rien à faire, la police est fourni avec Windows.
 * Sur un Mac, vous devez télécharger et installer la police: <a href="https://aka.ms/SegoeFonts">obtenir le Segoe UI et MDL2 polices d’icônes</a>
 
 ## <a name="icon-list"></a>Liste des icônes

@@ -13,11 +13,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043083"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186695"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
@@ -28,7 +28,7 @@ Révéler qu'est un effet visuel qui met en évidence les éléments interactifs
 > **API importantes**: [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet révéler attire l’attention sur les éléments interactifs en révélant conteneur de l’élément lorsque le pointeur se trouve à proximité, comme indiqué dans l’illustration suivante:
+L’effet révéler attire l’attention sur les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
 
 ![Visuel de l’effet Révéler](images/Nav_Reveal_Animation.gif)
 
@@ -67,7 +67,7 @@ Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres c
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-Ces illustrations montrent l’effet révéler mettre en surbrillance sur plusieurs contrôles différents:
+Ces illustrations montrent révéler mettre en surbrillance sur plusieurs contrôles différents:
 
 ![Exemples de Révéler](images/RevealExamples_Collage.png)
 

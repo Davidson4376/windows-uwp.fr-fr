@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 9bc19460fe1b9b9c6b637606a737e1157d98feef
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029985"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146668"
 ---
 # <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
 
@@ -256,7 +256,7 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Ensuite, obtenez un flux de sortie en appelant la méthode [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) à partir de la `stream`. Si vous utilisez c#, placez dans une instruction **using** pour gérer la durée de vie du flux sortie. Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous pouvez contrôler sa durée de vie en plaçant dans un bloc, ou sa définition à `nullptr` lorsque vous avez terminé avec celui-ci.
+2.  Ensuite, obtenez un flux de sortie en appelant la méthode [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) à partir de la `stream`. Si vous utilisez c#, placez dans une instruction **using** pour gérer la durée de vie du flux sortie. Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous pouvez contrôler sa durée de vie en plaçant dans un bloc, ou en lui attribuant `nullptr` lorsque vous avez terminé avec celui-ci.
 
 ```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))
@@ -282,7 +282,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  Ajoutez maintenant ce code (si vous utilisez c#, au sein de l’instruction **using** existante) pour écrire dans le flux de sortie en créant un objet [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) et en appelant la méthode [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) .
+3.  Ajoutez maintenant ce code (si vous utilisez c#, au sein de l’instruction **using** existant) pour écrire dans le flux de sortie en créant un objet [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) et en appelant la méthode [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) .
 
 ```csharp
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -308,7 +308,7 @@ Dim dataWriter As New DataWriter(outputStream)
 dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  Pour finir, ajoutez ce code (si vous utilisez c#, au sein de l’instruction interne **à l’aide de** ) pour enregistrer le texte dans votre fichier avec [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) et fermer le flux avec [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
+4.  Pour finir, ajoutez ce code (si vous utilisez c#, au sein de l’instruction interne **à l’aide de** ) pour enregistrer le texte dans votre fichier avec [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) et de fermer le flux avec [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
 
 ```csharp
 await dataWriter.StoreAsync();

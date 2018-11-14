@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036889"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157605"
 ---
 # <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
 
@@ -29,7 +29,7 @@ Identifiez les périphériques d’entrée connectés à un appareil de platefor
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626), utilisée pour récupérer les propriétés exposées par une ou plusieurs souris connectées. Créez simplement un objet **MouseCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les détectées: propriétés booléennes retournent différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel autre souris.
+**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des souris détectées: propriétés booléennes retournent différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel autre souris.
 
  
 
@@ -87,7 +87,7 @@ private void GetTouchProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), utilisée pour savoir si l’un des appareils détectés prend en charge l’entrée de pointeur (interaction tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil un seul pointeur.
+**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil d’un seul pointeur.
 
 Le code suivant utilise un tableau permettant d’afficher les propriétés et valeurs de chaque périphérique de pointage.
 

@@ -5,15 +5,15 @@ description: Créez et inscrivez une tâche in-process qui s’exécute dans le 
 ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 1eeac0239bd0c6df38f82fa185c1ed6f7eb3f9dc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028479"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187381"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Créer et inscrire une tâche en arrière-plan in-process
 
@@ -70,7 +70,7 @@ L’exemple de code suivant affecte une condition qui exige la présence de l’
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Placer votre code d’activité en arrière-plan dans OnBackgroundActivated()
 
-Placez votre code d’activité en arrière-plan dans [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) pour répondre à votre déclencheur en arrière-plan lorsqu’il se déclenche. **OnBackgroundActivated** peut être traité comme [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). La méthode possède un paramètre [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , qui contient tous les éléments qui fournit la méthode **Run** . Par exemple, dans App.xaml.cs:
+Placez votre code d’activité en arrière-plan dans [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) pour répondre à votre déclencheur en arrière-plan lorsqu’il se déclenche. **OnBackgroundActivated** peut être traité comme [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). La méthode a un paramètre de [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , qui contient tous les éléments qui fournit la méthode **Run** . Par exemple, dans App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;

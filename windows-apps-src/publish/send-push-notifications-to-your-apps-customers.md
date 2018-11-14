@@ -9,11 +9,11 @@ keywords: windows10, uwp, notifications ciblées, notifications push, toast, vig
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2cf6c9cbd4aa0b25afea47a2fe82774c3c87a7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027437"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142236"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -37,7 +37,7 @@ Lorsque vous examinez le contenu de vos notifications, tenez compte des points s
 
 De façon générale, vous devez effectuer trois opérations afin d’utiliser des notifications pour impliquer vos clients.
 
-1. **Inscrivez votre application pour recevoir les notifications Push.** Pour ce faire, ajoutez une référence au Microsoft Store Services SDK dans votre application, puis quelques lignes de code afin d’inscrire un canal de notification entre l’espace partenaires et votre application. Nous utiliserons ce canal pour transmettre vos notifications à vos clients. Pour plus de détails, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+1. **Inscrivez votre application pour recevoir les notifications Push.** Pour ce faire, ajoutez une référence pour le Microsoft Store Services SDK dans votre application, puis quelques lignes de code qui inscrit un canal de notification entre l’espace partenaires et votre application. Nous utiliserons ce canal pour transmettre vos notifications à vos clients. Pour plus de détails, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 2. **Déterminez quels clients cibler.** Vous pouvez envoyer votre notification à l’ensemble des clients de votre application, ou (pour les notifications créées pour une application unique) à un groupe de clients appelé *segment*, que vous pouvez définir en fonction de critères démographiques ou de revenus. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 3. **Créez le contenu de votre notification et envoyez-la.** Par exemple, vous pouvez créer une notification qui encourage les nouveaux clients à évaluer votre application, ou envoyer une notification pour promouvoir une offre spéciale d’achat d’une extension.
 
@@ -51,7 +51,7 @@ Suivez ces étapes pour créer une notification dans l’espace partenaires et l
 
 1. Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), développez la section **engager** , puis sélectionnez **les Notifications**.
 2. Sur la page **Notifications**, sélectionnez **Nouvelle notification**.
-3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification que](#notification-template-types) vous souhaitez envoyer, puis cliquez sur **OK**.
+3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification](#notification-template-types) que vous souhaitez envoyer, puis cliquez sur **OK**.
 4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Vous pouvez sélectionner uniquement les applications qui ont été [configurés pour recevoir des notifications à l’aide du Microsoft Store Services SDK](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 5. Dans la section **Paramètres de notification**, choisissez un **nom** pour votre notification et, si applicable, choisissez le **groupe de clients** à qui vous souhaitez envoyer la notification. (Les notifications envoyées à plusieurs applications peuvent uniquement être envoyées à tous les clients de ces applications.) Si vous souhaitez utiliser un segment que vous n'avez pas encore créé, sélectionnez **Créer un nouveau groupe client**. Remarque: Il faut 24heures avant qu’un nouveau segment puisse être utilisé pour les notifications. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 6. Si vous voulez indiquer à quel moment envoyer la notification, décochez la case **Notification immédiate** et choisissez une date et une heure spécifiques (au format UTC pour tous les clients, sauf si vous indiquez d’utiliser le fuseau horaire local de chaque client).
@@ -111,7 +111,7 @@ Vous pouvez mesurer l’implication de vos clients par le biais de chaque notifi
 ### <a name="to-measure-notification-performance"></a>Pour mesurer les performances des notifications
 
 1.  Lorsque vous créez une notification, dans la section **Contenu de la notification**, cochez la case **Suivre la fréquence de lancement d’application**.
-2.  Dans votre application, appelez la méthode [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) pour signaler au centre de l’espace que votre application a été lancée en réponse à une notification ciblée. Cette méthode est fournie par le Microsoft Store Services SDK. Pour plus d’informations sur la façon d’appeler cette méthode, consultez [configurer votre application pour recevoir des notifications de l’espace partenaires](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+2.  Dans votre application, appelez la méthode de [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) pour signaler au centre de l’espace que votre application a été lancée en réponse à une notification ciblée. Cette méthode est fournie par le Microsoft Store Services SDK. Pour plus d’informations sur la façon d’appeler cette méthode, consultez [configurer votre application pour recevoir des notifications de l’espace partenaires](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 
 ### <a name="to-view-notification-performance"></a>Pour afficher les performances des notifications
@@ -120,8 +120,8 @@ Lorsque vous avez configuré la notification et votre application pour mesurer l
 
 Pour passer en revue des données détaillées pour chaque notification:
 
-1.  Dans l’espace partenaires, développez la section **engager** et sélectionnez **Notifications**.
-2.  Dans la table des notifications existantes, sélectionnez **en cours** ou **terminé**et puis examinez les colonnes de **vitesse de transmission** et **application lance taux** pour voir les performances de haut niveau de chaque notification.
+1.  Dans l’espace partenaires, développez la section **engager** , puis sélectionnez **les Notifications**.
+2.  Dans la table des notifications existantes, sélectionnez **en cours** ou **terminé**et puis regardez dans les colonnes de **vitesse de transmission** et la **fréquence de lancement application** pour voir les performances de haut niveau de chaque notification.
 3.  Pour afficher des informations plus granulaires sur les performances, sélectionnez le nom d’une notification. Dans la section **Statistiques de livraison**, vous pouvez visualiser le **nombre** et le **pourcentage** pour les types d’**états** de notification suivants:
     * **Échec**: la notification n’a pas été transmise pour une raison quelconque. Cela peut se produire, par exemple, si un problème survient dans le service de notification Windows.
     * **Échec de l’expiration de canal**: la notification n’a pas pu être remise, car le canal entre l’application et l’espace partenaires a expiré. Cela peut se produire, par exemple, si le client n’a pas ouvert votre application depuis longtemps.
@@ -132,15 +132,15 @@ Pour passer en revue des données détaillées pour chaque notification:
 
 Pour analyser les données de l’activité utilisateur pour toutes vos notifications:
 
-1.  Dans l’espace partenaires, développez la section **engager** et sélectionnez **Notifications**.
+1.  Dans l’espace partenaires, développez la section **engager** , puis sélectionnez **les Notifications**.
 2.  Dans la page **Notifications** , cliquez sur l’onglet **analyser** . Cet onglet affiche les données suivantes:
-    * Vues des différents états action utilisateur pour vos toasts et les notifications du centre du graphique.
-    * Vues de carte monde click-par le biais de-taux de pour vos toasts et l’action centre de notifications.
+    * Vues des différents états utilisateur action pour vos toasts et les notifications du centre du graphique.
+    * Vues de carte monde clic par le biais de taux pour vos toasts et l’action de centre de notifications.
 3. Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de 30D (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également développer des **filtres** pour filtrer toutes les données par application et par marché.
 
 ## <a name="translate-your-notifications"></a>Traduire vos notifications
 
-Afin de maximiser l’impact de vos notifications, pensez à les traduire dans les langues préférées de vos clients. L’espace partenaires facilite la pour vous permettent de traduire vos notifications automatiquement en tirant parti de la puissance du service [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) .
+Afin de maximiser l’impact de vos notifications, pensez à les traduire dans les langues préférées de vos clients. L’espace partenaires facilite la traduire vos notifications automatiquement en tirant parti de la puissance du service [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) .
 
 1.  Une fois votre notification rédigée dans votre langue par défaut, sélectionnez **Ajouter des langues** (sous le menu **Langues** dans la section **Contenu de la notification**).
 2.  Dans la fenêtre **Ajouter des langues**, sélectionnez les langues supplémentaires dans lesquelles vous voulez que vos notifications apparaissent, puis sélectionnez **Mettre à jour**.

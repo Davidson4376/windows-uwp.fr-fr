@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032667"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188386"
 ---
 # <a name="getting-started-navigation"></a>Prise en main: Navigation
 
@@ -24,7 +24,7 @@ iOS fournit la classe **UINavigationController** pour faciliter la navigation : 
 
 En revanche, une application Windows 10 contenant plusieurs affichages présente plus d’une approche de site web à la navigation. Vous pouvez imaginer vos utilisateurs passant de page en page en cliquant sur des contrôles tandis qu’ils explorent l’application. Pour plus d’informations, voir [Informations de base relatives à la conception de la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438).
 
-Une des manières de gérer la navigation dans une application Windows 10 consiste à utiliser la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) . La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération.
+Une des manières de gérer la navigation dans une application Windows 10 consiste à utiliser la classe de [**trame**](https://msdn.microsoft.com/library/windows/apps/br242682) . La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération.
 
 Sans quitter la solution commencée précédemment, ouvrez le fichier **MainPage.xaml**, puis ajoutez un bouton dans l’affichage **Conception**. Remplacez la valeur « Button » de la propriété **Content** du bouton par « Go To Page ». Créez ensuite un gestionnaire pour l’événement **Click** du bouton, comme illustré dans la figure ci-dessous. Si vous ne vous rappelez pas comment procéder, consultez la procédure pas à pas décrite dans la section précédente (conseil : double-cliquez sur le bouton dans le mode **Création**).
 
@@ -66,7 +66,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 Exécutez le programme à présent. Appuyez sur le bouton «Go To Page» (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
 
-La navigation entre les pages est gérée par la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Comme la classe **UINavigationController** dans iOS utilise les méthodes **pushViewController** et **popViewController** , la classe **Frame** pour les applications UWP fournit des méthodes de [**Naviguer**](https://msdn.microsoft.com/library/windows/apps/br242694) et [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) . La classe **Frame** possède également une méthode appelée [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), qui comblera vos attentes.
+La navigation entre les pages est gérée par la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Comme la classe **UINavigationController** dans iOS utilise les méthodes **pushViewController** et **popViewController** , la classe **image** pour les applications UWP fournit des méthodes de [**Naviguer**](https://msdn.microsoft.com/library/windows/apps/br242694) et [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) . La classe **Frame** possède également une méthode appelée [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), qui comblera vos attentes.
 
 Cette procédure pas à pas crée une nouvelle instance de BlankPage chaque fois que vous y accédez (l’instance précédente sera automatiquement libérée, ou *publiée*). Si vous ne souhaitez pas qu’une nouvelle instance soit créée à chaque fois, ajoutez le code suivant au constructeur de la classe BlankPage dans le fichier BlankPage.xaml.cs. Le comportement [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) est ainsi activé.
 

@@ -8,11 +8,11 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032657"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188193"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en septembre 2018
 
@@ -24,37 +24,37 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 ### <a name="windows-machine-learning"></a>WindowsMachineLearning
 
-[Documentation de l’apprentissage automatique Windows](https://docs.microsoft.com/windows/ai/) maintenant résident sur leur propre site et sont mis à jour pour le dernier SDK Insider de Windows. Il existe bureau et didacticiels UWP en C++ et c# pour vous aider à commencer à ajouter WinML à votre application.
+[Les documents de l’apprentissage automatique Windows](https://docs.microsoft.com/windows/ai/) maintenant résident sur leur propre site et sont mis à jour pour le dernier SDK Insider de Windows. Il existe de bureau et les didacticiels UWP en C++ et c# pour vous aider à commencer à ajouter WinML à votre application.
 
 [Référence de l’API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) a été mis à jour pour le dernier SDK Insider de Windows.
 
-[Référentiel the Windows-Machine-Learning GitHub](https://github.com/Microsoft/Windows-Machine-Learning) a été mis à jour avec nouveaux exemples qui fonctionnent avec la dernière version du SDK.
+[Référentiel GitHub de Windows-Machine-Learning the](https://github.com/Microsoft/Windows-Machine-Learning) a été mis à jour avec nouveaux exemples qui fonctionnent avec la dernière version du SDK.
 
 ![Graphisme d’apprentissage automatique Windows](images/winml-graphic.png)
 
 ### <a name="windows-ui-library"></a>Bibliothèque de l’interface utilisateur de Windows
 
-[La bibliothèque de l’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
+[La bibliothèque d’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
 
 Pour plus d’informations sur la bibliothèque de l’interface utilisateur de Windows, voir [cette liste des API des espaces de noms inclus dans le package NuGet.](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="how-blur-effects-work"></a>Comment travail effets de flou
+### <a name="how-blur-effects-work"></a>Comment travail d’effets de flou
 
-Un de nos rédacteurs, le Mike Jacobs précieux, a commencé à une série d’articles en milieu sur flou, à partir de la vision à la photographie à la conception d’applications et de jeux. Si vous souhaitez en savoir plus sur cet effet visuel très répandue, consultez [le premier article sur la vision et de photographie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) et [la seconde sur l’anticrénelage dans les graphiques.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Un de nos rédacteurs, le Mike Jacobs précieux, a commencé à une série d’articles en milieu sur flou, à partir de la vision de photographie à la conception d’applications et de jeux. Si vous souhaitez en savoir plus sur cet effet visuel très répandue, consultez [l’article premier sur la vision et de photographie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) et [la seconde sur l’anticrénelage dans les graphiques.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![Flou en action](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>Conseils contributeurs
 
-Nous avons mis à jour [nos conseils relatifs aux contributeurs](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) pour notre documentation UWP. Ce guide nouvel clarifie le flux de travail et les attentes contributions externes à notre documentation.
+Nous avons mis à jour [nos conseils contributeurs](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) pour notre documentation UWP. Ces instructions nouvelles clarifie le flux de travail et les attentes externe contributions à notre documentation.
 
 ## <a name="videos"></a>Vidéos
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les questions les plus récentes que nous avons répondu à!
 
 Aaron Gustafson:
 

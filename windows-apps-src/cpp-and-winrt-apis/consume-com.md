@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
 ms.openlocfilehash: a07c9877a6d6d953e578d927959b1202444ede21
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034321"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184161"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Utiliser des composants COM avec C++/WinRT
 
-Vous pouvez utiliser les fonctionnalités de la [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bibliothèque à utiliser des composants COM, par exemple, les graphiques 2D et 3D haute performance des APIs DirectX. C++ / WinRT est le moyen le plus simple d’utiliser DirectX sans compromettre les performances. Cette rubrique présente un exemple de code de Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM. Vous pouvez, bien entendu, mélanger la programmation COM et Windows Runtime au sein de la même C++ / WinRT projet.
+Vous pouvez utiliser les fonctionnalités de la [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bibliothèque à utiliser des composants COM, tels que des graphiques 2D et 3D haute performance des APIs DirectX. C++ / WinRT est le moyen le plus simple d’utiliser DirectX sans compromettre les performances. Cette rubrique utilise un exemple de code Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM. Vous pouvez, bien entendu, combiner, la programmation COM et Windows Runtime au sein de la même C++ / WinRT projet.
 
 À la fin de cette rubrique, vous trouverez un listing du code source complet d’une application de Direct2D minimale. Nous allons levez des extraits de code et les utiliser pour illustrer comment utiliser des composants COM à l’aide de C++ / WinRT à l’aide de diverses fonctionnalités de C++ / WinRT bibliothèque.
 
@@ -30,7 +30,7 @@ Pour être plus spécifique, nous parlons d’interagir avec *des pointeurs*d’
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-Le code ci-dessus montre comment déclarer un pointeur intelligent non initialisé à une interface de COM [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) . Le pointeur intelligent n’est pas initialisé, afin qu’il n’est pas encore pointe vers une interface **ID2D1Factory1** appartenant à n’importe quel objet réel (il ne pointe pas vers une interface du tout). Toutefois, il est susceptible de le faire; et (en un pointeur intelligent) est la possibilité de via COM décompte de références pour gérer la durée de vie de l’objet propriétaire de l’interface qu’elle pointe vers et à être le moyen par lequel vous appelez des fonctions de cette interface.
+Le code ci-dessus montre comment déclarer un pointeur intelligent non initialisé à une interface COM de [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) . Le pointeur intelligent n’est pas initialisé, afin qu’il n’est pas encore pointe vers une interface **ID2D1Factory1** appartenant à n’importe quel objet réel (il ne pointe pas vers une interface tout). Mais il est susceptible de le faire; et (en un pointeur intelligent), il a la possibilité via COM décompte de références pour gérer la durée de vie de l’objet propriétaire de l’interface qu’elle pointe vers et à être le moyen par lequel vous appelez des fonctions de cette interface.
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>Fonctions COM qui renvoient un pointeur d’interface comme **void**
 
@@ -45,7 +45,7 @@ D2D1CreateFactory(
 );
 ```
 
-Le code ci-dessus appelle la fonction [**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) , qui retourne un pointeur d’interface **ID2D1Factory1** via son dernier paramètre, ce qui a **void\ * \ *** type. De nombreuses fonctions COM renvoient un **void\ * \ ***. Pour ces fonctions, utilisez [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) comme indiqué.
+Le code ci-dessus appelle la fonction [**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) , qui retourne un pointeur d’interface **ID2D1Factory1** via son dernier paramètre, qui a **void\ * \ *** type. De nombreuses fonctions COM renvoient un **void\ * \ ***. Pour ces fonctions, utilisez [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) comme indiqué.
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>Fonctions COM qui renvoient un pointeur d’interface spécifique
 
@@ -59,7 +59,7 @@ D3D11CreateDevice(
     ...);
 ```
 
-L’exemple de code dans la section avant ce qui suit montre comment appeler la fonction **D2D1CreateFactory** brute. Mais en fait, lorsque l’exemple de code de cette rubrique appelle **D2D1CreateFactory**, elle utilise un modèle de fonction d’assistance qui encapsule l’API brute, et par conséquent, l’exemple de code utilise réellement [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).
+L’exemple de code dans la section avant que celle-ci vous montre comment appeler la fonction **D2D1CreateFactory** brute. Mais en fait, lorsque l’exemple de code de cette rubrique appelle **D2D1CreateFactory**, elle utilise un modèle de fonction d’assistance qui encapsule l’API brute, et par conséquent, l’exemple de code utilise effectivement [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
@@ -71,7 +71,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>Fonctions COM qui renvoient un pointeur d’interface en tant que **IUnknown**
 
-La fonction [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) retourne un pointeur d’interface de fabrique DirectWrite via son dernier paramètre, qui a le type de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Pour une telle fonction, utilisez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function), mais réinterprétation cast qui **IUnknown**.
+La fonction [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) retourne un pointeur d’interface de fabrique DirectWrite via son dernier paramètre, ce qui a le type de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Pour une telle fonction, utilisez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function), mais réinterprétation cast qui **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -99,7 +99,7 @@ target->CreateSolidColorBrush(
 
 ## <a name="handle-hresult-error-codes"></a>Gérer les codes d’erreur HRESULT
 
-Pour vérifier que la valeur d’un HRESULT renvoyé à partir d’une fonction COM et lever une exception dans le cas où elle représente un code d’erreur, appelez [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).
+Pour vérifier que la valeur d’un HRESULT retournée à partir d’une fonction COM et lever une exception dans le cas où elle représente un code d’erreur, appelez [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).
 
 ```cppwinrt
 winrt::check_hresult(D2D1CreateFactory(
@@ -124,9 +124,9 @@ Vous pouvez appeler la fonction [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-pt
 }
 ```
 
-## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Fonctions de COM qui utilisent un pointeur d’interface **IUnknown**
+## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Fonctions COM qui prennent un pointeur d’interface **IUnknown**
 
-Vous pouvez appeler la fonction libre [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) pour transmettre vos **com_ptr** à une fonction qui prend un pointeur d’interface **IUnknown** .
+Vous pouvez appeler la fonction gratuite [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) pour transmettre vos **com_ptr** à une fonction qui prend un pointeur d’interface **IUnknown** .
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
@@ -135,7 +135,7 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
     ...));
 ```
 
-## <a name="passing-and-returning-com-smart-pointers"></a>Passage et retour de COM actives des pointeurs
+## <a name="passing-and-returning-com-smart-pointers"></a>Passage et retour de COM à puce pointeurs
 
 Une fonction qui prend un pointeur intelligent COM sous la forme d’un **winrt::com_ptr** doit faire en référence à une constante ou en référence.
 
@@ -164,7 +164,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 }
 ```
 
-Vous pouvez également utiliser [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function), qui retourne une valeur que vous pouvez cocher contre `nullptr` pour voir si la requête a réussi.
+Vous pouvez également utiliser [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function), qui retourne une valeur qui vous pouvez vérifier par rapport aux `nullptr` pour voir si la requête a réussi.
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Listing du code source complet d’une application de Direct2D minimale
 
@@ -480,7 +480,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="working-with-com-types-such-as-bstr-and-variant"></a>Utilisation des types de COM, tels que BSTR et VARIANT
 
-Comme vous pouvez le constater, C++ / WinRT fournit la prise en charge pour les implémenter et d’appeler des interfaces COM. L’utilisation des types de COM, tels que BSTR et variante, il est toujours la possibilité d’utiliser ceux dans leur forme brute (ainsi que les API appropriées). Sinon, vous pouvez utiliser les wrappers fournis par une infrastructure telles que [Bibliothèque ATL (Active Template)](/cpp/atl/active-template-library-atl-concepts), par du compilateur Visual C++ [Prise en charge COM](/cpp/cpp/compiler-com-support)ou même à vos propres wrappers.
+Comme vous pouvez le constater, C++ / WinRT fournit la prise en charge pour les implémenter et d’appeler des interfaces COM. L’utilisation des types de COM, tels que BSTR et variante, il est toujours la possibilité d’utiliser ceux dans leur forme brute (ainsi que les API appropriées). Vous pouvez également utiliser des wrappers fournis par une infrastructure telles que [Bibliothèque ATL (Active Template)](/cpp/atl/active-template-library-atl-concepts), par le du compilateur Visual C++ [Prise en charge COM](/cpp/cpp/compiler-com-support)ou même par vos propres wrappers.
 
 ## <a name="important-apis"></a>API importantes
 * [Fonction winrt::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)

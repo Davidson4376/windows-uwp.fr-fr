@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d11 , portage
 ms.localizationpriority: medium
 ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037285"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161950"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
 
@@ -82,7 +82,7 @@ typedef struct
 
 Cette structure n’a qu’une seule instance; elle contient tous les éléments requis pour effectuer le rendu d’un maillage très simple d’un nuanceur de vertex.
 
-> **Remarque**OpenGL ES 2.0 tout code de cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group et utilise la syntaxe de programmation Windows C.
+> **Remarque**code toute OpenGL ES 2.0 dans cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group et utilise la syntaxe de programmation Windows C.
 
  
 

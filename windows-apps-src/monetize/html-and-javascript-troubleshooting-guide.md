@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 38f0b36769d13d119965e7d15c5812b9ba1d6ecd
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039304"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155058"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 
@@ -48,7 +48,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     </head>
     ```
 
-3.  Vérifiez l’ID de l'application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité publicitaire que vous avez obtenu dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Vérifiez l’ID de l'application et l’ID d’unité publicitaire. Ces ID doive correspondre à l’ID d’application et l’ID d’unité publicitaire que vous avez obtenu dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -273,7 +273,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
     });  
     ```
 
-4.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité publicitaire que vous avez obtenu dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doive correspondre à l’ID d’application et l’ID d’unité publicitaire que vous avez obtenu dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript

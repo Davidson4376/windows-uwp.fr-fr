@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051069"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148155"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -28,7 +28,7 @@ Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en act
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et voir l’objet NavigationView en action</a> </p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et voir l’objet NavigationView en action</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -553,7 +553,7 @@ Voir Élément multimédia.
 
 ### <a name="navigationview"></a>NavigationView
 
-Un conteneur adaptable et le modèle de navigation souple qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
+Un conteneur adaptable et un modèle flexible de navigation qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
 
 Référence: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

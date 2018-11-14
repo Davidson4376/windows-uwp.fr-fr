@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026042"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147764"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
 
-Le **rapport sur les commentaires** dans l’espace partenaires vous permet de voir les problèmes, suggestions et votes que vos clients Windows 10 ont soumis par le biais du Hub de commentaires. Vous pouvez afficher ces données dans l’espace partenaires ou exporter les données à consulter hors connexion.
+Le **rapport sur les commentaires** dans l’espace partenaires vous permet de voir les problèmes, suggestions et votes que vos clients Windows 10 ont soumis via le Hub de commentaires. Vous pouvez afficher ces données dans l’espace partenaires ou exporter les données à consulter hors connexion.
 
 > [!NOTE]
 > Vous pouvez également [répondre aux commentaires](respond-to-customer-feedback.md) directement à partir de ce rapport pour faire savoir aux clients que vous êtes à leur écoute.
@@ -26,7 +26,7 @@ Inciter vos clients à faire des commentaires sur votre application est un excel
 
 Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. Pour cette raison, vous pouvez voir les commentaires des clients dans ce rapport même si vous n’avez pas spécifiquement demandé de commentaires depuis au sein de votre application.
 
-Commentaires peuvent également être utile lorsque vous utilisez la [version d’évaluation de package](package-flights.md), étant donné que le rapport sur les **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
+Commentaires peuvent également être utile lorsque vous utilisez [version d’évaluation de package](package-flights.md), étant donné que le rapport de **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
 
 > [!TIP]
 > Pour un aperçu de l’avis, des évaluations et commentaires des utilisateurs sur l’ensemble de vos applications au cours des 30 derniers jours, développez **engager** dans le menu de navigation de gauche, puis sélectionnez **avis et commentaires.** 
@@ -63,7 +63,7 @@ En outre, une option vous permet de [répondre aux commentaires](respond-to-cust
 
 ## <a name="translating-feedback"></a>Traduction des commentaires
 
-Par défaut, les commentaires qui n’était pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
+Par défaut, les commentaires qui n’a été pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
 
 Notez que les commentaires sont traduits par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez comparer la traduction ou utiliser un autre moyen de traduction.
 

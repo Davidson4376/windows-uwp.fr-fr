@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation mensuelle application pour une plage de dates données et d’autres filtres facultatifs.
 title: Obtenir l’utilisation d’applications mensuelles
 ms.author: mhopkins
 ms.date: 08/15/2018
@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039682"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159801"
 ---
 # <a name="get-monthly-app-usage"></a>Obtenir l’utilisation d’applications mensuelles
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données agrégées de l’utilisation (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -72,7 +72,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Valeur      | tableau  | Tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
+| Valeur      | tableau  | Un tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10000, mais que plus de10000lignes de données d’avis sont associées à la requête.                 |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                                                                          |
 
@@ -84,7 +84,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | Valeur                     | Type    | Description                                                                                 |
 |---------------------------|---------|---------------------------------------------------------------------------------------------|
 | date                      | chaîne  | La première date dans la plage de dates pour les données d’utilisation. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates.                          |
-| applicationId             | chaîne  | L’ID Store de l’application pour laquelle vous récupérez les données d’utilisation.                            |
+| applicationId             | chaîne  | L’ID Windows Store de l’application pour laquelle vous récupérez les données d’utilisation.                            |
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                                                |
 | market                    | chaîne  | Le code de pays ISO 3166 du marché dans lequel le client a utilisé votre application.                   |
 | packageVersion            | chaîne  | La version du package où l’utilisation s’est produite.                                            |
@@ -95,8 +95,8 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                                           |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                                        |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.                    |
-| averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application au quotidien.                             |
-| averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs au quotidien pour interagir avec votre application. |
+| averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application sur tous les jours.                             |
+| averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs sur tous les jours pour interagir avec votre application. |
 
 
 ### <a name="response-example"></a>Exemple de réponse

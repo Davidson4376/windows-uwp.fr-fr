@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048742"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183005"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations pour les applications de marketing de Microsoft Store
 
@@ -37,7 +37,7 @@ Vous pouvez également télécharger l’ensemble des images de badge (aux forma
 
 ## <a name="device-images"></a>Images d’appareil
 
-Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous mettons à votre disposition différentes images de châssis d’appareil sélectionnables, notamment des téléphones, des tablettes, des portables et des PC. Vous trouverez les meilleures pratiques et les spécifications techniques pour l’utilisation de ces images dans les [Les recommandations en matière de marketing adapté aux applications Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous mettons à votre disposition différentes images de châssis d’appareil sélectionnables, notamment des téléphones, des tablettes, des portables et des PC. Vous trouverez les meilleures pratiques et des spécifications techniques pour l’utilisation de ces images dans les [Les recommandations en matière de marketing adapté aux applications Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
 [ ![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Image d’appareil Windows**
 
@@ -47,7 +47,7 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 -   Avoir votre application ou autres contenus disponibles dans le Microsoft Store, ou faire partie du [Programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
--   Si vous êtes inscrit en tant que développeur d’applications dans l’espace partenaires, vous conformer à la section [«marques de licence pour Microsoft»](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) de l’accord de développeur d’application.
+-   Si vous êtes inscrit en tant que développeur d’applications dans l’espace partenaires, conformer à la section [«licence à des marques de Microsoft»](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) de l’accord de développeur d’application.
 
 -   Si vous n’êtes pas inscrit en tant que développeur d’applications dans l’espace partenaires, Microsoft vous accorde une licence dans le monde entier, non exclusive, non transférable, redevance pour l’utilisation des badges comme décrit dans les recommandations en matière de Badge Microsoft Store. Microsoft peut modifier ces recommandations, mais si tel est le cas, Microsoft utilisera tous les moyens raisonnables afin de vous rediriger vers les nouvelles URL auxquelles ces spécifications sont publiées. Microsoft se réserve tous les droits non expressément accordés ici.
 

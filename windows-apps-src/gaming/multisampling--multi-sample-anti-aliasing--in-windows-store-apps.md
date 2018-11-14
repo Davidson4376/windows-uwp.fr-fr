@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, échantillonnage multiple, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034945"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147353"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Échantillonnage multiple des applications de plateforme Windows universelle (UWP)
 
@@ -32,7 +32,7 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
 
 1.  Appelez [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) pour connaître les formats DXGI utilisables avec l’échantillonnage multiple. Fournissez les formats de cibles de rendu utilisables par votre jeu. Comme la cible de rendu et la cible de résolution doivent utiliser le même format, vérifiez [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) et **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    **Niveau de fonctionnalité 9:** Bien que le niveau de fonctionnalité 9 appareils [garantissent la prise en charge des formats des cibles de rendu échantillonnée plusieurs fois](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), prise en charge n’est pas garantie pour les cibles de résolution. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
+    **Niveau de fonctionnalité 9:** Bien que le niveau de fonctionnalité 9 appareils [garantit la prise en charge des formats des cibles de rendu échantillonnée plusieurs fois](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), prise en charge n’est pas garantie pour les cibles de résolution. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
 
     Le code suivant vérifie la prise en charge de l’échantillonnage multiple pour l’ensemble des valeurs de DXGI\_FORMAT:
 

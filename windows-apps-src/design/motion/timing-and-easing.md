@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 9983c62804dad4f0202fc83e3f9b5f23714352d2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024856"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183419"
 ---
 # <a name="timing-and-easing"></a>Minutage et accélération
 

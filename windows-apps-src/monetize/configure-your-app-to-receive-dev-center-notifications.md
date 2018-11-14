@@ -9,17 +9,17 @@ keywords: Windows 10, uwp, Microsoft Store Services SDK, ciblées des notificati
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1281436ce0fe8c7b04429cea897eedc58b15d9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025949"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181822"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Configurer votre application pour les notifications Push ciblées
 
 Vous pouvez utiliser la page de **notifications Push** dans l’espace partenaires pour entrer directement en contact avec les clients en envoyant des notifications push ciblées aux appareils sur lesquels votre application de plateforme Windows universelle (UWP) est installée. Vous pouvez utiliser des notifications push ciblées afin d’inciter vos clients à effectuer une action, par exemple évaluer une application ou essayer une nouvelle fonctionnalité. Vous pouvez envoyer différents types de notificationsPush, dont les notificationstoast, les notifications par vignette et les notifications XML brutes. Vous pouvez également effectuer le suivi des lancements d’applications provoqués par vos notificationsPush. Pour plus d’informations sur cette fonctionnalité, consultez la page [Envoyer des notifications Push aux clients de vos applications](../publish/send-push-notifications-to-your-apps-customers.md).
 
-Vous pouvez envoyer des notifications push ciblées à vos clients à partir de l’espace partenaires, vous devez utiliser une méthode de la classe [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) dans le Microsoft Store Services SDK afin d’inscrire votre application pour recevoir des notifications. Vous pouvez utiliser des méthodes supplémentaires de cette classe pour signaler au centre de l’espace que votre application a été lancée en réponse à une notification push ciblée (si vous souhaitez suivre la fréquence des lancements d’applications provoqués par vos notifications) et pour arrêter de recevoir des notifications.
+Avant de pouvoir envoyer des notifications push ciblées à vos clients à partir de l’espace partenaires, vous devez utiliser une méthode de la classe [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) dans le Microsoft Store Services SDK pour inscrire votre application pour recevoir des notifications. Vous pouvez utiliser les méthodes supplémentaires de cette classe pour signaler au centre de l’espace que votre application a été lancée en réponse à une notification push ciblée (si vous souhaitez suivre la fréquence des lancements d’applications provoqués par vos notifications) et d’arrêter de recevoir des notifications.
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 
@@ -33,7 +33,7 @@ Avant d’écrire du code, suivez ces étapes afin d’ajouter une référence a
 
 ## <a name="register-for-push-notifications"></a>Inscrire pour les NotificationsPush
 
-Pour enregistrer votre application pour recevoir des notifications push ciblées à partir de l’espace partenaires:
+Pour inscrire votre application pour recevoir des notifications push ciblées à partir de l’espace partenaires:
 
 1. Dans votre projet, recherchez une section de code s’exécutant au démarrage, dans laquelle vous pouvez inscrire votre application pour la réception des notifications.
 2. Ajoutez l’instruction suivante en haut du fichier de code.
@@ -75,9 +75,9 @@ Par exemple, vous pouvez récompenser les utilisateurs de votre application qui 
 
 ## <a name="notify-partner-center-of-your-app-launch"></a>Signaler au centre de l’espace de votre lancement de l’application
 
-Si vous sélectionnez l’option de **suivre la fréquence de lancement de l’application** pour votre notification push ciblée dans l’espace partenaires, appelez la méthode [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) à partir du point d’entrée appropriée dans votre application pour signaler à l’espace partenaires que votre application a été lancée en réponse à une notification push.
+Si vous sélectionnez l’option de **suivre la fréquence de lancement de l’application** pour votre notification push ciblée dans l’espace partenaires, appelez la méthode [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) à partir du point d’entrée appropriée dans votre application afin de signaler l’espace partenaires que votre application a été lancée en réponse à une notification push.
 
-Cette méthode renvoie également les arguments de lancement d’origine associés à votre application. Lorsque vous choisissez de suivre la fréquence de lancement de l’application pour votre notification push, un suivi opaque ID est ajouté aux arguments de lancement afin de faciliter le suivi de l’application de lancement dans l’espace partenaires. Vous devez transmettre les arguments de lancement de votre application à la méthode [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) , et cette méthode envoie l’ID de suivi à l’espace partenaires, retire des arguments de lancement et renvoie les arguments de lancement d’origine à votre code.
+Cette méthode renvoie également les arguments de lancement d’origine associés à votre application. Lorsque vous choisissez de suivre la fréquence de lancement de l’application pour votre notification push, un suivi opaque ID est ajouté aux arguments de lancement afin de faciliter le suivi de l’application de lancement dans l’espace partenaires. Vous devez transmettre les arguments de lancement de votre application à la méthode [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) , et cette méthode envoie l’ID de suivi à l’espace partenaires, le retire des arguments de lancement et renvoie les arguments de lancement d’origine à votre code.
 
 La méthode d’appel de cette méthode dépend du type d’activation de la notificationPush:
 
@@ -97,7 +97,7 @@ Si vous souhaitez que votre application cesse de recevoir des notifications push
 
 [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
 
-Notez que cette méthode invalide le canal utilisé pour les notifications et donc que l’application ne reçoit plus de notificationsPush d’*aucun* service. Une fois clôturé, le canal ne peut pas être utilisé à nouveau pour tous les services, y compris les notifications push ciblées à partir de l’espace partenaires et autres notifications utilisant WNS. Pour réactiver l’envoi des notificationsPush à cette application, l’application doit demander un nouveau canal.
+Notez que cette méthode invalide le canal utilisé pour les notifications et donc que l’application ne reçoit plus de notificationsPush d’*aucun* service. Une fois clôturé, le canal ne peut pas encore être utilisé pour tous les services, y compris les notifications push ciblées à partir de l’espace partenaires et autres notifications utilisant WNS. Pour réactiver l’envoi des notificationsPush à cette application, l’application doit demander un nouveau canal.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028970"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142945"
 ---
 # <a name="handle-app-activation"></a>Gérer l’activation d’une application
 
@@ -42,7 +42,7 @@ Définissez la classe pour votre application.
 Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) contient l’état précédent de votre application et les arguments d’activation.
 
 > [!NOTE]
-> Sous Windows, le lancement d’une application suspendue à partir de la liste de vignette ou application de démarrage n’a pas d’appeler cette méthode.
+> Sur Windows, le lancement d’une application suspendue à partir de la liste de vignette ou application de démarrage n’a pas d’appeler cette méthode.
 
 ```csharp
 using System;

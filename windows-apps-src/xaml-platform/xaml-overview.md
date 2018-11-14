@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: b2576c11e50092b5d8e70189e0e8a88cfab716f9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026890"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184460"
 ---
 # <a name="xaml-overview"></a>Vue d’ensemble du langage XAML
 
@@ -72,7 +72,7 @@ Le préfixe «x»/l’espace de noms XAML de langage XAML contient plusieurs con
 |------|-------------|
 | [x:Key](x-key-attribute.md) | Définit une clé unique définie par l’utilisateur pour chaque ressource dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) XAML. La chaîne du jeton de la clé est l’argument de l’extension de balisage **StaticResource**. Vous utiliserez cette clé ultérieurement pour récupérer la ressource XAML d’une autre utilisation XAML à un autre endroit du code XAML de votre application. |
 | [x:Class](x-class-attribute.md) | Indique l’espace de noms de code et le nom de la classe de code qui fournit le code-behind pour une page XAML. Nomme ainsi la classe créée ou jointe par des actions de génération lorsque vous générez votre application. Ces actions de génération prennent en charge le compilateur de balisage XAML, et combinent le balisage et le code-behind lorsque l’application est compilée. Vous devez avoir une telle classe pour prendre en charge le code-behind pour une page XAML. [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051) dans le modèle d’activation Windows Runtime par défaut. |
-| [x:Name](x-name-attribute.md) | Spécifie un nom d’objet au moment de l’exécution pour l’instance qui existe dans le code d’exécution après le traitement d’un élément objet défini en XAML. La définition de **x:Name** en XAML s’apparente à la déclaration d’une variable nommée dans le code. Comme vous l’apprendrez plus tard, c’est exactement ce qui se produit lorsque votre code XAML est chargé en tant que composant d’une application Windows Runtime. <br/><div class="alert">**Remarque** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) est une propriété similaire dans l’infrastructure, mais pas tous les éléments prennent en charge. Vous devez donc utiliser **x:Name** pour l’identification d’élément chaque fois que **FrameworkElement.Name** n’est pas pris en charge sur ce type d’élément. |
+| [x:Name](x-name-attribute.md) | Spécifie un nom d’objet au moment de l’exécution pour l’instance qui existe dans le code d’exécution après le traitement d’un élément objet défini en XAML. La définition de **x:Name** en XAML s’apparente à la déclaration d’une variable nommée dans le code. Comme vous l’apprendrez plus tard, c’est exactement ce qui se produit lorsque votre code XAML est chargé en tant que composant d’une application Windows Runtime. <br/><div class="alert">**Remarque** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) est une propriété similaire dans l’infrastructure, mais pas tous les éléments de la prise en charge. Vous devez donc utiliser **x:Name** pour l’identification d’élément chaque fois que **FrameworkElement.Name** n’est pas pris en charge sur ce type d’élément. |
 | [x:Uid](x-uid-directive.md) | Identifie les éléments qui doivent utiliser des ressources localisées pour certaines de leurs valeurs de propriétés. Pour plus d’informations sur l’utilisation de **x:Uid**, voir [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329). |
 | [Types de données intrinsèques XAML](xaml-intrinsic-data-types.md) | Ces types peuvent spécifier des valeurs pour des types à valeur simples lorsqu’un attribut ou une ressource l’exige. Ces types intrinsèques correspondent aux types à valeur simples habituellement définies dans le cadre des définitions intrinsèques de chaque langage de programmation. Par exemple, vous pouvez avoir besoin d’un objet représentant une valeur booléenne **true** afin de l’utiliser dans un état visuel dans une table de montage séquentiel [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320). Pour cette valeur en XAML, vous allez utiliser le type intrinsèque **x:Boolean** en tant qu’élément objet, comme ceci: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
@@ -90,7 +90,7 @@ Le préfixe définit le jeton de balisage utilisé pour faire référence à cet
 
 Par exemple, la syntaxe d’attribut pour mapper un préfixe `myTypes` à l’espace de noms `myCompany.myTypes` est `    xmlns:myTypes="using:myCompany.myTypes"`, et une utilisation d’élément représentative est `<myTypes:CustomButton/>`
 
-Pour plus d’informations sur le mappage des espaces de noms XAML pour les types personnalisés, y compris les considérations spéciales pour les extensions de composant Visual c++ (C++ / CX), consultez les [espaces de noms XAML et mappage d’espace de noms](xaml-namespaces-and-namespace-mapping.md).
+Pour plus d’informations sur le mappage des espaces de noms XAML pour les types personnalisés, y compris les considérations spéciales pour les extensions de composant Visual c++ (C++ / CX), voir les [espaces de noms XAML et mappage d’espace de noms](xaml-namespaces-and-namespace-mapping.md).
 
 ## <a name="other-xaml-namespaces"></a>Autres espaces de noms XAML
 
@@ -254,6 +254,6 @@ Le XAML est souvent modifié dans un IDE tel que Visual Studio et l’une de ses
 
 Une fois que l’application s’exécute pour de bon, les erreurs d’analyse XAML éventuelles qui n’ont pas été détectées au moment de la conception sont signalées par le Common Language Runtime (CLR) en tant qu’objet [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774). Pour plus d’informations sur ce que vous pouvez effectuer avec **XamlParseException** au moment de l’exécution, voir [Gestion des exceptions pour les applications Windows Runtime en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
-**Remarque**les applications qui utilisent C++ / CX pour le code n’obtiennent pas l' [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)spécifique. Toutefois, le message dans l’exception est explicite quant au fait que la source de l’erreur est liée à XAML et comprend des informations contextuelles telles que les numéros de ligne d’un fichier XAML, à l’image de l’objet **XamlParseException**.
+**Remarque**les applications qui utilisent C++ / CX pour le code n’obtiennent pas l' spécifiques [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774). Toutefois, le message dans l’exception est explicite quant au fait que la source de l’erreur est liée à XAML et comprend des informations contextuelles telles que les numéros de ligne d’un fichier XAML, à l’image de l’objet **XamlParseException**.
 
 Pour plus d’informations sur le débogage d’une application Windows Runtime, voir [Démarrer une session de débogage](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx).

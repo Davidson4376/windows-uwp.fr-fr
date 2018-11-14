@@ -10,11 +10,11 @@ keywords: Windows10, uwp, barre de titre
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ebe590f98afef031ab183589fc7dcfc29cd9493
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028314"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186124"
 ---
 # <a name="title-bar-customization"></a>Personnalisation de la barre de titre
 

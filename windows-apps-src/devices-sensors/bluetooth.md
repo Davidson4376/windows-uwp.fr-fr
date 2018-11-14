@@ -9,20 +9,20 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f381b7fbd53ee50d4589201edf74ac1f241d40
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031647"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191111"
 ---
 # <a name="bluetooth"></a>Bluetooth
 Cette section contient des articles sur l’intégration du Bluetooth aux applications de plateforme Windows universelle (UWP). Il existe deux technologies bluetooth différents que vous pouvez choisir d’implémenter dans votre application.
 
 ## <a name="classic-bluetooth-rfcomm"></a>Classique Bluetooth RFCOMM)
-Avant de Bluetooth LE, appareils couramment utilisé ce protocole pour communiquer à l’aide de Bluetooth. Ce protocole est simple et utile pour la communication d’appareils sans avoir besoin des économies d’énergie. Pour plus d’informations sur ce protocole, y compris les exemples de code, voir la rubrique [RFCOMM Bluetooth](send-or-receive-files-with-rfcomm.md) .
+Avant de Bluetooth LE, appareils couramment utilisé ce protocole pour communiquer à l’aide de Bluetooth. Ce protocole est simple et utile pour la communication de périphérique à sans avoir besoin des économies d’énergie. Pour plus d’informations sur ce protocole, y compris les exemples de code, voir la rubrique de [RFCOMM Bluetooth](send-or-receive-files-with-rfcomm.md) .
 
 ## <a name="bluetooth-low-energy-le"></a>Bluetooth Low-Energy (LE)
-Bluetooth Low Energy (LE) est une spécification qui définit les protocoles de découverte et de communication entre les appareils dotés d’une demande d’utilisation de la consommation d’énergie. Pour plus d’informations, y compris des exemples de code, voir la rubrique [Bluetooth Low Energy](bluetooth-low-energy-overview.md) .
+Bluetooth Low Energy (LE) est une spécification qui définit les protocoles de découverte et de communication entre les appareils dotés d’une demande d’utilisation de faible consommation d’énergie. Pour plus d’informations, y compris des exemples de code, voir la rubrique [Bluetooth Low Energy](bluetooth-low-energy-overview.md) .
 
 ## <a name="see-also"></a>Articles associés
 - [FAQ sur le Bluetooth pour les développeurs](bluetooth-dev-faq.md)

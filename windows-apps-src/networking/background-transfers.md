@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bc007ee1725ea3048895ccb9e7340bc0f08e8b8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6051954"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6135990"
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
 Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
@@ -30,7 +30,7 @@ Quand une application utilise la fonctionnalité de transfert en arrière-plan p
 > [!NOTE]
 > En raison des contraintes de ressource par application, une application ne doit pas effectuer plus de 200transferts (DownloadOperations + UploadOperations) à un moment donné. Si cette limite est dépassée, cela peut mettre la file d’attente de transfert de l’application dans un état irrécupérable.
 
-Quand une application est lancée, elle doit appeler [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) sur tous les objets existants [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) et [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live) . Cela entraîne la fuite des transferts déjà effectué et finalement rendre l’utilisation de la fonctionnalité de transfert en arrière-plan inutiles.
+Lorsqu’une application est lancée, elle doit appeler [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) sur tous les objets existants [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) et [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live) . Cela entraîne la fuite des transferts déjà effectué et finalement rendre l’utilisation de la fonctionnalité de transfert en arrière-plan inutiles.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Exécution de demandes de fichiers authentifiées avec le transfert en arrière-plan
 Le transfert en arrière-plan fournit des méthodes qui prennent en charge les informations d’authentification serveur et proxy de base, les cookies et l’utilisation d’en-têtes HTTP personnalisés (par l’intermédiaire de la méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) pour chaque opération de transfert.
@@ -42,7 +42,7 @@ Par exemple, la stratégie de coût définie pour une opération peut indiquer q
 
 Bien que la fonctionnalité de transfert en arrière-plan possède ses propres mécanismes pour gérer les modifications de l’état du réseau, d’autres considérations générales ayant trait à la connectivité des applications connectées au réseau sont à prendre en compte. Pour plus d’informations, voir [Exploitation des informations de connexion réseau disponibles](https://msdn.microsoft.com/library/windows/apps/hh452983).
 
-> **Remarque**pour les applications en cours d’exécution sur les appareils mobiles, il existe des fonctionnalités qui permettent à l’utilisateur de surveiller et de limiter la quantité de données transférées en fonction du type de connexion, état, de l’itinérance et forfait de données de l’utilisateur. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
+> **Remarque**pour les applications en cours d’exécution sur les appareils mobiles, il existe des fonctionnalités qui permettent à l’utilisateur de surveiller et de limiter la quantité de données transférées en fonction du type de connexion, état, de l’itinérance et planifier des données de l’utilisateur. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
 
 Le tableau suivant indique les moments où les transferts en arrière-plan sont autorisés sur le téléphone pour chaque valeur [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138), en fonction de l’état actuel du téléphone. Vous pouvez utiliser la classe [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) pour déterminer l’état actuel du téléphone.
 

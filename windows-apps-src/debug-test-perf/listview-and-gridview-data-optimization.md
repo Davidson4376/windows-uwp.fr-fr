@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92b81c79eb1be9e21aa7c306ef31b0b3bb62e7d1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042539"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145078"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Virtualisation des données ListView et GridView
 
@@ -29,7 +29,7 @@ Une méthode de virtualisation des données est requise pour tout jeu de donnée
 -   la source du jeu de données (disque local, réseau ou cloud) ;
 -   la consommation de mémoire totale de votre application.
 
-**Remarque**n’oubliez pas qu’une fonctionnalité est activée par défaut pour ListView et GridView qui affiche les éléments visuels d’espace réservé temporaire lorsque l’utilisateur effectue un mouvement panoramique/défilement rapide. Ces éléments visuels d’espace réservé sont remplacés par votre modèle d’élément lors du chargement des données. Vous pouvez désactiver la fonctionnalité en définissant [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) sur false. Toutefois, si vous procédez ainsi, nous vous recommandons d’utiliser l’attribut x:Phase pour restituer progressivement les éléments dans votre modèle d’élément. Voir [Mettre à jour les éléments ListView et GridView de façon progressive](optimize-gridview-and-listview.md#update-items-incrementally).
+**Remarque**n’oubliez pas qu’une fonctionnalité est activée par défaut pour ListView et GridView qui affiche les éléments visuels d’espace réservé temporaire lorsque l’utilisateur effectue un mouvement panoramique/défilement rapidement. Ces éléments visuels d’espace réservé sont remplacés par votre modèle d’élément lors du chargement des données. Vous pouvez désactiver la fonctionnalité en définissant [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) sur false. Toutefois, si vous procédez ainsi, nous vous recommandons d’utiliser l’attribut x:Phase pour restituer progressivement les éléments dans votre modèle d’élément. Voir [Mettre à jour les éléments ListView et GridView de façon progressive](optimize-gridview-and-listview.md#update-items-incrementally).
 
 Voici plus d’informations sur les techniques de virtualisation des données incrémentielles et à accès aléatoire.
 

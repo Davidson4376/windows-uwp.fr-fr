@@ -9,29 +9,29 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051420"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6140673"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
 
 Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
 
-Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour apportées à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
+Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour que vous apportez à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
 
 > [!NOTE]
-> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) actif dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour pouvoir soumettre des applications dans le Microsoft Store.
+> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) de actif dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour pouvoir soumettre des applications dans le Microsoft Store.
 
-Une fois que votre application est publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans l’espace partenaires. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **mise à jour** en regard de la soumission la plus récente affichée sur sa page de **présentation** . Vous pouvez également [Supprimer une application à partir du magasin](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour effectuer cette opération (et mettez-le à disposition plus tard, si vous souhaitez obtenir).
+Une fois votre application est publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans l’espace partenaires. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **mise à jour** en regard de la soumission la plus récente affichée sur sa page de **présentation** . Vous pouvez également [Supprimer une application à partir du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous devez le faire (et mettez-le à disposition plus tard, si vous souhaitez obtenir).
 
 > [!NOTE]
-> Cette section de la documentation explique comment créer une soumission d’application dans l’espace partenaires. Sinon, vous pouvez utiliser [l’API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission d’applications.
+> Cette section de la documentation décrit comment créer une soumission d’application dans l’espace partenaires. Sinon, vous pouvez utiliser [l’API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission d’applications.
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows de Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## <a name="app-submission-checklist"></a>Liste de vérification relative à la soumission d’une application
 
@@ -94,14 +94,14 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Description**               | Obligatoire                                    | [Rédiger une description convaincante de l’application](write-a-great-app-description.md) |
 | **Nouveautés de cette version**   | Facultatif                                 | [Notes de publication](create-app-store-listings.md#whats-new-in-this-version)       |
-| **Fonctionnalités de l’application**              | Facultatif                                    | [Fonctionnalités du produit](create-app-store-listings.md#product-features)         |
+| **Fonctionnalités de l’application**              | Facultatif                                    | [Fonctionnalités de produit](create-app-store-listings.md#product-features)         |
 | **Captures d'écran**               | Obligatoire (au moins une capture d’écran, quatre ou plus recommandées)          | [Captures d'écran](app-screenshots-and-images.md#screenshots)          |
 | **Logos Store**               | Recommandé; obligatoire pour certaines versions du système d’exploitation | [Logos Store](app-screenshots-and-images.md#store-logos)             |
 | **Bandes-annonces**                  | Facultatif                                    | [Bandes-annonces](app-screenshots-and-images.md#trailers)                | 
 | **Image Windows10 et Xbox (Image principale super16:9)**     | Nos recommandations        | [Image Windows 10 et Xbox (art d’image principale Super 16:9)
 ] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Images Xbox**     | Requis pour un affichage correct si vous publiez sur Xbox        | [Les images Xbox
-] (app-captures d’écran-et-images.md #xbox-images) |
+] (application captures d’écran et images.md #xbox-images) |
 | **Champs supplémentaires**  | Facultatif                                    | [Champs supplémentaires](create-app-store-listings.md#supplemental-fields) 
 | **Termes de recherche**              | Facultatif                                    | [Termes de recherche](create-app-store-listings.md#search-terms)         |
 | **Informations de copyright et de marque déposée** | Facultatif                                 | [Informations de copyright et de marque déposée](create-app-store-listings.md#copyright-and-trademark-info) |

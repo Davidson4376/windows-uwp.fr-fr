@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, publicité native
 ms.localizationpriority: medium
 ms.openlocfilehash: 36b96add3aa785ad20ddd1c42cd46e498d0264a6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025136"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185593"
 ---
 # <a name="native-ads"></a>Publicités natives
 
@@ -111,13 +111,13 @@ Après avoir vérifié que votre implémentation de publicité native affiche co
 
 1.  Assurez-vous que votre implémentation de publicité native suit nos [directives concernant les publicités natives](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
-2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et de [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Comme type d’unité publicitaire, spécifiez **Native**. Prenez note de l’ID d’unité publicitaire et de l’ID d’application.
+2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Comme type d’unité publicitaire, spécifiez **Native**. Prenez note de l’ID d’unité publicitaire et de l’ID d’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité publicitaire dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID Windows Store exemple ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID du Windows Store de l’exemple ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez éventuellement activer la médiation publicitaire pour la publicité native en configurant les paramètres de la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) sur la page [Publicités in-app](../publish/in-app-ads.md). La médiation publicitaire vous permet d'optimiser vos revenus publicitaires et vos capacités de promotion d'app en affichant des publicités issues de plusieurs réseaux publicitaires.
 
-4.  Dans votre code, remplacez les mêmes valeurs (autrement dit, les paramètres *applicationId* et *adUnitId* du constructeur [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) ) par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
+4.  Dans votre code, remplacez les valeurs d’unité publicitaire test (en d’autres termes, les paramètres *applicationId* et *adUnitId* du constructeur [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) ) par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
 
 5.  [Soumettre votre application](../publish/app-submissions.md) au Store à l’aide de l’espace partenaires.
 

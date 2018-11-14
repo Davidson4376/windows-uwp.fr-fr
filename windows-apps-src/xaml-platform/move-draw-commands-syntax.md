@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024228"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148957"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Syntaxe des commandes de déplacement et de dessin
 
@@ -81,7 +81,7 @@ Spécifie le point de départ d’une nouvelle figure.
 
 Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
 
-**Remarque**, il est légitime pour spécifier plusieurs points après la commande de déplacement. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
+**Remarque**qu’il est possible de spécifier plusieurs points après la commande de déplacement. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
 
 **Commandes de dessin**
 
@@ -229,7 +229,7 @@ Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la n
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Outils de conception qui produisent des commandes de déplacement et de dessin
 
-À l’aide de l’outil de **stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio2015 sera généralement de produire un objet de [**chemin d’accès**](/uwp/api/Windows.UI.Xaml.Shapes.Path) , avec déplacement et de commandes de dessin.
+À l’aide de l’outil de **stylet** et d’autres outils de dessin dans Blend pour Studio2015 Visual Microsoft sera généralement produire un objet de [**chemin d’accès**](/uwp/api/Windows.UI.Xaml.Shapes.Path) , avec déplacement commandes et de dessin.
 
 Il est possible que vous constatiez la présence de données de commandes de déplacement et de dessin dans certaines parties de contrôle définies dans les modèles par défaut XAML Windows Runtime de contrôles. Par exemple, certains contrôles utilisent un [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) dans lequel les données sont définies en tant que commandes de déplacement et de dessin.
 

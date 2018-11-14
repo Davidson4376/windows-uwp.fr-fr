@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, catégorie, sous-catégorie, genre, catégories, genres
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049818"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154601"
 ---
 # <a name="category-and-subcategory-table"></a>Tableau des catégories et sous-catégories
 
@@ -22,7 +22,7 @@ Le classement de votre application dans la catégorie et la sous-catégorie adé
 
 Vous devez choisir la catégorie qui correspond le mieux à votre application. Si vous le souhaitez, vous pouvez choisir une sous-catégorie, le cas échéant. Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, ou que vous n’en trouvez aucune qui corresponde à votre application, choisissez celle que, selon vous, les clients vont très certainement examiner lorsqu’ils rechercheront des applications comme la vôtre.
 
-Si vous choisissez des **jeux** pour votre catégorie, vous devez sélectionner au moins une sous-catégorie (appelée *genre* pour les jeux). Vous pouvez choisir autant de genres que nécessaires pour votre jeu. Notez que pour publier un jeu pour les clients sur Xbox, vous devez activer le [Programme Créateurs XboxLive](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou passer par le processus d’[approbation de concept](../gaming/concept-approval.md). 
+Si vous choisissez de **jeux** pour votre catégorie, vous devez sélectionner au moins une sous-catégorie (appelée *genre* pour les jeux). Vous pouvez choisir autant de genres que nécessaires pour votre jeu. Notez que pour publier un jeu pour les clients sur Xbox, vous devez activer le [Programme Créateurs XboxLive](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou passer par le processus d’[approbation de concept](../gaming/concept-approval.md). 
 
 > [!IMPORTANT] 
 > Si vous publiez l’application dans la catégorie **Jeux**, vous ne serez pas en mesure de sélectionner une autre catégorie dans une nouvelle soumission. Il faudra continuer à la publier dans la catégorie **Jeux** (bien que vous puissiez modifier les genres sélectionnés dans une nouvelle soumission). De même, vous ne pouvez pas sélectionner la catégorie **Jeux** lors de la mise à jour d’une application que vous avez précédemment publiée dans une catégorie différente.

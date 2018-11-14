@@ -6,14 +6,14 @@ description: Découvrez comment Windows Device Portal pour HoloLens vous permet 
 ms.author: pafarley
 ms.date: 09/26/2017
 ms.topic: article
-keywords: Windows 10, uwp, portail d’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 017a3061fbb72c45bd46ed4e1f134c022284ecfe
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034039"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145723"
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
 

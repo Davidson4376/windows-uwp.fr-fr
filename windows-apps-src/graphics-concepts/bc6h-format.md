@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039149"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186490"
 ---
 # <a name="bc6h-format"></a>Format BC6H
 
@@ -32,7 +32,7 @@ Le format BC6H est spécifié par les valeurs d’énumération DXGI\_FORMAT sui
 -   **DXGI\_FORMAT\_BC6H\_UF16**. Ce format BC6H n’utilise pas de bit de signe dans les valeurs de canal de couleur à virgule flottante de 16bits.
 -   **DXGI\_FORMAT\_BC6H\_SF16**. Ce format BC6H utilise un bit de signe dans les valeurs de canal de couleur à virgule flottante de 16bits.
 
-**Remarque**  l’à virgule flottante pour les canaux de couleur de 16 bits est souvent désigné comme format à virgule flottante «moitié». Ce format présente la disposition de bits suivante:
+**Remarque**  l’à virgule flottante de canaux de couleur de 16 bits est souvent désigné comme format à virgule flottante «moitié». Ce format présente la disposition de bits suivante:
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16 (flottant non signé) | 5bits exposants + 11bits mantisse              |

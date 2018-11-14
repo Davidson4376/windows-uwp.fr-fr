@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b10d615146c8989231c4fe36ad9588716c59c34
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032760"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6163958"
 ---
 # <a name="getting-started-creating-a-project"></a>Prise en main: Création d’un projet
 
@@ -29,7 +29,7 @@ Le billet de blog [Générer des applications pour Windows](https://blogs.window
 
 Création d’une application pour Windows 10 (appelés ou une application de plateforme Windows universelle (UWP)) est similaire à la création d’une application iOS à l’aide de tables de montage séquentiel. L’application Windows 10 est souvent construite sur plusieurs pages, chaque page contenant une partie de l’interface utilisateur, comme un site web. Généralement, chaque page possède deux fichiers sources associés: l’un pour stocker l’interface utilisateur au format [XAML](https://msdn.microsoft.com/library/windows/apps/mt185595), et l’autre contenant le code source, souvent C#. En interagissant avec votre application, l’utilisateur navigue entre ces pages. Dans ce guide pas à pas, vous allez créer une application sur deux pages.
 
-**Remarque**une caractéristique importante des applications Windows 10 est le fait que le même code source et le même ensemble d’API sont disponibles pour vous, quelle que soit la plateforme. Comme vous le savez, lorsque vous écrivez une application iOS universelle pour iPhone et iPad, vous pouvez déterminer au moment de l’exécution la plateforme sur laquelle votre application s’exécute, et prendre les mesures nécessaires. De la même façon, les applications Windows 10 peuvent indiquer, au moment de l’exécution, l’appareil qu’ils sont exécutent sur. Avec une application UWP, il est inutile d’utiliser des #ifdef dans le code source pour créer des builds spécifiquement adaptées aux ordinateurs de bureau ou aux téléphones. Heureusement, les applications Windows 10 utilisent intelligemment leurs contrôles d’interface utilisateur en fonction de l’appareil: par exemple, votre application peut faire référence à un contrôle de sélecteur de dates, et le contrôle sera automatiquement présentera et fonctionnera différemment selon s’il a en cours d’exécution sur un ordinateur de bureau ou un écran de téléphone. Toutefois, le code source reste la même.
+**Remarque**une caractéristique importante des applications de Windows 10 est le fait que le même code source et le même ensemble d’API sont disponibles pour vous, quelle que soit la plateforme. Comme vous le savez, lorsque vous écrivez une application iOS universelle pour iPhone et iPad, vous pouvez déterminer au moment de l’exécution la plateforme sur laquelle votre application s’exécute, et prendre les mesures nécessaires. De la même façon, les applications Windows 10 peuvent indiquer, au moment de l’exécution, l’appareil qu’ils sont en cours d’exécution sur. Avec une application UWP, il est inutile d’utiliser des #ifdef dans le code source pour créer des builds spécifiquement adaptées aux ordinateurs de bureau ou aux téléphones. Heureusement, les applications Windows 10 utilisent intelligemment leurs contrôles d’interface utilisateur en fonction de l’appareil: par exemple, votre application peut faire référence à un contrôle de sélecteur de dates, et le contrôle sera automatiquement rechercher et fonctionnent différemment selon s’il a en cours d’exécution sur un ordinateur de bureau ou un écran de téléphone. Toutefois, le code source reste la même.
 
 Nous allons voir comment nous pouvons créer une application Windows 10. Commencez par exécuter Visual Studio. Lors de sa première exécution, Visual Studio vous demande de vous procurer une licence de développeur. Ce type de licence vous permet d’installer et de tester des applications UWP sur votre ordinateur local avant de les soumettre au Microsoft Store. Pour obtenir une licence, suivez les instructions à l’écran pour vous connecter à l’aide d’un compte Microsoft. Si vous n’en possédez pas, cliquez sur le lien **S’inscrire** dans la boîte de dialogue **Licence de développeur** et suivez les instructions à l’écran.
 

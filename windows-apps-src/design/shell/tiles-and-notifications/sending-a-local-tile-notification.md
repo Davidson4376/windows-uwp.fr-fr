@@ -10,16 +10,16 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76af980aeb759905259a043fdb9b4b828a90d819
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043980"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161619"
 ---
 # <a name="send-a-local-tile-notification"></a>Envoyer une notification par vignette locale
  
 
-Vignettes d’application principale de Windows 10 sont définies dans votre manifeste d’application, tandis que les vignettes secondaires sont par programme créés et définis par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
+Vignettes d’application principale de Windows 10 sont définies dans le manifeste de votre application, tandis que les vignettes secondaires sont par programme créés et définis par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
 
 ![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 

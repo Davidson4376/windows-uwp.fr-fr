@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eaca23a72ff794a85ffd8ac13c3f522cabf32aa7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026714"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190285"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>Vignettes, badges et notifications pour les applications UWP
  
@@ -41,7 +41,7 @@ Une vignette est la représentation d’une application dans le menu Démarrer. 
 | [Créer des vignettes](creating-tiles.md) | Personnalisez la vignette par défaut de votre application et fournissez des ressources pour différentes tailles d’écran. |
 | [Ressources d’icônes de l’application](app-assets.md) | Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes. |
 | [API de vignette principale](primary-tile-apis.md) | Demandez à épingler la vignette principale de votre application, et vérifiez que la vignette principale est actuellement épinglée. |
-| [Contenu de vignette](create-adaptive-tiles.md) | Contenu de la notification par vignette est spécifié à l’aide d’adaptative, une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran de vignettes. Cet article vous explique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). |
+| [Contenu de vignette](create-adaptive-tiles.md) | Contenu de la notification par vignette est spécifié à l’aide d’adaptative, une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification à l’aide d’un langage de balisage simple et flexible qui s’adapte à différentes densités d’écran de vignettes. Cet article vous explique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). |
 | [Schéma de contenu de vignette](../tiles-and-notifications/tile-schema.md) | Voici les éléments et attributs permettant de créer des vignettes adaptatives. |
 | [Modèles de vignette spéciaux](special-tile-templates-catalog.md) | Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. |
 | [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md) | Découvrez comment envoyer une notification par vignette locale, en ajoutant du contenu dynamique riche à votre vignette dynamique. |

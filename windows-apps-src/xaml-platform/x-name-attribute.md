@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043798"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147990"
 ---
 # <a name="xname-attribute"></a>Attribut x:Name
 
@@ -59,7 +59,7 @@ Les outils de conception génèrent souvent automatiquement des valeurs **x:Name
 
 Il n’est pas possible de définir **x:Name** dans la syntaxe de l’élément de propriété XAML, ou dans le code à l’aide de [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). **x:Name** peut uniquement être défini à l’aide de la syntaxe de l’attribut XAML sur les éléments.
 
-**Remarque**spécifiquement pour C++ / CX applications, le champ de sauvegarde d’une référence de **x: Name** n’est pas créé pour l’élément racine d’un fichier XAML ou une page. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Remarque**spécifiquement pour C++ / CX, applications, le champ de sauvegarde d’une référence de **x: Name** n’est pas créé pour l’élément racine d’un fichier XAML ou de la page. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
 ### <a name="xname-and-other-name-properties"></a>x:Name et autres propriétés Name
 

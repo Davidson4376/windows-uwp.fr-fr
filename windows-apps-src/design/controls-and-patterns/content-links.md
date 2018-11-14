@@ -13,11 +13,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049798"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147865"
 ---
 # <a name="content-links-in-text-controls"></a>Liens de contenu dans les contrôles de texte
 
@@ -28,7 +28,7 @@ Lorsque l’utilisateur préfixe une entrée avec un symbole esperluette (@) dan
 > **API importantes**: [classe ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [classe ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [classe RichEditTextRange](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> L’API de liens de contenu est réparties dans les espaces de noms suivants: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents et Windows.UI.Text.
+> Les API pour les liens de contenu sont réparties dans les espaces de noms suivants: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents et Windows.UI.Text.
 
 
 
@@ -164,7 +164,7 @@ Le sélecteur People crée un ContentLinkInfo avec un Uri qui utilise le protoco
 - Si LinkContentKind n’est pas «People», il ouvre l'application **Contacts**. Par exemple, cela peut se produire si vous avez modifié le LinkContentKind dans le Gestionnaire d’événements ContentLinkChanged.
 
 > [!TIP]
-> Pour plus d’informations sur l’ouverture d’autres applications et sites Web à partir de votre application, consultez les rubriques sous [lancer une application avec un Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> Pour plus d’informations sur l’ouverture d’autres applications et les sites Web à partir de votre application, consultez les rubriques sous [lancer une application avec un Uri](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### <a name="invoked"></a>Invoked
 
