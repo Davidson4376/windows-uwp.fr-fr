@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8699ee06da545e3b34711f496a887fd7aa2c935
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046832"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209434"
 ---
 # <a name="file-access-permissions"></a>Autorisations d’accès aux fichiers
 
@@ -89,7 +89,7 @@ Le préfixe «ms-appx:///» de l’URI fait référence au répertoire d’insta
 
 En outre, contrairement à d’autres emplacements, vous pouvez également accéder à des fichiers dans le répertoire d’installation de votre application à l’aide de certaines [API Win32 et COM pour les applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) et de certaines [fonctions de la bibliothèque C/C++ standard à partir de Microsoft VisualStudio](http://msdn.microsoft.com/library/hh875057.aspx).
 
-Le répertoire d’installation de l’application est un emplacement en lecture seule. Vous ne pouvez pas accéder au répertoire d’installation par le biais du sélecteur de fichiers.
+Le répertoire d’installation de l’application est un emplacement en lecture seule. Vous ne peut pas accéder au répertoire d’installation par le biais du sélecteur de fichiers.
 
 ### <a name="application-data-locations"></a>Emplacements des données d’application
 Les dossiers dans lesquels votre application peut stocker des données. Ces dossiers (local, roaming et temporary) sont créés lors de l’installation de votre application.

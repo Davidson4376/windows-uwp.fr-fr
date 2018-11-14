@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fd4d481d30eda68acaf4e48e4d1c1bf4ed7d24
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029811"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158932"
 ---
 # <a name="get-set-up"></a>Préparation
 
@@ -23,9 +23,9 @@ Il est bien plus facile de se lancer que vous ne le pensez. Suivez ces instructi
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Télécharger ou mettre à jour Visual Studio
 
-Microsoft Visual Studio2017 vous aide à vous concevez, codez, testez et déboguez vos applications.
+Studio2017 Visual Microsoft vous permet de concevoir, coder, tester et déboguer vos applications.
 
-Si vous n’avez pas encore Visual Studio2017, vous pouvez installer le Community2017 Studio Visual Microsoft gratuit. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications:
+Si vous n’avez pas encore Studio2017 visuel, vous pouvez installer le Community2017 Studio Visual Microsoft gratuit. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications:
 
 -   [Télécharger les outils de développement de Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

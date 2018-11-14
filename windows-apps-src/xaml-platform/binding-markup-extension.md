@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02c856fd697bef958eb45a0f0f133e06f63a7f51
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039109"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159286"
 ---
 # <a name="binding-markup-extension"></a>Extension de balisage {Binding}
 
 
 **Remarque**un nouveau mécanisme de liaison est disponible pour Windows 10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
 
-**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{Binding}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour plus d’informations sur l’utilisation des données de liaison dans votre application avec **{Binding}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{Binding}** est utilisé pour les propriétés de liaison de données sur les contrôles à des valeurs provenant d’une source de données, comme du code. L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données et la transmet à la propriété sur le contrôle. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et se mettre à jour en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications de la valeur de contrôle à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
@@ -81,7 +81,7 @@ Pour plus d’informations sur la syntaxe de chaîne d’un chemin de propriét�
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Spécifie le minutage des mises à jour de la source de liaison. Si cette valeur n’est pas spécifiée, la valeur par défaut est **Default**. |
 
-**Remarque**si vous convertissez un balisage à partir de **{x: Bind}** **{** Binding}, tenez compte des différences des valeurs par défaut pour la propriété **Mode** .
+**Remarque**si vous convertissez un balisage à partir de **{x: Bind}** **{** Binding}, tenez compte des différences des valeurs par défaut pour la propriété de **Mode** .
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 

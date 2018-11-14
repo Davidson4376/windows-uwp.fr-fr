@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fbf6e7ee8a224a6957428fddd11a2922adbecf4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038519"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158581"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -23,7 +23,7 @@ Cette rubrique décrit le système de propriétés de dépendance disponible qua
 
 Une propriété de dépendance est un type spécialisé de propriété Plus précisément, il s’agit d’une propriété dont la valeur est suivie et influencée par un système de propriétés dédié qui fait partie de Windows Runtime.
 
-Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). Bon nombre des types que vous utilisez pour définir l’interface utilisateur pour une application UWP avec XAML seront une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas «XAML» ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
+Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). La plupart des types que vous utilisez pour définir l’interface utilisateur pour une application UWP avec XAML seront une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas «XAML» ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
 
 Le but des propriétés de dépendance est de fournir un moyen systémique pour calculer la valeur d’une propriété en fonction d’autres entrées (d’autres propriétés, événements et états qui interviennent dans une application en cours d’exécution). Il peut s’agir des entrées suivantes :
 
@@ -32,7 +32,7 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour définir une application Windows Runtime avec XAML pour les extensions de composant de l’interface utilisateur et c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) pour le code. Ces fonctionnalités incluent :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime avec XAML pour les extensions de composant de l’interface utilisateur et c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) pour le code. Ces fonctionnalités incluent :
 
 - Liaison de données
 - Styles

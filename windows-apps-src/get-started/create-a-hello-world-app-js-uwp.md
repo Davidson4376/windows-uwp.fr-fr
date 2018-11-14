@@ -2,22 +2,22 @@
 author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Créer une application «Hello World» (JS)
-description: Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple & \#0034; Hello, world & \#0034; application qui cible la plateforme Windows universelle (UWP) sur Windows 10.
+description: Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer un simple & le \#0034; Hello, world & \#0034; application qui cible la plateforme Windows universelle (UWP) sur Windows 10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032318"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159931"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
 
-Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple «Hello, world» qui cible la plateforme Windows universelle (UWP) sur Windows 10. Un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur n’importe quel appareil Windows 10.
+Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple «Hello, world» qui cible la plateforme Windows universelle (UWP) sur Windows 10. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 > [!NOTE]
 > Ce didacticiel utilise Visual Studio Community2017. Si vous utilisez une autre version de Visual Studio, son aspect vous semblera peut-être légèrement différent.
@@ -25,7 +25,7 @@ Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer un
 
 Vous allez apprendre à effectuer les opérations suivantes:
 
--   Créez un projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
+-   Créez un nouveau projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
 -   ajouter du contenu HTML et JavaScript;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio.
 

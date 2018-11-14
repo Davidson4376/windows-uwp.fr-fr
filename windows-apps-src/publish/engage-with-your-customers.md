@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f266538c42b83da9135079f51a3f935f459020
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045216"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160290"
 ---
 # <a name="engage-with-your-customers"></a>Impliquer vos clients
 
-[L’espace partenaires](https://partner.microsoft.com/dashboard) inclut des fonctionnalités pour vous aider à satisfaction de vos clients et stimuler l’intérêt client. Découvrez comment utiliser les notifications, les offres ciblées, répondre aux avis et commentaires et bien plus encore.
+[L’espace partenaires](https://partner.microsoft.com/dashboard) inclut des fonctionnalités pour vous aider à la satisfaction et stimuler l’intérêt client. Découvrez comment utiliser les notifications, offres ciblées, répondre aux avis et commentaires et bien plus encore.
 
 -   [Créer des groupes de clients](create-customer-groups.md)
 -   [Répondre aux avis des clients](respond-to-customer-reviews.md)

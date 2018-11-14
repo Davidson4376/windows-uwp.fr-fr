@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034298"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155595"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
@@ -26,7 +26,7 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 ## <a name="version-numbering-for-windows10-packages"></a>Numérotation des versions pour les packages Windows 10
 
 > [!IMPORTANT]
-> Pour les packages Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et doive conserver la valeur 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section). Les autres sections doivent être définies sur un nombre entier compris entre 0 et 65 535 (à l’exception de la première section, qui ne peut pas être 0).
+> Pour les packages de Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et doit rester en tant que 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section). Les autres sections doivent être définies sur un entier compris entre 0 et 65 535 (à l’exception de la première section, qui ne peut pas être 0).
 
 Lors du choix d’un package UWP à partir de votre soumission publiée, le Microsoft Store utilise toujours le package présentant la version la plus élevée applicable à l’appareil du client Windows 10. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
@@ -34,7 +34,7 @@ Vous pouvez fournir plusieurs packages UWP avec le même numéro de version. Tou
 
 Lorsque vous fournissez plusieurs packages UWP qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x 86, ARM, neutre) est utilisée pour déterminer celui qui est de niveau supérieur (lorsque le Windows Store détermine le package à fournir à un appareil d’un client). Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
 
-Cela vous offre une grande souplesse pour faire évoluer votre application au fil du temps. Vous pouvez charger et soumettre de nouveaux packages qui utilisent des numéros de version inférieurs pour prendre en charge pour les appareils Windows 10 qui vous précédemment ne gérait pas, vous pouvez ajouter des packages de version supérieure comprenant des dépendances plus strictes pour tirer parti de matériel ou les fonctionnalités du système d’exploitation ou vous peut ajouter des packages de version supérieure qui servent de base mises à jour pour tout ou partie de vos clients existants.
+Cela vous offre une grande souplesse pour faire évoluer votre application au fil du temps. Vous pouvez charger et soumettre de nouveaux packages qui utilisent des numéros de version inférieurs pour prendre en charge pour les appareils Windows 10 qui vous prenait en charge pas précédemment, vous pouvez ajouter des packages de version supérieure comprenant des dépendances plus strictes pour tirer parti de matériel ou les fonctionnalités du système d’exploitation ou vous peut ajouter des packages de version supérieure qui servent de base mises à jour pour tout ou partie de vos clients existants.
 
 L’exemple suivant montre comment gérer la numérotation des versions pour livrer les packages voulus à vos clients au gré de soumissions multiples.
 
@@ -42,7 +42,7 @@ L’exemple suivant montre comment gérer la numérotation des versions pour liv
 
 Windows 10 vous permet d’écrire un seul code base qui s’exécute partout. Cela facilite considérablement le démarrage d’un nouveau projet interplateforme. Toutefois, pour diverses raisons, il peut sembler inopportun de fusionner plusieurs codes base existants pour créer immédiatement un seul projet.
 
-Vous pouvez utiliser les règles de contrôle de version de package pour amener progressivement vos clients vers un package unique pour la famille d’appareils universelle, tout en envoyant un certain nombre de mises à jour intermédiaires pour des familles (y compris ceux qui tirent parti des API Windows 10). L’exemple suivant illustre la façon dont les mêmes règles sont appliquées de façon cohérente sur une série de soumissions pour la même application.
+Vous pouvez utiliser les règles de contrôle de version de package pour amener progressivement vos clients vers un package unique pour la famille d’appareils universelle, tout en envoyant un certain nombre de mises à jour intermédiaires pour des familles spécifiques (y compris ceux qui tirent parti des API de Windows 10). L’exemple suivant illustre la façon dont les mêmes règles sont appliquées de façon cohérente sur une série de soumissions pour la même application.
 
 | Soumission | Contenu                                                  | Expérience utilisateur                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,16 +66,16 @@ Pour résoudre le problème pour les clients qui ont déjà reçu le package pro
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions Windows8.1 (ou version antérieure) et des packages Windows Phone 8.1
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows de Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 Pour les packages .appx qui ciblent Windows Phone 8.1, le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package inclus dans la dernière soumission (ou toute soumission précédente).
 
 Pour les packages .appx qui ciblent package Windows8 et Windows8.1, la même règle s’applique par architecture: le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package publié en dernier dans le Windows Store pour la même architecture.
 
-En outre, le numéro de version des packages Windows8.1 doit toujours être supérieur aux numéros de version d’un de vos packages de package Windows8 pour la même application. En d’autres termes, le numéro de version d’un package de package Windows8 que vous soumettez doit être inférieur au numéro de version d’un package de Windows8.1 que vous avez soumis pour la même application.
+En outre, le numéro de version des packages de Windows8.1 doit toujours être supérieur aux numéros de version d’une de vos packages de package Windows8 pour la même application. En d’autres termes, le numéro de version d’un package de package Windows8 que vous soumettez doit être inférieur au numéro de version d’un package de Windows8.1 que vous avez soumis pour la même application.
 
 > [!NOTE]
-> Si votre application possède également des packages Windows 10, le numéro de version des packages Windows 10 doit être supérieur à ceux aucun de vos packages package Windows8, Windows8.1 et/ou Windows Phone 8.1. Pour plus d’informations, voir [Ajout des packages pour Windows 10 vers une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
+> Si votre application possède également des packages Windows 10, le numéro de version des packages Windows 10 doit être supérieur à ceux des packages de votre package Windows8, Windows8.1 et/ou Windows Phone 8.1. Pour plus d’informations, voir [Ajout des packages pour Windows 10 vers une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
 
 Voici quelques exemples de ce qui se passe dans les scénarios de mise à jour de numéro de version différent pour les packages ciblant package Windows8 et Windows8.1.
 
@@ -83,7 +83,7 @@ Voici quelques exemples de ce qui se passe dans les scénarios de mise à jour d
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | Rien                                     | x86, v1.0.0.0               | x86, v1.0.0.0 sur les ordinateurs x86 et x64                                                | Rien |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 pour l’architecture de l’ordinateur du client                                                   | Rien Les numéros de version sont les mêmes. |
-| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 pour les clients possédant un ordinateur x86 <br> v1.0.0.1 pour les clients possédant un ordinateur x64                 | Rien pour les clients exécutant l’application sur un ordinateur x86. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant l’application sur un ordinateur x64. <br> **Remarque**si la version de l’application s’exécute sur un x64 de x86 ordinateur, l’application ne sont pas mis à jour à le x64 version, sauf si le client effectue une désinstallation puis une réinstallation. |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 pour les clients possédant un ordinateur x86 <br> v1.0.0.1 pour les clients possédant un ordinateur x64                 | Rien pour les clients exécutant l’application sur un ordinateur x86. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant l’application sur un ordinateur x64. <br> **Remarque**si la version de l’application est en cours d’exécution sur un x64 de x86 ordinateur, l’application ne sont pas mis à jour à le x64 version, sauf si le client effectue une désinstallation puis une réinstallation. |
 | Rien                                     | neutre, v1.0.0.1           | neutre, v1.0.0.1 sur tous les ordinateurs                                                         | Rien |
 | neutre, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 pour l’architecture de l’ordinateur du client.          | Rien Les clients qui possèdent la version neutre v1.0.0.1 de l’application continuent de l’utiliser. |
 | neutre, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 pour l’architecture de l’ordinateur du client. | Rien pour les clients qui exécutent la version neutre v1.0.0.1 de l’application. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant la version v1.0.0.0 de l’application générée pour l’architecture de leur ordinateur. |

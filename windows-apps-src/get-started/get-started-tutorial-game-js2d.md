@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044446"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6263987"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 
@@ -28,11 +28,11 @@ ms.locfileid: "6044446"
 
 La publication d’une application dans le Microsoft Store signifie que vous pouvez partager (ou vendre!) avec des millions de personnes, sur différents appareils.  
 
-Pour publier votre application dans le Microsoft Store, il doit être écrit comme une application UWP (plateforme Windows universelle). Or, UWP est extrêmement souple et prend en charge un grand nombre de langues et d'infrastructures. Pour le prouver, cet exemple de jeu simple écrit en JavaScript tire parti de plusieurs bibliothèques CreateJS et montre comment dessiner des sprites, créer une boucle de jeu, prendre en charge le clavier et la souris et s’adapter à différentes tailles d’écran.
+Pour publier votre application dans le Microsoft Store, il doit être écrit en tant qu’une application UWP (plateforme Windows universelle). Or, UWP est extrêmement souple et prend en charge un grand nombre de langues et d'infrastructures. Pour le prouver, cet exemple de jeu simple écrit en JavaScript tire parti de plusieurs bibliothèques CreateJS et montre comment dessiner des sprites, créer une boucle de jeu, prendre en charge le clavier et la souris et s’adapter à différentes tailles d’écran.
 
 Ce projet est généré avec JavaScript à l’aide de Visual Studio. Avec quelques changements mineurs, il peut également être hébergé sur un site Web ou adapté à d’autres plateformes. 
 
-**Remarque:** Ce n’est pas un jeu complet (ni excellent). Il est conçu pour montrer comment utiliser JavaScript et un troisième bibliothèque tierce pour rendre une application prête à être publiée dans le Microsoft Store.
+**Remarque:** Ce n’est pas un jeu complet (ni excellent); Il est conçu pour montrer comment utiliser JavaScript et un troisième bibliothèque de tiers pour rendre une application prête à être publiée dans le Microsoft Store.
 
 
 ## <a name="requirements"></a>Spécifications
@@ -267,7 +267,7 @@ La procédure comprend quelques étapes.
 2. Vous devez utiliser la [liste de vérification](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
 3. L’application doit être soumise pour [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
 
-Pour plus d’informations, consultez [la publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).
+Pour plus d’informations, voir la [publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).
 
 ## <a name="suggestions-for-other-features"></a>Suggestions pour d’autres fonctionnalités.
 

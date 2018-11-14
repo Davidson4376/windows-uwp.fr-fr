@@ -6,18 +6,18 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047464"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264653"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
@@ -29,9 +29,9 @@ ms.locfileid: "6047464"
 
 Découvrez comment définir des conditions spécifiant à quel moment votre tâche en arrière-plan s’exécutera.
 
-Parfois, les tâches en arrière-plan doit remplir certaines conditions pour être remplies pour que la tâche en arrière-plan réussisse. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée une fois que le déclencheur est activé. La tâche en arrière-plan est ensuite mise en file, mais ne s’exécute jusqu'à ce que toutes les conditions requises sont satisfaites.
+Parfois, les tâches en arrière-plan nécessitent certaines conditions à remplir pour la tâche en arrière-plan réussisse. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée après que le déclencheur a été déclenché. La tâche en arrière-plan sera alors être en file d’attente, mais il ne s’exécute jusqu'à ce que toutes les conditions requises sont satisfaites.
 
-Affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et le processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
+Affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et de processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
 
 Il est également possible de combiner plusieurs conditions en appelant **AddCondition** plusieurs fois sur le même [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Veillez à ne pas ajouter de conditions conflictuelles, telles que **UserPresent** et **UserNotPresent**.
 
@@ -109,7 +109,7 @@ Pour ajouter plusieurs conditions, votre application effectue plusieurs appels �
 > [!NOTE]
 > Veillez à ne pas pour ajouter de conditions conflictuelles à une tâche en arrière-plan.
 
-L’extrait de code suivant présente plusieurs conditions dans le contexte de créer et d’inscrire une tâche en arrière-plan.
+L’extrait de code suivant présente plusieurs conditions dans le contexte de création et d’inscription d’une tâche en arrière-plan.
 
 ```csharp
 // Set up the background task.

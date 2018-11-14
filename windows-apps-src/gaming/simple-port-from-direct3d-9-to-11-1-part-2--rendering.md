@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, infrastructure de rendu, conversion, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034925"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207823"
 ---
 # <a name="convert-the-rendering-framework"></a>Convertir l’infrastructure de rendu
 
@@ -99,7 +99,7 @@ Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous metton
 
 Quand nous avons défini le schéma d’entrée, nous avons vérifié qu’il représentait la même structure de données que celle que nous utilisons pour stocker les données par vertex dans la mémoire système et la mémoire GPU. De même, la sortie d’un nuanceur de vertex doit correspondre à la structure utilisée en tant qu’entrée du nuanceur de pixels. Les règles ne sont pas les mêmes que pour passer des données d’une fonction à une autre en C++ ; vous pouvez omettre les variables inutilisées à la fin de la structure. Mais il n’est pas possible de réorganiser l’ordre et vous ne pouvez pas ignorer le contenu du milieu de la structure de données.
 
-> **Remarque**  les règles de Direct3D 9 pour lier des nuanceurs de vertex aux nuanceurs de pixels étaient plus souples que dans Direct3D 11 celles. La disposition Direct3D9 était flexible, mais inefficace.
+> **Remarque**  les règles de Direct3D 9 pour lier des nuanceurs de vertex pour les nuanceurs de pixels étaient plus souples que dans Direct3D 11 celles. La disposition Direct3D9 était flexible, mais inefficace.
 
  
 
@@ -154,7 +154,7 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 
 C’est tout ce dont nous avons besoin pour notre nuanceur de pixels direct. Même si nous l’appelons direct, il obtient en fait des données de couleurs interpolées de perspective correcte pour chaque pixel. Notez que la sémantique des valeurs système SV\_TARGET est appliquée à la sortie des valeurs de couleurs par notre nuanceur de pixels comme exigé par l’API.
 
-> **Remarque**nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir du système sémantique sv\_position. Les nuanceurs de pixels du modèle4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
+> **Remarque**nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir de la sémantique de la valeur de système SV\_POSITION. Les nuanceurs de pixels du modèle4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
 
  
 
@@ -248,7 +248,7 @@ Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la d�
 
 Les données par vertex doivent être stockées dans des types compatibles dans la mémoire système. Les types de données DirectXMath peuvent s’avérer utiles. Par exemple, DXGI\_FORMAT\_R32G32B32\_FLOAT correspond à [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
 
-> **Remarque**  tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
+> **Remarque**  les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
 
  
 

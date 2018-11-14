@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Windows10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: bf6d3f16c7b240ca370c01a787fef09862f35863
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045063"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202259"
 ---
 # <a name="time-based-animations"></a>Animations basées sur le temps
 
-Quand un composant ou l'intégralité de l'interface utilisateur change, les utilisateurs finaux l'observent souvent de deux manières: au fil du temps ou instantanément. Sur la plateforme Windows, le premier est préféré à ce dernier: les expériences utilisateur qui changent instantanément souvent et surprennent les utilisateurs finaux, car elles ne sont pas en mesure de suivre ce qui se passe. L’utilisateur final perçoit alors l’expérience comme saccadée et anormale.
+Quand un composant ou l'intégralité de l'interface utilisateur change, les utilisateurs finaux l'observent souvent de deux manières: au fil du temps ou instantanément. Sur la plateforme Windows, le premier est préféré à ce dernier: les expériences utilisateur qui changent instantanément troublent souvent et surprennent les utilisateurs finaux, car elles ne sont pas en mesure de suivre ce qui se passe. L’utilisateur final perçoit alors l’expérience comme saccadée et anormale.
 
 Vous pouvez plutôt modifier votre interface utilisateur au fil du temps pour guider l’utilisateur final ou l'informer des modifications apportées à l’expérience. Sur la plateforme Windows, cela s'effectue à l'aide d’animations basées sur le temps, également appelées KeyFrameAnimations. Les KeyFrameAnimations vous permettent de modifier une interface utilisateur au fil du temps et de contrôler chaque aspect de l’animation, notamment quand et comment elle démarre, et comment elle atteint son état de fin. Par exemple, l’animation d’un objet pour le déplacer vers une nouvelle position pendant 300millisecondes est plus agréable qu’une «téléportation» instantanée. Lorsque vous utilisez des animations au lieu de modifications instantanées, vous obtenez une expérience plus agréable et plus attrayante.
 

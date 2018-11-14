@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ba07f897111e27dc895aa187172841cac4b44f73
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042480"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6254907"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Définir le format, la résolution et la fréquence d’images pour MediaCapture
 
@@ -32,7 +32,7 @@ Le code figurant dans cet article a été adapté à partir de l’[exemple Came
 
 La création d’une classe d’assistance simple englobant la fonctionnalité de l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) simplifie la sélection d’un ensemble de propriétés d’encodage qui répondent à des critères particuliers. Cette classe d’assistance est particulièrement utile en raison du comportement de la fonctionnalité des propriétés d’encodage suivant:
 
-**Avertissement**  la méthode [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) utilise un membre de l’énumération [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) , par exemple, **VideoRecord** ou **Photo**et renvoie une liste de deux [** ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou objets [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) qui transmettent le flux de codage des paramètres, tels que la résolution de la photo capturée ou vidéo. Les résultats de l’appel de **GetAvailableMediaStreamProperties** peuvent inclure **ImageEncodingProperties** ou **VideoEncodingProperties** quelle que soit la valeur de **MediaStreamType** spécifiée. Pour cette raison, vous devez toujours vérifier le type de chaque valeur renvoyée et le convertir dans le type approprié avant d’essayer d’accéder à une des valeurs de propriété.
+**Avertissement**  la méthode [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) utilise un membre de l’énumération [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) , par exemple, **VideoRecord** ou **Photo**et renvoie une liste de deux [** ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou des objets [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) qui transmettent le flux de codage paramètres, tels que la résolution de la photo capturée ou vidéo. Les résultats de l’appel de **GetAvailableMediaStreamProperties** peuvent inclure **ImageEncodingProperties** ou **VideoEncodingProperties** quelle que soit la valeur de **MediaStreamType** spécifiée. Pour cette raison, vous devez toujours vérifier le type de chaque valeur renvoyée et le convertir dans le type approprié avant d’essayer d’accéder à une des valeurs de propriété.
 
 La classe d’assistance définie ci-dessous gère la vérification du type et son transtypage pour [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) afin que votre code d’application n’ait pas besoin de faire la distinction entre les deux types. En outre, pour ce faire, la classe d’assistance expose les propriétés pour les proportions des propriétés, la fréquence d’images (pour les propriétés d’encodage vidéo uniquement) et un nom convivial qui facilite l’affichage des propriétés d’encodage dans l’interface utilisateur de l’application.
 
@@ -76,7 +76,7 @@ Une application de caméra classique fournira l’interface utilisateur permetta
 
 -   Sélectionnez la résolution de l’aperçu la plus proche possible de la taille de [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) afin qu’aucun pixel en plus de ceux nécessaires ne soit transmis dans le pipeline du flux d’aperçu.
 
-**Important**  il est possible, sur certains appareils, pour définir des proportions différentes pour les flux d’aperçu de la caméra et de flux de capture. Le rognage d’image causé par cette incompatibilité peut entraîner la présence de contenu dans le média capturé qui n’était pas visible dans l’aperçu, ce qui peut aboutir à une expérience négative pour l’utilisateur. Il est fortement recommandé d’utiliser les mêmes proportions, dans une faible plage de tolérance, pour les flux d’aperçu et de capture. Il est bon que des résolutions entièrement différentes soient activées pour la capture et l’aperçu tant que les proportions correspondent étroitement.
+**Important**  qu’il est possible, sur certains appareils, pour définir des proportions différentes pour le flux d’aperçu de la caméra et de flux de capture. Le rognage d’image causé par cette incompatibilité peut entraîner la présence de contenu dans le média capturé qui n’était pas visible dans l’aperçu, ce qui peut aboutir à une expérience négative pour l’utilisateur. Il est fortement recommandé d’utiliser les mêmes proportions, dans une faible plage de tolérance, pour les flux d’aperçu et de capture. Il est bon que des résolutions entièrement différentes soient activées pour la capture et l’aperçu tant que les proportions correspondent étroitement.
 
 
 Pour vous assurer que les flux de capture de photo ou de vidéo correspondent aux proportions du flux d’aperçu, cet exemple appelle [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) et transmet la valeur enum **VideoPreview** pour demander les propriétés de flux actuelles du flux d’aperçu. Ensuite, une faible plage de tolérance des proportions est définie afin de pouvoir inclure des proportions qui ne sont pas exactement identiques au flux d’aperçu, tant qu’elles sont proches. Ensuite, une méthode d’extension Linq est utilisée pour sélectionner uniquement les objets **StreamPropertiesHelper** où les proportions sont comprises dans la plage de tolérance définie du flux d’aperçu.

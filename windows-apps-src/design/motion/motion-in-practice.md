@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 36081c14cfb75a1cedb103ba17eff4a05f5e4e83
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023286"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202816"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -84,7 +84,7 @@ Voici 3manières d’appliquer les principes de base du mouvement Fluent dans vo
 > Animations implicites nécessitent Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure.
 
 
-Animations implicites sont un moyen simple d’obtenir le mouvement Fluent par automatiquement et effectue une interpolation entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
+Animations implicites sont un moyen simple pour atteindre le mouvement Fluent par l’interpolation automatiquement entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
 
 Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes:
 
@@ -109,7 +109,7 @@ Chaque propriété qui peut avoir des modifications implicitement animées poss�
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-Cet exemple montre comment utiliser la propriété Opacity et transition pour qu’un bouton apparition en fondu lorsque le contrôle est activé et la disparition en fondu lorsqu’il est désactivé.
+Cet exemple montre comment utiliser la propriété Opacity et transition pour créer un bouton apparition en fondu lorsque le contrôle est activé et la disparition en fondu lorsqu’il est désactivé.
 
 ```xaml
 <Button x:Name="SubmitButton"

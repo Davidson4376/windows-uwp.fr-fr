@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039852"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6259236"
 ---
 # <a name="getting-started-animation"></a>Prise en main: Animation
 
@@ -128,7 +128,7 @@ Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le co
 
 Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour continuer à travailler dessus. Blend permet de créer aisément des interfaces utilisateur intéressantes, et la possibilité de les animer à l’aide d’un outil graphique peut accélérer considérablement le temps de développement. Pour plus d’informations sur les animations, voir [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Remarque**pour plus d’informations sur les animations pour <span class="legacy-term">les applications UWP en JavaScript et HTML</span>, consultez [animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Remarque**pour plus d’informations sur les animations pour <span class="legacy-term">les applications UWP en JavaScript et HTML</span>, voir [l’animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
 ### <a name="next-step"></a>Étape suivante
 

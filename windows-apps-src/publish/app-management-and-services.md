@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044459"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185668"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
 Vous pouvez gérer et afficher les détails de chacune de vos applications dans [l’espace partenaires et configurer des services comme les notifications, A / B test et les cartes.
 
-Lorsque vous travaillez avec une application dans l’espace partenaires, vous verrez des sections dans le menu de navigation de gauche pour les **Services** et de **Gestion des applications**. Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
+Lorsque vous travaillez avec une application dans l’espace partenaires, vous verrez des sections dans le menu de navigation de gauche pour la **Gestion des applications**et **Services** . Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
 
 ## <a name="services"></a>Services
 
@@ -29,7 +29,7 @@ La section **Services** vous permet de gérer les différents services pour vos 
 
 Si vous publiez un jeu, vous pouvez activer le [Programme créateurs Xbox Live](http://xbox.com/developers/creators-program) sur cette page. Cela vous permet de démarrer la configuration et le tests des fonctionnalités Xbox Live et finalement publier votre jeu programme créateurs Xbox Live.
 
-Pour plus d’informations, consultez [vous familiariser avec le programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créez un nouveau titre du programme créateurs Xbox Live et publier dans l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Pour plus d’informations, voir [prendre en main du programme créateurs de Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créez un nouveau titre du programme créateurs Xbox Live et les publier sur l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
 ## <a name="experimentation"></a>Expérimentation
 
@@ -39,19 +39,19 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 
 ## <a name="maps"></a>Cartes
 
-Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour savoir comment demander une clé d’authentification de cartes à partir du centre de développement Bing cartes et ajoutez-la à votre application, voir [demande une clé d’authentification de cartes](../maps-and-location/authentication-key.md) pour plus d’informations. 
+Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour savoir comment demander une clé d’authentification de cartes à partir du centre de développement Bing cartes et l’ajouter à votre application, consultez [demande une clé d’authentification de cartes](../maps-and-location/authentication-key.md) pour plus d’informations. 
 
-Utiliser la page **cartes** uniquement pour les applications précédemment publiées pour Windows Phone 8.1 et versions antérieures. Pour utiliser les services de carte dans ces applications, vous devez demander un ID d’application de service carte et un jeton d’inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton**, nous allons générer un service de carte ID d’Application (**ApplicationID**) et mapper service (**AuthenticationToken**) du jeton d’authentification pour votre application. Veillez à ajouter ces valeurs à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
+Utilisez la page **cartes** uniquement pour les applications précédemment publiées pour Windows Phone 8.1 et versions antérieures. Pour utiliser les services de carte dans ces applications, vous devez demander un ID d’application de service carte et un jeton à inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton**, nous allons générer un service de carte ID d’Application (**ApplicationID**) et mapper service (**AuthenticationToken**) du jeton d’authentification pour votre application. Veillez à ajouter ces valeurs à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
 
 ## <a name="product-collections-and-purchases"></a>Collections et achats de produits
 
-Pour utiliser le Microsoft Store API de collection et l’API d’achat de Microsoft Store pour accéder aux informations de propriété pour les applications et modules complémentaires, vous devez entrer associé ID clients Azure AD ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
+Pour utiliser le Microsoft Store API de collection et l’API d’achat de Microsoft Store pour accéder aux informations de propriété pour les applications et modules complémentaires, vous devez entrer le texte associé ID clients Azure AD ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
 
 Pour plus d’informations, consultez l’article [Gérer des droits sur les produits à partir d’un service](../monetize/view-and-grant-products-from-a-service.md).
 
 ## <a name="administrator-consent"></a>Consentement de l’administrateur
 
-f votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
+f votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui acquérir l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
 
 Pour plus d’informations, voir la [demande de consentement pour un client entière](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
@@ -87,7 +87,7 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
 La section **WNS/MPNS** fournit des options pour vous aider à créer et envoyer des notifications aux clients de votre application. 
 
 > [!TIP]
-> Pour les applications UWP, nous vous conseillons d’à l’aide de la fonctionnalité de **Notifications** dans l’espace partenaires. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
+> Pour les applications UWP, nous vous suggérons d’à l’aide de la fonctionnalité de **Notifications** dans l’espace partenaires. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
 
 Selon le type de package de votre application et ses besoins spécifiques, vous pouvez également utiliser une des options suivantes: 
 

@@ -15,15 +15,15 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba4bfcd38acba2bcd7c8399b8b17184edacc15a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034728"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191987"
 ---
 ## <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 
-Les contrôles de boîte de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles application. Ils bloquent les interactions avec la fenêtre d’application jusqu'à ce que masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.
+Les contrôles de boîte de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles d’application. Ils bloquent les interactions avec la fenêtre d’application jusqu'à ce que masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.
 
 ![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
 
@@ -34,7 +34,7 @@ Les contrôles de boîte de dialogue sont des superpositions d’interface utili
 
 Utilisez les boîtes de dialogue pour notifier les utilisateurs d’informations importantes ou pour demander une confirmation ou des informations supplémentaires avant de pouvoir effectuer une action.
 
-Pour savoir à quel moment utiliser une boîte de dialogue et quand utiliser un menu volant (un contrôle similaire), consultez [les boîtes de dialogue et menus volants](index.md). 
+Pour obtenir des recommandations à quel moment utiliser une boîte de dialogue ou quand vous devez utiliser un menu volant (un contrôle similaire), voir les [boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 

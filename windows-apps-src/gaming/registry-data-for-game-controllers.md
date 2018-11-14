@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bbd4074c52514b9cb66fd6f2dd189421f61d5ee
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032059"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192269"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 
@@ -42,7 +42,7 @@ Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine 
         <td>DWORD</td>
         <td>Non</td>
         <td>
-            <p>Indique que cet appareil en particulier doit être désactivé.</p>
+            <p>Indique que cet appareil particulier doit être désactivé.</p>
             <ul>
                 <li><b>0</b>: l’appareil n’est pas désactivé.</li>
                 <li><b>1</b>: l’appareil est désactivé.</li>

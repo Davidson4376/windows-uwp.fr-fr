@@ -2,7 +2,7 @@
 author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: Publier votre application de bureau empaquetée à un Windows store ou charger de manière indépendante sur un ou plusieurs périphériques.
+title: Publier votre application de bureau empaquetée à un Windows store ou les charger de manière indépendante sur un ou plusieurs périphériques.
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
@@ -10,15 +10,15 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036087"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210190"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
-Publier votre application de bureau empaquetée à un Windows store ou charger de manière indépendante sur un ou plusieurs périphériques.  
+Publier votre application de bureau empaquetée à un Windows store ou les charger de manière indépendante sur un ou plusieurs périphériques.  
 
 > [!NOTE]
 > Vous disposez d’un plan pour la transition des utilisateurs à votre application empaquetée? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
@@ -27,14 +27,14 @@ Publier votre application de bureau empaquetée à un Windows store ou charger d
 
 Le [MicrosoftStore](https://www.microsoft.com/store/apps) est une méthode pratique pour rendre votre application accessible aux clients.
 
-Publier votre application vers ce magasin d’atteindre le public le plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au leur organisation par le biais du [Microsoft Store pour entreprises](https://www.microsoft.com/business-store).
+Publier votre application vers ce magasin pour atteindre le public le plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au leur organisation par le biais du [Microsoft Store pour entreprises](https://www.microsoft.com/business-store).
 
 Si vous envisagez de publier dans le MicrosoftStore, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici: [Fonctionnalités restreintes](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
-Vous n’êtes pas obligé de signer votre application avant de la soumettre au Windows store.
+Vous n’êtes pas obligé de signer votre application avant de la soumettre au Windows Store.
 
 >[!IMPORTANT]
-> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils exécutant Windows 10 S. Il s’agit d’une exigence du store. Consultez [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
+> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence du store. Consultez [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
 
 <a id="side-load" />
 
@@ -44,11 +44,11 @@ Si vous préférez plutôt distribuer votre application sans utiliser le Windows
 
 Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du MicrosoftStore.
 
-Pour distribuer votre application sur d’autres appareils sans passer par le Windows store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
+Pour distribuer votre application à d’autres appareils sans passer par le Windows store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
 
 Vous pouvez [créer un certificat](../packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
 
-Si vous prévoyez de distribuer votre application sur des périphériques exécutant Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
+Si vous prévoyez de distribuer votre application sur des appareils qui exécutent Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
 
 Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine approuvée** ou **Personnes autorisées** de chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’aurez rien à installer sur les autres systèmes, hormis votre application.  
 
@@ -73,7 +73,7 @@ Avant de distribuer votre application, envisagez d’ajouter quelques extensions
 
 * Pointez les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée.
 * Associer votre application empaquetée à un ensemble de types de fichiers.
-* Rendre votre application empaquetée ouvrir certains types de fichiers par défaut.
+* Rendre votre application empaquetée à ouvrir certains types de fichiers par défaut.
 
 Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 

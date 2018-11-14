@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041798"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249448"
 ---
 # <a name="input-for-games"></a>Entrées pour les jeux
 
@@ -47,13 +47,13 @@ Pour plus d’informations sur l’utilisation des volants de course dans votre 
 
 Les manches à balai sont des périphériques d’entrée de jeu qui reproduire la sensation des manches à balai qui se trouve dans un avion ou spatial d’un vaisseau. Ces manches à balai constituent le périphérique d’entrée idéal pour un contrôle de pilotage rapide et précis.
 
-Pour plus d’informations sur l’utilisation des manches à balai dans votre jeu UWP, consultez le [manche à balai](flight-stick.md).
+Pour plus d’informations sur l’utilisation des manches à balai dans votre jeu UWP, voir le [manche à balai](flight-stick.md).
 
 ### <a name="raw-game-controllers"></a>Contrôleurs de jeu bruts
 
 Un contrôleur de jeu brut est une représentation générique d’un contrôleur de jeu dont les entrées existent sur différentes sortes de contrôleurs de jeu courants. Ces entrées sont affichées sous forme de simples tableaux de boutons, commutateurs et axes sans nom. En utilisant un contrôleur de jeu brut, vous pouvez permettre aux clients de créer des mappages d’entrée personnalisés, quel que soit le type de contrôleur qu’ils utilisent.
 
-Pour plus d’informations sur l’utilisation des contrôleurs de jeu bruts dans votre jeu UWP, voir [contrôleur de jeu brut](raw-game-controller.md).
+Pour plus d’informations sur l’utilisation des contrôleurs de jeu bruts dans votre jeu UWP, voir le [contrôleur de jeu brut](raw-game-controller.md).
 
 ### <a name="ui-navigation-controllers"></a>Contrôleurs de navigation d’interface utilisateur
 

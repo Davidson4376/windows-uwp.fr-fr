@@ -9,23 +9,23 @@ ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, l’impression 3d
 ms.localizationpriority: medium
 ms.openlocfilehash: d09ed242b2c5f0186b05279706943c9a65ee7c8a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051258"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186370"
 ---
 # <a name="3d-printing"></a>Impression3D
 
 
-Cette section explique comment utiliser l' [espace de noms Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) pour ajouter des fonctionnalités d’impression 3D à votre application Windows universelle.  
+Cette section décrit comment utiliser l' [espace de noms Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) pour ajouter des fonctionnalités d’impression 3D à votre application Windows universelle.  
 
 Pour plus d’informations sur l’impression 3D avec Windows 10, y compris les ressources pour les partenaires de matériel, forums de discussion de la Communauté et des informations générales sur les fonctionnalités d’impression 3D, consultez le site [d’impression 3D avec Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) dans le centre de développement matériel.
 
 | Rubrique | Description |
 |-------|-------------|
 | [Impression3D à partir de votre application](3d-print-from-app.md) | Découvrez comment ajouter la fonctionnalité d’impression 3D à votre application UWP. Cette rubrique explique comment lancer la boîte de dialogue d’impression3D après s’être assuré que votre modèle3D est imprimable et au format qui convient. |
-| [Générer un package 3MF](generate-3mf.md) | Décrit la structure du type de fichier 3D Manufacturing Format et comment il peut être créé et manipulé avec les API Windows.Graphics.Printing3D. |
+| [Générer un package 3MF](generate-3mf.md) | Décrit la structure du type de fichier 3D Manufacturing Format et comment il peut être créé et manipulé avec l’API Windows.Graphics.Printing3D. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 
