@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
 ms.openlocfilehash: a21cc94dd9b22304c715cc0e6b038ffdac6da02b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6200186"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458097"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 

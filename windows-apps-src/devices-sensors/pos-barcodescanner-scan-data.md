@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: caeda47e51c74976bd76708c60938d2dfc745d54
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667039"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6445027"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Obtenir et comprendre les données de code-barres
 

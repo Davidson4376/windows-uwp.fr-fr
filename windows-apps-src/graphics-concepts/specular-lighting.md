@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660086"
+ms.locfileid: "6456110"
 ---
 # <a name="specular-lighting"></a>Éclairage spéculaire
 

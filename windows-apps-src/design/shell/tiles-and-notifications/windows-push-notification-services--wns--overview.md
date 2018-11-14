@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 633fd26a7dfc799f9b9c9058f88ba6b1fa40ac57
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672468"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458544"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS)
  
@@ -38,7 +38,7 @@ Le diagramme ci-après présente l’intégralité du flux de données impliqué
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Inscription de votre application et réception des informations d’identification de votre service cloud
 
 
-Pour que vous puissiez envoyer des notifications à l’aide des servicesWNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Store. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, connectez-vous à [L’espace partenaires](https://partner.microsoft.com/dashboard). Après avoir créé votre application, vous pouvez récupérer les informations d’identification en suivant les instructions disponibles sur la page **Gestion des applications - WNS/MPNS**. Si vous souhaitez utiliser la solution Services Live, suivez le lien **Site Services Live** sur cette page.
+Pour que vous puissiez envoyer des notifications à l’aide des servicesWNS, votre application doit au préalable être inscrite auprès du Tableau de bord du Store. Cela vous fournit les informations d’identification de votre application que votre service cloud utilisera lors de l’authentification à l’aide des services WNS. Ces informations d’identification se composent d’un identificateur de sécurité du package (SID) et d’une clé secrète. Pour effectuer cette inscription, accédez au [Centre de développement Windows](http://go.microsoft.com/fwlink/p/?linkid=511146) et sélectionnez **Tableau de bord**. Après avoir créé votre application, vous pouvez récupérer les informations d’identification en suivant les instructions disponibles sur la page **Gestion des applications - WNS/MPNS**. Si vous souhaitez utiliser la solution Services Live, suivez le lien **Site Services Live** sur cette page.
 
 Chaque application dispose de son propre ensemble d’informations d’identification pour son service cloud. Ces informations d’identification ne peuvent pas être utilisées pour envoyer des notifications à une autre application.
 

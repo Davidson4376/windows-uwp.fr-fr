@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: df9c4764b8f7d752a132d6759054660f481cce55
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6462835"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6673851"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Revendication de périphérique de point de Service et activer le modèle
 

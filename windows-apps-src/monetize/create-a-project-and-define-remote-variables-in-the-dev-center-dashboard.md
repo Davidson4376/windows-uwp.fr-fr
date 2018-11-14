@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a59110fa094aeae3d40dca1372fde9889c108e
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6277704"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6467807"
 ---
 # <a name="create-an-experiment-project-in-partner-center"></a>Créer un projet d’expérience dans l’espace partenaires
 
