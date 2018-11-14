@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, textures, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6663242"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6454955"
 ---
 # <a name="apply-textures-to-primitives"></a>Appliquer des textures aux primitives
 

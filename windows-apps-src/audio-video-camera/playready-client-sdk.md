@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450987"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6660476"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -513,10 +513,10 @@ Pour obtenir un exemple d’implémentation de l’arrêt sécurisé, consultez 
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Utiliser la gestion des droits numériques par PlayReady sur XboxOne
 
-Pour utiliser la gestion des droits numériques PlayReady dans une application UWP sur XboxOne, vous devez tout d’abord inscrire le compte du Centre de développement que vous utilisez pour publier l’application afin d’obtenir l’autorisation d’utiliser PlayReady. Vous pouvez le faire de deux manières:
+Pour utiliser PlayReady DRM dans une application UWP sur Xbox One, vous devez d’abord inscrire votre compte du [Centre de l’espace](https://partner.microsoft.com/dashboard) que vous utilisez pour publier l’application pour l’autorisation d’utiliser PlayReady. Vous pouvez le faire de deux manières:
 
 * Demander à votre interlocuteur Microsoft de faire le nécessaire pour obtenir l’autorisation.
-* Demandez votre autorisation en envoyant les informations relatives à votre compte du Centre de développement et le nom de votre société à l’adresse [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
+* Demandez votre autorisation en envoyant votre nom de compte et de la société de l’espace partenaires à [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
 
 Une fois que vous recevez d’autorisation, vous devrez ajouter un objet `<DeviceCapability>` supplémentaire au manifeste de l’application. Vous devez l’ajouter manuellement, car aucun paramètre n’est actuellement disponible dans le concepteur de manifeste d’application. Pour le configurer, procédez comme suit:
 

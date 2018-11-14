@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b063bf5997bbb1fc082c8d9fefcf0f435262bf1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b309064c0110084d5445e8680d65f9935a3f69fe
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6445178"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654403"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -85,11 +85,11 @@ Voici un exemple d’élément **identité** intégrant un emplacement réservé
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Si vous avez réservé votre nom de l’application dans le Windows store, vous pouvez obtenir le nom et l’éditeur à l’aide du tableau de bord du centre de développement Windows. Si vous prévoyez de charger votre application sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom de l’éditeur que vous choisissez correspond au nom sur le certificat que vous utilisez pour signer votre application.
+> Si vous avez réservé votre nom de l’application dans le Microsoft Store, vous pouvez obtenir le nom et l’éditeur à l’aide de [L’espace partenaires](https://partner.microsoft.com/dashboard). Si vous prévoyez de charger votre application sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom de l’éditeur que vous choisissez correspond au nom sur le certificat que vous utilisez pour signer votre application.
 
 ### <a name="properties"></a>Propriétés
 
-L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows store, pour les applications qui sont chargées sur le store.
+L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows Store, pour les applications qui sont chargées sur le Store.
 
 ```XML
 <Properties>

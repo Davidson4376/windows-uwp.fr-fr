@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b7c20e0e6cf56afa7e2193739401bf49e0403a2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6467226"
+ms.locfileid: "6654983"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML; liaison à une propriété C++/WinRT
 Une propriété qui peut être efficacement liée à un contrôle XAML est appelée «propriété *observable*». Ce concept est basé sur le modèle de conception logicielle appelé «*modèle observateur*». Cette rubrique montre comment implémenter des propriétés observables dans [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)et comment lier des contrôles XAML.
@@ -208,7 +208,7 @@ namespace Bookstore
 
 Enregistrez le fichier. La génération du projet ne jusqu'à la fin pour le moment, mais générez maintenant est particulièrement utile car il régénère les fichiers de code source dans lequel la classe runtime **MainPage** est implémentée (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` et `MainPage.cpp`). Par conséquent, lancez-vous et construire maintenant. L’erreur de build vous devriez voir à ce stade est **'MainViewModel': n’est pas un membre de 'winrt::Bookstore::implementation::MainPage'**.
 
-Si vous omettez l’inclusion de `BookstoreViewModel.idl` (voir la description de `MainPage.idl` ci-dessus), ensuite, vous verrez l’erreur **attendu \ < près de «MainViewModel»**. Un autre conseil consiste à s’assurer que vous laissez tous les types dans le même espace de noms: l’espace de noms qui s’affiche dans les listes de code.
+Si vous omettez l’inclusion de `BookstoreViewModel.idl` (voir la description de `MainPage.idl` ci-dessus), puis vous verrez l’erreur **attendu \< près de «MainViewModel»**. Un autre conseil consiste à s’assurer que vous laissez tous les types dans le même espace de noms: l’espace de noms qui s’affiche dans les listes de code.
 
 Pour résoudre l’erreur qui nous s’attendent à voir, vous devez maintenant copiez les stubs accesseur pour la propriété **MainViewModel** en dehors des fichiers générés (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` et `MainPage.cpp`) et en `\Bookstore\Bookstore\MainPage.h` et `MainPage.cpp`.
 
