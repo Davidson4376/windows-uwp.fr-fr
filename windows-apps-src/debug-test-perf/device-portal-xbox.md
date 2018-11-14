@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 7182f67a7bffc303b9c3067d8b746f1b4f27b809
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6147333"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184746"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 

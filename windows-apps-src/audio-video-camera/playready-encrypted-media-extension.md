@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: Cette section explique comment modifier votre application de web PlayReady pour prendre en charge les modifications apportées entre la version précédente de Windows8.1 vers la version de Windows 10.
+description: Cette section explique comment modifier votre application web de PlayReady pour prendre en charge les modifications apportées à partir de la version précédente de Windows8.1 vers la version de Windows 10.
 title: Extension EME (Encrypted Media Extension) PlayReady
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b73464ea10aa835b82df17605e983ebdfb9cd890
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036969"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185393"
 ---
 # <a name="playready-encrypted-media-extension"></a>Extension EME (Encrypted Media Extension) PlayReady
 
 
 
-Cette section explique comment modifier votre application de web PlayReady pour prendre en charge les modifications apportées entre la version précédente de Windows8.1 vers la version de Windows 10.
+Cette section explique comment modifier votre application web de PlayReady pour prendre en charge les modifications apportées à partir de la version précédente de Windows8.1 vers la version de Windows 10.
 
 L’utilisation d’éléments multimédias PlayReady dans Internet Explorer permet aux développeurs de créer des applications web capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section explique comment ajouter des éléments multimédias PlayReady à vos applications web existantes en utilisant uniquement HTML5 et JavaScript.
 

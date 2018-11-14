@@ -8,11 +8,11 @@ ms.topic: article
 keywords: prise en main, uwp, windows10, piste d'apprentissage, liaison de données, liste
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e58231d644616a088eb06f24a2465c240e10c16
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6140068"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184141"
 ---
 # <a name="display-customers-in-a-list"></a>Afficher les clients dans une liste
 

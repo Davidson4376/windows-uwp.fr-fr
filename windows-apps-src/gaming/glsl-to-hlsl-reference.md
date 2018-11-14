@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, glsl, hlsl, opengl, directx, nuanceurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6140058"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183560"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Informations de référence sur le passage de GLSL à HLSL
 
