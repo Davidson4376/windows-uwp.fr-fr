@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 090dcab3b46b031a16be35973e1183220d5b1da0
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471674"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6280138"
 ---
 # <a name="stencil-buffers"></a>Mémoires tampons de gabarits
 

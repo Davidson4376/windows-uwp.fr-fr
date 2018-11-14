@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 184cd246019bacc6419580cd47d2904374606031
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b5ebbb628add9474412441ff507e7429f3bfd3ab
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451693"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661176"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Applications de bureau de package (pont du bureau)
 
@@ -90,7 +90,7 @@ Visual Studio simplifie grandement la création de packages. Il suffit d’ajout
 
 :heavy_check_mark: Générer votre package à l’aide d’un assistant.
 
-: heavy_check_mark: attribuer facilement une identité à votre application à partir d’un nom que vous avez déjà réservé dans le tableau de bord du centre de développement Windows.
+: heavy_check_mark: attribuer facilement une identité à votre application à partir d’un nom que vous avez déjà réservé dans [L’espace partenaires](https://partner.microsoft.com/dashboard).
 
 Voir le [Package d’une application de bureau à l’aide de Visual Studio](desktop-to-uwp-packaging-dot-net.md)
 

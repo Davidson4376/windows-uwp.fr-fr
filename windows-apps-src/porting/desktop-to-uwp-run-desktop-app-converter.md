@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f964c8ac4a579fe4c360967c6bc9e613659a668b
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 7fc8c8e68e4b20498f84b4d20d84eca0dbfa7237
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469792"
+ms.locfileid: "6650897"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -122,7 +122,7 @@ Pour créer votre package d'application, exécutez la commande ``DesktopAppConve
 Vous devez spécifier le numéro de version, l’éditeur et nom du package de l’application à l’aide de paramètres.
 
 > [!NOTE]
-> Si vous avez réservé votre nom d’application dans le Store, vous pouvez obtenir le nom et l’éditeur du package à l’aide du tableau de bord du centre de développement de Windows. Si vous prévoyez de charger votre application de manière indépendante sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom d’éditeur que vous choisissez correspond au nom indiqué sur le certificat utilisé pour signer votre application.
+> Si vous avez réservé le nom de votre application dans le Microsoft Store, vous pouvez obtenir le nom de package et l’éditeur à l’aide de [L’espace partenaires](https://partner.microsoft.com/dashboard). Si vous prévoyez de charger votre application de manière indépendante sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom d’éditeur que vous choisissez correspond au nom indiqué sur le certificat utilisé pour signer votre application.
 
 ### <a name="a-quick-look-at-command-parameters"></a>Aperçu des paramètres de commande
 
@@ -145,7 +145,7 @@ Voici quelques méthodes courantes pour créer votre package d'application.
 * [Package d’une application qui dispose d’un fichier de programme d’installation (.msi)](#installer-conversion)
 * [Une application qui a un fichier exécutable d’installation de package](#setup-conversion)
 * [Une application qui n’a pas de programme d’installation de package](#no-installer-conversion)
-* [Créer un package d'application, signer et préparer l'application pour la soumission au Store](#optional-parameters)
+* [Package d’application, signer l’application et préparer à la soumission au Windows Store](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -158,7 +158,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> Voici deux éléments important à prendre en considération ici. Assurez-vous en premier lieu que votre programme d’installation se trouve dans un dossier indépendant et que seuls les fichiers associés à ce programme d’installation se trouvent dans le même dossier. Le convertisseur copie l’intégralité du contenu de ce dossier vers l’environnement Windows isolé. <br> Ensuite si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.  
+> Voici deux éléments important à prendre en considération ici. Assurez-vous en premier lieu que votre programme d’installation se trouve dans un dossier indépendant et que seuls les fichiers associés à ce programme d’installation se trouvent dans le même dossier. Le convertisseur copie l’intégralité du contenu de ce dossier vers l’environnement Windows isolé. <br> En second lieu, si l’espace partenaires attribue une identité à votre package qui commence par un nombre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre.  
 
 **Vidéo**
 
@@ -176,7 +176,7 @@ Pointez vers l’exécutable d’installation à l’aide du paramètre ``Instal
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
+>Si l’espace partenaires attribue une identité à votre package qui commence par un nombre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre.
 
 Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation s’exécute en mode sans assistance, vous devrez peut-être l’utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
 
@@ -197,7 +197,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
+>Si l’espace partenaires attribue une identité à votre package qui commence par un nombre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre.
 
 **Vidéo**
 
@@ -213,7 +213,7 @@ Cet exemple est similaire au premier ceci près qu’il montre comment signer vo
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
+>Si l’espace partenaires attribue une identité à votre package qui commence par un nombre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre.
 
 Le ``Sign`` paramètre génère un certificat, puis signe votre application avec ce dernier. Vous devrez installer ce certificat généré pour exécuter votre application. Pour savoir comment procéder, consultez la section [Exécuter l’application empaquetée](#run-app) de ce guide.
 
@@ -271,13 +271,13 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script à la sortie sous la forme d’un Package MSIX de package. |
 |<a id="identity-params" /><strong>Paramètres d’identité de package</strong>||
-|-PackageName &lt;chaîne&gt; |Requis |Le nom de votre package d’application Windows universelle. Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre. |
+|-PackageName &lt;chaîne&gt; |Requis |Le nom de votre package d’application Windows universelle. Si l’espace partenaires attribue une identité à votre package qui commence par un nombre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre. |
 |-Éditeur &lt;chaîne&gt; |Requis |L’éditeur de votre package d’application Windows universelle |
 |-Version &lt;Version&gt; |Requis |Le numéro de version de votre package d’application Windows universelle |
 |<a id="manifest-params" /><strong>Paramètres de manifeste de package</strong>||
 |-AppExecutable &lt;chaîne&gt; |Facultatif |Nom de l’exécutable principal de votre application (par exemple, «MonApp.exe»). Ce paramètre est requis avec les conversions sans programme d’installation. |
 |-AppFileTypes &lt;chaîne&gt;|Facultatif |Une liste séparée par des virgules des types de fichiers auxquels l’application sera associée Exemple d’utilisation: -AppFileTypes "'.md', '.markdown'".|
-|-AppId &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est définie l’ID d’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. Dans de nombreux cas, l'utilisation de *PackageName* convient. Toutefois, si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre. |
+|-AppId &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est définie l’ID d’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. Dans de nombreux cas, l'utilisation de *PackageName* convient. Toutefois, si l’espace partenaires attribue une identité à votre package qui commence par un nombre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre. |
 |-AppDisplayName &lt;chaîne&gt;  |Facultatif |Spécifie une valeur à partir de laquelle est défini le nom complet de l’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. |
 |-AppDescription &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est définie la description d’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*.|
 |-PackageDisplayName &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est défini le nom complet du package dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. |

@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 481ec666c327b15088d8e60577c51fa1697918fe
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6447577"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661349"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>Télécharger un dossier dans le répertoire de développement
 

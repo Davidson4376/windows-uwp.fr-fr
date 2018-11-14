@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 32d8e7d858ff28a6ef6a9af517e0a584c6106cd5
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6145005"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6657055"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 

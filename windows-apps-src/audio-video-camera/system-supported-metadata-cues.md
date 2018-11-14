@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, métadonnées, indicateurs, fonctions vocales, chapitre
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6269316"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6470727"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>Indicateurs de métadonnées synchronisées pris en charge par le système
 Cet article décrit comment tirer parti de plusieurs formats de métadonnées synchronisées qui peuvent être incorporés dans des fichiers ou flux multimédia. Les applications UWP peuvent s’inscrire aux événements qui sont déclenchés par le pipeline multimédia pendant la lecture à chaque fois que ces indicateurs de métadonnées sont rencontrés. En utilisant la classe [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue), les applications peuvent implémenter leurs propres indicateurs de métadonnées personnalisés, mais cet article se concentre sur plusieurs normes de métadonnées qui sont détectées automatiquement par le pipeline multimédia, notamment:

@@ -13,11 +13,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6264060"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189509"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
 

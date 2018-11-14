@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
 ms.openlocfilehash: 536679068d66a279e158790bf0fcc0f8757709cc
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6163760"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6471020"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Développement d’applications pour Windows en tant que service
 
