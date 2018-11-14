@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, création de packages
 ms.localizationpriority: medium
 ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6470579"
+ms.locfileid: "6645564"
 ---
 # <a name="packaging-apps"></a>Création de packages d’applications
 

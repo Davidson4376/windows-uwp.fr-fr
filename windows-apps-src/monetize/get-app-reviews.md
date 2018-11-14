@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, avis
 ms.localizationpriority: medium
 ms.openlocfilehash: 656f00ec8a7711a43c44790b04ea01dace4c4ee2
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6188496"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6472080"
 ---
 # <a name="get-app-reviews"></a>Obtenir les avis sur les applications
 

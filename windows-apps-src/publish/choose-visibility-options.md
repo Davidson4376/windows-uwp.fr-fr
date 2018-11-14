@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, visibilité, public privé, disponible, détectable
 ms.localizationpriority: medium
 ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190060"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6275304"
 ---
 # <a name="choose-visibility-options"></a>Choisir les options de visibilité
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, globalisation, adaptabilité, localisation, DàG, GàD
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e4c5dfce4aa3e773ab8c334ca732ac5ed53030
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193525"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276780"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>Conception de votre application pour le texte bidirectionnel
 

@@ -15,11 +15,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: efb6c8a9324419ea099041f34c341152351575f6
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6202219"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6443549"
 ---
 # <a name="auto-suggest-box"></a>Zone de suggestion automatique
 

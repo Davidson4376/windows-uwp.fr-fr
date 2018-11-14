@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 320445022fa836e05d04e93b85d333ef1ad40a53
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6208891"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276427"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>FAQ et résolution des problèmes du kit de ressources MultilingualAppToolkit4.0
 

@@ -8,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d’analyse du MicrosoftStore, acquisitions de jeu Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 200f18e443e8a130a7e5c673b03c146b73c9083b
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193969"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6459550"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Obtenir des acquisitions de jeu Xbox One
 
@@ -60,7 +60,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-example"></a>Exemple de requête
 
-L’exemple suivant illustre plusieurs demandes d’obtention des données d’acquisition du jeu Xbox One. Remplacez la valeur *applicationId* par l’ID Store de votre jeu.
+L’exemple suivant illustre plusieurs demandes d’obtention des données d’acquisition du jeu Xbox One. Remplacez la valeur *applicationId* par l’ID de produit pour votre jeu.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0 HTTP/1.1
