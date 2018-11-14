@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fb6a552686e35f319d9624ba4c4663dad966f23
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029738"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195105"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 
@@ -23,7 +23,7 @@ Vous pouvez utiliser Visual Studio pour générer un package de votre applicatio
 La dernière version de Visual Studio fournit une nouvelle version projet de création de packages qui élimine toutes les étapes manuelles autrefois nécessaires pour mettre en package votre application Il suffit d’ajouter un projet de création de packages, de référencer votre projet d'application de bureau, puis d'appuyer sur F5 pour déboguer votre application. Plus aucun ajustement n'est nécessaire. Cette nouvelle expérience plus fluide améliore considérable l'expérience de la version précédente de Visual Studio.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (également appelé le pont du bureau) a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
@@ -91,7 +91,7 @@ Voir [Exécuter, déboguer et tester une application de bureau empaquetée](desk
 
 Consultez [Améliorer votre application de bureau pour Windows10](desktop-to-uwp-enhance.md)
 
-**Étendre votre application de bureau en ajoutant des projets UWP et composants Windows Runtime**
+**Étendre votre application de bureau en ajoutant des projets UWP et les composants Windows Runtime**
 
 Voir [Étendre votre application de bureau avec des composants UWP modernes](desktop-to-uwp-extend.md).
 

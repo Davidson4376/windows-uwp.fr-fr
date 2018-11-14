@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, direct3d 11, initialisation, portage, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031721"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276106"
 ---
 # <a name="initialize-direct3d-11"></a>Initialiser Direct3D 11
 
@@ -75,7 +75,7 @@ Pour commencer, nous créons le périphérique. Nous obtenons la liste des nivea
 
 Après avoir créé le périphérique Direct3D11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
 
-> **Remarque**  D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu de Microsoft Store est requis pour prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
+> **Remarque**  D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu du Microsoft Store est requis pour prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
 
  
 
@@ -127,7 +127,7 @@ Direct3D 11 inclut une API de périphérique appelée DXGI (infrastructure Direc
 
 Le périphérique Direct3D implémente une interface COM pour DXGI. Tout d’abord, nous avons besoin d’obtenir cette interface, puis de l’utiliser pour demander la carte DXGI hébergeant le périphérique. Ensuite, nous utilisons la carte DXGI pour créer une fabrique DXGI.
 
-> **Remarque**  il s’agit d’interfaces COM, alors votre première réponse peut consister à utiliser [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) à la place. Ensuite, il suffit d’appeler la méthode [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) en fournissant un pointeur COM vide du type d’interface correct.
+> **Remarque**  il s’agit d’interfaces COM afin que votre première réponse peut consister à utiliser [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) à la place. Ensuite, il suffit d’appeler la méthode [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) en fournissant un pointeur COM vide du type d’interface correct.
 
  
 

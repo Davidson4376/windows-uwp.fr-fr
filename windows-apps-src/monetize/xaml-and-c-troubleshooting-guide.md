@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, publicités, publicité, AdControl, résolution des problèmes, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 12789767694e4ab3fa13efec4a31c8db4acd5420
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6202620"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276352"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Guide de résolution des problèmes pour XAML et C#
 

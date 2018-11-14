@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, rendez-vous, calendrier
 ms.localizationpriority: medium
 ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034205"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6275954"
 ---
 # <a name="manage-appointments"></a>Gérer des rendez-vous
 
@@ -284,7 +284,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Remarque**pour Windows Phone applications du Windows Store, [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) que la boîte de dialogue affichée pour ajouter le rendez-vous est modifiable.
+**Remarque**pour Windows Phone Store d’applications, [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) que la boîte de dialogue affichée pour ajouter le rendez-vous est modifiable.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Remplacer un rendez-vous dans le calendrier d’un utilisateur
 

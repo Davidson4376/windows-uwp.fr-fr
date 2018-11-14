@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023677"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207486"
 ---
 # <a name="rotation"></a>Rotation
 
@@ -46,7 +46,7 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 
 ![schéma des différentes positions de doigts prises en charge par la rotation.](images/ux-rotate-positions.png)
 
-**Remarque**  au premier abord, ainsi que dans la plupart des cas, le point de rotation est l’un des points deux tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de la disposition de l’écran). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
+**Remarque**  intuitivement, ainsi que dans la plupart des cas, le point de rotation est l’un des points deux tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de la disposition de l’écran). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
 
 Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles: l’index touche un arbre et le pouce touche un rondin de bois.
 

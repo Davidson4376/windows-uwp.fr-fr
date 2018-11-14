@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 57d5c174b4519cb60b339a907fe41fb07af5f3ed
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049953"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194772"
 ---
 # <a name="barcode-scanner"></a>Scanneur de code-barres
 
@@ -25,7 +25,7 @@ Cette section fournit des conseils pour créer des applications de plateforme Wi
 | [Configurer un scanneur de code-barres](../devices-sensors/pos-barcodescanner-configure.md)  | Découvrez comment configurer un scanneur de code-barres pour l’application prévue. |
 | [Utiliser un déclencheur logiciel](../devices-sensors/pos-barcodescanner-software-trigger.md) | Découvrez comment contrôler l’action de l’analyse de logiciel. |
 | [Utilisation des symbologies](pos-barcodescanner-symbologies.md) | Découvrez comment déterminer les types de code-barres pris en charge par un scanneur de code-barres et vérifier les types de code-barres qui sont reconnus par le scanneur de codes-barres à partir de votre application. |
-| [Obtenir et comprendre les données de code-barres](pos-barcodescanner-scan-data.md) | Découvrez comment obtenir et interpréter les données de code-barres qui vous scannez. |
+| [Obtenir et comprendre les données de code-barres](pos-barcodescanner-scan-data.md) | Découvrez comment obtenir et interpréter les données de code-barres numérisation. |
 | [Scanneur de code-barres à caméra](pos-camerabarcode.md) | Lisez des codes-barres via un objectif de caméra standard à partir d’une application de plateforme Windows universelle. Requiert la Mise à jour d'avril2018 de Windows10 (build17134 ou version ultérieure). |
 |
  

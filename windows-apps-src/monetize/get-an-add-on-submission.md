@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: ad6381562b37b1a759a575e070edd6b1bf63402d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033281"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6162129"
 ---
 # <a name="get-an-add-on-submission"></a>Obtenir une soumission de module complémentaire
 
@@ -47,8 +47,8 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension qui contient la soumission à obtenir. L’ID Windows Store est disponible dans l’espace partenaires, et il est inclus dans les données de réponse des requêtes pour [créer une extension](create-an-add-on.md) ou [obtenir des détails sur les extensions](get-all-add-ons.md).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
+| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension qui contient la soumission à obtenir. L’ID Windows Store est disponible dans l’espace partenaires, et il est inclus dans les données de réponse des requêtes pour [créer une extension](create-an-add-on.md) ou [d’obtenir des détails sur les extensions](get-all-add-ons.md).  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête

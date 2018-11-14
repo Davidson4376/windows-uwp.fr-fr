@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, volant de course, retour de force
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b4b35bb729ee49dbfd3f2b2b2a029a4319521c
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6146857"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188648"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>Volant de course et retour de force
 

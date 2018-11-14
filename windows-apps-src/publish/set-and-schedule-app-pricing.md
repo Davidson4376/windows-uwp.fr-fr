@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, tarification, prix de l’application, vente d’applications, modification de prix, prix personnalisé, prix, tarif, coût, remplacer le prix de base, prix au format libre, format libre
 ms.localizationpriority: medium
 ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6154641"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207073"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Définir et planifier le prix de l’application
 

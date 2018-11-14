@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, carte, emplacement, définition de clôture virtuelle
 ms.localizationpriority: medium
 ms.openlocfilehash: 86104f00ed0189290fd0cd718042573d9d592cc3
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6144704"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276146"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Recommandations concernant la clôture virtuelle des apps
 

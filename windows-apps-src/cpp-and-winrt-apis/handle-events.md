@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ca257de29be8e732e05c343a4b782b1676627bf
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190010"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276027"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 

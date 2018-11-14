@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 717c819aaa732cf8d29e0a701a1fec81485f48ac
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6202461"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279038"
 ---
 # <a name="handle-app-resume"></a>Gérer la reprise d’une application
 

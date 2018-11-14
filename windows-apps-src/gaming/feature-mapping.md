@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx9, directx11, portage
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048100"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206042"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Mapper les fonctionnalités DirectX9 sur les API DirectX11
 
@@ -400,7 +400,7 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>  dans Direct3D 9, les données a été agrandissement de 255.0f, mais cela peut être géré dans le nuanceur.
+<strong>Remarque</strong>  dans Direct3D 9, les données a été multipliée par 255.0f, mais cela peut être géré dans le nuanceur.
 </div>
 <div>
  
@@ -414,7 +414,7 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>  dans Direct3D 9, les données a été agrandissement de 255.0f, mais cela peut être géré dans le nuanceur.
+<strong>Remarque</strong>  dans Direct3D 9, les données a été multipliée par 255.0f, mais cela peut être géré dans le nuanceur.
 </div>
 <div>
  
@@ -582,7 +582,7 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>Remarque</strong>  le nuanceur Obtient des valeurs UINT, mais si partie intégrante de style Direct3D 9 sont nécessaires (0.0f, 1.0f … 255.f), UINT peut seulement être convertie en float32 dans le nuanceur.
+<strong>Remarque</strong>  le nuanceur Obtient les valeurs UINT, mais si la partie intégrante de style Direct3D 9 sont nécessaires (0.0f, 1.0f … 255.f), UINT peut seulement être convertie en float32 dans le nuanceur.
 </div>
 <div>
  
@@ -592,7 +592,7 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>Remarque</strong>  le nuanceur Obtient des valeurs SINT, mais si Direct3D 9 style sont nécessaires, les valeurs SINT peut seulement être convertie en float32 dans le nuanceur.
+<strong>Remarque</strong>  le nuanceur Obtient les valeurs SINT, mais si Direct3D 9 style sont nécessaires, les valeurs SINT peut seulement être convertie en float32 dans le nuanceur.
 </div>
 <div>
  
@@ -602,7 +602,7 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>Remarque</strong>  le nuanceur Obtient des valeurs SINT, mais si Direct3D 9 style sont nécessaires, les valeurs SINT peut seulement être convertie en float32 dans le nuanceur.
+<strong>Remarque</strong>  le nuanceur Obtient les valeurs SINT, mais si Direct3D 9 style sont nécessaires, les valeurs SINT peut seulement être convertie en float32 dans le nuanceur.
 </div>
 <div>
  

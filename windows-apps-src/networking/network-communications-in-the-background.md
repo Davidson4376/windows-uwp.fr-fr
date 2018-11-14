@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032262"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6281698"
 ---
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
 Pour poursuivre la communication réseau alors qu’elle n’est pas au premier plan, votre application peut utiliser des tâches en arrière-plan et l’autre de ces deux options.
@@ -157,7 +157,7 @@ Pour voir un exemple complet de l’utilisation du [**SocketActivityTrigger**](h
 Vous remarquerez probablement que l’exemple appelle **TransferOwnership** dès la création d’un nouveau socket ou l’acquisition d’un socket existant, au lieu d’utiliser pour cela le gestionnaire d’événements **OnSuspending**, comme décrit dans cette rubrique. L’exemple se concentre en effet sur l’illustration de l’utilisation du [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) et n’utilise donc le socket pour aucune autre activité pendant son exécution. Votre application sera probablement plus complexe et devra utiliser **OnSuspending** pour déterminer à quel moment appeler **TransferOwnership**.
 
 ## <a name="control-channel-triggers"></a>Déclencheurs de canal de contrôle
-Assurez-vous tout d’abord que vous utilisez les déclencheurs de canal de contrôle (CCT) de manière appropriée. Si vous utilisez des connexions [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) , [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)ou [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), puis nous vous recommandons d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Vous pouvez utiliser les CCT pour **StreamSocket**, mais ils consomment plus de ressources et peuvent ne pas fonctionner en mode Veille connectée.
+Assurez-vous tout d’abord que vous utilisez les déclencheurs de canal de contrôle (CCT) de manière appropriée. Si vous utilisez des connexions de [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) , [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)ou [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), puis nous vous recommandons d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Vous pouvez utiliser les CCT pour **StreamSocket**, mais ils consomment plus de ressources et peuvent ne pas fonctionner en mode Veille connectée.
 
 Si vous utilisez des WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)ou [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient), vous devez utiliser [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
