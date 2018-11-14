@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, description, décrire, description dans le Store, marketing
 ms.localizationpriority: medium
 ms.openlocfilehash: 382bfe760165b4dee3fbdbb63166648c2e475325
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051685"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6282881"
 ---
 # <a name="write-a-great-app-description"></a>Rédiger une description convaincante de l’application
 
@@ -27,7 +27,7 @@ Vous trouverez ci-après quelques conseils pour la rédaction d’une descriptio
 -   **Utilisez des listes et de courts paragraphes.** Il est possible que des clients potentiels jettent simplement un œil rapide à la description de votre application. Découper le contenu à l’aide de courts paragraphes et de listes en facilite l’analyse.
 
     > [!NOTE]
-    > Ajout d’une liste des [fonctionnalités](create-app-store-listings.md#product-features) du produit peut également contribuer à montrer rapidement sa finalité de votre application. Cette liste apparaît juste en dessous de la description de l’application.
+    > Ajout d’une liste des [fonctionnalités de produit](create-app-store-listings.md#product-features) peut également contribuer à montrer rapidement sa finalité de votre application. Cette liste apparaît juste en dessous de la description de l’application.
 
 -   **Évitez d’employer un langage rébarbatif.** Rédigez votre description en utilisant un langage convivial. Veillez à ce que les termes utilisés décrivent clairement la finalité de votre application, mais essayez de faire en sorte que la formulation ne soit pas ennuyeuse. Dans de nombreuses applications, un ton informel et amical fonctionne bien.
 -   **Utilisez une description d’une longueur appropriée.** Une bonne description doit se lire rapidement, mais inclure également suffisamment d’informations pour intéresser le lecteur et expliquer ce que fait l’application. La description d’une application complexe nécessitera davantage de phrases; quelques phrases suffiront pour une application simple. Dans la plupart des cas, la longueur appropriée est généralement supérieure à 200mots, mais bien inférieure à 3000mots.

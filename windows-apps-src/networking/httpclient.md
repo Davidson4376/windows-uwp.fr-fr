@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c874c690826dfa74b8dcb2312204cd549db3db2b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035684"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192464"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -114,7 +114,7 @@ En C++, aucune méthode ne permet d’essayer et d’analyser une chaîne passé
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) est dépourvu d’une fonction pratique. De ce fait, une application utilisant [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) et les autres classes de cet espace de noms doit utiliser la valeur **HRESULT**.
 
-Dans les applications à l’aide de la Framework4.5 .NET en c#, VB.NET, [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) représente une erreur lors de l’exécution d’application lorsqu’une exception se produit. La propriété [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) renvoie la valeur **HRESULT** affectée à l’exception spécifique. La propriété [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) renvoie le message de description de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Une application peut filtrer sur des valeurs **HRESULT** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
+Dans les applications à l’aide de la Framework4.5 .NET dans c#, VB.NET, [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) représente une erreur lors de l’exécution d’application lorsqu’une exception se produit. La propriété [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) renvoie la valeur **HRESULT** affectée à l’exception spécifique. La propriété [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) renvoie le message de description de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Une application peut filtrer sur des valeurs **HRESULT** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
 Quand une exception se produit dans une application utilisant le C++ managé et que cette application est en cours d’exécution, [Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) représente une erreur. La propriété [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) renvoie la valeur **HRESULT** affectée à l’exception spécifique. La propriété [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) renvoie la chaîne fournie par le système associée à la valeur **HRESULT**. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Une application peut effectuer un filtrage sur des valeurs **HRESULT** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 

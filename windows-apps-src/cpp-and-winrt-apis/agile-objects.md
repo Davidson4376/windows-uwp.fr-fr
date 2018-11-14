@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa129a60c7dfcc170a9ddeec318a062fb8cbe56
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043768"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194644"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
 
@@ -21,7 +21,7 @@ Dans la grande majorité des cas, une instance d’une classe Windows Runtime so
 Toutefois, vous pouvez la refuser. Vous avez peut-être une bonne raison de vouloir qu’un objet de votre type réside, par exemple, dans un thread unique cloisonné. Cela est généralement lié aux exigences de réentrance. Mais, de plus en plus, même les API d’interface utilisateur proposent des objets agiles. En règle générale, l’agilité est l’option la plus simple et la plus performante. En outre, lorsque vous implémentez une usine d’activation, elle doit être agile même si votre classe runtime correspondante ne l’est pas.
 
 > [!NOTE]
-> Windows Runtime est basé sur COM. En termes COM, une classe agile est inscrite avec `ThreadingModel` = *Both*. Pour plus d’informations sur les modèles et les compartiments de thread COM, voir [comprendre et à l’aide des modèles de thread COM](https://msdn.microsoft.com/library/ms809971).
+> Windows Runtime est basé sur COM. En termes COM, une classe agile est inscrite avec `ThreadingModel` = *Both*. Pour plus d’informations sur les modèles de thread et cloisonnements de COM, voir la [compréhension et à l’aide des modèles de thread COM](https://msdn.microsoft.com/library/ms809971).
 
 ## <a name="code-examples"></a>Exemples de code
 
@@ -87,7 +87,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 Peu importe où la structure de marqueur apparaît dans le pack de paramètres variadiques.
 
-Si ou vous refusiez non l’agilité, vous pouvez implémenter vous-même **IMarshal** . Par exemple, vous pouvez utiliser le marqueur **winrt::non_agile** pour éviter l’implémentation de l’agilité par défaut et implémenter **IMarshal** vous-même&mdash;par exemple, pour prendre en charge la sémantique marshaler par valeur.
+Si ou vous refusiez non l’agilité, vous pouvez implémenter vous-même **IMarshal** . Par exemple, vous pouvez utiliser le marqueur **winrt::non_agile** afin d’éviter l’implémentation de l’agilité par défaut et implémenter **IMarshal** vous-même&mdash;par exemple, pour prendre en charge la sémantique marshaler par valeur.
 
 ## <a name="agile-references-winrtagileref"></a>Références agiles (winrt::agile_ref)
 

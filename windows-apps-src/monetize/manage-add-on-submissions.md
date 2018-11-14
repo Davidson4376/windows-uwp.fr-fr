@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les soumissions pour les applications qui sont enregistrées sur votre compte espace partenaires.
+description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les soumissions de modules complémentaires pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Gérer les soumissions de modules complémentaires
 ms.author: mhopkins
 ms.date: 04/17/2018
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d'extension, produit dans l'app, FAI
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044288"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196425"
 ---
 # <a name="manage-add-on-submissions"></a>Gérer les soumissions de modules complémentaires
 
@@ -26,7 +26,7 @@ L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de 
 
 ## <a name="methods-for-managing-add-on-submissions"></a>Méthodes de gestion des soumissions d’extensions
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’extension, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, l’extension doit déjà exister dans votre compte espace partenaires. Vous pouvez créer une extension dans l’espace partenaires en [définissant son type de produit et l’ID de produit](../publish/set-your-add-on-product-id.md) ou en utilisant les méthodes de l’API de soumission au Microsoft Store dans décrits dans [Gérer les modules complémentaires](manage-add-ons.md).
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’extension, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, l’extension doit déjà exister dans votre compte espace partenaires. Vous pouvez créer une extension dans l’espace partenaires en [définissant son type et l’ID de produit](../publish/set-your-add-on-product-id.md) ou à l’aide des méthodes API de soumission au Microsoft Store dans décrits dans [Gérer les modules complémentaires](manage-add-ons.md).
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 
 Pour créer une soumission pour une extension, suivez ce processus.
 
-1. Si vous ne le n'avez pas encore fait, remplissez les conditions préalables décrites dans [créer et gérer des soumissions à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD avec votre compte espace partenaires et l’obtention votre ID client et clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
+1. Si vous ne le n'avez pas encore fait, remplissez les conditions préalables décrites dans [créer et gérer des soumissions à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte espace partenaires et obtention votre ID client et clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
 
 2. [Obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission au MicrosoftStore. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
@@ -121,7 +121,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. Validez la soumission en exécutant la méthode suivante. Cela avertira l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte. Pour plus d’informations, voir [Valider une soumission d’extension](commit-an-add-on-submission.md).
+5. Validez la soumission en exécutant la méthode suivante. Cela vous avertit l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte. Pour plus d’informations, voir [Valider une soumission d’extension](commit-an-add-on-submission.md).
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -232,7 +232,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur      | Type   | Description        |
 |------------|--------|----------------------|
-| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md), [obtenir toutes les extensions](get-all-add-ons.md) et [obtenir une extension](get-an-add-on.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
+| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md), [obtenir toutes les extensions](get-all-add-ons.md) et [obtenir une extension](get-an-add-on.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 | contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10[motsclés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces motsclés.   |
 | lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
@@ -293,7 +293,7 @@ Cette ressource contient des informations commerciales sur une extension.
 > [!IMPORTANT]
 > La ressource **Sale** n’est plus prise en charge, et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’une extension à l’aide de l’API de soumission au MicrosoftStore. À l’avenir, nous allons mettre à jour l’API de soumission au MicrosoftStore pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant la soumission de modules complémentaires.
 >    * Après l’appel de la [méthode GET pour soumettre un module complémentaire](get-an-add-on-submission.md), la ressource *Sales* est vide. Vous pouvez continuer à utiliser l’espace partenaires pour obtenir les données de vente à prix réduit pour votre soumission d’extension.
->    * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’un module complémentaire](update-an-add-on-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez continuer à utiliser l’espace partenaires pour modifier les données commerciales concernant votre soumission d’extension.
+>    * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’un module complémentaire](update-an-add-on-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez continuer à utiliser l’espace partenaires pour changer les données de vente à prix réduit pour votre soumission d’extension.
 
 Cette ressource a les valeurs suivantes.
 
@@ -336,7 +336,7 @@ Cette ressource donne accès aux données du rapport de certification d’une so
 
 | Valeur           | Type    | Description               |
 |-----------------|---------|------|
-|     date            |    chaîne     |  La date et l’heure de que génération du rapport, au format ISO 8601.    |
+|     date            |    chaîne     |  Date et heure de que génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 ## <a name="enums"></a>Énumérations

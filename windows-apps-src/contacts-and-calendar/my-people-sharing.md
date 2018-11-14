@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039482"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199398"
 ---
 # <a name="my-people-sharing"></a>Partage de mes contacts
 
@@ -105,7 +105,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour rechercher le nom de famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet «Packages». Ici, «Application» est la classe activable correspondant à la vue de cible de partage.
+«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour rechercher votre nom de famille du Package, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet «Packages». Ici, «Application» est la classe activable correspondant à la vue de cible de partage.
 
 ## <a name="running-as-a-my-people-share-target"></a>En cours d’exécution en tant que cible de partage de mes contacts
 

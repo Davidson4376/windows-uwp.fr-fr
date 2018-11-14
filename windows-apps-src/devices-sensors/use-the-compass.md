@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4af6b0fb339ba1fde3ea94f456eac98be8a1db9b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051573"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199829"
 ---
 # <a name="use-the-compass"></a>Utiliser la boussole
 
@@ -33,7 +33,7 @@ Une application peut récupérer l’orientation actuelle par rapport au nord ma
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Il se peut que vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge une boussole.
 

@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows10, uwp, première application, hello word
 ms.localizationpriority: medium
 ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039241"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192320"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application «Hello World» (XAML)
 
-Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» application pour la plateforme Windows universelle (UWP) sur Windows 10. Un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur n’importe quel appareil Windows 10.
+Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» pour la plateforme Windows universelle (UWP) sur Windows 10 d’application. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 Vous allez apprendre à effectuer les opérations suivantes:
 
--   Créez un projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
+-   Créez un nouveau projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
 -   écrire du code XAML pour modifier l’interface utilisateur de votre page de démarrage;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio;
 -   utiliser un objet SpeechSynthesizer pour faire parler l’application quand vous appuyez sur un bouton.
@@ -48,7 +48,7 @@ Vous allez apprendre à effectuer les opérations suivantes:
 
 2.  Dans le menu **fichier** , sélectionnez **New > projet** pour ouvrir la boîte de dialogue *Nouveau projet* .
 
-3.  Dans la liste des modèles de gauche, choisissez **installés > Visual c# > Windows universel** pour afficher la liste des modèles de projet UWP.
+3.  Dans la liste des modèles de gauche, choisissez **installé > Visual c# > Windows universel** pour afficher la liste des modèles de projet UWP.
 
     (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d'installation de Visual Studio** dans la boîte de dialogue *Nouveau projet*. Voir [se préparer](get-set-up.md).)
 
@@ -95,14 +95,14 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 *Package.appxmanifest*
 -   Fichier manifeste qui décrit votre application: nom, description, vignette, page de démarrage, etc..
--   Comprend une liste des dépendances, les ressources et les fichiers contenus dans votre application.
+-   Comprend une liste de dépendances, les ressources et les fichiers contenus dans votre application.
 
 *Ensemble d’images de logo*
 -   Assets/Square150x150Logo.scale-200.png et Wide310x150Logo.scale-200.png représentent votre application (taille moyenne ou échelle) dans le menu Démarrer.
--   Assets/Square44x44Logo.png représente votre application dans la liste d’application du menu Démarrer, la barre des tâches et le Gestionnaire des tâches.
+-   Assets/Square44x44Logo.png représente votre application dans la liste de l’application du menu Démarrer, la barre des tâches et le Gestionnaire des tâches.
 -   Assets/StoreLogo.png représente votre application dans le MicrosoftStore.
 -   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
--   Assets/LockScreenLogo.scale-200.png peut être utilisé pour représenter l’application sur l’écran de verrouillage lorsque le système est verrouillé.
+-   Assets/LockScreenLogo.scale-200.png peut être utilisé pour représenter l’application sur l’écran de verrouillage, lorsque le système est verrouillé.
 
 ## <a name="step-2-adding-a-button"></a>Étape2: Ajouter un bouton
 

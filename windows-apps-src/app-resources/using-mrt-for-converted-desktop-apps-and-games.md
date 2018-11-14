@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app converter, interface utilisateur multilingue, assembly satellite
 ms.localizationpriority: medium
 ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034883"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251731"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows10 dans une application ou un jeu hérité
 
@@ -305,7 +305,7 @@ Maintenant que le fichier PRI est généré, vous pouvez créer et signer le pac
  * `/f` définit le mappage de fichier à utiliser (créé à l’étape précédente) 
  * `/p` définit le nom du package de sortie
  * `/o` définit sur Remplacer le fichier de sortie s’il existe.
-0. Une fois le package créé, il doit être signé. Le moyen le plus simple d’obtenir un certificat de signature est en créant un projet Windows universel vide dans Visual Studio et copie le `.pfx` fichier qu’il crée, mais vous pouvez en créer un manuellement à l’aide de la `MakeCert` et `Pvk2Pfx` utilitaires comme décrit dans [la **comment créer un package d’application certificat de signature** sur MSDN] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
+0. Une fois le package créé, il doit être signé. Le moyen le plus simple d’obtenir un certificat de signature est, créez un projet Windows universel vide dans Visual Studio et copiez la `.pfx` fichier qu’il crée, mais vous pouvez en créer un manuellement à l’aide de la `MakeCert` et `Pvk2Pfx` utilitaires comme décrit dans [la **comment créer un package d’application certificat de signature** sur MSDN] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
  * **Important:** si vous créez manuellement un certificat de signature, assurez-vous que vous placez les fichiers dans un répertoire autre que votre projet source ou package source; sinon, celui-ci risquera d'être inclus dans le package, y compris la clé privée!
 0. Pour signer le package, utilisez la commande suivante. Notez que le `Publisher` spécifié dans l'élément `Identity` du `AppxManifest.xml` doit correspondre au `Subject` du certificat (il ne s’agit **pas** de l'élément `<PublisherDisplayName>`, qui est le nom complet localisé à afficher aux utilisateurs). Comme toujours, remplacez les noms de fichiers `contoso_demo...` par les noms correspondants à votre projet, et (**très important**) vérifiez que le fichier `.pfx` ne se trouve pas dans le répertoire actif (sinon, il sera créé et inclus dans votre package, y compris la clé de signature privée!):
 

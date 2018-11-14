@@ -10,24 +10,24 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: b95637b38aafeb4111ecb25279dcec448ca3c30f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031171"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6254816"
 ---
 # <a name="home-page-dev-home"></a>Page d’accueil (Dev Home)
    
   
-La page **d’accueil** d’accueil du développeur permet d’accéder rapidement aux tâches qui sont effectuées régulièrement sur une console de développement.   
- ![Page d’accueil d’accueil du développeur](images/devhome_home.png)   
+La page **d’accueil** de l’outil accueil du développeur fournit un accès rapide pour les tâches qui sont effectuées régulièrement sur une console de développement.   
+ ![Page d’accueil de l’outil accueil du développeur](images/devhome_home.png)   
   
 La page **d’accueil** contient les volets suivants:   
  
    *  [Actions rapides](#ID4EEB)  
    *  [Jeux et applications](#ID4EPC)  
    *  [Comptes de test](#ID4EQD)  
-   *  [Entrer en contact avec votre navigateur](#ID4EFE)  
+   *  [Se connecter avec votre navigateur](#ID4EFE)  
 
  
 <a id="ID4EEB"></a>
@@ -60,7 +60,7 @@ Le volet de **jeux et applications** peut être utilisé pour effectuer les acti
    *  Lancer rapidement des applications et jeux.  
    *  Permet d’afficher l’état PLM d’applications et jeux.  
    *  Modifier les États PLM à partir d’un menu contextuel.  
-   *  Inscrire et exécuter un titre à partir d’un partage réseau distant.
+   *  Inscrire et à exécuter un titre à partir d’un partage réseau à distance.
 
   
 <a id="ID4EQD"></a>
@@ -82,7 +82,7 @@ Le volet de **comptes de Test** peut être utilisé pour effectuer les actions s
 
    
 
-## <a name="connect-with-your-browser"></a>Entrer en contact avec votre navigateur  
+## <a name="connect-with-your-browser"></a>Se connecter avec votre navigateur  
    
   
 Le volet de **se connecter avec votre navigateur** affiche l’adresse IP et le port que vous pouvez utiliser pour gérer votre console à partir d’un navigateur web.   

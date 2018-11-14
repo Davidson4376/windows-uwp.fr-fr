@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024846"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195844"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas: création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 
@@ -106,7 +106,7 @@ De la même façon, .NET Framework fournit une prise en charge pour permettre l�
 
 Dans votre projet JavaScript, ouvrez le fichier default.html et mettez à jour le corps comme illustré dans le code suivant. Ce code inclut l’ensemble complet de contrôles pour l’exemple d’application et spécifie les noms de fonctions pour les événements Click.
 
-> **Remarque**lorsque vous exécutez tout d’abord l’application, seuls les boutons Basics1 et Basics2 sont pris en charge.
+> **Remarque**lorsque vous exécutez tout d’abord l’application, seul le bouton boutons Basics1 et Basics2 sont pris en charge.
 
 ```html
 <body>
@@ -270,7 +270,7 @@ Dans le projet SampleComponent, ajoutez une nouvelle classe **public sealed** (c
 > End Class
 > ```
 
-Le Gestionnaire d’événements suit le modèle d’événement .NET Framework familier, à ceci près que l’expéditeur de l’événement (dans ce cas, l’objet PropertySet) est casté en le IObservableMap&lt;chaîne, objet&gt; interface (IObservableMap (Of String, Object) dans Visual Basic), qui est une instanciation de l’interface Windows Runtime [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (Vous pouvez caster l’expéditeur en son type si nécessaire.) En outre, les arguments d’événement sont présentés comme une interface plutôt qu’en tant qu’objet.
+Le Gestionnaire d’événements suit le modèle d’événement .NET Framework familier, à ceci près que l’expéditeur de l’événement (dans ce cas, il s’agit de l’objet PropertySet) est casté en le IObservableMap&lt;de chaîne, l’objet&gt; interface (IObservableMap (Of String, Object) dans Visual Basic), qui est une instanciation de l’interface Windows Runtime [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (Vous pouvez caster l’expéditeur en son type si nécessaire.) En outre, les arguments d’événement sont présentés comme une interface plutôt qu’en tant qu’objet.
 
 Dans le fichier default.js, ajoutez la fonction Runtime1 comme indiqué. Ce code crée un objet PropertySetStats, obtient sa collection PropertySet et ajoute son propre gestionnaire d’événements, la fonction onMapChanged, pour gérer l’événement MapChanged. Après avoir modifié la collection, runtime1 appelle la méthode DisplayStats pour afficher un récapitulatif des types de modifications.
 
@@ -413,7 +413,7 @@ En plus de retourner les types Windows Runtime que vous avez créés dans votre 
 
 Notez que le dictionnaire doit être retourné comme une interface implémentée par [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) et qui mappe vers une interface Windows Runtime. Dans ce cas, l’interface est IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) en Visual Basic). Lorsque le type Windows Runtime IMap&lt;int, string&gt; est transmis au code managé, il apparaît sous la forme IDictionary&lt;int, string&gt;. L’inverse est également vrai lorsque le type managé est transmis à JavaScript.
 
-**Important**lorsqu’un type managé implémente plusieurs interfaces, JavaScript utilise l’interface qui apparaît en premier dans la liste. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+**Important**lorsqu’un type managé implémente plusieurs interfaces, JavaScript utilise l’interface qui s’affiche en premier dans la liste. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
  
 
@@ -472,7 +472,7 @@ Naturellement, JavaScript n’est pas un langage fortement typé. L’utilisatio
 
 Autre comportement inattendu : si vous transmettez une variable JavaScript non assignée en tant qu’argument de chaîne, vous obtenez la chaîne « undefined ». En résumé, soyez prudent lorsque vous transmettez des types de collection .NET Framework à votre code JavaScript.
 
-> **Remarque**si vous disposez de grandes quantités de texte à concaténer, vous pouvez le faire plus efficace en déplaçant le code dans une méthode .NET Framework et à l’aide de la classe StringBuilder, comme illustré dans la fonction showMap.
+> **Remarque**si vous disposez de grandes quantités de texte à concaténer, vous pouvez le faire plus efficace en déplaçant le code dans une méthode .NET Framework et en utilisant la classe StringBuilder, comme illustré dans la fonction showMap.
 
 Même si vous ne pouvez pas exposer vos propres types génériques à partir d’un composant Windows Runtime, vous pouvez retourner les collections génériques .NET Framework pour les classes Windows Runtime à l’aide, par exemple, du code suivant:
 

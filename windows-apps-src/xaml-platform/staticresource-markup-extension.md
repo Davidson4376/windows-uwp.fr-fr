@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030471"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196948"
 ---
 # <a name="staticresource-markup-extension"></a>Extension de balisage {StaticResource}
 
@@ -77,7 +77,7 @@ Notez la façon dont l’utilisation de l’extension de balisage {StaticResourc
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>Prise en charge d’outils au moment de la conception pour l’extension de balisage **{StaticResource}**
 
-Microsoft Visual Studio2013 peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{StaticResource}** dans une page XAML. Par exemple, dès que vous tapez «{StaticResource», toute clé de ressource provenant de l’étendue de recherche actuelle s’affiche dans les listes déroulantes IntelliSense. En plus des ressources standard présentes au niveau de la page ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) et au niveau de l’application ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), vous pouvez aussi apercevoir les [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274), ainsi que les ressources de toute extension utilisée par votre projet.
+Studio2013 Visual Microsoft peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{StaticResource}** dans une page XAML. Par exemple, dès que vous tapez «{StaticResource», toute clé de ressource provenant de l’étendue de recherche actuelle s’affiche dans les listes déroulantes IntelliSense. En plus des ressources standard présentes au niveau de la page ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) et au niveau de l’application ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), vous pouvez aussi apercevoir les [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274), ainsi que les ressources de toute extension utilisée par votre projet.
 
 Lorsqu’une clé de ressource fait partie d’une utilisation de **{StaticResource}** quelconque, la fonctionnalité **Atteindre la définition** (F12) peut résoudre cette ressource et vous montrer le dictionnaire dans lequel elle est définie. Pour les ressources de thème, il s’agit du fichier generic.xaml à utiliser au moment de la conception.
 

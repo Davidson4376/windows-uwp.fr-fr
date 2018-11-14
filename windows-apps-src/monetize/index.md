@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039099"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199889"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 
@@ -34,7 +34,7 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 | [Consigner des événements personnalisés pour l’espace partenaires](log-custom-events-for-dev-center.md)  | Consigner des événements personnalisés à partir de votre application UWP et passez en revue les événements dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
 | [Demander des évaluations et des avis](request-ratings-and-reviews.md) |  Incitez vos clients à évaluer ou à donner un avis sur votre app en affichant par programme une interface utilisateur destinée aux avis et évaluations.  |
 | [Services MicrosoftStore](using-windows-store-services.md)    |  Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le WindowsStore et d’autres tâches associées au WindowsStore, et accéder aux données d’analyse.    |
-| [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester le PC et appareils sur le sol vente peuvent aller à droite dans.  |
+| [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester les PC et appareils sur le sol vente peuvent aller à droite dans.  |
 
 ## <a name="related-topics"></a>Rubriques connexes
 

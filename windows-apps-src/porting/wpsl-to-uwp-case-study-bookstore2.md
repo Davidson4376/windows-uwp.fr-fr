@@ -1,21 +1,21 @@
 ---
 author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application WindowsPhone Silverlight qu’affiche des données groupées dans un élément LongListSelector.
-title: WindowsPhone Silverlight d’étude de cas UWP, Bookstore2
+description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application de WindowsPhone Silverlight qu’affiche des données groupées dans un élément LongListSelector.
+title: WindowsPhone Silverlight à l’étude de cas UWP, Bookstore2
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040188"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199532"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight d’étude de cas UWP: Bookstore2
+# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight à l’étude de cas UWP: Bookstore2
 
 
 Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), commence par une application WindowsPhone Silverlight qu’affiche des données groupées dans un **élément LongListSelector**. Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **LongListSelector**, nous pouvons visualiser la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle Windows10Universal (UWP).
@@ -122,7 +122,7 @@ Vous pouvez à présent générer et exécuter l’application. Voici comment ce
 
 ![Application UWP sur un appareil mobile avec les modifications du code source initial](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-Le modèle d’affichage et les vues avec zoom avant et arrière fonctionnent ensemble correctement. Toutefois, cette approche nécessite un peu plus de travail de stylisation et de création de modèles. Par exemple, les styles et pinceaux corrects n'est pas encore utilisés, afin que le texte est invisible sur les en-têtes de groupe que vous pouvez cliquer pour effectuer un zoom arrière. Si vous exécutez l’application sur un appareil de bureau, vous verrez un second problème, c'est-à-dire que l’application n’adapte pas encore son interface utilisateur pour fournir la meilleure expérience et l’utilisation de l’espace sur des appareils plus grands où windows peuvent être sensiblement taille de l’écran d’un appareil mobile. Nous allons donc résoudre ces problèmes dans les sections ci-après ([Stylisation et création de modèles initiaux](#initial-styling-and-templating), [Interface utilisateur adaptative](#adaptive-ui) et [Stylisation finale](#final-styling)).
+Le modèle d’affichage et les vues avec zoom avant et arrière fonctionnent ensemble correctement. Toutefois, cette approche nécessite un peu plus de travail de stylisation et de création de modèles. Par exemple, les styles et pinceaux corrects n'est pas encore utilisés, afin que le texte est invisible sur les en-têtes de groupe que vous pouvez cliquer pour effectuer un zoom arrière. Si vous exécutez l’application sur un appareil de bureau, vous verrez un second problème, ce qui est que l’application n’adapte pas encore son interface utilisateur pour fournir la meilleure expérience et l’utilisation de l’espace sur des appareils plus grands où windows peuvent être sensiblement taille de l’écran d’un appareil mobile. Nous allons donc résoudre ces problèmes dans les sections ci-après ([Stylisation et création de modèles initiaux](#initial-styling-and-templating), [Interface utilisateur adaptative](#adaptive-ui) et [Stylisation finale](#final-styling)).
 
 ## <a name="initial-styling-and-templating"></a>Stylisation et création de modèles initiaux
 
@@ -255,18 +255,18 @@ Une fois cette séquence d’opérations de stylisation effectuée, l’applicat
 
 ![Application Windows10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom avant, deux tailles de fenêtres  
+Application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom avant, deux tailles de fenêtre  
 ![l’application windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre
+Application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre
 
 ![Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom avant)](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom avant
+Application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom avant
 
 ![Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom arrière)](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom arrière
+Application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom arrière
 
 ## <a name="making-the-view-model-more-flexible"></a>Optimisation de la flexibilité du modèle d’affichage
 
@@ -303,4 +303,4 @@ Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus
 
 ## <a name="conclusion"></a>Conclusion
 
-Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. Toutes les installations et les concepts de **l’élément LongListSelector**de WindowsPhone Silverlight — et bien plus encore, à être disponibles pour une application UWP sous la forme de **SemanticZoom**, **ListView**, **GridView**et **CollectionViewSource**a été trouvé. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.
+Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. Toutes les installations et les concepts de l' WindowsPhone Silverlight **LongListSelector**— et bien plus encore, à être disponibles pour une application UWP sous la forme de **SemanticZoom**, **ListView**, **GridView**et **CollectionViewSource**a été trouvé. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.

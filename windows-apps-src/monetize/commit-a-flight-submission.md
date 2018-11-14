@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission de version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034185"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197094"
 ---
 # <a name="commit-a-package-flight-submission"></a>Valider une soumission de version d’évaluation de package
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris tous les packages associés). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission d’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris tous les packages associés). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission pour l’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
 
 Pour plus d’informations sur la façon dont cette opération de validation s’inscrit dans le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission au MicrosoftStore, consultez [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md).
 
@@ -50,8 +50,8 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission de version d’évaluation de package à valider. L’ID Store de l’application est disponible dans l’espace partenaires.  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de version d’évaluation dans l’espace partenaires.  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la version d’évaluation dans l’espace partenaires.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête

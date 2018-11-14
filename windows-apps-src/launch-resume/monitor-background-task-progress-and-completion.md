@@ -6,18 +6,18 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 9c71d8a42a71d221f6a20850f1d002be922517be
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024891"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188097"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
@@ -38,7 +38,7 @@ La progression et l’achèvement des tâches en arrière-plan peuvent être sur
 ### <a name="step-1"></a>Étape1
 Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) .
 
-Utilisez l’empreinte suivante pour la méthode de Gestionnaire des événements **OnCompleted** arrière-plan tâche.
+Utilisez l’empreinte suivante pour la méthode de Gestionnaire des événements **OnCompleted** en arrière-plan tâche.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)

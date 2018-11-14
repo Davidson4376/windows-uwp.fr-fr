@@ -8,11 +8,11 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 76de6c5c1e8925dd8b166a8d99c39116bf66141d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043535"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195788"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en août 2018
 
@@ -26,13 +26,13 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 Les fonctionnalités suivantes ont été ajoutées à Windows les builds Insider Preview, disponibles via le programme [Windows Insider](https://insider.windows.com/) .
 
-* La [Bibliothèque de l’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact d’utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
+* La [Bibliothèque d’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact d’utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [bouton partagé](../design/controls-and-patterns/buttons.md#create-a-split-button)et [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) fournissent des contrôles de bouton avec des fonctionnalités spécialisées pour améliorer l’interface utilisateur de votre application.
 
 ![Un bouton partagé pour la sélection de couleur de premier plan](../design/controls-and-patterns/images/split-button-rtb.png)
 
-* NavigationView prend désormais en charge la [navigation en haut](../design/controls-and-patterns/navigationview.md), pour les cas dans lesquels votre application dispose d’un petit nombre d’options de navigation et requiert davantage d’espace pour le contenu de votre application.
+* NavigationView prend désormais en charge la [navigation en haut](../design/controls-and-patterns/navigationview.md), pour les cas dans lesquels votre application dispose d’un petit nombre d’options de navigation et nécessitent plus d’espace pour le contenu de votre application.
 
 * TreeView a été amélioré pour prendre en charge [liaison de données, les modèles, d’élément et de glisser -déplacer.](../design/controls-and-patterns/tree-view.md)
 
@@ -40,13 +40,13 @@ Les fonctionnalités suivantes ont été ajoutées à Windows les builds Insider
 
 L’infrastructure de prise en charge de package est un kit open source qui vous permet d’appliquer des correctifs à votre application win32 lorsque vous n’avez pas accès au code source, afin qu’il puisse exécuter dans un conteneur MSIX.
 
-Pour en savoir plus, voir [runtime d’appliquer des correctifs à un package MSIX à l’aide de l’infrastructure de prise en charge de Package](../porting/package-support-framework.md).
+Pour en savoir plus, voir [l’exécution d’appliquer des correctifs à un package MSIX à l’aide de l’infrastructure de prise en charge du Package](../porting/package-support-framework.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
 ### <a name="web-api-extensions"></a>Extensions de l’API Web
 
-Liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont propres à Internet Explorer ou Microsoft Edge et complément les informations existantes sur le support de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérités [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web riches informations sur les API à partir de MDN exposées directement en [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont spécifiques à Internet Explorer ou Microsoft Edge et complément existante d’informations sur la prise en charge de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérité [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web enrichi à partir de MDN, les informations sur les API exposées directement dans [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
 ### <a name="cwinrt-code-examples"></a>C++ / exemples de Code C++
 
@@ -54,17 +54,17 @@ Nous avons ajouté 250 [C++ / WinRT](../cpp-and-winrt-apis/index.md) code descri
 
 ### <a name="project-rome"></a>Projet «Rome»
 
-Le site de [documentation du projet «Rome»](https://docs.microsoft.com/windows/project-rome/) a été réorganisé dans une approche de la fonctionnalité de priorité. Cela doit facilitent pour les développeurs de rechercher qu’ils recherchent et pour implémenter des fonctionnalités de leur choix sur plusieurs plateformes.
+Le site de [documentation du projet «Rome»](https://docs.microsoft.com/windows/project-rome/) a été réorganisé dans une approche de la fonctionnalité d’abord. Cela doit faciliter pour les développeurs de rechercher qu’ils recherchent et pour implémenter des fonctionnalités de leur choix sur plusieurs plateformes.
 
 ## <a name="videos"></a>Vidéos
 
 ### <a name="xbox-live-unity-plugin"></a>Plug-in Xbox Live Unity
 
-Le plug-in Xbox Live pour Unity prend en charge pour l’ajout de signature de Xbox Live, statistiques, listes d’amis, stockage cloud et les classements à votre titre. [Regardez la vidéo](https://youtu.be/fVQZ-YgwNpY) pour en savoir plus, puis [Télécharger le package GitHub](https://aka.ms/UnityPlugin) pour commencer.
+Le plug-in Xbox Live pour Unity contient la prise en charge pour l’ajout de signature de Xbox Live, statistiques, listes d’amis, stockage cloud et les classements à votre titre. [Regardez la vidéo](https://youtu.be/fVQZ-YgwNpY) pour en savoir plus, puis [Télécharger le package GitHub](https://aka.ms/UnityPlugin) pour commencer.
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les questions les plus récentes que nous avons répondu à!
 
 Raymond Chen:
 

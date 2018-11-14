@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049973"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205751"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
@@ -63,11 +63,11 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 
 À compter de Windows 10, version 1809, vous pouvez utiliser l’extension de balisage **x: Bind** n’importe où vous utilisez **TemplateBinding** dans un [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) est requise (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
+La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) est requis (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
 
 Avec prise en charge de **x: Bind** , vous pouvez utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien que dans un [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
 
-Dans cet exemple, la propriété **TextBlock.Text** est évaluée à **Button.Content.ToString**. La propriété TargetType sur le ControlTemplate agit comme la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
+Dans cet exemple, la propriété **TextBlock.Text** a la valeur **Button.Content.ToString**. La propriété TargetType sur le ControlTemplate agit comme la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
 
 ```xaml
 <ControlTemplate TargetType="Button">

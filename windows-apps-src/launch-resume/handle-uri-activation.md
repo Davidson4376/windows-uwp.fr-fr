@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 808242fd7e179c225b3119dad146e7f05d72ffd4
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6163846"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188751"
 ---
 # <a name="handle-uri-activation"></a>Gérer l’activation des URI
 

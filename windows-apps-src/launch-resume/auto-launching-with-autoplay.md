@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046862"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194730"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Démarrage automatique avec lecture automatique
 
@@ -220,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
 2.  Pour exécuter votre application, insérez une carte mémoire d’appareil photo ou un autre périphérique de stockage d’un appareil photo dans votre PC. Sélectionnez ensuite l’une des options d’événement de contenu que vous avez spécifiées dans votre fichier package.appxmanifest à partir de la liste d’options de la lecture automatique. Cet exemple de code affiche ou copie uniquement les images du dossier DCIM de la carte mémoire d’un appareil photo. Si la carte mémoire de votre appareil photo stocke des images dans un dossier AVCHD ou PRIVATE\\ACHD, vous devez mettre à jour le code en conséquence.
-    **Remarque**si vous n’avez pas carte mémoire d’un appareil photo, vous pouvez utiliser une clé USB si elle dispose d’un dossier nommé **dossier DCIM** à la racine et si le dossier DCIM possède un sous-dossier qui contient des images.
+    **Remarque**si vous n’avez pas carte mémoire d’un appareil photo, vous pouvez utiliser un lecteur flash si elle a un dossier nommé **dossier DCIM** à la racine, et si le dossier DCIM dispose d’un sous-dossier qui contient des images.
 
 ## <a name="register-for-an-autoplay-device"></a>S’inscrire pour un appareil de lecture automatique
 

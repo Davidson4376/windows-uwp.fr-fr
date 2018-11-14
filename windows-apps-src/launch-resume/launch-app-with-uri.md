@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026910"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196843"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Lancer une application avec un URI
 
@@ -29,7 +29,7 @@ Cette section explique comment utiliser un URI (Uniform Resource Identifier) pou
 | [Lancer l’application UWP](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application UWP en ouvrant des pages spécifiques dans le Store. |
 | [Lancer l’application CartesWindows](launch-maps-app.md) | Découvrez comment lancer l’application Cartes Windows à partir de votre application. |
 | [Lancer l’application Contacts](launch-people-apps.md) | Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques. |
-| [Lancer la capture d’écran](launch-screen-snipping.md) | Découvrez comment utiliser les schémas d’URI pour ouvrir une nouvelle capture, ou pour ouvrir l’application capture & esquisse. |
+| [Lancer la capture d’écran](launch-screen-snipping.md) | Découvrez comment utiliser les schémas d’URI pour ouvrir une nouvelle capture ou pour ouvrir l’application de capture et Sketch. |
 | [Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application](web-to-app-linking.md) | Attractive avec votre application prenant en charge les applications pour la fonctionnalité de sites Web. |
 
 ## <a name="related-topics"></a>Rubriques connexes

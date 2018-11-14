@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 34d686b8e20d384da4a3db1ea3805ad082d5f8a8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028174"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196046"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Python: soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -54,7 +54,7 @@ L’exemple suivant indique comment [créer](create-a-flight.md) et [supprimer](
 
 ## <a name="create-an-app-submission"></a>Créer une soumission d’applications
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’apps. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Cet exemple effectue les tâches suivantes, entre autres:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’apps. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée à l’espace partenaires. Cet exemple effectue les tâches suivantes, entre autres:
 
 1. Pour commencer, il [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, il [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
@@ -69,7 +69,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 ## <a name="create-an-add-on-submission"></a>Créer une soumission d’extension
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’extension. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Cet exemple effectue les tâches suivantes, entre autres:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’extension. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée à l’espace partenaires. Cet exemple effectue les tâches suivantes, entre autres:
 
 1. Pour commencer, il [récupère les données de l’extension indiquée](get-an-add-on.md).
 2. Ensuite, il [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
@@ -84,7 +84,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 ## <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation du package
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission de version d’évaluation du package. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Cet exemple effectue les tâches suivantes, entre autres:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission de version d’évaluation du package. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée à l’espace partenaires. Cet exemple effectue les tâches suivantes, entre autres:
 
 1. Pour commencer, il [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, il [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.

@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Windows 10, uwp, achats dans l’application, FAI, extensions, les codes d’erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047304"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181745"
 ---
 # <a name="error-codes-for-store-operations"></a>Codes d’erreur pour les opérations du Store
 
 <!-- confirm whether symbolic names are defined for app developers, or do they just handle direct error code values -->
 
-Cet article décrit les codes d’erreur courants que vous pouvez rencontrer lorsque vous développez ou testez les opérations associées au Windows Store dans votre application.
+Cet article décrit les codes d’erreur courants que vous pouvez rencontrer lorsque vous développez ou de tester les opérations associées au Windows Store dans votre application.
 
 ## <a name="in-app-purchase-error-codes"></a>Codes d’erreur achat in-app
 
@@ -27,13 +27,13 @@ Codes d’erreur suivants sont liés aux opérations d’achat dans l’applicat
 |  Error code  |  Description  |
 |--------------|---------------|
 | 0x803F6100   | L’achat dans l’application n’a pas pu aboutir, car le des enfants monde sont actif. Pour terminer l’achat, se connecter à l’appareil avec votre compte Microsoft et réexécutez l’application.               |
-| 0x803F6101   | L’application spécifiée est introuvable. L’application n’est plus peut-être être disponible dans le Windows Store, ou vous avez fourni le mauvais ID Windows Store pour l’application.     |
-| 0x803F6102   | L’extension spécifiée est introuvable. L’extension n’est plus peut-être être disponible dans le Windows Store ou votre peut disposer de l’ID Windows Store incorrect pour l’extension.                                               |
-| 0x803F6103   | Le produit spécifié est introuvable. Le produit n’est plus peut-être être disponible dans le Windows Store, ou vous avez fourni le mauvais ID Store du produit.                                          |
-| 0x803F6104   | L’achat dans l’application n’a pas pu aboutir, car vous exécutez une version d’évaluation de l’application. Pour effectuer des achats dans l’application, installez la version complète de l’application.               |
+| 0x803F6101   | L’application spécifiée est introuvable. L’application n’est plus peut-être être disponible dans le Windows Store, ou que vous avez fourni le mauvais ID Windows Store pour l’application.     |
+| 0x803F6102   | L’extension spécifiée est introuvable. L’extension n’est plus peut-être être disponible dans le Windows Store ou votre peut avoir fourni l’ID Windows Store incorrect pour l’extension.                                               |
+| 0x803F6103   | Le produit spécifié est introuvable. Le produit n’est plus peut-être être disponible dans le Windows Store, ou que vous avez fourni le mauvais ID Store du produit.                                          |
+| 0x803F6104   | L’achat dans l’application n’a pas pu aboutir, car vous exécutez une version d’évaluation de l’application. Pour effectuer des achats in-app, installez la version complète de l’application.               |
 | 0x803F6105   | L’achat dans l’application n’a pas pu aboutir, car vous n’êtes pas connecté avec votre compte Microsoft.                                              |
-| 0x803F6107   | Élément inattendu s’est produit lors du traitement de l’opération en cours.                                             |
-| 0x803F6108   | L’achat dans l’application n’a pas pu aboutir, car les informations est manquantes dans la licence de l’application. Cette erreur peut se produire lorsque vous chargement indépendant de votre application. Pour résoudre ce problème, désinstallez l’application et réinstaller à partir du Windows Store pour actualiser la licence de l’application.                                          |
+| 0x803F6107   | Un événement inattendu s’est produit lors du traitement de l’opération en cours.                                             |
+| 0x803F6108   | L’achat dans l’application n’a pas pu aboutir, car les informations est manquantes dans la licence de l’application. Cette erreur peut se produire lorsque vous chargement indépendant de votre application. Pour résoudre ce problème, désinstallez l’application, et réinstaller à partir du Windows Store pour actualiser la licence de l’application.                                          |
 | 0x803F6109   | L’acquisition de module complémentaire consommable n’a pas pu aboutir, car la quantité spécifiée est plus que le solde restant.        |
 | 0x803F610A   | Le type de fournisseur spécifié pour le compte d’utilisateur du Windows Store n’est pas pris en charge.                                            |
 | 0x803F610B   | L’opération de magasin spécifiée n’est pas pris en charge.                                             |
@@ -42,7 +42,7 @@ Codes d’erreur suivants sont liés aux opérations d’achat dans l’applicat
 | 0x80040002   | La liste de mots clés fournie n’est pas valide.                   |
 | 0 x 80040003   | La cible de l’acquisition n’est pas valide.                       |
 
-## <a name="licensing-error-codes"></a>Codes d’erreur de licence
+## <a name="licensing-error-codes"></a>Codes d’erreur de gestion de licences
 
 Codes d’erreur suivants sont liés à la gestion des licences des applications ou des modules complémentaires.
 
@@ -53,15 +53,15 @@ Codes d’erreur suivants sont liés à la gestion des licences des applications
 | 0x803F8002   | Votre droit pour le produit a expiré.           |
 | 0x803F8003   | Votre droit pour le produit est dans un état non valide qui empêche la création d’une licence.   |
 | 0x803F8009<br/>0x803F800A   | La période d’évaluation de l’application a expiré.   |
-| 0x803F8190   |  La licence n’autorise pas le produit à utiliser dans le pays actuel ou la région de votre appareil.  |
+| 0x803F8190   |  La licence n’autorise pas le produit être utilisé dans les pays en cours ou une région de votre appareil.  |
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  Vous avez atteint le nombre maximal de périphériques qui peuvent être utilisées avec les jeux et applications à partir du Store. Pour utiliser ce jeu ou une application sur l’appareil actuel, commencez par supprimer un autre appareil à partir de votre compte.  |
-| 0x803F9000<br/>0x803F9001    |  La licence est arrivée à expiration ou endommagé. Pour vous aider à résoudre ce problème, essayez d’exécuter la [résolution des problèmes pour les applications Windows](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) pour réinitialiser le cache du Windows Store.     |
-| 0x803F9006    |  L’opération n’a pas pu aboutir, car l’utilisateur qui est autorisé à ce produit n’est pas connecté à l’appareil avec son compte Microsoft.            |
-| 0x803F9008<br/>0x803F9009    |  Votre appareil est hors connexion. Votre appareil doit être en ligne pour utiliser ce produit.            |
+| 0x803F9000<br/>0x803F9001    |  La licence est arrivé à expiration ou endommagé. Pour vous aider à résoudre ce problème, essayez d’exécuter la [résolution des problèmes pour les applications Windows](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) pour réinitialiser le cache de Windows Store.     |
+| 0x803F9006    |  L’opération a échoué car l’utilisateur qui est autorisé à ce produit n’est pas connecté à l’appareil avec leur compte Microsoft.            |
+| 0x803F9008<br/>0x803F9009    |  Votre appareil est en mode hors connexion. Votre appareil doit être en ligne pour utiliser ce produit.            |
 | 0x803F900A    |  L’abonnement a expiré.            |
 
 
-## <a name="self-install-update-error-codes"></a>Installez vous-même des codes d’erreur de mise à jour
+## <a name="self-install-update-error-codes"></a>Installation automatique des codes d’erreur de mise à jour
 
 Codes d’erreur suivants sont liés à [l’installation automatique des mises à jour de package](../packaging/self-install-package-updates.md).
 
