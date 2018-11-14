@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux , portage, nuanceur, direct3d, opengl
 ms.localizationpriority: medium
 ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042110"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201849"
 ---
 # <a name="port-the-shader-objects"></a>Porter les objets nuanceur
 
@@ -80,7 +80,7 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 Dans Direct3D, les nuanceurs ne sont pas compilés au moment de l’exécution : ils sont toujours compilés dans des fichiers CSO en même temps que les autres éléments du programme. Lorsque vous compilez votre application avec Microsoft Visual Studio, les fichiers HLSL sont compilés dans des fichiers CSO (.cso) que votre application doit ensuite charger. Vous devez donc veiller à bien inclure ces fichiers CSO dans le package de votre application!
 
-> **Remarque**  l’exemple suivant exécute le nuanceur de chargement et la compilation en mode asynchrone à l’aide de la syntaxe de mot clé et lambda **automatique** . La méthode ReadDataAsync(), implémentée pour le modèle, lit les données d’un fichier CSO sous forme de tableau d’octets (fileData).
+> **Remarque**  l’exemple suivant exécute le nuanceur de chargement et la compilation en mode asynchrone à l’aide de la syntaxe de lambda et le mot clé **auto** . La méthode ReadDataAsync(), implémentée pour le modèle, lit les données d’un fichier CSO sous forme de tableau d’octets (fileData).
 
  
 
