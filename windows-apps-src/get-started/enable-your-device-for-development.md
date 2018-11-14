@@ -9,11 +9,11 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0355b5e29a450b909bf6dcacf1c1b88c80ff1335
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6277766"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6670098"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 

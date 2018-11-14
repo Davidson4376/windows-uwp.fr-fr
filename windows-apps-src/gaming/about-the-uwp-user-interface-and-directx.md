@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, directx, objet d'application
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e29a19410915836be3c54c0dc04a6d7dc29ceeb
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6162299"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6665411"
 ---
 # <a name="the-app-object-and-directx"></a>Objet application et DirectX
 

@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4a362a3a7be06e48c64ce3e4d43ff917b9b24c5
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6195763"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6666217"
 ---
 # <a name="graphics-pipeline"></a>Pipeline graphique
 

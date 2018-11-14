@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b162be26073db6989f9ea13cc7805d2d0f3f0d3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033231"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6448278"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
@@ -325,7 +325,7 @@ Pour afficher une vue Streetside
 
 Cet exemple montre comment afficher une vue Streetside similaire à l’image précédente.
 
-**Remarque**la carte de la vue d’ensemble n’apparaître pas si le contrôle de carte est trop petit.
+**Remarque**la carte de la vue d’ensemble n’apparaît pas si le contrôle de carte est trop petit.
 
  
 

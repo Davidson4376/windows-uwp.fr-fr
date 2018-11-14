@@ -14,11 +14,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030796"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276959"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -377,7 +377,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [RichTe
 </Style>
 ```
 
-**Remarque**: les styles [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) n’ont pas tous les styles de gamme de texte [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) est le cas, principalement dans la mesure où le modèle d’objet de document basé sur des blocs pour **RichTextBlock** rend plus facile de définir des attributs sur le texte individuel éléments. Par ailleurs, si vous définissez [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
+**Remarque**: les styles [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) n’ont pas tous les styles de gamme de texte [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) est le cas, principalement car le modèle d’objet de document basé sur un bloc pour **RichTextBlock** rend plus facile de définir des attributs sur le texte individuels éléments. Par ailleurs, si vous définissez [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
 
 ## <a name="miscellaneous-named-styles"></a>Divers styles nommés
 

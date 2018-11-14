@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
 ms.openlocfilehash: 27ef8173db2976d58f9ccd0422a1217e2bd91d13
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050841"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6451766"
 ---
 # <a name="interstitial-ads"></a>Spots
 
@@ -215,13 +215,13 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
 1. Assurez-vous que votre utilisation des spots publicitaires dans votre app respecte nos [recommandations en matière de spots publicitaires](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
-2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et de [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité publicitaire dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID Windows Store exemple ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID du Windows Store de l’exemple ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez éventuellement activer la médiation publicitaire pour l'**InterstitialAd** en configurant les paramètres de la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) sur la page [Publicités In-app](../publish/in-app-ads.md). La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des spots issus de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux payants tels que Taboola et Smaato et les publicités des campagnes de promotion d’applications Microsoft.
 
-4.  Dans votre code, remplacez les mêmes valeurs par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
+4.  Dans votre code, remplacez les valeurs d’unité publicitaire test avec les valeurs dynamiques que vous avez générées dans l’espace partenaires.
 
 5.  [Soumettre votre application](../publish/app-submissions.md) au Store à l’aide de l’espace partenaires.
 

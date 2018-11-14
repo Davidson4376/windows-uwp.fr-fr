@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257409"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6662889"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6266294"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160151"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, direct3d, tampon de profondeur
 ms.localizationpriority: medium
 ms.openlocfilehash: 091ac04b2a41c54fbce7294bcf6651f4ad4aafd2
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199136"
+ms.locfileid: "6256628"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Créer des ressources de périphérique pour un tampon de profondeur
 

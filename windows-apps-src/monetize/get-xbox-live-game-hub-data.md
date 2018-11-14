@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, hubs de jeu
 ms.localizationpriority: medium
 ms.openlocfilehash: f565f0fc3799ebf2d23f9dd7b9320323588f4caa
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450407"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188668"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>Obtenir des données de hub de jeux Xbox Live
 

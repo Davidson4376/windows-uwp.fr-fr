@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046104"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452870"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
 
@@ -46,7 +46,7 @@ L’isolement réseau permet à un développeur de définir pour chaque applicat
 
 L’isolement réseau affecte tous les éléments de classe des espaces de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) et [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) qui essaient d’accéder au réseau. Windows applique activement l’isolement réseau. Un appel à un élément de classe de l’espace de noms **Windows.Web.Syndication** ou **Windows.Web.AtomPub** qui conduit à un accès réseau peut échouer en raison de l’isolement réseau si la fonctionnalité réseau appropriée n’a pas été activée.
 
-Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Fonctionnalités réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
+Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Fonctionnalités réseau sont généralement ajoutées à l’aide de Studio2015 Visual Microsoft lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
 
 Pour plus d’informations sur l’isolement réseau et les fonctionnalités de réseau, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces, publicités, gestion des erreurs, javascript, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: a9fa05ed2ee946fcec9ffb5ff21abd9011db0f2a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6195542"
+ms.locfileid: "6256984"
 ---
 # <a name="handle-ad-errors"></a>Gérer des erreurs dans les publicités
 

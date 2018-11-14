@@ -9,17 +9,17 @@ keywords: windows10, uwp, insiders, insider du centre de développement, fonctio
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: 950c80967851c858212fecc6999c93b55dd439de
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044010"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279125"
 ---
 # <a name="dev-center-insider-program"></a>Programme Insider du Centre de développement
 
-Comme un [développeur inscrit](http://go.microsoft.com/fwlink/?LinkID=615100), vous pouvez influer sur les fonctionnalités que nous mettons à disposition en joignant le programme Insider du centre de développement. Ce programme vous permet de tester les nouvelles fonctionnalités avant qu’elles ne soient disponibles pour tous les développeurs. Nous vous encourageons à nous faire part de vos commentaires sur ces fonctionnalités à l’aide du lien commentaires sous l’icône de point d’interrogation dans le coin supérieur droit du tableau de bord. Tous les commentaires que nous recevons des Insiders du Centre de développement font l’objet d’une lecture attentive et sont considérés en priorité.
+En tant [développeur inscrit](http://go.microsoft.com/fwlink/?LinkID=615100), vous pouvez influer sur les fonctionnalités que nous mettons à disposition en joignant le programme Insider du centre de développement. Ce programme vous permet de tester les nouvelles fonctionnalités avant qu’elles ne soient disponibles pour tous les développeurs. Nous vous encourageons à nous faire part de vos commentaires sur ces fonctionnalités à l’aide du lien commentaires sous l’icône de point d’interrogation dans le coin supérieur droit du tableau de bord. Tous les commentaires que nous recevons des Insiders du Centre de développement font l’objet d’une lecture attentive et sont considérés en priorité.
 
-Pour participer au programme, le sélectionner sur la page **paramètres du compte** . Vous pouvez annuler cette décision à tout moment.
+Pour participer au programme, sélectionner sur la page **paramètres du compte** . Vous pouvez annuler cette décision à tout moment.
 
 > [!IMPORTANT]
 > Les conditions du [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) s’appliquent à votre participation au programme. Avant de rejoindre le programme, veuillez lire ces conditions, notamment l’ExposéI. Gardez à l’esprit que les fonctionnalités exclusivement disponibles pour les membres du programme Insider du Centre de développement peuvent inclure des services expérimentaux et de versions préliminaires. Souvent, ces fonctionnalités ne sont associées à aucune documentation disponible, et vous pouvez rencontrer des résultats inattendus lorsque vous les utilisez.

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, campagnes publicitaires
 ms.localizationpriority: medium
 ms.openlocfilehash: c9d348ffc0895d5adb16886c5a66af14a1884b8b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6188276"
+ms.locfileid: "6249277"
 ---
 # <a name="get-ad-campaign-performance-data"></a>Obtenir les données relatives aux performances des campagnes de publicité
 

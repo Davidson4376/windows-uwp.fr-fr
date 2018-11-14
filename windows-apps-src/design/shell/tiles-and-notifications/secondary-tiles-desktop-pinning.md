@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows10, pont de bureau, vignettes secondaires, épingler, code confidentiel, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, win32, winforms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e37b47e22d10f509afd5d7503fa8f7a43ab365
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192983"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452850"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Épingler des vignettes secondaires à partir d’une application de bureau
 

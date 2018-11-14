@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 78cb7240fd11cee77556078f10500ca1a2087f0e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194843"
+ms.locfileid: "6258182"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -292,7 +292,7 @@ Pour générer des packages de soumission au Store, associez votre application a
 
 L'assistant d'association du Store génère un fichier nommé Package.StoreAssociation.xml qui contient les informations d’association au Store. Si vous stockez votre code source dans un référentiel public tel que GitHub, ce fichier contient tous les noms réservés de l’application pour ce compte. Vous pouvez exclure ou supprimer ce fichier avant de le rendre publique.
 
-Si vous n’avez pas accès au compte Centre de développement qui a été utilisé pour publier l’application, vous pouvez suivre les instructions fournies dans ce document: [Vous créez une application pour un tiers? Création du package de leur application pour le Store](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
+Si vous n’avez pas accès au compte de l’espace partenaires qui a été utilisé pour publier l’application, vous pouvez suivre les instructions fournies dans ce document: [vous créez une application pour une partie 3e? Création du package de leur application du Windows Store](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
 
 Vous devez ensuite vérifier que l’étape de génération inclut le paramètre suivant:
 
@@ -306,11 +306,11 @@ Cela génère un fichier de chargement qui peut être soumis au Windows Store.
 
 Utilisez l’extension Visual Studio Team Services pour le Microsoft Store pour l’intégration avec l’API Store et envoyez votre package d'application au Store.
 
-Vous devez connecter votre compte DevCenter avec Azure Active Directory (AD), puis créer une application dans votre AD pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension.
+Vous devez vous connecter à votre compte espace partenaires avec Azure Active Directory (AD) et créez une application dans votre AD pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension.
 
 Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et la configurer avec votre ID d’application et l’emplacement du fichier de chargement.
 
-![configuration du centre de développement](images/building-screen17.png)
+![configurer l’espace partenaires](images/building-screen17.png)
 
 Où la valeur du paramètre `Package File` est:
 

@@ -14,11 +14,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce72c40d3b97942612fc2979d026c965727512e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193267"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6667807"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 

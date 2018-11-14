@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows10, uwp, création de packages
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5cc0d73975b591d7584b1ac606aa3323cd6da3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 86472e4b3f9c7390eb7e6236de088ba2649901d1
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206924"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268457"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 
@@ -23,7 +23,7 @@ L'outil **MakeAppx.exe** crée des packages d’application et des ensembles de 
 > [!IMPORTANT] 
 > Si vous avez utilisé VisualStudio pour développer votre application, nous vous recommandons d’utiliser l’Assistant VisualStudio pour créer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec VisualStudio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Notez que **MakeAppx.exe** ne crée pas de fichier .appxupload. Le fichier .appxupload est créé dans le cadre du processus de création de packages Visual Studio et contient deux autres fichiers: .msix ou .appx et .appxsym. Le fichier .appxsym est un fichier .pdb compressé contenant les symboles publics de votre application utilisés pour [bloquer l’analyse](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) dans le centre de développement Windows. Vous pouvez également envoyer un fichier .appx normal, mais aucune information d’incident analytique ou de débogage ne sera disponible. Pour plus d’informations sur l’envoi de packages au Store, consultez [Chargement des packages d’application](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+Notez que **MakeAppx.exe** ne crée pas de fichier .appxupload. Le fichier .appxupload est créé dans le cadre du processus de création de packages Visual Studio et contient deux autres fichiers: .msix ou .appx et .appxsym. Le fichier .appxsym est un fichier .pdb compressé contenant les symboles publics de votre application utilisés pour [incident analytique](../publish/health-report.md) dans l’espace partenaires. Vous pouvez également envoyer un fichier .appx normal, mais aucune information d’incident analytique ou de débogage ne sera disponible. Pour plus d’informations sur l’envoi de packages au Store, consultez [Chargement des packages d’application](../publish/upload-app-packages.md). 
 
  Mises à jour de cet outil dans la version la plus récente de Windows 10 n’affectent pas l’utilisation de package .appx. Vous pouvez continuer à utiliser cet outil avec des packages .appx, ou utilisez l’outil avec prise en charge pour les packages .msix comme décrit ci-dessous.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, promotionnel, promotion, recommandé, présenter, store
 ms.localizationpriority: medium
 ms.openlocfilehash: 43970ce024408032f0e2e9891eaae34efa68e014
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039033"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250905"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Faciliter la promotion de votre application
 
@@ -29,7 +29,7 @@ Le MicrosoftStore présente différentes applications regroupées par catégorie
 
     Pour recommander les applications, le MicrosoftStore peut afficher les [images et captures d'écran de votre application](app-screenshots-and-images.md) dans différentes dispositions. Veillez à concevoir des captures d'écran attrayantes qui reflètent fidèlement votre application et assurez-vous que la première capture d'écran est particulièrement représentative et percutante. Vous pouvez fournir différents ensembles de captures d’écran afin d’illustrer l’apparence de l’application sur chaque type d’appareil que cette dernière prend en charge.
 
-    Pour optimiser les chances de votre application d’être recommandée dans le Store, fournissez toutes les images applicables dans les sections **Logos Store** et **Illustrations supplémentaires** de votre description dans le Store. Le **9:16 art affiche (720 x 1080 ou 1440 x 2160 pixels)** et images **art d’image principale Super 16:9 (1920 x 1080 ou 3840 x 2160 pixels)** sont particulièrement importantes. Si votre application prend en charge la famille d’appareils Xbox et/ou Holographique, nous vous recommandons de fournir également toutes les images applicables pour ces familles d’appareils. Pour obtenir plus d’informations ainsi que des instructions, voir [Captures d’écran, images et bandes-annonces de l’application](app-screenshots-and-images.md).
+    Pour optimiser les chances de votre application d’être recommandée dans le Store, fournissez toutes les images applicables dans les sections **Logos Store** et **Illustrations supplémentaires** de votre description dans le Store. Le **9:16 l’art affiche (720 x 1080 ou 1440 x 2160 pixels)** et les images de **pochette d’image principale Super 16:9 (1920 x 1080 ou 3840 x 2160 pixels)** sont particulièrement importantes. Si votre application prend en charge la famille d’appareils Xbox et/ou Holographique, nous vous recommandons de fournir également toutes les images applicables pour ces familles d’appareils. Pour obtenir plus d’informations ainsi que des instructions, voir [Captures d’écran, images et bandes-annonces de l’application](app-screenshots-and-images.md).
 
 -   **Générer une seule version de votre application, plutôt qu’une version gratuite et une version payante distincte**
 

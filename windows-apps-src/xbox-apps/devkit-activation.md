@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e497eb404129a7d8cc8ce9784c2e28a9c9456fc
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: bf9bbc2962bc0d11f9969bf41840be515c9c0881
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6136539"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279513"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Activation du mode développeur XboxOne
 
@@ -42,9 +42,9 @@ Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. 
     
 5.  Accédez à [partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate).
 
-6.  Connectez-vous au Centre de développement à l’aide du compte correspondant.
+6.  Connectez-vous à [L’espace partenaires](https://partner.microsoft.com/dashboard) avec vos informations d’identification de compte.
 
-7.  Entrez le code d’activation affiché dans l’application Dev Mode Activation. Vous disposez d’un nombre limité d’activations associées à votre compte. Une fois le Mode développeur activé, le Centre de développement indique que vous avez utilisé une des activations associées à votre compte.
+7.  Entrez le code d’activation affiché dans l’application Dev Mode Activation. Vous disposez d’un nombre limité d’activations associées à votre compte. Une fois que le Mode développeur a été activé, l’espace partenaires indiquera que vous avez utilisé une des activations associées à votre compte.
 
     ![Activation - Étape8](images/activation-step-8-rs2.png)    
     

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4d36fa22953bc4745b631303aae62985a5aa05
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444596"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671613"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -148,7 +148,7 @@ Chaque fois que vous cliquez sur la fenêtre, vous retirez 1 du solde du compte 
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Les délégués paramétrés et signaux simples, entre un ABI
 
-Si votre événement doit être accessible via une interface binaire d’application (ABI)&mdash;entre un composant et son application d’utilisation par&mdash;ensuite votre événement doit utiliser un type de délégué Windows Runtime. L’exemple ci-dessus utilise le type de délégué [**Windows::Foundation::EventHandler\ < T\ >**](/uwp/api/windows.foundation.eventhandler) Windows Runtime. [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) est un autre exemple d’un type de délégué Windows Runtime.
+Si votre événement doit être accessible via une interface binaire d’application (ABI)&mdash;entre un composant et son application d’utilisation par&mdash;ensuite votre événement doit utiliser un type de délégué Windows Runtime. L’exemple ci-dessus utilise la [**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) type délégué de Windows Runtime. [**TypedEventHandler\<TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) est un autre exemple d’un type de délégué Windows Runtime.
 
 Les paramètres de type de ces types de deux délégués avoir franchisse ABI, de sorte que les paramètres de type doivent être des types Windows Runtime, trop. Qui inclut les classes runtime interne et tierce, ainsi que des types primitifs tels que les nombres et les chaînes. Le compilateur vous aide à une erreur «*doit être WinRT type*» si vous oubliez cette contrainte.
 
