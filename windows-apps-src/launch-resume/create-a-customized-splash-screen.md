@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 80242b95e64f0d642df0284c94455d60825f6daf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046417"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145471"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>Afficher un écran de démarrage plus longtemps
 
@@ -34,7 +34,7 @@ Affichez un écran de démarrage plus longtemps en créant un écran de démarra
 
 Assurez-vous que votre écran de démarrage étendu imite avec précision l’écran de démarrage par défaut, en suivant ces recommandations:
 
--   La page de votre écran de démarrage étendu doit utiliser une image de 620x300 pixels cohérente avec l’image spécifiée pour l’écran de démarrage dans le manifeste de votre application (image de l’écran de démarrage de votre application). Dans Microsoft Visual Studio2015, les paramètres de l’écran démarrage sont stockés dans la section de **l’Écran de démarrage** de l’onglet **Ressources visuelles** dans votre manifeste d’application (fichier Package.appxmanifest).
+-   La page de votre écran de démarrage étendu doit utiliser une image de 620x300 pixels cohérente avec l’image spécifiée pour l’écran de démarrage dans le manifeste de votre application (image de l’écran de démarrage de votre application). Dans Studio2015 visuelle de Microsoft, les paramètres d’écran de démarrage sont stockés dans la section de **l’Écran de démarrage** de l’onglet **Ressources visuelles** dans votre manifeste d’application (fichier Package.appxmanifest).
 -   Votre écran de démarrage étendu doit utiliser une couleur d’arrière-plan identique à celle spécifiée pour l’écran de démarrage dans votre manifeste de l’application (arrière-plan de l’écran de démarrage de votre application).
 -   Votre code doit utiliser la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) pour positionner l’image de l’écran de démarrage de votre application aux mêmes coordonnées d’écran que l’écran de démarrage par défaut.
 -   Votre code doit répondre aux événements de redimensionnement de fenêtre (par exemple, quand l’écran pivote ou que votre application est déplacée à côté d’une autre application à l’écran) via la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763), pour permettre le repositionnement des éléments sur votre écran de démarrage étendu.
@@ -419,7 +419,7 @@ namespace SplashScreenExample
 }
 ```
 
-App.Xaml.cs: Ce projet a été créé en utilisant le modèle de projet **Application vide (XAML)** UWP application Studio2015 visuelle. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
+App.Xaml.cs: Ce projet a été créé à l’aide du modèle de projet **Application vide (XAML)** application UWP dans Visual Studio2015. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
 
 Si vous n’avez pas utilisé de modèle de projet pour votre application, voir l’étape 4 : [Modifier le gestionnaire d’activation de lancement](#modify-the-launch-activation-handler) pour obtenir un exemple de `OnLaunched` modifié qui n’utilise pas la navigation [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
 

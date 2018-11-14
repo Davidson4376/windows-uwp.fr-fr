@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: b69899761e1c4a139fd2b15d6810440df5192487
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: ea689f10b7208173208fdc4a9a9846ca9ee7da50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048848"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "6094875"
 ---
 # <a name="pointer-based-animations"></a>Animations basées sur le pointeur
 

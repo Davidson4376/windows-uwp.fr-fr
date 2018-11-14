@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, données d'app
 ms.localizationpriority: medium
 ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044298"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6135947"
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
@@ -102,7 +102,7 @@ Cette ressource a les valeurs suivantes.
 | primaryName   | chaîne  | Nom principal de l’application.      |
 | packageFamilyName | chaîne  | Nom de la famille de packages de l’application.      |
 | packageIdentityName          | chaîne  | Nom de l’identité du package de l’application.                       |
-| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Cela correspond à la valeur de **Package/identité/éditeur** qui apparaît sur la page [identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) pour l’application dans l’espace partenaires.       |
+| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Cela correspond à la valeur de **Package/identité/éditeur** qui s’affiche sur la page [identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) pour l’application dans l’espace partenaires.       |
 | firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO8601.   |
 | lastPublishedApplicationSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de l’application.    |
 | pendingApplicationSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour l’application.   |   

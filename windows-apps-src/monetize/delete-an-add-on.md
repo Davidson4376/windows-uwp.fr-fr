@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, supprimer, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043502"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6142685"
 ---
 # <a name="delete-an-add-on"></a>Supprime une extension
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour supprimer une extension (également connue sous le nom dans l’application produit ou PIA) pour une application inscrite dans votre compte espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour supprimer une extension (également connue sous le nom dans l’application PIA, produit) pour une application inscrite dans votre compte espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 

@@ -9,24 +9,24 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050745"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6135896"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>Prise en main de la plateforme Windows universelle (UWP) pour les développeurs iOS
 
 
-Si vous êtes un développeur iOS et envisagez de développer pour Windows 10, ces documents constituent un bon point de départ. Ils vous présenterons quelques concepts que vous devrez vous commencer à écrire des applications, et expliquent comment publier votre travail sur le Microsoft Store.
+Si vous êtes un développeur iOS et envisagez de développer pour Windows 10, ces documents constituent un bon point de départ. Ils vous présenterons certains concepts que vous devrez vous commencer à écrire des applications, et expliquent comment publier votre travail sur le Microsoft Store.
 
 Dans cette section, nous abordons ces aspects progressivement. Nous allons donc voir comment utiliser Microsoft Visual Studio et le langage de programmation C# pour créer une application quelconque, et décrire en particulier en quoi le processus se distingue de celui que vous suivez avec les outils que vous utilisez actuellement (Vous n’êtes pas un adepte de C# ? Ne vous en faites pas. D’autres langages et outils de programmation sont disponibles, que nous évoquons dans la rubrique [Prise en main : Choix d’un langage de programmation](getting-started-choosing-a-programming-language.md)).
 
 Windows 10 introduit une nouvelle plateforme pour la création d’applications conviviales sur le bureau, un ordinateur portable, tablette, les appareils de téléphone et bien plus encore. Compte tenu de la multitude de fonctionnalités uniques qu’offrent les applications UWP, un portage direct de votre application iOS vous priverait de ces fonctionnalités. Nous vous encourageons donc à tester les nouveaux contrôles et les nouvelles fonctions pour déterminer en quoi ils peuvent simplifier votre travail de développement et vous inciter à créer des applications.
 
-L’essentiel est que vous ne vous limitiez pas à effectuer le portage de votre application. Vous devez **réinventer** votre application afin de tirer parti des nouvelles fonctionnalités et des nouveaux appareils. N’optez pas pour le plus petit dénominateur commun, mais créez des expériences riches qui exploitent les fonctionnalités uniques de Windows 10, par exemple, les vignettes dynamiques, les notifications et l’interaction avec Cortana.
+L’essentiel est que vous ne vous limitiez pas à effectuer le portage de votre application. Vous devez **réinventer** votre application afin de tirer parti des nouvelles fonctionnalités et des nouveaux appareils. N’optez pas pour le plus petit dénominateur commun, mais créez des expériences riches qui exploitent les fonctionnalités uniques de Windows 10, par exemple, les vignettes dynamiques, notifications et l’interaction avec Cortana.
 
-Pour vous familiariser avec ces procédures pas à pas, vous aurez besoin d’un ordinateur doté de Windows 10 et Microsoft Visual Studio est installé. Vous pouvez télécharger depuis les [téléchargements aux développeurs pour la programmation d’applications UWP](https://developer.microsoft.com/en-us/windows/downloads). Vous n’avez pas de PC? Aucun souci, vous pouvez utiliser votre MAC : voir [Installation de Windows et des outils de développement sur votre Mac](setting-up-your-mac-with-windows-10.md).
+Pour vous familiariser avec ces procédures pas à pas, vous aurez besoin d’un ordinateur avec Windows 10 et Microsoft Visual Studio est installé. Vous pouvez télécharger depuis le [développeur téléchargements pour la programmation d’applications UWP](https://developer.microsoft.com/en-us/windows/downloads). Vous n’avez pas de PC? Aucun souci, vous pouvez utiliser votre MAC : voir [Installation de Windows et des outils de développement sur votre Mac](setting-up-your-mac-with-windows-10.md).
 
 | Rubrique | Description |
 |-------|-------------|

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, monétisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046992"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6137743"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -29,7 +29,7 @@ Vous pouvez promouvoir et monétiser un jeu UWP de l’une ou de plusieurs des m
 
 ## <a name="worldwide-distribution-channel"></a>Canal de distribution mondial
 
-Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge pour la facturation via différents modes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [Marchés et prix personnalisés](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
+Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge de la facturation via différentes formes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [Marchés et prix personnalisés](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
 
 ## <a name="set-a-price-for-your-game"></a>Définir un prix pour votre jeu
 
@@ -55,7 +55,7 @@ Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont �
 
 Vous pouvez créer deux types de composants additionnels dans le Windows Store: _Durables_ ou _Consommables_. Les composants additionnels durables sont des articles qui persistent pendant un laps de temps spécifié et ne peuvent être achetés qu’une seule fois avant expiration. Les composants additionnels consommables sont des articles qui peuvent être achetés et utilisés encore et encore.
 
-Lorsque vous créez des consommables, décidez de la manière dont vous souhaitez les suivre &mdash;, selon qu’ils sont _gérés par le développeur_ ou _gérés par le Windows Store_ (cette fonctionnalité est disponible à partir de Windows10, version1607). Avec un consommable géré par le développeur, vous êtes responsable du suivi du solde de l’élément pour le joueur; avec un consommable géré par le Windows Store, le Microsoft Store gère de solde de l’élément pour vous. Pour plus d’informations, voir [Vue d’ensemble des composants additionnels consommables](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
+Lorsque vous créez des consommables, décidez de la manière dont vous souhaitez les suivre &mdash;, selon qu’ils sont _gérés par le développeur_ ou _gérés par le Windows Store_ (cette fonctionnalité est disponible à partir de Windows10, version1607). Avec un consommable géré par le développeur, vous êtes responsable du suivi du solde de l’élément pour le joueur; avec un consommable géré par le Windows Store, le Microsoft Store gère l’élément le solde de pour vous. Pour plus d’informations, voir [Vue d’ensemble des composants additionnels consommables](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
 
 ### <a name="create-in-game-purchases"></a>Créer des achats dans le jeu
 

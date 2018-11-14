@@ -2,25 +2,25 @@
 author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: Installer des applications avec l’outil WinAppDeployCmd.exe
-description: Déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows 10 vers n’importe quel appareil Windows 10.
+description: Déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui peut utiliser pour déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows 10 à n’importe quel appareil Windows 10.
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 13468ce3b74992c026d94223b5e67aea99d79991
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: ea689f10b7208173208fdc4a9a9846ca9ee7da50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044079"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "6102978"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 
 
-Déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows 10 vers n’importe quel appareil Windows 10. Vous pouvez utiliser cet outil pour déployer un package d’application lorsque l’appareil Windows 10 est connecté via un port USB ou disponible sur le même sous-réseau sans avoir besoin de Microsoft Visual Studio ou la solution pour cette application. Vous pouvez également déployer l’application sans créer de package au préalable vers un ordinateur distant ou une XboxOne. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
+Déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui peut utiliser pour déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows 10 à n’importe quel appareil Windows 10. Vous pouvez utiliser cet outil pour déployer un package d’application lorsque l’appareil Windows 10 est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ou la solution pour cette application. Vous pouvez également déployer l’application sans créer de package au préalable vers un ordinateur distant ou une XboxOne. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 
-Vous devez simplement le SDK Windows 10 pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, il utilise le fichier.appx/.msix ou AppxManifest (pour les fichiers isolés) pour chargement indépendant de votre application sur un appareil Windows 10. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows 10 doit être en mode développeur ou déjà le certificat est installé.
+Vous devez simplement le SDK Windows 10 pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou d’un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, il utilise le fichier de.appx/.msix ou AppxManifest (pour les fichiers isolés) chargement indépendant de votre application sur un appareil Windows 10. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows 10 doit être en mode développeur ou déjà le certificat est installé.
 
 Pour un déploiement vers des appareils mobiles, vous devez d’abord créer un package. Pour plus d’informations, voir [cet article](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
@@ -28,7 +28,7 @@ L’outil **WinAppDeployCmd.exe** se trouve ici sur votre PC Windows 10: **C:\\P
 > [!NOTE]
 > Dans la version15063 et les versions ultérieures du kit SDK, celui-ci est installé côte-à-côte des dossiers spécifiques à la version.  Les kits SDK précédents (version 14393 et antérieures) sont écrits directement sur le dossier parent.
 
-Tout d’abord, connectez votre appareil Windows 10 au même sous-réseau ou connectez-le directement à votre ordinateur Windows 10 via une connexion USB. Utilisez ensuite la syntaxe et les exemples suivants de la commande présentés plus loin dans cet article pour déployer votre application UWP:
+Tout d’abord, connectez votre appareil Windows 10 au même sous-réseau ou connectez-le directement à votre ordinateur Windows 10 avec une connexion USB. Utilisez ensuite la syntaxe et les exemples suivants de la commande présentés plus loin dans cet article pour déployer votre application UWP:
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>Options et syntaxe WinAppDeployCmd
 

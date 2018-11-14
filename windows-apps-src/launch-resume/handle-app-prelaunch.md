@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a13ec942080d7fe517a10b837bea9ae8fae27750
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033933"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6144015"
 ---
 # <a name="handle-app-prelaunch"></a>Gérer le prélancement d’une application
 
@@ -37,7 +37,7 @@ Une fois qu’une application est prélancée, elle passe à l’état suspendu.
 
 ## <a name="detect-and-handle-prelaunch"></a>Détecter et gérer le prélancement
 
-Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) pendant l’activation. Utilisez cet indicateur pour exécuter du code qui doit être exécuté uniquement lorsque l’utilisateur lance explicitement l’application, comme illustré dans la modification suivante à [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
+Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) pendant l’activation. Utilisez cet indicateur pour exécuter du code qui doit être exécuté uniquement lorsque l’utilisateur lance explicitement l’application, comme illustré dans la modification suivante au [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -114,7 +114,7 @@ private void TryEnablePrelaunch()
 
 Remarque Les `TryEnablePrelaunch()` fonctionner, ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` sont prises en charge dans cette fonction est parce que lorsqu’une méthode est appelée, le JIT (juste-à-compilation de temps) tente de compiler la totalité de la méthode. Si votre application s’exécute sur une version de Windows 10 qui ne prend pas en charge `CoreApplication.EnablePrelaunch()`, puis le JIT échouera. En tenant compte de l’appel de méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()`, nous permet d’éviter ce problème.
 
-Il est également le code dans l’exemple ci-dessus que vous pouvez supprimer les commentaires si votre application doit refuser de prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été choisies automatiquement dans le prélancement, ce qui peut ne pas convenir pour votre application.
+Il est également le code dans l’exemple ci-dessus que vous pouvez supprimer les commentaires si votre application doit refuser de prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été automatiquement choisies dans le prélancement, ce qui peut ne pas convenir pour votre application.
 
 ## <a name="use-the-visibilitychanged-event"></a>Utiliser l’événement VisibilityChanged
 
