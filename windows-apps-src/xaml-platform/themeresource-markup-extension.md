@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 024e48380941c0d79eef65780396ec9b89edc3c7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039518"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6451881"
 ---
 # <a name="themeresource-markup-extension"></a>Extension de balisage {ThemeResource}
 
@@ -69,7 +69,7 @@ Les définitions XAML des états visuels dans un modèle de contrôle doivent ut
 
 Les utilisations de **ThemeResource** peuvent être considérées comme une série de valeurs dépendantes. Par exemple, une valeur [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) utilisée par un élément [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) qui est également une ressource à clé peut utiliser une référence **ThemeResource**. Toutefois, toutes les propriétés d’interface utilisateur qui utilisent la ressource **SolidColorBrush** à clé utilisent également une référence **ThemeResource**, de sorte que chaque propriété de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) autorise spécifiquement une modification de valeur dynamique quand le thème change.
 
-**Remarque** `{ThemeResource}` et d’évaluation de ressource de l’exécution lors du changement du thème est pris en charge dans le code XAML Windows8.1, mais non dans le code XAML des applications qui ciblent package Windows8.
+**Remarque** `{ThemeResource}` et d’évaluation de ressource d’exécution lors du changement du thème est pris en charge dans le code XAML Windows8.1, mais non dans le code XAML pour les applications ciblant package Windows8.
 
 ### <a name="system-resources"></a>Ressources système
 
@@ -140,11 +140,11 @@ Ici, la valeur [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)
 
 ## <a name="windows8-behavior"></a>Comportement de package Windows8
 
-Package Windows8 ne prenaient pas en charge l’extension de balisage **ThemeResource** , il est disponible à partir de Windows8.1. En outre, package Windows8 ne gérait pas changement dynamique des ressources liées aux thèmes pour une application Windows Runtime. Vous deviez redémarrer l’application pour que le changement de thème soit activé pour les styles et les modèles XAML. Cela n’est pas une bonne expérience utilisateur, afin que les applications sont vivement recommandées de recompile et cible Windows8.1 afin qu’ils peuvent utiliser des styles avec des utilisations **ThemeResource** et pouvant basculer dynamiquement les thèmes quand l’utilisateur. Applications qui ont été compilées pour package Windows8 mais s’exécutant sur Windows8.1 continue à utiliser le comportement de package Windows8.
+Package Windows8 ne prenaient pas en charge l’extension de balisage **ThemeResource** , il est disponible à partir de Windows8.1. En outre, package Windows8 ne gérait pas changement dynamique des ressources liées aux thèmes pour une application Windows Runtime. Vous deviez redémarrer l’application pour que le changement de thème soit activé pour les styles et les modèles XAML. Cela n’est pas une bonne expérience utilisateur, afin que les applications sont vivement recommandées de recompile et cible Windows8.1 afin qu’ils peuvent utiliser des styles avec des utilisations **ThemeResource** et que vous pouvant basculer dynamiquement les thèmes lorsque l’utilisateur effectue. Applications qui ont été compilées pour le package Windows8 mais s’exécutant sur Windows8.1 continue à utiliser le comportement de package Windows8.
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>Prise en charge d’outils au moment de la conception pour l’extension de balisage **{ThemeResource}**
 
-Microsoft Visual Studio2013 peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{ThemeResource}** dans une page XAML. Par exemple, dès que vous tapez « {ThemeResource », toute clé de ressource provenant des [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) s’affiche.
+Studio2013 Visual Microsoft peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{ThemeResource}** dans une page XAML. Par exemple, dès que vous tapez « {ThemeResource », toute clé de ressource provenant des [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) s’affiche.
 
 Lorsqu’une clé de ressource fait partie intégrante d’une utilisation quelconque de **{ThemeResource}**, la fonctionnalité **Atteindre la définition**(F12) peut résoudre cette ressource et vous présenter le fichier generic.xaml, dans lequel la ressource de thème est définie, à utiliser au moment de la conception. Les ressources de thème étant définies plus d’une fois (par thème), la fonctionnalité **Atteindre la définition** vous conduit à la première définition trouvée dans le fichier, c’est-à-dire la définition de **Default**. Si vous souhaitez obtenir les autres définitions, vous pouvez rechercher le nom de la clé dans le fichier et accéder aux définitions des autres thèmes.
 

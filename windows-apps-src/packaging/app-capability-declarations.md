@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be90230407c3d539c55dc05d1272fbaaa2ae10e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190070"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6658260"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -108,7 +108,7 @@ Pour déclarer une fonctionnalité restreinte, modifier votre fichier source [du
 
 ### <a name="restricted-capability-approval-process"></a>Processus d'approbation pour une fonctionnalité restreinte
 
-Auparavant, nous exigions que vous contactiez l'assistance pour obtenir l'approbation d'utiliser une fonctionnalité. Nous vous permettons désormais de fournir ces informations dans le tableau de bord du Centre de développement, dans le cadre du [processus de soumission](../publish/app-submissions.md).
+Auparavant, nous exigions que vous contactiez l'assistance pour obtenir l'approbation d'utiliser une fonctionnalité. Nous vous permettons désormais de fournir ces informations dans [L’espace partenaires](https://partner.microsoft.com/dashboard/) dans le cadre du [processus de soumission](../publish/app-submissions.md).
 
 Lorsque vous téléchargez des packages pour votre soumission, nous identifions la présence des fonctionnalités restreintes sont déclarées. Si c'est le cas, vous devez fournir les informations quant à l'utilisation que votre produit fait de chaque fonctionnalité à la page [Options de soumission](../publish/manage-submission-options.md#restricted-capabilities). Veillez à fournir autant de détails que possible afin de nous aider à comprendre la raison pour laquelle votre produit nécessite de déclarer ces fonctionnalités. Notez que cette opération peut avoir pour effet de rallonger la durée nécessaire pour que votre soumission arrive à bout du processus de certification.
 
@@ -117,7 +117,7 @@ Lors du processus de certification, nos testeurs examinent les informations que 
 Si nous n’approuvons votre utilisation des fonctionnalités, votre soumission ne sera pas certifiée et nous fournirons des commentaires dans le rapport de certification. Vous pouvez ensuite choisir de créer une nouvelle soumission et de télécharger les packages ne déclarant aucune fonctionnalité, ou, le cas échéant, de répondre aux problèmes liés à votre utilisation des fonctionnalités afin de demander l'approbation dans une nouvelle soumission.
 
 > [!NOTE]
-> Si votre soumission utilise un bac à sable de développement dans le Centre de développement (par exemple, c'est le cas pour tout jeu intégré au XboxLive), vous devez demander l'approbation au préalable au lieu de fournir des informations sur la page **Options de submission**. Pour cela,, consultez la page [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support). Sélectionner la rubrique d’assistance développeur **problème du tableau de bord**, Type de problème, **soumissions d’applications**et sous-catégorie **autres**. Puis décrivez comment vous utilisez la fonctionnalité et pourquoi il est nécessaire pour votre produit. Si vous ne fournissez pas toutes les informations nécessaires, votre demande est refusée. Il vous sera peut-être également demandé de fournir des informations supplémentaires. Notez que, en général, ce processus prend au minimum 5jours ouvrables. Envoyez donc votre demande bien à l'avance.
+> Si votre soumission utilise un bac à sable de développement dans l’espace partenaires (par exemple, si c’est le cas pour les jeux qui s’intègre à Xbox Live), vous devez demander l’approbation au préalable au lieu de fournir des informations sur la page **options de soumission** . Pour cela,, consultez la page [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support). Sélectionner la rubrique d’assistance développeur **problème du tableau de bord**, Type de problème, **soumissions d’applications**et sous-catégorie **autres**. Puis décrivez comment vous utilisez la fonctionnalité et pourquoi il est nécessaire pour votre produit. Si vous ne fournissez pas toutes les informations nécessaires, votre demande est refusée. Il vous sera peut-être également demandé de fournir des informations supplémentaires. Notez que, en général, ce processus prend au minimum 5jours ouvrables. Envoyez donc votre demande bien à l'avance.
 >
 > Vous pouvez également utiliser cette méthode de demande d’approbation (plutôt que de renseigner ces informations au cours de votre soumission), ou non, vous utilisez un bac à sable de développement, si vous préférez confirmer que vous sont autorisés à utiliser une fonctionnalité restreinte avant de commencer votre soumission.
 

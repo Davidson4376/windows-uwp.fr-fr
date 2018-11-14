@@ -1,25 +1,24 @@
 ---
 author: Xansky
-ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
-description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les informations concernant une erreur spécifique de votre app.
-title: Obtenir les informations sur une erreur de votre application
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les informations concernant une erreur spécifique de votre Xbox One jeu.
+title: Obtenir les détails d’une erreur dans votre console Xbox One jeu
 ms.author: mhopkins
-ms.date: 06/05/2018
+ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
-ms.openlocfilehash: e947314da1309c3f31af292bc70addbad8b0d4d9
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 33733af7f323817bc82d49800c2dc17c5f7b9887
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662653"
+ms.locfileid: "6469366"
 ---
-# <a name="get-details-for-an-error-in-your-app"></a>Obtenir les informations sur une erreur de votre application
+# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>Obtenir les détails d’une erreur dans votre console Xbox One jeu
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les informations concernant une erreur spécifique de votre app, au format JSON. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30derniers jours. Ces informations sont également disponibles dans la section des **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les informations concernant une erreur spécifique de votre Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord du centre de développement Analytique XDP. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30derniers jours.
 
-Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) afin de récupérer l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées.
+Vous pouvez utiliser cette méthode, vous devez tout d’abord utiliser la méthode [get pour votre jeu Xbox One, les données de rapport d’erreurs](get-error-reporting-data-for-your-xbox-one-game.md) pour récupérer l’ID de l’erreur dont vous souhaitez obtenir des informations détaillées.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -28,16 +27,16 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Récupérez l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour ce faire, utilisez la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) et utilisez la valeur **failureHash** dans le corps de la réponse de cette méthode.
+* Récupérez l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir cet ID, utilisez la méthode [d’obtenir les données de rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md) et utilisez la valeur de **failureHash** dans le corps de réponse de cette méthode.
 
 ## <a name="request"></a>Requête
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de requête                                                          |
+| Méthode | URI de la requête                                                          |
 |--------|----------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails``` |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failuredetails``` |
 
 
 ### <a name="request-header"></a>En-tête de requête
@@ -51,9 +50,9 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | ID WindowsStore de l’application dont vous souhaitez récupérer des données d’erreur. L’ID Windows Store est disponible sur la [page identité de l’application](../publish/view-app-identity-details.md) dans l’espace partenaires. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. |  Oui  |
-| failureHash | chaîne | ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir la valeur correspondant à l’erreur qui vous intéresse, utilisez la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) et utilisez la valeur **failureHash** dans le corps de la réponse de cette méthode. |  Oui  |
-| startDate | date | Date de début des données à récupérer concernant l’erreur. La valeur par défaut est de 30jours avant la date actuelle.<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode ne peut récupérer les informations concernant les erreurs qui se sont produites au cours des 30 derniers jours. |  Non  |
+| applicationId | chaîne | L’ID de produit du jeu Xbox One pour lequel vous récupérez les détails de l’erreur. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité de l’état d’analytique du centre de développement Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
+| failureHash | chaîne | ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir la valeur de l’erreur qui que vous intéressez, utilisez la méthode [d’obtenir les données de rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md) et utilisez la valeur de **failureHash** dans le corps de réponse de cette méthode. |  Oui  |
+| startDate | date | Date de début des données à récupérer concernant l’erreur. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
 | endDate | date | Date de fin des données à récupérer concernant l’erreur. La valeur par défaut est la date actuelle |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10 et skip=0 pour obtenir les 10premières lignes de données, top=10 et skip=10 pour obtenir les 10lignes suivantes, et ainsi de suite. |  Non  |
@@ -63,13 +62,13 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-example"></a>Exemple de requête
 
-Les exemples suivants fournissent plusieurs requêtes permettant de récupérer des données d’erreur. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.
+Les exemples suivants illustrent plusieurs requêtes de récupération des données d’erreur pour une console Xbox One du jeu. Remplacez la valeur *applicationId* par l’ID de produit pour votre jeu.
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failuredetails?applicationId=BRRT4NJ9B3D1&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0&filter=market eq 'US' and deviceType eq 'Windows.Desktop' HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failuredetails?applicationId=BRRT4NJ9B3D1&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0&filter=market eq 'US' and deviceType eq 'Windows.Desktop' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -93,7 +92,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 
 | Valeur           | Type    | Description     |
 |-----------------|---------|----------------------------|
-| applicationId   | chaîne  | ID Store de l’app dont vous souhaitez récupérer des données d’erreur.      |
+| applicationId   | chaîne  | L’ID de produit du jeu Xbox One pour lequel vous souhaitez récupérer des données d’erreur.      |
 | failureHash     | chaîne  | Identificateur unique de l’erreur.     |
 | failureName     | chaîne  | Le nom de l'échec, qui se compose de quatre partie: une ou plusieurs classes de problème, un code de vérification d'exception ou de bogue, le nom de l'image où l'erreur s'est produite et le nom de la fonction associée.           |
 | date            | chaîne  | Date de début des données d’erreur. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
@@ -101,11 +100,11 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | cabExpirationTime  | chaîne  | Date et heure auxquelles le fichierCAB est arrivé à expiration et n’est plus téléchargeable au format ISO8601.   |
 | marché          | chaîne  | Code pays ISO3166 du marché des appareils.     |
 | osBuild         | chaîne  | Numéro de version du système d’exploitation sur lequel l’erreur s’est produite.       |
-| packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.    |
-| deviceModel           | chaîne  | Chaîne identifiant le modèle d’appareil sur lequel l’app s’exécutait lorsque l’erreur s’est produite.   |
-| osVersion       | chaîne  | Une des chaînes suivantes qui spécifie la version du système d'exploitation sur laquelle l’erreur s’est produite:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Inconnu</strong></li></ul>    |
-| osRelease       | chaîne  |  L'une des chaînes suivantes qui spécifie la version du système d’exploitation ou l'anneau de distribution de version d’évaluation (comme une sous-population dans la version du système d’exploitation) sur laquelle/lequel l'erreur s'est produite.<p/><p>Pour Windows10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p/><p>Pour WindowsServer1709:</p><ul><li><strong>RTM</strong></li></ul><p>Pour WindowsServer2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>Pour Windows8.1:</p><ul><li><strong>Mise à jour 1</strong></li></ul><p>Pour Windows7:</p><ul><li><strong>Service Pack1</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
-| deviceType      | chaîne  | Une des chaînes suivantes qui spécifie le type de l’appareil sur lequel l’app s’exécutait lorsque l’erreur s’est produite:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Inconnu</strong></li></ul>     |
+| packageVersion  | chaîne  | La version du package de jeu qui est associé à cette erreur.    |
+| deviceModel           | chaîne  | L’une des chaînes suivantes qui spécifie la console Xbox One sur lequel le jeu a été en cours d’exécution lorsque l’erreur s’est produite.<p/><ul><li><strong>Microsoft-Xbox une</strong></li><li><strong>Microsoft-Xbox One S</strong></li><li><strong>Microsoft-Xbox One X</strong></li></ul>  |
+| osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Il s’agit toujours de la valeur de **Windows 10**.    |
+| osRelease       | chaîne  |  L’une des chaînes suivantes qui spécifie la version de système d’exploitation de Windows 10 ou l’anneau de l’évaluation (comme une sous-population au sein de la version du système d’exploitation) sur lequel l’erreur s’est produite.<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
+| deviceType      | chaîne  | Type d’appareil sur lequel l’erreur s’est produite. Il s’agit toujours de la valeur de **Console**.     |
 | cabDownloadable           | Booléen  | Indique si le fichier CAB est téléchargeable par cet utilisateur.   |
 
 
@@ -117,19 +116,19 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 {
   "Value": [
     {
-      "applicationId": "9NBLGGGZ5QDR ",
+      "applicationId": "BRRT4NJ9B3D1",
       "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
-      "failureName": "STOWED_EXCEPTION_System.UriFormatException_exe!ContosoGame.GroupedItems+_ItemView_ItemClick_d__9.MoveNext",
+      "failureName": "STOWED_EXCEPTION_System.UriFormatException_exe!ContosoSports.GroupedItems+_ItemView_ItemClick_d__9.MoveNext",
       "date": "2018-02-05 09:11:25",
       "cabId": "133637331323",
       "cabExpirationTime": "2016-12-05 09:11:25",
       "market": "US",
-      "osBuild": "10.0.10240",
+      "osBuild": "10.0.17134",
       "packageVersion": "1.0.2.6",
-      "deviceModel": "Contoso Computer",
+      "deviceModel": "Microsoft-Xbox One",
       "osVersion": "Windows 10",
-      "osRelease": "Version 1507",
-      "deviceType": "PC",
+      "osRelease": "Version 1803",
+      "deviceType": "Console",
       "cabDownloadable": false
     }
   ],
@@ -138,10 +137,9 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 }
 ```
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesassociées
 
-* [Rapport d’intégrité](../publish/health-report.md)
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)
-* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
-* [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Télécharger le fichier CAB concernant une erreur dans votre application](download-the-cab-file-for-an-error-in-your-app.md)
+* [Obtenir les données rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md)
+* [Obtenir la trace de pile concernant une erreur dans votre console Xbox One du jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)

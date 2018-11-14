@@ -10,16 +10,16 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 1866c4f94c5ef681080ae2a5658c6edba11ec44b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024433"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452605"
 ---
 # <a name="media-capture-page-dev-home"></a>Page (Dev Home) de Capture multimédia
    
   
-La page d’accueil du développeur **de capture multimédia** capture vidéo du titre en cours d’exécution sur la console.   
+La page **de capture multimédia** de l’outil accueil du développeur capture vidéo du titre en cours d’exécution sur la console.   
  ![Page d’accueil du développeur de capture](images/devhome_capture.png)   
   
 La page **de capture multimédia** contient les volets suivants:   
@@ -34,7 +34,7 @@ La page **de capture multimédia** contient les volets suivants:
 ## <a name="video-capture"></a>Capture vidéo  
    
   
-Le volet de **capture vidéo** contient des outils enregistrent un flux vidéo à partir de la console de développeur. Vous pouvez également capturer une vidéo des dernières quelques secondes à partir de la console.   
+Le volet de **capture vidéo** contient des outils enregistrent un flux vidéo à partir de la console de développeur. Vous pouvez également capturer une vidéo des dernières secondes à partir de la console.   
   
 <a id="ID4ERB"></a>
 

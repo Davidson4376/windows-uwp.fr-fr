@@ -12,11 +12,11 @@ keywords: Windows10, uwp, Protection des informations Windows, données d’entr
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: dec05e663e6ca7390dc3974b8a3cde2971b50426
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6454902"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6667346"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 

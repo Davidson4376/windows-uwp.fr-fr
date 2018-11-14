@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, remarques aux testeurs
 ms.localizationpriority: medium
 ms.openlocfilehash: ab3ba2eb08c01bac3b9c0536ce11b8e2bea96054
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6252720"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6457732"
 ---
 # <a name="notes-for-certification"></a>Remarques pour la certification
 
