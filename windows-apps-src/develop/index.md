@@ -9,11 +9,11 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049510"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654413"
 ---
 <div> 
 <h1>Développer des applicationsUWP</h1>
@@ -33,7 +33,7 @@ ms.locfileid: "6049510"
                     </div>
                     <div class="cardText">
                         <h3>Vue d’ensemble de la plateforme Windows universelle</h3>
-                        <p>Une explication des quelle UWP est, comment il fonctionne, et les fonctionnalités qu’il fournit.</p>
+                        <p>Obtenir une explication de quel UWP est, comment il fonctionne, et les fonctionnalités qu’il fournit.</p>
                     </div>
                 </div>
             </div>
@@ -271,7 +271,7 @@ ms.locfileid: "6049510"
                     </div>
                     <div class="cardText">
                         <h3>Exemples</h3>
-                        <p> Découvrez comment créer des applications réussies pour Windows en testant ces échantillons. Ces exemples vous montrent comment les fonctionnalités fonctionnent et à vous accélérer vos propres applications UWP.</p>
+                        <p> Découvrez comment créer des applications réussies pour Windows en testant ces échantillons. Ces exemples vous montrent comment les fonctionnalités fonctionnent et vous aider à vous démarrer vos propres applications UWP.</p>
                     </div>
                 </div>
             </div>

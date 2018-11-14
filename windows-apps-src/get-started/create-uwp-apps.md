@@ -7,18 +7,18 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows10, uwp, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: dde635624101fdcf0803770bc69e7922f56f704e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4bc64b0a6919180b6041bdbf4f81463019d274eb
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031578"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261577"
 ---
 # <a name="start-coding"></a>Commencer le codage
 
 ![Créer votre application](images/build-your-app.png)
 
-Bienvenue sur la [plateformeUWP](universal-application-platform-guide.md)! Sur cette page, nous vous orientons vers les informations correctes, nécessaires pour commencer à coder les applications Windows10 que vous souhaitez créer.
+Bienvenue sur la [plateformeUWP](universal-application-platform-guide.md)! Sur cette page, nous allons vous indiquons aux bonnes informations que vous avez besoin pour commencer à coder les applications Windows 10 que vous voulez créer.
 
 Avant de commencer le développement, vous devez veiller à [vous préparer.](get-set-up.md)
 

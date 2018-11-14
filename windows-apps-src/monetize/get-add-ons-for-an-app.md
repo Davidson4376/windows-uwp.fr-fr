@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extensions, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6164815"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6653867"
 ---
 # <a name="get-add-ons-for-an-app"></a>Obtenir des extensions pour une application
 
