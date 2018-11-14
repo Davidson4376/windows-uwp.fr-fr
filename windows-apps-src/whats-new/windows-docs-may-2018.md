@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6163887"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6650549"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en mai 2018
 
@@ -114,11 +114,11 @@ Nous avons aux retraités rajeunit notre Get démarré contenu avec les nouvelle
 
 ### <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
-Le [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans le tableau de bord du centre de développement offre désormais les mesures de visibilité. Nous avons également ajouté l’article [optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md) pour fournir des recommandations pour l’optimisation de la visibilité de vos annonces.
+Le [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans l’espace partenaires fournit désormais des mesures de visibilité. Nous avons également ajouté l’article [optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md) pour fournir des recommandations pour l’optimisation de la visibilité de vos annonces.
 
 ### <a name="targeted-push-notifications"></a>Notifications push ciblées
 
-La page de [Notifications](../publish/send-push-notifications-to-your-apps-customers.md) dans le tableau de bord du centre de développement fournit désormais des données d’analytique supplémentaires pour toutes vos notifications dans les vues de carte graphique et le monde.
+La page de [Notifications](../publish/send-push-notifications-to-your-apps-customers.md) dans l’espace partenaires fournit désormais des données d’analytique supplémentaires pour toutes vos notifications dans les vues de carte graphique et le monde.
 
 ## <a name="videos"></a>Vidéos
 

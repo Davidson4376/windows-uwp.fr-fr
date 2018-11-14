@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: cc71a58594c8794369bedd7f415518100892ff67
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6195105"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6667294"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 
-Vous pouvez utiliser Visual Studio pour générer un package de votre application de bureau. Vous pouvez ensuite publier ce package sur le Store ou le charger de manière indépendante sur un ou plusieurs ordinateurs.
+Vous pouvez utiliser Visual Studio pour générer un package de votre application de bureau. Ensuite, vous pouvez publier ce package au Microsoft Store ou charger de manière indépendante sur un ou plusieurs ordinateurs.
 
 La dernière version de Visual Studio fournit une nouvelle version projet de création de packages qui élimine toutes les étapes manuelles autrefois nécessaires pour mettre en package votre application Il suffit d’ajouter un projet de création de packages, de référencer votre projet d'application de bureau, puis d'appuyer sur F5 pour déboguer votre application. Plus aucun ajustement n'est nécessaire. Cette nouvelle expérience plus fluide améliore considérable l'expérience de la version précédente de Visual Studio.
 
@@ -66,7 +66,7 @@ Consultez ce guide avant de commencer la création d’un package pour votre app
 
 7. Utilisez l'assistant [Créer des packages d'application](../packaging/packaging-uwp-apps.md) pour générer un fichier appxupload.
 
-   Vous pouvez charger ce fichier directement sur le Store.
+   Vous pouvez charger ce fichier directement à la banque.
 
 **Vidéo**
 
