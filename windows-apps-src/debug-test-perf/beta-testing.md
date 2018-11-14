@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 55d90ffb50d6db71e135cbecf56487b96ba3377c
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451580"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668319"
 ---
 # <a name="beta-testing"></a>Bêta-test
 
@@ -42,9 +42,9 @@ Il est préférable d’effectuer le test bêta lors de l’étape de test final
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans le tableau de bord unifié du Centre de développement Windows, vous pouvez restreindre la distribution de vos applications à vos testeurs, quels que soient les systèmes d’exploitation ciblés par votre application. Il est inutile de créer une version différente de votre application avec un nom et une identité de package distincts : vous pouvez effectuer vos tests, puis créer une autre soumission lorsque vous êtes prêt à rendre l’application publique. (Bien entendu, vous pouvez créer une application distincte réservée aux tests si vous le préférez. Le cas échéant, veillez à lui donner un nom différent du nom prévu pour l’application finale qui sera rendue publique.)
+Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), vous pouvez limiter la distribution de vos applications à vos testeurs seulement, quel que soit le des systèmes d’exploitation ciblés par votre application. Il est inutile de créer une version différente de votre application avec un nom et une identité de package distincts : vous pouvez effectuer vos tests, puis créer une autre soumission lorsque vous êtes prêt à rendre l’application publique. (Bien entendu, vous pouvez créer une application distincte réservée aux tests si vous le préférez. Le cas échéant, veillez à lui donner un nom différent du nom prévu pour l’application finale qui sera rendue publique.)
 
-Pour savoir comment soumettre votre application au Windows Store pour le bêta-test, voir [Tests bêta et distribution ciblée](https://msdn.microsoft.com/library/windows/apps/Mt185377).
+Pour savoir comment soumettre votre application au Windows Store pour le bêta-test, voir [Tests bêta et distribution ciblée](../publish/beta-testing-and-targeted-distribution.md).
 
  
 

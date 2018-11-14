@@ -8,19 +8,19 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, l’image native du compilateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 231d5aa895cb4cf63ade01660df61e32424e67c7
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444723"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6656787"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Optimiser vos applications de bureau .NET avec les images natives
 
 > [!NOTE]
 > Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
-Vous pouvez améliorer le temps de démarrage de votre application .NET Framework en compilant préalablement vos fichiers binaires. Vous pouvez utiliser cette technologie sur les applications volumineuses qui vous empaquetez et distribuez via le Windows Store. Dans certains cas, nous avons observé une amélioration des performances de 20 %. Pour en savoir plus sur cette technologie dans [vue d’ensemble technique](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
+Vous pouvez améliorer le temps de démarrage de votre application .NET Framework en compilant préalablement vos fichiers binaires. Vous pouvez utiliser cette technologie sur les applications volumineuses qui vous empaquetez et distribuez via le Microsoft Store. Dans certains cas, nous avons observé une amélioration des performances de 20 %. Pour en savoir plus sur cette technologie dans [vue d’ensemble technique](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
 
 Nous avons publié une version d’évaluation du compilateur image native en tant que [package NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Vous pouvez appliquer ce package à n’importe quelle application .NET Framework qui cible la version 4.6.2 de .NET Framework ou une version ultérieure. Ce package ajoute une étape de génération post qui inclut une charge utile native à tous les fichiers binaires utilisés par votre application. Cette charge utile optimisée est chargée lorsque l’application s’exécute dans .NET 4.7.2 et versions supérieures tandis que les versions précédentes seront chargera le code MSIL.
 
@@ -59,7 +59,7 @@ Pour configurer votre projet:
 
 1. Avec le bouton droit de votre solution et sélectionnez **Le Gestionnaire de Configuration**.
 
-2. Sélectionnez **< New... >** dans le menu déroulant de **plateforme** en regard du nom du projet qui produit votre fichier exécutable.
+2. Sélectionnez **<New... >** dans le menu déroulant de **plateforme** en regard du nom du projet qui produit votre fichier exécutable.
 
 3. Dans la boîte de dialogue **Nouveau projet de plateforme** , assurez-vous que la liste déroulante de **Copier les paramètres à partir** d’est définie sur **Toute UC**.
 

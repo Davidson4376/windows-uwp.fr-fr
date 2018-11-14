@@ -7,12 +7,12 @@ ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6455351"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654049"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 
@@ -157,7 +157,7 @@ Une fois que votre application ou service est authentifié(e) avec un compte Mic
 ## <a name="summary"></a>Résumé
 
 Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) pour que votre application s’affiche dans la Chronologie et dans Cortana.
-* Pour en savoir plus sur l'API **UserActivity**, accédez au [Centre de développement Windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities).
+* En savoir plus sur la [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Consultez l'[exemple de code](https://github.com/Microsoft/project-rome).
 * Voir des [cartes adaptatives plus sophistiquées](http://adaptivecards.io/).
 * Publiez un objet **UserActivity** à partir d’iOS, d'Android ou de votre service web via [MicrosoftGraph](https://developer.microsoft.com/graph/).

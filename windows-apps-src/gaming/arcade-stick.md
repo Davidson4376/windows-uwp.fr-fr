@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, stick arcade, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458985"
+ms.locfileid: "6665625"
 ---
 # <a name="arcade-stick"></a>Stick arcade
 

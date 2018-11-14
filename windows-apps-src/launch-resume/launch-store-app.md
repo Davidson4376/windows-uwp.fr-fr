@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: ecb99c16d413e5e9869215f2d048ad6d9d52206f
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6454114"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668474"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Lancer l’application MicrosoftStore
 
@@ -43,7 +43,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID WindowsStore est recommandé pour les clients Windows10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex: PFN) sont toujours prises en charge.</p>
-<p>Ces valeurs sont disponibles dans le tableau de bord du Centre de développement Windows à la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">Identité de l’application</a> de la section Gestion des applications de chaque application.</p>
+<p>Ces valeurs peuvent être disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) sur la page de <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">l’identité de l’application</a> dans la section Gestion des applications pour chaque application.</p>
 </td>
 <td>
 ID WindowsStore <p>(recommandé)</p>
