@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199756"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6465924"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation
 

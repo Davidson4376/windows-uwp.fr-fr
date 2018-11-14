@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d502c721f98269c1256510a6f91f8c6dc8cd0fb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028254"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264627"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 
@@ -73,7 +73,7 @@ Cette section donne des exemples d’implémentation de bannières publicitaires
 
 * Contourner le minuteur d’actualisation intégré minimum pour les bannières publicitaires par quelque moyen que ce soit, y compris, mais sans s’y limiter, en remplaçant des objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) ou en actualisant automatiquement une page sans aucune interaction utilisateur.
 
-* À l’aide des unités publicitaires dynamiques (autrement dit, les unités publicitaires que vous procurer à partir de l’espace partenaires) au cours de développement et de test, ou dans un émulateur.
+* À l’aide des unités publicitaires dynamiques (autrement dit, les unités publicitaires que vous obtenez à partir de l’espace partenaires) au cours de développement et de test, ou dans un émulateur.
 
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
@@ -157,7 +157,7 @@ Cette section donne des exemples d’implémentations de spots publicitaires qui
 
 * Demander un spot publicitaire simplement pour avoir une publicité de secours à une cascade de publicités. Si vous demandez un spot publicitaire et que vous recevez l’événement [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready), le spot publicitaire suivant affiché dans votre application doit être celui qui est prêt à être affiché par la méthode [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
-* À l’aide des unités publicitaires dynamiques (autrement dit, les unités publicitaires que vous procurer à partir de l’espace partenaires) au cours de développement et de test, ou dans un émulateur.
+* À l’aide des unités publicitaires dynamiques (autrement dit, les unités publicitaires que vous obtenez à partir de l’espace partenaires) au cours de développement et de test, ou dans un émulateur.
 
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 

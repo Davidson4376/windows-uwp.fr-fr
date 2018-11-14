@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows10, uwp, création de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: d8728094292f1de81eb90752ee496090df4cb6e0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183491"
+ms.locfileid: "6250787"
 ---
 # <a name="packaging-apps"></a>Création de packages d’applications
 
@@ -34,4 +34,4 @@ Cette section contient ou associe des articles sur l’empaquetage d’applicati
 | [Installer des applications avec l’outil WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui peut utiliser pour déployer une application UWP à partir d’un ordinateur Windows 10 à n’importe quel appareil Windows 10 Mobile. Vous pouvez utiliser cet outil pour déployer un package d’application lorsque l’appareil Windows 10 Mobile est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ou la solution pour cette application. Cet article décrit comment installer des applications UWP à l’aide de cet outil. |
 | [Configuration de builds automatisées pour votre application UWP](auto-build-package-uwp-apps.md) | Cette rubrique vous montre comment utiliser Visual Studio Team Services (VSTS) pour empaqueter votre application dans le cadre d’un processus automatisé de génération, le cas échéant. |
 | [Déclarations des fonctionnalités d’application](app-capability-declarations.md) | Pour pouvoir accéder à certaines API, à certaines ressources (images ou musique) ou à certains appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application UWP. |
-| [Télécharger et installer des mises à jour de package sur le Store](self-install-package-updates.md) | Votre application UWP peut rechercher par programmation les mises à jour de packages et installer les mises à jour. Votre application peut également rechercher les packages qui ont été marqués comme obligatoires sur le tableau de bord du Centre de développement Windows et désactiver la fonctionnalité jusqu’à ce que la mise à jour obligatoire soit installée.  |
+| [Télécharger et installer des mises à jour de package sur le Store](self-install-package-updates.md) | Votre application UWP peut rechercher par programmation les mises à jour de packages et installer les mises à jour. Votre application peut également rechercher les packages qui ont été marqués comme obligatoires dans l’espace partenaires et désactiver la fonctionnalité jusqu'à ce que la mise à jour obligatoire est installée.  |

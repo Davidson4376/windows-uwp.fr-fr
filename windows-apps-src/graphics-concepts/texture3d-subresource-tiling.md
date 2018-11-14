@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 17970d509fa2bf6b80431e1c07b5d135c7dcb112
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044000"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193410"
 ---
 # <a name="texture3d-subresource-tiling"></a>Restitution de la sous-ressource Texture3D sous forme de tuiles
 
@@ -23,7 +23,7 @@ Ce tableau montre comment des sous-ressources [**Texture3D**](https://msdn.micro
 
 Ce tableau prend les tuiles [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et divise les dimensions x/y par 4 et ajoute 16couches de profondeur. Toutes les tuiles du premier plan (plan 2D de tuiles définissant les 16premières couches de profondeur) apparaissent avant les plans ultérieurs.
 
-**Remarque** Prise en charge de [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) de ressources de diffusion en continu n’est pas exposée dans l’implémentation initiale des ressources de diffusion en continu, mais les formes de tuiles souhaitées sont répertoriées ici pour la prise en charge possible dans une prochaine version.
+**Remarque** Prise en charge de [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) dans les ressources de diffusion en continu n’est pas exposée dans l’implémentation initiale des ressources de diffusion en continu, mais les formes de tuiles souhaitées sont répertoriées ici pour la prise en charge possible dans une prochaine version.
 
  
 

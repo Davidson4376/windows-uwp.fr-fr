@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026770"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206662"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>Espaces de noms XAML et mappage d’espaces de noms
 
@@ -63,7 +63,7 @@ L’espace de noms XAML «d:» est destiné à la prise en charge de concepteur,
 
 -   **d:DesignHeight and d:DesignWidth attributes :** ces attributs sont parfois appliqués à la racine d’un fichier XAML créé automatiquement par Visual Studio ou tout autre concepteur XAML. Par exemple, ces attributs sont définis sur la racine [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) du code XAML qui est créé si vous ajoutez un nouvel objet **UserControl** à votre projet d’application. Ils facilitent la conception de la composition du contenu XAML, afin que vous ayez une certaine anticipation des contraintes de disposition qui peuvent exister une fois que le contenu XAML est utilisé pour une instance de contrôle ou une autre partie d’une page d’interface utilisateur plus grande.
 
-   **Remarque**si vous migrez du code XAML à partir de Microsoft Silverlight peut-être ces attributs sur les éléments racines qui représentent la totalité d’une page de l’interface utilisateur. Dans ce cas, vous pouvez supprimer les attributs. D’autres fonctionnalités des concepteurs XAML, telles que le simulateur, sont probablement plus utiles pour la conception de dispositions de pages qui gèrent correctement la mise à l’échelle et les états d’affichage qu’une disposition de page de taille fixe utilisant **d:DesignHeight** et **d:DesignWidth**.
+   **Remarque**si vous migrez du code XAML à partir de Microsoft Silverlight vous pouvez disposer de ces attributs sur les éléments racines qui représentent la totalité d’une page de l’interface utilisateur. Dans ce cas, vous pouvez supprimer les attributs. D’autres fonctionnalités des concepteurs XAML, telles que le simulateur, sont probablement plus utiles pour la conception de dispositions de pages qui gèrent correctement la mise à l’échelle et les états d’affichage qu’une disposition de page de taille fixe utilisant **d:DesignHeight** et **d:DesignWidth**.
 
 -   **Attribut d:DataContext :** vous pouvez définir cet attribut sur une racine de page ou un contrôle pour remplacer tout [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) explicite ou hérité que cet objet a sans cela.
 -   **Attribut d:DesignSource :** spécifie une source de données au moment de la conception pour un [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), en remplacement de [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).

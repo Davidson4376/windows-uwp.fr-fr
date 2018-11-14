@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Utilisez l’API d’analytique Microsoft Store pour récupérer par programmation les données d’analytique pour les applications qui sont enregistrées sur vous ou votre organisation '' s compte espace partenaires de Windows.
+description: Utiliser l’API d’analytique Microsoft Store pour récupérer par programmation les données d’analytique pour les applications qui sont inscrites dans votre organisation '' s compte espace partenaires de Windows.
 title: Accéder aux données d’analyse à l’aide des services du Windows Store
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore
 ms.localizationpriority: medium
-ms.openlocfilehash: 8656270b81e0aae46c5d4f3a7b651135c163f76d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 80ca7d66489f936e8097e9466f74032fbfb78eaf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051553"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6257978"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
-Utiliser *Microsoft Store analytique API* pour récupérer par programmation les données d’analytique pour les applications qui sont enregistrées sur le compte du centre de l’espace Windows de votre organisation. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+Utiliser *Microsoft Store analytique API* pour récupérer par programmation les données d’analytique pour les applications qui sont enregistrées sur le compte du centre de l’espace Windows de vous ou votre organisation. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus de bout en bout:
 
@@ -31,15 +31,15 @@ Les étapes suivantes décrivent le processus de bout en bout:
 
 Avant d’écrire le code d’appel de l’API d’analyse du MicrosoftStore, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
-* Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API d’analyse du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
+* Vous devez associer une application Azure AD avec votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API d’analyse du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]
     > Cette tâche ne doit être effectuée qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
-Pour associer une application Azure AD à votre compte espace partenaires et récupérer les valeurs nécessaires:
+Pour associer une application Azure AD avec votre compte espace partenaires et récupérer les valeurs nécessaires:
 
-1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec l’annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
+1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec un annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
 
 2.  Ensuite, à partir de la page **utilisateurs** dans la section **paramètres du compte** de l’espace partenaires, [Ajoutez l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour accéder aux données d’analytique pour votre compte espace partenaires. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure Active directory, vous pouvez [créer une nouvelle application Azure AD dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
 
@@ -111,15 +111,15 @@ Les méthodes supplémentaires suivantes sont disponibles pour les comptes de d�
 
 ### <a name="methods-for-xbox-one-games"></a>Méthodes pour les jeux pour XboxOne
 
-Les méthodes supplémentaires suivantes sont disponibles pour les comptes de développeur avec les jeux Xbox One intégrés par le biais du portail de développeur Xbox (XDP) et dans le tableau de bord Analytique XDP.
+Les méthodes supplémentaires suivantes sont disponibles pour les comptes de développeur avec les jeux Xbox One intégrés par le biais du portail de développeur Xbox (XDP) et dans le tableau de bord XDP Analytique.
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|
-| Acquisitions |  <ul><li>[Obtenir des acquisitions de jeu Xbox One](get-xbox-one-game-acquisitions.md)</li></ul> |
+| Acquisitions |  <ul><li>[Obtenir des acquisitions de jeu Xbox One](get-xbox-one-game-acquisitions.md)</li><li>[Obtenir des acquisitions d’extensions XboxOne](get-xbox-one-add-on-acquisitions.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
-Comptes de développeur qui font partie du [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, voir le [tableau de bord du matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Comptes de développeur qui font partie du [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, consultez le [tableau de bord du matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Exemple de code
 

@@ -1,28 +1,28 @@
 ---
 author: TerryWarwick
 title: Support et commentaires
-description: Commentaires et support de fichier include
+description: Prise en charge et les commentaires de fichier include
 ms.author: jken
 ms.date: 06/12/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 6decdd4325a1c3cf854e340799b9d2f4a3272e6c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052324"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6211906"
 ---
 ## <a name="support-and-feedback"></a>Support et commentaires
 
 ### <a name="find-answers-to-your-questions"></a>Trouvez des réponses à vos questions
 
-Des questions? Contactez-nous sur [Stack Overflow](https://aka.ms/pos-stackoverflow) ou [MSDN UWP Forum](https://aka.ms/pos-msdn-uwpforum)
+Des questions? Contactez-nous sur [Stack Overflow](https://aka.ms/pos-stackoverflow) ou le [Forum de MSDN UWP](https://aka.ms/pos-msdn-uwpforum)
 
 Nous aider à localiser vos questions:
 - Ajoutez la balise [pointofservice](https://aka.ms/pos-stackoverflow) à votre question sur Stack Overflow. 
-- Inclure le terme [«pointofservice»](https://aka.ms/pos-msdn-uwpforum) dans votre question sur le Forum de UWP MSDN
+- Inclure le terme [«pointofservice»](https://aka.ms/pos-msdn-uwpforum) dans votre question sur le Forum de MSDN UWP
 
 ### <a name="make-feature-suggestions-or-give-feedback"></a>Suggérer des fonctionnalités ou envoyer vos commentaires
 Voir [UserVoice de commentaires de développeur](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594).

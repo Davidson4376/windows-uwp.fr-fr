@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, toast, centre de notifications dans le cloud, mise en miroir des notifications, notification, sur plusieurs appareils
 ms.localizationpriority: medium
 ms.openlocfilehash: c36b5ffcbb016e5b89fa1c960a7493767192296c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046319"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209841"
 ---
 # <a name="notification-mirroring"></a>Mise en miroir des notifications
 
@@ -27,7 +27,7 @@ Avec la mise en miroir des notifications et Cortana, les utilisateurs peuvent re
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-Les développeurs obtenir deux grands avantages à partir de la mise en miroir de notification: les notifications mises en miroir de résultat plus engagement des utilisateurs avec votre service, et également les utilisateurs à découvrir votre application de bureau Microsoft Store! Vos utilisateurs peuvent ne même pas savoir qu’une application UWP extraordinaire est disponible pour leur bureau Windows10. Les utilisateurs reçoivent la notification de mise en miroir sur leur téléphone, les utilisateurs peuvent cliquer sur la notification toast afin d’être redirigés vers le Microsoft Store, où ils peuvent installer votre application de bureau UWP.
+Les développeurs obtenir deux grands avantages à partir de la notification de mise en miroir: les notifications de mise en miroir de résultat plus engagement des utilisateurs avec votre service, et également les utilisateurs à découvrir votre application de bureau Microsoft Store! Vos utilisateurs peuvent ne même pas savoir qu’une application UWP extraordinaire est disponible pour leur bureau Windows10. Les utilisateurs reçoivent la notification de mise en miroir sur leur téléphone, les utilisateurs peuvent cliquer sur la notification toast afin d’être dirigé vers le Microsoft Store, où ils peuvent installer votre application de bureau UWP.
 
 La mise en miroir fonctionne avec Windows Phone et Android. Les utilisateurs doivent être connectés à Cortana sur leur téléphone et bureau pour que la mise en miroir des notifications puisse fonctionner.
 

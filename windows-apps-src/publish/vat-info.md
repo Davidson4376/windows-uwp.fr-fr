@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 872d3967e48a9c8122e3cc3043a1440950f70e9b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029666"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203216"
 ---
 # <a name="vat-info"></a>Informations sur la TVA
 
 
-Si vous devez fournir un numéro de TVA au cours du processus d’inscription de l’espace partenaires, voici quelques informations pour vous aider à démarrer.
+Si vous êtes tenu de fournir un numéro de TVA au cours du processus d’inscription de l’espace partenaires, voici quelques informations pour vous aider à démarrer.
 
 ## <a name="understanding-vat-numbers"></a>Description des numéros de TVA
 
