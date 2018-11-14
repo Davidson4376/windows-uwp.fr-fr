@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, graphiques, diagnostics, outils, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040615"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6260195"
 ---
 # <a name="graphics-diagnostics-tools"></a>Outils Graphics Diagnostics
 
@@ -21,7 +21,7 @@ ms.locfileid: "6040615"
 
 Avec Windows 10, les outils de diagnostic de graphiques sont désormais disponibles dans Windows en tant que fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
 
-1.  Accédez à **paramètres**, sélectionnez **les applications**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
+1.  Accédez à **paramètres**, sélectionnez les **applications**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
 2.  Cliquez sur **Ajouter une fonctionnalité**.   
 3.  Dans la liste **Fonctionnalités facultatives**, sélectionnez **Outils graphiques**, puis cliquez sur **Installer**.
 

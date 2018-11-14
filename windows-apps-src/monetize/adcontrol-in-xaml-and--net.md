@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, annonces, publicité, AdControl, contrôle de publicité, XAML, .net, procédure pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: b2346fceaae3996de8aa54640c206b5fcd8c4a87
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052174"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255889"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl en XAML et .NET
 
@@ -126,13 +126,13 @@ Cette procédure pas à pas montre comment utiliser la classe [AdControl](https:
 
 1. Assurez-vous que votre utilisation des bannières publicitaires dans votre app respecte nos [recommandations en matière de bannières publicitaires](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads).
 
-2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et de [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité publicitaire dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID Windows Store exemple ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID du Windows Store de l’exemple ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez, si vous le souhaitez, activer la médiation publicitaire pour **AdControl** en configurant ces paramètres dans la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) de la page [Publicités dans l'app](../publish/in-app-ads.md). La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des spots issus de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux payants tels que Taboola et Smaato et les publicités des campagnes de promotion d’applications Microsoft.
 
-4.  Dans votre code, remplacez les mêmes valeurs (**ApplicationId** et **AdUnitId**) par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
+4.  Dans votre code, remplacez les valeurs d’unité publicitaire test (**ApplicationId** et **AdUnitId**) par les valeurs dynamiques que vous avez générées dans l’espace partenaires.
 
 5.  [Soumettre votre application](../publish/app-submissions.md) au Store à l’aide de l’espace partenaires.
 

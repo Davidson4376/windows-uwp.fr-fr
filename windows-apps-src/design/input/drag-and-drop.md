@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dde0607b76d36b24c851c705ca62f71df052f65
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6163453"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6283069"
 ---
 # <a name="drag-and-drop"></a>Glisser-déplacer
 

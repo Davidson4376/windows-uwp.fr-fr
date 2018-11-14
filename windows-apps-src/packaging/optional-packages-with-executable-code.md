@@ -7,12 +7,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f454c7e7386ba829cf6c99edc0b5b8f2d831f00
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025189"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268834"
 ---
 # <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
  
@@ -26,7 +26,7 @@ Les packages facultatifs avec code exécutable sont utiles pour diviser une appl
 Pour obtenir les outils de développement les plus récents, consultez [Téléchargements et outils pour Windows10](https://developer.microsoft.com/windows/downloads). 
 
 > [!NOTE]
-> Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Store, il vous faudra une autorisation. S’ils ne sont pas soumis au Store, les packages facultatifs et ensembles connexes peuvent servir pour les applications métier (LOB) ou de l’entreprise sans autorisation du centre de développement. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
+> Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Store, il vous faudra une autorisation. Packages facultatifs et ensembles connexes peuvent être utilisés pour les applications cœur de métier (LOB) ou d’entreprise sans autorisation de l’espace partenaires s’ils ne sont pas soumis au Windows Store. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
 
 ## <a name="c-optional-packages-with-executable-code"></a>Packages facultatifs C++ avec code exécutable
 

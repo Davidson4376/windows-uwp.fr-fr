@@ -8,11 +8,11 @@ ms.topic: article
 keywords: prise en main, uwp, Windows10, piste d'apprentissage, paramètres, enregistrer des paramètres, charger des paramètres
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b11ea100915f8b6ff52db5223284da6f24a1d4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038858"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276126"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Enregistrer et charger des paramètres dans une application UWP
 

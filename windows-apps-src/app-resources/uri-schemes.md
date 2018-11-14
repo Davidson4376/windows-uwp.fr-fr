@@ -8,12 +8,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 59cd664e268e9e62786728aeb122ec52acd721c0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 75ba42674ca1ea460698fcce6e67bb3528589797
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031351"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251608"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -253,9 +253,9 @@ Le chemin d’accès identifie l’emplacement hiérarchique de la sous-arboresc
 
 Pour en savoir plus et voir des exemples, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Toutefois, lorsque le système de fichiers sous-jacent via lequel la ressource est accessible ne respecte pas la casse, la ressource est récupérée à l’aide de [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) avec la valeur de *ignoreCase* définie sur `true`.
+À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Toutefois, la récupération sous-jacent n’un [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) avec *ignoreCase* définie sur `true`.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*» et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de chaîne à partir d’un fichier de ressources nommé Hello#World.resw, utilisez cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*» et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de chaîne à partir d’un fichier de ressources nommé `Hello#World.resw`, utilisez cet URI.
 
 ```xml
 ms-resource:///Hello%23World/String1

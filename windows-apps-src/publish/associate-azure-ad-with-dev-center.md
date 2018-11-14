@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
 ms.localizationpriority: medium
 ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049404"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250777"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
 
-Dans l’ordre pour [Ajouter et gérer les utilisateurs de compte](add-users-groups-and-azure-ad-applications.md), vous devez tout d’abord associer votre compte espace partenaires à Azure Active Directory de votre organisation. 
+Dans l’ordre pour [Ajouter et gérer les utilisateurs de compte](add-users-groups-and-azure-ad-applications.md), vous devez d’abord associer votre compte espace partenaires avec Azure Active Directory de votre organisation. 
 
-Azure AD pour accéder de comptes multiutilisateur et tire parti de [L’espace partenaires](https://partner.microsoft.com/dashboard) . Si votre organisation utilise déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’AzureAD. Dans le cas contraire, vous pouvez créer un nouveau locataire Azure AD à partir de l’espace partenaires sans frais supplémentaires.
+[L’espace partenaires](https://partner.microsoft.com/dashboard) tire parti d’Azure AD pour l’accès au compte de plusieurs utilisateurs et de gestion. Si votre organisation utilise déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’AzureAD. Dans le cas contraire, vous pouvez créer un nouveau client à partir d’Azure AD au sein de l’espace partenaires sans frais supplémentaires.
 
 > [!TIP]
 > Cette rubrique est spécifique au programme de développeur d’applications Windows dans [L’espace partenaires](https://partner.microsoft.com/dashboard), mais association d’un client et la gestion des utilisateurs fonctionnent de la même façon pour les comptes dans le programme d’Application de bureau Windows (consultez ce [Programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) plus d’informations) et dans le programme de développement matériel Windows (où les références au rôle **Gestionnaire** seraient s’appliquent également aux comptes matériel ayant le rôle **d’administrateur** ; pour plus d’informations, consultez [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) ).
 
-Un seul client Azure AD peut être associé à plusieurs comptes espace partenaires. Il vous suffit d’avoir un client Azure AD associé à votre compte espace partenaires pour ajouter plusieurs comptes d’utilisateur, mais vous avez également la possibilité d’ajouter plusieurs clients Azure AD à un seul compte de l’espace partenaires. Tout utilisateur avec le rôle de **responsable** du compte de l’espace partenaires auront la possibilité d’ajouter et supprimer des clients Azure AD à partir du compte.
+Un seul client Azure AD peut être associé à plusieurs comptes espace partenaires. Il vous suffit d’avoir un client Azure AD associé à votre compte espace partenaires pour ajouter plusieurs comptes d’utilisateur, mais vous avez également la possibilité d’ajouter plusieurs clients Azure AD à un seul compte de l’espace partenaires. Tout utilisateur ayant le rôle **Manager** dans le compte de l’espace partenaires auront la possibilité d’ajouter et supprimer des clients Azure AD à partir du compte.
 
 > [!IMPORTANT]
 > Après avoir associé votre compte espace partenaires de votre client Azure AD, afin d’ajouter et gérer des utilisateurs de compte dans ce client, vous devez vous connecter à l’espace partenaires en tant qu’utilisateur dans le client qui a le rôle **Manager** .
 
 
-## <a name="associate-your-partner-center-account-with-your-organizations-existing-azure-ad-tenant"></a>Associer votre compte espace partenaires au client Azure AD existant de votre organisation
+## <a name="associate-your-partner-center-account-with-your-organizations-existing-azure-ad-tenant"></a>Associer votre compte de l’espace partenaires au client Azure AD existant de votre organisation
 
 Si votre organisation utilise déjà Azure AD, suivez ces étapes pour lier votre compte espace partenaires.
 
-1.  À partir de [L’espace partenaires](https://partner.microsoft.com/dashboard) , sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres de développement**. Dans le menu **paramètres** , sélectionnez **des clients**.
+1.  À partir de [L’espace partenaires](https://partner.microsoft.com/dashboard) , sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de développeur**. Dans le menu **paramètres** , sélectionnez **des clients**.
 2.  Sélectionnez **associer Azure AD avec votre compte espace partenaires**.
 3.  Entrez vos informations d’identification Azure AD pour le client que vous souhaitez associer.
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre locataire AzureAD. Pour valider l’association, sélectionnez **Confirmer**.
@@ -47,7 +47,7 @@ Si votre organisation utilise déjà Azure AD, suivez ces étapes pour lier votr
 
 Si vous avez besoin configurer un nouvel Azure AD à lier à votre compte espace partenaires, procédez comme suit.
 
-1.  À partir du [Centre de partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres de développement**. Dans le menu **paramètres** , sélectionnez **des clients**.
+1.  À partir du [Centre de partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de développeur**. Dans le menu **paramètres** , sélectionnez **des clients**.
 2.  Sélectionnez **Créer Azure AD**.
 3.  Entrez les informations de répertoire de votre nouvel Azure AD:
     - **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com».
@@ -69,16 +69,16 @@ Tout utilisateur qui dispose du rôle de **Gestionnaire** pour un compte espace 
 Pour associer un nouveau locataire, sélectionnez **Associer un autre client AzureAD**, puis suivez les étapes indiquées ci-dessus. Notez que vos informations d'identification vous seront demandées dans le client Azure AD que vous souhaitez associer.
 
 
-### <a name="remove-an-azure-ad-tenant-from-your-partner-center-account"></a>Supprimer un client Azure AD de votre compte de l’espace partenaires
+### <a name="remove-an-azure-ad-tenant-from-your-partner-center-account"></a>Supprimer un client Azure AD à partir de votre compte espace partenaires
 
 Tout utilisateur qui dispose du rôle de **Gestionnaire** pour un compte espace partenaires peut supprimer le compte des clients Azure AD.
 
 > [!IMPORTANT]
-> Lorsque vous supprimez un client, tous les utilisateurs qui ont été ajoutés au compte de l’espace partenaires à partir de ce client ne sera n’est plus en mesure de se connecter au compte. 
+> Lorsque vous supprimez un client, il se peut que tous les utilisateurs qui ont été ajoutés au compte de l’espace partenaires à partir de ce client ne sera n’est plus en mesure de se connecter au compte. 
 
-Pour supprimer un client, trouvez son nom dans la page **des clients** (dans **les paramètres de compte**), puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Une fois que vous procédez ainsi, aucun utilisateur dans ce client ne sera en mesure de se connecter au compte de l’espace partenaires, et toutes les autorisations que vous avez configurées pour ces utilisateurs seront supprimées.
+Pour supprimer un client, trouvez son nom sur la page **des clients** (dans **les paramètres de compte**), puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Une fois que vous procédez ainsi, aucun utilisateur dans ce client ne sera en mesure de se connecter au compte de l’espace partenaires, et toutes les autorisations que vous avez configurées pour ces utilisateurs seront supprimées.
 
 > [!TIP]
-> Vous ne pouvez pas supprimer un client si vous êtes actuellement connecté à l’espace partenaires à l’aide d’un compte dans le client. Pour supprimer un client, vous devez signer vers l’espace partenaires en tant que **Gestionnaire** pour un autre client qui est associé au compte. S’il n'existe qu’un seul client associé au compte, ce client ne peut être supprimé qu'après vous être connecté avec le compte Microsoft ayant ouvert le compte.
+> Vous ne pouvez pas supprimer un client si vous êtes actuellement connecté à l’espace partenaires à l’aide d’un compte dans le même client. Pour supprimer un client, vous devez se connecter à l’espace partenaires en tant que **Gestionnaire** pour un autre client qui est associé au compte. S’il n'existe qu’un seul client associé au compte, ce client ne peut être supprimé qu'après vous être connecté avec le compte Microsoft ayant ouvert le compte.
 
 

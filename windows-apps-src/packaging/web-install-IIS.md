@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liées à des packages définis, facultatifs, serveur IIS
 ms.localizationpriority: medium
 ms.openlocfilehash: 2898a3450f75379492bae1ade5c85581cc8e5a4e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6210220"
+ms.locfileid: "6259700"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Installer une application UWP à partir d’un serveur IIS
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051705"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189539"
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédias et les images
 
@@ -56,7 +56,7 @@ Le contenu Web d’un contrôle [**WebView**](https://msdn.microsoft.com/library
 
 L’animation d’un objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-> **Remarque**  les recommandations de cet article **mediaplayerelement** s’appliquent également aux [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows10, version1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
+> **Remarque**  les recommandations de cet article pour **MediaPlayerElement** s’appliquent également aux [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows10, version1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Utiliser avec parcimonie les animations infinies
 

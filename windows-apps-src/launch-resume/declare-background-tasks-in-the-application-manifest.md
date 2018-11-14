@@ -6,14 +6,14 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 343cca5b89dbe5fd7e1309b9487e8939218203d0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029381"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264611"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -92,7 +92,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
 
-    **Remarque**prenez soin pour répertorier chacun des types de déclencheur que vous utilisez, ou de la tâche en arrière-plan ne sera pas inscrire avec les types de déclencheur non déclaré (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échoue et lève une exception).
+    **Remarque**Assurez-vous de répertorier chacun des types de déclencheur que vous utilisez, ou la tâche en arrière-plan ne sera pas inscrire avec les types de déclencheur non déclaré (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échoue et lève une exception).
 
     Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés:
 

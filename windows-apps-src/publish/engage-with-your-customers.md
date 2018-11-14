@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f266538c42b83da9135079f51a3f935f459020
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6160290"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6282610"
 ---
 # <a name="engage-with-your-customers"></a>Impliquer vos clients
 

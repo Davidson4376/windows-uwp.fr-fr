@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
 ms.openlocfilehash: 6474fc334922d49489c377a0c29841fc45889e1d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039774"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255670"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -30,7 +30,7 @@ Notez que vous ne serez pas en mesure de configurer des dates dans la section **
 > [!IMPORTANT]
 > Les dates que vous spécifiez dans la section Planification s’appliquent uniquement aux clients sous Windows10.
 >
->Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, n’importe quelle date **empêcher l’acquisition** que vous sélectionnez ne s’applique pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [visibilité](choose-visibility-options.md#discoverability) , ou si vous sélectionnez **rendre votre application indisponible** à partir de la page de **Présentation de l’application** ).
+>Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, n’importe quelle date **d’empêcher l’acquisition** que vous sélectionnez s’appliquera pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [visibilité](choose-visibility-options.md#discoverability) , ou si vous sélectionnez **rendre votre application indisponible** à partir de la page de **Présentation de l’application** ).
 
 
 ## <a name="base-schedule"></a>Planification de base
@@ -60,7 +60,7 @@ Dans la liste déroulante **Empêcher l'acquisition**, vous pouvez définir une 
 
 Par défaut, l'option **Empêcher l'acquisition** est configurée sur jamais. Pour modifier ce paramètre, sélectionnez **à** dans le menu déroulant et spécifiez une date et une heure, comme décrit ci-dessus. À la date et à l'heure que vous sélectionnez, les clients ne seront plus en mesure d’acquérir l’application.
 
-Il est important de comprendre que cette option a le même effet que la sélection de **rendre votre application détectable mais ne sont pas disponibles** dans la section [visibilité](choose-visibility-options.md#discoverability) et en choisissant **empêcher l’acquisition: tout client ayant un lien direct peut voir Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10.** Pour arrêter de proposer une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+Il est important de comprendre que cette option a le même effet que la sélection de **rendre votre application détectable mais ne sont pas disponibles** dans la section [visibilité](choose-visibility-options.md#discoverability) et en choisissant **empêcher l’acquisition: tout client ayant un lien direct peut voir Windows Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10.** Pour arrêter de proposer une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
 > Si vous sélectionnez une date pour **Empêcher l'acquisition** et décidez ultérieurement que vous souhaitez la rendre disponible à nouveau, vous pouvez créer une nouvelle soumission et reconfigurer **Empêcher l'acquisition** sur **Jamais**. L’application sera à nouveau disponible après la publication de votre soumission mise à jour.

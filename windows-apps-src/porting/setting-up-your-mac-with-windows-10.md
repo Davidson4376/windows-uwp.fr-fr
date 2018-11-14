@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041785"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203844"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
 
@@ -22,13 +22,13 @@ Utilisez votre ordinateur Mac actuel pour développer des applications pour Wind
 
 ## <a name="run-windows-on-your-mac-and-use-visual-studio"></a>Exécuter Windows sur votre Mac et utiliser Visual Studio
 
-Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows 10 et Microsoft Visual Studio sur votre Mac.
+Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows 10 et Microsoft Visual Studio sur un ordinateur Apple.
 
-**Remarque**vous devez une image de démarrage de Windows 10 sur disque ou un disque mémoire flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas un abonné, le programme d’installation peut être acheté à partir du [Microsoft Store](http://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](http://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
+**Remarque**vous une image de démarrage de Windows 10 sur disque ou un disque mémoire flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas un abonné, le programme d’installation peut être acheté à partir du [Microsoft Store](http://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](http://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
 
 Une fois que vous avez Windows en cours d’exécution, vous pouvez ensuite installer la dernière version de Visual Studio à partir des [téléchargements de développeur pour Windows 10](https://developer.microsoft.com/en-us/windows/downloads) et commencer à écrire des applications!
 
-**Remarque**si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x 64) de Windows 10 Professionnel ou une meilleure. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
+**Remarque**si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x 64) de Windows 10 Professionnel ou supérieures. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 
 ## <a name="apple-boot-camp"></a>Apple Boot Camp
 

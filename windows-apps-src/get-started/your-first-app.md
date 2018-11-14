@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 64da4418e25f77f49854c054d9cb468f0d89f16c
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6156286"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6283132"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 

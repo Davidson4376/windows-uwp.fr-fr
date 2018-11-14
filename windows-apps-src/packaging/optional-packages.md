@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, empaqueter une extension, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a782ba90fbf350d9a18098d342c05c75dca6ceb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: c21b84467151493836186d1d55ab5e4e542899ec
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192200"
+ms.locfileid: "6259121"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Packages facultatifs et création d’ensembles connexes
 Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Ceux-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à la livraison de tout contenu supplémentaire distinct à partir de votre application d’origine.
@@ -29,7 +29,7 @@ Ensembles connexes sont une extension de packages facultatifs, ils vous permette
 Pour obtenir tous les derniers outils de développement, consultez les [téléchargements et outils pour Windows 10](https://developer.microsoft.com/windows/downloads).
 
 > [!NOTE]
-> Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Microsoft Store, vous aurez besoin des autorisations. S’ils ne sont pas soumis au Store, les packages facultatifs et ensembles connexes peuvent servir pour les applications métier (LOB) ou de l’entreprise sans autorisation du centre de développement. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
+> Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Microsoft Store, vous aurez besoin des autorisations. Packages facultatifs et ensembles connexes peuvent être utilisés pour les applications cœur de métier (LOB) ou d’entreprise sans autorisation de l’espace partenaires s’ils ne sont pas soumis au Windows Store. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
 
 ### <a name="code-sample"></a>Exemple de code
 Pendant que vous lisez cet article, il est recommandé que vous procédez ainsi que l' [exemple de code de package facultatif](https://github.com/AppInstaller/OptionalPackageSample) sur GitHub pour une connaissance pratique de packages facultatifs comment et liés de travail de jeux au sein de Visual Studio.

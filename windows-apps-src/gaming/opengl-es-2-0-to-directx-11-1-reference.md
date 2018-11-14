@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 14259fb6949eaa100d51fbdbda6f96bd07a4fa80
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042437"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202909"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>Informations de référence pour le portage d’OpenGLES2.0 vers Direct3D11
 

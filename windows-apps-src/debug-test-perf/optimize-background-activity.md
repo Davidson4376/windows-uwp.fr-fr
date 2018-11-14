@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 932dd3c89933eab9baefe6ff2c45359db6efbb14
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027068"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269561"
 ---
 # <a name="optimize-background-activity"></a>Optimiser l’activité en arrière-plan
 

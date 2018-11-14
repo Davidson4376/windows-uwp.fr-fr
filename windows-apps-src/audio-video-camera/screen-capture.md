@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, capture d’écran
 ms.localizationpriority: medium
 ms.openlocfilehash: d28ed1fce79a815155180ab8a3c708e2c8bf8916
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029587"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6457186"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -22,15 +22,15 @@ ms.locfileid: "6029587"
 Avec la capture d’écran, les développeurs appellent l’interface utilisateur sécurisée du système pour sélectionner la fenêtre d’affichage ou d’application à capturer, et une bordure de notification jaune est dessinée par le système autour de l’élément activement capturé. Dans le cas de plusieurs sessions de capture simultanée, une bordure jaune est dessinée autour de chaque élément capturé.
 
 > [!NOTE]
-> La capture d’écran API sont uniquement pris en charge sur le bureau et casques Windows Mixed Reality.
+> La capture d’écran API sont uniquement pris en charge sur les ordinateurs de bureau et casques Windows Mixed Reality.
 
 ## <a name="add-the-screen-capture-capability"></a>Ajouter la fonctionnalité de capture d’écran
 
-Les API disponibles dans l’espace de noms **Windows.Graphics.Capture** nécessitent une fonctionnalité générale à être déclarées dans le manifeste de votre application:
+Les API de l’espace de noms **Windows.Graphics.Capture** nécessitent une fonctionnalité générale à être déclarées dans le manifeste de votre application:
     
-1. Ouvrez **Package.appxmanifest** dans l' **Explorateur de solutions**.
+1. Dans l' **Explorateur de solutions**, ouvrez **Package.appxmanifest** .
 2. Sélectionnez l’onglet **Fonctionnalités**.
-3. Vérifiez **capturer des graphiques**.
+3. Vérifiez la **capturer des graphiques**.
 
 ![Capture de graphiques](images/screen-capture-1.png)
 
