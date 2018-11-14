@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f1f2050590267d0a98779eba11bbe0b363da0c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664161"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6278431"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Traiter les images bitmaps avec OpenCV
 
