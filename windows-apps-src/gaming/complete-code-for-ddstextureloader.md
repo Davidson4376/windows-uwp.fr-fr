@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, ddstextureloader
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ba0de548cb1c4222783ae4245e1aacba4ab09e2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661803"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832368"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>Code complet de DDSTextureLoader
 

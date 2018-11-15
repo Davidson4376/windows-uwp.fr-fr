@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6460811"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832947"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Installer des applicationsUWP à partir d’une page web
 

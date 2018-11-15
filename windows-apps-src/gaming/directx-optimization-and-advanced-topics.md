@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeu, directx, optimiser, échantillonnage multiple, chaînes d’échange
 ms.localizationpriority: medium
 ms.openlocfilehash: e1a9b16dcf8c40c2b1db4af172d97009563e677a
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6448952"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832258"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>Optimisation et rubriques avancées pour les jeux DirectX
 
