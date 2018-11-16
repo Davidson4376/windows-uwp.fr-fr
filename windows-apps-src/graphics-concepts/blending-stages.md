@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84b42460ce5368bdac6ab84a9f9c65d0cb8231a1
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6980250"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7129019"
 ---
 # <a name="blending-stages"></a>Étapes de fusion
 
