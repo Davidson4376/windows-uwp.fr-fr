@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b139d0b8747931f7cac9885d441122af97f7dad
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6834988"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974014"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Utiliser la bibliothèque Open Source Computer Vision Library (OpenCV) avec MediaFrameReader
 
@@ -66,7 +66,7 @@ L’événement **FrameArrived** est déclenché quand une nouvelle image est di
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Appareil photo](camera.md)
+* [Caméra](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Traiter les images bitmap logicielles avec OpenCV](process-software-bitmaps-with-opencv.md)

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, WinForms, wpf, win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6848923"
+ms.locfileid: "6972427"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de XAML UWP hébergeant des API dans une application de bureau
 
@@ -200,11 +200,11 @@ Pour obtenir des exemples qui montrent comment effectuer cette opération dans l
 
 Lorsque l’utilisateur modifie la taille de l’élément d’interface utilisateur parent, vous devez gérer les modifications de disposition nécessaires pour vous assurer que vos contrôles UWP afficher comme prévu. Voici quelques scénarios importants à prendre en compte.
 
-1. Lorsque l’élément d’interface utilisateur parent doit obtenir la taille de la zone rectangulaire nécessaire pour s’adapter à la **Windows.UI.Xaml.UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode de [**mesure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de la **Windows.UI.Xaml.UIElement **. Exemple:
+1. Lorsque l’élément d’interface utilisateur parent doit obtenir la taille de la zone rectangulaire nécessaire pour s’adapter à la **Windows.UI.Xaml.UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode de [**mesure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de la **Windows.UI.Xaml.UIElement **. Exemple :
     * Dans une application WPF vous pouvez le faire à partir de la méthode [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) de l' [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
     * Dans une application Windows Forms vous pourrez le faire à partir de la méthode [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 
-2. Lorsque la taille des modifications d’élément de l’interface utilisateur parent, appelez la méthode de [**disposition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows.UI.Xaml.UIElement** qui vous hébergez sur le **DesktopWindowXamlSource**. Exemple:
+2. Lorsque la taille des modifications d’élément de l’interface utilisateur parent, appelez la méthode de [**disposition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows.UI.Xaml.UIElement** qui vous hébergez sur le **DesktopWindowXamlSource**. Exemple :
     * Dans une application WPF vous pourrez le faire à partir de la méthode [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) de l’objet [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
     * Dans une application Windows Forms vous pouvez procéder à partir du gestionnaire pour l’événement [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 
@@ -313,6 +313,6 @@ L’API d’hébergement de XAML partage les mêmes limites que tous les autres 
 |-------|------------|
 | Votre application reçoit une **exception COMException** avec le message suivant: «AttachToWindow méthode a échoué car le HWND spécifié descend à partir d’une fenêtre de niveau supérieur différente du HWND qui a été précédemment passé à AttachToWindow sur le même thread.» | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative.AttachToWindow** et lui passé le HWND d’une fenêtre qui descend à partir d’une fenêtre de niveau supérieur différents qu’une fenêtre que vous avez spécifié dans un appel précédent à cette méthode sur le même thread.</p></p>Une fois que votre application appelle **IDesktopWindowXamlSourceNative.AttachToWindow** sur un thread spécifique, tous les autres objets [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) sur le même thread peuvent joindre uniquement à windows qui sont les descendants de la même fenêtre de niveau supérieur qui a été transmis dans le premier appel à **IDesktopWindowXamlSourceNative.AttachToWindow**. Lorsque tous les objets **DesktopWindowXamlSource** sont fermés pour un thread spécifique, la prochaine **DesktopWindowXamlSource** est ensuite libre pour s’attacher à n’importe quelle fenêtre à nouveau.</p></p>Pour résoudre ce problème, fermez tous les objets de **DesktopWindowXamlSource** qui sont liés aux autres fenêtres de niveau supérieur sur ce thread, ou créent un nouveau thread pour cette **DesktopWindowXamlSource**. |
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Contrôles UWP dans des applications de bureau](xaml-host-controls.md)
