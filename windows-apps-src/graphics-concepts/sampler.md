@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ae15e41ec1d6493f33a776c11d74e28b2c95dc34
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6188486"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6990948"
 ---
 # <a name="sampler"></a>Échantillonneur
 

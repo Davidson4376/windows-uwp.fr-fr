@@ -8,16 +8,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0acbf8378d2cffa7c083e1da06ed0775df69d60e
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670645"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974634"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
-Vous pouvez afficher et mettre à jour vos paramètres de compte de développeur et les informations de profil dans la section **paramètres du compte** du [Centre de partenaires](https://partner.microsoft.com/dashboard). 
+Vous pouvez afficher et mettre à jour vos paramètres de compte de développeur et les informations de profil dans la section **paramètres du compte** de [L’espace partenaires](https://partner.microsoft.com/dashboard). 
 
 > [!NOTE]
 > Préférences de notification (par exemple, le type de notifications à recevoir et leur mode de réception) peuvent être gérés dans le **Centre de messages** (auquel vous pouvez accéder en sélectionnant l’icône de message dans la zone supérieure de l’espace partenaires).

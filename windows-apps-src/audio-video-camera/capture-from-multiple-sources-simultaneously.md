@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, capture vidéo
 ms.localizationpriority: medium
 ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854360"
+ms.locfileid: "6986786"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
 
@@ -71,7 +71,7 @@ Une fois l’opération terminée, un fichier vidéo a été créé contenant la
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [Appareil photo](camera.md)
+* [Caméra](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md)

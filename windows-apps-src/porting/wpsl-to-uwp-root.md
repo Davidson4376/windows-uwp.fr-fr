@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: Si vous êtes un développeur avec une application WindowsPhone Silverlight, puis vous pouvez tirer parti de vos compétences et votre code source le passage à Windows 10.
-title: Passer de WindowsPhone Silverlight vers UWP
+title: Passer de Silverlight pour Windows Phone à UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb2617fc3fbd14d17635435c8bfd6d58817a7a1b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6836532"
+ms.locfileid: "6980646"
 ---
-#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Passer de WindowsPhone Silverlight vers UWP
+#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Passer de Silverlight pour Windows Phone à UWP
 
 
 Si vous êtes un développeur avec une application WindowsPhone Silverlight, puis vous pouvez tirer parti de vos compétences et votre code source le passage à Windows 10. Avec Windows 10, vous pouvez créer une application de plateforme Windows universelle (UWP), qui est un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour plus d’informations sur Windows 10, les applications UWP et les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, consultez le [Guide des applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn894631).

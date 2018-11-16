@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: e5a4c3607486a7163648c7aa5a0e1d03d37e421f
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6446547"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992436"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Créer et exécuter votre première expérience
 
@@ -107,6 +107,6 @@ Laissez s’écouler plusieurs heures après avoir terminé la section précéde
 
 * [Créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
-* [Définissez votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Gérer votre expérience dans l’espace partenaires](manage-your-experiment.md)
+* [Définir votre expérience dans l’Espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Gérer votre expérience dans l’Espace partenaires](manage-your-experiment.md)
 * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)

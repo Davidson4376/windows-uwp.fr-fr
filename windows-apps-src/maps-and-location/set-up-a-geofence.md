@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, carte, localisation, clôture virtuelle, notifications
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646837"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6860207"
 ---
 # <a name="set-up-a-geofence"></a>Configurer une clôture virtuelle
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
 ms.openlocfilehash: f02ca7c43443289ef9d2d0562be25f277068685b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654822"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6983092"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
