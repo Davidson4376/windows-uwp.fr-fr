@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: 894bc6f657f4a65072056a14171bf86b92cced38
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657167"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6841710"
 ---
 # <a name="xbox-device-portal-rest-api"></a>API REST pour Xbox Device Portal
 

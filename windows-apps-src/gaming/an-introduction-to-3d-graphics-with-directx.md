@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, directx, graphismes
 ms.localizationpriority: medium
 ms.openlocfilehash: e9834a83620343f26acaabd0e05b30cc2c1dcfab
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661992"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6837195"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>Graphismes3D de base pour jeux DirectX
 

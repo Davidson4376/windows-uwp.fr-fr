@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, entrée, manche à balai
 ms.localizationpriority: medium
 ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6269795"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6674189"
 ---
 # <a name="flight-stick"></a>Manche à balai
 
