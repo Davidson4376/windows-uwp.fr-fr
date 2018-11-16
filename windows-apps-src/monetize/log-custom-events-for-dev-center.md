@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
-title: Consigner des événements personnalisés pour l’espace partenaires
+title: Consigner des événements personnalisés pour l’Espace partenaires
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
@@ -9,13 +9,13 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861132"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6978368"
 ---
-# <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’espace partenaires
+# <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’Espace partenaires
 
 Le [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans l’espace partenaires vous permet d’obtenir des informations sur les événements personnalisés que vous avez définis dans votre application de plateforme Windows universelle (UWP). Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
 

@@ -12,12 +12,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d56090e8fc1de83eeb4e8a68ca1830692c5b2f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.openlocfilehash: c116a6131889e1d87642165f4e1d9883d78add33
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854939"
+ms.locfileid: "6981155"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -85,7 +85,6 @@ Tenez compte des modèles d’utilisation suivants pour déterminer la meilleure
 
 Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser des ACRYLIQUE relativement transparente avec une opacité de 60 %.
  - Lorsque le volet s’ouvre sous forme de superposition au-dessus de tout autre contenu d’application, il doit afficher [une acrylique dans l'application à 60%](#acrylic-theme-resources)
- - Lorsque le volet s’ouvre côte à côte avec le contenu de l’application principale, il doit afficher [une acrylique en arrière-plan de 60%](#acrylic-theme-resources)
 
 ![Application de cartes à l’aide de commandes horizontal dans l’application](images/Maps_In_App_Acrylic_1.png)
 
@@ -93,7 +92,7 @@ En outre, la fourniture de votre étendre le contenu ou défilement sous l’ACR
 
 ### <a name="vertical-panes"></a>Volets verticaux
 
-Pour les volets verticaux ou les surfaces qui permettent de section désactiver le contenu de votre application, nous vous recommandons de qu'utiliser un arrière-plan opaque au lieu d’ACRYLIQUE. Si votre volets verticaux ouvrent par-dessus le contenu, comme dans **Collapsed** de NavigationView ou les modes **Minimal** , nous vous suggérons qu'acrylique dans l’application vous permet de vous aider à préserver le contexte de la page lorsque l’utilisateur a ce volet ouvert.
+Pour les volets verticaux ou les surfaces qui permettent de section désactiver le contenu de votre application, nous vous recommandons de qu'utiliser un arrière-plan opaque au lieu d’ACRYLIQUE. Si votre volets verticaux ouvrent par-dessus le contenu, comme dans de NavigationView **compacte** ou les modes **Minimal** , nous vous suggérons qu'acrylique dans l’application vous permet de vous aider à préserver le contexte de la page lorsque l’utilisateur a ce volet ouvert.
 
 ### <a name="transient-surfaces"></a>Surfaces temporaires
 
