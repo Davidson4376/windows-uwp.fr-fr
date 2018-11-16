@@ -7,12 +7,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
 ms.localizationpriority: medium
-ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 9f44d5bc0e07ab40a396c103d2a8ba6db5427ae8
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648264"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853634"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
 
@@ -47,7 +47,7 @@ Si votre organisation utilise déjà Azure AD, suivez ces étapes pour lier votr
 
 Si vous avez besoin configurer un nouvel Azure AD à lier à votre compte espace partenaires, procédez comme suit.
 
-1.  À partir du [Centre de partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de développeur**. Dans le menu **paramètres** , sélectionnez **des clients**.
+1.  À partir de [L’espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de développeur**. Dans le menu **paramètres** , sélectionnez **des clients**.
 2.  Sélectionnez **Créer Azure AD**.
 3.  Entrez les informations de répertoire de votre nouvel Azure AD:
     - **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com».

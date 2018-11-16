@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, notification, collection, groupe, expérience utilisateur, expérience utilisateur des instructions, recommandations, action, toast, centre de notifications, noninterruptive, notifications efficaces, les notifications non intrusives, exploitables, gérer, organiser
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 849c8ffc66661546a088a3d89747e6690a763e71
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6463479"
+ms.locfileid: "6666582"
 ---
 # <a name="toast-notification-ux-guidance"></a>Conseils d’expérience utilisateur de Notification toast
 Les notifications sont requises de la vie moderne; ils aident les utilisateurs à être plus productifs et commencé avec les applications et sites Web, ainsi qu’en cours de rester avec les mises à jour. Toutefois, les notifications peuvent activer rapidement à partir d’utile à overbearing et intrusif s’ils ne sont pas conçus de manière centrée sur l’utilisateur. Vos notifications sont un clic droit direction opposée en cours est désactivée et il est peu probable une fois qu’ils sont désactivés, il seront activées à nouveau.  Par conséquent, assurez-vous que vos notifications sont de l’espace d’écran de l’utilisateur et l’heure, afin que vous pouvez conserver ce canal d’engagement ouvert.
@@ -59,7 +59,7 @@ Les deux de ces notifications Group de manière afin que le contenu pertinent re
 ## <a name="other-resources"></a>Autres ressources
 Ces quatre points ci-dessus sont des conseils que nous avons découvert efficaces par le biais de notre propre analyse de télémétrie et par le biais de la première et expériences de tiers. N’oubliez pas, toutefois, que ces recommandations exactement ce que sont: recommandations.  Nous sommes certains de ces règles aideront à augmenter l’engagement et la productivité de vos notifications, mais rien ne remplace centrée sur l’utilisateur et à apprendre à partir de vos propres données.  
 
-Si vous envoyez des notifications à votre application UWP aujourd'hui, vous pouvez afficher analytique sur qu’est-il arrivé à vos notifications du [Centre](https://developer.microsoft.com/en-us/windows)de développement! Ces données proviennent gratuites lorsque vous utilisez le [Windows Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) ou les [API de WNS](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview). Ces métriques vous donne plus de détails sur ce qui se produit à vos notifications sur la plateforme windows, ainsi que la manière dont les utilisateurs interagissent avec les notifications. Accéder à ce tableau de bord en accédant au menu sur le côté gauche engager > Notifications, puis en cliquant sur l’onglet «Analyse» dans la page de Notifications.  Elle se trouve dans le même emplacement que vous souhaitez aller à envoyer des notifications à partir du portail du centre de développement.
+Si vous envoyez des notifications à votre application UWP aujourd'hui, vous pouvez afficher analytique sur qu’est-il arrivé à vos notifications dans [L’espace partenaires](https://partner.microsoft.com/dashboard)! Ces données proviennent gratuites lorsque vous utilisez le [Windows Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) ou les [API de WNS](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview). Ces métriques vous donne plus de détails sur ce qui se produit à vos notifications sur la plateforme windows, ainsi que la manière dont les utilisateurs interagissent avec les notifications. Accéder à ces données en accédant au menu sur le côté gauche engager > Notifications, puis en cliquant sur l’onglet «Analyse» dans la page de Notifications.  Elle se trouve dans le même emplacement que vous irait à envoyer des notifications à partir de l’espace partenaires.
 
 ## <a name="related-topics"></a>Rubriquesconnexes
 

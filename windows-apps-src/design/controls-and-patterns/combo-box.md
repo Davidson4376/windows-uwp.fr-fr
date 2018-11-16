@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0c34dda3039a9b6a66428266e37f81b41695fbc0
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647511"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849511"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
 
@@ -224,7 +224,7 @@ L’événement TextSubmitted ne se produit pas si l’utilisateur entre du text
 
 ### <a name="sample---validate-input-and-use-locally"></a>Exemple: valider l’entrée et utiliser localement
 
-Dans cette examle, un sélecteur de taille de police contient un ensemble de valeurs correspondant à la gamme de taille de police, mais l’utilisateur peut entrer des tailles qui ne figurent pas dans la liste.
+Dans cet exemple, un sélecteur de taille de police contient un ensemble de valeurs correspondant à la gamme de taille de police, mais l’utilisateur peut entrer des tailles qui ne figurent pas dans la liste.
 
 Lorsque l’utilisateur ajoute une valeur qui n’est pas dans la liste, les mises à jour de taille de police, mais la valeur n’est pas ajouté à la liste des tailles de police.
 

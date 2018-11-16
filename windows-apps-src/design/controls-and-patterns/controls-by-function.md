@@ -10,18 +10,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 933ca3f6d683d5a58e10f87059527038e7b696d1
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665710"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833757"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
 L’infrastructure d’interface utilisateur XAML pour Windows fournit une bibliothèque complète de contrôles qui prennent en charge le développement d’une interface utilisateur. Certains de ces contrôles ont une représentation visuelle, tandis que d’autres font office de conteneurs d’autres contrôles ou d’autre contenu, par exemple des images ou du contenu multimédia. 
 
-Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en action en téléchargeant l’[exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en action en téléchargeant l’[exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 <table>
 <th align="left">Galerie de contrôles XAML<th>
@@ -56,21 +56,21 @@ Référence : [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xam
 
 Conception et procédure : [Guide de contrôle Barres d’application et barres de commande](app-bars.md) 
 
-Exemple de code : [Exemple de commandes XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Exemple de code : [Exemple de commandes XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>Séparateur de barre de l’application
 Sépare visuellement des groupes de commandes dans une barre de commande.
 
 Référence : [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-Exemple de code : [Exemple de commandes XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Exemple de code : [Exemple de commandes XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>Bouton bascule de la barre de l’application
 Bouton pour basculer les commandes dans une barre de commande.
 
 Référence : [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-Exemple de code : [Exemple de commandes XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Exemple de code : [Exemple de commandes XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>Barre de commandes
 Barre de l’application spécialisée qui gère le redimensionnement des éléments de boutons de la barre de l’application.
@@ -88,7 +88,7 @@ Référence : [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/
 
 Conception et procédure : [Guide de contrôle Barres d’application et barres de commande](app-bars.md)
 
-Exemple de code : [Exemple de commandes XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Exemple de code : [Exemple de commandes XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>Boutons
 
@@ -116,7 +116,7 @@ Un bouton qui apparaît sous la forme d’un texte balisé et ouvre l’URI spé
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
-                 NavigateUri="http://www.microsoft.com"/>
+                 NavigateUri="https://www.microsoft.com"/>
 ```
 
 Référence : [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -168,7 +168,7 @@ Référence : [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 
 Conception et procédure : [Listes](lists.md) 
 
-Exemple de code : [Exemple ListView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+Exemple de code : [Exemple ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### <a name="items-control"></a>Contrôle d’éléments
 Contrôle qui présente une collection d’éléments dans une interface utilisateur spécifiée par un modèle de données. 
@@ -193,7 +193,7 @@ Référence : [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 
 Conception et procédure : [Listes](lists.md) 
 
-Exemple de code : [Exemple ListView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+Exemple de code : [Exemple ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## <a name="date-and-time-controls"></a>Contrôles de date et d’heure
 
@@ -290,7 +290,7 @@ Référence : [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/
 
 Conception et procédure: [Menus et menus contextuels](menus.md) 
 
-Exemple de code : [Exemple de menu contextuel XAML](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+Exemple de code : [Exemple de menu contextuel XAML](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>Menu contextuel
 Commandes de présentation de menu personnalisé que vous spécifiez.
@@ -326,7 +326,7 @@ Référence : [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 
 Conception et procédure : [Image et ImageBrush](images-imagebrushes.md) 
 
-Exemple de code : [Exemple d’images XAML](http://go.microsoft.com/fwlink/p/?linkid=226867)
+Exemple de code : [Exemple d’images XAML](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>Graphiques et entrée manuscrite
 
@@ -355,7 +355,7 @@ Référence: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 
 Procédure : [Dessiner des formes](../../graphics/drawing-shapes.md) 
 
-Exemple de code : [Exemple de dessin vectoriel XAML](http://go.microsoft.com/fwlink/p/?linkid=226866)
+Exemple de code : [Exemple de dessin vectoriel XAML](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>Contrôles de disposition
 
@@ -455,7 +455,7 @@ Référence : [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xam
 
 Conception et procédure : [Guide de contrôle panoramique et défilement](scroll-controls.md) 
 
-Exemple de code : [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=238577)
+Exemple de code : [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>Panneau d’empilement
 Panneau de disposition qui organise les éléments enfants sur une seule ligne orientable horizontalement ou verticalement.
@@ -544,7 +544,7 @@ Référence : [MediaTransportControls](https://msdn.microsoft.com/library/window
 
 Conception et procédure : [Guide de contrôle Élément multimédia](media-playback.md) 
 
-Exemple de code : [Exemple de contrôles de transport multimédias système](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+Exemple de code : [Exemple de contrôles de transport multimédias système](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>Vidéo
 Voir Élément multimédia.
@@ -585,7 +585,7 @@ Conception et procédure : [Guide de contrôle Mode fractionné](split-view.md)
 Contrôle de conteneur qui héberge du contenu web.
 
 ```xaml
-<WebView x:Name="webView1" Source="http://dev.windows.com" 
+<WebView x:Name="webView1" Source="https://developer.microsoft.com" 
          Height="400" Width="800"/>
 ```
 
@@ -593,7 +593,7 @@ Référence : [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/win
 
 Conception et procédure: Recommandations pour l’affichage web 
 
-Exemple de code : [Exemple de contrôle d’affichage web XAML](http://go.microsoft.com/fwlink/p/?linkid=238582)
+Exemple de code : [Exemple de contrôle d’affichage web XAML](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -614,7 +614,7 @@ Référence : [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xam
 
 Conception et procédure : [Guide de contrôle Zoom sémantique](semantic-zoom.md)
 
-Exemple de code : [Exemple de groupement de GridView et SemanticZoom XAML](http://go.microsoft.com/fwlink/p/?linkid=226564)
+Exemple de code : [Exemple de groupement de GridView et SemanticZoom XAML](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>Contrôles de progression
 
@@ -665,7 +665,7 @@ Référence : [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/x
 
 Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de contrôle Zone de suggestion automatique](auto-suggest-box.md)
 
-Exemple de code : [Exemple de migration AutoSuggestBox](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+Exemple de code : [Exemple de migration AutoSuggestBox](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>Zone de texte de plusieurs lignes
 Voir Zone de texte.
@@ -684,7 +684,7 @@ Référence : [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml
 
 Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de contrôle Zone de mot de passe](password-box.md) 
 
-Exemple de code : [Exemple d’affichage de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238579), [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
+Exemple de code : [Exemple d’affichage de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=238579), [Exemple de modification de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>Zone d’édition enrichie
 Contrôle qui permet à un utilisateur de modifier des documents en texte enrichi avec du contenu tel que du texte mis en forme, des liens hypertexte et des images.
@@ -697,7 +697,7 @@ Référence : [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml
 
 Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de contrôle Zone d’édition enrichie](rich-edit-box.md)
 
-Exemple de code : [Exemple de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Exemple de code : [Exemple de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>Zone de recherche
 Voir Zone de suggestion automatique.
@@ -721,7 +721,7 @@ Référence : [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/w
 
 Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de contrôle Bloc de texte](text-block.md), [Guide de contrôle Bloc de texte enrichi](rich-text-block.md)
 
-Exemple de code : [Exemple de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Exemple de code : [Exemple de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>Zone de texte
 Champ de texte brut sur une ou plusieurs lignes.
@@ -737,7 +737,7 @@ Référence : [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/win
 
 Conception et procédure : [Contrôles de texte](text-controls.md), [Guide de contrôle Zone de texte](text-box.md) 
 
-Exemple de code : [Exemple de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Exemple de code : [Exemple de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>Contrôles de sélection
 

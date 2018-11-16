@@ -10,12 +10,12 @@ keywords: windows10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: d31916c4db51d278c294de56a7ec8a56d2178a91
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450114"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663658"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
@@ -52,7 +52,7 @@ Par défaut, Visual Studio stocke vos ressources d’icônes dans un sous-réper
 | Icône de l’application | Liste des applications dans le menu Démarrer, barre des tâches, Gestionnaire des tâches | Square44x44Logo.png |
 | Écran de démarrage | Écran de démarrage de l’application | SplashScreen.png  |
 | Logo du badge | Vignettes de votre application | BadgeLogo.png  |
-| Logo de logo/Store de package | Programme d’installation application, centre de développement, l’option «Signaler une application» dans le Windows Store, l’option «Rédiger un avis» dans le Windows Store | StoreLogo.png  |
+| Logo de logo/Store de package | Programme d’installation application, l’espace partenaires, l’option «Signaler une application» dans le Windows Store, l’option «Rédiger un avis» dans le Windows Store | StoreLogo.png  |
 
 \ * Utilisé, sauf si vous choisissez [d’Afficher uniquement les images dans le Windows Store chargées](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 

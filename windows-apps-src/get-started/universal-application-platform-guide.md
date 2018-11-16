@@ -8,16 +8,16 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: a506eec99aabaddac6251eb6548a671ecd283d0b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: a687aa7ed1115692f765e516dc8c8b15504b709e
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281116"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843156"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 
-![Les applications de la plateforme Windows universelle s’exécutent sur divers appareils et prennent en charge l’interface utilisateur adaptative, l’entrée utilisateur naturelle, un Windows Store, un centre de développement et des services cloud.](images/universalapps-overview.png)
+![Les applications de plateforme Windows universelle s’exécutent sur divers appareils, prendre en charge d’interface utilisateur adaptative, l’entrée utilisateur naturelle, un seul magasin, l’espace partenaires et services cloud](images/universalapps-overview.png)
 
 Description:
 
@@ -132,9 +132,9 @@ En plus de l’interaction sur différents appareils, [planifiez votre applicati
 - Découvrez comment [Ajouter Cortana sur votre application](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382) pour que votre application puisse répondre aux commandes vocales.
 - Incluez des [Notifications Push](https://msdn.microsoft.com/library/windows/apps/mt187203) et des [achats dans l’application](https://msdn.microsoft.com/library/windows/apps/mt219684) dans votre planification. Ces fonctionnalités doivent opérer sur tous les appareils.
 
-### <a name="submit-your-app-to-the-store"></a>Soumettre votre application auStore
+### <a name="submit-your-app-to-the-store"></a>Soumettre votre application à la banque
 
-Le nouveau tableau de bord unifié du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour appareils Windows à partir d’un seul et même emplacement. Pour savoir comment soumettre vos applications en vue de leur publication dans le Microsoft Store, voir [Utilisation du nouveau tableau de bord unifié du Centre de développement Windows](../publish/using-the-windows-dev-center-dashboard.md).
+[L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de gérer et soumettre toutes vos applications pour appareils Windows au même endroit. Consultez [les jeux et publier des applications Windows](../publish/index.md) pour savoir comment soumettre vos applications pour la publication dans le Microsoft Store.
 
 De nouvelles fonctionnalités simplifient les processus tout en vous offrant un contrôle accru. Le nouveau tableau de bord vous propose également des [rapports d’analyse détaillés](https://msdn.microsoft.com/library/windows/apps/mt148522), des [informations sur les revenus](https://msdn.microsoft.com/library/windows/apps/dn986925), des méthodes pour [promouvoir votre application et susciter l’intérêt de vos clients](https://msdn.microsoft.com/library/windows/apps/mt148526), et bien davantage.
 

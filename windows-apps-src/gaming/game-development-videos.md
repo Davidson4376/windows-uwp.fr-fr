@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, vidéos, GDC, build
 ms.localizationpriority: medium
 ms.openlocfilehash: 83865ca17801d51fdd611e6ad0187da98a4bec9e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6456042"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848087"
 ---
 # <a name="game-development-videos"></a>Vidéos de développement de jeux
 

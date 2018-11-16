@@ -170,7 +170,6 @@
 ### [Vignette, prise en charge des notifications toast pour la langue, l'échelle et le contraste](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [Épingler votre application à la barre des tâches](shell/pin-to-taskbar.md)
 ## [Personnalisation de la barre de titre](shell/title-bar.md)
-## [Conception de jeux](shell/design-for-sets.md)
 
 ## Notifications
 ### Notifications toast
