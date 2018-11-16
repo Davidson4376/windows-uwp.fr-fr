@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 75ba42674ca1ea460698fcce6e67bb3528589797
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657391"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844069"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 

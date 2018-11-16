@@ -8,12 +8,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f652ae186ced996c103a60aa8f13956a5da59ca
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 767ea7ca6a5f226fda75d97c3497ae77a5819626
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451746"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845650"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -44,8 +44,8 @@ Un compte de revenu est le compte bancaire vers lequel nous transférons l'argen
  
 **Pour configurer votre compte de paiement**
 
-1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), accédez aux **paramètres de compte** en sélectionnant l’icône dans le coin supérieur droit.
-2.  Dans le menu de navigation gauche de la page **Paramètres du compte**, cliquez sur **Compte de paiement**.
+1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône **paramètres de compte** dans le coin supérieur droit, puis sélectionnez les **paramètres de développement**.
+2.  Dans le menu de navigation de gauche, sélectionnez le **compte de revenu**.
 
    > [!NOTE]
    > Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
@@ -136,8 +136,8 @@ Vous pouvez remplir et envoyer vos déclarations fiscales par voie électronique
  
 **Pour créer votre profil fiscal**
 
-1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), cliquez sur l’icône **paramètres de compte** dans le coin supérieur droit.
-2.  Dans le menu de navigation de gauche de la page **Paramètres du compte**, cliquez sur **Profil fiscal**.
+1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône **paramètres de compte** dans le coin supérieur droit, puis sélectionnez les **paramètres de développement**.
+2.  Dans le menu de navigation de gauche, sélectionnez le **profil fiscal**.
 
    > [!NOTE]
    > Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, supprimer une version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6452678"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842576"
 ---
 # <a name="delete-a-package-flight"></a>Supprime une version d’évaluation du package
 

@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6674590"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844059"
 ---
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 

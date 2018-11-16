@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 72bea3badb19991883e2a6cc62463ab2dc58ec4a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671035"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840969"
 ---
 # <a name="monochrome-light-maps"></a>Cartes de lumière monochrome
 

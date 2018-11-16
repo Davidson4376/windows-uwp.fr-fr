@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, publication, prétraitement, certification, publication, en attente, soumettre, publier, état, heure
 ms.localizationpriority: medium
 ms.openlocfilehash: 161a95141511bc00b1d1a707e893d85dccfa8409
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6645454"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842686"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 

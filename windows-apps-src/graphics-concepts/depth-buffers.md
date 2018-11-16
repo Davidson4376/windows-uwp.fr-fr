@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb7ff4b23f9735347ce75e2e565c1b420ec936d6
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458318"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6843189"
 ---
 # <a name="depth-buffers"></a>Tampons de profondeur
 

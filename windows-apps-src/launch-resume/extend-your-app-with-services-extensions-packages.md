@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, uwp, étendre, agencer, service d’application, package, extension
 ms.localizationpriority: medium
 ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670536"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6841881"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Étendre votre application avec des services, des extensions et des packages
 

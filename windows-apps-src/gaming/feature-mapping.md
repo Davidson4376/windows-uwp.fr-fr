@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx9, directx11, portage
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670075"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6841865"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Mapper les fonctionnalités DirectX9 sur les API DirectX11
 

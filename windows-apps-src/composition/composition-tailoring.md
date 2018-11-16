@@ -7,12 +7,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2efea81f3520e6fb1a797394656587d2a29201aa
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: e6060e8da2ab4308deb3896b3ad209ab1093b056
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6459147"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6970422"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnalisation des effets et des expériences à l’aide de l’interface utilisateur Windows
 
@@ -118,7 +118,7 @@ Exemple de code complet sont accessibles dans le [référentiel Github de l’in
 
 ## <a name="fast-vs-slow-effects"></a>Rapide et effets lentes
 
-Fonction des commentaires à partir des méthodes dans l’API CompositionCapabilties [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) et [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) fournis, l’application peut décider de coûteux ou non pris en charge des effets d’échange pour d’autres effets de leur choix qui sont optimisées pour l’appareil. Certains effets sont connues pour être toujours davantage de ressources que d’autres et doivent être utilisées avec parcimonie, et autres effets peuvent être utilisés plus librement. Pour tous les effets, toutefois, soins doit être utilisé lorsque le chaînage et l’animation en tant que certains scénarios ou des combinaisons peuvent changer les caractéristiques de performances du graphique d’effet. Voici certaines caractéristiques de performances de règle générale pour les effets individuels:
+Fonction des commentaires à partir des méthodes dans l’API CompositionCapabilities [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) et [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) fournis, l’application peut décider de coûteux ou non pris en charge des effets d’échange pour d’autres effets de leur choix qui sont optimisées pour l’appareil. Certains effets sont connues pour être toujours davantage de ressources que d’autres et doivent être utilisées avec parcimonie, et autres effets peuvent être utilisés plus librement. Pour tous les effets, toutefois, soins doit être utilisé lorsque le chaînage et l’animation en tant que certains scénarios ou des combinaisons peuvent changer les caractéristiques de performances du graphique d’effet. Voici certaines caractéristiques de performances de règle générale pour les effets individuels:
 
 - Effets qui sont connues pour que l’impact de hautes performances sont comme suit: Flou gaussien, masque de clichés instantanés, BackDropBrush, HostBackDropBrush et couche visuelle. Ces ne sont pas recommandés pour une entrée de gamme de périphériques [(niveau de fonctionnalité 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)et doivent être utilisées judicieusement sur les appareils du haut de gamme.
 - Effets avec un impact sur les performances moyennes incluent la matrice de couleur, certaines BlendModes d’effet de fusion (luminosité, la couleur, la Saturation et teinte), projecteur, SceneLightingEffect et (selon scénario) BorderEffect. Ces effets peuvent fonctionner avec certains scénarios sur les périphériques d’entrée de gamme, mais soins doit être utilisé lorsque le chaînage et l’animation. Recommandons inférieure ou égale à deux pour limiter l’utilisation et l’animation de transitions uniquement.

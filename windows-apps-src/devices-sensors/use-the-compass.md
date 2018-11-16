@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4af6b0fb339ba1fde3ea94f456eac98be8a1db9b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662843"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6841594"
 ---
 # <a name="use-the-compass"></a>Utiliser la boussole
 

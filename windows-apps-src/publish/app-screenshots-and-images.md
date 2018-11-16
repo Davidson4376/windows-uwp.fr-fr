@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bd5a92f1e8dfe762ac3433bf64f9fe705644a9f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 4899e117096cf6d03c497fec79038e6d96aca3fd
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6669074"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840956"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -65,7 +65,7 @@ Vous pouvez fournir ces images sous forme de fichiers .png (inférieurs à 50Mo)
 
 ### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>Affiche9:16 (720x1080 ou 1440x2160pixels)
 
-Ce format est utilisé comme image de logo principale pour les clients sur Windows10 et les appareils Xbox. C’est pourquoi nous vous **conseillons vivement** de fournir cette image. Si vous ne l’incluez pas, l’affichage de votre description risque de ne pas être optimal et ne sera pas cohérent avec les autres descriptions que les clients verront lorsqu’ils navigueront sur le Store. Cette image peut également être utilisée dans des résultats de recherche ou dans des collections sélectionnées d’un point de vue éditorial.
+Ce format est utilisé comme image de logo principale pour les clients sur Windows10 et les appareils Xbox. C’est pourquoi nous vous **conseillons vivement** de fournir cette image. Votre description dans le ne semblent pas une bonne si vous ne l’incluez et ne serez pas cohérent avec les autres descriptions que les clients verront tout en naviguant dans le Windows Store. Cette image peut également être utilisée dans des résultats de recherche ou dans des collections sélectionnées d’un point de vue éditorial.
 
 Cette image doit inclure le nom de votre application, et le texte présent sur l’image doit respecter les exigences de lisibilité et d’accessibilité (taux de contraste de4,5 pour1). Notez que du texte superposé peut apparaître dans le quart inférieur de cette image, veillez donc à ne pas inclure de texte ou d’images clés à cet emplacement.
 

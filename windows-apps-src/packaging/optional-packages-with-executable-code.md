@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
 ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671555"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842881"
 ---
 # <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
  
