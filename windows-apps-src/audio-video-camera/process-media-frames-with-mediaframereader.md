@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c733fe0f4e8ee955c68ff4ec30bd9f9f2675899d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 6d4c752438af3425fffc69ecf71ff0dc8abe5963
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649773"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851573"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -50,7 +50,7 @@ De nombreuses applications qui traitent des images multimédias doivent récupé
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-Vous pouvez également créer une instance [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) à l’aide de [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) et de la valeur renvoyée de [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) afin de recevoir des notifications quand les groupes des sources d’images disponibles changent sur l’appareil, comme lors du branchement d’un appareil photo externe. Pour plus d’informations, consultez la page [**Énumérer les appareils**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
+Vous pouvez également créer un [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) à l’aide de [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) et la valeur retournée à partir de [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) pour recevoir des notifications lorsque des groupes de la source d’images disponibles sur l’appareil change, par exemple, lors du branchement d’un appareil photo externe. Pour plus d’informations, consultez la page [**Énumérer les appareils**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
 
 Une instance [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) dispose d’une collection d’objets [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) qui décrivent les sources d’images incluses dans le groupe. Une fois les groupes de sources d’images disponibles sur cet appareil récupérés, vous pouvez sélectionner le groupe exposant les sources d’images qui vous intéressent.
 

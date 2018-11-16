@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665641"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6983364"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 
@@ -31,7 +31,7 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 | [Exécuter des expériences avec des testsA/B](run-app-experiments-with-a-b-testing.md)      |   Exécutez des tests A/B dans vos applications de plateforme Windows universelle (UWP) pour évaluer l’efficacité de fonctionnalités spécifiques auprès de certains clients avant de les mettre à la disposition de tous. Cette fonctionnalité nécessite Microsoft Store Services SDK.  |
 | [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md)      |   Ajoutez du code dans vos applications UWP pour diriger vos clients Windows10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Ensuite, gérez ces commentaires dans le [rapport sur les commentaires](../publish/feedback-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK.   |
 | [Configurer votre application pour recevoir des notifications push l’espace partenaires](configure-your-app-to-receive-dev-center-notifications.md)  |  Inscrire un canal de notification pour votre application UWP afin de pouvoir recevoir des [notifications push de l’espace partenaires](../publish/send-push-notifications-to-your-apps-customers.md)et suivre la fréquence des lancements d’applications provoqués par les notifications push. Cette fonctionnalité nécessite MicrosoftStore Services SDK.  |
-| [Consigner des événements personnalisés pour l’espace partenaires](log-custom-events-for-dev-center.md)  | Consigner des événements personnalisés à partir de votre application UWP et passez en revue les événements dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
+| [Consigner des événements personnalisés pour l’Espace partenaires](log-custom-events-for-dev-center.md)  | Consigner des événements personnalisés à partir de votre application UWP et passez en revue les événements dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
 | [Demander des évaluations et des avis](request-ratings-and-reviews.md) |  Incitez vos clients à évaluer ou à donner un avis sur votre app en affichant par programme une interface utilisateur destinée aux avis et évaluations.  |
 | [Services MicrosoftStore](using-windows-store-services.md)    |  Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le WindowsStore et d’autres tâches associées au WindowsStore, et accéder aux données d’analyse.    |
 | [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester les PC et appareils sur le sol vente peuvent aller à droite dans.  |
