@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, graphismes
 ms.localizationpriority: medium
 ms.openlocfilehash: 0050b854b6c8c02cd6eda5e4903fe07ee25d521d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6445390"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6993100"
 ---
 # <a name="draw-to-the-screen"></a>Dessiner à l’écran
 

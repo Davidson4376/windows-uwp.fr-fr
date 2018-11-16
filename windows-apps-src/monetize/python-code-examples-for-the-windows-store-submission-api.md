@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 34d686b8e20d384da4a3db1ea3805ad082d5f8a8
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854840"
+ms.locfileid: "6996872"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Python: soumissions d'applications, d'extensions et de versions d’évaluation
 

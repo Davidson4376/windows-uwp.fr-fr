@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, données, types
 ms.localizationpriority: medium
 ms.openlocfilehash: 5aa6e17fcd95813b6abe05e9e42ad7c86657159f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6836761"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6993550"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Types de données C++ et C++/WinRT standard
 
@@ -158,5 +158,5 @@ Vous pouvez continuer à utiliser la [Bibliothèque de modèles parallèles (PPL
 * [IVector&lt;T&gt; interface](/uwp/api/windows.foundation.collections.ivector_t_)
 * [Modèle de structure winrt::array_view](/uwp/cpp-ref-for-winrt/array-view)
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques associées
 * [Gestion des chaînes en C++/WinRT](strings.md)

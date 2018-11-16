@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, tâche en arrière-plan, service d’application, des périphériques, systèmes distants connectés
 ms.localizationpriority: medium
 ms.openlocfilehash: bb036f0150095e6f02857d227e73b1c7f29b23df
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670900"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6990870"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 
