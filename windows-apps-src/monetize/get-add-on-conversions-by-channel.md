@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, conversions des extensions, canal
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451713"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651069"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>Obtenir les conversions d’extensions par canal
 

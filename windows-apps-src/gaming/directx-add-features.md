@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeu, directx, xaml, rotation écran, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: be3f8e57a592512335a826c142876d1ff3c53e5b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647099"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833483"
 ---
 # <a name="add-features-to-directx-games"></a>Ajouter des fonctionnalités à des jeux DirectX
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 40f9312b4b85e9f6e54a8bf02c6d07df35b8b626
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466186"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834470"
 ---
 # <a name="view-transform"></a>Transformation de vue
 

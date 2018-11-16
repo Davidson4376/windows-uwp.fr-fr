@@ -8,11 +8,11 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab8e8c18a0b1db0991bf470f194f8774f2357b4
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6471149"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6833724"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Les créateurs d’application système pour les fenêtres de conception Fluent
 

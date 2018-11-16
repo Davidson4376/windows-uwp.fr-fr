@@ -9,11 +9,11 @@ keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt,
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655999"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840873"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 

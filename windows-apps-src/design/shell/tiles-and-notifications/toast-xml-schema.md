@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bcfc56264ab3063995fd9f2b06bd93e9406cd37e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647132"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6835770"
 ---
 # <a name="toast-content-xml-schema"></a>Schéma XML du contenu du toast
 
