@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6856590"
+ms.locfileid: "6978968"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le MicrosoftStore Services SDK
 
@@ -144,4 +144,4 @@ Si nous publions une nouvelle version du SDK qui introduit de nouvelles API ou f
 * [Exécuter des expériences avec des testsA/B](run-app-experiments-with-a-b-testing.md)
 * [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md)
 * [Configurer votre application pour recevoir des notifications push l’espace partenaires](configure-your-app-to-receive-dev-center-notifications.md)
-* [Consigner des événements personnalisés pour l’espace partenaires](log-custom-events-for-dev-center.md)
+* [Consigner des événements personnalisés pour l’Espace partenaires](log-custom-events-for-dev-center.md)

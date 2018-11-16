@@ -9,11 +9,11 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6852473"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6988798"
 ---
 <div> 
 <h1>Développer des applicationsUWP</h1>
@@ -206,7 +206,7 @@ ms.locfileid: "6852473"
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Périphériques, capteurs et alimentation</h3>
-                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Présentation</a></p>
+                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Vue d'ensemble</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">Activer les fonctionnalités d’un appareil</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">Jumeler des appareils</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">Point de service</a></p>
@@ -226,7 +226,7 @@ ms.locfileid: "6852473"
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Portage</h3>
-                        <p style="display:block"><a href="/windows/uwp/porting/">Présentation</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/">Vue d'ensemble</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight vers UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows Runtime 8.x vers UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">Pont du bureau</a></p>

@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in Partner Center.
-title: Créer un projet d’expérience dans l’espace partenaires
+title: Créez un projet d’expérience dans l’Espace partenaires
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a59110fa094aeae3d40dca1372fde9889c108e
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6849267"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992376"
 ---
-# <a name="create-an-experiment-project-in-partner-center"></a>Créer un projet d’expérience dans l’espace partenaires
+# <a name="create-an-experiment-project-in-partner-center"></a>Créez un projet d’expérience dans l’Espace partenaires
 
 Pour vous familiariser avec l’expérimentation, créez un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation pour votre application dans l’espace partenaires et définir des variables distantes que votre application peut accéder.
 
@@ -45,7 +45,7 @@ Une fois le projet créé, vous pouvez [coder votre application à des fins d’
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
-* [Définissez votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Gérer votre expérience dans l’espace partenaires](manage-your-experiment.md)
+* [Définir votre expérience dans l’Espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Gérer votre expérience dans l’Espace partenaires](manage-your-experiment.md)
 * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)

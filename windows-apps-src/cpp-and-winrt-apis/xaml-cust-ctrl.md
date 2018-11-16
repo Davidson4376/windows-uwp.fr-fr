@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, un contrôle personnalisé basé sur un modèle,
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e06a28125b3cf3a760d7e9170512b6467c0170d
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6858792"
+ms.locfileid: "6969871"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 
@@ -192,6 +192,6 @@ Les fonctions *Overridable* se présentent différemment dans les projections de
 * [Classe FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
 * [Classe UIElement](/uwp/api/windows.ui.xaml.uielement)
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques associées
 * [Modèles de contrôles](/windows/uwp/design/controls-and-patterns/control-templates)
 * [Propriétés de dépendance personnalisées](/windows/uwp/xaml-platform/custom-dependency-properties)

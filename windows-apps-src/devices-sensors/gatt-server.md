@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b8a941b7b80bd5d34e88798ec586d9c1d52e2887
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662459"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6987086"
 ---
 # <a name="bluetooth-gatt-server"></a>Bluetooth GATT Server
 
@@ -29,7 +29,7 @@ Cet article explique les API de serveur d’attribut générique (GATT Bluetooth
 - Répondre pour lire et écrire des demandes
 - Envoyer des notifications aux clients abonnés
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 Windows fonctionne généralement sur le rôle du client. Néanmoins, les nombreux scénarios surviennent qui nécessitent Windows pour agir en tant qu’également un serveur GATT de Bluetooth LE. Presque tous les scénarios pour les appareils IoT, ainsi que la plupart des communications de BLE inter-plateforme nécessite Windows pour être un serveur GATT. En outre, l’envoi de notifications pour les appareils à proximité portable est devenu un scénario courant qui requiert également cette technologie.  
 > Assurez-vous que tous les concepts décrits dans la [documentation du Client GATT](gatt-client.md) sont clairs avant de poursuivre.  
 
