@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, reprise, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 1149bebfd837e3d4051b5e0fca10aac248d909c5
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6982786"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149966"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>Comment relancer une application (DirectX et C++)
 

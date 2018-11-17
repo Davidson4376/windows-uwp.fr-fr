@@ -9,12 +9,13 @@ keywords: windows10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
-ms.openlocfilehash: 9372ba818805446948a444632e809ec06691c5e5
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 2a7e2c3a08fc925c57e19b9c51011854b947a52d
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6993634"
+ms.locfileid: "7154425"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Animation d’éléments XAML avec des animations de composition
 

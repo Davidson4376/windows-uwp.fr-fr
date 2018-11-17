@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, API d'analyse du MicrosoftStore, télécharger le fichier CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: 517a1cbb8ec2cafe49ded53bce34e17537bc5efc
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: ad1e3339fe50087c3a3d8cdcf3a99f27c1c868df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968213"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147013"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour télécharger le fichier CAB associé à une erreur spécifique dans votre jeu Xbox One qui a été intégré via le portail de développeur de le Xbox (XDP) et disponible dans le tableau de bord du centre de développement Analytique XDP. Cette méthode ne peut télécharger le fichier CAB pour une erreur qui se sont produites au cours des 30 derniers jours.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour télécharger le fichier CAB associé à une erreur spécifique dans votre jeu Xbox One qui a été intégré via le portail de développeur de le Xbox (XDP) et disponible dans le tableau de bord du centre de partenaires Analytique XDP. Cette méthode ne peut télécharger le fichier CAB pour une erreur qui se sont produites au cours des 30 derniers jours.
 
 Avant de pouvoir utiliser cette méthode, vous devez d’abord utiliser la méthode [d’obtenir des détails sur une erreur dans votre jeu Xbox One](get-details-for-an-error-in-your-xbox-one-game.md) pour récupérer l’ID du fichier CAB à télécharger.
 
@@ -50,7 +50,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit du jeu Xbox One pour lequel vous téléchargez le fichier CAB. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité de l’état d’analytique du centre de développement Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
+| applicationId | chaîne | L’ID de produit du jeu Xbox One pour lequel vous téléchargez le fichier CAB. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité à partir du rapport analytique de partenaires Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
 | cabId | chaîne | L’ID unique du fichier CAB à télécharger. Pour obtenir cet ID, utilisez la méthode de [obtenir plus d’informations concernant une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md) pour récupérer les détails d’une erreur spécifique dans votre application et utiliser la valeur de **cabId** dans le corps de réponse de cette méthode. |  Oui  |
 
  
