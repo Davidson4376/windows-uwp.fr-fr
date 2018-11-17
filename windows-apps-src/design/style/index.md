@@ -8,12 +8,13 @@ ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
-ms.openlocfilehash: 378841414f97abb313584e6bcd033914440713a6
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 851c566c046a07d2368937cfe9e8b67945f615a9
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6986527"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7154634"
 ---
 # <a name="style-for-uwp-apps"></a>Style des applications UWP
 

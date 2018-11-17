@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, toast, horodatage personnalisé, horodatage, notification, centre de notifications
 ms.localizationpriority: medium
 ms.openlocfilehash: 290825fa079052b79fb2feaec8af928f8da93f95
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7100466"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156965"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Horodatages personnalisés des toasts
 

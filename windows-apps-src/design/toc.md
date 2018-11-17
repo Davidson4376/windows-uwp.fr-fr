@@ -30,7 +30,6 @@
 ## Transformations
 ### [Vue d'ensemble](layout/transforms.md)
 ### [Effets de perspective 3D](layout/3-d-perspective-effects.md)
-## [Profondeur de tampon et ombre](layout/depth-shadow.md)
 
 # Contrôles
 ## [Vue d'ensemble](controls-and-patterns/index.md)

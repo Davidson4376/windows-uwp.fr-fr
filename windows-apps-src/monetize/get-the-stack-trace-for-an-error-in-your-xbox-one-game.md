@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: df3af90bda9d972a891dce67730f8f320b7607c1
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6976820"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7173542"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>Obtenir la trace de pile concernant une erreur dans votre console Xbox One du jeu
 
-Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir la trace de pile concernant une erreur dans votre console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord du centre de développement Analytique XDP. Cette méthode ne peut télécharger que la trace de pile concernant une erreur survenue dans les 30derniers jours.
+Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir la trace de pile concernant une erreur dans votre console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord du centre de partenaires Analytique XDP. Cette méthode ne peut télécharger que la trace de pile concernant une erreur survenue dans les 30derniers jours.
 
 Avant de pouvoir utiliser cette méthode, vous devez d’abord utiliser la méthode [d’obtenir des détails sur une erreur dans votre jeu Xbox One](get-details-for-an-error-in-your-xbox-one-game.md) pour récupérer l’ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile.
 
@@ -50,7 +50,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit du jeu Xbox One pour laquelle vous récupérez une trace de pile. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité de l’état d’analytique du centre de développement Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
+| applicationId | chaîne | L’ID de produit du jeu Xbox One pour laquelle vous récupérez une trace de pile. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité à partir du rapport analytique de partenaires Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
 | cabId | chaîne | ID unique du fichierCAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode de [obtenir plus d’informations concernant une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md) pour récupérer les détails d’une erreur spécifique dans votre application et utiliser la valeur de **cabId** dans le corps de réponse de cette méthode. |  Oui  |
 
  

@@ -9,11 +9,11 @@ keywords: windows10, uwp, jeux, souris, entrée
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
 ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6992327"
+ms.locfileid: "7171818"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Mouvements de souris relatifs et CoreWindow
 

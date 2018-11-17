@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d502c721f98269c1256510a6f91f8c6dc8cd0fb
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7101273"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150325"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 
