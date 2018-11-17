@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, cartesd, stockage
 ms.localizationpriority: medium
 ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7102058"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166728"
 ---
 # <a name="access-the-sd-card"></a>Accéder à la carte SD
 
