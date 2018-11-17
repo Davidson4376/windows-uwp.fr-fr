@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: bc5873486bdd9c4adf4ea74b10a240617143ad23
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6973187"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7154785"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
