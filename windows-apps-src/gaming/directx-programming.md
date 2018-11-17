@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeu, vue d’ensemble, programmation, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: e422dab7f06e314d849cacc361b51d2f68f0de98
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6984054"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7161338"
 ---
 # <a name="directx-programming"></a>Programmation DirectX
 

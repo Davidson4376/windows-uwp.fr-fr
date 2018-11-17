@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bad800f3858cdfdf3def3a9a04854f078b3af399
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7100901"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162531"
 ---
 # <a name="guidelines-for-targeting"></a>Recommandations en matière de ciblage
 
