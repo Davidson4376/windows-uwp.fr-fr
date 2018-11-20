@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, portage, boucle de jeu, direct3d 9, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7171878"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7297963"
 ---
 # <a name="port-the-game-loop"></a>Porter la boucle de jeu
 

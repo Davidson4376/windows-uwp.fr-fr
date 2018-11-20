@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, carte, emplacement, geovisit
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a78b2689a10dff50696e5e65cc44f79a6f1ea7d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152424"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295327"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>Instructions pour l'utilisation du suivi des visites
 

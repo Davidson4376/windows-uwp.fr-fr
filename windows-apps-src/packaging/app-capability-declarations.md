@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: bb692aaada7296f230e1243a3ce515b471f1ba98
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152677"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296964"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -208,7 +208,7 @@ Le tableau suivant répertorie les fonctionnalités restreintes. Vous pouvez dem
 | **BIOS et microprogramme du système** | La fonctionnalité **smbios** permet aux applications d’accéder aux données BIOS et aux données du microprogramme du système. |
 | **Niveau d’autorisation de confiance totale** | La fonctionnalité **runFullTrust** restreint aux applications de s’exécuter au niveau de l’autorisation de confiance totale sur l’ordinateur de l’utilisateur. Cette fonctionnalité est nécessaire pour utiliser l’API [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) .<br /><br />Cette fonctionnalité est également nécessaire pour n’importe quelle application de bureau qui est fournie sous un package appx ou msix (comme avec le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop)), et elle s’affiche automatiquement dans votre manifeste lors de la compression de ces applications à l’aide de Desktop App Converter (DAC) ou Visual Studio. |
 | **Élévation** | La fonctionnalité **allowElevation** restreint permet aux applications qui sont créées par les partenaires Microsoft et les entreprises à conserver la fonctionnalité de bureau existante nécessitant une élévation automatique lors du lancement ou pendant la durée de vie d’une application.<br/><br/>Nous ne vous recommandons de déclarer cette fonctionnalité dans les applications que vous soumettez au Microsoft Store. Dans la plupart des cas, l’utilisation de cette fonctionnalité ne sont pas approuvée. Il ne sera approuvé pour les applications cœur de métier déployées par les entreprises à son magasin privé via le Microsoft Store pour entreprises.  |
-| **Informations d’identification d’appareil d’équipe Windows** | La fonctionnalité **teamEditionDeviceCredentials** restreint permet aux applications d’accéder aux API qui requièrent des informations d’identification de compte appareil sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous ne vous recommandons de déclarer cette fonctionnalité dans les applications que vous soumettez au Microsoft Store. Dans la plupart des cas, l’utilisation de cette fonctionnalité ne sont pas approuvée. |
+| **Informations d’identification d’appareil d’équipe Windows** | La fonctionnalité **teamEditionDeviceCredential** restreint permet aux applications d’accéder aux API qui requièrent des informations d’identification de compte appareil sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous ne vous recommandons de déclarer cette fonctionnalité dans les applications que vous soumettez au Microsoft Store. Dans la plupart des cas, l’utilisation de cette fonctionnalité ne sont pas approuvée. |
 | **Affichage de l’Application équipe Windows** | La fonctionnalité **teamEditionView** restreint permet aux applications d’accéder aux API pour l’hébergement d’un affichage de l’application sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous ne vous recommandons de déclarer cette fonctionnalité dans les applications que vous soumettez au Microsoft Store. Dans la plupart des cas, l’utilisation de cette fonctionnalité ne sont pas approuvée. |
 | **Extension de traitement d’appareil photo** | La fonctionnalité **cameraProcessingExtension** restreint aux applications de traiter les images capturées à partir de l’appareil photo sans contrôle de la caméra direct.<br /><br />Cette fonctionnalité est nécessaire pour appeler des API dans l’espace de noms [Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider) .<br /><br />Toute personne peut demander l’accès à cette fonctionnalité pour la soumission au WindowsStore. |
 | **Gestion de l’utilisation des données*** | La fonctionnalité **networkDataUsageManagement** restreint aux applications de collecter des informations sur l’utilisation de données réseau.<br /><br />Cette fonctionnalité est nécessaire pour appeler [GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync).<br /><br />Toute personne peut demander l’accès à cette fonctionnalité pour la soumission au WindowsStore. |

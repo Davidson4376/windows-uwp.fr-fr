@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2087debd758a24b50ac1885cb68d4b97ea2898fd
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7173802"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7292928"
 ---
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 

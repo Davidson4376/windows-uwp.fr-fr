@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
 ms.openlocfilehash: cb80e2dbd7ebdfbb05bd642b9875a9cd7cc356f3
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7153622"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295489"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>Inscrire une application dans un dossier isolé  
 

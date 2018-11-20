@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ed938ec247f308559566ad299bec8eb8ea75674
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162197"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295091"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>Modèles de vignette adaptative: schéma et conseils
 
