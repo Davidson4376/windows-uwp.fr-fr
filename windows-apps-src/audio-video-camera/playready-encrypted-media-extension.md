@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b73464ea10aa835b82df17605e983ebdfb9cd890
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7149060"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285958"
 ---
 # <a name="playready-encrypted-media-extension"></a>Extension EME (Encrypted Media Extension) PlayReady
 
