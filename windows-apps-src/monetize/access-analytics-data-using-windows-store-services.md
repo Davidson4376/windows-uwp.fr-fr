@@ -10,11 +10,11 @@ keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du Microsof
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: aaf1675d102a714b32d2e59483f6c10ad704284f
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7287037"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421418"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 

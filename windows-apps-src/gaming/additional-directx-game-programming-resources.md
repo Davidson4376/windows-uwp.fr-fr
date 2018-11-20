@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, programmation
 ms.localizationpriority: medium
 ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7280920"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7445828"
 ---
 # <a name="game-programming-resources"></a>Ressources de programmation de jeux
 
