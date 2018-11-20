@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 439a69da400caaa9ae509a121f2aa7336853d2ca
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7148610"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285787"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Indexeurs spécifiques au format de MakePri.exe
 

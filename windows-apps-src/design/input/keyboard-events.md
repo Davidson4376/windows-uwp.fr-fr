@@ -15,11 +15,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a9abc16a4992dedead598f96061811c82c5a5c5
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7161414"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7279365"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 

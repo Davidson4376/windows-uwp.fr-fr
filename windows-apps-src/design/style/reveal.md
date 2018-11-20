@@ -13,11 +13,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7168418"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285129"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 062ca589b2a63db1f56ada4e2df4f99bc7f8b0fb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7146153"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7288699"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>Fonctionnalités d’interface utilisateur de caméra pour les appareils mobiles
 

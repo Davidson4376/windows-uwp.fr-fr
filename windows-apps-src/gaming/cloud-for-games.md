@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, services cloud
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7154119"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7286698"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 

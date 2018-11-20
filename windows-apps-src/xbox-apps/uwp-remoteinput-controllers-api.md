@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0b85293ada8619246c3c23ef2103ead5f40c23
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171259"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7289479"
 ---
 # <a name="controller-api-reference"></a>Référence API du contrôleur   
 Vous pouvez obtenir le nombre de contrôleurs physiques attachés et les désactiver à l'aide de cette API REST.

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, latence, dxgi, chaînes d’échange
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169089"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7283513"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Réduire la latence avec des chaînes d’échange DXGI1.3
 

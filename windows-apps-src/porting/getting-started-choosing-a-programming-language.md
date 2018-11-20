@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7144925"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7287339"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>Prise en main: Choix d’un langage de programmation
 

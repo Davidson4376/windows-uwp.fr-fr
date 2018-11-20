@@ -12,12 +12,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5f11afbafc424a4ed7f2c973f0417c792ab7da65
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 08bf867b6690a84f89b61cac9942b8ad6c27cd99
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160177"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280627"
 ---
 # <a name="use-a-maintenance-trigger"></a>Utiliser un déclencheur de maintenance
 
@@ -35,7 +35,7 @@ Cet exemple suppose que vous disposez d’un code léger à exécuter en arrièr
 
 Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
-Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* est défini sur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
+Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* est défini sur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
 
 > [!NOTE]
 > Si *FreshnessTime* est défini sur moins de 15 minutes, une exception est levée lorsque vous tentez d’inscrire la tâche en arrière-plan.

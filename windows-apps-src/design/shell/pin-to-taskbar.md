@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, la barre des tâches, gestionnaire de la barre des tâches, épingler à la barre des tâches, vignette principale
 ms.localizationpriority: medium
 ms.openlocfilehash: 47fcd1f9d090c49ecbd49e05696b33f789973160
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167215"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7290219"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Épingler votre application à la barre des tâches
 

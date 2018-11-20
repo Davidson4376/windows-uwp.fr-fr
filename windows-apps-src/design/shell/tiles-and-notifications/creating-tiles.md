@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f4388b67335bce497987ab22e3b281cf86e029af
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167255"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7307559"
 ---
 # <a name="tiles-for-uwp-apps"></a>Vignettes pour les applications UWP
 
