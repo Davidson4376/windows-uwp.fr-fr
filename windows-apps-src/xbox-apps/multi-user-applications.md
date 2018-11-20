@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
 ms.openlocfilehash: 7534b6764bc98c415b557d100d869df186453626
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170541"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7278513"
 ---
 # <a name="introduction-to-multi-user-applications"></a>Présentation des applications multi-utilisateurs
 

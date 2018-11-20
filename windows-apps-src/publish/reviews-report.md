@@ -8,12 +8,12 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
-ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: e5deef6d5e67c1236fb88f93269fcf91bb50243c
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158250"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7281781"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
@@ -22,7 +22,7 @@ Le rapport **avis** dans [L’espace partenaires](https://partner.microsoft.com/
 
 Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Vous pouvez également répondre au client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+Vous pouvez également répondre aux clients avis [directement à partir de cette page](respond-to-customer-reviews.md) ou par programmation [via le Microsoft Store API d’avis](../monetize/submit-responses-to-app-reviews.md).
 
 > [!TIP]
 > Pour obtenir un aperçu des avis, des évaluations et des commentaires des utilisateurs formulés pour l’ensemble de vos applications au cours des 30derniers jours, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Reviews and feedback**. 
@@ -114,7 +114,7 @@ Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origin
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard), l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) d’envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) ou l' [QU'API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md) pour envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 
