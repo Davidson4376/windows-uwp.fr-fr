@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167275"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7303539"
 ---
 # <a name="commit-an-add-on-submission"></a>Valider une soumission d’extension
 

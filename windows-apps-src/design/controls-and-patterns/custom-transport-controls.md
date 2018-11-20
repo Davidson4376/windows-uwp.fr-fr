@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0486fbab829b7c4ce501f9ac20dac97e6abef595
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7164954"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7303733"
 ---
 # <a name="create-custom-transport-controls"></a>Créer des contrôles de transport personnalisés
 

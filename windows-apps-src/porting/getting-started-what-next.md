@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8a6165df7bf839154ede4db3fda8a5e1662880
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165760"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302687"
 ---
 # <a name="getting-started-what-next"></a>Prise en main: Et ensuite?
 

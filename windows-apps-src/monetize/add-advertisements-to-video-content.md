@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, annonces, publicités, vidéo, planificateur, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 158817aa0abea1ddb1247188ec69389a7682e899
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166169"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305823"
 ---
 # <a name="show-ads-in-video-content"></a>Afficher des publicités dans du contenu vidéo
 

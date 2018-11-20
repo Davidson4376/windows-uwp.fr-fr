@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, audio, jeux, exemple
 ms.localizationpriority: medium
 ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7172032"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7306938"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>Ajout de son à l’exemple Marble Maze
 

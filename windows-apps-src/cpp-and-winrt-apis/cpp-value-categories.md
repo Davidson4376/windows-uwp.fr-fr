@@ -9,11 +9,11 @@ keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, déplacement, 
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 854bc14c37a70cdb4e7e4113a10ca977582cbb77
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7173862"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305573"
 ---
 # <a name="value-categories-and-references-to-them"></a>Catégories de valeurs et références à ces
 Cette rubrique décrit les différentes catégories de valeurs (et les références à des valeurs) qui existent en C++. Vous seront sans doute ont entendu *lvalues* et *rvalues*, mais vous ne pouvez pas penser d'entre eux dans les conditions de cette rubrique présente. Et il existe également des autres types de valeurs.

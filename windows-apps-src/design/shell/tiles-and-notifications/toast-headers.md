@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, toast, en-tête, en-têtes de toast, notification, regrouper les toasts, centre de notifications
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc515b811a11be045ce80ed816708d230720a29
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170739"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302739"
 ---
 # <a name="toast-headers"></a>En-têtes de toast
 

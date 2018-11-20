@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: Windows 10 sur ARM, ARM, créer des applications win32 ARM64, génération de pilotes ARM64
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166096"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7301760"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 sur ARM
 Windows 10 s’exécute sur les ordinateurs munis de processeurs ARM. Cette page fournit les informations pour en savoir plus sur la plateforme et de commencer à développer des applications. Nous vous encourageons également à fournir vos commentaires en utilisant les liens en bas de la page.

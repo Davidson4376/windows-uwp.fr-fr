@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 610b794c0ded6791e93c14d8960366132afd973b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169326"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7301598"
 ---
 # <a name="game-flow-management"></a>Gestion du flux de jeu
 

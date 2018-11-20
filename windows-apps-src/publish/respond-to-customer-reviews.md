@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, répondre, réponses, passez en revue
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ded7cc66cda75fbb6edb9ab9d84c21c2d02cff
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 9552e9dede62d4d89b71f031cd2ff2c76964d0cb
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158556"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305030"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
@@ -23,7 +23,7 @@ Vous pouvez répondre aux avis de votre application pour permettre aux clients q
 Pour visualiser les avis de votre application et y répondre, recherchez l’application dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez *Analytique**, puis cliquez sur **avis** pour afficher le [rapport avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
 
 > [!TIP]
-> Outre l’utilisation de l’espace partenaires pour répondre aux avis, vous pouvez répondre aux avis [par programme](../monetize/submit-responses-to-app-reviews.md)ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+> Outre l’utilisation de l’espace partenaires pour répondre aux avis, vous pouvez répondre aux avis [par programme](../monetize/submit-responses-to-app-reviews.md).
 
 Par défaut, votre réponse est publiée dans le Windows Store, juste en dessous de la révision du client d’origine. Ces réponses seront visibles pour tous les clients consultant le Windows Store sur un appareil Windows 10. Si le client qui a rédigé un avis d’un appareil exécutant Windows 10, version 1803 ou une version ultérieure, et ils n’ont pas refusé de recevoir des réponses de courrier électronique, une copie de votre réponse également sera envoyée à ce client par e-mail.  Vous devez fournir une adresse e-mail valide pour pouvoir soumettre votre réponse, ce qui nous inclut dans le message électronique au client. Ils peuvent ensuite utiliser cette adresse de messagerie pour vous contacter directement.
 
