@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d, porter
 ms.localizationpriority: medium
 ms.openlocfilehash: 532c2a0a9779ae3eaedb2217175dc0805514f792
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145095"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7292215"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>Mapper OpenGLES2.0 à Direct3D11
 
