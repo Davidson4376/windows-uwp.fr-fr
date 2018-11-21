@@ -14,11 +14,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b506b439ff98da873823bd586bb5388fe360b2ba
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7425364"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7554303"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 

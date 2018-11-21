@@ -10,11 +10,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 232770ab4b746663a105982605d1cedcb92adbe3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430044"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7556572"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>Accueil du développeur sur la Console (Dev Home)
    

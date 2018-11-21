@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, services du MicrosoftStore, API d'avis du MicrosoftStore, informations de réponse
 ms.localizationpriority: medium
 ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7440563"
+ms.locfileid: "7553995"
 ---
 # <a name="get-response-info-for-reviews"></a>Obtenez des informations sur les réponses concernant les avis
 

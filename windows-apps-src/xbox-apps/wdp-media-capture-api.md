@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
 ms.openlocfilehash: f58fa4c3a9a1abd407f635f27de3a545c3aafc6c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422695"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7556552"
 ---
 # <a name="media-capture-api-reference"></a>Informations de référence sur les API de capture multimédia #
 

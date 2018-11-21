@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
 ms.openlocfilehash: eace82801b2e3d1423eeec9e9da7cf56db043666
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427235"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7556442"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
