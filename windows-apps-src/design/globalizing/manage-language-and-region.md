@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 2215231b21700fc17b08c2149316f9a59f8d1f04
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7297714"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7430774"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 Pour configurer une liste ordonnée de langues d'affichage ou simplement une seule langue d'affichage favorites, les utilisateurs Windows peuvent accéder à **Paramètres** > **Heure et langue** > **Région et langue**. Les langues peuvent comporter des variantes régionales. Par exemple, vous pouvez sélectionner l'espagnol d'Espagne, l'espagnol du Mexique, l'espagnol des États-Unis, etc.
