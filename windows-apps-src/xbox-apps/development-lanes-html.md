@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c32a02532ab544e7697d59fa4f1ca93231183d3
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7299244"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436145"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>Intégration de jeux HTML dans UWP sur Xbox
 Xbox One constitue une excellente plateforme pour les jeux basés sur HTML5. Les jeux HTML5 s’exécutent sur le moteur de rendu [Edge](https://developer.microsoft.com/microsoft-edge/). Edge est rapide et prend entièrement en charge les fonctionnalités HTML5 et CSS3, telles que WebGL et la zone de dessin.
