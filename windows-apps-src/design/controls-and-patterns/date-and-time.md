@@ -15,11 +15,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 363c60a9aeaaa98d808e015f96e4096cf889a501
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7435662"
+ms.locfileid: "7556101"
 ---
 # <a name="calendar-date-and-time-controls"></a>Contrôles de calendrier, de date et d’heure
 
