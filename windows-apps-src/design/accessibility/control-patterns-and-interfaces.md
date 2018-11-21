@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e48045e27e8ee7796f5dda2afb691a9f6e5371b2
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7300227"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443183"
 ---
 # <a name="control-patterns-and-interfaces"></a>Modèles de contrôle et interfaces  
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7286743"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7444428"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Créer un fichier de programme d'installation d'application avec VisualStudio
 
