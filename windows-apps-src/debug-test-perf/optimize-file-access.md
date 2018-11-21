@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423434"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7557037"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers
 

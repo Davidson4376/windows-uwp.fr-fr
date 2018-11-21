@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c617f3ec6d189f3ee75fcf2fd0ff96d386ec32c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7418514"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7559220"
 ---
 # <a name="which-networking-technology"></a>Quelle technologie de réseau?
 

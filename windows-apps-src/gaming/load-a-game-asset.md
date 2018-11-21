@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, directx, chargement des ressources
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7434689"
+ms.locfileid: "7554624"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Charger des ressources dans votre jeu DirectX
 

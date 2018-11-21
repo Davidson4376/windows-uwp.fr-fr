@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, évaluations et avis
 ms.localizationpriority: medium
 ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7433409"
+ms.locfileid: "7559077"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des avis pour votre app
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f267fbcaecfdf9f1888e47d8dbe35d9cc469f4c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7420211"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7555525"
 ---
 # <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a991d692b4ba4c7a221932218a7d25e48fe16ca
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427095"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7567624"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>Expériences personnalisées de manipulation avec InteractionTracker
 
