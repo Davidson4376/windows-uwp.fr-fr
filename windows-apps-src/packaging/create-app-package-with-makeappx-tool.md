@@ -9,12 +9,12 @@ keywords: windows10, uwp, création de packages
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77e15948de005ad966dee9c214e990fe5816d3fc
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: aad7244d90b9025dbbec37013edfb31b068a8abc
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7288542"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7426339"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 
@@ -36,8 +36,8 @@ Pour créer manuellement un fichier .appxupload:
 ## <a name="using-makeappxexe"></a>Utilisation de MakeAppx.exe
 
 Selon votre chemin d’installation du Kit de développement logiciel (SDK), c’est là où **MakeAppx.exe** se trouve sur votre PC Windows10:
-- x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe
-- x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+- x86: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;numéro de build&gt;\x86\makeappx.exe
+- x64: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;numéro de build&gt;\x64\makeappx.exe
 
 Il n’existe aucune version ARM de cet outil.
 
