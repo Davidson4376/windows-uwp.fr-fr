@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 04eabb4c70143a08f5b850e6444f7f3d21a9dd4a
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427626"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576593"
 ---
 # <a name="input-driven-animations"></a>Animations pilotées par une entrée
 
