@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7431677"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7563155"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 

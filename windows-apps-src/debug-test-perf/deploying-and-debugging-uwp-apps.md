@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a398b621ff309af8c6f8252613d3ea106d96485
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7429545"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7563247"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 

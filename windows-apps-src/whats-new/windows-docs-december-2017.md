@@ -8,11 +8,11 @@ ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430595"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7560900"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en décembre2017
 

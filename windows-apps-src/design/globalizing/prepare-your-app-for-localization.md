@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7435319"
+ms.locfileid: "7561822"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
