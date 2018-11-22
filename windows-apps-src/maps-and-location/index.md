@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, carte, emplacement, services de carte
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443100"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7580556"
 ---
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et de l’emplacement
 

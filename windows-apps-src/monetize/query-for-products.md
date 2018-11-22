@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, afficher produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7441678"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7581402"
 ---
 # <a name="query-for-products"></a>Demander des produits
 
