@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, objet principal
 ms.localizationpriority: medium
 ms.openlocfilehash: b94d7139f35b3a18edd66af9959a0958d0bdcbc1
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7433519"
+ms.locfileid: "7573807"
 ---
 # <a name="define-the-main-game-object"></a>Définir l’objet jeu principal
 

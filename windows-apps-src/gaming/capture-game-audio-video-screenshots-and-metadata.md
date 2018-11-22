@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, jeu, capturer, audio, vidéo, métadonnées
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1641cb4c50b86d7f678bf18fa85ad0215b4b15
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 906422e8bcca90c35821ecac95c02279c65fa400
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423025"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7569865"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu
 Cet article explique comment capturer l’audio, la vidéo et les captures d’écran de jeu et soumettre les métadonnées afin que le système les incorpore dans les médias capturés et de diffusion. Ainsi, les applications et notamment la vôtre, sont en mesure de créer des expériences dynamiques qui sont synchronisées avec les événements de jeu. 
@@ -59,7 +59,7 @@ La classe **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.med
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>Déterminer si votre application peut enregistrer actuellement
-Il existe plusieurs raisons pour lesquelles votre application peut ne pas être en mesure de capturer l’audio ou la vidéo actuellement. Ceci est notamment le cas si l’appareil utilisé ne satisfait pas la configuration matérielle requise pour l’enregistrement ou si une autre application est en cours de diffusion. Avant de lancer un enregistrement, vous pouvez vérifier si votre application est en mesure d’effectuer l’enregistrement actuellement. Appelez la méthode **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** de l’objet **AppRecordingManager**, puis vérifiez la propriété **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** de l’objet **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** renvoyé. Si **CanRecord** renvoie la valeur **false**, ce qui signifie que votre application ne peut pas enregistrer actuellement, vous pouvez vérifier la propriété **[Details](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** pour en déterminer la raison. En fonction de la raison, vous pouvez afficher l’état à l’utilisateur ou afficher des instructions pour l’activation de l’enregistrement par l’application.
+Il existe plusieurs raisons pour lesquelles votre application peut ne pas être en mesure de capturer l’audio ou la vidéo actuellement. Ceci est notamment le cas si l’appareil utilisé ne satisfait pas la configuration matérielle requise pour l’enregistrement ou si une autre application est en cours de diffusion. Avant de lancer un enregistrement, vous pouvez vérifier si votre application est en mesure d’effectuer l’enregistrement actuellement. Appelez la méthode **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** de l’objet **AppRecordingManager**, puis vérifiez la propriété **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** de l’objet **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** renvoyé. Si **CanRecord** renvoie **false**, ce qui signifie que votre application ne peut pas enregistrer actuellement, vous pouvez vérifier la propriété de **[Détails](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** pour déterminer la raison. En fonction de la raison, vous pouvez afficher l’état à l’utilisateur ou afficher des instructions pour l’activation de l’enregistrement par l’application.
 
 
 
@@ -145,7 +145,7 @@ Vous pouvez mettre fin à tous les états actuellement ouverts en appelant **[St
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>Gérer la limite de stockage de cache de métadonnées
-Les métadonnées que vous écrivez avec **AppCaptureMetadataWriter** sont mises en cache par le système jusqu’à ce qu’elles soient écrites dans le flux de média associé. Le système définit une limite de taille pour le cache de métadonnées de chaque application. Une fois la limite de taille du cache atteinte, le système commence à vider les métadonnées mises en cache. Le système supprimera les métadonnées écrites avec la valeur de priorité **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** avant les métadonnées ayant la priorité **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**.
+Les métadonnées que vous écrivez avec **AppCaptureMetadataWriter** sont mises en cache par le système jusqu’à ce qu’elles soient écrites dans le flux de média associé. Le système définit une limite de taille pour le cache de métadonnées de chaque application. Une fois la limite de taille du cache atteinte, le système commence à vider les métadonnées mises en cache. Le système supprimera les métadonnées écrites avec la valeur de priorité **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** avant de supprimer les métadonnées ayant la priorité **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** .
 
 À tout moment, vous pouvez vérifier le nombre d’octets disponibles dans le cache de métadonnées de votre application en appelant **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)**. Vous pouvez choisir de définir le seuil défini par l’application. Une fois ce seuil atteint, vous pouvez choisir de réduire la quantité de métadonnées écrites dans le cache. L’exemple suivant montre une implémentation simple de ce modèle.
 
