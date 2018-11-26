@@ -2,18 +2,16 @@
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
 description: Cette section explique comment partager des données entre des applications UWP, notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer.
 title: Communication entre les applications
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 52e8479febb2134365bab6c68486d9e284366535
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554740"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701087"
 ---
 # <a name="app-to-app-communication"></a>Communication entre les applications
 

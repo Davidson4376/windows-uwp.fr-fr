@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: Ombres de composition
 description: L’API de l’ombre vous permettre d’ajouter des ombres personnalisables dynamiques à du contenu de l’interface utilisateur.
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c2f42235e6a74747059723841d3082037b558c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572239"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703173"
 ---
 # <a name="shadows-in-windows-ui"></a>Ombres dans l’interface utilisateur de Windows
 

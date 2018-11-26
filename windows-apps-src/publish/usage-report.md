@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Usage report in Partner Center lets you see how customers are using your app.
 title: Rapport d’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: c6f22d9aafada5bab8deaef246f64a7447569c82
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0d0be1399ebc00ffda57ecf27a72be994fa994ce
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578910"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701676"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 

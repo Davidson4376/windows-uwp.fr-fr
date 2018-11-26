@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Définir l’infrastructure d’application UWP du jeu
 description: La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows.
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563029"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697302"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Définir l’infrastructure d’application UWP
 

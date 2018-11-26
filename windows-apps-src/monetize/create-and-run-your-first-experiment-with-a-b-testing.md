@@ -1,19 +1,17 @@
 ---
-author: Xansky
 Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
 title: Créer et exécuter votre première expérience
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a4c3607486a7163648c7aa5a0e1d03d37e421f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8dba9095326c01029e14742c98c1c368b896dfb8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566786"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702803"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Créer et exécuter votre première expérience
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Utilisez HttpClient et le reste de l’API d’espace de noms Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1.
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c874c690826dfa74b8dcb2312204cd549db3db2b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 706432123d8a778af558d0c3e426ad4f5120bdba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567939"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703183"
 ---
 # <a name="httpclient"></a>HttpClient
 

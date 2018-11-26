@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S) et en prenant en charge à la fois les messages UTF-8 et les messages binaires.
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
-ms.author: stwhi
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows10, uwp, mise en réseau, websocket, messagewebsocket et streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: eaba8d7b87d9e2762d13bd86629ee4a996e2d5e8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74bf686346951337f785f0eac6570aca35df6060
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568520"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697822"
 ---
 # <a name="websockets"></a>WebSockets
 Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S) et en prenant en charge à la fois les messages UTF-8 et les messages binaires.

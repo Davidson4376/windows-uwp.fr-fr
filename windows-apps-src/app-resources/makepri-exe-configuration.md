@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: This topic describes the schema of the MakePri.exe XML configuration file.
 title: Fichier de configuration de MakePri.exe
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 3becb43fb1f173926ce4873aa61368f095bef5d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef0e8834310e77084c0bb4a8aad22786a89fb312
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563366"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701179"
 ---
 # <a name="makepriexe-configuration-file"></a>Fichier de configuration de MakePri.exe
 

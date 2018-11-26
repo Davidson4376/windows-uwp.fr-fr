@@ -1,14 +1,13 @@
 ---
 title: Automatisation du lancement des applications UWP Windows10
 description: Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés.
-author: listurm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e26c181d0cde9ff3e5b2952a8cf1f614d02cb35
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 123e2dfff909265673a711f480f5fe636590afa4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494186"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698448"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Automatisation du lancement des applications UWP Windows10
 

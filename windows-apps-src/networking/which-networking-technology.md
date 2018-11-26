@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
 description: Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
 title: Quelle technologie de réseau?
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c617f3ec6d189f3ee75fcf2fd0ff96d386ec32c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559220"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697955"
 ---
 # <a name="which-networking-technology"></a>Quelle technologie de réseau?
 

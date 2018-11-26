@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Portail d’appareil pour WindowsDesktop
 description: Découvrez comment WindowsDevicePortal ouvre les diagnostics et l’automatisation sur votre bureau Windows.
-ms.author: pafarley
 ms.date: 03/15/2018
 ms.topic: article
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 353afaa511eb382ba2d5772b9b88d3e6b5335ea6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1be8dfd11e68dc8e6382f98e08e6c23f2a4d6be6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565166"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697232"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour WindowsDesktop
 

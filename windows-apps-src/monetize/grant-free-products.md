@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Utilisez cette méthode dans l’API d’achat du MicrosoftStore pour octroyer une app ou extension gratuite à un utilisateur donné.
 title: Attribuer des produits gratuits
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: windows10, uwp, API d’achat du MicrosoftStore, octroyer des produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 27503148d4406cb0ba1c2ce9782ca7131c8ce081
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75edbe720e2e4483432d3d865650e5d7e7a24b40
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578535"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703453"
 ---
 # <a name="grant-free-products"></a>Attribuer des produits gratuits
 

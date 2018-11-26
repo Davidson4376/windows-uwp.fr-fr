@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Porter les objets nuanceur
 description: Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux , portage, nuanceur, direct3d, opengl
 ms.localizationpriority: medium
-ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571834"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696820"
 ---
 # <a name="port-the-shader-objects"></a>Porter les objets nuanceur
 

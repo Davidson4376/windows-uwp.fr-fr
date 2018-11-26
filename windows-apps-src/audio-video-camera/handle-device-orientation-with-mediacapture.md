@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: af3941c0-3508-4ba2-a79e-fc71657c605f
 description: Cet article vous explique comment gérer l’orientation de l’appareil quand vous capturez des photos et des vidéos à l’aide d’une classe d’assistance.
 title: Gérer l’orientation de l’appareil à l’aide de MediaCapture
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1367c880bd6dde573ab4fc30733ed9d1fefa6b0b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 866a3b02d67409d03fccf427663de65cc94919b2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560783"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701388"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>Gérer l’orientation de l’appareil à l’aide de MediaCapture
 Lorsque votre application capture une photo ou une vidéo qui est destinée à être vue en dehors, comme lors de l’enregistrement sur un fichier sur l’appareil de l’utilisateur ou d’un partage en ligne, il est important de coder l’image à l’aide des métadonnées appropriées d’orientation, de manière à ce que le contenu soit orienté correctement lorsqu’une autre application ou un autre appareil l’affiche. La détermination des données appropriées d’orientation à inclure dans un fichier multimédia peut être une tâche complexe, dans la mesure où diverses variables sont à examiner, dont l’orientation du châssis de l’appareil, l’orientation de l’affichage et le placement de l’appareil photo sur le châssis (appareil photo frontal ou arrière). 

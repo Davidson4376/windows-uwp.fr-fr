@@ -2,18 +2,16 @@
 title: Empreinte digitale biométrique
 description: Cet article explique comment ajouter des empreintes digitales biométriques à votre application de plateforme Windows universelle (UWP).
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccd2efee17c7f1205bcac6f05b016af7e6c6dae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573519"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699840"
 ---
 # <a name="fingerprint-biometrics"></a>Empreinte digitale biométrique
 

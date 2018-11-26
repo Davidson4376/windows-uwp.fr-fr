@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Décrit le schéma de données JSON étendu des produits du Windows Store dans l’espace de noms Windows.Services.Store.
 title: Schémas de données des produits du Windows Store
-ms.author: mhopkins
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, produits du MicrosoftStore, schéma
 ms.localizationpriority: medium
-ms.openlocfilehash: 980fde1a222b5fb7ba2d4524469a9b6673cbabd3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565510"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700135"
 ---
 # <a name="data-schemas-for-store-products"></a>Schémas de données pour les produits du MicrosoftStore
 

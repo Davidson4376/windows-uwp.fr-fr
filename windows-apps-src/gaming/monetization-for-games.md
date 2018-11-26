@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Monétisation pour les jeux
 description: Implémentez des bannières publicitaires, des spots vidéo publicitaires et des achats in-app pour les jeux de la plateforme Windows universelle (UWP) sur Windows10.
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561762"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697119"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 

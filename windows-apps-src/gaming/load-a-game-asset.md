@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Charger des ressources dans votre jeu DirectX
 description: La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données.
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, chargement des ressources
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554624"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703133"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Charger des ressources dans votre jeu DirectX
 

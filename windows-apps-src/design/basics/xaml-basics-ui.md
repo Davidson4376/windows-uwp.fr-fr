@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: Créer un didacticiel d'interface utilisateur
 description: Cet article décrit les principes fondamentaux de la création d'interfaces utilisateur en XAML
 keywords: XAML, UWP, Prise en main
-ms.author: jimwalk
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d54df07cd5f2ccc32098b17fd7c656900cba978
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571624"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700957"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Didacticiel: Créer une interface utilisateur
 

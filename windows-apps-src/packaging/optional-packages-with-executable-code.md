@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Packages facultatifs avec code exécutable
 description: Découvrez comment utiliser Visual Studio pour créer un package facultatif avec du code exécutable.
-ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 795155ab38be11987d978d8c3843a73b7d359277
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567909"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697412"
 ---
 # <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
  

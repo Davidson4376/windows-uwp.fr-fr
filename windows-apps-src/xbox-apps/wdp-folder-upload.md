@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: Infos de référence sur les API de chargement du dossier Device Portal
 description: Découvrez comment accéder par programme aux API de chargement des dossiers.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 481ec666c327b15088d8e60577c51fa1697918fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557792"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699744"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>Télécharger un dossier dans le répertoire de développement
 

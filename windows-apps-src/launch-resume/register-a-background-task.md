@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Inscrire une tâche en arrière-plan
 description: Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: faed3f762594ae46b617831615df2448391e1c7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f940b0433c5cf7818102f92c9e61a6fe012bf4b9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575479"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700377"
 ---
 # <a name="register-a-background-task"></a>Inscrire une tâche en arrière-plan
 

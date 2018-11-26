@@ -2,18 +2,16 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: Cette feuille de route propose une vue d’ensemble de fonctionnalités principales d’entreprise pour les applications Windows 10 et de la plateforme Windows universelle (UWP).
 title: Entreprise
-author: awkoren
-ms.author: alkoren
 ms.date: 08/30/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b3106df6d8a1fd85b92aa06dd5c5cf7a7f79ded5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579074"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696705"
 ---
 # <a name="enterprise"></a>Entreprise
 

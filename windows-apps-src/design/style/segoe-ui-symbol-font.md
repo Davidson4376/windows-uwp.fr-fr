@@ -1,22 +1,20 @@
 ---
-author: mijacobs
 Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
 Search.Refinement.TopicID: 184
 title: Recommandations en matière d’icônes Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d24f40c32cfcf3d0efe8597c4d955ae4146cf9e8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7442478"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700079"
 ---
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 

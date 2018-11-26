@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 description: Attractive avec votre application prenant en charge les applications pour la fonctionnalité de sites Web.
 keywords: Liaisons Windows ciblées
-ms.author: twhitney
 ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561584"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699327"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 

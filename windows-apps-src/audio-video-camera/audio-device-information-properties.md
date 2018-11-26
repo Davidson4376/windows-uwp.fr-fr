@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: Cet article répertorie les propriétés DeviceInformation liées aux appareils audio
 title: Propriétés d’informations des appareils audio
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d612a259785c8ba29ab975ba910c4f3e7df61d6f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 443bcc3c0280aca85de31d8c9f3704302432cb76
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555021"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701481"
 ---
 # <a name="audio-device-information-properties"></a>Propriétés d’informations des appareils audio
 

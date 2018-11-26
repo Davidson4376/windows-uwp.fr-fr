@@ -1,18 +1,16 @@
 ---
-author: ridomin
 title: Créer un fichier de programme d'installation d'application avec VisualStudio
 description: Découvrez comment utiliser VisualStudio pour permettre des mises à jour automatiques à l'aide du fichier .appinstaller.
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567697"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697772"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Créer un fichier de programme d'installation d'application avec VisualStudio
 

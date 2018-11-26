@@ -1,20 +1,18 @@
 ---
-author: laurenhughes
 title: Créer un package d’application avec l’outil MakeAppx.exe
 description: MakeAppx.exe crée, chiffre, déchiffre et extrait les fichiers des packages d’applications et des ensembles d’applications.
-ms.author: lahugh
 ms.date: 06/21/2018
 ms.topic: article
 keywords: windows10, uwp, création de packages
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aad7244d90b9025dbbec37013edfb31b068a8abc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563042"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697182"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 

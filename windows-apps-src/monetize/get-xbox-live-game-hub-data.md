@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données de hub de jeux Xbox Live.
 title: Obtenir des données de hub de jeux Xbox Live
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, hubs de jeu
 ms.localizationpriority: medium
-ms.openlocfilehash: f565f0fc3799ebf2d23f9dd7b9320323588f4caa
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 09c2a2c69e32d151c393c5a0652c1d9de7b4360e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7421961"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697862"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>Obtenir des données de hub de jeux Xbox Live
 

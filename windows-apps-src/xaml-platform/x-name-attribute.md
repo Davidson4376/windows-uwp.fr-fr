@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général.
 title: Attribut xName
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582139"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698887"
 ---
 # <a name="xname-attribute"></a>Attribut x:Name
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: Cet article montre comment énumérer des périphériques MIDI et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle.
 title: MIDI
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d1e4afd620b871d4273699aea5c02cc9faec80
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443328"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701501"
 ---
 # <a name="midi"></a>MIDI
 

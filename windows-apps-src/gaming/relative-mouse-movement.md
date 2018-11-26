@@ -1,19 +1,17 @@
 ---
-author: scottmill
 title: Mouvements de souris relatifs
 description: Utilisez des contrôles de souris relatifs, qui n’utilisent pas le curseur système et ne retournent pas de coordonnées d’écran absolues, pour suivre le delta des pixels entre les mouvements de la souris dans les jeux.
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, souris, entrée
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575096"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697642"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Mouvements de souris relatifs et CoreWindow
 

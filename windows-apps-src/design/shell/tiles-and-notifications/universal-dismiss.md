@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to use Universal Dismiss on your toast notifications.
 title: Masquage universel
 label: Universal Dismiss
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
 keywords: windows10, uwp, toast, centre de notifications dans le cloud, masquage universel, notification, sur plusieurs appareils, masquer une fois, masquer partout
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a9c446172b25f2430a3f75014c8e168a91c233
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0dc87e8856e35d60660c2643b70b820b2857b488
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567773"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702227"
 ---
 # <a name="universal-dismiss"></a>Masquage universel
 

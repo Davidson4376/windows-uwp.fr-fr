@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: Créer et convertir un mappage de groupe de contenu source
 description: Pour préparer votre application de plateforme Windows universelle (UWP) pour l’installation en continu d’une application UWP, vous devez créer un mappage de groupe de contenu. Cet article vous guidera dans les spécificités de la création et la conversion d’un mappage de groupe de contenu tout en vous fournissant des conseils et astuces tout au long du processus.
-ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
 keywords: Windows10, UWP, mappage de groupe de contenu, installation en continu, installation en continu d’une application UWP, mappage de groupe de contenu source
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2922d6d3f54d693a9fe9c0982ea06cc5f2caae
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7433966"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697522"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Créer et convertir un mappage de groupe de contenu source
 

@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Gérer l’activation des URI
 description: Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut pour un nom de schéma d’URI (Uniform Resource Identifier).
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 808242fd7e179c225b3119dad146e7f05d72ffd4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566500"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700304"
 ---
 # <a name="handle-uri-activation"></a>Gérer l’activation des URI
 

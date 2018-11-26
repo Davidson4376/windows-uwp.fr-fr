@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 description: Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript.
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571969"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696890"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas: création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 

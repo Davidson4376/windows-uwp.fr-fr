@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Piste d'apprentissage - Créer et configurer un formulaire
 description: Découvrez ce que vous devez faire pour créer un formulaire à la structure robuste dans votre application.
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: prise en main, uwp, windows10, piste d'apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c624a3c666dcc405ee2375738c605ae147b7d9d3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430542"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697079"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 

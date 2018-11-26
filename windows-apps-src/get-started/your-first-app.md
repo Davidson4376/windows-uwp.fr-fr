@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Créer votre première application
 description: Créer une application de plateforme Windows universelle (UWP) pour Windows 10 à l’aide de votre langage de programmation favori.
-ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
 keywords: windows10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 64da4418e25f77f49854c054d9cb468f0d89f16c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577549"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703313"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
 title: Codecs pris en charge
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570056"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701057"
 ---
 # <a name="supported-codecs"></a>Codecs pris en charge
 

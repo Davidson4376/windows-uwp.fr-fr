@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Gérer une tâche en arrière-plan annulée
 description: Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581665"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701846"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 

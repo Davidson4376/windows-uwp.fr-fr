@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: Meilleures pratiques pour l’utilisation du pool de threads
 description: Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, thread, pool de threads
 ms.localizationpriority: medium
-ms.openlocfilehash: ff607e3b39ea9d9a3731cc1f231fe1eb27b0b155
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576693"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699900"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>Meilleures pratiques pour l’utilisation du pool de threads
 

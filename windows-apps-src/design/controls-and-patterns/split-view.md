@@ -1,11 +1,9 @@
 ---
-author: QuinnRadich
 title: Mode Fractionné
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: Un contrôle de mode Fractionné inclut un volet pouvant être développé/réduit ainsi qu’une zone de contenu.
 label: Split view
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c5efe23955d1064eae639bf6e9ddd0a3a83dc315
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 826b408135b85b1903ce345c480015797b814255
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560620"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698095"
 ---
 # <a name="split-view-control"></a>Contrôle de mode Fractionné
 

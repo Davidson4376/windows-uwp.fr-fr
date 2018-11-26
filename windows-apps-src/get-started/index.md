@@ -2,18 +2,16 @@
 layout: LandingPage
 description: Prise en main de la plateforme Windows universelle (UWP) et du développement d’applications pour Windows10.
 title: Prise en main de la plateforme Windows universelle (UWP)
-author: QuinnRadich
-ms.author: quradic
 ms.date: 03/23/2018
 ms.topic: article
 keywords: prise en main, windows10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 0193209c1a603bb253b07b084dd62d29c91009a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572051"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702407"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Prise en main des applications Windows10 
  
@@ -209,7 +207,6 @@ Créez des applications qui fonctionnent sur tous les appareils Windows10, ou am
 </div>
 
 ---
-
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">

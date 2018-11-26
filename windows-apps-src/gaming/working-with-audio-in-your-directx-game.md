@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Audio pour les jeux
 description: Apprenez à développer et à incorporer de la musique et des sons dans votre jeu DirectX, et à traiter les signaux audio afin de créer des sons dynamiques et positionnels.
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, audio, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fd106e07e6359e9289074cb62cec6bf7458ac5bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582359"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697432"
 ---
 # <a name="audio-for-games"></a>Audio pour les jeux
 

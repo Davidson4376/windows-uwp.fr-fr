@@ -1,20 +1,18 @@
 ---
-author: Xansky
 description: Décrit les étapes requises pour garantir que votre application UWP est utilisable lorsqu’un thème à contraste élevé est actif.
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: Thèmes à contraste élevé
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 09/28/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf8b634cfc7ba66cde107150b54ecec76b2861d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e4e8d5f49d10219a06a36fdfbe7ec3abe236109a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577690"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700467"
 ---
 # <a name="high-contrast-themes"></a>Thèmes à contraste élevé  
 

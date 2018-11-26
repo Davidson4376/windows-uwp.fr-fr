@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Configurer des ressources DirectX et afficher une image
 description: Voici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, et comment présenter l’image rendue à l’écran.
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, ressources, images
 ms.localizationpriority: medium
-ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b650f77627e02427b2861a2e6d0df7d1fc86831a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564485"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697622"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>Configurer des ressources DirectX et afficher une image
 

@@ -2,18 +2,16 @@
 description: Cet article explique comment prendre en charge le copier-coller dans les applications UWP en utilisant le Presse-papiers.
 title: Copier et coller
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f730d01ba019a220658bc94be5f0a18da6b217f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ba498a9bc6541f45f01e74b1ea90f4f9a1bfde90
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569776"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701235"
 ---
 # <a name="copy-and-paste"></a>Copier et coller
 

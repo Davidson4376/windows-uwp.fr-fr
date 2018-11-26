@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les informations concernant une erreur spécifique de votre application de bureau.
 title: Obtenir les informations sur une erreur de votre application de bureau
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails, application de bureau
 ms.localizationpriority: medium
-ms.openlocfilehash: 922ab18bfebfbe539788ade3caa7626919d6b19a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1451d0196b1bffa6b49f44c556502c1e086aeff0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562728"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699985"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>Obtenir les informations sur une erreur de votre application de bureau
 

@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: Animations de mouvement naturelles
 description: En savoir plus sur les animations de mouvement naturelles et leur utilisation dans l’interface utilisateur de votre application.
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 537e722917f00d590428dd2b5ee2d24e023e52b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580974"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697712"
 ---
 # <a name="natural-motion-animations"></a>Animations de mouvement naturelles
 

@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Diagnostic des conditions d’erreur d’un composant Windows Runtime
 description: Cet article fournit des informations supplémentaires sur les restrictions applicables aux composants WindowsRuntime écrits en code managé.
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 833dd0a6447e9d0bb49c21a18d17bd7b0dc3455d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570515"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699910"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Diagnostic des conditions d’erreur d’un composant WindowsRuntime
 

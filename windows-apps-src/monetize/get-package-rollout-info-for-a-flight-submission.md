@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: Appliquez cette méthode dans l’API de soumission au MicrosoftStore pour récupérer les informations sur le lancement du package pour une soumission de version d’évaluation du package.
 title: Obtenir des informations sur le déploiement pour une soumission d’évaluation de package
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du package, soumission d’évaluation de package
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 97051f3953b215dcf2ae2a2af00b55b435b726c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4e60ecfccecda850a5c83e5840626e1b789a068d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572111"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697562"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>Obtenir des informations sur le déploiement pour une soumission d’évaluation de package
 

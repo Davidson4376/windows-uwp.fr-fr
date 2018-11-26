@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 description: Découvrir comment utiliser l’exécution étendue pour que votre application continue de s’exécuter lorsqu’elle est en mode réduit
 title: Reporter la suspension d’une application avec l’exécution étendue
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, exécution étendue, mode réduit, ExtendedExecutionSession, tâche en arrière-plan, cycle de vie de l’application, écran de verrouillage
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e05259306a222a3cb18268aeb58a8380f6d4d2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8cc67a7593a340ada8f807fc0fb0c1b846c6f05b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566414"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699350"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Reporter la suspension d’une application avec l’exécution étendue
 

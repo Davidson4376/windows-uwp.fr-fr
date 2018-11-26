@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: Informations de référence sur les API de capture multimédia
 description: Découvrez comment accéder à l’API de capture multimédia par programmation.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
-ms.openlocfilehash: f58fa4c3a9a1abd407f635f27de3a545c3aafc6c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a27d13f7ceedd14a84d5b4b4aa1233445037a1f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556552"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699645"
 ---
 # <a name="media-capture-api-reference"></a>Informations de référence sur les API de capture multimédia #
 

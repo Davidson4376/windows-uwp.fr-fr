@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les soumissions pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Gérer les soumissions d’applications
-ms.author: mhopkins
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d’app
 ms.localizationpriority: medium
-ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aabaa932c8bd21baf81970564b15421931ad39f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575426"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698005"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 

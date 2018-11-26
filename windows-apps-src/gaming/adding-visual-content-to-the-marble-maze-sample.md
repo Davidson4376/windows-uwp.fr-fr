@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Ajout de contenu visuel à l’exemple Marble Maze
 description: Ce document décrit comment le jeu Marble Maze utilise Direct3D et Direct2D dans l’environnement d’application de plateforme Windows universelle (UWP) afin de vous présenter ces modèles et de vous aider à les adapter à vos propres jeux.
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
-ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, exemple, directx, graphisme
 ms.localizationpriority: medium
-ms.openlocfilehash: 5171578b844829ec590b654194639ed6c8ebbfe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60dd12c3e18b82118053d72d0983e13008dd8a0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558826"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696780"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>Ajout de contenu visuel à l’exemple Marble Maze
 

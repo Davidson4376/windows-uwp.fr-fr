@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP).
 title: Gestion des droits numériques PlayReady
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557209"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701514"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 

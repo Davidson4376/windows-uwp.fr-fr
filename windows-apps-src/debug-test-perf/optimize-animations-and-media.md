@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: Optimiser les animations, les éléments multimédias et les images
 description: Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 14b26274dd005813fe5c8ced2d90f6380e4d7f21
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554486"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696247"
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédias et les images
 

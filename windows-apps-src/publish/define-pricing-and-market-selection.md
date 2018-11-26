@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 title: Définir la sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7136868fc9c212640c142db2751bd6e9a0b179
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f99ca0db7b6e1f46c45ac8713c83ad34c02078f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564280"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699383"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 

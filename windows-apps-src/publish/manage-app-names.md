@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: View the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete reserved names that you don't need anymore.
 title: Gestion des noms d’application
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
-ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, noms d’application, modifiez le nom de l’application, nom de l’application mise à jour, jeu, nom de produit
 ms.localizationpriority: medium
-ms.openlocfilehash: b35db620956e99791d03fb2d25dea8682d4ffaac
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a27955f64a36fadde9b0f1781337929ce6871a9c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557305"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699817"
 ---
 # <a name="manage-app-names"></a>Gestion des noms d’application
 

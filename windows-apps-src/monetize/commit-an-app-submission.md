@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’applications nouvelle ou mise à jour à l’espace partenaires.
 title: Valider une soumission d’application
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d'applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582076"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697362"
 ---
 # <a name="commit-an-app-submission"></a>Valider une soumission d’application
 

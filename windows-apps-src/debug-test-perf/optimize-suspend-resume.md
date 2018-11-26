@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: Optimiser l’interruption/la reprise
 description: Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565706"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700507"
 ---
 # <a name="optimize-suspendresume"></a>Optimiser l’interruption/la reprise
 

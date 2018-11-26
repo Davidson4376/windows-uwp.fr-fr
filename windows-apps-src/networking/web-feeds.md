@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms Windows.Web.Syndication.
 title: Flux RSS/Atom
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562578"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697272"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
 

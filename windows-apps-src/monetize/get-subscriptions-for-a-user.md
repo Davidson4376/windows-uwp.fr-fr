@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Utilisez cette méthode dans l’API d’achat du MicrosoftStore pour obtenir les abonnements qu’un utilisateur donné est autorisé à utiliser.
 title: Recueillir les abonnements d’un utilisateur
-ms.author: mhopkins
 ms.date: 07/10/2018
 ms.topic: article
 keywords: windows10, uwp, API d’achat du MicrosoftStore, abonnements
 ms.localizationpriority: medium
-ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b568531ce0807ebc5be0d27a78b94547e8473ae6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579447"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698188"
 ---
 # <a name="get-subscriptions-for-a-user"></a>Recueillir les abonnements d’un utilisateur
 
