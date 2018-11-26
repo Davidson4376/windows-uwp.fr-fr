@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Nous expliquons les règles syntaxiques XAML et la terminologie qui décrit les restrictions ou les choix disponibles pour la syntaxe XAML.
 title: Guide de la syntaxe XAML
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579809"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693350"
 ---
 # <a name="xaml-syntax-guide"></a>Guide de la syntaxe XAML
 

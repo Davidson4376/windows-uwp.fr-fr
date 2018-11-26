@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Utiliser la profondeur et les effets sur des primitives
 description: Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, profondeur, effets, primitives, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558318"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691500"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>Utiliser la profondeur et les effets sur des primitives
 
@@ -34,7 +32,6 @@ Nous supposons en outre que vous avez suivi les rubriques [Démarrage rapide : c
 
 <a name="instructions"></a>Instructions
 ------------
-
 ### <a name="1-defining-cube-variables"></a>1. Définition des variables du cube
 
 Tout d’abord, nous devons définir les structures **SimpleCubeVertex** et **ConstantBuffer** pour le cube. Ces structures spécifient les positions et les couleurs de vertex pour le cube et le type d’affichage de ce dernier. Nous déclarons [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) et [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) à l’aide de [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx), et nous déclarons une instance de **ConstantBuffer**.

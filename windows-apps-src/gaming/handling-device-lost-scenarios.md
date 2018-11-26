@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Gérer des scénarios de suppression de périphériques dans Direct3D11
 description: Cet article explique comment recréer la chaîne d’interface de périphériques Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée.
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, directx 11, périphérique perdu
 ms.localizationpriority: medium
-ms.openlocfilehash: 888b3ec7ab667a8a92ae638a9d5c456c3180df0d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c11bbf7657644fbf616590f50d75d93f62ed993e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562811"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691299"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Gérer des scénarios de suppression de périphériques dans Direct3D11
 

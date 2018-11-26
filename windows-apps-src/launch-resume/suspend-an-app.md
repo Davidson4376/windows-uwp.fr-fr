@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Gérer la suspension d’une application
 description: Découvrez comment enregistrer d’importantes données d’application lorsque le système suspend l’exécution de votre application.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 7cb93c410f583884f75f21d9beda03db87c024f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561696"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695098"
 ---
 # <a name="handle-app-suspend"></a>Gérer la suspension d’une application
 

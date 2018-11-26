@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 title: Attribut xDeferLoadStrategy
 description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire.Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565424"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719381"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>Attribut x:DeferLoadStrategy
 

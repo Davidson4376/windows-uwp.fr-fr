@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 title: Résumé du paiement
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555361"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691903"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 

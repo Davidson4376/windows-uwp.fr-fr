@@ -4,17 +4,15 @@ description: Dans Direct3D, les ressources de texture sont disponibles avec un a
 ms.assetid: 18DABFCE-8A36-4C4E-B08E-10428B05D701
 keywords:
 - Affichages de texture
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9506b86fc16861984e539c52bdd92eed544079a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9167db4648dd193acaff0a224f3378486d171ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559562"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692066"
 ---
 # <a name="texture-views"></a>Affichages de texture
 

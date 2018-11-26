@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Les fenêtres de programme éditeurs de publicités premium se compose d’une collection organisée d’applications prenant en ad qui peuvent cibler des réseaux publicitaires de l’espace avec premium, haut rendement des publicités. Dans ce programme, les applications sont haut de gamme en termes d’utilisation, d’engagement et d’expérience.
 title: Programme Éditeurs de publicités Premium Windows
-ms.author: mhopkins
 ms.date: 09/08/2017
 ms.topic: article
 keywords: windows10, uwp, annonces, publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 0975749e07d8bdc625820d694d08a6d8f8e29932
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 638854066c02edb923c8d4153f2125142d6b966b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571756"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692610"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Programme Éditeurs de publicités Premium Windows
 

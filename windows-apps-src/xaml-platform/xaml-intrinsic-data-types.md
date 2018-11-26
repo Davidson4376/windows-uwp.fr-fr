@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Indique la prise en charge au niveau du langage en XAML pour Windows Runtime pour certains types de données dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++.
 title: Types de données intrinsèques XAML
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556898"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694225"
 ---
 # <a name="xaml-intrinsic-data-types"></a>Types de données intrinsèques XAML
 

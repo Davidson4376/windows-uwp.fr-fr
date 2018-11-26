@@ -2,18 +2,16 @@
 description: Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP.
 title: Glisser-déplacer
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dde0607b76d36b24c851c705ca62f71df052f65
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577142"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719698"
 ---
 # <a name="drag-and-drop"></a>Glisser-déplacer
 

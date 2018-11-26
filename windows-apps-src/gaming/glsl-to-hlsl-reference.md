@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Informations de référence sur le passage de GLSL vers HLSL
 description: Si vous avez pour projet de créer un jeu pour UWP, vous allez porter votre architecture graphique OpenGLES2.0 sur Direct3D11, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, glsl, hlsl, opengl, directx, nuanceurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580576"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691953"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Informations de référence sur le passage de GLSL à HLSL
 

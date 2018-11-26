@@ -2,18 +2,16 @@
 title: Vue d’ensemble de la transformation
 description: Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques3D.
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32f55b0a387221b792e37072f129edddf285195b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573714"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693030"
 ---
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
 

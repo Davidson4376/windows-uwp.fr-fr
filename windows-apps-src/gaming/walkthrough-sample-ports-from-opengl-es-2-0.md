@@ -1,15 +1,14 @@
 ---
-author: mtoepke
 title: Procédure pas à pas des exemples de portage depuis OpenGL ES2.0
 description: Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline graphique OpenGL ES 2.0 de différente complexité.
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a4416150a0d536dfa1c4f572d79c26990d3f6e7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652278"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691109"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>Exemples de portage pas à pas depuis OpenGL ES 2.0
 
@@ -39,11 +38,11 @@ Cet ensemble de rubriques présente plusieurs scénarios de portage de pipeline 
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

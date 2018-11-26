@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 66a9cfe2-b212-4c73-8a36-963c33270099
 description: Cet article répertorie les balises du protocole HTTP Live Streaming (HLS) prises en charge pour les applications UWP.
 title: Prise en charge des balises HTTP Live Streaming (HLS)
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8e90f98dd79150cf19727fe31e51278a88a198
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7c6664d13e76a5774172094d632de9db25109fdc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572974"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696151"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>Prise en charge des balises HTTP Live Streaming (HLS)
 Le tableau suivant répertorie les balises HLS prises en charge pour les applications UWP.

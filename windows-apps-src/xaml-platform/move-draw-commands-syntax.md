@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML.
 title: Syntaxe des commandes de déplacement et de dessin
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 604ad25bb65486b3b388a9a03d7503b0c1ce9c03
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555400"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720345"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Syntaxe des commandes de déplacement et de dessin
 

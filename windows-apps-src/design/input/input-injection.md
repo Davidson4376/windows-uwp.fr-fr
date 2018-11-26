@@ -1,20 +1,18 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
 title: Simuler une entrée utilisateur par une injection d’entrée
 label: Input injection
 template: detail.hbs
 keywords: périphérique, numériseur, entrée, interaction, injection
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa83e202078336884ff2e1924ebc223bbe13dcdd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572651"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694650"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée utilisateur par une injection d’entrée
 

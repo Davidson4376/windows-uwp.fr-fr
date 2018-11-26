@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission d’extension pour une application inscrite dans l’espace partenaires.
 title: Crée une soumission d’extension
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: c4aecb07034b7c8a161546fc9d8001247e9234cb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578146"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691810"
 ---
 # <a name="create-an-add-on-submission"></a>Crée une soumission d’extension
 

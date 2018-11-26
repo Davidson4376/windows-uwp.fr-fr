@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Configurer une clôture virtuelle
 description: Configurez une clôture virtuelle dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, carte, localisation, clôture virtuelle, notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556001"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691324"
 ---
 # <a name="set-up-a-geofence"></a>Configurer une clôture virtuelle
 

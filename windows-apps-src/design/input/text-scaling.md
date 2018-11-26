@@ -1,28 +1,26 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Build UWP apps and custom/templated controls that support platform text scaling.
 title: Mise à l’échelle du texte
 label: Text scaling
 template: detail.hbs
 keywords: UWP, texte, la mise à l’échelle, l’accessibilité, la «options d’ergonomie», afficher, «Ajout de texte plus large», l’interaction utilisateur, entrées
-ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3110615e43ffa4839d9be6ebf5113fc9d8b7c05f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f81c435690c7bf17066be5f49de4994f146fc5c9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571431"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694046"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
 ![Exemple de texte mise à l’échelle 100 % à 225 %](images/coretext/text-scaling-news-hero-small.png)  
 *Exemple de texte mise à l’échelle dans Windows 10 (100 % à 225 %)*
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Lecture de texte sur un écran d’ordinateur (à partir d’un appareil mobile à un ordinateur portable à un moniteur de bureau à l’écran giant de Surface Hub) peut être difficile pour de nombreuses personnes. À l’inverse, certains utilisateurs de trouver les tailles de police utilisées dans les applications et sites web à être plus grande que nécessaire.
 

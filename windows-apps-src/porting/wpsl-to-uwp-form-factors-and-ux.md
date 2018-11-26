@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes.
 title: Portage WindowsPhone Silverlight vers UWP pour différents facteurs de forme et expériences utilisateur
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 809cf2691a2bc7b7c72d4ba031fa4c6b45335dde
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555341"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706876"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage WindowsPhone Silverlight vers UWP pour différents facteurs de forme et expériences utilisateur
 

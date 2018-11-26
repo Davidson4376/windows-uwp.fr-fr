@@ -4,17 +4,15 @@ description: Les formats contenant un gabarit ne sont pas pris en charge par les
 ms.assetid: 90A572A4-3C76-4795-BAE9-FCC72B5F07AD
 keywords:
 - Formats de gabarit non pris en charge par les ressources de diffusion en continu
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d10478d76be88138d1382793bd8b5e0d5b3ef41a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d35813a6242abd555e87329c25a413285d1d948
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569099"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691022"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a>Formats de gabarit non pris en charge par les ressources de diffusion en continu
 

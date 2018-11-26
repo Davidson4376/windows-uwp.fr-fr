@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet.
 title: Résolution des problèmes de portage WindowsPhone Silverlight vers UWP
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5d3ab7b50721b969859006831b33e9b00e300f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 372fd491e329a468c273dd039c917eba5dc3e123
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582159"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719213"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>Résolution des problèmes de portage WindowsPhone Silverlight vers UWP
 

@@ -1,18 +1,16 @@
 ---
-author: M-Stahl
 title: Référence des API portail Xbox informations sur l’appareil
 description: Découvrez comment accéder aux informations d’appareil Xbox.
-ms.author: mstahl
 ms.date: 11/7/2017
 ms.topic: article
 keywords: Windows 10, uwp, xbox, le portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557229"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694594"
 ---
 # <a name="xbox-info-api-reference"></a>Référence de l’API d’informations Xbox   
 Vous pouvez accéder à Xbox One informations sur l’appareil à l’aide de cette API.

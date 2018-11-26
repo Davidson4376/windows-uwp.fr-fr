@@ -4,17 +4,15 @@ description: Cette section contient des informations sur l’organisation intern
 ms.assetid: 24D17B9F-8CA7-4006-9E0F-178C6B3CAEC9
 keywords:
 - Formats de texture compressés
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd0ff85198107263fba458bd97c0323a7049d20
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3171eba376911157a6ad2687fe3879df751615ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569089"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695028"
 ---
 # <a name="compressed-texture-formats"></a>Formats de texture compressés
 

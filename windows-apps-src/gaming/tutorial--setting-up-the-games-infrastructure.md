@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Configurer le projet de jeu
 description: La première étape de l’assemblage de votre jeu consiste à configurer un projet dans Microsoft VisualStudio de façon à réduire la quantité de travail nécessaire sur l’infrastructure de code.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, configuration, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560829"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696463"
 ---
 # <a name="set-up-the-game-project"></a>Configurer le projet de jeu
 

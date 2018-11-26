@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: Utilisez cette méthode dans l’API des promotions du MicrosoftStore pour gérer les profils de ciblage dans le cadre de campagnes publicitaires.
 title: Gérer les profils de ciblage
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7573469"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712841"
 ---
 # <a name="manage-targeting-profiles"></a>Gérer les profils de ciblage
 

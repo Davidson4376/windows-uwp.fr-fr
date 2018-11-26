@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Ressources de programmation de jeux
 description: Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, programmation
 ms.localizationpriority: medium
-ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557169"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692960"
 ---
 # <a name="game-programming-resources"></a>Ressources de programmation de jeux
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: La pratique de définition d’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des WindowsPhone Silverlight aux applications de plateforme Windows universelle (UWP).
 title: Portage WindowsPhone Silverlight XAML et l’interface utilisateur pour UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d219a09ccca74c9fc513b7510c40ce0b90ad9f52
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 153d73a75b48d61cb490a903c6657c42638c6674
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553806"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707140"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portage WindowsPhone Silverlight XAML et l’interface utilisateur pour UWP
 

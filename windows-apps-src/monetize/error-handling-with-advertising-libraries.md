@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: Découvrez comment gérer les erreurs générées par la classe AdControl dans les bibliothèques de publicités Microsoft.
 title: Gérer des erreurs dans les publicités
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows10, uwp, annonces, publicités, gestion des erreurs, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: a9fa05ed2ee946fcec9ffb5ff21abd9011db0f2a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a6c14ecf8e8909ab6cd95a54ca8144fbf8a8d912
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577375"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712483"
 ---
 # <a name="handle-ad-errors"></a>Gérer des erreurs dans les publicités
 

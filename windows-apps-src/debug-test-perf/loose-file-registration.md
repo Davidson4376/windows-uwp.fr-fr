@@ -1,18 +1,16 @@
 ---
-author: c-don
 title: Déployer une application par le biais de l’inscription de fichiers libres
 description: Ce guide vous montre comment utiliser la disposition de fichier isolé de valider et de partager des applications Windows 10 sans avoir à les empaqueter.
-ms.author: cdon
 ms.date: 6/1/2018
 ms.topic: article
 keywords: Windows 10, uwp, portail d’appareil, le Gestionnaire d’applications, déploiement, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 928c07bd23228f0fefd78be6019a0d116b2e6e4b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574359"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694828"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Déployer une application par le biais de l’inscription de fichiers libres 
 

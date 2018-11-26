@@ -1,18 +1,16 @@
 ---
 title: Notifications de mes contacts
 description: Explique comment créer et utiliser les notifications de mes contacts, qui sont un nouveau type de notification toast.
-author: muhsinking
-ms.author: mukin
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 943d236699ccab6d61e5394426077a32d7249592
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: db25954b7fc6541ac5f5900236e61cb8da488be6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554326"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695311"
 ---
 # <a name="my-people-notifications"></a>Notifications de mes contacts
 

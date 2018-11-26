@@ -1,19 +1,17 @@
 ---
 title: Déployer des profils de scanneurs de codes-barres avec GPM
-author: PatrickFarley
 description: Les profils de scanneurs de codes-barres peuvent être déployés avec un serveur GPM.
 ms.assetid: 99ED3BD8-022C-40C2-9C65-F599186548FE
-ms.author: pafarley
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cfd9692620273952483ec7da65a69b643cb5bf4f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dbcaa683e2c7a2bb18d88fcba03e10fa951d4459
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568019"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719094"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>Déployer des profils de scanneurs de codes-barres avec GPM
 

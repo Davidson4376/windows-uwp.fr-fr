@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: Utilisez cette méthode dans l’API d’offres ciblées du MicrosoftStore afin d’obtenir les offres ciblées, disponibles pour l’utilisateur actuel dans le cadre de l’app actuelle.
 title: Obtenir des offres ciblées
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API des offres ciblées du Store, obtenir des offres ciblées
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557239"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695237"
 ---
 # <a name="get-targeted-offers"></a>Obtenir des offres ciblées
 

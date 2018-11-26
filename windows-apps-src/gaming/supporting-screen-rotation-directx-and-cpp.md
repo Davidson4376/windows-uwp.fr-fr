@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Prise en charge de l’orientation de l’écran (DirectX et C++)
 description: Ici, nous verrons les meilleures pratiques en matière de gestion de la rotation écran dans votre application UWP DirectX, afin que le matériel graphique de l’appareil Windows 10 sont utilisées efficacement.
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, orientation de l’écran, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed8739f8ba7b2049af154d458ccaa831b8526a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574014"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712543"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>Prise en charge de l’orientation de l’écran (DirectX et C++)
 

@@ -1,9 +1,7 @@
 ---
-author: mijacobs
 description: Révéler est un effet visuel qui permet d'ajouter de la profondeur et une meilleure mise au point des éléments interactifs de votre application.
 title: Principales fonctionnalités de révéler
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
 keywords: windows10, uwp
@@ -12,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8278b126ed209148a2e44ea464e04073dcefc829
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576403"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698228"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 

@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Écrans de démarrage
 description: Cette section explique comment définir et configurer l’écran de démarrage de votre application.
 ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45609a0feb244f746fb8dfbf3dee0dacbe541fc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559522"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720195"
 ---
 # <a name="splash-screens"></a>Écrans de démarrage
 

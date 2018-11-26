@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: Découvrez comment utiliser l’espace de noms Windows.Services.Store pour acheter une application ou l’une de ses extensions.
 title: Activer les achats dans l’application et d’extensions dans l’application
 keywords: windows10, uwp, extensions, achats dans l’application, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb7165586c62770fd6b18fff8c7ad0095bc78ba
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560660"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720165"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Activer les achats dans l’application et d’extensions dans l’application
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une version d’évaluation de package pour une application inscrite dans votre compte espace partenaires.
 title: Créer une version d’évaluation du package
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580473"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712563"
 ---
 # <a name="create-a-package-flight"></a>Créer une version d’évaluation du package
 

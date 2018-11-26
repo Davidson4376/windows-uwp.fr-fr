@@ -1,10 +1,8 @@
 ---
-author: Jwmsft
 Description: A text entry box that provides suggestions as the user types.
 title: Zone de liste déroulante (zone de liste déroulante)
 label: Combo box
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -12,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c34dda3039a9b6a66428266e37f81b41695fbc0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fb286b591881d16ff08dae9fe12770644d886acf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561986"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698728"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les informations concernant une erreur spécifique de votre Xbox One jeu.
 title: Obtenir les détails d’une erreur dans votre console Xbox One jeu
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f665b99b7f64e41597a5767d58b86ac8e85c6bd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569361"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712603"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>Obtenir les détails d’une erreur dans votre console Xbox One jeu
 

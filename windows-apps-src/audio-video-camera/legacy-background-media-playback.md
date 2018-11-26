@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 3848cd72-eccd-400e-93ff-13649cd81b6c
 description: Cet article fournit une assistance relative aux applications recourant au modèle de lecture multimédia d’arrière-plan et fournit des recommandations relatives à la migration vers le nouveau modèle.
 title: Lecture multimédia en arrière-plan héritée
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 319343a06eeb49fc4ec0ca2fcd340f655654f718
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560118"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692970"
 ---
 # <a name="legacy-background-media-playback"></a>Lecture multimédia en arrière-plan héritée
 

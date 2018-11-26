@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 title: Signer un package d'application à l'aide de SignTool
 description: Utilisez SignTool pour signer manuellement un package d'application à l'aide d'un certificat.
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: adb94257f6a978ba0b5ea56facf3894e2cfae32b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565812"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706987"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Signer un package d'application à l'aide de SignTool
 

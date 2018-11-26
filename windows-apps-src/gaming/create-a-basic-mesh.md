@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Créer et afficher un maillage de base
 description: Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter les objets et les surfaces dans le jeu.
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, maillage, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555321"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693609"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 

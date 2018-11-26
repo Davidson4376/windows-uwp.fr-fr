@@ -1,10 +1,8 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion uses timing and easing functions.
 title: Minutage et accélération - animation dans les applications UWP
 label: Timing and easing
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
@@ -13,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bce437a9c9ba6bac8beb0ba705020065bad29b83
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556908"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693530"
 ---
 # <a name="timing-and-easing"></a>Minutage et accélération
 

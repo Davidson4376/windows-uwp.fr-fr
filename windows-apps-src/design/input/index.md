@@ -1,22 +1,20 @@
 ---
 description: Optimisez votre application pour un stylet, Surface Dial et d'autres types d’entrée.
 title: Entrée et interactions
-author: Karl-Bridge-Microsoft
 keywords: entrées d’application, personnaliser une application UWP
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: a69ebdb983fe8c023f2940a38ea6152d569f987c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555694"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695783"
 ---
 # <a name="input-and-interactions"></a>Entrée et interactions
 

@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Fournit un identificateur unique à des éléments de balisage. Pour le code XAML de plateforme Windows universelle (UWP), cet identificateur unique est utilisé par des processus ou outils de localisation XAML, comme l’utilisation des ressources d’un fichier de ressources .resw.
 title: Directive xUid
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bec4bd5d35fc2bb3013b37c1386520a769ddeb6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 03cf647fdb243fd18212ca894f7682e913378907
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577345"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694274"
 ---
 # <a name="xuid-directive"></a>Directive x:Uid
 

@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Installer un ensemble connexe à l’aide d’un fichier du Programme d’installation d’application
 description: Dans cette section, nous allons examiner les étapes à suivre pour autoriser l’installation d’un ensemble connexe via le Programme d’installation d’application. Nous effectuerons également les étapes nécessaires pour créer un fichier *.appinstaller qui définira votre ensemble connexe.
-ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 4caf4333bb3d442779aedac2028b0996cbd17645
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576463"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692590"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>Installer un ensemble connexe à l’aide d’un fichier du Programme d’installation d’application
 

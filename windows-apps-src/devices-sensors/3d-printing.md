@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: Impression3D
 description: Cette section explique comment utiliser la fonctionnalité d’impression 3D dans votre application Windows universelle.
-ms.author: pafarley
 ms.date: 10/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, l’impression 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: d09ed242b2c5f0186b05279706943c9a65ee7c8a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5d0bfaa06c749567fb38254be06ac9e8fd01fe61
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569063"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693000"
 ---
 # <a name="3d-printing"></a>Impression3D
 

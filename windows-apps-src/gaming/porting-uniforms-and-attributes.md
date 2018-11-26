@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Mémoires tampons, uniformes, sommets Port OpenGL ES 2.0 vers Direct3D
 description: Au cours du processus de portage vers Direct3D11 depuis OpenGLES2.0, vous devez modifier la syntaxe et le comportement de l’API pour transmettre des données entre l’application et les programmes de nuanceurs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d, tampons, uniformes, attributs de sommets
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0192eb4b89ef91bc895a96e46cd39524f24c44
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a1db1890e47257412a7e2ee8e08c40164d0d927
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566480"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691520"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>Comparer les tampons, les uniformes et les attributs de sommets OpenGLES2.0 à Direct3D
 

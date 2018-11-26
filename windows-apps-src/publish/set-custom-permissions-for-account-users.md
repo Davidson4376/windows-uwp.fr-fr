@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Set roles or custom permissions for account users.
 title: Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580433"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719619"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 

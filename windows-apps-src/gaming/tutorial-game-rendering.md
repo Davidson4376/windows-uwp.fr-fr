@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Configuration
 description: Découvrez comment assembler le pipeline de rendu pour afficher les graphiques. Rendu de jeu, configuration et préparation des données.
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
-ms.openlocfilehash: 134c9005a796f52fb61ba628c0a85c8dbd875442
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567283"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712894"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Infrastructure de renduII: rendu de jeu
 

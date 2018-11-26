@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
 title: Épingler votre application à la barre des tâches
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, la barre des tâches, gestionnaire de la barre des tâches, épingler à la barre des tâches, vignette principale
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fcd1f9d090c49ecbd49e05696b33f789973160
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 640dc637a1c50718210d87af87cb8b8e706a5ab7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553556"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712725"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Épingler votre application à la barre des tâches
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur une extension pour une application inscrite dans votre compte espace partenaires.
 title: Obtenir une extension
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9620b0b7cf4d1ecb583215b2ab0fafe0e82712bf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577977"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691540"
 ---
 # <a name="get-an-add-on"></a>Obtenir une extension
 

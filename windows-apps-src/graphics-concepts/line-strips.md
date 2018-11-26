@@ -4,17 +4,15 @@ description: Une bande de lignes est une primitive composée de segments de lign
 ms.assetid: 6E8C58E1-B463-44FD-A69F-81CCBF25D856
 keywords:
 - Bandes de lignes
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a5fbf4d7fd4f82e6bc44795d64e6b98b6c732f49
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 869f0ac2b255c0dee231828f6d9064a917668821
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575152"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692720"
 ---
 # <a name="line-strips"></a>Bandes de lignes
 

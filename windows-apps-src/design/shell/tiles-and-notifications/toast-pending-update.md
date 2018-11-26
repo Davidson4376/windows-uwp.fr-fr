@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to create multi-step interactions in your notifications.
 title: Toast avec activation des mises à jour en attente
 label: Toast with pending update activation
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/14/2017
 ms.topic: article
 keywords: windows10, uwp, toast, en attente de mise à jour, pendingupdate, interactivité à plusieurs étapes, interactions à plusieurs étapes
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d21c96676eec1b8b1a1f4397880af937dd8f4b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568079"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693010"
 ---
 # <a name="toast-with-pending-update-activation"></a>Toast avec activation des mises à jour en attente
 

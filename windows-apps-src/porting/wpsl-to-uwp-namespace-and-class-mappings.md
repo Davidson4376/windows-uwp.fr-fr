@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Cette rubrique fournit un mappage complet des WindowsPhone APIs Silverlight vers leurs équivalents de la plateforme Windows universelle (UWP).
 title: WindowsPhone Silverlight aux mappages d’espace de noms et des classes UWP
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553586"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706955"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight aux mappages d’API UWP
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour récupérer des informations sur toutes les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Obtenir toutes les applications
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, apps
 ms.localizationpriority: medium
-ms.openlocfilehash: a689f540cb939cea3549b6660f2daf9a70f9b1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576703"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691820"
 ---
 # <a name="get-all-apps"></a>Obtenir toutes les applications
 

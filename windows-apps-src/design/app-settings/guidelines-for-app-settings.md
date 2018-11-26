@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: This article describes best practices for creating and displaying app settings.
 title: Recommandations en matière de paramètres d’application
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 56a952950fa9f2d9d57d5beaed397dd72f64ea54
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e7fa5b4c432cec3d0f628de3b52e814f9c211f79
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560341"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719757"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres d’application
 

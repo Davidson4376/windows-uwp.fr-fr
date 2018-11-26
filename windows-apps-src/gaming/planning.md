@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Planification pour les jeux UWP
 description: Planification des jeux UWP.
 ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeu, planification, accessibilité, cloud, monétiser, package, technologie, concept, approbation
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576782"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712947"
 ---
 # <a name="planning-for-uwp-games"></a>Planification pour les jeux UWP
 

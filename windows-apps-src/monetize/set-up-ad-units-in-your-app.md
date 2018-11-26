@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: Découvrez comment ajouter des applications ad unité valeurs des ID et à partir de l’espace partenaires à votre application avant de soumettre votre application dans le Windows Store.
 title: Configurer des unités publicitaires dans votre application
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows10, uwp, publicités, publicité, unités publicitaires, tests
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b2d01434e508d4a5067ffd66bdf86b3083b43016
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575251"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692430"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Configurer des unités publicitaires dans votre application
 

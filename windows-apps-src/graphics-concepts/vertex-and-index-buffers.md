@@ -4,17 +4,15 @@ description: Les mémoires tampons de vertex comportent des données de vertex; 
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
 keywords:
 - Mémoires tampons de vertex et d'index
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2327036eb53ac34c406aef53163be642468fbddc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d2ea6ce4060957ade5dd1007389be51176440f04
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573856"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718823"
 ---
 # <a name="vertex-and-index-buffers"></a>Mémoires tampons de vertex et d'index
 
