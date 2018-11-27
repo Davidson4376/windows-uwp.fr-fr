@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Nouveautés de Windows10 pour les développeurs - Outils et fonctionnalités
 description: Windows10, build14393 et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la nouvelle plateforme Windows universelle.
 keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows10, 1607, juillet, plus récent, 14393
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: a350ff9cd5a2a3ec22637eabbcfc55b693cdd283
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aff0812da6b7c3d8e55bc31ed196211f54252e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570219"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709712"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>Nouveautés pour les développeurs dans Windows10, build14393
 

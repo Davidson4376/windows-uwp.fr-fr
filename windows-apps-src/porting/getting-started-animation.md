@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: Prise en main de l’application Animation
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: Dans ce projet, nous allons déplacer un rectangle, lui appliquer un effet de fondu, puis l’afficher de nouveau.
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582099"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708801"
 ---
 # <a name="getting-started-animation"></a>Prise en main: Animation
 

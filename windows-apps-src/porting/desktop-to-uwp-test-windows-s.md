@@ -1,19 +1,17 @@
 ---
-author: normesta
 Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: Tester votre application Windows pour Windows10S
-ms.author: normesta
 ms.date: 05/11/2017
 ms.topic: article
 keywords: windows10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3307506c5cf62d04cd19fbc302ad14bfcedd0045
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a8b17697612d50d10ecfbb07388207527a4cb39b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571726"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708669"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Tester votre application Windows pour Windows10 en modeS.
 

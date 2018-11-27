@@ -1,26 +1,24 @@
 ---
-author: abbycar
 title: Ajouter des contrôles
 description: Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
-ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5873486bdd9c4adf4ea74b10a240617143ad23
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 01c0d1361dcc0858a54792adc0d17408ed281c99
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553686"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711900"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, un PC équipé d’une manette Xbox, ou le dernier jeu rayon avec une souris et un clavier de jeu. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
+Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, un PC équipé d’une manette Xbox, ou le dernier jeu rayon avec une souris et un clavier. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
 
 > [!NOTE]
 > Pour plus d’informations sur les contrôles, consultez [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) et [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md).

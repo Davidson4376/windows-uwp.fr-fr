@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: Assurer la réactivité du thread de l’interface utilisateur
 description: Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7884c7187bf127e15aaaed38a55e5f9827a3990d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8cd5df1d22189698f6544af4ab72c09425531602
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578794"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710014"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Assurer la réactivité du thread de l’interface utilisateur
 
@@ -43,7 +41,7 @@ Pour que l’application reste réactive, la plateforme fournit des versions asy
 
 Codez les gestionnaires d’événements de sorte qu’ils effectuent rapidement leur retour. Dans les cas où une quantité considérable de tâches doivent être effectuées, planifiez-les sur un thread en arrière-plan et revenez.
 
-Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. En c# et Visual Basic vous pouvez accomplir cela en passant de code à [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
+Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. En c# et Visual Basic vous pouvez accomplir cela en transmettant code à [**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
 
 Gardez à l’esprit que les éléments d’interface utilisateur sont accessibles uniquement à partir du thread d’interface utilisateur. Utilisez le thread d’interface utilisateur pour accéder aux éléments d’interface utilisateur avant de lancer le travail en arrière-plan et/ou utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) ou [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) sur le thread d’arrière-plan.
 

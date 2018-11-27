@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Débogage, tests et analyse des performances
-description: Utilisez Microsoft Visual Studio et autres outils pour déboguer et tester votre application et préparer pour le processus de certification du Microsoft Store.
-ms.author: pafarley
+description: Utilisez Microsoft Visual Studio et autres outils pour déboguer et tester votre application et préparer pour le processus de certification Microsoft Store.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a6651c6d1117648522f95c7e7c85aad11ceed42f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 757de9201d1cb7f753419024271f2be5c1aa67f4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555846"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710644"
 ---
 # <a name="debugging-testing-and-performance"></a>Débogage, tests et analyse des performances
 
@@ -26,7 +24,7 @@ Cette section vous montre comment utiliser Microsoft Visual Studio pour débogue
 | [Outils de test et de débogage pour la Gestion de la durée de vie des processus](testing-debugging-plm.md) | Outils et techniques pour le débogage et le test de fonctionnement de votre application avec la Gestion de la durée de vie des processus. |
 | [Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile](test-with-the-emulator.md) | Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile. L’émulateur est une application de bureau qui émule un appareil mobile exécutant Windows 10. Il offre un environnement virtualisé dans lequel vous pouvez déboguer et tester les applications Windows sans appareil physique. Il fournit également un environnement isolé pour vos prototypes d’application. |
 | [Tester les applications de Surface Hub à l’aide de Visual Studio](test-surface-hub-apps-using-visual-studio.md) | Le simulateur de Visual Studio fournit un environnement dans lequel vous pouvez concevoir, développer, déboguer et tester des applications de plateforme Windows universelle (UWP), y compris les applications que vous avez conçues pour Microsoft Surface Hub. Le simulateur n’utilise pas la même interface utilisateur que Surface Hub, mais il permet de tester l’apparence et le comportement de votre application avec la taille d’écran et la résolution de Surface Hub. |
-| [Déployer une application par le biais de l’inscription de fichiers libres](loose-file-registration.md) | Ce guide vous montre comment utiliser la disposition de fichier isolé de valider et de partager des applications Windows 10 sans avoir à les empaqueter. |
+| [Déployer une application par le biais de l’inscription de fichiers libres](loose-file-registration.md) | Ce guide montre comment utiliser la disposition de fichier isolé de valider et de partager des applications Windows 10 sans avoir besoin de les inclure. |
 | [Bêta-test](beta-testing.md) | Le **bêta-test** vous donne la possibilité d’améliorer votre application en fonction des commentaires d’utilisateurs ne faisant pas partie de votre équipe de développement qui essaient la version non publiée de votre application sur leur propre appareil. |
 | [WindowsDevicePortal](device-portal.md) | Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. |
 | [Kit de certification des applications Windows](windows-app-certification-kit.md) | Pour donner à votre application de chances de publication sur le Microsoft Store ou de certification Windows, validez-la et testez-la avant de l’envoyer pour certification. Cet article vous explique comment installer et exécuter le Kit de certification des applications Windows. |

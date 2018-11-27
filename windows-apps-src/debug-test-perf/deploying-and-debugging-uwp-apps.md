@@ -1,26 +1,24 @@
 ---
-author: PatrickFarley
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 title: Déploiement et débogage des applications UWP
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a398b621ff309af8c6f8252613d3ea106d96485
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f58485b6f6829b9eec0495cce088304b181a2b1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563247"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710034"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
 
 Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 
-Microsoft Visual Studio vous permet de déployer et déboguer vos applications de plateforme Windows universelle (UWP) sur un grand nombre d’appareils de Windows 10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
+Microsoft Visual Studio vous permet de déployer et déboguer vos applications de plateforme Windows universelle (UWP) sur un grand nombre d’appareils Windows 10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
 
 ## <a name="picking-a-deployment-target"></a>Sélection d’une cible de déploiement
 
@@ -32,7 +30,7 @@ Pour sélectionner une cible, accédez à la liste déroulante des cibles de dé
 -   L’**Ordinateur local** déploie l’application sur votre ordinateur de développement actuel. Cette option est disponible uniquement si la **Version minimale de la plateforme cible** de votre application est inférieure ou égale à celle du système d’exploitation de votre ordinateur de développement.
 -   L’**Ordinateur distant** vous permet de spécifier une cible distante pour déployer l’application. Pour plus d’informations sur le déploiement sur un ordinateur distant, voir [Spécification d’un appareil distant](#specifying-a-remote-device).
 -   L’**Appareil** déploie l’application sur un appareil USB connecté. L’appareil doit être déverrouillé par le développeur et son écran doit être déverrouillé.
--   Un **Émulateur** démarre et déploie l’application sur un émulateur avec la configuration spécifiée dans le nom. Émulateurs sont disponibles uniquement sur Hyper-V en cours d’exécution Windows8.1 des ordinateurs, ou supérieur.
+-   Un **Émulateur** démarre et déploie l’application sur un émulateur avec la configuration spécifiée dans le nom. Émulateurs sont disponibles uniquement sur Hyper-V en cours d’exécution Windows8.1 des ordinateurs ou supérieur.
 
 
 ## <a name="debugging-deployed-apps"></a>Débogage des applications déployées
@@ -67,7 +65,7 @@ Pour spécifier un ordinateur distant pour des applications en C# ou Microsoft V
 
 ![Boîte de dialogue Connexions à distance](images/debug-remote-connections.png)
 
-Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accédez à l’onglet **Déboguer** . À partir de là, sélectionnez **trouvez** regard **ordinateur distant:**
+Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accédez à l’onglet **Déboguer** . À partir de là, activez **trouver** à **ordinateur distant:**
 
 ![Onglet Déboguer](images/debug-remote-machine-config.png)
 
@@ -134,7 +132,7 @@ Les nouvelles propriétés sont notamment:
 
 ### <a name="requirements"></a>Configuration requise
 Pour utiliser les options avancées de déploiement distant, vous devez avoir la configuration requise suivante:
-* Disposer de Visual Studio 2015 Update 3 ou certains Visual Studio version ultérieure installée avec la version 1.4.1 des outils Windows 10 ou version ultérieure (incluant le SDK de mise à jour anniversaire Windows 10) nous vous recommandons d’utiliser la dernière version de Visual Studio avec les mises à jour pour bénéficier de toutes les nouvelles fonctionnalités de sécurité et de développement.
+* Disposer de Visual Studio 2015 Update 3 ou certains Visual Studio version ultérieure installée avec la version 1.4.1 des outils Windows 10 ou version ultérieure (incluant le SDK de mise à jour anniversaire Windows 10) nous vous recommandons d’utiliser la dernière version de Visual Studio avec les mises à jour pour garantir vous obtiendrez tous les nouvelles fonctionnalités de sécurité et de développement.
 * Ciblez un appareil distant Xbox avec la Mise à jour anniversaire Windows10 ou un PC avec Windows10CreatorsUpdate 
 * Utilisez le mode d’authentification Universel
 

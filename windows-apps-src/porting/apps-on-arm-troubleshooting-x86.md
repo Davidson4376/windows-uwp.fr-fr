@@ -1,17 +1,16 @@
 ---
 title: Résolution des problèmes relatifs aux applications de bureau x86
 description: Problèmes courants avec les applications x86 lors de l'exécution sur ARM, et comment les résoudre.
-ms.author: misatran
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows10 s, toujours connecté, émulation x86 sur ARM, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ef13f6f27b45a4cc41244e4ebed0a54804fc8e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 396bb0bf2c5ba5236e0e46e7b474867ffacb8c75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566062"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711109"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Résolution des problèmes relatifs aux applications de bureau x86
 >[!IMPORTANT]

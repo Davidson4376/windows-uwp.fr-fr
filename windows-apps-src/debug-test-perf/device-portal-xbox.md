@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal pour Xbox
 description: Découvrez comment activer Device Portal pour XboxOne.
-ms.author: pafarley
 ms.date: 02/12/2017
 ms.topic: article
-keywords: Windows 10, uwp, le portail d’appareil
+keywords: Windows 10, uwp, portal de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 7182f67a7bffc303b9c3067d8b746f1b4f27b809
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554453"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710119"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -197,7 +195,7 @@ Espace de travail vide que vous pouvez personnaliser à votre convenance. Vous p
 
 ### <a name="game-event-data"></a>Données d’événement de jeu
 
-Sur la page de **données d’événement de jeu** , vous pouvez afficher un graphique en temps réel à ce flux dans le nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre console Xbox One. S’il existe des événements du jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre de jeu) qui décrit chaque événement dans une table de données sous le graphique de données. Le tableau est uniquement disponible si l’événement n’est enregistré.
+Sur la page de **données d’événement de jeu** , vous pouvez afficher un graphique en temps réel à ce flux dans le nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre console Xbox One. S’il existe des événements du jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre de jeu) décrivant chaque événement dans une table de données sous le graphique de données. Le tableau est uniquement disponible s’il existe des événements enregistrés.
 
 ![Données d’événement de jeu](images/device-portal-xbox-22.PNG)
 

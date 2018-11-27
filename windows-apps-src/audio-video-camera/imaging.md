@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap.
 title: Créer, modifier et enregistrer des images bitmap
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc7d3d70291d29102af614f29fd4531523a961e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563854"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711344"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 

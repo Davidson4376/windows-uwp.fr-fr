@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 title: Définir des délais d’expiration de reconnaissance vocale
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
 keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00923b4448d96943cf00eade46c39c42e87c4f96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 73c7e889b4633dae9e416cf7ccde13eb3f58e8ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581115"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708689"
 ---
 # <a name="set-speech-recognition-timeouts"></a>Définir des délais d’expiration de reconnaissance vocale
 
@@ -33,7 +31,7 @@ Ici, nous spécifions différentes valeurs [**Timeouts**](https://msdn.microsoft
 -   BabbleTimeout : durée pendant laquelle un SpeechRecognizer continue à écouter les sons incompréhensibles (brouhaha) avant de supposer que la saisie vocale est terminée et de mettre fin à l’opération de reconnaissance vocale.
 -   EndSilenceTimeout: durée pendant laquelle un SpeechRecognizer détecte du silence (après que les résultats de la reconnaissance vocale ont été générés) avant de supposer que la saisie vocale est terminée.
 
-**Remarque**délais d’attente peut être définie sur une base de chaque moteur de reconnaissance vocale.
+**Remarque**délais d’attente peut être définie sur la base de chaque moteur de reconnaissance vocale.
 
  
 

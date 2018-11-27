@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Le service de médiation publicitaire de Microsoft vous permet d'optimiser vos revenus publicitaires et vos capacités de promotion d'applications en affichant des publicités issues de plusieurs réseaux publicitaires.
 title: Service de médiation publicitaire de Microsoft
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows10, uwp, pub, publicité, médiation publicitaire
 ms.localizationpriority: medium
-ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565736"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711446"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Service de médiation publicitaire de Microsoft
 

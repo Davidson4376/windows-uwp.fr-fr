@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Lancement, reprise et tâches en arrière-plan
 description: Cette section décrit ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP).
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
-ms.author: twhitney
 ms.date: 10/04/2017
 ms.topic: article
-keywords: Windows 10, uwp, tâche en arrière-plan, service d’application, des périphériques, systèmes distants connectés
+keywords: Windows 10, uwp, tâche en arrière-plan, service d’application, les appareils, systèmes distants connectés
 ms.localizationpriority: medium
-ms.openlocfilehash: bb036f0150095e6f02857d227e73b1c7f29b23df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565686"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710538"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 

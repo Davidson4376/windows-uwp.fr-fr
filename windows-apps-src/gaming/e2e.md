@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Guide de développement de jeux Windows10
 description: Guide complet sur les ressources et les informations nécessaires au développement de jeux de plateforme Windows universelle (UWP).
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.author: joanlee
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: 7481c1d0f64ccb25168200cdf5e6ccc068f769b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582038"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707626"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows10
 
@@ -106,7 +104,7 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
 
 ### <a name="partner-center"></a>Espace partenaires
 
-[L’inscription d’un compte de développeur dans l’espace partenaires](https://developer.microsoft.com/store/register) est la première étape de la publication de votre jeu Windows. Un compte de développeur vous permet de réserver le nom de votre jeu et de soumettre des jeux gratuits ou payants au Microsoft Store pour tous les appareils Windows. Utilisez votre compte de développeur pour gérer votre jeu et les produits intégrés au jeu, obtenir des analyses détaillées et activer des services qui créent des expériences exceptionnelles pour vos joueurs dans le monde entier. 
+[L’inscription d’un compte de développeur dans l’espace partenaires](https://developer.microsoft.com/store/register) est la première étape de la publication du jeu de Windows. Un compte de développeur vous permet de réserver le nom de votre jeu et de soumettre des jeux gratuits ou payants au Microsoft Store pour tous les appareils Windows. Utilisez votre compte de développeur pour gérer votre jeu et les produits intégrés au jeu, obtenir des analyses détaillées et activer des services qui créent des expériences exceptionnelles pour vos joueurs dans le monde entier. 
 
 Microsoft propose également plusieurs programmes pour développeurs pour vous aider à développer et à publier des jeux Windows. Nous vous recommandons de voir si l’un est adaptée à vos besoins avant de vous inscrire pour un compte espace partenaires. Pour plus d’informations, accédez à [Programmes pour développeurs](#developer-programs)
 
@@ -580,7 +578,7 @@ Grâce à la plateforme UWP, vous combinez facilement des composants écrits dan
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>Quelle version de DirectX utiliser dans votre jeu ?
 
-Si vous choisissez DirectX pour votre jeu, vous devez déterminer la version à utiliser: Microsoft Direct3D12 ou Microsoft Direct3D11.
+Si vous choisissez DirectX pour votre jeu, vous devez déterminer la version à utiliser: Microsoft Direct3D12 ou Direct3D11 Microsoft.
 
 DirectX 12 est plus rapide et plus efficace que n’importe quelle version précédente. Direct3D 12 permet des scènes plus riches, un plus grand nombre d’objets et des effets plus complexes. Il tire également mieux parti du matériel graphique moderne sur PC Windows10 et Xbox One. Étant donné que Direct3D12 fonctionne à un niveau très faible, il donne aux équipes de développement de graphiques expertes, ou aux équipes de développement de DirectX11 expérimentées, les moyens de maximiser l’optimisation des graphiques.
 
@@ -1009,7 +1007,7 @@ Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d�
     </tr>
 </table>
 
-### <a name="windows-desktop-apisto-uwp"></a>UWP APIsto bureau de Windows
+### <a name="windows-desktop-apisto-uwp"></a>Windows Desktop APIsto UWP
 
 Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows vers UWP.
 
@@ -1167,7 +1165,7 @@ Guides et références pour l’implémentation de son dans les jeux à l’aide
     </tr>
     <tr>
         <td>Découvrez comment intégrer Windows Sonic dans vos jeux (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">Présentation des Spatial Audio Capabilities for Xbox andWindows</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">Présentation Spatial Audio Capabilities for Xbox andWindows</a></td>
     </tr>
 </table>
 
@@ -1360,7 +1358,7 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>Activer les achats de produits in-app (module complémentaire)
 
-Une extension (produit in-app) est un article supplémentaire que les joueurs peuvent acheter dans le jeu. Les modules complémentaires peuvent être niveaux de jeu, les éléments ou tout autre chose susceptibles de plaire à vos joueurs. Utilisés à bon escient, les modules complémentaires peuvent fournir des revenus tout en améliorant l’expérience de jeu. Vous définissez et publiez des extensions de votre jeu par le biais de l’espace partenaires et activez les achats dans l’application dans le code de votre jeu.
+Une extension (produit in-app) est un article supplémentaire que les joueurs peuvent acheter dans le jeu. Les modules complémentaires peuvent être niveaux de jeu, les éléments ou tout autre chose susceptibles de plaire à vos joueurs. Utilisés à bon escient, les modules complémentaires peuvent fournir des revenus tout en améliorant l’expérience de jeu. Vous définissez et publiez des modules complémentaires de votre jeu par le biais de l’espace partenaires et activez les achats dans l’application dans le code de votre jeu.
 
 <table>
     <colgroup>
@@ -1538,7 +1536,7 @@ Les informations et guides suivants contribuent à rendre le processus de soumis
 
 ### <a name="publishing"></a>Publication
 
-Vous allez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) pour publier et de gérer vos packages de jeu.
+Vous utiliserez [L’espace partenaires](https://partner.microsoft.com/dashboard) pour publier et de gérer vos packages de jeu.
 
 <table>
     <colgroup>

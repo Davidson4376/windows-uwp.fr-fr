@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 title: Animations en fondu dans les applications UWP
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d2a9745e35f19066b094b2be187620858166dbd5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d3fee78f3608466f588a79d2811f1464e27a0ab
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580055"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708775"
 ---
 # <a name="fade-animations"></a>Animations en fondu
 

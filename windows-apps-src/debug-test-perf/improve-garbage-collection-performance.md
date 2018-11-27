@@ -1,26 +1,24 @@
 ---
-author: jwmsft
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
 title: Améliorer les performances du nettoyage de la mémoire
 description: Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performances du récupérateur de mémoire .NET pour les applications UWP.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d3940f519706fba6d795d60344cbd83337ae482
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553886"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710558"
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)
 
 
 Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Remarque**intervenir dans le comportement par défaut du garbage collector est fortement indicatif générale des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
+**Remarque**intervenir dans le comportement par défaut du RÉCUPÉRATEUR est fortement indicatif générale des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
 
  
 

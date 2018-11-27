@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation mensuelle application pour une plage de dates données et d’autres filtres facultatifs.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
 title: Obtenir l’utilisation d’applications mensuelles
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567184"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710698"
 ---
 # <a name="get-monthly-app-usage"></a>Obtenir l’utilisation d’applications mensuelles
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données agrégées de l’utilisation (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -72,7 +70,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Valeur      | tableau  | Un tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
+| Valeur      | tableau  | Tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10000, mais que plus de10000lignes de données d’avis sont associées à la requête.                 |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                                                                          |
 
@@ -87,7 +85,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | applicationId             | chaîne  | L’ID Windows Store de l’application pour laquelle vous récupérez les données d’utilisation.                            |
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                                                |
 | market                    | chaîne  | Le code de pays ISO 3166 du marché dans lequel le client a utilisé votre application.                   |
-| packageVersion            | chaîne  | La version du package où l’utilisation s’est produite.                                            |
+| packageVersion            | chaîne  | La version du package dans lequel l’utilisation s’est produite.                                            |
 | deviceType                | chaîne  | L’une des chaînes suivantes qui spécifie le type d’appareil où l’utilisation s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablette**</li><li>**IoT**</li><li>**Serveur**</li><li>**Holographic**</li><li>**Inconnu**</li></ul>                                                                                                                           |
 | subscriptionName          | chaîne  | Indique si l’utilisation a été par le biais de Xbox Game Pass.                                              |
 | monthlySessionCount       | long    | Le nombre de sessions utilisateur au cours du mois.                                              |
@@ -95,8 +93,8 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                                           |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                                        |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.                    |
-| averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application sur tous les jours.                             |
-| averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs sur tous les jours pour interagir avec votre application. |
+| averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application quotidiennement.                             |
+| averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs quotidiennement pour interagir avec votre application. |
 
 
 ### <a name="response-example"></a>Exemple de réponse

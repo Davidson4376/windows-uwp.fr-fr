@@ -1,25 +1,23 @@
 ---
-author: jnHs
 Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: Rémunération
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 96845e81b093b7cddb6d334286e9cfa468a43b28
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581685"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709650"
 ---
 # <a name="getting-paid"></a>Rémunération
-Voici quelques informations importantes sur la réception de paiement pour vos applications, d’extensions et vos revenus publicitaires.
+Voici quelques informations importantes sur la rémunération de paiement pour vos applications, d’extensions et vos revenus publicitaires.
 
 > [!IMPORTANT]
-> Avant que vous pouvez recevoir l’argent des ventes dans le Microsoft Store, vous devez [configurer votre compte de revenu et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
+> Avant de recevoir l’argent des ventes dans le Microsoft Store, vous devez [configurer votre compte de revenu et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
@@ -65,7 +63,7 @@ Pour mettre des paiements en attente, accédez à **Paramètres du compte**. Sou
 Une fois que vous avez configuré l’état de mise en attente des paiements sur **Activé**, tous les paiements sont mis en attente jusqu’à ce que vous basculiez à nouveau le curseur sur **Désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
 
 > [!NOTE]
-> Votre sélection de **l’état de mise en attente du paiement** s’applique à **toutes les** sources de revenus payées par le biais du programme pour les développeurs Windows dans l’espace partenaires (Microsoft Store, publicité, Azure Marketplace, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
+> Votre sélection de **l’état de mise en attente du paiement** s’applique à **toutes les** sources de revenus payées par le biais du programme pour les développeurs Windows dans l’espace partenaires (Microsoft Store, publicité, place de marché Microsoft Azure, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
 
 
  

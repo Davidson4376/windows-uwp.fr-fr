@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578698"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711019"
 ---
 # <a name="rotation"></a>Rotation
 
@@ -46,7 +44,7 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 
 ![schéma des différentes positions de doigts prises en charge par la rotation.](images/ux-rotate-positions.png)
 
-**Remarque**  intuitivement, ainsi que dans la plupart des cas, le point de rotation est l’un des points deux tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de la disposition de l’écran). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
+**Remarque**  au premier abord, ainsi que dans la plupart des cas, le point de rotation est l’un des points deux tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de la disposition de l’écran). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
 
 Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles: l’index touche un arbre et le pouce touche un rondin de bois.
 

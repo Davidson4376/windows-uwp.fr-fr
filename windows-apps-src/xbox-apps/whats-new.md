@@ -1,19 +1,17 @@
 ---
-author: v-angraf
 title: Nouveautés de la plateformeUWP sur Xbox One
 description: Cette rubrique présente les nouvelles fonctionnalités des applications UWP sur XboxOne.
-ms.author: v-angraf
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
-ms.openlocfilehash: cc2168014e714de0b43b6ffffe84126764f0a4a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aff65e5f1b4771cbb33bc8b8219224042b7bf7e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570033"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709802"
 ---
 # <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Nouveautés de la dernière mise à jour de la plateforme UWP sur Xbox One pour les développeurs
 
@@ -29,7 +27,7 @@ UWP sur Xbox One applications permettre prennent désormais en charge la navigat
 > Pour des raisons de compatibilité, cette fonctionnalité est disponible uniquement pour les applications qui sont créées avec la version la plus récente de UWP sur Xbox One. 
 
 ## <a name="dev-home-is-now-the-default-home-experience-on-development-consoles"></a>Accueil du développeur est désormais l’expérience domestique par défaut sur les consoles de développement
-Maintenant, les consoles de développement lancement accueil du développeur en tant que l’expérience domestique par défaut. Cela vous permet de mettre immédiatement en sans avoir besoin de cliquer sur par le biais de l’écran d’accueil de vente au détail. Accueil du développeur inclut désormais une action rapide pour lancer l’écran d’accueil de vente au détail. En outre, un nouveau paramètre de permet de vous assurer que l’expérience par défaut d’origine au détail. 
+Consoles de développement maintenant lancement accueil du développeur en tant que l’expérience domestique par défaut. Cela vous permet de réaliser correctement fonctionner sans avoir besoin de cliquer sur par le biais de l’écran d’accueil de vente au détail. Accueil du développeur inclut désormais une action rapide pour lancer l’écran d’accueil de vente au détail. En outre, un nouveau paramètre de permet de vous assurer que l’expérience par défaut à domicile vente au détail. 
 
 ## <a name="new-dev-home-user-interface"></a>Nouvelle interface utilisateur d’accueil du développeur
 L’interface utilisateur de Dev Home inclut désormais des améliorations de productivité suivantes:
@@ -38,10 +36,10 @@ L’interface utilisateur de Dev Home inclut désormais des améliorations de pr
  - Boutons d’action rapide sur le premier onglet d’accueil du développeur autoriser un accès rapide aux actions plus couramment utilisées. 
 
 ## <a name="wdp-for-xbox-enhancements"></a>WDP pour les améliorations de la Xbox
-Windows Device Portal (WDP) inclut désormais une prise en charge supplémentaire pour les paramètres de la console. 
+Le Windows Device Portal (WDP) inclut désormais une prise en charge supplémentaire pour les paramètres de la console. 
 
 ## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>Vous pouvez maintenant basculer le type de votre titre UWP entre «Application» et «Game»
-Commutation le type de votre titre UWP entre «Application» et «Jeu» vous permet de tester des scénarios de jeu sans le publier dans le Windows store. Dans accueil du développeur, sélectionnez l’application dans le volet de **jeux et applications** , appuyez sur le bouton d’affichage sur le contrôleur, sélectionnez les **Détails de l’application** et puis modifier le type «Application» ou «Jeu».
+Basculement entre le type de votre titre UWP entre «Application» et «Jeu» vous permet de tester des scénarios de jeu sans le publier dans le Windows store. Dans accueil du développeur, sélectionnez l’application dans le volet de **jeux et applications** , appuyez sur le bouton d’affichage sur le contrôleur, sélectionner les **Détails de l’application** et puis modifier le type «Application» ou «Jeu».
 
 ## <a name="see-also"></a>Voir aussi
 - [Problèmes connus](known-issues.md)

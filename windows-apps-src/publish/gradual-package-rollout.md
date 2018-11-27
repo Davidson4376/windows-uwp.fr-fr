@@ -1,19 +1,17 @@
 ---
-author: JnHs
 Description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
 title: Lancement progressif de packages
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2db3d34ed223b318d65ec497cc0feb7cb16342
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cada2da4b587340f38901f9a4ec5504d9d3c57de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562528"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709587"
 ---
 # <a name="gradual-package-rollout"></a>Lancement progressif de packages
 

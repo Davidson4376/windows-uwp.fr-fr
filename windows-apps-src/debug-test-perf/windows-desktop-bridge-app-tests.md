@@ -1,26 +1,24 @@
 ---
-author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Tests d’application Pont du bureau Windows
 description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour sa conversion vers une application UWP.
-ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 8363bc3085e9d6ec4e1a86751b691266b12b365c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557179"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710158"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
 [Les applications pont du bureau](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications de plateforme Windows universelle (UWP) à l’aide du [Pont du bureau](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier.appx ou .appxbundle) ciblant Windows10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
-Les tests facultatifs des applications pont du bureau de Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
+Tests facultatifs des applications pont du bureau Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
 
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 

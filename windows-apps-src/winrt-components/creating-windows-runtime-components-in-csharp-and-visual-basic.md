@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Création de composants Windows Runtime enC# et VisualBasic
 description: Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime.
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 52745a4fcd6b5a6b33982595f8c7c65c0bee3c32
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569040"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7709752"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Création de composants Windows Runtime en C# et Visual Basic
 Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime. Vous pouvez utiliser votre composant dans les applications de plateforme Windows universelle (UWP) avec C++, JavaScript, Visual Basic ou C#. Cette rubrique présente les règles de création d’un composant et décrit quelques aspects de prise en charge de .NET Framework pour Windows Runtime. En règle générale, cette prise en charge est conçue pour être transparente pour les programmeurs .NET Framework. Toutefois, lorsque vous créez un composant à utiliser avec JavaScript ou C++, vous devez tenir compte des différences de prise en charge de Windows Runtime par ces langages.
@@ -27,7 +25,7 @@ En interne, les types Windows Runtime de composant peuvent utiliser n’importe 
 
 -   Les champs, paramètres et valeurs de retour de tous les types et membres publics de votre composant doivent être de type Windows Runtime.
 
-    Cette restriction comprend les types Windows Runtime que vous créez, ainsi que les types qui sont fournis directement par Windows Runtime. Elle inclut également un certain nombre de types .NET Framework. L’inclusion de ces types fait partie de la prise en charge fournie par le .NET Framework pour permettre l’utilisation naturelle du Windows Runtime en code managé: votre code utilise les types .NET Framework familiers plutôt que les types Windows Runtime sous-jacents. Par exemple, vous pouvez utiliser les types primitifs .NET Framework tels que Int32 et Double, certains types fondamentaux tels que DateTimeOffset et Uri, et certains types d’interface générique comme IEnumerable&lt;T&gt; (IEnumerable(Of T) en Visual Basic) et IDictionary&lt;TKey,TValue&gt;, couramment utilisés. (Notez que les arguments de type de ces types génériques doivent être des types Windows Runtime). Ce sujet est abordé dans les sections des types de passer de Windows Runtime au code managé et passage managés types Windows Runtime, plus loin dans cette rubrique.
+    Cette restriction comprend les types Windows Runtime que vous créez, ainsi que les types qui sont fournis directement par Windows Runtime. Elle inclut également un certain nombre de types .NET Framework. L’inclusion de ces types fait partie de la prise en charge fournie par le .NET Framework pour permettre l’utilisation naturelle du Windows Runtime en code managé: votre code utilise les types .NET Framework familiers plutôt que les types Windows Runtime sous-jacents. Par exemple, vous pouvez utiliser les types primitifs .NET Framework tels que Int32 et Double, certains types fondamentaux tels que DateTimeOffset et Uri, et certains types d’interface générique comme IEnumerable&lt;T&gt; (IEnumerable(Of T) en Visual Basic) et IDictionary&lt;TKey,TValue&gt;, couramment utilisés. (Notez que les arguments de type de ces types génériques doivent être des types Windows Runtime). Ce sujet est abordé dans les sections types en passant Windows Runtime au code managé et passage managés types vers le Windows Runtime, plus loin dans cette rubrique.
 
 -   Les interfaces et classes publiques peuvent contenir des méthodes, propriétés et événements. Vous pouvez déclarer des délégués pour vos événements ou utiliser le délégué EventHandler&lt;T&gt;. Une classe ou interface publique ne peut pas:
 
@@ -92,7 +90,7 @@ Pour certains types de collection couramment utilisés, le mappage est compris e
 
 Lorsqu’un type implémente plusieurs interfaces, vous pouvez utiliser n’importe quelle interface qu’il implémente comme type de paramètre ou type de retour d’un membre. Par exemple, vous pouvez passer ou retourner un Dictionary&lt;int, string&gt; (Dictionary (Of Integer, String) en Visual Basic) comme IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, ou IEnumerable&lt; System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
-**Important**JavaScript utilise l’interface qui s’affiche en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+**Important**JavaScript utilise l’interface qui apparaît en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
 Dans le Windows Runtime, IMap&lt;K, V&gt; et IMapView&lt;K, V&gt; sont itérés à l’aide de IKeyValuePair. Lorsque vous les passez à un code managé, ils apparaissent sous la forme IDictionary&lt;TKey, TValue&gt; et IReadOnlyDictionary&lt;TKey, TValue&gt;, donc naturellement vous utilisez System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; pour les énumérer.
 

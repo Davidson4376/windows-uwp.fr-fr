@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: Référence sur les API d’inscription dans dossier isolé Device Portal
 description: Découvrez comment accéder par programme aux API d’inscription dans des dossiers isolés.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
-ms.openlocfilehash: cb80e2dbd7ebdfbb05bd642b9875a9cd7cc356f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564352"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709557"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>Inscrire une application dans un dossier isolé  
 

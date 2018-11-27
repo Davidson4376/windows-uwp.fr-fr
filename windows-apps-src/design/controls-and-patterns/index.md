@@ -1,21 +1,19 @@
 ---
 description: Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45contrôles puissants utilisables avec votre application.
 title: Contrôles et modèles UWP - Développement d’applications Windows
-author: mijacobs
 keywords: contrôles uwp, interface utilisateur, contrôles d’application
 label: Controls & patterns
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d557280ab253a09d5697f369c694e490d3c7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c2f1a2b5ae514222ed6ef06cc7099a0261747dbc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564573"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709838"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  
@@ -42,7 +40,7 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>Obtenir la bibliothèque d’interface utilisateur Windows
-Certains contrôles sont uniquement disponibles dans la bibliothèque de l’interface utilisateur Windows. Pour la faire, consultez les [instructions d’installation et de la vue d’ensemble de bibliothèque de l’interface utilisateur Windows](/uwp/toolkits/winui/).
+Certains contrôles sont uniquement disponibles dans la bibliothèque de l’interface utilisateur Windows. Pour la faire, consultez les [instructions d’installation et de vue d’ensemble de la bibliothèque de l’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 ## <a name="alphabetical-index"></a>Index alphabétique 
 

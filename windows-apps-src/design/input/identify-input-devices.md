@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
 title: Identifier des périphériques d’entrée
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 keywords: périphérique, numériseur, entrées, interactions
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568377"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711199"
 ---
 # <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
 
@@ -87,7 +85,7 @@ private void GetTouchProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), utilisée pour savoir si l’un des appareils détectés prend en charge l’entrée de pointeur (interaction tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil d’un seul pointeur.
+**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil un seul pointeur.
 
 Le code suivant utilise un tableau permettant d’afficher les propriétés et valeurs de chaque périphérique de pointage.
 

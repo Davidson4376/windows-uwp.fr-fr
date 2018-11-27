@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: Décrit comment enregistrer l’audio, la vidéo et les métadonnées de jeu dans une application UWP.
 title: Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, jeu, capturer, audio, vidéo, métadonnées
 ms.localizationpriority: medium
-ms.openlocfilehash: 906422e8bcca90c35821ecac95c02279c65fa400
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4bdc5c210c466d6065fbcf1c856276bbb485788a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569865"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708169"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu
 Cet article explique comment capturer l’audio, la vidéo et les captures d’écran de jeu et soumettre les métadonnées afin que le système les incorpore dans les médias capturés et de diffusion. Ainsi, les applications et notamment la vôtre, sont en mesure de créer des expériences dynamiques qui sont synchronisées avec les événements de jeu. 
@@ -145,7 +143,7 @@ Vous pouvez mettre fin à tous les états actuellement ouverts en appelant **[St
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>Gérer la limite de stockage de cache de métadonnées
-Les métadonnées que vous écrivez avec **AppCaptureMetadataWriter** sont mises en cache par le système jusqu’à ce qu’elles soient écrites dans le flux de média associé. Le système définit une limite de taille pour le cache de métadonnées de chaque application. Une fois la limite de taille du cache atteinte, le système commence à vider les métadonnées mises en cache. Le système supprimera les métadonnées écrites avec la valeur de priorité **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** avant de supprimer les métadonnées ayant la priorité **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** .
+Les métadonnées que vous écrivez avec **AppCaptureMetadataWriter** sont mises en cache par le système jusqu’à ce qu’elles soient écrites dans le flux de média associé. Le système définit une limite de taille pour le cache de métadonnées de chaque application. Une fois la limite de taille du cache atteinte, le système commence à vider les métadonnées mises en cache. Le système supprimera les métadonnées qui ont été écrites avec la valeur de priorité **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** avant les métadonnées ayant la priorité **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** .
 
 À tout moment, vous pouvez vérifier le nombre d’octets disponibles dans le cache de métadonnées de votre application en appelant **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)**. Vous pouvez choisir de définir le seuil défini par l’application. Une fois ce seuil atteint, vous pouvez choisir de réduire la quantité de métadonnées écrites dans le cache. L’exemple suivant montre une implémentation simple de ce modèle.
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: Énumérer les appareils
 description: L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau.
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df6082665136442c03273dea4132417b0fd7033c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6348cc713d4fb93dfed9310eea9d3fd1025a2de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553433"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708709"
 ---
 # <a name="enumerate-devices"></a>Énumérer les appareils
 

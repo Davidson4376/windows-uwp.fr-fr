@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
 description: 'Le premier exercice de portage nous permettra de mettre en pratique une notion de base : porter un convertisseur simple d’OpenGL ES 2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX 11 (Windows universelle) fourni dans Visual Studio 2015.'
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d11 , portage
 ms.localizationpriority: medium
-ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559191"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707705"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
 
@@ -82,7 +80,7 @@ typedef struct
 
 Cette structure n’a qu’une seule instance; elle contient tous les éléments requis pour effectuer le rendu d’un maillage très simple d’un nuanceur de vertex.
 
-> **Remarque**code toute OpenGL ES 2.0 dans cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group et utilise la syntaxe de programmation Windows C.
+> **Remarque**OpenGL ES 2.0 tout code de cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group et utilise la syntaxe de programmation Windows C.
 
  
 

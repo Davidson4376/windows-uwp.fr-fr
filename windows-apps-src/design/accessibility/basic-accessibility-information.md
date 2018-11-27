@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Présenter des informations d’accessibilité élémentaires
 label: Expose basic accessibility information
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b9d76dd20c4537fadf8c0701c200740c31b784
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8e7526ec4f32f641f152709e6968f3dc442c2a06
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557345"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709660"
 ---
 # <a name="expose-basic-accessibility-information"></a>Présenter des informations d’accessibilité élémentaires  
 

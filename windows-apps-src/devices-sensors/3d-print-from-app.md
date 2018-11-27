@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Impression3D à partir de votre application
 description: Découvrez comment ajouter des fonctionnalités d’impression3D à votre application Windows universelle. Cette rubrique explique comment lancer la boîte de dialogue d’impression3D après s’être assuré que votre modèle3D est imprimable et au format qui convient.
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, l’impression 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 818e1338a1d36d24990f22316dc2072c2c0d7cc5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574402"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708509"
 ---
 # <a name="3d-printing-from-your-app"></a>Impression3D à partir de votre application
 

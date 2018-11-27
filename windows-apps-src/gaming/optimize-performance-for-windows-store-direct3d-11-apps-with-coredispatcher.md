@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Optimiser la latence d’entrée pour les jeux UWP DirectX
 description: La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide.
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, directx, latence d’entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576821"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708840"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimiser la latence d’entrée pour les jeux UWP DirectX
 
@@ -235,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Le modèle **DirectX 11 et application XAML (Windows universel)** dans Studio2015 Visual Microsoft sépare la boucle de jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
+Le modèle **DirectX 11 et application XAML (Windows universel)** dans Microsoft Visual Studio2015 sépare la boucle de jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Autres façons de réduire la latence d’entrée
 

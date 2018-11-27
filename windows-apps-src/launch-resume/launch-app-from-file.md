@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Lancer une application par l’activation de fichiers
 description: Cette section montre comment configurer le démarrage de votre application à l’ouverture d’un fichier d’un type donné.
 ms.assetid: 62e9b125-f899-4df6-ad96-570fdbcb8bc5
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c883de1e05b827b6f1c37ad1f911f930b7019ad6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d48cbbf45dc2a09ca8eea3538501cbbe6f07ce02
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559791"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710528"
 ---
 # <a name="launch-an-app-through-file-activation"></a>Lancer une application par l’activation de fichiers
 

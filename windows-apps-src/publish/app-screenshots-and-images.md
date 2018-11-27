@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: Captures d’écran, images et bandes-annonces de l’application
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 4899e117096cf6d03c497fec79038e6d96aca3fd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0019ded3b409acf0e6530bffa4ad73f85bfa8855
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581842"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709454"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -65,7 +63,7 @@ Vous pouvez fournir ces images sous forme de fichiers .png (inférieurs à 50Mo)
 
 ### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>Affiche9:16 (720x1080 ou 1440x2160pixels)
 
-Ce format est utilisé comme image de logo principale pour les clients sur Windows10 et les appareils Xbox. C’est pourquoi nous vous **conseillons vivement** de fournir cette image. Votre description dans le ne semblent pas une bonne si vous ne l’incluez et ne serez pas cohérent avec les autres descriptions que les clients verront tout en naviguant dans le Windows Store. Cette image peut également être utilisée dans des résultats de recherche ou dans des collections sélectionnées d’un point de vue éditorial.
+Ce format est utilisé comme image de logo principale pour les clients sur Windows10 et les appareils Xbox. C’est pourquoi nous vous **conseillons vivement** de fournir cette image. Votre description ne semblent pas une bonne si vous ne l’incluez et ne serez pas cohérent avec les autres descriptions que les clients verront tout en naviguant dans le Windows Store. Cette image peut également être utilisée dans des résultats de recherche ou dans des collections sélectionnées d’un point de vue éditorial.
 
 Cette image doit inclure le nom de votre application, et le texte présent sur l’image doit respecter les exigences de lisibilité et d’accessibilité (taux de contraste de4,5 pour1). Notez que du texte superposé peut apparaître dans le quart inférieur de cette image, veillez donc à ne pas inclure de texte ou d’images clés à cet emplacement.
 
@@ -81,17 +79,17 @@ Cette image peut apparaître dans différentes pages du Store pour Windows10 (y 
 
 ### <a name="11-app-tile-icon-300-x-300-pixels"></a>Icône de vignette d’application1:1 (300x300pixels)
 
-Cette image est requise pour un affichage correct sur WindowsPhone8.1 et versions antérieures. Si votre application publiée précédemment prend en charge Windows Phone 8.1 ou versions antérieure et que vous ne fournissez pas cette image, les clients verront une icône vide avec la description de votre application. (Cela s’applique également aux clients sur Windows 10 si votre application ne comporte que des packages ciblant Windows Phone 8.1 ou versions antérieure.)
+Cette image est requise pour un affichage correct sur WindowsPhone8.1 et versions antérieures. Si votre application publiée précédemment prend en charge Windows Phone 8.1 ou versions antérieure et que vous ne fournissez pas cette image, les clients verront une icône vide à la description de votre application. (Cela s’applique également aux clients sur Windows 10 si votre application ne comporte que des packages ciblant Windows Phone 8.1 ou versions antérieure.)
 
 Si de votre soumission *uniquement* comprend des packages UWP, vous n’avez pas besoin de fournir cette image (sauf si vous cochez la case pour **pour les clients sur Windows 10 et Xbox, afficher les images de logo chargées au lieu des images de mes packages**, comme décrit dans la prochaine section).
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>Affichage chargé uniquement les images de logo disponibles dans le Windows Store
 
-Vous avez la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox) et à la place le Windows Store utilise uniquement les images que vous chargez. Cette opération vous permet de mieux contrôler l’apparence de votre application sur différents affichages partout dans le Store pour les clients sur Windows10 (y compris Xbox). (Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, ces clients peuvent toujours voir les images à partir de vos packages.)
+Vous avez la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox) et à la place le Windows Store utilise uniquement les images que vous chargez. Cette opération vous permet de mieux contrôler l’apparence de votre application sur différents affichages partout dans le Store pour les clients sur Windows10 (y compris Xbox). (Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, les clients peuvent toujours voir des images à partir de vos packages.)
 
-Pour disposer du magasin utiliser uniquement les images que vous chargez (pour les clients sur Windows 10, y compris Xbox), et pas utiliser toutes les images à partir de vos packages, cochez la case à cocher **pour les clients sur Windows 10 et Xbox, d’affichage chargées au lieu des images de mes packages, les images de logo **.
+Pour disposer du magasin utiliser uniquement les images que vous chargez (pour les clients sur Windows 10, y compris Xbox), et pas utiliser toutes les images à partir de vos packages, cochez la case à cocher **pour les clients sur Windows 10 et Xbox, affichage des images de logo au lieu des images de mes packages chargées **.
 
-Lorsque vous cochez cette case, une nouvelle section appelée **magasin afficher des images** s’affiche. Ici, vous pouvez charger 3 images, y compris la taille de **l’application de 1:1 vignette icône (300 x 300 pixels)** (si vous cochez cette case, le champ de fournir que cette image se déplace dans cette section). Si vous utilisez cette option, nous vous recommandons de fournir les trois tailles d’image: 71x71, 150x150 et 300x300pixels. Toutefois, seule la taille 300 x 300 est obligatoire.
+Lorsque vous cochez cette case, une nouvelle section appelée **magasin afficher des images** s’affiche. Ici, vous pouvez charger 3 images, y compris **l’application de 1:1 vignette icône (300 x 300 pixels)** (si vous cochez cette case, le champ de fournir que cette image se déplace dans cette section). Si vous utilisez cette option, nous vous recommandons de fournir les trois tailles d’image: 71x71, 150x150 et 300x300pixels. Toutefois, seule la taille 300 x 300 est obligatoire.
 
 
 <span id="promotional-images" />
@@ -120,7 +118,7 @@ Vous pouvez ajouter jusqu'à 15bandes-annonces à votre description dans le Stor
 Vous devez charger un fichier vidéo (.mp4 ou .mov), une vignette et un titre pour chaque bande-annonce fournie.
 
 > [!IMPORTANT]
-> Lorsque vous utilisez des bandes-annonces, vous devez également fournir une section d’image de [pochette d’image principale Super 16:9](#windows-10-and-xbox-image-169-super-hero-art) afin que vos bandes-annonces apparaissent en haut de votre description dans le Windows Store. Cette image s’affichera après la diffusion de vos bandes-annonces.
+> Lorsque vous utilisez des bandes-annonces, vous devez également fournir une section d’image de [pochette d’image principale Super 16:9](#windows-10-and-xbox-image-169-super-hero-art) afin que vos bandes-annonces apparaissent dans la partie supérieure de votre description dans le Windows Store. Cette image s’affichera après la diffusion de vos bandes-annonces.
 
 Pour concevoir des bandes-annonces efficaces, appliquez les recommandations suivantes:
 - Les bandes-annonces doivent être de bonne qualité et de courte durée (60secondes au maximum et moins de 2Go recommandés). 
@@ -139,7 +137,7 @@ Vous devez également respecter la configuration requise répertoriée ci-dessou
 > [!TIP]
 > Si vous avez créé des descriptions dans le Store en plusieurs langues, vous pouvez sélectionner **Choisir à partir de bandes-annonces existantes** pour réutiliser les bandes-annonces que vous avez déjà chargées. Vous n’êtes pas obligé de les charger une à une pour chaque langue.
 
-Pour supprimer une bande-annonce d'une liste, cliquez sur le **X** en regard de son nom de fichier. Vous pouvez choisir de la supprimer uniquement les actuelle descriptions dans lequel vous travaillez, ou pour la supprimer de toutes les descriptions du Windows Store de votre produit (dans chaque langue).
+Pour supprimer une bande-annonce d'une liste, cliquez sur le **X** en regard de son nom de fichier. Vous pouvez choisir s’il convient de la supprimer uniquement les actuelle descriptions dans lequel vous travaillez, ou pour la supprimer de toutes les descriptions du Windows Store de votre produit (dans chaque langue).
 
 
 ### <a name="trailer-requirements"></a>Exigences pour les bandes-annonces
@@ -265,7 +263,7 @@ L’image **2:1 (2400x1200)** est uniquement utilisée si votre application pren
 
 ### <a name="images-only-for-windows-8x-andor-windows-phone-8x"></a>Images uniquement pour Windows8.x et/ou Windows Phone8.x 
 
-Si votre application précédemment soumises prend en charge les versions antérieures du système d’exploitation (Windows 8.x et/ou Windows Phone 8.x), ces images doivent être fournies dans l’ordre pour que nous puissions recommander votre application dans les présentations promotionnelles (même s’ils ne garantissent pas que votre application sera recommandée). Si votre application ne prend pas en charge ces versions de système d’exploitation, ignorez cette section. (Cette section était précédemment appelée **Images promotionnelles facultatives**.)
+Si votre application précédemment soumises prend en charge les versions antérieures du système d’exploitation (Windows 8.x et/ou Windows Phone 8.x), ces images doivent être fournies dans l’ordre pour que nous puissions recommander votre application dans les présentations promotionnelles (même s’ils ne garantissent pas que votre application sera recommandée). Si votre application ne prend pas en charge ces versions de système d’exploitation antérieures, ignorez cette section. (Cette section était précédemment appelée **Images promotionnelles facultatives**.)
 
 **Pour WindowsPhone8.1 et les versions antérieures**, deux tailles d’images sont utilisables dans les présentations promotionnelles: **1000x800pixels (5:4)** et **358x358pixels (1:1)**. Si votre application s’exécute sur Windows Phone 8.1 ou versions antérieures, nous vous recommandons de fournir des images dans les deux de ces tailles.  
 

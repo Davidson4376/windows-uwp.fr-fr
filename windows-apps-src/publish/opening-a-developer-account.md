@@ -1,19 +1,17 @@
 ---
-author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Ouverture d’un compte de développeur
 description: Voici une vue d’ensemble de comment s’inscrire pour un compte de développeur Windows pour le Microsoft Store et d’autres programmes Microsoft dans l’espace partenaires.
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b34bdfae8faf7fee2b2eae373483eb9e4dea1972
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e1c2567393e6d6bfab75b2db068f0b61f7fb6893
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576037"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7709742"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
@@ -49,7 +47,7 @@ Voici une vue d’ensemble de comment s’inscrire pour un compte de développeu
 
 9.  Passez en revue les informations de votre compte et vérifiez que l’ensemble des éléments sont corrects. Ensuite, lisez et acceptez les conditions générales du [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Cochez la base pour indiquer que vous avez lu et accepté les conditions.
 
-10.  Cliquez sur **Terminer** pour confirmer votre inscription. Votre paiement sera traité, et nous vous enverrons un message de confirmation à votre adresse e-mail.
+10.  Cliquez sur **Terminer** pour confirmer votre inscription. Votre paiement sera traité, puis nous enverrons un message de confirmation à votre adresse e-mail.
 
 Une fois que vous vous êtes inscrit, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, le processus prend un peu plus de temps, car nous devons nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Cette procédure de contrôle, qui peut prendre de quelques jours à quelques semaines, inclut un appel téléphonique à votre entreprise. Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**.
 
@@ -59,12 +57,12 @@ Une fois que vous vous êtes inscrit, votre compte est soumis au processus de v�
 > [!IMPORTANT]
 > Pour autoriser plusieurs utilisateurs à accéder à votre compte de développeur, nous vous recommandons d’utiliser Azure Active Directory pour attribuer des rôles à des utilisateurs individuels (plutôt que le partage d’accès au compte Microsoft). Chaque utilisateur pourra alors accéder au compte de développeur en vous connectant à l’espace partenaires avec ses propres informations d’identification Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
 
-Si vous avez besoin d’avoir plusieurs personnes accès le compte d’entreprise en se connectant avec un compte Microsoft qui l’a ouvert (plutôt qu’en tant qu’utilisateurs individuels ajoutés au compte), les instructions suivantes peut-être être utile:
+Si vous devez avoir plusieurs personnes accès le compte d’entreprise en se connectant avec un compte Microsoft qui l’a ouvert (plutôt qu’en tant qu’utilisateurs individuels ajoutés au compte), les instructions suivantes peut-être être utile:
 
--   Créer le compte Microsoft à l’aide d’une adresse de messagerie qui n’appartienne pas déjà, ni à une autre personne, tel que MyCompany_PartnerCenter@outlook.com. N’utilisez pas une adresse de messagerie au domaine de votre entreprise, en particulier si votre société utilise déjà Azure AD. (Comme indiqué ci-dessus, vous pouvez ajouter des utilisateurs à partir Azure de votre société AD plus loin.)
+-   Créer le compte Microsoft à l’aide d’une adresse de messagerie qui n’appartienne pas déjà, ni à une autre personne, telles que MyCompany_PartnerCenter@outlook.com. N’utilisez pas une adresse de messagerie au domaine de votre société, en particulier si votre société utilise déjà Azure AD. (Comme indiqué plus haut, vous pouvez ajouter des utilisateurs supplémentaires à partir Azure de votre société AD plus loin.)
 -   Limitez l’accès à ce compte Microsoft au plus petit nombre possible d'utilisateurs.
--   Configurer une liste de distribution de messagerie d’entreprise qui inclut tous les utilisateurs ont besoin d’accéder au compte de développeur et ajoutez cette adresse de messagerie pour les [informations de sécurité associée au compte Microsoft [(https://account.microsoft.com/security). Cela permet à tous les employés sur la liste de recevoir des codes de sécurité envoyées à cet alias. Si la configuration d’une liste de distribution n’est pas envisageable, vous pouvez ajouter l’adresse de messagerie d’un individu à vos informations de sécurité, mais le propriétaire de l’adresse e-mail sera le seul qui peut accéder et partager le code de sécurité lorsque vous y êtes invité (par exemple, quand de nouvelles informations de sécurité sont ajoutées à t Il compte, ou lorsqu’elle est accessible à partir d’un nouvel appareil).
--   Ajouter un numéro de téléphone d’entreprise à des informations de sécurité du compte Microsoft. Essayez d’utiliser un nombre qui ne nécessite pas d’une extension et est accessible aux membres de clés de l’équipe.
+-   Configurer une liste de distribution de messagerie d’entreprise qui comprend toutes les personnes qui doivent accéder au compte de développeur, puis ajoutez cette adresse de messagerie pour les [informations de sécurité associée au compte Microsoft [(https://account.microsoft.com/security). Cela permet à tous les employés sur la liste de recevoir des codes de sécurité envoyées à cet alias. Si la configuration d’une liste de distribution n’est pas envisageable, vous pouvez ajouter l’adresse de messagerie d’un individu à vos informations de sécurité, mais le propriétaire de l’adresse e-mail sera le seul qui peut accéder et partager le code de sécurité lorsque vous y êtes invité (par exemple, quand de nouvelles informations de sécurité sont ajoutées à t Il compte, ou lorsqu’elle est accessible à partir d’un nouvel appareil).
+-   Ajouter un numéro de téléphone de société aux informations de sécurité du compte Microsoft. Essayez d’utiliser un nombre qui ne nécessite pas d’une extension et est accessible aux membres clés de l’équipe.
 -   En règle générale, nous conseillons aux développeurs à utiliser des [appareils approuvés](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) pour se connecter au compte de développeur de votre société. Tous les membres clés de l’équipe doivent avoir accès à ces appareils approuvés. Cela limite le nombre de codes de sécurité devant être envoyés lors de l’accès au compte. En effet, une limite s’applique au nombre de codes pouvant être générés par compte chaque semaine.
 -   Si vous devez autoriser l’accès au compte à partir d’un PC non approuvé, limitez cet accès à cinq développeurs maximum. Dans l’idéal, ces développeurs doivent accéder au compte à partir d’ordinateurs qui partagent le même emplacement géographique et réseau.
 -   Passez fréquemment en revue les informations de sécurité de votre entreprise à l’adresse https://account.microsoft.com/security pour vérifier qu’elles sont à jour.

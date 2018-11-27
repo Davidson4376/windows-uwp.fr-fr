@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Gérer le prélancement d’une application
 description: Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched et en appelant CoreApplication.EnablePrelaunch(true).
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a13ec942080d7fe517a10b837bea9ae8fae27750
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554005"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710744"
 ---
 # <a name="handle-app-prelaunch"></a>Gérer le prélancement d’une application
 
@@ -37,7 +35,7 @@ Une fois qu’une application est prélancée, elle passe à l’état suspendu.
 
 ## <a name="detect-and-handle-prelaunch"></a>Détecter et gérer le prélancement
 
-Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) pendant l’activation. Utilisez cet indicateur pour exécuter du code qui doit être exécuté uniquement lorsque l’utilisateur lance explicitement l’application, comme illustré dans la modification suivante au [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
+Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) pendant l’activation. Utilisez cet indicateur pour exécuter du code qui doit être exécuté uniquement lorsque l’utilisateur lance explicitement l’application, comme illustré dans la modification suivante à [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -112,9 +110,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-Remarque Les `TryEnablePrelaunch()` fonctionner, ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` sont prises en charge dans cette fonction est parce que lorsqu’une méthode est appelée, le JIT (juste-à-compilation de temps) tente de compiler la totalité de la méthode. Si votre application s’exécute sur une version de Windows 10 qui ne prend pas en charge `CoreApplication.EnablePrelaunch()`, puis le JIT échouera. En tenant compte de l’appel de méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()`, nous permet d’éviter ce problème.
+Remarque Les `TryEnablePrelaunch()` fonctionner, ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` est pris en compte dans cette fonction est parce que lorsqu’une méthode est appelée, le JIT (juste-à-compilation de temps) tente de compiler la totalité de la méthode. Si votre application est en cours d’exécution sur une version de Windows 10 qui ne prend pas en charge `CoreApplication.EnablePrelaunch()`, puis le JIT échouera. En tenant compte de l’appel de méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()`, nous permet d’éviter ce problème.
 
-Il est également le code dans l’exemple ci-dessus que vous pouvez supprimer les commentaires si votre application doit refuser de prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été automatiquement choisies dans le prélancement, ce qui peut ne pas convenir pour votre application.
+Il est également le code dans l’exemple ci-dessus que vous pouvez supprimer les commentaires si votre application doit refuser de prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été choisies automatiquement dans le prélancement, ce qui peut ne pas convenir pour votre application.
 
 ## <a name="use-the-visibilitychanged-event"></a>Utiliser l’événement VisibilityChanged
 

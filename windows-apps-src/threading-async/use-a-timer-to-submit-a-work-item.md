@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Utiliser un minuteur pour envoyer un élément de travail
 description: Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, minuteur, threads
 ms.localizationpriority: medium
-ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2537bad82fc4a17b964f5871ab6ae1434c417f66
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563571"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711880"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Utiliser un minuteur pour envoyer un élément de travail
 
@@ -29,7 +27,7 @@ Découvrez comment créer un élément de travail qui s’exécute une fois le d
 
 Utilisez la méthode [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) pour créer un minuteur pour l’élément de travail. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *delay* pour spécifier la durée pendant laquelle le pool de threads attend avant de pouvoir attribuer l’élément de travail à un thread disponible. Le délai est spécifié à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996).
 
-> **Remarque** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) vous permet d’accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque**vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute dans trois minutes:
 

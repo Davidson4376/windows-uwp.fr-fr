@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 title: Code adaptatif de version
 description: Utilisez la classe ApiInformation pour tirer parti des nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: e25a3bd447519ce344a95a1c335451f731552487
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562881"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710106"
 ---
 # <a name="version-adaptive-code"></a>Code adaptatif de version
 

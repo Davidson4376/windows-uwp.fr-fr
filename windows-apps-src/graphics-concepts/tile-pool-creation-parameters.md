@@ -4,17 +4,15 @@ description: Utilisez les paramètres de cette section pour définir des pools d
 ms.assetid: FDC1AD88-BC41-49EE-881E-F21743D407DB
 keywords:
 - Paramètres de création d’un pool de tuiles
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e0a29f66d8d153bc7c558acb804c96fe200864e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88b854ae3fcccc65b111cee873ef3aee528d6a82
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565255"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708930"
 ---
 # <a name="tile-pool-creation-parameters"></a>Paramètres de création d’un pool de tuiles
 

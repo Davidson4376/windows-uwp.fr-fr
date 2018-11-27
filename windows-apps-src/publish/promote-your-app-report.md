@@ -1,23 +1,21 @@
 ---
-author: JnHs
 title: Rapport de campagne de publicité
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: Le rapport de campagne de publicité dans l’espace partenaires vous permet de visualiser les performances de vos campagnes de promotion d’annonce.
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f99c9af9fd3f8c9a94b79b3324fea6ebbd710c5b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573658"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711459"
 ---
 # <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 
-Le rapport de **campagne de publicité** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de visualiser les performances de vos [campagnes de publicité](create-an-ad-campaign-for-your-app.md) de promotion d’application. Pour afficher ce rapport, développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**.
+Le rapport de **campagne de publicité** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous permet de visualiser les performances de vos [campagnes de publicité](create-an-ad-campaign-for-your-app.md) de promotion d’application. Pour afficher le rapport, développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**.
 
 ## <a name="definitions"></a>Définitions
 

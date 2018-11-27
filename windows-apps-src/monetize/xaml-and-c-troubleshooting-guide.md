@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 title: Guide de résolution des problèmes pour XAML et C#
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows10, uwp, publicités, publicité, AdControl, résolution des problèmes, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 12789767694e4ab3fa13efec4a31c8db4acd5420
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564185"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707986"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Guide de résolution des problèmes pour XAML et C#
 

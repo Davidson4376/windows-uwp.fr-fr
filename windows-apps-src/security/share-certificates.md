@@ -2,18 +2,16 @@
 title: Partager des certificats entre applications
 description: Les applications de plateforme Windows universelle (UWP) qui nécessitent une authentification sécurisée au-delà d’une combinaison identifiant utilisateur et mot de passe peuvent utiliser des certificats à des fins d’authentification.
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 044b1b60b80cec1fc40adda6b9b6d44bee34ce7c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570352"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711396"
 ---
 # <a name="share-certificates-between-apps"></a>Partager des certificats entre applications
 

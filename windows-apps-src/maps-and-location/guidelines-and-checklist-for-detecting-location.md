@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Recommandations pour les applications prenant en charge l’emplacement
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, emplacement, carte, géolocalisation
 ms.localizationpriority: medium
-ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e5150188c99bfc448bf85df6a6dabbbb4c60bd49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582269"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709597"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
 
@@ -77,7 +75,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
         Les appareils qui fournissent des données de géolocalisation peuvent suivre l’intervalle de rapport demandé par différentes applications et fournir des rapports de données au plus petit intervalle demandé. L’application qui a le plus besoin de précision reçoit ainsi les données dont elle a besoin. Par conséquent, il est possible que le service de géolocalisation génère des mises à jour à une fréquence plus élevée que celle demandée par votre application, si une autre application a demandé des mises à jour plus fréquentes.
 
-        **Remarque**qu’il n’est pas garanti que la source de localisation honore la demande pour l’intervalle de rapport. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
+        **Remarque**il n’est pas garanti que la source de localisation honore la demande pour l’intervalle de rapport. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
 
     -   Dans un souci d’économie d’énergie, définissez la propriété [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) pour indiquer à la plateforme de géolocalisation si votre application a besoin ou non de données de grande précision. Si aucune application n’a besoin de données de grande précision, le système peut économiser de l’énergie en n’activant pas les services GPS.
 
@@ -89,7 +87,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
         Par exemple :
 
         -   Si votre application obtient l’emplacement pour l’optimisation publicitaire, la météo, les actualités, et ainsi de suite, une précision de 5000 mètres suffit généralement.
-        -   Si votre application s’affiche dans le voisinage procure, une précision de 300 mètres est en général de bons résultats.
+        -   Si votre application affiche procure le voisinage, une précision de 300 mètres est en général de bons résultats.
         -   Si l’utilisateur souhaite obtenir des recommandations pour choisir un restaurant dans les environs, une précision de 100 mètres suffit.
         -   Si l’utilisateur essaie de partager sa position, l’application doit demander une précision d’environ 10 mètres.
     -   Utilisez la propriété [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) si votre application a des exigences de précision spécifiques. Par exemple, les applications de navigation doivent utiliser la propriété **Geocoordinate.accuracy** pour déterminer si les données de géolocalisation disponibles répondent à leurs exigences.

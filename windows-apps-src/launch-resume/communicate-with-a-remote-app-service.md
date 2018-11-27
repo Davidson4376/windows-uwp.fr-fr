@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Communiquer avec un service d’application distant
 description: Échanger des messages avec un service d'application exécuté sur un appareil distant utilisant le projet Rome.
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome, tâche en arrière-plan, service d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: 044197ebae111e9300f06783f02de7f0636d4a11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568610"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709061"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Communiquer avec un service d’application distant
 
@@ -22,7 +20,7 @@ En plus de lancer une application sur un appareil distant avec un URI, vous pouv
 ## <a name="set-up-the-app-service-on-the-host-device"></a>Configurer le service d’application sur l’appareil hôte
 Pour exécuter un service d’application sur un appareil distant, un fournisseur de ce service d’application doit être installé sur cet appareil. Ce guide utilise la version CSharp de l'[exemple du service d’application Générateur de nombres aléatoires](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices), qui est disponible dans le [référentiel d’exemples d’application Windows universelle](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices). Pour obtenir des instructions sur la rédaction du code de votre service d’application, consultez [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md).
 
-Que vous utilisiez un service d’application prêt à l’emploi ou créé par vos soins, vous devez lui apporter quelques modifications pour le rendre compatible avec les systèmes distants. Dans VisualStudio, accédez au projet du fournisseur du service d’application (appelé «AppServicesProvider») et sélectionnez son fichier _Package.appxmanifest_. Cliquez sur le bouton droit et sélectionnez **Afficher le code** pour afficher le contenu du fichier. Créez un élément **Extensions** à l’intérieur de l’élément principal de **l’Application** (ou le trouver s’il existe déjà). Ensuite, créez une **Extension** pour définir le projet comme un service d’application et de faire référence au projet de son parent.
+Que vous utilisiez un service d’application prêt à l’emploi ou créé par vos soins, vous devez lui apporter quelques modifications pour le rendre compatible avec les systèmes distants. Dans VisualStudio, accédez au projet du fournisseur du service d’application (appelé «AppServicesProvider») et sélectionnez son fichier _Package.appxmanifest_. Cliquez sur le bouton droit et sélectionnez **Afficher le code** pour afficher le contenu du fichier. Créez un élément **Extensions** à l’intérieur de l’élément principal de **l’Application** (ou le trouver s’il existe déjà). Ensuite, créez une **Extension** pour définir le projet comme un service d’application et de faire référence à son projet parent.
 
 ``` xml
 ...

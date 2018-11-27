@@ -4,17 +4,15 @@ description: L’étape du nuanceur de coque (HS, Hull Shader) constitue l’une
 ms.assetid: C62F6F15-CAD7-4C72-9735-00762E346C4C
 keywords:
 - Étape du nuanceur de coque (HS)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d2aed18d476f966e644fa095aa6a5a518ebbe959
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570993"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710357"
 ---
 # <a name="hull-shader-hs-stage"></a>Étape du nuanceur de coque (HS)
 

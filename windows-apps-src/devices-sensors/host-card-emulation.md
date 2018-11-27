@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: Créer une application de carte à puceNFC
 description: Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile.
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf8d5f1587cc27082944cf0fc63edc274cb2bc7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577733"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708179"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puceNFC
 
@@ -25,7 +23,7 @@ Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>Éléments nécessaires au développement d’une application HCE
 
 
-Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devrez obtenir votre configuration d’environnement de développement. Vous pouvez obtenir configuré en installant Microsoft Visual Studio2015, qui inclut les outils de développement Windows et l’émulateur Windows 10 Mobile avec prise en charge de l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://msdn.microsoft.com/library/windows/apps/Dn726766).
+Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Vous pouvez obtenir configurer en installant Microsoft Visual Studio2015, qui inclut les outils de développement Windows et l’émulateur Windows 10 Mobile avec prise en charge de l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://msdn.microsoft.com/library/windows/apps/Dn726766).
 
 Si vous le souhaitez, si vous souhaitez tester un véritable appareil Windows 10 Mobile émulateur Windows 10 Mobile, vous devez également les éléments suivants.
 
@@ -314,7 +312,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 Votre application doit vérifier si un appareil présente le matériel NFC, prend en charge la fonction d’émulation de carte et l’émulation de carte hôte afin de proposer de telles fonctionnalités à l’utilisateur.
 
-La fonction d’émulation de carte à puce NFC est activée uniquement sur Windows 10 Mobile, par conséquent, vous essayez d’utiliser l’API d’émulateur de carte à puce dans d’autres versions de Windows 10, vous provoquerez des erreurs. Pour vérifier la prise en charge de l’API de carte à puce, consultez l’extrait de code suivant.
+La fonction d’émulation de carte à puce NFC est activée uniquement sur Windows 10 Mobile, par conséquent, essayez d’utiliser l’API d’émulateur de carte à puce dans d’autres versions de Windows 10, vous provoquerez des erreurs. Pour vérifier la prise en charge de l’API de carte à puce, consultez l’extrait de code suivant.
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
@@ -334,7 +332,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>Comportement de l’écran de verrouillage et de l’écran éteint
 
-Windows 10 Mobile a les paramètres d’émulation de carte de niveau appareil, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
+Windows 10 Mobile a des paramètres d’émulation de carte au niveau du périphérique, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
 
 Votre application peut interroger la valeur de l’élément [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) au niveau appareil et réagir selon les cas, en fonction du comportement souhaité de votre application dans chaque état.
 
@@ -384,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** Importantes ** le héritées binaire SMS interception prise en charge dans Windows Phone 8.1 a été supprimée et remplacée par la nouvelle plus large prise en charge SMS dans Windows 10 Mobile, mais toutes les applications Windows Phone 8.1 héritées élargie des doivent mettre à jour pour utiliser le nouveau SMS Mobile de Windows 10 API.
+** Importantes ** hérité binaire SMS interception prend en charge le Windows Phone 8.1 a été supprimée et remplacée par la nouvelle plus large prise en charge SMS dans Windows 10 Mobile, mais toutes les applications Windows Phone 8.1 héritées élargie des doivent mettre à jour pour utiliser le nouveau SMS Mobile Windows 10 API.

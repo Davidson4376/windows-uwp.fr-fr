@@ -1,23 +1,21 @@
 ---
-author: jnHs
 Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: Définir le prix et la disponibilité d’une extension
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dc557306fe2e5e24ce1210e75ac5f29628306ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 062337c82d2567d15b0eff1767ab157618da257e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563978"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710724"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 
-Lorsque vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les options de la page **tarification et disponibilité** déterminent la quantité de facturer les clients pour votre extension et la façon dont il doit être proposé aux clients.
+Quand vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les options de la page **tarification et disponibilité** déterminent la quantité de facturer les clients pour votre extension et comment elle doit être proposé aux clients.
 
 ## <a name="markets"></a>Marchés
 
@@ -36,7 +34,7 @@ L’option par défaut est **Can be displayed in the parent product’s Store li
 Pour les extensions que vous ne voulez pas mettre à la disposition générale, sélectionnez **Masquée dans le WindowsStore** et l’une des options suivantes:
 
 -   **Disponible à l’achat à partir du produit parent uniquement**: cette option permet à tout client d’acheter le module complémentaire à partir de votre application, mais le module complémentaire ne sera pas affiché dans la description de votre application ou détectable dans le Windows Store. Utilisez cette option uniquement si l’offre n’est pas mise à la disposition générale, par exemple lors des périodes initiales de test interne.
--   **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le WindowsStore, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows10. This add-on is not displayed in the parent product’s listing**: cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas pris en charge pour les clients sur Windows8.1 ou une version antérieure**. Si votre application publiée précédemment est disponible sur Windows8.1 ou une version antérieure, le module complémentaire sera disponible à l’achat pour ces clients. Pour arrêter de proposer le module complémentaire aux clients Windows8.1 ou une version antérieure, vous devez mettre à jour votre application pour supprimer le code proposant le module complémentaire, puis publier une nouvelle soumission pour l’application. Il est recommandé de même si votre application ne cible pas Windows8.1 ou une version antérieure; Il est une meilleure expérience pour vos clients si vous leur proposez jamais un module complémentaire que vous avez choisi de rendre indisponible.
+-   **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le WindowsStore, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows10. This add-on is not displayed in the parent product’s listing**: cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas pris en charge pour les clients sur Windows8.1 ou une version antérieure**. Si votre application publiée précédemment est disponible sur Windows8.1 ou une version antérieure, le module complémentaire sera toujours disponible à l’achat pour ces clients. Pour arrêter de proposer le module complémentaire aux clients Windows8.1 ou une version antérieure, vous devez mettre à jour votre application en supprimant le code proposant le module complémentaire, puis publier une nouvelle soumission pour l’application. Il est recommandé de même si votre application ne cible pas Windows8.1 ou une version antérieure; Il est une meilleure expérience pour vos clients si vous leur proposez jamais un module complémentaire que vous avez choisi de rendre indisponible.
     
  > [!NOTE] 
  > Le choix de l’option **Empêcher l’acquisition** et/ou la soumission d’une mise à jour d’application supprimant l’extension du code de votre application n’ont pas d’incidence sur les clients qui ont déjà acheté cette extension, quel que soit le système d’exploitation qu’ils utilisent.
@@ -51,7 +49,7 @@ Pour plus d’informations, voir [Configurer le calendrier de publication exact]
 
 ## <a name="pricing"></a>Tarification
 
-Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **d’empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
+Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
 
 Vous pouvez également planifier des modifications de tarifs pour indiquer la date et l’heure auxquelles le prix de l’extension doit changer. En outre, vous pouvez personnaliser ces changements pour des marchés spécifiques. 
 

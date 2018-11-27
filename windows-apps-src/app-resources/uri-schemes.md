@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
 title: Schémas d’URI
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 75ba42674ca1ea460698fcce6e67bb3528589797
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563669"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711249"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
