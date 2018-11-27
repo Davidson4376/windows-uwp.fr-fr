@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Mise en réseau pour les jeux
 description: Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, mise en réseau, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2697564e703cfe290e33f204125346f3e8bad8ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579210"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702009"
 ---
 # <a name="networking-for-games"></a>Mise en réseau pour les jeux
 

@@ -1,20 +1,18 @@
 ---
-author: Xansky
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Utiliser l’API d’analytique Microsoft Store pour récupérer par programmation les données d’analytique pour les applications qui sont inscrites dans votre organisation '' s compte espace partenaires de Windows.
 title: Accéder aux données d’analyse à l’aide des services du Windows Store
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aaf1675d102a714b32d2e59483f6c10ad704284f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6bd559a630c1299c28ff135692ee15e9443180c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561364"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701713"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 

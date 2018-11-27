@@ -2,18 +2,16 @@
 title: Codes d’authentification des messages, hachages et signatures
 description: Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications de plateforme Windows universelle (UWP) pour détecter une falsification des messages.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: b472a7209ddb9e67f7bb7c00e967295892568a29
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572745"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701603"
 ---
 # <a name="macs-hashes-and-signatures"></a>Codes d’authentification des messages, hachages et signatures
 

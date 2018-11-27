@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Quelles sont les nouveautés dans la documentation Windows en septembre 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 septembre 2018.
 keywords: Nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, septembre
-ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560108"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701879"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en septembre 2018
 
