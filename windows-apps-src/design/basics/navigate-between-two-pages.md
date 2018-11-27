@@ -1,12 +1,10 @@
 ---
-author: Jwmsft
 Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
 title: Navigation pair à pair entre deuxpages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -15,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e72dc726143d17f605283fa801f8e286c2c58878
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581330"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717108"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implémenter la navigation entre deux pages
 
@@ -298,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> Le code ici utilise la valeur de retour de [**Naviguer**](https://msdn.microsoft.com/library/windows/apps/br242694) pour lever une exception d’application en cas d’échec de la navigation vers le cadre de la fenêtre initiale de l’application. Quand **Navigate** retourne **true**, la navigation a lieu.
+> Le code ici utilise la valeur de retour de [**Naviguer**](https://msdn.microsoft.com/library/windows/apps/br242694) pour lever une exception d’application en cas d’échec de la navigation vers fenêtre initiale de l’application. Quand **Navigate** retourne **true**, la navigation a lieu.
 
 À présent, générez et exécutez l’application. Cliquez sur le lien «Click to go to page2». La deuxième page indiquant «Page2» en haut doit être chargée et affichée dans la trame.
 
@@ -318,7 +316,7 @@ Pour finir, chaque fois qu’une page est chargée dans la trame, cette page est
 
 Notre application navigue entre deux pages, mais elle n’effectue pour le moment rien d’intéressant. Souvent, lorsqu’une application possède plusieurs pages, celles-ci doivent partager des informations. Passons des informations de la première page à la deuxième page.
 
-Dans Page1.xaml, remplacez le **contrôle HyperlinkButton** que vous avez ajouté précédemment avec suivant [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+Dans Page1.xaml, remplacez le **contrôle HyperlinkButton** que vous avez ajouté précédemment avec l' suivant [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 Ici, nous ajoutons une étiquette [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) et un objet [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) pour entrer une chaîne de texte.
 

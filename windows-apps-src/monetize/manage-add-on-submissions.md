@@ -1,32 +1,30 @@
 ---
-author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les soumissions de modules complémentaires pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Gérer les soumissions de modules complémentaires
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d'extension, produit dans l'app, FAI
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576756"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713180"
 ---
 # <a name="manage-add-on-submissions"></a>Gérer les soumissions de modules complémentaires
 
 L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de gérer les soumissions d’extensions (également connues sous le nom PIA ou produits in-app) pour vos apps. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une extension, veillez à apporter d’autres modifications à la soumission uniquement par à l’aide de l’API, plutôt que d’apporter des modifications dans l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une extension, veillez à apporter d’autres modifications à la soumission uniquement par à l’aide de l’API, plutôt que d’apporter des modifications dans l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 <span id="methods-for-add-on-submissions" />
 
 ## <a name="methods-for-managing-add-on-submissions"></a>Méthodes de gestion des soumissions d’extensions
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’extension, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, l’extension doit déjà exister dans votre compte espace partenaires. Vous pouvez créer une extension dans l’espace partenaires en [définissant son type et l’ID de produit](../publish/set-your-add-on-product-id.md) ou à l’aide des méthodes API de soumission au Microsoft Store dans décrits dans [Gérer les modules complémentaires](manage-add-ons.md).
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’extension, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, l’extension doit déjà exister dans votre compte espace partenaires. Vous pouvez créer une extension dans l’espace partenaires en [définissant son type de produit et l’ID de produit](../publish/set-your-add-on-product-id.md) ou en utilisant les méthodes de l’API de soumission au Microsoft Store dans décrits dans [Gérer les modules complémentaires](manage-add-ons.md).
 
 <table>
 <colgroup>
@@ -81,7 +79,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 
 Pour créer une soumission pour une extension, suivez ce processus.
 
-1. Si vous ne le n'avez pas encore fait, remplissez les conditions préalables décrites dans [créer et gérer des soumissions à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte espace partenaires et obtention votre ID client et clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
+1. Si vous ne le n'avez pas encore fait, remplissez les conditions préalables décrites dans [créer et gérer des soumissions à l’aide des services Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD avec votre compte espace partenaires et l’obtention votre ID client et clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
 
 2. [Obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission au MicrosoftStore. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
@@ -121,7 +119,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. Validez la soumission en exécutant la méthode suivante. Cela vous avertit l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte. Pour plus d’informations, voir [Valider une soumission d’extension](commit-an-add-on-submission.md).
+5. Validez la soumission en exécutant la méthode suivante. Cela avertit l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte. Pour plus d’informations, voir [Valider une soumission d’extension](commit-an-add-on-submission.md).
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -336,7 +334,7 @@ Cette ressource donne accès aux données du rapport de certification d’une so
 
 | Valeur           | Type    | Description               |
 |-----------------|---------|------|
-|     date            |    chaîne     |  Date et heure de que génération du rapport, au format ISO 8601.    |
+|     date            |    chaîne     |  La date et l’heure de que génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 ## <a name="enums"></a>Énumérations

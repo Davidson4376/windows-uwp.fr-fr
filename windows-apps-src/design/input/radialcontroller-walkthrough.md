@@ -1,19 +1,17 @@
 ---
-author: Karl-Bridge-Microsoft
 ms.assetid: ''
 title: Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
 description: Un didacticiel détaillé qui explique comment ajouter la prise en charge de Surface Dial (et autres périphériques à molette) à votre application UWP.
 keywords: radial, dial, didacticiel
-ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df0f37fda62a7b673e28a6198758365886b6783
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579424"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713632"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Didacticiel: Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
 

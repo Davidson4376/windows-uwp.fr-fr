@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Forum Aux Questions
 description: Forum aux questions concernant UWP sur Xbox.
-ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564465"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714155"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions
 
@@ -61,9 +59,9 @@ Pour plus d’informations la manière de quitter le programme pour les dévelop
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>J’ai vendu ma console XboxOne en la laissant en mode développeur. Comment désactiver le mode développeur?
 
-Si vous n’avez plus accès à votre console Xbox One, vous pouvez la désactiver dans l’espace partenaires de Windows. Pour plus d’informations, consultez la section de **désactiver votre console à l’aide de l’espace partenaires** dans la rubrique de [Désactivation du Mode de développeur une Xbox](devkit-deactivation.md#deactivate-your-console-using-partner-center) . 
+Si vous n’avez plus accès à votre console Xbox One, vous pouvez la désactiver dans Windows l’espace partenaires. Pour plus d’informations, consultez la section **désactiver votre console à l’aide de l’espace partenaires** dans la rubrique de [Désactivation du Mode de développeur une Xbox](devkit-deactivation.md#deactivate-your-console-using-partner-center) . 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>J’ai quitté le programme pour développeurs à l’aide de l’espace partenaires, mais je suis toujours en Mode développeur. Que dois-je faire?
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>J’ai quitté le programme pour développeurs à l’aide de l’espace partenaires, mais je suis toujours en mode développeur. Que dois-je faire?
 
 Démarrez l’outil Accueil du développeur et sélectionnez le bouton **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en mode commercial. 
 

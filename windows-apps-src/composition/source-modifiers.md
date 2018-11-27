@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: Tirer pour actualiser à l'aide de modificateurs de source
 description: Créer des contrôles personnalisés Tirer pour actualiser à l’aide de SourceModifiers
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 997082d2ed7375d99a7be1543901d1dd854be1a0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566661"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715001"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>Tirer pour actualiser à l'aide de modificateurs de source
 

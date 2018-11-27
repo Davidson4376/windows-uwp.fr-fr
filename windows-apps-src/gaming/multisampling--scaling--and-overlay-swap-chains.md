@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Mise à l’échelle et superpositions de chaînes d’échange
 description: Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, mise à l’échelle de chaînes d’échange, superpositions, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564553"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713140"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Mise à l’échelle et superpositions de chaînes d’échange
 

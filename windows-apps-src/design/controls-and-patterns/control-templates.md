@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework.
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,17 +7,16 @@ title: Modèles de contrôles
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce72c40d3b97942612fc2979d026c965727512e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576117"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714608"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -55,7 +53,7 @@ Le code XAML suivant permet de créer un modèle [**ControlTemplate**](https://m
 Un [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) est un lien spécial qui lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. TemplateBinding peut uniquement être utilisé dans une définition ControlTemplate en XAML. Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 > [!NOTE]
-> À compter de Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), vous pouvez utiliser des extensions de balisage [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) dans des lieux vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
+> À partir de Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), vous pouvez utiliser des extensions de balisage [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) dans des lieux vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

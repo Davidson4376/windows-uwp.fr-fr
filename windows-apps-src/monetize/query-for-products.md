@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Utilisez cette méthode dans l’API de collection du MicrosoftStore pour obtenir tous les produits possédés par un client pour les apps associées à votre ID client AzureAD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres.
 title: Demander des produits
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, afficher produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581402"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713160"
 ---
 # <a name="query-for-products"></a>Demander des produits
 

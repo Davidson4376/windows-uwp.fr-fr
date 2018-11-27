@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Lancement et reprise des applications (DirectX et C++)
 description: Découvrez comment lancer, suspendre et reprendre votre application DirectX de plateforme Windows universelle (UWP).
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, lancement, reprise
 ms.localizationpriority: medium
-ms.openlocfilehash: ebcec430c4fc916e77ebdf25ee53deb23b02185d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac2f7e70d813ea3314d897eedb5e245d781ce412
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559758"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713020"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Lancement et reprise des applications (DirectX et C++)
 

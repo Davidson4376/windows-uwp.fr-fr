@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Distribution d’un composant Windows Runtime managé
 description: Vous pouvez distribuer votre composant WindowsRuntime par copie de fichiers.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef51e2235d8ac5c46af6093809d241d5c137d57d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581181"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711545"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>Distribution d’un composant Windows Runtime managé
 

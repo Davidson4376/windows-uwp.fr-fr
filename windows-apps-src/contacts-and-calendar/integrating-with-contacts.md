@@ -1,20 +1,18 @@
 ---
-author: normesta
 description: Cet article vous explique comment ajouter votre application en regard des actions dans une carte de visite
 MSHAttr: PreferredLib:/library/windows/apps
 title: Connecter votre application à des actions sur une carte de visite
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, contacts, carte de visite, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: eb1c01a4fe370f899da185dc39b7d3abe6a1904e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579909"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715989"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 

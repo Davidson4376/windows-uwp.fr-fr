@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Convertir l’infrastructure de rendu
 description: Montre comment convertir une infrastructure de rendu simple de Direct3D9 à Direct3D11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D11.
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, infrastructure de rendu, conversion, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575620"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713812"
 ---
 # <a name="convert-the-rendering-framework"></a>Convertir l’infrastructure de rendu
 
@@ -154,7 +152,7 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 
 C’est tout ce dont nous avons besoin pour notre nuanceur de pixels direct. Même si nous l’appelons direct, il obtient en fait des données de couleurs interpolées de perspective correcte pour chaque pixel. Notez que la sémantique des valeurs système SV\_TARGET est appliquée à la sortie des valeurs de couleurs par notre nuanceur de pixels comme exigé par l’API.
 
-> **Remarque**nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir de la sémantique de la valeur de système SV\_POSITION. Les nuanceurs de pixels du modèle4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
+> **Remarque**nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir du système sémantique sv\_position. Les nuanceurs de pixels du modèle4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
 
  
 
@@ -248,7 +246,7 @@ Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la d�
 
 Les données par vertex doivent être stockées dans des types compatibles dans la mémoire système. Les types de données DirectXMath peuvent s’avérer utiles. Par exemple, DXGI\_FORMAT\_R32G32B32\_FLOAT correspond à [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
 
-> **Remarque**  les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
+> **Remarque**  tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
 
  
 

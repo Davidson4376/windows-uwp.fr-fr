@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Configurer votre plateforme UWP sur l’environnement de développement Xbox
 description: Procédure de configuration et de test de votre plateforme Windows universelle sur l’environnement de développement Xbox.
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 54bc87e007cc42cb4abe1ca8e01d0c8f3b76792f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554067"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711661"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Configurer votre plateforme UWP sur l’environnement de développement Xbox
 
@@ -25,7 +23,7 @@ Cet article couvre les étapes relatives à la configuration et au test de votre
 
 ## <a name="visual-studio-setup"></a>Installation de Visual Studio
 
-1. Installez Visual Studio 2017, Visual Studio 2015 Update 3 ou la dernière version de Visual Studio. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads). Nous vous recommandons d’utiliser la dernière version de Visual Studio afin que vous puissiez recevoir les mises à jour pour les développeurs et de sécurité.
+1. Installez Visual Studio 2017, Visual Studio 2015 Update 3 ou la dernière version de Visual Studio. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads). Nous vous recommandons d’utiliser la dernière version de Visual Studio afin que vous pouvez recevoir les dernières mises à jour pour les développeurs et la sécurité.
 
 2. Si vous installez VisualStudio2017, veillez à choisir la charge de travail **Développement de plateforme Windows universelle**. Si vous êtes un développeur en C++, assurez-vous de sélectionner également la case **outils de plateforme Windows universelle C++** dans le volet de droite **Résumé**, sous **Développement de plateforme Windows universelle**. Elle ne fait pas partie de l'installation par défaut.
 

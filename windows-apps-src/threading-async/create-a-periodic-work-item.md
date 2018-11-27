@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Créer un élément de travail périodique
 description: Découvrez comment créer un élément de travail qui se reproduit régulièrement.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, élément de travail périodique, threads, minuteurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570312"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715220"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
@@ -33,7 +31,7 @@ Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/librar
 
 > **Remarque**Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Remarque** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) vous permet d’accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque**vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes:
 

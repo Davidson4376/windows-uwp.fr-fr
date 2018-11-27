@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
 title: Valeurs de NumeralSystem
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f02b1f389a118ee5505c40d8c6dde1ee9472a0f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f4b7e914684d2e4d3d9c4c1f0cdc7e88d7b5b8fe
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577122"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715399"
 ---
 # <a name="numeralsystem-values"></a>Valeurs de NumeralSystem
 

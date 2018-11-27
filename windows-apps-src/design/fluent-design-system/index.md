@@ -1,19 +1,17 @@
 ---
 description: Découvrez Fluent Design et comment l'intégrer à vos applications.
 title: Système Fluent Design pour Windows
-author: mijacobs
 keywords: disposition d’application uwp, plateforme windows universelle, conception d’application, interface, système fluent design
-ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c61eb71a82234a1339295536140121d80f83a033
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570796"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715583"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Les créateurs d’application système pour les fenêtres de conception Fluent
 
@@ -42,11 +40,11 @@ En intégrant des éléments du monde physique, une expérience Fluent exploite 
 
 ![Logo de conception Fluent](images/fluentdesign_header.png)
 
-Nos recommandations en matière de conception expliquent comment appliquer des principes de conception Fluent à des applications. Quel type d’applications? Alors que la plupart de nos recommandations peuvent être appliqués à n’importe quelle plateforme, nous avons créé UWP (la plateforme Windows universelle) pour prendre en charge de la conception Fluent.
+Nos recommandations en matière de conception expliquent comment appliquer des principes de conception Fluent pour les applications. Quel type d’applications? Tandis que la plupart de nos recommandations peuvent être appliqués à n’importe quelle plateforme, nous avons créé UWP (la plateforme Windows universelle) pour prendre en charge de la conception Fluent.
 
 Les fonctionnalités Fluent Design sont intégrées dans UWP. Certaines de ces fonctionnalités&mdash;comme les pixels effectifs et le système d’entrée universel&mdash; sont automatiques. Il n’est pas nécessaire d’écrire du code supplémentaire pour en tirer parti. D'autres fonctionnalités, telles qu’acrylique, sont facultatives: vous les ajoutez à votre application en écrivant du code pour les inclure.
 
-> Nous apportons les contrôles UWP aux ordinateurs de bureau pour que vous puissiez améliorer l’apparence et les fonctionnalités de vos applications WPF ou Windows existantes avec des fonctionnalités Fluent Design. Pour plus d’informations, voir [les contrôles UWP de l’hôte dans les applications WPF et Windows Forms](/windows/uwp/xaml-platform/xaml-host-controls).
+> Nous apportons les contrôles UWP aux ordinateurs de bureau pour que vous puissiez améliorer l’apparence et les fonctionnalités de vos applications WPF ou Windows existantes avec des fonctionnalités Fluent Design. Pour plus d’informations, voir [les contrôles UWP hôte dans les applications WPF et Windows Forms](/windows/uwp/xaml-platform/xaml-host-controls).
 
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
@@ -61,7 +59,7 @@ En plus de conseils de conception, nos articles Fluent Design également vous mo
 ![](images/xaml-example.png)
 
 
-> Si vous débutez dans le développement UWP, consultez notre [vous familiariser avec la page de l’UWP](https://developer.microsoft.com/windows/apps/getstarted).
+> Si vous débutez dans le développement UWP, consultez notre [page UWP en main](https://developer.microsoft.com/windows/apps/getstarted).
 
 ## <a name="find-a-natural-fit"></a>Trouvez une solution naturelle
 

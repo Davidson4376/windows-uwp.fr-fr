@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Utiliser des pinceaux
 description: Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur.
-ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e96604daa9f8736601f52c917b556369ec620e96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e46ef0e459ede5fd1185d78186968735d886e63
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580443"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713935"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Utilisation des pinceaux pour peindre des arrière-plans, des premiers plans et des contours
 
@@ -39,7 +37,7 @@ Un pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps
 
 ### <a name="predefined-color-names"></a>Noms de couleur prédéfinis
 
-Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) ou [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Vous disposez de 256couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec les canaux de couleur appropriés. 256 couleurs nommées reposent sur les noms de couleurs *X11* à partir de Cascading Style Sheets, niveau3 spécification (CSS3), vous peut-être déjà familiarisé avec cette liste de couleurs nommées si vous avez l’expérience de développement web ou de conception.
+Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) ou [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Vous disposez de 256couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec les canaux de couleur appropriés. 256 couleurs nommées reposent sur les noms de couleurs *X11* à partir de la Cascading Style Sheets, niveau3 spécification (CSS3), vous peut-être déjà familiarisé avec cette liste de couleurs nommées si vous connaissez précédent développement web ou de conception.
 
 Vous trouverez ci-dessous un exemple dans lequel la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) d’un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) présente la couleur prédéfinie [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 

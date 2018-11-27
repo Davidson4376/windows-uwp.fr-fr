@@ -1,19 +1,17 @@
 ---
-author: JordanEllis6809
 title: Intégration de jeux Unity dans UWP sur Xbox
 description: Développement UWP Unity sur Xbox
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 ms.localizationpriority: medium
-ms.openlocfilehash: f9851b76b218ed4241ccb617979c127d03f57ee7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 64a686aea24d23b5e999780eaa0eda661af3637f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561792"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714552"
 ---
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a>Intégration de jeux Unity dans UWP sur Xbox
 

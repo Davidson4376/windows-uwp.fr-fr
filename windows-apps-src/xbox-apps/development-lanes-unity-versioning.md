@@ -1,12 +1,13 @@
 ---
-author: JordanEllis6809
 title: 'Unity: Gestion de version de votre projet UWP'
 description: Version de votre projet UWP Unity
-ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230212"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711631"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: Gestion de version de votre projet UWP
 
@@ -48,19 +49,19 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 
 ## <a name="folders"></a>Dossiers  
 
-`Assets` | ***Include*** | Contient les images du Windows Store.  
-`Data`   | ***Ignore*** | Où Unity compile votre projet (scènes, nuanceurs, scripts, préfabriqués, etc.).  
-`Dependencies` | ***Include*** | J’ai créé ce dossier pour y conserver toutes les dépendances UWP (par exemple, XboxLiveSDK.dll).  
-`Properties` | ***Include*** | Contient des paramètres plus avancés qui peuvent être modifiés par le développeur.  
-`Unprocessed` | ***Ignore*** | Contient les fichiers Unity `.dll` et `.pdb`.  
+`Assets` | ***Inclure*** | Contient des images de Microsoft Store  
+`Data`   | ***Ignorer*** | Où Unity compile votre projet (scènes, nuanceurs, Scripts, préfabriqués, etc.).  
+`Dependencies` | ***Inclure*** | Ce dossier est j’ai créé pour conserver toutes les dépendances UWP (par exemple, XboxLiveSDK.dll)  
+`Properties` | ***Inclure*** | Contient des paramètres plus avancés qui peuvent être modifiées par le développeur  
+`Unprocessed` | ***Ignorer*** | Contient Unity `.dll` et `.pdb` fichiers  
 
 ## <a name="files"></a>Fichiers  
 
-`App.cs` | ***Incluent*** | Point d’entrée de votre application UWP. Peut être modifié et étendu avec d’autres fichiers sources.  
-`Package.appxmanifest` | ***Include*** | Manifeste du package pour votre AppX.  
-`project.json` | ***Include*** | Décrit les packages NuGet dont votre `*.csproj` dépend.  
-`ScrapyardPhoenix.csproj` | ***Include*** | Décrit la cible de votre build UWP. Si vous ajoutez des dépendances supplémentaires à votre projet UWP, ce fichier `*.csproj` contiendra ces informations.  
-`ScrapyardPhoenix.csproj.user` | ***Ignore*** | Ce fichier contient des informations sur l’utilisateur local.
+`App.cs` | ***Inclure*** | Point d’entrée de votre application UWP. Cela peut être modifié et étendu avec d’autres fichiers sources  
+`Package.appxmanifest` | ***Inclure*** | Fichier source du manifeste du package d’application pour votre AppX  
+`project.json` | ***Inclure*** | Décrit les packages NuGet votre `*.csproj` dépend  
+`ScrapyardPhoenix.csproj` | ***Inclure*** | Décrit la cible de votre build UWP; Si vous ajoutez des dépendances supplémentaires à votre UWP projet, ce `*.csproj` fichier contiendra ces informations  
+`ScrapyardPhoenix.csproj.user` | ***Ignorer*** | Ce fichier contient des informations d’utilisateur local
 
 ## <a name="resulting-gitignore"></a>Fichier .gitignore obtenu
 

@@ -1,19 +1,17 @@
 ---
 title: Déverrouillage Windows avec les appareils (IoT) complémentaires
 description: Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure du dispositif complémentaire Windows Hello, un dispositif complémentaire peut enrichir considérablement l’expérience Windows Hello même en l’absence de biométrie (par exemple, si l’ordinateur de bureau Windows10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf1ae02a1c1937c02b6c750872dc784d28cd8e0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b33cf07ef10d0891f2747a06caf098b7d37b62f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582149"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716727"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 

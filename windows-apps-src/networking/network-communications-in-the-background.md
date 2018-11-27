@@ -1,23 +1,21 @@
 ---
-author: stevewhims
 description: Afin de poursuivre la communication réseau en dehors de l'arrière-plan, une application doit utiliser les tâches d'arrière-plan et le broker de socket ou les déclencheurs de chaîne de contrôle.
 title: Communications réseau en arrière-plan
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.author: stwhi
 ms.date: 06/14/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555381"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713566"
 ---
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
 Pour poursuivre la communication réseau alors qu’elle n’est pas au premier plan, votre application peut utiliser des tâches en arrière-plan et l’autre de ces deux options.
-- Broker de socket. Si votre application utilise des sockets pour les connexions à long terme, lorsqu’il quitte le premier plan, elle peut déléguer la propriété d’un socket à un broker de socket système. Le broker puis: active votre application lorsque le trafic atteint le socket; transfère la propriété à votre application; et votre application traite alors le trafic entrant.
+- Broker de socket. Si votre application utilise des sockets pour les connexions à long terme puis, lorsqu’il quitte le premier plan, elle peut déléguer la propriété d’un socket à un broker de socket système. Le broker puis: active votre application lorsque le trafic atteint le socket; propriété revenir à votre application; et votre application traite alors le trafic entrant.
 - Déclencheurs de canal de contrôle. 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>Exécution d’opérations réseau dans les tâches en arrière-plan
@@ -157,7 +155,7 @@ Pour voir un exemple complet de l’utilisation du [**SocketActivityTrigger**](h
 Vous remarquerez probablement que l’exemple appelle **TransferOwnership** dès la création d’un nouveau socket ou l’acquisition d’un socket existant, au lieu d’utiliser pour cela le gestionnaire d’événements **OnSuspending**, comme décrit dans cette rubrique. L’exemple se concentre en effet sur l’illustration de l’utilisation du [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) et n’utilise donc le socket pour aucune autre activité pendant son exécution. Votre application sera probablement plus complexe et devra utiliser **OnSuspending** pour déterminer à quel moment appeler **TransferOwnership**.
 
 ## <a name="control-channel-triggers"></a>Déclencheurs de canal de contrôle
-Assurez-vous tout d’abord que vous utilisez les déclencheurs de canal de contrôle (CCT) de manière appropriée. Si vous utilisez des connexions de [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) , [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)ou [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), puis nous vous recommandons d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Vous pouvez utiliser les CCT pour **StreamSocket**, mais ils consomment plus de ressources et peuvent ne pas fonctionner en mode Veille connectée.
+Assurez-vous tout d’abord que vous utilisez les déclencheurs de canal de contrôle (CCT) de manière appropriée. Si vous utilisez des connexions [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) , [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)ou [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), puis nous vous recommandons d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Vous pouvez utiliser les CCT pour **StreamSocket**, mais ils consomment plus de ressources et peuvent ne pas fonctionner en mode Veille connectée.
 
 Si vous utilisez des WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)ou [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient), vous devez utiliser [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 

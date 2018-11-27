@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
 title: XAML et espace blanc
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 521e794680df6449ebc49745319c4aeec74405d1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568970"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714394"
 ---
 # <a name="xaml-and-whitespace"></a>XAML et espace blanc
 

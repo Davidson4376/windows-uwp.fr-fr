@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données d'évaluation agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs.
 title: Obtenir les évaluations des applications
-ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, évaluations
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 32f32d3389a340c25d99ec0f0a68e0c20af89c2b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561406"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715744"
 ---
 # <a name="get-app-ratings"></a>Obtenir les évaluations des applications
 

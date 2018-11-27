@@ -1,25 +1,23 @@
 ---
-author: v-angraf
 ms.assetid: 94bb7ad9-cf50-61a8-ad42-48b9bdb9ed36
-title: Page d’accueil (Dev Home)
+title: Page d’accueil (accueil)
 description: Fournit des informations sur la page d’accueil de l’application accueil du développeur pour Xbox One.
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: b95637b38aafeb4111ecb25279dcec448ca3c30f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555079"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714499"
 ---
-# <a name="home-page-dev-home"></a>Page d’accueil (Dev Home)
+# <a name="home-page-dev-home"></a>Page d’accueil (accueil)
    
   
-La page **d’accueil** de l’outil accueil du développeur fournit un accès rapide pour les tâches qui sont effectuées régulièrement sur une console de développement.   
+La page **d’accueil** de l’outil accueil du développeur permet d’accéder rapidement aux tâches qui sont effectuées régulièrement sur une console de développement.   
  ![Page d’accueil de l’outil accueil du développeur](images/devhome_home.png)   
   
 La page **d’accueil** contient les volets suivants:   
@@ -27,7 +25,7 @@ La page **d’accueil** contient les volets suivants:
    *  [Actions rapides](#ID4EEB)  
    *  [Jeux et applications](#ID4EPC)  
    *  [Comptes de test](#ID4EQD)  
-   *  [Se connecter avec votre navigateur](#ID4EFE)  
+   *  [Entrer en contact avec votre navigateur](#ID4EFE)  
 
  
 <a id="ID4EEB"></a>
@@ -43,8 +41,8 @@ Le volet **actions rapides** contienne les boutons suivants qui permettent d’a
    *  **Bac à sable de modification:** Vous permet de modifier le bac à sable de la console est en.   
    *  **Console de redémarrage:** Le redémarrage de la console de développement.   
    *  **Quitter le Mode développeur:** Retourne la console en mode commercial et redémarre la console.   
-   *  **Accueil de lancement:** Lance l’écran d’accueil de vente au détail.   
-   *  **Inscrire un jeu à partir d’un emplacement réseau partagé:** Inscrit un jeu à partir d’un emplacement réseau partagé.   
+   *  **Lancement accueil:** Lance l’écran d’accueil de vente au détail.   
+   *  **Inscrire un jeu à partir d’un emplacement réseau partagé:** Inscrit un jeu à partir d’un emplacement partagé sur le réseau.   
 
   
 <a id="ID4EPC"></a>
@@ -60,7 +58,7 @@ Le volet de **jeux et applications** peut être utilisé pour effectuer les acti
    *  Lancer rapidement des applications et jeux.  
    *  Permet d’afficher l’état PLM d’applications et jeux.  
    *  Modifier les États PLM à partir d’un menu contextuel.  
-   *  Inscrire et à exécuter un titre à partir d’un partage réseau à distance.
+   *  Inscrire et exécuter un titre à partir d’un partage réseau à distance.
 
   
 <a id="ID4EQD"></a>
@@ -75,14 +73,14 @@ Le volet de **comptes de Test** peut être utilisé pour effectuer les actions s
    *  Permet d’afficher la liste des utilisateurs inscrits sur la console.  
    *  Connectez-vous à un utilisateur ou déconnexion d’un simple clic.  
    *  Ajouter des comptes d’utilisateurs et invités.  
-   *  Afficher les détails des comptes utilisateurs et invités.  
+   *  Afficher les détails des comptes d’utilisateurs et invités.  
 
   
 <a id="ID4EFE"></a>
 
    
 
-## <a name="connect-with-your-browser"></a>Se connecter avec votre navigateur  
+## <a name="connect-with-your-browser"></a>Entrer en contact avec votre navigateur  
    
   
 Le volet de **se connecter avec votre navigateur** affiche l’adresse IP et le port que vous pouvez utiliser pour gérer votre console à partir d’un navigateur web.   

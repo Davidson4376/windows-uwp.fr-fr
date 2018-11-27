@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Servez-vous des exemples de code Python présentés dans cette section pour en savoir plus sur la soumission d'options de jeu et de bandes-annonces à l'aide de l’API de soumission au MicrosoftStore.
 title: 'Exemple de code Python: soumission d’applications avec options de jeu et bandes-annonces'
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, options de jeu, bandes-annonces, descriptions avancées, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c753e51d15b142cdcd7e54b3ed0304d13169b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 59306e32fe1fcc68978c977b89934e64d85b8cc8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582389"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713213"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Exemple de code Python: soumission d’applications avec options de jeu et bandes-annonces
 

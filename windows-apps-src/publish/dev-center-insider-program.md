@@ -1,25 +1,23 @@
 ---
 title: Programme Insider du Centre de développement
 description: Essayez les nouvelles fonctionnalités du Centre de développement avant qu’elles ne soient disponibles pour tous et faites-nous part de votre avis.
-author: JnHs
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, insiders, insider du centre de développement, fonctionnalités d’aperçu
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
-ms.openlocfilehash: 950c80967851c858212fecc6999c93b55dd439de
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ad70e986a35767c687d863a7db0754bd980be5db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576613"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715207"
 ---
 # <a name="dev-center-insider-program"></a>Programme Insider du Centre de développement
 
-En tant [développeur inscrit](http://go.microsoft.com/fwlink/?LinkID=615100), vous pouvez influer sur les fonctionnalités que nous mettons à disposition en joignant le programme Insider du centre de développement. Ce programme vous permet de tester les nouvelles fonctionnalités avant qu’elles ne soient disponibles pour tous les développeurs. Nous vous encourageons à nous faire part de vos commentaires sur ces fonctionnalités à l’aide du lien commentaires sous l’icône de point d’interrogation dans le coin supérieur droit du tableau de bord. Tous les commentaires que nous recevons des Insiders du Centre de développement font l’objet d’une lecture attentive et sont considérés en priorité.
+En tant qu’un [développeur inscrit](http://go.microsoft.com/fwlink/?LinkID=615100), vous pouvez aider d’influencer les fonctionnalités que nous mettons à disposition en joignant le programme Insider du centre de développement. Ce programme vous permet de tester les nouvelles fonctionnalités avant qu’elles ne soient disponibles pour tous les développeurs. Nous vous encourageons à nous faire part de vos commentaires sur ces fonctionnalités à l’aide du lien commentaires sous l’icône de point d’interrogation dans le coin supérieur droit du tableau de bord. Tous les commentaires que nous recevons des Insiders du Centre de développement font l’objet d’une lecture attentive et sont considérés en priorité.
 
-Pour participer au programme, sélectionner sur la page **paramètres du compte** . Vous pouvez annuler cette décision à tout moment.
+Pour rejoindre le programme, le sélectionner sur la page **paramètres du compte** . Vous pouvez annuler cette décision à tout moment.
 
 > [!IMPORTANT]
 > Les conditions du [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) s’appliquent à votre participation au programme. Avant de rejoindre le programme, veuillez lire ces conditions, notamment l’ExposéI. Gardez à l’esprit que les fonctionnalités exclusivement disponibles pour les membres du programme Insider du Centre de développement peuvent inclure des services expérimentaux et de versions préliminaires. Souvent, ces fonctionnalités ne sont associées à aucune documentation disponible, et vous pouvez rencontrer des résultats inattendus lorsque vous les utilisez.

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Comparer le code EGL avec DXGI et Direct3D
 description: L’interface graphique DirectX(DXGI) et certaines APIDirect3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D11 sous l’angle d’EGL.
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565338"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713030"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>Comparer le codeEGL avec DXGI et Direct3D
 
@@ -30,7 +28,7 @@ L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même
 
 À l’instar d’EGL, DXGI et Direct3D fournissent diverses méthodes qui vous permettent de configurer des ressources graphiques, d’obtenir un contexte de rendu pour le dessin des nuanceurs et d’afficher les résultats dans une fenêtre. Toutefois, DXGI et Direct3D comportent quelques options supplémentaires qui nécessitent une configuration particulière dans le cadre du portage à partir d’EGL.
 
-> **Remarque**  ce guide repose sur la spécification d’ouverte de Khronos Group pour EGL 1.4 disponibles ici: [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
+> **Remarque**  ce guide repose sur la spécification ouverte de Khronos Group pour EGL 1.4, disponibles ici: [\[PDF\ Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
 
  
 
@@ -49,7 +47,7 @@ Comme EGL, DXGI et Direct3D fournissent des API pour les opérations suivantes :
 -   Affichage sur des cibles de rendu spécifiques (telles que les textures).
 -   Actualisation de la surface d’affichage de la fenêtre afin de présenter les résultats du rendu avec les ressources graphiques.
 
-Pour découvrir le processus de configuration du pipeline graphique Direct3D, consultez le modèle application DirectX 11 (Windows universel) dans Studio2015 Visual Microsoft. La classe de rendu de base fournie dans ce modèle peut servir de référence pour créer l’infrastructure graphique Direct3D 11 et y configurer les principales ressources nécessaires. Elle offre également une prise en charge de certaines fonctionnalités des applications de plateforme Windows universelle (UWP), telles que la rotation de l’écran.
+Pour voir le processus général de configuration du pipeline graphique Direct3D, consultez le modèle application DirectX 11 (Windows universel) dans Microsoft Visual Studio2015. La classe de rendu de base fournie dans ce modèle peut servir de référence pour créer l’infrastructure graphique Direct3D 11 et y configurer les principales ressources nécessaires. Elle offre également une prise en charge de certaines fonctionnalités des applications de plateforme Windows universelle (UWP), telles que la rotation de l’écran.
 
 EGL comprend très peu d’API en comparaison de Direct3D 11. La navigation entre les différentes API de Direct3D 11 peut se révéler compliquée si vous n’êtes pas familiarisé avec les noms et le langage technique propres à cette plateforme. Nous vous proposons ici une vue d’ensemble pour vous aider à démarrer.
 
@@ -74,7 +72,7 @@ Voici maintenant la procédure générale pour créer un affichage graphique sim
 6.  Après l’exécution du pipeline et le dessin d’une trame dans la mémoire tampon d’arrière-plan, présentez la chaîne à l’écran avec la méthode [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
 Pour plus d’informations sur ce processus, consultez [Prise en main de DirectX Graphics](https://msdn.microsoft.com/library/windows/desktop/hh309467). La suite du présent article couvre la plupart des étapes que vous aurez généralement à effectuer pour configurer et gérer un pipeline graphique de base.
-> **Remarque**  applications de bureau Windows ont différentes API permettant d’obtenir une chaîne de permutation Direct3D, telles que [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)et n’utilisez pas un objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) .
+> **Remarque**  applications de bureau Windows ont différentes API pour obtenir une chaîne de permutation Direct3D, telles que [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)et n’utilisez pas un objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) .
 
  
 

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Fonctionnalité d'appareil PointOfService
 description: La fonctionnalité PointOfService est requise pour l'utilisation de l’espace de noms Windows.Devices.PointOfService.
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: dbed55af1a9fa3df14f0a7e3e7c6d1f599b40fd3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 832881919a3ed1f44c0912703ede5948c5b10d11
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566629"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713905"
 ---
 # <a name="pointofservice-device-capability"></a>Fonctionnalité d'appareil PointOfService
 Vous demandez l’accès aux API PointOfService en déclarant la fonctionnalité dans votre manifeste de package d’application. Vous pouvez déclarer la plupart des fonctionnalités à l’aide du concepteur de manifeste, dans MicrosoftVisual Studio, ou vous pouvez les ajouter manuellement.  

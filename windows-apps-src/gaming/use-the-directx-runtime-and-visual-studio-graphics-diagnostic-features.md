@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Outils Graphics Diagnostics
 description: Découvrez comment obtenir et utiliser les fonctionnalités de diagnostic de graphiques, notamment le débogage graphique, l’analyse des frames graphiques et l’utilisation du processeur graphique (GPU) dans Visual Studio.
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, graphiques, diagnostics, outils, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581298"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716647"
 ---
 # <a name="graphics-diagnostics-tools"></a>Outils Graphics Diagnostics
 
@@ -21,7 +19,7 @@ ms.locfileid: "7581298"
 
 Avec Windows 10, les outils de diagnostic de graphiques sont désormais disponibles dans Windows en tant que fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
 
-1.  Accédez à **paramètres**, sélectionnez les **applications**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
+1.  Accédez à **paramètres**, sélectionnez **les applications**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
 2.  Cliquez sur **Ajouter une fonctionnalité**.   
 3.  Dans la liste **Fonctionnalités facultatives**, sélectionnez **Outils graphiques**, puis cliquez sur **Installer**.
 

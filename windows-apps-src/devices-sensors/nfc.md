@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Communication en champ proche (NFC)
 description: Cette section contient des articles sur l’intégration de la technologieNFC dans les applications de plateforme Windows universelle (UWP).
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 15a113b5-8231-41c9-b724-ce5add813967
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e8e5a94092312b953dd2a183cd6902a1df5505
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3f71cc75c0eca8564069c9f4ba634d9b42b63ee7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565590"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714324"
 ---
 # <a name="nfc"></a>NFC
 

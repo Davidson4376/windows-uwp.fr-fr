@@ -1,28 +1,26 @@
 ---
-author: normesta
 description: Entrées et propriétés d’une feuille de style de carte
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Référence de feuille de style de carte
-ms.author: normesta
 ms.date: 03/16/2017
 ms.topic: article
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: eace82801b2e3d1423eeec9e9da7cf56db043666
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ecf83b25a8f448cb0ac22bbad0aa2d4f687c721
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556442"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715135"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
-Technologies de mise en correspondance de Microsoft utilisent des _feuilles de style de carte_ pour définir l’apparence de cartes.  Une feuille de style de carte est définie à l’aide de JavaScript Object Notation (JSON) et peut être utilisée dans différentes manières, y compris dans le d’une application du Windows Store [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) par le biais de la méthode [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
+Technologies de mappage de Microsoft utilisent des _feuilles de style de carte_ pour définir l’apparence des cartes.  Une feuille de style de carte est définie à l’aide de JavaScript Object Notation (JSON) et peut être utilisée dans différentes manières, y compris dans d’une application Windows Store [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) par le biais de la méthode [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
 
 Feuilles de style peuvent être créés de manière interactive à l’aide de l’application de [l’Éditeur de feuilles de Style de carte](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
 
-Le code JSON ci-après peut être utilisé pour faire d’eau en rouge, des plans d’eau en vert et apparaissent de zones continentales en bleu:
+Le code JSON ci-après peut être utilisé pour faire d’eau en rouge, des plans d’eau en vert et zones continentales s’affichent en bleu:
 
 ```json
     {"version":"1.*",
@@ -31,7 +29,7 @@ Le code JSON ci-après peut être utilisé pour faire d’eau en rouge, des plan
     }
 ```
 
-Ce JSON peut servir à supprimer la totalité des légendes et des points d’une carte.
+Ce JSON peut être utilisé pour supprimer la totalité des légendes et des points d’une carte.
 
 ```json
 
@@ -67,7 +65,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | settings                     | [Settings](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | Paramètres qui s’appliquent à la totalité de la feuille de style. |
 | mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Entrée parente de toutes les entrées de la carte. |
 | > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Entrée parente de toutes les entrées non utilisateur. |
-| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Utilisation de zones décrivant continentales.  Il ne doivent ne pas pour confondre avec les bâtiments physiques qui sont sous l’entrée de la structure. |
+| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Utilisation de zones continentales de décrivant.  Il ne doivent ne pas pour confondre avec les bâtiments physiques qui sont sous l’entrée de la structure. |
 | >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent aéroports. |
 | >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Zones dans lesquelles il y a une forte concentration d'entreprises ou de points intéressants. |
 | >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent cimetières. |
@@ -77,7 +75,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Domaines qui sont utilisés à des fins industrielles. |
 | >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Étiquettes de zone (île). |
 | >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones utilisées à des fins médicales (par exemple: un campus hospitalier). |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent des bases militaires ou ont des usages militaires. |
+| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent les bases militaires ou ont des usages militaires. |
 | >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Domaines qui sont utilisés pour nautiques connexes. |
 | >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Étiquettes de zone de voisinage. |
 | >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui est utilisé comme une piste de décollage avion. |
@@ -101,12 +99,12 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant n’importe quel locaiton d’entreprise. |
 | >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des sites touristiques tels que musées, zoos, etc.. |
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des emplacements d’utilisation générale de la Communauté. |
-| >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des établissements scolaires et les autres éducation liées à des emplacements. |
+| >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des établissements scolaires et les autre éducation liées à des emplacements. |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des lieux de divertissement telles que des salles, cinémas, etc.. |
 | >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des services essentiels tels que stationnement, banques, pédale, etc.. |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des restaurants, cafés, etc.. |
 | >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des hôtels ou autres sociétés de dépôt. |
-| >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des entreprises de l’espace de l’écran. |
+| >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des entreprises immobilier. |
 | >>>>> shoppingPoint          | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des hôtels ou autres sociétés de dépôt. |
 | >>> populatedPlace           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant la superficie d’une agglomération (par exemple, une ville ou un village). |
 | >>>> capital                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant le chef-lieu d’une agglomération. |
@@ -116,23 +114,23 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>> roadExit                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des sorties, appartenant généralement à un réseau autoroutier. |
 | >>> transit                  | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des arrêts d’autobus, des gares, des aéroports, etc. |
 | >> political                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones administratives telles que les pays, les régions et les départements. |
-| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Les bordures de la région de pays et des étiquettes. |
+| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bordures de région de pays et des étiquettes. |
 | >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1, départements, provinces, etc., les bordures et des étiquettes. |
 | >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2, sous-préfectures, etc., les bordures et des étiquettes. |
 | >> structure                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments et autres constructions. |
 | >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments. |
 | >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments utilisés pour l’éducation. |
 | >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments utilisés à des fins médicales par exemple, hôpitaux. |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments utilisés pour le transit, tels que des aéroports. |
+| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments utilisés pour le transit tels que des aéroports. |
 | >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies appartenant au réseau de transport (par exemple, routes, lignes de chemin de fer et lignes de ferry). |
 | >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant toutes les routes. |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant réseau autoroutier volumineux et contrôlé par l’accès. |
+| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant volumineux, contrôlée réseau autoroutier accès. |
 | >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les bretelles haut débit qui se connectent généralement à contrôlée réseau autoroutier accès. |
 | >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant réseau autoroutier. |
 | >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes principales. |
 | >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes secondaires. |
-| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant une autoroute. |
-| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les bretelles généralement se connectent au réseau autoroutier. |
+| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant AutoRoute. |
+| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les bretelles en règle générale, se connectent au réseau autoroutier. |
 | >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant unpaved AutoRoute. |
 | >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes à péage. |
 | >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies ferrées. |
@@ -220,7 +218,7 @@ Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapele
 | borderOutlineColor           | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne secondaire ou de contour de la bordure d’un polygone rempli. |
 | borderStrokeColor            | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne principale de la bordure d’un polygone rempli. |
 | borderVisible                | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| borderWidthScale             | Flottant   |  ✔   |  ✔   |  ✔   |  ✔   | À l’échelle qui le trait de bordures sont. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
+| borderWidthScale             | Flottant   |  ✔   |  ✔   |  ✔   |  ✔   | À l’échelle qui du trait des bordures sont. Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
 
 <a id="pointstyle" />
 

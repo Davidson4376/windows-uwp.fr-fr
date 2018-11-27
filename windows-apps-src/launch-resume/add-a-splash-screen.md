@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Ajouter un écran de démarrage
 description: Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application à l’aide de Microsoft Visual Studio.
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
-ms.author: twhitney
 ms.date: 05/08/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 143b96171091406fb91954685143e4f86c036ffb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 882ee548754b9fa498697a8d75a12a23f86fc9de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560038"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715867"
 ---
 # <a name="add-a-splash-screen"></a>Ajouter un écran de démarrage
 
@@ -43,7 +41,7 @@ Quand vous utilisez un modèle Visual Studio pour créer votre application, une 
 
 5. Pour sélectionner une nouvelle image d’écran de démarrage pour une application du Windows Phone Store, appuyez sur le bouton comportant des points de suspension, qui s’affiche à côté de l’étiquette **1152x1920px** sous **Composants mis à l’échelle**. Choisissez l’image de 1152 x 1920pixels (.png, .jpg ou .jpeg) que vous voulez utiliser comme image d’écran de démarrage.
 
-    **Important**l’image d’écran de démarrage vous choisissez doit être 1152 x 1920 pixels qui est la taille correcte pour une 2,4 x facteur d’échelle. Si c’est la seule ressource que vous fournissez, elle sera réduite pour les facteurs d’échelle de 1,4x et 1x.
+    **Important**l’image d’écran de démarrage vous choisissez doit être 1152 x 1920 pixels qui est la taille correcte pour une 2,4 fois facteur d’échelle. Si c’est la seule ressource que vous fournissez, elle sera réduite pour les facteurs d’échelle de 1,4x et 1x.
 
 6. Dans le champ **Couleur d’arrière-plan** de la section **Écran de démarrage**, définissez la couleur d’arrière-plan affichée avec l’image d’écran de démarrage. Vous pouvez entrer le nom d’une couleur ou ’\#’ et la valeur hexadécimale d’une couleur. Pour obtenir la liste des noms de couleurs disponibles, voir [**Élément SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467). La définition d’une couleur d’arrière-plan d’écran de démarrage est facultative. Si vous ne spécifiez pas de couleur pour une application UWP, la couleur d’arrière-plan de l’écran de démarrage est gris clair par défaut (valeur hexadécimale \#464646). Il s’agit de la même couleur que la couleur d’arrière-plan par défaut de la **vignette** (voir le champ **Couleur d’arrière-plan** de la section **Mosaïque et logos** de l’onglet **Ressources visuelles**). Si vous ne spécifiez pas de couleur pour un Windows Phone ou si vous la définissez sur « transparent », la couleur d’arrière-plan de l’écran de démarrage sera transparente.
 

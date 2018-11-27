@@ -1,19 +1,17 @@
 ---
 title: Didacticiel de prise en main - Jeu UWP3D en JavaScript
 description: Un jeu UWP pour le Microsoft Store, écrit en JavaScript avec three.js
-author: abbycar
-ms.author: abigailc
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553969"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713579"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -258,7 +256,7 @@ Cela nous a demandé pas mal de code, mais nous avons désormais un superbe cube
 
 Vous pouvez copier et coller l'ensemble du code JavaScript dans ce CodePen pour vous rattraper si vous avez rencontré des problèmes, ou le modifier pour régler les lumières ou changer les couleurs. 
 
-<iframe height='300' scrolling='no' title='Lumières, caméra, cube!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>lumières, caméra, cube!</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='Les lumières, caméra, cube!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>lumières, caméra, cube!</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
@@ -1001,7 +999,7 @@ dinoAlert.style.display = 'none';
 À ce stade, un dinosaure sauvage se lance à la poursuite du joueur dès que celui-ci s'approche trop près et ne s’arrête que lorsque sa position correspond à celle du joueur.
 La dernière étape consiste à ajouter des conditions de fin de partie une fois que le dino se trouve à `CATCHOFFSET` unités de distance.
 
-<iframe height='300' scrolling='no' title='La poursuite' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>The chase (La chasse)</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='La chase' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>The chase (La chasse)</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 

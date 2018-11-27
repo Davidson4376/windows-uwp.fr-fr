@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Surveiller la progression et l’achèvement des tâches en arrière-plan
 description: Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan.
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9c71d8a42a71d221f6a20850f1d002be922517be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12772d81742815b8d739f61aee9461e64f970ef2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582419"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715857"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 

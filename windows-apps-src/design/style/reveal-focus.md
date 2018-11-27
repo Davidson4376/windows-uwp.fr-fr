@@ -1,9 +1,7 @@
 ---
-author: cphilippona
-description: Révéler que focus est un effet visuel qui anime la bordure des éléments pouvant être actifs lorsque l’utilisateur déplace le focus clavier ou du boîtier de commande sur ces derniers.
+description: Révéler que focus est un effet visuel qui anime la bordure des éléments susceptibles d’être activés lorsque l’utilisateur déplace le focus clavier ou du boîtier de commande sur ces derniers.
 title: Révéler Focus
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 03/1/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -11,18 +9,18 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c80ed7521d797602cde15607f966a1fc3665cd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 311e5714c5428fac6509564fd00784299a02f630
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581221"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711585"
 ---
 # <a name="reveal-focus"></a>Révéler Focus
 
 ![image hero](images/header-reveal-focus.svg)
 
-Révéler que focus est un effet d’éclairage pour [des expériences «10-foot»](/windows/uwp/design/devices/designing-for-tv), par exemple, les écrans de télévision et Xbox One. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
+Révéler que focus est un effet visuel pour [des expériences «10-foot»](/windows/uwp/design/devices/designing-for-tv), par exemple, les écrans de télévision et Xbox One. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
 
 (Pour l’effet révéler mettre en surbrillance, un effet d’éclairage qui met en évidence les éléments interactifs, consultez l' [article révéler mettre en surbrillance](/windows/uwp/design/style/reveal).)
 
@@ -30,11 +28,11 @@ Révéler que focus est un effet d’éclairage pour [des expériences «10-foot
 > **API importantes**: [propriété Application.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [propriété Control.UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet révéler Focus attire l’attention sur les éléments ayant le focus en ajoutant un éclat animé autour de bordure de l’élément:
+L’effet révéler Focus attire l’attention sur les éléments actifs en ajoutant un éclat animé autour de bordure de l’élément:
 
 ![Visuel de l’effet de révélation](images/traveling-focus-fullscreen-light-rf.gif)
 
-Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisateur ne peut pas être totalement concentré sur tout l’écran de TV. 
+Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisateur ne peut pas être totalement concentré sur l’écran de TV entier. 
 
 ## <a name="examples"></a>Exemples
 
@@ -43,7 +41,7 @@ Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisa
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/RevealFocus">Ouvrir l’application et voir révéler le Focus en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/RevealFocus">Ouvrir l’application et voir révéler Focus en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -68,17 +66,17 @@ Révéler que focus est désactivé par défaut. Pour l’activer:
 Une fois que vous définissez la propriété **FocusVisualKind** , le système applique automatiquement l’effet révéler le Focus à tous les contrôles dont la propriété [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) est définie sur **True** (valeur par défaut pour la plupart des contrôles). 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>Pourquoi Focus n’est-il pas révéler sur par défaut? 
-Comme vous pouvez le constater, il est relativement facile à activer révéler le Focus lorsque l’application détecte qu’il s’exécute sur une Xbox. Par conséquent, pourquoi le système ne l’active pas simplement pour vous? Étant donné que le Focus de révéler augmente la taille du visuel du focus, ce qui peut entraîner des problèmes avec la disposition de votre interface utilisateur. Dans certains cas, vous voudrez personnaliser l’effet révéler le Focus afin de l’optimiser pour votre application.
+Comme vous pouvez le constater, il est relativement facile à activer révéler le Focus lorsque l’application détecte qu’il s’exécute sur une Xbox. Par conséquent, pourquoi le système ne l’active pas simplement pour vous? Étant donné que le Focus de révéler augmente la taille du visuel du focus, ce qui peut entraîner des problèmes avec la disposition de votre interface utilisateur. Dans certains cas, vous voudrez personnaliser l’effet révéler la mise au point pour optimiser pour votre application.
 
 ## <a name="customizing-reveal-focus"></a>Personnaliser révéler Focus
 
 Vous pouvez personnaliser l’effet révéler le Focus en modifiant les propriétés visuelles du focus pour chaque contrôle: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)et [ FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Ces propriétés vous permettent de personnaliser la couleur et l’épaisseur du rectangle de focus. (Ils s’agit des mêmes propriétés que vous utilisez pour la création de [visuels de focus à haute visibilité](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
 
-Toutefois, avant de commencer la personnalisation, il est utile de connaître un peu plus les composants qui composent le Focus de révéler.
+Toutefois, avant de commencer la personnalisation, il est utile de connaître un peu plus les composants qui constituent le Focus de révéler.
 
-Il existe trois parties, les visuels de révéler le Focus par défaut: la bordure principale, la bordure secondaire et l’éclat. La bordure principale a une épaisseur de **2px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1px** et apparaît autour de la bordure principale *intérieure*. L’éclat de révéler le Focus a une épaisseur proportionnelle à l’épaisseur de la bordure principale et apparaît autour de l' *extérieur* de la bordure principale.
+Il existe trois parties, les visuels de Focus révéler par défaut: la bordure principale, la bordure secondaire et l’éclat. La bordure principale a une épaisseur de **2px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1px** et apparaît autour de la bordure principale *intérieure*. L’éclat de révéler le Focus a une épaisseur proportionnelle à l’épaisseur de la bordure principale et apparaît autour de l' *extérieur* de la bordure principale.
 
-En plus des éléments statiques, visuels de Focus révéler dotés d’une lumière animée qui clignote au repos et se déplace dans la direction du focus lors du déplacement du focus.
+En plus des éléments statiques, de visuels de Focus révéler fonctionnalité une lumière animée qui clignote au repos et se déplace dans la direction du focus lors du déplacement du focus.
 
 ![Révéler les couches de Focus](images/reveal-breakdown.svg)
 

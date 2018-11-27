@@ -4,17 +4,15 @@ description: Un tampon de profondeur, ou tampon z-buffer, stocke des information
 ms.assetid: BE83A1D7-D43D-4013-8817-EFD2B24DC58E
 keywords:
 - Tampons de profondeur
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb7ff4b23f9735347ce75e2e565c1b420ec936d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 279e650532505467f3c0dbabf3814618b893aedb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565726"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7712000"
 ---
 # <a name="depth-buffers"></a>Tampons de profondeur
 

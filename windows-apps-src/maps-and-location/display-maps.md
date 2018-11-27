@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: Afficher des cartes avec des vues 2D, 3D et Streetside
 description: Vous pouvez afficher une carte dans une fenêtre pouvant faire l'objet d'un abandon interactif, appelée carte *placecard* ou dans un contrôle de carte complet.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
 keywords: Windows10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b162be26073db6989f9ea13cc7805d2d0f3f0d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564781"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714851"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
@@ -325,7 +323,7 @@ Pour afficher une vue Streetside
 
 Cet exemple montre comment afficher une vue Streetside similaire à l’image précédente.
 
-**Remarque**la carte de la vue d’ensemble n’apparaît pas si le contrôle de carte est trop petit.
+**Remarque**la carte de la vue d’ensemble n’apparaître pas si le contrôle de carte est trop petit.
 
  
 

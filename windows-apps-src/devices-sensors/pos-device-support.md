@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Prise en charge du matériel de point de service
 description: Cet article contient des informations sur la prise en charge matérielle pour chacune des classes de périphérique de point de service
-ms.author: jken
 ms.date: 06/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582399"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714298"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 
@@ -69,7 +67,7 @@ ms.locfileid: "7582399"
 
 
 ¹ mise à jour pour prendre en charge des codes-barres 2D via Honeywell <br/>
-² du microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
+² le microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
 
 
 <hr>

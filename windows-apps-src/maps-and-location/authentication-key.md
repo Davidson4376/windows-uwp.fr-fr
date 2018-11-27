@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: Demander une clé d’authentification de cartes
 description: Votre application Windows universelle doit être authentifiée pour pouvoir utiliser le MapControl et les services cartographiques dans l’espace de noms Windows.Services.Maps.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, clé d’authentification de cartes, contrôle de cartes
 ms.localizationpriority: medium
-ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e986880ccedfdb4648b1554c35c23a8a841fe820
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571271"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715016"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 

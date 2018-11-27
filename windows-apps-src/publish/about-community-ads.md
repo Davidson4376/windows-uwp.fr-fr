@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
 title: À propos des annonces de la communauté
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8acf83e2b39ece5fcd46c3d89d921e4f3013b67
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570465"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714337"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 
@@ -30,12 +28,12 @@ Voici comment fonctionne ce programme:
 
 ### <a name="opt-in-to-community-ads"></a>Accepter les publicités de la communauté
 
-Avant de créer une campagne de publicité de la Communauté pour l’une de vos applications, vous devez le sélectionner sur la **MONÉTISER** &gt; page **publicités dans l’application** dans [L’espace partenaires](https://partner.microsoft.com/dashboard).
+Avant de pouvoir créer une campagne de publicité de la Communauté pour l’une de vos applications, vous devez le sélectionner sur la **MONÉTISER** &gt; page **publicités dans l’application** dans [L’espace partenaires](https://partner.microsoft.com/dashboard).
 
 Pour participer aux annonces de la Communauté pour une application UWP:
 
-1. Sélectionnez une unité publicitaire que vous utilisez dans l’application et un défilement vers le bas pour les **paramètres de médiation**.
-2. **Laisser Microsoft optimiser mes paramètres** est activée, les annonces de la Communauté sont automatiquement activés pour votre unité publicitaire. Dans le cas contraire, sélectionnez la configuration de base ou d’une configuration spécifique au marché dans la liste déroulante des **cibles** , puis vérifiez la zone **d’annonces de la Communauté Microsoft** dans la liste **d’autres réseaux publicitaires** .
+1. Sélectionnez une unité publicitaire que vous utilisez dans l’application et faites défiler vers le bas pour les **paramètres de médiation**.
+2. Si **Microsoft permettre à optimiser mes paramètres** est sélectionné, annonces de la Communauté sont automatiquement activés pour votre unité publicitaire. Dans le cas contraire, sélectionnez la configuration de base ou une configuration spécifique au marché dans le menu déroulant **cible** et puis cochez la case **d’annonces de la Communauté Microsoft** dans la liste **d’autres réseaux publicitaires** .
 
     > [!NOTE]
     > Vous pouvez utiliser les champs de **poids** pour spécifier le taux de publicités que vous souhaitez afficher à partir de réseaux payants et d’autres réseaux publicitaires, y compris les annonces de la Communauté.

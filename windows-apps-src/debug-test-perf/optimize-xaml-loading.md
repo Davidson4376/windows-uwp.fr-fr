@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: Optimiser votre balisage XAML
 description: L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
-ms.author: jimwalk
 ms.date: 08/10/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 884825f2e9639f620d8db4e6110791fddf2d7e77
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560361"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715999"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 

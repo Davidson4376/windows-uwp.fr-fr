@@ -1,22 +1,20 @@
 ---
-author: Xansky
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs.
 title: Obtenir les données rapport d’erreurs pour votre console Xbox One jeu
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e494b3e93e2dd6ac23ef1562c32485bf2e7ddb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560315"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713473"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>Obtenir les données rapport d’erreurs pour votre console Xbox One jeu
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données de rapport d’erreur agrégées pour votre console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord du centre de partenaires Analytique XDP.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données de rapport d’erreur agrégées pour votre console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord XDP Analytique l’espace partenaires.
 
 Vous pouvez récupérer des informations d’erreur supplémentaires en utilisant les méthodes [d’obtenir des détails sur une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md), [obtenir la trace de pile concernant une erreur dans votre console Xbox One jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)et [Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md) .
 
@@ -97,7 +95,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.   |
 | symbol          | chaîne  | Le symbole affecté à cette erreur. |
 | osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Il s’agit toujours de la valeur de **Windows 10**.  |
-| osRelease       | chaîne  |  L’une des chaînes suivantes qui spécifie la version de système d’exploitation de Windows 10 ou l’anneau de l’évaluation (comme une sous-population au sein de la version du système d’exploitation) sur lequel l’erreur s’est produite.<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
+| osRelease       | chaîne  |  L’une des chaînes suivantes qui spécifie la version du système d’exploitation de Windows 10 ou l’anneau évaluation (comme une sous-population au sein de la version du système d’exploitation) sur lequel l’erreur s’est produite.<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
 | eventType       | chaîne  | Une des chaînes suivantes:<ul><li>**crash**</li><li>**hang**</li><li>**Échec de la mémoire**</li></ul>      |
 | market          | chaîne  | Code pays ISO3166 du marché des appareils.   |
 | deviceType      | chaîne  | Type d’appareil sur lequel l’erreur s’est produite. Il s’agit toujours de la valeur de **Console**.    |
@@ -140,7 +138,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [Obtenir les détails d’une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md)
+* [Obtenir des détails sur une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md)
 * [Obtenir la trace de pile concernant une erreur dans votre console Xbox One du jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)

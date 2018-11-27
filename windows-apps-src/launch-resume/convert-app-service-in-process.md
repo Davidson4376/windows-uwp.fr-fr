@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 description: Convertissez un code de service d’application qui s’exécutait dans un processus distinct en arrière-plan en code qui s’exécute dans le même processus que votre fournisseur de service d’application.
-ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, uwp, le service d’application
+keywords: Windows 10, uwp, service d’application
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: 272102f08b145c0681b0e036be4d41bc7c9ad9ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561548"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714831"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 

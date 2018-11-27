@@ -4,17 +4,15 @@ description: Une liste de points est un ensemble de sommets qui sont rendus sous
 ms.assetid: 332954AE-019F-4A91-B773-E3A7C92F3297
 keywords:
 - Listes de points
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b4c2e0f6e99099df4bdda9452521acf3b0cd2b8f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575666"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714598"
 ---
 # <a name="point-lists"></a>Listes de points
 

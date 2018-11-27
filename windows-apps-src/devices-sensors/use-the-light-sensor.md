@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: Utiliser le capteur de luminosité
 description: Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f7f838e5640f873593ac2e08c6a9b30f5258e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47092c128fe3a3855d7e32706451545b357c39c4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561900"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713925"
 ---
 # <a name="use-the-light-sensor"></a>Utiliser le capteur de luminosité
 
@@ -33,7 +31,7 @@ Un capteur de lumière ambiante est l’un des types de capteur d’environnemen
 
 ## <a name="prerequisites"></a>Prérequis
 
-Il se peut que vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur de luminosité ambiante.
 

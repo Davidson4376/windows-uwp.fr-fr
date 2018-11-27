@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Couche visuelle
 description: L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571388"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716127"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
@@ -40,7 +38,7 @@ Principales fonctions de la couche visuelle:
 
 ### <a name="content"></a>Contenu
 
-Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Les sous-classes de Visual incluent [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) contenant contenu et peuvent être peint avec des couleurs unies, personnalisés dessinés contenus ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
+Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. De Visual inclure [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) contenant contenu et peut être peint avec des couleurs unies, personnalisés dessinés contenus ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
 
 Pour plus d’informations, consultez la vue d’ensemble [Éléments visuels de composition](composition-visual-tree.md).
 

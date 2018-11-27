@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Lancer l’application Microsoft Store
 description: Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application Microsoft Store à des pages spécifiques dans le Windows Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb99c16d413e5e9869215f2d048ad6d9d52206f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578445"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714811"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Lancer l’application MicrosoftStore
 
@@ -43,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID WindowsStore est recommandé pour les clients Windows10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex: PFN) sont toujours prises en charge.</p>
-<p>Ces valeurs peuvent être disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) sur la page de <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">l’identité de l’application</a> dans la section Gestion des applications pour chaque application.</p>
+<p>Ces valeurs peuvent être disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) sur la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">identité de l’application</a> dans la section Gestion des applications pour chaque application.</p>
 </td>
 <td>
 ID WindowsStore <p>(recommandé)</p>

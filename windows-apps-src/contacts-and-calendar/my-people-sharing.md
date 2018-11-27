@@ -1,18 +1,16 @@
 ---
 title: Partage de mes contacts
 description: Explique comment ajouter la prise en charge du partage de mes contacts
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569341"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716064"
 ---
 # <a name="my-people-sharing"></a>Partage de mes contacts
 
@@ -105,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour rechercher votre nom de famille du Package, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet «Packages». Ici, «Application» est la classe activable correspondant à la vue de cible de partage.
+«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour rechercher le nom de famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet «Packages». Ici, «Application» est la classe activable correspondant à la vue de cible de partage.
 
 ## <a name="running-as-a-my-people-share-target"></a>En cours d’exécution en tant que cible de partage de mes contacts
 

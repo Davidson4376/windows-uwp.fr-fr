@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
 title: API de vignette principale
 label: Primary tile API's
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows10, uwp, StartScreenManager, épingler la vignette principale, API de vignette principale, vérifier si la vignette est épinglée, vignette dynamique
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d5c65881552199fce6f90bbf15e4bb2bac950ce
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6156922"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713865"
 ---
 # <a name="primary-tile-apis"></a>API de vignette principale
  
@@ -86,7 +84,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 Si votre vignette principale n’est pas épinglée pour le moment et si elle est prise en charge par Démarrer, vous souhaiterez peut-être afficher un conseil aux utilisateurs indiquant qu’ils peuvent épingler votre vignette principale.
 
 > [!NOTE]
-> Vous devez appeler cette API à partir d’un thread d’interface utilisateur pendant que votre application est au premier plan, et vous devez appeler uniquement cette APIafterthe utilisateur a demandé intentionnellement le bepinned de vignette principale (par exemple, après l’utilisateur a cliqué sur Oui pour votre Conseil sur l’épinglage de la vignette).
+> Vous devez appeler cette API à partir d’un thread d’interface utilisateur pendant que votre application est au premier plan, et vous devez appeler uniquement cette APIafterthe utilisateur a demandé intentionnellement le bepinned vignette principale (par exemple, lorsque l’utilisateur a cliqué sur Oui pour votre Conseil sur l’épinglage de la vignette).
 
 Si l’utilisateur clique sur votre bouton pour épingler la vignette principale, vous appelez ensuite la méthode [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) pour demander que votre vignette soit épinglée au menu Démarrer. Cette action affiche une boîte de dialogue demandant à l’utilisateur de confirmer qu’il souhaite épingler votre vignette au menu Démarrer.
 

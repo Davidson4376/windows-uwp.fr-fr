@@ -4,17 +4,15 @@ description: Vous pouvez redimensionner un pool de vignettes, offrir des ressour
 ms.assetid: 90347F7F-C991-4287-BD70-494533ECDC8A
 keywords:
 - Opérations disponibles sur les pools de vignettes
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ec546d467f338bbbe2f4dbf89015a4487e001718
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b8b0c6f4fa578e4ec483492b320dc9bc346ab66
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562708"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713965"
 ---
 # <a name="operations-available-on-tile-pools"></a>Opérations disponibles sur les pools de vignettes
 

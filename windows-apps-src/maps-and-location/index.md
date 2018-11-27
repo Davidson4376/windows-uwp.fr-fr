@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: Vue d’ensemble des cartes et de l’emplacement
 description: Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, carte, emplacement, services de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aea553a46357a26028848db5ff0e9b5debbeae56
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580556"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715115"
 ---
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et de l’emplacement
 
@@ -23,7 +21,7 @@ ms.locfileid: "7580556"
 Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
 
 > [!TIP]
-> Pour en savoir plus sur l’utilisation de cartes et emplacement dans votre application, téléchargez les exemples suivants à partir du [référentiel de Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub:
+> Pour plus d’informations sur l’utilisation de cartes et emplacement dans votre application, téléchargez les exemples suivants à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub:
 -   [Exemple de carte pour la plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [Exemple de géolocalisation UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
@@ -53,7 +51,7 @@ Ajoutez des itinéraires, des indications et des fonctionnalités de géocodage 
 | [Afficher des centres d’intérêt sur une carte](display-poi.md) | Ajoutez des centres d’intérêt à une carte à l’aide de punaises, d’images, de formes et d’éléments d’interface utilisateur XAML. |
 | [Afficher des itinéraires et indications](routes-and-directions.md) | Demandez des itinéraires et indications, et affichez-les dans votre application. |
 | [Effectuer un géocodage et un géocodage inverse](geocoding.md) | Convertissez des adresses en emplacements géographiques (géocodage) et des emplacements géographiques en adresses (géocodage inverse) en appelant les méthodes de la classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). |
-| [Rechercher et télécharger des packages de cartes pour une utilisation hors connexion](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| Dans le passé, votre application devait diriger les utilisateurs vers l’application paramètres pour télécharger des cartes hors connexion. Maintenant, vous pouvez utiliser des classes dans l’espace de noms [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) pour rechercher les packages téléchargés dans une zone donnée (basée sur un [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc.).. <br> Vous pouvez également vérifier et écouter l’état téléchargé des packages de cartes comme ainsi que démarrer un téléchargement sans que l’utilisateur à laisser votre application. <br> Vous trouverez des exemples illustrant comment effectuer cette opération dans le contenu de référence et l' [exemple de carte de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
+| [Rechercher et télécharger des packages de cartes pour une utilisation hors connexion](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| Dans le passé, votre application devait diriger les utilisateurs vers l’application paramètres pour télécharger des cartes hors connexion. Maintenant, vous pouvez utiliser des classes dans l’espace de noms [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) recherche des packages téléchargés dans une zone donnée (basée sur un [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc..). <br> Vous pouvez également vérifier et écouter l’état téléchargé des packages de cartes mais aussi démarrer un téléchargement sans obliger l’utilisateur à laisser votre application. <br> Vous trouverez des exemples illustrant comment effectuer cette opération dans le contenu de référence et l' [exemple de carte de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 ## <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
@@ -65,7 +63,7 @@ Utilisez les API de l’espace de noms [**Windows.Devices.Geolocation**](https:/
 | [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](guidelines-and-checklist-for-detecting-location.md) | Recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur. |
 | [Obtenir l’emplacement de l’utilisateur](get-location.md) | Demandez l’accès à l’emplacement de l’utilisateur, puis récupérez-le. | 
 | [Instructions pour l’utilisation du suivi des visites](guidelines-for-visits.md) | Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour améliorer le suivi de l’emplacement. |
-| [Recommandations en matière de conception pour le géorepérage](guidelines-for-geofencing.md) | Recommandations en matière de performances pour les applications qui utilisent la fonctionnalité de géorepérage. |
+| [Recommandations en matière de conception pour le géorepérage](guidelines-for-geofencing.md) | Recommandations en matière de performances pour les applications qui utilisent la fonctionnalité de limite géographique. |
 | [Configurer une limite géographique](set-up-a-geofence.md) | Configurez une limite géographique dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan. |
 
 ## <a name="launch-the-windows-maps-app"></a>Lancer l’application CartesWindows

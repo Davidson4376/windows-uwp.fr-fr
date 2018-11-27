@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Utiliser la boussole
 description: Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4af6b0fb339ba1fde3ea94f456eac98be8a1db9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571541"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714025"
 ---
 # <a name="use-the-compass"></a>Utiliser la boussole
 
@@ -33,7 +31,7 @@ Une application peut récupérer l’orientation actuelle par rapport au nord ma
 
 ## <a name="prerequisites"></a>Prérequis
 
-Il se peut que vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge une boussole.
 

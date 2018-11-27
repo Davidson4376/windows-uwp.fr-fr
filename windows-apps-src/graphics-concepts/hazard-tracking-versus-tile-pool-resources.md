@@ -4,17 +4,15 @@ description: Pour les ressources autres que celles de diffusion en continu, Dire
 ms.assetid: 8B0C73D3-3F77-41E8-B17D-C595DEE39E49
 keywords:
 - Suivi des risques ou ressources d’un pool de vignettes
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ff4e2ff079e15c0af41e3232c4b70c582a6a25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4dec176206aacb946bfd65341c483d8ba61558ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558467"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714311"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>Suivi des risques ou ressources d’un pool de vignettes
 

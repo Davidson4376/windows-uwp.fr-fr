@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts.
 title: Sélectionner des contacts
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: contacts, sélection sélectionner un seul contact sélectionner plusieurs contacts contacts, sélectionner plusieurs sélectionner un contact spécifique contact de données, sélection d’un contact de données spécifique, sélection de champs spécifiques
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 28943c5ff60ebf2326193e4c3f90a02111f4aec2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579706"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716160"
 ---
 # <a name="select-contacts"></a>Sélectionner des contacts
 

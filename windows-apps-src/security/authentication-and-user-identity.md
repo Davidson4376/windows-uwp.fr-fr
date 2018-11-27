@@ -2,18 +2,16 @@
 title: Authentification et identité des utilisateurs
 description: Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs. Cela peut aller de l’authentification unique (SSO) à l’aide d’un service Broker d’authentification web à l’authentification à 2facteurs hautement sécurisée.
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e41ef25f0d4cce3b36187862936136d84988ad0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d23f54a371a883de8b56d03ddd153ab2d91c230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570139"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715036"
 ---
 # <a name="authentication-and-user-identity"></a>Authentification et identité des utilisateurs
 
@@ -23,7 +21,7 @@ Les applications de plateforme Windows universelle (UWP) disposent de plusieurs 
 
 Pour les connexions d’applications régulières aux services de fournisseur d’identité tiers, tels que Facebook, Twitter, Flickr et ainsi de suite, utilisez le [service Broker d’authentification web](web-authentication-broker.md). Pour plus de commodité, utilisez la fonctionnalité [Stockage sécurisé des informations d’identification](credential-locker.md) pour enregistrer et rendre itinérantes les informations d’ouverture de session de l’utilisateur.
 
-Les entreprises qui utilisent Windows 10 doivent sérieusement envisager d’utiliser [Microsoft Passport et Windows Hello](microsoft-passport.md), ce qui permet l’authentification à 2 facteurs hautement sécurisée. Si l’utilisation de Microsoft Passport se révèle impossible, l’emploi de [cartes à puce](smart-cards.md) et de l’[empreinte digitale biométrique](fingerprint-biometrics.md) peut contribuer à ajouter une couche de sécurité supplémentaire.
+Les entreprises qui utilisent Windows 10 doivent sérieusement envisager d’utiliser [Microsoft Passport et Windows Hello](microsoft-passport.md), ce qui permet une authentification à 2 facteurs hautement sécurisée. Si l’utilisation de Microsoft Passport se révèle impossible, l’emploi de [cartes à puce](smart-cards.md) et de l’[empreinte digitale biométrique](fingerprint-biometrics.md) peut contribuer à ajouter une couche de sécurité supplémentaire.
 
 <table>
 <tr><th>Rubrique</th><th>Description</th></tr>

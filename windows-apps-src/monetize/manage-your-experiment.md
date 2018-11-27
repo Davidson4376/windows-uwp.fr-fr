@@ -1,32 +1,30 @@
 ---
-author: Xansky
 Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
 title: Gérer votre expérience dans l’Espace partenaires
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d1cdb80a2278850f18cecc631fef0b5dff0fefc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e5c0d0ca1b1d771df2b224cc41ec5a37e267bc9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566141"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713546"
 ---
 # <a name="manage-your-experiment-in-partner-center"></a>Gérer votre expérience dans l’Espace partenaires
 
-Après vous [Définissez votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md) et le [code de votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à activer votre expérience et à utiliser l’espace partenaires pour passer en revue les résultats de votre expérience. Après avoir obtenu toutes les données dont vous avez besoin, vous pourrez mettre fin à votre expérience et décider si vous souhaitez continuer à utiliser les valeurs des variables dans la variante de contrôle pour toutes vos applications, ou si vous voulez utiliser les valeurs des variables dans l’une de vos autres variantes.
+Après avoir vous [Définissez votre expérience dans l’espace partenaires](define-your-experiment-in-the-dev-center-dashboard.md) et [code de votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à activer votre expérience et à utiliser l’espace partenaires pour passer en revue les résultats de votre expérience. Après avoir obtenu toutes les données dont vous avez besoin, vous pourrez mettre fin à votre expérience et décider si vous souhaitez continuer à utiliser les valeurs des variables dans la variante de contrôle pour toutes vos applications, ou si vous voulez utiliser les valeurs des variables dans l’une de vos autres variantes.
 
 > [!NOTE]
-> Lorsque vous activez une expérience, l’espace partenaires lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. Toutefois, il peut prendre plusieurs heures pour les données d’expérience s’affiche dans l’espace partenaires.
+> Lorsque vous activez une expérience, l’espace partenaires lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. Toutefois, il peut prendre plusieurs heures pour les données de l’expérience s’affiche dans l’espace partenaires.
 
 Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 ## <a name="activate-your-experiment"></a>Activer votre expérience
 
-Lorsque vous êtes satisfait des paramètres de votre expérience dans l’espace partenaires et que vous avez mis à jour le code de votre application, vous êtes prêt à activer votre expérience, afin de pouvoir commencer à collecter les données correspondantes à partir de votre application. Quand l’expérience est active, votre application peut récupérer les valeurs de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires.
+Lorsque vous êtes satisfait des paramètres de votre expérience dans l’espace partenaires et que vous avez mis à jour le code de votre application, vous êtes prêt à activer votre expérience afin de commencer à collecter des données de l’expérience à partir de votre application. Quand l’expérience est active, votre application peut récupérer les valeurs de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires.
 
 1. Connectez-vous à l'[Espace partenaires](https://partner.microsoft.com/dashboard).
 2. Sous **Vos applications**, sélectionnez l’application présentant l’expérience que vous souhaitez activer.

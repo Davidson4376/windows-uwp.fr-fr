@@ -4,17 +4,15 @@ description: Une ressource est une zone de mémoire accessible par le pipeline D
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
 keywords:
 - Ressources
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a56b03de29e110a2768ebe71f4e61d8099ca1cf8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577295"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711960"
 ---
 # <a name="resources"></a>Ressources
 

@@ -1,27 +1,25 @@
 ---
-author: jwmsft
 description: L’extension de balisage Binding est convertie au moment du chargement XAML en une instance de la classe Binding.
 title: Extension de balisage Binding
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c35f8794cb77d7a05f2861e1d4d45023dc216129
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b197ea668ec73711b7a9c63e516b4ec9a5f54d62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572641"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713985"
 ---
 # <a name="binding-markup-extension"></a>Extension de balisage {Binding}
 
 
 **Remarque**un nouveau mécanisme de liaison est disponible pour Windows 10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
 
-**Remarque**pour plus d’informations sur l’utilisation des données de liaison dans votre application avec **{Binding}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{Binding}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{Binding}** est utilisé pour les propriétés de liaison de données sur les contrôles à des valeurs provenant d’une source de données, comme du code. L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données et la transmet à la propriété sur le contrôle. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et se mettre à jour en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications de la valeur de contrôle à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
