@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Modèles de projet et outils pour les jeux
 description: Cette rubrique montre ce dont vous avez besoin pour commencer à programmer des jeux DirectX pour la plateforme Windows universelle (UWP).
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, modèles, outils, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571521"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717375"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Modèles de projet et outils pour les jeux
 
@@ -27,7 +25,7 @@ Pour commencer, vous devez disposer de Visual Studio.
 ## <a name="get-visual-studio"></a>Obtenir Visual Studio
 
 
-[Téléchargez et installez Studio2015 visuelle de Microsoft](https://www.visualstudio.com/vs-2015-product-editions).
+[Téléchargez et installez Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>

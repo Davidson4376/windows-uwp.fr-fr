@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Préparation
 description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencer à créer des applications de plateforme Windows universelle (UWP) pour Windows 10.
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fd4d481d30eda68acaf4e48e4d1c1bf4ed7d24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f3d14467856aee733f2e11d057db0deb873269ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576423"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716790"
 ---
 # <a name="get-set-up"></a>Préparation
 
@@ -23,9 +21,9 @@ Il est bien plus facile de se lancer que vous ne le pensez. Suivez ces instructi
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Télécharger ou mettre à jour Visual Studio
 
-Studio2017 Visual Microsoft vous permet de concevoir, coder, tester et déboguer vos applications.
+Microsoft Visual Studio2017 vous aide à vous concevez, codez, testez et déboguez vos applications.
 
-Si vous n’avez pas encore Studio2017 visuel, vous pouvez installer le Community2017 Studio Visual Microsoft gratuit. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications:
+Si vous n’avez pas encore Visual Studio2017, vous pouvez installer le Community2017 Studio Visual Microsoft gratuit. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications:
 
 -   [Télécharger les outils de développement de Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

@@ -1,24 +1,22 @@
 ---
-author: Xansky
 description: Découvrez comment utiliser des bannières publicitaires dans votre application UWP.
 title: Bannières publicitaires
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, annonces, publicité, AdControl, bannières publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a8a08f81328be5dcf28a3f73a592e88e1edd135
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8754790fac07e6e1babdb44888cfd1ff138c230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564435"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716803"
 ---
 # <a name="banner-ads"></a>Bannières publicitaires
 
 Les articles de cette section montrent comment utiliser la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) dans le SDK Microsoft Advertising pour ajouter des bannières publicitaires à votre application UWP.
 
-Bannières publicitaires sont des publicités à affichage statique qui utilisent une partie rectangulaire d’une page dans votre application pour afficher du contenu publicitaire. Ces publicités peuvent s'actualiser automatiquement à intervalles réguliers. Il s’agit d’un bon point de départ si vous débutez avec les publicités dans votre application.
+Bannières publicitaires sont des publicités à affichage statique qui utilisent une partie rectangulaire d’une page de votre application pour afficher du contenu publicitaire. Ces publicités peuvent s'actualiser automatiquement à intervalles réguliers. Il s’agit d’un bon point de départ si vous débutez avec les publicités dans votre application.
 
 ![addreferences](images/banner-ad.png)
 

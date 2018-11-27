@@ -1,21 +1,19 @@
 ---
-author: stevewhims
 Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/01/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558414"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716887"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
@@ -35,7 +33,7 @@ Contrairement aux ressources d’image, où un fichier de ressource d’image co
     1. Sous le nœud de votre projet, créez un dossier et nommez-le «Strings».
     2. Sous `Strings`, créez un sous-dossier et nommez-le «en-US».
     3. Sous `en-US`, créez un fichier de ressources (.resw) et vérifiez qu’il est nommé «Resources.resw».
-    <br>**Remarque**si vous avez des fichiers de ressources .NET (.resx) que vous souhaitez porter, voir le [portage du balisage XAML et l’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Remarque**si vous avez des fichiers de ressources .NET (.resx) que vous souhaitez porter, consultez [portage du balisage XAML et l’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3.  Ouvrez `Resources.resw` et ajoutez ces ressources de chaîne.
 
     `Strings/en-US/Resources.resw`
@@ -90,7 +88,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Vous pouvez utiliser ce même code à partir d’un projet de bibliothèque de classes (Windows universel) ou de [bibliothèque Windows Runtime (Windows universel)](../winrt-components/index.md). Lors de l’exécution, les ressources de l’application qui héberge la bibliothèque sont chargées. Il est recommandé qu’une bibliothèque charge les ressources à partir de l’application qui l’héberge, car l’application est susceptible d’avoir un niveau plus élevé de localisation. Si une bibliothèque doit fournir des ressources, elle doit donner à l’application qui l’héberge l’option de remplacer ces ressources en tant qu’entrée.
 
-Si un nom de ressource est segmenté (qu’elle contient «.» caractères), puis remplacer points avec une barre oblique («/») en caractères dans le nom de ressource. Les identificateurs de propriété, par exemple, contient points; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ces éléments à partir du code.
+Si un nom de ressource est segmenté (qu’il contient «.» caractères), puis remplacer points avec une barre oblique («/») en caractères dans le nom de ressource. Les identificateurs de propriété, par exemple, contient points; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ces éléments à partir du code.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
@@ -118,7 +116,7 @@ En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.
 ## <a name="localize-the-string-resources"></a>Localiser les ressources de chaîne
 1. Faites une copie de votre fichier de ressources (.resw) pour une autre langue.
     1. Sous «Strings», créez un sous-dossier et nommez-le «de-DE» pour Allemand (Allemagne).
-   <br>**Remarque**pour le nom de dossier, vous pouvez utiliser n’importe quelle [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
+   <br>**Remarque**pour le nom du dossier, vous pouvez utiliser n’importe quelle [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
    2. Faites une copie de `Strings/en-US/Resources.resw` dans le dossier `Strings/de-DE`.
 2. Traduisez les chaînes.
     1. Ouvrez `Strings/de-DE/Resources.resw` et traduisez les valeurs dans la colonne Valeur. Il n’est pas nécessaire de traduire les commentaires.
@@ -173,7 +171,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Si vous déplacez la ressource «AppDisplayName» de `Resources.resw` vers `ManifestResources.resw`, puis dans le manifeste de votre package d’application, vous devez remplacer `ms-resource:AppDisplayName` par `ms-resource:/ManifestResources/AppDisplayName`.
 
-Si un nom de fichier de ressources est segmenté (qu’elle contient «.» caractères), puis laissez les points dans le nom lorsque vous le référencez. **Ne pas** remplacer les points par des caractères d’une barre oblique («/»), comme vous le feriez pour un nom de ressource.
+Si un nom de fichier de ressources est segmenté (qu’il contient «.» caractères), puis laissez les points dans le nom lorsque vous y faites référence. **Ne pas** remplacer les points par des caractères d’une barre oblique («/»), comme vous le feriez pour un nom de ressource.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -266,20 +264,20 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Pour une bibliothèque Windows Runtime (Windows universel), si l’espace de noms par défaut est segmenté (qu’elle contient «.» caractères), puis utilisez des points dans le nom de mappage de ressources.
+Pour une bibliothèque Windows Runtime (Windows universel), si l’espace de noms par défaut est segmenté (qu’il contient «.» caractères), puis utilisez points dans le nom de mappage de ressources.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Vous n’avez pas besoin de faire pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de la bibliothèque ou de votre composant. De chaque ressource `uri` s’affiche dans le fichier vidé.
+Vous n’avez pas besoin pour ce faire pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de la bibliothèque ou de votre composant. De chaque ressource `uri` s’affiche dans le fichier vidé.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Chargement de chaînes à partir d’autres packages
-Les ressources pour un package d’application sont gérées et accessibles par le biais du package propriétaire de niveau supérieur[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)en cours. Dans chaque package, différents composants peuvent avoir leurs ownResourceMapsubtrees, auquel vous pouvez accéder via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propre de niveau supérieur[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de l' actuelle[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). Dans chaque package, différents composants peuvent avoir leurs ownResourceMapsubtrees, auquel vous pouvez accéder via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Un package d’infrastructure peut accéder à ses propres ressources avec un URI d’identificateur de ressource absolu. Voir également [Schémas d’URI](uri-schemes.md).
 

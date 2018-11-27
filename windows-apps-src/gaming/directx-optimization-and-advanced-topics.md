@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Optimisation et rubriques avancées pour les jeux DirectX
 description: Optimisation et rubriques avancées pour la programmation de jeux DirectX.
 ms.assetid: b5f29fb2-3bcf-43b2-9a68-f8819473bf62
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeu, directx, optimiser, échantillonnage multiple, chaînes d’échange
 ms.localizationpriority: medium
-ms.openlocfilehash: e1a9b16dcf8c40c2b1db4af172d97009563e677a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9618a35ecd8f9d1a37b627494c0f00a5ed84806
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567455"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717536"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>Optimisation et rubriques avancées pour les jeux DirectX
 

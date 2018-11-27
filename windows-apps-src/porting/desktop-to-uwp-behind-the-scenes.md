@@ -1,23 +1,21 @@
 ---
-author: normesta
 Description: This article provides a deeper dive on how the Desktop Bridge works under the covers.
 title: Fonctionnement détaillé de Pont du bureau
-ms.author: normesta
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff5cd40cad43a73a8ba51a25710e2f2cbaf2a7b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f5320d4d6a4f43ee8d94a55e46333821656adb20
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578385"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717118"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>Fonctionnement détaillé de votre application de bureau empaquetée
 
-Cet article présente de manière plus approfondie interne sur ce qui se produit à des fichiers et des entrées de Registre lorsque vous créez un package d’application Windows pour votre application de bureau.
+Cet article présente de manière plus approfondie interne sur ce qui se passe aux fichiers et aux entrées de Registre lorsque vous créez un package d’application Windows pour votre application de bureau.
 
 L’objectif principal d’un package modern est de séparer l’état de l’application à partir de l’état du système autant que possible tout en conservant la compatibilité avec d’autres applications. Pour ce faire, le pont place l’application dans un package de plateforme Windows universelle (UWP), puis détecte et redirige certaines modifications qu’il apporte au système de fichiers et au Registre lors de l’exécution.
 
@@ -50,7 +48,7 @@ Lire ou énumérer un fichier ou un dossier Windows connu | Fusion dynamique de 
 
 ### <a name="packaged-vfs-locations"></a>Emplacements de VFS empaquetés
 
-Le tableau suivant montre où les fichiers intégrés à votre package sont superposés sur le système de l’application. Votre application détectera ces fichiers pour être dans les emplacements système répertoriés, alors qu’ils sont dans les emplacements redirigés à l’intérieur de *C:\Program files\windowsapps\nom_package\vfs*. Les emplacements FOLDERID proviennent des constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx).
+Le tableau suivant montre où les fichiers intégrés à votre package sont superposés sur le système de l’application. Votre application détectera ces fichiers pour présenter les emplacements système répertoriés, en fait, ils se trouvent dans les emplacements redirigés à l’intérieur de *C:\Program files\windowsapps\nom_package\vfs*. Les emplacements FOLDERID proviennent des constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx).
 
 Emplacement système | Emplacement redirigé (sous [Racine du package] \VFS\) | Valide sur les architectures
  :--- | :--- | :---

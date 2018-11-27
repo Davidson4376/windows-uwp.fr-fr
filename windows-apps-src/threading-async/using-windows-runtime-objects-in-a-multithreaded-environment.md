@@ -4,16 +4,14 @@ description: Cet article décrit la façon dont le .NETFramework gère les appel
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
-author: normesta
-ms.author: normesta
 keywords: windows10, uwp, minuteur, threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4b8249a81cb7d71ba1f4775fd858ae87779c85
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 82e1431a6689ef9ece91cef7e2b018e24f834039
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553756"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716972"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Utilisation des objets Windows Runtime dans un environnement multi-thread
 Cet article décrit la façon dont le .NETFramework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.

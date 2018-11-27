@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Nouveautés apportées dans la documentation Windows en juillet2017 - Développer des applicationsUWP
 description: De nouvelles fonctionnalités, des exemples et des conseils aux développeurs ont été ajoutés à la documentation du développeur Windows10 en juillet2017.
 keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows10
-ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dd00d1aba0e6a58cd2128c90b2c7f714d3f8f802
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579537"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717349"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en juillet2017
 

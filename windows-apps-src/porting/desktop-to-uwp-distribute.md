@@ -1,20 +1,18 @@
 ---
-author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: Publier votre application de bureau empaquetée au Microsoft Store ou charger de manière indépendante sur un ou plusieurs périphériques.
-ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: f79e641b377f0e34ece8f0be434fae11cba621a6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9fe216b70b7c10f254c0e3b7b18275a72d46215c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555483"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717148"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
@@ -44,11 +42,11 @@ Si vous préférez plutôt distribuer votre application sans utiliser le Windows
 
 Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du MicrosoftStore.
 
-Pour distribuer votre application à d’autres appareils sans le placer dans le Windows Store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
+Pour distribuer votre application sur d’autres appareils sans le placer dans le Windows Store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
 
 Vous pouvez [créer un certificat](../packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
 
-Si vous prévoyez de distribuer votre application sur des appareils qui exécutent Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
+Si vous prévoyez de distribuer votre application sur des périphériques exécutant Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
 
 Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine approuvée** ou **Personnes autorisées** de chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’aurez rien à installer sur les autres systèmes, hormis votre application.  
 
@@ -125,7 +123,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstaller la version bureau de votre application
 
-Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
+Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Si cela se produit, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
 
 Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 

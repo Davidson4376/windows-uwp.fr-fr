@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Lancer l’application Cartes Windows
 description: Découvrez comment lancer l’application Cartes Windows à partir de votre application.
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567753"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717612"
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
@@ -301,7 +299,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>trfc=1</p></td>
 <td align="left"><p>Spécifie si les informations sur le trafic sont incluses sur la carte. Si vous omettez le paramètre trfc, vous obtenez le même résultat qu’avec la commande <code>trfc=0</code>.</p>
 <div class="alert">
-**Remarque**données sur le trafic ne sont pas disponibles dans toutes les régions.
+**Remarque**données relatives au trafic ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
  

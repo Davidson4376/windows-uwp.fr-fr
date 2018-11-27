@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
 title: Traiter des fichiers multimédias en arrière-plan
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569812"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716677"
 ---
 # <a name="process-media-files-in-the-background"></a>Traiter des fichiers multimédias en arrière-plan
 

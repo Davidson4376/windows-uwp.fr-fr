@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: Comment étirer l’IU vers le bord de l’écran
 description: Comment désactiver la mise à l’échelle automatique pour la zone sans titre.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
 ms.localizationpriority: medium
-ms.openlocfilehash: 32932845db47ed47b7e80f68cf4e424ba97e85c0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ac49d80f1d99a56eff565a0daa8f2f3e9289636
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558135"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717184"
 ---
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>Comment étirer l’IU vers le bord de l’écran   
 Par défaut, des bordures sont placées autour de la fenêtre d’affichage de l’application. Elles permettent de tenir compte de la zone adaptée à l’écran de télévision. Pour plus d’informations, voir [Conception pour Xbox et TV](../design/devices/designing-for-tv.md#tv-safe-area). 

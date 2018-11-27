@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: Cet article vous montre comment utiliser la bibliothèque Open Source Computer Vision Library (OpenCV) avec la classe MediaFrameReader.
 title: Utiliser OpenCV avec MediaFrameReader
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b139d0b8747931f7cac9885d441122af97f7dad
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a603899776879cb7c8dc2439c3c22906db0b8038
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554905"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7716547"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Utiliser la bibliothèque Open Source Computer Vision Library (OpenCV) avec MediaFrameReader
 
@@ -30,7 +28,7 @@ Cet article repose sur le contenu de deux autres articles:
 
 Outre ces articles, pour afficher et télécharger un exemple de travail complet, de bout en bout, du scénario décrit dans cet article, voir la [Profils d’appareil photo + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) dans le référentiel Windows Universal Samples GitHub.
 
-Pour commencer à développer rapidement, vous pouvez inclure la bibliothèque OpenCV dans un projet d’application UWP à l’aide de packages NuGet, mais ces packages peut ne pas passent le processus d’application certficication lorsque vous soumettez votre application au Windows Store, afin qu’il est recommandé de télécharger le OpenCV bibliothèque de code source et créer les fichiers binaires avant de soumettre votre application. Vous trouverez des informations sur le développement avec OpenCV à l’adresse [http://opencv.org](http://opencv.org)
+Pour commencer à développer rapidement, vous pouvez inclure la bibliothèque OpenCV dans un projet d’application UWP à l’aide de packages NuGet, mais ces packages peut ne pas passent le processus d’application certficication lorsque vous soumettez votre application au Windows Store, afin qu’il est recommandé de télécharger le OpenCV bibliothèque de code source et de créer les fichiers binaires avant de soumettre votre application. Vous trouverez des informations sur le développement avec OpenCV à l’adresse [http://opencv.org](http://opencv.org)
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>Implémenter le composant Windows Runtime natif OpenCVHelper

@@ -2,18 +2,16 @@
 title: Créer un service de connexion WindowsHello
 description: Voici la deuxième partie de la procédure complète sur l’utilisation de Windows Hello comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows10.
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 839d44c992977fdad8863203b84116b2faeba76d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7445685"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717088"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Créer un service de connexion WindowsHello
 

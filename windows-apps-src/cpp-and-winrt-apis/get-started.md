@@ -1,25 +1,23 @@
 ---
-author: stevewhims
 description: Pour vous aider à utiliser rapidement C++/WinRT, cette rubrique présente un exemple simple de code.
 title: Prise en main de C++/WinRT
-ms.author: stwhi
 ms.date: 10/19/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, utiliser rapidement, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc98f61acc3b5dccdc4869b646337fdf9a6e701a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570967"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716228"
 ---
 # <a name="get-started-with-cwinrt"></a>Prise en main de C++/WinRT
 
-Pour vous aider à la mise à niveau à l’utilisation de [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple basé sur un nouveau **Windows Console Application (C++ / WinRT)** projet. Cette rubrique montre également comment [Ajouter C++ / WinRT prise en charge un projet d’application de bureau Windows](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+Pour vous aider à rapidement avec à l’aide de [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple basé sur un nouveau **Windows Console Application (C++ / WinRT)** projet. Cette rubrique montre également comment [Ajouter C++ / WinRT prise en charge pour un projet d’application de bureau Windows](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 > [!IMPORTANT]
-> Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C++ / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à deux cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > **langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez).
+> Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à soit cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > **langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez-le).
 
 ## <a name="a-cwinrt-quick-start"></a>Démarrage rapide avec C++/WinRT
 
@@ -120,7 +118,7 @@ Vous n'avez pas non plus besoin de gérer les codes de retour HRESULT. C++/WinRT
 
 ## <a name="modify-a-windows-desktop-application-project-to-add-cwinrt-support"></a>Modifier un projet d’application de bureau Windows pour ajouter C++ / WinRT support
 
-Cette section vous montre comment vous pouvez ajouter C++ / prise en charge WinRT à un projet d’application de bureau Windows que vous pourriez rencontrer. Si vous n’avez pas un projet d’application de bureau Windows existant, vous pouvez suivre, ainsi que les étapes suivantes en premier une création. Par exemple, ouvrez Visual Studio et créez un **Visual C++** \> **Windows Desktop** \> projet**d’Application de bureau Windows** .
+Cette section vous montre comment vous pouvez ajouter C++ / WinRT prise en charge pour un projet d’application de bureau Windows que vous pourriez rencontrer. Si vous n’avez pas un projet d’application de bureau Windows existant, vous pouvez suivre, ainsi que les étapes suivantes en premier une création. Par exemple, ouvrez Visual Studio et créez un **Visual C++** \> **Windows Desktop** \> projet**d’Application de bureau Windows** .
 
 ### <a name="set-project-properties"></a>Définir les propriétés de projet
 
@@ -150,7 +148,7 @@ C++ / projection de langage WinRT dépend de certaines fonctions (non-membres) g
 
 La première option consiste à ajouter à votre Visual Studio de projet toutes C++ / WinRT MSBuild propriétés et cibles. Modifier votre `.vcxproj` de fichiers, recherchez `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définissez la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`.
 
-Vous pouvez également utiliser les paramètres de lien de projet pour une liaison explicite `WindowsApp.lib`.
+Sinon, vous pouvez utiliser les paramètres de lien de projet pour une liaison explicite `WindowsApp.lib`.
 
 Ou, vous pouvez le faire dans le code source (dans `pch.h`, par exemple) comme suit.
 
@@ -158,13 +156,13 @@ Ou, vous pouvez le faire dans le code source (dans `pch.h`, par exemple) comme s
 #pragma comment(lib, "windowsapp")
 ```
 
-Vous pouvez maintenant compiler et lier et ajouter C++ / code WinRT à votre projet (par exemple, le code affiché dans la [A les langages c++ / WinRT démarrage rapide](#a-cwinrt-quick-start) section ci-dessus)
+Vous pouvez maintenant compiler et lier et ajouter C++ / WinRT code à votre projet (par exemple, le code affiché dans la [A les langages c++ / WinRT démarrage rapide](#a-cwinrt-quick-start) section ci-dessus)
 
 ## <a name="important-apis"></a>API importantes
-* [Méthode de SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [Propriété de SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [Méthode SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [Propriété SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [structure de WinRT::HRESULT-erreur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [structure WinRT::HRESULT-erreur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>Rubriquesconnexes
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

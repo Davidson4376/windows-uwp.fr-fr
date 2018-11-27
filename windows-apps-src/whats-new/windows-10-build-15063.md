@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Nouveautés de Windows10 pour les développeurs - Outils et fonctionnalités
 description: Windows10, build15063 et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la plateforme Windows universelle.
 keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows10, 1703, mars, plus récent, 15063
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b853a4ac5afa03759094327c2b80d266751b8ec
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3791887baaefeca0052a10c60d4650d5623ba3fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573964"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717240"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>Nouveautés pour les développeurs dans Windows10, build15063
 

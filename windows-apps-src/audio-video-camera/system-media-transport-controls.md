@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles dédiés intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application.
 title: Contrôle manuel des contrôles de transport de média système
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ece9a25a2fd2892553d66847c39637e7faae70
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6be1680d1ce843c1fbe7105dc2027e764095495a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554945"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7717224"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>Contrôle manuel des contrôles de transport de média système
 

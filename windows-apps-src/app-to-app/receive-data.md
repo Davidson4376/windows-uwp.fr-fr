@@ -2,18 +2,16 @@
 description: Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager.
 title: Recevoir des données
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d64e4a2d4251aca6bbce39b5f24e3e5f35295b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563270"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716747"
 ---
 # <a name="receive-data"></a>Recevoir des données
 

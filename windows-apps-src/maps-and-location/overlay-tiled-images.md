@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: Superposer des images sous forme de vignettes sur une carte
 description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.author: normesta
 ms.date: 07/19/2018
 ms.topic: article
 keywords: windows10, uwp, carte, emplacement, images, superposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e01b115d3e2b2a305468357440acff50a06f3fd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47b9c4335a99e7b0f17da0fb9ddb520cc917e398
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557011"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716780"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Superposer des images sous forme de vignettes sur une carte
 

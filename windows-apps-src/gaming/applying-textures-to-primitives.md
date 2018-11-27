@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Appliquer des textures aux primitives
 description: Nous chargeons des données brutes, appliquées à une primitive 3D avec le cube créé à la rubrique Utilisation de la profondeur et d’effets sur des primitives.
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, textures, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 437c861e6d3017d83b520732dd0e279d882835c5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577743"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717652"
 ---
 # <a name="apply-textures-to-primitives"></a>Appliquer des textures aux primitives
 
@@ -34,7 +32,6 @@ Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : con
 
 <a name="instructions"></a>Instructions
 ------------
-
 ### <a name="1-defining-variables-for-a-textured-cube"></a>1. Définition de variables pour un cube avec texture
 
 Tout d’abord, nous devons définir les structures **BasicVertex** et **ConstantBuffer** pour le cube auquel est appliquée une texture. Ces structures spécifient les positions, les orientations et les textures de vertex pour le cube et le type d’affichage de ce dernier. À défaut, nous déclarons des variables comme nous l’avons fait dans le didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
