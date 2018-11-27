@@ -1,22 +1,20 @@
 ---
-author: Xansky
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’acquisition agrégées d’extensions.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’acquisition agrégées d’extensions.
 title: Obtenir des acquisitions d’extensions XboxOne
-ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
-keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de Xbox One acquisitions de modules complémentaires
+keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, Xbox One acquisitions de modules complémentaires
 ms.localizationpriority: medium
-ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569499"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717979"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions XboxOne
 
-Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les données d’acquisition agrégées d’extensions au format JSON pour une console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord du centre de partenaires Analytique XDP.
+Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les données d’acquisition agrégées d’extensions au format JSON pour une console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord XDP Analytique l’espace partenaires.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -48,21 +46,21 @@ Le paramètre *applicationId* ou *addonProductId* est obligatoire. Pour récupé
 
 | Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | *ProductId* du jeu Xbox One pour lequel vous récupérez les données d’acquisition. Pour obtenir l' *ID du produit* de votre jeu, accédez à votre jeu dans le programme d’Analytique XDP et récupérer l' *ID du produit* à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’acquisitions à partir du rapport analytique de l’espace partenaires, le *productId* est inclus dans le fichier .tsv. |  Oui  |
-| addonProductId | chaîne | *ProductId* de l’extension pour laquelle vous souhaitez récupérer des données d’acquisition.  | Oui  |
+| applicationId | chaîne | L' *ID du produit* du jeu Xbox One pour lequel vous récupérez des données d’acquisition. Pour obtenir l' *ID du produit* de votre jeu, accédez à votre jeu dans le programme d’Analytique XDP et récupérer l' *ID du produit* à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’acquisitions à partir du rapport analytique de l’espace partenaires, l' *ID du produit* est inclus dans le fichier .tsv. |  Oui  |
+| addonProductId | chaîne | L' *ID du produit* de l’extension pour laquelle vous souhaitez récupérer des données d’acquisition.  | Oui  |
 | startDate | date | Dans la plage de dates, date de début de la récupération des données d’acquisition. La valeur par défaut est la date du jour. |  Non  |
 | endDate | date | Dans la plage de dates, date de fin de la récupération des données d’acquisition. La valeur par défaut est la date du jour. |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
 | filter |chaîne  | <p>Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs eq ou ne, et les instructions peuvent être combinées à l’aide des opérateurs and ou or. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre filter. par exemple, filter=market eq 'US' and gender eq 'm'.</p> <p>Vous pouvez spécifier les champs suivants dans le corps de réponse:</p> <ul><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul>| Non   |
 | aggregationLevel | chaîne | Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. | Non |
-| orderby | chaîne | Instruction qui commande les valeurs de données de résultats pour chaque acquisition d’extension. La syntaxe est <em>orderby = field [order], champ [order], …</em> Le paramètre de <em>champ</em> peut être une des chaînes suivantes:<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p> |  Non  |
+| orderby | chaîne | Instruction qui commande les valeurs de données de résultats pour chaque acquisition d’extension. La syntaxe est <em>orderby = field [order], [order], de champ …</em> Le paramètre de <em>champ</em> peut être une des chaînes suivantes:<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p> |  Non  |
 | groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>age</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple: <em> &amp;groupby = âge, marché&amp;aggregationLevel = week</em></p> |  Non  |
 
 
 ### <a name="request-example"></a>Exemple de requête
 
-L’exemple suivant illustre quelques requêtes d’obtention de données d’acquisition d’extensions. Remplacez les valeurs *addonProductId* et *applicationId* avec l’ID Store approprié pour votre extension ou application.
+L’exemple suivant illustre quelques requêtes d’obtention de données d’acquisition d’extensions. Remplacez les valeurs *addonProductId* et *applicationId* par l’ID Windows Store pour votre extension ou application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/addonacquisitions?addonProductId=BRRT4NJ9B3D2&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -96,7 +94,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | Valeur               | Type    | Description        |
 |---------------------|---------|---------------------|
 | date                | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| addonProductId      | chaîne  | *ProductId* de l’extension pour laquelle vous récupérez les données d’acquisition.                                                                                                                                                                 |
+| addonProductId      | chaîne  | L' *ID du produit* de l’extension pour laquelle vous récupérez les données d’acquisition.                                                                                                                                                                 |
 | addonProductName    | chaîne  | Nom d’affichage de l’extension. Cette valeur s’affiche uniquement dans les données de réponse si le paramètre *aggregationLevel* est défini sur le **jour**, sauf si vous spécifiez le champ **addonProductName** dans le paramètre *groupby* .                                                                                                                                                                                                            |
 | applicationId       | chaîne  | L' *ID du produit* de l’application pour laquelle vous souhaitez récupérer des données d’acquisition d’extension.                                                                                                                                                           |
 | applicationName     | chaîne  | Le nom complet du jeu.                                                                                                                                                                                                             |
@@ -106,7 +104,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | market              | chaîne  | Le code pays ISO3166 du marché dans lequel l’acquisition s’est produite.                                                                                                                                                                  |
 | gender              | chaîne  | <p>L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition:</p> <ul><li>«m»</li><li>«f»</li><li>«Inconnu»</li></ul>                                                                                                    |
 | age            | chaîne  | <p>L'une des chaînes suivantes qui indique le groupe d'âge de l'utilisateur ayant effectué l’acquisition:</p> <ul><li>«moins de 13»</li><li>«13: 17»</li><li>«18 à 24»</li><li>«25-34»</li><li>«35-44»</li><li>«44: 55»</li><li>«greater than 55»</li><li>«Inconnu»</li></ul>                                                                                                 |
-| acquisitionType     | chaîne  | <p>Une des chaînes suivantes qui indique le type d'acquisition:</p> <ul><li>«Gratuitement»</li><li>«Essai»</li><li>«Payé»</li><li>«Code promotionnel»</li><li>«PIA»</li><li>«Abonnement PIA»</li><li>«Public privé»</li><li>«Pre ordre»</li><li>«Xbox Game Pass» (ou «Game Pass» si l’interrogation pour les données avant le 23 mars 2018)</li><li>«Disques»</li><li>«Code prépayé»</li><li>«Facturé Pre ordre»</li><li>«Annulé Pre ordre»</li><li>«Failed Pre ordre»</li></ul>                                                                                                    |
+| acquisitionType     | chaîne  | <p>Une des chaînes suivantes qui indique le type d'acquisition:</p> <ul><li>«Gratuitement»</li><li>«Essai»</li><li>«Payé»</li><li>«Code promotionnel»</li><li>«Iap»</li><li>«Abonnement Iap»</li><li>«Public privé»</li><li>«Pre ordre»</li><li>«Xbox Game Pass» (ou «Game Pass» si l’interrogation pour les données avant le 23 mars 2018)</li><li>«Disques»</li><li>«Code prépayé»</li><li>«Facturé ordre des pré»</li><li>«Annulé l’ordre des pré»</li><li>«N’a pas pu ordre des pré»</li></ul>                                                                                                    |
 | acquisitionQuantity | entier | Le nombre d’acquisitions qui se sont produites.                        |
 
 

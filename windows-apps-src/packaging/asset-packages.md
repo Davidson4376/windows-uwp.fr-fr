@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Introduction aux packages d'actifs
 description: Les packages d'actifs désignent un type de package qui agit en tant qu'emplacement centralisé pour les fichiers communs d'une application. Ainsi, la nécessité de dupliquer les fichiers au travers de ses packages d'architecture est efficacement éliminée.
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 98980e67d24eb96aa55af7fefe10b5e4c2cdfa67
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b7ae65d13f92f5ab28f2f5eda468032bb7f83793
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566177"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718099"
 ---
 # <a name="introduction-to-asset-packages"></a>Introduction aux packages d'actifs
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: Utilisez cette méthode dans l’API des promotions du MicrosoftStore pour gérer les lignes de livraison des campagnes publicitaires.
 title: Gérer les lignes de livraison
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d4a09524f1ebc0e944036bd9458b1b32ee04d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 363f7034d7e353d9ee110637971e7b848dbca1bb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555242"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718251"
 ---
 # <a name="manage-delivery-lines"></a>Gérer les lignes de livraison
 

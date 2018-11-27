@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: Les SDK Windows, Microsoft Advertising, MicrosoftStore Services et le MicrosoftStore fournissent de nombreuses fonctionnalités qui vous permettent de générer davantage de revenus avec vos apps et de conquérir des clients en engageant les utilisateurs.
 title: Monétisation, implication et services du Windows Store
-ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566766"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718673"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 
@@ -34,7 +32,7 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 | [Consigner des événements personnalisés pour l’Espace partenaires](log-custom-events-for-dev-center.md)  | Consigner des événements personnalisés à partir de votre application UWP et passez en revue les événements dans le [rapport d’utilisation](../publish/usage-report.md) dans l’espace partenaires. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
 | [Demander des évaluations et des avis](request-ratings-and-reviews.md) |  Incitez vos clients à évaluer ou à donner un avis sur votre app en affichant par programme une interface utilisateur destinée aux avis et évaluations.  |
 | [Services MicrosoftStore](using-windows-store-services.md)    |  Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le WindowsStore et d’autres tâches associées au WindowsStore, et accéder aux données d’analyse.    |
-| [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester les PC et appareils sur le sol vente peuvent aller à droite dans.  |
+| [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester le PC et appareils sur le sol vente peuvent aller à droite dans.  |
 
 ## <a name="related-topics"></a>Rubriques connexes
 

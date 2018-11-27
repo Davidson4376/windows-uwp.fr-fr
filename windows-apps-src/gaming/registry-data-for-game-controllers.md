@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Données de Registre pour les contrôleurs de jeu
 description: En savoir plus sur les données qu’il est possible d’ajouter au Registre de l’ordinateur afin de pouvoir utiliser votre contrôleur dans les jeux UWP.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: wdg-dev-content
 ms.date: 06/25/2018
 ms.topic: article
 keywords: Windows10, uwp, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbd4074c52514b9cb66fd6f2dd189421f61d5ee
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577043"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717920"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 

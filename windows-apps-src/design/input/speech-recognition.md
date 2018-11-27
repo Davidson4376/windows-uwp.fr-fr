@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
 title: Reconnaissance vocale
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
 keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur
-ms.author: kbridge
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9148b2d57c55bdff09be9a9d6bb8a6b65d93f12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b6e0c6a751116ad03c4e8d69cb02e7147938097
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557146"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718570"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
@@ -28,17 +26,17 @@ La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API
 
 ## <a name="configure-speech-recognition"></a>Configurer la reconnaissance vocale
 
-Pour prendre en charge la reconnaissance vocale avec votre application, l’utilisateur doit se connecter et activer un microphone sur leur appareil et acceptez la politique de confidentialité de Microsoft l’octroi d’autorisation pour votre application pour l’utiliser.
+Pour prendre en charge la reconnaissance vocale avec votre application, l’utilisateur doit se connecter et activer un microphone sur leur appareil et acceptez la politique de confidentialité Microsoft l’octroi d’autorisation pour votre application pour l’utiliser.
 
 À l’invite automatiquement l’utilisateur avec une boîte de dialogue système demande d’autorisation d’accès et utiliser le microphone de l’alimentation audio venez de définir (exemple à partir de [reconnaissance vocale et exemple de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897) illustré ci-dessous), le **Microphone** [appareil fonctionnalité](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) dans le [manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Pour plus d’informations, voir les [déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ![Politique de confidentialité pour l’accès au microphone](images/speech/privacy.png)
 
-Si l’utilisateur clique sur Oui pour accorder l’accès au microphone, votre application est ajoutée à la liste des applications approuvées sur les paramètres -> confidentialité -> page du Microphone. Toutefois, comme l’utilisateur peut choisir de désactiver ce paramètre à tout moment, vous devez vérifier que votre application a accès au microphone avant d’essayer de l’utiliser.
+Si l’utilisateur clique sur Oui pour accorder l’accès au microphone, votre application est ajoutée à la liste des applications approuvées sur les paramètres -> confidentialité -> page Microphone. Toutefois, comme l’utilisateur peut choisir de désactiver ce paramètre à tout moment, vous devez vérifier que votre application a accès au microphone avant de tenter de l’utiliser.
 
-Si vous souhaitez également prendre en charge de la dictée, Cortana, ou la reconnaissance vocale autres services (par exemple, une [Grammaire prédéfinie](#predefined-grammars) définies dans une contrainte de rubrique), vous devez également confirmer que **la reconnaissance vocale en ligne** (Paramètres -> confidentialité -> voix) est activée.
+Si vous souhaitez également prendre en charge de la dictée, Cortana, ou la reconnaissance vocale autres services (par exemple, une [Grammaire prédéfinie](#predefined-grammars) définies dans une contrainte de rubrique), vous devez également confirmer que **la reconnaissance vocale en ligne** (Paramètres -> confidentialité -> voix) est paramètre activé.
 
-Cet extrait de code montre comment votre application peut vérifier s’il existe un microphone et si elle est autorisé à l’utiliser.
+Cet extrait de code montre comment votre application peut vérifier si un microphone est présent et si elle est autorisé à l’utiliser.
 
 ```csharp
 public class AudioCapturePermissions
@@ -212,7 +210,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
 
-Vous pouvez utiliser les types de contraintes suivants pour reconnaître la saisie vocale.
+Vous pouvez utiliser les types de contraintes suivantes pour reconnaître la saisie vocale.
 
 ### <a name="predefined-grammars"></a>Grammaires prédéfinies
 
@@ -222,7 +220,7 @@ La grammaire de dictée de texte libre par défaut peut reconnaître la plupart 
 
 La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-**Remarque**étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineux, et parce qu’ils sont en ligne (pas sur l’appareil), performances ne peuvent pas être aussi bonnes qu’avec une grammaire personnalisée installée sur l’appareil.     
+**Remarque**étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineux, et dans la mesure où ils sont en ligne (pas sur l’appareil), performances ne peut pas être aussi bonnes qu’avec une grammaire personnalisée installée sur l’appareil.     
 
 Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
@@ -281,7 +279,7 @@ Utilisez un fichier XML VCD (Voice Command Definition) pour définir les command
 
 Voir [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
-**Remarque**le type de type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
+**Remarque**le type de contrainte vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
 Pour apprendre à utiliser des contraintes, voir [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md).
 
 La grammaire de dictée prédéfinie d’une application Windows universelle reconnaît la plupart des mots et des expressions courtes dans une langue donnée. Elle est activée par défaut lorsqu’un objet du moteur de reconnaissance vocale est instancié sans contraintes personnalisées.

@@ -1,19 +1,17 @@
 ---
 description: Découvrez comment développer une application UWP.
 title: Développer des applicationsUWP
-author: mijacobs
 layout: LandingPage
-keywords: portail de vue d’ensemble plateforme async thread UWP application développement développer les développeurs
-ms.author: mijacobs
+keywords: portail de vue d’ensemble plateforme async threading UWP application développement développer les développeurs
 ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558975"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718640"
 ---
 <div> 
 <h1>Développer des applicationsUWP</h1>
@@ -52,7 +50,7 @@ ms.locfileid: "7558975"
                     </div>                
                     <div class="cardText">
                         <h3>Guides de portage</h3>
-                        <p>Mettez votre existant Windows Forms, WPF, Android ou application iOS vers UWP. </p>
+                        <p>Porter votre existant Windows Forms, WPF, Android ou application iOS vers UWP. </p>
                     </div>
                 </div>
             </div>
@@ -206,7 +204,7 @@ ms.locfileid: "7558975"
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Périphériques, capteurs et alimentation</h3>
-                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Vue d'ensemble</a></p>
+                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Vue d’ensemble</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">Activer les fonctionnalités d’un appareil</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">Jumeler des appareils</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">Point de service</a></p>
@@ -226,7 +224,7 @@ ms.locfileid: "7558975"
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Portage</h3>
-                        <p style="display:block"><a href="/windows/uwp/porting/">Vue d'ensemble</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/">Vue d’ensemble</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight vers UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows Runtime 8.x vers UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">Pont du bureau</a></p>
@@ -271,7 +269,7 @@ ms.locfileid: "7558975"
                     </div>
                     <div class="cardText">
                         <h3>Exemples</h3>
-                        <p> Découvrez comment créer des applications réussies pour Windows en testant ces échantillons. Ces exemples vous montrent comment les fonctionnalités fonctionnent et vous aider à vous démarrer vos propres applications UWP.</p>
+                        <p> Découvrez comment créer des applications réussies pour Windows en testant ces échantillons. Ces exemples vous montrent comment les fonctionnalités fonctionnent et à vous accélérer vos propres applications UWP.</p>
                     </div>
                 </div>
             </div>

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: Cette rubrique présente une étude de cas de portage d’un questionnaire de pair à pair jeu WinRT 8.1 exemple d’application pour une application de plateforme Windows universelle Windows 10 (UWP).
 title: 'Étude de cas de portage d’application Windows Runtime8.x vers UWP: exemple d’application d’homologue à homologue QuizGame'
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69aae85f4e0bb01833114ae5b2cbfab45e9dd84d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ce39e87f3c5c9e11f3e9ddb1424d606356ee3c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567999"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717473"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows Runtime 8.x vers l’étude de cas UWP: exemple d’application QuizGame
 
@@ -22,13 +20,13 @@ ms.locfileid: "7567999"
 
 Cette rubrique présente une étude de cas de portage d’un questionnaire de pair à pair jeu WinRT 8.1 exemple d’application pour une application de plateforme Windows universelle Windows10Universal (UWP).
 
-Une application 8.1 universelle est une application qui génère deux versions de la même application: un package d’application pour Windows8.1 et une autre pour Windows Phone 8.1. La version WinRT 8.1 de l’application QuizGame utilise une disposition de projet d’application Windows universelle, mais adopte une approche différente et génère une application fonctionnellement distincte pour les deux plates-formes. Le package d’application Windows8.1 sert l’hôte pour une session de jeu-questionnaire, alors que le package d’application Windows Phone 8.1 joue le rôle du client de l’hôte. Les deux composantes de la session de jeu-questionnaire communiquent via un réseau homologue à homologue.
+Une application 8.1 universelle est une application qui génère deux versions de la même application: un package d’application pour Windows8.1 et une autre pour Windows Phone 8.1. La version WinRT 8.1 de l’application QuizGame utilise une disposition de projet d’application Windows universelle, mais adopte une approche différente et génère une application fonctionnellement distincte pour les deux plates-formes. Le package d’application Windows8.1 joue l’hôte pour une session de jeu-questionnaire, alors que le package d’application Windows Phone 8.1 joue le rôle du client de l’hôte. Les deux composantes de la session de jeu-questionnaire communiquent via un réseau homologue à homologue.
 
-Une adaptation personnalisée de ces deux composantes pour un PC et un téléphone (respectivement) semble appropriée. Toutefois, ne serait-il pas préférable de pouvoir exécuter le client et l’hôte sur n’importe quel appareil ? Dans ce cas étude, nous allons porter les deux applications vers Windows 10 dans laquelle elles seront générées dans un package d’application unique que les utilisateurs peuvent installer sur un large éventail d’appareils.
+Une adaptation personnalisée de ces deux composantes pour un PC et un téléphone (respectivement) semble appropriée. Toutefois, ne serait-il pas préférable de pouvoir exécuter le client et l’hôte sur n’importe quel appareil ? Dans ce cas étude, nous allons porter les deux applications vers Windows 10 où elles seront générées dans un package d’application unique que les utilisateurs peuvent installer sur un large éventail d’appareils.
 
 L’application utilise des modèles qui exploitent des affichages et des modèles d’affichage. Grâce à cette séparation nette, le processus de portage de cette application est très direct, comme vous allez le constater.
 
-**Remarque**cet exemple suppose que votre réseau est configuré pour envoyer et recevoir des UDP personnalisés (la plupart des réseaux domestiques le sont, bien que votre réseau d’entreprise ne soient pas) les paquets de multidiffusion de groupe. Cet exemple envoie et reçoit également des paquets TCP.
+**Remarque**cet exemple suppose que votre réseau est configuré pour envoyer et recevoir des UDP personnalisé (la plupart des réseaux domestiques le sont, bien que votre réseau d’entreprise ne soient pas) les paquets de multidiffusion de groupe. Cet exemple envoie et reçoit également des paquets TCP.
 
  
 
@@ -82,13 +80,13 @@ Pour activer le mode test local, définissez l’élément **LOCALTESTMODEON** (
 L’application QuizGame comporte les éléments suivants :
 
 -   P2PHelper. Il s’agit d’une bibliothèque de classes portable, qui contient la logique du réseau homologue à homologue.
--   QuizGame.Windows. Il s’agit du projet qui génère le package d’application pour l’application hôte, qui cible Windows8.1.
+-   QuizGame.Windows. Il s’agit du projet qui crée le package d’application pour l’application hôte, qui cible Windows8.1.
 -   QuizGame.WindowsPhone. Il s’agit du projet qui génère le package d’application pour l’application client, qui cible Windows Phone 8.1.
 -   QuizGame.Shared. Il s’agit du projet qui contient le code source, les fichiers de balisage et d’autres actifs et ressources qui sont utilisés par les deux autres projets.
 
 Pour cette étude de cas, nous disposons des options habituelles décrites dans la section [Si vous disposez d’une application 8.1 universelle](w8x-to-uwp-root.md), relative aux appareils à prendre en charge.
 
-En fonction de ces options, nous allons porter l’élément QuizGame.Windows vers un nouveau projet Windows 10, appelé QuizGameHost. Et, nous allons porter l’élément QuizGame.WindowsPhone vers un nouveau projet Windows 10, appelé QuizGameClient. Ces projets ciblent la famille d’appareils universels ; ainsi, ils peuvent s’exécuter sur n’importe quel appareil. Nous allons laisser les fichiers sources de l’élément QuizGame.Shared, entre autres, dans leur dossier, et lier les fichiers partagés dans les deux nouveaux projets. Comme auparavant, nous allons conserver tous les éléments en une seule solution, que nous appellerons QuizGame10.
+Basés sur ces options, nous allons porter l’élément QuizGame.Windows vers un nouveau projet Windows 10, appelé QuizGameHost. Et, nous allons porter l’élément QuizGame.WindowsPhone vers un nouveau projet Windows 10, appelé QuizGameClient. Ces projets ciblent la famille d’appareils universels ; ainsi, ils peuvent s’exécuter sur n’importe quel appareil. Nous allons laisser les fichiers sources de l’élément QuizGame.Shared, entre autres, dans leur dossier, et lier les fichiers partagés dans les deux nouveaux projets. Comme auparavant, nous allons conserver tous les éléments en une seule solution, que nous appellerons QuizGame10.
 
 **Solution QuizGame10**
 
@@ -108,7 +106,7 @@ En fonction de ces options, nous allons porter l’élément QuizGame.Windows ve
 
 **QuizGameHost**
 
--   Créez un projet d’application Windows 10 (**Ajouter** &gt; **Nouveau projet** &gt; **Windows universel** &gt; **Application vide (Windows universel)**) et appelez-le «quizgamehost».
+-   Créer un projet d’application Windows 10 (**Ajouter** &gt; **Nouveau projet** &gt; **Windows universel** &gt; **Application vide (Windows universel)**) et appelez-le «quizgamehost».
 -   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence** &gt; **Projets** &gt; **Solution** &gt; **P2PHelper**).
 -   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter** &gt; **Élément existant**, puis passez au dossier au-dessus. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
 -   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.Windows\\ vers \\QuizGameHost\\ et remplacez l’espace de noms par QuizGameHost.
@@ -135,7 +133,7 @@ par:
 
 **QuizGameClient**
 
--   Créez un projet d’application Windows 10 (**Ajouter** &gt; **Nouveau projet** &gt; **Windows universel** &gt; **Application vide (Windows universel)**) et appelez-le «quizgameclient».
+-   Créer un projet d’application Windows 10 (**Ajouter** &gt; **Nouveau projet** &gt; **Windows universel** &gt; **Application vide (Windows universel)**) et appelez-le «quizgameclient».
 -   Ajoutez une référence à l’élément P2PHelper (**Ajouter une référence** &gt; **Projets** &gt; **Solution** &gt; **P2PHelper**).
 -   Dans l’**Explorateur de solutions**, créez un dossier pour chacun des dossiers partagés sur le disque. Ensuite, cliquez avec le bouton droit sur chaque dossier que vous venez de créer et sélectionnez **Ajouter** &gt; **Élément existant**, puis passez au dossier au-dessus. Ouvrez le dossier partagé approprié, sélectionnez tous les fichiers, puis cliquez sur **Ajouter en tant que lien**.
 -   Copiez le fichier MainPage.xaml de l’emplacement \\QuizGame.WindowsPhone\\ vers \\QuizGameClient\\ et remplacez l’espace de noms par QuizGameClient.
@@ -179,7 +177,7 @@ Nous pouvons utiliser la fonction adaptative de gestionnaire d’état visuel po
 ## <a name="universal-styling"></a>Stylisation universelle
 
 
-Vous remarquerez que, dans Windows 10, les boutons ne présentent le même remplissage cible tactile dans leur modèle. Deux petites modifications devraient résoudre le problème. Tout d’abord, ajoutez ce balisage dans le fichier app.xaml des projets QuizGameHost et QuizGameClient.
+Vous remarquerez que dans Windows 10, les boutons ne possèdent le même remplissage cible tactile dans leur modèle. Deux petites modifications devraient résoudre le problème. Tout d’abord, ajoutez ce balisage dans le fichier app.xaml des projets QuizGameHost et QuizGameClient.
 
 ```xml
 <Style TargetType="Button">

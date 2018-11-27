@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: Découvrez comment activer les versions d’évaluation et achats in-app dans les applicationsUWP.
 title: Achats dans l’application et versions d’évaluation
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables, abonnement
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566203"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718324"
 ---
 # <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 
@@ -21,7 +19,7 @@ Le WindowsSDK fournit des API que vous pouvez utiliser pour implémenter les fon
 
 * **Achats in-app**&nbsp;&nbsp;Que votre application soit gratuite ou non, vous pouvez vendre du contenu ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application.
 
-* **Fonctionnalités d’évaluation**&nbsp;&nbsp;si vous [Configurez votre application comme une version d’évaluation gratuite dans l’espace partenaires](../publish/set-app-pricing-and-availability.md#free-trial), vous pouvez encourager vos clients à acheter la version complète de votre application en excluant ou en limitant certaines fonctionnalités durant la période d’évaluation. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
+* **La fonctionnalité d’évaluation**&nbsp;&nbsp;si vous [Configurez votre application comme une version d’évaluation gratuite dans l’espace partenaires](../publish/set-app-pricing-and-availability.md#free-trial), vous pouvez encourager vos clients à acheter la version complète de votre application en excluant ou en limitant certaines fonctionnalités durant la période d’évaluation. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
 Cet article vous fournit une vue d’ensemble du fonctionnement des achats in-app et des versions d’évaluation dans les applicationsUWP.
 
@@ -31,12 +29,12 @@ Cet article vous fournit une vue d’ensemble du fonctionnement des achats in-ap
 
 Il existe deuxespaces de noms différents à utiliser pour ajouter des achats in-app et des fonctionnalités de version d’évaluation dans vos applicationsUWP, en fonction de la version de Windows10 ciblée par vos applications. Bien que les API dans ces espaces de noms servent les mêmes objectifs, elles sont conçues légèrement différemment et leur code n’est pas compatible.
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;À partir de Windows10, version1607, les applications peuvent utiliser l’API dans cet espace de noms pour implémenter les achats in-app et les versions d’évaluation. Nous vous recommandons d’utiliser les membres dans cet espace de noms si votre projet d’application cible **Windows10 Anniversary Edition (version10.0; build 14393)** ou une version ultérieure dans Visual Studio. Cet espace de noms prend en charge les types d’extension plus récents, comme les extensions consommables gérés par le Windows Store et est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. Pour plus d’informations sur cet espace de noms, consultez la section [Achats dans l’application et versions d’évaluation utilisant l’espace de noms Windows.Services.Store](#api_intro) de cet article.
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;À partir de Windows10, version1607, les applications peuvent utiliser l’API dans cet espace de noms pour implémenter les achats in-app et les versions d’évaluation. Nous vous recommandons d’utiliser les membres dans cet espace de noms si votre projet d’application cible **Windows10 Anniversary Edition (version10.0; build 14393)** ou une version ultérieure dans Visual Studio. Cet espace de noms prend en charge les types de module complémentaire plus récents, comme les extensions consommables gérés par le Windows Store et est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. Pour plus d’informations sur cet espace de noms, consultez la section [Achats dans l’application et versions d’évaluation utilisant l’espace de noms Windows.Services.Store](#api_intro) de cet article.
 
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;L’ensemble des versions de Windows10 prennent également en charge une API plus ancienne pour les achats in-app et les versions d’évaluation dans cet espace de noms. Si vous recherchez des informations sur l’espace de noms **Windows.ApplicationModel.Store**, consultez la page [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 > [!IMPORTANT]
-> L'espace de noms **Windows.ApplicationModel.Store** n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms **Windows.Services.Store** pour votre app à la place, si cela est possible. L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans des applications ou jeux qui utilisent un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live).
+> L'espace de noms **Windows.ApplicationModel.Store** n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms **Windows.Services.Store** pour votre app à la place, si cela est possible. L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans les applications ou jeux qui utilisent un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour un de jeu qui s’intègre à Xbox Live).
 
 <span id="concepts" />
 
@@ -160,12 +158,12 @@ Pour exclure ou limiter les fonctionnalités d’une version d’évaluation de 
 
 Si votre application utilise des API de l'espace de noms **Windows.Services.Store** pour implémenter des achats in-app et la fonctionnalité de version d’évaluation, vous devez la publier dans le Store et télécharger l’application sur votre appareil de développement pour utiliser sa licence à des fins de test. Procédez comme suit pour tester votre code:
 
-1. Si votre application n’est pas encore publiée et disponible dans le Windows Store, assurez-vous que votre application minimale requise [Kit de Certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) , de [soumettre votre application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et assurez-vous que votre application réussit le processus de certification. Vous pouvez [configurer votre application pour qu'elle ne soit pas détectable dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant que vous la testez. Notez la configuration correcte de [versions d’évaluation de package](../publish/package-flights.md). Incorrectement package configuré, versions d’évaluation est peut-être ne pas en mesure d’être téléchargées.
+1. Si votre application n’est pas encore publiée et disponible dans le Windows Store, vous assurer que votre application respecte les exigences minimales de [Kit de Certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) , de [soumettre votre application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et assurez-vous que votre application réussit le processus de certification. Vous pouvez [configurer votre application pour qu'elle ne soit pas détectable dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant que vous la testez. Notez la configuration correcte des [versions d’évaluation de package](../publish/package-flights.md). Incorrectement package configuré, versions d’évaluation est peut-être ne pas en mesure d’être téléchargées.
 
 2. Ensuite, assurez-vous d’exécuter les actions suivantes:
 
     * Écrivez du code dans votre application qui utilise la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) et d’autres types associés dans l’espace de noms **Windows.Services.Store** afin d’implémenter les [achats dans l’application](#implement-iap) ou une [fonctionnalité de version d’évaluation](#implement-trial).
-    * Si votre application propose un module complémentaire que les clients peuvent acheter, [créez une soumission d’extension pour votre application dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+    * Si votre application propose un module complémentaire dont les clients peuvent acheter, [créez une soumission d’extension pour votre application dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
     * Si vous souhaitez exclure ou limiter certaines fonctionnalités dans une version d’évaluation de votre application, [Configurez votre application comme une version d’évaluation gratuite dans l’espace partenaires](../publish/set-app-pricing-and-availability.md#free-trial).
 
 3. Avec votre projet ouvert dans Visual Studio, cliquez sur le **menu Projet**, pointez sur **Store**, puis cliquez sur **Associer l’application au WindowsStore**. Suivez les instructions de l’Assistant pour associer le projet d’application à l’application dans votre compte du centre de l’espace que vous souhaitez utiliser pour le test.

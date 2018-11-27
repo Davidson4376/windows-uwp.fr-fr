@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Vous pouvez utiliser la classe PropertyPath et la syntaxe de chaîne pour instancier une valeur PropertyPath en XAML ou dans le code.
 title: Syntaxe de Property-path
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574090"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717712"
 ---
 # <a name="property-path-syntax"></a>Syntaxe de Property-path
 
@@ -56,7 +54,7 @@ Un chemin de propriété pour la liaison de données peut inclure des référenc
 
 Prenons par exemple un objet métier qui contient une liste de «Teams» (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de «Players» où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe: «Teams\[1\].Players\[Smith\]». (Vous utilisez1 pour indiquer le deuxième élément de «Teams», car la liste est indexée à partir de zéro.)
 
-**Remarque**prise en charge de l’indexation pour les sources de données C++ est limitée. voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**prise en charge de l’indexation pour les sources de données C++ est limitée; Regardez la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="attached-properties"></a>Propriétés jointes
 

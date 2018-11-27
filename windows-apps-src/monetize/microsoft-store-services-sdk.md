@@ -1,23 +1,21 @@
 ---
-author: Xansky
 Description: The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
 title: Impliquer les clients avec le MicrosoftStore Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
-ms.author: mhopkins
 ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8394a1a44173541e8982a660591e84b25b985205
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567515"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718450"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le MicrosoftStore Services SDK
 
-Le Microsoft Store Services SDK fournit des fonctionnalités qui vous aident à conquérir des clients dans vos applications de plateforme Windows universelle (UWP), tels que l’envoi de notifications ciblées à vos applications et en cours d’exécution A / B expériences dans vos applications. Ce kit de développement logiciel(SDK) est une extension pour VisualStudio2015 et d’autres versions de VisualStudio.
+Le Microsoft Store Services SDK fournit des fonctionnalités qui vous aident à entrer en contact avec les clients de vos applications de plateforme Windows universelle (UWP), par exemple, l’envoi de notifications ciblées à vos applications et en cours d’exécution A / B d’expériences dans vos applications. Ce kit de développement logiciel(SDK) est une extension pour VisualStudio2015 et d’autres versions de VisualStudio.
 
 > [!NOTE]
 > Pour afficher des publicités dans vos applications UWP, utilisez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) au lieu du MicrosoftStore Services SDK. Les bibliothèques de publicités ont été déplacées depuis le MicrosoftStore Services SDK vers le SDK MicrosoftAdvertising. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md).
@@ -30,9 +28,9 @@ Le MicrosoftStore Services SDK prend en charge les scénarios suivants pour les 
 
 |  Scénario  |  Description   |
 |------------|----------------|
-|  [Exécuter des expériences dans votre applicationUWP avec des testsA/B](run-app-experiments-with-a-b-testing.md)    |  Exécutez des testsA/B dans vos applications de plateforme Windows universelle (UWP) pour évaluer l’efficacité de fonctionnalités spécifiques auprès de certains clients avant de les mettre à la disposition de tous. Après avoir défini une expérience dans l’espace partenaires, utiliser la classe [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) pour obtenir des variantes pour votre expérience dans votre application, utilisez ces données pour modifier le comportement de la fonctionnalité que vous testez et ensuite utiliser le [LogForVariation ](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)méthode pour envoyer des événements d’affichage et les événements de conversion vers l’espace partenaires. Enfin, utilisez l’espace partenaires pour afficher les résultats et gérer l’expérience.  |
+|  [Exécuter des expériences dans votre applicationUWP avec des testsA/B](run-app-experiments-with-a-b-testing.md)    |  Exécutez des testsA/B dans vos applications de plateforme Windows universelle (UWP) pour évaluer l’efficacité de fonctionnalités spécifiques auprès de certains clients avant de les mettre à la disposition de tous. Après avoir défini une expérience dans l’espace partenaires, utilisez la classe [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) pour obtenir des variantes pour votre expérience dans votre application, utilisez ces données pour modifier le comportement de la fonctionnalité que vous testez et ensuite utiliser le [LogForVariation ](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)méthode pour envoyer des événements d’affichage et les événements de conversion vers l’espace partenaires. Enfin, utilisez l’espace partenaires pour afficher les résultats et gérer l’expérience.  |
 |  [Lancer le Hub de commentaires à partir de votre applicationUWP](launch-feedback-hub-from-your-app.md)    |  Utilisez la classe [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) dans votre application UWP pour diriger vos clients Windows10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Ensuite, gérez ces commentaires dans le [rapport sur les commentaires](../publish/feedback-report.md) dans l’espace partenaires. |
-|  [Configurer votre application UWP pour recevoir des notifications push de l’espace partenaires](configure-your-app-to-receive-dev-center-notifications.md)    |  Utilisez la classe [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) dans votre application UWP pour inscrire votre application pour recevoir des notifications push ciblées que vous envoyez à vos clients à l’aide de l’espace partenaires.  |
+|  [Configurer votre application UWP pour recevoir des notifications push l’espace partenaires](configure-your-app-to-receive-dev-center-notifications.md)    |  Utilisez la classe [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) dans votre application UWP pour inscrire votre application pour recevoir des notifications push ciblées que vous envoyez à vos clients à l’aide de l’espace partenaires.  |
 |   [Consigner des événements personnalisés dans votre application UWP pour le rapport d’utilisation dans l’espace partenaires](log-custom-events-for-dev-center.md)   |  Utilisez la classe [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) dans votre application UWP pour consigner des événements personnalisés qui sont associés à votre application dans l’espace partenaires. Ensuite, passez en revue le total d’occurrences de vos événements personnalisés dans la section **événements personnalisés** du [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans l’espace partenaires.  |
 
 <span id="prerequisites" />

@@ -1,19 +1,17 @@
 ---
 title: Répondre aux retours des clients
 description: Vous pouvez répondre directement à un commentaire laissé par vos clients dans le Hub de commentaires.
-author: JnHs
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da9e96bace29dc33874d5b8c3e4ac846eddeb63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574890"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717032"
 ---
 # <a name="respond-to-customer-feedback"></a>Répondre aux retours des clients
 

@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
 title: Création manuelle de packages d’application
 description: Cette section contient ou associe des articles sur la création manuelle de packages d’applications UWP.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows10, uwp, création de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: 0268e858ecbcaaee95796fa590d4a9994dcfb505
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556167"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718753"
 ---
 # <a name="manual-app-packaging"></a>Création manuelle de packages d’application
 
@@ -44,5 +42,5 @@ Cette section contient des sujets plus avancés concernant l'agencement d'une ap
 |-------|-------------|
 | [Introduction aux packages d'actifs](asset-packages.md) | Les packages d'actifs désignent un type de package qui agit en tant qu'emplacement centralisé pour les fichiers communs d'une application. Ainsi, la nécessité de dupliquer les fichiers au travers de ses packages d'architecture est efficacement éliminée. |
 | [Développement de packages d'actifs et mise en dossier de packages](package-folding.md) | Découvrez comment organiser efficacement votre application avec des packages d'actifs et la mise en dossier des packages. |
-| [Packages d'application d'ensemble plat](flat-bundles.md) | Décrit comment créer un ensemble plat pour les fichiers de package de votre application. |
+| [Packages d'application d'ensemble plat](flat-bundles.md) | Explique comment créer un ensemble plat pour les fichiers de package de votre application. |
 | [Création de package à l'aide de la disposition de mise en package](packaging-layout.md) | La disposition de mise en package constitue un unique document décrivant la structure de mise en package de l'application. Il spécifie les ensembles d'une application (principaux et facultatifs), les packages contenus dans les ensembles ainsi que les fichiers contenus dans les packages. |

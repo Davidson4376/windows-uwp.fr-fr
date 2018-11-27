@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: Utilisez l’API des offres ciblées du MicrosoftStore pour récupérer les offres ciblées disponibles pour l'utilisateur actuel de votre app.
 title: Gérer les offres ciblées à l’aide des services du WindowsStore
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API des offres ciblées du MicrosoftStore, offres ciblées
 ms.localizationpriority: medium
-ms.openlocfilehash: dbfefefdb7f7b96dbe99b35656b610b393ab3afa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 27d99d2008352ff291f0cb620afab8ccb8f6977c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576543"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718510"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du WindowsStore
 
-Si vous créez une *offre ciblée* dans le **engager > offres ciblées** page de votre application dans l’espace partenaires, utilisez l' *API des offres ciblées du Microsoft Store* dans le code de votre application pour récupérer les informations qui vous permet d’implémenter l’expérience dans l’application pour le offre ciblée. Pour plus d’informations concernant les offres ciblées et leur création dans le tableau de bord, consultez [Utiliser les offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+Si vous créez une *offre ciblée* dans le **engager > offres ciblées** page de votre application dans l’espace partenaires, utilisez l' *API des offres ciblées du Microsoft Store* dans le code de votre application pour récupérer les informations qui vous permet de mettre en œuvre l’expérience dans l’application pour le offre ciblée. Pour plus d’informations concernant les offres ciblées et leur création dans le tableau de bord, consultez [Utiliser les offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
 L’API des offres ciblées est une API REST simple que vous pouvez utiliser afin d’obtenir les offres ciblées disponibles pour l’utilisateur actuel, basée sur le fait que l’utilisateur fasse partie ou non du segment de clientèle pour l’offre ciblée. Pour utiliser cette API dans le code de votre app, procédez ainsi:
 

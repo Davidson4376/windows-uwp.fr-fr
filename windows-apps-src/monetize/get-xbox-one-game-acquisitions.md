@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données d’acquisition agrégées d’un jeu Xbox One pour une plage de dates données, et en fonction de filtres facultatifs.
 title: Obtenir des acquisitions de jeu Xbox One
-ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d’analyse du MicrosoftStore, acquisitions de jeu Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 200f18e443e8a130a7e5c673b03c146b73c9083b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 348430f7ceee66a9c4e82f258a70e57d8f344943
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559509"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717894"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Obtenir des acquisitions de jeu Xbox One
 
-Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les données d’acquisition agrégées au format JSON pour une console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord XDP Analytique.
+Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les données d’acquisition agrégées au format JSON pour une console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord Analytique XDP.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -47,7 +45,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L'ID produit du jeu Xbox One pour lequel vous récupérez des données d’acquisition. Pour obtenir l’ID de produit de votre jeu, accédez à votre jeu dans le programme d’Analytique XDP et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’acquisitions à partir du rapport analytique de l’espace partenaires, l’ID de produit est inclus dans le fichier .tsv.  |  Oui  |
+| applicationId | chaîne | L'ID produit du jeu Xbox One pour lequel vous récupérez des données d’acquisition. Pour obtenir l’ID de produit de votre jeu, accédez à votre jeu dans le programme d’Analytique XDP et récupérer l’ID de produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’acquisitions à partir du rapport analytique de l’espace partenaires, l’ID de produit est inclus dans le fichier .tsv.  |  Oui  |
 | startDate | date | Dans la plage de dates, la date de début de la récupération des données d’acquisition. La valeur par défaut est la date actuelle. |  Non  |
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données d’acquisition. La valeur par défaut est la date actuelle. |  Non  |
 | top | int | Le nombre de rangées de données à renvoyer. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
@@ -91,7 +89,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | date                | chaîne | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | applicationId       | chaîne | L'ID produit du jeu Xbox One pour lequel vous récupérez des données d’acquisition. |
 | applicationName     | chaîne | Le nom complet du jeu.       |
-| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Iap</strong></li><li><strong>Abonnement Iap</strong></li><li><strong>Public privé</strong></li><li><strong>Ordre des versions antérieures</strong></li><li><strong>Xbox Game Pass</strong> (ou <strong>Game Pass</strong> si vous interrogez des données antérieures au 23mars2018)</li><li><strong>Disque</strong></li><li><strong>Code prépayé</strong></li><li><strong>Commande de pré facturés</strong></li><li><strong>Commande de pré annulée</strong></li><li><strong>Commande de pré ayant échoué</strong></li></ul>    |
+| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Iap</strong></li><li><strong>Abonnement Iap</strong></li><li><strong>Public privé</strong></li><li><strong>Ordre des pré</strong></li><li><strong>Xbox Game Pass</strong> (ou <strong>Game Pass</strong> si vous interrogez des données antérieures au 23mars2018)</li><li><strong>Disque</strong></li><li><strong>Code prépayé</strong></li><li><strong>Ordre Pre facturés</strong></li><li><strong>Commande des pré annulée</strong></li><li><strong>Ordre Pre ayant échoué</strong></li></ul>    |
 | age                 | chaîne | L'une des chaînes suivantes qui indique le groupe d'âge de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | chaîne | L'une des chaînes suivantes qui spécifie le type d’appareil ayant effectué l'acquisition:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Serveur</strong></li><li><strong>Tablette</strong></li><li><strong>Holographique</strong></li><li><strong>Inconnu</strong></li></ul>  |
 | gender              | chaîne | L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |

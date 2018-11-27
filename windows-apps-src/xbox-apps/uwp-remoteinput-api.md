@@ -1,14 +1,13 @@
 ---
-author: WilliamsJason
 title: Référence API d’entrée à distance de Device Portal
 description: Découvrez comment envoyer à distance l'entrée du contrôleur, du clavier et de la souris sur une Xbox.
 ms.localizationpriority: medium
-ms.openlocfilehash: a2217b87d840bc95010e2e1ce47ea72e991e8fa3
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: e0db86ad50bfb1cb27f516243542a554e710c3ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921240"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7719632"
 ---
 # <a name="remote-input-api-reference"></a>Référence API de l'Entrée distante   
 Vous pouvez envoyer l’entrée du contrôleur, du clavier et de la souris en temps réel et à distance par le biais de cette API.

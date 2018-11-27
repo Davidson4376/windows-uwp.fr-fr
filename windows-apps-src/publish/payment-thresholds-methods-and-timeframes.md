@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: Délais, méthodes et seuils de paiement
-ms.author: wdg-dev-content
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a62d08d540479daf77d532afa1b97ae128d2c1f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f837674ff9af123c7535e3aea00b632b8b35bfc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564678"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717933"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 

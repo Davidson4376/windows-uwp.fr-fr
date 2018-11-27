@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: Utilisez cette méthode dans l’API des promotions du MicrosoftStore pour gérer les contenus créatifs dans le cadre de campagnes publicitaires.
 title: Gérer des contenus créatifs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: 97a7ac89585cbcf7a4609aee16978d36be027a24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572948"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718049"
 ---
 # <a name="manage-creatives"></a>Gérer des contenus créatifs
 

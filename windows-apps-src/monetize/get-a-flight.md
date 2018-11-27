@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour obtenir des données pour une version d’évaluation de package pour une application inscrite dans votre compte espace partenaires.
 title: Obtenir une version d’évaluation du package
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, version d’évaluation, version d'évaluation du package
 ms.localizationpriority: medium
-ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568198"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717969"
 ---
 # <a name="get-a-package-flight"></a>Obtenir une version d’évaluation du package
 
@@ -47,7 +45,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la version d’évaluation du package à obtenir. L’ID Store de l’application est disponible dans l’espace partenaires.  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la version d’évaluation dans l’espace partenaires.  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de version d’évaluation dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête

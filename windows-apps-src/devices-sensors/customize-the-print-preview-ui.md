@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: Personnaliser l’interface utilisateur d’aperçu avant impression
 description: Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, l’impression
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570783"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718520"
 ---
 # <a name="customize-the-print-preview-ui"></a>Personnaliser l’interface utilisateur d’aperçu avant impression
 
@@ -27,7 +25,7 @@ ms.locfileid: "7570783"
 
 Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. Pour plus d’informations sur l’impression, consultez [Imprimer à partir de votre application](print-from-your-app.md).
 
-**Conseil**la plupart des exemples de cette rubrique sont basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+**Conseil**la plupart des exemples de cette rubrique est basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
  
 

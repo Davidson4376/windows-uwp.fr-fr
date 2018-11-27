@@ -4,17 +4,15 @@ description: Cette section décrit le comportement du rastériseur avec les vign
 ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
 keywords:
 - Comportement du rastériseur avec les vignettes non mappées
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f56e8051c8a66cf579a7c3dbcddc738b3a10bcaf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e3089444820f990644526eaafb7f2ef9007fa70a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555654"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718490"
 ---
 # <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Comportement du rastériseur avec les vignettes non mappées
 

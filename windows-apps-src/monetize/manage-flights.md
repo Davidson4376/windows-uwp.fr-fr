@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: Utilisez ces méthodes dans l’API de soumission au Microsoft Store pour gérer les versions d’évaluation de package pour les applications qui sont enregistrées sur votre compte espace partenaires.
 title: Gérer les versions d’évaluation de package
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, versions d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1300151d8b50a0a9e192c2090e9a3d72afa86e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8678ee4d73f13e241a2c72d6dac532289af13ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560916"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718059"
 ---
 # <a name="manage-package-flights"></a>Gérer les versions d’évaluation de package
 

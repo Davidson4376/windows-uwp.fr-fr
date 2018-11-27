@@ -4,17 +4,15 @@ description: Les applications peuvent créer un ou plusieurs pools de vignettes 
 ms.assetid: BD51EDD3-4AD3-4733-B014-DD77B9D743BB
 keywords:
 - Création d’un pool de tuiles
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cbb8b61c8eeef1a842a7c6b61d09670f056bb409
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5ce3824ab2d435b42df9586a6c229b68db10a0c9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572216"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718713"
 ---
 # <a name="tile-pool-creation"></a>Création d’un pool de tuiles
 
