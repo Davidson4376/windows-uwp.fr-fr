@@ -1,21 +1,19 @@
 ---
-author: stevewhims
 Description: Use the Windows.Globalization.DateTimeFormatting API with custom templates and patterns to display dates and times in exactly the format you wish.
 title: Utiliser des modèles de format des dates et heures
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/09/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a86d0b29b39ecb4d2793e641c8c53f6c2a4e3c0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577526"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705174"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
 

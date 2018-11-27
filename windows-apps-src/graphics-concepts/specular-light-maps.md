@@ -4,17 +4,15 @@ description: Lorsqu’ils sont éclairés par une source lumineuse, les objets b
 ms.assetid: 9B3AC5EC-DDAA-4671-BC81-0E3C79D87A81
 keywords:
 - Mappages de lumière spéculaire
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd9db0afa914ef7a56dbd55c938129b86a43743
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7d88989be04704395c056f1bae058e2aefd1a2a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564658"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707587"
 ---
 # <a name="specular-light-maps"></a>Mappages de lumière spéculaire
 

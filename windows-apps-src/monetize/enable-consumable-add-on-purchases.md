@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: Découvrez comment utiliser l’espace de noms Windows.Services.Store pour utiliser les modules complémentaires consommables.
 title: Activer les achats d’extensions consommables
 keywords: windows10, uwp, consommable, extensions, achats dans l’application, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4687833b55f1456d298b552f5cce897f8b4eaa1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572928"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705141"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats d’extensions consommables
 

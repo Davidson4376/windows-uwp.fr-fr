@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 title: Guide de résolution des problèmes pour HTML et JavaScript
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f0b36769d13d119965e7d15c5812b9ba1d6ecd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554100"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702833"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 

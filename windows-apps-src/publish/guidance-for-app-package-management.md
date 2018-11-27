@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Aide sur la gestion des packages d’application
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e625522b0e9fd03fda49eb28bbedb20c00c15634
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573674"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704789"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -69,7 +67,7 @@ Gardez à l'esprit que même si vous supprimez tous les packages prenant en char
 Si vous disposez d’une application dans le Windows Store incluant uniquement des packages pour Windows 8.x et/ou Windows Phone 8.x et que vous souhaitez mettre à jour votre application pour Windows 10, créez une nouvelle soumission et ajoutez votre ou vos packages UWP .msixupload ou .appxupload lors de l’étape de [Packages](upload-app-packages.md) . Une fois que votre application passe en certification, le package UWP sera également disponible pour de nouvelles acquisitions par les clients sur Windows 10.
 
 > [!NOTE]
-> Une fois qu’un client sur Windows 10 obtient votre package UWP, vous ne pouvez pas restaurer que le client revenir à un package pour n’importe quelle version du système d’exploitation précédente. 
+> Une fois qu’un client sur Windows 10 obtient votre package UWP, vous ne pouvez pas faire rouler que le client revenir à un package pour n’importe quelle version du système d’exploitation précédente. 
 
 Notez que le numéro de version de vos packages Windows 10 doit être supérieur à ceux des packages de package Windows8, Windows8.1 et/ou Windows Phone 8.1 que vous avez utilisé. Pour plus d’informations, voir [Numérotation des versions de packages](package-version-numbering.md).
 

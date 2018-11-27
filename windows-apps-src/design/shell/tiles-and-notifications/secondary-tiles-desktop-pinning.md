@@ -1,20 +1,18 @@
 ---
-author: vladimp
 Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: Épingler des vignettes secondaires à partir d’une application de bureau
 label: Pin secondary tiles from desktop application
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows10, pont de bureau, vignettes secondaires, épingler, code confidentiel, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e37b47e22d10f509afd5d7503fa8f7a43ab365
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572725"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703729"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Épingler des vignettes secondaires à partir d’une application de bureau
 

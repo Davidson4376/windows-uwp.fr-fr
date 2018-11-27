@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
 title: Définir le type et l’ID produit d’une extension
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, extensions, iap, durable, consommable, abonnement, type de produit, id produit, achat in-app, produit in-app
 ms.localizationpriority: medium
-ms.openlocfilehash: 14d0cd40e0a7a170a835b000dc66ec683c2fb59c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51807b96d80245b8dc5b22f1f376f603285d518a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573565"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705826"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>Définir le type et l’ID produit d’une extension
 

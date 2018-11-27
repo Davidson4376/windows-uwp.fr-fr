@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. TemplateBinding peut uniquement être utilisé dans une définition ControlTemplate en XAML.
 title: Extension de balisage TemplateBinding
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
-ms.author: jimwalk
 ms.date: 10/29/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554087"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702327"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 

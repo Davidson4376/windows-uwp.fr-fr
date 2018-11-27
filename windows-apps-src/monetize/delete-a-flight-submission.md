@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour supprimer une soumission de version d’évaluation du package existante.
 title: Supprime une soumission de version d’évaluation du package
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission de version d’évaluation, supprimer, version d'évaluation du package
 ms.localizationpriority: medium
-ms.openlocfilehash: 2196a6b7023a062905ae721ebdb536e2c8044057
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1222c730f4e7819037ee42fc0897cf2924586b25
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564149"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707890"
 ---
 # <a name="delete-a-package-flight-submission"></a>Supprime une soumission de version d’évaluation du package
 
@@ -47,7 +45,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission de version d’évaluation du package à supprimer. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la version d’évaluation dans l’espace partenaires.  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de version d’évaluation dans l’espace partenaires.  |
 | submissionId | chaîne | Obligatoire. ID de la soumission à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 
 

@@ -1,23 +1,22 @@
 ---
-author: WilliamsJason
-title: Référence API les informations d’identification de périphérique portail réseau
-description: Apprenez à ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
+title: Référence sur les API les informations d’identification réseau Device Portal
+description: Découvrez comment ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e00169f92ee6f0aa48df64ec4a1186f9682b358
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "410164"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705101"
 ---
-# <a name="network-credentials-api-reference"></a>Référence de l’API des informations d’identification réseau
-Vous pouvez ajouter, supprimer ou mettre à jour des informations d’identification réseau stockées sur le Kit de développement à l’aide de cette API REST.
+# <a name="network-credentials-api-reference"></a>Référence de l’API d’informations d’identification réseau
+Vous pouvez ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées sur votre Kit de développement à l’aide de cette API REST.
 
 ## <a name="get-existing-credentials"></a>Obtenir des informations d’identification existantes
 
 **Requête**
 
-Vous pouvez obtenir une liste des actions stockées ainsi que le nom d’utilisateur de l’utilisateur qui dispose des informations d’identification de ce partage réseau.
+Vous pouvez obtenir une liste des actions stockées, ainsi que le nom d’utilisateur de l’utilisateur qui possède des informations d’identification pour ce partage réseau.
 
 Méthode      | URI de la requête
 :------     | :-----
@@ -37,10 +36,10 @@ GET | /ext/networkcredential
 
 **Réponse**   
 
-- Tableau JSON dans le format suivant:
+- Tableau JSON au format suivant:
 * Informations d’identification
   * NetworkPath - le chemin d’accès au partage réseau.
-  * Nom d’utilisateur - le nom d’utilisateur qui dispose des informations d’identification stockées.
+  * Username: le nom d’utilisateur qui a des informations d’identification stockées.
 
 **Code d’état**
 
@@ -66,7 +65,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès du partage réseau que vous ajoutez les informations d’identification pour accéder à. |
+| NetworkPath        | Le chemin d’accès réseau pour le partage de vous ajoutez des informations d’identification pour accéder à. |
 <br>
 
 **En-têtes de requête**
@@ -77,8 +76,8 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Les éléments JSON suivants:
 * NetworkPath - le chemin d’accès au partage réseau.
-* Nom d’utilisateur - stocker les informations d’identification sous le nom d’utilisateur.
-* Mot de passe - le mot de passe nouveaux ou mis à jour pour cet utilisateur.
+* Username: le nom d’utilisateur pour stocker les informations d’identification sous.
+* -Le mot de passe nouvelle ou mise à jour pour cet utilisateur.
 
 **Réponse**   
 
@@ -108,7 +107,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès réseau au partage à partir de laquelle vous voulez supprimer les informations d’identification stockées. |
+| NetworkPath        | Le chemin d’accès réseau pour le partage à partir de laquelle vous supprimez les informations d’identification stockées. |
 <br>
 
 **En-têtes de requête**

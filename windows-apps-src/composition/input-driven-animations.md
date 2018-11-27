@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: Animations pilotées par une entrée
 description: Découvrez comment utiliser des animations d’entrée dans l’interface utilisateur de votre application.
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 04eabb4c70143a08f5b850e6444f7f3d21a9dd4a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576593"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708369"
 ---
 # <a name="input-driven-animations"></a>Animations pilotées par une entrée
 

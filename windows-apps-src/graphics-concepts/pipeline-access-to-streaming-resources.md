@@ -4,17 +4,15 @@ description: Les ressources de diffusion en continu peuvent être utilisés dans
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
 keywords:
 - Accès du pipeline aux ressources de diffusion en continu
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f777669959721405fc5c77ef134e3726291b9c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d95ffc14e9ae6d4ea59a4b3bdc33fd215cb61be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572385"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703799"
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>Accès du pipeline aux ressources de diffusion en continu
 

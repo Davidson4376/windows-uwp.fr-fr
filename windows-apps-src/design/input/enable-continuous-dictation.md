@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to capture and recognize long-form, continuous dictation speech input.
 title: Activer la dictée continue
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
 keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557735"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705031"
 ---
 # <a name="continuous-dictation"></a>Dictée continue
 
@@ -167,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Le gestionnaire d’événements vérifie la propriété d’état afin de savoir si la reconnaissance a réussi. Il gère également le cas où l’utilisateur cesse de parler. Souvent, un [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) est considérée comme réussi lorsque l’utilisateur a fini de parler. Vous devez gérer ce cas dans votre code afin d’offrir une expérience optimale.
 
-    **Remarque**l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché sur un thread en arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le fait [exemple vocal et TTS]), vous devez distribuer les mises à jour au thread d’interface utilisateur via la méthode [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur.
+    **Remarque**l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le fait [exemple vocal et TTS]), vous devez distribuer les mises à jour au thread d’interface utilisateur via la méthode [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,

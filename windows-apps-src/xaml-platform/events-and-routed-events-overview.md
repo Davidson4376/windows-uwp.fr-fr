@@ -1,19 +1,17 @@
 ---
-author: jwmsft
-description: Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez des extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur.
+description: Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez les extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur.
 title: Vue d’ensemble des événements et des événements routés
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570585"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708026"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 
@@ -21,7 +19,7 @@ ms.locfileid: "7570585"
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez des extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les *événements routés* : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition.
+Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez les extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les *événements routés* : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition.
 
 ## <a name="events-as-a-programming-concept"></a>Événements en tant que concept de programmation
 
@@ -151,7 +149,7 @@ End Sub
 
 **Remarque**Visual Studio et son aire de conception XAML promeuvent généralement la technique de gestion d’instance plutôt que le mot clé **Handles** . Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
 
-En C++ / CX, également utiliser le **+=** syntaxe, mais il existe des différences au formulaire de base en c#:
+En C++ / CX, vous également utiliser le **+=** syntaxe, mais il existe des différences au formulaire de base en c#:
 
 -   Il n’existe aucune inférence de délégué, donc vous devez utiliser **ref new** pour l’instance de délégué.
 -   Le constructeur du délégué possède deux paramètres et requiert que l’objet cible soit le premier d’entre eux. En général, vous spécifiez **this**.

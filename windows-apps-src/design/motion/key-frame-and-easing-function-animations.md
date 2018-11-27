@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 title: Animations par images clés et animations de fonctions d’accélération
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: Les animations par clés linéaires, les animations par clés avec KeySpline ou les animations de fonctions d’accélération sont utilisées avec le même scénario.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2076866cc31f50bd7ccfc6730bca5be96ffdc7c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 145912f08075678c98dfb34ac491e123577c69e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571218"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703978"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>Animations par images clés et animations de fonctions d’accélération
 

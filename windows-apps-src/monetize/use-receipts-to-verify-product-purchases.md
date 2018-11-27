@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: Chaque transaction du Microsoft Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction.
 title: Utiliser des reçus pour vérifier les achats de produits
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563155"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702743"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 

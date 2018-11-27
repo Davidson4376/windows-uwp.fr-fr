@@ -1,21 +1,19 @@
 ---
-author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Écouteur de notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 06/13/2017
 ms.topic: article
 keywords: windows10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
-ms.openlocfilehash: c67f3531d248ef46a162b992850d0240c37ba21a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c0717fb3d1db42483214e8396d436c47c23744ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568092"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703689"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Écouteur de notification: accéder à toutes les notifications
 

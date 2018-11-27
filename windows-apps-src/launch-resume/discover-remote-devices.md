@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Détecter des appareils distants
 description: Apprenez à détecter des appareils distants depuis votre application à l'aide du projet «Rome».
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
+keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e6d3d4a549c5e815464ef696a938b44dbe6128c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561126"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706222"
 ---
 # <a name="discover-remote-devices"></a>Détecter des appareils distants
 Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows signés avec le même compte Microsoft que l’appareil détecteur. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.

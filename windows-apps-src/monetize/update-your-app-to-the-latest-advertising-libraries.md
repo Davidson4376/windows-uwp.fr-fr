@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: Découvrez comment mettre à jour votre application afin d’utiliser les bibliothèques de publicités Microsoft les plus récentes prises en charge et assurez-vous que votre application continue à recevoir des bannières publicitaires.
 title: Mettre à jour votre application avec les bibliothèques de publicités les plus récentes
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, AdMediatorControl, AdControl, migrer
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 48fc818c1ae7a9a46912ff52c2b00b07f19c366e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571611"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708269"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Mettre à jour votre application avec les bibliothèques de publicités les plus récentes pour bannières publicitaires
 
@@ -88,4 +86,4 @@ Supprimez du projet toutes les références existantes aux bibliothèques de pub
 
 Testez votre application pour vous assurer qu’elle affiche les bannières publicitaires comme prévu.
 
-Si la version précédente de votre application est déjà disponible dans le Windows Store, [créer une nouvelle soumission](../publish/app-submissions.md) pour votre application mise à jour dans l’espace partenaires pour republier votre application.
+Si la version précédente de votre application est déjà disponible dans le Windows Store, [créer une nouvelle soumission](../publish/app-submissions.md) pour votre application mise à jour dans l’espace partenaires de republier l’application.

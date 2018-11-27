@@ -4,17 +4,15 @@ description: Le niveau3 comprend la prise en charge de Texture3D pour les ressou
 ms.assetid: 86E2F311-A221-4C87-BA89-642FF388FAEB
 keywords:
 - Niveau3
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 02eb9179cbc4a5fed5d1f6dc37622491859a7552
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 019899df18831167f0744d5274aa120cc7dd2096
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561291"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708589"
 ---
 # <a name="tier-3"></a>Niveau3
 

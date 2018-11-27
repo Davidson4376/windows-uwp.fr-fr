@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Créer et inscrire une tâche en arrière-plan in-process
 description: Créez et inscrivez une tâche in-process qui s’exécute dans le même processus que votre application au premier plan.
-ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eeac0239bd0c6df38f82fa185c1ed6f7eb3f9dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2a59fe6056661289726fdaa6c2dd26e90d5e3fad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577915"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709018"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Créer et inscrire une tâche en arrière-plan in-process
 
@@ -70,7 +68,7 @@ L’exemple de code suivant affecte une condition qui exige la présence de l’
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Placer votre code d’activité en arrière-plan dans OnBackgroundActivated()
 
-Placez votre code d’activité en arrière-plan dans [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) pour répondre à votre déclencheur en arrière-plan lorsqu’il se déclenche. **OnBackgroundActivated** peut être traité comme [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). La méthode a un paramètre de [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , qui contient tous les éléments qui fournit la méthode **Run** . Par exemple, dans App.xaml.cs:
+Placez votre code d’activité en arrière-plan dans [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) pour répondre à votre déclencheur en arrière-plan lorsqu’il se déclenche. **OnBackgroundActivated** peut être traité comme [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). La méthode a un paramètre [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) , qui contient tous les éléments qui offre la méthode **Run** . Par exemple, dans App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -90,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-Pour obtenir un exemple de **OnBackgroundActivated** plus riche, consultez [convertir un service d’application à s’exécuter dans le même processus que son application hôte](convert-app-service-in-process.md).
+Pour obtenir un exemple de **OnBackgroundActivated** plus riche, voir [convertir un service d’application à s’exécuter dans le même processus que son application hôte](convert-app-service-in-process.md).
 
 ## <a name="handle-background-task-progress-and-completion"></a>Gérer la progression et l’achèvement des tâches en arrière-plan
 

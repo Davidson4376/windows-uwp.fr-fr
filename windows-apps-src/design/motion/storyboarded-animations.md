@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: Animations dans une table de montage
 description: Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel.
-ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e4aa010915ba681869b4ae27ba63e081a31ef78
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558946"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708866"
 ---
 # <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
 

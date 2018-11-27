@@ -1,19 +1,17 @@
 ---
-author: rido-min
 Description: This guide explains how to configure your Visual Studio Solution to optimize the application binaries with native images.
 Search.Product: eADQiWindows 10XVcnh
 title: Optimiser vos applications de bureau .NET avec les images natives
-ms.author: normesta
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, l’image native du compilateur
 ms.localizationpriority: medium
-ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3071b843a1605d765ab5b087d5e1bfb96a220218
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553856"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702207"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Optimiser vos applications de bureau .NET avec les images natives
 

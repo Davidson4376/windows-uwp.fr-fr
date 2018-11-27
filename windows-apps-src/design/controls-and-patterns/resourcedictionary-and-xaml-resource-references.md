@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: Explains how to define a ResourceDictionary element and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package.
 MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,17 +7,16 @@ title: Références aux ressources ResourceDictionary et XAML
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51461df47fe92c296fee198a6f2ed1c34e833cd7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571029"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705922"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Références aux ressources ResourceDictionary et XAML
 
@@ -204,7 +202,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) est une classe de base dont sont dérivés les contrôles, et qui présente une propriété [Resources](https://msdn.microsoft.com/library/windows/apps/br208740). Ainsi, vous pouvez ajouter un dictionnaire de ressources locales à tout élément **FrameworkElement**.
 
-Ici, les éléments [Page](https://msdn.microsoft.com/library/windows/apps/br227503) et [Border](https://msdn.microsoft.com/library/windows/apps/br209250) possèdent des dictionnaires de ressources et présentent une ressource appelée « greeting ». [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) nommé «textBlock2» est à l’intérieur de la **bordure**, donc sa recherche de ressource recherche d’abord à la **bordure**ses ressources, puis de la **Page**d' ressources et les ressources [d’Application](https://msdn.microsoft.com/library/windows/apps/br242324) . L’élément **TextBlock** lira « Hola mundo ».
+Ici, les éléments [Page](https://msdn.microsoft.com/library/windows/apps/br227503) et [Border](https://msdn.microsoft.com/library/windows/apps/br209250) possèdent des dictionnaires de ressources et présentent une ressource appelée « greeting ». [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) nommé «textBlock2» est à l’intérieur de la **bordure**, donc sa recherche de ressource consulte d’abord la **bordure**ses ressources, puis de la **Page**d' ressources et les ressources [d’Application](https://msdn.microsoft.com/library/windows/apps/br242324) . L’élément **TextBlock** lira « Hola mundo ».
 
 Pour accéder aux ressources de cet élément à partir du code, utilisez la propriété [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) de cet élément. Si vous accédez à une ressource de [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) dans le code, plutôt que dans XAML, la recherche sera exécutée dans ce dictionnaire, pas dans les dictionnaires de l’élément parent.
 

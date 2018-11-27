@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
 title: Contrôles d’appareil photo manuel pour la capture photo et vidéo
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7475910adffd24e4484b539f65633dfb8fc054a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 303cbd5e87db773324cd98447df6d99dc6de5a0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560690"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701328"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 

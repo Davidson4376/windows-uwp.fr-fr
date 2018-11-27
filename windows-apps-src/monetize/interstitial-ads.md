@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Découvrez comment insérer des spots publicitaires dans une application UWP pour Windows10 à l’aide du SDK MicrosoftAdvertising.
 title: Spots
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ef8173db2976d58f9ccd0422a1217e2bd91d13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573694"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708389"
 ---
 # <a name="interstitial-ads"></a>Spots
 
@@ -215,15 +213,15 @@ Cet exemple part du principe que vous avez créé un projet C++ **application Di
 
 1. Assurez-vous que votre utilisation des spots publicitaires dans votre app respecte nos [recommandations en matière de spots publicitaires](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
-2.  Dans l’espace partenaires, accédez à la page de [publicités dans l’application](../publish/in-app-ads.md) et [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+2.  Dans l’espace partenaires, accédez à la page [publicités dans l’application](../publish/in-app-ads.md) et [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Pour le type d’unité publicitaire, choisissez **Spot vidéo** ou **Bannière**, en fonction du type de spot que vous diffusez. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID du Windows Store de l’exemple ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID Windows Store exemple ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez éventuellement activer la médiation publicitaire pour l'**InterstitialAd** en configurant les paramètres de la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) sur la page [Publicités In-app](../publish/in-app-ads.md). La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des spots issus de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux payants tels que Taboola et Smaato et les publicités des campagnes de promotion d’applications Microsoft.
 
-4.  Dans votre code, remplacez les valeurs d’unité publicitaire test avec les valeurs dynamiques que vous avez générées dans l’espace partenaires.
+4.  Dans votre code, remplacez les mêmes valeurs avec les valeurs dynamiques que vous avez générées dans l’espace partenaires.
 
-5.  [Soumettre votre application](../publish/app-submissions.md) au Store à l’aide de l’espace partenaires.
+5.  [Soumettre votre application](../publish/app-submissions.md) au Windows Store à l’aide de l’espace partenaires.
 
 6.  Passez en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans l’espace partenaires.
 

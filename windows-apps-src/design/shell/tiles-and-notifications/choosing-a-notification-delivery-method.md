@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: This article covers the four notification options&\#8212;local, scheduled, periodic, and push&\#8212;that deliver tile and badge updates and toast notification content.
 title: Choisir une méthode de remise de notification
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c01b96f70bd39c43f321935aa47393ada0400319
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569328"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708529"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Choisir une méthode de remise de notification
 

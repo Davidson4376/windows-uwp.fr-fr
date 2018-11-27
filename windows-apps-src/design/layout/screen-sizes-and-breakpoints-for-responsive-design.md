@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 title: Tailles d’écran et points d’arrêt pour la conception réactive
 description: Au lieu d’optimiser votre interface utilisateur pour les nombreux appareils de l’écosystème Windows10, nous vous recommandons de concevoir une application pour plusieurs largeurs principales appelées «points d’arrêt».
-ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dbe71805ac0607a974374fb7a4f50a1d3f4d6811
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0959c9bc09782538cdb15a68c46b0797d4b7d230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574475"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708914"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
@@ -102,6 +100,6 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode ancré pour qu’il soit toujours affiché.
 
 >[!TIP] 
-> Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows 10 compatibles à un moniteur, souris et clavier pour rendre leurs téléphones fonctionnent comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
+> Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows 10 compatibles à un moniteur, souris et clavier à apporter leurs téléphones fonctionnent comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
 
 

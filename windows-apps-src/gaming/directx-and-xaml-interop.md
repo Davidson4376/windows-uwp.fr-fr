@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Technologie interop DirectX et XAML
 description: Vous pouvez utiliser XAML (Extensible Application Markup Language) et MicrosoftDirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, directx, interopérabilité xaml
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 058a1458f8990e5f70e7ed0ea4ef1a2b5f4a4956
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575106"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702467"
 ---
 # <a name="directx-and-xaml-interop"></a>Interopérabilité entre DirectX et XAML
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: Découvrez comment utiliser l’espace de noms Windows.Services.Store pour obtenir les informations du WindowsStore concernant l’application active ou l’un de ses modules complémentaires.
 title: Obtenir les informations produit des applications et des extensions
-ms.author: mhopkins
 ms.date: 02/08/2018
 ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561604"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705392"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Obtenir les informations produit des applications et des extensions
 
@@ -29,7 +27,7 @@ Pour obtenir un exemple d’application complète, consultez [Exemple Store](htt
 Les conditions préalables de ces exemples sont les suivantes:
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure.
 * Vous avez [créé une soumission d’application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et que cette application est publiée dans le Windows Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Windows Store pendant que vous la testez. Pour plus d’informations, consultez nos [conseils de test](in-app-purchases-and-trials.md#testing).
-* Si vous souhaitez obtenir les informations de produit pour une extension de l’application, vous devez également [créer l’extension dans l’espace partenaires](../publish/add-on-submissions.md).
+* Si vous souhaitez obtenir des informations de produit pour une extension de l’application, vous devez également [créer l’extension dans l’espace partenaires](../publish/add-on-submissions.md).
 
 Le code de ces exemples respecte les présupposés suivants:
 * Le code s’exécute dans le contexte d’une [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) qui contient un [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) nommé ```workingProgressRing``` et un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) nommé ```textBlock```. Ces objets sont utilisés pour respectivement indiquer qu’une opération asynchrone est en cours et afficher les messages de sortie.

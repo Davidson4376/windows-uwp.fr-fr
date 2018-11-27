@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
 title: Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 018740b9ceaa10425ec71f6a2775d547b7c30e82
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac61d57a965e3a35c6eb7cfaf17d0f4ef2a02501
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569661"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706399"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: Cette section explique comment modifier votre application web de PlayReady pour prendre en charge les modifications apportées à partir de la version précédente de Windows8.1 vers la version de Windows 10.
 title: Extension EME (Encrypted Media Extension) PlayReady
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35f76b933807ce2dcf582ccbc2d3ac432195211c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574575"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701438"
 ---
 # <a name="playready-encrypted-media-extension"></a>Extension EME (Encrypted Media Extension) PlayReady
 

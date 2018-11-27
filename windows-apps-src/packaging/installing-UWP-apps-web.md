@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Installer des applicationsUWP à partir d’une page web
 description: Dans cette section, nous allons examiner les étapes à suivre pour permettre aux utilisateurs d’installer vos applications directement à partir de la page web.
-ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582199"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708119"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Installer des applicationsUWP à partir d’une page web
 
@@ -32,8 +30,8 @@ Dans ce mécanisme, le Programme d’installation d’application inscrit un sch
 
 1. Les serveurs Web doivent avoir la prise en charge pour les requêtes de plages d’octets (HTTP/1.1)
     - Les serveurs qui prennent en charge le protocole HTTP/1.1 doivent avoir la prise en charge pour les requêtes de plages d’octets 
-2. Les serveurs Web doivent savoir sur les types contenus du package d’application Windows 10
-    - Voici comment déclarer des nouveaux types de contenu en tant que partie du [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+2. Serveurs Web devez connaître sur les types contenus du package d’application Windows 10
+    - Voici comment déclarer les nouveaux types de contenu en tant que partie du [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Comment activer ce mécanisme sur une page web 
 Les développeurs d’application qui souhaitent héberger des packages de l’application sur leurs sites Web doivent suivre cette étape:

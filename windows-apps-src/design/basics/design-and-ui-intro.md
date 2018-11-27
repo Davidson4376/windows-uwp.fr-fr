@@ -1,20 +1,18 @@
 ---
-author: mijacobs
 Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: Présentation de la conception des applications de plateforme Windows universelle (UWP) (applications Windows)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0168ae8d5058b6dde7cd137e95560008d2a4973d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0006d20c1db7da16b885e82fb3f066b081e27349
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574825"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706105"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applicationsUWP
 
@@ -32,7 +30,7 @@ Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devic
 
 ![même application sur différents appareils](images/universal-image-1.jpg)
 
-UWP permet en ajustant automatiquement les éléments d’interface utilisateur afin qu’ils soient lisibles et faciles à utiliser sur tous les périphériques et les tailles d’écran.
+UWP permet en ajustant automatiquement les éléments d’interface utilisateur afin qu’ils soient lisible et facile à interagir avec sur tous les périphériques et les tailles d’écran.
 
 Lorsque votre application est exécutée sur un appareil, le système utilise un algorithme afin de normaliser l’affichage à l’écran des éléments d’interface utilisateur. Cet algorithme de mise à l’échelle prend en compte la distance d’affichage et la densité de l’écran (en pixels par pouce) pour optimiser la taille perçue (plutôt que la taille physique). L’algorithme de mise à l’échelle garantit qu’une police de 24pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible pour l’utilisateur qu’une police de 24pixels sur un téléphone doté d’un écran 5pouces distant de quelques centimètres.
 

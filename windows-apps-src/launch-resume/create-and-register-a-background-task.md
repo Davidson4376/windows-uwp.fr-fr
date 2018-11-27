@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Créer et inscrire une tâche en arrière-plan hors processus
 description: Créez une classe de tâche en arrière-plan hors processus et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.author: twhitney
 ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8d32b4559e91cc898944f3767d4b082935359d49
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb6cde0c3c31f0116c65e5d5dc4a0d8ae4a1b540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553596"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704540"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
@@ -39,7 +37,7 @@ Vous pouvez exécuter du code en arrière-plan en écrivant des classes qui impl
 Les étapes suivantes vous montrent comment écrire une nouvelle classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
 
 1.  Créez un projet pour les tâches en arrière-plan et ajoutez-le à votre solution. Pour ce faire, le bouton droit sur le nœud de votre solution dans l' **Explorateur de solutions** et sélectionnez **Ajouter** \> **Nouveau projet**. Sélectionnez le type de projet de **Composant Windows Runtime** , nommez le projet, puis cliquez sur OK.
-2.  Référencez le projet des tâches en arrière-plan à partir de votre projet d’application de plateforme Windows universelle (UWP). Pour un c# ou C++ application, dans votre projet d’application, avec le bouton droit sur les **références** et sélectionnez **Ajouter une nouvelle référence**. Sous **Solution**, sélectionnez **Projets** et le nom de votre projet de tâches en arrière-plan, puis cliquez sur **OK**.
+2.  Référencez le projet des tâches en arrière-plan à partir de votre projet d’application de plateforme Windows universelle (UWP). Pour un langage c# ou application C++, dans votre projet d’application, avec le bouton droit sur les **références** et sélectionnez **Ajouter une nouvelle référence**. Sous **Solution**, sélectionnez **Projets** et le nom de votre projet de tâches en arrière-plan, puis cliquez sur **OK**.
 3.  Pour le projet de tâches en arrière-plan, ajoutez une nouvelle classe qui implémente l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) . La méthode [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) est un point d’entrée obligatoire qui sera appelé lorsque l’événement spécifié est déclenché; Cette méthode est nécessaire dans chaque tâche en arrière-plan.
 
 > [!NOTE]

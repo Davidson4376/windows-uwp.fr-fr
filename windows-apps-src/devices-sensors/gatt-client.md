@@ -1,18 +1,16 @@
 ---
-author: msatranjr
 title: Bluetooth GATT Client
 description: Cet article fournit une vue d’ensemble du Client de profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code pour les scénarios d’utilisation courants.
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 345e6f82ddf97c2595dad0029ca432f075a6190b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572702"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703596"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT Client
 
@@ -29,7 +27,7 @@ Cet article montre l’utilisation de l’API de Client d’attribut générique
 - Lire et écrire dans une caractéristique
 - S’abonner pour les modifications de valeur de notifications lors de la caractéristique
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d’ensemble
 Les développeurs peuvent utiliser les API dans l’espace de noms [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) pour accéder aux périphériques Bluetooth LE. Les appareils Bluetooth LE exposent leurs fonctionnalités par le biais d’une collection de :
 
 -   Services

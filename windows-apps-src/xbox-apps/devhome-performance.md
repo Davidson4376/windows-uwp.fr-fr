@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
 title: Page des performances (Dev Home)
 description: Fournit des informations sur la page de Performance de l’application accueil du développeur pour Xbox One.
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 6035463473eb6ddb1a3ec7fa554f9a12b8f764fc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562668"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702187"
 ---
 # <a name="performance-page-dev-home"></a>Page des performances (Dev Home)
    

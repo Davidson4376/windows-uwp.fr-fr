@@ -1,9 +1,7 @@
 ---
-author: mijacobs
 Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Contrôles de menu volant
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
@@ -13,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e68f8f48ca9ba67a29c8a52a5d59767a080f642b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8ce3222ed13cf82a9f235a592b5830ab96384664
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568284"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704603"
 ---
 # <a name="flyouts"></a>Menus volants
 
@@ -32,7 +30,7 @@ Un menu volant est un conteneur d’abandon interactif capable d’afficher l’
 
 * N’utilisez pas de menu volant à la place d’une [info-bulle](../tooltips.md) ou d’un [menu contextuel](../menus.md). Utilisez une info-bulle pour afficher une brève description qui disparaît après une durée spécifiée. Utilisez un menu contextuel pour les actions contextuelles liées à un élément de l’interface utilisateur, comme copier et coller.
 
-Pour savoir à quel moment utiliser un menu volant et quand utiliser une boîte de dialogue (un contrôle similaire), consultez les [boîtes de dialogue et menus volants](index.md). 
+Pour obtenir des recommandations sur le moment d’utiliser un menu volant ou quand vous devez utiliser une boîte de dialogue (un contrôle similaire), voir les [boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 

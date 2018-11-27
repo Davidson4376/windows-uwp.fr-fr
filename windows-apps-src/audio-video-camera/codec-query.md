@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 0A360481-B649-4E90-9BC4-4449BA7445EF
 description: Recherchez les encodeurs et décodeurs audio et vidéo installés sur un appareil.
 title: Rechercher les codecs installés
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, codec, encodeur, décodeur, requête
 ms.localizationpriority: medium
-ms.openlocfilehash: b74ac269bcba6d15e7c4f5dcb4c34d53573deb5e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571208"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701275"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>Rechercher les codecs installés sur un appareil
 La classe **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** vous permet de rechercher les codecs installés sur l’appareil actuel. Les codecs qui sont fournis dans Windows10 pour les différentes familles d’appareils sont répertoriés dans l’article [Codecs pris en charge](supported-codecs.md); toutefois, étant donné que les utilisateurs et les applications peuvent installer des codecs supplémentaires sur un appareil, vous pouvez avoir besoin de rechercher les codecs pris en charge au moment de l’exécution afin de déterminer les codecs qui sont disponibles sur l’appareil actuel.

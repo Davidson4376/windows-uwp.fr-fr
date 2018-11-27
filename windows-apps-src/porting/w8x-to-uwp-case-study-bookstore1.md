@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: 'Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1'
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle Windows 10 (UWP).
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cec8171b381a607616e2054784fa888074d3f90e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566832"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704420"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime8.x vers UWP : Bookstore1
 
@@ -122,7 +120,7 @@ Pour finir, copiez l’élément `BookstoreListBoxStyle` dans BookstoreStyles.xa
 
 ![Application Windows10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil Mobile
+L’application Windows 10 portée, exécutée sur un appareil Mobile
 
 ## <a name="conclusion"></a>Conclusion
 

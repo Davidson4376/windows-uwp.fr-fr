@@ -4,17 +4,15 @@ description: L'éclairage ambiant permet de donner à une scène un éclairage c
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - Éclairage ambiant
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579736"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707394"
 ---
 # <a name="ambient-lighting"></a>Éclairage ambiant
 
@@ -46,7 +44,7 @@ Cₐ possède l'une des valeurs suivantes:
 -   couleur2 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2, et si la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur ambiante du matériau.
 
-**Remarque**  si aucune des deux options AMBIENTMATERIALSOURCE sont utilisée et la couleur du vertex n’est pas fournie, la couleur ambiante du matériau est utilisée.
+**Remarque**  si aucune des deux options AMBIENTMATERIALSOURCE sont utilisée, la couleur du vertex n’est pas fournie, puis la couleur ambiante du matériau est utilisée.
 
  
 

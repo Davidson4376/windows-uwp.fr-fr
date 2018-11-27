@@ -1,22 +1,20 @@
 ---
-author: stevewhims
 description: Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base **winrt::implements**, directement ou indirectement.
 title: Créer des API avec C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 21670e0908a212341d401b4cbca314a9242b26a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580815"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706004"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
-Cette rubrique montre comment créer [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API à l’aide de la [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) la structure, de base directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
+Cette rubrique montre comment créer [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API à l’aide de la [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) de base struct, directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
 
 - Vous ne créez *pas* une classe Windows Runtime (classe runtime); vous souhaitez simplement implémenter une ou plusieurs interfaces Windows Runtime pour une utilisation locale au sein de votre application. Vous dérivez directement de **winrt::implements** dans ce cas, et implémentez des fonctions.
 - Si vous *créez* une classe runtime. Vous pouvez créer un composant qui sera utilisé à partir d’une application. Ou vous pouvez créer un type qui sera utilisé à partir de l’interface utilisateur XAML et, dans ce cas, vous implémentez et utilisez une classe runtime au sein de la même unité de compilation. Dans ces cas, laissez les outils générer pour vous des classes qui dérivent de **winrt::implements**.
@@ -258,9 +256,9 @@ IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> Toutefois, si vous référencez votre type à partir de votre interface utilisateur XAML, un type d’implémentation et un type projeté se retrouveront dans le même projet. Dans ce cas, la **rendre** renvoie une instance du type projeté. Pour obtenir un exemple de code de ce scénario, voir [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+> Toutefois, si vous référencez votre type à partir de votre interface utilisateur XAML, un type d’implémentation et un type projeté se retrouveront dans le même projet. Dans ce cas, le **rendre** renvoie une instance du type projeté. Pour obtenir un exemple de code de ce scénario, voir [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-Nous ne pouvons utiliser que `istringable` (dans l’exemple de code ci-dessus) pour appeler les membres de l’interface **IStringable**. Mais une interface C++/WinRT (qui est une interface projetée) dérive de [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Par conséquent, vous pouvez appeler [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (ou [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) sur ce dernier à la requête pour d’autres types projetés ou les interfaces, que vous pouvez également utiliser ou retourner.
+Nous ne pouvons utiliser que `istringable` (dans l’exemple de code ci-dessus) pour appeler les membres de l’interface **IStringable**. Mais une interface C++/WinRT (qui est une interface projetée) dérive de [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Par conséquent, vous pouvez appeler [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (ou [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) sur ce dernier pour interroger pour d’autres types projetés ou les interfaces, que vous pouvez également utiliser ou retourner.
 
 ```cppwinrt
 istringable.ToString();
@@ -280,10 +278,10 @@ iclosable.Close();
 
 La classe **MyType** ne fait pas partie de la projection; il s’agit de l’implémentation. Mais de cette façon vous pouvez appeler ses méthodes d’implémentation directement, sans la surcharge d’un appel de fonction virtuelle. Dans l’exemple ci-dessus, même si **MyType::ToString** utilise la même signature que la méthode projetée sur **IStringable**, nous appelons la méthode non virtuelle directement, sans traverser la limite de l’interface binaire d’application (ABI). **com_ptr** pointant simplement un curseur sur la structure **MyType**, vous pouvez également accéder à tous les autres détails internes de **MyType** via la variable `myimpl` et l’opérateur flèche.
 
-Dans le cas où vous disposez d’un objet de l’interface, et vous savez qu’il s’agit d’une interface sur votre implémentation, puis vous pouvez revenir à la mise en œuvre à l’aide du modèle de fonction [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) . Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
+Dans le cas où vous avez un objet d’interface et que vous savez qu’il s’agit d’une interface sur votre implémentation, puis vous pouvez revenir à l’implémentation à l’aide du modèle de fonction [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) . Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
 
 > [!NOTE]
-> Si vous n’avez pas installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou une version ultérieure, vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
+> Si vous n’avez pas encore installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou une version ultérieure, puis vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 Voici un exemple: Il existe un autre exemple dans [implémentez la classe de contrôle personnalisé **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
@@ -315,8 +313,8 @@ IClosable ic1 = myimpl.as<IClosable>(); // error
 
 Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation a été généré par le `cppwinrt.exe` outil) qui rend cela possible.
 
-## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Dérivation à partir d’un type qui possède un constructeur par défaut
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) est un exemple d’un constructeur par défaut. Il n’existe aucun constructeur par défaut, de ce fait, pour construire un **ToggleButtonAutomationPeer**, vous devez transmettre un *owner*. Par conséquent, si vous dérivez de **ToggleButtonAutomationPeer**, vous devez fournir un constructeur qui prend un *owner* et le transmet à la base. Voyons à quoi cela ressemble dans la pratique.
+## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Dérivation à partir d’un type qui possède un constructeur non défini par défaut
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) est un exemple d’un constructeur non défini par défaut. Il n’existe aucun constructeur par défaut, de ce fait, pour construire un **ToggleButtonAutomationPeer**, vous devez transmettre un *owner*. Par conséquent, si vous dérivez de **ToggleButtonAutomationPeer**, vous devez fournir un constructeur qui prend un *owner* et le transmet à la base. Voyons à quoi cela ressemble dans la pratique.
 
 ```idl
 // MySpecializedToggleButton.idl
@@ -375,7 +373,7 @@ Tant que vous n'aurez pas apporté les modifications décrites ci-dessus (pour t
 
 ## <a name="important-apis"></a>API importantes
 * [Modèle de structure winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [fonction de WinRT::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [fonction WinRT::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [Modèle de fonction winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
 * [modèle de fonction WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
 * [Modèle de structure winrt::implements](/uwp/cpp-ref-for-winrt/implements)

@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Boîtier de commande et vibration
 description: Utilisez les API de boîtier de commande Windows.Gaming.Input pour détecter et lire les commandes de vibration et d’impulsion, et les envoyer aux boîtiers de commande.
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
-ms.author: wdg-dev-content
 ms.date: 09/06/2018
 ms.topic: article
 keywords: windows10, uwp, jeux, boîtier de commande, vibration
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea8afb0a9e66ccb4ea603bd78dc5030ca18babe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e65b22039c381bd333516bd9f98c60bbddb9621c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562091"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702903"
 ---
 # <a name="gamepad-and-vibration"></a>Boîtier de commande et vibration
 

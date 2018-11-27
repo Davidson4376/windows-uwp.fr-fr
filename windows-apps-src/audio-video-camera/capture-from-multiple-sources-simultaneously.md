@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: Cet article vous montre comment capturer une vidéo à partir de plusieurs sources simultanées dans un fichier unique avec plusieurs pistes vidéos incorporées.
 title: Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
-ms.author: drewbat
 ms.date: 09/12/2017
 ms.topic: article
 keywords: Windows10, uwp, capture vidéo
 ms.localizationpriority: medium
-ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a654739490043b9f821e7906fa8cf9e3e7259fed
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554676"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706419"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
 

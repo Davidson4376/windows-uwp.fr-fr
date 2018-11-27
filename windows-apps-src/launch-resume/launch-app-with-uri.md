@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Lancer une application avec un URI
 description: Cette section explique comment utiliser un URI (Uniform Resource Identifier) pour lancer une application à partir d’une autre application.
 ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a42a59f76da99461b2e2428f5732ca0c433b6540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570272"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705948"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Lancer une application avec un URI
 
@@ -29,7 +27,7 @@ Cette section explique comment utiliser un URI (Uniform Resource Identifier) pou
 | [Lancer l’application UWP](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application UWP en ouvrant des pages spécifiques dans le Store. |
 | [Lancer l’application CartesWindows](launch-maps-app.md) | Découvrez comment lancer l’application Cartes Windows à partir de votre application. |
 | [Lancer l’application Contacts](launch-people-apps.md) | Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques. |
-| [Lancer la capture d’écran](launch-screen-snipping.md) | Découvrez comment utiliser les schémas d’URI pour ouvrir une nouvelle capture ou pour ouvrir l’application de capture et Sketch. |
+| [Lancer la capture d’écran](launch-screen-snipping.md) | Découvrez comment utiliser les schémas d’URI pour ouvrir une nouvelle capture ou pour ouvrir l’application capture & esquisse. |
 | [Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application](web-to-app-linking.md) | Attractive avec votre application prenant en charge les applications pour la fonctionnalité de sites Web. |
 
 ## <a name="related-topics"></a>Rubriques connexes

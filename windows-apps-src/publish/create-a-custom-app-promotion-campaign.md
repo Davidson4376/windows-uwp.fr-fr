@@ -1,19 +1,17 @@
 ---
-author: JnHs
 description: En plus de créer une campagne de publicité pour votre application qui s’exécute dans des applications Windows, vous pouvez promouvoir votre application à l’aide d’autres canaux.
 title: Créer une campagne personnalisée de promotion d’applications
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
-ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578814"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704616"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
@@ -47,7 +45,7 @@ Lorsque les abonnés du développeur sur Facebook et Twitter cliquent sur l’UR
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>Comprendre comment les acquisitions sont éligibles en tant que conversions
 
-Une *conversion* de campagne personnalisée est une acquisition qui résulte d’un clic par un client sur une URL promue par le biais d’une campagne personnalisée. Il existe différents scénarios pour qu’elle en tant que conversion pour les graphiques de **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md) et pour qu’elle en tant que conversion pour [ récupération par programme l’ID de campagne](#programmatically).
+Une *conversion* de campagne personnalisée est une acquisition qui résulte d’un clic par un client sur une URL promue par le biais d’une campagne personnalisée. Il existe différents scénarios pour qu’elle en tant que conversion pour les graphiques de **vues de page d’application et les conversions par ID de campagne** et **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md) et pour qu’elle en tant que conversion pour [ récupération par programme l’ID de campagne](#programmatically).
 
 ### <a name="qualifying-conversions-in-the-acquisitions-report"></a>Conversions éligibles dans le rapport sur les Acquisitions
 

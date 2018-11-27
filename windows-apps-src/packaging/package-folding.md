@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Développement de packages d'actifs et mise en dossier de packages
 description: Découvrez comment organiser efficacement votre application avec des packages d'actifs et la mise en dossier des packages.
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
-ms.openlocfilehash: efdf560158e2b57ae9e05ecc31d49c7cf981d8c0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9241ffeb6b232c5b5be3098b114f6c7bf00bcf0d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567674"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708046"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>Développement de packages d'actifs et mise en dossier de packages 
 
@@ -27,7 +25,7 @@ Si vous envisagez d'utiliser les packages d'actifs pour vos applications, vous v
 
 Pour comprendre que la mise en dossier des packages n'a aucune incidence sur votre processus de développement, il faut d'abord comprendre ce qui se produit lorsque vous fractionnez votre application en plusieurs packages (avec les packages d'actifs ou les packages de ressources). 
 
-À un niveau élevé, lorsque vous fractionnez certains fichiers d'application dans d'autres packages (qui ne sont pas des packages d'architecture), vous n'êtes pas en mesure d'accéder à ces fichiers directement selon l'emplacement d'exécution de votre code. En effet, ces packages sont tous installés dans des répertoires différents de l'emplacement dans lequel votre package d'architecture est installé. Par exemple, si vous élaborez un jeu et que votre jeu est localisé en Français, allemand et vous générez pour x64 et x x86 ordinateurs, puis vous devez avoir ces fichiers de package d’application au sein de l’ensemble d’applications de votre jeu:
+À un niveau élevé, lorsque vous fractionnez certains fichiers d'application dans d'autres packages (qui ne sont pas des packages d'architecture), vous n'êtes pas en mesure d'accéder à ces fichiers directement selon l'emplacement d'exécution de votre code. En effet, ces packages sont tous installés dans des répertoires différents de l'emplacement dans lequel votre package d'architecture est installé. Par exemple, si vous élaborez un jeu et que votre jeu est localisé en Français, allemand et vous générez pour x64 et x x86 machines, puis vous devez avoir ces fichiers de package d’application au sein de l’ensemble d’applications de votre jeu:
 
 -   MyGame_1.0_x86.appx
 -   MyGame_1.0_x64.appx

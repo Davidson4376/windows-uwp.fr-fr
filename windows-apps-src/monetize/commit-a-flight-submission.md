@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour à l’espace partenaires.
 title: Valider une soumission de version d’évaluation de package
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581488"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702653"
 ---
 # <a name="commit-a-package-flight-submission"></a>Valider une soumission de version d’évaluation de package
 

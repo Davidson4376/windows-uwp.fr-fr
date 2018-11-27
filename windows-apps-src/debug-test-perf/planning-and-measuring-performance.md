@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: Planification des performances
 description: Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563506"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704961"
 ---
 # <a name="planning-for-performance"></a>Planification des performances
 

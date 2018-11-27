@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Référence pour le portage d’OpenGL ES2.0 sur Direct3D11
 description: Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES2.0 sur Direct3D11.
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 14259fb6949eaa100d51fbdbda6f96bd07a4fa80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563939"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707755"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>Informations de référence pour le portage d’OpenGLES2.0 vers Direct3D11
 

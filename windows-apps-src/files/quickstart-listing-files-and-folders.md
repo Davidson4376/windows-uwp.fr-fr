@@ -1,9 +1,7 @@
 ---
-author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Énumérer et interroger des fichiers et dossiers
 description: Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers.
-ms.author: lahugh
 ms.date: 06/28/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -13,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 13aa22906e9c5ba64237b2c69025143060ff85a9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579696"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703879"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 

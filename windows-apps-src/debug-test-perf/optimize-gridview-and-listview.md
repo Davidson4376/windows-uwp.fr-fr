@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: Optimisation des options d’interface ListView et GridView
 description: Optimisez ListView/GridView et le temps de démarrage via la virtualisation de l’interface, la réduction des éléments et la mise à jour progressive des éléments.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563422"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705675"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Optimisation des options d’interface ListView et GridView
 

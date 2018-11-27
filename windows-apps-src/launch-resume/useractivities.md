@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: Poursuivre l’activité utilisateur, même sur différents appareils
 description: Cette rubrique décrit comment permettre aux utilisateurs de reprendre ce qu’ils étaient en train de faire dans votre application, même sur plusieurs appareils.
 keywords: activité utilisateur, activités utilisateur, chronologie, cortana reprend là où vous en étiez, cortana reprend là où j’en étais, projet rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561851"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708056"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 
@@ -157,7 +155,7 @@ Une fois que votre application ou service est authentifié(e) avec un compte Mic
 ## <a name="summary"></a>Résumé
 
 Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) pour que votre application s’affiche dans la Chronologie et dans Cortana.
-* En savoir plus sur la [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* En savoir plus sur les [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Consultez l'[exemple de code](https://github.com/Microsoft/project-rome).
 * Voir des [cartes adaptatives plus sophistiquées](http://adaptivecards.io/).
 * Publiez un objet **UserActivity** à partir d’iOS, d'Android ou de votre service web via [MicrosoftGraph](https://developer.microsoft.com/graph/).

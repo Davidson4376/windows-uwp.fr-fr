@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Reviews report in Partner Center lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: Rapport sur les révisions
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
-ms.author: wdg-dev-content
 ms.date: 08/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
-ms.openlocfilehash: e5deef6d5e67c1236fb88f93269fcf91bb50243c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7ec883e7bcb98d69673b520df918e085182d35ec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7573479"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705698"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
@@ -22,7 +20,7 @@ Le rapport **avis** dans [L’espace partenaires](https://partner.microsoft.com/
 
 Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Vous pouvez également répondre aux clients avis [directement à partir de cette page](respond-to-customer-reviews.md) ou par programmation [via le Microsoft Store API d’avis](../monetize/submit-responses-to-app-reviews.md).
+Vous pouvez également répondre aux clients avis [directement à partir de cette page](respond-to-customer-reviews.md) ou par programme [par le biais du Microsoft Store API d’avis](../monetize/submit-responses-to-app-reviews.md).
 
 > [!TIP]
 > Pour obtenir un aperçu des avis, des évaluations et des commentaires des utilisateurs formulés pour l’ensemble de vos applications au cours des 30derniers jours, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Reviews and feedback**. 
@@ -35,14 +33,14 @@ Dans la zone supérieure de la page, vous pouvez sélectionner la période sur l
 Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette page en fonction des options suivantes. Ces filtres ne s’appliqueront pas aux graphiques **Répartition des classifications** et **Évaluation moyenne au fil du temps**.
 
 -   **Évaluation**: les avis avec des évaluations incluant toutes les étoiles sont sélectionnés par défaut, mais vous pouvez sélectionner ou désélectionner des évaluations spécifiques (comprenant entre 1 et 5étoiles) si vous souhaitez ne visualiser que les avis associés à des évaluations données.
-- **Passez en revue le contenu**: le paramètre par défaut est **que les évaluations avec avis**, ce qui signifie que les évaluations uniquement avec le contenu de l’avis seront affiche. Vous pouvez sélectionner **tous les** afficher toutes les évaluations, y compris ceux qui n’incluent pas n’importe quel texte d’avis écrite. Notez que le graphique de **répartition des classifications** s’affiche toujours tous les avis, quel que soit votre sélection.
+- **Passez en revue le contenu**: le paramètre par défaut est **que les évaluations avec avis**, ce qui signifie que les évaluations uniquement avec le contenu de l’avis seront affiche. Vous pouvez sélectionner **tous les** afficher toutes les évaluations, y compris ceux qui n’incluent pas n’importe quel texte révision écrite. Notez que le graphique de **répartition des classifications** s’affiche toujours tous les avis, quel que soit votre sélection.
 -   **Version du système d’exploitation**: la valeur par défaut de ce filtre est **Toutes**. Vous pouvez choisir une version de système d’exploitation spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients qui utilisent cette version.
 -   **Version du package**: la valeur par défaut de ce filtre est **Toutes**. Si votre application comprend plusieurs packages, vous pouvez choisir un package spécifique ici si vous souhaitez visualiser uniquement les avis laissés par les clients qui disposaient de ce package lorsqu’ils ont évalué votre application.
 -   **Réponses**: la valeur par défaut de ce filtre est **Toutes**. Vous pouvez choisir de ne visualiser que les avis pour lesquels vous avez [répondu aux clients](respond-to-customer-reviews.md), ou uniquement ceux auxquels vous n'avez pas encore répondu.
 -   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n’ont pas encore été mis à jour par le client.
 -   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous ne souhaitez visualiser que les avis de clients appartenant à ce marché.
 -   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients utilisant celui-ci.
--   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie d’insight](#review-insight-categories) affiche uniquement les avis que nous avons associées à cette catégorie. 
+-   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie des informations](#review-insight-categories) à afficher uniquement les avis que nous avons associées à cette catégorie. 
 
 > [!TIP]
 > Si cette page ne contient aucun avis, assurez-vous que vos filtres n’ont pas exclu la totalité des avis concernant votre application. Par exemple, si vous filtrez les avis en fonction d’un système d’exploitation non pris en charge par votre application, aucun avis n’apparaîtra sur cette page.
@@ -50,7 +48,7 @@ Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette pa
 
 ## <a name="ratings-breakdown"></a>Répartition des classifications
 
-Le graphique de **répartition des classifications** s’affiche en haut de ce rapport, afin que vous pouvez obtenir un aperçu des éléments suivants: 
+Le graphique de **répartition des classifications** s’affiche en haut de ce rapport afin que vous pouvez obtenir un aperçu de ce qui suit: 
 - Évaluation moyenne à l’aide d’étoiles concernant l’application
 - Nombre total d’évaluations de votre application au cours des 12derniers mois.
 - Nombre total d’évaluations correspondant à chaque nombre d’étoiles.
@@ -63,7 +61,7 @@ Le graphique de **répartition des classifications** s’affiche en haut de ce r
 
 Notez que ce graphique inclut toujours toutes vos avis, même si vous avez sélectionné **que les évaluations avec avis** dans le filtre de page **passer en revue le contenu** .
 
-Vous pouvez également visualiser ce graphique dans le [rapport sur les évaluations](ratings-report.md), ainsi que de plus d’informations sur les évaluations de votre application.
+Ce graphique peut également être visible dans le [rapport sur les évaluations](ratings-report.md), ainsi que de plus d’informations sur les évaluations de votre application.
 
 
 <span id = "review-insight-categories" />
@@ -109,12 +107,12 @@ Les commentaires qui n'ont pas été rédigés dans votre langue sont traduits p
 
 Notez que les évaluations sont traduites par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez le comparer à la traduction ou utiliser un autre moyen de traduction.
 
-Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origine à gauche par le client recherche est effectuée (et non une le texte traduit), même si vous avez la case à cocher **traduire avis** activée.
+Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origine à gauche par le client recherche est effectuée (et non un texte traduit), même si vous avez la case à cocher **d’avis par translation** activée.
 
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) ou l' [QU'API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md) pour envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) ou l' [QU'API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md) pour répondre à la plupart des avis rédigés par vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 

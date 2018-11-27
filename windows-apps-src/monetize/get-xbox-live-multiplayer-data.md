@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données multijoueurs Xbox Live.
 title: Obtenir des données multijoueur Xbox Live
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, multijoueurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 6074f3774d099c63f6c39ac4ef0e95a7b6745912
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74f1a64bde32fe68a51527527a0b049d811d0853
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574841"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702893"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Obtenir des données multijoueur Xbox Live
 

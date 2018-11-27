@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Gérer l’activation d’une application
 description: Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched.
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
-ms.author: twhitney
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -13,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559771"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705292"
 ---
 # <a name="handle-app-activation"></a>Gérer l’activation d’une application
 
@@ -42,7 +40,7 @@ Définissez la classe pour votre application.
 Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) contient l’état précédent de votre application et les arguments d’activation.
 
 > [!NOTE]
-> Sur Windows, le lancement d’une application suspendue à partir de la liste de vignette ou application de démarrage n’a pas d’appeler cette méthode.
+> Sur Windows, le lancement d’une application suspendue à partir de l’écran de démarrage par vignette ou application de la liste n’a pas d’appeler cette méthode.
 
 ```csharp
 using System;

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Créer des ressources de périphérique pour un tampon de profondeur
 description: Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre.
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, direct3d, tampon de profondeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 091ac04b2a41c54fbce7294bcf6651f4ad4aafd2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579457"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702447"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Créer des ressources de périphérique pour un tampon de profondeur
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Technologies de jeu des applications pour la plateforme Windows universelle (UWP)
 description: Ce guide décrit les technologies disponibles pour le développement de jeux UWP.
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, technologie, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576834"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707672"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Technologies de jeu des applications UWP
 
@@ -24,9 +22,9 @@ Ce guide décrit les technologies disponibles pour le développement de jeux UWP
 ##  <a name="benefits-of-windows10-for-game-development"></a>Avantages de Windows 10 pour le développement de jeux
 
 
-Avec l’introduction de UWP dans Windows 10, vos titres Windows 10 sera en mesure de s’étendre sur toutes les plateformes Microsoft. Avec la migration gratuite à partir de versions antérieures de Windows, il existe un nombre croissant de clients de Windows 10. La combinaison de ces deux aspects signifie que vos titres Windows 10 pourront atteindre un nombre considérable de clients par le biais du Microsoft Store.
+Avec l’introduction des UWP dans Windows 10, vos titres Windows 10 sera en mesure de s’étendre sur toutes les plateformes Microsoft. Avec la migration gratuite des versions précédentes de Windows, il existe un nombre croissant de clients de Windows 10. La combinaison de ces deux aspects signifie que vos titres Windows 10 seront en mesure d’atteindre un nombre considérable de clients par le biais du Microsoft Store.
 
-En outre, Windows 10 offre de nombreuses nouvelles fonctionnalités qui sont particulièrement intéressant de jeux:
+En outre, Windows 10 offre de nombreuses nouvelles fonctionnalités qui ne sont particulièrement utiles pour les jeux:
 
 -   Réduction de la pagination de la mémoire et de la taille globale du système de mémoire
 -   Amélioration de la gestion de la mémoire graphique qui alloue et protège activement davantage de mémoire pour le jeu au premier plan
@@ -39,7 +37,7 @@ Les jeux en temps réel exigeant des performances élevées doivent utiliser des
 ## <a name="development-environment"></a>Environnement de développement
 
 
-Pour créer des jeux pour UWP, vous devez configurer votre environnement de développement en installant Visual Studio 2015 ou version ultérieure. Nous vous recommandons d’installer la dernière version de Visual Studio, vous donnant accès aux dernières mises à jour de sécurité et de développement. Visual Studio vous permet de créer des applications UWP et fournit des outils de développement de jeux:
+Pour créer des jeux pour UWP, vous devez configurer votre environnement de développement en installant Visual Studio 2015 ou version ultérieure. Nous recommandons que vous installez la dernière version de Visual Studio, vous donnant accès aux dernières mises à jour de sécurité et de développement. Visual Studio vous permet de créer des applications UWP et fournit des outils de développement de jeux:
 
 -   Outils Visual Studio pour la programmation de jeux DX - Visual Studio offre des outils permettant de créer, modifier, prévisualiser et exporter des ressources d’image, de modèle et de nuanceur. Il existe également des outils que vous pouvez utiliser pour convertir des ressources au moment de la création et pour déboguer le code graphique DirectX. Pour plus d’informations, voir [Utiliser Visual Studio Tools pour la programmation de jeux](set-up-visual-studio-for-game-development.md).
 -   Fonctionnalités de Graphics Diagnostics dans Visual Studio - Les outils de diagnostic de graphiques sont désormais disponibles dans Windows en tant que fonctionnalités facultatives. Les outils de diagnostic vous permettent d’effectuer des tâches de débogage graphique et d’analyse des frames graphiques, ainsi que de surveiller l’utilisation du processeur graphique (GPU) en temps réel. Pour plus d’informations, voir [Utiliser les fonctionnalités de diagnostic de graphiques de Visual Studio et du runtime DirectX](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).

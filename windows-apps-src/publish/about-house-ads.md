@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
 title: À propos des publicités maison
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c8a9ad51baab0edf96d08682aefce99ba04fd5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556190"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703899"
 ---
 # <a name="about-house-ads"></a>À propos des publicités maison
 

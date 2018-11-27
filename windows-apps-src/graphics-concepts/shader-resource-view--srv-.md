@@ -4,17 +4,15 @@ description: Les vues de ressource de nuanceur habillent en général des textur
 ms.assetid: 4505BCD2-0EDA-40F2-887C-EC081FE32E8F
 keywords:
 - Affichage des ressources de nuanceur (SRV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e98b9942dfc14604c061a036cd3c9803abaf3915
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd6cca08c0845e2da5420fc1f040cc285c87953d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580729"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702683"
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>Affichage des ressources de nuanceur (SRV) et des accès sans ordre (UAV)
 

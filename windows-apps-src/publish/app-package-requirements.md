@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: Exigences relatives au package de l’application
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580689"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704095"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 

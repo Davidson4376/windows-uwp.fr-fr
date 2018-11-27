@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Créer votre application en réservant un nom
 keywords: windows10, uwp, réservation de noms, nom de l’application, noms d’application, noms, nom du produit, attribution de noms, nom réservé, titre, noms, titres
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b00ace982bb39b99816013a8491b5b75be765833
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573313"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704635"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
@@ -24,7 +22,7 @@ Vous pouvez réserver un nom pour votre application même si vous n'avez pas enc
 Lorsque vous [chargez les packages de votre application](upload-app-packages.md), la valeur [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) doit correspondre au nom que vous avez réservé pour votre application. Si vous utilisez Microsoft VisualStudio pour créer le package de votre application, cet attribut est rempli automatiquement.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans l’espace partenaires. Toutefois, sachez que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans l’espace partenaires. Toutefois, n’oubliez pas que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>Création de votre application en réservant un nouveau nom

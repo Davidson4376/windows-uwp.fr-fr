@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Build Universal Windows Platform (UWP) apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
 title: Interactions avec le stylet et WindowsInk dans les applications UWP
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkCanvas, reconnaissance de l’écriture manuscrite, interaction utilisateur, entrées
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a9dd4347cc682f384c2d408d30820acf76ce34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 22477ab0facfcb67d44057a91c7c3a49df57f8b9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562688"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704440"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et WindowsInk dans les applications UWP
 

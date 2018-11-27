@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Écrire un plug-in personnalisé pour DevicePortal
 description: Découvrez comment écrire une application UWP qui utilise WindowsDevicePortal pour héberger une page web et fournir des informations de diagnostic.
-ms.author: pafarley
 ms.date: 03/24/2017
 ms.topic: article
-keywords: Windows 10, uwp, le portail d’appareil
+keywords: Windows 10, uwp, portal de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: cceceae4b6b9bf4cecd3c3bee36344f4e5a1eed1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560292"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705593"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour DevicePortal
 

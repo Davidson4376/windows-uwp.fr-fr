@@ -1,18 +1,16 @@
 ---
-author: msatranjr
 title: Bluetooth basse énergie
 description: Cette rubrique fournit une vue d’ensemble de Bluetooth LE dans les applications UWP.
-ms.author: misatran
 ms.date: 03/15/2017
 ms.topic: article
 keywords: Windows 10, uwp, bluetooth, bluetooth LE, faible consommation d’énergie, gatt, écart, central, périphérique, client, serveur, l’Observateur, éditeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e5bef16c76ee14c2abb7a5a41ab02d150a97333
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3853003e54e58b3949c248fb03cb0a83e2d6d112
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581930"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702387"
 ---
 # <a name="bluetooth-low-energy"></a>Bluetooth basse énergie
 Bluetooth Low Energy (LE) est une spécification qui définit les protocoles de découverte et de communication entre les périphériques économe en énergie. La découverte d’appareils est effectuée par le biais du protocole de profil d’accès générique (espace). Après la découverte, la communication de périphérique à s’effectue par le biais du protocole d’attribut générique (GATT). Cette rubrique fournit une vue d’ensemble de Bluetooth LE dans les applications UWP. Pour afficher plus de détails sur le Bluetooth LE, consultez la [Spécification de Core Bluetooth](https://www.bluetooth.com/specifications/bluetooth-core-specification) version 4.0, où Bluetooth L’a été introduit. 

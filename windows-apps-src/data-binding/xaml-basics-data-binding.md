@@ -1,18 +1,16 @@
 ---
-author: KarlErickson
 title: Créer des liaisons de données
 description: Cet article décrit les principes fondamentaux de la liaison de données en XAML
 keywords: XAML, UWP, Prise en main
-ms.author: karler
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8000d9105481bc177eb2fc64646aec009fd80d36
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557692"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705573"
 ---
 # <a name="create-data-bindings"></a>Créer des liaisons de données
 

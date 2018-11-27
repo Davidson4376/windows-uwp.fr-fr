@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: Appeler des API asynchrones en C# ou Visual Basic
 description: La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, C#, Visual Basic, asynchrone
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571637"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704888"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Appeler des API asynchrones en C# ou Visual Basic
 

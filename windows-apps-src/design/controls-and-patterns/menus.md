@@ -1,10 +1,8 @@
 ---
-author: mijacobs
 Description: Menus and context menus display a list of commands or options when the user requests them.
 title: Menus et menus contextuels
 label: Menus and context menus
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -15,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b03a1a7f8670029a12cf2a9537516d4f23a3c64f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9edf7bcb2ad76ed02887dfffc3e72d0d47f5aa1a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579935"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705889"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -30,7 +28,7 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
-| Ce contrôle est inclus dans le cadre de la bibliothèque d’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et les fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez la [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Ce contrôle est inclus dans le cadre de la bibliothèque de l’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez la [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **API de la plateforme** | **API de bibliothèque de l’interface utilisateur Windows** |
 | - | - |
@@ -44,15 +42,15 @@ Menus et menus contextuels permettent d’organiser les commandes; Pour afficher
 
 ### <a name="menubar-vs-menuflyout"></a>Barre de menus ou MenuFlyout
 
-Pour afficher un menu dans un menu volant joint à un élément d’interface utilisateur sur les canevas, utilisez le contrôle MenuFlyout pour héberger vos éléments de menu. Vous pouvez appeler un menu volant sous la forme d’un menu standard ou un menu contextuel. Un menu volant héberge un menu de niveau supérieur unique (et sous-menus facultatifs).
+Pour afficher un menu dans un menu volant attaché à un élément d’interface utilisateur sur les canevas, utilisez le contrôle MenuFlyout pour héberger vos éléments de menu. Vous pouvez appeler un menu volant sous la forme d’un menu normal ou un menu contextuel. Un menu volant héberge un menu de niveau supérieur unique (et sous-menus facultatifs).
 
-Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne horizontale, utilisez une barre de menus. En règle générale, vous placez la barre de menus en haut de la fenêtre d’application.
+Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne horizontale, utilisez une barre de menus. Vous placez en règle générale, la barre de menus en haut de la fenêtre d’application.
 
 ### <a name="menubar-vs-commandbar"></a>Barre de menus ou CommandBar
 
-Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou regroupement que permet un contrôle CommandBar.
+Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen rapide et simple pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou au regroupement que permet un contrôle CommandBar.
 
-Vous pouvez également utiliser une barre de menus en conjonction avec un contrôle CommandBar. Utilisez la barre de menus de fournir la majeure partie des commandes et le contrôle CommandBar pour mettre en évidence les commandes les plus utilisées.
+Vous pouvez également utiliser une barre de menus en association avec un contrôle CommandBar. Utilisez la barre de menus pour fournir la majeure partie des commandes et le contrôle CommandBar pour mettre en évidence les commandes les plus utilisées.
 
 ## <a name="examples"></a>Exemples
 
@@ -72,7 +70,7 @@ Vous pouvez également utiliser une barre de menus en conjonction avec un contr�
 
 ## <a name="menus-vs-context-menus"></a>Menus par rapport aux menus contextuels
 
-Menus et menus contextuels sont similaires dans leur apparence et ce qu’ils contiennent. En fait, vous pouvez utiliser le même contrôle [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), pour les créer. La différence est la façon dont vous permettez à l’utilisateur y accéder.
+Menus et menus contextuels sont similaires dans leur apparence et qu’ils peuvent contenir. En fait, vous pouvez utiliser le même contrôle [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), pour les créer. La différence est la façon dont vous permettez à l’utilisateur y accéder.
 
 Quand utiliser un menu ou un menu contextuel?
 
@@ -128,7 +126,7 @@ Ne vous sentez pas obligé de fournir des icônes pour les commandes qui n’ont
 ````
 
 > [!TIP]
-> La taille de l’icône dans un MenuFlyoutItem est de 16 x 16 px. Si vous utilisez SymbolIcon, FontIcon ou PathIcon, l’icône s’adapte automatiquement à la taille correcte sans perte de fidélité. Si vous utilisez BitmapIcon, assurez-vous que la taille de votre ressource est de 16x16px.  
+> La taille de l’icône dans un MenuFlyoutItem est de 16 x 16 px. Si vous utilisez SymbolIcon, FontIcon ou PathIcon, l’icône s’adapte automatiquement à la taille correcte sans aucune perte de fidélité. Si vous utilisez BitmapIcon, assurez-vous que la taille de votre ressource est de 16x16px.  
 
 ## <a name="create-a-menu-flyout-or-a-context-menu"></a>Créer un menu volant ou un menu contextuel
 
@@ -140,7 +138,7 @@ Voici le rôle de ces objets:
 - [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx): activer ou désactiver une option.
 - [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx): séparer visuellement des éléments de menu.
 
-Cet exemple crée un [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) et utilise la propriété [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) , une propriété disponible pour la plupart des contrôles, pour afficher le MenuFlyout en tant qu’un menu contextuel.
+Cet exemple crée un [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) et utilise la propriété [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) , une propriété disponible pour la plupart des contrôles, pour afficher l’objet MenuFlyout en tant qu’un menu contextuel.
 
 ````xaml
 <Rectangle
@@ -218,9 +216,9 @@ Les contrôles permettant de faire disparaître les contrôles, tels que des men
 
 ## <a name="create-a-menu-bar"></a>Créer une barre de menus
 
-> **Version d’évaluation**: barre de menus nécessite [dernière build de Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **Version d’évaluation**: nécessite une barre de menus [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Vous utilisez les mêmes éléments pour créer des menus dans une barre de menus, comme dans un menu volant. Toutefois, au lieu de le regroupement d’objets MenuFlyoutItem dans un MenuFlyout, vous les regrouper dans un élément MenuBarItem. Chaque MenuBarItem est ajouté à la barre de menus comme un menu de niveau supérieur.
+Vous utilisez les mêmes éléments pour créer des menus dans une barre de menus, comme dans un menu volant. Toutefois, au lieu de regroupement d’objets MenuFlyoutItem dans un MenuFlyout, vous les regrouper dans un élément MenuBarItem. Chaque MenuBarItem est ajouté à la barre de menus, comme un menu de niveau supérieur.
 
 ![Exemple d’une barre de menus](images/menu-bar-submenu.png)
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données agrégées de rapport d’erreurs pour une application de bureau, pour une plage de dates données et en fonction d’autres filtres facultatifs.
 title: Obtenir des données de rapport d'erreur pour votre application de bureau
-ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, application de bureau
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0081024f59af5180f5018664934277e7fad835
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d7a017f2b9530a88b76a9d374b92e9cfd8890b51
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576223"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708639"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Obtenir des données de rapport d'erreur pour votre application de bureau
 

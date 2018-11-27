@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Nouveautés apportées dans la documentation Windows en septembre2017 - Développer des applicationsUWP
 description: De nouvelles fonctionnalités, des vidéos et des conseils aux développeurs ont été ajoutés à la documentation du développeur Windows10 en septembre2017.
 keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows10, 1709
-ms.author: quradic
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 436b610be942b33849b6da31cf5f9353a505a700
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c3fe097be63fef790b9dcc4cedd6ee457e3c79f5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565206"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708449"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre2017
 

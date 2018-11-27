@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
 description: Utilisez les exemples de code dans cette section pour en savoir plus sur l’utilisation de l’API de soumission au Microsoft Store.
 title: Exemples de code pour l’API de soumission
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, API de soumission au Microsoft Store, exemples de code
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9c2acbdd6c45c00ba96bdc11a8273a66a67116
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60668ba81bbaefe2c190f7212618684797366bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558171"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707930"
 ---
 # <a name="code-examples-for-the-submission-api"></a>Exemples de code pour l’API de soumission
 
-Cette section fournit des exemples de code pour l’utilisation de l' [API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md) dans différents langages de programmation.
+Cette section fournit des exemples de code pour utiliser l' [API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md) dans différents langages de programmation.
 
 > [!NOTE]
 > Outre les exemples de code répertoriés ci-dessous, nous fournissons également un module de PowerShell open source qui implémente une interface de ligne de commande sur l’API de soumission au Microsoft Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre app, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission au MicrosoftStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
