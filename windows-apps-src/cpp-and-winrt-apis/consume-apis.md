@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700198"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855277"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
 
@@ -176,7 +176,7 @@ MainPage::MainPage()
 Pour obtenir plus d’informations, du code et la procédure d’utilisation d’une classe runtime implémentée dans le projet d’utilisation, voir [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>Instanciation et retour des types et interfaces projetés
-Voici un exemple de ce à quoi peuvent ressembler les types et interfaces projetés dans votre projet d’utilisation. Gardez à l’esprit qu’un type projeté (par exemple, le dans cet exemple), est générée par l’outil et qu’il n’est pas quelque chose que vous souhaitez créer vous-même.
+Voici un exemple de ce à quoi peuvent ressembler les types et interfaces projetés dans votre projet d’utilisation. N’oubliez pas qu’un type projeté (par exemple, le dans cet exemple), est générée par l’outil et n’est pas quelque chose que vous souhaitez créer vous-même.
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
@@ -242,9 +242,9 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [Interface de QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [Fonction de RoActivateInstance](https://msdn.microsoft.com/library/br224646)
-* [Classe de Windows::Foundation:: URI](/uwp/api/windows.foundation.uri)
+* [Interface QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [Fonction RoActivateInstance](https://msdn.microsoft.com/library/br224646)
+* [Classe Windows::Foundation:: URI](/uwp/api/windows.foundation.uri)
 * [Modèle de fonction winrt::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [Modèle de fonction winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [Structure winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

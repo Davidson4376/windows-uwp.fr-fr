@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d5635a41bec716487c08dd57e6ba2ac360649ad
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693110"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7848637"
 ---
 # <a name="dialogs-and-flyouts"></a>Boîtes de dialogue et menus volants
 
@@ -84,7 +84,7 @@ Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialog
 :::row-end:::
 
 
-## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>Comment les éviter à l’aide des boîtes de dialogue et menus volants
+## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>Méthodes pour éviter d’utiliser des boîtes de dialogue et menus volants
 
 Mesurez l’importance des informations à partager: sont-elles suffisamment importantes pour interrompre l’utilisateur? Évaluez également la fréquence à laquelle les informations doivent être affichées. Si vous affichez une boîte de dialogue ou une notification toutes les 5minutes, vous pouvez peut-être plutôt leur allouer un emplacement dans l’interface utilisateur principale. Par exemple, dans un client de chat, au lieu d’afficher un menu volant chaque fois qu’un ami se connecte, vous pouvez afficher la liste des amis en ligne sur le moment et mettre en évidence les amis quand ils se connectent.
 
@@ -92,7 +92,7 @@ Les boîtes de dialogue sont fréquemment utilisées pour confirmer une action (
 
 ## <a name="how-to-create-a-dialog"></a>Comment créer une boîte de dialogue
 
-Consultez l' [article de boîtes de dialogue](dialogs.md). 
+Consultez l' [article des boîtes de dialogue](dialogs.md). 
 
 ## <a name="how-to-create-a-flyout"></a>Comment créer un menu volant
 

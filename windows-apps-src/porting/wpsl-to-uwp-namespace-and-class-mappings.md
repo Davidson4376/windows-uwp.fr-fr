@@ -1,5 +1,5 @@
 ---
-description: Cette rubrique fournit un mappage complet des WindowsPhone APIs Silverlight vers leurs équivalents de la plateforme Windows universelle (UWP).
+description: Cette rubrique présente le mappage complet des WindowsPhone Silverlight APIs sur leurs équivalents de la plateforme Windows universelle (UWP).
 title: WindowsPhone Silverlight aux mappages d’espace de noms et des classes UWP
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706955"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848449"
 ---
-# <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight aux mappages d’API UWP
+# <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight pour le mappage des API UWP
 
 
-Cette rubrique fournit un mappage complet des WindowsPhone APIs Silverlight vers leurs équivalents de la plateforme Windows universelle (UWP). Il ne s’agit généralement pas d’un mappage un-à-un des fonctionnalités : une plateforme peut comporter plus ou moins de fonctionnalités que l’autre dans un espace de noms ou dans une classe.
+Cette rubrique présente le mappage complet des WindowsPhone Silverlight APIs sur leurs équivalents de la plateforme Windows universelle (UWP). Il ne s’agit généralement pas d’un mappage un-à-un des fonctionnalités : une plateforme peut comporter plus ou moins de fonctionnalités que l’autre dans un espace de noms ou dans une classe.
 
 La table de mappage vous aidera à lorsque vous travaillez dans un projet UWP et que vous réutilisez le code source à partir d’un projet WindowsPhone Silverlight. Il existe des différences dans les noms des espaces de noms et des classes (y compris dans les contrôles d’interface utilisateur) entre les deux plateformes. Dans de nombreux cas, pour effectuer un mappage, il suffit de modifier un nom d’espace de noms. Votre code est ensuite compilé. Parfois, un nom de classe ou d’API a changé, ainsi que le nom de l’espace de noms. D’autres fois, le mappage demande un peu plus de travail et, dans de rares cas, il nécessite un changement d’approche.
 

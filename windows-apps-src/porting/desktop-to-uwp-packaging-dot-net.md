@@ -8,15 +8,15 @@ keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719045"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847766"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 
-Vous pouvez utiliser Visual Studio pour générer un package de votre application de bureau. Ensuite, vous pouvez publier ce package au Microsoft Store ou charger de manière indépendante sur un ou plusieurs ordinateurs.
+Vous pouvez utiliser Visual Studio pour générer un package de votre application de bureau. Ensuite, vous pouvez publier ce package sur le Microsoft Store ou charger de manière indépendante sur un ou plusieurs ordinateurs.
 
 La dernière version de Visual Studio fournit une nouvelle version projet de création de packages qui élimine toutes les étapes manuelles autrefois nécessaires pour mettre en package votre application Il suffit d’ajouter un projet de création de packages, de référencer votre projet d'application de bureau, puis d'appuyer sur F5 pour déboguer votre application. Plus aucun ajustement n'est nécessaire. Cette nouvelle expérience plus fluide améliore considérable l'expérience de la version précédente de Visual Studio.
 

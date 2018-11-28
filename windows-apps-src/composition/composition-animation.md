@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712758"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846749"
 ---
 # <a name="composition-animations"></a>Animations de composition
 
@@ -21,7 +21,7 @@ Les API Windows.UI.Composition vous permettent de créer, d’animer, de transfo
 
 Imaginez la conception du mouvement comme un film. Les transitions transparentes vous laissent concentrés sur l’histoire et donnent vie aux expériences. Nous pouvons inviter cette sensation dans nos conceptions, en guidant les utilisateurs à partir d’une tâche à l’autre avec une aisance cinématographique. Le mouvement est souvent le facteur de différenciation entre une Interface utilisateur et une expérience utilisateur.
 
-En tant qu’un bloc de construction fondamental de la plateforme d’interface utilisateur de Windows, des CompositionAnimations offrent un moyen puissant et efficace pour créer des expériences de mouvement dans l’interface utilisateur de votre application. Le moteur d’animation a été conçu dès le départ pour vous assurer que votre animation s’exécute à 60 FPS, indépendamment du thread d’interface utilisateur. Ces animations sont conçues pour fournir la flexibilité nécessaire pour créer des expériences de mouvement innovantes basés sur le temps, les entrées et les autres propriétés.
+En tant qu’un bloc de construction fondamental de la plateforme d’interface utilisateur de Windows, des CompositionAnimations offrent un moyen puissant et efficace pour créer des expériences de mouvement dans l’interface utilisateur de votre application. Le moteur d’animation a été conçu dès le départ pour vous assurer que votre mouvement s’exécute à 60 FPS, indépendamment du thread d’interface utilisateur. Ces animations sont conçues pour fournir la flexibilité nécessaire pour créer des expériences de mouvement innovante basées sur le temps, l’entrée et d’autres propriétés.
 
 ### <a name="examples-of-motion"></a>Exemples de mouvement
 
@@ -37,11 +37,11 @@ Ici, un effet parallaxe visuel déplace les objets à différentes vitesses lors
 
 ## <a name="using-compositionanimations-to-create-motion"></a>À l’aide des CompositionAnimations pour créer un mouvement
 
-Pour générer le mouvement dans l’interface utilisateur, les développeurs peuvent accéder à des animations en XAML (lien vers les tables de montage séquentiel ici) ou la couche visuelle. Animations sur la couche visuelle fournissent les développeurs avec une série d’avantages:
+Pour générer le mouvement dans l’interface utilisateur, les développeurs peuvent accéder à des animations dans XAML (lien vers les tables de montage séquentiel ici) ou la couche visuelle. Animations sur la couche visuelle fournissent les développeurs avec une série d’avantages:
 
 - Performances – au lieu de l’animation liée au Thread d’interface utilisateur classique, animations sur la plateforme d’interface utilisateur Windows opèrent sur un thread indépendant à 60 FPS, l’activation des expériences de mouvement fluide.
-- Modèle de création de modèles – animations de la couche interface utilisateur Windows sont des modèles, signification peut utiliser une animation unique sur plusieurs objets et modifier les propriétés ou utilise des paramètres sans avoir besoin de gêner précédente.
-- Personnalisation: la couche interface utilisateur Windows non seulement facilite rendre l’interface utilisateur magnifique, mais à toute une gamme de types d’animation, possible afin de créer de nouveaux et des expériences avec un dégradé de personnalisations
+- Modèle de création de modèles – animations de la couche interface utilisateur Windows sont des modèles, signification peut utiliser une animation unique sur plusieurs objets et modifier les propriétés ou paramètres sans avoir besoin de gêner précédent utilise.
+- Personnalisation: la couche interface utilisateur Windows non seulement simplifie la rendre l’interface utilisateur magnifique, mais à toute une gamme de types d’animation, possible afin de créer de nouveaux et des expériences avec un dégradé de personnalisations
 
 En tant que développeur création d’expériences au niveau de la couche interface utilisateur Windows, vous avez accès à une variété de concepts d’animation pour donner vie vos conceptions. Vous pouvez utiliser une de ces concepts pour animer une propriété ou de la sous-chaîne composant (le cas échéant) de n’importe quel CompositionObject.
 
@@ -53,8 +53,8 @@ En tant que développeur création d’expériences au niveau de la couche inter
 
 | Concept d’animation | Description |
 | ----------------- | ----------- |
-| [Basées sur le temps de mouvement avec des KeyFrameAnimations](time-animations.md)  | KeyFrameAnimations permettent de contrôler directement la totalité d’une expérience de mouvement sur une période de temps. Développeurs décrivant d’un mouvement début, fin, l’interpolation entre les deux et durée d’une manière d’images clés traditionnelles. |
-| [Mouvement relatif avec ExpressionAnimations](relation-animations.md)  | Les ExpressionAnimations sont utilisées pour décrivent comment un mouvement de la propriété d’un objet doit être piloté par rapport à la propriété d’un autre objet. Les développeurs définissent une équation mathématique qui définit la relation de référence. |
+| [Basé sur le temps de mouvement avec des KeyFrameAnimations](time-animations.md)  | KeyFrameAnimations permettent de contrôler directement la totalité d’une expérience de mouvement sur une période de temps. Développeurs décrivant d’un mouvement début, fin, l’interpolation entre les deux et durée en images clés traditionnelles voulu. |
+| [Mouvement relatif avec ExpressionAnimations](relation-animations.md)  | Les ExpressionAnimations sont utilisées pour décrire la façon dont un mouvement de propriété d’un objet doit soit piloté par rapport à la propriété d’un autre objet. Les développeurs définissent une équation mathématique qui définit la relation basée sur la référence. |
 | ImplicitAnimations | Ces animations sont basés sur le déclencheur et sont définies séparément à partir de la logique d’application. ImplicitAnimations sont utilisées pour décrire quand et comment les animations de se produisent en réponse aux changements de propriété direct. |
 | [Mouvement pilotées par l’entrée avec des Animations d’entrée](input-driven-animations.md)  | Animations d’entrée décrit un ensemble de scénarios qui permettent aux développeurs décrire un mouvement de basée sur la manipulation via l’interaction tactile ou d’autres modalités d’entrée. Ces animations sont pilotées en fonction sur l’entrée utilisateur active ou des mouvements. |
 | [Basée sur la physique de mouvement avec NaturalMotionAnimations](natural-animations.md)  | Les NaturalMotionAnimations sont utilisées pour décrire un mouvement naturel et familier expériences basées sur le monde réel forcer le mouvement piloté. Au lieu de la définition de temps, les développeurs définissent les caractéristiques du mouvement (par exemple, damping ratio pour les effets ressort) |

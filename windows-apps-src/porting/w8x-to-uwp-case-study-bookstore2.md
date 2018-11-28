@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 156f780e5637852d554488adfeeb9d688fa4a4d7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693685"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853341"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Étude de cas de portage d’application Windows Runtime8.x vers UWP: Bookstore2
 
@@ -51,7 +51,7 @@ Application Bookstore2\_81 sur WindowsPhone (vue avec zoom arrière)
 
 La solution Bookstore2\_81 est un projet d’application universelle pour la version8.1. Le projet Bookstore2\_81.Windows crée le package d’application pour Windows8.1 et le projet bookstore2\_81.windowsphone génère le package d’application pour Windows Phone 8.1. Enfin, le projet Bookstore2\_81.Shared contient le code source, les fichiers de balisage et d’autres composants et ressources qui sont utilisés par les deux autres projets.
 
-Tout comme dans l’étude de cas précédente, l’option que nous allons prendre (ceux décrits dans [Si vous disposez d’une application 8.1 universelle](w8x-to-uwp-root.md)) est à porter le contenu de la Shared projet à un Windows 10 qui cible la famille d’appareils universelle.
+Tout comme avec l’étude de cas précédente, l’option que nous allons prendre (de ceux décrits dans [Si vous disposez d’une application 8.1 universelle](w8x-to-uwp-root.md)) consiste à porter le contenu de la Shared projet à un Windows 10 qui cible la famille d’appareils universelle.
 
 Commencez par créer un projet Application vide (universelle Windows). Appelez-le «Bookstore2Universal\_10». Il s’agit des fichiers à copier de Bookstore2\_81 dans Bookstore2Universal\_10.
 
@@ -63,7 +63,7 @@ Commencez par créer un projet Application vide (universelle Windows). Appelez-l
 
 **Dans le projet Windows**
 
--   Copiez le fichier BookstoreStyles.xaml. Nous allons utiliser celle-ci comme un bon point de départ, car toutes les clés de ressources dans ce fichier seront résolu dans une application Windows 10; certaines de ces éléments dans le fichier WindowsPhone équivalent ne seront pas le cas.
+-   Copiez le fichier BookstoreStyles.xaml. Nous allons utiliser celle-ci comme un bon point de départ, car toutes les clés de ressources dans ce fichier seront résolu dans une application Windows 10; certains de ces éléments dans le fichier WindowsPhone équivalent ne seront pas le cas.
 -   Copiez les fichiers SeZoUC.xaml et SeZoUC.xaml.cs. Nous allons commencer par la version de cet affichage pour Windows, qui est appropriée pour les fenêtres étendues. Ensuite, nous adapterons ce contenu à des fenêtres plus petites et, de ce fait, à des appareils plus petits.
 
 Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore2\_81 par «Bookstore2Universal\_10». Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Aucune modification du code n’est nécessaire dans le modèle d’affichage, ni dans tout autre code impératif. Toutefois, pour simplifier l’identification de la version de l’application en cours d’exécution, remplacez la valeur renvoyée par la propriété **Bookstore2Universal\_10.BookstoreViewModel.AppName**, à savoir « Bookstore2\_81 », par « BOOKSTORE2UNIVERSAL\_10 ».
@@ -78,7 +78,7 @@ L’application Windows 10 avec le code source initial modifié, exécutée sur 
 
 L’application Windows 10 avec le code source initial modifié, exécutée sur un appareil de bureau, vue avec zoom arrière
 
-Le modèle d’affichage et les vues avec zoom avant et arrière fonctionnent ensemble correctement. Cependant, il existe certains problèmes, qui les rendent difficiles à voir. Exemple de problème : l’élément [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) ne défile pas. Il s’agit, car, dans Windows 10, le style par défaut d’un [**contrôle GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) provoque la disposées verticalement (et les instructions de conception de Windows 10 recommander que nous l’utilisons cette façon dans le nouveau et dans les applications portées). Toutefois, les paramètres dans le modèle de panneau d’éléments personnalisé que nous avons copié à partir du projet Bookstore2\_81 de défilement horizontal (qui a été conçu pour la version 8.1 app) sont en conflit avec les paramètres de défilement vertical dans le style par défaut de Windows 10 qui est appliquée en conséquence nous avoir porté à une application Windows 10. Deuxième problème: l’application ne peut pas encore adapter son interface utilisateur à l’appareil de l’utilisateur, afin de lui offrir la meilleure expérience possible, quelle que soit la taille des fenêtres et de l’appareil. Enfin, les styles et pinceaux corrects ne sont pas encore utilisés, ce qui entraîne l’invisibilité d’une partie du texte (cela inclut les en-têtes de groupe sur lesquels vous pouvez cliquer pour effectuer un zoom arrière). Ainsi, dans les trois sections suivantes ([Modifications de conception des éléments SemanticZoom et GridView](#semanticzoom-and-gridview-design-changes), [L’interface utilisateur adaptative](#adaptive-ui), et [Stylisation universelle](#universal-styling)) nous allons remédier à ces problèmes.
+Le modèle d’affichage et les vues avec zoom avant et arrière fonctionnent ensemble correctement. Cependant, il existe certains problèmes, qui les rendent difficiles à voir. Exemple de problème : l’élément [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) ne défile pas. Il s’agit, car, dans Windows 10, le style par défaut d’un [**contrôle GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) provoque l’être disposées verticalement (et les instructions de conception de Windows 10 recommander que nous l’utilisons cette façon dans le nouveau et dans les applications portées). Toutefois, les paramètres dans le modèle de panneau d’éléments personnalisé que nous avons copié à partir du projet Bookstore2\_81 de défilement horizontal (ce qui a été conçu pour la version 8.1 app) sont en conflit avec les paramètres de défilement vertical dans le style par défaut de Windows 10 qui est appliquée en conséquence Nous ayant été transférées vers une application Windows 10. Deuxième problème: l’application ne peut pas encore adapter son interface utilisateur à l’appareil de l’utilisateur, afin de lui offrir la meilleure expérience possible, quelle que soit la taille des fenêtres et de l’appareil. Enfin, les styles et pinceaux corrects ne sont pas encore utilisés, ce qui entraîne l’invisibilité d’une partie du texte (cela inclut les en-têtes de groupe sur lesquels vous pouvez cliquer pour effectuer un zoom arrière). Ainsi, dans les trois sections suivantes ([Modifications de conception des éléments SemanticZoom et GridView](#semanticzoom-and-gridview-design-changes), [L’interface utilisateur adaptative](#adaptive-ui), et [Stylisation universelle](#universal-styling)) nous allons remédier à ces problèmes.
 
 ## <a name="semanticzoom-and-gridview-design-changes"></a>Modifications de conception des éléments SemanticZoom et GridView
 
@@ -155,19 +155,19 @@ Une fois cette séquence d’opérations de stylisation effectuée, l’applicat
 
 ![Application Windows10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom avant, deux tailles de fenêtre
+L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom avant, deux tailles de fenêtre
 
 ![Application Windows10 portée, exécutée sur un appareil de bureau (vue avec zoom arrière et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre
+L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre
 
 ![Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom avant)](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom avant
+L’application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom avant
 
 ![Application Windows10 portée, exécutée sur un appareil mobile (vue avec zoom arrière)](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-Application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom arrière
+L’application Windows 10 portée, exécutée sur un appareil Mobile, la vue avec zoom arrière
 
 ## <a name="conclusion"></a>Conclusion
 

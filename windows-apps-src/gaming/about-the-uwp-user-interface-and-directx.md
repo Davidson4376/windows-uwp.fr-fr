@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, directx, objet d'application
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693150"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7848787"
 ---
 # <a name="the-app-object-and-directx"></a>Objet application et DirectX
 
@@ -19,7 +19,7 @@ ms.locfileid: "7693150"
 
 Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique: en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
 
-Consultez le [Glossaire de graphiques Direct3D](../graphics-concepts/index.md) pour plus d’informations sur les termes peu familiers graphiques ou des concepts que vous rencontrez lors de la lecture.
+Consultez le [Glossaire de graphiques Direct3D](../graphics-concepts/index.md) pour plus d’informations sur les termes peu familiers graphiques ou concepts que vous rencontrer lors de la lecture.
 
 ## <a name="the-important-core-user-interface-namespaces"></a>Principaux espaces de noms d’interface utilisateur
 
@@ -32,7 +32,7 @@ Pour commencer, intéressons-nous aux espaces de noms Windows Runtime que vous d
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Remarque**  si vous ne développez pas une application UWP, utilisez les composants d’interface utilisateur fournis par les bibliothèques de JavaScript ou spécifiques au langage XAML et les espaces de noms au lieu des types fournis par ces espaces de noms.
+> **Remarque**  si vous ne développez pas une application UWP, utilisez les composants d’interface utilisateur fournis par les bibliothèques spécifiques JavaScript (ou XAML) et les espaces de noms au lieu des types fournis par ces espaces de noms.
 
  
 

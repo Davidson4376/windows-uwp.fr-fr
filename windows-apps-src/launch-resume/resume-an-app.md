@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: f424a274d3e96b58f32875620f3165ccfac82ba6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699264"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851940"
 ---
 # <a name="handle-app-resume"></a>Gérer la reprise d’une application
 
@@ -116,7 +116,7 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> Étant donné que l’événement de [**reprise**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché à partir du thread d’interface utilisateur, un répartiteur dans votre gestionnaire pour transférer les appels vers votre interface utilisateur.
+> Dans la mesure où l’événement de [**reprise**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché à partir du thread d’interface utilisateur, un répartiteur dans votre gestionnaire pour transférer les appels vers votre interface utilisateur.
 
 ## <a name="remarks"></a>Remarques
 

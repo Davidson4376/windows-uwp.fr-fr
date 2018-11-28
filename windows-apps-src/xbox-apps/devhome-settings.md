@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698864"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847558"
 ---
 # <a name="settings-page-dev-home"></a>Page des paramètres (Dev Home)
    
@@ -37,7 +37,7 @@ La page **paramètres** contient les volets suivants:
 ## <a name="console-settings"></a>Paramètres de la console  
    
   
-Le volet de **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, sandbox et les paramètres de clé de l’accès de sécurité.   
+Le volet **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, sandbox et les paramètres de clé de l’accès de sécurité.   
   
 <a id="ID4EOB"></a>
 
@@ -46,7 +46,7 @@ Le volet de **paramètres de la Console** fournit une vue «en un coup de œil»
 ## <a name="os-recovery-update-settings"></a>Paramètres de mise à jour de récupération du système d’exploitation  
    
   
-Le volet de **récupération de système d’exploitation mettre à jour les paramètres** configure les paramètres de mise à jour automatique de la console. Notez que les modifications apportées à ces paramètres peut prendre jusqu'à 24 heures prennent effet.   
+Le volet de **récupération du système d’exploitation mettre à jour les paramètres** configure les paramètres de mise à jour automatique de la console. Notez que les modifications apportées à ces paramètres peut prendre jusqu'à 24 heures prennent effet.   
   
 <a id="ID4EYB"></a>
 
@@ -55,7 +55,7 @@ Le volet de **récupération de système d’exploitation mettre à jour les par
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-Le volet de **Visual Studio** permet de coupler la console avec Visual Studio. Vous pouvez également supprimer toutes les instances de Visual Studio associés.   
+Le volet de **Visual Studio** permet de coupler la console avec Visual Studio. Vous pouvez également supprimer toutes les instances de Visual Studio couplées.   
   
 <a id="ID4ECC"></a>
 
@@ -82,7 +82,7 @@ Le volet **sans assistance script de configuration** gère les scripts d’insta
 ## <a name="default-home-experience"></a>Expérience d’accueil par défaut  
    
   
-Le volet **Par défaut de l’expérience domestique** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
+Le volet **Par défaut l’expérience Home** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
   
 <a id="ID4EJD"></a>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712841"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839024"
 ---
 # <a name="manage-targeting-profiles"></a>Gérer les profils de ciblage
 
@@ -143,7 +143,7 @@ Les corps de requête et de réponse associés à ces méthodes comportent les c
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  entier   |  ID du profil de ciblage.     |   Oui    |       |   Non      |       
 |  name   |  chaîne   |   Nom du profil de ciblage.    |    Non   |      |  Oui     |       
-|  targetingType   |  chaîne   |  Utilisez l’une des valeurs suivantes: <ul><li>**Automatique**: spécifiez cette valeur pour permettre à Microsoft de choisir le profil de ciblage basé sur les paramètres de votre application dans l’espace partenaires.</li><li>**Manual**: définissez cette valeur pour définir votre propre profil de ciblage.</li></ul>     |  Non     |  Auto    |   Oui    |       
+|  targetingType   |  chaîne   |  Utilisez l’une des valeurs suivantes: <ul><li>**Auto**: définissez cette valeur pour permettre à Microsoft de choisir le profil de ciblage basé sur les paramètres de votre application dans l’espace partenaires.</li><li>**Manual**: définissez cette valeur pour définir votre propre profil de ciblage.</li></ul>     |  Non     |  Auto    |   Oui    |       
 |  age   |  tableau   |   Un ou plusieurs nombres entiers identifiant les tranches d’âge des utilisateurs à cibler. Pour obtenir une liste complète des entiers, consultez la section [Valeurs d’âge](#age-values) de cet article.    |    Non    |  null    |     Non    |       
 |  gender   |  tableau   |  Un ou plusieurs nombres entiers identifiant les genres des utilisateurs à cibler. Pour obtenir une liste complète des entiers, consultez la section [Valeurs de sexe](#gender-values) de cet article.       |  Non    |  null    |     Non    |       
 |  country   |  tableau   |  Un ou plusieurs nombres entiers identifiant les codes pays des utilisateurs à cibler. Pour obtenir une liste complète des entiers, consultez la section [Valeurs de codes pays](#country-code-values) de cet article.    |  Non    |  null   |      Non   |       

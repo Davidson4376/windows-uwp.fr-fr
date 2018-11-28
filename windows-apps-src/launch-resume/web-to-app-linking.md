@@ -7,23 +7,23 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699327"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7847911"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 
 Applications pour les sites Web associe votre application à un site Web afin que lorsqu’un utilisateur ouvre un lien vers votre site Web, votre application est lancée au lieu d’ouvrir le navigateur. Si votre application n’est pas installée, votre site Web s’ouvre comme d’habitude dans le navigateur. Cette expérience est très fiable puisque seuls les propriétaires de contenus vérifiés peuvent s’inscrire pour créer ce type de lien. Les utilisateurs seront en mesure de vérifier toutes leurs liens web applications inscrits en accédant à Paramètres > applications > applications pour les sites Web.
 
-Pour activer le web-la liaison application-vous devez:
+Pour activer web-la liaison application-vous devez:
 - identifier les URI gérés par votre application dans le fichier manifeste;
 - Un fichier JSON qui définit l’association entre votre application et votre site Web. déclaration de manifeste avec le nom de famille de Package d’application à la même racine hôte que l’application.
 - gérer l’activation dans l’application.
 
 > [!Note]
-> À partir de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge lance l’application correspondante. Prise en charge des liens a cliqué dans d’autres navigateurs (par exemple, Internet Explorer, etc.), vous gardera dans l’expérience de navigation.
+> À partir de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge seront lance l’application concernée. Prise en charge des liens a cliqué dans d’autres navigateurs (par exemple, Internet Explorer, etc.), vous gardera dans l’expérience de navigation.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>S’inscrire pour bénéficier du traitement des liens http et https dans le manifeste de l’application
 
@@ -76,7 +76,7 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, pour `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui démarrent avec l’adresse de votre site Web (par exemple, msn.com), **sauf** ceux sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
+Par exemple, pour `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par adresse de votre site Web (par exemple, msn.com), **sauf** ceux sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
 
 ### <a name="multiple-apps"></a>Applications multiples
 
@@ -164,9 +164,9 @@ Testez la configuration de votre application et de votre site web en exécutant 
 -   Package Family Name: le nom de la famille de packages (PFN) de votre application
 -   File path: le fichier JSON utilisé pour la validation locale (par exemple, C:\\SomeFolder\\windows-app-web-link)
 
-Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il fonctionnera pas.
+Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lorsqu’il est chargé. S’il existe un code d’erreur, il fonctionnera pas.
 
-Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de la validation locale:
+Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de validation locale:
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
@@ -198,4 +198,4 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 [Web application-exemple de projet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [Gérer l’Activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[Lancement d’Association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().
+[exemple de lancement d’Association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().

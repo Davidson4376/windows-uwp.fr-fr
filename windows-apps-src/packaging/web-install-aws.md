@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, Windows 10, UWP, charger de manière indépendante du programme d’installation, AppInstaller, application, liés packages définis, facultatifs, AWS
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696196"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848909"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>Hébergement de packages d’application UWP sur AWS pour l’installation web
 
@@ -22,45 +22,45 @@ Cette rubrique décrit les étapes permettant de configurer un site Web Amazon W
 
 Pour suivre correctement ce didacticiel, vous aurez besoin des éléments suivants:
  
-1. Abonnement de AWS 
+1. Abonnement AWS 
 2. Page Web
 3. Package d’application UWP: le package d’application que vous allez distribuer
 
 Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Cela est utile si vous n’avez pas de package d’application ou de page web à utiliser, mais que vous souhaitez apprendre à utiliser cette fonctionnalité.
 
-Ce didacticiel empruntera comment configurer une page web et des packages d’hôte. Cela nécessite un abonnement AWS. En fonction de l’échelle de l’opération, vous pouvez utiliser leur abonnement gratuit à suivre ce didacticiel. 
+Ce didacticiel empruntera comment configurer une page web et des packages d’hôte. Cela nécessite un abonnement AWS. En fonction de l’échelle de votre opération, vous pouvez utiliser leur abonnement gratuit à suivre ce didacticiel. 
 
 ## <a name="step-1---aws-membership"></a>Étape 1: l’appartenance AWS
 Pour obtenir un abonnement AWS, visitez la [page de détails du compte AWS](https://aws.amazon.com/free/). Dans le cadre de ce didacticiel, vous pouvez utiliser un abonnement gratuit.
 
 ## <a name="step-2---create-an-amazon-s3-bucket"></a>Étape 2: créer un compartiment Amazon S3
 
-Amazon Simple Storage Service (S3) est une AWS offre pour recueillir, stocker et analyser les données. Compartiments de S3 sont un moyen pratique de packages d’application UWP hôte et les pages web pour la distribution. 
+Amazon Simple Storage Service (S3) est une AWS offre pour recueillir, stocker et analyser les données. Compartiments S3 sont un moyen pratique de packages d’application UWP hôte et les pages web pour la distribution. 
 
 Après la connexion à AWS avec vos informations d’identification, sous `Services` trouver `S3`. 
 
-Sélectionnez le **compartiment de créer**et entrez un **nom de compartiment** pour votre site Web. Suivez les instructions de la boîte de dialogue pour définir les propriétés et des autorisations. Pour vous assurer que votre application UWP peut être distribuée à partir de votre site Web, activer les **lire** et **écrire** des autorisations pour votre compartiment et sélectionnez **accorder l’accès en lecture publique à ce profil d’appel**.
+Sélectionnez le **compartiment créer**et entrez un **nom de la plage** de votre site Web. Suivez les instructions de la boîte de dialogue pour définir les propriétés et des autorisations. Pour vous assurer que votre application UWP peut être distribuée à partir de votre site Web, activez **lire** et **écrire** des autorisations pour votre compartiment et sélectionnez **accorder l’accès en lecture publique à ce profil d’appel**.
 
 ![Définir des autorisations sur Amazon S3 compartiment](images/aws-permissions.png) 
 
-Passez en revue le résumé pour vous assurer que les options sélectionnées sont répercutées. Cliquez sur le **compartiment de créer** pour cette étape est terminée. 
+Passez en revue le résumé pour vous assurer que les options sélectionnées sont répercutées. Cliquez sur le **compartiment créer** pour cette étape est terminée. 
 
 ## <a name="step-3---upload-uwp-app-package-and-web-pages-to-an-s3-bucket"></a>Étape 3: télécharger le package d’application UWP et les pages web pour une plage de S3
 
-Un vous avez créé un compartiment Amazon S3, vous serez en mesure de visualiser dans votre affichage Amazon S3. Voici un exemple de quoi ressemble notre compartiment de démonstration:
+L’une vous avez créé un compartiment S3 Amazon, vous serez en mesure de visualiser dans votre affichage S3 Amazon. Voici un exemple de quoi ressemble notre compartiment de démonstration:
 
 ![Affichage de compartiment Amazon S3](images/aws-post-create.png)
 
-Nous sommes maintenant prêts à charger les packages d’application et les pages web que nous souhaiterions pour héberger dans notre compartiment Amazon S3. 
+Nous sommes maintenant prêts à charger les packages d’application et des pages web que nous souhaiterions pour héberger dans notre compartiment Amazon S3. 
 
-Cliquez sur le compartiment nouvellement créé pour charger du contenu. Le compartiment est actuellement vide dans la mesure où rien n’a été téléchargé encore. Cliquez sur le bouton **Télécharger** , puis sélectionnez les packages d’application et les fichiers de page web que vous souhaitez télécharger.
+Cliquez sur le compartiment nouvellement créé pour charger du contenu. Le compartiment est actuellement vide dans la mesure où rien n’a été encore chargé. Cliquez sur le bouton **Télécharger** , puis sélectionnez les packages d’application et les fichiers de page web que vous souhaitez télécharger.
 
 > [!NOTE]
 > Vous pouvez utiliser le package de l’application qui fait partie du référentiel [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub si vous n’avez pas de package de l’application. Le certificat (MySampleApp.cer) avec lequel le package a été signé se trouve également avec l’exemple sur GitHub. Le certificat doit être installé sur votre appareil avant que vous puissiez installer l’application.
 
 ![Télécharger le package d’application](images/aws-upload-package.png)
 
-Comme pour les autorisations pour la création d’un compartiment Amazon S3, le contenu dans le compartiment doit également avoir **lire**, **écrire**et des autorisations **accorder l’accès en lecture publique de cet objet (s)** .
+Comme pour les autorisations pour la création d’un compartiment Amazon S3, le contenu dans le compartiment doit également avoir **lire**, **écrire**et autorisations **accorder l’accès en lecture publique à cet objet (s)** .
 
 Si vous souhaitez tester le chargement d’une page web, mais que vous n’en avez pas, vous pouvez utiliser l’exemple de page html (default.html) à partir du [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp/blob/master/MySampleWebApp/default.html).
 
@@ -73,7 +73,7 @@ Sélectionnez le fichier de package d’application téléchargé pour obtenir l
 
 ![chemin d’accès du package téléchargé](images/aws-package-path.png)
 
-**Copiez** le lien vers l’application de package et ajoutez la référence dans votre page web. 
+**Copier** le lien vers l’application de package et ajoutez la référence dans votre page web. 
 
 ```html
 <html>
@@ -90,9 +90,9 @@ Charger le fichier html dans votre compartiment Amazon S3. Pensez à définir de
 
 ## <a name="step-4---test"></a>Étape 4: Test
 
-Une fois que la page web est chargée dans votre profil d’appel Amazon S3, obtenez le lien vers la page web en sélectionnant le fichier html chargés.
+Une fois que la page web est chargée dans votre compartiment Amazon S3, obtenez le lien vers la page web en sélectionnant le fichier html téléchargé.
 
-Cliquez sur le lien pour ouvrir la page web. Dans la mesure où nous avons défini des autorisations pour accorder l’accès public pour le package d’application et de la page web, quiconque disposant du lien vers la page web sera en mesure d’y accéder et d’installer vos packages d’application UWP à l’aide du programme d’installation de l’application. Notez que le programme d’installation d’application fait partie de la plateforme Windows 10. En tant que développeur, vous n’avez pas besoin d’ajouter tout code supplémentaires ou des fonctionnalités à votre application pour permettre l’utilisation du programme d’installation de l’application. 
+Utilisez le lien pour ouvrir la page web. Dans la mesure où nous avons défini des autorisations pour accorder l’accès public pour le package d’application et de la page web, quiconque disposant du lien vers la page web sera en mesure d’y accéder et d’installer vos packages d’application UWP à l’aide du programme d’installation de l’application. Notez que le programme d’installation d’application fait partie de la plateforme Windows 10. En tant que développeur, vous n’avez pas besoin d’ajouter n’importe quel code supplémentaires ou des fonctionnalités à votre application pour permettre l’utilisation du programme d’installation de l’application. 
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 

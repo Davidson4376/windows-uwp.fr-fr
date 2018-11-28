@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719942"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855537"
 ---
 # <a name="introduction-to-buffers"></a>Introduction aux mémoires tampons
 
 
 Une ressource de mémoire tampon est un ensemble de données dont le type a été intégralement spécifié, regroupées en éléments. Les mémoires tampons stockent des données, telles que les coordonnées de texture dans une *mémoire tampon de vertex*, les index dans une *mémoire tampon d’index*, les données constantes de nuanceur dans une *mémoire tampon constante*, les vecteurs de position, les vecteurs normaux ou l’état de l’appareil.
 
-Un élément de la mémoire tampon est constitué de 1 à 4 composants. Les éléments de mémoire tampon peuvent comporter des valeurs de données compressées (comme des valeurs de surface R8G8B8A8), des entiers8bits uniques ou quatre valeurs à virgule flottante de 32bits.
+Un élément de mémoire tampon est constitué de 1 à 4 composants. Les éléments de mémoire tampon peuvent comporter des valeurs de données compressées (comme des valeurs de surface R8G8B8A8), des entiers8bits uniques ou quatre valeurs à virgule flottante de 32bits.
 
-Un tampon est créé en tant que ressource non structurée. Dans la mesure où il est non structurée, une mémoire tampon ne peut pas contenir des niveaux de mipmap, il ne peut pas obtenir filtré lors de la lecture et qu’il ne peut pas être échantillonné plusieurs fois.
+Un tampon est créé en tant que ressource non structurée. Dans la mesure où il s’agit non structurée, une mémoire tampon ne peut pas contenir des niveaux de mipmap, il ne peut pas obtenir filtré lors de la lecture, et il ne peut pas être échantillonné plusieurs fois.
 
 ## <a name="span-idbuffertypesspanspan-idbuffertypesspanspan-idbuffertypesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>Types de tampons
 
@@ -44,9 +44,9 @@ Plus souvent, un tampon de vertex contient toutes les données nécessaires pour
 
 ![illustration d’un tampon de sommet contenant les données de texture, normales et de position](images/d3d10-vertex-buffer-element.png)
 
-Cette mémoire tampon de vertex contient des données de vertex; chaque sommet stocke trois éléments (position, normales et les coordonnées de texture). Généralement, les coordonnées de position et normales sont spécifiées à l’aide de trois valeurs flottantes de 32bits et les coordonnées de texture à l’aide de deux valeurs flottantes de 32bits.
+Cet mémoire tampon de vertex contient des données de vertex; chaque sommet stocke trois éléments (position, normales et les coordonnées de texture). Généralement, les coordonnées de position et normales sont spécifiées à l’aide de trois valeurs flottantes de 32bits et les coordonnées de texture à l’aide de deux valeurs flottantes de 32bits.
 
-Pour accéder aux données à partir d’une mémoire tampon de vertex, vous devez savoir quel sommet accès, ainsi que les paramètres supplémentaires de mémoire tampon suivants:
+Pour accéder aux données à partir d’une mémoire tampon de vertex, vous devez savoir quel sommet pour l’accès, ainsi que les paramètres supplémentaires de mémoire tampon suivants:
 
 -   Offset - le nombre d’octets entre le début du tampon et les données du premier sommet.
 -   BaseVertexLocation -le nombre d’octets entre le décalage et le premier sommet utilisé par l’appel de dessin approprié.
@@ -77,7 +77,7 @@ Une mémoire tampon constante vous permet de fournir efficacement des données c
 
 Chaque élément stocke une constante de 1 à 4composants, en fonction du format des données stockées.
 
-Une mémoire tampon constante permet uniquement un indicateur de liaison unique, qui ne peut être combiné avec n’importe quel autre indicateur de liaison.
+Une mémoire tampon constante permettre utiliser uniquement un indicateur de liaison unique, qui ne peuvent pas être combiné avec n’importe quel autre indicateur de liaison.
 
 Pour lire une mémoire tampon constante de nuanceur à partir d’un nuanceur, utilisez une fonction de chargement HLSL. Chaque étape du nuanceur permet d’utiliser jusqu’à 15tampons constants; chaque tampon peut contenir jusqu’à 4096constantes.
 

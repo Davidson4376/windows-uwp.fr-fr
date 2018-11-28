@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700079"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7846057"
 ---
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
@@ -62,7 +62,7 @@ Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` po
 
 
 ## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police?
-* Sur Windows 10: Il n’existe rien à faire, la police est fourni avec Windows.
+* Sur Windows 10: Il n’avez rien à faire, la police est fourni avec Windows.
 * Sur un Mac, vous devez télécharger et installer la police: <a href="https://aka.ms/SegoeFonts">obtenir le Segoe UI et MDL2 polices d’icônes</a>
 
 ## <a name="icon-list"></a>Liste des icônes

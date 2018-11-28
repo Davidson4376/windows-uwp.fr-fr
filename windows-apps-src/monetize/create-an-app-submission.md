@@ -1,21 +1,21 @@
 ---
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une nouvelle soumission pour une application inscrite dans votre compte espace partenaires.
+description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission pour une application inscrite dans votre compte espace partenaires.
 title: Crée une soumission d’applications
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’apps
 ms.localizationpriority: medium
 ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702853"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850529"
 ---
 # <a name="create-an-app-submission"></a>Crée une soumission d’applications
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une nouvelle soumission pour une application inscrite dans votre compte espace partenaires. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-app-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-app-submission.md) pour permettre son intégration et sa publication.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission pour une application inscrite dans votre compte espace partenaires. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-app-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-app-submission.md) pour permettre son intégration et sa publication.
 
 Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’apps à l’aide de l’API de soumission au MicrosoftStore, voir [Gérer les soumissions d’apps](manage-app-submissions.md).
 

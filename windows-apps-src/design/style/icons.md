@@ -12,11 +12,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0f881c470d92ea1eafb08f24e6cf1fd06f4fc75e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719140"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855477"
 ---
 # <a name="icons-for-uwp-apps"></a>Icônes pour les applications UWP
 
@@ -136,7 +136,7 @@ Il existe de nombreuses façons de créer une icône. Vous pouvez utiliser une p
 
 ## <a name="make-the-icon-do-something"></a>Faites faire une action à l’icône
 
-Une fois que vous avez une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à une commande ou une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône sur un bouton ou une barre de commandes. 
+Une fois que vous avez une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à une commande ou une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône à un bouton ou une barre de commandes. 
 
 ![Image d'une barre de commandes](images/icons/app-bar-desktop.svg)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, exemples, directx, principes de base
 ms.localizationpriority: medium
 ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704128"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7854986"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Principes de base de l’exemple MarbleMaze
 
@@ -44,7 +44,7 @@ Nous sommes partis d’un projet existant pour la création du projet Visual Stu
 
 3. Dans la liste du milieu, sélectionnez **l’Application DirectX 11 (Windows universel)**. Si vous ne voyez pas cette option, vous devrez pas les composants requis installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou supprimant des charges de travail et les composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur l’installation des composants supplémentaires.
 
-4. Donnez à votre projet un **nom**, un **emplacement** pour les fichiers de stockage et un **nom de la Solution**, puis cliquez sur **OK**.
+4. Donnez à votre projet un **nom**et un **emplacement** pour les fichiers à stocker un **nom de la Solution**, puis cliquez sur **OK**.
 
 ![Nouveau projet](images/marble-maze-sample-fundamentals-1.png)
 

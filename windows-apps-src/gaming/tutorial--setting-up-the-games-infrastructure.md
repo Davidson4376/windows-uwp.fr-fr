@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, configuration, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696463"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838152"
 ---
 # <a name="set-up-the-game-project"></a>Configurer le projet de jeu
 
@@ -33,7 +33,7 @@ Si vous débutez dans le développement de la plateforme Windows universelle (UW
 
 ### <a name="use-directx-template-to-create-a-project"></a>Utiliser un modèle DirectX pour créer un projet
 
-Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Studio2017 visuelle de Microsoft, vous trouverez un certain nombre de modèles qui peuvent considérablement simplifier le développement d’applications graphiques et de jeux. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
+Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Microsoft Studio2017 visuel, vous trouverez de nombreux modèles qui peuvent considérablement simplifier le développement d’applications graphiques et de jeux. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
 
 Le modèle utilisé pour ce didacticiel est intitulé **Application DirectX11 (Windows universel)**. 
 

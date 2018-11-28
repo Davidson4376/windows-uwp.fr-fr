@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703839"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839364"
 ---
 # <a name="use-the-inclinometer"></a>Utiliser l’inclinomètre
 
@@ -31,7 +31,7 @@ Certaines jeux3D requièrent un inclinomètre en tant que périphérique d’ent
 
  ## <a name="prerequisites"></a>Prérequis
 
-Il se peut que vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinomètre.
 

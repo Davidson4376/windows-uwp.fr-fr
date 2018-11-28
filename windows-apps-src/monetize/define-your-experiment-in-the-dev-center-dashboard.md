@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: 7818d9e251233c757618d60abaa156d294afb4b5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697162"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838994"
 ---
 # <a name="define-your-experiment-in-partner-center"></a>Définir votre expérience dans l’Espace partenaires
 
-Après vous [créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) et le [code de votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
+Après avoir vous [créez un projet et définir des variables distantes dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) et [code de votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
 
 Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -87,7 +87,7 @@ Pour tester votre expérience avant de la publier pour les clients, suivez ce pr
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Après avoir défini votre expérience dans l’espace partenaires et coder l’expérience dans votre application, vous êtes prêt à [s’exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
+Une fois que vous définissez votre expérience dans l’espace partenaires et codez l’expérience dans votre application, vous êtes prêt à [s’exécuter et gérer votre expérience dans l’espace partenaires](manage-your-experiment.md).
 
 ## <a name="related-topics"></a>Rubriques associées
 

@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699086"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853394"
 ---
 # <a name="pointofservice-device-sharing"></a>Le partage d’appareils PointOfService
 
 Découvrez comment partager le réseau ou des périphériques Bluetooth connecté avec d’autres ordinateurs dans un environnement dans lequel plusieurs ordinateurs s’appuient sur des périphériques partagés plutôt que dédiés périphériques connectés à chaque ordinateur.
 
-## <a name="device-sharing"></a>Partage de périphériques
+## <a name="device-sharing"></a>Le partage d’appareils
 
-Réseau et Bluetooth connectés des périphériques PointOfService sont généralement utilisées dans un environnement wheere plusieurs périphériques clients sont partage les mêmes périphériques tout au long de la journée.  Dans un environnement de vente au détail ou de services de cuisine occupé tout retard dans la possibilité pour un appareil client pour s’attacher à un périphérique a un impact sur l’efficacité dans lesquels une entreprise associée peut fermer une transaction avec le client et passer à la suivante. Dans un scénario de restaurant rapide de service dans lequel une imprimante de reçus est utilisée comme une imprimante de cuisine pour transférer les détails de la commande d’un client à la cuisine de préparation seront plusieurs périphériques clients prendre les commandes des clients.  Une fois que la commande est terminée, chaque appareil client doit être en mesure d’imprimer immédiatement l’ordre pour la cuisine revendiquer l’imprimante partagée.
+Réseau et Bluetooth connectés des périphériques PointOfService sont généralement utilisées dans un environnement wheere plusieurs appareils clients sont partage les mêmes périphériques tout au long de la journée.  Dans un environnement de vente au détail ou services cuisine occupé tout retard dans la possibilité pour un appareil client pour s’attacher à un périphérique a un impact sur l’efficacité dans lesquels une entreprise associée peut fermer une transaction avec le client et passer à la suivante. Dans un scénario de restaurant rapide de service dans lequel une imprimante de reçus est utilisée comme une imprimante de cuisine transférer les détails de commande d’un client à la cuisine de préparation seront plusieurs appareils clients en prenant les commandes des clients.  Une fois que la commande est terminée, chaque appareil client doit être en mesure d’imprimer immédiatement la commande pour la cuisine revendiquer l’imprimante partagée.
 
 Dans ces environnements, il est important pour l’application à entièrement **Supprimer** l’objet appareil respecter afin que l’autre peut revendiquer le même appareil.
 
@@ -39,7 +39,7 @@ using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 ```
 
 
-Suppression d’un PosPrinter par appeler Dispose() explicitement
+Suppression d’un PosPrinter en appelant la méthode Dispose() explicitement
 
 ```Csharp 
 using Windows.Devices.PointOfService;

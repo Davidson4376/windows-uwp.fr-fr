@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b7e914684d2e4d3d9c4c1f0cdc7e88d7b5b8fe
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715399"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845646"
 ---
 # <a name="numeralsystem-values"></a>Valeurs de NumeralSystem
 

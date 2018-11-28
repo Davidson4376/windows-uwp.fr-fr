@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0211e451c3e700da34d24e39a5045f9e046020a8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701202"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855117"
 ---
 # <a name="audio-graphs"></a>Graphiques audio
 
@@ -43,7 +43,7 @@ Les API de graphique audio Windows Runtime:
 -   Sont bien plus simples d’utilisation que XAudio2.
 -   Peuvent être utilisées à partir de C# , en plus de la prise en charge pour C++.
 -   Peuvent utiliser directement des fichiers audio, notamment les formats de fichier compressé. XAudio2 fonctionne uniquement sur les mémoires tampons audio et n’offre pas de fonctionnalités d’E/S fichier.
--   Permet le pipeline audio à faible latence dans Windows 10.
+-   Peuvent utiliser le pipeline audio à faible latence dans Windows 10.
 -   Prennent en charge le changement de point de terminaison automatique lorsque les paramètres de point de terminaison par défaut sont utilisés. Par exemple, si l’utilisateur bascule du haut-parleur de l’appareil à un casque, l’audio est automatiquement redirigée vers la nouvelle entrée.
 
 ## <a name="audiograph-class"></a>Classe AudioGraph

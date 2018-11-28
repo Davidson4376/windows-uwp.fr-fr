@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712185"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848469"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -21,7 +21,7 @@ Cette rubrique décrit le système de propriétés de dépendance disponible qua
 
 Une propriété de dépendance est un type spécialisé de propriété Plus précisément, il s’agit d’une propriété dont la valeur est suivie et influencée par un système de propriétés dédié qui fait partie de Windows Runtime.
 
-Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). La plupart des types que vous utilisez pour définir l’interface utilisateur pour une application UWP avec XAML seront une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas «XAML» ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
+Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). Bon nombre des types que vous utilisez pour définir l’interface utilisateur pour une application UWP avec XAML seront une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas «XAML» ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
 
 Le but des propriétés de dépendance est de fournir un moyen systémique pour calculer la valeur d’une propriété en fonction d’autres entrées (d’autres propriétés, événements et états qui interviennent dans une application en cours d’exécution). Il peut s’agir des entrées suivantes :
 
@@ -30,7 +30,7 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime avec XAML pour les extensions de composant de l’interface utilisateur et c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) pour le code. Ces fonctionnalités incluent :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour définir une application Windows Runtime avec XAML pour les extensions de composant de l’interface utilisateur et c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) pour le code. Ces fonctionnalités incluent :
 
 - Liaison de données
 - Styles
@@ -149,7 +149,7 @@ L’exemple suivant définit la valeur [**Text**](https://msdn.microsoft.com/lib
 Vous pouvez également établir des liaisons à l’aide de code plutôt qu’en XAML. Voir [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257).
 
 > [!NOTE]
-> Liaisons comme celle-ci sont traitées comme une valeur locale à des fins de priorité de valeur de propriété de dépendance. Si vous affectez une autre valeur locale à une propriété qui contenait à l’origine une valeur [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), vous remplacez entièrement la liaison, pas seulement la valeur de la liaison au moment de l’exécution. Les liaisons {x: Bind} sont implémentées à l’aide du code généré qui définit une valeur locale pour la propriété. Si vous définissez une valeur locale pour une propriété qui utilise {x: Bind}, cette valeur est alors remplacée à la prochaine évaluation de la liaison, par exemple lorsqu’elle observe une modification de la propriété sur son objet source.
+> Liaisons comme celle-ci sont traitées en tant qu’une valeur locale à des fins de priorité de valeur de propriété de dépendance. Si vous affectez une autre valeur locale à une propriété qui contenait à l’origine une valeur [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), vous remplacez entièrement la liaison, pas seulement la valeur de la liaison au moment de l’exécution. Les liaisons {x: Bind} sont implémentées à l’aide du code généré qui définit une valeur locale pour la propriété. Si vous définissez une valeur locale pour une propriété qui utilise {x: Bind}, cette valeur est alors remplacée à la prochaine évaluation de la liaison, par exemple lorsqu’elle observe une modification de la propriété sur son objet source.
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>Sources de liaison, cibles de liaison, le rôle de FrameworkElement
 

@@ -1,34 +1,34 @@
 ---
 title: Lancer la capture d’écran
-description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application de capture et Sketch ou pour ouvrir une nouvelle capture.
+description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application capture & croquis ou d’en ouvrir une nouvelle capture.
 ms.date: 8/1/2017
 ms.topic: article
-keywords: Windows 10, uwp, uri, la capture, esquisse
+keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691085"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850423"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
-La **ms-screenclip:** et **ms-screensketch:** schémas d’URI vous permet de lancer la capture d’écran ou de la modification des captures d’écran.
+La **ms-screenclip:** et **ms-screensketch:** schémas d’URI vous permet de lancer la capture d’écran ou la modification des captures d’écran.
 
 ## <a name="open-a-new-snip-from-your-app"></a>Ouvrir une nouvelle capture à partir de votre application
 
-La **ms-screenclip:** URI permet à votre application ouvrir et de démarrer une nouvelle capture automatiquement. La capture qui en résulte est copiée dans le Presse-papiers de l’utilisateur, mais n’est pas automatiquement transmise à l’application d’ouverture.
+La **ms-screenclip:** URI permet à votre application ouvrir et démarrer une nouvelle capture automatiquement. La capture qui en résulte est copiée dans le Presse-papiers de l’utilisateur, mais n’est pas automatiquement transmise à l’application d’ouverture.
 
 **ms-screenclip:** accepte les paramètres suivants:
 
 | Paramètre | Type | Requis | Description |
 | --- | --- | --- | --- |
 | source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Indique la durée, en secondes complètes, entre l’appel de l’URI et quand commence la capture d’écran. |
+| delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes complètes, entre l’appel de l’URI et quand commence la capture d’écran. |
 
-## <a name="launching-the-snip--sketch-app"></a>Lancer la capture et l’application de croquis
+## <a name="launching-the-snip--sketch-app"></a>Lancer la capture et une application de croquis
 
 La **ms-screensketch:** URI vous permet par programmation lancer l’application de capture et Sketch et ouvrez une image spécifique dans cette application pour annotation.
 
@@ -36,11 +36,11 @@ La **ms-screensketch:** URI vous permet par programmation lancer l’application
 
 | Paramètre | Type | Requis | Description |
 | --- | --- | --- | --- |
-| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application de capture et Sketch. Récupérée à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
+| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application capture & esquisse. Récupéré à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
 | source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
 | isTemporary | bool | non | Si définie sur True, écran Esquisse essaie de supprimer le fichier après l’avoir ouvert. |
 
-L’exemple suivant appelle la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image de capture et Sketch à partir de l’application de l’utilisateur.
+L’exemple suivant appelle la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image à la capture et Sketch à partir de l’application de l’utilisateur.
 
 ```csharp
 

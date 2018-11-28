@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
 ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691903"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850463"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 
@@ -27,7 +27,7 @@ Si vous vendez des produits dans Place de marché MicrosoftAzure, la page **Rés
 >
 > Les paiements sont effectués mensuellement (à condition que le seuil de paiement ait été atteint). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement. Pour plus d’informations, consultez la page [Seuils de paiement, méthodes et délais](payment-thresholds-methods-and-timeframes.md).
 
-Pour afficher le **Résumé du paiement**, cliquez sur l’icône de **paiement** qui s’affiche près du coin supérieur droit dans l’espace partenaires, puis sélectionnez **Résumé du paiement**.
+Pour afficher le **Résumé du paiement**, cliquez sur l’icône de **revenu** qui s’affiche près du coin supérieur droit dans l’espace partenaires, puis sélectionnez **Résumé du paiement**.
 
 ## <a name="current-proceeds-and-payments"></a>Revenus et paiements actuels
 

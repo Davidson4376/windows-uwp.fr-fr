@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8257a8a0c6b8ca320adb04bfb64b0308a4cbefd3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698238"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847888"
 ---
 # <a name="use-the-gyrometer"></a>Utiliser le gyromètre
 
@@ -31,7 +31,7 @@ Les gyromètres viennent compléter les accéléromètres en tant que contrôleu
 
 ## <a name="prerequisites"></a>Prérequis
 
-Il se peut que vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un gyromètre.
 

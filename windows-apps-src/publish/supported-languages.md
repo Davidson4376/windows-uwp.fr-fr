@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702114"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7849406"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
 
 Vous pouvez soumettre des applications dans le Microsoft Store dans plus de 100 langues.
 
-Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [comprendre les langues de profil utilisateur et d’application les langues du manifeste](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [comprendre les langues de profil utilisateur et application les langues du manifeste](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
 ## <a name="supported-languages"></a>Langues prises en charge
 
 
-Voici les langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins une de ces langues. 
+Il s’agit des langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins une de ces langues. 
 
-Les codes de langue qui ne sont pas inclus ici ne sont pas pris en charge par le Windows Store. Nous recommandons que vous n’incluez pas les packages ciblant des codes de langue autre que ceux indiqués ci-dessous. Ces packages ne seront pas distribuées aux clients et peuvent provoquer des retards ou des échecs de certification.
+Codes de langue qui ne sont pas inclus ici ne sont pas pris en charge par le Windows Store. Nous recommandons que vous n’incluez pas les packages ciblant des codes de langue autre que ceux indiqués ci-dessous. Ces packages ne seront pas distribuées aux clients et peuvent provoquer des retards ou des échecs de certification.
 
 | Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

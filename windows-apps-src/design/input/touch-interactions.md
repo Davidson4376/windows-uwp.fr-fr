@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698268"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7847420"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -80,7 +80,7 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 
 ## <a name="use-touch-feedback"></a>Utiliser le retour tactile
 
-Les retours visuels appropriés au cours des interactions avec votre application aide les utilisateurs à reconnaître, à apprendre et à s’adapter à l’interprétation de leurs interactions par l’application et le Windowsplatform. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
+Les retours visuels appropriés au cours des interactions avec votre application aide les utilisateurs à reconnaître, à apprendre et s’adapter à l’interprétation de leurs interactions par l’application et le Windowsplatform. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
 Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, quels que soient l’emplacement et le moment de la détection de l’entrée tactile, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
@@ -436,7 +436,7 @@ Un mouvement se compose d’une série d’événements de manipulation. Chaque 
 
 Puis, un ou plusieurs événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) sont déclenchés. Par exemple, si vous appuyez sur l’écran et faites glisser votre doigt sur celui-ci. Enfin, un événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) est déclenché lorsque l’interaction prend fin.
 
-**Remarque**si vous n’avez pas un moniteur à écran tactile, vous pouvez tester votre code d’événements de manipulation dans le simulateur à l’aide d’une souris et une interface de roulette de la souris.
+**Remarque**si vous n’avez un écran tactile, vous pouvez tester votre code d’événements de manipulation dans le simulateur à l’aide d’une souris et une interface de roulette de souris.
 
  
 

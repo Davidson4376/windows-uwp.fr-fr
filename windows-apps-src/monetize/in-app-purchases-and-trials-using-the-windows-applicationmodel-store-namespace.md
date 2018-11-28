@@ -7,11 +7,11 @@ ms.topic: article
 keywords: uwp, achats dans l’application, extensions, versions d’évaluation, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700231"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845603"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store
 
@@ -20,7 +20,7 @@ Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel
 Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md). Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats dans l'application à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple WindowsStore](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version10.0; Build14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows10, version1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats dans l'application](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans des applications ou jeux qui utilisent un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
+> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version10.0; Build14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows10, version1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats dans l'application](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans les applications ou jeux qui utilisent un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour un de jeu qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Prise en main des classes CurrentApp et CurrentAppSimulator
 

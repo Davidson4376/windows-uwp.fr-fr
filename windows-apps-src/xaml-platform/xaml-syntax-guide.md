@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693350"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842107"
 ---
 # <a name="xaml-syntax-guide"></a>Guide de la syntaxe XAML
 
@@ -238,7 +238,7 @@ Tout d’abord, la présence de l’élément objet indique qu’un nouvel objet
 
 Une autre règle du langage XAML est que les attributs d’un élément doivent pouvoir être définis dans n’importe quel ordre. Parexemple, il n’y a pas de différence entre `<Rectangle Height="50" Width="100" />` et `<Rectangle Width="100"  Height="50" />`. L’ordre que vous utilisez est une question de style.
 
-**Remarque**concepteurs XAML effectuent souvent la promotion des conventions relatives à si vous utilisez des aires de conception autres que l’éditeur XML, mais vous pouvez modifier librement ce code XAML ultérieurement, pour réorganiser les attributs ou d’en introduire de nouveaux.
+**Remarque**concepteurs XAML effectuent souvent la promotion des conventions relatives à si vous utilisez des aires de conception autres que l’éditeur XML, mais vous pouvez modifier librement ce code XAML ultérieurement, afin de réorganiser les attributs ou introduire de nouveaux.
 
 ## <a name="attached-properties"></a>Propriétés jointes
 

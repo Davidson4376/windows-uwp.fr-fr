@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx 11, périphérique perdu
 ms.localizationpriority: medium
 ms.openlocfilehash: c11bbf7657644fbf616590f50d75d93f62ed993e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691299"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846837"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Gérer des scénarios de suppression de périphériques dans Direct3D11
 
@@ -26,7 +26,7 @@ Dans DirectX 9, les applications peuvent présenter un état de type « [périph
 -   Le périphérique graphique cesse de répondre et est réinitialisé.
 -   Une carte graphique est attachée ou supprimée physiquement.
 
-Dans ces circonstances, DXGI retourne un code d’erreur indiquant que le périphérique Direct3D doit être réinitialisé et que les ressources de périphérique doivent être recréées. Cette procédure pas à pas montre comment les applications et les jeux Direct3D 11 peuvent détecter ces situations et réagir de manière appropriée quand la carte graphique est réinitialisée, supprimée ou modifiée. Exemples de code sont fournis à partir du modèle application DirectX 11 (Windows universelle) fourni avec Studio2015 visuelle de Microsoft.
+Dans ces circonstances, DXGI retourne un code d’erreur indiquant que le périphérique Direct3D doit être réinitialisé et que les ressources de périphérique doivent être recréées. Cette procédure pas à pas montre comment les applications et les jeux Direct3D 11 peuvent détecter ces situations et réagir de manière appropriée quand la carte graphique est réinitialisée, supprimée ou modifiée. Exemples de code sont fournis à partir du modèle application DirectX 11 (Windows universelle) fourni avec Microsoft Visual Studio2015.
 
 ## <a name="instructions"></a>Instructions
 

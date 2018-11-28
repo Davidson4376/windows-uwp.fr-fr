@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694355"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835294"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
@@ -21,7 +21,7 @@ La section **Descriptions dans le Store** du [processus de soumission d’applic
 Un grand nombre des champs d'une **Description dans le Store** sont facultatifs, mais nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin que votre description soit attrayante. La condition minimale requise pour que l'étape **Description dans le Store** puisse être considérée comme terminée est une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> Vous pouvez éventuellement [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md) si vous préférez entrer vos informations de description hors connexion dans un fichier .csv, plutôt qu’en fournissant des informations et téléchargement de fichiers directement dans l’espace partenaires. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois. 
+> Vous pouvez éventuellement [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md) si vous préférez entrer vos informations de description hors connexion dans un fichier .csv, plutôt qu’en fournissant des informations et le chargement de fichiers directement dans l’espace partenaires. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois. 
 
 Si votre application publiée précédemment prend en charge Windows 8.x et/ou Windows Phone 8.x ou version antérieure, vous pouvez [créer des descriptions spécifiques à la plateforme](create-platform-specific-store-listings.md) affiche pour ces clients. 
 
@@ -38,19 +38,19 @@ Dans la section **Langues supplémentaires de description dans le Store**, vous 
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission. 
 
-## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description
+## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description dans le Store
 
-Pour modifier une description, sélectionnez le nom de la langue à partir de la page de présentation de soumission. Vous devez modifier chaque langue séparément, sauf si vous choisissez d’exporter vos descriptions du Windows Store et travailler hors connexion, puis l’importer toutes les données de description à la fois. Pour plus d’informations qui fonctionnement, reportez-vous à la section [Importer et exporter des descriptions dans le Store](import-and-export-store-listings.md).
+Pour modifier une description, sélectionnez le nom de la langue à partir de la page de présentation de soumission. Vous devez modifier chaque langue séparément, sauf si vous choisissez d’exporter vos descriptions du Windows Store et travailler hors connexion, puis importer toutes les données de description à la fois. Pour plus d’informations qui fonctionnement, reportez-vous à la section [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md).
 
 Les champs disponibles sont décrites ci-dessous.
 
 ## <a name="product-name"></a>Nom du produit
 
-Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé dans la description dans le Windows Store (si vous avez réserver plusieurs noms pour l’application).
+Cette zone de liste déroulante vous permet de spécifier le nom qui doit être utilisé dans les descriptions (si vous avez réserver plusieurs noms pour l’application).
 
-Si vous avez chargé des packages dans la même langue que la description que vous travaillez sur, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission, une fois que vous avez chargé les packages qui utilisent le nouveau nom.
+Si vous avez chargé des packages dans la même langue que la description que vous mettez au point, le nom utilisé dans ces packages est sélectionné. Si vous devez [Renommer l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission, après avoir chargé les packages qui utilisent le nouveau nom.
 
-Si vous n’avez pas encore chargé les packages pour la langue en cours et vous avez réservé plusieurs noms, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
+Si vous n’avez pas encore chargé les packages pour la langue vous mettez au point et vous avez réservé plus d’un nom, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
 > [!NOTE]
 > Le **nom du produit** que vous sélectionnez uniquement s’applique à la description dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que l’ou les packages de chaque langue et la description du Windows Store utilisent le même nom.
@@ -67,7 +67,7 @@ Pour obtenir des conseils sur la rédaction d’une description attrayante, cons
 
 Si vous soumettez votre application pour la première fois, laissez ce champ vide. Pour une mise à jour d’une application existante, il s’agit dans lequel vous pouvez d’indiquer aux clients ce qui a changé dans la dernière version. Ce champ est limité à 1500 caractères. (Ce champ s’appelait auparavant **Notes de publication**).
 
-## <a name="product-features"></a>Fonctionnalités de produit
+## <a name="product-features"></a>Fonctionnalités du produit
 
 Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces informations sont présentées au client sous la forme d’une liste à puce dans la section **Fonctionnalités** de la description de votre application dans le Store, en complément de la **Description**. Chacune de ces informations est limitée à 200caractères par fonctionnalité. Vous pouvez spécifier jusqu’à 20fonctionnalités.
 

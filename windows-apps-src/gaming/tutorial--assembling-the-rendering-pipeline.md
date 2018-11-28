@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
 ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702497"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845083"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Infrastructure de renduI: présentation du rendu
 
-Dans les rubriques précédentes, vous avez vu comment structurer un jeu de plateforme Windows universelle (UWP) à utiliser avec Windows Runtime et comment définir une machine à états pour gérer le flux du jeu. Vous allez maintenant découvrir comment assembler l'infrastructure du rendu. Examinons comment l’exemple de jeu restitue la scène du jeu à l’aide de Direct3D11 (communément appelé DirectX 11).
+Dans les rubriques précédentes, vous avez vu comment structurer un jeu de plateforme Windows universelle (UWP) à utiliser avec Windows Runtime et comment définir une machine à états pour gérer le flux du jeu. Vous allez maintenant découvrir comment assembler l'infrastructure du rendu. Examinons comment l’exemple de jeu restitue la scène avec Direct3D11 (communément appelé DirectX 11).
 
 >[!Note]
 >Si vous n’avez pas encore téléchargé le dernier code de jeu pour cet exemple, accédez à [Exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une vaste collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [Obtenir des exemples de la plateforme Windows universelle (UWP) à partir de GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
@@ -626,7 +626,7 @@ Chaque carte vidéo implémente un certain niveau de fonctionnalité DirectX en 
 
 Avec le niveau de fonctionnalité, lorsque vous créez un appareil, vous pouvez tenter de créer un appareil pour le niveau de fonctionnalité que vous souhaitez demander. Si la création d'appareil fonctionne, ce niveau de fonctionnalité existe, si ce n’est pas, le matériel ne prend pas en charge ce niveau de fonctionnalité. Vous pouvez essayer de recréer un appareil avec un niveau de fonctionnalité inférieur ou vous pouvez choisir de quitter l’application. Par exemple, le niveau de fonctionnalité 12\_0 nécessite Direct3D 11.3 ou Direct3D 12 et le modèle de nuanceur 5.1. Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D: vue d’ensemble pour chaque niveau de fonctionnalité](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).
 
-À l’aide des niveaux de fonctionnalité, vous pouvez développer une application Direct3D9, Microsoft Direct3D10 ou Direct3D11 et exécuter sur du matériel 9, 10 ou 11 (avec quelques exceptions). Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
+À l’aide de niveaux de fonctionnalité, vous pouvez développer une application Direct3D9, Microsoft Direct3D10 ou Direct3D11 et exécuter sur du matériel 9, 10 ou 11 (avec quelques exceptions). Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
 
 ### <a name="stereo-rendering"></a>Rendu stéréo
 

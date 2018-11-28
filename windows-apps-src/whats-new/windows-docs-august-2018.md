@@ -6,15 +6,15 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: da8bc3b441a1b619e086934f277cb14be6bcc37a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698688"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852557"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en août 2018
 
-La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et des vidéos suivantes ont été mis à disposition au cours du mois d’août.
+La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et des vidéos suivantes ont été mis à disposition dans le mois d’août.
 
 [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
@@ -24,7 +24,7 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 Les fonctionnalités suivantes ont été ajoutées à Windows les builds Insider Preview, disponibles via le programme [Windows Insider](https://insider.windows.com/) .
 
-* La [Bibliothèque d’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact d’utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
+* La [Bibliothèque de l’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact d’utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [bouton partagé](../design/controls-and-patterns/buttons.md#create-a-split-button)et [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) fournissent des contrôles de bouton avec des fonctionnalités spécialisées pour améliorer l’interface utilisateur de votre application.
 
@@ -38,27 +38,27 @@ Les fonctionnalités suivantes ont été ajoutées à Windows les builds Insider
 
 L’infrastructure de prise en charge de package est un kit open source qui vous permet d’appliquer des correctifs à votre application win32 lorsque vous n’avez pas accès au code source, afin qu’il puisse exécuter dans un conteneur MSIX.
 
-Pour en savoir plus, voir [l’exécution d’appliquer des correctifs à un package MSIX à l’aide de l’infrastructure de prise en charge du Package](../porting/package-support-framework.md).
+Pour en savoir plus, voir [l’exécution d’appliquer des correctifs vers un package MSIX à l’aide de l’infrastructure de prise en charge du Package](../porting/package-support-framework.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
 ### <a name="web-api-extensions"></a>Extensions de l’API Web
 
-Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont spécifiques à Internet Explorer ou Microsoft Edge et complément existante d’informations sur la prise en charge de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérité [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web enrichi à partir de MDN, les informations sur les API exposées directement dans [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont propres à Internet Explorer ou Microsoft Edge et complément les informations existantes sur le support de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérités [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web enrichi à partir de MDN, les informations sur les API exposées directement en [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
-### <a name="cwinrt-code-examples"></a>C++ / exemples de Code C++
+### <a name="cwinrt-code-examples"></a>C++ / exemples de WinRT Code
 
 Nous avons ajouté 250 [C++ / WinRT](../cpp-and-winrt-apis/index.md) code descriptions vers des rubriques dans notre documentation, qui l’accompagne existant C + / exemples de code CX.
 
 ### <a name="project-rome"></a>Projet «Rome»
 
-Le site de [documentation du projet «Rome»](https://docs.microsoft.com/windows/project-rome/) a été réorganisé dans une approche de la fonctionnalité d’abord. Cela doit faciliter pour les développeurs de rechercher qu’ils recherchent et pour implémenter des fonctionnalités de leur choix sur plusieurs plateformes.
+Le site de [documentation du projet «Rome»](https://docs.microsoft.com/windows/project-rome/) a été réorganisé dans une approche de la fonctionnalité de priorité. Cela doit facilitent pour les développeurs de rechercher qu’ils recherchent et pour implémenter des fonctionnalités de leur choix sur plusieurs plateformes.
 
 ## <a name="videos"></a>Vidéos
 
 ### <a name="xbox-live-unity-plugin"></a>Plug-in Xbox Live Unity
 
-Le plug-in Xbox Live pour Unity contient la prise en charge pour l’ajout de signature de Xbox Live, statistiques, listes d’amis, stockage cloud et les classements à votre titre. [Regardez la vidéo](https://youtu.be/fVQZ-YgwNpY) pour en savoir plus, puis [Télécharger le package GitHub](https://aka.ms/UnityPlugin) pour commencer.
+Le plug-in Xbox Live pour Unity prend en charge pour l’ajout de signature de Xbox Live, statistiques, listes d’amis, stockage cloud et les classements à votre titre. [Regardez la vidéo](https://youtu.be/fVQZ-YgwNpY) pour en savoir plus, puis [Télécharger le package GitHub](https://aka.ms/UnityPlugin) pour commencer.
 
 ### <a name="one-dev-question"></a>Question sur le développement
 

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d40e921f999381421a5a6ce422e019e7db58bbd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719554"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837779"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
 
-Le **rapport sur les commentaires** dans l’espace partenaires vous permet de voir les problèmes, suggestions et votes que vos clients Windows 10 ont soumis via le Hub de commentaires. Vous pouvez afficher ces données dans l’espace partenaires ou exporter les données à consulter hors connexion.
+Le **rapport sur les commentaires** dans l’espace partenaires vous permet de voir les problèmes, suggestions et votes que vos clients Windows 10 ont soumis par le biais du Hub de commentaires. Vous pouvez afficher ces données dans l’espace partenaires ou exporter les données à consulter hors connexion.
 
 > [!NOTE]
 > Vous pouvez également [répondre aux commentaires](respond-to-customer-feedback.md) directement à partir de ce rapport pour faire savoir aux clients que vous êtes à leur écoute.
@@ -24,7 +24,7 @@ Inciter vos clients à faire des commentaires sur votre application est un excel
 
 Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. Pour cette raison, vous pouvez voir les commentaires des clients dans ce rapport même si vous n’avez pas spécifiquement demandé de commentaires depuis au sein de votre application.
 
-Commentaires peuvent également être utile lorsque vous utilisez [version d’évaluation de package](package-flights.md), étant donné que le rapport de **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
+Commentaires peuvent également être utile lorsque vous utilisez la [version d’évaluation de package](package-flights.md), étant donné que le rapport sur les **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
 
 > [!TIP]
 > Pour un aperçu de l’avis, des évaluations et commentaires des utilisateurs sur l’ensemble de vos applications au cours des 30 derniers jours, développez **engager** dans le menu de navigation de gauche, puis sélectionnez **avis et commentaires.** 

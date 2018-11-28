@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 61918f8f81137dad4db9bf627b7c87e0c05ace8d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719531"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855497"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
 
@@ -20,13 +20,13 @@ Utilisez votre ordinateur Mac actuel pour développer des applications pour Wind
 
 ## <a name="run-windows-on-your-mac-and-use-visual-studio"></a>Exécuter Windows sur votre Mac et utiliser Visual Studio
 
-Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows 10 et Microsoft Visual Studio sur un ordinateur Apple.
+Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows 10 et Microsoft Visual Studio sur votre Mac.
 
-**Remarque**vous une image de démarrage de Windows 10 sur disque ou un disque mémoire flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas un abonné, le programme d’installation peut être acheté à partir du [Microsoft Store](http://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](http://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
+**Remarque**vous devez une image de démarrage de Windows 10 sur disque ou un disque mémoire flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas un abonné, le programme d’installation peut être acheté à partir du [Microsoft Store](http://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](http://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
 
-Une fois que vous avez Windows en cours d’exécution, vous pouvez ensuite installer la dernière version de Visual Studio à partir des [téléchargements de développeur pour Windows 10](https://developer.microsoft.com/en-us/windows/downloads) et commencer à écrire des applications!
+Une fois que vous avez Windows en cours d’exécution, vous pouvez ensuite installer la dernière version de Visual Studio à partir des [téléchargements de développeur pour Windows 10](https://developer.microsoft.com/en-us/windows/downloads) et commencez à écrire des applications!
 
-**Remarque**si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x 64) de Windows 10 Professionnel ou supérieures. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
+**Remarque**si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x 64) de Windows 10 Professionnel ou une meilleure. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 
 ## <a name="apple-boot-camp"></a>Apple Boot Camp
 
