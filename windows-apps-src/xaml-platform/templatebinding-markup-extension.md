@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702327"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841126"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
@@ -52,20 +52,20 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 
 **TemplateBinding** est une extension de balisage. Les extensions de balisage sont généralement implémentées lorsqu’il est nécessaire de procéder à l’échappement de valeurs d’attribut pour en faire autre chose que des valeurs littérales ou des noms de gestionnaires. Il s’agit d’une mesure plus globale que celle qui consiste à placer simplement des convertisseurs de types au niveau de certains types ou propriétés. Toutes les extensions de balisage XAML utilisent les caractères «{» et «}» dans leur syntaxe d’attribut, ce qui correspond à la convention qui permet au processeur XAML de reconnaître qu’une extension de balisage doit traiter l’attribut.
 
-**Remarque**implémentation du processeur dans le XAML Windows Runtime, il n’existe aucune représentation de classe de stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
+**Remarque**implémentation du processeur dans le XAML Windows Runtime, il n’existe aucune représentation de classe stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
 
 ### <a name="xbind-in-controltemplate"></a>x: Bind dans ControlTemplate
 
 > [!NOTE]
 > À l’aide de x: Bind dans un ControlTemplate requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-À compter de Windows 10, version 1809, vous pouvez utiliser l’extension de balisage **x: Bind** n’importe où vous utilisez **TemplateBinding** dans un [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+À partir de Windows 10, version 1809, vous pouvez utiliser l’extension de balisage **x: Bind** n’importe où vous utilisez **TemplateBinding** dans un [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) est requis (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
+La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) est requise (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
 
-Avec prise en charge de **x: Bind** , vous pouvez utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien que dans un [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
+Avec prise en charge de **x: Bind** , vous pouvez utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien comme dans un [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
 
-Dans cet exemple, la propriété **TextBlock.Text** a la valeur **Button.Content.ToString**. La propriété TargetType sur le ControlTemplate agit comme la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
+Dans cet exemple, la propriété **TextBlock.Text** est évaluée à **Button.Content.ToString**. La propriété TargetType sur le ControlTemplate agit en tant que la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
 
 ```xaml
 <ControlTemplate TargetType="Button">

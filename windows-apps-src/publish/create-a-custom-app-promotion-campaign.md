@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
 ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704616"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838547"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
@@ -26,7 +26,7 @@ Il existe deux principaux types de données associés à des campagnes personnal
 
 Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit:
 
-* Vous pouvez afficher les données sur les vues de page et les conversions de votre application ou un module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
+* Vous pouvez afficher les données concernant les vues de page et les conversions de votre application ou module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
 * Si votre application est une application de plateforme Windows universelle (UWP), vous pouvez utiliser les API du SDK Windows pour récupérer par programme l’ID de campagne personnalisée qui a abouti à une conversion.
 
 ## <a name="example-custom-campaign-scenario"></a>Exemple de scénario de campagne personnalisée
@@ -193,4 +193,4 @@ Avant de promouvoir une URL de campagne personnalisée, nous vous recommandons d
 
 3.  Cliquez sur l’URL plusieurs fois pour fermer l’applicationUWP ou la page du navigateur après chaque visite de la page de votre application. Lors de **l’une** de ces visites de la page de votre application, procédez à l’acquisition de votre application pour générer une conversion. Comptez le nombre total de fois où vous avez cliqué sur l’URL.
 
-4. Vérifiez si les vues de page escomptées et les conversions s’affichent dans les graphiques de **vues de page d’application et les conversions par ID de campagne** et les **conversions totales de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md)et tester le code de votre application pour vérifier si elle peut récupérer l’ID de campagne à l’aide de l’API décrites ci-dessus.
+4. Vérifiez si les vues de page escomptées et les conversions s’affichent dans les **vues de page d’application et les conversions par ID de campagne** et les **conversions totales de campagnes** graphiques dans le [rapport sur les Acquisitions](acquisitions-report.md)et tester le code de votre application pour vérifier si elle peut récupérer l’ID de campagne à l’aide de l’API décrites ci-dessus.

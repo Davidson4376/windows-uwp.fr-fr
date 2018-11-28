@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b32abae4938081610db2cfc2ded25adadab95d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694006"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7844316"
 ---
 # <a name="create-add-on-store-listings"></a>Créer des descriptions d'extension dans le WindowsStore
 
-Lorsque vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les informations que vous fournissez dans l’étape **descriptions du Windows Store** seront affichera à vos clients lorsqu’ils voient s’afficher l’option d’acquisition de votre module complémentaire. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne de l'extension une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
+Quand vous soumettez un module complémentaire dans [L’espace partenaires](https://partner.microsoft.com/dashboard), les informations que vous fournissez dans l’étape **descriptions du Windows Store** seront affichera à vos clients lorsqu’ils voient s’afficher l’option d’acquisition de votre module complémentaire. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne de l'extension une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
 
 > [!TIP]
 > Vous pouvez également [Importer et exporter des descriptions du Windows Store](import-and-export-store-listings.md) pour votre extension si vous souhaitez entrer vos informations de description hors connexion dans un fichier .csv, plutôt que de renseigner ces informations directement dans l’espace partenaires. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues. Toutefois, vous pouvez toujours entrer vos informations directement dans [L’espace partenaires](https://partner.microsoft.com/dashboard) , plutôt que d’utiliser la fonctionnalité d’importation/exportation.

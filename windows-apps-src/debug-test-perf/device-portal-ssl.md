@@ -4,32 +4,32 @@ title: Configurer le Portail d’appareil avec un certificat SSL personnalisé
 description: À déterminer
 ms.date: 07/11/2017
 ms.topic: article
-keywords: Windows 10, uwp, le portail d’appareil
+keywords: Windows 10, uwp, portal de l’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700407"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7843201"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Configurer le Portail d’appareil avec un certificat SSL personnalisé
 Dans Windows 10 Creators Update, Windows Device Portal ajouté un moyen pour les administrateurs d’appareil installer un certificat personnalisé pour une utilisation dans les communications HTTPS. 
 
-Alors que vous pouvez le faire sur votre propre PC, cette fonctionnalité est principalement destinée aux entreprises qui disposent déjà d’une infrastructure de certificat en place.  
+Pendant que vous pouvez le faire sur votre propre PC, cette fonctionnalité est principalement destinée aux entreprises qui disposent déjà d’une infrastructure de certificat en place.  
 
-Par exemple, une société peut avoir une autorité de certification (CA) qu’il utilise pour signer des certificats pour les sites Web intranet pris en charge via le protocole HTTPS. Cette fonctionnalité est l’abréviation d’infrastructure. 
+Par exemple, une société peut avoir une autorité de certification (CA) qu’il utilise pour signer des certificats pour les sites Web intranet pris en charge via HTTPS. Cette fonctionnalité est l’abréviation d’infrastructure. 
 
 ## <a name="overview"></a>Vue d’ensemble
 Par défaut, Device Portal génère une autorité de certification racine auto-signé et qui utilise ensuite pour signer des certificats SSL pour qu’il est à l’écoute sur chaque point de terminaison. Cela inclut les `localhost`, `127.0.0.1`, et `::1` (localhost IPv6).
 
 Vous trouverez également des nom d’hôte de l’appareil (par exemple, `https://LivingRoomPC`) et chaque lien-local l’adresse IP attribuée à l’appareil (jusqu'à deux [IPv4, IPv6] par carte réseau). Vous pouvez voir les adresses IP de lien-local pour un appareil en fonction de l’outil de mise en réseau dans le portail d’appareil. Ils peuvent commencer avec `10.` ou `192.` pour IPv4, ou `fe80:` pour IPv6. 
 
-Dans le programme d’installation par défaut, un avertissement concernant le certificat peut apparaître dans votre navigateur en raison de l’autorité de certification racine non approuvée. Plus précisément, le certificat SSL fourni par Device Portal est signé par une autorité de certification qui le navigateur ou le PC n’approuve pas de racine. Cela peut être résolu en créant une autorité de certification racine approuvée.
+Dans le programme d’installation par défaut, un avertissement concernant le certificat peut apparaître dans votre navigateur en raison de l’autorité de certification racine non approuvée. Plus précisément, le certificat SSL fourni par Device Portal est signé par une autorité de certification qui le navigateur ou le PC n’approuve racine. Cela peut être résolu en créant une nouvelle racine de confiance autorité de certification.
 
 ## <a name="create-a-root-ca"></a>Créer une autorité de certification racine
 
-Cela doit uniquement être réalisée si votre société (ou accueil) n’a pas de configurer une infrastructure de certificat et ne doit être effectuée qu’une seule fois. Le script PowerShell suivant crée une autorité de certification appelée _WdpTestCA.cer_racine. L’installation de ce fichier pour les autorités de Certification racine de confiance de l’ordinateur local entraînera votre appareil pour approuver les certificats SSL qui sont signés par cette autorité de certification. Vous pouvez (et doivent) installer ce fichier .cer sur chaque PC que vous souhaitez vous connecter à Windows Device Portal.  
+Cela doit uniquement être réalisée si votre société (ou accueil) n’a pas de configurer une infrastructure de certificat et ne doit être effectuée qu’une seule fois. Le script PowerShell suivant crée une autorité de certification appelée _WdpTestCA.cer_racine. L’installation de ce fichier pour les autorités de Certification racine de confiance de l’ordinateur local entraînera votre appareil pour approuver des certificats SSL qui sont signés par cette autorité de certification racine. Vous pouvez (et doivent) installer ce fichier .cer sur chaque PC auquel vous souhaitez vous connecter à Windows Device Portal.  
 
 ```PowerShell
 $CN = "PickAName"
@@ -42,13 +42,13 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-Une fois que cela est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ pour signer les certificats SSL. 
+Une fois que cela est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ pour signer des certificats SSL. 
 
 ## <a name="create-an-ssl-certificate-with-the-root-ca"></a>Créer un certificat SSL avec l’autorité de certification racine
 
-Certificats SSL ont deux fonctions essentielles: sécuriser votre connexion par le biais du chiffrement et en vérifiant que réellement la communication avec l’adresse affichée dans la barre du navigateur (Bing.com, 192.168.1.37, etc.) et non un tiers malveillant.
+Certificats SSL ont deux fonctions essentielles: sécurisation de votre connexion par le biais de chiffrement et la vérification que vous communiquez réellement avec l’adresse affichée dans la barre du navigateur (Bing.com, 192.168.1.37, etc.) et non un tiers malveillant.
 
-Le script PowerShell suivant crée un certificat SSL pour le `localhost` point de terminaison. Chaque point de terminaison qui écoute Device Portal doit son propre certificat; Vous pouvez remplacer le `$IssuedTo` argument dans le script avec chacune des différents points de terminaison de votre appareil: le nom d’hôte, hôte local et l’adresses IP.
+Le script PowerShell suivant crée un certificat SSL pour le `localhost` point de terminaison. Chaque point de terminaison qui écoute Device Portal a besoin de son propre certificat; Vous pouvez remplacer le `$IssuedTo` argument dans le script avec chacune des différents points de terminaison de votre appareil: le nom d’hôte, hôte local et l’adresses IP.
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -83,7 +83,7 @@ WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 ```
 
-Une fois que vous avez installé les certificats, il vous suffit de redémarrer le service pour que les modifications prennent effet:
+Une fois que vous avez installé les certificats, il vous suffit de redémarrer le service afin que les modifications prennent effet:
 
 ```
 sc stop webmanagement
@@ -92,4 +92,4 @@ sc start webmanagement
 
 > [!TIP]
 > Les adresses IP peuvent changer au fil du temps.
-De nombreux réseaux utilisent DHCP pour fournir les adresses IP, afin que les appareils n’obtient pas toujours la même adresse IP qu’ils avaient précédemment. Si vous avez créé un certificat pour une adresse IP sur un appareil et que l’adresse du périphérique a été modifié, Windows Device Portal génère un nouveau certificat utilisant le certificat auto-signé existant, et arrête à l’aide de celui que vous avez créé. Cela entraînera la page d’avertissement de certificat s’affiche dans votre navigateur à nouveau. Pour cette raison, nous vous recommandons de se connecter à vos appareils par le biais de leurs noms d’hôtes, que vous pouvez définir dans Device Portal. Ces restent les mêmes, quel que soit les adresses IP.
+De nombreux réseaux utilisent DHCP pour fournir les adresses IP, afin que les appareils n’obtient pas toujours la même adresse IP qu’ils avaient précédemment. Si vous avez créé un certificat pour une adresse IP sur un appareil et que l’adresse de l’appareil a changé, Windows Device Portal génère un nouveau certificat utilisant le certificat auto-signé existant, et arrête à l’aide de celui que vous avez créé. Cela entraînera la page d’avertissement de certificat s’affiche dans votre navigateur à nouveau. Pour cette raison, nous vous recommandons de se connecter à vos appareils par le biais de leurs noms d’hôtes, que vous pouvez définir dans Device Portal. Elles restent les mêmes, quel que soit les adresses IP.

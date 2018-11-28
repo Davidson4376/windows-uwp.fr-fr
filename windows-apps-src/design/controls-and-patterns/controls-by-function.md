@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e38803c8cbe8b9bdee9a9365127d5f7e7866f7d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695048"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835102"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -26,7 +26,7 @@ Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en act
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et voir l’objet NavigationView en action</a> </p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et voir l’objet NavigationView en action</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -551,7 +551,7 @@ Voir Élément multimédia.
 
 ### <a name="navigationview"></a>NavigationView
 
-Un conteneur adaptable et un modèle flexible de navigation qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
+Un conteneur adaptable et le modèle de navigation souple qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
 
 Référence: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

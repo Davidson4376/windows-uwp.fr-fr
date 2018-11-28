@@ -8,22 +8,22 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702187"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844280"
 ---
 # <a name="performance-page-dev-home"></a>Page des performances (Dev Home)
    
   
-La page des **performances** de l’outil accueil du développeur simule différents activité du disque et des conditions d’utilisation du processeur pour résoudre des problèmes.   
+La page d’accueil du développeur des **performances** simule différents activité du disque et des conditions d’utilisation du processeur pour résoudre des problèmes.   
  ![Page d’accueil du développeur des performances](images/devhome_performance.png)   
   
 La page de **performances** contient les volets suivants:   
  
    *  [Simulation de disque](#ID4EEB)  
-   *  [Simulation de l’UC](#ID4EOB)  
+   *  [Simulation de processeur](#ID4EOB)  
 
  
 <a id="ID4EEB"></a>
@@ -33,13 +33,13 @@ La page de **performances** contient les volets suivants:
 ## <a name="disk-simulation"></a>Simulation de disque  
    
   
-Le volet de **simulation de disque** simule l’activité du disque du système ou d’autres applications.   
+Le volet de **simulation de disque** simule l’activité du disque à partir du système ou d’autres applications.   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="cpu-simulation"></a>Simulation de l’UC  
+## <a name="cpu-simulation"></a>Simulation de processeur  
    
   
 Le volet de **Simulation de processeur** simule l’activité sur CPU6 (le noyau partagé).   

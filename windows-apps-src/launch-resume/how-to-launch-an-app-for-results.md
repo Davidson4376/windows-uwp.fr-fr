@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f627cf2a897de32aea0e35faf66f5ea70695efd5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694998"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839064"
 ---
 # <a name="launch-an-app-for-results"></a>Lancer une application pour obtenir des résultats
 
@@ -25,7 +25,7 @@ ms.locfileid: "7694998"
 
 Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de *démarrage d’une application pour afficher les résultats*. L’exemple suivant vous montre comment utiliser [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) afin de démarrer une application pour afficher les résultats.
 
-Nouvelle application à la communication API dans Windows 10 rendent possible pour Windows applications (et aux applications Web Windows) lancer une application et échanger des données et des fichiers. Cela vous permet de créer des solutions hybrides à partir de plusieurs applications. Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation d’achat pour effectuer un processus de paiement.
+Nouvelle application-application communication API dans Windows 10 permettent aux Windows applications (et les applications Web Windows) lancer une application et échanger des données et des fichiers. Cela vous permet de créer des solutions hybrides à partir de plusieurs applications. Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation d’achat pour effectuer un processus de paiement.
 
 L’application que vous démarrez pour afficher les résultats sera désignée sous le nom d’application lancée. L’application qui lance l’application sera désignée sous le nom d’application appelante. Pour cet exemple, vous allez écrire l’application appelante et l’application lancée.
 

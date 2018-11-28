@@ -4,14 +4,14 @@ title: Device Portal pour appareils mobiles
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, le portail d’appareil
+keywords: Windows 10, uwp, portal de l’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720395"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839344"
 ---
 # <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
 

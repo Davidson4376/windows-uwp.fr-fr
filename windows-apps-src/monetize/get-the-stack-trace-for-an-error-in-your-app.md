@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697802"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7843102"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir la trace de pile concernant une erreur dans votre app. Cette méthode ne peut télécharger que la trace de pile concernant une erreur d’application survenue dans les 30derniers jours. Les traces de pile sont également disponibles dans la section des **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir la trace de pile concernant une erreur dans votre app. Cette méthode ne peut télécharger que la trace de pile concernant une erreur d’application survenue dans les 30derniers jours. Les traces de pile sont également disponibles dans la section **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
 
 Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer l’ID du fichierCAB associé à l’erreur dont vous voulez récupérer la trace de pile.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
 ms.openlocfilehash: c0717fb3d1db42483214e8396d436c47c23744ee
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703689"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833689"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Écouteur de notification: accéder à toutes les notifications
 
@@ -277,7 +277,7 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Événement en arrière-plan pour une notification ajoutée/ignorée
 
 > [!IMPORTANT] 
-> Problème connu: l’événement au premier plan entraîne une boucle de processeur sur les versions récentes de Windows et précédemment n’a pas fonctionné auparavant. N’utilisez pas l’événement au premier plan. Dans une prochaine mise à jour vers Windows, nous sera résoudre ce problème.
+> Problème connu: l’événement au premier plan entraîne une boucle de processeur sur les versions récentes de Windows et précédemment n’a pas fonctionné auparavant. N’utilisez pas l’événement au premier plan. La mise à jour à venir pour Windows, nous sera résoudre ce problème.
 
 Au lieu d’utiliser l’événement au premier plan, utilisez le code indiqué précédemment pour une tâche en arrière-plan de [modèle à processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md) . La tâche en arrière-plan vous permettent également de recevoir des notifications d’événement de modification à la fois pendant que votre application est fermée ou en cours d’exécution.
 
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>Fixdelays de faire dans la tâche en arrière-plan
+## <a name="howto-fixdelays-in-the-background-task"></a>Comment faire pour fixdelays dans la tâche en arrière-plan
 
-Lorsque vous testez votre application, vous remarquerez peut-être que la tâche en arrière-plan est parfois retardée et ne déclenche pas pendant plusieurs minutes. Pour corriger le délai, invite l’utilisateur togo aux paramètres système -> système -> batterie -> utilisation de la batterie par application, recherchez votre application dans la liste, sélectionnez-le et définissez-la sur «toujours autorisé en arrière-plan».Après cela, la tâche en arrière-plan doit toujours être déclenchée au sein d’une seconde de la notification reçue environ.
+Lorsque vous testez votre application, vous remarquerez peut-être que la tâche en arrière-plan est parfois retardée et ne se déclenche pas pendant plusieurs minutes. Pour corriger le délai, invite l’utilisateur togo aux paramètres système -> système -> batterie -> utilisation de la batterie par application, recherchez votre application dans la liste, sélectionnez-le et définissez-la sur «toujours autorisé en arrière-plan».Après cela, la tâche en arrière-plan doit toujours être déclenchée au sein d’une seconde de la notification reçue environ.

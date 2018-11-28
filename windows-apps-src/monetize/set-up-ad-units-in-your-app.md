@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, publicités, publicité, unités publicitaires, tests
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d01434e508d4a5067ffd66bdf86b3083b43016
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692430"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839204"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Configurer des unités publicitaires dans votre application
 
@@ -58,7 +58,7 @@ Pour obtenir une unité publicitaire dynamique à partir de l’espace partenair
 
 2.  Après avoir créé la nouvelle unité publicitaire, récupérez l'**ID d’application** et l'**ID d’unité publicitaire** associés à l’unité publicitaire dans le tableau des unités publicitaires disponible à la page **Monétiser**&gt;**les publicités dans l'app**.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID du Windows Store de l’exemple ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID Windows Store exemple ressemble à 9NBLGGH4R315).
 
 3.  Affectez les valeurs ID d’application et ID d’unité publicitaire au code de votre application. Pour plus d’informations, consultez les articles suivants:
     * [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)

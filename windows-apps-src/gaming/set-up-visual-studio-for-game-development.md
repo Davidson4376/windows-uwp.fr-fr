@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, visual studio, outils, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719923"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843851"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Outils Visual Studio pour la programmation de jeux
 
@@ -45,7 +45,7 @@ Créez des [fichiers de personnalisations de la build](#build-customizations-for
 
 Pour plus d’informations, voir [Utilisation de textures et d’images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-> **Remarque**l’éditeur d’images n’est pas destiné à remplacer une application de retouche d’images complète, mais il convient à nombreux simple affichage et de modification des scénarios.
+> **Remarque**l’éditeur d’images n’a pas vocation à remplacer une application d’édition d’images complète, mais est approprié pour les nombreux simple affichage et la modification des scénarios.
 
  
 
@@ -64,7 +64,7 @@ Voici la capture d’écran d’un modèle dans l’éditeur auquel un éclairag
 
 Pour plus d’informations, voir [Utilisation de modèles en 3D](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-> **Remarque**l’éditeur de modèles n’est pas destiné à remplacer une application d’édition de modèles complète, mais il convient à nombreux simple affichage et de modification des scénarios.
+> **Remarque**l’éditeur de modèles n’a pas vocation à remplacer une application d’édition de modèles complète, mais est approprié pour les nombreux simple affichage et la modification des scénarios.
 
  
 

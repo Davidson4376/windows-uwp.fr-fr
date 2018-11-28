@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707193"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840583"
 ---
 # <a name="stream-output-so-stage"></a>Étape Stream Output
 
@@ -43,7 +43,7 @@ Les données de vertex issues d'une étape précédente du nuanceur.
 
 L'étape de sortie de flux (SO) sort (diffuse) en continu les données de vertex de l'étape active précédente, telle que l'étape du nuanceur de géométrie (GS), et les stocke dans une ou plusieurs mémoires tampon en mémoire. Si l'étape du nuanceur de géométrie (GS) est inactive et que l'étape de sortie de flux (SO) diffuse en continu les données de vertex de l'étape du nuanceur de domaine (DS) (ou de l'étape du nuanceur de vertex (VS) si l'étape DS est également inactive) et les stocke dans des mémoires tampon en mémoire.
 
-Lorsqu’une bande de triangles ou de la ligne est liée à l’étape d’assembleur d’entrée (IA), chaque bande est convertie en une liste avant qu’ils sont diffusées. Les vertex sont toujours écrits sous forme de primitives complètes (par exemple, 3 vertex à la fois pour les triangles); les primitives incomplètes ne sont jamais diffusées. Types de primitives avec Voisinage ignorent les données de voisinage avant la diffusion en continu des données.
+Lorsqu’une bande de triangles ou de ligne est liée à l’étape d’assembleur d’entrée (IA), chaque bande est convertie en une liste avant qu’ils sont diffusées. Les vertex sont toujours écrits sous forme de primitives complètes (par exemple, 3 vertex à la fois pour les triangles); les primitives incomplètes ne sont jamais diffusées. Types de primitives avec Voisinage ignorent les données de voisinage avant la diffusion en continu des données.
 
 L’étape de sortie de flux peut prendre en charge simultanément jusqu'à 4mémoires tampons.
 

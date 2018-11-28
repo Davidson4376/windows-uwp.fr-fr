@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 674f5977a69855ff51cbc579ca66085aa133eb5b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697692"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7841774"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Appliquer des correctifs à l’exécution à un package MSIX à l’aide de l’infrastructure de prise en charge de Package
 
 L’infrastructure de prise en charge de Package est un kit open source qui vous permet d’appliquer des correctifs à votre application win32 existantes lorsque vous n’avez pas accès au code source, afin qu’il puisse exécuter dans un conteneur MSIX. L’infrastructure de prise en charge de Package permet à votre application de suivre les meilleures pratiques de l’environnement d’exécution moderne.
 
-Pour plus d’informations, voir [l’Infrastructure prise en charge du Package](https://docs.microsoft.com/windows/msix/package-support-framework-overview).
+Pour plus d’informations, voir [Infrastructure prise en charge du Package](https://docs.microsoft.com/windows/msix/package-support-framework-overview).
 
-Ce guide vous aidera à identifier les problèmes de compatibilité des applications, et pour rechercher, appliquer et étendre runtime des correctifs qui y remédier.
+Ce guide vous aidera à identifier les problèmes de compatibilité d’application, et pour rechercher, appliquer et étendre runtime des correctifs qui y remédier.
 
 <a id="identify" />
 
 ## <a name="identify-packaged-application-compatibility-issues"></a>Identifier les problèmes de compatibilité d’application empaquetée
 
-Tout d’abord, créez un package pour votre application. Ensuite, installez-le, exécutez-le et observer son comportement. Vous pouvez recevoir des messages d’erreur qui peuvent vous aider à identifier un problème de compatibilité. Vous pouvez également utiliser le [Moniteur de processus](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) pour identifier les problèmes.  Problèmes courants concernent hypothèses d’application en ce qui concerne les autorisations de chemin de répertoire et le programme de travail.
+Tout d’abord, créez un package pour votre application. Ensuite, l’installer, exécutez-le et observer son comportement. Vous pouvez recevoir des messages d’erreur qui peuvent vous aider à identifier un problème de compatibilité. Vous pouvez également utiliser le [Moniteur de processus](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) pour identifier les problèmes.  Relation entre les problèmes courants et hypothèses d’application en ce qui concerne les autorisations de chemin de répertoire et le programme de travail.
 
 ### <a name="using-process-monitor-to-identify-an-issue"></a>L’utilisation du moniteur de processus pour identifier un problème
 
@@ -33,19 +33,19 @@ Tout d’abord, créez un package pour votre application. Ensuite, installez-le,
 
 ![Filtre d’application ProcMon](images/desktop-to-uwp/procmon_app_filter.png)
 
-Une liste des événements s’affiche. Pour la plupart de ces événements, le mot **Réussite** s’affiche dans la colonne de **résultat** .
+Une liste d’événements s’affiche. Pour la plupart de ces événements, le mot **Réussite** s’affiche dans la colonne de **résultat** .
 
-![Événements de ProcMon](images/desktop-to-uwp/procmon_events.png)
+![Événements ProcMon](images/desktop-to-uwp/procmon_events.png)
 
-Si vous le souhaitez, vous pouvez filtrer les événements pour n’afficher que seuls les échecs.
+Si vous le souhaitez, vous pouvez filtrer les événements pour ne visualiser que seuls les échecs.
 
-![Exclusion de ProcMon succès](images/desktop-to-uwp/procmon_exclude_success.png)
+![Réussite Exclude ProcMon](images/desktop-to-uwp/procmon_exclude_success.png)
 
-Si vous suspectez un échec d’accès de système de fichiers, recherchez les événements ayant échoué sont sous le System32/SysWOW64 ou le chemin d’accès du fichier de package. Les filtres permettent d’ici, trop. Écran de démarrage en bas de cette liste et faites défiler vers le haut. Échecs qui s’affichent en bas de cette liste se sont produites plus récemment. Attention la plupart des erreurs qui contiennent des chaînes telles que «accès refusé» et «chemin/nom introuvable» et ignorer les éléments qui ne semblent pas suspectes. Le [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/) a deux problèmes. Vous pouvez voir ces problèmes dans la liste qui s’affiche dans l’image suivante.
+Si vous suspectez un échec d’accès de système de fichiers, recherchez des événements ayant échoués qui se trouvent sous le System32/SysWOW64 ou le chemin d’accès du fichier de package. Filtres permettent d’ici, trop. Démarrer en bas de cette liste et faites défiler vers le haut. Échecs qui s’affichent en bas de cette liste se sont produits la plus récente. Y prêter attention la plupart des erreurs qui contiennent des chaînes telles que «accès refusé» et «chemin/nom introuvable» et ignorer les éléments qui ne semblent pas suspectes. Le [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/) a deux problèmes. Vous pouvez voir ces problèmes dans la liste qui s’affiche dans l’image suivante.
 
 ![ProcMon Config.txt](images/desktop-to-uwp/procmon_config_txt.png)
 
-Dans le premier problème qui s’affiche dans cette image, l’application ne peut pas lire à partir du fichier «Config.txt» qui se trouve dans le chemin d’accès «C:\Windows\SysWOW64». Il est peu probable que l’application essaie de référencer directement de ce chemin d’accès. Il est probable qu’il essaie de lire à partir de ce fichier à l’aide d’un chemin d’accès relatif et par défaut, «System32/SysWOW64» est le répertoire de travail de l’application. Cela signifie que l’application s’attend à son répertoire de travail actuel pour être défini sur quelque part dans le package. Recherchez à l’intérieur de l’appx, nous pouvons voir que le fichier existe dans le même répertoire que le fichier exécutable.
+Dans le premier problème qui s’affiche dans cette image, l’application ne parvient pas à lire à partir du fichier «Config.txt» qui se trouve dans le chemin d’accès «C:\Windows\SysWOW64». Il est peu probable que l’application tente de faire référence à ce chemin d’accès directement. Il est probable qu’il essaie de lire à partir de ce fichier à l’aide d’un chemin d’accès relatif et par défaut, «System32/SysWOW64» est le répertoire de travail de l’application. Cela signifie que l’application s’attend à son répertoire de travail actuel pour être défini sur quelque part dans le package. Recherchez à l’intérieur de l’appx, nous pouvons voir que le fichier existe dans le même répertoire que le fichier exécutable.
 
 ![Application Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
 
@@ -53,27 +53,27 @@ Le deuxième problème s’affiche dans l’image suivante.
 
 ![Fichier journal ProcMon](images/desktop-to-uwp/procmon_logfile.png)
 
-Dans ce problème, l’application ne peut pas écrire un fichier .log à son chemin d’accès du package. Cela suggère qu’une correction de la redirection de fichier peut-être vous aider.
+Dans ce problème, l’application ne parvient pas à écrire un fichier .log dans son chemin d’accès du package. Cela suggère qu’une correction de la redirection de fichier peut-être vous aider.
 
 <a id="find" />
 
 ## <a name="find-a-runtime-fix"></a>Trouver un correctif runtime
 
-CELLES contient des correctifs de runtime que vous pouvez utiliser tout de suite, telles que la correction de la redirection de fichier.
+CELLES contient des correctifs à l’exécution que vous pouvez utiliser tout de suite, telles que la correction de la redirection de fichier.
 
 ### <a name="file-redirection-fixup"></a>Correction de la Redirection de fichier
 
-Vous pouvez utiliser la [Correction de la Redirection de fichier](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) pour rediriger les tentatives d’écrire ou de lire des données dans un répertoire qui n’est pas accessible à partir d’une application qui s’exécute dans un conteneur MSIX.
+Vous pouvez utiliser le [Fichier de Redirection de correction](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) pour rediriger les tentatives d’écrire ou de lire des données dans un répertoire qui n’est pas accessible à partir d’une application qui s’exécute dans un conteneur MSIX.
 
-Par exemple, si votre application écrit dans un fichier journal qui se trouve dans le même répertoire que vos applications exécutables, vous pouvez utiliser le [Fichier de la Redirection de correction](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) pour créer ce fichier journal dans un autre emplacement, par exemple, le magasin de données d’application locale.
+Par exemple, si votre application écrit dans un fichier journal qui se trouve dans le même répertoire que vos applications exécutables, vous pouvez utiliser le [Fichier de Redirection de correction](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) pour créer ce fichier journal dans un autre emplacement, par exemple, le magasin de données d’application locale.
 
 ### <a name="runtime-fixes-from-the-community"></a>Correctifs à l’exécution de la Communauté
 
-Veillez à passer en revue les contributions de la Communauté à notre page [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework) . Il est possible que d’autres développeurs ont résolu un problème similaire au vôtre et ont partagés un correctif de l’exécution.
+Veillez à passer en revue les contributions de la Communauté à notre page [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework) . Il est possible que d’autres développeurs ont résolu un problème similaire au vôtre et ont partagés un correctif runtime.
 
-## <a name="apply-a-runtime-fix"></a>Appliquer un correctif de runtime
+## <a name="apply-a-runtime-fix"></a>Appliquer un correctif runtime
 
-Vous pouvez appliquer un correctif runtime existantes avec des outils simples quelques du SDK Windows et en suivant ces étapes.
+Vous pouvez appliquer un correctif runtime existantes avec des outils simples quelques du SDK Windows et en suivant les étapes suivantes.
 
 > [!div class="checklist"]
 > * Créez un dossier de disposition de package
@@ -82,22 +82,22 @@ Vous pouvez appliquer un correctif runtime existantes avec des outils simples qu
 > * Modifier le manifeste du package
 > * Créer un fichier de configuration
 
-Examinons chaque tâche.
+Revenons par le biais de chaque tâche.
 
 ### <a name="create-the-package-layout-folder"></a>Créer le dossier de disposition de package
 
-Si vous disposez déjà d’un fichier .msix (ou .appx), vous pouvez décompresser son contenu dans un dossier de disposition qui servira à la zone de transit de votre package. Vous pouvez le faire à partir d’une invite de commandes à l’aide de l’outil de makemsix, selon votre chemin d’installation du Kit de développement, il s’agit où vous trouverez l’outil makemsix.exe sur votre PC Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files () x86) \Windows Kits\10\bin\x64\makemsix.exe
+Si vous disposez déjà d’un fichier .msix (ou .appx), vous pouvez décompresser son contenu dans un dossier de disposition qui fera office de la zone de transit de votre package. Vous pouvez le faire à partir d’une invite de commandes à l’aide de l’outil de makemsix, selon votre chemin d’installation du SDK, il s’agit dans lequel vous trouverez l’outil makemsix.exe sur votre PC Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files () x86) \Windows Kits\10\bin\x64\makemsix.exe
 
 ```ps
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
 
-Cela vous donne en quelque chose qui ressemble à ceci.
+Cela vous donne en quelque chose qui ressemble à ce qui suit.
 
 ![Disposition de package](images/desktop-to-uwp/package_contents.png)
 
-Si vous n’avez pas de commencer par un fichier .msix (ou .appx), vous pouvez créer les fichiers et le dossier du package à partir de zéro.
+Si vous n’avez pas de commencer par un fichier .msix (ou .appx), vous pouvez créer le dossier du package et les fichiers à partir de zéro.
 
 ### <a name="get-the-package-support-framework-files"></a>Obtenir les fichiers de l’infrastructure de prise en charge de Package
 
@@ -113,11 +113,11 @@ nuget install Microsoft.PackageSupportFramework
 
 #### <a name="get-the-package-by-using-visual-studio"></a>Obtenir le package à l’aide de Visual Studio
 
-Dans Visual Studio, cliquez sur le nœud de votre solution ou un projet et choisissez une des commandes de gérer les Packages Nuget.  Rechercher les **Microsoft.PackageSupportFramework** ou les **produits** rechercher le package sur Nuget.org. Ensuite, l’installer.
+Dans Visual Studio, cliquez sur le nœud de votre solution ou un projet et choisissez une des commandes gérer les Packages Nuget.  Rechercher les **Microsoft.PackageSupportFramework** ou les **produits** rechercher le package sur Nuget.org. Ensuite, l’installer.
 
-### <a name="add-the-package-support-framework-files-to-your-package"></a>Ajouter les fichiers de l’infrastructure de prise en charge de Package à votre package
+### <a name="add-the-package-support-framework-files-to-your-package"></a>Ajouter les fichiers de Package prise en charge Framework à votre package
 
-Ajoutez la DLL de produits requises 32 bits et 64 bits et les fichiers exécutables dans le répertoire du package. Inspirez-vous du tableau suivant. Vous devrez également inclure tous les correctifs de runtime dont vous avez besoin. Dans notre exemple, nous devons le correctif de runtime de la redirection de fichier.
+Ajoutez la DLL de produits requises 32 bits et 64 bits et les fichiers exécutables dans le répertoire du package. Inspirez-vous du tableau suivant. Vous devrez également inclure tous les correctifs runtime dont vous avez besoin. Dans notre exemple, nous devons le correctif de runtime de la redirection de fichier.
 
 | Exécutable de l’application est x64 | Exécutable de l’application est x86 |
 |-------------------------------|-----------|
@@ -131,7 +131,7 @@ Le contenu de votre package doit maintenant ressembler à ceci.
 
 ### <a name="modify-the-package-manifest"></a>Modifier le manifeste du package
 
-Ouvrez votre manifeste du package dans un éditeur de texte et définissez le `Executable` attribut de la `Application` élément au nom du fichier exécutable de lancement de produits.  Si vous connaissez l’architecture de votre application cible, sélectionnez la version appropriée, PSFLauncher32.exe ou PSFLauncher64.exe.  Si ce n’est pas le cas, PSFLauncher32.exe fonctionnera dans tous les cas.  Voici un exemple:
+Ouvrez votre manifeste du package dans un éditeur de texte et définissez le `Executable` attribut de le `Application` élément au nom du fichier exécutable Lanceur produits.  Si vous savez que l’architecture de votre application cible, sélectionnez la version appropriée, PSFLauncher32.exe ou PSFLauncher64.exe.  Si ce n’est pas le cas, PSFLauncher32.exe fonctionnera dans tous les cas.  Voici un exemple:
 
 ```xml
 <Package ...>
@@ -148,7 +148,7 @@ Ouvrez votre manifeste du package dans un éditeur de texte et définissez le `E
 
 ### <a name="create-a-configuration-file"></a>Créer un fichier de configuration
 
-Créer un nom de fichier ``config.json``et enregistrez ce fichier dans le dossier racine de votre package. Modifier l’ID d’application déclarée du fichier config.json pour pointer vers le fichier exécutable qui vient d’être remplacé. À l’aide de la connaissance que vous avez obtenus à partir de l’utilisation du moniteur de processus, vous pouvez également définir le répertoire de travail mais aussi utiliser la correction de la redirection de fichier pour rediriger les opérations de lecture/écriture aux fichiers .log sous le répertoire de «PSFSampleApp» relatif au package.
+Créer un nom de fichier ``config.json``et enregistrez-le dans le dossier racine de votre package. Modifier l’ID d’application déclaré du fichier config.json pour pointer vers le fichier exécutable qui vient d’être remplacé. À l’aide de la connaissance que vous avez obtenus à partir de l’utilisation du moniteur de processus, vous pouvez également définir le répertoire de travail mais aussi utiliser la correction de la redirection de fichier pour rediriger les opérations de lecture/écriture aux fichiers .log sous le répertoire «PSFSampleApp» relatif au package.
 
 ```json
 {
@@ -188,12 +188,12 @@ Voici un guide pour le schéma config.json:
 
 | Tableau | key | Valeur |
 |-------|-----------|-------|
-| applications | id |  Utilisez la valeur de la `Id` attribut de la `Application` élément dans le manifeste du package. |
-| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous souhaitez commencer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste de package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de la `Application` élément. |
-| applications | workingDirectory | (Facultatif) Un chemin d’accès relatif au package à utiliser comme répertoire de travail de l’application démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
+| applications | id |  Utilisez la valeur de la `Id` attribut de le `Application` élément dans le manifeste du package. |
+| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous voulez démarrer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste du package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de le `Application` élément. |
+| applications | workingDirectory | (Facultatif) Un chemin d’accès relatif au package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire en tant que répertoire de travail de l’application. |
 | processus | exécutable | Dans la plupart des cas, il s’agit du nom de la `executable` configuré ci-dessus avec l’extension de fichier et le chemin supprimée. |
-| corrections | DLL | Chemin relatif au package la correction,.msix/.appx à charger. |
-| corrections | config | (Facultatif) Contrôle le comporte de la liste de distribution de correction. Le format exact de cette valeur varie selon la correction-par-correction comme chaque correction puisse les interpréter ce «blob» qu’il le souhaite. |
+| corrections | DLL | Chemin d’accès relatif au package à la correction,.msix/.appx à charger. |
+| corrections | config | (Facultatif) Contrôle le comporte de la liste de distribution de correction. Le format exact de cette valeur varie sur une base de correction-par-correction comme chaque correction puisse les interpréter ce «blob» qu’il le souhaite. |
 
 Le `applications`, `processes`, et `fixups` clés sont des tableaux. Cela signifie que vous pouvez utiliser le fichier config.json pour spécifier plusieurs applications, processus et correction DLL.
 
@@ -216,7 +216,7 @@ Pour plus d’informations, voir [comment créer un certificat de signature de p
 À l’aide de PowerShell, installez le package.
 
 >[!NOTE]
-> N’oubliez pas d’abord désinstaller le package.
+> N’oubliez pas de désinstallation de tout d’abord le package.
 
 ```ps
 powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
@@ -239,9 +239,9 @@ Une autre technique à diagnostiquer les problèmes de compatibilité d’applic
 }
 ```
 
-Par défaut, la correction de Trace filtre les erreurs qui peuvent être considérés comme «prévus».  Par exemple, les applications peuvent essayer de manière inconditionnelle supprimer un fichier sans vérifier s’il existe déjà, en ignorant le résultat. Cela a pour les conséquences malheureusement que certains échecs inattendus peuvent obtenir filtrés, afin que dans l’exemple ci-dessus, nous opter pour la réception de tous les échecs à partir des fonctions de système de fichiers. Nous procédons ainsi car nous savons à partir de l’avant que la lecture à partir du fichier Config.txt échoue avec le message «fichier introuvable». Il s’agit d’une défaillance qui est souvent observée et pas censée pour être inattendue. Dans la pratique, il est probablement mieux commencer le filtrage uniquement à des échecs inattendus et ensuite revenir à tous les échecs s’il existe un problème qui ne peut pas toujours être identifié.
+Par défaut, la correction de Trace filtre les défaillances qui peuvent être considérés comme «prévus».  Par exemple, les applications peuvent essayer de manière inconditionnelle supprimer un fichier sans vérifier s’il existe déjà, en ignorant le résultat. Cela a pour les conséquences malheureusement que certains échecs inattendus peuvent obtenir filtrés, afin que dans l’exemple ci-dessus, nous opter pour recevoir tous les échecs de fonctions de système de fichiers. Nous procédons ainsi car nous savons à partir d’avant que la tentative de lecture à partir du fichier Config.txt échoue avec le message «fichier introuvable». Il s’agit d’une défaillance qui est souvent observée et pas censée pour être inattendue. Dans la pratique, il est probablement mieux pour commencer à déconnecter, puis revenir à tous les échecs s’il existe un problème qui ne peut pas toujours être identifié et filtrage uniquement à des échecs inattendus.
 
-Par défaut, la sortie de la correction de suivi est envoyée au débogueur attaché. Pour cet exemple, nous ne sont pas accédant à joindre un débogueur et utilisera à la place le programme [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) de SysInternals pour consulter sa sortie. Après avoir exécuté l’application, nous pouvons voir les échecs de mêmes en comme avant, ce qui nous pointez vers les même correctifs à l’exécution.
+Par défaut, la sortie de la correction de Trace est envoyée au débogueur attaché. Pour cet exemple, nous ne sont pas accédant à joindre un débogueur et utilisera à la place le programme [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) de SysInternals pour consulter sa sortie. Après l’exécution de l’application, nous pouvons voir les échecs de mêmes en comme précédemment, ce qui nous pointez vers les même correctifs à l’exécution.
 
 ![TraceShim fichier introuvable](images/desktop-to-uwp/traceshim_filenotfound.png)
 
@@ -249,7 +249,7 @@ Par défaut, la sortie de la correction de suivi est envoyée au débogueur atta
 
 ## <a name="debug-extend-or-create-a-runtime-fix"></a>Déboguer, étendre ou créer un correctif runtime
 
-Vous pouvez utiliser Visual Studio pour déboguer un correctif de runtime, étendre un correctif de runtime ou en créer un à partir de zéro. Vous devez effectuer les opérations suivantes réussisse.
+Vous pouvez utiliser Visual Studio pour déboguer un correctif runtime, étendre un correctif runtime ou en créer un à partir de zéro. Vous devez effectuer les opérations suivantes réussisse.
 
 > [!div class="checklist"]
 > * Ajoutez un projet de création de packages
@@ -266,8 +266,8 @@ Examinons chaque projet dans cet exemple.
 | Projet | Objectif |
 |-------|-----------|
 | DesktopApplicationPackage | Ce projet est basé sur le [projet de package de l’Application Windows](desktop-to-uwp-packaging-dot-net.md) et qu’il génère le package MSIX. |
-| Runtimefix | Il s’agit d’un projet de bibliothèque de Dynamic-Linked C++ qui contient un ou plusieurs fonctions de remplacement qui servent à la résolution de l’exécution. |
-| PSFLauncher | Il s’agit de projet C++ vide. Ce projet est un emplacement pour collecter les fichiers distribuable d’exécution de l’infrastructure de prise en charge du Package. Elle génère un fichier exécutable. Cet exécutable est la première chose qui s’exécute lorsque vous démarrez la solution. |
+| Runtimefix | Il s’agit d’un projet de bibliothèque de Dynamic-Linked C++ qui contient une ou plusieurs fonctions de remplacement qui servent de la résolution de l’exécution. |
+| PSFLauncher | Il s’agit de projet C++ vide. Ce projet est un endroit pour collecter les fichiers distribuable runtime de l’infrastructure de prise en charge du Package. Elle génère un fichier exécutable. Cet exécutable est la première chose qui s’exécute lorsque vous démarrez la solution. |
 | WinFormsDesktopApplication | Ce projet contient le code source d’une application de bureau. |
 
 Pour consulter un exemple complet qui contient tous ces types de projets, voir [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/).
@@ -278,13 +278,13 @@ Passons en revue les étapes nécessaires pour créer et configurer chacune de c
 
 Si vous n’avez pas encore une solution pour votre application de bureau, créez une nouvelle **Solution vide** dans Visual Studio.
 
-![Nouvelle solution](images/desktop-to-uwp/blank-solution.png)
+![Solution vide](images/desktop-to-uwp/blank-solution.png)
 
-Vous pouvez également ajouter des projets d’application dont vous disposez.
+Vous pouvez également ajouter des projets d’application que vous avez.
 
 ### <a name="add-a-packaging-project"></a>Ajoutez un projet de création de packages
 
-Si vous n’avez pas encore un **Projet de création de packages d’Application Windows**, créer un et l’ajouter à votre solution.
+Si vous n’avez pas encore un **Projet de création de packages d’Application Windows**, en créer un et l’ajouter à votre solution.
 
 ![Modèle de projet de package](images/desktop-to-uwp/package-project-template.png)
 
@@ -306,17 +306,17 @@ Dans l' **Explorateur de solutions**, cliquer sur le projet de création de pack
 
 ### <a name="add-project-for-the-runtime-fix"></a>Ajouter le projet pour la résolution de l’exécution
 
-Ajoutez un projet C++, **La bibliothèque de liens dynamiques (DLL)** à la solution.
+Ajoutez un projet C++ **Bibliothèque de liens dynamiques (DLL)** à la solution.
 
-![Bibliothèque de correction d’exécution](images/desktop-to-uwp/runtime-fix-library.png)
+![Bibliothèque de correctif Runtime](images/desktop-to-uwp/runtime-fix-library.png)
 
-Avec le bouton droit qui de projet, puis choisissez **Propriétés**.
+Avec le bouton droit le que de projet, puis choisissez **Propriétés**.
 
 Dans les pages de propriétés, recherchez le champ **Standard de langage C++** et dans la liste déroulante en regard de ce champ, sélectionnez le **ISO C ++ 17 Standard (/ std: c ++ 17)** option.
 
 ![ISO 17 Option](images/desktop-to-uwp/iso-option.png)
 
-Avec le bouton droit de ce projet et puis, dans le menu contextuel, choisissez l’option de **Gérer les Packages Nuget** . Vérifiez que l’option de la **source du Package** est définie à **l’ensemble** ou **nuget.org**.
+Avec le bouton droit de ce projet et puis, dans le menu contextuel, choisissez l’option de **Gérer les Packages Nuget** . Vérifiez que l’option de **source du Package** est définie à **l’ensemble** ou **nuget.org**.
 
 Cliquez sur l’icône Paramètres ensuite ce champ.
 
@@ -324,9 +324,9 @@ Recherche de *produits** Nuget empaqueter et puis installez-le pour ce projet.
 
 ![package NuGet](images/desktop-to-uwp/psf-package.png)
 
-Si vous souhaitez déboguer ou étendre un correctif de runtime existant, ajoutez les fichiers de correctif de runtime que vous avez obtenu en utilisant les instructions décrites dans la section [trouver un correctif de l’exécution](#find) de ce guide.
+Si vous souhaitez déboguer ou étendre un correctif runtime existant, ajoutez les fichiers de correctif runtime que vous avez obtenu en utilisant les instructions décrites dans la section [Rechercher un correctif de runtime](#find) de ce guide.
 
-Si vous envisagez de créer un nouveau correctif, n’ajoutez pas quoi que ce soit à ce projet tout de suite. Nous allons vous aider à ajouter les fichiers appropriés à ce projet plus loin dans ce guide. Pour l’instant, nous allons continuer la configuration de votre solution.
+Si vous avez l’intention de créer un nouveau correctif, n’ajoutez pas quoi que ce soit à ce projet tout de suite. Nous vous aiderons à ajouter les fichiers appropriés à ce projet plus loin dans ce guide. Pour le moment, nous allons continuer la configuration de votre solution.
 
 ### <a name="add-a-project-that-starts-the-psf-launcher-executable"></a>Ajoutez un projet qui démarre le Lanceur de produits exécutable
 
@@ -334,15 +334,15 @@ Ajoutez un projet C++ **Projet vide** à la solution.
 
 ![Projet vide](images/desktop-to-uwp/blank-app.png)
 
-Ajouter le package Nuget de **produits** à ce projet à l’aide de la même recommandation décrite dans la section précédente.
+Ajouter le package Nuget de **produits** à ce projet en utilisant les mêmes consignes décrites dans la section précédente.
 
-Ouvrez les pages de propriétés du projet et dans la page Paramètres **généraux** , définissez la propriété de **Nom de la cible** sur ``PSFLauncher32`` ou ``PSFLauncher64`` en fonction de l’architecture de votre application.
+Ouvrez les pages de propriétés du projet et dans la page Paramètres **généraux** , définissez la propriété **Nom de la cible** sur ``PSFLauncher32`` ou ``PSFLauncher64`` en fonction de l’architecture de votre application.
 
 ![Référence de Lanceur de produits](images/desktop-to-uwp/shim-exe-reference.png)
 
 Ajouter une référence de projet au projet de correctif runtime dans votre solution.
 
-![référence de correction d’exécution](images/desktop-to-uwp/reference-fix.png)
+![référence de correctif Runtime](images/desktop-to-uwp/reference-fix.png)
 
 Avec le bouton droit de la référence, puis, dans la fenêtre **Propriétés** , appliquez ces valeurs.
 
@@ -371,7 +371,7 @@ Dans le nœud **Applications** , avec le bouton droit de l’application de lanc
 
 ![Définir le point d’entrée](images/desktop-to-uwp/set-startup-project.png)
 
-Ajoutez un fichier nommé ``config.json`` à votre projet de création de package, puis, copiez et collez le texte json suivant dans le fichier. Définissez la propriété de **l’Action de Package** pour le **contenu**.
+Ajoutez un fichier nommé ``config.json`` à votre projet de création de package, puis, copiez et collez le texte json suivant dans le fichier. Définissez la propriété de **l’Action de Package** au **contenu**.
 
 ```json
 {
@@ -401,12 +401,12 @@ Fournir une valeur pour chaque clé. Appuyez-vous sur le tableau suivant.
 
 | Tableau | key | Valeur |
 |-------|-----------|-------|
-| applications | id |  Utilisez la valeur de la `Id` attribut de la `Application` élément dans le manifeste du package. |
-| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous souhaitez commencer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste de package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de la `Application` élément. |
-| applications | workingDirectory | (Facultatif) Un chemin d’accès relatif au package à utiliser comme répertoire de travail de l’application démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
+| applications | id |  Utilisez la valeur de la `Id` attribut de le `Application` élément dans le manifeste du package. |
+| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous voulez démarrer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste du package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de le `Application` élément. |
+| applications | workingDirectory | (Facultatif) Un chemin d’accès relatif au package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire en tant que répertoire de travail de l’application. |
 | processus | exécutable | Dans la plupart des cas, il s’agit du nom de la `executable` configuré ci-dessus avec l’extension de fichier et le chemin supprimée. |
-| corrections | DLL | Chemin relatif au package la correction DLL à charger. |
-| corrections | config | (Facultatif) Contrôle le comporte de la DLL de correction. Le format exact de cette valeur varie selon la correction-par-correction comme chaque correction puisse les interpréter ce «blob» qu’il le souhaite. |
+| corrections | DLL | Chemin d’accès relatif au package à la correction DLL à charger. |
+| corrections | config | (Facultatif) Contrôle le comporte de la DLL de correction. Le format exact de cette valeur varie sur une base de correction-par-correction comme chaque correction puisse les interpréter ce «blob» qu’il le souhaite. |
 
 Lorsque vous avez terminé, votre ``config.json`` fichier doit ressembler à ceci.
 
@@ -434,22 +434,22 @@ Lorsque vous avez terminé, votre ``config.json`` fichier doit ressembler à cec
 
 ### <a name="debug-a-runtime-fix"></a>Déboguer un correctif runtime
 
-Dans Visual Studio, appuyez sur F5 pour démarrer le débogueur.  La première chose qui démarre est l’application de lancement de produits, qui à son tour, lance votre application de bureau cible.  Pour déboguer l’application de bureau cible, vous devrez manuellement attacher au processus de l’application de bureau en choisissant **Déboguer**->**Attacher au processus**et en sélectionnant le processus d’application. Pour permettre le débogage d’une application .NET avec un correctif de runtime natif DLL, sélectionnez les types de code managé et natif (débogage en mode mixte).  
+Dans Visual Studio, appuyez sur F5 pour démarrer le débogueur.  La première chose qui démarre est l’application de lancement de produits, qui à son tour, lance votre application de bureau cible.  Pour déboguer l’application de bureau cible, vous devrez manuellement attacher au processus d’application de bureau en choisissant **Déboguer**->**Attacher au processus**, puis en sélectionnant le processus d’application. Pour permettre le débogage d’une application .NET avec un correctif de runtime natif DLL, sélectionnez les types de code managé et natif (débogage en mode mixte).  
 
 Une fois que vous avez configuré cela, vous pouvez définir des points d’arrêt en regard des lignes de code dans le code de l’application de bureau et le projet de correction du runtime. Si vous n’avez pas le code source à votre application, vous serez en mesure de définir des points d’arrêt uniquement en regard des lignes de code dans votre projet de correction du runtime.
 
 >[!NOTE]
-> Alors que Visual Studio vous donne le développement plus simple et l’expérience de débogage, il existe certaines limitations, par conséquent, plus loin dans ce guide, nous aborderons autres techniques de débogage que vous pouvez appliquer.
+> Pendant que Visual Studio vous donne le développement plus simple et l’expérience de débogage, il existe certaines limitations, par conséquent, plus loin dans ce guide, nous aborderons autres techniques de débogage que vous pouvez appliquer.
 
 ## <a name="create-a-runtime-fix"></a>Créer un correctif runtime
 
-Si il n’existe pas encore d’un runtime résoudre le problème que vous souhaitez résoudre, vous pouvez créer un nouveau correctif de runtime en écrivant des fonctions de remplacement, y compris les données de configuration qui convient. Examinons chaque partie.
+Si il n’existe pas encore d’un runtime résoudre le problème que vous souhaitez résoudre, vous pouvez créer un nouveau correctif runtime en écrivant des fonctions de remplacement, y compris les données de configuration qui convient. Examinons chaque partie.
 
 ### <a name="replacement-functions"></a>Fonctions de remplacement
 
-Tout d’abord, identifiez quelle fonction les appels échouent lorsque votre application s’exécute dans un conteneur MSIX. Ensuite, vous pouvez créer des fonctions de remplacement que vous souhaitez que le Gestionnaire de l’exécution pour appeler à la place. Cela vous donne la possibilité de remplacer l’implémentation d’une fonction avec un comportement qui doit être conforme aux règles de l’environnement d’exécution moderne.
+Tout d’abord, identifiez quelle fonction appels échouent lorsque votre application s’exécute dans un conteneur MSIX. Ensuite, vous pouvez créer des fonctions de remplacement que vous souhaitez que le Gestionnaire d’exécution pour appeler à la place. Cela vous donne la possibilité de remplacer l’implémentation d’une fonction avec un comportement qui doit être conforme aux règles de l’environnement d’exécution moderne.
 
-Dans Visual Studio, ouvrez le projet de correctif de runtime que vous avez créé précédemment dans ce guide.
+Dans Visual Studio, ouvrez le projet de correctif runtime que vous avez créé précédemment dans ce guide.
 
 Déclarez la ``FIXUP_DEFINE_EXPORTS`` macro, puis ajoutez une instruction include pour le `fixup_framework.h` en haut de chaque. Fichiers CPP dans lequel vous envisagez d’ajouter les fonctions de votre correctif runtime.
 
@@ -477,13 +477,13 @@ int WINAPI MessageBoxWFixup(
 DECLARE_FIXUP(MessageBoxWImpl, MessageBoxWFixup);
 ```
 
-L’appel à `DECLARE_FIXUP` mappe le `MessageBoxW` pour votre nouvelle fonction de remplacement. Lorsque votre application tente d’appeler le `MessageBoxW` fonction, elle appelle la fonction de remplacement à la place.
+L’appel à `DECLARE_FIXUP` mappe le `MessageBoxW` pour votre nouvelle fonction de remplacement. Lorsque votre application tente d’appeler le `MessageBoxW` fonction, il appelle la fonction de remplacement à la place.
 
-#### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>Protection contre les appels récurrents aux fonctions de correctifs à l’exécution
+#### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>Protection contre les appels récursive aux fonctions de correctifs à l’exécution
 
-Vous pouvez éventuellement appliquer le `reentrancy_guard` type à vos fonctions qui protègent contre les appels récurrents aux fonctions de correctifs à l’exécution.
+Vous pouvez éventuellement appliquer le `reentrancy_guard` type à vos fonctions qui protègent contre les appels récursive aux fonctions de correctifs à l’exécution.
 
-Par exemple, cela peut donner une fonction de remplacement pour le `CreateFile` fonction. Votre implémentation peut appeler le `CopyFile` fonction, mais l’implémentation de la `CopyFile` fonction peut appeler le `CreateFile` fonction. Cela peut entraîner un cycle récurrent infini d’appels à la `CreateFile` fonction.
+Par exemple, cela peut donner une fonction de remplacement pour le `CreateFile` fonction. Votre implémentation peut appeler le `CopyFile` fonction, mais l’implémentation de la `CopyFile` fonction peut appeler le `CreateFile` fonction. Cela peut entraîner un cycle récurrent infini d’appels à le `CreateFile` fonction.
 
 Pour plus d’informations sur `reentrancy_guard` voir [authoring.md](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)
 
@@ -512,21 +512,21 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 Visual Studio vous donne le développement plus simple et l’expérience de débogage, mais il existe certaines limitations.
 
-Tout d’abord, débogage F5 s’exécute l’application par le déploiement de fichiers libres dans le chemin d’accès de dossier de la mise en package, au lieu de l’installation à partir d’un .msix / package .appx.  En règle générale, le dossier de disposition n’a pas les mêmes restrictions de sécurité qu’un dossier de package installé. Par conséquent, il ne peut pas être possible de reproduire des erreurs de déni d’accès de chemin d’accès de package avant d’appliquer un correctif de runtime.
+Tout d’abord, débogage F5 s’exécute l’application par le déploiement de fichiers libres dans le chemin d’accès de dossier de la mise en package, au lieu de l’installation à partir d’un .msix / package .appx.  Le dossier de disposition en règle générale, n’a pas les mêmes restrictions de sécurité qu’un dossier de package installé. Par conséquent, il ne peut pas être possible de reproduire les erreurs de refus d’accès package chemin d’accès avant d’appliquer un correctif de runtime.
 
-Pour résoudre ce problème, utilisez .msix / déploiement du package .appx plutôt que F5 perdre le déploiement de fichiers.  Pour créer un .msix / créer un package .appx fichier, utilisez l’utilitaire de [MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) dans le Kit de développement Windows, comme décrit ci-dessus. Ou, à partir de Visual Studio, cliquez sur le nœud de votre projet d’application et sélectionnez **Store**->**Créer des Packages d’application**.
+Pour résoudre ce problème, utilisez .msix / déploiement du package .appx plutôt que F5 perdre le déploiement de fichiers.  Pour créer un .msix / créer un package .appx fichier, utilisez l’utilitaire [MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) dans le Kit de développement Windows, comme décrit ci-dessus. Ou, à partir d’au sein de Visual Studio, cliquez sur le nœud de votre projet d’application et sélectionnez **Store**->**Créer des Packages d’application**.
 
-Un autre problème avec Visual Studio est qu’il n’a pas de prise en charge intégrée pour attacher à tous les processus enfants lancées par le débogueur.   Cela complique la logique dans le chemin de démarrage de l’application cible, qui doit être liée manuellement par Visual Studio après le lancement de débogage.
+Un autre problème avec Visual Studio est qu’il n’a pas de prise en charge intégrée pour l’attachement à n’importe quel processus enfants lancées par le débogueur.   Cela rend difficiles à déboguer logique dans le chemin de démarrage de l’application cible, qui doit être liée manuellement par Visual Studio après le lancement.
 
-Pour résoudre ce problème, utilisez un débogueur qui prend en charge les processus enfants joindre.  Notez qu’il est généralement pas possible d’attacher un débogueur (JIT) de juste-à-temps à l’application cible.  Il s’agit, car la plupart des techniques JIT implique le lancement du débogueur à la place de l’application cible, via la clé de Registre ImageFileExecutionOptions.  Cette action annule le mécanisme de detouring utilisé par PSFLauncher.exe pour injecter de FixupRuntime.dll dans l’application cible.  WinDbg, inclus dans les [Outils de débogage pour Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)et obtenues à partir du [Kit de développement Windows](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk), attacher de processus enfant de prend en charge.  Il prend également en charge directement [lancement et de débogage d’une application UWP](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
+Pour résoudre ce problème, utilisez un débogueur qui prend en charge de processus enfant joindre.  Notez qu’il n’est généralement pas possible d’attacher un débogueur (JIT) de juste-à-temps à l’application cible.  Il s’agit dans la mesure où la plupart des techniques JIT impliquent lancer le débogueur à la place de l’application cible, via la clé de Registre ImageFileExecutionOptions.  Cela va à l’encontre detouring mécanisme utilisé par PSFLauncher.exe pour injecter FixupRuntime.dll dans l’application cible.  WinDbg, inclus dans les [Outils de débogage pour Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)et obtenues à partir du [Kit de développement Windows](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk), attacher de processus enfant de prend en charge.  Il prend également en charge directement [lancement et de débogage d’une application UWP](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app).
 
-Pour déboguer le démarrage de l’application cible comme un processus enfant, démarrer ``WinDbg``.
+Pour déboguer le démarrage de l’application cible en tant qu’un processus enfant, démarrer ``WinDbg``.
 
 ```ps
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
-À la ``WinDbg`` invite, d’activer des enfants de débogage et de définir des points d’arrêt appropriés.
+À la ``WinDbg`` invite, activer le débogage des enfants et définir des points d’arrêt appropriés.
 
 ```ps
 .childdbg 1
@@ -540,7 +540,7 @@ sxe ld fixup.dll
 g
 ```
 
-(execute jusqu'à ce que la correction que DLL est chargée)
+(s’exécute jusqu'à ce que la correction que DLL est chargée)
 
 ```ps
 bp ...

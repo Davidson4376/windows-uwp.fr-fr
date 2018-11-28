@@ -6,11 +6,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f46c566712f7f0c2bca45db5a107738c4104e037
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697492"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841615"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -33,7 +33,7 @@ Les extensions d’abonnement des applications UWP prennent en charge les foncti
 
 Pour activer les achats d'extensions d’abonnement dans votre application, procédez comme suit.
 
-1. [Créer une soumission d’extension](../publish/add-on-submissions.md) pour laquelle votre abonnement dans l’espace partenaires et publier la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
+1. [Créer une soumission d’extension](../publish/add-on-submissions.md) pour votre abonnement dans l’espace partenaires et publier la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
 
     * [Type de produit](../publish/set-your-add-on-product-id.md#product-type): veillez à sélectionner **Abonnement**.
 
@@ -124,7 +124,7 @@ Nous n’offrons pas de périodes de grâce pour la facturation de l’abonnemen
 Les scénarios suivants ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 
 * La vente d'abonnements aux clients directement via le Windows Store n’est pas prise en charge pour l’instant. Les abonnements sont disponibles pour les achats in-app de produits numériques uniquement.
-* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](http://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers la période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
+* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](http://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers une période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
 * Le changement de niveau n’est actuellement pas pris en charge pour les extensions d’abonnement (par exemple, passer un client d'un abonnement de base à un abonnement premium avec plus de fonctionnalités).
 * Les codes de [vente](../publish/put-apps-and-add-ons-on-sale.md) et les [codes promotionnels](../publish/generate-promotional-codes.md) ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 

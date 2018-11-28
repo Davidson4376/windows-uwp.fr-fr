@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694928"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838461"
 ---
 # <a name="commit-an-add-on-submission"></a>Valider une soumission d’extension
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’extension nouvelle ou mise à jour (produit également connue sous le nom in-app ou PIA) à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les icônes associées). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission pour l’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
+Utilisez cette méthode dans l’API de soumission au Microsoft Store pour valider une soumission d’extension nouvelle ou mise à jour (produit également appelé in-app ou PIA) à l’espace partenaires. L’action de validation alertes partenaire centre que les données de soumission ont été téléchargées (y compris les icônes associées). En réponse, l’espace partenaires valide les modifications apportées aux données de soumission pour l’intégration et sa publication. Une fois que l’opération de validation réussit, les modifications apportées à la soumission sont affichées dans l’espace partenaires.
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une extension à l’aide de l’API de soumission au MicrosoftStore, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 

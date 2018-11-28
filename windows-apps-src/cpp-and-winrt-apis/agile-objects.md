@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720445"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843710"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
 
@@ -19,7 +19,7 @@ Dans la grande majorité des cas, une instance d’une classe Windows Runtime so
 Toutefois, vous pouvez la refuser. Vous avez peut-être une bonne raison de vouloir qu’un objet de votre type réside, par exemple, dans un thread unique cloisonné. Cela est généralement lié aux exigences de réentrance. Mais, de plus en plus, même les API d’interface utilisateur proposent des objets agiles. En règle générale, l’agilité est l’option la plus simple et la plus performante. En outre, lorsque vous implémentez une usine d’activation, elle doit être agile même si votre classe runtime correspondante ne l’est pas.
 
 > [!NOTE]
-> Windows Runtime est basé sur COM. En termes COM, une classe agile est inscrite avec `ThreadingModel` = *Both*. Pour plus d’informations sur les modèles de thread et cloisonnements de COM, voir la [compréhension et à l’aide des modèles de thread COM](https://msdn.microsoft.com/library/ms809971).
+> Windows Runtime est basé sur COM. En termes COM, une classe agile est inscrite avec `ThreadingModel` = *Both*. Pour plus d’informations sur les modèles et compartiments de thread COM, voir la [compréhension et à l’aide des modèles de thread COM](https://msdn.microsoft.com/library/ms809971).
 
 ## <a name="code-examples"></a>Exemples de code
 

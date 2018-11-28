@@ -1,6 +1,6 @@
 ---
 layout: LandingPage
-description: Cette page fournit les informations vous permettant de commencer à développer ARM64 win32 et les applications UWP.
+description: Cette page fournit les informations vous permettant de commencer à développer des applications UWP et win32 ARM64.
 title: Windows10 sur ARM
 author: msatranjr
 ms.author: misatran
@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: Windows 10 sur ARM, ARM, créer des applications win32 ARM64, génération de pilotes ARM64
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700599"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844303"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 sur ARM
 Windows 10 s’exécute sur les ordinateurs munis de processeurs ARM. Cette page fournit les informations pour en savoir plus sur la plateforme et de commencer à développer des applications. Nous vous encourageons également à fournir vos commentaires en utilisant les liens en bas de la page.
@@ -24,15 +24,15 @@ Regardez et découvrez comment Windows 10 s’exécute sur ARM.
 <ul class="cols cols3">
     <li>
         <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
-        <h3>Création d’applications de C++ Win32 ARM64</h3><p>Découvrez comment installer les outils de ARM64 pour Visual Studio. Puis nous allons vous guidons à travers les étapes de création et de compilation d’un nouveau projet ARM 64.</p>
+        <h3>Création d’applications de C++ Win32 ARM64</h3><p>Découvrez comment installer les outils de ARM64 pour Visual Studio. Puis nous allons Guide à travers les étapes de création et de compilation d’un nouveau projet 64 ARM.</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>Build 2018 Windows 10 sur ARM pour les développeurs</h3><p>En savoir plus sur Windows 10 sur appareils ARM, comment la magie de x86 émulation fonctionne et enfin l’envoi et de créer des applications pour Windows 10 sur ARM. Nous être sera montrant comment créer des applications de ARM64 pour les ordinateurs de bureau et UWP.</p>
+        <h3>Build 2018 Windows 10 sur ARM pour les développeurs</h3><p>En savoir plus sur Windows 10 sur appareils ARM, comment la magie de x86 works émulation et enfin l’envoi et de créer des applications pour Windows 10 sur ARM. Nous être sera montrant comment créer des applications de ARM64 pour les ordinateurs de bureau et UWP.</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
-        <h3>Communauté Windows quotidienne avec David Gallo</h3><p>Acquérir une connaissance approfondie de la façon dont Windows 10 s’exécute sur ARM64 et avoir une idée des applications et des expériences sur cette plateforme.</p>
+        <h3>Communauté Windows quotidienne avec David Gallo</h3><p>Acquérir une connaissance approfondie de la façon dont Windows 10 s’exécute sur ARM64 et obtenir une idée des applications et des expériences sur cette plateforme.</p>
     </li>
 </ul>
 
@@ -65,7 +65,7 @@ Découvrez la plateforme en fonction de ces ressources.
                 </a>
                 <div class="cardText">
                     <h3>Découvrez comment x86 works d’émulation</h3>
-                    <p class="x-hidden-focus">Découvrez tout sur cette fonctionnalité clé de Windows 10 sur ARM.</p>
+                    <p class="x-hidden-focus">Découvrez tout sur cette fonctionnalité clée de Windows 10 sur ARM.</p>
                 </div>
             </div>
         </div>
@@ -125,14 +125,14 @@ Démarrez la personnalisation de vos applications pour Windows 10 sur ARM et tir
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="Débogage des applications de ARM64" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="Débogage des applications ARM64" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>Débogage sur ARM</h3>
-                    <p class="x-hidden-focus">Faire fonctionner votre code effectue en toute transparence sur Windows 10 sur ARM.</p>
+                    <h3>Le débogage sur ARM</h3>
+                    <p class="x-hidden-focus">Obtenir votre code en cours d’exécution effectue en toute transparence sur Windows 10 sur ARM.</p>
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@ Démarrez la personnalisation de vos applications pour Windows 10 sur ARM et tir
 </ul>-->
 
 ## <a name="let-us-know-if-you-have-feedback"></a>Faites-nous savoir si vous avez des commentaires
-Nous lançons continuellement notre produit en tirant parti des commentaires à partir de vous et nos clients existants. Si vous avez une idée, sont bloqués sur un problème ou que vous souhaitez simplement partager l’étendue des votre expérience est, ces liens vous aidera.
+Nous lançons continuellement notre produit par des commentaires en exploitant de vous et nos clients existants. Si vous avez une idée, sont bloqués sur un problème ou que vous souhaitez simplement partager l’étendue des votre expérience est, ces liens vous aidera.
 
 <ul class="cardsM cols cols3">
 <li>
@@ -200,7 +200,7 @@ Nous lançons continuellement notre produit en tirant parti des commentaires à 
             <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Utiliser le hub de commentaires</h3>
-                <p>Nous avons manqué quelque chose? Vous disposez d’une bonne idée? Faites-nous savoir dans le Hub de commentaires.</p>
+                <p>Nous avons manqué quelque chose? Vous disposez d’une bonne idée? Faites-le nous savoir dans le Hub de commentaires.</p>
             </div>
         </a>
     </li>
@@ -209,7 +209,7 @@ Nous lançons continuellement notre produit en tirant parti des commentaires à 
             <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Signaler un bogue</h3>
-                <p>Trouvé un bogue dans notre plateforme? Envoyez-nous un e-mail avec les détails.</p>
+                <p>Trouvé un bogue dans notre plateforme? Envoyez-nous un e-mail contenant les détails.</p>
             </div>
         </a>
     </li>
@@ -217,8 +217,8 @@ Nous lançons continuellement notre produit en tirant parti des commentaires à 
         <a class="card" href="https://github.com/MicrosoftDocs/windows-uwp/tree/docs/landing/arm-docs" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
-                <h3>Envoyer vos commentaires de document</h3>
-                <p>Vous avez avez rencontré un problème avec notre documentation? Voulez-vous nous faire quelque chose de plus claire? Créer un problème sur notre référentiel GitHub de documents.</p>
+                <h3>Envoyer vos commentaires doc</h3>
+                <p>Ont rencontré un problème avec notre documentation? Voulez-vous nous faire quelque chose de plus claire? Créer un problème sur notre référentiel GitHub de documents.</p>
             </div>
         </a>
     </li>

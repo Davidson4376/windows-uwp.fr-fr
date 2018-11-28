@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: bd851b6deab0f7a2772720fac83bb2bfa3175071
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691640"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7843743"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -59,7 +59,7 @@ Les tâches en arrière-plan qui s’exécutent dans le même processus que l’
 
 **Demander l’exécution des tâches en arrière-plan:**
 
-> **Important**à compter de Windows 10, les applications ne sont plus requis pour figurer sur l’écran de verrouillage pour exécuter des tâches en arrière-plan.
+> **Important**à compter de Windows 10, les applications ne sont plus requis à figurer dans l’écran de verrouillage pour exécuter des tâches en arrière-plan.
 
 Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de tâche en arrière-plan. Cette méthode retourne [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439) si l’utilisateur a explicitement refusé des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil. Pour plus d’informations sur le choix de l’utilisateur autour de l’activité en arrière-plan et l’économiseur de batterie, voir [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Liste de vérifications relatives aux tâches en arrière-plan

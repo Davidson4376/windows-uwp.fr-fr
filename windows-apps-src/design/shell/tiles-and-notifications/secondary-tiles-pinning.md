@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, uwp, vignettes secondaires, épingler, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fda249e38ddc9126816b0ea479ec0339fc6202b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703739"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844135"
 ---
 # <a name="pin-secondary-tiles"></a>Épingler les vignettes secondaires
 
