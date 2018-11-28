@@ -14,11 +14,11 @@ dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: e6aebac45dc32933f55d917c0b1153cba952d819
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700579"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827384"
 ---
 # <a name="designing-for-mixed-reality"></a>Conception pour la réalité mixte
 
@@ -84,7 +84,7 @@ Plusieurs méthodes d’entrée inédites ont été conçues spécialement pour 
 * [Appareils Clicker](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens uniquement)
 * [Contrôleurs de mouvement](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (appareils de réalité mixte uniquement, comme illustrés ci-dessus.)
 
-Ces contrôleurs rendent l’interaction avec des objets virtuels naturelle et précise. Certaines de ces interactions sont gratuites. Par exemple, mouvement de sélection HoloLens ou en cliquant sur un déclencheur ou une clé de Windows du contrôleur de mouvement génère la réponse d’entrée que vous attendez, là encore, sans codage de votre part.
+Ces contrôleurs rendent l’interaction avec des objets virtuels naturelle et précise. Certaines de ces interactions sont gratuites. Par exemple, mouvement de sélection HoloLens ou en cliquant sur un déclencheur ou une clé de Windows du contrôleur mouvement génère la réponse d’entrée que vous attendez, là encore, sans codage de votre part.
 
 À d’autres moments, vous voudrez ajouter du code pour tirer parti des informations et entrées supplémentaires qui sont disponibles. Par exemple, les contrôleurs de mouvement peuvent servir à manipuler des objets avec un niveau précis de contrôle si vous écrivez du code qui prend en compte leur position et les pressions sur leurs boutons.
 

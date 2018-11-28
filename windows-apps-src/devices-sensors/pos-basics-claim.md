@@ -1,16 +1,16 @@
 ---
-title: APPAREIL PointOfService revendication et activer le modèle
-description: En savoir plus sur les revendication PointOfService et activer le modèle
+title: APPAREIL PointOfService revendiquer et activer le modèle
+description: En savoir plus sur la revendication PointOfService et activer le modèle
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698963"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826638"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Revendication de périphérique de point de Service et activer le modèle
 
@@ -32,9 +32,9 @@ Une fois que vous avez créé un objet d’appareil PointOfService, vous devez l
 |PosPrinter | [PosPrinter.ClaimPrinterAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) |  [ClaimedPosPrinter.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.close) | 
  | 
 
-## <a name="enable-device-for-io-operations"></a>Activer l’appareil pour les opérations d’e/s
+## <a name="enable-device-for-io-operations"></a>Activer le périphérique pour les opérations d’e/s
 
-L’action de revendication simplement établit une droits exclusifs sur l’appareil, mais ne le ne pas placer dans un état opérationnel.  Afin de pouvoir recevoir des événements ou d’effectuer des opérations de sortie, vous devez activer l’appareil à l’aide de **EnableAsync**.  À l’inverse, vous pouvez appeler **DisableAsync** pour arrêter d’écouter des événements à partir de l’appareil ou l’exécution de sortie.  Vous pouvez également utiliser **IsEnabled** pour déterminer l’état de votre appareil.
+L’action de revendication simplement établit une droits exclusifs à l’appareil, mais ne le ne pas placer dans un état opérationnel.  Afin de pouvoir recevoir des événements ou d’effectuer des opérations de sortie, vous devez activer l’appareil à l’aide de **EnableAsync**.  À l’inverse, vous pouvez appeler **DisableAsync** pour cesser d’écouter les événements à partir de l’appareil ou l’exécution de sortie.  Vous pouvez également utiliser **IsEnabled** pour déterminer l’état de votre appareil.
 
 ### <a name="apis-used-enable--disable"></a>API utilisées Active / désactiver
 
@@ -42,14 +42,14 @@ L’action de revendication simplement établit une droits exclusifs sur l’app
 |-|:-|:-|:-|
 |ClaimedBarcodeScanner | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
 |ClaimedCashDrawer | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
-|ClaimedLineDisplay | Pas de Applicable¹ | Pas de Applicable¹ | Pas de Applicable¹ | 
+|ClaimedLineDisplay | Pas Applicable¹ | Pas Applicable¹ | Pas Applicable¹ | 
 |ClaimedMagneticStripeReader | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.isenabled) |  
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
 Affichage de ligne ¹ ne nécessite pas vous permettent d’activer explicitement l’appareil pour les opérations d’e/s.  L’activation est exécutée automatiquement par APIs LineDisplay PointOfService qui effectuent des e/s.
 
-## <a name="code-sample-claim-and-enable"></a>Exemple de code: revendication et activer
+## <a name="code-sample-claim-and-enable"></a>Exemple de code: revendiquer et activer
 
 Cet exemple montre comment revendiquer un scanneur de code-barres après avoir créé avec succès un objet scanneur de code-barres.
 

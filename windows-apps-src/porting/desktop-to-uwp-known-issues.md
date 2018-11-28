@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703413"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828778"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 
@@ -91,7 +91,7 @@ La [mise à jour de Windows (version 14393.351 - KB3197954)](https://support.mic
 
 Si la mise à jour ne résout pas le problème ou si vous ne savez pas vraiment comment récupérer votre ordinateur, contactez le [Support Microsoft](https://support.microsoft.com/contactus/).
 
-Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que, dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application pour les utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
+Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application aux utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -119,7 +119,7 @@ Double-cliquez sur le certificat dans l’Explorateur de fichiers. Sélectionnez
 
 **Option3: CertUtil**
 
-Exécuter des **certutil** à partir de la ligne de commande sur le fichier PFX et copier le champ *d’objet* à partir de la sortie.
+Exécutez **certutil** à partir de la ligne de commande sur le fichier PFX et copier le champ *d’objet* à partir de la sortie.
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -145,7 +145,7 @@ Pour rechercher des fichiers qui contiennent un certificat PE incorrect, ouvrez 
 set APPXSIP_LOG=1
 ```
 
-Ensuite, à partir de l' **invite de commandes**, connectez-vous à votre application à nouveau. Exemple :
+Ensuite, à partir de l' **invite de commandes**, signer votre application à nouveau. Exemple :
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707078"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828798"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
 Certaines expériences Windows10 (par exemple: une page d'interface utilisateur tactile) doivent s'exécuter à l'intérieur d'un conteneur d'application moderne. Si vous souhaitez ajouter ces expériences, étendez votre application de bureau avec des composant de projets UWP et Windows Runtime.
 
-Dans de nombreux cas, vous pouvez appeler APIs Windows Runtime directement à partir de votre application de bureau, par conséquent, avant de consulter ce guide, consultez [améliorer pour Windows 10](desktop-to-uwp-enhance.md).
+Dans de nombreux cas, vous pouvez appeler APIs Windows Runtime directement à partir de votre application de bureau, par conséquent, avant de consulter ce guide, consultez [optimisation pour Windows 10](desktop-to-uwp-enhance.md).
 
 >[!NOTE]
 >Ce guide suppose que vous avez créé un package d’application Windows pour votre application de bureau. Si vous n’avez pas encore fait, consultez [les applications de bureau de Package](desktop-to-uwp-root.md).
@@ -40,7 +40,7 @@ Si votre solution ne contient pas un projet de création de packages, consultez 
 
 ### <a name="configure-the-desktop-application"></a>Configurer l’application de bureau
 
-Assurez-vous que votre application de bureau comporte des références aux fichiers dont vous avez besoin d’appeler APIs Windows Runtime.
+Assurez-vous que votre application de bureau comporte des références aux fichiers que vous devez appeler APIs Windows Runtime.
 
 Pour ce faire, consultez la section [tout d’abord, configurez votre projet](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) de la rubrique [améliorer votre application de bureau pour Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
 
@@ -93,7 +93,7 @@ Cette image montre une application Windows Forms qui ouvre une interface utilisa
 ![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. Qui est l’approche stable pris en charge à l’affichage des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. XAML (îles) sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous invitons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production à ce stade. Ces contrôles et les API continuera à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. Qui est l’approche pris en charge stable affichant des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces contrôles et les API continuera à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Modèle de conception
 
@@ -262,7 +262,7 @@ Pour faire de votre application une cible de partage, procédez comme suit:
 
 :one: [Ajouter une extension de cible de partage](#share-extension)
 
-: two: [Remplacer le Gestionnaire d’événements OnShareTargetActivated](#override)
+: deux: [Remplacer le Gestionnaire d’événements OnShareTargetActivated](#override)
 
 : trois: [Ajouter les extensions de bureau au projet UWP](#desktop-extensions)
 
@@ -329,7 +329,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 }
 ```
 
-Dans ce code, nous enregistrer l’image qui est partagé par l’utilisateur dans un dossier de stockage local des applications. Une version ultérieure, nous allons modifier l’application de bureau pour extraire des images à partir de ce dossier. L’application de bureau pour ce faire, car il est inclus dans le même package en tant que l’application UWP.
+Dans ce code, nous enregistrons l’image qui est partagé par l’utilisateur dans un dossier de stockage local des applications. Plus tard, nous allons modifier l’application de bureau pour extraire des images à partir de ce dossier. L’application de bureau pour ce faire, car il est inclus dans le même package en tant que l’application UWP.
 
 <a id="desktop-extensions" />
 
@@ -353,7 +353,7 @@ Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest**
 </Extensions>  
 ```
 
-Cette extension permettra l’application UWP démarrer l’application de bureau pour laquelle vous souhaitez que le partage un fichier. Dans l’exemple, nous faisons référence à l’exécutable de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
+Cette extension activera l’application UWP démarrer l’application de bureau pour laquelle vous souhaitez que le partage un fichier. Dans l’exemple, nous faisons référence au fichier exécutable de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
 
 <a id="modify-desktop" />
 
@@ -365,7 +365,7 @@ Modifier votre application de bureau pour rechercher et traiter le fichier parta
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Pour les instances de l’application de bureau qui sont déjà en cours par l’utilisateur, nous pouvons également gérer l’événement [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) et transmettre le chemin d’accès à l’emplacement du fichier. De cette façon, toutes les instances ouvertes de l’application de bureau affichera la photo partagée.
+Pour les instances de l’application de bureau qui sont déjà en cours par l’utilisateur, nous pouvons également gérer l’événement [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) et transmettre le chemin d’accès à l’emplacement du fichier. De cette façon toutes les instances ouvertes de l’application de bureau affiche la photo partagée.
 
 ```csharp
 ...

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699681"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827437"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
@@ -76,7 +76,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
-Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. Sauf si une distinction est établie dans une API ou requis par certaines WindowsUI spécifique à l’appareil, nous appelons simplement les deux interactions avec le mouvement panoramique.
+Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. Sauf si une distinction est établie dans une API ou requis par certaines WindowsUI propre à l’appareil, nous appelons simplement les deux interactions avec le mouvement panoramique.
 
 > <div id="main">
 > <strong>Windows10 Fall Creators Update - Changement de comportement</strong>
@@ -116,7 +116,7 @@ Il existe deuxmodes d’affichage du mouvement panoramique qui dépendent du pé
 -   Des indicateurs de mouvement panoramique pour l’interaction tactile.
 -   Des barres de défilement pour d’autres périphériques d’entrée comme la souris, le pavé tactile, le clavier et le stylet.
 
-**Remarque**indicateurs de mouvement panoramique sont uniquement visibles quand le contact est effectué dans la région. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
+**Remarque**indicateurs de mouvement panoramique ne sont visibles que lorsque le contact est effectué dans la région. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
 
  
 

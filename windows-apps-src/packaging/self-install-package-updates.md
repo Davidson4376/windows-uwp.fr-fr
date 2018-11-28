@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720175"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826355"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Télécharger et installer des mises à jour de package sur le Store
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>Mises à jour de packages obligatoires
 
-Lorsque vous créez une soumission de package dans l’espace partenaires pour une application qui cible Windows 10, version 1607 ou ultérieure, vous pouvez [Marquer le package comme obligatoire](../publish/upload-app-packages.md#mandatory-update) la date et l’heure auxquelles il devenue obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
+Lorsque vous créez une soumission de package dans l’espace partenaires pour une application qui cible Windows 10, version 1607 ou ultérieure, vous pouvez [Marquer le package comme obligatoire](../publish/upload-app-packages.md#mandatory-update) et la date et l’heure auxquelles il devient obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
 
 > [!NOTE]
 > L’état obligatoire d’une mise à jour de package n’est pas appliqué par Microsoft et le système d’exploitation ne fournit pas d’interface utilisateur pour indiquer aux utilisateurs qu’une mise à jour d’application obligatoire doit être installée. Les développeurs doivent utiliser le paramètre obligatoire pour appliquer des mises à jour d’application obligatoires dans leur propre code.  
 
 Pour marquer une soumission de package comme obligatoire:
 
-1. Connectez-vous à [L’espace partenaires](https://partner.microsoft.com/dashboard) et accédez à la page de vue d’ensemble de votre application.
+1. Se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) et accédez à la page Vue d’ensemble de votre application.
 2. Cliquez sur le nom de la soumission contenant la mise à jour de package que vous voulez rendre obligatoire.
 3. Accédez à la page **Packages** de la soumission. Au bas de cette page, sélectionnez **Rendre obligatoire cette mise à jour**, puis choisissez le jour et l’heure auxquels la mise à jour du package devient obligatoire. Cette option s’applique à tous les packages UWP de la soumission.
 

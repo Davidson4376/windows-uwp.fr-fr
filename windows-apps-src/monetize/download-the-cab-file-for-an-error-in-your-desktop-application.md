@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, API d'analyse du MicrosoftStore, télécharger le fichier CAB, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3535f18b8127ea18bca234cdcc9b695e89ebfd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712523"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826046"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>Télécharger le fichier CAB pour une erreur dans votre application de bureau
 

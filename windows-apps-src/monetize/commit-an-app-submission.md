@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697362"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826146"
 ---
 # <a name="commit-an-app-submission"></a>Valider une soumission d’application
 

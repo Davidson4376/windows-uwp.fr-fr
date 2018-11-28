@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694225"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829874"
 ---
 # <a name="xaml-intrinsic-data-types"></a>Types de données intrinsèques XAML
 

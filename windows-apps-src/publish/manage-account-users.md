@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp, les utilisateurs de comptes, gérer les utilisateurs, azure ad, multiutilisateur, plusieurs utilisateurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 282b1eb087fa081b621437206f338ed4b6d3569b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696218"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826585"
 ---
 # <a name="manage-account-users"></a>Gérer des utilisateurs de compte
 
 Vous pouvez utiliser Azure Active Directory pour ajouter et gérer des utilisateurs supplémentaires dans votre compte [Espace partenaires](https://partner.microsoft.com/dashboard) . Vous pouvez définir le rôle ou les autorisations personnalisées dont doit disposer chaque utilisateur. Vous pouvez également attribuer un rôle à un groupe d’utilisateurs ou à une application Azure AD.
 
-Pour ajouter et gérer des utilisateurs de compte, vous devez d’abord associer votre compte espace partenaires avec Azure Active Directory de votre organisation. 
+Pour ajouter et gérer les utilisateurs de compte, vous devez tout d’abord associer votre compte espace partenaires à Azure Active Directory de votre organisation. 
 
 Cette section décrit la procédure à suivre pour effectuer les opérations suivantes:
 
@@ -26,4 +26,4 @@ Cette section décrit la procédure à suivre pour effectuer les opérations sui
 -   [Définir des rôles et des autorisations personnalisées pour les utilisateurs de compte](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> Ces rubriques sont spécifiques au programme de développeurs d’applications Windows dans l’espace partenaires, mais association d’un client et la gestion des utilisateurs fonctionnent de la même façon pour les comptes dans le programme de développement matériel Windows (pour plus d’informations, consultez [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) ) ou dans le Programme d’Application de bureau Windows (pour plus d’informations, consultez [Programme d’Application de bureau de Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) ).
+> Ces rubriques sont spécifiques au programme de développeurs d’applications Windows dans l’espace partenaires, mais association d’un client et la gestion des utilisateurs fonctionnent de la même façon pour les comptes dans le programme de développement matériel Windows (pour plus d’informations, consultez [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) ) ou dans le Programme d’Application de bureau Windows (pour plus d’informations, consultez [Programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) ).
