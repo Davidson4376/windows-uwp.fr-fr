@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7721845"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7994068"
 ---
 ## <a name="support-and-feedback"></a>Support et commentaires
 
 ### <a name="find-answers-to-your-questions"></a>Trouvez des réponses à vos questions
 
-Des questions? Contactez-nous sur [Stack Overflow](https://aka.ms/pos-stackoverflow) ou le [Forum de MSDN UWP](https://aka.ms/pos-msdn-uwpforum)
+Des questions? Contactez-nous sur [Stack Overflow](https://aka.ms/pos-stackoverflow) ou [MSDN UWP Forum](https://aka.ms/pos-msdn-uwpforum)
 
 Nous aider à localiser vos questions:
 - Ajoutez la balise [pointofservice](https://aka.ms/pos-stackoverflow) à votre question sur Stack Overflow. 

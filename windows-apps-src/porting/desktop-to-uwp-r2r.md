@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, l’image native du compilateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 3071b843a1605d765ab5b087d5e1bfb96a220218
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7844868"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7970183"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Optimisez vos applications de bureau .NET avec les images natives
 

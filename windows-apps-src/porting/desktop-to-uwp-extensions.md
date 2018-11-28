@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ae09190b916fdaae68a67a2b9c11caa20d30e2
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7850668"
+ms.locfileid: "7965167"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 

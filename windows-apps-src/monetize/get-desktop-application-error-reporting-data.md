@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: d7a017f2b9530a88b76a9d374b92e9cfd8890b51
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7847941"
+ms.locfileid: "7965386"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Obtenir des données de rapport d'erreur pour votre application de bureau
 

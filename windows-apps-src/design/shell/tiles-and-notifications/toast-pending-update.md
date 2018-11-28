@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, toast, en attente de mise à jour, pendingupdate, interactivité à plusieurs étapes, interactions à plusieurs étapes
 ms.localizationpriority: medium
 ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7839284"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7965177"
 ---
 # <a name="toast-with-pending-update-activation"></a>Toast avec activation des mises à jour en attente
 
