@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx11
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c165d47beea8ee0e31a3213bdd0dbf0c2bc3d7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692640"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826870"
 ---
 # <a name="directx-11-porting-faq"></a>Portage DirectX11: FAQ
 
@@ -121,7 +121,7 @@ Il n’existe pas de format de remplacement officiel pour les fichiers .x, mais 
 ## <a name="how-do-i-debug-my-shaders"></a>Comment déboguer mes nuanceurs ?
 
 
-Studio2015 Visual Microsoft inclut des outils de diagnostic pour les graphiques DirectX. Voir [Débogage des graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+Microsoft Visual Studio2015 inclut des outils de diagnostic pour les graphiques DirectX. Voir [Débogage des graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Quel est l’équivalent Direct3D 11 de la fonction *x* ?
 

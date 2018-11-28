@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, options de jeu, bandes-annonces, descriptions avancées, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 974bbc4c864edb9450f9ba677c60349b5e1f8ece
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712636"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832209"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Exemple de code Java: soumission d’applications avec options de jeu et bandes-annonces
 

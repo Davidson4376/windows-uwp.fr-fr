@@ -11,11 +11,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8278b126ed209148a2e44ea464e04073dcefc829
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698228"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831153"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
@@ -26,7 +26,7 @@ Révéler qu'est un effet visuel qui met en évidence les éléments interactifs
 > **API importantes**: [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet révéler attire l’attention sur les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
+L’effet révéler attire l’attention sur les éléments interactifs en révélant conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
 
 ![Visuel de l’effet Révéler](images/Nav_Reveal_Animation.gif)
 

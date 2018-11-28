@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 38318e7f97c8eba7d0137a865f5025fb9a77fa55
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704746"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829974"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Présentation du développement d’applications Windows sécurisées
 
@@ -286,7 +286,7 @@ Lorsque les données arrivent sur un appareil, nous les désignons sous le terme
 
 Par le passé, Windows n’a jamais présenté de définition d’une application. Ce terme désignait le plus souvent un exécutable (.exe), et ceci n’englobait jamais l’installation, le stockage d’état, la durée d’exécution, le contrôle de version, l’intégration du système d’exploitation et la communication entre les applications. Le modèle de plateforme Windows universelle définit un modèle d’application qui couvre l’installation, l’environnement d’exécution, la gestion des ressources, les mises à jour, le modèle de données et la désinstallation.
 
-Les applications de Windows 10 s’exécutent dans un conteneur, ce qui signifie qu’elles disposent de privilèges limités par défaut (des privilèges supplémentaires peuvent être demandés et accordés par l’utilisateur). Par exemple, si une application souhaite accéder à des fichiers du système, il convient d’utiliser un sélecteur de fichiers à partir de l’espace de noms [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) pour permettre à l’utilisateur de sélectionner un fichier (aucun accès direct aux fichiers n’est autorisé). De même, si une application a besoin d’accéder aux données d’emplacement de l’utilisateur, il convient d’activer et de déclarer la fonctionnalité de localisation des appareils, en informant l’utilisateur lors du téléchargement que cette application demandera l’accès à l’emplacement de l’utilisateur. En outre, lorsque l’application doit accéder pour la première fois à l’emplacement de l’utilisateur, elle présente une invite de consentement supplémentaire à l’utilisateur pour demander l’autorisation d’accéder à ces données.
+Les applications Windows 10 s’exécuter dans un conteneur, ce qui signifie qu’elles disposent de privilèges limités par défaut (des privilèges supplémentaires peuvent être demandés et accordés par l’utilisateur). Par exemple, si une application souhaite accéder à des fichiers du système, il convient d’utiliser un sélecteur de fichiers à partir de l’espace de noms [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) pour permettre à l’utilisateur de sélectionner un fichier (aucun accès direct aux fichiers n’est autorisé). De même, si une application a besoin d’accéder aux données d’emplacement de l’utilisateur, il convient d’activer et de déclarer la fonctionnalité de localisation des appareils, en informant l’utilisateur lors du téléchargement que cette application demandera l’accès à l’emplacement de l’utilisateur. En outre, lorsque l’application doit accéder pour la première fois à l’emplacement de l’utilisateur, elle présente une invite de consentement supplémentaire à l’utilisateur pour demander l’autorisation d’accéder à ces données.
 
 Notez que ce modèle d’application agit à la façon d’une « prison » pour les applications (empêchant ces dernières d’atteindre l’extérieur), mais non à la manière d’un « château » inaccessible depuis l’extérieur (les applications avec des privilèges administratifs peuvent bien entendu accéder à l’intérieur). La fonctionnalité Device Guard disponible dans Windows 10 contribue à restreindre davantage cet accès en permettant aux organisations/services informatiques de spécifier les applications (Win32) qui sont autorisées à s’exécuter.
 

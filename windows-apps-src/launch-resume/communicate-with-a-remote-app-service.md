@@ -7,11 +7,11 @@ ms.topic: article
 keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome, tâche en arrière-plan, service d’application
 ms.localizationpriority: medium
 ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709061"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831880"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Communiquer avec un service d’application distant
 

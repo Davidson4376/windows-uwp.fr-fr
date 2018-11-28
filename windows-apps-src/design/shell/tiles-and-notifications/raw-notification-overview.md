@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad00090fdfc3ce7be34ef6271d16e76541b584bb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703566"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844358"
 ---
 # <a name="raw-notification-overview"></a>Vue d’ensemble des notifications brutes
 
@@ -113,7 +113,7 @@ Pour chaque application, une seule tâche en arrière-plan peut être exécutée
 ## <a name="other-resources"></a>Autres ressources
 
 
-Pour en savoir plus en téléchargeant l' [exemple de notifications brutes](http://go.microsoft.com/fwlink/p/?linkid=241553) pour Windows8.1 et l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?LinkId=231476) pour Windows8.1 et réutilisez son code source dans votre application Windows 10.
+Vous trouverez davantage en téléchargeant l' [exemple de notifications brutes](http://go.microsoft.com/fwlink/p/?linkid=241553) pour Windows8.1 et l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?LinkId=231476) pour Windows8.1 et réutilisez son code source dans votre application Windows 10.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

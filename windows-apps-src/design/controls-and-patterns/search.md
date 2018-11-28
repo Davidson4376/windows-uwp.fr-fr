@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: caf0e8e63716f6ba140ef9346257687f0e7293bb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699449"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831269"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 
@@ -37,7 +37,7 @@ L’option de recherche est l’un des moyens les plus courants pour rechercher 
 
  
 
-**Formulation de requêtes/suggestion automatique de la requête.** Requête formulation de requêtes remplace le contenu d’entrée nulle dès que l’utilisateur commence à entrer. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
+**Interroger la formulation de requêtes/suggestion automatique.** Requête formulation de requêtes remplace le contenu d’entrée nulle dès que l’utilisateur commence à entrer. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
 
 ![Exemple de suggestion automatique de requête/formulation](images/search-autosuggest-example.png)
 
@@ -60,7 +60,7 @@ Voici quelques exemples d’étendues de recherche courantes:
 
 **Web.** Rechercher dans un index web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
-**Mon contenu.** Recherche sur l’ou les périphériques, cloud, des graphiques sociaux et bien plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
+**Mon contenu.** Recherche entre les périphériques, cloud, des graphiques sociaux et bien plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
 
 Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Par exemple :
 

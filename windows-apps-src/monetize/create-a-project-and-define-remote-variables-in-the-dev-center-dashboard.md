@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: acfd654f02cb7fb727d35271175e59966e2abdc4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699975"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837334"
 ---
 # <a name="create-an-experiment-project-in-partner-center"></a>Créez un projet d’expérience dans l’Espace partenaires
 
-Pour vous familiariser avec l’expérimentation, créez un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation pour votre application dans l’espace partenaires et définir des variables distantes que votre application peut accéder.
+Pour vous familiariser avec expérimentation, créez un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation pour votre application dans l’espace partenaires et définir les variables distantes auxquelles votre application peut accéder.
 
 Les instructions suivantes décrivent les étapes de base pour créer un projet. Pour découvrir une procédure pas à pas détaillée illustrant le processus de création d’un projet, puis exécuter une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 

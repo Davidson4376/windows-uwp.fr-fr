@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706004"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831614"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 

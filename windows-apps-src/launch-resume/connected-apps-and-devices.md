@@ -3,15 +3,15 @@ title: Applications et appareils connectés (projet «Rome»)
 description: Cette section explique comment utiliser la plateforme Systèmes distants pour identifier les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
 ms.date: 06/08/2018
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
+keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699165"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830153"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet «Rome»)
 

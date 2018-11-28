@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: d9665ba3af10091ddc652198d5340e00456a65a7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711099"
+ms.locfileid: "7830233"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants WindowsRuntime du service Broker pour les applications installées hors UWP
 

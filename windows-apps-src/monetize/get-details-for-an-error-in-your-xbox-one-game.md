@@ -1,20 +1,20 @@
 ---
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les informations concernant une erreur spécifique de votre Xbox One jeu.
-title: Obtenir les détails d’une erreur dans votre console Xbox One jeu
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les informations concernant une erreur spécifique pour votre console Xbox One jeu.
+title: Obtenir des détails sur une erreur dans votre console Xbox One jeu
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712603"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827773"
 ---
-# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>Obtenir les détails d’une erreur dans votre console Xbox One jeu
+# <a name="get-details-for-an-error-in-your-xbox-one-game"></a>Obtenir des détails sur une erreur dans votre console Xbox One jeu
 
-Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les informations concernant une erreur spécifique de votre Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord du centre de partenaires Analytique XDP. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30derniers jours.
+Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir les informations concernant une erreur spécifique pour votre console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord XDP Analytique l’espace partenaires. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30derniers jours.
 
 Vous pouvez utiliser cette méthode, vous devez tout d’abord utiliser la méthode [get pour votre jeu Xbox One, les données de rapport d’erreurs](get-error-reporting-data-for-your-xbox-one-game.md) pour récupérer l’ID de l’erreur dont vous souhaitez obtenir des informations détaillées.
 
@@ -25,7 +25,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Récupérez l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir cet ID, utilisez la méthode [d’obtenir les données de rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md) et utilisez la valeur de **failureHash** dans le corps de réponse de cette méthode.
+* Récupérez l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir cet ID, utilisez la méthode [d’obtenir les données de rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md) et utilisez la valeur **failureHash** dans le corps de réponse de cette méthode.
 
 ## <a name="request"></a>Requête
 
@@ -49,7 +49,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | L’ID de produit du jeu Xbox One pour lequel vous récupérez les détails de l’erreur. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité à partir du rapport analytique de partenaires Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
-| failureHash | chaîne | ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir la valeur de l’erreur qui que vous intéressez, utilisez la méthode [d’obtenir les données de rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md) et utilisez la valeur de **failureHash** dans le corps de réponse de cette méthode. |  Oui  |
+| failureHash | chaîne | ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir la valeur de l’erreur qui que vous intéresse, utilisez la méthode [obtenir les données de rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md) et utilisez la valeur **failureHash** dans le corps de réponse de cette méthode. |  Oui  |
 | startDate | date | Date de début des données à récupérer concernant l’erreur. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
 | endDate | date | Date de fin des données à récupérer concernant l’erreur. La valeur par défaut est la date actuelle |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
@@ -101,7 +101,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | packageVersion  | chaîne  | La version du package de jeu qui est associé à cette erreur.    |
 | deviceModel           | chaîne  | L’une des chaînes suivantes qui spécifie la console Xbox One sur lequel le jeu a été en cours d’exécution lorsque l’erreur s’est produite.<p/><ul><li><strong>Microsoft-Xbox une</strong></li><li><strong>Microsoft-Xbox One S</strong></li><li><strong>Microsoft-Xbox One X</strong></li></ul>  |
 | osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Il s’agit toujours de la valeur de **Windows 10**.    |
-| osRelease       | chaîne  |  L’une des chaînes suivantes qui spécifie la version de système d’exploitation de Windows 10 ou l’anneau de l’évaluation (comme une sous-population au sein de la version du système d’exploitation) sur lequel l’erreur s’est produite.<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
+| osRelease       | chaîne  |  L’une des chaînes suivantes qui spécifie la version du système d’exploitation de Windows 10 ou l’anneau évaluation (comme une sous-population au sein de la version du système d’exploitation) sur lequel l’erreur s’est produite.<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
 | deviceType      | chaîne  | Type d’appareil sur lequel l’erreur s’est produite. Il s’agit toujours de la valeur de **Console**.     |
 | cabDownloadable           | Booléen  | Indique si le fichier CAB est téléchargeable par cet utilisateur.   |
 

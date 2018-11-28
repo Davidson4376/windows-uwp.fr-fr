@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e1d955ce7e70f2f2a454823020df38db66e47d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704460"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827294"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>Activer ou désactiver le décodeur logiciel qui est fourni avec Windows
 Dans Windows10, version1803, le décodeur logiciel est installé et activé par défaut.  Vous pouvez désactiver le logiciel de décodage qui est fourni avec Windows si vous ne souhaitez pas utiliser le scanneur de code-barres à caméra ou que vous avez acheté un décoder tiers qui fonctionne avec les API Windows.Devices.PointOfService.BarcodeScanner et ne souhaitez pas utiliser les deux.

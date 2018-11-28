@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fe876b362f09eaca68d84516d413d3f458edf0a6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706758"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831644"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Découvrir et sélectionner des capacités de caméra avec des profils de caméra
 

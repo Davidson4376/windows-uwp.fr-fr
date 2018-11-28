@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, tâche en arrière-plan, le service d’application
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 97dd249165877591743892a136d51e0969dd902a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709120"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7841864"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>Porter une tâche en arrière-plan hors processus vers une tâche en arrière-plan in-process
 

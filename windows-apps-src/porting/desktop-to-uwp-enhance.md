@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696180"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837133"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Améliorer votre application de bureau pour Windows10
 
-Vous pouvez utiliser APIs Windows Runtime pour ajouter des expériences modernes qui se déclenchent pour les utilisateurs de Windows 10.
+Vous pouvez utiliser Windows Runtime APIs pour ajouter des expériences modernes qui se déclenchent pour les utilisateurs de Windows 10.
 
 D'abord, configurez votre projet. Ensuite, ajoutez des expériences Windows10. Vous pouvez créer séparément pour les utilisateurs de Windows10 ou distribuer exactement les mêmes fichiers binaires à tous les utilisateurs, quelle que soit la version de Windows utilisée.
 
@@ -23,7 +23,7 @@ D'abord, configurez votre projet. Ensuite, ajoutez des expériences Windows10. V
 
 Vous devrez apporter quelques modifications à votre projet pour utiliser les API UWP.
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Modifier un projet .NET pour utiliser APIs Windows Runtime
+### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Modifier un projet .NET pour utiliser Windows Runtime APIs
 
 Ouvrez la boîte de dialogue **Gestionnaire de références**, choisissez le bouton **Parcourir**, puis sélectionnez **Tous les fichiers**.
 
@@ -43,9 +43,9 @@ Dans la fenêtre **Propriétés**, réglez le champ **Copie locale** de chaque f
 
 ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 
-### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>Modifier un projet C++ pour utiliser APIs Windows Runtime
+### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>Modifier un projet C++ pour utiliser Windows Runtime APIs
 
-Utilisez [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) pour consommer APIs Windows Runtime. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne.
+Utilisation [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) pour consommer APIs Windows Runtime. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne.
 
 Pour configurer votre projet pour C++ / WinRT, voir [Modifier un projet d’application de bureau Windows pour ajouter C++ / WinRT support](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
@@ -55,7 +55,7 @@ Vous êtes maintenant prêt à ajouter des expériences modernes qui se déclenc
 
 :white_check_mark: **D’abord, choisissez les expériences que vous voulez ajouter**
 
-Vous avez le choix parmi une grande variété. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide des API de monétisation ou attirer l’attention vers votre application lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image un autre utilisateur a validé.
+Vous avez le choix parmi une grande variété. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide des API de monétisation ou attirer l’attention vers votre application lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image qui un autre utilisateur a validé.
 
 ![Toast](images/desktop-to-uwp/toast.png)
 

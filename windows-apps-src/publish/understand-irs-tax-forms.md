@@ -7,11 +7,11 @@ keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt,
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696167"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854101"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -31,16 +31,16 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 
 Les déclarations fiscales vous sera envoyées à partir de l’adresse suivante:
 
-**Citoyens des États-Unis:**
+**Citoyens aux États-Unis:**
 <table>
-<tr><th>Groupe de l’entreprise</th><th>Entité juridique</th><th>Adresse</th></tr>
+<tr><th>Groupe Professionnel</th><th>Entité juridique</th><th>Adresse</th></tr>
 <tr><td>Windows, Office, Azure</td><td>MicrosoftCorporation</td><td>One Microsoft Way<br>Redmond WA 98052 États-Unis</td></tr>
 <tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 États-Unis</td></tr>
 <table> 
 
-**Non-US citoyens:**
+**Citoyens hors des États-Unis:**
 <table>
-<tr><th>Groupe de l’entreprise</th><th>Entité juridique</th><th>Adresse</th></tr>
+<tr><th>Groupe Professionnel</th><th>Entité juridique</th><th>Adresse</th></tr>
 <tr><td>Windows, Office, Azure</td><td>Microsoft Irlande Operations Limited (paiement a été effectué par Microsoft Corporation via Microsoft Irlande agissant comme intermédiaire qualifié pour Microsoft Corporation)</td><td>Un emplacement de Microsoft<br>Sud&nbsp;comté&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
 <tr><td>Publicité *</td><td>Microsoft Irlande Operations Limited (paiement a été effectué par Microsoft Online Inc. via Microsoft Irlande agissant en tant qu’agent de paiement pour Microsoft Online Inc.)</td><td>Un emplacement de Microsoft<br>Sud&nbsp;comté&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
 <tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 États-Unis</td></tr>
@@ -56,7 +56,7 @@ Les déclarations fiscales vous sera envoyées à partir de l’adresse suivante
   </tr>
   <tr> 
      <td valign="top">J’ai réalisé <b>plus de 200ventes d’applications</b> pour un montant total d’achat <b>supérieur à 20000dollars USD</b> durant l’année fiscale applicable (<b>sans</b> prendre en compte les ventes réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10).</td>
-    <td valign="top"><b>1099-K</b>:<br>Déclarant: Microsoft Corporation<br>NUMÉRO EIN: *** 4442<br><br><b>Important</b>: formulaire 1099-K contient des quantités <b>d’achat bruts</b> , pas les paiements que vous.</td>
+    <td valign="top"><b>1099-K</b>:<br>Déclarant: Microsoft Corporation<br>NUMÉRO EIN: *** 4442<br><br><b>Important</b>: formulaire 1099-K contienne des quantités <b>d’achat bruts</b> , pas les paiements que vous.</td>
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>au moins 10dollars en paiement</b> de (i) ventes d’applications réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10 ou de (ii) ventes sur le Marché Minecraft.<br>

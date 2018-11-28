@@ -9,11 +9,11 @@ pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702367"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839727"
 ---
 # <a name="page-transitions"></a>Transitions de page
 
@@ -56,9 +56,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>Glissement horizontal
 
-Glissement horizontal permet d’afficher que les pages sœur s’affichent en regard de l’autre. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) utilise automatiquement cette animation de navigation supérieure, mais si vous créez votre propre expérience de navigation horizontale, vous pouvez implémenter diapositive horizontal avec SlideNavigationTransitionInfo.
+Utilisez diapositive horizontal pour montrer que les pages sœur s’affichent en regard des autres. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) utilise automatiquement cette animation de navigation supérieure, mais si vous créez votre propre expérience de navigation horizontale, vous pouvez implémenter diapositive horizontal avec SlideNavigationTransitionInfo.
 
-Retranscrire est que l’utilisateur navigue entre les pages qui se trouvent en regard de l’autre. 
+Retranscrire est que l’utilisateur navigue entre les pages qui se trouvent en regard des autres. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage

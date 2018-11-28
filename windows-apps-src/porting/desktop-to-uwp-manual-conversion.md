@@ -1,7 +1,7 @@
 ---
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: Empaqueter une application manuellement (pont du bureau)
+title: Créer un package une application manuellement (pont du bureau)
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows10, uwp
@@ -9,11 +9,11 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4b9b5f08be695d803e9254e5801ac63b2889e1c9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697202"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836956"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -88,7 +88,7 @@ Voici un exemple d’élément **identité** intégrant un emplacement réservé
 
 ### <a name="properties"></a>Propriétés
 
-L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows Store, pour les applications qui sont chargées sur le Store.
+L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows Store, pour les applications qui sont chargées sur le Windows Store.
 
 ```XML
 <Properties>
@@ -131,7 +131,7 @@ Remplissez ce modèle avec les informations décrivant votre application.
 
 ### <a name="application-element"></a>Élément d’application
 
-Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément de l’Application est toujours ``Windows.FullTrustApplication``.
+Pour les applications de bureau que vous créez un package pour, le ``EntryPoint`` attribut de l’élément de l’Application est toujours ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -198,14 +198,14 @@ Voir [Créer un package d’application avec l’outil MakeAppx.exe](https://doc
 
 ## <a name="run-the-packaged-app"></a>Exécuter l’application empaquetée
 
-Vous pouvez exécuter votre application de la tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
+Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez les fichiers existants dans votre package par les nouveaux, augmentez le nombre de versions dans AppxManifest.xml, puis exécutez à nouveau la commande ci-dessus.
 
 > [!NOTE]
-> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et que vous installez votre application empaquetée à n’importe quel lecteur doit être formaté au format NTFS.
+> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et tout lecteur sur lequel vous installez votre application empaquetée à doit être formaté au format NTFS.
 
 ## <a name="next-steps"></a>Étapes suivantes
 

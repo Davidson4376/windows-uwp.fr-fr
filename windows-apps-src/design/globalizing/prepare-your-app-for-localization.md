@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720135"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845414"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -52,7 +52,7 @@ En bref, factorisez vos chaînes en morceaux fonctionnant dans tous les contexte
 
 Considérez la chaîne suivante: «le {0} pas pu être synchronisé.»
 
-Divers mots pourraient remplacer {0}, par exemple «rendez-vous», «tâche» ou «document». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle («Der», «Die», «Das») doivent correspondre au mot paramétré:
+Divers mots pourraient remplacer {0}, par exemple, «rendez-vous», «tâche» ou «document». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle («Der», «Die», «Das») doivent correspondre au mot paramétré:
 
 | Anglais                                    | Allemand                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -96,7 +96,7 @@ Ne supposez pas que toutes les langues expriment les paramètres dans le même o
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Assurez-vous que le traducteur connaisse l’intention de chacun des paramètres afin qu’ils peuvent inverser l’ordre des éléments de format dans la chaîne de format (par exemple, «{1} {0}») en fonction de la langue cible.
+La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Vous assurer que le traducteur connaisse l’intention de chacun des paramètres afin qu’ils peuvent inverser l’ordre des éléments dans la chaîne de format format (par exemple, «{1} {0}») tel qu’approprié pour la langue cible.
 
 ## <a name="dont-over-localize"></a>Ne sur-localisez pas.
 

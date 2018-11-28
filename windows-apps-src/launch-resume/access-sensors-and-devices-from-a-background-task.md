@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718833"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828001"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder à des capteurs et des appareils depuis une tâche en arrière-plan
 
@@ -83,7 +83,7 @@ Pour utiliser [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/
 
 **Important**  prendre en compte des points importants suivants lors de l’utilisation de la [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337):
 
--   La possibilité de déclencher par programme les tâches en arrière-plan qui utilisent la [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) a été introduite dans Windows8.1 et Windows Phone 8.1.
+-   La possibilité de déclencher des tâches en arrière-plan qui utilisent la [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) par programme a été introduite dans Windows8.1 et Windows Phone 8.1.
 
 -   Certaines stratégies sont appliquées par Windows pour s’assurer de l’accord de l’utilisateur lors de la mise à jour des appareils périphériques sur le PC.
 

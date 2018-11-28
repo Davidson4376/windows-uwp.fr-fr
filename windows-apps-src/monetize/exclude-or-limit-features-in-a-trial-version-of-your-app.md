@@ -7,18 +7,18 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d7ada6567db95609203f8f163b78631e141b4f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712463"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826754"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclure ou limiter des fonctionnalités de la version d’évaluation
 
 Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
 > [!IMPORTANT]
-> Cet article explique comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour activer la fonctionnalité de version d'essai. Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. L’espace de noms **Windows.Services.Store** prend en charge les types de module complémentaire plus récents, tels que les extensions consommables gérées Store et des abonnements et est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations sur la mise en place de la fonctionnalité de version d'évaluation à l'aide de l'espace de noms **Windows.Services.Store**, consultez [cet article](implement-a-trial-version-of-your-app.md).
+> Cet article explique comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour activer la fonctionnalité de version d'essai. Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. L’espace de noms **Windows.Services.Store** prend en charge les types de module complémentaire plus récents, tels que les extensions consommables gérés par le Windows Store et les abonnements et est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par l’espace partenaires et le Windows Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations sur la mise en place de la fonctionnalité de version d'évaluation à l'aide de l'espace de noms **Windows.Services.Store**, consultez [cet article](implement-a-trial-version-of-your-app.md).
 
 ## <a name="prerequisites"></a>Prérequis
 

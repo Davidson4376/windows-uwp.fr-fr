@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702663"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832255"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame2D
 
@@ -26,7 +26,7 @@ MonoGame est une infrastructure légère de développement de jeux. Ce didactici
 
 ## <a name="prerequisites"></a>Éléments prérequis
 +   Windows10 et Microsoft Visual Studio2017.  [Cliquez ici pour savoir comment prendre en main VisualStudio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ L’infrastructure de développement de bureau .NET. Si vous n’avez pas encore cela installé, vous pouvez l’obtenir en réexécuter le programme d’installation de Visual Studio et en modifiant votre installation de Visual Studio 2017.
++ L’infrastructure de développement de bureau .NET. Si vous n’avez pas encore cela installé, vous pouvez l’obtenir en ré-exécutant le programme d’installation de Visual Studio et en modifiant votre installation de Visual Studio 2017.
 +   Connaissances élémentaires de C# ou d'un langage de programmation similaire orienté objet. [Cliquez ici pour savoir comment commencer en C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 +   La connaissance de concepts informatiques élémentaires tels que les classes, les méthodes ou les variables sera un plus.
 
@@ -482,9 +482,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie qu’à la fois le sprites Brocoli et dino seront dessinées sur le sprite herbe existant, afin qu’ils puissent jamais être masqués herbe, quelle que soit leur position.
+Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie que les sprites dino et le Brocoli seront affichées sur le sprite herbe existant, afin qu’ils puissent jamais être masqués herbe, quelle que soit leur position.
 
-Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure d’effectuer votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer à une vitesse croissante.
+Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure de modifier votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer à une vitesse croissante.
 
 ![Obstacle et avatar du joueur](images/monogame-tutorial-2.png)
 
@@ -600,7 +600,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme fonctionne en testant pour voir s’il existe un écart entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
+Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme fonctionne cherche à voir s’il existe un espace entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
 
 ### <a name="2-load-new-textures"></a>2. Chargement de nouvelles textures
 
@@ -648,7 +648,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 Cela appelle la méthode **RectangleCollision** que nous avons créée dans **SpriteClass**et marque le jeu comme étant terminé si elle retourne true.
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. Ajout de l’entrée utilisateur permettant de réinitialiser le jeu
-Ajoutez ce code à la méthode **KeyboardHandler** , pour permettre à l’utilisateur à réinitialiser le jeu si elles appuyez sur ENTRÉE:
+Ajoutez ce code à la méthode **KeyboardHandler** , pour permettre à l’utilisateur à réinitialiser le jeu sur ENTRÉE:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

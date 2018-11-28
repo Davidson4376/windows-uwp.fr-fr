@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, glsl, hlsl, opengl, directx, nuanceurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691953"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826890"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Informations de référence sur le passage de GLSL à HLSL
 
@@ -94,7 +94,7 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 <td align="left">Matrices row-major (par défaut)</td>
 <td align="left">Matrices column-major (par défaut)
 <div class="alert">
-<strong>Remarque</strong>  le modificateur de type <strong>row_major</strong> permet de modifier la disposition pour une seule variable. Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Syntaxe des variables</a>. Vous pouvez aussi spécifier un indicateur de compilateur ou une instruction pragma pour modifier la configuration globale par défaut.
+<strong>Remarque</strong>  utilisez le modificateur de type <strong>row_major</strong> pour modifier la disposition pour une seule variable. Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Syntaxe des variables</a>. Vous pouvez aussi spécifier un indicateur de compilateur ou une instruction pragma pour modifier la configuration globale par défaut.
 </div>
 <div>
  

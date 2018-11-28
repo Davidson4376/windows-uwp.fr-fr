@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b6ab15d94267baa0606cfbcff10eae471ce3dad5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704287"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836613"
 ---
 # <a name="render-target-view-rtv"></a>Affichage de la cible du rendu (RTV)
 

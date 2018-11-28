@@ -1,21 +1,21 @@
 ---
-description: L’extension de balisage est une solution de hautes performances de liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
+description: L’extension de balisage est une alternative hautes performances à la liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5407849c15da25adc29fa97c0215b9734a5d3258
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694848"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855397"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
-**Remarque**pour plus d’informations sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{x: Bind}** — nouveauté de Windows 10, est une alternative aux **{Binding}**. **{x: Bind}** s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}** et prend en charge le débogage de mieux.
 
@@ -143,7 +143,7 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 | **Mode** | Spécifie le mode de liaison, sous la forme de l’une des chaînes suivantes : «OneTime», «OneWay» ou «TwoWay». La valeur par défaut est «OneTime». Notez qu’elle diffère de la valeur par défaut **{Binding}**, qui est « OneWay » dans la plupart des cas. |
 | **TargetNullValue** | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. |
 | **BindBack** | Spécifie une fonction à utiliser pour le sens inverse d’une liaison bidirectionnelle. |
-| **UpdateSourceTrigger** | Spécifie à quel moment renvoyer les modifications du contrôle vers le modèle dans les liaisons TwoWay. La valeur par défaut de toutes les propriétés à l’exception de TextBox.Text est PropertyChanged; la valeur par défaut de TextBox.Text est LostFocus.|
+| **UpdateSourceTrigger** | Spécifie à quel moment renvoyer les modifications du contrôle vers le modèle dans les liaisons TwoWay. La valeur par défaut pour toutes les propriétés à l’exception de TextBox.Text est PropertyChanged; TextBox.Text est LostFocus.|
 
 > [!NOTE]
 > Si vous convertissez un balisage de **{Binding}** en **{x:Bind}**, soyez attentif aux différences de valeurs par défaut de la propriété **Mode**.
@@ -154,7 +154,7 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 
 Dans la mesure où l’extension de balisage **{x:Bind}** utilise un code généré pour obtenir ses avantages, elle nécessite des informations de type au moment de la compilation. Cela signifie que vous ne pouvez pas effectuer de liaison à des propriétés quand vous ne connaissez pas le type à l’avance. Pour cette raison, vous ne pouvez pas utiliser **{x:Bind}** avec la propriété **DataContext**, qui est du type **Object**, et est également sujette à modification au moment de l’exécution.
 
-Lorsque vous utilisez **{x:Bind}** avec des modèles de données, vous devez indiquer le type cible de la liaison en définissant une valeur **x:DataType**, comme illustré dans l’exemple ci-dessous. Vous pouvez également définir le type sur une interface ou un type de classe de base, puis utiliser des conversions si nécessaire pour formuler une expression complète.
+Lorsque vous utilisez **{x: Bind}** avec des modèles de données, vous devez indiquer le type cible de la liaison en définissant une valeur **x: DataType** , comme illustré dans la section [exemples](#examples) . Vous pouvez également définir le type sur une interface ou un type de classe de base, puis utiliser des conversions si nécessaire pour formuler une expression complète.
 
 Les liaisons compilées dépendent de la génération du code. Par conséquent, si vous utilisez **{x:Bind}** dans un dictionnaire de ressources, ce dernier doit comporter une classe code-behind. Pour un exemple de code, voir [Dictionnaires de ressources avec {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind).
 

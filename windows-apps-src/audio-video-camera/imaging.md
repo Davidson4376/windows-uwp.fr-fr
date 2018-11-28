@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711344"
+ms.locfileid: "7831385"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 

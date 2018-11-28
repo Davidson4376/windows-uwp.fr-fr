@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’applications, mise à jour
 ms.localizationpriority: medium
 ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712676"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7842120"
 ---
 # <a name="update-an-app-submission"></a>Mettre à jour une soumission d’application
 
@@ -25,7 +25,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Créer une soumission pour une de vos applications. Vous pouvez le faire dans l’espace partenaires, ou vous pouvez le faire à l’aide de la méthode de [créer une soumission d’application](create-an-app-submission.md) .
+* Créer une soumission pour l’une de vos applications. Vous pouvez le faire dans l’espace partenaires, ou vous pouvez le faire à l’aide de la méthode de [créer une soumission d’application](create-an-app-submission.md) .
 
 ## <a name="request"></a>Requête
 

@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d53bb0747ba5fb3469f9a395847eb856f72c9632
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703433"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831455"
 ---
 # <a name="parallax"></a>Parallaxe
 
@@ -106,8 +106,8 @@ ParallaxView ajuste automatiquement la taille de l’image pour qu’elle foncti
 
 Les propriétés VerticalShift et HorizontalShift vous permettent de contrôler le degré de l’effet parallaxe.
 
-* La propriété VerticalShift spécifie le degré de rotation verticale de l'arrière-plan pendant toute l'opération parallaxe. Une valeur de 0 signifie que l’arrière-plan ne se déplace pas du tout.
-* La propriété HorizontalShift spécifie le degré de rotation horizontale de l'arrière-plan pendant toute l'opération parallaxe. Une valeur de 0 signifie que l’arrière-plan ne se déplace pas du tout.
+* La propriété VerticalShift spécifie le degré de rotation verticale de l'arrière-plan pendant toute l'opération parallaxe. Une valeur de 0 signifie que l’arrière-plan ne bouge pas du tout.
+* La propriété HorizontalShift spécifie le degré de rotation horizontale de l'arrière-plan pendant toute l'opération parallaxe. Une valeur de 0 signifie que l’arrière-plan ne bouge pas du tout.
 
 Les valeurs élevées créent un effet plus important. 
 

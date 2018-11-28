@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720115"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830100"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -49,7 +49,7 @@ Microsoft Emulator pour Windows 10 Mobile nécessite Visual Studio 2015 ou versi
 
 L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>L’installation, de désinstallation et de l’émulateur en cours d’exécution
+## <a name="installing-uninstalling-and-running-the-emulator"></a>L’installation et désinstallation de l’émulateur en cours d’exécution
 
 ### <a name="installing"></a>L’installation
 L’émulateur Microsoft pour Windows10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows10. Ils peuvent tous deux être installés avec VisualStudio. Consultez la [page de téléchargement de VisualStudio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
@@ -64,7 +64,7 @@ Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la c
 
 ### <a name="running"></a>Running
 
-Pour exécuter une application dans l’émulateur, sélectionnez simplement un périphérique émulé dans le menu déroulant **exécution** dans Visual Studio.
+Pour exécuter une application dans l’émulateur, sélectionnez simplement un périphérique émulé à partir du menu déroulant **exécuter** dans Visual Studio.
 
 ![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
 
@@ -621,17 +621,17 @@ Vous trouverez ci-après des problèmes connus liés à l’émulateur, ainsi qu
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
 
-Dans certains cas, y compris une fois que vous mettez à jour vers une nouvelle version d’évaluation de Windows 10, un commutateur réseau virtuel associé à l’émulateur peut obtenir dans un état où il ne peut pas être supprimé par le biais de l’interface utilisateur.
+Dans certaines situations, y compris une fois que vous mettez à jour vers une nouvelle version d’évaluation de Windows 10, un commutateur réseau virtuel associé à l’émulateur peut passer à un état où il ne peut pas être supprimé par le biais de l’interface utilisateur.
 
 Pour résoudre ce problème, exécutez « netcfg -d » à partir d’une invite de commandes administrateur : `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. À l’issue de l’exécution de la commande, redémarrez votre ordinateur pour terminer le processus de récupération.
 
-**Remarque**cette commande supprime tous les périphériques de mise en réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
+**Remarque**cette commande supprime tous les appareil réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
  
 ### <a name="unable-to-launch-the-emulators"></a>Impossible de lancer les émulateurs
 
 L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Remarque**XDECleanup.exe supprime l’émulateur tous les ordinateurs virtuels Hyper-V spécifiques et il points de contrôle ou les États.
+> **Remarque**XDECleanup.exe supprime l’émulateur tous les ordinateurs virtuels Hyper-V spécifique et il points de contrôle ou les États.
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Désinstaller l’image système Windows10 pour Mobile
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, interopérabilité xaml
 ms.localizationpriority: medium
 ms.openlocfilehash: 058a1458f8990e5f70e7ed0ea4ef1a2b5f4a4956
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702467"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842566"
 ---
 # <a name="directx-and-xaml-interop"></a>Interopérabilité entre DirectX et XAML
 
@@ -21,7 +21,7 @@ Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft 
 
 Si votre application se concentre principalement sur le rendu 2D, il peut être judicieux d’utiliser la bibliothèque Windows Runtime [Win2D](https://github.com/microsoft/win2d). Gérée par Microsoft, cette bibliothèque est basée sur les technologies Direct2D principales. Elle simplifie considérablement simplifie le modèle d’utilisation pour implémenter des graphismes 2D et comprend des abstractions utiles pour certaines des techniques décrites dans ce document. Pour en savoir plus, voir la page du projet. Ce document fournit des recommandations pour les développeurs d’applications qui choisissent de ne *pas* utiliser Win2D.
 
-> **Remarque**APIs de DirectX n’étant pas définies en tant que types Windows Runtime, vous utiliserez généralement des extensions de composant Visual c++ (C++ / CX) pour développer des composants UWP XAML qui interagissent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
+> **Remarque**APIs DirectX n’étant pas définies en tant que types Windows Runtime, il vous utilisez généralement des extensions de composant Visual c++ (C++ / CX) pour développer des composants UWP XAML qui interagissent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
 
  
 

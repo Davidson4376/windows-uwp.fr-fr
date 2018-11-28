@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
 ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695038"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848017"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 
-Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows10 à l’aide du SDK MicrosoftAdvertising. Notre plateforme de monétisation des publicités offre une variété de formats de publicité qui peuvent être intégrés en toute transparence votre médiation prend en charge et les applications avec de nombreux réseaux publicitaires populaires. Notre plateforme est conforme à la OpenRTB, une grande 2.x, Definitions 2 et les normes VPAID 3 et est compatible avec MOAT et IAS. 
+Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows10 à l’aide du SDK MicrosoftAdvertising. Notre plateforme de monétisation des publicités offre une variété de formats de publicité qui peuvent être intégrées en toute transparence dans vos applications et prend en charge médiation avec de nombreux réseaux publicitaires populaires. Notre plateforme est conforme à la OpenRTB, une grande 2.x, Definitions 2 et 3 VPAID normes et est compatible avec MOAT et IAS. 
 
 <br/>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, opengl, direct3d11 , portage
 ms.localizationpriority: medium
 ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707705"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839777"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
 

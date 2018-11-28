@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e64feb8938be3e7338c87acdf8fd18fb13e525b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699489"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829659"
 ---
 # <a name="xbox-best-practices"></a>Bonnes pratiques pour Xbox
 
@@ -65,7 +65,7 @@ Les discussions suivantes sur [Channel 9](https://channel9.msdn.com/) sont une e
 
 ## <a name="app-dev-on-xbox"></a>Développement d’applications sur Xbox
 
-L’événement de **Développement d’applications sur Xbox** est un excellent point de départ pour les développeurs à nouveau pour la création d’applications sur Xbox.
+L’événement de **Développement d’applications sur Xbox** est un excellent point de départ pour les développeurs à nouveau à la création d’applications sur Xbox.
 
 * [Regardez les sessions enregistrées](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [Lisez les billets de blog](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)

@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d’app
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aabaa932c8bd21baf81970564b15421931ad39f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698005"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838060"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
 L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de gérer les soumissions de vos apps, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission au MicrosoftStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une application, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que de l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous ne serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez l’API de soumission au Microsoft Store pour créer une soumission pour une application, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 > [!IMPORTANT]
-> Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser l’espace partenaires de publier la soumission.
+> Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser l’espace partenaires pour publier la soumission.
 
 
 <span id="methods-for-app-submissions" />
@@ -125,7 +125,7 @@ Pour créer une soumission pour une application, suivez ce processus.
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Validez la soumission d’applications](commit-an-app-submission.md) en exécutant la méthode suivante. Cela vous avertit l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte.
+5. [Validez la soumission d’applications](commit-an-app-submission.md) en exécutant la méthode suivante. Cela avertit l’espace partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent maintenant être appliqués à votre compte.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -423,9 +423,9 @@ Cette ressource contient des informations de référencement de base pour une ap
 |  copyrightAndTrademarkInfo                |   chaîne      |  [Informations de copyright et/ou de marque](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info) facultatives.  |
 |  keywords                |  tableau       |  Tableau de [mots clés](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords) facilitant l’apparition de l’application dans les résultats de recherche.    |
 |  licenseTerms                |    chaîne     | [Termes du contrat de licence](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) facultatifs de votre application.     |
-|  privacyPolicy                |   chaîne      |   Cette valeur est obsolète. Pour définir ou modifier l’URL de politique de confidentialité de votre application, vous devez le faire dans la page de [Propriétés](../publish/enter-app-properties.md#privacy-policy-url) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.       |
-|  supportContact                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier la prise en charge de contact URL ou adresse e-mail de votre application, vous devez le faire dans la page de [Propriétés](../publish/enter-app-properties.md#support-contact-info) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.        |
-|  websiteUrl                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier l’URL de la page web de votre application, vous devez le faire dans la page de [Propriétés](../publish/enter-app-properties.md#website) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.      |    
+|  privacyPolicy                |   chaîne      |   Cette valeur est obsolète. Pour définir ou modifier l’URL de politique de confidentialité de votre application, vous devez accéder à la page de [Propriétés](../publish/enter-app-properties.md#privacy-policy-url) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.       |
+|  supportContact                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier la prise en charge de contact URL ou adresse e-mail de votre application, vous devez accéder à la page de [Propriétés](../publish/enter-app-properties.md#support-contact-info) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.        |
+|  websiteUrl                |   chaîne      |  Cette valeur est obsolète. Pour définir ou modifier l’URL de la page web de votre application, vous devez accéder à la page de [Propriétés](../publish/enter-app-properties.md#website) dans l’espace partenaires. Vous pouvez omettre cette valeur dans vos appels à l’API de soumission. Si vous définissez cette valeur, elle sera ignorée.      |    
 |  description               |    chaîne     |   [Description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) du listing de l’application.   |     
 |  fonctionnalités               |    tableau     |  Tableau contenant 20chaînes au maximum qui répertorient les [fonctionnalités](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) de votre application.     |
 |  releaseNotes               |  chaîne       |  [Notes de publication](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) de votre application.    |
@@ -458,7 +458,7 @@ Cette ressource contient les données d’image et d’icône d’une descriptio
 
 ### <a name="gaming-options-resource"></a>Ressource d'options de jeu
 
-Cette ressource contient des paramètres relatifs au jeu pour l’application. Les valeurs de cette ressource correspondent aux [paramètres de jeu](../publish/enter-app-properties.md#game-settings) pour les soumissions dans l’espace partenaires.
+Cette ressource contient des paramètres relatifs au jeu pour l’application. Les valeurs figurant dans cette ressource correspondent aux [paramètres de jeu](../publish/enter-app-properties.md#game-settings) pour les soumissions dans l’espace partenaires.
 
 ```json
 {
@@ -590,7 +590,7 @@ Cette ressource donne accès aux données du rapport de certification d’une so
 
 | Valeur           | Type    | Description             |
 |-----------------|---------|------|
-|     date            |    chaîne     |  Date et heure de que génération du rapport, au format ISO 8601.    |
+|     date            |    chaîne     |  La date et l’heure de que génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 
@@ -643,7 +643,7 @@ Cette ressource contient les [paramètres de lancement de packages](#manage-grad
 
 ### <a name="trailers-resource"></a>Ressource de bande-annonce
 
-Cette ressource représente une vidéo de bande-annonce pour la description de l’app. Les valeurs de cette ressource correspondent aux options [bandes-annonces](../publish/app-screenshots-and-images.md#trailers) des soumissions dans l’espace partenaires.
+Cette ressource représente une vidéo de bande-annonce pour la description de l’app. Les valeurs figurant dans cette ressource correspondent aux options [bandes-annonces](../publish/app-screenshots-and-images.md#trailers) des soumissions dans l’espace partenaires.
 
 Vous pouvez ajouter jusqu'à 15ressources de bande-annonce pour le tableau *trailers* dans une [ressource de soumission d’applications](#app-submission-object). Pour télécharger des fichiers vidéo de bande-annonce et des images miniatures pour une soumission, ajoutez ces fichiers à l'archive ZIP qui contient les packages et les images de description pour la soumission, puis téléchargez cette archive ZIP dans l'URI de la signature d’accès partagé (SAS) de la soumission. Pour plus d’informations sur le téléchargement de l’archive ZIP sur l’URI SAS, voir [créer une soumission d’apps](#create-an-app-submission).
 

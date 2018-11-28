@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 4527cface4681bf4866249c6398d43e6af782725
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700487"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834011"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -90,7 +90,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
 
-    **Remarque**Assurez-vous de répertorier chacun des types de déclencheur que vous utilisez, ou la tâche en arrière-plan ne sera pas inscrire avec les types de déclencheur non déclaré (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échoue et lève une exception).
+    **Remarque**prenez soin pour répertorier chacun des types de déclencheur que vous utilisez, ou de la tâche en arrière-plan ne sera pas inscrire avec les types de déclencheur non déclaré (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échoue et lève une exception).
 
     Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés:
 

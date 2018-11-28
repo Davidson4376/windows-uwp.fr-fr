@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714851"
+ms.locfileid: "7831813"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 

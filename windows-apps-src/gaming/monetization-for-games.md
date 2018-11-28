@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, monétisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697119"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831305"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -27,7 +27,7 @@ Vous pouvez promouvoir et monétiser un jeu UWP de l’une ou de plusieurs des m
 
 ## <a name="worldwide-distribution-channel"></a>Canal de distribution mondial
 
-Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge de la facturation via différentes formes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [définir la sélection du marché](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
+Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge de la facturation via différents modes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [définir la sélection du marché](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
 
 ## <a name="set-a-price-for-your-game"></a>Définir un prix pour votre jeu
 
@@ -53,7 +53,7 @@ Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont �
 
 Vous pouvez créer deux types de composants additionnels dans le Windows Store: _Durables_ ou _Consommables_. Les composants additionnels durables sont des articles qui persistent pendant un laps de temps spécifié et ne peuvent être achetés qu’une seule fois avant expiration. Les composants additionnels consommables sont des articles qui peuvent être achetés et utilisés encore et encore.
 
-Lorsque vous créez des consommables, décidez de la manière dont vous souhaitez les suivre &mdash;, selon qu’ils sont _gérés par le développeur_ ou _gérés par le Windows Store_ (cette fonctionnalité est disponible à partir de Windows10, version1607). Avec un consommable géré par le développeur, vous êtes responsable du suivi du solde de l’élément pour le joueur; avec un consommable géré par le Windows Store, le Microsoft Store gère l’élément le solde de pour vous. Pour plus d’informations, voir [Vue d’ensemble des composants additionnels consommables](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
+Lorsque vous créez des consommables, décidez de la manière dont vous souhaitez les suivre &mdash;, selon qu’ils sont _gérés par le développeur_ ou _gérés par le Windows Store_ (cette fonctionnalité est disponible à partir de Windows10, version1607). Avec un consommable géré par le développeur, vous êtes responsable du suivi du solde de l’élément pour le joueur; avec un consommable géré par le Windows Store, le Microsoft Store gère de solde de l’élément pour vous. Pour plus d’informations, voir [Vue d’ensemble des composants additionnels consommables](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
 
 ### <a name="create-in-game-purchases"></a>Créer des achats dans le jeu
 
@@ -118,7 +118,7 @@ Une fois que votre jeu est soumis dans le Windows Store, il entre dans le [proce
 Avec votre solution de jeu ouverte dans Visual Studio:
 
 1. Accédez à __Projet__ > __Windows Store__ > __Associer l’application avec le Windows Store…__
-2. Connectez-vous à votre compte de développeur de l’espace partenaires et sélectionnez le nom de l’application à laquelle associer cette solution.
+2. Se connecter à votre compte de développeur de l’espace partenaires et sélectionnez le nom de l’application à laquelle associer cette solution.
 3. Double-cliquez sur le __fichier Package.appxmanifest.xml__ et accédez à l’onglet __Empaquetage__ afin de vérifier que le jeu est correctement associé.
 
 Si vous avez associé la solution à un jeu publié qui est actif et répertorié dans le Windows Store, votre solution dispose d’une licence active et vous vous rapprochez de la création de composants additionnels pour votre jeu. Pour plus d’informations, consultez [Empaquetage d’applications](https://msdn.microsoft.com/windows/uwp/packaging/index).

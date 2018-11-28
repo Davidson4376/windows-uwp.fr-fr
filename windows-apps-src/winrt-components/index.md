@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c018c890f8fcab2cb0c778c8c91840911f158c9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707020"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851010"
 ---
 # <a name="windows-runtime-components"></a>Composants Windows Runtime
 Les composants Windows Runtime sont des objets autonomes que vous pouvez instancier et utiliser dans n’importe quel langage, notamment C#, Visual Basic, JavaScript et C++.
@@ -20,7 +20,7 @@ Vous pouvez utiliser Visual Studio et C#, Visual Basic ou C++ pour créer des co
 
 | Rubrique | Description |
 |-------|-------------|
-| [Création de composants Windows Runtime en C++](creating-windows-runtime-components-in-cpp.md) | Cette rubrique montre comment utiliser C++ / CX pour créer un composant Windows Runtime, qui est un composant qui peut être appelé à partir d’une application Windows universelle générée à l’aide de c#, Visual Basic, C++ ou Javascript. |
+| [Création de composants Windows Runtime en C++](creating-windows-runtime-components-in-cpp.md) | Cette rubrique montre comment utiliser C++ / CX pour créer un composant Windows Runtime, qui est un composant qui peut être appelée à partir d’une application Windows universelle générée à l’aide de c#, Visual Basic, C++ ou Javascript. |
 | [Procédure pas à pas: création d’un composant WindowsRuntime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | Cette procédure pas à pas montre comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic. Avant d’entreprendre cette procédure pas à pas, vous devez maîtriser des concepts tels que l’interface binaire abstraite (ABI), les classes ref et les extensions des composants Visual C++ qui facilitent l’utilisation des classes ref. Pour plus d’informations, consultez les articles [Création de composants Windows Runtime en C++](creating-windows-runtime-components-in-cpp.md) et [Informations de référence sur le langage Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx). |
 | [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) | Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime. Vous pouvez utiliser votre composant dans les applications de plateforme Windows universelle (UWP) avec C++, JavaScript, Visual Basic ou C#. Cette rubrique présente les règles de création d’un composant et décrit quelques aspects de prise en charge de .NET Framework pour Windows Runtime. En règle générale, cette prise en charge est conçue pour être transparente pour les programmeurs .NET Framework. Toutefois, lorsque vous créez un composant à utiliser avec JavaScript ou C++, vous devez tenir compte des différences de prise en charge de Windows Runtime par ces langages. |
 | [Procédure pas à pas: création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript. |

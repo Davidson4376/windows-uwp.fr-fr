@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720215"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855567"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
 
-Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui vous assurer que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus d’informations et actions dans le cas d’échec suggérées.
+Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui vous assurer que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus de détails et actions dans le cas d’échec suggérées.
 
 ## <a name="deployment-and-launch-tests"></a>Tests de déploiement et de lancement
 

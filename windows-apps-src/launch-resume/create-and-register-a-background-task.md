@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: eb6cde0c3c31f0116c65e5d5dc4a0d8ae4a1b540
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704540"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832229"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
@@ -140,7 +140,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, Si vous n’utilisez pas un report, le processus de tâche en arrière-plan peut arrêt inattendu si la méthode **Run** retourne avant tout travail asynchrone a exécuté jusqu'à la fin.
+4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, Si vous n’utilisez pas un report, puis le processus de tâche en arrière-plan peut arrêt inattendu si la méthode **Run** retourne avant tout travail asynchrone a s’exécuter jusqu’au.
 
 Demandez le report dans la méthode **Run** avant d’appeler la méthode asynchrone. Enregistrez le report dans un membre de classe de données afin qu’il est accessible à partir de la méthode asynchrone. Déclarez le report terminé après que l’exécution du code asynchrone a abouti.
 

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706876"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830814"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage WindowsPhone Silverlight vers UWP pour différents facteurs de forme et expériences utilisateur
 
 
 Rubrique précédente : [Portage des couches métier et des couches de données](wpsl-to-uwp-business-and-data.md).
 
-Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes. Différences entre les appareils tels que la taille physique, orientation par défaut et facteur de résolution de pixels effectifs en qu'une application de plateforme Windows universelle (UWP) est restituée par Windows 10. Heureusement, le système gère à votre place une grande partie des tâches les plus difficiles à l’aide de concepts novateurs tels que les pixels effectifs.
+Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes. Différences entre les appareils tels que la taille physique, orientation par défaut et facteur de résolution de pixels effectifs en une application de plateforme Windows universelle (UWP) est restitué par Windows 10. Heureusement, le système gère à votre place une grande partie des tâches les plus difficiles à l’aide de concepts novateurs tels que les pixels effectifs.
 
 ## <a name="different-form-factors-and-user-experience"></a>Des facteurs de forme différents pour une expérience utilisateur variée
 
@@ -56,7 +56,7 @@ Outre la disposition dynamique intégrée aux contrôles système et les panneau
 
 ## <a name="input-modalities"></a>Modalités d’entrée
 
-Une interface WindowsPhone Silverlight est tactiles spécifiques. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610) et [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607).
+Une interface WindowsPhone Silverlight est interactions tactiles. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610) et [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607).
 
 ## <a name="maximizing-markup-and-code-re-use"></a>Valorisation de la réutilisation du code et du balisage
 

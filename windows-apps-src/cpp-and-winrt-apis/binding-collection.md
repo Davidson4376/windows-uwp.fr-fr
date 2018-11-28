@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, collection
 ms.localizationpriority: medium
 ms.openlocfilehash: 9df7c96549254ab8318fd9a7c8224c6e87701747
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705685"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832072"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Contrôles d’éléments XAML; liaison à une collection C++/WinRT
 

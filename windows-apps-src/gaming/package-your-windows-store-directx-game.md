@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, package
 ms.localizationpriority: medium
 ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692168"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827167"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Créer un package pour votre jeu de plateforme Windows universelle (UWP) DirectX
 
@@ -43,7 +43,7 @@ Contenu susceptible d’intégrer des packs de ressources de jeu :
 
 Tout cela est défini dans le fichier package.appxmanifest qui fait partie de votre projet UWP, ainsi que dans la structure de répertoires de votre package final. Avec cette nouvelle interface utilisateur Visual Studio, en suivant la procédure figurant dans ce document, vous n’avez pas besoin d’effectuer des modifications manuelles.
 
-> **Important**  le chargement et la gestion de ces ressources sont gérés par le biais de la **Windows.ApplicationModel.Resources**\ * API. Si vous utilisez ces API de ressources de modèle d’applications pour charger le fichier qui convient pour un paramètre régional, un facteur d’échelle ou un niveau de fonctionnalité DirectX spécifiques, vous n’avez pas besoin de charger vos ressources à l’aide de chemins d’accès de fichiers explicites. Vous fournissez à la place les API de ressources avec simplement le nom du fichier généralisé de la ressource souhaitée. Le système de gestion des ressources se charge ensuite d’obtenir la variante correcte de la ressource de la plateforme active et de la configuration régionale de l’utilisateur (que vous pouvez directement spécifier comme avec ces mêmes API).
+> **Important**  le chargement et la gestion de ces ressources sont gérées par le biais de la **Windows.ApplicationModel.Resources**\ * API. Si vous utilisez ces API de ressources de modèle d’applications pour charger le fichier qui convient pour un paramètre régional, un facteur d’échelle ou un niveau de fonctionnalité DirectX spécifiques, vous n’avez pas besoin de charger vos ressources à l’aide de chemins d’accès de fichiers explicites. Vous fournissez à la place les API de ressources avec simplement le nom du fichier généralisé de la ressource souhaitée. Le système de gestion des ressources se charge ensuite d’obtenir la variante correcte de la ressource de la plateforme active et de la configuration régionale de l’utilisateur (que vous pouvez directement spécifier comme avec ces mêmes API).
 
  
 
@@ -51,7 +51,7 @@ Les ressources utilisées pour la création de packs de ressources sont spécifi
 
 -   Les fichiers de ressources portent le même nom de fichier et les versions spécifiques du pack de ressources sont placées dans des répertoires nommés particuliers. Ces noms de répertoires sont réservés par le système. Par exemple, \\en-us, \\scale-140, \\dxfl-dx11.
 -   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement («\_»). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Remarque**  lorsqu’il est utilisé dans un nom de fichier plutôt que seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme «lang -<tag>», par exemple, «lang-fr-fr» comme décrit dans la [personnaliser vos ressources pour la langue, échelle et d’autres qualificateurs](../app-resources/tailor-resources-lang-scale-contrast.md).
+    > **Remarque**  lorsqu’il est utilisé dans un nom de fichier plutôt que seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme «lang -<tag>», par exemple, «lang-fr-fr» comme décrit dans [personnaliser vos ressources pour la langue, échelle et d’autres qualificateurs](../app-resources/tailor-resources-lang-scale-contrast.md).
 
      
 
@@ -84,7 +84,7 @@ Lorsque vous configurez votre application pour prendre en charge les ressources 
      
 
 -   Utilisez les API dans [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) et [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour spécifier et charger les ressources spécifiques aux paramètres régionaux de votre application. En outre, utilisez des références de ressources qui n’incluent pas les paramètres régionaux spécifiques, car ces API déterminent les paramètres régionaux appropriés en fonction des paramètres de l’utilisateur, puis récupèrent la ressource appropriée pour l’utilisateur.
--   Dans Studio2015 visuelle de Microsoft, sélectionnez **projet-& gt; Windows Store-& gt; créer un Package d’application …** et créer le package.
+-   Dans Microsoft Studio2015 visuelle, sélectionnez **projet-& gt; Windows Store-& gt; créer un Package d’application …** et créer le package.
 
 ## <a name="defining-scaling-factor-resource-packs"></a>Définition des packs de ressources du facteur d’échelle
 

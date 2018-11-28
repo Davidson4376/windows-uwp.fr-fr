@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704789"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828854"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -31,7 +31,7 @@ Les différents systèmes d’exploitation peuvent exécuter différents types d
 En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Windows 10 peuvent exécuter toutes les précédentes versions du système d’exploitation pris en charge (par famille d’appareils). Les appareils de bureau Windows 10 peuvent exécuter des applications qui ont été conçues pour Windows8.1 ou package Windows8; Les appareils mobiles Windows 10 peuvent exécuter des applications qui ont été conçues pour Windows Phone 8.1, WindowsPhone8 et même Windows Phone 7.x. Toutefois, sur Windows 10 elles n’obtiennent ces packages si l’application n’inclut pas les packages UWP ciblant la famille d’appareils applicable.
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows de Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
 
 
 ## <a name="removing-an-app-from-the-store"></a>Suppression d'une application du Store
@@ -48,12 +48,12 @@ Notez que les clients ayant déjà l’application pourront encore l’utiliser 
 Après avoir effectué l’application indisponible, vous verrez toujours il dans l’espace partenaires. Si vous décidez de la remettre à disposition des clients, vous pouvez cliquer sur **Rendre votre application indisponible** sur la page Vue d’ensemble de l’application. L’application est mise à disposition des nouveaux clients (sauf paramétrage contraire dans votre dernière soumission) dans les heures suivant votre confirmation.
 
 > [!NOTE]
-> Si vous souhaitez que votre application reste disponible, mais voulez arrêter de la proposer aux nouveaux clients sur une version spécifique de système d’exploitation, vous pouvez créer une autre soumission et supprimer tous les packages associés à la version de système d’exploitation pour laquelle vous souhaitez empêcher toute nouvelle acquisition. Par exemple, si vous possédiez auparavant des packages pour Windows Phone 8.1 et Windows 10, et que vous ne souhaitez pas continuer à proposer l’application aux nouveaux clients sur WindowsPhone8.1, supprimez tous vos packages WindowsPhone8.1 de la soumission. Une fois la mise à jour est publiée, aucun nouveau client sous WindowsPhone8.1 ne sera en mesure d’acquérir l’application, bien que les clients qui la possèdent continuent à l’utiliser). Toutefois, l’application sera toujours disponible pour les nouveaux clients sur Windows 10.
+> Si vous souhaitez que votre application reste disponible, mais voulez arrêter de la proposer aux nouveaux clients sur une version spécifique de système d’exploitation, vous pouvez créer une autre soumission et supprimer tous les packages associés à la version de système d’exploitation pour laquelle vous souhaitez empêcher toute nouvelle acquisition. Par exemple, si vous possédiez auparavant des packages pour Windows Phone 8.1 et Windows 10, et que vous ne souhaitez pas continuer à proposer l’application aux nouveaux clients sur WindowsPhone8.1, supprimez tous vos packages WindowsPhone8.1 de la soumission. Une fois la mise à jour publiée, aucun nouveau client sous WindowsPhone8.1 ne sera en mesure d’acquérir l’application, bien que les clients qui la possèdent continuent à l’utiliser). Toutefois, l’application sera toujours disponible pour les nouveaux clients sur Windows 10.
 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Suppression de packages pour une famille d'appareils précédemment prise en charge
 
-Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment pris en charge, vous serez invité à confirmer qu’il s’agit votre intention avant d’enregistrer vos modifications sur la page **Packages** .
+Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment prise en charge, vous serez invité à confirmer qu’il s’agit votre intention avant d’enregistrer vos modifications sur la page **Packages** .
 
 Lorsque vous publiez une soumission qui supprime tous les packages qui peuvent s’exécuter sur une famille d’appareils précédemment prise en charge par votre application, les nouveaux clients ne sera pas en mesure d’acquérir l’application sur cette famille. Vous pouvez toujours publier une autre mise à jour pour proposer de nouveau des packages pour cette famille d'appareils.
 

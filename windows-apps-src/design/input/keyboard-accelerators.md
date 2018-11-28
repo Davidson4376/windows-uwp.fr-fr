@@ -1,23 +1,21 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
 title: Raccourcis clavier
 label: Keyboard accelerators
 template: detail.hbs
 keywords: clavier, raccourci, touche de raccourci, raccourcis clavier, accessibilité, navigation, focus, texte, entrée, interactions utilisateur, boîtier de commande, distant
-ms.author: kbridge
 ms.date: 10/10/2017
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567129"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831624"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -250,7 +248,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Remplacer le comportement de clavier par défaut
 
-Dans certains cas, vous devrez remplacer le comportement par défaut des clés spécifiques telles que la touche Retour arrière ou la touche ENTRÉE. Par exemple: 
+Dans certains cas, vous devrez peut-être substituer le comportement par défaut des clés spécifiques telles que la touche Retour arrière ou la touche ENTRÉE. Par exemple: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Désactiver un raccourci clavier 
 
@@ -359,10 +357,10 @@ Comme les raccourcis clavier ne sont généralement pas décrit directement dans
 
 **Windows 10, Version 1803 (mise à jour du mois d’avril 2018) et versions ultérieures**
 
-Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (sauf [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
+Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (à l’exception [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
 
 > [!NOTE] 
-> Si plusieurs raccourcis sont définis pour un contrôle, seul le premier est présenté.
+> Si plusieurs raccourcis sont définis par un contrôle, seul le premier est présenté.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
@@ -440,7 +438,7 @@ Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*Touches de raccourci ajouté au texte de MenuFlyoutItem*
+*Touches de raccourci ajoutée au texte de MenuFlyoutItem*
 
 Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode), qui accepte deux valeurs: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 

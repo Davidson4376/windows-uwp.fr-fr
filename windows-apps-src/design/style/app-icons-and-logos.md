@@ -10,15 +10,15 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7083152efb4cf871f8abebf6d2970d2da4ba06e9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698128"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832698"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
-Chaque application dispose d’un icône/logo qui le représente, et elle apparaît dans plusieurs emplacements dans l’interpréteur de commandes Windows: 
+Chaque application dispose d’un icône/logo qui il représente, et cette icône apparaît dans plusieurs emplacements dans l’interpréteur de commandes Windows: 
 
 :::row:::
     :::column:::
@@ -34,13 +34,13 @@ Chaque application dispose d’un icône/logo qui le représente, et elle appara
     :::column-end:::
 :::row-end:::
 
-Cet article décrit les principes fondamentaux de la création d’icônes d’application, l’utilisation de Visual Studio pour les gérer et comment les gérer manuellement, vous ne devez.
+Cet article décrit les principes fondamentaux de la création d’icônes d’application, l’utilisation de Visual Studio pour les gérer et comment les gérer manuellement, si nécessaire.
  
-(Cet article est spécifiquement pour les icônes qui représentent l’application proprement dite; pour obtenir des conseils généraux icône, consultez l’article [icônes](icons.md) .)
+(Cet article est spécifiquement pour les icônes qui représentent l’application proprement dite; pour obtenir des conseils généraux icône, consultez l’article [icônes](icons.md) ).
 
 ## <a name="icon-types-locations-and-scale-factors"></a>Types d’icônes, emplacements et facteurs d’échelle
 
-Par défaut, Visual Studio stocke vos ressources d’icônes dans un sous-répertoire d’actifs. Voici une liste des différents types d’icônes, où ils s’affichent, et ils sont appelés. 
+Par défaut, Visual Studio stocke vos ressources d’icônes dans un sous-répertoire d’actifs. Voici une liste des différents types d’icônes, où ils s’affichent, et qu’ils sont appelés. 
 
 | Nom de l’icône | S’affiche dans | Nom de fichier de ressources |
 | ---      | ---        | --- |
@@ -48,16 +48,16 @@ Par défaut, Visual Studio stocke vos ressources d’icônes dans un sous-réper
 | Vignette moyenne |Menu Démarrer, Microsoft Store listing\ *  |  Square150x150Logo.png |
 | Vignette large  | Menu Démarrer   | Wide310x150Logo.png |
 | Grande vignette   | Menu Démarrer, Microsoft Store listing\ * |  LargeTile.png  |
-| Icône de l’application | Liste des applications dans le menu Démarrer, barre des tâches, Gestionnaire des tâches | Square44x44Logo.png |
+| Icône de l’application | Liste des applications dans le menu Démarrer, barre des tâches, le Gestionnaire des tâches | Square44x44Logo.png |
 | Écran de démarrage | Écran de démarrage de l’application | SplashScreen.png  |
 | Logo du badge | Vignettes de votre application | BadgeLogo.png  |
-| Logo de logo/Store de package | Programme d’installation application, l’espace partenaires, l’option «Signaler une application» dans le Windows Store, l’option «Rédiger un avis» dans le Windows Store | StoreLogo.png  |
+| Logo de logo/Store de package | Programme d’installation application, l’espace partenaires, l’option «Signaler une application» dans le Windows Store, l’option «Donner votre avis» dans le Windows Store | StoreLogo.png  |
 
 \ * Utilisé, sauf si vous choisissez [d’Afficher uniquement les images dans le Windows Store chargées](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 
 Pour vous assurer que ces icônes paraissent sur chaque écran, vous pouvez créer plusieurs versions de la même icône pour afficher différents facteurs d’échelle. 
 
-Le facteur d’échelle détermine la taille des éléments d’interface utilisateur, tel que le texte. Plage de facteurs à l’échelle de 100 % et 400 %. Les valeurs créent des plus grands éléments d’interface utilisateur, ce qui les rend plus visible sur des affichages haute résolution. 
+Le facteur d’échelle détermine la taille des éléments d’interface utilisateur, tel que le texte. Plage de facteurs à l’échelle de 100 % et 400 %. Les valeurs créent des éléments d’interface utilisateur plus grandes, ce qui les rend plus faciles à voir sur des écrans haute résolution. 
 
 :::row:::
     :::column:::
@@ -71,7 +71,7 @@ Le facteur d’échelle détermine la taille des éléments d’interface utilis
 :::row-end:::  
 
 
-Dans la mesure où les ressources d’icône d’application sont des images bitmap et images bitmap évoluent peu, nous vous recommandons de fournir une version chaque ressource d’icône pour chaque facteur d’échelle: 100 %, 125 %, 150 %, 200 % et 400 %. C’est un grand nombre d’icônes! Fortunatly, Visual Studio fournit un outil qui facilite la générer et mettre à jour ces icônes. 
+Dans la mesure où les ressources d’icône d’application sont des images bitmap et images bitmap ne bien à l’échelle, nous vous recommandons de fournir une version chaque ressource d’icône pour chaque facteur d’échelle: 100 %, 125 %, 150 %, 200 % et 400 %. C’est un grand nombre d’icônes! Fortunatly, Visual Studio fournit un outil qui permet de facilement générer et mettre à jour ces icônes. 
 
 ## <a name="microsoft-store-listing-image"></a>Image de description dans le Microsoft Store
 
@@ -81,7 +81,7 @@ Par défaut, nous utilisons certaines images à partir de vos packages dans le W
 
 ![En spécifiant les logos Windows Store au cours du processus de soumission d’application](images/app-icons/storelogodisplay.png)
 
-Lorsque vous cochez cette case, une nouvelle section appelée **magasin afficher des images** s’affiche. Ici, vous pouvez charger 3 tailles d’image que le Windows Store utilise à la place d’images de logo dans les packages de votre application: 71 x 71, 150 x 150 et 300 x 300 pixels. Seule la taille de 300 x 300 est nécessaire, bien que nous vous recommandons de fournir tous les 3 tailles.
+Lorsque vous cochez cette case, une nouvelle section appelée **magasin afficher des images** s’affiche. Ici, vous pouvez charger 3 tailles d’image qui le Store utilise à la place d’images de logo dans les packages de votre application: 71 x 71, 150 x 150 et 300 x 300 pixels. Seule la taille de 300 x 300 est obligatoire, mais nous vous recommandons de fournir tous les 3 tailles.
 
 Pour plus d’informations, voir [l’affichage chargé uniquement les images de logo disponibles dans le Windows Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).
 
@@ -101,7 +101,7 @@ The Store may also use your app's tile and other images that you include in your
 For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
 
 
-## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>Gestion des icônes d’application avec le Concepteur de manifeste de Visual Studio
+## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>La gestion des icônes d’application avec le Concepteur de manifeste de Visual Studio
 
 Visual Studio fournit un outil très utile pour la gestion de vos icônes d’application appelés le **Concepteur de manifeste**. 
 
@@ -164,7 +164,7 @@ Le premier élément de menu dans l’onglet **Ressources visuelles** , **Toutes
 Il vous souhaitez est de fournir une image unique, et Visual Studio génère la petite vignette, vignette moyenne, grande vignette, vignette large, grande vignette, icône de l’application, écran de démarrage et ressources de logo pour chaque facteur d’échelle de package.
 
 Pour générer toutes les ressources à la fois:
-1. Cliquez sur le bouton **...** en regard du champ **Source** , puis sélectionnez l’image que vous souhaitez utiliser. Si vous utilisez une image bitmap, assurez-vous qu’il est au moins de 400 par 400 pixels afin que vous obtenez des résultats nets. Images vectorielles convient le mieux; Visual Studio vous permet d’utiliser les IA (Adobe Illustrator) et les fichiers PDF. 
+1. Cliquez sur le bouton **...** en regard du champ **Source** , puis sélectionnez l’image que vous souhaitez utiliser. Si vous utilisez une image bitmap, vérifier qu’elles sont au moins de 400 par 400 pixels de sorte que vous obtenez des résultats nets. Images vectoriel fonctionnent mieux; Visual Studio vous permet d’utiliser IA (Adobe Illustrator) et les fichiers PDF. 
 2. (Facultatif). Dans la section **Paramètres d’affichage** , configurez ces options:
 
     a.  **Nom court**: spécifiez un nom court de votre application.
@@ -173,11 +173,11 @@ Pour générer toutes les ressources à la fois:
 
     c. **Vignette en arrière-plan**: spécifiez la valeur hexadécimale ou un nom de couleur pour la couleur d’arrière-plan de vignette. Exemple: `#464646`. La valeur par défaut est `transparent`.
 
-    d. **Arrière-plan de l’écran NVIDIA**: spécifiez le nom de valeur ou de couleur hexadécimal pour l’arrière-plan d’écran NVIDIA. 
+    d. **Arrière-plan de l’écran NVIDIA**: spécifiez le nom de valeur ou la couleur hexadécimal pour l’arrière-plan d’écran NVIDIA. 
 
 3. Cliquez sur **Générer**. 
 
-Visual Studio génère des fichiers de votre image et les ajoute au projet. Si vous souhaitez modifier vos ressources, il suffit de répéter le processus. 
+Visual Studio génère vos fichiers image et les ajoute au projet. Si vous souhaitez modifier vos ressources, il suffit de répéter le processus. 
 
 Ressources d’icônes à l’échelle suivent cette convention d’affectation de noms de fichier:
 
@@ -187,16 +187,16 @@ Par exemple:
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Notez que Visual Studio ne génère pas un logo du badge par défaut. C’est parce que votre logo du badge est unique et probablement ne doit pas correspondre à vos autres icônes d’application. Pour plus d’informations, voir les [notifications de Badge pour article d’applications UWP](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Notez que Visual Studio ne génère pas un logo du badge par défaut. C’est parce que votre logo du badge est unique et sans doute ne doit pas correspondre à vos autres icônes d’application. Pour plus d’informations, voir les [notifications de Badge pour article d’applications UWP](/windows/uwp/design/shell/tiles-and-notifications/badges). 
 
 
 ## <a name="more-about-app-icon-assets"></a>En savoir plus sur les ressources d’icône d’application
-Visual Studio ne génère pas toutes les ressources de l’icône de l’application requis par votre projet, mais si vous souhaitez les personnaliser, il est utile de comprendre la façon dont elles sont différentes à partir d’autres ressources d’application. 
+Visual Studio ne génère pas toutes les ressources de l’icône de l’application requis par votre projet, mais si vous souhaitez personnaliser leur, il permet de comprendre la façon dont elles sont différentes à partir d’autres ressources d’application. 
 
-La ressource d’icône application s’affiche dans un grand nombre d’emplacements: la barre des tâches de Windows, l’affichage des tâches, ALT + TAB et le coin inférieur droit des vignettes de démarrage. Étant donné que la ressource d’icône application apparaît peu partout, elle a certains dimensionnement supplémentaires et placage options n’ont pas les autres ressources: «taille de la cible» actifs et ressources «sans plaque». 
+La ressource d’icône application s’affiche dans un grand nombre d’emplacements: la barre des tâches de Windows, l’affichage des tâches, ALT + TAB et le coin inférieur droit des vignettes de démarrage. Étant donné que la ressource d’icône application apparaît dans c’est le cas de nombreux endroits, elle a certains dimensionnement supplémentaires et placage options n’ont pas les autres ressources: «taille de la cible» actifs et ressources «sans plaque». 
 
 ### <a name="target-size-app-icon-assets"></a>Ressources d’icône d’application de la taille de la cible
-Outre les tailles de facteur d’échelle standard («square44x44logo.Scale-400.png»), nous vous recommandons également de création de ressources de la «taille de la cible». Nous appelons ces ressources-taille de la cible, car elles ciblent des tailles spécifiques, telles que des 16 pixels, au lieu des facteurs d’échelle spécifique, par exemple, 400. Ressources de taille de la cible sont destinées aux surfaces qui n’utilisent pas le système de plateau de mise à l’échelle:
+Outre les tailles de facteur d’échelle standard («square44x44logo.Scale-400.png»), nous vous recommandons également de création de ressources «taille de la cible». Nous appelons ces ressources-taille de la cible, car elles ciblent des tailles spécifiques, par exemple, 16 pixels, au lieu des facteurs d’échelle spécifique, par exemple, 400. Ressources de taille de la cible sont destinées aux surfaces qui n’utilisent pas le système de plateau de mise à l’échelle:
 
 * Liste des raccourcis du menu Démarrer (bureau)
 * Coin inférieur de la vignette du menu Démarrer (bureau)
@@ -255,19 +255,19 @@ Pour plus d’informations sur les écrans de démarrage, consultez l' [article 
 
 ## <a name="more-about-badge-logo-assets"></a>En savoir plus sur les ressources de logo de badge
 
-Lorsque vous utilisez le Générateur de ressources pour générer toutes les ressources dont vous avez besoin, il existe une raison pourquoi il ne génère pas de badge logos par défaut: elles sont très différentes à partir d’autres ressources d’application. Le logo du badge est une image d’état qui s’affiche dans les notifications et sur les vignettes de l’application. 
+Lorsque vous utilisez le Générateur de ressources pour générer toutes les ressources dont vous avez besoin, il existe une raison pourquoi il ne génère pas de logos badge par défaut: elles sont très différentes à partir d’autres ressources d’application. Le logo du badge est une image d’état qui s’affiche dans les notifications et sur les vignettes de l’application. 
 
 Pour plus d’informations, voir les [notifications de Badge pour article d’applications UWP](/windows/uwp/design/shell/tiles-and-notifications/badges).
 
 
-## <a name="customizing-asset-padding"></a>Personnalisation de remplissage de ressource
+## <a name="customizing-asset-padding"></a>Personnalisation de remplissage actifs
 
-Par défaut, Générateur de ressources de Visual Studio applique recommandée remplissage à une image. Si vos images contiennent déjà remplissage ou images pleine qui s’étendent à la fin de la vignette, vous pouvez désactiver cette fonctionnalité en décochant la case à cocher **Appliquer recommandé de remplissage** . 
+Par défaut, Générateur de ressources de Visual Studio applique recommandée remplissage à une image. Si vos images déjà contient du remplissage ou si vous souhaitez que les images pleine qui s’étendent à la fin de la vignette, vous pouvez désactiver cette fonctionnalité en désactivant la case à cocher **Appliquer recommandé de remplissage** . 
 
 ### <a name="tile-padding-recommendations"></a>Recommandations en matière de remplissage de vignette
 Si vous voulez fournir votre propre remplissage, Voici nos recommandations pour les vignettes. 
 
-Il existe des tailles de vignettes 4: petite (71 x 71), moyenne (150 x 150), l’échelle (310 x 150) et grande (310 x 310). 
+Il existe 4 tailles de vignettes: petite (71 x 71), moyenne (150 x 150), l’échelle (310 x 150) et grande (310 x 310). 
 
 Chaque ressource de vignette a la même taille que la vignette sur laquelle elle est positionnée.
 

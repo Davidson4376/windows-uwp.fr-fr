@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d9b2a894746cc9f26a0ebb3df90c967a73914c3c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694394"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827711"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -234,7 +234,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour leurs téléphones utiliser comme un ordinateur portable.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et clavier leurs téléphones pour utiliser comme un ordinateur portable.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 

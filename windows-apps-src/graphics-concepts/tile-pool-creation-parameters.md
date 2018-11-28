@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88b854ae3fcccc65b111cee873ef3aee528d6a82
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708930"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846529"
 ---
 # <a name="tile-pool-creation-parameters"></a>Paramètres de création d’un pool de tuiles
 

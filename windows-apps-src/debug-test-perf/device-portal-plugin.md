@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, portal de l’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705593"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832526"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour DevicePortal
 

@@ -11,11 +11,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 265a99e7abbb9b2f4c3341f90aecc3661ce3ffbf
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704027"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850568"
 ---
 # <a name="attached-properties-overview"></a>Vue d’ensemble des propriétés jointes
 
@@ -36,7 +36,7 @@ En XAML, les propriétés jointes sont définies à l’aide de la syntaxe _Atta
 ```
 
 > [!NOTE]
-> Nous utilisons simplement [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) comme une propriété de l’exemple jointe sans expliquer de manière exhaustive raison pour laquelle vous souhaitez l’utiliser. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) ou [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+> Nous utilisons simplement [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) comme une propriété exemple jointe sans expliquer de manière exhaustive pourquoi cette utilisation. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) ou [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
 
 ## <a name="why-use-attached-properties"></a>Pourquoi utiliser des propriétés jointes?
 

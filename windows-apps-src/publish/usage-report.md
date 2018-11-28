@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d0be1399ebc00ffda57ecf27a72be994fa994ce
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701676"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833228"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -39,7 +39,7 @@ Les informations figurant dans tous les graphiques répertoriés ci-après corre
 
 Le graphique **Utilisation** affiche des détails sur la façon dont vos clients utilisent votre application au cours de la période sélectionnée. Notez que ce graphique n’effectue pas le suivi des utilisateurs uniques de votre application ni des sessions utilisateur uniques (autrement dit, les utilisateurs qui figurent dans ce graphique peuvent avoir utilisé votre application une ou plusieurs fois).
 
-Ce graphique comporte des onglets que vous pouvez afficher, illustrant l’utilisation par jour ou par semaine (selon la durée que vous avez sélectionné).
+Ce graphique comporte des onglets que vous pouvez afficher, présentent l’utilisation par jour ou par semaine (selon la durée que vous avez sélectionné).
 
 - **Utilisateurs**: affiche le nombre total de **sessions utilisateur** au cours de la période sélectionnée. Chaque session utilisateur représente une période de temps distincte, qui commence au lancement de l’application (début du processus) et qui se termine à l’arrêt de l’application (fin du processus) ou après une période d’inactivité. Pour cette raison, un client unique peut avoir plusieurs sessions utilisateur sur un même jour ou une même semaine. Le nombre total **d’utilisateurs actifs** (tout client utilisant l’application ce jour ou cette semaine-là) et de **nouveaux utilisateurs** (clients ayant utilisé votre application pour la première fois ce jour ou cette semaine-là) est également affiché. Notez que si vous avez appliqué des filtres à la page, la valeur **Nouveaux utilisateurs** n’apparaît pas dans ce graphique.
 - **Appareils**: affiche le nombre d’appareils utilisés quotidiennement par tous les utilisateurs pour interagir avec votre application.
@@ -48,10 +48,10 @@ Ce graphique comporte des onglets que vous pouvez afficher, illustrant l’utili
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
 - **Prévision de l’évolution**: affiche le nombre d’utilisateurs devraient est susceptible d’arrêter l’utilisation de votre application plus tôt, basées sur leur utilisation récente.
 
-Lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 
 ## <a name="user-sessions"></a>Sessions utilisateur

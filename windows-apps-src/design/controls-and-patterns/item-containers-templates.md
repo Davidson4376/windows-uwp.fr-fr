@@ -13,11 +13,11 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711139"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850244"
 ---
 # <a name="item-containers-and-templates"></a>Modèles et des conteneurs d’éléments
 

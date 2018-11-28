@@ -1,19 +1,19 @@
 ---
-title: Référence des API portail Xbox informations sur l’appareil
-description: Découvrez comment accéder aux informations d’appareil Xbox.
+title: Informations sur l’appareil Xbox portail référence d’API
+description: Découvrez comment accéder aux informations sur l’appareil Xbox.
 ms.date: 11/7/2017
 ms.topic: article
 keywords: Windows 10, uwp, xbox, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694594"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850638"
 ---
 # <a name="xbox-info-api-reference"></a>Référence de l’API d’informations Xbox   
-Vous pouvez accéder à Xbox One informations sur l’appareil à l’aide de cette API.
+Vous pouvez accéder Xbox One informations sur l’appareil à l’aide de cette API.
 
 ## <a name="get-xbox-one-device-information"></a>Obtenir des informations sur l’appareil Xbox One
 
@@ -44,10 +44,10 @@ Un objet JSON avec les champs suivants:
 * OsEdition - (chaîne) l’édition du système d’exploitation, par exemple, «Mars 2017» ou «mars 2017 correctif 1».
 * ConsoleId - ID. de (chaîne) la console
 * ID d’appareil - Xbox Live Device de (chaîne) la console ID.
-* Numéro de série - numéro de série de (chaîne) la console.
+* SerialNumber - le numéro de série de (chaîne) la console.
 * DevMode - Active le mode développeur de (chaîne) la console, par exemple, «None» ou «Commercial».
 * ConsoleType - type de (chaîne) la console, par exemple, «Xbox One» ou «Xbox One S».
-* DevkitCertificateExpirationTime - (nombre) de l’heure UTC en quelques secondes de la date d’expiration du certificat de kit de développement de la console.
+* DevkitCertificateExpirationTime - (nombre) de l’heure UTC en secondes, la date d’expiration certificat de kit de développement de la console.
 
 **Code d’état**
 

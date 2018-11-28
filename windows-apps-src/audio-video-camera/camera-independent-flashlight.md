@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd69900995a51af806c99b25aae43149d6e30a7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696138"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831558"
 ---
 # <a name="camera-independent-flashlight"></a>Lampe torche indépendante de la caméra
 

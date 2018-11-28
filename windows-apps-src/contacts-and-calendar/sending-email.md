@@ -7,11 +7,11 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695276"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832387"
 ---
 # <a name="send-email"></a>Envoyer un courrier électronique
 
@@ -47,7 +47,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Les pièces jointes que vous ajoutez à un message électronique à l’aide de la classe [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) seront affichent uniquement dans l’application de messagerie. Si les utilisateurs disposent d’autres programmes de messagerie configuré en tant que leur programme de messagerie par défaut, la fenêtre de rédaction d’un message s’affiche sans la pièce jointe. Il s’agit d’un problème connu.
+> Les pièces jointes que vous ajoutez à un message électronique à l’aide de la classe [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) seront affichent uniquement dans l’application de messagerie. Si les utilisateurs disposent de tout autre programme de messagerie configuré en tant que leur programme de messagerie par défaut, la fenêtre de rédaction d’un message s’affiche sans la pièce jointe. Il s’agit d’un problème connu.
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 

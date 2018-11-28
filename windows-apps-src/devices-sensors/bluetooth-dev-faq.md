@@ -7,33 +7,33 @@ keywords: windows10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b72b5722a3ece0165fc63e7ce4abc1238bc135
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718859"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854537"
 ---
 # <a name="bluetooth-developer-faq"></a>FAQ sur le Bluetooth pour les développeurs
 
 Cet article contient des réponses aux questions les plus fréquentes concernant les API Bluetooth UWP.
 
-## <a name="what-apis-do-i-use-bluetooth-classic-rfcomm-or-bluetooth-low-energy-gatt"></a>Quelles API utiliser? Classique de Bluetooth (RFCOMM) ou Bluetooth Low Energy (GATT)?
-Il existe différentes discussions en ligne autour de cette rubrique générale par conséquent, nous allons conserver cette réponse parfaitement sur la différence par rapport à Windows. Voici quelques recommandations générales:
+## <a name="what-apis-do-i-use-bluetooth-classic-rfcomm-or-bluetooth-low-energy-gatt"></a>Quelles API utiliser? Bluetooth classique (RFCOMM) ou Bluetooth Low Energy (GATT)?
+Il existe diverses discussions en ligne autour de cette rubrique générale par conséquent, nous allons conserver cette réponse parfaitement sur la différence par rapport à Windows. Voici quelques recommandations générales:
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>Bluetooth LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
-Utilisez les API GATT lorsque vous communiquez avec un appareil qui prend en charge de Bluetooth Low Energy. Si vous êtes utiliser cas rare large bande passante faible ou requiert un faible consommation d’énergie, Bluetooth Low Energy est la réponse. L’espace de noms principal qui inclut cette fonctionnalité est [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
+Utilisez les API GATT lorsque vous communiquez avec un appareil qui prend en charge de Bluetooth Low Energy. Si vous êtes utiliser cas est la bande passante faible, rare ou nécessite de faible consommation d’énergie, Bluetooth Low Energy est la réponse. L’espace de noms principal qui inclut cette fonctionnalité est [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
 
-**Quand ne pas utiliser de Bluetooth LE**
-- Bande passante élevée, les scénarios de haute fréquence. Si vous avez besoin de conserver en permanence de synchronisation avec de grandes quantités de données, envisagez d’utiliser le Bluetooth et Wi-Fi classique ou peut-être même. 
+**Quand ne pas utiliser Bluetooth LE**
+- Bande passante élevée, les scénarios de haute fréquence. Si vous avez besoin de conserver en permanence la synchronisation avec de grandes quantités de données, envisagez d’utiliser Bluetooth et Wi-Fi classique ou peut-être même. 
 
 ### <a name="bluetooth-classic-windowsdevicesbluetoothrfcomm"></a>Bluetooth classique (Windows.Devices.Bluetooth.Rfcomm)
 
-Les API RFCOMM permettent aux développeurs un socket à établir une communication de style de port série et bidirectionnel. Une fois que vous avez un socket, les méthodes d’écriture dans et de lecture à partir de celui-ci sont relativement standard. Une implémentation de cette est présentée dans l' [exemple de Rfcomm Chat](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat). 
+Les API RFCOMM fournit aux développeurs un socket à établir une communication de style de port série et bidirectionnel. Une fois que vous disposez d’un socket, les méthodes d’écriture dans et de lecture à partir de celui-ci sont relativement standard. Une implémentation de cette est présentée dans l' [exemple de conversation Rfcomm](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat). 
 
 **Quand ne pas utiliser de Bluetooth Rfcomm** 
-- Notifications. Le protocole Bluetooth GATT dispose d’une commande spécifique pour ce faire et entraîne beaucoup moins courant et le temps de réponse plus rapides. 
-- Vérification de la détection de présence ou de proximité. Préférable d’utiliser les [API d’annonce](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement) et de se connecter via Bluetooth LE. 
+- Notifications. Le protocole Bluetooth GATT dispose d’une commande spécifique pour ce faire et entraîne beaucoup moins courant et diminution du délai de réponse. 
+- Vérification de la détection de présence ou de proximité. Préférable d’utiliser les [API d’annonce](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement) et se connecter via Bluetooth LE. 
 
 
 ## <a name="why-does-my-bluetooth-le-device-stop-responding-after-a-disconnect"></a>Pourquoi mon périphérique Bluetooth LE ne répond plus après une déconnexion?
@@ -63,24 +63,24 @@ Dans cet exemple, nous générons le jumelage avec un périphérique sans chiffr
 
 Vous n’êtes pas contraint de le faire pour les appareils Bluetooth RFCOMM (standard). À compter de Windows10 version1607, vous pouvez simplement interroger les appareils à proximité et vous y connecter. L’[exemple de discussion RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) mis à jour présente cette fonctionnalité. 
 
-**(14393 et ci-dessous)** Cette fonctionnalité n’est pas disponible pour Bluetooth Low Energy (Client GATT), afin que vous devrez quand même paire soit par le biais de la page des paramètres ou à l’aide de l’API [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) dans les commandes que l’accès de ces appareils.
+**(14393 et ci-dessous)** Cette fonctionnalité n’est pas disponible pour Bluetooth Low Energy (Client GATT), afin que vous aurez toujours à paire soit par le biais de la page des paramètres ou à l’aide de l’API [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) dans accès ordre ces périphériques.
 
-**(15030 et ci-dessus)** COUPLAGE de périphériques Bluetooth n’est plus nécessaire. Utilisez les nouvelles APIs Async comme GetGattServicesAsync et GetCharacteristicsAsync afin d’interroger l’état actuel de l’appareil distant. Consultez la [documentation du Client](gatt-client.md) pour plus d’informations. 
+**(15030 et ci-dessus)** COUPLAGE d’appareils Bluetooth n’est plus nécessaire. Utilisez les nouvelles APIs asynchrone, tels que GetGattServicesAsync et GetCharacteristicsAsync afin d’interroger l’état actuel de l’appareil distant. Consultez la [documentation du Client](gatt-client.md) pour plus d’informations. 
 
 ## <a name="when-should-i-pair-with-a-device-before-communicating-with-it"></a>Quand dois-je jumeler avec un appareil avant de pouvoir communiquer avec celle-ci?
-En règle générale, si vous avez besoin d’une obligation de confiance, à long terme avec un appareil, associer avec ce dernier (qui redirige l’utilisateur à la page Paramètres ou à l’aide de l’énumération des périphériques et les API de jumelage). Si vous devez simplement lus d’informations sur l’appareil qui est exposée publiquement (un capteur de température ou une balise), puis se connecter ou écouter les annonces sans apporter aucun effort de coupler avec l’appareil. Cela empêchera les problèmes d’interopérabilité à long terme, car un grand nombre d’appareils ne prennent pas en charge le jumelage. 
+En règle générale, si vous avez besoin d’une obligation de confiance, à long terme avec un appareil, jumeler avec ce dernier (qui redirige l’utilisateur à la page Paramètres ou à l’aide de l’énumération des appareils et les API de couplage). Si vous devez simplement lus d’informations sur l’appareil qui est exposée publiquement (un capteur de température ou beacon), puis se connecter ou écouter les annonces sans apporter aucun effort de coupler avec l’appareil. Cela empêchera les problèmes d’interopérabilité à long terme, car un grand nombre d’appareils ne prennent pas en charge le couplage. 
 
 ## <a name="do-all-windows-devices-support-peripheral-role"></a>Tous les appareils Windows prennent en charge le rôle périphérique?
 
-Non, il s’agit d’un composant dépendant du matériel, mais une méthode est fournie (BluetoothAdapter.IsPeripheralRoleSupported) pour rechercher si elle est prise en charge ou non.  Appareils pris en charge actuellement incluent Windows Phone sur 8992 + et RPi3 (Windows IoT). 
+Non, il s’agit d’un composant dépendant du matériel, mais une méthode est fournie (BluetoothAdapter.IsPeripheralRoleSupported) pour rechercher si elle est prise en charge ou non.  Incluent des périphériques actuellement pris en charge Windows Phone sur 8992 + et RPi3 (Windows IoT). 
 
 ## <a name="can-i-access-these-apis-from-win32"></a>Puis-je accéder à ces API à partir de Win32?
 
-Oui, toutes ces API doit fonctionner. Ce blog décrit en détail la façon d’appeler les [API de Windows à partir d’applications de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/). 
+Oui, toutes ces API doit fonctionner. Ce blog décrit en détail la façon d’appeler des [API Windows à partir d’applications de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/). 
 ## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>Cette fonctionnalité est censée exister sur *- Insérer référence (SKU) ici -*?
 
 **Bluetooth LE**: Oui, toutes les fonctionnalités dans OneCore et devrait être disponible sur les appareils la plus récentes avec une pile Bluetooth LE ne fonctionnent pas. 
 > Avertissement: Le rôle périphérique est dépend du matériel et certaines éditions de Windows Server ne prend pas en charge le Bluetooth. 
 
-**Bluetooth BR/EDR (classique)**: il existe des variations mais de manière générale, ils ont une prise en charge très similaire de niveau profil. Voir les documents sur [RFCOMM](send-or-receive-files-with-rfcomm.md) et ces documents profil pris en charge pour les [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) et votre [téléphone](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
+**Bluetooth BR/EDR (classique)**: il existe des variations, mais de manière générale, ils ont une prise en charge très similaire de niveau profil. Voir la documentation sur [RFCOMM](send-or-receive-files-with-rfcomm.md) et ces documents profil pris en charge pour les [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) et votre [téléphone](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
 

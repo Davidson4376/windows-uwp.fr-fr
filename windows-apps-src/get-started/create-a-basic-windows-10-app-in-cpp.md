@@ -1,24 +1,24 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Créer un Hello application World en C++ / CX (Windows 10)
-description: Avec Studio2017 visuelle de Microsoft, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
+description: Avec Microsoft Studio2017 visuel, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712384"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836553"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application «Hello world» en C++ / CX
 
 > [!IMPORTANT]
 > Ce didacticiel utilise C++ / CX. Microsoft a publié C++ / WinRT: une projection moderne entièrement standard C ++ 17 langue pour les API Windows Runtime (WinRT). Pour plus d’informations sur cette langue, veuillez consulter [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
 
-Avec Studio2017 visuelle de Microsoft, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10 avec une interface utilisateur qui est définie dans le balisage langage XAML (Extensible Application).
+Avec Microsoft Studio2017 visuel, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10 avec une interface utilisateur qui est définie dans le balisage langage XAML (Extensible Application).
 
 > [!NOTE]
 > Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
@@ -43,7 +43,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 -   Vous utilisez toujours le débogueur, le profileur et les autres outils de développement de Visual Studio.
 
--   Vous créez toujours des applications qui sont compilées en code machine natif par le compilateur Visual C++. Les applications UWP en C++ / CX ne s’exécutent dans un environnement d’exécution managé.
+-   Vous créez toujours des applications qui sont compilées en code machine natif par le compilateur Visual C++. Les applications UWP en C++ / CX ne s’exécutent pas dans un environnement d’exécution managé.
 
 ### <a name="whats-new"></a>Quelles sont les nouveautés ?
 
@@ -61,11 +61,11 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 ## <a name="hello-world-store-app-in-ccx"></a>Application de Store Hello World en C++ / CX
 
-Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé des applications pour Windows8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, un pour l’application Windows, un pour l’application téléphonique et l’autre avec code partagé. Windows 10 Universal Windows Platform (UWP) rend possible d’avoir qu’un seul projet, qui s’exécute sur tous les appareils, y compris les ordinateurs de bureau et portables exécutant Windows 10, les appareils tels que les tablettes, les téléphones mobiles, les appareils de réalité virtuelle, et ainsi de suite.
+Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé des applications pour Windows8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, un pour l’application Windows, l’un pour l’application téléphonique et l’autre avec code partagé. La Universal Windows Platform (UWP) Windows 10 permet de disposer que d’un projet, qui s’exécute sur tous les appareils, y compris les ordinateurs de bureau et portables exécutant Windows 10, les appareils tels que les tablettes, les téléphones mobiles, les appareils de réalité virtuelle, et ainsi de suite.
 
 Commençons par les bases:
 
--   Comment créer un projet Windows universel dans Visual Studio2017.
+-   Découvrez comment créer un projet Windows universel dans Visual Studio2017.
 
 -   Comprendre les projets et fichiers qui sont créés.
 
@@ -117,7 +117,7 @@ Si vous examinez le code dans les fichiers App.xaml.h et App.xaml.cpp dans le pr
 
 **Classes ref**
 
-Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++ / CX, la durée de vie de ces types est régie par automatique décompte de références (pas le garbage collection) afin que vous ne supprimez jamais explicitement ces objets. Vous pouvez créer vos propres classes ref également.
+Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++ / CX, la durée de vie de ces types est régie par le décompte (pas le garbage collection) afin que vous ne supprimez jamais explicitement ces objets de références automatique. Vous pouvez créer vos propres classes ref également.
 
 ```cpp
 namespace HelloWorld
@@ -334,7 +334,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-    **Conseil**bien qu’il n’existe aucun texte dans ce [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit d’afin que vous pouvez le sélectionner.  
+    **Conseil**bien qu’il n’existe aucun texte dans ce [**contrôle TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit afin que vous pouvez le sélectionner.  
 
     Votre code XAML doit maintenant se présenter ainsi:
 

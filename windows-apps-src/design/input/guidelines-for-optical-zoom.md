@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fcbaa0a3db826ef971878acd6a553dd7a836508
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697945"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834301"
 ---
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 
@@ -37,7 +37,7 @@ Les schémas suivants montrent les différences entre le redimensionnement et le
 
 ![resserrer les doigts pour rétrécir un objet et les écarter pour l’agrandir](images/objectresize.png)
 
-**Remarque**  zoom optique ne pas confondre avec [Le Zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deuxinteractions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
+**Remarque**  zoom optique ne confondez pas avec [Le Zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deuxinteractions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
 
  
 

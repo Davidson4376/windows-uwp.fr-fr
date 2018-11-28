@@ -7,11 +7,11 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du pack
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
 ms.openlocfilehash: 08450b7aa9608e610a31d114059dd49e3ef3e10c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720105"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831498"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>Interrompre le lancement d’une soumission d’applications
 
@@ -28,7 +28,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Créer une soumission pour une de vos applications. Vous pouvez le faire dans l’espace partenaires, ou vous pouvez le faire à l’aide de la méthode de [créer une soumission d’application](create-an-app-submission.md) .
+* Créer une soumission pour l’une de vos applications. Vous pouvez le faire dans l’espace partenaires, ou vous pouvez le faire à l’aide de la méthode de [créer une soumission d’application](create-an-app-submission.md) .
 * Autorisez un déploiement de package progressif pour la soumission. Vous pouvez effectuer cette [dans l’espace partenaires](../publish/gradual-package-rollout.md), ou vous pouvez le faire à [l’aide de l’API de soumission au Microsoft Store](manage-app-submissions.md#manage-gradual-package-rollout).
 
 ## <a name="request"></a>Requête

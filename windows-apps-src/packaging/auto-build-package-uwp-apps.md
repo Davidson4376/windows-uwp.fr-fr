@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693070"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827450"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -224,7 +224,7 @@ Ensuite, supprimez l’argument msbuild `AppxBundle` de l’étape de générati
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>Configuration d’une build de déploiement continu pour le chargement indépendant
 
-Ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’un ensemble d’applications application à partir de la section artefacts de la page de résultats de build.
+Lorsque ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’un ensemble d’applications application à partir de la section artefacts de la page de résultats de build.
 Si vous voulez effectuer un test bêta de l’application en créant une distribution plus complète, vous pouvez utiliser le service HockeyApp. Ce service offre des fonctionnalités améliorées de test bêta, d’analyse des utilisateurs et de diagnostic d’incidents.
 
 ### <a name="applying-version-numbers-to-your-builds"></a>Application des numéros de version à vos builds
@@ -304,9 +304,9 @@ Cela génère un fichier de chargement qui peut être soumis au Windows Store.
 
 Utilisez l’extension Visual Studio Team Services pour le Microsoft Store pour l’intégration avec l’API Store et envoyez votre package d'application au Store.
 
-Vous devez vous connecter à votre compte espace partenaires avec Azure Active Directory (AD) et créez une application dans votre AD pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension.
+Vous devez vous connecter à votre compte espace partenaires avec Azure Active Directory (AD) et créez une application dans votre Active Directory pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension.
 
-Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et la configurer avec votre ID d’application et l’emplacement du fichier de chargement.
+Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et configurer avec votre ID d’application et l’emplacement du fichier de chargement.
 
 ![configurer l’espace partenaires](images/building-screen17.png)
 
@@ -331,7 +331,7 @@ Utilisez le script PowerShell `Add-AppDevPackage.ps1` pour installer des applica
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Chargement indépendant de votre application avec la mise à jour anniversaire de Windows10
 
-Dans la mise à jour d’anniversaire de Windows 10, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en cliquant sur le bouton Installer dans une boîte de dialogue.
+Dans la mise à jour Windows 10 anniversaire, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en choisissant le bouton Installer dans une boîte de dialogue.
 
 ![chargement indépendant dans rs1](images/building-screen18.png)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, carte, emplacement, clics-infos
 ms.localizationpriority: medium
 ms.openlocfilehash: f67c93a6f56fd466d981bce10eb41c16ff8da1f3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720335"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831948"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
 

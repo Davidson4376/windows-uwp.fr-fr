@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 372fd491e329a468c273dd039c917eba5dc3e123
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719213"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844517"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>Résolution des problèmes de portage WindowsPhone Silverlight vers UWP
 
@@ -24,7 +24,7 @@ Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, m
 
 Les exceptions d’analyse XAML peuvent être difficiles à diagnostiquer, en particulier si l’exception ne présente aucun message d’erreur explicite. Assurez-vous que le débogueur est configuré pour intercepter les exceptions de première chance (pour essayer d’intercepter l’exception d’analyse le plus tôt possible). Vous pourrez peut-être inspecter la variable d’exception dans le débogueur pour déterminer si la valeur HRESULT ou le message comportent des informations utiles. Vérifiez également la fenêtre de sortie de Visual Studio pour voir si elle contient des messages d’erreur de l’analyseur XAML.
 
-Si votre application s’arrête et que vous ne connaissez qu’une exception non gérée a été levée pendant l’analyse du balisage XAML, ce peut être le résultat d’une référence à une ressource manquante (c'est-à-dire une ressource dont la clé existe pour les applications WindowsPhone Silverlight, mais pas pour Windows 10 applications, par exemple certaines clés de Style **TextBlock** système). Il peut également s’agir d’une exception levée à l’intérieur d’une classe **UserControl**, d’un contrôle personnalisé ou d’un panneau de disposition personnalisé.
+Si votre application s’arrête et que vous ne connaissez qu’une exception non gérée a été levée pendant l’analyse du balisage XAML, qui peut ensuite être le résultat d’une référence à une ressource manquante (c'est-à-dire une ressource dont la clé existe pour les applications WindowsPhone Silverlight, mais pas pour Windows 10 applications, par exemple certaines clés de Style **TextBlock** système). Il peut également s’agir d’une exception levée à l’intérieur d’une classe **UserControl**, d’un contrôle personnalisé ou d’un panneau de disposition personnalisé.
 
 En dernier recours, vous pouvez effectuer un fractionnement binaire. Supprimez environ la moitié du balisage d’une page et réexécutez l’application. Vous saurez alors si l’erreur se situe quelque part dans la moitié que vous avez supprimée (que vous devez restaurer maintenant dans tous les cas) ou dans la partie que vous n’avez *pas* supprimée. Répétez ce processus en fractionnant la moitié qui contient l’erreur et ainsi de suite jusqu’à ce que vous ayez ciblé le problème.
 
@@ -32,7 +32,7 @@ En dernier recours, vous pouvez effectuer un fractionnement binaire. Supprimez e
 
 Cette section explique comment procéder si, lorsque vous ouvrez un projet Windows 10 dans Visual Studio, vous voyez apparaître le message «Visual Studio mise à jour requise. Un ou plusieurs projets nécessitent un Kit de développement de plate-forme &lt;version&gt; qui n’est pas installé ou qui est inclus comme élément d’une prochaine mise à jour de Visual Studio. »
 
--   Tout d’abord, déterminez le numéro de version du SDK pour Windows 10 que vous avez installé. Accédez à **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** et notez la valeur de *&lt;nom_dossier_version&gt;*, à quatre éléments (« Major.Minor.Build.Revision »).
+-   Tout d’abord, déterminez le numéro de version du SDK pour Windows 10 que vous avez installés. Accédez à **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** et notez la valeur de *&lt;nom_dossier_version&gt;*, à quatre éléments (« Major.Minor.Build.Revision »).
 -   Ouvrez le fichier de votre projet à des fins d’édition, puis recherchez les éléments `TargetPlatformVersion` et `TargetPlatformMinVersion`. Modifiez-les comme suit, en remplaçant *&lt;nom_dossier_version&gt;* par le numéro de version à quatre éléments que vous avez trouvé sur le disque :
 
 ```xml

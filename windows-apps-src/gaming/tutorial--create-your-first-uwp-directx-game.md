@@ -7,11 +7,11 @@ ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702507"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846463"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>Créer un jeu de plateforme Windows universelle (UWP) simple avec DirectX
 

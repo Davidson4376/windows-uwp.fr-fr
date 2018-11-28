@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705031"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845063"
 ---
 # <a name="continuous-dictation"></a>Dictée continue
 
@@ -26,7 +26,7 @@ Dans [Reconnaissance vocale](speech-recognition.md), vous avez appris à capture
 Pour les sessions de reconnaissance vocale en continu plus longues, tel qu’un texte dicté ou un e-mail, utilisez la propriété [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) d’un [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) afin d’obtenir un objet [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896).
 
 > [!NOTE]
-> Prise en charge de la dictée dépend de l' [appareil](https://docs.microsoft.com/windows/uwp/design/devices/) où votre application est en cours d’exécution. Pour les PC et ordinateurs portables, uniquement en-US est reconnue, lorsqu’une Xbox et les téléphones peuvent reconnaître toutes les langues prises en charge par la reconnaissance vocale. Pour plus d’informations, consultez [spécifier la langue de reconnaissance vocale](specify-the-speech-recognizer-language.md).
+> Prise en charge linguistique de dictée dépend de l' [appareil](https://docs.microsoft.com/windows/uwp/design/devices/) où votre application est en cours d’exécution. Pour les PC et ordinateurs portables, uniquement en-US est reconnue, lorsqu’une Xbox et les téléphones peuvent reconnaître toutes les langues prises en charge par la reconnaissance vocale. Pour plus d’informations, consultez [spécifier la langue de reconnaissance vocale](specify-the-speech-recognizer-language.md).
 
 ## <a name="set-up"></a>Configuration
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Nous vérifions ensuite la propriété [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434). Si la valeur de confiance est de [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) ou plus, nous ajoutons du texte au StringBuilder. Nous mettons également à jour l’interface utilisateur lorsque nous collectons des entrées.
 
-    **Remarque**l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché sur un thread en arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le fait [exemple vocal et TTS]), vous devez distribuer les mises à jour au thread d’interface utilisateur via la méthode [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur.
+    **Remarque**l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le fait [exemple vocal et TTS]), vous devez distribuer les mises à jour au thread d’interface utilisateur via la méthode [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704095"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833123"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
@@ -30,7 +30,7 @@ Si vous utilisez Visual Studio comme environnement de développement, vous dispo
 
 Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées. En l’absence des informations supplémentaires ajoutées au manifeste, vous pouvez rencontrer des échecs de chargement de package. 
 
-Lorsque vous générez des packages de votre application UWP, Visual Studio peut créer une .msix ou fichier appx ou un fichier .msixupload ou .appxupload. Pour les applications UWP, nous vous recommandons de vous toujours chargez le fichier .msixupload ou .appxupload dans la page [Packages](upload-app-packages.md) . Pour plus d’informations sur la création de packages d’applicationsUWP pour leStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
+Lorsque vous générez des packages UWP de votre application, Visual Studio peut créer une .msix ou fichier appx ou un fichier .msixupload ou .appxupload. Pour les applications UWP, nous recommandons que vous toujours charger le fichier .msixupload ou .appxupload dans la page [Packages](upload-app-packages.md) . Pour plus d’informations sur la création de packages d’applicationsUWP pour leStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
 
 Il n’est pas nécessaire que les packages de votre application soient signés avec un certificat provenant d’une autorité de certification approuvée.
 
@@ -57,7 +57,7 @@ Votre manifeste doit inclure des informations spécifiques concernant votre comp
 > Les valeurs du manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
 
 
-Les ensembles d’applications (.msixbundle ou .appxbundle) utilisent un manifeste différent. Pour connaître les détails et exigences concernant les manifestes d’ensemble d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un .msixbundle ou le .appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [d’identité](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
+Les ensembles d’applications (.msixbundle ou .appxbundle) utilisent un manifeste différent. Pour connaître les détails et exigences concernant les manifestes d’ensemble d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un .msixbundle ou .appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [d’identité](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
 
 > [!TIP]
 > Veillez à exécuter le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
@@ -73,7 +73,7 @@ Les packages de votre application doivent être conformes aux exigences ci-aprè
 | Hachages de mappage de bloc     | Algorithme SHA2-256                                                   |
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows de Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## <a name="supported-versions"></a>Versions prises en charge
 

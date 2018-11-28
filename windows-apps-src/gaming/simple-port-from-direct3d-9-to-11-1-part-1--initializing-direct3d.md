@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, direct3d 11, initialisation, portage, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707574"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852051"
 ---
 # <a name="initialize-direct3d-11"></a>Initialiser Direct3D 11
 

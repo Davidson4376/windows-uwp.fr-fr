@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
 ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707626"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829772"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows10
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7713566"
+ms.locfileid: "7832473"
 ---
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
 Pour poursuivre la communication réseau alors qu’elle n’est pas au premier plan, votre application peut utiliser des tâches en arrière-plan et l’autre de ces deux options.
