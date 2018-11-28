@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, achats dans l'application, FAI, extensions, catalogue, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7841906"
+ms.locfileid: "7968983"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Gérer un vaste catalogue de produits in-app
 
