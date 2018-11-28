@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows10, uwp, low light fusion, bitmaps, traitement d’image
 ms.localizationpriority: medium
 ms.openlocfilehash: e0677d2e4ce5e412c158b8a00da3a6338bae6c46
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7713373"
+ms.locfileid: "7837690"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>Traiter des images bitmap avec l’API LowLightFusion
 

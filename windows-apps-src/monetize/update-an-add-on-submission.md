@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’extension, mise à jour, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: fd0bb8df9b9fc36216da72e4ad01ebd2e650ad1a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698025"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835374"
 ---
 # <a name="update-an-add-on-submission"></a>Mettre à jour une soumission d’extension
 
@@ -48,7 +48,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension pour laquelle vous voulez mettre à jour une soumission. L’ID Windows Store est disponible dans l’espace partenaires, et il est inclus dans les données de réponse des requêtes pour [créer une extension](create-an-add-on.md) ou [d’obtenir des détails sur les extensions](get-all-add-ons.md).  |
+| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension pour laquelle vous voulez mettre à jour une soumission. L’ID Windows Store est disponible dans l’espace partenaires, et il est inclus dans les données de réponse des requêtes pour [créer une extension](create-an-add-on.md) ou [obtenir des détails sur les extensions](get-all-add-ons.md).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission à mettre à jour. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
 
 

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 05cf78d7dec260b990d2ce71662e3db6eb07d07f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703932"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835504"
 ---
 # <a name="getting-started-common-controls"></a>Prise en main: Contrôles courants
 
 
 ## <a name="common-controls-list"></a>Liste des contrôles courants
 
-Dans la section qui précède, vous utilisiez seulement deux contrôles : les boutons et les blocs de texte. Bien entendu, il existe beaucoup plus de contrôles qui sont disponibles pour vous. Voici quelques contrôles communs que vous utiliserez dans vos applications et leurs équivalents dans iOS. Les contrôles iOS apparaissent dans l’ordre alphabétique, en regard des contrôles les plus similaires pour la plateforme Windows universelle (UWP).
+Dans la section qui précède, vous utilisiez seulement deux contrôles : les boutons et les blocs de texte. Bien entendu, il existe beaucoup plus de contrôles qui sont offrent à vous. Voici quelques contrôles communs que vous utiliserez dans vos applications et leurs équivalents dans iOS. Les contrôles iOS apparaissent dans l’ordre alphabétique, en regard des contrôles les plus similaires pour la plateforme Windows universelle (UWP).
 
 L’intelligence des contrôles UWP est qu’ils sont capables de détecter le type d’appareil sur lequel ils s’exécutent, et de modifier leur apparence et leurs fonctionnalités en conséquence. Par exemple, si votre projet utilise le contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681), il est capable de s’optimiser lui-même pour adapter son apparence et son comportement à l’appareil sur lequel il opère, qu’il s’agisse d’un ordinateur de bureau ou d’un téléphone. Vous n’avez rien à faire : les contrôles s’ajustent automatiquement au moment de l’exécution.
 
@@ -30,7 +30,7 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Sélecteur de dates (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Vue image (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> Voir également [Image et ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Libellé (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> Voir aussi [Démarrage rapide: affichage de texte](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Voir les [cartes Bing pour les applications UWP](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Voir [Bing cartes pour les applications UWP](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Contrôleur de navigation (UINavigationController) et contrôleur de navigation délégué (UINavigationControllerDelegate) | [Trame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Contrôle de page (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Vue sélecteur (UIPickerView) et vue déléguée sélecteur (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> Voir aussi [Ajout de zones de liste déroulante et de zones de liste](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
@@ -51,7 +51,7 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 
 Pour obtenir d’autres contrôles, voir [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-**Remarque**pour obtenir la liste des contrôles pour les applications UWP en JavaScript et HTML, voir la [liste des contrôles](https://msdn.microsoft.com/library/windows/apps/hh465453).
+**Remarque**pour obtenir la liste des contrôles pour les applications UWP en JavaScript et HTML, consultez la [liste des contrôles](https://msdn.microsoft.com/library/windows/apps/hh465453).
 
 ### <a name="next-step"></a>Étape suivante
 

@@ -6,11 +6,11 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bd333cecc5f9141b3fd34593ea10d17fe6face1e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693490"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853162"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Nouveautés pour les développeurs dans Windows10, build16299
 
@@ -78,7 +78,7 @@ Les fonctionnalités de cette section ont été ajoutées depuis la parution de 
 
 Fonctionnalité | Description
  :------ | :------
-Gestion des comptes | Nous proposons désormais plus de souplesse lors [l’association de locataires Azure AD à votre compte espace partenaires](../publish/associate-azure-ad-with-dev-center.md) pour ajouter plusieurs comptes d’utilisateur. Vous pouvez associer plusieurs clients Azure AD avec un seul compte de l’espace partenaires ou associer qu’un seul client Azure AD avec plus d’un compte espace partenaires.
+Gestion des comptes | Nous proposons désormais plus de souplesse lors [l’association de locataires Azure AD à votre compte espace partenaires](../publish/associate-azure-ad-with-dev-center.md) pour ajouter plusieurs comptes d’utilisateur. Vous pouvez associer plusieurs clients Azure AD à un seul compte espace partenaires ou associer qu’un seul client Azure AD avec plus d’un compte espace partenaires.
 Publicité | Le SDKMicrosoftAdvertising vous permet désormais d’afficher les [publicités natives](../monetize/native-ads.md) dans vos applications. Une publicité native est un format de publicité basée sur un composant où chaque élément de l'annonce publicitaire (par exemple, le titre, l’image, la description et le texte de l’appel à l’action) est fourni à votre application sous forme d'élément individuel. Les publicités natives ne sont aujourd'hui disponibles que pour les développeurs qui rejoignent un programme pilote, mais nous envisageons de les rendre disponibles pour tous les développeurs bientôt.
 Tarification et disponibilité |  De nouvelles options de tarification et de disponibilité vous permettent de [planifier des changements de prix](../publish/set-and-schedule-app-pricing.md) et de [définir les dates de lancement précise](../publish/configure-precise-release-scheduling.md).
 API d'analyse du MicrosoftStore | L'[API d'analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md) fournit désormais une méthode que vous pouvez utiliser pour [télécharger le fichier CAB pour une erreur dans votre application](../monetize/download-the-cab-file-for-an-error-in-your-app.md).

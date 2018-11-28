@@ -3,11 +3,11 @@ title: Référence sur les API les informations d’identification réseau Devic
 description: Découvrez comment ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705101"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836234"
 ---
 # <a name="network-credentials-api-reference"></a>Référence de l’API d’informations d’identification réseau
 Vous pouvez ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées sur votre Kit de développement à l’aide de cette API REST.
@@ -39,7 +39,7 @@ GET | /ext/networkcredential
 - Tableau JSON au format suivant:
 * Informations d’identification
   * NetworkPath - le chemin d’accès au partage réseau.
-  * Username: le nom d’utilisateur qui a des informations d’identification stockées.
+  * Nom d’utilisateur - le nom d’utilisateur qui a des informations d’identification stockées.
 
 **Code d’état**
 
@@ -65,7 +65,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès réseau pour le partage de vous ajoutez des informations d’identification pour accéder à. |
+| NetworkPath        | Le chemin d’accès réseau pour le partage de vous ajoutez les informations d’identification pour accéder à. |
 <br>
 
 **En-têtes de requête**
@@ -76,7 +76,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Les éléments JSON suivants:
 * NetworkPath - le chemin d’accès au partage réseau.
-* Username: le nom d’utilisateur pour stocker les informations d’identification sous.
+* Nom d’utilisateur - le nom d’utilisateur pour stocker les informations d’identification sous.
 * -Le mot de passe nouvelle ou mise à jour pour cet utilisateur.
 
 **Réponse**   

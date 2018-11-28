@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708026"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833988"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 

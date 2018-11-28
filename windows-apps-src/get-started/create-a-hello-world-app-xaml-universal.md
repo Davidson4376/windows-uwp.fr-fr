@@ -7,19 +7,19 @@ ms.topic: article
 keywords: windows10, uwp, première application, hello word
 ms.localizationpriority: medium
 ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700477"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834704"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application «Hello World» (XAML)
 
-Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» pour la plateforme Windows universelle (UWP) sur Windows 10 d’application. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
+Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» application pour la plateforme Windows universelle (UWP) sur Windows 10. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 Vous allez apprendre à effectuer les opérations suivantes:
 
--   Créez un nouveau projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
+-   Créez un projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
 -   écrire du code XAML pour modifier l’interface utilisateur de votre page de démarrage;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio;
 -   utiliser un objet SpeechSynthesizer pour faire parler l’application quand vous appuyez sur un bouton.
@@ -44,9 +44,9 @@ Vous allez apprendre à effectuer les opérations suivantes:
 
 1.  Lancez Visual Studio2017.
 
-2.  Dans le menu **fichier** , sélectionnez **New > projet** pour ouvrir la boîte de dialogue *Nouveau projet* .
+2.  Dans le menu **fichier** , sélectionnez **Nouveau > projet** pour ouvrir la boîte de dialogue *Nouveau projet* .
 
-3.  Dans la liste des modèles de gauche, choisissez **installé > Visual c# > Windows universel** pour afficher la liste des modèles de projet UWP.
+3.  Dans la liste des modèles de gauche, choisissez **installés > Visual c# > Windows universel** pour afficher la liste des modèles de projet UWP.
 
     (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d'installation de Visual Studio** dans la boîte de dialogue *Nouveau projet*. Voir [se préparer](get-set-up.md).)
 
@@ -83,7 +83,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 -   App.xaml est le fichier dans lequel vous déclarez les ressources utilisées dans l’application.
 -   App.xaml.cs est le fichier code-behind d’App.xaml. Comme toutes les pages code-behind, il contient un constructeur qui appelle la méthode `InitializeComponent`. Ce n’est pas vous qui écrivez la méthode `InitializeComponent`. Elle est générée par Visual Studio et vise essentiellement à initialiser les éléments déclarés dans le fichier XAML.
 -   App.xaml.cs est le point d’entrée de votre application.
--   App.Xaml.cs contient également des méthodes pour gérer [l’activation](../launch-resume/activate-an-app.md) et la [suspension](../launch-resume/suspend-an-app.md) de l’application.
+-   App.Xaml.cs contient également des méthodes pour gérer [l’activation](../launch-resume/activate-an-app.md) et [la suspension](../launch-resume/suspend-an-app.md) de l’application.
 
 *MainPage.xaml*
 
@@ -93,7 +93,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 *Package.appxmanifest*
 -   Fichier manifeste qui décrit votre application: nom, description, vignette, page de démarrage, etc..
--   Comprend une liste de dépendances, les ressources et les fichiers contenus dans votre application.
+-   Comprend une liste des dépendances, les ressources et les fichiers contenus dans votre application.
 
 *Ensemble d’images de logo*
 -   Assets/Square150x150Logo.scale-200.png et Wide310x150Logo.scale-200.png représentent votre application (taille moyenne ou échelle) dans le menu Démarrer.
@@ -233,7 +233,7 @@ Quand vous exécutez l’application et que vous cliquez sur le bouton, votre or
 
 ## <a name="summary"></a>Récapitulatif
 
-Félicitations, vous avez créé votre première application pour Windows 10 et UWP.
+Félicitations, vous avez créé votre première application pour Windows 10 et la plateforme UWP!
 
 Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../design/layout/grid-tutorial.md) ou passez directement aux [étapes suivantes](learn-more.md).
 

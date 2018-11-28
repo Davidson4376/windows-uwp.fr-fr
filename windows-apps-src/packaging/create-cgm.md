@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, UWP, mappage de groupe de contenu, installation en continu, installation en continu d’une application UWP, mappage de groupe de contenu source
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697522"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837123"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Créer et convertir un mappage de groupe de contenu source
 

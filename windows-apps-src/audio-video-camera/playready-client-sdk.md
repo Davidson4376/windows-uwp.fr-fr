@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701514"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836221"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -19,7 +19,7 @@ ms.locfileid: "7701514"
 
 Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP).
 
-La gestion des droits numériques par PlayReady permet aux développeurs de créer des applications pour UWP capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section décrit les modifications apportées à Microsoft PlayReady DRM pour Windows 10 et explique comment modifier votre application UWP PlayReady pour prendre en charge les modifications apportées à partir de la version précédente de Windows8.1 vers la version de Windows 10.
+La gestion des droits numériques par PlayReady permet aux développeurs de créer des applications pour UWP capables de fournir du contenu PlayReady à l’utilisateur tout en appliquant les règles d’accès définies par le fournisseur de contenu. Cette section décrit les modifications apportées à Microsoft PlayReady DRM pour Windows 10 et explique comment modifier votre application UWP PlayReady pour prendre en charge les modifications apportées entre la version précédente de Windows8.1 vers la version de Windows 10.
  
 | Rubrique                                                                     | Description                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -398,14 +398,14 @@ Le tableau suivant décrit la gestion des droits numériques parPlayReady pour l
 Avant de commencer la création de votre application pour UWP protégée par PlayReady, le logiciel suivant doit être installé sur votre système :
 
 -   Windows 10.
--   Si vous compilez les exemples par PlayReady DRM pour les applications UWP, vous devez utiliser Studio2015 Visual Microsoft ou version ultérieure pour compiler les exemples. Vous pouvez toujours utiliser Studio2013 Visual Microsoft pour compiler les exemples de PlayReady DRM pour les applications du Windows Store Windows8.1 la.
+-   Si vous compilez les exemples de la DRM PlayReady pour les applications UWP, vous devez utiliser Microsoft Visual Studio2015 ou version ultérieure pour compiler les exemples. Vous pouvez toujours utiliser Microsoft Visual Studio2013 pour compiler les exemples de PlayReady DRM pour les applications du Windows Store Windows8.1 la.
 
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-uwp-app-migration-guide"></a>Guide de migration des applications UWP PlayReady
 
-Cette section inclut des informations sur la migration de vos applications du Windows Store de 8.x PlayReady Windows existantes vers Windows 10.
+Cette section inclut des informations sur la façon de migrer vos applications de Store 8.x PlayReady Windows existantes vers Windows 10.
 
 L’espace de noms pour les applications UWP PlayReady sur Windows 10 a été modifiée de **Microsoft.Media.PlayReadyClient** à [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). Cela signifie que vous devez rechercher l’ancien espace de noms et le remplacer par le nouvel espace de noms dans votre code. Vous devrez toujours référencer un fichier winmd. Il fait partie de windows.media.winmd sur le système d’exploitation Windows 10. Il se trouve sous windows.winmd et fait partie du kit de développement logiciel (SDK) Windows. Pour la plateforme Windows universelle, il est référencé sous windows.foundation.univeralappcontract.winmd.
 
@@ -511,7 +511,7 @@ Pour obtenir un exemple d’implémentation de l’arrêt sécurisé, consultez 
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Utiliser la gestion des droits numériques par PlayReady sur XboxOne
 
-Pour utiliser PlayReady DRM dans une application UWP sur Xbox One, vous devez d’abord inscrire votre compte du [Centre de l’espace](https://partner.microsoft.com/dashboard) que vous utilisez pour publier l’application pour l’autorisation d’utiliser PlayReady. Vous pouvez le faire de deux manières:
+Pour utiliser PlayReady DRM dans une application UWP sur Xbox One, vous devez tout d’abord inscrire votre compte du [Centre de l’espace](https://partner.microsoft.com/dashboard) que vous utilisez pour publier l’application pour l’autorisation d’utiliser PlayReady. Vous pouvez le faire de deux manières:
 
 * Demander à votre interlocuteur Microsoft de faire le nécessaire pour obtenir l’autorisation.
 * Demandez votre autorisation en envoyant votre nom de compte et de la société de l’espace partenaires à [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).

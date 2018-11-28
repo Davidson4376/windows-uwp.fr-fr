@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 8394a1a44173541e8982a660591e84b25b985205
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718450"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853056"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le MicrosoftStore Services SDK
 

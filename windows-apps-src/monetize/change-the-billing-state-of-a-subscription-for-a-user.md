@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API d'achat du MicrosoftStore, abonnements
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4cf27331a218c0c0ef06ee1a80c141b889504a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699962"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838124"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>Modifier l’état de facturation de l’abonnement d’un utilisateur
 
@@ -53,7 +53,7 @@ Pour plus d’informations, consultez [Gérer les droits sur les produits à par
 
 | Nom         | Type  | Description   |  Requis  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | chaîne | ID de l’abonnement à modifier. Pour obtenir cet ID, appelez la méthode [recueillir les abonnements d’un utilisateur](get-subscriptions-for-a-user.md) , identifiez l’entrée de corps de réponse qui représente l’extension d’abonnement que vous souhaitez modifier et utiliser la valeur du champ **id** pour l’entrée.     | Oui      |
+| recurrenceId | chaîne | ID de l’abonnement à modifier. Pour obtenir cet ID, appelez la méthode [recueillir les abonnements d’un utilisateur](get-subscriptions-for-a-user.md) , identifiez l’entrée du corps de la réponse qui représente l’extension d’abonnement que vous souhaitez modifier et utiliser la valeur du champ **id** pour l’entrée.     | Oui      |
 
 
 ### <a name="request-body"></a>Corps de requête
@@ -116,7 +116,7 @@ Le corps de réponse contient les données suivantes.
 | autoRenew | Valeur booléenne |  Indique si l’abonnement est configuré pour se renouveler automatiquement à la fin de la période d’abonnement en cours.   |
 | bénéficiaire | chaîne |  L’ID du bénéficiaire du droit associé à cet abonnement.   |
 | expirationTime | chaîne | La date et l’heure auxquelles l’abonnement expire, au format ISO8601. Ce champ est uniquement disponible lorsque l’abonnement est dans certains états. Généralement, le délai d’expiration indique le moment où l’état actuel arrive à expiration. Par exemple, pour un abonnement actif, la date d’expiration indique quand le renouvellement automatique suivant a lieu.    |
-| expirationTimeWithGrace | chaîne | Date et heure de qu'expiration de l’abonnement, y compris la période de grâce au format ISO 8601. Cette valeur indique quand l’utilisateur perd l’accès à l’abonnement une fois que l’abonnement n’a pas pu renouveler automatiquement.    |
+| expirationTimeWithGrace | chaîne | La date et l’heure qu'auxquelles l’abonnement expire, y compris la période de grâce au format ISO 8601. Cette valeur indique quand l’utilisateur perd l’accès à l’abonnement une fois que l’abonnement n’a pas pu renouveler automatiquement.    |
 | id | chaîne |  L’ID de l’abonnement. Utilisez cette valeur afin d’indiquer l’abonnement que vous souhaitez modifier lorsque vous appelez la méthode [modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md).    |
 | isTrial | Valeur booléenne |  Indique si l’abonnement est une version d’évaluation.     |
 | lastModified | chaîne |  La date et l’heure auxquelles l’abonnement a été modifié pour la dernière fois, au format ISO8601.      |

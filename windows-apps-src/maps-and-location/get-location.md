@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, carte, emplacement, fonctionnalité de localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706856"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834672"
 ---
 # <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
@@ -56,7 +56,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
->Remarque: La fonctionnalité de localisation approximative permet à votre application d’obtenir un localisation intentionnellement obfusqué emplacement (imprécis) sans obtenir l’autorisation explicite de l’utilisateur (le commutateur de localisation de l’échelle du système doit toujours se trouver **sur**, toutefois). Pour savoir comment utiliser la localisation approximative dans votre application, voir la méthode [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) dans la classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) .
+>Remarque: La fonctionnalité de localisation approximative permet à votre application d’obtenir un localisation intentionnellement obfusqué emplacement (imprécis) sans obtenir l’autorisation explicite de l’utilisateur (le commutateur de localisation à l’échelle du système doit toujours se trouver **sur**, toutefois). Pour savoir comment utiliser la localisation approximative dans votre application, consultez la méthode [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) dans la classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) .
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Étape 2: Obtenir l’emplacement de l’utilisateur et inscrire les changements d’autorisation de localisation
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698907"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837478"
 ---
 # <a name="xnull-markup-extension"></a>Extension de balisage {x:Null}
 

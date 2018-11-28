@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
 ms.openlocfilehash: 5176e123d57b8bcc5d4981acc91b22329ad4c643
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702953"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832797"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>Obtenir les informations sur une erreur de votre application
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les informations concernant une erreur spécifique de votre app, au format JSON. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30derniers jours. Ces informations sont également disponibles dans la section des **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les informations concernant une erreur spécifique de votre app, au format JSON. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30derniers jours. Ces informations sont également disponibles dans la section **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
 
 Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) afin de récupérer l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées.
 

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 69504fd8d670158a35e5afd5dcd035acd296f084
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692079"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834958"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Obtenir les données de signalement d’erreurs pour votre application
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer le rapport complet des erreurs de votre app au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Cette méthode ne récupère que les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans la section des **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer le rapport complet des erreurs de votre app au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Cette méthode ne récupère que les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans la section **échecs** du [rapport d’intégrité](../publish/health-report.md) dans l’espace partenaires.
 
 Vous pouvez récupérer des informations d’erreur supplémentaires à l’aide des méthodes [obtenir des informations les erreurs](get-details-for-an-error-in-your-app.md), [obtenir la trace de la pile](get-the-stack-trace-for-an-error-in-your-app.md) et [télécharger le fichier CAB](download-the-cab-file-for-an-error-in-your-app.md).
 

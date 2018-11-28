@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ece97d2e2cf96d2905902fd563f1de9027aa64a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693580"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835234"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
-Vous pouvez créer des campagnes de publicité dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour aider à promouvoir votre application et à développer la base de ses utilisateurs. Par défaut, nous allons choisir le public cible de vos publicités d’après les paramètres de votre application dans l’espace partenaires, mais vous pouvez définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
+Vous pouvez créer des campagnes de publicité dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour aider à promouvoir votre application et à développer la base de ses utilisateurs. Par défaut, nous allons choisir le public cible de vos publicités d’après les paramètres de votre application dans l’espace partenaires, mais vous pouvez éventuellement définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
 
 Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
 
 > [!NOTE]
-> Cette section de la documentation décrit comment créer une campagne de publicité dans l’espace partenaires. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
+> Cette section de la documentation explique comment créer une campagne de publicité dans l’espace partenaires. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
 
 ## <a name="instructions"></a>Instructions
 
@@ -70,7 +70,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez l’article [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes de publicité maison, car elles s’exécutent uniquement dans vos propres applications.
 
 11.  Dans la page **Conception d’annonces**, choisissez l’une des options suivantes:
-    * **Auto-généré**. Il s’agit de l’option par défaut, et vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
+    * **Auto-généré**. Il s’agit de l’option par défaut, et il vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge MicrosoftStore s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]
