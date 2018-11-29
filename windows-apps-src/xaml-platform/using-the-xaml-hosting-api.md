@@ -1,16 +1,16 @@
 ---
 description: Cet article décrit comment héberger UWP XAML d’interface utilisateur dans votre application de bureau.
 title: À l’aide de l’API d’hébergement dans une application de bureau UWP XAML
-ms.date: 09/21/2018
+ms.date: 11/27/2018
 ms.topic: article
 keywords: Windows 10, uwp, WinForms, wpf, win32
 ms.localizationpriority: medium
-ms.openlocfilehash: b6883b605bed0b259cd70d1f6dc0264476eddd40
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: df6c47fd93c3f42721fd072d6406a2d32f7889db
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837561"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990116"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de l’API d’hébergement dans une application de bureau UWP XAML
 
@@ -46,8 +46,8 @@ Il existe plusieurs exemples qui montrent comment utiliser le XAML UWP, API d’
 
 Le contrôle de [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le Kit de ressources de la Communauté Windows agit comme un exemple de référence pour l’utilisation de l’UWP, API d’hébergement dans les applications WPF et Windows Forms. Le code source est disponible aux emplacements suivants:
 
-  * Pour la version WPF du contrôle, [Cliquez ici](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost). La version WPF dérive de [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
-  * Pour la version Windows Forms du contrôle, [Cliquez ici](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost). La version Windows Forms dérive de [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
+  * Pour la version WPF du contrôle, [Cliquez ici](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost). La version WPF dérive de [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
+  * Pour la version Windows Forms du contrôle, [Cliquez ici](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). La version Windows Forms dérive de [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -161,8 +161,8 @@ Voici les principales étapes pour héberger un contrôle UWP dans votre applica
 Pour obtenir des exemples complets qui illustrent les tâches dans le contexte d’un exemple d’application de travail, voir les fichiers de code suivants:
 
   * **Win32 C++:** Consultez le fichier [Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp) dans l’exemple [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting) ou le fichier [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) dans l’exemple [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) .
-  * **WPF:** Voir les fichiers [WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) et [WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) dans le Kit de ressources de la Communauté Windows.  
-  * **Windows Forms:** Voir les fichiers [WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) et [WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) dans le Kit de ressources de la Communauté Windows.
+  * **WPF:** Voir les fichiers [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) et [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) dans le Kit de ressources de la Communauté Windows.  
+  * **Windows Forms:** Voir les fichiers [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) et [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) dans le Kit de ressources de la Communauté Windows.
 
 
 ## <a name="how-to-host-custom-uwp-xaml-controls"></a>Hôte personnalisé XAML UWP de contrôles
@@ -174,11 +174,11 @@ Si vous souhaitez héberger un contrôle XAML UWP personnalisé (un contrôle qu
 
 1. Définissez un type personnalisé qui dérive de [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) et implémente également [**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider). Ce type agit comme un fournisseur de métadonnées racine pour le chargement des métadonnées pour les types UWP XAML personnalisés dans les assemblys dans le répertoire actif de votre application.
 
-    Pour obtenir un exemple illustrant comment procéder, consultez le fichier de code [XamlApplication.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/XamlApplication.cs) dans le Kit de ressources de la Communauté Windows. Ce fichier fait partie de l’implémentation des classes **WindowsXamlHost** partagée pour WPF et Windows Forms, ce qui est d’illustrer l’utilisation de l’API dans ces types d’applications d’hébergement de XAML UWP.
+    Pour obtenir un exemple illustrant comment procéder, consultez le fichier de code [XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs) dans le Kit de ressources de la Communauté Windows. Ce fichier fait partie de l’implémentation des classes **WindowsXamlHost** partagée pour WPF et Windows Forms, ce qui est d’illustrer l’utilisation de l’API dans ces types d’applications d’hébergement de XAML UWP.
 
 2. Appelez la méthode de [**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) de votre fournisseur de métadonnées racine lorsque le nom de type du contrôle XAML UWP est affecté (Cela peut être affecté dans le code en cours d’exécution, ou vous pouvez choisir d’activer cette option pour être affectés dans la fenêtre de propriétés de Visual Studio).
 
-    Pour obtenir un exemple illustrant comment procéder, consultez le fichier de code [UWPTypeFactory.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/UWPTypeFactory.cs) dans le Kit de ressources de la Communauté Windows. Ce fichier fait partie de l’implémentation des classes **WindowsXamlHost** partagée pour WPF et Windows Forms.
+    Pour obtenir un exemple illustrant comment procéder, consultez le fichier de code [UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs) dans le Kit de ressources de la Communauté Windows. Ce fichier fait partie de l’implémentation des classes **WindowsXamlHost** partagée pour WPF et Windows Forms.
 
 3. Intégrer le code source pour le contrôle XAML UWP personnalisé à votre solution d’application hôte, la génération du contrôle personnalisé et l’utiliser dans votre application en suivant [les instructions ci-après](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control).
 
@@ -193,8 +193,8 @@ Le XAML UWP API d’hébergement fournit plusieurs types et membres pour vous ai
 2. Lorsque l’utilisateur se trouve sur le dernier élément pouvant être actif dans votre **DesktopWindowXamlSource** et appuie sur la touche **Tab** ou sur une touche de direction, l’événement [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) est déclenché. Gérez cet événement et par programmation déplacer le focus vers le prochain élément dans l’application hôte. Par exemple, dans une application WPF où le **DesktopWindowXamlSource** est hébergé dans un [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost), vous pouvez utiliser la méthode [**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) pour transférer le focus vers le prochain élément dans l’application hôte.
 
 Pour obtenir des exemples qui montrent comment effectuer cette opération dans le contexte d’un exemple d’application de travail, voir les fichiers de code suivants:
-  * **WPF:** Consultez le fichier [WindowsXamlHostBase.Focus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) dans le Kit de ressources de la Communauté Windows.  
-  * **Windows Forms:** Consultez le fichier [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) dans le Kit de ressources de la Communauté Windows.
+  * **WPF:** Consultez le fichier [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) dans le Kit de ressources de la Communauté Windows.  
+  * **Windows Forms:** Consultez le fichier [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) dans le Kit de ressources de la Communauté Windows.
 
 ## <a name="how-to-handle-layout-changes"></a>Comment gérer les modifications de disposition
 
@@ -209,8 +209,8 @@ Lorsque l’utilisateur modifie la taille de l’élément d’interface utilisa
     * Dans une application Windows Forms vous ferez cela à partir du gestionnaire pour l’événement [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 
 Pour obtenir des exemples qui montrent comment effectuer cette opération dans le contexte d’un exemple d’application de travail, voir les fichiers de code suivants:
-  * **WPF:** Consultez le fichier [WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le Kit de ressources de la Communauté Windows.  
-  * **Windows Forms:** Consultez le fichier [WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le Kit de ressources de la Communauté Windows.
+  * **WPF:** Consultez le fichier [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le Kit de ressources de la Communauté Windows.  
+  * **Windows Forms:** Consultez le fichier [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) dans le Kit de ressources de la Communauté Windows.
 
 ## <a name="how-to-handle-dpi-changes"></a>Comment gérer les modifications PPP
 

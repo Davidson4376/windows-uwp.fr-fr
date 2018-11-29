@@ -5,12 +5,12 @@ ms.date: 09/17/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7842394"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990515"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Applications adaptatives de version: Utiliser de nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
 
@@ -56,7 +56,7 @@ Pour modifier la version Minimum et la version Cible d’un projet déjà créé
 | CreatorsUpdate | 1703 | 15063 |
 | FallCreatorsUpdate | 1709 | 16299 |
 | Mise à jour d’avril2018 | 1803 | 17134 |
-| Mise à jour octobre 2018 | 1809 | _Insider Preview_ |
+| Mise à jour octobre 2018 | 1809 | 17763 |
 
 Vous pouvez télécharger les versions finales du SDK à partir des [archives du SDKWindows et de l’émulateur](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel (SDK) WindowsInsiderPreview dans la section du site [WindowsInsider](https://insider.windows.com/Home/BuildWithWindows) dédiée aux développeurs.
 

@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, portal de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832526"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989038"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour DevicePortal
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-L’application doit gérer deux événements pour exécuter la boucle de gestion des requêtes: l’événement **Closed**, qui se déclenche chaque fois que le service DevicePortal s’arrête, et l’événement [**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), qui expose les requêtesHTTP entrantes et assure la principale fonctionnalité du fournisseur DevicePortal. 
+Il existe deux événements qui doivent être gérées par l’application pour effectuer la requête boucle de gestion des: **fermé**, pour chaque fois que le service Device Portal s’arrête, et les demandes de [**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), qui expose HTTP entrante et fournit la main fonctionnalité du fournisseur Device Portal. 
 
 ## <a name="handle-the-requestreceived-event"></a>Gérer l’événement RequestReceived
 L’événement **RequestReceived** se déclenche chaque fois qu’une requêteHTTP est effectuée sur l’itinéraire du gestionnaire spécifié de votre plug-in. La boucle de gestion des requêtes pour les fournisseurs DevicePortal est comparable à celle de NodeJSExpress: les objets de requête et de réponse sont fournis en même temps que l’événement, et le gestionnaire répond en remplissant l’objet de réponse. Dans les fournisseurs DevicePortal, l’événement **RequestReceived** et ses gestionnaires utilisent les objets [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage) et [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage).   
