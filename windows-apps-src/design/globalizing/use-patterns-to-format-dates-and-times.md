@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a86d0b29b39ecb4d2793e641c8c53f6c2a4e3c0
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 9ffcbc3d1c11c8f756b6307b15b87c14b09f65c4
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7830363"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989226"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
 
@@ -39,7 +39,7 @@ var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatt
 
 Ce code crée un formateur basé sur la langue et la région du contexte actuel. Dans un modèle de format, l'ordre des composants importe peu; le formateur les affiche dans le bon ordre pour la langue actuelle. Ainsi il affiche «Janvier1» pour l’anglais (États-Unis), «1janvier» pour le français (France) et «1月1日» pour le japonais.
 
-En revanche, le motif de format est spécifique à la culture. Accédons au motif de format pour notre modèle de format.
+En revanche, le motif de format est spécifique à la culture. Nous allons accéder au modèle de format pour notre modèle de format.
 
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;

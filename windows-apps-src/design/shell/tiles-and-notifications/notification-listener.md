@@ -8,16 +8,16 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
-ms.openlocfilehash: c0717fb3d1db42483214e8396d436c47c23744ee
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7833689"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983891"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Écouteur de notification: accéder à toutes les notifications
 
-L'Écouteur de notification donne accès à toutes les notifications d'un utilisateur. Les montres intelligentes et d'autres appareils portables peuvent utiliser l’écouteur de notification pour envoyer les notifications du téléphone à l’appareil portable. Les applications de domotique peuvent utiliser l'écouteur de notification pour effectuer des actions spécifiques lors de la réception de notifications, par exemple, faire clignoter les lumières lorsque vous recevez un appel. 
+L'Écouteur de notification donne accès à toutes les notifications d'un utilisateur. Les montres intelligentes et d'autres appareils portables peuvent utiliser l’écouteur de notification pour envoyer les notifications du téléphone à l’appareil portable. Applications de domotique peuvent utiliser écouteur de notification pour effectuer des actions spécifiques lors de la réception de notifications, par exemple, faire que clignoter les lumières lorsque vous recevez un appel. 
 
 > [!IMPORTANT]
 > **Nécessite la mise à jour anniversaire**: vous devez cibler le Kit de développement logiciel (SDK)14393 et exécuter la Build14993 ou une version supérieure pour utiliser l'Écouteur de notification.
