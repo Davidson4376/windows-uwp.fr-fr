@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7984070"
+ms.locfileid: "8196161"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>Exposition des ressources de diffusion en continu HLSL
 

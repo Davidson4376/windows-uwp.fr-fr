@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7991836"
+ms.locfileid: "8209394"
 ---
 # <a name="compute-pipeline"></a>Pipeline de calcul
 

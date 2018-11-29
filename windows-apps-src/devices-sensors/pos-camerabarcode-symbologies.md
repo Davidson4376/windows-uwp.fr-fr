@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: ecb40528ee0104a2e25b5e95499c4404057eba1f
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7982024"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8188611"
 ---
 # <a name="symbologies"></a>Symbologies
 Cette rubrique fournit des exemples de codes-barres pour chacune des symbologies prises en charge par le décodeur de code-barres logiciel fourni avec Windows10, notamment: UPC/EAN, Code 39, Code 128, Code 2 parmi 5 entrelacé, Databar Omnidirectional, Databar Stacked, CodeQR et GS1DWCode.

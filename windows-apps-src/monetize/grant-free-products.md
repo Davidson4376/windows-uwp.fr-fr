@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API d’achat du MicrosoftStore, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 75edbe720e2e4483432d3d865650e5d7e7a24b40
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7978804"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8209803"
 ---
 # <a name="grant-free-products"></a>Attribuer des produits gratuits
 

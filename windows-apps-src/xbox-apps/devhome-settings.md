@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7989837"
+ms.locfileid: "8203651"
 ---
 # <a name="settings-page-dev-home"></a>Page des paramètres (Dev Home)
    

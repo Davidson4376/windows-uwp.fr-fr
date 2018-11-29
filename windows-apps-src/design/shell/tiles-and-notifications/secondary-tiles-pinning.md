@@ -1,20 +1,20 @@
 ---
-Description: Learn how to pin a secondary tile from your UWP app.
-title: Épingler les vignettes secondaires
-label: Pin secondary tiles
+Description: Learn how to pin a secondary tile to Start from your UWP app.
+title: Épingler les vignettes secondaires au menu Démarrer
+label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows10, uwp, vignettes secondaires, épingler, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fda249e38ddc9126816b0ea479ec0339fc6202b
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7977049"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8218012"
 ---
-# <a name="pin-secondary-tiles"></a>Épingler les vignettes secondaires
+# <a name="pin-secondary-tiles-to-start"></a>Épingler les vignettes secondaires au menu Démarrer
 
 
 Cette rubrique vous guide à travers les étapes de création d’une vignette secondaire pour votre application UWP et son épinglage au menu Démarrer.
