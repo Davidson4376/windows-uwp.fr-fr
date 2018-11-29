@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, licences, applications, extensions, achats dans l’application, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827853"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7982943"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Obtenir les informations de licence des applications et des extensions
 

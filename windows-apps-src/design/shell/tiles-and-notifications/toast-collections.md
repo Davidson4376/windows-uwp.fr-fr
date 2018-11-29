@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, notification, collections, collection, notifications de groupe, notifications de regroupement, regrouper, organiser, centre de notifications, toast
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6818f876c094298a0a6636faa00efa9a192545
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7849426"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983794"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Regroupement de notifications toast avec des collections
 Utilisez des regroupements pour organiser les toasts de votre application dans le centre de notifications. Les collections permettent aux utilisateurs de localiser plus facilement les informations dans le centre de notifications et aux développeurs de mieux gérer leurs notifications.  Les API ci-dessous permettent de supprimer, de créer et de mettre à jour des collections de notifications.

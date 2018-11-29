@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad801dee43607b4fb6e75bd30f612682e1214ff
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7852511"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7984585"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
