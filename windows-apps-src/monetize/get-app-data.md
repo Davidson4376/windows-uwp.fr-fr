@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, données d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: 312729c25d5d9f34471c7154a84273bcbf844da4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720225"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992384"
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
@@ -109,7 +109,7 @@ Cette ressource a les valeurs suivantes.
 
 <span id="add-on-object" />
 
-### <a name="add-on-resouce"></a>Ressource d’extension
+### <a name="add-on-resource"></a>Ressource d’extension
 
 Cette ressource fournit des informations sur une extension.
 
