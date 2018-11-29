@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, modèles, outils, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7982851"
+ms.locfileid: "8193659"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Modèles de projet et outils pour les jeux
 
