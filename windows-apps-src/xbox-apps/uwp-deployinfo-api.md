@@ -3,11 +3,11 @@ title: Informations de référence sur les API de déploiement de Device Portal
 description: Découvrez comment accéder aux API d’informations de déploiement par programmation.
 ms.localizationpriority: medium
 ms.openlocfilehash: c44089313b100880b419e9b55a26101e877496f3
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832658"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7973960"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Nécessite des informations de déploiement pour un ou plusieurs packages installés.
 

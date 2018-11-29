@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, annonce, publicité, directives, visibilité
 ms.localizationpriority: medium
 ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7846203"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7972659"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>Optimiser la visibilité de vos unités publicitaires
 

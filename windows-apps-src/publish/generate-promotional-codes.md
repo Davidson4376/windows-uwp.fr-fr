@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827417"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7973224"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 

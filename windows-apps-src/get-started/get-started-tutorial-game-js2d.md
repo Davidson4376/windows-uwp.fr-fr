@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7828165"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7972447"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 

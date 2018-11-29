@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 303cbd5e87db773324cd98447df6d99dc6de5a0c
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7831186"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7975700"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 

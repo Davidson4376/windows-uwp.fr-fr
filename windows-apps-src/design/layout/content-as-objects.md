@@ -4,11 +4,11 @@ title: Contenu en tant qu’objets
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7833238"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7975869"
 ---
 # <a name="content-as-objects"></a>Contenu en tant qu’objets
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, Windows 10, UWP, charger de manière indépendante du programme d’installation, AppInstaller, application, liés packages définis, facultatifs, AWS
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7848909"
+ms.locfileid: "7979075"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>Hébergement de packages d’application UWP sur AWS pour l’installation web
 

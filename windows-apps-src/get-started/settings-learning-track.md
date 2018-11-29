@@ -7,11 +7,11 @@ keywords: prise en main, uwp, Windows10, piste d'apprentissage, paramètres, enr
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7826744"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7974071"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Enregistrer et charger des paramètres dans une application UWP
 

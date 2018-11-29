@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb53295227655e3067dafd5e3a3f1f4631a97455
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7849147"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7976075"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Portage des entreprises WindowsPhone Silverlight et des couches de données vers UWP
 

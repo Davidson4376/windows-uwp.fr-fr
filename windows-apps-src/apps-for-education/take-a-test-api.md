@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, éducation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f308e42e1dbb1d3654d3fc557a9d5e29ef6f6b0
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7839976"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7975647"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
 

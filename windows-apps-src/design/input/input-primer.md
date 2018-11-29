@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d9b2a894746cc9f26a0ebb3df90c967a73914c3c
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827711"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7978309"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumission de version d'évaluation, état
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cd898c51d694d2dd60185623126c7f566af0f55
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7841499"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7976349"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>Obtenir l’état d’une soumission de version d’évaluation de package
 

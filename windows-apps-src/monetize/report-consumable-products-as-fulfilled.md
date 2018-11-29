@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, traiter, produit consommable
 ms.localizationpriority: medium
 ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7854267"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7978392"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Signaler le traitement de la commande d’un produit consommable
 

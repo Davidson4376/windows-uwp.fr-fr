@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7851470"
+ms.locfileid: "7977095"
 ---
 # <a name="vertex-shader-vs-stage"></a>Étape Vertex Shader (VS)
 

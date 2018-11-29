@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7828778"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7973523"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 

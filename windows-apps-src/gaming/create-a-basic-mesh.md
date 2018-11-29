@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, maillage, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7848823"
+ms.locfileid: "7978299"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 

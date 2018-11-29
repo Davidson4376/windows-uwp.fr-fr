@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, son
 ms.localizationpriority: medium
 ms.openlocfilehash: 94044e3d10df15cb1cb256d86ced798395e6af6f
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7848971"
+ms.locfileid: "7973914"
 ---
 # <a name="add-sound"></a>Ajouter du son
 
