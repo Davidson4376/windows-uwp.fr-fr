@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7970724"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8201070"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions
 

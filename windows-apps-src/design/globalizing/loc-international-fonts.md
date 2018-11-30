@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c525c79287a81421c68fca5bed3393b4d230d8a
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7965755"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8205026"
 ---
 # <a name="international-fonts"></a>Polices internationales
 

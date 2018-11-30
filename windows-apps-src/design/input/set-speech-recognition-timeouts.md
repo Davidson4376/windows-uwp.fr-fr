@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 73c7e889b4633dae9e416cf7ccde13eb3f58e8ee
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7964162"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8202946"
 ---
 # <a name="set-speech-recognition-timeouts"></a>Définir des délais d’expiration de reconnaissance vocale
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ffcbc3d1c11c8f756b6307b15b87c14b09f65c4
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7989226"
+ms.locfileid: "8202210"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
 

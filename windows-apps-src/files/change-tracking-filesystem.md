@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e90692753924572a932767b9c188ed6d24f94593
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7978402"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8202256"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>Suivre les modifications de système de fichiers en arrière-plan
 
