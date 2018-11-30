@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993435"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8204798"
 ---
 # <a name="about-house-ads"></a>À propos des publicités maison
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 69e726291cc9bd79cb96b1b1460c4027aee9c0b7
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7979374"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8209179"
 ---
 # <a name="depth-stencil-view-dsv"></a>Vue du stencil de profondeur (DSV)
 
