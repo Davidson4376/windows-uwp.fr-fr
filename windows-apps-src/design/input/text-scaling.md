@@ -9,18 +9,18 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f81c435690c7bf17066be5f49de4994f146fc5c9
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201250"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8329810"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
 ![Exemple de texte mise à l’échelle 100 % à 225 %](images/coretext/text-scaling-news-hero-small.png)  
 *Exemple de texte mise à l’échelle dans Windows 10 (100 % à 225 %)*
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Lecture de texte sur un écran d’ordinateur (à partir d’un appareil mobile à un ordinateur portable à un moniteur de bureau à l’écran de Surface Hub giant) peut être difficile pour de nombreuses personnes. À l’inverse, certains utilisateurs de trouver les tailles de police utilisées dans les applications et sites web à être plus grande que nécessaire.
 

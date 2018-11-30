@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8197042"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8330080"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Intégration avec les contrôles de transport de média système
 

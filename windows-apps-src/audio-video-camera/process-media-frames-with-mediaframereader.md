@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8202276"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8329984"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 

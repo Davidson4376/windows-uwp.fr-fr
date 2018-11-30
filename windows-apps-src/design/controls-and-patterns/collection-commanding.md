@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8207136"
+ms.locfileid: "8327634"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Commandes contextuelles pour les regroupements et les listes
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8195833"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8327837"
 ---
 # <a name="accessing-homegroup-content"></a>Accès au contenu du Groupement résidentiel
 

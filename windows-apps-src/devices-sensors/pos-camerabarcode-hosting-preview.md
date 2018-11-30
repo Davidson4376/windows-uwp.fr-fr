@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb7b1b620fcfa16576d84eaa2564408394d59de
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8215388"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8327554"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a>Héberger un aperçu de scanneur de codes-barres à caméra dans votre application
 ## <a name="step-1-setup-your-camera-preview"></a>Étape1: Installer l'aperçu de votre caméra

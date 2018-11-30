@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8197760"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8323463"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
