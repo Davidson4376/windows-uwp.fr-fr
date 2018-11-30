@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 4113df37446d93883cf395e7c1e86b1de6c1b328
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8194735"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8323353"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>Accueil du développeur sur la Console (Dev Home)
    
@@ -57,7 +57,7 @@ Le reste de l’UI Dev Home est divisé en les pages suivantes. Pour plus d’in
    *  [XboxLive](devhome-live.md)  
    *  [Paramètres](devhome-settings.md)  
    *  [Capture multimédia](devhome-capture.md)  
-   *  [Réseaux](devhome-networking.md)  
+   *  [Mise en réseau](devhome-networking.md)  
    *  [Analyse des performances](devhome-performance.md)  
 
   

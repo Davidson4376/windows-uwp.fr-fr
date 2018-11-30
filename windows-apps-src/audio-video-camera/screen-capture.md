@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, capture d’écran
 ms.localizationpriority: medium
 ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8189450"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8328455"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 

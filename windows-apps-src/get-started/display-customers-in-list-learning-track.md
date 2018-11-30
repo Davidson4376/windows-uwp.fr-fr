@@ -7,11 +7,11 @@ keywords: prise en main, uwp, windows10, piste d'apprentissage, liaison de donn√
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210239"
+ms.locfileid: "8324421"
 ---
 # <a name="display-customers-in-a-list"></a>Afficher les clients dans une liste
 
