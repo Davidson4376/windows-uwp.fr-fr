@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, données d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198752"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8348821"
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
@@ -19,44 +19,12 @@ Utilisez les méthodes suivantes dans l’API de soumission au Microsoft Store p
 
 Avant de pouvoir utiliser ces méthodes, l’application doit déjà exister dans votre compte espace partenaires. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
 
-<table>
-<colgroup>
-<col width="10%" />
-<col width="30%" />
-<col width="60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Méthode</th>
-<th align="left">URI</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications</td>
-<td align="left"><a href="get-all-apps.md">Obtenir des données pour toutes vos applications</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}</td>
-<td align="left"><a href="get-an-app.md">Obtenir des données pour une application spécifique</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts</td>
-<td align="left"><a href="get-add-ons-for-an-app.md">Obtenir des modules complémentaires pour une application</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights</td>
-<td align="left"><a href="get-flights-for-an-app.md">Obtenir des versions d’évaluation du package pour une application</a></td>
-</tr>
-</tbody>
-</table>
-
-<span/>
+| Méthode | URI                                                                                             | Description                                                 |
+|------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [Obtenir des données pour toutes vos applications](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [Obtenir des données pour une application spécifique](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Obtenir des modules complémentaires pour une application](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md) |
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -180,13 +148,12 @@ Cette ressource fournit des informations sur une soumission. L’exemple suivant
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description                 |
-|-----------------|---------|------------------------------|
-| id            | chaîne  | ID de la soumission.    |
-| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.            |
- 
-<span/>
+| Valeur              | Type   | Description               |
+|--------------------|--------|---------------------------|
+| id                 | chaîne | ID de la soumission. |
+| resourceLocation   | chaîne | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission. |
 
+ 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
