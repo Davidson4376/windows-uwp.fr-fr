@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e537e40d5224f2522cb5ecebd92664d1794dd06
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8196649"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8331125"
 ---
 # <a name="getting-started-with-point-of-service"></a>Prise en main de la technologie de point de service
 

@@ -7,11 +7,11 @@ keywords: prise en main, uwp, windows10, piste d'apprentissage, fichiers, e/s de
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8192375"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8333241"
 ---
 # <a name="work-with-files"></a>Travailler avec des fichiers
 

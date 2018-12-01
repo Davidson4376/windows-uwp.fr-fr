@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9510b65bd635b5b10e0cbea551c12b29ef8f37
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8212912"
+ms.locfileid: "8341329"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -300,7 +300,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Pour les développeurs | ms-settings:developers |
 | Récupération | ms-settings:recovery |
 | Résoudre les problèmes | ms-settings:troubleshoot |
-| Sécurité de Windows | ms-settings:windowsdefender |
+| Sécurité Windows | ms-settings:windowsdefender |
 | Programme WindowsInsider | ms-settings:windowsinsider (présent uniquement si l’utilisateur est inscrit dans TEC) |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | WindowsUpdate - Options avancées | ms-settings:windowsupdate-options |

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8191433"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8337767"
 ---
 # <a name="my-people-sharing"></a>Partage de mes contacts
 

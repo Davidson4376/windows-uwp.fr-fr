@@ -6,11 +6,11 @@ ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ba3ee5f62ed9455e95d9e760abdba6009e5027
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216050"
+ms.locfileid: "8331864"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, clubs
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217130"
+ms.locfileid: "8338671"
 ---
 # <a name="get-xbox-live-club-data"></a>Obtenir des données de club Xbox Live
 

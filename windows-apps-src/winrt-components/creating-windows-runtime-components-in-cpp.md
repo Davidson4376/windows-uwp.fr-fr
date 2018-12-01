@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dacca1cff943001c03f9f432404b6dab2fb5b94
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8207955"
+ms.locfileid: "8338245"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Création de composants Windows Runtime en C++/CX
 > [!NOTE]

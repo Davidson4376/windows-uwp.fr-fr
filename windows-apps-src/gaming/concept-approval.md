@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, approbation de concept
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213967"
+ms.locfileid: "8331451"
 ---
 # <a name="concept-approval"></a>Approbation de concept
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé, politique de confidentialité, coordonnées du support technique, site web de l’application, support
 ms.localizationpriority: medium
 ms.openlocfilehash: 80220f8402b225691a2e4eb3202f1f04d48e06b4
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198577"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8331262"
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 

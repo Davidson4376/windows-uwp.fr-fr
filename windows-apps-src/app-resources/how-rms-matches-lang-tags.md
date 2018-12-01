@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 4914a448432206e2418fe110c0b49517a7145e0b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8203765"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8331663"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>Comment le système de gestion des ressources met en correspondance les balises de langue
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
 ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8202579"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8338516"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Infrastructure de renduI: présentation du rendu
 

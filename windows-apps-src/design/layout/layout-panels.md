@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 01fed50a00c26ca53b6ee703451f424811ba0e03
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8200504"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8335924"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
