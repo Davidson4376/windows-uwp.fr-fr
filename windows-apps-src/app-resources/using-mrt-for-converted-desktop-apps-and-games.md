@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app converter, interface utilisateur multilingue, assembly satellite
 ms.localizationpriority: medium
 ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217670"
+ms.locfileid: "8345304"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows10 dans une application ou un jeu hérité
 

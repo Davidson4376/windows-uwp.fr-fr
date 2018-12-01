@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 006507d4665f5578310b8d3e31fb8f7fba4117a2
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201502"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8337235"
 ---
 # <a name="enterprise-shared-storage"></a>Stockage partagé d’entreprise
 

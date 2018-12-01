@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8188809"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8339338"
 ---
 # <a name="home-page-dev-home"></a>Page d’accueil (accueil)
    

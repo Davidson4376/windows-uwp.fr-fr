@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: dd7dfb621d84a3ce1d934c358ab60683caee9238
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8215683"
+ms.locfileid: "8343850"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
@@ -361,7 +361,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 Si vous spécifiez l’activation en arrière-plan dans votre toast (ou sur un bouton du toast), votre tâche en arrière-plan sera exécutée à la place de l’activation de votre application au premier plan.
 
-Pour plus d’informations sur les tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](/launch-resume/support-your-app-with-background-tasks.md).
+Pour plus d’informations sur les tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 Si vous ciblez les builds14393 ou supérieures, vous pouvez utiliser des tâches en arrière-plan in-process, ce qui simplifie considérablement les choses. Notez que l’exécution des tâches en arrière-plan in-process échoue sur les versions plus anciennes de Windows. Nous allons utiliser une tâche en arrière-plan in-process dans cet exemple de code.
 

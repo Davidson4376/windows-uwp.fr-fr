@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, interopérabilité xaml
 ms.localizationpriority: medium
 ms.openlocfilehash: 058a1458f8990e5f70e7ed0ea4ef1a2b5f4a4956
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8200850"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8343661"
 ---
 # <a name="directx-and-xaml-interop"></a>Interopérabilité entre DirectX et XAML
 

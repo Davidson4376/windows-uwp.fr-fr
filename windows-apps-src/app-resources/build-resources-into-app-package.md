@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8199807"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8346090"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Générer des ressources dans votre package d’application, plutôt que dans un pack de ressources
 

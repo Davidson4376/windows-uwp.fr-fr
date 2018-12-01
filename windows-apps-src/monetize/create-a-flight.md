@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213188"
+ms.locfileid: "8344529"
 ---
 # <a name="create-a-package-flight"></a>Créer une version d’évaluation du package
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, uwp, StartScreenManager, épingler la vignette principale, API de vignette principale, vérifier si la vignette est épinglée, vignette dynamique
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210469"
+ms.locfileid: "8346741"
 ---
 # <a name="primary-tile-apis"></a>API de vignette principale
  

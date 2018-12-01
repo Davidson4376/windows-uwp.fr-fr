@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, volumes d’ombre, tampons de profondeur, directx11
 ms.localizationpriority: medium
 ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8202510"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8346771"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Procédure pas à pas: Implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D11
 

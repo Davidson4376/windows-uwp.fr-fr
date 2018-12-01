@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216837"
+ms.locfileid: "8339083"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT Client
 
@@ -27,7 +27,7 @@ Cet article présente l’utilisation des API pour applications de plateforme Wi
 - Lire et écrire dans une caractéristique
 - S’abonner pour les modifications de valeur de notifications lors de la caractéristique
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 Les développeurs peuvent utiliser les API dans l’espace de noms [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) pour accéder aux périphériques Bluetooth LE. Les appareils Bluetooth LE exposent leurs fonctionnalités par le biais d’une collection de :
 
 -   Services
