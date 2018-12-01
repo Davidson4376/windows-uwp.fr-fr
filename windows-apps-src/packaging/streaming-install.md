@@ -7,11 +7,11 @@ ms.topic: article
 keywords: installation d’une application uwp de diffusion en continu Windows 10, uwp, l’installation, en continu
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa33410be31b1732a04c51d14dbbd114e1f5e0c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8208335"
+ms.locfileid: "8344665"
 ---
 # <a name="uwp-app-streaming-install"></a>Installation en continu d’une application UWP
 Le mode d’installation en continu des applications de la plateforme Windows universelle (UWP) vous permet de spécifier les parties de votre application que vous souhaitez voir téléchargées en premier par le MicrosoftStore. Lorsque les fichiers essentiels de l’application sont téléchargés en priorité, l’utilisateur peut lancer l’application et interagir avec elle pendant que le reste du téléchargement s’achève en arrière-plan. 
