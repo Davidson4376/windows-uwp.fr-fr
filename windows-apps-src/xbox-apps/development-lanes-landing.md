@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325183"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8461480"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>Intégration de jeux existants dansXbox
 
