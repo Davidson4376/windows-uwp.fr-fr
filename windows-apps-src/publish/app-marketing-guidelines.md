@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b76966cf4909af460575882e2d2be7c82743a0
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8329049"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465803"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations en matière d’applications de marketing de Microsoft Store
 
-Découvrez comment promouvoir vos applications et contenu dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
+Découvrez comment promouvoir vos applications et vos contenus dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
 
 ## <a name="store-badges"></a>Badges Windows Store
 
@@ -45,7 +45,7 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 -   Avoir votre application ou autres contenus disponibles dans le Microsoft Store, ou faire partie du [Programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
--   Si vous êtes inscrit en tant que développeur d’applications dans l’espace partenaires, vous conformer à la section [«marques de licence à Microsoft»](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) de l’accord de développeur d’application.
+-   Si vous êtes inscrit en tant que développeur d’applications dans l’espace partenaires, vous conformer à la section [«marques de licence pour Microsoft»](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) de l’accord de développeur d’application.
 
 -   Si vous n’êtes pas inscrit en tant que développeur d’applications dans l’espace partenaires, Microsoft vous accorde une licence dans le monde entier, non exclusive, non transférable, redevance pour l’utilisation des badges comme décrit dans les recommandations en matière de Badge Microsoft Store. Microsoft peut modifier ces recommandations, mais si tel est le cas, Microsoft utilisera tous les moyens raisonnables afin de vous rediriger vers les nouvelles URL auxquelles ces spécifications sont publiées. Microsoft se réserve tous les droits non expressément accordés ici.
 

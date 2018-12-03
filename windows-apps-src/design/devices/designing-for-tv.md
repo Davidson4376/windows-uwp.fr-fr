@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326885"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8466464"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
@@ -832,7 +832,7 @@ Vous placez l’extrait de code précédent dans les ressources de la page ou de
 > [!NOTE]
 > Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) des éléments [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) et [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) sur `GridView`.
 
-Pour un contrôle plus fin sur la procédure éléments sont affiche, si votre application cible la version 1803 ou version ultérieure, vous pouvez utiliser l' [événement UIElement.BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur l' [élément ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour le **contrôle ListView**/**GridView** pour intercepter avant que le **ScrollViewer** interne est le cas, comme dans les extraits de code suivants:
+Pour un contrôle plus fin sur la procédure éléments sont affichés, si votre application cible la version 1803 ou version ultérieure, vous pouvez utiliser l' [événement UIElement.BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Vous pouvez le placer sur l' [élément ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) pour le **contrôle ListView**/**GridView** pour intercepter avant que le **ScrollViewer** interne est le cas, comme dans les extraits de code suivants:
 
 ```xaml
 <GridView x:Name="gridView">

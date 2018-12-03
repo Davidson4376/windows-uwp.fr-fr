@@ -2,16 +2,16 @@
 title: Capture d’écran
 description: L’espace de noms Windows.Graphics.Capture fournit des API pour l’acquisition d’images à partir d’une fenêtre d’affichage ou d’application, afin de créer des flux vidéo ou des captures instantanées pour créer des expériences collaboratives et interactives.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.date: 10/09/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows10, uwp, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328455"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470763"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -20,7 +20,7 @@ ms.locfileid: "8328455"
 Avec la capture d’écran, les développeurs appellent l’interface utilisateur sécurisée du système pour sélectionner la fenêtre d’affichage ou d’application à capturer, et une bordure de notification jaune est dessinée par le système autour de l’élément activement capturé. Dans le cas de plusieurs sessions de capture simultanée, une bordure jaune est dessinée autour de chaque élément capturé.
 
 > [!NOTE]
-> La capture d’écran API sont uniquement pris en charge sur le bureau et casques Windows Mixed Reality.
+> La capture d’écran API sont uniquement prises en charge sur le bureau et casques Windows Mixed Reality.
 
 ## <a name="add-the-screen-capture-capability"></a>Ajouter la fonctionnalité de capture d’écran
 
@@ -166,7 +166,7 @@ Lorsque la méthode **Recreate** est appelée, toutes les images existantes sont
 L’extrait de code suivant est un exemple de bout en bout de l’implémentation de capture d’écran dans une application UWP. Dans cet exemple, nous avons un bouton dans le serveur frontal qui, lorsque vous cliquez dessus, appelle la méthode **Button_ClickAsync** .
 
 > [!NOTE]
-> Cet extrait de code utilise [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu des graphiques 2D. Consultez leur documentation pour plus d’informations sur la façon de configurer pour votre projet.
+> Cet extrait de code utilise [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu des graphiques 2D. Consultez leur documentation pour savoir comment configurer pour votre projet.
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -383,6 +383,10 @@ namespace WindowsGraphicsCapture
     }
 }
 ```
+
+## <a name="record-a-video"></a>Enregistrer une vidéo
+
+Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le faire plus facilement avec l' [espace de noms Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Il s’agit d’une partie de l’extension SDK, du bureau pour qu’elle fonctionne uniquement sur le bureau et nécessite que vous ajoutez une référence à celui-ci à partir de votre projet. Pour plus d’informations, consultez la [vue d’ensemble des familles de périphérique](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>Articles associés
 

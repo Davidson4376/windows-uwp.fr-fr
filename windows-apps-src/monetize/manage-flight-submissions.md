@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions de version d'évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325611"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8466345"
 ---
 # <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation du package
 
@@ -24,7 +24,7 @@ L’API de soumission au MicrosoftStore fournit des méthodes qui permettent de 
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>Méthodes de gestion des soumissions de versions d’évaluation de package
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de version d’évaluation du package, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, la version d’évaluation de package doit déjà exister dans l’espace partenaires. Vous pouvez créer un package de version d’évaluation [dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes d’API de soumission au Microsoft Store dans tel que décrit dans le [package de gérer des versions d’évaluation](manage-flights.md).
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de version d’évaluation du package, utilisez les méthodes ci-dessous. Avant de pouvoir utiliser ces méthodes, la version d’évaluation de package doit déjà exister dans l’espace partenaires. Vous pouvez créer un package de version d’évaluation [dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes d’API de soumission au Microsoft Store dans tel que décrit dans les [versions d’évaluation du package de gestion](manage-flights.md).
 
 <table>
 <colgroup>

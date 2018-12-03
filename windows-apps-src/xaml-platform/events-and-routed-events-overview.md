@@ -1,5 +1,5 @@
 ---
-description: Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez les extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur.
+description: Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez des extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur.
 title: Vue d’ensemble des événements et des événements routés
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337649"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8468923"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 
@@ -19,7 +19,7 @@ ms.locfileid: "8337649"
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez les extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les *événements routés* : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition.
+Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez des extensions de composant c#, Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre définition d’interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les *événements routés* : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition.
 
 ## <a name="events-as-a-programming-concept"></a>Événements en tant que concept de programmation
 
