@@ -7,11 +7,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cc650c1f81fbcac5b62b090a6dc58b5f8709cd7a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334759"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8464934"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Didacticiel: prendre en charge l’entrée manuscrite dans votre application UWP
 

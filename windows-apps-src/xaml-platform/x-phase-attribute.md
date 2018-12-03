@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8335884"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465645"
 ---
 # <a name="xphase-attribute"></a>Attribut x:Phase
 
@@ -79,5 +79,5 @@ Les numéros de phase ne doivent pas nécessairement être contigus, et sont ide
 
 L’exécution par phases affecte uniquement les liaisons [{x:Bind}](x-bind-markup-extension.md), pas les liaisons [{Binding}](binding-markup-extension.md).
 
-L’exécution par phases s’applique uniquement quand le modèle d’élément est rendu à l’aide d’un contrôle qui la prend en charge. Pour Windows 10, cela signifie [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). L’exécution par phases ne s’applique pas aux modèles de données utilisés dans d’autres contrôles d’élément, ou pour d’autres cas de figure tels que [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou des sections de [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843). Dans ces situations, tous les éléments d’interface utilisateur sont liés aux données en une fois.
+L’exécution par phases s’applique uniquement quand le modèle d’élément est rendu à l’aide d’un contrôle qui la prend en charge. Pour Windows 10, cela signifie que [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). L’exécution par phases ne s’applique pas aux modèles de données utilisés dans d’autres contrôles d’élément, ou pour d’autres cas de figure tels que [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou des sections de [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843). Dans ces situations, tous les éléments d’interface utilisateur sont liés aux données en une fois.
 

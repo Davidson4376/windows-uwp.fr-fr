@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328203"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465239"
 ---
 # <a name="handle-app-suspend"></a>Gérer la suspension d’une application
 
@@ -142,7 +142,7 @@ Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle re
 Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu'à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deuxéventualités prévalant*. Pour étendre la durée en l’état d’interruption en cours usage [ **ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> Pour améliorer la réactivité du système dans Windows8.1, les applications disposent d’un accès de faible priorité aux ressources de cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5secondes en priorité normale sur Windows ou de 1 à 10secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
+> Pour améliorer la réactivité du système dans Windows8.1, les applications disposent d’un accès de faible priorité aux ressources cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5secondes en priorité normale sur Windows ou de 1 à 10secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
 
 **Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
 

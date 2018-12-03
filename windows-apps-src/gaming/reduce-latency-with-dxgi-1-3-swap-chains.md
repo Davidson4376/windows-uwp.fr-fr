@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, latence, dxgi, chaînes d’échange
 ms.localizationpriority: medium
 ms.openlocfilehash: ec315cc9ed59a4b3272151f2ee1bb4bde8d9df10
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326335"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465763"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Réduire la latence avec des chaînes d’échange DXGI1.3
 
@@ -35,7 +35,7 @@ Spécifiez l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Remarque**  Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou supprimé à l’aide de [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
+> **Remarque**  Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou retiré avec [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
 
  
 

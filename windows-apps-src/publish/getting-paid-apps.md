@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
 ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8329450"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465249"
 ---
 # <a name="getting-paid"></a>Rémunération
 Voici quelques informations importantes sur la rémunération de paiement pour vos applications, d’extensions et vos revenus publicitaires.

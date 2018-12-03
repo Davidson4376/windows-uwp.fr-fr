@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350181"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8464706"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Définir l’infrastructure d’application UWP
 

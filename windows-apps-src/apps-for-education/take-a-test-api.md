@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, éducation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f308e42e1dbb1d3654d3fc557a9d5e29ef6f6b0
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350492"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472396"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
 
@@ -28,7 +28,7 @@ Les API Examen existent dans les espaces de noms suivants. Notez que toutes les 
 
 ### <a name="security-namespace"></a>Espace de noms de sécurité
 
-L’espace de noms de sécurité vous permet de verrouiller l’appareil, consultez la liste des processus utilisateur et système, obtenir des adresses IP et MAC et effacer des ressources web mises en cache.
+L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérifier la liste des processus utilisateur et système, obtenir des adresses IP et MAC et effacer des ressources web mises en cache.
 
 | Méthode | Description   |
 |--------|---------------|

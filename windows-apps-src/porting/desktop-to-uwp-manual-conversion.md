@@ -9,11 +9,11 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4b9b5f08be695d803e9254e5801ac63b2889e1c9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337049"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465418"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -88,7 +88,7 @@ Voici un exemple d’élément **identité** intégrant un emplacement réservé
 
 ### <a name="properties"></a>Propriétés
 
-L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows Store, pour les applications qui sont chargées sur le Windows Store.
+L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows Store, pour les applications qui sont chargées sur le Store.
 
 ```XML
 <Properties>
@@ -109,7 +109,7 @@ Voici un exemple de nœud [Ressources](https://docs.microsoft.com/uwp/schemas/ap
 ```
 ### <a name="dependencies"></a>Dépendances
 
-Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` l’attribut ``Windows.Desktop``.
+Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` attribut ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -184,7 +184,7 @@ Si vous créez des ressources basées sur une cible comme décrit dans la sectio
 
 5.  Créez les fichiers resources.pri à l’aide de la commande ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Par exemple, la commande pour votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+    Par exemple, la commande de votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
 6.  Créez un package d’application Windows en suivant les instructions de l’étape suivante.
 
@@ -198,7 +198,7 @@ Voir [Créer un package d’application avec l’outil MakeAppx.exe](https://doc
 
 ## <a name="run-the-packaged-app"></a>Exécuter l’application empaquetée
 
-Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
+Vous pouvez exécuter votre application de la tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
