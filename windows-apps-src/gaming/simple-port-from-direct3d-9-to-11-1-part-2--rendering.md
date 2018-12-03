@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, infrastructure de rendu, conversion, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8341556"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472103"
 ---
 # <a name="convert-the-rendering-framework"></a>Convertir l’infrastructure de rendu
 
@@ -97,7 +97,7 @@ Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous metton
 
 Quand nous avons défini le schéma d’entrée, nous avons vérifié qu’il représentait la même structure de données que celle que nous utilisons pour stocker les données par vertex dans la mémoire système et la mémoire GPU. De même, la sortie d’un nuanceur de vertex doit correspondre à la structure utilisée en tant qu’entrée du nuanceur de pixels. Les règles ne sont pas les mêmes que pour passer des données d’une fonction à une autre en C++ ; vous pouvez omettre les variables inutilisées à la fin de la structure. Mais il n’est pas possible de réorganiser l’ordre et vous ne pouvez pas ignorer le contenu du milieu de la structure de données.
 
-> **Remarque**  les règles de Direct3D 9 pour lier des nuanceurs de vertex pour les nuanceurs de pixels étaient plus souples que dans Direct3D 11 celles. La disposition Direct3D9 était flexible, mais inefficace.
+> **Remarque**  les règles de Direct3D 9 pour lier des nuanceurs de vertex aux nuanceurs de pixels étaient plus souples que dans Direct3D 11 celles. La disposition Direct3D9 était flexible, mais inefficace.
 
  
 
@@ -246,7 +246,7 @@ Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la d�
 
 Les données par vertex doivent être stockées dans des types compatibles dans la mémoire système. Les types de données DirectXMath peuvent s’avérer utiles. Par exemple, DXGI\_FORMAT\_R32G32B32\_FLOAT correspond à [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
 
-> **Remarque**  tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
+> **Remarque**  les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
 
  
 

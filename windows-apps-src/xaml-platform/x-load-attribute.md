@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332984"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472193"
 ---
 # <a name="xload-attribute"></a>Attribut x:Load
 
-Vous pouvez utiliser **x: Load** pour optimiser le démarrage, la création de l’arborescence d’éléments visuels et utilisation de la mémoire de votre application XAML. À l’aide de **x: Load** a un effet visuel similaire à la **visibilité**, à ceci près que lorsque l’élément n’est pas chargé, sa mémoire est publiée et en interne un espace réservé petit est utilisé pour marquer sa place dans l’arborescence d’éléments visuel.
+Vous pouvez utiliser **x: Load** pour optimiser le démarrage, la création de l’arborescence d’éléments visuels et utilisation de la mémoire de votre application XAML. À l’aide de **x: Load** a un effet visuel similaire à la **visibilité**, à ceci près que lorsque l’élément n’est pas chargée, sa mémoire est publiée et en interne un espace réservé petit est utilisé pour marquer sa place dans l’arborescence visuelle.
 
-L’élément d’interface utilisateur attribué avec x: Load peut être chargé et déchargé par le biais du code, ou à l’aide d’une expression [x: Bind](x-bind-markup-extension.md) . Cela permet de réduire les coûts des éléments qui sont affichés rarement ou dans certaines conditions. Lorsque vous utilisez x: Load sur un conteneur comme grille ou StackPanel, le conteneur et tous ses enfants sont chargées ou déchargées en tant que groupe.
+L’élément d’interface utilisateur attribué avec x: Load peut être chargé et déchargé par le biais du code, ou à l’aide d’une expression [x: Bind](x-bind-markup-extension.md) . Cela permet de réduire les coûts des éléments qui sont affichés rarement ou dans certaines conditions. Lorsque vous utilisez x: Load sur un conteneur comme grille ou StackPanel, le conteneur et tous ses enfants sont chargés ou déchargée en tant que groupe.
 
 Le suivi des éléments différés par l’infrastructure XAML ajoute environ 600 octets à l’utilisation de la mémoire pour chaque élément attribué avec x: Load, pour prendre en compte l’espace réservé. Par conséquent, il est possible d’abusif de cet attribut dans la mesure où vos performances diminuent réellement. Nous vous recommandons d’utiliser uniquement sur les éléments qui doivent être masqués. Si vous utilisez x: Load sur un conteneur, puis la surcharge est payée uniquement pour l’élément avec l’attribut x: Load.
 
@@ -38,8 +38,8 @@ Il existe différentes méthodes pour charger les éléments:
 - Utiliser une expression [x: Bind](x-bind-markup-extension.md) pour spécifier l’état de chargement. L’expression doit retourner **true** pour charger et **false** pour décharger l’élément.
 - Appelez [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) avec le nom que vous avez défini sur l’élément.
 - Appelez [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) avec le nom que vous avez défini sur l’élément.
-- Dans un [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), utilisez une animation [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) ou de **table de montage séquentiel** qui cible l’élément de x: Load.
-- Cible l’élément déchargée dans n’importe quel **table de montage séquentiel**.
+- Dans un [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), utilisez une animation [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) ou de **table de montage séquentiel** qui cible l’élément x: Load.
+- Ciblez l’élément déchargée dans n’importe quel **table de montage séquentiel**.
 
 > NOTE : une fois que l’instanciation d’un élément a démarré, celui-ci est créé sur le thread de l’interface utilisateur, au risque que celle-ci s’interrompe si ce qui est créé en une fois est trop important.
 
@@ -58,9 +58,9 @@ Décharger un élément:
 - Dans une Page ou UserControl, appelez **UnloadObject** et transmettez la référence d’objet
 - Appelez **Windows.UI.Xaml.Markup.XamlMarkupHelper.UnloadObject** et transmettez la référence d’objet
 
-Lorsqu’un objet est déchargé, il est remplacé dans l’arborescence avec un espace réservé. L’instance d’objet reste en mémoire jusqu'à ce que toutes les références ont été publiées. L’API UnloadObject sur un Page/UserControl est conçu pour libérer les références détenus par codegen pour x: Name et x: Bind. Si vous maintenez des références supplémentaires dans le code d’application qu'auront également besoin d’être libéré.
+Lorsqu’un objet est déchargé, il est remplacé dans l’arborescence avec un espace réservé. L’instance d’objet reste en mémoire jusqu'à ce que toutes les références ont été publiées. L’API UnloadObject sur un Page/UserControl est conçu pour libérer les références détenus par codegen pour x: Name et x: Bind. Si vous maintenez des références supplémentaires dans le code d’application qu'il devra également être libéré.
 
-Lorsqu’un élément est déchargé, tout état associé à l’élément seront ignorées, par conséquent, si vous utilisez x: Load comme une version optimisée de visibilité, puis vérifiez tout état est appliqué par le biais des liaisons, ou est nouveau appliqué par du code lors de l’événement Loaded est déclenché.
+Lorsqu’un élément est déchargé, tout état associé à l’élément sera ignoré, par conséquent, si vous utilisez x: Load comme une version optimisée de visibilité, puis vérifiez tout état est appliqué par le biais des liaisons, ou est nouveau appliqué par du code lors de l’événement Loaded est déclenché.
 
 ## <a name="restrictions"></a>Restrictions
 
@@ -71,17 +71,17 @@ Les restrictions pour l’utilisation de **x: Load** sont les suivantes:
 - Vous ne pouvez pas utiliser x: Load sur les éléments racines dans une [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), un [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)ou un [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 - Vous ne pouvez pas utiliser x: Load sur les éléments dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 - Vous ne pouvez pas utiliser x: Load sur un XAML libre chargé avec [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
-- Le déplacement d’un élément parent efface tous les éléments qui n’ont pas été chargés.
+- Le déplacement d’un élément parent efface tous les éléments qui n’ont pas été chargées.
 
 ## <a name="remarks"></a>Remarques
 
-Vous pouvez utiliser x: Load sur les éléments imbriqués, mais ils doivent être réalisés à partir de l’élément plus éloigné. Si vous tentez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
+Vous pouvez utiliser x: Load sur les éléments imbriqués, mais ils doivent être réalisés à partir de l’élément le plus éloigné dans. Si vous tentez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
 
 En règle générale, nous vous conseillons de différer les éléments qui ne sont pas visibles dans la première image.Une bonne indication pour identifier les éléments à différer consiste à rechercher des éléments créés avec une [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) réduite. De même, une interface utilisateur déclenchée par l’utilisateur est également un bon endroit où rechercher des éléments à différer.
 
 Soyez prudent avant de différer des éléments dans un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), car si le temps de démarrage s’en trouve réduit, cela peut également réduire les performances des mouvements panoramiques, selon ce que vous créez. Si vous cherchez à accroître les performances des mouvements panoramiques, consultez la documentation sur [l’extension de balisage {x:Bind}](x-bind-markup-extension.md) et [l’attribut x:Phase](x-phase-attribute.md).
 
-Si l' [attribut x: Phase](x-phase-attribute.md) est utilisé en association avec **x: Load** puis, lors de la réalisation d’un élément ou une arborescence d’éléments, les liaisons sont appliquées jusqu'à la phase actuelle. La phase spécifiée pour **x: Phase** affectent ou contrôler l’état de chargement de l’élément. Lorsqu’un élément de liste est recyclé dans le cadre d’un mouvement panoramique, réalisés éléments seront comportent de la même manière que d’autres éléments actifs, et les liaisons compilées (liaisons **{x: Bind}** ) sont traitées à l’aide des mêmes règles, y compris l’exécution par phases.
+Si l' [attribut x: Phase](x-phase-attribute.md) est utilisé en association avec **x: Load** ensuite, lors de la réalisation d’un élément ou une arborescence d’éléments, les liaisons sont appliquées jusqu'à la phase actuelle. La phase spécifiée pour **x: Phase** affectent ou contrôler l’état de chargement de l’élément. Lorsqu’un élément de liste est recyclé dans le cadre d’un mouvement panoramique, réalisés éléments seront comportent de la même manière que d’autres éléments actifs, et les liaisons compilées (liaisons **{x: Bind}** ) sont traitées à l’aide des mêmes règles, y compris l’exécution par phases.
 
 Il est généralement conseillé de mesurer les performances de votre application avant et après afin de vous assurer d’obtenir les performances souhaitées.
 

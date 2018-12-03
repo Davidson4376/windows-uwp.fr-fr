@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332545"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472340"
 ---
 # <a name="sockets"></a>Sockets
 Les sockets constituent une technologie de transfert de données de faible niveau en priorité du nombre de protocoles de réseau implémentés. UWP offre les classes TCP et socket UDP pour les applications de serveur client ou pair à paire, que les connexions soient de longue durée ou qu'une connexion établie ne soit pas requise.

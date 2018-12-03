@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/03/2018
-ms.locfileid: "8327196"
+ms.locfileid: "8472173"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Diagnostic des conditions d’erreur d’un composant WindowsRuntime
 
@@ -29,7 +29,7 @@ Les composants Windows Runtime managés ne peuvent pas implémenter les interfac
 
 | Numéro d’erreur | Texte du message|       
 |--------------|-------------|
-| WME1084      | Type '{0}«implémente l’interface asynchrone Windows Runtime»{1}». Les types Windows Runtime ne peuvent pas implémenter les interfaces asynchrones. Veuillez utiliser la classe System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory pour générer des opérations asynchrones afin d’exporter vers Windows Runtime. |
+| WME1084      | Type de «{0}«implémente l’interface asynchrone Windows Runtime»{1}». Les types Windows Runtime ne peuvent pas implémenter les interfaces asynchrones. Veuillez utiliser la classe System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory pour générer des opérations asynchrones afin d’exporter vers Windows Runtime. |
 
 > **Remarque**les messages d’erreur qui font référence à Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation «plateforme Windows universelle (UWP)». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
 
@@ -69,7 +69,7 @@ Dans l’UWP, une classe ne peut avoir qu’un seul constructeur avec un nombre 
 
 | Numéro d’erreur | Texte du message                                                                                                                                            |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1099      | Type '{0}'possède plusieurs constructeurs avec'{1}' des arguments. Les types Windows Runtime ne peuvent pas posséder plusieurs constructeurs ayant le même nombre d’arguments. |
+| WME1099      | Type '{0}«possède plusieurs constructeurs avec»{1}» des arguments. Les types Windows Runtime ne peuvent pas posséder plusieurs constructeurs ayant le même nombre d’arguments. |
 
  
 
@@ -114,7 +114,7 @@ Un type dans un composant Windows Runtime ne peut pas avoir un nom identique à 
 | WME1042      | Le module d’entrée doit contenir au moins un type public se trouvant à l’intérieur d’un espace de noms.                                                                                                                                                                                                                                                                   |
 | WME1043      | Le module d’entrée doit contenir au moins un type public se trouvant à l’intérieur d’un espace de noms. Les seuls types présents dans des espaces de noms sont privés.                                                                                                                                                                                                               |
 | WME1044      | Un type public possède un espace de noms («{1}») qui ne partage aucun préfixe commun avec d’autres espaces de noms («{0}»). Tous les types d’un fichier de métadonnées Windows doivent exister dans un sous-espace de noms de l’espace de noms impliqué par le nom de fichier.                                                                                                                              |
-| WME1067      | Noms Namespace ne peuvent pas différer uniquement par la casse: «{0}','{1}'.                                                                                                                                                                                                                                                                                                |
+| WME1067      | Noms Namespace ne peuvent pas différer uniquement par la casse: «{0}','{1}».                                                                                                                                                                                                                                                                                                |
 | WME1068      | Type de «{0}«ne peut pas d’avoir le même nom que l’espace de noms»{1}».                                                                                                                                                                                                                                                                                                 |
 
  
@@ -128,7 +128,7 @@ Bon nombre de ces mappages sont des interfaces. Par exemple, [IList&lt;T&gt;](ht
 
 En général, le meilleur choix est l’interface qui est la plus proche du type. Par exemple, pour Dictionary&lt;int, string&gt;, le meilleur choix est sans doute IDictionary&lt;int, string&gt;.
 
-> **Important**JavaScript utilise l’interface qui apparaît en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+> **Important**JavaScript utilise l’interface qui s’affiche en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
 > **Attention**Évitez d’utiliser les interfaces non génériques [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) et [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) si votre composant doit être utilisé par JavaScript. Ces interfaces mappent vers [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) et [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), respectivement. Elles prennent en charge la liaison pour les contrôles XAML et sont invisibles dans JavaScript. JavaScript émet l’erreur d’exécution « La fonction “X” a une signature non valide et ne peut pas être appelée ».
 
@@ -176,7 +176,7 @@ Dans l’UWP, une structure peut contenir uniquement des champs, et seules les s
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                                                                                                            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1060      | Structure «{0}«possède le champ»{1}«de type»{2}». «{2}» n’est pas un type de champ Windows Runtime valide. Les champs d’une structure Windows Runtime doivent uniquement avoir la valeur UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, ou bien correspondre à une structure. |
+| WME1060      | Structure de «{0}«possède le champ»{1}«de type»{2}». «{2}» n’est pas un type de champ Windows Runtime valide. Les champs d’une structure Windows Runtime doivent uniquement avoir la valeur UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, ou bien correspondre à une structure. |
 
  
 
@@ -193,7 +193,7 @@ Dans l’UWP, les tableaux dans les signatures de membre doivent être unidimens
 |--------------|--------------------|
 | WME1034      | Méthode «{0}«a un tableau de type»{1}» avec une limite inférieure de zéro dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime doivent avoir une limite inférieure de zéro. |
 | WME1035      | Méthode «{0}«a un tableau multidimensionnel de type»{1}» dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime doivent être unidimensionnels.                  |
-| WME1036      | Méthode '{0}«possède un tableau imbriqué de type»{1}» dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime ne peuvent pas être imbriqués.                                    |
+| WME1036      | Méthode «{0}«possède un tableau imbriqué de type»{1}» dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime ne peuvent pas être imbriqués.                                    |
 
  
 

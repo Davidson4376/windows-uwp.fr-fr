@@ -6,11 +6,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f46c566712f7f0c2bca45db5a107738c4104e037
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8345196"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472416"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -124,7 +124,7 @@ Nous n’offrons pas de périodes de grâce pour la facturation de l’abonnemen
 Les scénarios suivants ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 
 * La vente d'abonnements aux clients directement via le Windows Store n’est pas prise en charge pour l’instant. Les abonnements sont disponibles pour les achats in-app de produits numériques uniquement.
-* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](http://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers une période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
+* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](http://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers la période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
 * Le changement de niveau n’est actuellement pas pris en charge pour les extensions d’abonnement (par exemple, passer un client d'un abonnement de base à un abonnement premium avec plus de fonctionnalités).
 * Les codes de [vente](../publish/put-apps-and-add-ons-on-sale.md) et les [codes promotionnels](../publish/generate-promotional-codes.md) ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 
