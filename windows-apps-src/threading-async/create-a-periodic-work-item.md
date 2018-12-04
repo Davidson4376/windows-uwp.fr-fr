@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, élément de travail périodique, threads, minuteurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344151"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485125"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
@@ -31,7 +31,7 @@ Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/librar
 
 > **Remarque**Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Remarque**vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) vous permet d’accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes:
 

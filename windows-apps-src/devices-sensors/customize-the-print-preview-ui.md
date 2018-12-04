@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, l’impression
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8351071"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485275"
 ---
 # <a name="customize-the-print-preview-ui"></a>Personnaliser l’interface utilisateur d’aperçu avant impression
 
@@ -48,7 +48,7 @@ Ces options sont définies dans la classe [**StandardPrintTaskOptions**](https:/
 
 Toutefois, les modifications que vous apportez par le biais de cette méthode affectent uniquement l’interface utilisateur d’aperçu avant impression. L’utilisateur peut toujours accéder à l’ensemble des options prises en charge par l’imprimante en appuyant sur **Autres paramètres** dans l’interface utilisateur d’aperçu avant impression.
 
-**Remarque**bien que votre application puisse spécifier les options d’impression à afficher, seules celles qui sont pris en charge par l’imprimante sélectionnée sont affichées dans l’interface utilisateur d’aperçu avant impression. L’interface utilisateur d’impression n’affiche pas les options que l’imprimante sélectionnée ne prend pas en charge.
+**Remarque**bien que votre application puisse spécifier les options d’impression à afficher, seules celles qui sont prises en charge par l’imprimante sélectionnée sont affichées dans l’interface utilisateur d’aperçu avant impression. L’interface utilisateur d’impression n’affiche pas les options que l’imprimante sélectionnée ne prend pas en charge.
 
  
 

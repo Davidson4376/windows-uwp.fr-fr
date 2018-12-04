@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’apps
 ms.localizationpriority: medium
 ms.openlocfilehash: ca13ff36db823bfea44fa9e31c20a621c5b8aa2e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8347282"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485115"
 ---
 # <a name="get-an-app-submission"></a>Obtenir une soumission d’application
 
@@ -47,7 +47,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à obtenir. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête
@@ -185,7 +185,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | La soumission est introuvable. |
-| 409  | La soumission n’appartient pas à l’application spécifiée, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | La soumission n’appartient pas à l’application spécifiée, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas prise en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Rubriques associées

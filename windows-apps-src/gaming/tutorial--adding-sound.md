@@ -1,21 +1,21 @@
 ---
 title: Ajouter du son
-description: Développer un moteur audio simple à l’aide des API XAudio2 pour la musique du jeu la lecture et des effets sonores.
+description: Développez un moteur audio simple à l’aide des API XAudio2 pour la musique du jeu la lecture et des effets sonores.
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, son
 ms.localizationpriority: medium
 ms.openlocfilehash: 94044e3d10df15cb1cb256d86ced798395e6af6f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340928"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485581"
 ---
 # <a name="add-sound"></a>Ajouter du son
 
-Dans cette rubrique, nous créons un moteur audio simple à l’aide de [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API. Si vous débutez dans __XAudio2__, nous avons inclus un brève présentation du sous [des concepts Audio](#audio-concepts).
+Dans cette rubrique, nous créons un moteur audio simple à l’aide de [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API. Si vous débutez dans __XAudio2__, nous avons inclus un brève présentation du sous [concepts Audio](#audio-concepts).
 
 >[!Note]
 >Si vous n’avez pas encore téléchargé le dernier code de jeu pour cet exemple, accédez à [Exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une vaste collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [Obtenir des exemples de la plateforme Windows universelle (UWP) à partir de GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
@@ -46,17 +46,17 @@ Après avoir configuré, nous Découvrez comment déclencher les effets sonores 
 
 ### <a name="simple3dgameinitialize-method"></a>Méthode Simple3DGame::Initialize
 
-Dans __Simple3DGame::Initialize__, où __m\_controller__ et __m\_renderer__ sont également initialisées, nous configurer le moteur audio et préparez-vous à lire des sons.
+Dans __Simple3DGame::Initialize__, où __m\_controller__ et __m\_renderer__ sont également initialisés, nous configurer le moteur audio et préparez-vous à lire des sons.
 
  * Créez __m\_audioController__, qui est une instance de la classe [Audio](#audioh) .
- * Créer les ressources audio nécessaires à l’aide de la méthode [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) . Ici, deux objets __XAudio2__ &mdash; un objet de moteur de musique et un objet de moteur audio et une voix de contrôle pour chacun d’eux ont été créés. L’objet de moteur de musique peut être utilisé pour lire du contenu de la musique de fond pour votre jeu. Le moteur audio peut être utilisé pour lire les effets sonores dans votre jeu. Pour plus d’informations, voir [créer et initialiser les ressources audio](#create-and-initialize-the-audio-resources).
+ * Créer les ressources audio nécessaires à l’aide de la méthode [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) . Ici, deux objets __XAudio2__ &mdash; un objet de moteur de musique et un objet de moteur audio et une voix de contrôle pour chacun d’eux ont été créés. L’objet de moteur de musique peut être utilisé pour la musique en arrière-plan pour votre jeu. Le moteur audio peut être utilisé pour lire les effets sonores dans votre jeu. Pour plus d’informations, voir [créer et initialiser les ressources audio](#create-and-initialize-the-audio-resources).
  * Créez __mediaReader__, qui est une instance de classe [MediaReader](#mediareaderh) . [MediaReader](#mediareaderh), qui est une classe d’assistance pour la classe [SoundEffect](#soundeffecth) , lit les petits fichiers audio de manière synchrone à partir de l’emplacement du fichier et renvoie les données audio comme un tableau d’octets.
  * Utilisez [MediaReader::LoadMedia](#mediareaderloadmedia-method) pour charger des fichiers audio à partir de son emplacement et créez une variable __targetHitSound__ pour contenir les données audio .wav chargé. Pour plus d’informations, voir [charger le fichier audio](#load-audio). 
 
-Les effets sonores sont associés à l’objet jeu. Par conséquent, lorsqu’une collision se produit avec cet objet de jeu, il déclenche l’effet sonore à lire. Dans cet exemple de jeu, nous avons effets sonores pour les munitions (ce qui nous permet de tirer sur cibles avec) et pour la cible. 
+Les effets sonores sont associés à l’objet jeu. Par conséquent, lorsqu’une collision se produit avec cet objet de jeu, il déclenche l’effet audio à lire. Dans cet exemple de jeu, nous avons effets sonores pour les munitions (ce qui nous permet de tirer sur cibles avec) et pour la cible. 
     
 * Dans la classe __GameObject__ , il existe une propriété __HitSound__ qui est utilisée pour associer l’effet sonore à l’objet.
-* Créez une nouvelle instance de la classe [SoundEffect](#soundeffecth) et initialisez-la. Pendant l’initialisation, une voix source pour l’effet sonore est créé. 
+* Créez une nouvelle instance de la classe [SoundEffect](#soundeffecth) et initialiser. Pendant l’initialisation, une voix source pour l’effet sonore est créée. 
 * Cette classe émet un son à l’aide d’une voix de contrôle fournie à partir de la classe [Audio](#audioh) . Données audio sont lue à partir de l’emplacement du fichier à l’aide de la classe [MediaReader](#mediareaderh) . Pour plus d’informations, voir [associer son à l’objet](#associate-sound-to-object).
 
 >[!Note]
@@ -129,7 +129,7 @@ void Simple3DGame::Initialize(
 
 ## <a name="create-and-initialize-the-audio-resources"></a>Créez et initialisez les ressources audio
 
-* Utilisez [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212), une API XAudio2, pour créer deux nouveaux objets XAudio2 qui définissent les moteurs effet musique et audio. Cette méthode retourne un pointeur d’interface [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) de l’objet qui gère tous les États du moteur audio, le son traitement thread, le graphique de voix et bien plus encore.
+* Utilisez [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212), une API XAudio2, pour créer deux nouveaux objets XAudio2 qui définissent les moteurs d’effets musique et audio. Cette méthode retourne un pointeur d’interface [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) de l’objet qui gère tous les États du moteur audio, le son traitement thread, le graphique de voix et bien plus encore.
 * Après les moteurs ont été instanciés, utilisez [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) pour créer une voix de contrôle pour chacun des objets du moteur audio.
 
 Pour plus d’informations, accédez à [Comment: XAudio2 initialiser](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx).
@@ -188,13 +188,13 @@ Pour plus d’informations sur la raison pour laquelle nous utilisons le lecteur
 1. Utilisez [IMFSourceReader::GetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374660) pour obtenir le type de média en cours pour le flux.
 2. Utilisez [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) pour convertir le type de média audio actuel dans une mémoire tampon [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) , en utilisant les résultats de l’opération antérieure en tant qu’entrée. Cette structure Spécifie le format de données du flux audio en priorité qui est utilisé après son chargement. 
 
-Le format __WAVEFORMATEX__ peut être utilisé pour décrire le tampon PCM. Par rapport à la structure [WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802) , il peut uniquement être utilisé pour décrire un sous-ensemble de formats audio en priorité. Pour plus d’informations sur les différences entre __WAVEFORMATEX__ et __WAVEFORMATEXTENSIBLE__, consultez [Extensible descripteurs au Format en priorité](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
+Le format __WAVEFORMATEX__ peut être utilisé pour décrire le tampon PCM. Par rapport à la structure [WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802) , il peut uniquement être utilisé pour décrire un sous-ensemble des formats audio en priorité. Pour plus d’informations sur les différences entre __WAVEFORMATEX__ et __WAVEFORMATEXTENSIBLE__, consultez [Extensible descripteurs au Format en priorité](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
 
 #### <a name="read-the-audio-stream"></a>Lire le flux audio
 
 1.  Obtenir la durée, en secondes, du flux audio en appelant [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) , puis convertit la durée en octets.
 2.  Lire le fichier audio en tant que flux en appelant la méthode [IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665). __ReadSample__ lit l’exemple suivant à partir de la source du média.
-3.  Utilisez [IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx) pour copier le contenu de la mémoire tampon audio exemple (_exemple_) dans un tableau (_mediaBuffer_).
+3.  Utilisez [IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx) pour copier le contenu de la mémoire tampon échantillon audio (_exemple_) dans un tableau (_mediaBuffer_).
 
 ```cpp
 Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -295,13 +295,13 @@ Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
 ```
 ## <a name="associate-sound-to-object"></a>Associer son objet
 
-Association de sons à l’objet a lieu lorsque le jeu initialise, dans la méthode [Simple3DGame::Initialize](#simple3dgameinitialize-method) .
+Associer des sons à l’objet a lieu lorsque le jeu initialise, dans la méthode [Simple3DGame::Initialize](#simple3dgameinitialize-method) .
 
 Récapitulatif:
 * Dans la classe __GameObject__ , il existe une propriété __HitSound__ qui est utilisée pour associer l’effet sonore à l’objet.
-* Créer une nouvelle instance de l’objet de classe [SoundEffect](#soundeffecth) et l’associer à l’objet jeu. Cette classe émet un son à l’aide de __XAudio2__ API.  Il utilise une voix de contrôle fournie par la classe [Audio](#audioh) . Les données audio peuvent être lues à partir de l’emplacement du fichier à l’aide de la classe [MediaReader](#mediareaderh) .
+* Créez une instance de l’objet de classe [SoundEffect](#soundeffecth) et l’associer à l’objet jeu. Cette classe émet un son à l’aide de __XAudio2__ API.  Il utilise une voix de contrôle fournie par la classe [Audio](#audioh) . Les données audio peuvent être lus à partir de l’emplacement du fichier à l’aide de la classe [MediaReader](#mediareaderh) .
 
-[SoundEffect::Initialize](#soundeffectinitialize-method) est utilisé pour initialiser la __SoundEffect__ instance avec les paramètres d’entrée suivants: pointeur vers l’objet de moteur audio (IXAudio2 des objets créés dans la méthode [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) ), pointeur vers le format de le .wav fichier à l’aide de __MediaReader::GetOutputWaveFormatEx__et les données audio chargées à l’aide de la méthode [MediaReader::LoadMedia](#mediareaderloadmedia-method) . Pendant l’initialisation, la voix source pour l’effet sonore est également créée.
+[SoundEffect::Initialize](#soundeffectinitialize-method) est utilisé pour initialiser la __SoundEffect__ instance avec les paramètres d’entrée suivants: pointeur vers l’objet de moteur audio (IXAudio2 des objets créés dans la méthode [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) ), pointeur vers le format de le .wav fichier à l’aide de __MediaReader::GetOutputWaveFormatEx__et les données audio chargé à l’aide de la méthode [MediaReader::LoadMedia](#mediareaderloadmedia-method) . Pendant l’initialisation, la voix source pour l’effet sonore est également créée.
 
 ### <a name="soundeffectinitialize-method"></a>Méthode SoundEffect::Initialize
 
@@ -333,11 +333,11 @@ void SoundEffect::Initialize(
 
 ## <a name="play-the-sound"></a>Lire le son
 
-Déclencheurs d’effets sonores sont définies dans [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) méthode car il s’agit où le mouvement des objets sont mis à jour et collision entre des objets est déterminée.
+Déclencheurs d’effets sonores sont définis dans méthode [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) dans la mesure où c’est là mouvement des objets sont mis à jour et les collisions entre les objets sont déterminée.
 
 Dans la mesure où l’interaction entre les objets de diffère sensiblement selon le jeu, nous n’allons pas pour discuter de la dynamique des objets jeu ici. Si vous avez besoin de comprendre son implémentation, passez à la méthode [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) .
 
-En principe, lorsqu’une collision se produit, il déclenche l’effet sonore pour lire du contenu en appelant la méthode [SoundEffect::PlaySound]((soundeffectplaysound-method). Cette méthode s’arrête des effets sonores qui est en cours de lecture et de la mémoire tampon en mémoire avec les données audio souhaités en file d’attente. Il utilise des voix source pour définir le volume, envoyer des données audio et démarrer la lecture.
+En principe, lorsqu’une collision se produit, il déclenche l’effet sonore pour lire du contenu en appelant la méthode [SoundEffect::PlaySound]((soundeffectplaysound-method). Cette méthode arrête des effets sonores qui est en cours de lecture et files d’attente de la mémoire tampon en mémoire avec les données audio souhaités. Il utilise des voix source pour définir le volume, envoyer des données audio et démarrer la lecture.
 
 ### <a name="soundeffectplaysound-method"></a>Méthode SoundEffect::PlaySound
 
@@ -473,7 +473,7 @@ Pour plus d’informations, accédez à la [voix XAudio2](https://msdn.microsoft
 
 ### <a name="audio-graph"></a>Graphique audio
 
-Graphique audio est une collection de [voix XAudio2](#xaudio2-voice-objects). Audio démarre sur un côté d’un graphique audio dans les voix sources, si vous le souhaitez passe par le biais d’un ou plusieurs voix prémixées et se termine à une voix de contrôle. Un graphique audio contient une voix source pour chaque son en cours de lecture, zéro ou plusieurs voix prémixées et une voix mastérisée. Le graphique audio plus simple et au minimum nécessaire pour rendre un bruit de XAudio2, est une seule voix source sortie directement dans une voix de contrôle. Pour plus d’informations, accédez à [graphiques Audio](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
+Graphique audio est une collection de [voix XAudio2](#xaudio2-voice-objects). Audio démarre sur un côté d’un graphique audio dans les voix sources, si vous le souhaitez passe par le biais d’un ou plusieurs voix prémixées et se terminant à une voix de contrôle. Un graphique audio contient une voix source pour chaque son en cours de lecture, zéro ou plusieurs voix prémixées et une voix mastérisée. Le graphique audio plus simple et au minimum nécessaire pour rendre un bruit de XAudio2, est une seule voix source sortie directement dans une voix de contrôle. Pour plus d’informations, accédez à [graphiques Audio](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
 
 ### <a name="additional-reading"></a>Documentation supplémentaire
 
@@ -481,7 +481,7 @@ Graphique audio est une collection de [voix XAudio2](#xaudio2-voice-objects). Au
 * [Procédure: charger des fichiers de données audio dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
 * [Procédure: lire un son avec XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
 
-## <a name="key-audio-h-files"></a>Fichiers de clé .h audio
+## <a name="key-audio-h-files"></a>Fichiers .h audio clé
 
 ### <a name="audioh"></a>Audio.h
 

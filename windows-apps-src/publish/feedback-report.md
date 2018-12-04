@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d40e921f999381421a5a6ce422e019e7db58bbd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336050"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484854"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
 
@@ -24,7 +24,7 @@ Inciter vos clients à faire des commentaires sur votre application est un excel
 
 Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. Pour cette raison, vous pouvez voir les commentaires des clients dans ce rapport même si vous n’avez pas spécifiquement demandé de commentaires depuis au sein de votre application.
 
-Commentaires peuvent également être utile lorsque vous utilisez la [version d’évaluation de package](package-flights.md), étant donné que le rapport sur les **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
+Commentaires peuvent également être utile lorsque vous utilisez la [version d’évaluation de package](package-flights.md), dans la mesure où le rapport sur les **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
 
 > [!TIP]
 > Pour un aperçu de l’avis, des évaluations et commentaires des utilisateurs sur l’ensemble de vos applications au cours des 30 derniers jours, développez **engager** dans le menu de navigation de gauche, puis sélectionnez **avis et commentaires.** 
@@ -61,7 +61,7 @@ En outre, une option vous permet de [répondre aux commentaires](respond-to-cust
 
 ## <a name="translating-feedback"></a>Traduction des commentaires
 
-Par défaut, les commentaires qui n’a été pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
+Par défaut, les commentaires qui n’était pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
 
 Notez que les commentaires sont traduits par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez comparer la traduction ou utiliser un autre moyen de traduction.
 

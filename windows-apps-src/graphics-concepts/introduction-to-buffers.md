@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333135"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486650"
 ---
 # <a name="introduction-to-buffers"></a>Introduction aux mémoires tampons
 
@@ -44,18 +44,18 @@ Plus souvent, un tampon de vertex contient toutes les données nécessaires pour
 
 ![illustration d’un tampon de sommet contenant les données de texture, normales et de position](images/d3d10-vertex-buffer-element.png)
 
-Cet mémoire tampon de vertex contient des données de vertex; chaque sommet stocke trois éléments (position, normales et les coordonnées de texture). Généralement, les coordonnées de position et normales sont spécifiées à l’aide de trois valeurs flottantes de 32bits et les coordonnées de texture à l’aide de deux valeurs flottantes de 32bits.
+Cette mémoire tampon de vertex contient des données de vertex; chaque sommet stocke trois éléments (position, normales et les coordonnées de texture). Généralement, les coordonnées de position et normales sont spécifiées à l’aide de trois valeurs flottantes de 32bits et les coordonnées de texture à l’aide de deux valeurs flottantes de 32bits.
 
 Pour accéder aux données à partir d’une mémoire tampon de vertex, vous devez savoir quel sommet pour l’accès, ainsi que les paramètres supplémentaires de mémoire tampon suivants:
 
 -   Offset - le nombre d’octets entre le début du tampon et les données du premier sommet.
 -   BaseVertexLocation -le nombre d’octets entre le décalage et le premier sommet utilisé par l’appel de dessin approprié.
 
-Avant de créer une mémoire tampon de vertex, vous devez définir sa disposition. Une fois que l’objet de disposition d’entrée est créé, liez-le à l' [étape d’assembleur d’entrée (IA)](input-assembler-stage--ia-.md).
+Avant de créer une mémoire tampon de vertex, vous devez définir sa disposition. Une fois que l’objet de schéma d’entrée est créé, liez-le à l' [étape d’assembleur d’entrée (IA)](input-assembler-stage--ia-.md).
 
 ### <a name="span-idindexbufferspanspan-idindexbufferspanspan-idindexbufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>Mémoire tampon d’index
 
-Mémoires tampons d’index contient des décalages d’entiers dans des mémoires tampons de vertex et sont utilisés pour restituer des primitives plus efficacement. Un tampon d’index contient un ensemble séquentiel d’index de 16 ou 32bits; chaque index est utilisé pour identifier un sommet dans un tampon de sommet. Un tampon d’index peut être illustré comme suit.
+Mémoires tampons d’index contiennent des décalages d’entiers dans des mémoires tampons de vertex et sont utilisés pour restituer des primitives plus efficacement. Un tampon d’index contient un ensemble séquentiel d’index de 16 ou 32bits; chaque index est utilisé pour identifier un sommet dans un tampon de sommet. Un tampon d’index peut être illustré comme suit.
 
 ![illustration d’un tampon d’index](images/d3d10-index-buffer.png)
 

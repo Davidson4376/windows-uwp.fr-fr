@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333487"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485541"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Mappages dans un pool de vignettes
 
@@ -31,7 +31,7 @@ Découvrons ensemble quel serait, dans le pire des cas, le besoin en stockage de
 
 Supposons que chacune des entrées de la table de page représente 64bits.
 
-Pour la table de page pessimiste taille pour une surface unique, les limites de ressources dans Direct3D11, supposons qu’une ressource de diffusion en continu est créée avec un format de 128 bits par élément (par exemple, une valeur flottante RVBA), par conséquent, une vignette de 64 Ko comporte alors uniquement 4 096 pixels. La taille maximale prise en charge de [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526), de 16384\*16384\*2048 (avec uniquement une seule image bitmap), nécessite environ 1Go de stockage dans la table de page si les éléments sont renseignés exclusivement (sans mipmap) avec des entrées de table de 64bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers; il est alors d’environ 1,3Go.
+Pour la table de page pessimiste taille pour une surface unique, compte tenue des limites de ressources dans Direct3D11, supposons qu’une ressource de diffusion en continu est créée avec un format de 128 bits par élément (par exemple, une valeur flottante RVBA), par conséquent, une vignette de 64 Ko comporte alors uniquement 4 096 pixels. La taille maximale prise en charge de [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526), de 16384\*16384\*2048 (avec uniquement une seule image bitmap), nécessite environ 1Go de stockage dans la table de page si les éléments sont renseignés exclusivement (sans mipmap) avec des entrées de table de 64bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers; il est alors d’environ 1,3Go.
 
 Dans cette configuration, vous aurez accès à environ 106téraoctets de mémoire adressable. Toutefois, il peut exister une limite de quantité de mémoire adressable. Le cas échéant, ces volumes sont réduits, éventuellement autour d’un téraoctet.
 

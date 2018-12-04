@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d0be1399ebc00ffda57ecf27a72be994fa994ce
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8324717"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486587"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -46,12 +46,12 @@ Ce graphique comporte des onglets que vous pouvez afficher, présentent l’util
 - **Durée**: indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
 - **Engagement**: indique les minutes d’engagement moyenne par utilisateur (durée moyenne de toutes les sessions utilisateur). 
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
-- **Prévision de l’évolution**: affiche le nombre d’utilisateurs devraient est susceptible d’arrêter l’utilisation de votre application plus tôt, basées sur leur utilisation récente.
+- **Prévision de l’évolution**: affiche le nombre d’utilisateurs devraient est susceptible d’arrêter d’utiliser votre application plus tôt, basées sur leur utilisation récente.
 
-Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou diminuer dans une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 
 ## <a name="user-sessions"></a>Sessions utilisateur

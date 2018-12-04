@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, nuanceurs, primitives, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5173adc26e0730ccb80f93fe0c12af286b0c1a49
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350833"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485677"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>Créer des nuanceurs et tracer des primitives
 

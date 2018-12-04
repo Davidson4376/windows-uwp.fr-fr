@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission de version d’évaluation, mise à jour
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1e88383d6562526d77aea8c75891216cd75ade
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334466"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485451"
 ---
 # <a name="update-a-package-flight-submission"></a>Mettre à jour une soumission de version d’évaluation du package
 
@@ -50,7 +50,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. ID Windows Store de l’application pour laquelle vous voulez mettre à jour une soumission de version d’évaluation de package. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | chaîne | Obligatoire. ID de la version d’évaluation de package pour laquelle vous voulez mettre à jour une soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de version d’évaluation dans l’espace partenaires.  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à mettre à jour. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à mettre à jour. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête
@@ -149,7 +149,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 400  | Impossible de mettre à jour la soumission de version d’évaluation de package, car la requête n’est pas valide. |
-| 409  | La soumission de version d’évaluation du package ne peut pas être mis à jour en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas pris en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | La soumission de version d’évaluation du package ne peut pas être mis à jour en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas prise en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Rubriques associées

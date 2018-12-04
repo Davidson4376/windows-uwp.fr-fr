@@ -7,11 +7,11 @@ keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt,
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346668"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485799"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -27,7 +27,7 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 |1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Imprimées des déclarations seront versions avant **le 15 mars**, et les copies .pdf sont disponibles dans l’espace partenaires (dans **paramètres du compte > profil fiscal**) en même temps |
 
 > [!NOTE]
-> L’adresse, que nous utilisons sur les déclarations fiscales de l’IRS provient de l’adresse dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
+> L’adresse, que nous utilisons sur les déclarations fiscales de l’IRS provient de l’adresse figurant dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
 
 Les déclarations fiscales vous sera envoyées à partir de l’adresse suivante:
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331732"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485726"
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
@@ -299,7 +299,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>trfc=1</p></td>
 <td align="left"><p>Spécifie si les informations sur le trafic sont incluses sur la carte. Si vous omettez le paramètre trfc, vous obtenez le même résultat qu’avec la commande <code>trfc=0</code>.</p>
 <div class="alert">
-**Remarque**données relatives au trafic ne sont pas disponibles dans toutes les régions.
+**Remarque**données sur le trafic ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
  

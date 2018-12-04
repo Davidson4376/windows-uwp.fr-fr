@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337275"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486296"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>Comparer le codeEGL avec DXGI et Direct3D
 
@@ -28,7 +28,7 @@ L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même
 
 À l’instar d’EGL, DXGI et Direct3D fournissent diverses méthodes qui vous permettent de configurer des ressources graphiques, d’obtenir un contexte de rendu pour le dessin des nuanceurs et d’afficher les résultats dans une fenêtre. Toutefois, DXGI et Direct3D comportent quelques options supplémentaires qui nécessitent une configuration particulière dans le cadre du portage à partir d’EGL.
 
-> **Remarque**  ce guide repose sur la spécification ouverte de Khronos Group pour EGL 1.4, disponibles ici: [\[PDF\ Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
+> **Remarque**  ce guide repose sur la spécification ouverte de Khronos Group pour EGL 1.4 disponibles ici: [\[PDF\ Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
 
  
 

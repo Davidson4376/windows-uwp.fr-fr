@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334578"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485135"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -149,7 +149,7 @@ L’exemple suivant définit la valeur [**Text**](https://msdn.microsoft.com/lib
 Vous pouvez également établir des liaisons à l’aide de code plutôt qu’en XAML. Voir [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257).
 
 > [!NOTE]
-> Liaisons comme celle-ci sont traitées en tant qu’une valeur locale à des fins de priorité de valeur de propriété de dépendance. Si vous affectez une autre valeur locale à une propriété qui contenait à l’origine une valeur [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), vous remplacez entièrement la liaison, pas seulement la valeur de la liaison au moment de l’exécution. Les liaisons {x: Bind} sont implémentées à l’aide du code généré qui définit une valeur locale pour la propriété. Si vous définissez une valeur locale pour une propriété qui utilise {x: Bind}, cette valeur est alors remplacée à la prochaine évaluation de la liaison, par exemple lorsqu’elle observe une modification de la propriété sur son objet source.
+> Liaisons comme celle-ci sont traitées qu’une valeur locale à des fins de priorité de valeur de propriété de dépendance. Si vous affectez une autre valeur locale à une propriété qui contenait à l’origine une valeur [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), vous remplacez entièrement la liaison, pas seulement la valeur de la liaison au moment de l’exécution. Les liaisons {x: Bind} sont implémentées à l’aide du code généré qui définit une valeur locale pour la propriété. Si vous définissez une valeur locale pour une propriété qui utilise {x: Bind}, cette valeur est alors remplacée à la prochaine évaluation de la liaison, par exemple lorsqu’elle observe une modification de la propriété sur son objet source.
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>Sources de liaison, cibles de liaison, le rôle de FrameworkElement
 

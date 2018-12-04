@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'avis sur le MicrosoftStore, acquisitions d’extensions
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342326"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485865"
 ---
 # <a name="submit-responses-to-reviews"></a>Soumettre des réponses aux avis
 
@@ -69,7 +69,7 @@ Chaque objet figurant dans le tableau *Réponses* contient les valeurs suivantes
 | ReviewId | chaîne |  L’ID de l’avis auquel vous souhaitez répondre (il s’agit d’un GUID). Les ID d’avis sont disponibles dans les données de réponse de la méthode [Obtenir les avis sur les applications](get-app-reviews.md) dans l’API d’analyse du MicrosoftStore et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).   |  Oui  |
 | ResponseText | chaîne | La réponse que vous souhaitez soumettre. Votre réponse doit suivre [les recommandations suivantes](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Oui  |
 | SupportEmail | chaîne | L'adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Vous devez spécifier une adresse e-mail valide.     |  Oui  |
-| IsPublic | Booléen |  Si vous spécifiez la **valeur true**, votre réponse s’affichera dans Description de votre application, juste en dessous de l’avis du client et elle sera visible pour tous les clients. Si vous spécifiez **false** et l’utilisateur n’a pas encore choisi de ne pas recevoir de réponses de courrier électronique, votre réponse sera envoyée au client par courrier électronique, et il ne sera pas visible pour les autres clients dans la description de votre application. Si vous spécifiez **false** et que l’utilisateur a choisi de ne pas recevoir de réponses de courrier électronique, une erreur sera renvoyée.   |  Oui  |
+| IsPublic | Booléen |  Si vous spécifiez la **valeur true**, votre réponse s’affichera dans Description de votre application, juste en dessous de l’avis du client et elle sera visible pour tous les clients. Si vous spécifiez **false** et que l’utilisateur n’a pas encore choisi de ne pas recevoir de réponses de courrier électronique, votre réponse sera envoyée au client par courrier électronique, et il ne sera pas visible pour les autres clients dans la description de votre application. Si vous spécifiez **false** et que l’utilisateur a choisi de ne pas recevoir de réponses de courrier électronique, une erreur sera renvoyée.   |  Oui  |
 
 
 ### <a name="request-example"></a>Exemple de requête

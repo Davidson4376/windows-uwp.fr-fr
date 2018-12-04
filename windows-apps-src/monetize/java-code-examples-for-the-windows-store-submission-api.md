@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332201"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485591"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -68,13 +68,13 @@ L’exemple suivant indique comment [créer](create-a-flight.md) et [supprimer](
 
 ## <a name="create-an-app-submission"></a>Créer une soumission d’applications
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’apps. Pour ce faire, le ```SubmitNewApplicationSubmission``` méthode crée une soumission en clonant la dernière soumission publiée, et puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```SubmitNewApplicationSubmission``` effectue les tâches suivantes:
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission au MicrosoftStore afin de créer une soumission d’apps. Pour ce faire, le ```SubmitNewApplicationSubmission``` méthode crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée vers l’espace partenaires. Plus précisément, la méthode ```SubmitNewApplicationSubmission``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
 4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage BlobAzure.
-5. Ensuite, il [mises à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans l’espace partenaires.
+5. Ensuite, il [mises à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission vers l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md), jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
@@ -89,7 +89,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 2. Ensuite, elle [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
 4. Il charge une archiveZIP contenant des icônes associées à la soumission sur le stockage BlobAzure.
-5. Ensuite, il [mises à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans l’espace partenaires.
+5. Ensuite, il [mises à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission vers l’espace partenaires.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]

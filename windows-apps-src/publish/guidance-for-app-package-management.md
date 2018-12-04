@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340196"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486266"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -48,12 +48,12 @@ Notez que les clients ayant déjà l’application pourront encore l’utiliser 
 Après avoir effectué l’application indisponible, vous verrez toujours il dans l’espace partenaires. Si vous décidez de la remettre à disposition des clients, vous pouvez cliquer sur **Rendre votre application indisponible** sur la page Vue d’ensemble de l’application. L’application est mise à disposition des nouveaux clients (sauf paramétrage contraire dans votre dernière soumission) dans les heures suivant votre confirmation.
 
 > [!NOTE]
-> Si vous souhaitez que votre application reste disponible, mais voulez arrêter de la proposer aux nouveaux clients sur une version spécifique de système d’exploitation, vous pouvez créer une autre soumission et supprimer tous les packages associés à la version de système d’exploitation pour laquelle vous souhaitez empêcher toute nouvelle acquisition. Par exemple, si vous possédiez auparavant des packages pour Windows Phone 8.1 et Windows 10, et que vous ne souhaitez pas continuer à proposer l’application aux nouveaux clients sur WindowsPhone8.1, supprimez tous vos packages WindowsPhone8.1 de la soumission. Une fois la mise à jour publiée, aucun nouveau client sous WindowsPhone8.1 ne sera en mesure d’acquérir l’application, bien que les clients qui la possèdent continuent à l’utiliser). Toutefois, l’application sera toujours disponible pour les nouveaux clients sur Windows 10.
+> Si vous souhaitez que votre application reste disponible, mais voulez arrêter de la proposer aux nouveaux clients sur une version spécifique de système d’exploitation, vous pouvez créer une autre soumission et supprimer tous les packages associés à la version de système d’exploitation pour laquelle vous souhaitez empêcher toute nouvelle acquisition. Par exemple, si vous possédiez auparavant des packages pour Windows Phone 8.1 et Windows 10, et que vous ne souhaitez pas continuer à proposer l’application aux nouveaux clients sur WindowsPhone8.1, supprimez tous vos packages WindowsPhone8.1 de la soumission. Une fois la mise à jour est publiée, aucun nouveau client sous WindowsPhone8.1 ne sera en mesure d’acquérir l’application, bien que les clients qui la possèdent continuent à l’utiliser). Toutefois, l’application sera toujours disponible pour les nouveaux clients sur Windows 10.
 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Suppression de packages pour une famille d'appareils précédemment prise en charge
 
-Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment prise en charge, vous serez invité à confirmer qu’il s’agit votre intention avant d’enregistrer vos modifications sur la page **Packages** .
+Si vous supprimez tous les packages d’une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment pris en charge, vous serez invité à confirmer qu’il s’agit de votre intention avant d’enregistrer vos modifications sur la page **Packages** .
 
 Lorsque vous publiez une soumission qui supprime tous les packages qui peuvent s’exécuter sur une famille d’appareils précédemment prise en charge par votre application, les nouveaux clients ne sera pas en mesure d’acquérir l’application sur cette famille. Vous pouvez toujours publier une autre mise à jour pour proposer de nouveau des packages pour cette famille d'appareils.
 
@@ -64,10 +64,10 @@ Gardez à l'esprit que même si vous supprimez tous les packages prenant en char
 
 ## <a name="adding-packages-for-windows10-to-a-previously-published-app"></a>Ajout de packages pour Windows 10 vers une application publiée précédemment
 
-Si vous disposez d’une application dans le Windows Store incluant uniquement des packages pour Windows 8.x et/ou Windows Phone 8.x et que vous souhaitez mettre à jour votre application pour Windows 10, créez une nouvelle soumission et ajoutez votre ou vos packages UWP .msixupload ou .appxupload lors de l’étape de [Packages](upload-app-packages.md) . Une fois que votre application passe en certification, le package UWP sera également disponible pour de nouvelles acquisitions par les clients sur Windows 10.
+Si vous disposez d’une application dans le Windows Store incluant uniquement les packages pour Windows 8.x et/ou Windows Phone 8.x et que vous souhaitez mettre à jour votre application pour Windows 10, créez une nouvelle soumission et ajoutez votre ou vos packages UWP .msixupload ou .appxupload lors de l’étape de [Packages](upload-app-packages.md) . Une fois que votre application passe en certification, le package UWP sera également disponible pour de nouvelles acquisitions par les clients sur Windows 10.
 
 > [!NOTE]
-> Une fois qu’un client sur Windows 10 obtient votre package UWP, vous ne pouvez pas faire rouler que le client revenir à un package pour n’importe quelle version du système d’exploitation précédente. 
+> Une fois qu’un client sur Windows 10 obtient votre package UWP, vous ne pouvez pas restaurer que le client revenir à un package pour n’importe quelle version du système d’exploitation précédente. 
 
 Notez que le numéro de version de vos packages Windows 10 doit être supérieur à ceux des packages de package Windows8, Windows8.1 et/ou Windows Phone 8.1 que vous avez utilisé. Pour plus d’informations, voir [Numérotation des versions de packages](package-version-numbering.md).
 

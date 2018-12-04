@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333873"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485225"
 ---
 # <a name="performance-page-dev-home"></a>Page des performances (Dev Home)
    
@@ -33,7 +33,7 @@ La page de **performances** contient les volets suivants:
 ## <a name="disk-simulation"></a>Simulation de disque  
    
   
-Le volet de **simulation de disque** simule l’activité du disque à partir du système ou d’autres applications.   
+Le volet de **simulation de disque** simule l’activité du disque du système ou d’autres applications.   
   
 <a id="ID4EOB"></a>
 

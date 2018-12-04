@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8329463"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485749"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
@@ -36,7 +36,7 @@ Tenez compte des stratégies suivantes relatives aux codes promotionnels:
 -   Vous devez respecter les exigences définies dans le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notamment la section **3k. Codes promotionnels**.
 
 > [!NOTE]
-> Vous pouvez utiliser des codes promotionnels même si votre application n’est pas disponible pour les clients (autrement dit, si vous avez sélectionné la **rendre ce produit disponible mais non détectable dans le Windows Store** avec le **Stop acquisition: tout client ayant un lien direct peut voir Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10** option dans la section de [détectabilité](choose-visibility-options.md#discoverability) de votre soumission). Avec cette option, les clients doivent se trouver sur Windows 10 (y compris Xbox) afin d’acquérir votre produit avec un code promotionnel.
+> Vous pouvez utiliser des codes promotionnels même si votre application n’est pas disponible pour les clients (autrement dit, si vous avez sélectionné l’option **rendre ce produit disponible mais non détectable dans le Windows Store** avec le **Stop acquisition: tout client ayant un lien direct peut voir Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10** option dans la section de [détectabilité](choose-visibility-options.md#discoverability) de votre soumission). Avec cette option, les clients doivent se trouver sur Windows 10 (y compris Xbox) afin d’acquérir votre produit avec un code promotionnel.
 
 
 ## <a name="order-promotional-codes"></a>Commander des codes promotionnels
