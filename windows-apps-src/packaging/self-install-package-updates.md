@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326059"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8476061"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Télécharger et installer des mises à jour de package sur le Store
 
-À compter de la version 1607 de Windows10, vous pouvez utiliser les méthodes de la classe [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) pour vérifier par programmation les mises à jour pour l'application actuelle à partir du MicrosoftStore, puis télécharger et installer les packages mis à jour. Vous pouvez également rechercher les packages que vous avez marqués comme obligatoires dans l’espace partenaires et désactivez la fonctionnalité dans votre application jusqu'à ce que la mise à jour obligatoire est installée.
+À compter de la version 1607 de Windows10, vous pouvez utiliser les méthodes de la classe [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) pour vérifier par programmation les mises à jour pour l'application actuelle à partir du MicrosoftStore, puis télécharger et installer les packages mis à jour. Vous pouvez également rechercher les packages que vous avez marqués comme obligatoires dans l’espace partenaires et désactivez les fonctionnalités dans votre application jusqu'à ce que la mise à jour obligatoire est installée.
 
 D'autres méthodes [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) introduites dans la version 1803 de Windows10 vous permettent de télécharger et d'installer les mises à jour de package silencieusement (sans afficher de notification à l'utilisateur dans l'interface utilisateur), de désinstaller un [package facultatif](optional-packages.md) et d'obtenir les informations relatives aux packages dans la file d'attente de téléchargement et d'installation de votre application.
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>Mises à jour de packages obligatoires
 
-Lorsque vous créez une soumission de package dans l’espace partenaires pour une application qui cible Windows 10, version 1607 ou ultérieure, vous pouvez [Marquer le package comme obligatoire](../publish/upload-app-packages.md#mandatory-update) et la date et l’heure auxquelles il devient obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
+Lorsque vous créez une soumission de package dans l’espace partenaires pour une application qui cible Windows 10, version 1607 ou ultérieure, vous pouvez [Marquer le package comme obligatoire](../publish/upload-app-packages.md#mandatory-update) et la date et l’heure auxquelles il devenue obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
 
 > [!NOTE]
 > L’état obligatoire d’une mise à jour de package n’est pas appliqué par Microsoft et le système d’exploitation ne fournit pas d’interface utilisateur pour indiquer aux utilisateurs qu’une mise à jour d’application obligatoire doit être installée. Les développeurs doivent utiliser le paramètre obligatoire pour appliquer des mises à jour d’application obligatoires dans leur propre code.  
 
 Pour marquer une soumission de package comme obligatoire:
 
-1. Se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) et accédez à la page Vue d’ensemble de votre application.
+1. Se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) et accédez à la page de présentation de votre application.
 2. Cliquez sur le nom de la soumission contenant la mise à jour de package que vous voulez rendre obligatoire.
 3. Accédez à la page **Packages** de la soumission. Au bas de cette page, sélectionnez **Rendre obligatoire cette mise à jour**, puis choisissez le jour et l’heure auxquels la mise à jour du package devient obligatoire. Cette option s’applique à tous les packages UWP de la soumission.
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dbcaa683e2c7a2bb18d88fcba03e10fa951d4459
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339566"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8474971"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>Déployer des profils de scanneurs de codes-barres avec GPM
 
@@ -23,4 +23,4 @@ Microsoft ne définit pas les spécificités d’un profil de scanneur et n’in
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Fournisseur de services de configuration EnterpriseExtFileSystem](https://msdn.microsoft.com/library/windows/hardware/mt157025)
-- [Charge des périphériques scanneur de code-barres](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)
+- [Charge des périphériques scanneur de codes-barres](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

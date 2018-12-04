@@ -3,15 +3,15 @@ description: Utilisez cette méthode dans l’API d’analytique Microsoft Store
 title: Obtenir les données d’analyse pour votre application de bureau
 ms.date: 07/31/2018
 ms.topic: article
-keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, insights
+keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5545d27668b23e5b7ae91201421dfa4c92f9c8ed
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328880"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475968"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
@@ -46,7 +46,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir des données d’analyse. Pour obtenir l’ID de produit d’une application de bureau, ouvrez n’importe quel [rapport analytique pour votre application de bureau dans l’espace partenaires](https://msdn.microsoft.com/library/windows/desktop/mt826504) (par exemple, le **rapport d’intégrité**) et récupérez l’ID produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données d’analyse pour toutes les applications inscrites dans votre compte.  |  Non  |
-| startDate | date | La date de début dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
+| startDate | date | Date de début dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
 | endDate | date | La date de fin dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est la date actuelle |  Non  |
 | filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter = dataType eq 'acquisition'*. <p/><p/>Cette méthode prend uniquement en **l’intégrité**filtre.  | Non   |
 
@@ -65,7 +65,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | tableau  | Tableau d’objets contenant des données d’analyse de l’application. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs des informations](#insight-values) ci-dessous.                                                                                                                      |
+| Valeur      | tableau  | Tableau d’objets contenant des données d’analyse de l’application. Pour plus d’informations sur les données de chaque objet, consultez la section de [valeurs Insight](#insight-values) ci-dessous.                                                                                                                      |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                 |
 
 
@@ -76,9 +76,9 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données d’analyse.     |
-| insightDate                | chaîne | La date à laquelle nous avons identifié la modification dans une unité de mesure spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
+| insightDate                | chaîne | La date à laquelle nous avons identifié la modification dans une unité de mesure spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou réduire dans une unité de mesure par rapport à la semaine. |
 | type de données     | chaîne | Une chaîne qui spécifie la zone d’analytique générale qui informe cette insight. Actuellement, cette méthode prend uniquement en charge **la santé**.    |
-| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour des informations en cours.    |
+| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails de l’analyse en cours.    |
 
 
 ### <a name="insightdetail-values"></a>Valeurs InsightDetail
