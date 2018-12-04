@@ -7,11 +7,11 @@ ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343004"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472908"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Cycle de vie d’une application de plateforme Windows universelle (UWP) Windows10
 
@@ -56,7 +56,7 @@ Obtenez l’état antérieur de votre application grâce à [LaunchActivatedEven
 |**ClosedByUser** | L’utilisateur a fermé l’application en effectuant le mouvement de fermeture en mode tablette ou en appuyant sur Alt+F4. Lorsque l’utilisateur ferme l’application, celle-ci est suspendue puis arrêtée. | Comme l’application a suivi les mêmes étapes qui aboutissent à l’état Terminated, gérez cette situation comme l’état Terminated.|
 |**Running** | L’application était déjà ouverte lorsque l’utilisateur a essayé de la relancer. | Aucune. Notez qu’aucune autre instance de votre application n’est lancée. L’instance en cours d’exécution est simplement activée. |
 
-**Remarque** *Session utilisateur* est basé sur l’ouverture de session Windows. Tant que l’utilisateur actuel ne s’est pas déconnecté ou n’a pas arrêté ou redémarré Windows, la session utilisateur reste active entre des événements, tels que l’authentification de l’écran de verrouillage, le changement d’utilisateur, etc. 
+**Remarque** *Session utilisateur* est basée sur l’ouverture de session Windows. Tant que l’utilisateur actuel ne s’est pas déconnecté ou n’a pas arrêté ou redémarré Windows, la session utilisateur reste active entre des événements, tels que l’authentification de l’écran de verrouillage, le changement d’utilisateur, etc. 
 
 Gardez à l’esprit que si l’appareil dispose de ressources suffisantes, le système d’exploitation prélance fréquemment les applications qui ont autorisé ce comportement, afin d’optimiser la réactivité. Les applications prélancées démarrent en arrière-plan puis sont rapidement suspendues, permettant ainsi à l’utilisateur de les réactiver, une opération plus rapide qu’un démarrage.
 
@@ -181,7 +181,7 @@ Pour des consignes générales, consultez [Lancement, reprise et tâches en arri
 
 En général, les utilisateurs n’ont pas besoin de fermer les applications et peuvent laisser Windows les gérer. Toutefois, ils peuvent décider de fermer une application en effectuant un mouvement de fermeture, en appuyant sur Alt+F4 ou en utilisant le sélecteur de tâche sur Windows Phone.
 
-Aucun événement n’indique que l’utilisateur a fermé l’application. Lorsqu’elle est fermée par l’utilisateur, une application est d’abord suspendue pour lui donner l’occasion d’enregistrer son état. Windows8.1 et versions ultérieures, une application a été fermée par l’utilisateur, l’application est supprimée de l’écran et basculer la liste, mais ne sont pas explicitement arrêtées.
+Aucun événement n’indique que l’utilisateur a fermé l’application. Lorsqu’elle est fermée par l’utilisateur, une application est d’abord suspendue pour lui donner l’occasion d’enregistrer son état. Windows8.1 et versions ultérieures, une application a été fermée par l’utilisateur, l’application est supprimée de l’écran et liste de répartition ne sont pas explicitement être arrêtée.
 
 **Comportement fermée par l’utilisateur:** si votre application doit se comporter différemment lorsqu’elle est fermée par l’utilisateur que quand elle est fermée par Windows, vous pouvez utiliser le Gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
 

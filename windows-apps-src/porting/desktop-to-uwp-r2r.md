@@ -1,33 +1,33 @@
 ---
 Description: This guide explains how to configure your Visual Studio Solution to optimize the application binaries with native images.
 Search.Product: eADQiWindows 10XVcnh
-title: Optimisez vos applications de bureau .NET avec les images natives
+title: Optimiser vos applications de bureau .NET avec les images natives
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, l’image native du compilateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 3071b843a1605d765ab5b087d5e1bfb96a220218
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338393"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8471947"
 ---
-# <a name="optimize-your-net-desktop-apps-with-native-images"></a>Optimisez vos applications de bureau .NET avec les images natives
+# <a name="optimize-your-net-desktop-apps-with-native-images"></a>Optimiser vos applications de bureau .NET avec les images natives
 
 > [!NOTE]
 > Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
-Vous pouvez améliorer le temps de démarrage de votre application .NET Framework en compilant au préalable vos fichiers binaires. Vous pouvez utiliser cette technologie sur les applications volumineuses qui vous empaquetez et distribuez par le biais du Microsoft Store. Dans certains cas, nous avons observé une amélioration des performances de 20 %. Pour en savoir plus sur cette technologie dans [vue d’ensemble technique](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
+Vous pouvez améliorer le temps de démarrage de votre application .NET Framework en compilant préalablement vos fichiers binaires. Vous pouvez utiliser cette technologie sur les applications volumineuses qui vous empaquetez et distribuez via le Microsoft Store. Dans certains cas, nous avons observé une amélioration des performances de 20 %. Pour en savoir plus sur cette technologie dans la [vue d’ensemble technique](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
 
 Nous avons publié une version d’évaluation du compilateur image native sous forme de [package NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Vous pouvez appliquer ce package à n’importe quelle application .NET Framework qui cible la version 4.6.2 de .NET Framework ou une version ultérieure. Ce package ajoute une étape de génération post qui inclut une charge utile native à tous les fichiers binaires utilisés par votre application. Cette charge utile optimisée est chargée lorsque l’application s’exécute dans .NET 4.7.2 et versions supérieures tandis que les versions précédentes chargera toujours le code MSIL.
 
-Le [.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) est inclus dans [mise à jour Windows 10 avril 2018](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/). Vous pouvez également installer cette version de .NET Framework sur les PC exécutant Windows 7 + et Windows Server 2008 R2 +.
+Le [.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) est inclus dans [mise à jour Windows 10 avril 2018](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/). Vous pouvez également installer cette version de .NET Framework sur les PC exécutant Windows 7 et Windows Server 2008 R2 +.
 
 > [!IMPORTANT]
-> Si vous souhaitez produire des images natives pour votre application empaquetée par le projet de package de l’Application Windows, veillez à définir la version Minimum de plateforme cible du projet pour la mise à jour anniversaire de Windows.
+> Si vous voulez générer des images natives pour votre application empaquetée par le projet de package de l’Application Windows, veillez à définir la version Minimum de plateforme cible du projet pour la mise à jour anniversaire de Windows.
 
-## <a name="how-to-produce-native-images"></a>Procédure pour produire des images natives
+## <a name="how-to-produce-native-images"></a>Comment générer des images natives
 
 Suivez ces instructions pour configurer vos projets.
 
@@ -45,7 +45,7 @@ Pour configurer votre projet pour cibler .NET Framework 4.6.2 vous devez les out
 
 ![Installer la version 4.6.2 de .NET outils de développement](images/desktop-to-uwp/install-4.6.2-devpack.png)
 
-Par ailleurs, vous pouvez obtenir les packs du développeur de .NET à partir de:[https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
+Par ailleurs, vous pouvez obtenir les packs de développeur de .NET à partir de:[https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 ## <a name="configure-the-target-platform-as-x86-or-x64"></a>Configurer la plateforme cible en tant que x86 ou x64
 
@@ -59,11 +59,11 @@ Pour configurer votre projet:
 
 2. Sélectionnez **<New... >** dans le menu déroulant de **plateforme** en regard du nom du projet qui produit votre fichier exécutable.
 
-3. Dans la boîte de dialogue **Nouveau projet de plateforme** , assurez-vous que la liste déroulante de **Copier les paramètres à partir** d’est définie sur **Toute UC**.
+3. Dans la boîte de dialogue **Nouveau projet de plateforme** , assurez-vous que la liste déroulante de **Copier les paramètres depuis** est définie sur **Toute UC**.
 
 ![Configurer x86](images/desktop-to-uwp/configure-x86.png)
 
-Répétez cette étape pour `Release/x64` si vous souhaitez que générer x64 des fichiers binaires.
+Répétez cette étape pour `Release/x64` si vous souhaitez produire x64 fichiers binaires.
 
 >[!IMPORTANT]
 > Configuration AnyCPU n’est pas pris en charge par le compilateur d’image native.

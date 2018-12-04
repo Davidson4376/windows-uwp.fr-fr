@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336586"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8471617"
 ---
 # <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), utilisée pour savoir si l’un des appareils détectés prend en charge l’entrée de pointeur (interaction tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil un seul pointeur.
+**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil un pointeur.
 
 Le code suivant utilise un tableau permettant d’afficher les propriétés et valeurs de chaque périphérique de pointage.
 

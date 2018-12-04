@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339428"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473053"
 ---
 # <a name="stream-output-so-stage"></a>Étape Stream Output
 
@@ -43,7 +43,7 @@ Les données de vertex issues d'une étape précédente du nuanceur.
 
 L'étape de sortie de flux (SO) sort (diffuse) en continu les données de vertex de l'étape active précédente, telle que l'étape du nuanceur de géométrie (GS), et les stocke dans une ou plusieurs mémoires tampon en mémoire. Si l'étape du nuanceur de géométrie (GS) est inactive et que l'étape de sortie de flux (SO) diffuse en continu les données de vertex de l'étape du nuanceur de domaine (DS) (ou de l'étape du nuanceur de vertex (VS) si l'étape DS est également inactive) et les stocke dans des mémoires tampon en mémoire.
 
-Lorsqu’une bande de triangles ou de ligne est liée à l’étape d’assembleur d’entrée (IA), chaque bande est convertie en une liste avant qu’ils sont diffusées. Les vertex sont toujours écrits sous forme de primitives complètes (par exemple, 3 vertex à la fois pour les triangles); les primitives incomplètes ne sont jamais diffusées. Types de primitives avec Voisinage ignorent les données de voisinage avant la diffusion en continu des données.
+Lorsqu’une bande de triangles ou de lignes est liée à l’étape d’assembleur d’entrée (IA), chaque bande est convertie en une liste avant qu’ils sont diffusées. Les vertex sont toujours écrits sous forme de primitives complètes (par exemple, 3 vertex à la fois pour les triangles); les primitives incomplètes ne sont jamais diffusées. Types de primitives avec Voisinage ignorent les données de voisinage avant la diffusion en continu de données.
 
 L’étape de sortie de flux peut prendre en charge simultanément jusqu'à 4mémoires tampons.
 

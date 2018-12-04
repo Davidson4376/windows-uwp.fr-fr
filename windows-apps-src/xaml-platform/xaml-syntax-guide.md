@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337245"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473444"
 ---
 # <a name="xaml-syntax-guide"></a>Guide de la syntaxe XAML
 
@@ -286,7 +286,7 @@ Dans de rares cas, vous verrez une syntaxe XAML où le type d’une propriété 
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Conventions sur les espaces réservés XAML dans les informations de référence sur Windows Runtime
 
-Si vous avez examiné une section **Syntaxe** des rubriques de référence pour les API Windows Runtime qui peuvent utiliser XAML, vous avez probablement constaté que la syntaxe inclut un assez grand nombre d’espaces réservés. Syntaxe XAML est différente de celle les extensions de composant c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) syntaxe, car la syntaxe XAML est une syntaxe d’utilisation. Elle évoque votre utilisation finale dans vos propres fichiers XAML, mais sans être trop contraignante sur les valeurs que vous pouvez utiliser. Ainsi, l’utilisation décrit en général un type de grammaire qui combine des littéraux et des espaces réservés, et définit certains de ces espaces réservés dans la section **Valeurs XAML**.
+Si vous avez examiné une section **Syntaxe** des rubriques de référence pour les API Windows Runtime qui peuvent utiliser XAML, vous avez probablement constaté que la syntaxe inclut un assez grand nombre d’espaces réservés. Syntaxe XAML est différente de celle les extensions de composant c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) syntaxe dans la mesure où la syntaxe XAML est une syntaxe d’utilisation. Elle évoque votre utilisation finale dans vos propres fichiers XAML, mais sans être trop contraignante sur les valeurs que vous pouvez utiliser. Ainsi, l’utilisation décrit en général un type de grammaire qui combine des littéraux et des espaces réservés, et définit certains de ces espaces réservés dans la section **Valeurs XAML**.
 
 Lorsque vous voyez des noms de types/noms d’éléments dans une syntaxe XAML pour une propriété, le nom affiché est relatif au type qui définit initialement la propriété. Cependant, la syntaxe XAML Windows Runtime prend en charge un modèle d’héritage de classe pour les classes [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Vous pouvez donc souvent utiliser un attribut sur une classe qui n’est pas littéralement la classe de définition, mais qui dérive d’une classe qui a au préalable défini la propriété/l’attribut. Par exemple, vous pouvez définir [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) en tant qu’attribut sur toute classe dérivée de [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) avec un héritage complet. Par exemple : `<Button Visibility="Visible" />`. Ne considérez donc pas le nom d’élément affiché dans la syntaxe d’utilisation XAML de manière trop littérale. La syntaxe peut être viable pour des éléments représentant cette classe, mais aussi pour des éléments représentant une classe dérivée. Dans les cas où il est rare ou impossible que le type indiqué en tant qu’élément de définition soit dans une utilisation réelle, ce nom de type est délibérément en minuscules dans la syntaxe. Par exemple, la syntaxe affichée pour **UIElement.Visibility** est :
 

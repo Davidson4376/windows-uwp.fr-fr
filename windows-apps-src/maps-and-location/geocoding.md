@@ -1,28 +1,28 @@
 ---
 title: Effectuer un géocodage et un géocodage inverse
-description: Ce guide vous montre comment convertissez des adresses en emplacements géographiques (géocodage) et emplacements géographiques en adresses rues (géocodage inverse) en appelant les méthodes de la classe MapLocationFinder dans Windows.Services.Maps.
+description: Ce guide vous montre comment convertissez des adresses en emplacements géographiques (géocodage) et emplacements géographiques d’adresses (géocodage inverse) en appelant les méthodes de la classe MapLocationFinder dans Windows.Services.Maps.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows10, uwp, géocodage, carte, emplacement
 ms.localizationpriority: medium
 ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352403"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8471537"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Effectuer un géocodage et un géocodage inverse
 
-Ce guide vous montre comment convertir les adresses en emplacements géographiques (géocodage) et convertir des emplacements géographiques en adresses rues (géocodage inverse) en appelant les méthodes de la classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) dans le [**Windows.Services.Maps **](https://msdn.microsoft.com/library/windows/apps/dn636979)espace de noms.
+Ce guide vous montre comment convertir les adresses en emplacements géographiques (géocodage) et convertir des emplacements géographiques d’adresses (géocodage inverse) en appelant les méthodes de la classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) dans le [**Windows.Services.Maps **](https://msdn.microsoft.com/library/windows/apps/dn636979)espace de noms.
 
 > [!TIP]
 > Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple de [MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) à partir du [référentiel d’exemples universelle Windows](hhttps://github.com/Microsoft/Windows-universal-samples) sur GitHub.
 
 Les classes qui entrent en jeu dans le géocodage et géocodage inverse sont organisés comme suit.
 
--   La classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) contient des méthodes qui gèrent les géocodage ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) et un géocodage ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) inverse.
+-   La classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) contient des méthodes qui gèrent le géocodage ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) et un géocodage ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) inverse.
 -   Les deux de ces méthodes retourne une instance de [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) .
 -   La propriété [**d’emplacements**](https://msdn.microsoft.com/library/windows/apps/dn627552) de la [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) expose une collection d’objets [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) . 
 -   Objets [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) ont une propriété [**d’adresse**](https://msdn.microsoft.com/library/windows/apps/dn636929) , qui expose un objet [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) représentant une adresse et une propriété de [**Point**](https://docs.microsoft.com/uwp/api/windows.services.maps.maplocation.point) , qui expose un objet [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) représentant un emplacement géographique.

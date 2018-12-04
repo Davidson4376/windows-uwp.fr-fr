@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344731"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8471657"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -80,7 +80,7 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 
 ## <a name="use-touch-feedback"></a>Utiliser le retour tactile
 
-Les retours visuels appropriés au cours des interactions avec votre application aide les utilisateurs à reconnaître, à apprendre et s’adapter à l’interprétation de leurs interactions par l’application et le Windowsplatform. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
+Les retours visuels appropriés au cours des interactions avec votre application permet aux utilisateurs de reconnaître, à apprendre et à s’adapter à l’interprétation de leurs interactions par l’application et le Windowsplatform. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
 Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, quels que soient l’emplacement et le moment de la détection de l’entrée tactile, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
@@ -151,7 +151,7 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Remarque**une exception à cette règle est où vous utilisez des interactions chronométrées pour vous aider à apprentissage et à l’exploration (par exemple, appuyer et maintenir).
+    **Remarque**une exception à cette règle est où vous utilisez des interactions chronométrées pour aider à l’apprentissage et à l’exploration (par exemple, appuyer et maintenir).
 
      
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326072"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465970"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight à l’étude de cas UWP: Bookstore2
 
@@ -26,7 +26,7 @@ Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](
 
 [Téléchargez le Bookstore2Universal\_10 Windows 10 application](http://go.microsoft.com/fwlink/?linkid=532952).
 
-##  <a name="the-windowsphone-silverlight-app"></a>L’application WindowsPhone Silverlight
+##  <a name="the-windowsphone-silverlight-app"></a>L’application Silverlight pour WindowsPhone
 
 Voici à quoi ressemble Bookstore2WPSL8, l’application que nous allons porter. Il s’agit d’un élément **LongListSelector** permettant le défilement vertical des livres regroupés par auteur. Vous pouvez effectuer un zoom arrière vers la liste de raccourcis et, à partir de cette dernière, revenir à n’importe quel groupe. Cette application comporte deux parties principales : le modèle d’affichage, qui fournit la source de données groupées, et l’interface utilisateur, qui est liée à ce modèle d’affichage. Comme nous allons le voir, ces deux parties sont facilement portées depuis la technologie WindowsPhone Silverlight vers la plateforme Windows universelle (UWP).
 
@@ -253,7 +253,7 @@ Une fois cette séquence d’opérations de stylisation effectuée, l’applicat
 
 ![Application Windows10 portée, exécutée sur un appareil de bureau (vue avec zoom avant et deux tailles de fenêtres)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom avant, deux tailles de fenêtre  
+L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom avant, deux tailles de fenêtres  
 ![l’application windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 L’application Windows 10 portée, exécutée sur un appareil de bureau, vue avec zoom arrière, deux tailles de fenêtre
@@ -274,7 +274,7 @@ Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors �
 
 -   Modifiez la classe Author afin qu’elle ne dérive plus de l’élément **List&lt;T&gt;**.
 -   Ajoutez ce champ à 
--   Ajoutez cette propriété à 
+-   Ajouter cette propriété 
 -   Bien entendu, nous pouvons répéter ces deux étapes de manière à ajouter autant de groupes que nous le voulons.
 -   Remplacez l’implémentation de la méthode AddBookSku par `this.BookSkus.Add(bookSku);`.
 -   Maintenant que la classe Author *inclut* au moins un groupe, nous devons indiquer à l’élément **CollectionViewSource** quel groupe utiliser. Pour ce faire, ajoutez à l’élément **CollectionViewSource** la propriété: `ItemsPath="BookSkus"`

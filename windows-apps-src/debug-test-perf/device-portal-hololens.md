@@ -4,14 +4,14 @@ title: Device Portal pour HoloLens
 description: Découvrez comment Windows Device Portal pour HoloLens vous permet de configurer et de gérer à distance votre appareil HoloLens.
 ms.date: 09/26/2017
 ms.topic: article
-keywords: Windows 10, uwp, portal de l’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 2607b40e53ab4a6fa1dbca389348d2de9108e4b0
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337703"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473119"
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
 

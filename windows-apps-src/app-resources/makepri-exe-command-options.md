@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8324707"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465773"
 ---
 # <a name="makepriexe-command-line-options"></a>Options de ligne de commande de MakePri.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) inclut les commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez l’option **Du SDK Windows pour les applications UWP managées** lors de l’installation du Kit de développement Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez l’option **Du SDK Windows pour les applications UWP managées** lors de l’installation du Kit de développement logiciel Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 ## <a name="getting-help-from-the-command-line"></a>Obtention d’aide à partir de la ligne de commande
 
-Vous pouvez exécuter `MakePri.exe help` ou `MakePri.exe /?` pour afficher les commandes que vous pouvez utiliser avec MakePri.exe. Vous pouvez également émettre `MakePri.exe <command> /?` pour connaître les spécificités sur une commande et, dans de très rares cas, même `MakePri.exe <command> <option>` pour voir plus d’informations sur une option.
+Vous pouvez exécuter `MakePri.exe help` ou `MakePri.exe /?` pour afficher les commandes que vous pouvez utiliser avec MakePri.exe. Vous pouvez également exécuter `MakePri.exe <command> /?` pour afficher des détails sur une commande et, dans de très rares cas, même `MakePri.exe <command> <option>` pour afficher plus d’informations sur une option.
 
 ## <a name="makepri-commands"></a>Commandes MakePri
 
@@ -418,13 +418,13 @@ Pour `resourcepack` et `versioned`, au lieu de fournir un fichier PRI en tant qu
 
 ## <a name="47indexoptionsio-option"></a>& option #47;IndexOptions(io)
 
-Vous utilisez l’option d’options index (/ e/s) avec `new`, `resourcepack`, et `versioned` pour spécifier les options qui fournissent un contrôle détaillé sur le comportement des indexeurs de ressource. Options d’index sont désactivées par défaut.
+Vous utilisez l’option options d’index (/ e/s) avec `new`, `resourcepack`, et `versioned` pour spécifier les options qui fournissent un contrôle précis sur le comportement des indexeurs de ressource. Options d’index sont désactivées par défaut.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**OPTIONS** est une liste séparée par des virgules constituée des options suivantes.
+**OPTIONS** est une liste séparée par des virgules composée des options suivantes.
 
 - +/-HiddenFiles(hf). Index (+) ou ignorer (-) les fichiers et dossiers cachés.
 - +/-LinkedFiles(lf). Index (+) ou ignorer (-) lié des fichiers et dossiers.
