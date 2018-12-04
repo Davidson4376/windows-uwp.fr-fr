@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, exemples, directx, principes de base
 ms.localizationpriority: medium
 ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323646"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473401"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Principes de base de l’exemple MarbleMaze
 
@@ -42,7 +42,7 @@ Nous sommes partis d’un projet existant pour la création du projet Visual Stu
 
 2. Dans la fenêtre **Nouveau projet** , dans le volet gauche, sélectionnez **installés > Modèles > Visual C++**.
 
-3. Dans la liste du milieu, sélectionnez **l’Application DirectX 11 (Windows universel)**. Si vous ne voyez pas cette option, vous devrez pas les composants requis installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou supprimant des charges de travail et les composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur l’installation des composants supplémentaires.
+3. Dans la liste du milieu, sélectionnez **Application DirectX 11 (Windows universel)**. Si vous ne voyez pas cette option, vous devrez pas les composants requis installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou supprimant des charges de travail et les composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur l’installation des composants supplémentaires.
 
 4. Donnez à votre projet un **nom**et un **emplacement** pour les fichiers à stocker un **nom de la Solution**, puis cliquez sur **OK**.
 
@@ -77,7 +77,7 @@ Vous pouvez utiliser les entrées tactiles, l’accéléromètre, la manette Xbo
 ##  <a name="code-conventions"></a>Conventions de code
 
 
-Windows Runtime est une interface de programmation permettant de créer des applications pour UWP qui ne peuvent être exécutées que dans un environnement d’application particulier. Ces applications utilisent des fonctions autorisées, les types de données et les appareils et sont distribuées à partir du Microsoft Store. Au niveau le plus bas, Windows Runtime est composé d’une interface binaire d’application. L’interface binaire d’application est un contrat binaire de bas niveau qui rend les API Windows Runtime accessibles à plusieurs langages de programmation tels que les langages JavaScript, .NET et Visual C++.
+Windows Runtime est une interface de programmation permettant de créer des applications pour UWP qui ne peuvent être exécutées que dans un environnement d’application particulier. Ces applications utilisent des fonctions autorisées, les types de données et les appareils et sont distribuées depuis le Microsoft Store. Au niveau le plus bas, Windows Runtime est composé d’une interface binaire d’application. L’interface binaire d’application est un contrat binaire de bas niveau qui rend les API Windows Runtime accessibles à plusieurs langages de programmation tels que les langages JavaScript, .NET et Visual C++.
 
 Afin d’appeler les API Windows Runtime à partir des langages JavaScript et .NET, ces langages nécessitent des projections spécifiques à chaque environnement de langage. Quand vous appelez une API Windows Runtime à partir du langage JavaScript ou .NET, vous invoquez la projection, laquelle appelle à son tour la fonction ABI sous-jacente. Bien que vous puissiez également appeler les fonctions ABI directement à partir du langage C++, Microsoft fournit également des projections pour C++, car elles permettent de consommer nettement plus facilement les API Windows Runtime, tout en maintenant de hautes performances. Microsoft fournit également des extensions de langage pour Visual C++ qui prennent en charge spécifiquement les projections Windows Runtime. Plusieurs de ces extensions de langage présentent une syntaxe similaire à celle du langage C++/CLI. Toutefois, au lieu de cibler l’environnement CLR (Common Langage Runtime), les applications natives utilisent cette syntaxe pour cibler Windows Runtime. Le modificateur de référence d’objet, ou accent circonflexe (^), est un élément important de cette nouvelle syntaxe, car il permet l’effacement automatique des objets d’exécution au moyen du décompte de références. Au lieu d’appeler des méthodes telles que [AddRef](https://msdn.microsoft.com/library/windows/desktop/ms691379) et [Release](https://msdn.microsoft.com/library/windows/desktop/ms682317) pour gérer la durée de vie d’un objet WindowsRuntime, le runtime supprime l’objet quand aucun autre composant ne le référence, par exemple lorsqu’il quitte l’étendue ou que vous attribuez la valeur **nullptr** à toutes les références. Une autre part importante de l’utilisation de VisualC++ pour créer des applications UWP relève du mot-clé **ref new**. Utilisez **ref new** à la place de **new** pour créer des objets WindowsRuntime avec décompte des références. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822).
 
@@ -119,7 +119,7 @@ Utilisez les annotations SAL et les outils d’analyse du code pour découvrir l
 
 Le langage SAL de Microsoft vous permet d’annoter (ou décrire) la façon dont une fonction utilise ses paramètres. Les annotations SAL décrivent également des valeurs de retour. Les annotations SAL peuvent être utilisées conjointement à l’outil d’analyse du code C/C++ pour découvrir les éventuelles erreurs du code source C ou C++. Les erreurs de codage courantes signalées par l’outil sont notamment les dépassements de mémoire tampon, une mémoire non initialisée, les déréférencements du pointeur Null et les fuites de mémoire et de ressources.
 
-Envisagez de la méthode **BasicLoader::LoadMesh** , qui est déclarée dans [BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h). Cette méthode utilise `_In_` pour spécifier le *nom de fichier* est un paramètre d’entrée (et par conséquent sera uniquement être lue à partir de), `_Out_` pour spécifier que *vertexBuffer* et *indexBuffer* sont des paramètres de sortie (et par conséquent sera uniquement écrit), et `_Out_opt_` pour spécifier que *vertexCount* et *indexCount* sont facultatifs paramètres de sortie (et peuvent être écrits pour). Étant donné que *vertexCount* et *indexCount* sont des paramètres de sortie optionnels, ils peuvent avoir la valeur **nullptr**. L’outil d’analyse du code C/C++ examine les appels à cette méthode pour s’assurer que les paramètres qu’elle transmet répondent à ces critères.
+Envisagez la méthode **BasicLoader::LoadMesh** , qui est déclarée dans [BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h). Cette méthode utilise `_In_` pour spécifier le *nom de fichier* est un paramètre d’entrée (et par conséquent sera uniquement être lue à partir de), `_Out_` pour spécifier que *vertexBuffer* et *indexBuffer* sont des paramètres de sortie (et par conséquent sera uniquement écrit), et `_Out_opt_` pour spécifier que *vertexCount* et *indexCount* sont facultatifs paramètres de sortie (et peuvent être écrits pour). Étant donné que *vertexCount* et *indexCount* sont des paramètres de sortie optionnels, ils peuvent avoir la valeur **nullptr**. L’outil d’analyse du code C/C++ examine les appels à cette méthode pour s’assurer que les paramètres qu’elle transmet répondent à ces critères.
 
 ```cpp
 void LoadMesh(

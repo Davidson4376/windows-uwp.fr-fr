@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325901"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473014"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -55,7 +55,7 @@ Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’a
 
 2.  Dans le [Portail de gestion Azure](https://portal.azure.com/), accédez à **Azure Active Directory**. Sélectionnez votre répertoire et cliquez sur **inscriptions** dans le volet de navigation de gauche, puis sélectionnez votre application.
 3.  Vous êtes redirigé vers la page d’inscription principal de l’application. Sur cette page, copiez la valeur **d’ID d’Application** pour une utilisation ultérieure.
-4.  Créer une clé que vous devez ultérieurement (tous les appelée une *clé secrète du client*). Dans le volet gauche, cliquez sur **les paramètres** , puis **clés**. Sur cette page, effectuez les étapes pour [créer une clé](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
+4.  Créer une clé dont vous aurez besoin ultérieurement (tous les appelée une *clé secrète du client*). Dans le volet gauche, cliquez sur **les paramètres** et les **clés**. Sur cette page, effectuez les étapes pour [créer une clé](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
 5.  Ajouter plusieurs URI d’audience nécessaire à votre [manifeste d’application](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest). Dans le volet gauche, cliquez sur **le manifeste**. Cliquez sur **Modifier**, remplacez le `"identifierUris"` section par le texte suivant, puis cliquez sur **Enregistrer**.
 
     ```json
@@ -202,7 +202,7 @@ Pour chaque scénario, fournissez les informations suivantes à l’API:
 
 Le schéma suivant décrit le processus d’appeler une méthode dans l’API ou achat de l’API de collection de Microsoft Store à partir de votre service.
 
-  ![Appeler des collections ou acheter API](images/b2b-2.png)
+  ![Appeler des collections ou des API d’achat](images/b2b-2.png)
 
 ## <a name="claims-in-a-microsoft-store-id-key"></a>Revendications dans une clé d’ID du MicrosoftStore
 

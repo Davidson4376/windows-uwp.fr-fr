@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330383"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473566"
 ---
 # <a name="settings-page-dev-home"></a>Page des paramètres (Dev Home)
    
@@ -37,7 +37,7 @@ La page **paramètres** contient les volets suivants:
 ## <a name="console-settings"></a>Paramètres de la console  
    
   
-Le volet **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, sandbox et les paramètres de clé de l’accès de sécurité.   
+Le volet **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, bac à sable et paramètres de la clé de sécurité accès.   
   
 <a id="ID4EOB"></a>
 
@@ -55,7 +55,7 @@ Le volet de **récupération du système d’exploitation mettre à jour les par
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-Le volet de **Visual Studio** permet de coupler la console avec Visual Studio. Vous pouvez également supprimer toutes les instances de Visual Studio couplées.   
+Le volet de **Visual Studio** permet de coupler la console avec Visual Studio. Vous pouvez également supprimer toutes les instances de Visual Studio associés.   
   
 <a id="ID4ECC"></a>
 
@@ -73,7 +73,7 @@ Le volet **paramètres de débogage** est utilisé pour afficher et activer/dés
 ## <a name="unattended-script-configuration"></a>Configuration de script sans assistance  
    
   
-Le volet **sans assistance script de configuration** gère les scripts d’installation pour les consoles Xbox One.   
+Le volet **assistance script de configuration** gère les scripts d’installation pour les consoles Xbox One.   
   
 <a id="ID4E3C"></a>
 
@@ -82,7 +82,7 @@ Le volet **sans assistance script de configuration** gère les scripts d’insta
 ## <a name="default-home-experience"></a>Expérience d’accueil par défaut  
    
   
-Le volet **Par défaut l’expérience Home** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
+Le volet **Par défaut l’expérience domestique** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
   
 <a id="ID4EJD"></a>
 
