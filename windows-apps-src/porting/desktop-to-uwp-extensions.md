@@ -8,17 +8,17 @@ keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ae09190b916fdaae68a67a2b9c11caa20d30e2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342851"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473616"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 
 Utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
 
-Par exemple, utilisez une extension pour créer une exception de pare-feu, rendre votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage sur la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
+Par exemple, utilisez une extension pour créer une exception de pare-feu, que votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 
 Cette rubrique décrit ces extensions et les tâches que vous pouvez effectuer en les utilisant.
 
@@ -154,7 +154,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Associer votre application empaquetée à un ensemble de types de fichiers
 
-Vous pouvez associer votre application empaquetée avec des extensions de type de fichier. Si un utilisateur clique un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste de suggestions.
+Vous pouvez associer votre application empaquetée à des extensions de type de fichier. Si un utilisateur clique un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste de suggestions.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
@@ -242,7 +242,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Catégorie | Toujours: ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
 |Verbe |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
-|Id |L’ID unique du verbe. Si votre application est une application UWP, il est transmis à votre application dans le cadre de ses arguments d’événement d’activation afin qu’elle puisse gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
+|Id |L’ID unique du verbe. Si votre application est une application UWP, cela est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin qu’elle puisse gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
 |Parameters |La liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application empaquetée de confiance totale, ces paramètres sont transmis à l’application en tant qu’arguments d’événement lorsque l’application est activée. Vous pouvez personnaliser le comportement de votre application en fonction de différents verbes d’activation. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. Si votre application est une application UWP, vous ne pouvez pas transmettre de paramètres. L’application reçoit l’ID à la place (voir la puce précédente).|
 |Extended |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et est défini par défaut sur la valeur **False** (c’est-à-dire que le verbe est toujours affiché) s’il n’est pas répertorié. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de «Ouvrir», qui est toujours défini sur **False**).|
 
@@ -305,7 +305,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |-------|-------------|
 |Catégorie |Toujours: ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
-|UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, lors de tentatives par votre application pour ouvrir un fichier aide d’une URL, le système téléchargera d’abord le fichier localement. |
+|UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, lors de tentatives par votre application d’ouvrir un fichier aide d’une URL, le système téléchargera d’abord le fichier localement. |
 |Parameters |Paramètres facultatifs. |
 |FileType |Les extensions de fichier appropriées. |
 
@@ -966,7 +966,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>Démarrer un fichier exécutable lorsque les utilisateurs se connectent à Windows
 
-Tâches de démarrage permettent à votre application lancer un exécutable automatiquement chaque fois qu’un utilisateur ouvre une session.
+Tâches de démarrage permettent à votre application lancer un exécutable automatiquement chaque fois qu’un utilisateur se connecte.
 
 > [!NOTE]
 > L’utilisateur doit démarrer votre application au moins une fois pour enregistrer cette tâche de démarrage.
@@ -1264,7 +1264,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 </Package>
 ```
 
-Cette extension peut être utile si vous souhaitez créer une interface utilisateur de plateforme Windows universelle qui s’exécute sur tous les appareils, mais que vous souhaitez que les composants de votre application Win32 poursuivent leur exécution en mode de confiance totale.
+Cette extension peut être utile si vous souhaitez créer une interface utilisateur de la plateforme Windows universelle qui s’exécute sur tous les appareils, mais que vous souhaitez que les composants de votre application Win32 poursuivent leur exécution en mode de confiance totale.
 
 Créez simplement un package d’application Windows pour votre application Win32. Ensuite, ajoutez cette extension au fichier de package de votre application UWP. Cette extension indique que vous souhaitez démarrer un fichier exécutable dans le package d’application Windows.  Si vous souhaitez communiquer entre votre application UWP et votre application Win32, vous pouvez configurer un ou plusieurs [services d’application](../launch-resume/app-services.md) pour ce faire. Pour en savoir plus sur ce scénario, reportez-vous [ici](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 

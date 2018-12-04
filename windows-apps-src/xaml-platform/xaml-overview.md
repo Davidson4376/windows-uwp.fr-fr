@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 639f552a240cf8d28d1a2a0ce530315671128746
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336715"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475304"
 ---
 # <a name="xaml-overview"></a>Vue d’ensemble du langage XAML
 
@@ -70,7 +70,7 @@ Le préfixe «x»/l’espace de noms XAML de langage XAML contient plusieurs con
 |------|-------------|
 | [x:Key](x-key-attribute.md) | Définit une clé unique définie par l’utilisateur pour chaque ressource dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) XAML. La chaîne du jeton de la clé est l’argument de l’extension de balisage **StaticResource**. Vous utiliserez cette clé ultérieurement pour récupérer la ressource XAML d’une autre utilisation XAML à un autre endroit du code XAML de votre application. |
 | [x:Class](x-class-attribute.md) | Indique l’espace de noms de code et le nom de la classe de code qui fournit le code-behind pour une page XAML. Nomme ainsi la classe créée ou jointe par des actions de génération lorsque vous générez votre application. Ces actions de génération prennent en charge le compilateur de balisage XAML, et combinent le balisage et le code-behind lorsque l’application est compilée. Vous devez avoir une telle classe pour prendre en charge le code-behind pour une page XAML. [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051) dans le modèle d’activation Windows Runtime par défaut. |
-| [x:Name](x-name-attribute.md) | Spécifie un nom d’objet au moment de l’exécution pour l’instance qui existe dans le code d’exécution après le traitement d’un élément objet défini en XAML. La définition de **x:Name** en XAML s’apparente à la déclaration d’une variable nommée dans le code. Comme vous l’apprendrez plus tard, c’est exactement ce qui se produit lorsque votre code XAML est chargé en tant que composant d’une application Windows Runtime. <br/><div class="alert">**Remarque** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) est une propriété similaire dans l’infrastructure, mais pas tous les éléments qu’il prend en charge. Vous devez donc utiliser **x:Name** pour l’identification d’élément chaque fois que **FrameworkElement.Name** n’est pas pris en charge sur ce type d’élément. |
+| [x:Name](x-name-attribute.md) | Spécifie un nom d’objet au moment de l’exécution pour l’instance qui existe dans le code d’exécution après le traitement d’un élément objet défini en XAML. La définition de **x:Name** en XAML s’apparente à la déclaration d’une variable nommée dans le code. Comme vous l’apprendrez plus tard, c’est exactement ce qui se produit lorsque votre code XAML est chargé en tant que composant d’une application Windows Runtime. <br/><div class="alert">**Remarque** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) est une propriété similaire dans l’infrastructure, mais pas tous les éléments prennent en charge. Vous devez donc utiliser **x:Name** pour l’identification d’élément chaque fois que **FrameworkElement.Name** n’est pas pris en charge sur ce type d’élément. |
 | [x:Uid](x-uid-directive.md) | Identifie les éléments qui doivent utiliser des ressources localisées pour certaines de leurs valeurs de propriétés. Pour plus d’informations sur l’utilisation de **x:Uid**, voir [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329). |
 | [Types de données intrinsèques XAML](xaml-intrinsic-data-types.md) | Ces types peuvent spécifier des valeurs pour des types à valeur simples lorsqu’un attribut ou une ressource l’exige. Ces types intrinsèques correspondent aux types à valeur simples habituellement définies dans le cadre des définitions intrinsèques de chaque langage de programmation. Par exemple, vous pouvez avoir besoin d’un objet représentant une valeur booléenne **true** afin de l’utiliser dans un état visuel dans une table de montage séquentiel [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320). Pour cette valeur en XAML, vous allez utiliser le type intrinsèque **x:Boolean** en tant qu’élément objet, comme ceci: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 

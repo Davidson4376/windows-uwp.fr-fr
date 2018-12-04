@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, packages, télécharger, disponibilité famille d’appareils
 ms.localizationpriority: medium
 ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8335304"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473899"
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
@@ -51,19 +51,19 @@ Si vous soumettez une applicationUWP pour Windows10IoT Standard, vous ne devez p
 Si votre soumission pour une application publiée précédemment comprend des packages pouvant s’exécuter sur **Windows 8/8.1** et **Windows Phone 8.x et versions antérieures**, ces packages seront rendus disponibles pour les clients sur ces versions de système d’exploitation. Pour arrêter de proposer votre application à ces clients, supprimez les packages correspondants de votre soumission.
 
 > [!IMPORTANT]
-> Pour empêcher complètement une famille d’appareils Windows 10 spécifique d’obtenir votre soumission, mettez à jour l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste pour cibler uniquement la famille d’appareils que vous souhaitez prendre en charge (c'est-à-dire, Windows.Mobile ou Windows.Desktop), au lieu de cela à ce qu’il soit en tant que la valeur Windows.Universal (pour la famille d’appareils universelle) que Microsoft Visual Studio inclut dans le manifeste par défaut.
+> Pour empêcher complètement une famille d’appareils Windows 10 spécifique d’obtenir votre soumission, mettez à jour l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste pour cibler uniquement la famille d’appareils que vous souhaitez prendre en charge (c'est-à-dire, Windows.Mobile ou Windows.Desktop), au lieu de cela que de laisser la valeur Windows.Universal (pour la famille d’appareils universelle) que Microsoft Visual Studio inclut dans le manifeste par défaut.
 
-Il est important de savoir que les sélections que vous effectuez dans la section **Disponibilité de la famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez sa famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows10. Par exemple, si vous disposez d’une application publiée avec des packages Windows Phone 8.1, et que vous ajoutez un package Windows 10 (UWP) ciblant la famille d’appareils Windows.Universal, les clients mobiles Windows 10 qui disposaient de votre package Windows Phone 8.1 seront proposées une mise à jour pour ce paramètre, Windows 10 (UWP) de package, même si vous avez désactivé la case à cocher **Windows 10 Mobile**.
+Il est important de savoir que les sélections que vous effectuez dans la section **Disponibilité de la famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez sa famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows10. Par exemple, si vous disposez d’une application publiée avec des packages Windows Phone 8.1, et que vous ajoutez un package Windows 10 (UWP) ciblant la famille d’appareils Windows.Universal, les clients mobiles Windows 10 qui disposaient de votre package Windows Phone 8.1 seront proposées une mise à jour pour ce paramètre, Windows Package de 10 (UWP), même si vous avez désactivé la case à cocher **Windows 10 Mobile**.
 
 Pour plus d’informations sur les familles d’appareils, voir [**Vue d’ensemble des familles d’appareils**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 
 
 ## <a name="understanding-ranking"></a>Compréhension du classement
 
-Permet d’identifier les vous permettant d’indiquer les familles d’appareils Windows 10 pouvant télécharger votre soumission, la section de **la disponibilité de la famille d’appareils de périphérique** montre les packages spécifiques qui seront disponibles pour différentes familles d’appareils. Si vous possédez plusieurs packages pouvant s’exécuter sur une famille d’appareils spécifique, le tableau indique l’ordre de proposition des packages, en fonction de leur numéro de version. Pour plus d’informations sur la façon dont le Store classe les packages en fonction de leur numéro de version, consultez la section [Numérotation des versions de packages](package-version-numbering.md). 
+Permet d’identifier les vous permettant d’indiquer les familles d’appareils Windows 10 pouvant télécharger votre soumission, la section de **la disponibilité de la famille d’appareils de périphérique** montre les packages spécifiques qui seront rendus disponibles pour différentes familles. Si vous possédez plusieurs packages pouvant s’exécuter sur une famille d’appareils spécifique, le tableau indique l’ordre de proposition des packages, en fonction de leur numéro de version. Pour plus d’informations sur la façon dont le Store classe les packages en fonction de leur numéro de version, consultez la section [Numérotation des versions de packages](package-version-numbering.md). 
 
 Par exemple, imaginons que vous disposez de deuxpackages: Package_A.appxupload et Package_B.appxupload. Pour une famille d’appareils donnée, si Package_A.appxupload est classé au premier rang et que Package_B.appxupload est classé au second rang, lorsqu’un client sur ce type d’appareil acquiert votre application, le WindowsStore tentera dans un premier temps d’offrir Package_A.appxupload. Si l’appareil du client n’est pas en mesure d’exécuter Package_A.appxupload, le WindowsStore propose Package_B.appxupload. Si l’appareil du client ne peut exécuter aucun des packages pour cette famille (par exemple, si le **MinVersion** votre application prend en charge est supérieure à la version de l’appareil du client), puis le client ne sont pas être en mesure de télécharger l’application sur cet appareil.
 
 > [!NOTE]
-> Les numéros de version dans les packages .xap (pour les applications précédemment publiées) ne sont pas considérées comme lors de la détermination du package à fournir à un client donné. Pour cette raison, si vous disposez de plusieurs packages de rang égal, vous verrez un astérisque en lieu et place d’un numéro; les clients peuvent recevoir les deuxpackages. Pour mettre à jour les clients d’un package .xap vers une version plus récente, veillez à supprimer l’ancien .xap dans la nouvelle soumission.
+> Les numéros de version dans les packages .xap (pour les applications déjà publiées) ne sont pas considérées comme lors de la détermination du package à fournir à un client donné. Pour cette raison, si vous disposez de plusieurs packages de rang égal, vous verrez un astérisque en lieu et place d’un numéro; les clients peuvent recevoir les deuxpackages. Pour mettre à jour les clients d’un package .xap vers une version plus récente, veillez à supprimer l’ancien .xap dans la nouvelle soumission.
 
