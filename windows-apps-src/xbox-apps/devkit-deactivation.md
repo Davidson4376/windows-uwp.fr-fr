@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344437"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478092"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du mode développeur XboxOne
 
@@ -74,7 +74,7 @@ Pour réinitialiser votre console procédez comme suit:
 
 Si vous ne parvenez pas à accéder à votre console pour une raison quelconque, vous pouvez également désactiver le Mode développeur sur votre console à l’aide de l’espace partenaires.
 
-1. Accédez à la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxdevices) dans l’espace partenaires. Vous pouvez être invité à se connecter.
+1. Accédez à la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxdevices) dans l’espace partenaires. Vous pouvez être invité à vous connecter.
 
 2. Recherchez la console que vous voulez désactiver dans la liste des consoles à l’aide du numéro de série ou de l’ID de la console ou de l’appareil.  
 

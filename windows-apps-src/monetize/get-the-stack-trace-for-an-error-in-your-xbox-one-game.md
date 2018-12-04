@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: fd43305c54245c3281a0e840d3df4c5c87ff7ad8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332826"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478238"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>Obtenir la trace de pile concernant une erreur dans votre console Xbox One du jeu
 
@@ -48,7 +48,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit du jeu Xbox One pour lequel vous récupérez une trace de pile. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité à partir du rapport analytique de partenaires Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
+| applicationId | chaîne | L’ID de produit du jeu Xbox One pour laquelle vous récupérez une trace de pile. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité à partir du rapport analytique de partenaires Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
 | cabId | chaîne | ID unique du fichierCAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [d’obtenir des détails sur une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md) pour récupérer les détails d’une erreur spécifique dans votre application et utilisez la valeur **cabId** dans le corps de réponse de cette méthode. |  Oui  |
 
  
