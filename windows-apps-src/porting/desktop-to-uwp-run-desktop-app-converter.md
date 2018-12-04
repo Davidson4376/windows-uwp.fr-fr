@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333597"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483785"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -50,7 +50,7 @@ Voici quelques actions supplémentaires, qu’il peut accomplir pour vous.
 
 :heavy_check_mark: Signer automatiquement votre package pour vous permettre de tester votre application.
 
-: heavy_check_mark: valider votre application par rapport à l’application empaquetée et configuration requise pour Microsoft Store.
+: heavy_check_mark: valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 Vous trouverez une liste complète des options dans la section [Paramètres](#command-reference) de ce guide.
 
@@ -120,7 +120,7 @@ Pour créer votre package d'application, exécutez la commande ``DesktopAppConve
 Vous devez spécifier le numéro de version, l’éditeur et nom du package de l’application à l’aide de paramètres.
 
 > [!NOTE]
-> Si vous avez réservé votre nom d’application dans le Microsoft Store, vous pouvez obtenir le nom de package et l’éditeur à l’aide de [L’espace partenaires](https://partner.microsoft.com/dashboard). Si vous prévoyez de charger votre application de manière indépendante sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom d’éditeur que vous choisissez correspond au nom indiqué sur le certificat utilisé pour signer votre application.
+> Si vous avez réservé le nom de votre application dans le Microsoft Store, vous pouvez obtenir le nom de package et l’éditeur à l’aide de [L’espace partenaires](https://partner.microsoft.com/dashboard). Si vous prévoyez de charger votre application de manière indépendante sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom d’éditeur que vous choisissez correspond au nom indiqué sur le certificat utilisé pour signer votre application.
 
 ### <a name="a-quick-look-at-command-parameters"></a>Aperçu des paramètres de commande
 
@@ -143,7 +143,7 @@ Voici quelques méthodes courantes pour créer votre package d'application.
 * [Package d’une application qui dispose d’un fichier de programme d’installation (.msi)](#installer-conversion)
 * [Une application qui dispose d’un fichier exécutable d’installation de package](#setup-conversion)
 * [Une application qui n’a pas de programme d’installation de package](#no-installer-conversion)
-* [Package d’application, signer l’application et les préparer à la soumission au Windows Store](#optional-parameters)
+* [Package d’application, signer l’application et préparer à la soumission au Windows Store](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -156,7 +156,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> Voici deux éléments important à prendre en considération ici. Assurez-vous en premier lieu que votre programme d’installation se trouve dans un dossier indépendant et que seuls les fichiers associés à ce programme d’installation se trouvent dans le même dossier. Le convertisseur copie l’intégralité du contenu de ce dossier vers l’environnement Windows isolé. <br> Deuxièmement, si l’espace partenaires attribue une identité à votre package commençant par un chiffre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre.  
+> Voici deux éléments important à prendre en considération ici. Assurez-vous en premier lieu que votre programme d’installation se trouve dans un dossier indépendant et que seuls les fichiers associés à ce programme d’installation se trouvent dans le même dossier. Le convertisseur copie l’intégralité du contenu de ce dossier vers l’environnement Windows isolé. <br> Deuxièmement, si l’espace partenaires attribue une identité à votre package commençant par un chiffre, assurez-vous que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre.  
 
 **Vidéo**
 
@@ -205,7 +205,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>Créer un package d'application, signer l’application puis exécuter les vérifications de validation sur le package
 
-Cet exemple est similaire au premier près qu’il montre comment vous pouvez signer votre application pour le test local, puis valider votre application par rapport à l’application empaquetée et configuration requise pour Microsoft Store.
+Cet exemple est similaire au premier près qu’il montre comment vous pouvez signer votre application pour le test local, puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -263,11 +263,11 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |<a id="conversion-params" /> <strong>Paramètres de conversion</strong>|||
 |-AppInstallPath &lt;chaîne&gt;  |Facultatif |Chemin d’accès complet au dossier racine de votre application pour les fichiers installés en cas d’installation (par exemple, «C:\Program Files (x86)\MyApp»).|
 |-Destination &lt;chaîne&gt; |Requis |La destination souhaitée pour la sortie d’appx du convertisseur: DesktopAppConverter peut créer cet emplacement s’il n’existe pas déjà.|
-|-Installer &lt;chaîne&gt; |Requis |Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement. Conversion sans programme, il s’agit du chemin d’accès au répertoire racine des fichiers de votre application. |
+|-Installer &lt;chaîne&gt; |Requis |Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement. Conversion sans programme, c’est le chemin vers le répertoire racine des fichiers de votre application. |
 |-InstallerArguments &lt;chaîne&gt; |Facultatif |Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès &lt;log_folder&gt;, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE**: les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation. <br><br>Exemple d’utilisation de ce paramètre: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log". Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci: ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton &lt;log_folder&gt; si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Facultatif |Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple: 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script à la sortie sous la forme d’un Package MSIX de package. |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script pour empaqueter la sortie sous la forme d’un Package MSIX. |
 |<a id="identity-params" /><strong>Paramètres d’identité de package</strong>||
 |-PackageName &lt;chaîne&gt; |Requis |Le nom de votre package d’application Windows universelle. Si l’espace partenaires attribue une identité à votre package commençant par un chiffre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre. |
 |-Éditeur &lt;chaîne&gt; |Requis |L’éditeur de votre package d’application Windows universelle |
@@ -275,7 +275,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |<a id="manifest-params" /><strong>Paramètres de manifeste de package</strong>||
 |-AppExecutable &lt;chaîne&gt; |Facultatif |Nom de l’exécutable principal de votre application (par exemple, «MonApp.exe»). Ce paramètre est requis avec les conversions sans programme d’installation. |
 |-AppFileTypes &lt;chaîne&gt;|Facultatif |Une liste séparée par des virgules des types de fichiers auxquels l’application sera associée Exemple d’utilisation: -AppFileTypes "'.md', '.markdown'".|
-|-AppId &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est définie l’ID d’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. Dans de nombreux cas, l'utilisation de *PackageName* convient. Toutefois, si l’espace partenaires attribue une identité à votre package commençant par un chiffre, vérifiez que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre. |
+|-AppId &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est définie l’ID d’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. Dans de nombreux cas, l'utilisation de *PackageName* convient. Toutefois, si l’espace partenaires attribue une identité à votre package commençant par un chiffre, assurez-vous que vous également transmettez le paramètre <i>- AppId</i> et utilisez uniquement le suffixe de la chaîne (après le point de séparation) en tant que la valeur de ce paramètre. |
 |-AppDisplayName &lt;chaîne&gt;  |Facultatif |Spécifie une valeur à partir de laquelle est défini le nom complet de l’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. |
 |-AppDescription &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est définie la description d’application dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*.|
 |-PackageDisplayName &lt;chaîne&gt; |Facultatif |Spécifie une valeur à partir de laquelle est défini le nom complet du package dans le manifeste du package d’application Windows. Si elle n’est pas spécifiée, elle sera définie en fonction de la valeur transmise pour *PackageName*. |
@@ -292,7 +292,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-LogFile &lt;chaîne&gt;  |Facultatif |Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé. |
 | -Sign [&lt;SwitchParameter&gt;] |Facultatif |Indique à ce script qu’il doit signer le package d’application Windows produit à l’aide d’un certificat généré à des fins de test. Ce commutateur doit être présent en même temps que le commutateur ```-MakeAppx```. |
 |&lt;Paramètres communs&gt; |Requis |Cette applet de commande prend en charge les paramètres courants: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
-| -Verify [&lt;SwitchParameter&gt;] |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à l’outil DAC de vérifier que le package d’application par rapport à l’application empaquetée et configuration requise pour Microsoft Store. Le résultat obtenu est un rapport de validation «VerifyReport.xml», qui s’affiche de manière plus efficace dans un navigateur. Ce commutateur doit être présent en même temps que le commutateur `-MakeAppx`. |
+| -Verify [&lt;SwitchParameter&gt;] |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à l’outil DAC de vérifier que le package d’application par rapport à l’application empaquetée et les exigences de Microsoft Store. Le résultat obtenu est un rapport de validation «VerifyReport.xml», qui s’affiche de manière plus efficace dans un navigateur. Ce commutateur doit être présent en même temps que le commutateur `-MakeAppx`. |
 |-PublishComRegistrations| Facultatif| Analyse toutes les inscriptions COM publiques effectuées par votre programme d’installation et publie celles qui sont valides dans votre manifeste. Utilisez cet indicateur seulement si vous souhaitez rendre ces enregistrements accessibles à d’autres applications. Il n’est pas nécessaire d’employer cet indicateur si ces enregistrements ne doivent être utilisés que par votre application. <br><br>Consultez [cet article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) pour vous assurer que vos inscriptions COM fonctionnent comme prévu après la création du package de votre application.
 
 <a id="run-app" />
@@ -303,7 +303,7 @@ Il existe deux façons d’exécuter votre application.
 
 L’une d’elles consiste à ouvrir une invite de commandes PowerShell pour saisir la commande suivante: ```Add-AppxPackage –Register AppxManifest.xml```. Il s’agit probablement du moyen le plus simple d’exécuter votre application, car vous n’avez pas à vous connecter.
 
-Une autre méthode consiste à signer votre application avec un certificat. Si vous utilisez la ```sign``` paramètre, Desktop App Converter génère un pour vous et puis signez votre application avec ce dernier. Ce fichier est nommé **auto-generated.cer**, et vous pouvez le trouver dans le dossier racine de votre application empaquetée.
+Autre méthode consiste à signer votre application avec un certificat. Si vous utilisez la ```sign``` paramètre, Desktop App Converter génère un pour vous et puis signez votre application avec ce dernier. Ce fichier est nommé **auto-generated.cer**, et vous pouvez le trouver dans le dossier racine de votre application empaquetée.
 
 Suivez ces étapes pour installer le certificat généré, puis exécutez votre application.
 

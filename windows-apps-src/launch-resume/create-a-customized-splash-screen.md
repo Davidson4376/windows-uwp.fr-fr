@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 142ee642806ebba41d6ddb4d49fe55217e7a0e2e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338426"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482826"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>Afficher un écran de démarrage plus longtemps
 
@@ -418,7 +418,7 @@ namespace SplashScreenExample
 
 ### <a name="appxamlcs"></a>App.Xaml.cs
 
-Ce projet a été créé à l’aide du modèle projet **Application vide (XAML)** d’application UWP dans Visual Studio. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
+Ce projet a été créé à l’aide du modèle de projet UWP application **Application vide (XAML)** dans Visual Studio. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
 
 Si vous n’avez pas utilisé de modèle de projet pour votre application, voir l’étape 4 : [Modifier le gestionnaire d’activation de lancement](#modify-the-launch-activation-handler) pour obtenir un exemple de `OnLaunched` modifié qui n’utilise pas la navigation [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, maillage, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330516"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479506"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 
@@ -257,7 +257,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **Remarque**vous déclarez généralement la matrice de projection lorsque vous configurez les ressources spécifiques de l’appareil, car les résultats de la multiplication avec ce dernier doivent correspondre les paramètres de taille de fenêtre d’affichage 2D actuels (qui correspondent souvent à la hauteur en pixels et la largeur de la affichage). Si ceux-ci changent, vous devez mettre à l’échelle les valeurs des coordonnées x et y en conséquence.
+> **Remarque**vous déclarez généralement la matrice de projection lorsque vous configurez les ressources propres au périphérique, dans la mesure où les résultats de la multiplication avec ce dernier doivent correspondre à des paramètres de taille de fenêtre d’affichage 2D actuels (qui correspondent souvent à la hauteur en pixels et la largeur de la affichage). Si ceux-ci changent, vous devez mettre à l’échelle les valeurs des coordonnées x et y en conséquence.
 
  
 

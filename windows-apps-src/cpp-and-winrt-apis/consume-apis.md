@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337175"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481736"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
 
-Cette rubrique montre comment utiliser [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, qu’ils fassent partie de Windows, implémentées par un fournisseur de composants tiers ou par vous-même.
+Cette rubrique montre comment utiliser [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, qu’il fasse partie de Windows, implémentées par un fournisseur de composants tiers ou par vous-même.
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>Si l’API se trouve dans un espace de noms Windows
 Il s'agit du scénario le plus courant dans lequel vous utiliserez une API Windows Runtime. Pour chaque type dans un espace de noms Windows défini dans les métadonnées, C++/WinRT définit un équivalent compatible C++ (appelé le *type projeté*). Le type projeté a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt** à l’aide de la syntaxe C++. Par exemple, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) est projeté en C++/WinRT sous la forme **winrt::Windows::Foundation::Uri**.
@@ -176,7 +176,7 @@ MainPage::MainPage()
 Pour obtenir plus d’informations, du code et la procédure d’utilisation d’une classe runtime implémentée dans le projet d’utilisation, voir [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>Instanciation et retour des types et interfaces projetés
-Voici un exemple de ce à quoi peuvent ressembler les types et interfaces projetés dans votre projet d’utilisation. N’oubliez pas qu’un type projeté (par exemple, le dans cet exemple), est générée par l’outil et n’est pas quelque chose que vous souhaitez créer vous-même.
+Voici un exemple de ce à quoi peuvent ressembler les types et interfaces projetés dans votre projet d’utilisation. N’oubliez pas qu’un type projeté (par exemple, celle qui figure dans cet exemple), est générée par l’outil et n’est pas quelque chose que vous souhaitez créer vous-même.
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,

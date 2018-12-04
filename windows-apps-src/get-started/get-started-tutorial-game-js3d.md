@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336173"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479496"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -256,7 +256,7 @@ Cela nous a demandé pas mal de code, mais nous avons désormais un superbe cube
 
 Vous pouvez copier et coller l'ensemble du code JavaScript dans ce CodePen pour vous rattraper si vous avez rencontré des problèmes, ou le modifier pour régler les lumières ou changer les couleurs. 
 
-<iframe height='300' scrolling='no' title='Les lumières, caméra, cube!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>lumières, caméra, cube!</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='Lumières, caméra, cube!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>lumières, caméra, cube!</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
@@ -640,7 +640,7 @@ Au final, nous appliquons les valeurs mises à jour `x` et `y` quelles qu'elles 
 
 Félicitations! Vous disposez maintenant d’une caméra contrôlée par le joueur qui peut se déplacer et observer les alentours. Nous traversons toujours les murs, mais nous nous en soucierons plus tard. Ensuite, nous allons ajouter notre dinosaure.
 
-<iframe height='300' scrolling='no' title='Déplacer.' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>se déplacer</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='Déplacer.' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>déplacer</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!NOTE]
@@ -999,7 +999,7 @@ dinoAlert.style.display = 'none';
 À ce stade, un dinosaure sauvage se lance à la poursuite du joueur dès que celui-ci s'approche trop près et ne s’arrête que lorsque sa position correspond à celle du joueur.
 La dernière étape consiste à ajouter des conditions de fin de partie une fois que le dino se trouve à `CATCHOFFSET` unités de distance.
 
-<iframe height='300' scrolling='no' title='La chase' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>The chase (La chasse)</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='La poursuite' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>The chase (La chasse)</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 

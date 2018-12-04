@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330483"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484217"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 

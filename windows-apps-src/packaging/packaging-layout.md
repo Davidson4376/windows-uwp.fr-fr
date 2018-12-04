@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331550"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482282"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Création de package à l'aide de la disposition de mise en package  
 
@@ -51,7 +51,7 @@ Voici un exemple de disposition de mise en package simple:
 Décomposons cet exemple pour comprendre son fonctionnement
 
 ### <a name="packagefamily"></a>PackageFamily
-Cette disposition de mise en package créera un fichier d’un ensemble d’applications d’application plate unique avec une x64 package d’architecture et un package d’actifs «Media». 
+Cette disposition de mise en package créera un fichier d’un ensemble d’applications d’application plat unique avec une x64 package d’architecture et un package d’actifs «Media». 
 
 L'élément **PackageFamily** est utilisé pour définir un ensemble d'applications. Vous devez utiliser l'attribut **ManifestPath** pour fournir un élément **AppxManifest** à l'ensemble. L'élément **AppxManifest** doit correspondre à l'élément **AppxManifest** pour le package d'architecture de l'ensemble. L'attribut **ID** doit également être fourni. Cet élément est utilisé avec MakeAppx.exe lors de la création de package. Ainsi, vous pouvez créer uniquement ce package si vous le souhaitez, il s'agira alors du nom de fichier pour le package obtenu. L'attribut **FlatBundle** est utilisé pour décrire le type d'ensemble que vous souhaitez créer, l'attribut **true** pour un ensemble plat (vous trouverez plus d'informations ici) et l'attribut **false** pour un ensemble classique. L'attribut **ResourceManager** est utilisé pour spécifier si les packages de ressources dans cet ensemble utiliseront MRT afin d'accéder aux fichiers. La valeur par défaut est **true**, mais à compter de la version 1803 de Windows10, il n'est pas encore prêt. L'attribut doit donc être défini sur **false**.
 

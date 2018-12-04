@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8348509"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483185"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
@@ -30,7 +30,7 @@ Si vous utilisez Visual Studio comme environnement de développement, vous dispo
 
 Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées. En l’absence des informations supplémentaires ajoutées au manifeste, vous pouvez rencontrer des échecs de chargement de package. 
 
-Lorsque vous générez des packages UWP de votre application, Visual Studio peut créer une .msix ou fichier appx ou un fichier .msixupload ou .appxupload. Pour les applications UWP, nous recommandons que vous toujours charger le fichier .msixupload ou .appxupload dans la page [Packages](upload-app-packages.md) . Pour plus d’informations sur la création de packages d’applicationsUWP pour leStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
+Lorsque vous générez des packages UWP de votre application, Visual Studio peut créer une .msix ou fichier appx ou un fichier .msixupload ou .appxupload. Pour les applications UWP, nous recommandons que vous chargez toujours le fichier .msixupload ou .appxupload dans la page [Packages](upload-app-packages.md) . Pour plus d’informations sur la création de packages d’applicationsUWP pour leStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
 
 Il n’est pas nécessaire que les packages de votre application soient signés avec un certificat provenant d’une autorité de certification approuvée.
 

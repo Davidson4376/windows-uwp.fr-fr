@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API d'avis du MicrosoftStore, répondre aux avis
 ms.localizationpriority: medium
 ms.openlocfilehash: 2547daa3de7b4a3825060550b7ddc00c10df3e90
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8329239"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482690"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Répondre aux avis à l’aide des services du Windows Store
 
@@ -24,7 +24,7 @@ Les étapes suivantes décrivent le processus de bout en bout:
 3.  [Appelez l’API d’avis du MicrosoftStore](#call-the-windows-store-reviews-api).
 
 > [!NOTE]
-> Outre l’utilisation du Microsoft Store API pour répondre par programmation aux avis, vous pouvez également répondre aux avis [à l’aide de l’espace partenaires](../publish/respond-to-customer-reviews.md)d’avis.
+> Outre l’utilisation du Microsoft Store API pour répondre par programmation aux avis, vous pouvez répondre aux avis [à l’aide de l’espace partenaires](../publish/respond-to-customer-reviews.md)d’avis.
 
 <span id="prerequisites" />
 
@@ -42,7 +42,7 @@ Pour associer une application Azure AD à votre compte espace partenaires et ré
 
 1.  Dans l’espace partenaires, [Associez le compte de l’espace partenaires de votre organisation avec un annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Ensuite, dans la page **utilisateurs** dans la section **paramètres du compte** de l’espace partenaires, [Ajouter l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour répondre aux d'avis. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure Active directory, vous pouvez [créer une nouvelle application Azure AD dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  Ensuite, dans la page **utilisateurs** dans la section **paramètres du compte** de l’espace partenaires, [Ajoutez l’application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) qui représente l’application ou le service que vous allez utiliser pour répondre aux avis. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre répertoire Azure Active directory, vous pouvez [créer une nouvelle application Azure AD dans l’espace partenaires](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Revenez à la page **Utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 

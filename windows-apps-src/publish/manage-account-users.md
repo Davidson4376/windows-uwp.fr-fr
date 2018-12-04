@@ -7,22 +7,22 @@ ms.topic: article
 keywords: Windows 10, uwp, les utilisateurs de comptes, gérer les utilisateurs, azure ad, multiutilisateur, plusieurs utilisateurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 282b1eb087fa081b621437206f338ed4b6d3569b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330908"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482879"
 ---
 # <a name="manage-account-users"></a>Gérer des utilisateurs de compte
 
 Vous pouvez utiliser Azure Active Directory pour ajouter et gérer des utilisateurs supplémentaires dans votre compte [Espace partenaires](https://partner.microsoft.com/dashboard) . Vous pouvez définir le rôle ou les autorisations personnalisées dont doit disposer chaque utilisateur. Vous pouvez également attribuer un rôle à un groupe d’utilisateurs ou à une application Azure AD.
 
-Pour ajouter et gérer les utilisateurs de compte, vous devez tout d’abord associer votre compte espace partenaires à Azure Active Directory de votre organisation. 
+Pour ajouter et gérer les utilisateurs de compte, vous devez d’abord associer votre compte espace partenaires avec Azure Active Directory de votre organisation. 
 
 Cette section décrit la procédure à suivre pour effectuer les opérations suivantes:
 
 -   [Associer Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md)
--   [Ajouter des utilisateurs, des groupes et applications Azure AD à votre compte espace partenaires](add-users-groups-and-azure-ad-applications.md)
+-   [Ajouter des utilisateurs, groupes et applications Azure AD à votre compte espace partenaires](add-users-groups-and-azure-ad-applications.md)
 -   [Définir des rôles et des autorisations personnalisées pour les utilisateurs de compte](set-custom-permissions-for-account-users.md)
 
 > [!TIP]

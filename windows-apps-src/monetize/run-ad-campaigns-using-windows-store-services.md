@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
 ms.openlocfilehash: 038003714d6543580f618b381ac7f4ecbde22da9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8345393"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479137"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Gérer des campagnes publicitaires à l’aide des services du Windows Store
 
-Utiliser l' *API de promotions du Microsoft Store* pour gérer par programmation les campagnes publicitaires promotionnelles pour les applications qui sont enregistrées sur votre compte d’ou votre organisation l’espace partenaires. Cette API permet de créer, de mettre à jour et de surveiller vos campagnes et d'autres ressources connexes, telles que des options créatives et de ciblage. Cette API est particulièrement utile pour les développeurs qui créent des volumes importants de campagnes de publicité, et qui souhaitent le faire sans à l’aide de l’espace partenaires. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+Utiliser l' *API de promotions du Microsoft Store* pour gérer par programmation les campagnes publicitaires promotionnelles pour les applications qui sont enregistrées sur votre compte d’ou votre organisation l’espace partenaires. Cette API permet de créer, de mettre à jour et de surveiller vos campagnes et d'autres ressources connexes, telles que des options créatives et de ciblage. Cette API est particulièrement utile pour les développeurs qui créent des volumes importants de campagnes de publicité, et qui souhaitent faire sans utiliser l’espace partenaires. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus de bout en bout:
 
@@ -26,7 +26,7 @@ Les étapes suivantes décrivent le processus de bout en bout:
 Vous pouvez également créer et gérer des campagnes publicitaires à l’aide de l’espace partenaires et toutes les campagnes publicitaires que vous créez programmatiquement via l’API est également accessibles dans l’espace partenaires de promotions Microsoft Store. Pour plus d’informations sur la gestion des campagnes de publicité dans l’espace partenaires, consultez l’article [créer une campagne de publicité pour votre application](../publish/create-an-ad-campaign-for-your-app.md).
 
 > [!NOTE]
-> Tous les développeurs disposant d’un compte espace partenaires peuvent utiliser l’API de promotions Microsoft Store pour gérer les campagnes publicitaires pour leurs applications. Les agences média peuvent également demander l’accès à cette API pour diffuser des campagnes publicitaires pour le compte de leurs annonceurs. Si vous êtes une agence média et que vous souhaitez en savoir plus sur cette API ou en demander l'accès, faites parvenir votre demande à l'adresse storepromotionsapi@microsoft.com.
+> Tous les développeurs disposant d’un compte de l’espace partenaires peuvent utiliser l’API de promotions Microsoft Store pour gérer les campagnes publicitaires pour leurs applications. Les agences média peuvent également demander l’accès à cette API pour diffuser des campagnes publicitaires pour le compte de leurs annonceurs. Si vous êtes une agence média et que vous souhaitez en savoir plus sur cette API ou en demander l'accès, faites parvenir votre demande à l'adresse storepromotionsapi@microsoft.com.
 
 <span id="prerequisites" />
 

@@ -4,14 +4,14 @@ description: Assurez-vous que votre application répond aux exigences relatives 
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: bd851b6deab0f7a2772720fac83bb2bfa3175071
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8348778"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480044"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 

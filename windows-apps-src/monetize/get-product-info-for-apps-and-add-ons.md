@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325519"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479667"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Obtenir les informations produit des applications et des extensions
 
@@ -27,7 +27,7 @@ Pour obtenir un exemple d’application complète, consultez [Exemple Store](htt
 Les conditions préalables de ces exemples sont les suivantes:
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure.
 * Vous avez [créé une soumission d’application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans l’espace partenaires et que cette application est publiée dans le Windows Store. Vous pouvez éventuellement configurer l’application pour qu'elle ne soit pas détectable dans le Windows Store pendant que vous la testez. Pour plus d’informations, consultez nos [conseils de test](in-app-purchases-and-trials.md#testing).
-* Si vous souhaitez obtenir des informations de produit pour une extension de l’application, vous devez également [créer l’extension dans l’espace partenaires](../publish/add-on-submissions.md).
+* Si vous souhaitez obtenir les informations produit pour une extension de l’application, vous devez également [créer l’extension dans l’espace partenaires](../publish/add-on-submissions.md).
 
 Le code de ces exemples respecte les présupposés suivants:
 * Le code s’exécute dans le contexte d’une [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) qui contient un [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) nommé ```workingProgressRing``` et un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) nommé ```textBlock```. Ces objets sont utilisés pour respectivement indiquer qu’une opération asynchrone est en cours et afficher les messages de sortie.

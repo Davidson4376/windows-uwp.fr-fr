@@ -4,18 +4,18 @@ description: Créez une classe de tâche en arrière-plan hors processus et insc
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ms.date: 07/02/2018
 ms.topic: article
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: eb6cde0c3c31f0116c65e5d5dc4a0d8ae4a1b540
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337255"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479476"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
@@ -36,7 +36,7 @@ Vous pouvez exécuter du code en arrière-plan en écrivant des classes qui impl
 
 Les étapes suivantes vous montrent comment écrire une nouvelle classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
 
-1.  Créez un projet pour les tâches en arrière-plan et ajoutez-le à votre solution. Pour ce faire, le bouton droit sur le nœud de votre solution dans l' **Explorateur de solutions** et sélectionnez **Ajouter** \> **Nouveau projet**. Sélectionnez le type de projet de **Composant Windows Runtime** , nommez le projet, puis cliquez sur OK.
+1.  Créez un projet pour les tâches en arrière-plan et ajoutez-le à votre solution. Pour ce faire, avec le bouton droit sur le nœud de votre solution dans l' **Explorateur de solutions** et sélectionnez **Ajouter** \> **Nouveau projet**. Sélectionnez le type de projet de **Composant Windows Runtime** , nommez le projet, puis cliquez sur OK.
 2.  Référencez le projet des tâches en arrière-plan à partir de votre projet d’application de plateforme Windows universelle (UWP). Pour un langage c# ou application C++, dans votre projet d’application, avec le bouton droit sur les **références** et sélectionnez **Ajouter une nouvelle référence**. Sous **Solution**, sélectionnez **Projets** et le nom de votre projet de tâches en arrière-plan, puis cliquez sur **OK**.
 3.  Pour le projet de tâches en arrière-plan, ajoutez une nouvelle classe qui implémente l’interface [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) . La méthode [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) est un point d’entrée obligatoire qui sera appelé lorsque l’événement spécifié est déclenché; Cette méthode est nécessaire dans chaque tâche en arrière-plan.
 
@@ -140,11 +140,11 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, Si vous n’utilisez pas un report, puis le processus de tâche en arrière-plan peut arrêt inattendu si la méthode **Run** retourne avant tout travail asynchrone a s’exécuter jusqu’au.
+4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, Si vous n’utilisez pas un report, le processus de tâche en arrière-plan peut arrêt inattendu si la méthode **Run** retourne avant tout travail asynchrone a s’exécuter jusqu’au.
 
 Demandez le report dans la méthode **Run** avant d’appeler la méthode asynchrone. Enregistrez le report dans un membre de classe de données afin qu’il est accessible à partir de la méthode asynchrone. Déclarez le report terminé après que l’exécution du code asynchrone a abouti.
 
-L’exemple de code suivant obtient le report, l’enregistre et le libère lorsque le code asynchrone est terminé.
+L’exemple de code suivant obtient le report, l’enregistre et relâche le bouton lorsque le code asynchrone est terminé.
 
 ```csharp
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
@@ -207,11 +207,11 @@ Pour plus d’informations sur les modèles asynchrones, voir [Programmation asy
 Les étapes qui suivent sont à effectuer dans l’une de vos classes d’application (par exemple, MainPage.xaml.cs).
 
 > [!NOTE]
-> Vous pouvez également créer une fonction consacrée à l’inscription des tâches en arrière-plan&mdash;voir [inscrire une tâche en arrière-plan](register-a-background-task.md). Dans ce cas, au lieu d’utiliser les trois étapes suivantes, vous pouvez simplement construire le déclencheur et à les fournir à la fonction d’inscription, le nom de la tâche, son point d’entrée et (éventuellement) une condition.
+> Vous pouvez également créer une fonction consacrée à l’inscription des tâches en arrière-plan&mdash;voir [inscrire une tâche en arrière-plan](register-a-background-task.md). Dans ce cas, au lieu d’utiliser les trois étapes suivantes, vous pouvez simplement construire le déclencheur et à les fournir à la fonction d’inscription, ainsi que le nom de la tâche, son point d’entrée et (éventuellement) une condition.
 
 ## <a name="register-the-background-task-to-run"></a>Inscrire la tâche en arrière-plan à des fins d’exécution
 
-1.  Découvrez les indique si la tâche en arrière-plan est déjà inscrite en parcourant la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) . Cette étape est primordiale ; si votre application ne vérifie pas la présence d’inscriptions de tâches en arrière-plan existantes, elle peut aisément procéder plusieurs fois à l’inscription de la tâche, ce qui risque de poser des problèmes de performance et d’épuiser le temps processeur disponible pour la tâche avant que le travail ne soit effectué.
+1.  Découvrez si la tâche en arrière-plan est déjà inscrite en parcourant la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) . Cette étape est primordiale ; si votre application ne vérifie pas la présence d’inscriptions de tâches en arrière-plan existantes, elle peut aisément procéder plusieurs fois à l’inscription de la tâche, ce qui risque de poser des problèmes de performance et d’épuiser le temps processeur disponible pour la tâche avant que le travail ne soit effectué.
 
 L’exemple suivant effectue une itération sur la propriété **AllTasks** et définit une variable d’indicateur sur true si la tâche est déjà inscrite.
 
@@ -344,7 +344,7 @@ Pour plus d’informations, voir [Recommandations en matière de tâches en arri
 
 ## <a name="handle-background-task-completion-using-event-handlers"></a>Gérer l’achèvement des tâches en arrière-plan à l’aide de gestionnaires d’événements
 
-Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) afin que votre application puisse obtenir les résultats de la tâche en arrière-plan. Lorsque l’application est lancée ou de reprise, la méthode marquée est appelée si la tâche en arrière-plan est terminée depuis la dernière fois que l’application a été au premier plan. (La méthode OnCompleted est appelée immédiatement si la tâche en arrière-plan se termine pendant que votre application est au premier plan.)
+Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) afin que votre application puisse obtenir les résultats de la tâche en arrière-plan. Lorsque l’application est lancée ou reprise, la méthode marquée est appelée si la tâche en arrière-plan est terminée depuis la dernière fois que l’application a été au premier plan. (La méthode OnCompleted est appelée immédiatement si la tâche en arrière-plan se termine pendant que votre application est au premier plan.)
 
 1.  Écrivez une méthode OnCompleted pour gérer l’achèvement des tâches en arrière-plan. Par exemple, le résultat des tâches en arrière-plan peut entraîner une mise à jour de l’interface utilisateur. L’empreinte de la méthode présentée ici est requise pour la méthode de gestionnaire d’événements OnCompleted, même si cet exemple n’utilise pas le paramètre *args*.
 

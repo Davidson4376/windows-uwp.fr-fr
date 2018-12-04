@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325595"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483039"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 
@@ -164,7 +164,7 @@ Testez la configuration de votre application et de votre site web en exécutant 
 -   Package Family Name: le nom de la famille de packages (PFN) de votre application
 -   File path: le fichier JSON utilisé pour la validation locale (par exemple, C:\\SomeFolder\\windows-app-web-link)
 
-Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lorsqu’il est chargé. S’il existe un code d’erreur, il fonctionnera pas.
+Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il fonctionnera pas.
 
 Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de validation locale:
 
@@ -198,4 +198,4 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 [Web application-exemple de projet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [Gérer l’Activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[exemple de lancement d’Association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().
+[Lancement d’Association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().

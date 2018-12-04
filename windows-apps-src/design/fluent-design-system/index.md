@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337305"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479353"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Les créateurs d’application système pour les fenêtres de conception Fluent
 
@@ -36,11 +36,11 @@ Les expériences Fluent s’ajustent au comportement et aux intentions&mdash;ell
 En intégrant des éléments du monde physique, une expérience Fluent exploite quelque chose de fondamental. Elle utilise la lumière, l’ombre, le mouvement, la profondeur et la texture pour organiser les informations d’une façon qui semble intuitive et instinctive.
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Utilisation de Fluent Design à votre application avec UWP
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Utilisation de Fluent Design dans votre application avec UWP
 
 ![Logo de conception Fluent](images/fluentdesign_header.png)
 
-Nos recommandations en matière de conception expliquent comment appliquer des principes de conception Fluent pour les applications. Quel type d’applications? Tandis que la plupart de nos recommandations peuvent être appliqués à n’importe quelle plateforme, nous avons créé UWP (la plateforme Windows universelle) pour prendre en charge de la conception Fluent.
+Nos recommandations en matière de conception expliquent comment appliquer des principes de conception Fluent aux applications. Quel type d’applications? Tandis que la plupart de nos recommandations peuvent être appliqués à n’importe quelle plateforme, nous avons créé UWP (la plateforme Windows universelle) pour prendre en charge de la conception Fluent.
 
 Les fonctionnalités Fluent Design sont intégrées dans UWP. Certaines de ces fonctionnalités&mdash;comme les pixels effectifs et le système d’entrée universel&mdash; sont automatiques. Il n’est pas nécessaire d’écrire du code supplémentaire pour en tirer parti. D'autres fonctionnalités, telles qu’acrylique, sont facultatives: vous les ajoutez à votre application en écrivant du code pour les inclure.
 
@@ -59,7 +59,7 @@ En plus de conseils de conception, nos articles Fluent Design également vous mo
 ![](images/xaml-example.png)
 
 
-> Si vous débutez dans le développement UWP, consultez notre [page UWP en main](https://developer.microsoft.com/windows/apps/getstarted).
+> Si vous débutez dans le développement UWP, consultez notre [prendre en main page UWP](https://developer.microsoft.com/windows/apps/getstarted).
 
 ## <a name="find-a-natural-fit"></a>Trouvez une solution naturelle
 
@@ -115,9 +115,9 @@ Comment faire qu’une application semble naturelle sur un grand nombre d’appa
         [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
-## <a name="make-it-intuitive"></a>Rendre intuitive
+## <a name="make-it-intuitive"></a>Faites-en intuitive
 
-Une expérience semble intuitive quand elle comporte comme l’utilisateur s’attend à. À l’aide des contrôles et des modèles établis, et en tirant profit de la prise en charge de plates-formes pour l’accessibilité et la globalisation, vous pouvez créer une expérience intuitive qui permet aux utilisateurs d’être plus productifs.
+Une expérience semble intuitive quand elle comporte comme l’utilisateur s’attend à pouvoir. À l’aide des contrôles et des modèles établis, et en tirant profit de la prise en charge de plates-formes pour l’accessibilité et la globalisation, vous pouvez créer une expérience intuitive qui permet aux utilisateurs d’être plus productifs.
 
 Montrer de l'empathie c’est exécuter la bonne action au bon moment.
 

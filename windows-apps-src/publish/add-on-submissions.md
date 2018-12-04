@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, iap, achat in-app, produit in-app, soumission iap
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dc3e9b928c544b8552abc6c289c682694f623c0
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8347211"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484054"
 ---
 # <a name="add-on-submissions"></a>Soumissions d'extensions
 
@@ -81,11 +81,11 @@ Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au W
 
 ## <a name="updating-an-add-on-after-publication"></a>Mise à jour d’une extension après sa publication
 
-Une extension est modifiable à tout moment après sa publication. Modifications de module complémentaire sont soumises et publiées indépendamment de votre application, vous généralement inutile de mettre à jour de l’ensemble de l’application afin d’apporter des modifications à une extension, par exemple, la mise à jour son prix ou sa description.
+Une extension est modifiable à tout moment après sa publication. Modifications de module complémentaire sont soumises et publiées indépendamment de votre application, vous généralement inutile de mettre à jour l’ensemble de l’application afin d’apporter des modifications à une extension, par exemple, la mise à jour son prix ou sa description.
 
 Pour envoyer des mises à jour, accédez à le de page Ajout dans l’espace partenaires et cliquez sur la **mise à jour**. Cela crée une nouvelle soumission pour l’extension, en utilisant les informations de votre soumission précédente comme point de départ. Apportez les modifications que vous souhaitez comme, puis cliquez sur **Envoyer au Store**.
 
 Si vous voulez supprimer une extension précédemment proposé, vous pouvez créer une soumission et modifier l’option [Distribution et visibilité](set-add-on-pricing-and-availability.md) en la définissant sur **Hidden in the Store** (Plus disponible à l’achat) avec l'option **Stop acquisition** (arrêt acquisition). Veillez à mettre à jour le code de votre application en fonction des besoins pour supprimer les références à l’extension (en particulier si votre application publiée précédemment prend en charge Windows 8.1 version antérieure; ce paramètre de visibilité ne s’appliquent à ces clients).
 
 > [!IMPORTANT]
-> Si votre application publiée précédemment est disponible pour les clients sur Windows 8.x, vous devez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouvelles extensions dans une application ciblant Windows8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces extensions, puis soumettre de nouveau l’application. Dans le cas contraire, les nouvelles extensions ne seront pas visibles par les clients utilisant Windows8.x.
+> Si votre application publiée précédemment est accessible aux clients utilisant Windows 8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouvelles extensions dans une application ciblant Windows8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces extensions, puis soumettre de nouveau l’application. Dans le cas contraire, les nouvelles extensions ne seront pas visibles par les clients utilisant Windows8.x.

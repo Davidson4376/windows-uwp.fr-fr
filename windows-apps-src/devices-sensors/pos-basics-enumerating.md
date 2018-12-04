@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 7759186d45d3488336a1b793d173d6d1f21aa601
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343681"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479074"
 ---
 # <a name="enumerating-point-of-service-devices"></a>Énumération d'appareils de point de service
 Dans cette section, vous allez découvrir comment [définir un sélecteur d’appareil](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) qui sert à interroger les appareils disponibles pour le système et comment utiliser ce sélecteur pour énumérer les appareils de point de service à l’aide d’une des méthodes suivantes:
@@ -44,7 +44,7 @@ Les méthodes **GetDeviceSelector** pour les différents types de périphérique
 * [MagneticStripeReader.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.getdeviceselector)
 * [PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector)
 
-À l’aide d’une méthode **GetDeviceSelector** qui prend une valeur [PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes) en tant que paramètre, vous pouvez limiter votre sélecteur pour énumérer les local, réseau, ou les appareils de PDV Bluetooth connectés, réduisant ainsi le temps que nécessaire pour effectuer la requête.  L’exemple ci-dessous montre une utilisation de cette méthode pour définir un sélecteur qui prend en charge uniquement localement connectés imprimantes de PDV.
+À l’aide d’une méthode **GetDeviceSelector** qui prend une valeur [PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes) en tant que paramètre, vous pouvez limiter votre sélecteur pour énumérer les local, réseau, ou les appareils de PDV Bluetooth connectés, réduisant ainsi le temps que nécessaire pour effectuer la requête.  L’exemple ci-dessous montre une utilisation de cette méthode pour définir un sélecteur qui prend en charge uniquement localement connectés imprimantes POS.
 
  ```Csharp
 using Windows.Devices.PointOfService;
@@ -57,9 +57,9 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 
 ## <a name="method-1-use-a-device-picker"></a>Méthode 1: Utiliser un sélecteur d’appareil
 
-La classe [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker) vous permet d’afficher un menu volant sélecteur qui contient une liste des appareils pour l’utilisateur de choisir parmi les. Vous pouvez utiliser la propriété de [filtre](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter) pour choisir les types d’appareils s’affichent dans le sélecteur. Cette propriété est de type [DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter). Vous pouvez ajouter les types d’appareil pour le filtre à l’aide de la propriété [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses) ou [SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors) .
+La classe [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker) vous permet d’afficher un menu volant sélecteur qui contient une liste des appareils pour l’utilisateur de choisir parmi les. Vous pouvez utiliser la propriété [Filter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter) pour choisir les types d’appareils s’affichent dans le sélecteur. Cette propriété est de type [DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter). Vous pouvez ajouter des types d’appareils au filtre à l’aide de la propriété [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses) ou [SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors) .
 
-Lorsque vous êtes prêt à afficher le sélecteur de périphérique, vous pouvez appeler la méthode [PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync) , qui affiche l’interface utilisateur du sélecteur et reconfigurer l’appareil sélectionné. Vous devez spécifier un [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) qui détermine où le menu volant s’affiche. Cette méthode retourne un objet [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) , par conséquent, pour l’utiliser avec le Point de Service API, vous devez utiliser la méthode **FromIdAsync** pour la classe d’appareil particulier que vous souhaitez. Vous passez la propriété [DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) en tant que paramètre *d’ID d’appareil* de la méthode et que vous obtenez une instance de la classe de périphérique en tant que la valeur de retour.
+Lorsque vous êtes prêt à afficher le sélecteur d’appareil, vous pouvez appeler la méthode [PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync) , qui affiche l’interface utilisateur du sélecteur et reconfigurer l’appareil sélectionné. Vous devez spécifier un [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) qui détermine où le menu volant s’affiche. Cette méthode retourne un objet [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) , par conséquent, pour l’utiliser avec le Point de Service API, vous devez utiliser la méthode **FromIdAsync** pour la classe d’appareil particulier que vous souhaitez. Vous passez la propriété [DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) en tant que paramètre *d’ID d’appareil* de la méthode et que vous obtenez une instance de la classe de périphérique en tant que la valeur de retour.
 
 L’extrait de code suivant crée un **DevicePicker**, ajoute un filtre de scanneur de code-barres, a l’utilisateur de choisir un appareil et crée ensuite un objet **BarcodeScanner** basé sur l’ID de périphérique:
 
@@ -88,9 +88,9 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 ```
 
 > [!CAUTION]
-> **GetDefaultAsync** doit être utilisée avec précaution car elle peut retourner un autre appareil à partir d’une session à l’autre. De nombreux événements peuvent influencer cette énumération pour donner un résultat de premier périphérique disponible différent, notamment: 
+> **GetDefaultAsync** doit être utilisé avec précaution car elle peut retourner un autre appareil à partir d’une session à l’autre. De nombreux événements peuvent influencer cette énumération pour donner un résultat de premier périphérique disponible différent, notamment: 
 > - Modification des caméras connectées à votre ordinateur 
-> - Modifier sur les lieux de périphériques de Service connectés à votre ordinateur
+> - Modifier le point d’entrée des appareils de Service connectés à votre ordinateur
 > - Modification des NAS appareils du Point de Service disponibles sur votre réseau
 > - Modification des appareils de Point de Service Bluetooth à portée de votre ordinateur 
 > - Modifications apportées à la configuration de Point de Service 
@@ -103,10 +103,10 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 Dans ceratins scénarios, vous souhaiterez créer votre propre interface utilisateur ou devrez énumérer les appareils sans afficher d’interface à l’utilisateur.  Dans ces situations, vous pouvez énumérer une capture instantanée d’appareils actuellement connectés ou associés avec le système à l’aide de [DeviceInformation.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync).  Cette méthode retient les résultats jusqu'à ce que l’énumération soit entièrement terminée.
 
 > [!TIP]
-> Il est recommandé d’utiliser la méthode **GetDeviceSelector** avec le paramètre **PosConnectionTypes** lors de l’utilisation de **FindAllAsync** afin de limiter votre requête au type de connexion souhaité.  Connexions réseau et Bluetooth peuvent retarder les résultats car leurs énumérations doivent être terminées avant de retourner les résultats de **FindAllAsync** .
+> Il est recommandé d’utiliser la méthode **GetDeviceSelector** avec le paramètre **PosConnectionTypes** lors de l’utilisation de **FindAllAsync** afin de limiter votre requête au type de connexion souhaité.  Les connexions réseau et Bluetooth peuvent retarder les résultats car leurs énumérations doivent être terminées avant de retourner les résultats de **FindAllAsync** .
 
 > [!CAUTION] 
-> **FindAllAsync** retourne un tableau d’appareils.  L’ordre de ce tableau peut changer d’une session à l'autre, par conséquent, il est déconseillé de s'appuyer sur un ordre spécifique en utilisant un index codé en dur dans le tableau.  Utilisez les propriétés [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) pour filtrer les résultats ou fournir une interface utilisateur pour l’utilisateur de choisir parmi les.
+> **FindAllAsync** retourne un tableau d’appareils.  L’ordre de ce tableau peut changer d’une session à l'autre, par conséquent, il est déconseillé de s'appuyer sur un ordre spécifique en utilisant un index codé en dur dans le tableau.  Utilisez les propriétés [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) pour filtrer les résultats ou fournissez une interface utilisateur pour l’utilisateur de choisir parmi les.
 
 Cet exemple utilise le sélecteur défini ci-dessus pour prendre une capture instantanée d’appareils à l’aide de **FindAllAsync** , puis énumère chacun des éléments renvoyés par la collection et écrit le nom de l’appareil et l’ID de la sortie de débogage. 
 
@@ -155,7 +155,7 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 ```
 
 > [!TIP]
-> Pour plus d’informations sur l’utilisation d’un **DeviceWatcher**, reportez-vous à la section [énumérer et observer des appareils]( https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices) .
+> Pour plus d’informations sur l’utilisation d’un **DeviceWatcher**, consultez [énumérer et observer des appareils]( https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices) .
 
 ## <a name="see-also"></a>Voir aussi
 * [Prise en main de la technologie de point de service](pos-basics.md)

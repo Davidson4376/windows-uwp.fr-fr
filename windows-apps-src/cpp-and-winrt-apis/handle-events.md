@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
 ms.openlocfilehash: f30ff39b0dcb54cd50808381bcb30e58e7dfe07d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352213"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484336"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -49,7 +49,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> Lorsque inscrit le délégué, l’exemple de code ci-dessus passe un brutes *ce* pointeur (en pointant sur l’objet actif). Pour savoir comment établir une référence forte ou faible à l’objet actif, voir la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [en toute sécurité l’accès à *ce* pointeur avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> Lorsque inscrit le délégué, l’exemple de code ci-dessus passe un brutes *ce* pointeur (en pointant sur l’objet actif). Pour savoir comment établir une référence forte ou faible à l’objet actif, voir la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [en toute sécurité accéder à *ce* pointeur avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 Il existe d’autres façons de construire un **RoutedEventHandler**. Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choisir *C++/WinRT* dans la liste déroulante **Langage** de la page). Notez les différents constructeurs: l’un d’entre eux prend une expression lambda; un autre une fonction gratuite, et un autre (celui que nous avons utilisé ci-dessus) prend un objet et un pointeur-vers-fonction-membre.
 
@@ -122,7 +122,7 @@ private:
 };
 ```
 
-Au lieu d’une référence forte, comme dans l’exemple ci-dessus, vous pouvez stocker une référence faible pour le bouton (voir [références fortes et faibles en C++ / WinRT](weak-references.md)).
+Au lieu d’une référence forte, comme dans l’exemple ci-dessus, vous pouvez stocker une référence faible sur le bouton (voir [références fortes et faibles en C++ / WinRT](weak-references.md)).
 
 Lorsque vous inscrivez un délégué, vous pouvez également spécifier **winrt::auto_revoke** (qui est une valeur de type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) pour demander un révocateur d’événement (de type [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Le révocateur d’événement conserve une référence faible à la source d’événement (l’objet qui déclenche l’événement) pour vous. Vous pouvez révoquer manuellement en appelant la fonction membre **event_revoker::revoke**; mais le révocateur d'événement appelle cette fonction lui-même automatiquement lorsqu'il est hors de portée. La fonction **revoke** vérifie si la source d’événement existe toujours et, si tel est le cas, révoque votre délégué. Dans cet exemple, il n’est pas nécessaire de stocker la source d’événement ni d’avoir un destructeur.
 
@@ -200,7 +200,7 @@ void ProcessFeedAsync()
 Comme l’indique le commentaire sur la «coroutine» ci-dessus, au lieu d’utiliser un délégué avec les événements terminés des actions et des opérations asynchrones, vous trouverez sans doute plus naturel d’utiliser des coroutines. Pour plus d’informations et des exemples de code, voir [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md).
 
 > [!NOTE]
-> Il n’est pas correct d’implémenter plus d’un *Gestionnaire d’achèvement* pour une action asynchrone ou une opération. Vous pouvez avoir soit un délégué unique pour son événement terminé, ou vous pouvez `co_await` il. Si vous avez à la fois, puis la seconde échouera.
+> Il n’est pas correct d’implémenter plus d’un *Gestionnaire d’achèvement* pour une action asynchrone ou une opération. Vous pouvez avoir soit un délégué unique pour son événement terminé, ou vous pouvez `co_await` il. Si vous avez à la fois, le second échouera.
 
 Si vous tenez aux délégués au lieu d’une coroutine, puis vous pouvez opter pour une syntaxe plus simple.
 
@@ -228,9 +228,9 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>En toute sécurité l’accès à *ce* pointeur avec un délégué de gestion des événements
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Accéder en toute sécurité à *ce* pointeur avec un délégué de gestion des événements
 
-Si vous gérez un événement avec la fonction de membre d’un objet, ou à partir d’une fonction lambda au sein de la fonction de membre d’un objet, puis vous devez considérer les durées de vie relatives du destinataire événement (l’objet qui gère l’événement) ainsi que la source d’événement (l’objet déclenchement de l’événement). Pour plus d’informations et des exemples de code, voir [références fortes et faibles en C++ / WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+Si vous gérez un événement avec la fonction de membre d’un objet, ou à partir d’une fonction lambda au sein de la fonction de membre d’un objet, vous devez penser les durées de vie relatives du destinataire événement (l’objet qui gère l’événement) ainsi que la source d’événement (l’objet qui déclenche l’événement). Pour plus d’informations et des exemples de code, voir [références fortes et faibles en C++ / WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 ## <a name="important-apis"></a>API importantes
 * [structure de marqueur WinRT::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)

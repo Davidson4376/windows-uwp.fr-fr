@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339216"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479426"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -286,26 +286,26 @@ Auparavant, les applicationsUWP utilisaient [AppViewBackButtonVisibility](https:
 
 Si votre application continue à l’aide de [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), puis le système de l’interface utilisateur rendra le système de bouton précédent:
 
-- Si votre application n’est **pas à onglets**, puis le bouton précédent est restitué à l’intérieur de la barre de titre. Les interactions utilisateur et d’expérience visuelle du bouton précédent restent inchangées à partir des versions précédentes.
+- Si votre application n’est **pas à onglets**, le bouton précédent est rendu à l’intérieur de la barre de titre. Les interactions utilisateur et d’expérience visuelle du bouton précédent restent inchangées à partir des versions précédentes.
 
     ![Bouton précédent de la barre de titre](images/nav-back-pc.png)
 
 - Si une application est **à onglets**, alors que le bouton précédent s’affiche à l’intérieur d’un nouveau système vers l’arrière barre.
 
-    ![Système dessiné précédent de la barre de boutons](images/back-nav/tabs.png)
+    ![Système dessiné précédent de barre de boutons](images/back-nav/tabs.png)
 
 ### <a name="system-back-bar"></a>Précédent système barre
 
 > [!NOTE]
 > «Précédent système barre» est uniquement une description, pas un nom officiel.
 
-Le système vers l’arrière barre est une «bande» qui est insérée entre la bande d’onglet et la zone de contenu de l’application. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande possède une hauteur verticale de 32 pixels pour garantir une taille de cible tactile adéquate pour le bouton précédent.
+Le système vers l’arrière barre est une «bande» qui est insérée entre la bande d’onglet et la zone de contenu de l’application. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande a une hauteur verticale de 32 pixels pour garantir une taille cible tactile adéquate pour le bouton précédent.
 
-La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton précédent est visible, le système vers l’arrière barre s’insère et contenu de l’application vers le bas par 32 pixels en dessous de la bande d’onglet. Lorsque le bouton précédent est masqué, le système vers l’arrière barre est supprimée de manière dynamique, un décalage contenu de l’application 32 pixels pour répondre à la bande d’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application vers le haut ou vers le bas, nous vous recommandons de prévoir un [bouton précédent dans l’application](#back-button).
+La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton précédent est visible, le système vers l’arrière barre s’insère et contenu de l’application vers le bas par 32 pixels en dessous de la bande d’onglet. Lorsque le bouton précédent est masqué, le système vers l’arrière barre est supprimée de manière dynamique, décalage de contenu de l’application 32 pixels pour répondre à la bande d’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application vers le haut ou vers le bas, nous vous recommandons de prévoir un [bouton précédent dans l’application](#back-button).
 
-[Personnalisations de barre de titre](../shell/title-bar.md) ne seront reprises à l’onglet de l’application et le système de retour barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs seront appliquera à l’arrière du système et de tabulation barre.
+[Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet application et de revenir au système barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
-[Personnalisations de barre de titre](../shell/title-bar.md) ne seront reprises à l’onglet de l’application et le système de retour barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs seront appliquera à l’arrière du système et de tabulation barre.
+[Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet application et de revenir au système barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>Recommandations sur le comportement personnalisé de navigation vers l’arrière
 

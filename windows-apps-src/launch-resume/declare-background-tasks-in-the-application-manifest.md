@@ -4,14 +4,14 @@ description: Activez l’utilisation des tâches en arrière-plan en les déclar
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 4527cface4681bf4866249c6398d43e6af782725
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337325"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483406"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -209,7 +209,7 @@ Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exé
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Exécuter dans un nouveau processus à chaque fois qu’un déclencheur se déclenche avec l’attribut SupportsMultipleInstances
 
-Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché. Notez l’utilisation de `SupportsMultipleInstances` qui permet ce comportement. Pour pouvoir utiliser cet attribut, vous devez cibler le Kit de développement logiciel version «10.0.15063» (Windows 10 Creators Update) ou une version ultérieure.
+Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché. Notez l’utilisation de `SupportsMultipleInstances` qui permet ce comportement. Pour pouvoir utiliser cet attribut vous devez cibler le Kit de développement logiciel version «10.0.15063» (Windows 10 Creators Update) ou une version ultérieure.
 
 ```xml
 <Package

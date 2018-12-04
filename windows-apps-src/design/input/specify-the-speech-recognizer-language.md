@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: acd8b06c98c95750b6d047cda96b8c2884a9d7a9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339599"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483653"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Spécifier la langue de reconnaissance vocale
 
@@ -56,7 +56,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 Les langues installées peuvent varier entre les appareils. Vérifiez l’existence d’une langue avant de vous en servir pour une contrainte particulière.
 
-**Remarque**un redémarrage est nécessaire lorsqu’un nouveau module linguistique est installé. Une exception avec le code d’erreur SPERR\_NOT\_FOUND (0x8004503a) est déclenchée si la langue spécifiée n’est pas prise en charge ou n’est pas encore installée.
+**Remarque**un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d’erreur SPERR\_NOT\_FOUND (0x8004503a) est déclenchée si la langue spécifiée n’est pas prise en charge ou n’est pas encore installée.
 
  
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé, politique de confidentialité, coordonnées du support technique, site web de l’application, support
 ms.localizationpriority: medium
 ms.openlocfilehash: 80220f8402b225691a2e4eb3202f1f04d48e06b4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331262"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483245"
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
@@ -58,7 +58,7 @@ Entrez l’URL de la page web où vos clients peuvent obtenir un support pour vo
 
 ## <a name="game-settings"></a>Paramètres de jeux
 
-Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Les informations que vous fournissez dans cette section seront affiche sur le Windows Store du produit de description.
+Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Les informations que vous fournissez dans cette section seront affichera sur le Windows Store du produit de description.
 
 Si votre jeu prend en charge des options multijoueurs, veillez à indiquer le nombre minimum et maximum de joueurs pour une session. Vous ne pouvez pas entrer un nombre minimum ou maximum de joueurs supérieur à 1000.
 

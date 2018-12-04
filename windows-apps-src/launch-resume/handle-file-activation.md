@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8324810"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482048"
 ---
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
@@ -125,7 +125,7 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 Nous vous recommandons de créer une nouvelle XAML **image** pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, le backstack de navigation pour la nouvelle image XAML ne contient pas n’importe quel contenu précédent pouvant figurer dans la fenêtre active a suspendu l’application. Si vous décidez d’utiliser une seule XAML **image** de lancement et des contrats de fichier, vous devez effacer les pages dans le journal de navigation de la **trame**d' avant de naviguer vers une nouvelle page.
 
-Lorsque votre application est lancée via l’activation de fichiers, vous devez envisager d’inclure une interface utilisateur qui permet à l’utilisateur de revenir à la première page de l’application.
+Lorsque votre application est lancée via l’activation des fichiers, vous devez envisager d’inclure une interface utilisateur qui permet à l’utilisateur de revenir à la première page de l’application.
 
 ## <a name="remarks"></a>Remarques
 

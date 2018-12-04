@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp, première application, hello word
 ms.localizationpriority: medium
 ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326539"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484745"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application «Hello World» (XAML)
 
-Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» application pour la plateforme Windows universelle (UWP) sur Windows 10. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
+Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» application pour la plateforme Windows universelle (UWP) sur Windows 10. Un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 Vous allez apprendre à effectuer les opérations suivantes:
 
@@ -83,7 +83,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 -   App.xaml est le fichier dans lequel vous déclarez les ressources utilisées dans l’application.
 -   App.xaml.cs est le fichier code-behind d’App.xaml. Comme toutes les pages code-behind, il contient un constructeur qui appelle la méthode `InitializeComponent`. Ce n’est pas vous qui écrivez la méthode `InitializeComponent`. Elle est générée par Visual Studio et vise essentiellement à initialiser les éléments déclarés dans le fichier XAML.
 -   App.xaml.cs est le point d’entrée de votre application.
--   App.Xaml.cs contient également des méthodes pour gérer [l’activation](../launch-resume/activate-an-app.md) et [la suspension](../launch-resume/suspend-an-app.md) de l’application.
+-   App.Xaml.cs contient également des méthodes pour gérer [l’activation](../launch-resume/activate-an-app.md) et la [suspension](../launch-resume/suspend-an-app.md) de l’application.
 
 *MainPage.xaml*
 
@@ -100,7 +100,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 -   Assets/Square44x44Logo.png représente votre application dans la liste de l’application du menu Démarrer, la barre des tâches et le Gestionnaire des tâches.
 -   Assets/StoreLogo.png représente votre application dans le MicrosoftStore.
 -   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
--   Assets/LockScreenLogo.scale-200.png peut être utilisé pour représenter l’application sur l’écran de verrouillage, lorsque le système est verrouillé.
+-   Assets/LockScreenLogo.scale-200.png peut être utilisé pour représenter l’application sur l’écran de verrouillage lorsque le système est verrouillé.
 
 ## <a name="step-2-adding-a-button"></a>Étape2: Ajouter un bouton
 
@@ -233,7 +233,7 @@ Quand vous exécutez l’application et que vous cliquez sur le bouton, votre or
 
 ## <a name="summary"></a>Récapitulatif
 
-Félicitations, vous avez créé votre première application pour Windows 10 et la plateforme UWP!
+Félicitations, vous avez créé votre première application pour Windows 10 et UWP!
 
 Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../design/layout/grid-tutorial.md) ou passez directement aux [étapes suivantes](learn-more.md).
 

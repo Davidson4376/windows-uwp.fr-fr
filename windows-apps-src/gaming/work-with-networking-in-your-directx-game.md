@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, jeux, mise en réseau, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 2697564e703cfe290e33f204125346f3e8bad8ac
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/03/2018
-ms.locfileid: "8327461"
+ms.locfileid: "8480301"
 ---
 # <a name="networking-for-games"></a>Mise en réseau pour les jeux
 
@@ -47,7 +47,7 @@ Les API de réseau les plus connues pour les jeux sont les suivantes :
 
 -   TCP et sockets : fournit une connexion fiable. Utilisez TCP pour les jeux qui ne nécessitent aucune sécurité. TCP permet au serveur d’effectuer facilement une montée en puissance. Il est ainsi couramment utilisé dans les jeux qui ont recours au modèle d’infrastructure (client-serveur ou pair à pair Internet). TCP peut également servir pour les jeux ad hoc (pair à pair local) via Wi-Fi Direct et Bluetooth. TCP est couramment utilisé pour les déplacements d’objets, l’interaction entre les personnages, la conversation textuelle et bien d’autres opérations. La classe [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) fournit un socket TCP qui peut être utilisé dans les jeux Microsoft Store. La classe **StreamSocket** est utilisée avec les classes associées de l’espace de noms [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
 -   TCP et sockets avec SSL: offre une connexion fiable qui empêche l’écoute clandestine. Utilisez les connexions TCP avec SSL pour les jeux qui nécessitent de la sécurité. Le chiffrement et le traitement de SSL ajoute un coût en termes de latence et de performance. Il est donc uniquement utilisé quand la sécurité est nécessaire. TCP avec SSL est couramment utilisé pour les connexions, les ressources d’achat et de commerce, la création de personnages de jeu et la gestion. La classe [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) fournit un socket TCP prenant en charge SSL.
--   UDP et sockets : offre des transferts réseau non fiables avec un traitement faible. UDP est utilisé pour les jeux qui tolèrent un faible niveau de latence et quelques pertes de paquets. Il sert souvent dans les jeux de combat, pour les tirs et les trajectoires, l’audio sur le réseau et la conversation vocale. La classe [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) fournit un socket UDP qui peut être utilisé dans les jeux Microsoft Store. La classe **DatagramSocket** est utilisée avec les classes associées de l’espace de noms [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
+-   UDP et sockets : offre des transferts réseau non fiables avec un traitement faible. UDP est utilisé pour les jeux qui tolèrent un faible niveau de latence et quelques pertes de paquets. Il sert souvent dans les jeux de combat, pour les tirs et les trajectoires, l’audio sur le réseau et la conversation vocale. La classe [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) fournit un socket UDP qu’il peut être utilisé dans les jeux Microsoft Store. La classe **DatagramSocket** est utilisée avec les classes associées de l’espace de noms [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
 -   Client HTTP: offre une connexion fiable aux serveurs HTTP. Le scénario de réseau le plus courant consiste à accéder à un site Web pour récupérer ou stocker des informations. Il peut s’agir tout simplement d’un site Web permettant de stocker des informations utilisateur et des scores de jeu. Combiné à SSL à des fins de sécurité, un client HTTP peut être utilisé pour la connexion, l’achat, les ressources de commerce, la création de personnages de jeu et la gestion. La classe [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) fournit un client HTTP moderne API pour une utilisation dans les jeux Microsoft Store. La classe **HttpClient** est utilisée avec les classes associées de l’espace de noms [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692).
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>Gestion des exceptions réseau dans votre jeu DirectX

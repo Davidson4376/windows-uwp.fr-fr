@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f5eabfaf8e526899c17b2d0da688a5135133f65
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8335021"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484356"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>Interopération de la composition en mode natif avec DirectX et Direct2D
 
@@ -39,11 +39,11 @@ Pour des raisons de performances, lorsqu’une application appelle [**BeginDraw*
 
 ## <a name="usage-example"></a>Exemple d’utilisation
 
-L’exemple de code suivant illustre un scénario d’interopérabilité. L’exemple combine des types à partir de la surface d’exposition basée sur le Windows Runtime de Composition de Windows, ainsi que des types à partir de l’interopérabilité en-têtes et du code qui restitue le texte à l’aide de la DirectWrite basées sur COM et les API de Direct2D. L’exemple utilise [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) et [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) pour faciliter l’interopérabilité entre ces technologies transparente. L’exemple utilise DirectWrite pour disposer le texte, puis il utilise Direct2D pour effectuer le rendu. Le périphérique graphique de composition accepte directement le périphérique Direct2D au moment de l’initialisation. Cela permet de **BeginDraw** à retourner un pointeur d’interface **ID2D1DeviceContext** , ce qui est beaucoup plus efficace que l’application de créer un contexte Direct2D pour encapsuler une interface ID3D11Texture2D retournée à chaque opération de dessin.
+L’exemple de code suivant illustre un scénario d’interopérabilité. L’exemple combine des types à partir de la surface basée sur le Windows Runtime de Composition de Windows, ainsi que des types à partir de l’interopérabilité en-têtes et du code qui restitue le texte à l’aide de la DirectWrite basées sur COM et les API de Direct2D. L’exemple utilise [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) et [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) pour faciliter l’interopérabilité entre ces technologies transparente. L’exemple utilise DirectWrite pour disposer le texte, puis il utilise Direct2D pour effectuer le rendu. Le périphérique graphique de composition accepte directement le périphérique Direct2D au moment de l’initialisation. Ainsi, **BeginDraw** à retourner un pointeur d’interface **ID2D1DeviceContext** , ce qui est beaucoup plus efficace que l’application de créer un contexte Direct2D pour encapsuler une interface ID3D11Texture2D retournée à chaque opération de dessin.
 
-Il existe deux exemples de code ci-dessous. Tout d’abord, un [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) exemple (qui est terminée), puis C++ / exemple de code CX (qui omet les parties DirectWrite et Direct2D de l’exemple).
+Il existe deux exemples de code ci-dessous. Tout d’abord, un [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) exemple (qui est terminée), puis C++ / CX code exemple (omet les parties DirectWrite et Direct2D de l’exemple).
 
-D’utiliser C++ / WinRT, exemple de code ci-dessous, commencez par créer un nouveau **Core App (C++ / WinRT)** projet dans Visual Studio (pour la configuration requise, voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-and-the-vsix)). Lors de la création du projet, sélectionnez en tant que votre Version cible **Windows 10, version 1803 (version 10.0; Build 17134)**. C’est la version par rapport à laquelle ce code a été créé et testé. Remplacez le contenu de votre `App.cpp` de source de fichier de code avec le code ci-dessous, puis générez et exécutez. L’application affiche la chaîne «Hello, World!» dans le texte noir sur un arrière-plan transparent.
+D’utiliser C++ / WinRT, exemple de code ci-dessous, commencez par créer un nouveau **Core App (C++ / WinRT)** projet dans Visual Studio (pour la configuration requise, voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-and-the-vsix)). Lors de la création du projet, sélectionnez votre version cible **Windows 10, version 1803 (version 10.0; Build 17134)**. C’est la version par rapport à laquelle ce code a été créé et testé. Remplacez le contenu de votre `App.cpp` de source de fichier de code avec le code ci-dessous, puis générez et exécutez. L’application affiche la chaîne «Hello, World!» dans le texte noir sur un arrière-plan transparent.
 
 ```cppwinrt
 // App.cpp

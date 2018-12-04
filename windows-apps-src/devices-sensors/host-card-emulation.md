@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343167"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480764"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puceNFC
 
 
 **Important**cette rubrique s’applique uniquement à Windows 10 Mobile.
 
-Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte appelée, émulation de carte hôte (HCE). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de l’émulation de carte hôte (HCE) sur les appareils Windows 10 Mobile et comment vous pouvez développer une application HCE afin que vos clients peuvent accéder à vos services par le biais de leur téléphone au lieu d’une carte physique sans aucune collaboration avec un opérateur de réseau mobile.
+Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte appelée, émulation de carte hôte (HCE). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de l’émulation de carte hôte (HCE) sur les appareils Windows 10 Mobile et comment vous pouvez développer une application HCE afin que vos clients peuvent accéder à vos services par le biais de leur téléphone, plutôt que d’une carte physique sans aucune collaboration avec un opérateur de réseau mobile.
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>Éléments nécessaires au développement d’une application HCE
 
 
-Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Vous pouvez obtenir configurer en installant Microsoft Visual Studio2015, qui inclut les outils de développement Windows et l’émulateur Windows 10 Mobile avec prise en charge de l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://msdn.microsoft.com/library/windows/apps/Dn726766).
+Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Vous pouvez se préparer en installant Microsoft Visual Studio2015, qui inclut les outils de développement Windows et l’émulateur Windows 10 Mobile avec prise en charge de l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://msdn.microsoft.com/library/windows/apps/Dn726766).
 
 Si vous le souhaitez, si vous souhaitez tester un véritable appareil Windows 10 Mobile émulateur Windows 10 Mobile, vous devez également les éléments suivants.
 
@@ -36,7 +36,7 @@ Windows 10 Mobile implémente un service HCE qui offre les fonctionnalités suiv
 -   La résolution des conflits et le routage de la commande et de la réponse APDU (Application Protocol Data Unit) sont couplés à l’une des applications inscrites, en fonction de la carte de lecteur externe choisie et de la préférence utilisateur.
 -   Gestion des événements et des notifications sur les applications, suite aux actions de l’utilisateur.
 
-Windows 10 prend en charge l’émulation de cartes à puce sont basés sur la norme ISO-DEP (ISO-IEC 14443-4) et communique à l’aide des commandes APDU définies dans la norme ISO-IEC 7816-4 spécification. Windows 10 prend en charge ISO/IEC 14443-4 Type A technologie pour les applications HCE. Les technologies de type B, de type F et non ISO-DEP (comme MIFARE) sont routées vers la carte SIM par défaut.
+Windows 10 prend en charge l’émulation de cartes à puce sont basés sur la norme ISO-DEP (ISO-IEC 14443-4) et communique à l’aide des commandes APDU définies dans la norme ISO-IEC 7816-4 spécification. Windows 10 prend en charge ISO/IEC 14443-4 A technologie pour les applications HCE. Les technologies de type B, de type F et non ISO-DEP (comme MIFARE) sont routées vers la carte SIM par défaut.
 
 Seuls les appareils Windows 10 Mobile sont activés avec la fonction d’émulation de carte. L’émulation de carte basée sur HCE et SIM n’est pas disponible sur les autres versions de Windows 10.
 
@@ -72,7 +72,7 @@ Votre application peut créer, inscrire et activer des groupes d’identificateu
 
 **Coexistence avec des applicationsNFC basées sur SIM**
 
-Dans Windows 10 Mobile, le système configure la table de routage de contrôleur NFC qui est utilisée pour prendre des décisions de routage sur la couche du contrôleur. La table contient les informations de routage pour les éléments suivants.
+Dans Windows 10 Mobile, le système configure la table de routage de contrôleur NFC qui sert à prendre des décisions de routage sur la couche du contrôleur. La table contient les informations de routage pour les éléments suivants.
 
 -   Itinéraires des identificateurs d’applet.
 -   Itinéraire de protocole (ISO-DEP).
@@ -332,7 +332,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>Comportement de l’écran de verrouillage et de l’écran éteint
 
-Windows 10 Mobile a des paramètres d’émulation de carte au niveau du périphérique, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
+Windows 10 Mobile a les paramètres d’émulation de carte au niveau du périphérique, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
 
 Votre application peut interroger la valeur de l’élément [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) au niveau appareil et réagir selon les cas, en fonction du comportement souhaité de votre application dans chaque état.
 

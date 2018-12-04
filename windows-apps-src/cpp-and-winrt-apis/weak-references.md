@@ -7,19 +7,19 @@ keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, faible, réfé
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334802"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481676"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Références fortes et faibles en C++ / WinRT
 
-Windows Runtime est un système avec décompte des références; et, dans un tel système, il est important pour vous de connaître la signification d’et la distinction entre, forts et faibles (et des références références qui ne sont pas, par exemple, le pointeur implicite *cette* ). Comme vous le verrez dans cette rubrique, le savoir comment gérer ces références correctement peut faire la différence entre un système fiable qui s’exécute de façon fluide et qui se bloque de manière imprévisible. En fournissant des fonctions d’assistance qui ont une prise en charge approfondie dans la projection de langage, [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) vous répond à mi-chemin dans votre travail de création de systèmes plus complexes simplement et correctement.
+Windows Runtime est un système avec décompte des références; et, dans un tel système, il est important pour vous de connaître la signification d’et la distinction entre, forts et faibles (et des références références qui ne sont pas, par exemple, le pointeur implicite *cette* ). Comme vous le verrez dans cette rubrique, savoir comment gérer ces références correctement peut signifier la différence entre un système fiable qui s’exécute de façon fluide et qui se bloque de manière imprévisible. Grâce à des fonctions d’assistance qui ont une prise en charge approfondie dans la projection de langage, [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) vous répond à mi-chemin dans votre travail de création de systèmes plus complexes simplement et correctement.
 
-## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>En toute sécurité l’accès à *ce* pointeur dans une coroutine membre de classe
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Accéder en toute sécurité au pointeur *this* dans une coroutine membre de classe
 
-Le code ci-dessous montre un exemple typique d’une coroutine qui est une fonction membre d’une classe.
+Le code ci-dessous montre un exemple typique d’une coroutine est une fonction membre d’une classe.
 
 ```cppwinrt
 // pch.h
@@ -57,18 +57,18 @@ int main()
 }
 ```
 
-**MyClass::RetrieveValueAsync** ne fonctionne pas pendant un certain temps, et finalement il retourne une copie de la `MyClass::m_value` membre de données. L’appel de **RetrieveValueAsync** entraîne un objet asynchrone à créer, et cet objet possède un implicite *ce* pointeur (par le biais duquel, en définitive, `m_value` est accessible).
+**MyClass::RetrieveValueAsync** ne fonctionne pas pendant un certain temps, et finalement il retourne une copie de la `MyClass::m_value` membre de données. L’appel de **RetrieveValueAsync** entraîne un objet asynchrone à créer et cet objet possède un implicite *ce* pointeur (par le biais duquel, en définitive, `m_value` est accessible).
 
-Voici la séquence complète des événements.
+Voici la séquence d’événements complète.
 
 1. Dans la **principale**, une instance de **MyClass** est créée (`myclass_instance`).
 2. Le `async` objet est créé, en pointant (via son *ce*) sur `myclass_instance`.
-3. La fonction **winrt::Windows::Foundation::IAsyncAction::get** bloque pendant quelques secondes et puis retourne le résultat de **RetrieveValueAsync**.
+3. La fonction **winrt::Windows::Foundation::IAsyncAction::get** est bloqué pendant quelques secondes, puis renvoie le résultat de **RetrieveValueAsync**.
 4. **RetrieveValueAsync** renvoie la valeur de `this->m_value`.
 
 Étape 4 est sûre tant que *ce* n’est valide.
 
-Toutefois, que se passe-t-il si l’instance de classe est détruite avant l’opération asynchrone se termine? Il existe toutes sortes de façons que l’instance de classe pourrait accéder hors de portée avant que la méthode asynchrone est terminé. Mais, nous pouvons simuler le son en affectant à l’instance de classe `nullptr`.
+Toutefois, que se passe-t-il si l’instance de classe est détruite avant l’opération asynchrone se termine? Il existe toutes sortes de façons que l’instance de classe pourrait accéder hors de portée avant que la méthode asynchrone est terminé. Toutefois, nous pouvons simuler le son en affectant à l’instance de classe `nullptr`.
 
 ```cppwinrt
 int main()
@@ -84,11 +84,11 @@ int main()
 }
 ```
 
-Après le point où nous détruire l’instance de classe, il se présente comme nous ne directement les désignons à nouveau. Toutefois, bien entendu l’objet asynchrone dispose d’un pointeur *this* à sa et tente de qui permet de copier la valeur stockée à l’intérieur de l’instance de classe. La coroutine est une fonction membre, et il s’attend à être en mesure d’utiliser *ce* son pointeur mise.
+Après le point où nous détruire l’instance de classe, il se présente comme nous ne directement les désignons à nouveau. Mais, bien entendu l’objet asynchrone a un pointeur *this* à celui-ci, puis essaie de qui permet de copier la valeur stockée à l’intérieur de l’instance de classe. La coroutine est une fonction membre, et il s’attend à être en mesure d’utiliser *ce* son pointeur mise.
 
-Avec cette modification du code, nous rencontré un problème à l’étape 4, car l’instance de classe a été supprimée, et *ce* n’est plus valide. Dès que l’objet asynchrone tente d’accéder à la variable à l’intérieur de l’instance de classe, il se bloque (ou effectuer une action entièrement non défini).
+Avec cette modification du code, nous rencontré un problème à l’étape 4, dans la mesure où l’instance de classe a été supprimée, et *ce* n’est plus valide. Dès que l’objet asynchrone tente d’accéder à la variable à l’intérieur de l’instance de classe, il se bloque (ou effectuer une action entièrement non défini).
 
-La solution consiste à donner à l’opération asynchrone&mdash;la coroutine&mdash;sa propre référence forte à l’instance de classe. En tant qu’écrite actuellement, la coroutine conserve efficacement un brutes *ce* pointeur vers l’instance de classe; mais qui n’est pas suffisamment afin de maintenir l’instance de classe.
+La solution consiste à donner à l’opération asynchrone&mdash;la coroutine&mdash;sa propre référence forte à l’instance de classe. En tant qu’écrite actuellement, la coroutine conserve efficacement un brutes *ce* pointeur vers l’instance de classe; mais qui n’est pas suffisante pour maintenir l’instance de classe.
 
 Pour garder active une instance de la classe, remplacez l’implémentation de **RetrieveValueAsync** à celui illustré ci-dessous.
 
@@ -103,9 +103,9 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 Étant donné que C++ / objet WinRT dérive directement ou indirectement à partir du modèle [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) , C++ / WinRT objet peut appeler sa fonction de membre [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) protégé pour récupérer une référence forte à *ce* son pointeur. Notez qu’il n’est pas nécessaire pour utiliser réellement les `strong_this` variable; l’appel simplement **get_strong** incrémente le décompte de références et maintient votre implicite *ce* pointeur valide.
 
-Cela permet de résoudre le problème que nous avions précédemment lorsque nous avons obtenu à l’étape 4. Même si toutes les autres références à l’instance de classe disparaissent, la coroutine a effectué la précaution de garantir que ses dépendances sont stables.
+Cela résout le problème que nous avions précédemment lorsque nous avons obtenu à l’étape 4. Même si toutes les autres références à l’instance de classe disparaissent, la coroutine a effectué la précaution de garantir que ses dépendances sont stables.
 
-Si une référence forte n’est pas appropriée, vous pouvez appeler [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) pour récupérer une référence faible à *cette*à la place. Il suffit de confirmer que vous pouvez récupérer une référence forte avant d’accéder à *cette*.
+Si une référence forte n’est pas appropriée, vous pouvez appeler [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) pour récupérer une référence faible à *this*à la place. Confirmez que vous pouvez récupérer une référence forte avant d’accéder à *cette*.
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -127,13 +127,13 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 Dans l’exemple ci-dessus, la référence faible n’a pas maintenir la version de l’instance de classe d’être détruits lorsqu’il ne reste aucune référence forte. Toutefois, il vous donne un moyen de vérifier si une référence forte peut être obtenue avant d’accéder à la variable de membre.
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>En toute sécurité l’accès à *ce* pointeur avec un délégué de gestion des événements
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Accéder en toute sécurité à *ce* pointeur avec un délégué de gestion des événements
 
 ### <a name="the-scenario"></a>Le scénario
 
 Pour obtenir des informations générales sur la gestion des événements, voir [gérer des événements en utilisant des délégués en C++ / WinRT](handle-events.md).
 
-La section précédente mis en surbrillance les problèmes potentiels de la durée de vie dans les zones de coroutines et d’accès concurrentiel. Mais, si vous gérez un événement avec la fonction de membre d’un objet, ou à partir d’une fonction lambda à l’intérieur de la fonction de membre d’un objet, puis vous devez considérer les durées de vie relatives du destinataire événement (l’objet qui gère l’événement) ainsi que la source d’événement (l’objet déclenchement de l’événement). Examinons quelques exemples de code.
+La section précédente mis en surbrillance les problèmes potentiels de la durée de vie dans les zones de coroutines et d’accès concurrentiel. Toutefois, si vous gérez un événement avec la fonction de membre d’un objet, ou à partir d’une fonction lambda à l’intérieur de la fonction de membre d’un objet, puis vous devez penser à la durée de vie relatives du destinataire d’événement (l’objet qui gère l’événement) et la source d’événement (l’objet qui déclenche l’événement). Examinons quelques exemples de code.
 
 Tout d’abord, la description dans le code ci-dessous définit une classe de **source d’événement** simple, ce qui déclenche un événement générique qui est géré par les délégués qui ont été ajoutés à celui-ci. Cet exemple d’événement se produit à utiliser le type de délégué [**Windows::Foundation:: EventHandler**](/uwp/api/windows.foundation.eventhandler) , mais les problèmes et des solutions ici s’appliquent aux types de délégués tout.
 
@@ -190,7 +190,7 @@ int main()
 }
 ```
 
-Le modèle est que le destinataire d’événement dispose d’un gestionnaire d’événements lambda avec les dépendances sur son *ce* pointeur. Chaque fois que le destinataire d’événement survit à la source d’événement, elle survit à ces dépendances. Et, dans ces cas, qui sont communs, le modèle de son bon fonctionne. Certains de ces cas sont évidents, par exemple, lorsqu’une page d’interface utilisateur gère un événement déclenché par un contrôle qui se trouve sur la page. Le bouton de survit à la page&mdash;par conséquent, le gestionnaire est également survit au bouton. Cela est vrai chaque fois que le destinataire est le propriétaire de la source (comme membre de données, par exemple), ou chaque fois que le destinataire et la source sont frère/sœur et appartiennent directement à un autre objet. Si vous êtes certain que vous avez un cas où le gestionnaire ne survivra pas au *this* dont il dépend, vous pouvez capturer *this* normalement, sans considération pour la durée de vie forte ou faible.
+Le modèle est que le destinataire d’événement dispose d’un gestionnaire d’événements lambda dotés de dépendances sur son *ce* pointeur. Chaque fois que le destinataire d’événement survit à la source d’événement, elle survit à ces dépendances. Et, dans ces cas, qui sont communs, le modèle fonctionne correctement. Certains de ces cas sont évidents, par exemple, lorsqu’une page d’interface utilisateur gère un événement déclenché par un contrôle qui se trouve sur la page. Le bouton de survit à la page&mdash;par conséquent, le gestionnaire est également survit au bouton. Cela est vrai chaque fois que le destinataire est le propriétaire de la source (comme membre de données, par exemple), ou chaque fois que le destinataire et la source sont frère/sœur et appartiennent directement à un autre objet. Si vous êtes certain que vous avez un cas où le gestionnaire ne survivra pas au *this* dont il dépend, vous pouvez capturer *this* normalement, sans considération pour la durée de vie forte ou faible.
 
 Mais il existe cependant des cas où *cette* ne survit pas à son utilisation dans un gestionnaire (y compris les gestionnaires pour les événements de progression déclenchés par les opérations et les actions asynchrones et l’achèvement), il est important de savoir comment les traiter avec eux.
 
@@ -217,7 +217,7 @@ int main()
 Le destinataire d’événement est détruit, mais le Gestionnaire d’événements lambda au sein de celle-ci est toujours abonné à **l’événement** . Lorsque cet événement est déclenché, l’expression lambda tente de supprimer la référence à *ce* pointeur, qui est à ce stade non valide. Par conséquent, une violation d’accès résulte du code dans le gestionnaire (ou dans la continuation d’une coroutine) vous tentez de l’utiliser.
 
 > [!IMPORTANT]
-> Si vous rencontrez une telle situation, puis vous devez envisager de la durée de vie de l’objet de *ce* ; et ou non le capturée *cet* objet survit à la capture. Si ce n’est pas le cas, capturez-le avec une référence forte ou faible, comme nous allons le montrer ci-dessous.
+> Si vous rencontrez une telle situation, vous devez envisager de la durée de vie de l’objet *this* ; et ou non le capturée *cet* objet survit à la capture. Si ce n’est pas le cas, capturez-le avec une référence forte ou faible, comme nous allons le montrer ci-dessous.
 >
 > Ou&mdash;si elle a du sens pour votre scénario et si les threads considérations le rendent même possible&mdash;, alors une autre option consiste à révoquer le gestionnaire une fois que le destinataire a terminé avec l’événement, ou dans le destructeur du destinataire. Voir [révoquer un délégué inscrit](handle-events.md#revoke-a-registered-delegate).
 
@@ -239,11 +239,11 @@ event_source.Event([this](auto&& ...)
 });
 ```
 
-Dans les deux cas, nous mettons simplement la capture le pointeur brut *cette* . Et qui n’a aucun effet sur le décompte de références, afin que rien est empêche la destruction de l’objet en cours.
+Dans les deux cas, nous allons simplement la capture le pointeur brut *cette* . Et qui n’a aucun effet sur le décompte de références, afin que rien est empêche la destruction de l’objet en cours.
 
 ### <a name="the-solution"></a>La solution
 
-La solution consiste à capturer une référence forte. Une référence forte *n’est* incrémente le décompte de références et il *est* conserver l’objet en cours vivant. Vous déclarez une variable de capture (appelée `strong_this` dans cet exemple), puis initialisez-la avec un appel à [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function), qui Récupère une référence forte à notre *ce* pointeur.
+La solution consiste à capturer une référence forte. Une référence forte *n’est* incrémente le décompte de références et il *est* conserver l’objet en cours actif. Vous déclarez une variable de capture (appelée `strong_this` dans cet exemple), puis initialisez-la avec un appel à [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function), qui Récupère une référence forte à notre *ce* pointeur.
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -252,7 +252,7 @@ event_source.Event([this, strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-Vous pouvez même omettre la capture automatique de l’objet en cours et accéder au membre de données via la variable de capture à la place de via le implicite *cette*.
+Vous pouvez même omettre la capture automatique de l’objet en cours et accéder au membre de données via la variable de capture plutôt que via le implicite *cette*.
 
 ```cppwinrt
 event_source.Event([strong_this { get_strong()}](auto&& ...)
@@ -261,7 +261,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-Si une référence forte n’est pas appropriée, vous pouvez appeler [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) pour récupérer une référence faible à *cette*à la place. Il suffit de confirmer que vous pouvez toujours récupérer une référence forte à partir de celui-ci avant d’accéder aux membres.
+Si une référence forte n’est pas appropriée, vous pouvez appeler [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) pour récupérer une référence faible à *this*à la place. Confirmez que vous pouvez toujours récupérer une référence forte à partir de celui-ci avant d’accéder aux membres.
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -294,15 +294,15 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 };
 ```
 
-Il s’agit de la manière standard, classique pour faire référence à un objet et sa fonction membre. Pour rendre cet sans échec, vous pouvez&mdash;à compter de la version 10.0.17763.0 (Windows 10, version 1809) du SDK Windows&mdash;établir une référence forte ou faible au niveau du point où le gestionnaire est enregistré. À ce stade, l’objet destinataire d’événement est connu pour être restés actifs.
+Il s’agit de la manière standard, classique pour faire référence à un objet et sa fonction membre. Pour rendre cet sécurisés, vous pouvez&mdash;à compter de la version 10.0.17763.0 (Windows 10, version 1809) du SDK Windows&mdash;établir une référence forte ou faible au niveau du point où le gestionnaire est enregistré. À ce stade, l’objet destinataire d’événement est connu pour être restés actifs.
 
-Pour une référence forte, simplement appeler [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) à la place le brut *ce* pointeur. C++ / WinRT permet de s’assurer que le délégué qui en résulte conserve une référence forte à l’objet actif.
+Pour une référence forte, événements appellent simplement [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) à la place le brut *ce* pointeur. C++ / WinRT permet de s’assurer que le délégué qui en résulte conserve une référence forte à l’objet actif.
 
 ```cppwinrt
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-Pour une référence faible, appelez [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function). C++ / WinRT permet de s’assurer que le délégué qui en résulte conserve une référence faible. À la dernière minute et en arrière-plan, le délégué tente de résoudre la référence faible vers une forte et appelle uniquement la fonction membre si l’opération a réussi.
+Pour une référence faible, appelez [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function). C++ / WinRT permet de s’assurer que le délégué qui en résulte conserve une référence faible. À la dernière minute et en arrière-plan, le délégué tente de résoudre la référence faible vers une forte et n’appelle la fonction membre si l’opération a réussi.
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
@@ -310,7 +310,7 @@ event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 
 ### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>Un exemple de référence faible à l’aide de **SwapChainPanel::CompositionScaleChanged**
 
-Dans cet exemple de code, nous utilisons l’événement [**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) par le biais une autre illustration des références faibles. Le code inscrit un gestionnaire d’événements à l’aide d’une expression lambda qui capture une référence faible au destinataire.
+Dans cet exemple de code, nous utilisons l’événement [**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) par une autre illustration des références faibles. Le code inscrit un gestionnaire d’événements à l’aide d’une expression lambda qui capture une référence faible au destinataire.
 
 ```cppwinrt
 winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
@@ -340,7 +340,7 @@ Dans la clause de capture lamba, une variable temporaire est créée, qui repré
 
 ## <a name="weak-references-in-cwinrt"></a>Références faibles en C++/WinRT
 
-Ci-dessus, nous avons vu des références faibles utilisés. En règle générale, elles sont parfaites pour endommager les références cycliques. Par exemple, pour l’implémentation de l’infrastructure d’interface utilisateur XAML native&mdash;en raison de la conception historique de l’infrastructure&mdash;le références faibles mécanisme en C++ / WinRT est nécessaire pour gérer les références cycliques. En dehors de XAML, cependant, vous ne devrez probablement utiliser des références faibles (not qu’il existe rien intrinsèquement XAML spécifiques à leur sujet). Au lieu de cela, plus souvent, soyez en mesure de concevoir votre propre C++ / WinRT APIs de manière à éviter le besoin de références cycliques et des références faibles. 
+Ci-dessus, nous avons vu des références faibles utilisés. En règle générale, elles sont parfaites pour scinder les références cycliques. Par exemple, pour l’implémentation de l’infrastructure d’interface utilisateur XAML native&mdash;en raison de la conception historique de l’infrastructure&mdash;le références faibles mécanisme en C++ / WinRT est nécessaire pour gérer les références cycliques. En dehors de XAML, cependant, vous ne devrez probablement utiliser des références faibles (pas qu’il existe rien intrinsèquement XAML spécifiques à leur sujet). Au lieu de cela, plus souvent, soyez en mesure de concevoir votre propre C++ / WinRT APIs de manière à éviter le besoin de références cycliques et des références faibles. 
 
 Pour n’importe quel type donné que vous déclarez, il n’est pas immédiatement évident pour C++/WinRT de déterminer si des références faibles sont nécessaires. Par conséquent, C++/WinRT fournit la prise en charge des références faibles automatiquement sur le modèle de structure [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), à partir duquel vos propres types C++/WinRT dérivent directement ou indirectement. Il s’agit d’une prise en charge «payer pour lire», dans la mesure où elle ne vous coûte rien, sauf si votre objet est réellement interrogé pour [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource). Et vous pouvez choisir explicitement de [refuser cette prise en charge](#opting-out-of-weak-reference-support).
 

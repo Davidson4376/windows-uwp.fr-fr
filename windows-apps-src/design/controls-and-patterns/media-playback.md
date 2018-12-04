@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e8ed0c28199e49e9c4be69785a7af5985afae6a2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8351980"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483686"
 ---
 # <a name="media-player"></a>Lecteur multimédia
 
@@ -302,7 +302,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) propose diverses propriétés, méthodes et événements destinés à contrôler la lecture audio et vidéo par le biais de la propriété [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx). Pour obtenir la liste complète des propriétés, méthodes et événements, voir la page de référence de [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx).
 
 ### <a name="advanced-media-playback-scenarios"></a>Scénarios de lecture multimédia avancés
-Pour les scénarios de lecture multimédia plus complexes, comme la lecture d’une playlist, le basculement entre des langues audio ou la création de pistes de métadonnées personnalisées, définissez le [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur un [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) ou un [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx). Consultez la page de [la lecture multimédia](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource) pour plus d’informations sur l’activation de plusieurs fonctionnalités multimédias avancées.
+Pour les scénarios de lecture multimédia plus complexes, comme la lecture d’une playlist, le basculement entre des langues audio ou la création de pistes de métadonnées personnalisées, définissez le [MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur un [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) ou un [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx). Consultez la page de [lecture de contenu multimédia](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource) pour plus d’informations sur l’activation de plusieurs fonctionnalités multimédias avancées.
 
 ### <a name="enable-full-window-video-rendering"></a>Activer le rendu vidéo dans une fenêtre entière
 

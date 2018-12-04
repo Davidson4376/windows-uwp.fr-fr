@@ -8,16 +8,16 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8ffcbbcc73db049498eb09ea60061f93cd7b09f2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351553"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480334"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
 
-Conception et téléchargements liés à l’interface utilisateur pour les applications de conception Fluent/UWP. Pour obtenir des outils supplémentaires, tels que VisualStudio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
+Conception et des téléchargements liés à l’interface utilisateur pour les applications de conception Fluent/UWP. Pour obtenir des outils supplémentaires, tels que VisualStudio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
 
 
 ## <a name="design-toolkits"></a>Kits de ressources de conception
@@ -66,7 +66,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column-end:::
 :::row-end:::
 
-## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et les kits de ressources de développeur
+## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et les kits de développement
 
 :::row:::
     :::column:::
@@ -111,7 +111,7 @@ L’éditeur de thème XAML Fluent est un outil qui permet d’illustrer la flex
 
 ![Image VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle vague du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de la composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, il s’agit de lampes).<br>
+L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle génération du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de la composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, il s’agit de lampes).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Télécharger l’exemple VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Découvrir l’exemple VanArsdel sur GitHub</a>
 
 ![Générer cast image](images/buildcast.png)

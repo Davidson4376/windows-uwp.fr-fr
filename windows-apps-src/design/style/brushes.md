@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e46ef0e459ede5fd1185d78186968735d886e63
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344886"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481457"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Utilisation des pinceaux pour peindre des arrière-plans, des premiers plans et des contours
 
@@ -37,7 +37,7 @@ Un pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps
 
 ### <a name="predefined-color-names"></a>Noms de couleur prédéfinis
 
-Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) ou [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Vous disposez de 256couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec les canaux de couleur appropriés. 256 couleurs nommées reposent sur les noms de couleurs *X11* à partir de la Cascading Style Sheets, niveau3 spécification (CSS3), vous peut-être déjà familiarisé avec cette liste de couleurs nommées si vous connaissez précédent développement web ou de conception.
+Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) ou [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Vous disposez de 256couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec les canaux de couleur appropriés. 256 couleurs nommées reposent sur les noms de couleurs *X11* à partir de Cascading Style Sheets, niveau3 spécification (CSS3), vous peut-être déjà familiarisé avec cette liste de couleurs nommées si vous connaissez précédent développement web ou de conception.
 
 Vous trouverez ci-dessous un exemple dans lequel la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) d’un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) présente la couleur prédéfinie [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 

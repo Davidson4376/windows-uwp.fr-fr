@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
 ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8351289"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483505"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Intégrer des jeux C++ personnalisés dans UWP sur Xbox
 

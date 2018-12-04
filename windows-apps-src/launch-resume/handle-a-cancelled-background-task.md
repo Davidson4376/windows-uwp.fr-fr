@@ -4,18 +4,18 @@ description: Découvrez comment faire en sorte qu’une tâche en arrière-plan 
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ms.date: 07/05/2018
 ms.topic: article
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323141"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479034"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
@@ -36,7 +36,7 @@ Cette rubrique s’applique également aux tâches en arrière-plan in-process. 
 Écrivez une méthode permettant de gérer l’événement d’annulation.
 
 > [!NOTE]
-> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire insuffisante n’est exposée ou si elle ne gère pas l’application, puis la tâche en arrière-plan est alors arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire insuffisante n’est exposée ou si l’application ne gère pas, la tâche en arrière-plan est alors arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
 Créez une méthode nommée **OnCanceled** en procédant comme suit. Cette méthode constitue le point d’entrée appelé par Windows Runtime lorsqu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
 
@@ -133,7 +133,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **\_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan in-process, cela implique un retour à partir de la méthode **OnBackgroundActivated** . Pour les tâches en arrière-plan out-of-process, cela implique un retour à partir de la méthode **Run** .
 
-Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** devient défini sur true, arrêter le travail de continuer.
+Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** est défini sur true, arrêter le travail empêche de poursuivre.
 
 L' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan.
 
@@ -257,7 +257,7 @@ else
 
 Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
 
-À des fins d’illustration, l’exemple de code présente uniquement des portions de la méthode **Run** (et le minuteur de rappel) à partir de l' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+À des fins d’illustration, l’exemple de code présente uniquement des portions de la méthode **Run** (et le minuteur de rappel) de l' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 ## <a name="run-method-example"></a>Exemple de méthode Run
 

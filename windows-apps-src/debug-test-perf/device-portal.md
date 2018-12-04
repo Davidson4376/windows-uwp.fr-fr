@@ -4,30 +4,30 @@ title: Vue d’ensemble de Windows Device Portal
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
 ms.date: 12/12/2017
 ms.topic: article
-keywords: Windows 10, uwp, portal de l’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bffdb31e9001bd0b2abe873780ef507c2073b46
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332506"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480546"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
-Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous aider à résoudre les problèmes et d’afficher les performances en temps réel de votre appareil Windows.
+Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous aider à résoudre les problèmes et afficher les performances en temps réel de votre appareil Windows.
 
 Windows Device Portal est un serveur web sur votre appareil que vous pouvez vous connecter à partir d’un navigateur web sur un PC. Si votre appareil dispose d’un navigateur web, vous pouvez également vous connecter localement avec le navigateur sur cet appareil.
 
 Windows Device Portal est disponible sur chaque famille d’appareils, mais les fonctionnalités et la configuration varient en fonction des besoins de chaque appareil. Cet article fournit une description générale de Device Portal et des liens vers des articles contenant des informations plus spécifiques pour chaque famille d’appareils.
 
-La fonctionnalité de Windows Device Portal est implémentée avec l' [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
+Les fonctionnalités de Windows Device Portal sont implémentée avec l' [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
 
 ## <a name="setup"></a>Installation
 
 Chaque appareil possède des instructions spécifiques concernant la connexion à Device Portal. Toutefois, chacun nécessite d’effectuer les étapes générales suivantes.
-1. Activer le Mode développeur et Device Portal sur votre appareil (configuré dans l’application paramètres).
-2. Connectez votre appareil et un PC par le biais d’un réseau local ou USB.
+1. Activez le Mode développeur et Device Portal sur votre appareil (configuré dans l’application paramètres).
+2. Connectez votre appareil et votre PC via un réseau local ou USB.
 3. Accéder à la page Device Portal dans votre navigateur. Ce tableau indique les ports et protocoles utilisés par chaque famille d’appareils.
 
 Famille d’appareils | Activé par défaut? | HTTP | HTTPS | USB
@@ -51,8 +51,8 @@ Pour obtenir des instructions d’installation propres à chaque appareil, consu
 
 ### <a name="toolbar-and-navigation"></a>Barre d’outils et navigation
 
-La barre d’outils en haut de la page permet d’accéder aux fonctionnalités couramment utilisées.
-- **Alimentation**: accéder aux options d’alimentation.
+La barre d’outils dans la partie supérieure de la page donne accès aux fonctionnalités couramment utilisées.
+- **Marche/arrêt**: accéder aux options d’alimentation.
   - **Arrêt**: éteint l’appareil.
   - **Redémarrer**: mise sous tension de l’appareil par cycle.
 - **Aide**: ouvre la page d’aide.
@@ -63,21 +63,21 @@ Les outils qui sont communes à familles d’appareils sont décrits ici. D’au
 
 ### <a name="apps-manager"></a>App Manager (Gestionnaire d’applications)
 
-Le Gestionnaire d’applications constitue une installation ou la désinstallation et les fonctionnalités de gestion pour application de packages et des ensembles de sur l’appareil hôte.
+Le Gestionnaire d’applications constitue une installation ou la désinstallation et les fonctionnalités de gestion pour application des packages et des ensembles de sur l’appareil hôte.
 
 ![Page du Gestionnaire Device Portal applications](images/device-portal/wdp-apps.png)
 
-- **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées à partir de local, réseau ou web héberge et enregistrer des fichiers libres à partir des partages réseau.
-- **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et de les fermer si nécessaire.
+- **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées dans local, réseau ou web héberge et enregistrer des fichiers libres à partir des partages réseau.
+- **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et fermez-les si nécessaire.
 
 #### <a name="install-an-app"></a>Installer une application
 
 1.  Lorsque vous avez créé un package d’application, vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
   ![Installation d’applications](images/device-portal/iot-installapp0.png)
-2.  Dans la section de Gestionnaire des applications du portail de l’appareil, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
+2.  De section du Gestionnaire de Device Portal applications, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
 3.  Cliquez sur **Parcourir** et recherchez votre package d’application.
 3.  Cliquez sur **Parcourir** et recherchez le fichier de certificat (_.cer_) (non requis sur tous les appareils.)
-4.  Cases à cocher le respectifs si vous souhaitez installer facultatifs ou les packages d’infrastructure, ainsi que l’installation d’application. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
+4.  Cases à cocher le respectifs si vous souhaitez installer facultatifs ou les packages d’infrastructure, ainsi que l’installation de l’application. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
 5.  Cliquez sur **suivant** pour passer à l’étape suivante et **installer** pour lancer l’installation. 
 
 #### <a name="uninstall-an-app"></a>Désinstaller une application
@@ -105,8 +105,8 @@ Voici les mesures disponibles:
 - **Configuration requise du processeur**: pourcentage du total disponible de l’UC
 - **Mémoire**: totale, en cours d’utilisation, disponible validée, paginée et non paginée
 - **E/s**: les quantités de données en lecture et écriture
-- **Réseau**: réceptions et envois des données
-- **GPU**: % du GPU disponible total de l’utilisation du moteur
+- **Réseau**: réceptions et envois de données
+- **Processeur graphique**: utilisation de moteur pour cent de processeur graphique disponibles total
 
 
 ![Page de performances du portail d’appareil](images/device-portal/mob-device-portal-perf.png)
@@ -128,8 +128,8 @@ Cochez la case **Masquer les fournisseurs** pour n’afficher que la liste des �
   Cliquez ou appuyez sur **Activer** pour démarrer le suivi. Le fournisseur est ajouté à la liste déroulante **Fournisseurs activés**.
 - **Fournisseurs personnalisés** sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’incluez pas de crochets dans le GUID.
 - **Fournisseurs activé**: cela répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur **Désactiver** pour arrêter le suivi. Cliquez ou appuyez sur **Arrêter tout** pour suspendre tout le suivi.
-- **Historique des fournisseurs**: Cela affiche les fournisseurs ETW qui ont été activées au cours de la session en cours. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
-- **Filtres / événements**: la section **événements** répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau est mis à jour en temps réel. Utilisez le menu **filtres** pour configurer des filtres personnalisés pour lequel les événements seront affiche. Cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans un fichier** pour exporter les événements ETW actuellement collectés dans un fichier CSV local.
+- **Historique des fournisseurs**: Cela affiche les fournisseurs ETW qui ont été activés au cours de la session en cours. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
+- **Filtres / événements**: la section **événements** répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau est mis à jour en temps réel. Utilisez le menu **filtres** pour configurer des filtres personnalisés pour lequel les événements seront affichés. Cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans un fichier** pour exporter les événements ETW actuellement collectés dans un fichier CSV local.
 
 Pour plus d’informations sur l’utilisation de la journalisation ETW, consultez le blog de [l’Utiliser Device Portal pour afficher les journaux de débogage](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) . 
 
@@ -150,17 +150,17 @@ Capturé. Les fichiers ETL peuvent être ouverts pour analyse dans l' [Analyseur
 
 La page Gestionnaire de périphériques énumère tous les périphériques connectés à votre appareil. Vous pouvez cliquer sur les icônes de paramètres pour afficher les propriétés de chaque.
 
-![Page de gestionnaire de périphérique Device Portal](images/device-portal/mob-device-portal-devices.png)
+![Page de gestionnaire de périphériques Device Portal](images/device-portal/mob-device-portal-devices.png)
 
 ### <a name="networking"></a>Mise en réseau
 
 La page de mise en réseau gère les connexions réseau sur l’appareil. Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal.
-- **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Device Portal ne gère pas encore l’authentification en entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour tenter de se connecter à un des profils Wi-Fi connus à l’appareil.
+- **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Device Portal ne gère pas encore l’authentification en entreprise. Vous pouvez également utiliser la liste déroulante **profils** pour tentent de se connecter à un des profils Wi-Fi connus à l’appareil.
 - **Configuration IP**: affiche des informations adresse chacun de l’hôte de ports de réseau de l’appareil.
 
 ![Page de mise en réseau du portail d’appareil](images/device-portal/mob-device-portal-network.png)
 
-## <a name="service-features-and-notes"></a>Remarques et fonctionnalités du Service
+## <a name="service-features-and-notes"></a>Remarques et fonctionnalités de Service
 
 ### <a name="dns-sd"></a>DNS-SD
 

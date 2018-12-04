@@ -2,16 +2,16 @@
 description: Découvrez comment développer une application UWP.
 title: Développer des applicationsUWP
 layout: LandingPage
-keywords: portail de vue d’ensemble plateforme async threading UWP application développement développer les développeurs
+keywords: portail de vue d’ensemble plateforme async thread UWP application développement développer les développeurs
 ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342087"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482128"
 ---
 <div> 
 <h1>Développer des applicationsUWP</h1>
@@ -31,7 +31,7 @@ ms.locfileid: "8342087"
                     </div>
                     <div class="cardText">
                         <h3>Vue d’ensemble de la plateforme Windows universelle</h3>
-                        <p>Obtenir une explication de quel UWP est, comment il fonctionne, et les fonctionnalités qu’il fournit.</p>
+                        <p>Obtenir une explication des quelle UWP est, comment il fonctionne, et les fonctionnalités qu’il fournit.</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ ms.locfileid: "8342087"
                     </div>                
                     <div class="cardText">
                         <h3>Guides de portage</h3>
-                        <p>Porter votre existant Windows Forms, WPF, Android ou application iOS vers UWP. </p>
+                        <p>Mettez votre existant Windows Forms, WPF, Android ou application iOS vers UWP. </p>
                     </div>
                 </div>
             </div>

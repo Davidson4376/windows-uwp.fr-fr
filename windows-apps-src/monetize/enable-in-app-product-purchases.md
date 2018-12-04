@@ -7,11 +7,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a203ef79fc6ebb45107cd9ac9d79cadf330f7a5d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352333"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482743"
 ---
 # <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
@@ -78,7 +78,7 @@ C’est simple: remplacez chaque référence à [CurrentAppSimulator](https://ms
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>Étape4: Configuration dans le Windows Store de l’offre de produit in-app
 
-Dans l’espace partenaires, accédez à votre application et [créer une extension](../publish/add-on-submissions.md) qui correspond à votre offre de produit dans l’application. Définissez l’ID de produit, le type, le prix et d’autres propriétés pour votre module complémentaire. Veillez à effectuer les différents réglages en respectant la configuration définie dans le fichier WindowsStoreProxy.xml pendant le test.
+Dans l’espace partenaires, accédez à votre application et [créer une extension](../publish/add-on-submissions.md) qui correspond à votre offre de produit in-app. Définissez l’ID de produit, le type, le prix et d’autres propriétés pour votre module complémentaire. Veillez à effectuer les différents réglages en respectant la configuration définie dans le fichier WindowsStoreProxy.xml pendant le test.
 
   > [!NOTE]
   > Le jeton d’offre dans l’application que vous utilisez dans votre code doit correspondre à la valeur [d’ID de produit](../publish/set-your-add-on-product-id.md#product-id) que vous spécifiez pour le module complémentaire correspondant dans l’espace partenaires.

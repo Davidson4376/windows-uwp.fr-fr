@@ -7,15 +7,15 @@ keywords: windows10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: d9665ba3af10091ddc652198d5340e00456a65a7
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336133"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480077"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants WindowsRuntime du service Broker pour les applications installées hors UWP
 
-Cet article présente une fonctionnalité enterprise pris en charge par Windows 10, ce qui permet aux applications de .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
+Cet article traite une fonctionnalité prise en charge par Windows 10, ce qui permet aux applications de .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
 
 ## <a name="introduction"></a>Introduction
 
@@ -46,7 +46,7 @@ Le composant de bureau de cette fonctionnalité est un nouveau type d’applicat
 
 Le contrat entre l’application installée hors Windows Store et le composant du bureau est décrit en fonction du système de type UWP. Cela implique la déclaration d’une ou plusieurs classes C\# qui représentent une plateforme universelle Windows. Reportez-vous à la rubrique MSDN [Création de composants Windows Runtime en C\# et Visual Basic](https://msdn.microsoft.com/library/br230301.aspx) pour connaître les conditions spécifiques pour la création d’une classe Windows Runtime en C\#.
 
->**Remarque**énumérations ne sont pas pris en charge dans le contrat de composants Windows Runtime entre le composant de bureau et l’application installée pour l’instant.
+>**Remarque**énumérations ne sont pas prises en charge dans le contrat de composants Windows Runtime entre le composant de bureau et l’application installée pour l’instant.
 
 **Application installée hors Windows Store**
 
@@ -161,7 +161,7 @@ Cette opération s’effectue via les scripts suivants. Ajoutez les scripts à l
     rem erase "$(TargetPath)"
 ```
 
-Une fois la référence**winmd**est créé (dans le dossier «référence» sous le dossier du projet cible), il s’agit (copiés) sur chaque projet d’application installée hors Windows Store utilisation et référencé. La section suivante décrira cette procédure. La structure de projet intégrée dans les règles de génération ci-dessus garantit que l’implémentation et la référence**winmd**se trouvent dans des répertoires séparés dans la hiérarchie de génération pour éviter toute confusion.
+Une fois la référence**winmd**est créé (dans le sous-dossier «reference» du dossier du projet cible), il s’agit (copiés) sur chaque projet d’application installée hors Windows Store utilisation et référencé. La section suivante décrira cette procédure. La structure de projet intégrée dans les règles de génération ci-dessus garantit que l’implémentation et la référence**winmd**se trouvent dans des répertoires séparés dans la hiérarchie de génération pour éviter toute confusion.
 
 ## <a name="side-loaded-applications-in-detail"></a>Détails sur les applications installées hors Windows Store
 Comme indiqué précédemment, l’application installée hors Windows Store est créée comme n’importe quelle application UWP, à un détail près: la déclaration de la disponibilité de la ou des classes Runtime dans le manifeste de l’application installée hors Windows Store. Cela permet à l’application d’écrire un nouvel accès à la fonctionnalité dans le composant de bureau. Une nouvelle entrée de manifeste dans la section <Extension> décrit la classe Runtime implémentée dans le composant de bureau et les informations sur son emplacement. Le contenu de cette déclaration dans le manifeste de l’application est le même pour les applications qui ciblent Windows10. Par exemple:
@@ -181,7 +181,7 @@ La catégorie est inProcessServer, car il existe plusieurs entrées dans la cat�
 
 La section <ActivatableClass> est identique à une classe Runtime véritablement in-process préférée par un composant Windows Runtime dans le package d’application. <ActivatableClassAttribute> est un nouvel élément et les attributs Name="DesktopApplicationPath" et Type="string" sont obligatoires et invariants. L’attribut Value pointe vers l’emplacement où réside le fichier winmd d’implémentation du composant de bureau (décrit en détail dans la section suivante). Chaque classe Runtime préférée par le composant de bureau doit avoir son arborescence d’éléments <ActivatableClass>. ActivatableClassId doit correspondre au nom complet d’espace de noms de la classe Runtime.
 
-Comme indiqué dans la section «Définition du contrat», une référence de projet au winmd de référence du composant de bureau doit être créée. Le système de projet Visual Studio crée une structure de répertoires à deux niveaux portant le même nom. Dans l’exemple il s’agit de EnterpriseIPCApplication\\EnterpriseIPCApplication. La référence **winmd**est copiée manuellement dans ce deuxième répertoire de niveau, puis les références de projet de boîte de dialogue est utilisée (cliquez sur la**Parcourir..** bouton) pour rechercher et référencer ce **fichier winmd**. L’espace de noms de premier niveau du composant de bureau (Fabrikam) doit ensuite s’afficher sous la forme d’un nœud de premier niveau dans la partie Références du projet.
+Comme indiqué dans la section «Définition du contrat», une référence de projet au winmd de référence du composant de bureau doit être créée. Le système de projet Visual Studio crée une structure de répertoires à deux niveaux portant le même nom. Dans l’exemple il s’agit de EnterpriseIPCApplication\\EnterpriseIPCApplication. La référence **winmd**est copiée manuellement dans ce deuxième répertoire de niveau, puis les références du projet boîte de dialogue est utilisée (cliquez sur la**Parcourir..** bouton) pour rechercher et référencer ce **fichier winmd**. L’espace de noms de premier niveau du composant de bureau (Fabrikam) doit ensuite s’afficher sous la forme d’un nœud de premier niveau dans la partie Références du projet.
 
 >**Remarque** Il est très important d’utiliser le**fichier winmd de référence**dans l’application installée hors Windows Store. Si vous faites par inadvertance le**fichier winmd d’implémentation**vers le répertoire de l’application installée hors Windows Store et les informations de référence, vous recevrez probablement une erreur liée à «IStringable introuvable». Il s’agit d’un coup sûr que la mauvaise**winmd**a été référencé. Les règles post-build dans l’application serveur IPC (décrites dans la section suivante) avec soin placent ces deux**winmd**dans des répertoires distincts.
 
@@ -406,7 +406,7 @@ En règle générale, seules des références entre projets sont créées. Cepen
 
 Ces références sont un mélange précis de références qui sont nécessaires au fonctionnement correct de ce serveur hybride. Le protocole consiste à ouvrir le fichier .csproj (tel que décrit dans «Comment modifier le type de sortie du projet») et à ajouter ces références si nécessaire.
 
-Une fois ces références configurées correctement, la tâche suivante consiste à implémenter la fonctionnalité du serveur. Consultez la rubrique MSDN[meilleures pratiques pour l’interopérabilité avec les composants Windows Runtime (applications UWP en C\ #/ VB/C++ et XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
+Une fois ces références configurées correctement, la tâche suivante consiste à implémenter la fonctionnalité du serveur. Consultez la rubrique MSDN[meilleures pratiques en matière d’interopérabilité avec les composants Windows Runtime (applications UWP en C\ #/ VB/C++ et XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
 Cette tâche consiste à créer une DLL de composant Windows Runtime qui est en mesure d’appeler le code de bureau dans le cadre de son implémentation. L’exemple fourni comprend les principaux modèles utilisés dans Windows Runtime:
 
 -   Appels de méthode
@@ -419,7 +419,7 @@ Cette tâche consiste à créer une DLL de composant Windows Runtime qui est en 
 
 **Installer**
 
-Pour installer l’application, copiez l' implémentation**winmd**vers le répertoire correct indiqué dans le manifeste associé installée hors Windows Store de l’application: <ActivatableClassAttribute>valeur de le = «path». Copiez également les fichiers de support associés et les DLL proxy/stub (décrites plus bas). Si vous ne copiez l' implémentation**winmd**au serveur emplacement du répertoire, tous les chargées appels de l’application à nouveau sur la classe runtime génère une erreur «classe non inscrite». Si vous n’installez pas le proxy/stub (ou ne l’inscrivez pas) tous les appels échoueront sans valeur de retour. Cette dernière erreur n’est souvent**pas**associées à des exceptions visibles.
+Pour installer l’application, copiez l' implémentation**winmd**vers le répertoire correct indiqué dans le manifeste associé installée hors Windows Store de l’application: <ActivatableClassAttribute>valeur du = «path». Copiez également les fichiers de support associés et les DLL proxy/stub (décrites plus bas). Si vous ne copiez l' implémentation**winmd**au serveur emplacement du répertoire, tous les chargées appels de l’application à nouveau sur la classe runtime lève une erreur «classe non inscrite». Si vous n’installez pas le proxy/stub (ou ne l’inscrivez pas) tous les appels échoueront sans valeur de retour. Cette dernière erreur n’est souvent**pas**associées à des exceptions visibles.
 Si des exceptions visibles sont provoquées par cette erreur de configuration, elles font référence à un «cast incorrect».
 
 **Considérations en matière d’implémentation serveur**
@@ -453,7 +453,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**Remarque** Il est possible d’attendre des opérations qui peuvent durer longtemps pendant l’écriture de l’implémentation. Si tel est le cas, le**Task.Run**code doit être déclarée:
+>**Remarque** Il est possible d’attendre des opérations qui peuvent durer longtemps pendant l’écriture de l’implémentation. Si tel est le cas, le**Task.Run**code doit être déclaré:
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -483,7 +483,7 @@ Les étapes décrites dans cet article sont plus compliquées que la procédure 
 
 **Solution &gt; Ajouter &gt; Projet &gt; Visual C++ &gt; Console Win32 option Sélectionner la DLL.**
 
-Pour connaître les étapes ci-dessous, nous supposons que le composant serveur est appelé**MyWinRTComponent**.
+Les étapes ci-dessous, nous supposons que le composant serveur est appelé**MyWinRTComponent**.
 
 **Étape3:** supprimez tous les fichiers CPP/H du projet.
 
@@ -499,7 +499,7 @@ d) Un fichier \*\_p.c (MyWinRTComponent_\p.c)
 
 **Étape5:** ajoutez ces quatre fichiers générés au projet «MyWinRTProxy».
 
-**Étape 6:** Ajouter un fichier de définition au projet «MyWinRTProxy»**(projet > Ajouter un nouvel élément > Code > fichier de définition de Module**) et mettre à jour le contenu pour être:
+**Étape 6:** Ajouter un fichier de définition au projet «MyWinRTProxy»**(projet > Ajouter un nouvel élément > Code > fichier de définition de Module**) et mettre à jour le contenu:
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -535,9 +535,9 @@ MyWinRTComponent.Proxies
 
 **Déploiement du proxy**
 
-Le proxy doit être inscrit globalement. Pour ce faire, le processus d’installation doit appeler DllRegisterServer dans la DLL proxy. Dans la mesure où la fonctionnalité ne prend en charge que des serveurs x86 (pas de prise en charge 64bits), la configuration la plus simple utilise un serveur 32bits, un proxy 32bits et une application installée hors Windows Store 32bits. Le proxy se trouve généralement avec l' implémentation**winmd**pour le composant de bureau.
+Le proxy doit être inscrit globalement. Pour ce faire, le processus d’installation doit appeler DllRegisterServer dans la DLL proxy. Dans la mesure où la fonctionnalité ne prend en charge que des serveurs x86 (pas de prise en charge 64bits), la configuration la plus simple utilise un serveur 32bits, un proxy 32bits et une application installée hors Windows Store 32bits. Le proxy se trouve généralement en même temps que la mise en œuvre**winmd**pour le composant de bureau.
 
-Une étape de configuration supplémentaire est nécessaire. Pour que le processus d’installation hors Windows Store charge et exécute le proxy, le répertoire doit être marqué «lecture / exécution» pour ALL_APPLICATION_PACKAGES. Cette opération est effectuée par le biais du**icacls.exe**outil de ligne de commande. Cette commande doit s’exécuter dans le répertoire dans lequel l' implémentation**winmd**et réside dll proxy/stub:
+Une étape de configuration supplémentaire est nécessaire. Pour que le processus d’installation hors Windows Store charge et exécute le proxy, le répertoire doit être marqué «lecture / exécution» pour ALL_APPLICATION_PACKAGES. Cette opération est effectuée via**icacls.exe**outil de ligne de commande. Cette commande doit être exécutée sur le répertoire dans lequel l' implémentation**winmd**et réside dll proxy/stub:
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
@@ -553,7 +553,7 @@ Voici une liste d’éléments à prendre en compte:
 
 -   Le transfert en bloc des résultats limite le trafic interprocessus. La construction Windows Runtime Array est utilisée pour cela.
 
--   Un retour*liste<T>* où*T*est un objet d’une opération ou une propriété async, entraîne un grand nombre d’interprocessus. Par exemple, si vous retournez un*liste&lt;personnes&gt;* objets. Chaque itération correspondra à un appel interprocessus. Chaque*personnes*objet retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel se traduit par un appel interprocessus. Par conséquent, un «simple»*liste&lt;personnes&gt;* objet où*nombre*est volumineux entraîne un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple:
+-   Un retour*liste<T>* où*T*est un objet d’une opération ou une propriété async, entraîne un grand nombre d’interprocessus. Par exemple, si vous retournez un*liste&lt;personnes&gt;* objets. Chaque itération correspondra à un appel interprocessus. Chaque*personnes*objet retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu dans un appel interprocessus. Par conséquent, un «simple»*liste&lt;personnes&gt;* objet où*nombre*est volumineux entraîne un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple:
 
 ```csharp
 struct PersonStruct

@@ -13,11 +13,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9947f2910855b5d55b5140f043d65fd0befeae
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343157"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481049"
 ---
 # <a name="time-picker"></a>Sélecteur d’heure
  

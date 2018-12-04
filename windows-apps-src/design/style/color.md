@@ -8,11 +8,11 @@ design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 55e93cdbeec5aad487d7c03c1877095dc13955b1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8345249"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483577"
 ---
 # <a name="color"></a>Couleur
 
@@ -255,13 +255,13 @@ Pour plus d’informations sur l’utilisation des pinceaux, voir [Pinceaux XAML
 
 ## <a name="scoping-system-colors"></a>Étendue de couleurs système
 
-Outre la définition de vos propres couleurs dans votre application, vous pouvez également limiter nos couleurs systématisées à des zones souhaitées dans toute votre application à l’aide de la balise **ColorSchemeResources** . Cette API permet de vous non seulement colorisation et groupes importants de thème des contrôles à la fois en définissant quelques propriétés, mais aussi donne vous autre système de nombreux avantages que vous ne seraient pas normalement obtenir de définir vos propres couleurs personnalisées manuellement:
+Outre la définition de vos propres couleurs dans votre application, vous pouvez également limiter nos couleurs systématisées à des zones souhaitées dans toute votre application à l’aide de la balise **ColorSchemeResources** . Cette API permet de vous non seulement colorier et grands groupes de thème de contrôles à la fois en définissant quelques propriétés, mais aussi donne vous autre système de nombreux avantages que vous ne seraient pas normalement obtenir de définir vos propres couleurs personnalisées manuellement:
 
 - N’importe quelle couleur définie à l’aide de **ColorSchemeResources** a un impact pas le contraste élevé
-  * Ce qui signifie que votre application sera accessible à plus de personnes sans aucune conception supplémentaires ou le coût de développement
-- Peut facilement affecter couleurs omniprésent, clair ou foncé entre les deux thèmes en définissant une propriété sur l’API
+  * Ce qui signifie que votre application seront accessible à plus de personnes sans aucune conception supplémentaires ou le coût de développement
+- Peut facilement définir couleurs à omniprésent, clair ou foncé entre les deux thèmes en définissant une propriété sur l’API
 - Couleurs définies sur **ColorSchemeResources** seront mises en cascade vers tous les contrôles similaires qui utilisent également cette couleur système
-  * Cela permet de s’assurer que vous bénéficiez d’un historique de couleur cohérente sur votre application tout en conservant l’aspect de votre marque
+  * Cela permet de s’assurer que vous bénéficiez d’un article de couleur cohérentes sur votre application tout en conservant l’aspect de votre marque
 - Effets de tous les états visuels, les animations et les variantes de l’opacité sans avoir à redéfinir le modèle
 
 ### <a name="how-to-use-colorschemeresources"></a>L’utilisation de ColorSchemeResources
@@ -274,13 +274,13 @@ ColorSchemeResources est une API qui indique où à prendre en compte le systèm
 - Dark
   * Affiche vos modifications de couleur uniquement dans [le thème foncé](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
 
-Définition de x: Key permet de garantir que vos couleurs modifier de manière appropriée pour le thème système ou de l’application, devez vous souhaitez une apparence personnalisée différente lorsque dans le thème.
+Définition de x: Key permet de garantir que vos couleurs changent en fonction du thème système ou l’application devez vous souhaitez une apparence personnalisée différente lorsque dans le thème.
 
 ### <a name="how-to-apply-scoped-colors"></a>Comment appliquer des couleurs dans une étendue
 
-Étendue de ressources par le biais de la **ColorSchemeResources** API en XAML vous permet de prendre des couleurs système ou pinceau qui se trouve dans notre bibliothèque de [ressources de thème](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) et de les redéfinir dans l’étendue d’une page ou d’un conteneur.
+Étendue de ressources par le biais de la **ColorSchemeResources** API en XAML vous permet de prendre des couleur système ou un pinceau qui se trouve dans notre bibliothèque de [ressources de thème](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources) et de les redéfinir dans l’étendue d’une page ou d’un conteneur.
 
-Par exemple, si vous définis par deux couleurs système - **SystemBaseLowColor** et **SystemBaseMediumLowColor** à l’intérieur d’une grille et ensuite placé deux boutons sur votre page: un à l’intérieur de cette grille et l’un à l’extérieur:
+Par exemple, si vous avez défini deux couleurs système - **SystemBaseLowColor** et **SystemBaseMediumLowColor** à l’intérieur d’une grille et que vous ensuite placé deux boutons sur votre page: un à l’intérieur de cette grille et l’un à l’extérieur:
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -299,8 +299,8 @@ Vous obtenez **Button_A** avec les nouvelles couleurs appliqués et **Button_B**
 
 ![couleurs système dans une étendue sur le bouton](images/color/scopedcolors_cyan_button.png)
 
-Toutefois, dans la mesure où toutes les couleurs de notre système mises en cascade trop vers d’autres contrôles, définition **SystemBaseLowColor** et **SystemBaseMediumLowColor** affecte simplement plus de boutons. Dans ce cas, les contrôles comme **ToggleButton**, **RadioButton** et **Slider** seront également être effectuées par ces modifications de couleur système, ces contrôles soient placées ci-dessus étendue de la grille ainsi.
-Si vous souhaitez définir l’étendue un système couleur modification *à un seul uniquement des contrôles* vous pouvez le faire en définissant **ColorSchemeResources** dans les ressources de ce contrôle:
+Toutefois, dans la mesure où toutes les couleurs de notre système mises en cascade trop vers d’autres contrôles, définition **SystemBaseLowColor** et **SystemBaseMediumLowColor** affecteront simplement plus de boutons. Dans ce cas, les contrôles comme **ToggleButton**, **RadioButton** et **Slider** seront également être effectuées par ces modifications de couleur système, ces contrôles soient placées ci-dessus étendue de la grille ainsi.
+Si vous souhaitez définir l’étendue un système couleur modification *à un seul contrôle uniquement* vous pouvez le faire en définissant **ColorSchemeResources** dans les ressources de ce contrôle:
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -314,11 +314,11 @@ Si vous souhaitez définir l’étendue un système couleur modification *à un 
 </Grid>
 <Button Content="Button_B"/>
 ```
-Vous avez essentiellement exactement la même chose comme avant, mais maintenant tous les autres contrôles ajoutés à la grille ignorera les modifications de couleur. Il s’agit dans la mesure où ces couleurs système sont étendues à **Button_A** uniquement.
+Vous avez essentiellement exactement la même chose comme avant, mais maintenant tous les autres contrôles ajoutés à la grille pas sélectionne les modifications de couleur. Il s’agit dans la mesure où ces couleurs système sont étendues à **Button_A** uniquement.
 
 ### <a name="nesting-scoped-resources"></a>Ressources d’imbrication à prendre en compte
 
-Imbrication de couleurs système est également possible et est effectué cette opération en plaçant **ColorSchemeResources** en ressources des éléments imbriqués dans le balisage de disposition de votre application:
+Imbrication de couleurs système est également possible et est fait en plaçant **ColorSchemeResources** en ressources des éléments imbriqués dans le balisage de disposition de votre application:
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -341,7 +341,7 @@ Imbrication de couleurs système est également possible et est effectué cette 
 </Grid>
 ```
 
-Dans cet exemple, **Button_A** hérite de définissent des couleurs dans **Grid_A**de ressources et de **Bouton imbriqué** hérite des couleurs de **Grid_B**de ressources. Par extension, cela signifie que tous les autres contrôles placés au sein de **Grid_B** sera vérifier ou appliquer **Grid_B**de ressources en premier lieu, avant de vérifier ou application **Grid_A**de ressources, et enfin appliquant nos couleurs par défaut si rien n’est définie à la niveau de la page ou de l’application.
+Dans cet exemple, **Button_A** hérite de définissent des couleurs dans **Grid_A**de ressources et de **Bouton imbriqué** hérite des couleurs de **Grid_B**de ressources. Par extension, cela signifie que tous les autres contrôles placés au sein de **Grid_B** sera coché ou appliquer des ressources **Grid_B**de tout d’abord, avant de vérifier ou application **Grid_A**de ressources, et enfin appliquant nos couleurs par défaut si rien n’est définie à la niveau de la page ou de l’application.
 
 Cela fonctionne pour n’importe quel nombre d’éléments imbriqués dont les ressources ont des définitions de couleur.
 
@@ -351,7 +351,7 @@ Vous n’êtes pas limité à un conteneur ou ressources de la page et pouvez é
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
-Tout d’abord, vous créez une classe ResourceDictionary. Puis placer le **ColorSchemeResources** au sein de la ThemeDictionaries et remplacer les couleurs système souhaité:
+Tout d’abord, vous créez une classe ResourceDictionary. Placez le **ColorSchemeResources** au sein de la ThemeDictionaries, puis remplacer les couleurs système souhaité:
 
 ```xaml
 <ResourceDictionary
@@ -371,7 +371,7 @@ Tout d’abord, vous créez une classe ResourceDictionary. Puis placer le **Colo
 
 #### <a name="mainpagexaml"></a>MainPage.xaml
 
-Sur la page contenant votre disposition, il vous suffit fusionner ce dictionnaire dans à la portée de que votre choix:
+Sur la page contenant votre disposition, il vous suffit de fusion ce dictionnaire dans à la portée de que votre choix:
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -387,11 +387,11 @@ Sur la page contenant votre disposition, il vous suffit fusionner ce dictionnair
 </Grid>
 ```
 
-Maintenant, toutes les ressources, les thèmes et couleurs personnalisés peuvent être placés dans un dictionnaire de ressources **MyCustomTheme** unique et à prendre en compte lorsque cela est nécessaire sans avoir à vous soucier de l’encombrement supplémentaire dans le balisage de votre disposition.
+À présent, toutes les ressources, les thèmes et couleurs personnalisés peuvent être placés dans un dictionnaire de ressources **MyCustomTheme** unique et à prendre en compte lorsque cela est nécessaire sans avoir à vous soucier de l’encombrement supplémentaire dans le balisage de votre disposition.
 
 ### <a name="other-ways-to-define-color-resources"></a>Autres façons de définir des ressources de couleur
 
-ColorSchemeResources permet également des couleurs système doit être placé et définition directement au sein de celle-ci comme un wrapper, plutôt qu’en ligne:
+ColorSchemeResources permet également de couleurs système doit être placé et de définir directement au sein de celle-ci comme wrapper, plutôt qu’en ligne:
 
 ``` xaml
 <ColorSchemeResources x:Key="Dark">

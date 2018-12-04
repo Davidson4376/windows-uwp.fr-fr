@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323343"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480252"
 ---
 # <a name="xname-attribute"></a>Attribut x:Name
 
@@ -57,7 +57,7 @@ Les outils de conception génèrent souvent automatiquement des valeurs **x:Name
 
 Il n’est pas possible de définir **x:Name** dans la syntaxe de l’élément de propriété XAML, ou dans le code à l’aide de [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). **x:Name** peut uniquement être défini à l’aide de la syntaxe de l’attribut XAML sur les éléments.
 
-**Remarque**spécifiquement pour C++ / CX, applications, le champ de sauvegarde d’une référence de **x: Name** n’est pas créé pour l’élément racine d’un fichier XAML ou une page. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Remarque**spécifiquement pour C++ / CX applications, le champ de sauvegarde d’une référence de **x: Name** n’est pas créé pour l’élément racine d’un fichier XAML ou une page. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
 ### <a name="xname-and-other-name-properties"></a>x:Name et autres propriétés Name
 

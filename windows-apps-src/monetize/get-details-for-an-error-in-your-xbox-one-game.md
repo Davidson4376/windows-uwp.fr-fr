@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346635"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484657"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>Obtenir des détails sur une erreur dans votre console Xbox One jeu
 
@@ -98,7 +98,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | cabExpirationTime  | chaîne  | Date et heure auxquelles le fichierCAB est arrivé à expiration et n’est plus téléchargeable au format ISO8601.   |
 | marché          | chaîne  | Code pays ISO3166 du marché des appareils.     |
 | osBuild         | chaîne  | Numéro de version du système d’exploitation sur lequel l’erreur s’est produite.       |
-| packageVersion  | chaîne  | La version du package de jeu qui est associé à cette erreur.    |
+| packageVersion  | chaîne  | La version du package de jeu associé à cette erreur.    |
 | deviceModel           | chaîne  | L’une des chaînes suivantes qui spécifie la console Xbox One sur lequel le jeu a été en cours d’exécution lorsque l’erreur s’est produite.<p/><ul><li><strong>Microsoft-Xbox une</strong></li><li><strong>Microsoft-Xbox One S</strong></li><li><strong>Microsoft-Xbox One X</strong></li></ul>  |
 | osVersion       | chaîne  | La version de système d’exploitation sur laquelle l’erreur s’est produite. Il s’agit toujours de la valeur de **Windows 10**.    |
 | osRelease       | chaîne  |  L’une des chaînes suivantes qui spécifie la version du système d’exploitation de Windows 10 ou l’anneau évaluation (comme une sous-population au sein de la version du système d’exploitation) sur lequel l’erreur s’est produite.<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dacca1cff943001c03f9f432404b6dab2fb5b94
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338245"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484034"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Création de composants Windows Runtime en C++/CX
 > [!NOTE]
-> Cette rubrique a pour but de vous aider à maintenir votre application C++/CX. Mais nous vous recommandons d’utiliser [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) pour de nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Pour savoir comment créer un composant Windows Runtime à l’aide de C++ / WinRT, consultez [créer des événements en C++ / WinRT](../cpp-and-winrt-apis/author-events.md).
+> Cette rubrique a pour but de vous aider à maintenir votre application C++/CX. Mais nous vous recommandons d’utiliser [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) pour de nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Pour savoir comment créer un composant Windows Runtime à l’aide de C++ / WinRT, voir [créer des événements en C++ / WinRT](../cpp-and-winrt-apis/author-events.md).
 
 Cette rubrique montre comment utiliser C++ / CX pour créer un composant Windows Runtime, qui est un composant qui peut être appelée à partir d’une application Windows universelle générée à l’aide de c#, Visual Basic, C++ ou Javascript.
 
@@ -25,7 +25,7 @@ Il existe plusieurs raisons pour la création d’un composant Windows Runtime.
 
 Lorsque vous générez une solution qui contient un projet JavaScript ou .NET et un projet de composant Windows Runtime, les fichiers projet JavaScript et la DLL compilée sont fusionnés dans un package qui peut être débogué en local dans le simulateur, ou à distance sur un périphérique attaché. Le projet seul peut aussi être distribué en tant que kit de développement logiciel (SDK) de l’extension. Pour plus d’informations, voir [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx).
 
-En règle générale, lorsque vous codez votre C + / composant CX, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite de l’interface binaire abstraite (ABI) dans lequel vous transmettez des données vers et depuis du code dans un autre package .winmd. Il, utilisez les types Windows Runtime et la syntaxe spéciale que C++ / CX prend en charge pour créer et manipuler ces types. En outre, dans votre C++ / CX de code, utilisez les types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés dans JavaScript, Visual Basic, C++ ou c#. Pour plus d’informations sur C++ / syntaxe CX, voir [référence du langage Visual C++ (C++ / CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+En règle générale, lorsque vous codez votre C + / composant CX, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite de l’interface binaire abstraite (ABI) où vous transmettez des données vers et depuis du code dans un autre package .winmd. Il, utilisez les types Windows Runtime et la syntaxe spéciale que C++ / CX prend en charge pour créer et manipuler ces types. En outre, dans votre C++ / CX de code, utilisez les types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés dans JavaScript, Visual Basic, C++ ou c#. Pour plus d’informations sur C++ / syntaxe CX, voir [référence du langage Visual C++ (C++ / CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
 ## <a name="casing-and-naming-rules"></a>Règles de casse et d’appellation
 
@@ -238,7 +238,7 @@ function SetAndGetDate() {
 }
 ```
 
-Lorsqu’un langage .NET passe un System.DateTime à C++ / CX composant, la méthode accepte qu’il en tant que Windows::Foundation:: DateTime. Lorsque le composant passe un Windows::Foundation::DateTime à une méthode .NET Framework, la méthode l’accepte en tant que DateTimeOffset.
+Lorsqu’un langage .NET passe un System.DateTime à C++ / composant CX, la méthode l’accepte en tant que Windows::Foundation:: DateTime. Lorsque le composant passe un Windows::Foundation::DateTime à une méthode .NET Framework, la méthode l’accepte en tant que DateTimeOffset.
 
 ```csharp
 private void DateTimeExample()
@@ -345,7 +345,7 @@ private void GetDictionary()
 ```
 
 ## <a name="properties"></a>Propriétés
-Une classe ref publique en C++ / extensions de composant CX expose les données membres publiques sous forme de propriétés, en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le «magasin de stockage» de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
+Une classe ref publique en C++ / extensions de composant CX expose les données membres publiques sous forme de propriétés en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le «magasin de stockage» de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
 
 ```cpp
 //Properties
@@ -525,7 +525,7 @@ private:
 };
 ```
 
-Les valeurs enum sont passées entre C++ / CX et JavaScript sous forme d’entiers. Vous pouvez éventuellement déclarer un objet JavaScript qui contient les mêmes valeurs nommées que C++ / CX enum et l’utilisation comme suit.
+Les valeurs enum sont passées entre C++ / CX et JavaScript sous forme d’entiers. Vous pouvez éventuellement déclarer un objet JavaScript qui contient les mêmes valeurs nommées que C++ / CX enum et à utiliser comme suit.
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };

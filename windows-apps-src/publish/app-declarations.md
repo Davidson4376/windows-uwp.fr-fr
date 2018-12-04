@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b2f4a0ce5fb44665a38824e4805d74e60bd3021
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8348646"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481313"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
-La section **déclarations de produit** de la page de [Propriétés](enter-app-properties.md) du [processus de soumission](app-submissions.md) permet de vous assurer que votre application s’affiche correctement et proposée à un ensemble approprié de clients et de voir les à comment ils peuvent utiliser votre application.
+La section **déclarations de produit** de la page de [Propriétés](enter-app-properties.md) du [processus de soumission](app-submissions.md) permet de vous assurer que votre application s’affiche correctement et proposée à un ensemble approprié de clients et permet de les comprennent comment ils peuvent utiliser votre application.
 
-Les sections suivantes décrivent certaines des déclarations et ce que vous devez prendre en compte lors de la détermination si chaque déclaration s’applique à votre application. Notez que deux de ces déclarations sont vérifiées par défaut (comme décrit ci-dessous). En fonction de la catégorie de votre produit, vous pouvez également voir des déclarations supplémentaires. Veillez à passer en revue toutes les déclarations et de vous assurer qu’ils reflètent précisément votre soumission.
+Les sections suivantes décrivent certaines des déclarations et ce que vous devez prendre en compte lors de la détermination si chaque déclaration s’applique à votre application. Notez que deux de ces déclarations sont vérifiées par défaut (comme décrit ci-dessous). En fonction de la catégorie de votre produit, vous pouvez également voir des déclarations supplémentaires. Veillez à passer en revue toutes les déclarations et vous assurer qu’ils reflètent précisément votre soumission.
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce Microsoft Store.
 
@@ -58,7 +58,7 @@ Si vous voulez empêcher l’insertion des données de votre application dans le
 
 ## <a name="this-app-sends-kinect-data-to-external-services"></a>Cette application envoie des données de Kinect à des services externes. 
 
-Si votre application utilise les données de Kinect et l’envoie à n’importe quel service externe, vous devez cocher cette case.
+Si votre application utilise les données de Kinect et l’envoie à n’importe quel service externe, vous devez activer cette case.
 
 
 

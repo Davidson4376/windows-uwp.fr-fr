@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 486eb4adc1151bac1bf6a04a8f54b67530b426a3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340889"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482680"
 ---
 # <a name="swap-chains"></a>Chaînes de permutation
 
@@ -30,7 +30,7 @@ Direct3D met en œuvre deux options pour éviter les erreurs:
 
 -   Une option pour autoriser uniquement les mises à jour de l’opération d’analyse sur les opérations de retracé vertical (ou de synchronisation verticale). Un moniteur actualise généralement son image en déplaçant un point lumineux à l'horizontale, en zigzaguant depuis le coin supérieur gauche de l'écran vers le coin inférieur droit. Une fois qu'il a atteint le bas de l'écran, le moniteur réétalonne le point lumineux dans l’angle supérieur gauche afin de pouvoir recommencer le processus.
 
-    Ce réétalonnage est appelé synchronisation verticale. Au cours d’une synchronisation verticale, le moniteur ne dessine rien, que toute mise à jour de la mémoire tampon d’affichage n’est pas visibles jusqu'à ce que le moniteur recommence à dessiner. La synchronisation verticale est relativement lente. Toutefois, elle n'est pas suffisamment lente pour rendre une scène complexe pendant l'attente. Pour éviter les erreurs et être en mesure d'assurer le rendu des scènes complexes, vous devez avoir recours à un processus appelé mise en mémoire tampon d'arrière-plan.
+    Ce réétalonnage est appelé synchronisation verticale. Au cours d’une synchronisation verticale, le moniteur ne dessine rien, que toute mise à jour la mémoire tampon d’affichage n’est pas visibles jusqu'à ce que le moniteur recommence à dessiner. La synchronisation verticale est relativement lente. Toutefois, elle n'est pas suffisamment lente pour rendre une scène complexe pendant l'attente. Pour éviter les erreurs et être en mesure d'assurer le rendu des scènes complexes, vous devez avoir recours à un processus appelé mise en mémoire tampon d'arrière-plan.
 
 -   Une option pour utiliser une technique appelée mise en mémoire tampon d'arrière-plan. La mise en mémoire tampon d'arrière-plan est le processus consistant à dessiner une surface hors écran appelée mémoire tampon d’arrière-plan. Toutes les surfaces autres que le tampon d’affichage sont appelées des surfaces hors écran car elles ne sont jamais directement affichée par le moniteur.
 

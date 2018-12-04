@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344622"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481706"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
@@ -76,7 +76,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
-Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. Sauf si une distinction est établie dans une API ou requis par certaines WindowsUI propre à l’appareil, nous appelons simplement les deux interactions avec le mouvement panoramique.
+Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. À moins qu’une distinction est établie dans une API ou requis par certaines WindowsUI propre à l’appareil, nous appelons simplement les deux interactions avec le mouvement panoramique.
 
 > <div id="main">
 > <strong>Windows10 Fall Creators Update - Changement de comportement</strong>

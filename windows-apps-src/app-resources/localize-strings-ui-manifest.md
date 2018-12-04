@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8327594"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479769"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
@@ -88,13 +88,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Vous pouvez utiliser ce même code à partir d’un projet de bibliothèque de classes (Windows universel) ou de [bibliothèque Windows Runtime (Windows universel)](../winrt-components/index.md). Lors de l’exécution, les ressources de l’application qui héberge la bibliothèque sont chargées. Il est recommandé qu’une bibliothèque charge les ressources à partir de l’application qui l’héberge, car l’application est susceptible d’avoir un niveau plus élevé de localisation. Si une bibliothèque doit fournir des ressources, elle doit donner à l’application qui l’héberge l’option de remplacer ces ressources en tant qu’entrée.
 
-Si un nom de ressource est segmenté (qu’il contient «.» caractères), puis remplacer points avec une barre oblique («/») en caractères dans le nom de ressource. Les identificateurs de propriété, par exemple, contient points; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ces éléments à partir du code.
+Si un nom de ressource est segmenté (qu’il contient «.» caractères), puis remplacer points avec une barre oblique («/») caractères dans le nom de ressource. Les identificateurs de propriété, par exemple, contient points; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ces éléments à partir du code.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre application. De chaque ressource `uri` s’affiche dans le fichier vidé.
+En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre application. Chaque ressource `uri` s’affiche dans le fichier vidé.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -177,7 +177,7 @@ Si un nom de fichier de ressources est segmenté (qu’il contient «.» caract�
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre application. De chaque ressource `uri` s’affiche dans le fichier vidé.
+En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de votre application. Chaque ressource `uri` s’affiche dans le fichier vidé.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -270,14 +270,14 @@ Pour une bibliothèque Windows Runtime (Windows universel), si l’espace de nom
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Vous n’avez pas besoin pour ce faire pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de la bibliothèque ou de votre composant. De chaque ressource `uri` s’affiche dans le fichier vidé.
+Vous n’avez pas besoin de faire pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider le fichier PRI de la bibliothèque ou de votre composant. Chaque ressource `uri` s’affiche dans le fichier vidé.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Chargement de chaînes à partir d’autres packages
-Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propre de niveau supérieur[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de l' actuelle[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). Dans chaque package, différents composants peuvent avoir leurs ownResourceMapsubtrees, auquel vous pouvez accéder via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propre de niveau supérieur[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)en cours. Dans chaque package, différents composants peuvent avoir leurs ownResourceMapsubtrees, auquel vous pouvez accéder via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Un package d’infrastructure peut accéder à ses propres ressources avec un URI d’identificateur de ressource absolu. Voir également [Schémas d’URI](uri-schemes.md).
 

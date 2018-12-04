@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d’app
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aabaa932c8bd21baf81970564b15421931ad39f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8347191"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482204"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
@@ -337,7 +337,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur      | Type   | Description      |
 |------------|--------|-------------------|
-| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de la soumission dans l’espace partenaires.  |
+| id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md), [obtenir toutes les apps](get-all-apps.md) et [obtenir une app](get-an-app.md). Pour une soumission qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de soumission dans l’espace partenaires.  |
 | applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement«_», par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | [Ressource de tarification](#pricing-object) qui contient les informations de tarification de l’application.        |   
 | visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -724,7 +724,7 @@ Les valeurs suivantes représentent les niveaux de prix disponibles dans la [res
 |  Base               |   Le niveau de prix n’est pas défini; utilisez le prix de base de l’application.      |     
 |  NotAvailable              |   L’application n’est pas disponible dans la région spécifiée.    |     
 |  Free              |   L’application est gratuite.    |    
-|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge:<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour voir le tableau complet des prix niveaux qui sont disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associés à chaque niveau, accédez à la page **tarification et disponibilité** pour un de vos soumissions d’applications dans l’espace partenaires et Cliquez sur le lien **Afficher la table** dans la section **marchés et prix personnalisés** (pour certains comptes développeur, ce lien est dans la section **tarification** ).    |
+|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge:<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour voir le tableau complet des prix niveaux qui sont disponibles pour votre compte de développeur, y compris les prix spécifiques au marché qui sont associées à chaque niveau, accédez à la page **tarification et disponibilité** pour un de vos soumissions d’applications dans l’espace partenaires et Cliquez sur le lien **Afficher la table** dans la section **marchés et prix personnalisés** (pour certains comptes développeur, ce lien est dans la section **tarification** ).    |
 
 
 <span id="enterprise-licensing" />

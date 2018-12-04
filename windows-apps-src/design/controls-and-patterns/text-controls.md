@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 467be141d2c198bc95c93771ffa9cf2ad8fd6c0d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336745"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480861"
 ---
 # <a name="text-controls"></a>Contrôles de texte
 
@@ -123,7 +123,7 @@ Pour découvrir les recommandations concernant les polices, voir les articles su
 
 ![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
-Pour plus d’informations, voir la [Saisie de texte avec la vue de l’écriture manuscrite](text-handwriting-view.md).
+Pour plus d’informations, voir la [Saisie de texte avec l’affichage de l’écriture manuscrite](text-handwriting-view.md).
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Choisissez le clavier adapté à votre contrôle de texte
 

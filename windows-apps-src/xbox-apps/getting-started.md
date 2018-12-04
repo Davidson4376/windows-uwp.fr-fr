@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a8f217322d6d10b91ebc82c3434c88e9d11128f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346648"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8480569"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Prise en main du développement d’applications UWP sur XboxOne
 
@@ -19,7 +19,7 @@ Pour configurer correctement votre PC et votre console Xbox One pour le dévelop
 ## <a name="before-you-start"></a>Avant de commencer
 
 Avant de commencer, vous devez effectuer les opérations suivantes:
--   Configurer un PC avec la dernière version de Windows 10.
+-   Configuration d’un ordinateur avec la dernière version de Windows 10.
 <!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
 
     > [!NOTE]
@@ -48,9 +48,9 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 ## <a name="setting-up-your-xbox-one-console"></a>Configuration de votre console XboxOne
 
-1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application et obtenir le code d’activation, puis entrez-le dans la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxactivate) dans votre compte espace partenaires. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
+1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application, obtenez le code d’activation et puis entrez-le la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxactivate) dans votre compte espace partenaires. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
 
-2.  Ouvrez l’application **Dev Mode Activation** , puis sélectionnez **basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
+2.  Ouvrez l’application **Dev Mode Activation** et sélectionnez **basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
   
   > [!NOTE]
   > Vos applications et jeux commerciaux ne s’exécuteront pas en mode développeur, mais les applications ou jeux que vous créerez le feront sans problème. Pour exécuter vos applications et jeux favoris, rebasculez en mode commercial.
@@ -60,9 +60,9 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 ## <a name="creating-your-first-project-in-visual-studio"></a>Création de votre premier projet dans Visual Studio
 
-Pour obtenir des informations plus détaillées, consultez [configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md).
+Pour plus d’informations, consultez [configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md).
 
-1.  **Pour c#**: créer un nouveau projet Windows universel et dans l' **Explorateur de solutions**, cliquez sur le projet et sélectionnez **Propriétés**. Sélectionnez l’onglet **débogage** , remplacez **l’appareil cible** à **l’Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ de **l’ordinateur distant** et sélectionnez **universel (protocole non chiffré)** dans le ** Mode d’authentification** liste déroulante.   
+1.  **Pour c#**: créer un nouveau projet Windows universel et dans l' **Explorateur de solutions**, cliquez sur le projet, puis sélectionnez **Propriétés**. Sélectionnez l’onglet **débogage** , remplacez **l’appareil cible** à **l’Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ de **l’ordinateur distant** et sélectionnez **universel (protocole non chiffré)** dans le ** Mode d’authentification** liste déroulante.   
 
     Pour trouver l’adresseIP de votre console XboxOne, démarrez l’outil Accueil du développeur sur votre console (grande vignette figurant sur le côté droit de l’écran d’accueil) et examinez le coin supérieur gauche de l’écran. Pour plus d’informations sur l’outil Accueil du développeur, voir [Présentation des outils Xbox One](introduction-to-xbox-tools.md).  
 
