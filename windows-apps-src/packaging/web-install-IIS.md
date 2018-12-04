@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liées à des packages définis, qui sont facultatifs, serveur IIS
 ms.localizationpriority: medium
-ms.openlocfilehash: b447093ba54f2c979d35793a6a4eaa7538ee4892
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352133"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469369"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Installer une application UWP à partir d’un serveur IIS
 
@@ -20,24 +20,24 @@ L’application Programme d'installation d'application permet aux développeurs 
 
 ## <a name="setup"></a>Configuration
 
-Pour passer avec succès par le biais de ce didacticiel, vous devez les éléments suivants:
+Pour passer correctement par le biais de ce didacticiel, vous devez les éléments suivants:
 
 1. VisualStudio2017  
 2. Outils de développement Web et IIS 
 3. Package d’application UWP: le package d’application que vous allez distribuer
 
-Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Cela est utile si vous n’avez pas travailler avec des packages d’application, mais que vous souhaitez savoir comment utiliser cette fonctionnalité.
+Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Ceci est utile si vous n’avez pas travailler avec des packages d’application, mais que vous souhaitez savoir comment utiliser cette fonctionnalité.
 
 ## <a name="step-1---install-iis-and-aspnet"></a>Étape 1: installer IIS et ASP.NET 
 
-[Internet Information Services](https://www.iis.net/) est une fonctionnalité de Windows qui peut être installée par le biais du menu Démarrer. Dans le **menu Démarrer** recherche pour **activer des fonctionnalités Windows activé ou désactivé**.
+[Internet Information Services](https://www.iis.net/) est une fonctionnalité de Windows qui peut être installée par le biais du menu Démarrer. Dans le **menu Démarrer** recherche **Windows activer ou désactiver des fonctionnalités**.
 
 Recherchez et sélectionnez **Internet Information Services** pour installer IIS.
 
 > [!NOTE]
 > Vous n’avez pas besoin de sélectionner toutes les cases à cocher sous Internet Information Services. Uniquement celles sélectionnés lorsque vous vérifiez **Internet Information Services** suffisent.
 
-Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l’installer, recherchez **Internet Information Services -> World Wide Web Services -> fonctionnalités de développement d’applications**. Sélectionner une version d’ASP.NET qui est supérieure ou égale à ASP.NET 4.5.
+Vous devrez également installer ASP.NET 4.5 ou une version ultérieure. Pour l’installer, recherchez **Internet Information Services -> World Wide Web des Services -> fonctionnalités de développement d’applications**. Sélectionnez une version d’ASP.NET qui est supérieure ou égale à ASP.NET 4.5.
 
 ![Installez ASP.NET](images/install-asp.png)
 
@@ -45,9 +45,9 @@ Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l�
 
 [Installer Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) si vous n’avez pas déjà installé il. Si vous avez déjà Visual Studio 2017, vous assurer que les charges de travail suivantes sont installées. Si les charges de travail ne sont pas présents sur votre installation, suivez le long à l’aide de Visual Studio Installer (disponibles dans le menu Démarrer).  
 
-Lors de l’installation, sélectionnez le **développement Web ASP.NET et** et les autres charges de travail qui vous intéresse. 
+Pendant l’installation, sélectionnez le **développement Web ASP.NET et** et les autres charges de travail qui vous intéressez. 
 
-Une fois que l’installation est terminée, lancez Visual Studio et créez un nouveau projet (**fichier** -> **Nouveau projet**).
+Une fois que l’installation est terminée, démarrez Visual Studio et créez un nouveau projet (**fichier** -> **Nouveau projet**).
 
 ## <a name="step-3---build-a-web-app"></a>Étape 3: créer une application Web
 
@@ -59,13 +59,13 @@ Lancez Visual Studio 2017 en tant **qu’administrateur** et créez un nouveau p
 
 À partir de l’Explorateur de solutions, cliquez avec le bouton droit sur le projet racine, puis sélectionnez **Propriétés**.
 
-Dans les propriétés de l’application web, sélectionnez l’onglet **Web** . Dans la section **serveurs** , choisissez le **Serveur IIS Local** dans le menu déroulant et cliquez sur **Créer un répertoire virtuel**. 
+Dans les propriétés de l’application web, sélectionnez l’onglet **Web** . Dans la section **serveurs** , choisissez **IIS Local** dans le menu déroulant, cliquez sur **Créer un répertoire virtuel**. 
 
 ![onglet Web](images/web-tab.png)
 
 ## <a name="step-5---add-an-app-package-to-a-web-application"></a>Étape 5: ajouter un package d’application pour une application web 
 
-Ajoutez le package d’application que vous envisagez de distribuer les applications web. Vous pouvez utiliser le package d’application qui fait partie des fourni [packages du projet starter](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) sur GitHub si vous n’avez pas un package d’application disponible. Le certificat (MySampleApp.cer) avec lequel le package a été signé se trouve également avec l’exemple sur GitHub. Vous devez disposer du certificat est installé sur votre appareil avant l’installation de l’application (étape 9).
+Ajoutez le package d’application que vous envisagez de distribuer les applications web. Vous pouvez utiliser le package d’application qui fait partie des fourni [des packages de projet de démarrage](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) sur GitHub si vous n’avez pas un package d’application disponible. Le certificat (MySampleApp.cer) avec lequel le package a été signé se trouve également avec l’exemple sur GitHub. Vous devez disposer du certificat est installé sur votre appareil avant l’installation de l’application (étape 9).
 
 Dans l’application web de projet de démarrage, un nouveau dossier a été ajouté à l’application web appelée `packages` qui contient les packages d’application doit être distribué. Pour créer le dossier dans Visual Studio, cliquez avec le bouton droit sur la racine de l’Explorateur de solutions, sélectionnez **Ajouter** -> **Nouveau dossier** et nommez-le `packages`. Pour ajouter des packages d’application dans le dossier, avec le bouton droit, cliquez sur le `packages` dossier et sélectionnez **Ajouter** -> emplacement de package**Élément existant …** et accédez à l’application. 
 
@@ -117,9 +117,9 @@ Ouvrez le fichier **Web.config** de l’Explorateur de solutions et ajoutez les 
 
 ## <a name="step-8---add-loopback-exemption-for-app-installer"></a>Étape 8: ajouter l’exemption de bouclage pour le programme d’installation d’application
 
-En raison de l’isolement réseau, les applications UWP comme programme d’installation d’application sont limitées à utiliser des adresses IP bouclage comme http://localhost/. Lorsque vous utilisez un serveur IIS local, le programme d’installation d’application doit être ajouté à la liste exemption de bouclage. 
+En raison de l’isolement réseau, les applications UWP comme programme d’installation d’application sont limitées à utiliser des adresses IP en boucle comme http://localhost/. Lorsque vous utilisez un serveur IIS local, le programme d’installation d’application doit être ajouté à la liste exemption de bouclage. 
 
-Pour ce faire, ouvrez l' **invite de commandes** en tant qu' **administrateur** et entrez les informations suivantes: ''' ligne de commande CheckNetIsolation.exe LoopbackExempt - a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+Pour ce faire, ouvrez l' **invite de commandes** en tant qu' **administrateur** et entrez les informations suivantes: ''' ligne de commande CheckNetIsolation.exe LoopbackExempt - a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe»
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -131,7 +131,7 @@ Vous devez rechercher `microsoft.desktopappinstaller_8wekyb3d8bbwe` dans la list
 
 Une fois que la validation locale de l’installation d’application via le programme d’installation d’application est terminée, vous pouvez supprimer l’exemption de bouclage que vous avez ajouté dans cette étape par:
 
-''' Ligne de commande CheckNetIsolation.exe LoopbackExempt -d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+' Ligne de commande CheckNetIsolation.exe LoopbackExempt -d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe»
 ```
 
 ## Step 9 - Run the Web App 

@@ -7,11 +7,11 @@ keywords: windows10, uwp, notifications ciblées, notifications push, toast, vig
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 902a8d84c2a0cfa1549c4c3926e838e9bb8ed9c4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8324129"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470323"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -118,8 +118,8 @@ Lorsque vous avez configuré la notification et votre application pour mesurer l
 
 Pour passer en revue des données détaillées pour chaque notification:
 
-1.  Dans l’espace partenaires, développez la section **engager** et sélectionner des **Notifications**.
-2.  Dans la table des notifications existantes, sélectionnez **en cours** ou **terminé**et puis examinez les colonnes de **vitesse de transmission** et la **fréquence de lancement application** pour afficher les performances de haut niveau de chaque notification.
+1.  Dans l’espace partenaires, développez la section **engager** et sélectionnez **Notifications**.
+2.  Dans la table des notifications existantes, sélectionnez **en cours** ou **terminé**et puis examinez les colonnes de **vitesse de transmission** et **application lance taux** pour afficher les performances de haut niveau de chaque notification.
 3.  Pour afficher des informations plus granulaires sur les performances, sélectionnez le nom d’une notification. Dans la section **Statistiques de livraison**, vous pouvez visualiser le **nombre** et le **pourcentage** pour les types d’**états** de notification suivants:
     * **Échec**: la notification n’a pas été transmise pour une raison quelconque. Cela peut se produire, par exemple, si un problème survient dans le service de notification Windows.
     * **Échec de l’expiration de canal**: la notification n’a pas pu être remise, car le canal entre l’application et l’espace partenaires a expiré. Cela peut se produire, par exemple, si le client n’a pas ouvert votre application depuis longtemps.
@@ -130,15 +130,15 @@ Pour passer en revue des données détaillées pour chaque notification:
 
 Pour analyser les données de l’activité utilisateur pour toutes vos notifications:
 
-1.  Dans l’espace partenaires, développez la section **engager** et sélectionner des **Notifications**.
+1.  Dans l’espace partenaires, développez la section **engager** et sélectionnez **Notifications**.
 2.  Dans la page **Notifications** , cliquez sur l’onglet **analyser** . Cet onglet affiche les données suivantes:
     * Vues des différents états utilisateur action pour vos toasts et les notifications du centre du graphique.
-    * Vues de carte monde click-par le biais de-taux de pour vos toasts et l’action centre de notifications.
+    * Vues de carte monde click par le biais de taux pour vos toasts et l’action de centre de notifications.
 3. Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de 30D (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également développer des **filtres** pour filtrer toutes les données par application et par marché.
 
 ## <a name="translate-your-notifications"></a>Traduire vos notifications
 
-Afin de maximiser l’impact de vos notifications, pensez à les traduire dans les langues préférées de vos clients. L’espace partenaires facilite la pour vous permettent de traduire vos notifications automatiquement en tirant parti de la puissance du service [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) .
+Afin de maximiser l’impact de vos notifications, pensez à les traduire dans les langues préférées de vos clients. L’espace partenaires facilite pour vous permet de traduire vos notifications automatiquement en tirant parti de la puissance du service [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) .
 
 1.  Une fois votre notification rédigée dans votre langue par défaut, sélectionnez **Ajouter des langues** (sous le menu **Langues** dans la section **Contenu de la notification**).
 2.  Dans la fenêtre **Ajouter des langues**, sélectionnez les langues supplémentaires dans lesquelles vous voulez que vos notifications apparaissent, puis sélectionnez **Mettre à jour**.

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342649"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470505"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
@@ -59,11 +59,11 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 > [!NOTE]
 > À l’aide de x: Bind dans un ControlTemplate requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-À partir de Windows 10, version 1809, vous pouvez utiliser l’extension de balisage **x: Bind** n’importe où vous utilisez **TemplateBinding** dans un [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+À compter de Windows 10, version 1809, vous pouvez utiliser l’extension de balisage **x: Bind** n’importe où vous utilisez **TemplateBinding** dans un [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
 La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) est requise (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
 
-Avec prise en charge de **x: Bind** , vous pouvez utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien comme dans un [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
+Avec prise en charge de **x: Bind** , vous pouvez utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles ainsi que dans un [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
 
 Dans cet exemple, la propriété **TextBlock.Text** est évaluée à **Button.Content.ToString**. La propriété TargetType sur le ControlTemplate agit en tant que la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
 

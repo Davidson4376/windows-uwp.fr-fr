@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, extensions, iap, durable, consommable, abonnement, type de produit, id produit, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 51807b96d80245b8dc5b22f1f376f603285d518a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352063"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467045"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>Définir le type et l’ID produit d’une extension
 
@@ -50,7 +50,7 @@ Une fois qu’un client a acquis une extension d’abonnement, il est facturé �
 
 Les extensions d’abonnement sont uniquement prises en charge pour les clients qui exécutent Windows10, version1607 ou ultérieure. L’application parente doit être compilée à l’aide du SDK Windows10, version14393 ou ultérieure, et elle doit utiliser l’API d’achat in-app de l’espace de noms **Windows.Services.Store** en lieu et place de l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, consultez l’article [Activer les extensions d’abonnement de votre application](../monetize/enable-subscription-add-ons-for-your-app.md).
 
-Vous devez soumettre le produit parent avant que vous pouvez publier des extensions d’abonnement dans le Windows Store (Toutefois, vous pouvez créer la soumission dans l’espace partenaires et commencer à travailler dessus à tout moment).
+Vous devez soumettre le produit parent avant de pouvoir publier les extensions d’abonnement dans le Windows Store (Toutefois, vous pouvez créer la soumission dans l’espace partenaires et commencer à travailler dessus à tout moment).
 
 ## <a name="product-id"></a>ID produit
 
@@ -63,6 +63,6 @@ Voici quelques éléments à prendre en considération lors du choix d’un ID p
 -   Un ID produit ne peut pas comporter plus de 100caractères.
 -   Un ID produit ne peut comporter aucun de ces caractères: **&lt; &gt; \* % & : \\ ? + ,**
 -   Les clients ne verront pas l’ID produit. (Par la suite, vous pourrez entrer un [titre et une description](create-add-on-descriptions.md) qui seront visibles par les clients.)
--   Si votre application publiée précédemment prend en charge Windows Phone 8.1 ou version antérieure, vous devez uniquement utiliser des caractères alphanumériques, des points et/ou des traits de soulignement dans votre ID de produit. Si vous utilisez d’autres types de caractère, le module complémentaire ne sera pas disponible à l’achat pour les clients utilisant WindowsPhone8.1 ou une version antérieure.
+-   Si votre application publiée précédemment prend en charge Windows Phone 8.1 ou versions antérieures, vous devez uniquement utiliser des caractères alphanumériques, des points et/ou des traits de soulignement dans votre ID de produit. Si vous utilisez d’autres types de caractère, le module complémentaire ne sera pas disponible à l’achat pour les clients utilisant WindowsPhone8.1 ou une version antérieure.
 
  

@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332615"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8466798"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
-**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de:
 
@@ -104,7 +104,7 @@ La fonction en cours de liaison doit:
 - Les types d’arguments doivent correspondre aux données transmises. Nous ne faisons pas de conversions restrictives.
 - Le type de retour de la fonction doit correspondre au type de la propriété qui utilise la liaison.
 
-À partir de la prochaine mise à jour majeure vers Windows 10, le moteur de liaison sera réagir aux notifications de modification de propriété déclenchées avec le nom de la fonction et réévaluer les liaisons en fonction des besoins. Exemple : 
+À partir de la prochaine mise à jour majeure vers Windows 10, le moteur de liaison réagir aux notifications de modification de propriété déclenchées avec le nom de la fonction et réévaluer les liaisons en fonction des besoins. Exemple : 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">

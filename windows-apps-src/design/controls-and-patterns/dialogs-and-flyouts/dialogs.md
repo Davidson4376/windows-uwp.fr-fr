@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 520f4bdd72c51cd1508c9e655107ae909f6e4243
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8347305"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8468570"
 ---
 ## <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 
@@ -32,7 +32,7 @@ Les contrôles de boîte de dialogue sont des superpositions d’interface utili
 
 Utilisez les boîtes de dialogue pour notifier les utilisateurs d’informations importantes ou pour demander une confirmation ou des informations supplémentaires avant de pouvoir effectuer une action.
 
-Pour obtenir des recommandations sur le moment d’utiliser une boîte de dialogue ou quand vous devez utiliser un menu volant (un contrôle similaire), voir les [boîtes de dialogue et menus volants](index.md). 
+Pour obtenir des recommandations sur le moment d’utiliser une boîte de dialogue et quand utiliser un menu volant (un contrôle similaire), voir les [boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 

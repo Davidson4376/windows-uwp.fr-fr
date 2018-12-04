@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aec7ed4f97a0ce4733cfba450770de86a84d6ee
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323025"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469847"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
 
-Utilisez l' *API de soumission au Microsoft Store* pour interroger et de créer des soumissions d’applications, des modules complémentaires et des versions d’évaluation de package pour votre compte d’ou votre organisation l’espace partenaires par programmation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+Utilisez l' *API de soumission au Microsoft Store* pour interroger et de créer des soumissions pour des applications, des extensions et des versions d’évaluation de package pour le compte de l’espace partenaires de vous ou votre organisation par programmation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus complet d’utilisation de l’API de soumission au MicrosoftStore:
 
@@ -27,7 +27,7 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> Si vous utilisez cette API pour créer une soumission pour une application, version d’évaluation, ou un module complémentaire, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que dans l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+> Si vous utilisez cette API pour créer une soumission pour une application, une version d’évaluation ou un module complémentaire, veillez à apporter d’autres modifications à la soumission uniquement à l’aide de l’API, plutôt que dans l’espace partenaires. Si vous utilisez l’espace partenaires pour modifier une soumission que vous avez créé à l’origine à l’aide de l’API, vous serez n’est plus en mesure de modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 > [!IMPORTANT]
 > Vous ne pouvez pas utiliser cette API pour publier des soumissions pour [les achats en volume par le biais du MicrosoftStore pour Entreprises et du MicrosoftStore pour Éducation](../publish/organizational-licensing.md) ou pour publier des soumissions pour les [apps cœur de métier](../publish/distribute-lob-apps-to-enterprises.md) directement aux entreprises. Pour ces deux scénarios, vous devez utiliser publier la soumission dans l’espace partenaires.
@@ -144,7 +144,7 @@ Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://
 Si vous avez des questions sur l’API de soumission au MicrosoftStore ou si vous avez besoin d’aide pour gérer vos soumissions avec cette API, utilisez les ressources suivantes:
 
 * Posez vos questions sur nos [forums](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
-* Visitez notre [page de support](https://developer.microsoft.com/windows/support) et demander l’une des options de support assisté pour l’espace partenaires. Si vous êtes invité à choisir un type de problème et une catégorie, choisissez respectivement **Soumission d’application et certification** et **Soumission d’une application**.  
+* Visitez notre [page de support](https://developer.microsoft.com/windows/support) et demander une des options de support assisté pour l’espace partenaires. Si vous êtes invité à choisir un type de problème et une catégorie, choisissez respectivement **Soumission d’application et certification** et **Soumission d’une application**.  
 
 ## <a name="related-topics"></a>Rubriques connexes
 

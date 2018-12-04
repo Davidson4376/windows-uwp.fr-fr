@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 604ad25bb65486b3b388a9a03d7503b0c1ce9c03
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333367"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8468279"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Syntaxe des commandes de déplacement et de dessin
 
@@ -227,7 +227,7 @@ Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la n
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Outils de conception qui produisent des commandes de déplacement et de dessin
 
-À l’aide de l’outil de **stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio2015 sera généralement produire un objet de [**chemin d’accès**](/uwp/api/Windows.UI.Xaml.Shapes.Path) , avec déplacement commandes et de dessin.
+À l’aide de l’outil de **stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio2015 sera généralement de produire un objet de [**chemin d’accès**](/uwp/api/Windows.UI.Xaml.Shapes.Path) , avec déplacement et de commandes de dessin.
 
 Il est possible que vous constatiez la présence de données de commandes de déplacement et de dessin dans certaines parties de contrôle définies dans les modèles par défaut XAML Windows Runtime de contrôles. Par exemple, certains contrôles utilisent un [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) dans lequel les données sont définies en tant que commandes de déplacement et de dessin.
 

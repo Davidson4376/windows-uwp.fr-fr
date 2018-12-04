@@ -1,20 +1,20 @@
 ---
 title: Quelles sont les nouveautés dans la documentation Windows en août 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 août 2018.
-keywords: Nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, août
+keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, août
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: da8bc3b441a1b619e086934f277cb14be6bcc37a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346244"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473679"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en août 2018
 
-La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et des vidéos suivantes ont été mis à disposition dans le mois d’août.
+La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et les vidéos suivantes ont été mis à disposition dans le mois d’août.
 
 [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
@@ -30,7 +30,7 @@ Les fonctionnalités suivantes ont été ajoutées à Windows les builds Insider
 
 ![Un bouton partagé pour la sélection de couleur de premier plan](../design/controls-and-patterns/images/split-button-rtb.png)
 
-* NavigationView prend désormais en charge la [navigation en haut](../design/controls-and-patterns/navigationview.md), pour les cas dans lesquels votre application dispose d’un petit nombre d’options de navigation et nécessitent plus d’espace pour le contenu de votre application.
+* NavigationView prend désormais en charge la [navigation en haut](../design/controls-and-patterns/navigationview.md), pour les cas dans lesquels votre application dispose d’un petit nombre d’options de navigation et requiert davantage d’espace pour le contenu de votre application.
 
 * TreeView a été amélioré pour prendre en charge [liaison de données, les modèles, d’élément et de glisser -déplacer.](../design/controls-and-patterns/tree-view.md)
 
@@ -44,9 +44,9 @@ Pour en savoir plus, voir [l’exécution d’appliquer des correctifs vers un p
 
 ### <a name="web-api-extensions"></a>Extensions de l’API Web
 
-Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont propres à Internet Explorer ou Microsoft Edge et complément les informations existantes sur le support de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérités [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web enrichi à partir de MDN, les informations sur les API exposées directement en [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont propres à Internet Explorer ou Microsoft Edge et complément les informations existantes sur le support de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérités [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web enrichi à partir de MDN, les informations sur les API exposées directement dans [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
-### <a name="cwinrt-code-examples"></a>C++ / exemples de WinRT Code
+### <a name="cwinrt-code-examples"></a>C++ / exemples de Code C++
 
 Nous avons ajouté 250 [C++ / WinRT](../cpp-and-winrt-apis/index.md) code descriptions vers des rubriques dans notre documentation, qui l’accompagne existant C + / exemples de code CX.
 
@@ -62,7 +62,7 @@ Le plug-in Xbox Live pour Unity prend en charge pour l’ajout de signature de X
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime décrire une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les dernières questions que nous avons répondu!
 
 Raymond Chen:
 

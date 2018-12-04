@@ -10,11 +10,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 311e5714c5428fac6509564fd00784299a02f630
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351177"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470845"
 ---
 # <a name="reveal-focus"></a>Révéler Focus
 
@@ -72,11 +72,11 @@ Comme vous pouvez le constater, il est relativement facile à activer révéler 
 
 Vous pouvez personnaliser l’effet révéler le Focus en modifiant les propriétés visuelles du focus pour chaque contrôle: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)et [ FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Ces propriétés vous permettent de personnaliser la couleur et l’épaisseur du rectangle de focus. (Ils s’agit des mêmes propriétés que vous utilisez pour la création de [visuels de focus à haute visibilité](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
 
-Toutefois, avant de commencer la personnalisation, il est utile de connaître un peu plus les composants qui constituent le Focus de révéler.
+Toutefois, avant de commencer la personnalisation, il est utile de connaître un peu plus les composants qui composent le Focus de révéler.
 
 Il existe trois parties, les visuels de Focus révéler par défaut: la bordure principale, la bordure secondaire et l’éclat. La bordure principale a une épaisseur de **2px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1px** et apparaît autour de la bordure principale *intérieure*. L’éclat de révéler le Focus a une épaisseur proportionnelle à l’épaisseur de la bordure principale et apparaît autour de l' *extérieur* de la bordure principale.
 
-En plus des éléments statiques, de visuels de Focus révéler fonctionnalité une lumière animée qui clignote au repos et se déplace dans la direction du focus lors du déplacement du focus.
+En plus des éléments statiques, visuels de Focus révéler dotés d’une lumière animée qui clignote au repos et se déplace dans la direction du focus lors du déplacement du focus.
 
 ![Révéler les couches de Focus](images/reveal-breakdown.svg)
 
@@ -163,7 +163,7 @@ Si vous souhaitez utiliser uniquement l’éclat sans le visuel du focus princip
 
 ## <a name="use-your-own-focus-visuals"></a>Utiliser vos propres visuels de focus
 
-Une autre façon de personnaliser révéler le Focus consiste à désactiver les visuels de focus fournis par le système en dessinant vos propres à l’aide des états visuels. Pour plus d’informations, voir [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895).
+Une autre façon de personnaliser le Focus de révéler consiste à désactiver les visuels de focus fournis par le système en dessinant vos propres à l’aide des états visuels. Pour plus d’informations, voir [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895).
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Révéler Focus et Fluent Design System

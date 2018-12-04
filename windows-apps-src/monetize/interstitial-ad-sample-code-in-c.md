@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, pub, publicités, spots, c#, exemple de code
 ms.localizationpriority: medium
 ms.openlocfilehash: a8276e1a9639b23a965c5a608fb951d1e1035133
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8345163"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8474763"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Exemple de code pour spot publicitaire en C\# #  
 
@@ -21,7 +21,7 @@ Cette rubrique indique l’exemple de code complet pour une application de plate
 
 Cette section affiche le contenu des fichiers MainPage.xaml et MainPage.xaml.cs d’une application de base, qui comporte un spot publicitaire. Pour utiliser ces exemples, copiez le code dans un projet Visual C# **Application vide (Windows universelle)** au sein de VisualStudio.
 
-Cet exemple d’application utilise deuxboutons pour demander, puis lancer un spot publicitaire. Remplacez les valeurs de la ```myAppId``` et ```myAdUnitId``` champs avec des valeurs dynamiques à partir de l’espace partenaires avant de soumettre votre application au Windows Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+Cet exemple d’application utilise deuxboutons pour demander, puis lancer un spot publicitaire. Remplacez les valeurs de la ```myAppId``` et ```myAdUnitId``` champs par des valeurs dynamiques à partir de l’espace partenaires avant de soumettre votre application au Windows Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
 > Pour modifier cet exemple de sorte à afficher une bannière au lieu d’un spot vidéo, transmettez la valeur **AdType.Display** au premier paramètre de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) au lieu de **AdType.Video**. Pour plus d’informations, voir [Spots](interstitial-ads.md).

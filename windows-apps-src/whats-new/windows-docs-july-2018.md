@@ -1,20 +1,20 @@
 ---
 title: Quelles sont les nouveautés dans la documentation Windows en juillet 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 juillet 2018.
-keywords: Nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, juillet
+keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, juillet
 ms.date: 7/11/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d445f31d22baaafeb16c004543770cf5d6df05a7
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333587"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469967"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en juillet 2018
 
-La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Le suivant présentations de fonctionnalités, conseils aux développeurs, vidéos et des exemples ont été à disposition dans le mois de juillet.
+La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs, vidéos et exemples suivants ont été mis à disposition dans le mois de juillet.
 
 [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
@@ -34,7 +34,7 @@ Consultez nos guides PWA pour:
 
 ### <a name="notepad"></a>Bloc-notes
 
-Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom, enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Les Windows Insiders](https://insider.windows.com/). 
+Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom, enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Windows Insiders](https://insider.windows.com/). 
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
@@ -60,9 +60,9 @@ Nous avons ajouté plusieurs nouvelles rubriques à la [documentation de WebVR](
 
 * [Démonstrations WebVR](https://docs.microsoft.com/microsoft-edge/webvr/demos): consultez certaines démonstrations de WebVR à l’aide de Microsoft Edge et un casque immersif Windows Mixed Reality.
 
-En outre, nous lui avons apportées certaines mises à jour vers les pages existantes:
+En outre, nous avons apportées certaines mises à jour vers les pages existantes:
 
-* La table des matières est désormais mieux organisée en quatre compartiments de niveau supérieur distinctes: **Notions de base**, de **développement**, **ressources**et **démonstrations**.
+* La table des matières est désormais mieux organisée quatre séries de niveau supérieur distinctes: **Notions de base**, de **développement**, **ressources**et **démonstrations**.
 
 * [Guide du développeur de WebVR (page d’accueil)](https://docs.microsoft.com/microsoft-edge/webvr/): actualisée apparence, avec des grandes images et icônes et Nouvelle démonstration.
 
@@ -76,11 +76,11 @@ Désormais, notre [documentation prise en main](../get-started/index.md) pour le
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>Améliorer votre robot avec chat personnalité de projet
 
-Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler de manière plus conversationnel pour interagir avec les clients. Pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique, [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) .
+Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler de manière plus conversationnel pour interagir avec les clients. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique.
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime décrire une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les dernières questions que nous avons répondu!
 
 Raymond Chen:
 
@@ -88,13 +88,13 @@ Raymond Chen:
 
 Larry Osterman:
 
-* [Pourquoi ne pas nous laisser les développeurs changer le périphérique audio par défaut?](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
+* [Pourquoi ne nous permettent aux développeurs modifier le périphérique audio par défaut?](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
 * [Pourquoi sont tellement asynchrone de fonctions UWP?](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
 
 ## <a name="samples"></a>Exemples
 
 ### <a name="photo-editor-cwinrt"></a>Photo Editor C++ / WinRT
 
-L’exemple d’application Photo Editor illustre le développement avec le [C++ / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) projection de langage. L’application vous permet de récupérer des photos à partir de la bibliothèque **d’images** , puis modifiez une image choisie avec des effets de photo associé. [Cloner ou télécharger l’exemple ici.](https://github.com/Microsoft/Windows-appsample-photo-editor)
+L’exemple d’application Photo Editor illustre le développement avec le [C++ / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) projection de langage. L’application vous permet de vous récupérer des photos à partir de la bibliothèque **d’images** , puis modifiez une image choisie avec des effets de photo associé. [Cloner ou télécharger l’exemple ici.](https://github.com/Microsoft/Windows-appsample-photo-editor)
 
 ![Un exemple de l’exemple en action](images/photo-editor-banner.png)

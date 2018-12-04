@@ -7,15 +7,15 @@ keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343333"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467676"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
-La **ms-screenclip:** et **ms-screensketch:** schémas d’URI vous permet de lancer la capture d’écran ou la modification des captures d’écran.
+La **ms-screenclip:** et **ms-screensketch:** schémas d’URI vous permet de lancer la capture d’écran ou modifiez des captures d’écran.
 
 ## <a name="open-a-new-snip-from-your-app"></a>Ouvrir une nouvelle capture à partir de votre application
 
@@ -36,7 +36,7 @@ La **ms-screensketch:** URI vous permet par programmation lancer l’application
 
 | Paramètre | Type | Requis | Description |
 | --- | --- | --- | --- |
-| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application capture & esquisse. Récupéré à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
+| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application de capture et Sketch. Récupérée à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
 | source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
 | isTemporary | bool | non | Si définie sur True, écran Esquisse essaie de supprimer le fichier après l’avoir ouvert. |
 

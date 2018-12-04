@@ -1,13 +1,13 @@
 ---
 title: Référence sur les API les informations d’identification réseau Device Portal
-description: Découvrez comment ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
+description: Apprenez à ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346532"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469065"
 ---
 # <a name="network-credentials-api-reference"></a>Référence de l’API d’informations d’identification réseau
 Vous pouvez ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées sur votre Kit de développement à l’aide de cette API REST.
@@ -39,7 +39,7 @@ GET | /ext/networkcredential
 - Tableau JSON au format suivant:
 * Informations d’identification
   * NetworkPath - le chemin d’accès au partage réseau.
-  * Nom d’utilisateur - le nom d’utilisateur qui a des informations d’identification stockées.
+  * Username: le nom d’utilisateur qui a des informations d’identification stockées.
 
 **Code d’état**
 
@@ -51,7 +51,7 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## <a name="add-or-update-stored-credentials-for-a-user"></a>Ajouter ou mettre à jour les informations d’identification stockées pour un utilisateur
+## <a name="add-or-update-stored-credentials-for-a-user"></a>Ajouter ou mettre à jour les informations d’identification stockées d’un utilisateur
 
 **Requête**
 
@@ -65,7 +65,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès réseau pour le partage de vous ajoutez les informations d’identification pour accéder à. |
+| NetworkPath        | Le chemin d’accès du partage réseau vous ajoutez les informations d’identification pour accéder à. |
 <br>
 
 **En-têtes de requête**
@@ -76,7 +76,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 - Les éléments JSON suivants:
 * NetworkPath - le chemin d’accès au partage réseau.
-* Nom d’utilisateur - le nom d’utilisateur pour stocker les informations d’identification sous.
+* Username: le nom d’utilisateur pour stocker les informations d’identification sous.
 * -Le mot de passe nouvelle ou mise à jour pour cet utilisateur.
 
 **Réponse**   
@@ -93,7 +93,7 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## <a name="remove-stored-credentials-for-a-share"></a>Supprimer les informations d’identification stockées pour un partage.
+## <a name="remove-stored-credentials-for-a-share"></a>Supprimez les informations d’identification stockées pour un partage.
 
 **Requête**
 
@@ -107,7 +107,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès réseau pour le partage à partir de laquelle vous supprimez les informations d’identification stockées. |
+| NetworkPath        | Le chemin d’accès réseau pour le partage à partir duquel vous supprimez les informations d’identification stockées. |
 <br>
 
 **En-têtes de requête**

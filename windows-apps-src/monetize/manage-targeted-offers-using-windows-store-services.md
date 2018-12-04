@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API des offres ciblées du MicrosoftStore, offres ciblées
 ms.localizationpriority: medium
 ms.openlocfilehash: 27d99d2008352ff291f0cb620afab8ccb8f6977c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346711"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470700"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du WindowsStore
 
-Si vous créez une *offre ciblée* dans le **engager > offres ciblées** page de votre application dans l’espace partenaires, utilisez l' *API des offres ciblées du Microsoft Store* dans le code de votre application pour récupérer les informations qui vous permet de mettre en œuvre l’expérience dans l’application pour le offre ciblée. Pour plus d’informations concernant les offres ciblées et leur création dans le tableau de bord, consultez [Utiliser les offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+Si vous créez une *offre ciblée* dans le **engager > offres ciblées** page de votre application dans l’espace partenaires, utilisez l' *API des offres ciblées du Microsoft Store* dans le code de votre application pour récupérer les informations qui vous permet d’implémenter l’expérience dans l’application pour le offre ciblée. Pour plus d’informations concernant les offres ciblées et leur création dans le tableau de bord, consultez [Utiliser les offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
 L’API des offres ciblées est une API REST simple que vous pouvez utiliser afin d’obtenir les offres ciblées disponibles pour l’utilisateur actuel, basée sur le fait que l’utilisateur fasse partie ou non du segment de clientèle pour l’offre ciblée. Pour utiliser cette API dans le code de votre app, procédez ainsi:
 

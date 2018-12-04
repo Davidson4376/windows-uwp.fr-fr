@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e5c0d0ca1b1d771df2b224cc41ec5a37e267bc9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328442"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470991"
 ---
 # <a name="manage-your-experiment-in-partner-center"></a>Gérer votre expérience dans l’Espace partenaires
 
@@ -24,7 +24,7 @@ Pour découvrir une procédure pas à pas illustrant le processus de création e
 
 ## <a name="activate-your-experiment"></a>Activer votre expérience
 
-Lorsque vous êtes satisfait des paramètres de votre expérience dans l’espace partenaires et que vous avez mis à jour le code de votre application, vous êtes prêt à activer votre expérience afin de commencer à collecter des données de l’expérience à partir de votre application. Quand l’expérience est active, votre application peut récupérer les valeurs de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires.
+Lorsque vous êtes satisfait des paramètres de votre expérience dans l’espace partenaires et que vous avez mis à jour le code de votre application, vous êtes prêt à activer votre expérience, afin de pouvoir commencer à collecter les données correspondantes à partir de votre application. Quand l’expérience est active, votre application peut récupérer les valeurs de variante et signaler des événements d’affichage et de conversion vers l’espace partenaires.
 
 1. Connectez-vous à l'[Espace partenaires](https://partner.microsoft.com/dashboard).
 2. Sous **Vos applications**, sélectionnez l’application présentant l’expérience que vous souhaitez activer.

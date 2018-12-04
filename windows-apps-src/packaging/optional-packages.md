@@ -7,14 +7,14 @@ ms.topic: article
 keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, empaqueter une extension, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: e19f9673090501d59e260a698f9968a8f98f1cd5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8348910"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473689"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Packages facultatifs et création d’ensembles connexes
-Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Ceux-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
+Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Celles-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
 
 Ensembles connexes sont une extension de packages facultatifs, ils permettent de mettre en œuvre un ensemble de versions strict parmi les packages facultatifs et les principaux. Ils vous permettent également de charger du code natif (C++) des packages facultatifs. 
 
@@ -45,7 +45,7 @@ Pour créer un package facultatif dans Visual Studio, vous devez:
 
 Remplacez `[MainPackageDependency]` avec votre **nom de famille de package** à l’étape 2. Cela spécifiera que votre **package facultatif** dépend de votre **package principal**.
 
-Une fois que vous avez votre dépendances du package configuré à partir des étapes 1 à 4, vous pouvez continuer à développer comme vous le feriez normalement. Si vous souhaitez charger du code à partir du package facultatif dans le package principal, vous devez générer un ensemble connexe. Consultez la section [associé définit](#related_sets) pour plus d’informations.
+Une fois que vous avez votre dépendances du package configurer des étapes 1 à 4, vous pouvez continuer à développer comme vous le feriez normalement. Si vous souhaitez charger du code à partir du package facultatif dans le package principal, vous devez créer un ensemble connexe. Consultez la section [associé définit](#related_sets) pour plus d’informations.
 
 Visual Studio peut être configuré pour redéployer votre package principal à chaque fois que vous déployez un package facultatif. Pour définir la dépendance de génération dans Visual Studio, vous devez:
 
@@ -56,13 +56,13 @@ Désormais, chaque fois que vous entrez F5 ou que vous générez un projet de pa
 
 ## Ensembles connexes<a name="related_sets"></a>
 
-Si vous souhaitez charger du code à partir d’un package facultatif dans le package principal, vous devez générer un ensemble connexe. Pour générer un ensemble connexe, votre package principal et le package facultatif doivent être étroitement. Les métadonnées pour les ensembles connexes sont spécifiée dans le fichier .appxbundle ou .msixbundle du package principal. Visual Studio vous permet d’obtenir les métadonnées correcte dans vos fichiers. Pour configurer la solution de votre application pour des ensembles connexes, procédez comme suit:
+Si vous souhaitez charger du code à partir d’un package facultatif dans le package principal, vous devez créer un ensemble connexe. Pour générer un ensemble connexe, votre package principal et le package facultatif doivent être étroitement. Les métadonnées pour les ensembles connexes sont spécifiée dans le fichier .appxbundle ou .msixbundle du package principal. Visual Studio vous permet d’obtenir les métadonnées correcte dans vos fichiers. Pour configurer la solution de votre application pour des ensembles connexes, procédez comme suit:
 
 1. Cliquez avec le bouton droit sur le projet de package principal, sélectionnez **Ajouter > nouvel élément …**
 2. À partir de la fenêtre, recherchez les modèles installés pour «.txt» et ajoutez un nouveau fichier texte.
 > [!IMPORTANT]
 > Le nouveau fichier texte doit être nommé: `Bundle.Mapping.txt`.
-3. Dans le `Bundle.Mapping.txt` fichier que vous allez spécifier les chemins d’accès relatifs à des projets de package facultatif ou les packages externes. Un échantillon `Bundle.Mapping.txt` fichier doit ressembler à ceci:
+3. Dans le `Bundle.Mapping.txt` fichier que vous allez spécifier les chemins d’accès relatifs à des projets de package facultatif ou les packages externes. Un exemple `Bundle.Mapping.txt` fichier doit ressembler à ceci:
 
 ```syntax
 [OptionalProjects]
@@ -73,10 +73,10 @@ Si vous souhaitez charger du code à partir d’un package facultatif dans le pa
 "..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
 ```
 
-Lorsque votre solution est configurée de cette façon, Visual Studio va créer un manifeste de l’ensemble d’applications pour le package principal avec toutes les métadonnées requises pour les ensembles connexes. 
+Lorsque votre solution est configurée de cette façon, Visual Studio crée un manifeste de l’ensemble d’applications pour le package principal avec toutes les métadonnées requises pour les ensembles connexes. 
 
-Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier pour les ensembles connexes fonctionne uniquement sur Windows 10, version 1703. En outre, cible plateforme Min Version de votre application doit être définie sur 10.0.15063.0.
+Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier d’ensembles connexes ne fonctionne que sur Windows 10, version 1703. En outre, la plateforme Min Version de votre application cible doit être définie à 10.0.15063.0.
 
 ## Problèmes connus<a name="known_issues"></a>
 
-Débogage d’un projet de facultatif ensemble connexe n’est actuellement pas prise en charge dans Visual Studio. Pour contourner ce problème, vous pouvez déployer et lancer l’activation (Ctrl + F5) et attacher manuellement le débogueur à un processus. Pour joindre le débogueur, passez le menu «Débogage» dans Visual Studio, sélectionnez «attacher au processus» et attachez le débogueur au **processus de l’application principale**.
+Débogage d’un projet facultatif ensemble connexe n’est actuellement pas prise en charge dans Visual Studio. Pour contourner ce problème, vous pouvez déployer et lancer l’activation (Ctrl + F5) et attacher manuellement le débogueur à un processus. Pour joindre le débogueur, consultez le menu «Débogage» dans Visual Studio, sélectionnez «attacher au processus» et attachez le débogueur au **processus d’application principale**.

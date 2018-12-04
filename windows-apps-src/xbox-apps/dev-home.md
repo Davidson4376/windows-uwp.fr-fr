@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 4113df37446d93883cf395e7c1e86b1de6c1b328
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323353"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8468653"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>Accueil du développeur sur la Console (Dev Home)
    
@@ -20,19 +20,19 @@ ms.locfileid: "8323353"
 Accueil du développeur est d’expérimenter des outils dans le kit de développement Xbox One sont destiné à améliorer la productivité des développeurs. Accueil du développeur offre des fonctionnalités pour gérer et configurer votre kit de développement, gérer les utilisateurs, lancer titres installés et effectuer des captures et effectue le suivi. Dans les futures versions que nous continuerons à développer les fonctionnalités pour activer des fonctionnalités supplémentaires en fonction de vos commentaires, ainsi que pour activer l’ajout de vos propres outils et d’extensibilité.   
    
   
-Nous sommes très intéressés par vos commentaires sur l’accueil du développeur et les scénarios que les plus intéressantes dans leur affichage prennent en charge. Fournissez vos commentaires par le biais des méthodes décrites sous **Envoyer des commentaires** dans le menu principal de l’application ou par le biais de votre gestionnaire de compte de développeur (mère).   
+Nous sommes très intéressés par vos commentaires sur l’accueil du développeur et les scénarios que vous vous intéressez plus voir pour prendre en charge. Fournissez vos commentaires par le biais des méthodes décrites sous **Envoyer des commentaires** dans le menu principal de l’application ou par le biais de votre gestionnaire de compte de développeur (mère).   
    
   
 Pour lancer l’accueil du développeur sur le novembre 2015 ou restauration ultérieure:  
  
-   1. Ouvrez le guide en déplacement gauche sur Accueil, ou d’un double-clic sur le bouton Nexus  
+   1. Ouvrez le guide en déplaçant gauche sur Accueil ou double-clic sur le bouton Nexus  
    1. Déplacer vers le bas les **paramètres** (l’icône d’engrenage)   
    1. Sélectionnez **tous les paramètres**  
    1. Dans la page de **développeur** par défaut, sélectionnez **Accueil du développeur** (l’icône d’accueil)   
 
  ![](images/dev_home_icons.png)   
   
-Sur les versions antérieures récupérations sélectionner la vignette accueil du développeur sur le côté droit de l’écran d’accueil de **contenu du numéro** d’ou afficher la liste des applications dans le Gestionnaire de Xbox One et lancer **Accueil du développeur**.   
+Sur les récupérations antérieures sélectionner la vignette accueil du développeur sur le côté droit de l’écran d’accueil de **contenu du numéro** ou afficher la liste des applications dans le gestionnaire une Xbox et lancer **Accueil du développeur**.   
  ![](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
@@ -51,7 +51,7 @@ L’en-tête de l’interface utilisateur de Dev Home contient les éléments su
 
    
   
-Le reste de l’UI Dev Home est divisé en les pages suivantes. Pour plus d’informations sur les outils sur ces pages, voir les rubriques correspondantes.   
+Le reste de l’interface utilisateur un développement à domicile se divise en les pages suivantes. Pour plus d’informations sur les outils sur ces pages, consultez les rubriques correspondantes.   
  
    *  [Home](devhome-home.md)  
    *  [XboxLive](devhome-live.md)  
@@ -77,10 +77,10 @@ En appuyant sur le bouton **menu** sur votre contrôleur, vous pouvez accéder a
 ## <a name="snap-mode-ux"></a>Mode ancrage UX  
    
   
-Plusieurs outils existants et à venir dans accueil du développeur, par exemple, la mise en réseau et le mode multijoueur, sont conçus pour être utilisés ancrée sur le côté lors de l’exécution votre titre, afin que vous pouvez avoir accéder facilement aux outils pendant que vous testez.   
+Plusieurs outils existants et à venir dans accueil du développeur, par exemple, la mise en réseau et le mode multijoueur, sont conçues pour être utilisé ancrée sur le côté lors de l’exécution votre titre, afin que vous pouvez avoir accéder facilement aux outils pendant que vous testez.   
    
   
-Pour accéder au mode ancrage, mettre en évidence le titre de l’outil approprié, appuyez sur le bouton **affichage** de votre manette et sélectionner **d’ancrage** dans le menu contextuel:  
+Pour accéder au mode ancrage, mettre en évidence le titre de l’outil approprié, appuyez sur le bouton **affichage** de votre manette, sélectionnez **Aligner** dans le menu contextuel:  
  ![](images/dev_home_4.png)   
   
 L’outil Accueil du développeur s’ancrera à droite de l’écran. Vous pouvez changer de contexte en appuyant comme d’habitude deux fois sur le bouton Nexus.  
@@ -116,28 +116,28 @@ Dans le Menu principal, vous pouvez sélectionner un **espace de travail** , pui
 
    
 
-### <a name="setting-the-default-application-for-a-package"></a>Définition de l’application par défaut pour un package  
+### <a name="setting-the-default-application-for-a-package"></a>Définition de l’application par défaut d’un package  
    
   
-Si un package contient plusieurs applications, Dev Home vous permettent de définir le lancement de l’application par défaut. Sélectionnez le package dans le Lanceur et appuyez sur le bouton **A** pour ouvrir la liste des applications disponibles. Sélectionnez celui que vous souhaitez définir en tant que la valeur par défaut et appuyez sur le bouton **d’affichage** , puis choisissez **définir par défaut** dans le menu contextuel.   
+Si un package contient plusieurs applications, Dev Home vous permettent de définir le lancement de l’application par défaut. Sélectionnez le package dans le Lanceur et appuyez sur le bouton **A** pour ouvrir la liste des applications disponibles. Sélectionnez celui que vous souhaitez définir en tant que la valeur par défaut et appuyez sur le bouton **affichage** , puis choisissez **définir par défaut** dans le menu contextuel.   
  ![](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
    
 
-### <a name="using-dev-home-to-register-and-launch-titles-from-a-network-share"></a>L’utilisation de Dev Home pour enregistrer et lancer des titres à partir d’un partage réseau  
+### <a name="using-dev-home-to-register-and-launch-titles-from-a-network-share"></a>L’utilisation de Dev Home pour enregistrer et lancer des titres depuis un partage réseau  
    
   
-À partir du Lanceur, en bas des applications installées et la liste des jeux, vous pouvez sélectionner l’option **inscrire un jeu à partir d’un partage réseau** pour exécuter une version de fichiers isolés d’un titre à distance.   
+À partir du Lanceur, en bas de la liste des jeux, les applications installées, vous pouvez sélectionner l’option **inscrire un jeu à partir d’un partage réseau** pour exécuter une version de fichiers isolés d’un titre à distance.   
  ![](images/dev_home_8.png)   
   
-Vous pouvez ensuite entrer le chemin d’accès réseau pour le fichier appxmanifest.xml pour le titre que vous voulez inscrire. Accueil du développeur tente d’inscrire le titre à l’aide des informations d’identification existantes pour ce partage et si nécessaire demandera nouvelles informations d’identification réseau. Si vous avez besoin d’accéder aux partages supplémentaires (par exemple à des ressources d’accès symboliquement lié sur un serveur distinct) vous devrez ajouter celles via l’option ci-dessous.   
+Vous pouvez ensuite entrer le chemin d’accès réseau dans le fichier appxmanifest.xml pour le titre que vous voulez inscrire. Accueil du développeur tente d’inscrire le titre à l’aide des informations d’identification existantes pour ce partage et si nécessaire demandera nouvelles informations d’identification réseau. Si vous avez besoin d’accéder aux partages supplémentaires (par exemple pour les ressources d’accès symboliquement lié sur un serveur distinct) vous devrez ajouter celles via l’option ci-dessous.   
    
   
 Vous pouvez gérer ces informations d’identification stockées (et ajouter de nouvelles) sur la console via l’option de **Gérer les informations d’identification réseau** du menu principal.   
  ![](images/dev_home_9.png)   
   
-Vous pouvez afficher les informations d’identification actuellement sur la console, modifier les informations d’identification en sélectionnant le chemin d’accès de l’information d’identification et en cliquant sur **un** bouton et supprimer des informations d’identification en sélectionnant le lien Supprimer et en cliquant sur **un** bouton.   
+Vous pouvez afficher les informations d’identification actuellement sur la console, modifier les informations d’identification en sélectionnant le chemin d’accès de l’information d’identification et en cliquant sur **un** bouton et supprimer des informations d’identification en sélectionnant le lien Supprimer et cliquer sur **un** bouton.   
    
 <a id="ID4EGAAC"></a>
 
@@ -145,10 +145,10 @@ Vous pouvez afficher les informations d’identification actuellement sur la con
 
 ## <a name="in-this-section"></a>Dans cette section  
   
-[Page d’accueil (accueil)](devhome-home.md)  
+[Page d’accueil (Dev Home)](devhome-home.md)  
 
 
-&nbsp;&nbsp;Fournit un accès rapide pour les tâches qui sont effectuées régulièrement sur une console de développement. 
+&nbsp;&nbsp;Permet d’accéder rapidement aux tâches qui sont effectuées régulièrement sur une console de développement. 
   
   
 [Xbox Live Page (Dev Home)](devhome-live.md)  
@@ -160,7 +160,7 @@ Vous pouvez afficher les informations d’identification actuellement sur la con
 [Page des paramètres (Dev Home)](devhome-settings.md)  
 
 
-&nbsp;&nbsp;Permet d’accéder aux différents paramètres pour la console de développement. 
+&nbsp;&nbsp;Fournit l’accès à différents paramètres pour la console de développement. 
   
   
 [Page (Dev Home) de Capture multimédia](devhome-capture.md)  

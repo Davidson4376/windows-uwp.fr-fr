@@ -1,24 +1,22 @@
 ---
 title: Installation d'une application UWP depuis un serveur web Azure
 description: Ce didacticiel montre comment configurer un serveur web Azure, vérifier que votre application web peut héberger des packages d’application et appeler et utiliser le Programme d'installation d'application efficacement.
-ms.date: 09/30/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs, serveur web Azure
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f0e4fe6cd2b05c2de4648a410ba43ce27e48922
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325631"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469210"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Installer une application UWP à partir d’une application Web Azure
 
 L’application Programme d'installation d'application permet aux développeurs et professionnels de l’informatique de distribuer des applications Windows10 en les hébergeant sur leurs propres Réseau de diffusion de contenu (CDN). Cela est utile pour les entreprises qui ne veulent pas ou n'ont pas besoin de publier leurs applications dans le Microsoft Store, mais qui souhaitent tirer parti de la plateforme Windows10 de déploiement et de création de packages.
 
 Cette rubrique explique comment configurer un serveur web Azure afin d'héberger des packages d'application UWP et comment utiliser l’application Programme d'installation d'application pour installer des packages d’application.
-
-Dans ce didacticiel, nous voyons comment configurer un serveur IIS pour vérifier localement que votre application web peut correctement héberger les packages d’application et appeler et utiliser efficacement l’application Programme d'installation d'application. Nous aurons également des didacticiels montrant comment héberger correctement vos applications web sur les services de cloud web populaires dans le champ (Azure et AWS) afin de vérifier qu’elles respectent la configuration requise par le Programme d'installation d'application pour réaliser des installations web. Ce didacticiel pas à pas ne nécessite aucune compétence particulière et est très facile à suivre. 
 
 ## <a name="setup"></a>Configuration
 

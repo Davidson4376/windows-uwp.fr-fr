@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp, analytique, rapports, tableau de bord, applications, données, les mesures
 ms.localizationpriority: medium
 ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339103"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8468643"
 ---
 # <a name="analyze-app-performance"></a>Analyser les performances de l’application
 
-Vous pouvez consulter analytique détaillées de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
+Vous pouvez afficher analytique détaillées de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
 
-Vous pouvez afficher les rapports d’analyse directement dans l’espace partenaires ou [télécharger les rapports que vous avez besoin](download-analytic-reports.md) pour analyser les données en mode hors connexion. Nous proposerons également plusieurs méthodes pour vous [accéder](#outside)à vos données d’analytique en dehors de l’espace partenaires.
+Vous pouvez afficher les rapports d’analyse directement dans l’espace partenaires ou [télécharger les rapports que vous avez besoin](download-analytic-reports.md) pour analyser les données en mode hors connexion. Nous proposerons également plusieurs méthodes pour vous à [accéder à vos données d’analytique en dehors de l’espace partenaires](#outside).
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>Visualiser les principales analyses de toutes vos applications
 
@@ -64,4 +64,4 @@ Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéd
 * [Découvrez comment utiliser le pack de contenu du Centre de développement Windows pour PowerBI pour se connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Pour connecter le pack de contenu du centre de développement Windows pour Power BI, nous recommandons que vous spécifiez les informations d’identification à partir d’un annuaire Azure AD associé à votre compte espace partenaires. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans PowerBI ne sont pas actualisées automatiquement et vous devez vous connecter à PowerBI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur la configuration de l’association, voir [Associer Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md).
+> Pour connecter le pack de contenu du centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un annuaire Azure AD associé à votre compte espace partenaires. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans PowerBI ne sont pas actualisées automatiquement et vous devez vous connecter à PowerBI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur la configuration de l’association, voir [Associer Azure Active Directory à votre compte espace partenaires](associate-azure-ad-with-dev-center.md).

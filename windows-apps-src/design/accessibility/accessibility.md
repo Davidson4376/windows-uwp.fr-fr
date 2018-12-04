@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9cdfb8a20e273d5d9e5819fc1e28aba97e4296
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352233"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473769"
 ---
 # <a name="accessibility"></a>Accessibilité  
 

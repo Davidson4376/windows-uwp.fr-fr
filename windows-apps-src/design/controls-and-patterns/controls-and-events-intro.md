@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331623"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8466745"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
 
@@ -21,7 +21,7 @@ Dans le développement d’applications UWP, un *contrôle* est un élément d�
 
 > **API importantes**: [espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [maître/détails](master-details.md) est un moyen que vous pouvez utiliser un contrôle [SplitView](split-view.md) pour la navigation de l’application. De même, vous pouvez personnaliser le modèle d’un contrôle [NavigationView](navigationview.md) pour implémenter le modèle d’onglet.
+Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [maître/détails](master-details.md) est un moyen que vous pouvez utiliser un contrôle [SplitView](split-view.md) pour la navigation dans l’application. De même, vous pouvez personnaliser le modèle d’un contrôle [NavigationView](navigationview.md) pour implémenter le modèle d’onglet.
 
 Dans de nombreux cas, vous pouvez utiliser un contrôle en l’état. Toutefois, les contrôles XAML distinguent la fonction de la structure et de l’apparence, vous pouvez donc apporter des modifications à différents niveaux pour les adapter à vos besoins. Dans la section [Style](../style/index.md), vous pouvez apprendre à utiliser des [styles XAML](xaml-styles.md) et des [modèles de contrôle](control-templates.md) pour modifier un contrôle.
 
