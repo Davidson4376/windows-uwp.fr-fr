@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d5885c5161793807bf32f62ff2df4bab5b2c1d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344764"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478518"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
@@ -30,7 +30,7 @@ Dans ce rapport, une **acquisition** signifie qu’un nouveau client a obtenu un
 
 ## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Dans la zone en temps réel des données seront affiche pour toutes les options (sauf dans les données **d’application cumulative** ). Le temps de **1 H** et **72 H** périodes s’appliquent uniquement à l’onglet **application quotidienne** du graphique **Acquisitions** et à l’onglet **Acquisitions** du graphique **des marchés** . 
+Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Dans la zone en temps réel des données seront affiche pour toutes les options (sauf dans les données **d’application cumulative** ). L’heure de **1 H** et **72 H** périodes s’appliquent uniquement à l’onglet **application quotidienne** du graphique **Acquisitions** et à l’onglet **Acquisitions** du graphique **des marchés** . 
 
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par marché et/ou par type d’appareil.
 
@@ -44,19 +44,19 @@ Les informations figurant dans tous les graphiques répertoriés ci-après corre
 
 Le graphique **Acquisitions** affiche le nombre total d’acquisitions quotidiennes ou hebdomadaires (chaque fois qu’un nouveau client obtient une licence pour votre application) au cours de la période sélectionnée. (Lorsque vous utilisez l’option **Appliquer les filtres** pour afficher les données portant sur une durée plus étendue, les données d’acquisition sont regroupées par semaine.) Seules les acquisitions effectuées par les clients qui sont connectés avec un compte Microsoft valide figurent dans ce graphique. 
 
-Par défaut, nous affichons la vue de **l’application tous les jours** , qui comprend près de données en temps réel. Vous pouvez également visualiser le nombre total d’acquisitions sur toute la durée de vie de votre application en sélectionnant **App cumulative**. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
+Par défaut, nous affichons l’affichage de **l’application tous les jours** , qui inclut les données quasiment en temps réel. Vous pouvez également visualiser le nombre total d’acquisitions sur toute la durée de vie de votre application en sélectionnant **App cumulative**. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
 
-**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte pour n’importe quel remboursements, reprises, les rétrofacturation, etc..
+**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte de n’importe quel remboursements, reprises, les rétrofacturation, etc..
 
 Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition émanant du client ou du WindowsStore sur le web et/ou par version du système d’exploitation.
 
 > [!NOTE]
 > Vous pouvez également récupérer ces données par programme à l’aide de la méthode [Obtenir des acquisitions d’applications](../monetize/get-app-acquisitions.md) dans notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle. Ces représentent une augmentation importante ou diminuer dans une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 ## <a name="installs"></a>Installations
 
@@ -113,7 +113,7 @@ Le graphique **Données démographiques sur les clients** présente des informat
 
 ## <a name="app-page-views-and-conversions-by-channel"></a>Conversions et accès aux pages de l’application par canal
 
-Le graphique de **conversions par canal et page application** vous permet de voir comment les clients sur Windows 10 sont arrivés à la description de votre application sur la période sélectionnée.
+Le graphique de **conversions par canal et page application** vous permet de voir comment les clients sur Windows 10 sont arrivés à la description de votre application au cours de la période sélectionnée.
 
 Dans ce graphique, un *canal* désigne la méthode à l’aide de laquelle un client a accédé à la page de description de votre application (par exemple, navigation et recherche dans le WindowsStore, lien à partir d’un site web externe, lien figurant dans l’une de vos campagnes personnalisées, etc.). Les canaux suivants sont inclus :
 

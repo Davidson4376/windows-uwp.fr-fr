@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330248"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478198"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
@@ -25,7 +25,7 @@ Pour en savoir plus sur la configuration des langues dans vos applications, cons
 
 Il s’agit des langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins une de ces langues. 
 
-Codes de langue qui ne sont pas inclus ici ne sont pas pris en charge par le Windows Store. Nous recommandons que vous n’incluez pas les packages ciblant des codes de langue autre que ceux indiqués ci-dessous. Ces packages ne seront pas distribuées aux clients et peuvent provoquer des retards ou des échecs de certification.
+Codes de langue qui ne sont pas inclus ici ne sont pas prises en charge par le Windows Store. Nous recommandons que vous n’incluez pas les packages ciblant des codes de langue autre que ceux indiqués ci-dessous. Ces packages ne seront pas distribuées aux clients et peuvent provoquer des retards ou des échecs de certification.
 
 | Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

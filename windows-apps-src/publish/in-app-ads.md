@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e212e16039d49e3ffd08aa5886d48c61ee24e9e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330685"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479568"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -31,13 +31,13 @@ Pour plus d’informations sur la façon d’intégrer ces SDK avec vos applicat
 
 Pour créer une unité publicitaire pour une [bannière publicitaire](../monetize/banner-ads.md), un [spot](../monetize/interstitial-ads.md) ou une [publicité native](../monetize/native-ads.md) dans votre application:
 
-1.  Accédez à la **MONÉTISER** &gt; **des publicités dans l’application** de page dans l’espace partenaires et cliquez sur **créer une publicité**.
+1.  Accédez à la **MONÉTISER** &gt; **publicités In-app** de page dans l’espace partenaires et cliquez sur **créer une publicité**.
 2.  Dans la liste déroulante **Nom de l'application**, sélectionnez l’application dans laquelle votre unité publicitaire sera utilisée.
 3.  Dans le champ **Nom de la publicité**, entrez un nom pour l’unité publicitaire. Il peut s’agir d’une chaîne descriptive que vous souhaitez utiliser pour identifier l’unité publicitaire à des fins de création de rapports.
 4.  Dans la liste déroulante **Type de publicité**, sélectionnez le type de publicité.
 
     * Si vous affichez une bannière publicitaire dans votre application, sélectionnez la **bannière**.
-    * Si vous affichez un spot vidéo ou une bannière publicitaire dans votre application, sélectionnez **spot vidéo** ou des **bannières spots** (veillez à sélectionner l’option appropriée pour le type de spot publicitaire que vous souhaitez afficher).
+    * Si vous affichez un spot vidéo ou une bannière publicitaire dans votre application, sélectionnez **spot vidéo** ou une **bannière** (veillez à sélectionner l’option appropriée pour le type de spot publicitaire que vous souhaitez afficher).
     * Si vous affichez une publicité native dans votre application, sélectionnez **natif**.
 
 5. Dans la liste déroulante **Famille d’appareils**, sélectionnez la famille d’appareils ciblée par l’application dans laquelle votre unité publicitaire sera utilisée. Les options disponibles sont: **UWP (Windows10)**, **PC/tablette (Windows8.1)** ou **Mobile (Windows Phone8.x)**.
@@ -84,13 +84,13 @@ Lorsque vous [créez une unité publicitaire UWP](#create-ad-unit) ou [Modifier 
 Pour configurer les paramètres de médiation publicitaire pour une unité publicitaire UWP dans votre application:
 
 1. [Créez une unité publicitaire](#create-ad-unit) ou [sélectionnez une unité publicitaire existante](#available-ad-units).
-2. Sur la page **publicités dans l’application** , accédez à la section des **paramètres de médiation** et la configuration de vos paramètres.
+2. Sur la page **publicités In-app** , accédez à la section **paramètres de médiation** et la configuration de vos paramètres.
 
-    * Par défaut, la case à cocher **laisser Microsoft optimiser mes paramètres** est sélectionnée. Nous vous recommandons d’utiliser cette option. Cette option utilise des algorithmes d’apprentissage de l’ordinateur pour choisir automatiquement les paramètres de médiation publicitaire pour votre application, afin de vous aider à optimiser vos revenus publicitaires sur les marchés que votre application prend en charge. Lorsque vous utilisez cette option, vous pouvez également choisir les réseaux publicitaires que vous voulez utiliser dans la configuration. Décochez les réseaux publicitaires que vous ne voulez pas faire partie de la configuration et notre algorithme permet de garantir que votre application reçoit uniquement des publicités à partir de réseaux publicitaires sélectionné.
-    * Si vous souhaitez choisir vos propres ad paramètres de médiation, choisissez **Modifier les paramètres par défaut**.
+    * Par défaut, la case à cocher **laisser Microsoft optimiser mes paramètres** est sélectionnée. Nous vous recommandons d’utiliser cette option. Cette option utilise des algorithmes d’apprentissage de l’ordinateur pour choisir automatiquement les paramètres de médiation publicitaire pour votre application, afin de vous aider à optimiser vos revenus publicitaires sur les marchés que votre application prend en charge. Lorsque vous utilisez cette option, vous pouvez également choisir les réseaux publicitaires que vous voulez utiliser dans la configuration. Désactivez les réseaux publicitaires que vous ne voulez pas faire partie de la configuration et notre algorithme permet de garantir que votre application reçoit uniquement des publicités à partir de réseaux publicitaires sélectionné.
+    * Si vous souhaitez choisir vos propres ad paramètres de médiation, choisir de **Modifier les paramètres par défaut**.
 
     > [!NOTE]
-    > Les étapes restantes de cette section sont uniquement applicables si vous décidez de **Modifier les paramètres par défaut**.
+    > Les étapes restantes de cette section sont appliquent si vous décidez de **Modifier les paramètres par défaut**uniquement.
 
 3. Dans la liste déroulante **Cible**, choisissez **Ligne de base** pour définir la configuration par défaut de vos paramètres de médiation publicitaire. Cette configuration par défaut s’appliquera à tous les marchés, à l’exception des marchés pour lesquels vous définissez des configurations spécifiques au marché.
 4. Ensuite, spécifiez le taux de publicités que vous voulez afficher dans votre contrôle à partir de réseaux payants (qui vous rémunèrent pour les expositions) et d’autres réseaux publicitaires (qui ne vous rémunèrent pas pour les expositions). Pour ce faire, entrez une valeur comprise entre 0 et 100dans le champ **Poids** pour **Réseaux publicitaires payants** et **Autres réseaux publicitaires**.  
@@ -110,7 +110,7 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 
 |  Réseau publicitaire  |  Description  |  Types de publicités pris en charge  |
 |--------------|---------------|---------------------|
-| Formule et AppNexus |  Il s’agit d’un réseau publicitaire géré par Microsoft qui diffuse des annonces par le biais de notre partenaire réseaux, formule et AppNexus.<p/>**Remarque**: formule et AppNexus est toujours au premier rang de la liste **des réseaux publicitaires payé** pour les unités de bannières publicitaires, et il ne peut pas être modifié à un niveau inférieur pour ces types de publicités. | Bannière, spot vidéo |
+| Formule et AppNexus |  Il s’agit d’un réseau publicitaire géré par Microsoft qui diffuse des annonces par le biais de notre partenaire réseaux, formule et AppNexus.<p/>**Remarque**: formule et AppNexus est toujours au premier rang de la liste des **réseaux publicitaires de payé** pour les unités de bannières publicitaires, et il ne peut pas être modifié à un niveau inférieur pour ces types de publicités. | Bannière, spot vidéo |
 | AppNexus (direct) | Sélectionnez cette option pour proposer des publicités à partir de [AppNexus](https://www.appnexus.com). | Spot vidéo, native  |
 | Publicités pour l’installation d’applications Microsoft | Sélectionnez cette option pour proposer des publicités pour l’installation d’applications ou des publicités pour la réactivation d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes de publicité pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, spot bannière, native  |
 | Recommandations de contenu MSN |  Sélectionnez cette option pour proposer des publicités à partir des recommandations de contenu MSN. |  Bannière, spot bannière  |
@@ -152,7 +152,7 @@ Les réseaux publicitaires disponibles proposent des publicités dans tous les [
 
 ## <a name="coppa-compliance"></a>Conformité avec la réglementation COPPA
 
-Lorsque vous [créez une unité publicitaire](#create-ad-unit) , ou [Sélectionnez une unité publicitaire existante](#available-ad-units), la section de **conformité de la réglementation COPPA** s’affiche en bas de la page si l’application sélectionnée pour l’unité publicitaire comporte au moins une soumission qui a atteint [dans le magasin de](../publish/the-app-certification-process.md#in-the-store) l’étape dans l’application processus de certification.
+Lorsque vous [créez une unité publicitaire](#create-ad-unit) , ou [Sélectionnez une unité publicitaire existante](#available-ad-units), la section de la **conformité de la réglementation COPPA** s’affiche en bas de la page si l’application sélectionnée pour l’unité publicitaire comporte au moins une soumission qui a atteint [dans le magasin de](../publish/the-app-certification-process.md#in-the-store) l’étape dans l’application processus de certification.
 
 Dans le cadre de la réglementation COPPA (Children's Online Privacy Protection Act), vous devez sélectionner **Cette application est destinée à des enfants de moins de 13** dans cette section si votre application s’adresse aux enfants de moins de 13ans. Si vous sélectionnez cette option, Microsoft prendra les mesures nécessaires pour désactiver les services de publicité comportementale lors de la diffusion de publicités dans votre application.
 

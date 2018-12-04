@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, remarques aux testeurs
 ms.localizationpriority: medium
 ms.openlocfilehash: d47933ac3482f610fb8fe28b7fb52238ac7ca294
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330845"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478454"
 ---
 # <a name="notes-for-certification"></a>Remarques pour la certification
 
@@ -22,15 +22,15 @@ Prenez soin d’inclure les éléments suivants (s’ils sont applicables à vot
 
 -   **Nom d’utilisateur et mots de passe pour les comptes de test**: Si votre application nécessite que les utilisateurs se connectent à un service ou un compte de médias sociaux, fournissez le nom d’utilisateur et mot de passe d’un compte de test. Les testeurs de certification utiliseront ce compte lors de l’examen de votre application.
 
--   **Étapes pour accéder aux fonctionnalités masquées ou verrouillées**: Décrivez brièvement comment les testeurs peuvent accéder à des fonctionnalités, modes ou du contenu qui ne peut-être pas être évident. Les applications incomplètes risquent de ne pas obtenir de certification.
+-   **Étapes pour accéder aux fonctionnalités masquées ou verrouillées**: Décrivez brièvement comment les testeurs peuvent accéder aux fonctionnalités, modes ni le contenu qui ne peut-être pas être évident. Les applications incomplètes risquent de ne pas obtenir de certification.
 
--   **Procédure de vérification d’utilisation du contenu audio en arrière-plan**: Si votre application autorise l’audio à s’exécuter en arrière-plan, les testeurs peuvent avoir besoin des instructions sur la façon d’accéder à cette fonctionnalité afin de vérifier qu’elle fonctionne correctement.
+-   **Procédure de vérification d’utilisation du contenu audio en arrière-plan**: Si votre application autorise l’audio à s’exécuter en arrière-plan, testeurs peuvent avoir besoin de savoir comment accéder à cette fonctionnalité afin de vérifier qu’elle fonctionne correctement.
 
--  **Différences d’attendue de comportement en fonction de la région ou d’autres paramètres clients**: par exemple, si des clients de régions différentes verront des contenus différents, assurez-vous d’effectuer votre appel afin que les testeurs comprennent les différences et procèdent à un examen.
+-  **Différences d’attendue de comportement en fonction de la région ou d’autres paramètres clients**: par exemple, si des clients de régions différentes verront des contenus différents, veillez à appeler cette afin que les testeurs comprennent les différences et procèdent à un examen.
 
--   **Plus d’informations sur ce qui a changé dans une mise à jour de l’application**: pour les mises à jour des applications déjà publiées, vous voudrez peut-être indiquer les testeurs ce qui a changé, surtout si vos packages sont les mêmes et que vous modifiez simplement description (par exemple, l’ajout de plus de votre application captures d’écran, la modification de catégorie de votre application ou modification de la description).
+-   **Plus d’informations sur ce qui a changé dans une mise à jour de l’application**: les mises à jour des applications déjà publiées, vous voudrez peut-être indiquer les testeurs ce qui a changé, surtout si vos packages sont les mêmes et que vous modifiez simplement description (par exemple, l’ajout de plus de votre application captures d’écran, la modification de catégorie de votre application ou modification de la description).
 
--   **La date de saisie les notes**: cela est particulièrement important si vous utilisez un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour n’importe quel jeu qui s’intègre à Xbox Live), puisque les remarques que vous entrez lors sera publication dans un bac à sable rester lorsque vous demandez la certification. L’affichage de la date aide les testeurs à évaluer s’il existe des problèmes temporaires susceptibles de ne plus s’appliquer.
+-   **La date que vous saisissez les notes**: cela est particulièrement important si vous utilisez un bac à sable de développement dans l’espace partenaires (par exemple, c’est le cas pour n’importe quel jeu qui s’intègre à Xbox Live), puisque les remarques que vous entrez lors sera publication dans un bac à sable rester lorsque vous demandez la certification. L’affichage de la date aide les testeurs à évaluer s’il existe des problèmes temporaires susceptibles de ne plus s’appliquer.
 
 -  **Tout autre élément que les testeurs auront besoin de comprendre, selon vous, au sujet de votre soumission.**
 

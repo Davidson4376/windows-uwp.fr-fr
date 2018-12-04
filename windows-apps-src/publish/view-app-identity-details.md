@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 114524294a5b77165167601c1479b6c3894bb29b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342488"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478374"
 ---
 # <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 
@@ -23,7 +23,7 @@ Pour consulter ces informations, accédez à l’une de vos applications, puis d
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>Valeurs à inclure dans le manifeste du package de votre application
 
-Les valeurs suivantes doivent être incluses dans votre manifeste du package. Si vous [utilisez Microsoft VisualStudio pour générer vos packages](../packaging/packaging-uwp-apps.md), et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces éléments:
+Les valeurs suivantes doivent être inclus dans votre manifeste du package. Si vous [utilisez Microsoft VisualStudio pour générer vos packages](../packaging/packaging-uwp-apps.md), et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces éléments:
 
 -   **Package/Identité/Nom**
 -   **Package/Identité/Serveur de publication**
