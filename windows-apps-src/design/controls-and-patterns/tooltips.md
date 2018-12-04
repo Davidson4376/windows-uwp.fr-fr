@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 651914cfb2abd4326c6ac6295f10ad359925d465
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343363"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8477757"
 ---
 # <a name="tooltips"></a>Info-bulles
 
@@ -112,7 +112,7 @@ Vous pouvez utiliser n’importe quel objet comme [contenu](/uwp/api/windows.ui.
 
 Par défaut, une info-bulle s’affiche centrée au-dessus du pointeur. Le placement n’étant pas limité par la fenêtre de l’application, l’info-bulle peut s’afficher partiellement ou complètement en dehors des limites de cette fenêtre.
 
-Pour les ajustements de grande échelle, utilisez la propriété [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) ou **ToolTipService.Placement** jointe pour spécifier si l’info-bulle doit être dessiné au-dessus, au-dessous, à gauche ou droite du pointeur. Vous pouvez définir les propriétés [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) ou [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) pour modifier la distance entre le pointeur et l’info-bulle. Qu’un seul de ces deux valeurs de décalage peut influencer la position finale - VerticalOffset lorsque Placement est la partie supérieure ou inférieure, HorizontalOffset lorsqu’il ne reste Placement ou à droite.
+Pour les ajustements de l’étendue, utilisez la propriété [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) ou **ToolTipService.Placement** jointe pour spécifier si l’info-bulle doit être dessiné au-dessus, au-dessous, à gauche ou droite du pointeur. Vous pouvez définir les propriétés [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) ou [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) pour modifier la distance entre le pointeur et l’info-bulle. Qu’un seul de ces deux valeurs de décalage peut influencer la position finale - VerticalOffset lorsque Placement est la partie supérieure ou inférieure, HorizontalOffset lorsqu’il ne reste Placement ou à droite.
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->

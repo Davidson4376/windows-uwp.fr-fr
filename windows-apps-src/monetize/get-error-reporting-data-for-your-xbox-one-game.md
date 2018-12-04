@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
 ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8326872"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8476371"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>Obtenir les données rapport d’erreurs pour votre console Xbox One jeu
 
 Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données de rapport d’erreur agrégées pour votre console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord XDP Analytique l’espace partenaires.
 
-Vous pouvez récupérer des informations d’erreur supplémentaires en utilisant les méthodes [d’obtenir des détails sur une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md), [obtenir la trace de pile concernant une erreur dans votre console Xbox One jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)et [Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md) .
+Vous pouvez récupérer des informations d’erreur supplémentaires en utilisant les méthodes [obtenir plus d’informations concernant une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md), [obtenir la trace de pile concernant une erreur dans votre console Xbox One jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)et [Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md) .
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -100,7 +100,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | market          | chaîne  | Code pays ISO3166 du marché des appareils.   |
 | deviceType      | chaîne  | Type d’appareil sur lequel l’erreur s’est produite. Il s’agit toujours de la valeur de **Console**.    |
 | packageName     | chaîne  | Le package de nom unique du jeu qui est associé à cette erreur.      |
-| packageVersion  | chaîne  | La version du package de jeu qui est associé à cette erreur.   |
+| packageVersion  | chaîne  | La version du package de jeu associé à cette erreur.   |
 | deviceCount     | entier | Le nombre d’appareils uniques correspondant à cette erreur pour le niveau d’agrégation spécifié.  |
 | eventCount      | entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, mise à jour, tâche en arrière-plan, updatetask, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8327262"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8477502"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Exécuter une tâche en arrière-plan lorsque votre application UWP est mise à jour
 
@@ -31,7 +31,7 @@ Comme avec d’autres types de tâches en arrière-plan, vous mettre en œuvre l
 
 Vous n’avez pas besoin d’enregistrer cette tâche en arrière-plan (la section «Inscrire la tâche en arrière-plan s’exécute» dans la rubrique **créer et inscrire une tâche en arrière-plan hors processus** ) pour utiliser la tâche de mise à jour. Il s’agit de la principale raison d’utiliser une tâche de mise à jour, car vous n’avez pas besoin d’ajouter du code à votre application pour inscrire la tâche et l’application ne doit pas s’exécuter au moins une fois avant la mise à jour pour inscrire la tâche en arrière-plan.
 
-L’exemple de code suivant montre un point de départ de base pour une classe de tâche en arrière-plan tâche de mise à jour en c#. La classe de tâche en arrière-plan elle-même - et toutes les autres classes dans le projet de tâche en arrière-plan - doivent être **publics** et **sealed**. Votre classe de tâche en arrière-plan doit dériver de **IBackgroundTask** et avoir une méthode **Run()** publique avec la signature illustrée ci-dessous:
+L’exemple de code suivant montre un point de départ de base pour une classe de tâche en arrière-plan tâche mise à jour en c#. La classe de tâche en arrière-plan elle-même - et toutes les autres classes dans le projet de tâche en arrière-plan - doivent être **public** et **sealed**. Votre classe de tâche en arrière-plan doit dériver de **IBackgroundTask** et avoir une méthode **Run()** publique avec la signature illustrée ci-dessous:
 
 ```cs
 using Windows.ApplicationModel.Background;
@@ -82,7 +82,7 @@ Ensuite, dans l’Explorateur de solutions, cliquez sur le projet de votre appli
 
 ![définir les paramètres de débogage](images/do-not-launch-but-debug.png)
 
-Ensuite, pour vous assurer que le UpdateTask est déclenchée, augmentez le numéro de version du package. Dans l’Explorateur de solutions, double-cliquez sur le fichier de votre application **Package.appxmanifest** pour ouvrir le Concepteur de packages et ensuite mettre à jour le numéro de **Build** :
+Ensuite, pour vous assurer que le UpdateTask se déclenche, augmentez le numéro de version du package. Dans l’Explorateur de solutions, double-cliquez sur le fichier de votre application **Package.appxmanifest** pour ouvrir le Concepteur de packages et ensuite mettre à jour le numéro de **Build** :
 
 ![mise à jour de la version](images/bump-version.png)
 
@@ -91,7 +91,7 @@ Désormais, dans Visual Studio 2017 lorsque vous appuyez sur F5, mise à jour vo
 Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’application au premier plan du menu Démarrer de Windows au sein de la même session de débogage. Le débogueur s’attache à nouveau automatiquement, cette fois à votre processus de premier plan, et vous pouvez parcourir la logique de votre application.
 
 > [!NOTE]
-> Les utilisateurs de Visual Studio 2015: les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques à déclencheur et testez le UpdateTask, à l’exception de Visual Studio ne sera pas attachée à celui-ci. Une autre possibilité dans Visual Studio 2015 consiste à configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit l’UpdateTask en tant que son Point d’entrée et déclenche l’exécution directement à partir de l’application au premier plan.
+> Les utilisateurs de Visual Studio 2015: les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques à déclencheur et testez le UpdateTask, à l’exception de Visual Studio ne sera pas attachée à celui-ci. Une autre procédure dans Visual Studio 2015 consiste à configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit l’UpdateTask en tant que son Point d’entrée et déclenche l’exécution directement à partir de l’application au premier plan.
 
 ## <a name="see-also"></a>Voir aussi
 

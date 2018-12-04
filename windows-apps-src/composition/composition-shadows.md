@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333261"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8477684"
 ---
 # <a name="shadows-in-windows-ui"></a>Ombres dans l’interface utilisateur de Windows
 
@@ -37,7 +37,7 @@ basicRectVisual.Shadow = basicShadow;
 
 ## <a name="shaping-the-shadow"></a>Dans les situations où l’ombre
 
-Il existe plusieurs façons de définir la forme pour votre DropShadow:
+Il existe plusieurs façons de définir la forme de votre DropShadow:
 
 - **Utilisez la valeur par défaut** - par défaut la forme DropShadow est définie par le mode «Default» sur CompositionDropShadowSourcePolicy. Pour SpriteVisual, la valeur par défaut est rectangulaire, sauf si un masque est fourni. Pour LayerVisual, la valeur par défaut est hériter un masque à l’aide de la valeur alpha du pinceau de l’élément visuel.
 - **Définir un masque** ; vous pouvez définir la propriété [masque](/uwp/api/windows.ui.composition.dropshadow.mask) pour définir un masque d’opacité de l’ombre.
@@ -67,7 +67,7 @@ imageSpriteVisual.Shadow = shadow;
 
 ![Image web connectés avec ombre portée masquée](images/ms-brand-web-dropshadow.png)
 
-## <a name="using-an-alternative-mask"></a>À l’aide d’un masque de remplacement.
+## <a name="using-an-alternative-mask"></a>À l’aide d’un masque de remplacement
 
 Dans certains cas, vous voudrez peut-être l’ombre de forme tels qu’il ne correspond pas au contenu de votre élément visuel. Pour obtenir cet effet, vous devez définir explicitement la propriété masque à l’aide d’un pinceau avec alpha.
 
@@ -97,7 +97,7 @@ imageSpriteVisual.Shadow = shadow;
 
 ## <a name="animating"></a>Animation
 
-Selon la norme de la couche visuelle, DropShadow propriétés peuvent être animées à l’aide d’Animations de Composition. Ci-dessous, nous modifions le code à partir de l’exemple de faible pluie ci-dessus pour animer le rayon de flou de l’ombre.
+Selon la norme de la couche visuelle, DropShadow propriétés peuvent être animées à l’aide d’Animations de Composition. Ci-dessous, nous modifions le code de l’exemple de faible pluie ci-dessus pour animer le rayon de flou de l’ombre.
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -114,12 +114,12 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 Si vous souhaitez ajouter une ombre aux éléments d’infrastructure plus complexes, il existe deux façons pour permettre l’interopérabilité avec les ombres entre XAML et de Composition:
 
 1. Utilisez le [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) disponible dans le Kit de ressources de la Communauté Windows. Consultez la [documentation DropShadowPanel](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) pour plus d’informations sur son utilisation.
-1. Créer un élément visuel pour utiliser en tant que l’hôte de l’ombre et la lier au visuel de document XAML.
-1. Utiliser le contrôle de CompositionShadow personnalisé de la galerie d’exemples Composition [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) . Voir l’exemple ci-dessous pour afficher la syntaxe.
+1. Créez un élément visuel pour utiliser en tant que l’hôte de l’ombre & Lier à la visuel de document XAML.
+1. Utilisez le contrôle de CompositionShadow personnalisé de la galerie d’exemples Composition [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) . Voir l’exemple ci-dessous pour une utilisation.
 
 ## <a name="performance"></a>Analyse des performances
 
-Bien que la couche visuelle possède de nombreuses optimisations en place pour rendre les effets efficace et utilisable, la génération d’ombres peut être une opération relativement coûteuse selon les options que vous définissez. Vous trouverez ci-dessous des niveau «coûts élevés» pour différents types d’ombres. Notez que bien que certaines ombres peut s’avérer coûteux qu’ils peuvent toujours être appropriés à utiliser avec parcimonie dans certains scénarios.
+Bien que la couche visuelle possède de nombreuses optimisations en place pour rendre les effets efficace et utilisable, la génération d’ombres peut être une opération relativement coûteuse selon les options que vous définissez. Vous trouverez ci-dessous des niveau «cher» pour différents types d’ombres. Notez que bien que certaines ombres peut s’avérer coûteux qu’ils peuvent toujours être judicieux d’utiliser avec parcimonie dans certains scénarios.
 
 Caractéristiques d’ombre| Coût
 ------------- | -------------

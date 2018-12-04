@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9941c18936291b3dad6de9b47ef1299d986bef68
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343230"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8476524"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Attirer les clients et promouvoir vos applications
 
@@ -20,7 +20,7 @@ Une fois que votre application se trouve dans le Microsoft Store, il est temps v
 -   [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 -   [Créer une campagne personnalisée de promotion d’applications](create-a-custom-app-promotion-campaign.md)
 -   [Commercialiser des applications et des extensions](put-apps-and-add-ons-on-sale.md)
--   [Recommandations en matière d’applications de marketing de Microsoft Store](app-marketing-guidelines.md)
+-   [Recommandations pour les applications de marketing de Microsoft Store](app-marketing-guidelines.md)
 -   [Créer un lien vers votre application](link-to-your-app.md)
 -   [Faciliter la promotion de votre application](make-your-app-easier-to-promote.md)
 

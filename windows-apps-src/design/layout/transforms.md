@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f978c7b76f01be23badcf38a56023963882af9d2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351749"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8477311"
 ---
 # <a name="transforms-overview"></a>Vue d’ensemble des transformations
 
