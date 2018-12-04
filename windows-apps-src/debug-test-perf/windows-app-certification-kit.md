@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 614f59fe06528d7b5bac36290eae14f0d7d49653
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350294"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473699"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
@@ -88,7 +88,7 @@ Les seuils du test de performances du Kit de certification des applications Wind
 
 Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répond aux [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur de faible consommation d’énergie, par exemple, un ordinateur Intel Atom basée sur un processeur avec une résolution d’écran de 1366 x 768 (ou une version ultérieure) et une rotation dur lecteur (par opposition à un disque dur SSD).
 
-À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous à la plus récente [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
+À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Consultez les plus récentes [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification d’application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

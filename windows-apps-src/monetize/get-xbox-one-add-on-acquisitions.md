@@ -1,16 +1,16 @@
 ---
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’acquisition agrégées d’extensions.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’acquisition agrégées d’extensions.
 title: Obtenir des acquisitions d’extensions XboxOne
 ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, Xbox One acquisitions de modules complémentaires
 ms.localizationpriority: medium
 ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323955"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475353"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions XboxOne
 
@@ -46,7 +46,7 @@ Le paramètre *applicationId* ou *addonProductId* est obligatoire. Pour récupé
 
 | Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L' *ID du produit* du jeu Xbox One pour lequel vous récupérez des données d’acquisition. Pour obtenir l' *ID du produit* de votre jeu, accédez à votre jeu dans le programme d’Analytique XDP et récupérer l' *ID du produit* à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’acquisitions à partir du rapport analytique de l’espace partenaires, l' *ID du produit* est inclus dans le fichier .tsv. |  Oui  |
+| applicationId | chaîne | *ProductId* du jeu Xbox One pour lequel vous récupérez des données d’acquisition. Pour obtenir l' *ID du produit* de votre jeu, accédez à votre jeu dans le programme d’Analytique XDP et récupérer l' *ID du produit* à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’acquisitions à partir du rapport analytique de l’espace partenaires, l' *ID du produit* est inclus dans le fichier .tsv. |  Oui  |
 | addonProductId | chaîne | L' *ID du produit* de l’extension pour laquelle vous souhaitez récupérer des données d’acquisition.  | Oui  |
 | startDate | date | Dans la plage de dates, date de début de la récupération des données d’acquisition. La valeur par défaut est la date du jour. |  Non  |
 | endDate | date | Dans la plage de dates, date de fin de la récupération des données d’acquisition. La valeur par défaut est la date du jour. |  Non  |
@@ -104,7 +104,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | market              | chaîne  | Le code pays ISO3166 du marché dans lequel l’acquisition s’est produite.                                                                                                                                                                  |
 | gender              | chaîne  | <p>L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition:</p> <ul><li>«m»</li><li>«f»</li><li>«Inconnu»</li></ul>                                                                                                    |
 | age            | chaîne  | <p>L'une des chaînes suivantes qui indique le groupe d'âge de l'utilisateur ayant effectué l’acquisition:</p> <ul><li>«moins de 13»</li><li>«13: 17»</li><li>«18 à 24»</li><li>«25-34»</li><li>«35-44»</li><li>«44: 55»</li><li>«greater than 55»</li><li>«Inconnu»</li></ul>                                                                                                 |
-| acquisitionType     | chaîne  | <p>Une des chaînes suivantes qui indique le type d'acquisition:</p> <ul><li>«Gratuitement»</li><li>«Essai»</li><li>«Payé»</li><li>«Code promotionnel»</li><li>«Iap»</li><li>«Abonnement Iap»</li><li>«Public privé»</li><li>«Pre ordre»</li><li>«Xbox Game Pass» (ou «Game Pass» si l’interrogation pour les données avant le 23 mars 2018)</li><li>«Disques»</li><li>«Code prépayé»</li><li>«Facturé ordre des pré»</li><li>«Annulé l’ordre des pré»</li><li>«N’a pas pu ordre des pré»</li></ul>                                                                                                    |
+| acquisitionType     | chaîne  | <p>Une des chaînes suivantes qui indique le type d'acquisition:</p> <ul><li>«Gratuitement»</li><li>«Essai»</li><li>«Payé»</li><li>«Code promotionnel»</li><li>«PIA»</li><li>«Abonnement PIA»</li><li>«Public privé»</li><li>«Pre ordre»</li><li>«Xbox Game Pass» (ou «Game Pass» si l’interrogation pour les données avant le 23 mars 2018)</li><li>«Disques»</li><li>«Code prépayé»</li><li>«Facturé Pre ordre»</li><li>«Annulé Pre ordre»</li><li>«Failed Pre ordre»</li></ul>                                                                                                    |
 | acquisitionQuantity | entier | Le nombre d’acquisitions qui se sont produites.                        |
 
 

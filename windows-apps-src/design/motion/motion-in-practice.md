@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351339"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8474525"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -85,7 +85,7 @@ Voici 3manières d’appliquer les principes de base du mouvement Fluent dans vo
 
 Animations implicites sont un moyen simple d’obtenir le mouvement Fluent par automatiquement et effectue une interpolation entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
 
-Vous pouvez implicitement animer les propriétés suivantes:
+Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes:
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
@@ -93,10 +93,10 @@ Vous pouvez implicitement animer les propriétés suivantes:
   - **Échelle**
   - **Translation**
 
-- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
+- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau](/uwp/api/windows.ui.xaml.controls.panel)
   - **Arrière-plan**
 
-Chaque propriété qui peut avoir des modifications implicitement animées possède une propriété de _transition_ correspondante. Pour animer la propriété, vous affectez un type de transition à la propriété correspondante de la _transition_ . Ce tableau indique les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
+Chaque propriété qui peut avoir des modifications implicitement animées possède une propriété de _transition_ correspondant. Pour animer la propriété, vous affectez un type de transition à la propriété correspondante de la _transition_ . Ce tableau indique les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
 
 | Propriété animée | Propriété de transition | Type de transition implicite |
 | -- | -- | -- |

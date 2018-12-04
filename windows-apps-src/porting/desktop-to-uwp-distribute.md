@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe216b70b7c10f254c0e3b7b18275a72d46215c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340235"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475621"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
@@ -71,7 +71,7 @@ Avant de distribuer votre application, envisagez d’ajouter quelques extensions
 
 * Pointez les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée.
 * Associer votre application empaquetée à un ensemble de types de fichiers.
-* Rendre votre application empaquetée à ouvrir certains types de fichiers par défaut.
+* Rendre votre application empaquetée ouvrir certains types de fichiers par défaut.
 
 Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
@@ -123,7 +123,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstaller la version bureau de votre application
 
-Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Si cela se produit, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
+Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
 
 Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 

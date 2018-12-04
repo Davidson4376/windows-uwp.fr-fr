@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331590"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475294"
 ---
 # <a name="enter-add-on-properties"></a>Saisir les propriétés d’une extension
 
@@ -84,7 +84,7 @@ Vous pouvez fournir jusqu’à dix mots clés d’un maximum de 30caractères ch
 Pour exécuter une requête sur ce champ, utilisez la propriété [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) de [l’espace de noms Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), utilisez plutôt la propriété [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords).)
 
 > [!NOTE]
-> Mots clés ne sont pas disponibles pour une utilisation dans les packages ciblant package Windows8 et Windows8.1.
+> Mots clés ne sont pas utilisables dans des packages ciblant package Windows8 et Windows8.1.
 
 <span id="custom-developer-data" />
 

@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323105"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8471266"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 
@@ -58,7 +58,7 @@ Consultez ce guide avant de commencer la création d’un package pour votre app
 
    ![Définir le point d’entrée](images/desktop-to-uwp/entry-point-set.png)
 
-6. Générez le projet de création de package pour vous assurer qu’aucune erreur n’apparaît.  Si vous recevez des erreurs, ouvrez le **Gestionnaire de Configuration** et vous assurer que vos projets ciblent la même plate-forme.
+6. Générez le projet de création de package pour vous assurer qu’aucune erreur n’apparaît.  Si vous recevez des erreurs, ouvrez le **Gestionnaire de Configuration** et vous assurer que vos projets ciblent la plate-forme même.
 
    ![Gestionnaire de configuration](images/desktop-to-uwp/config-manager.png)
 
