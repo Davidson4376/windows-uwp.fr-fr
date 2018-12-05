@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464746"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8688359"
 ---
 # <a name="themeresource-markup-extension"></a>Extension de balisage {ThemeResource}
 
@@ -67,7 +67,7 @@ Les définitions XAML des états visuels dans un modèle de contrôle doivent ut
 
 Les utilisations de **ThemeResource** peuvent être considérées comme une série de valeurs dépendantes. Par exemple, une valeur [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) utilisée par un élément [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) qui est également une ressource à clé peut utiliser une référence **ThemeResource**. Toutefois, toutes les propriétés d’interface utilisateur qui utilisent la ressource **SolidColorBrush** à clé utilisent également une référence **ThemeResource**, de sorte que chaque propriété de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) autorise spécifiquement une modification de valeur dynamique quand le thème change.
 
-**Remarque** `{ThemeResource}` et d’évaluation de la ressource de l’exécution lors du changement du thème est pris en charge dans le code XAML Windows8.1, mais non dans le code XAML des applications qui ciblent package Windows8.
+**Remarque** `{ThemeResource}` et d’évaluation de la ressource de l’exécution lors du changement du thème est pris en charge dans le code XAML Windows8.1, mais non dans le code XAML des applications qui ciblent le package Windows8.
 
 ### <a name="system-resources"></a>Ressources système
 
@@ -138,7 +138,7 @@ Ici, la valeur [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)
 
 ## <a name="windows8-behavior"></a>Comportement de package Windows8
 
-Package Windows8 ne prenaient pas en charge l’extension de balisage **ThemeResource** , il est disponible à partir de Windows8.1. En outre, package Windows8 ne gérait pas changement dynamique des ressources liées aux thèmes pour une application Windows Runtime. Vous deviez redémarrer l’application pour que le changement de thème soit activé pour les styles et les modèles XAML. Cela n’est pas une bonne expérience utilisateur, afin que les applications sont vivement recommandées de recompile et cible Windows8.1 afin qu’ils peuvent utiliser des styles avec des utilisations **ThemeResource** et pouvant basculer dynamiquement les thèmes quand l’utilisateur. Applications qui ont été compilées pour package Windows8 mais s’exécutant sur Windows8.1 continue à utiliser le comportement de package Windows8.
+Package Windows8 ne prenaient pas en charge l’extension de balisage **ThemeResource** , il est disponible à partir de Windows8.1. En outre, package Windows8 ne gérait pas changement dynamique des ressources liées aux thèmes pour une application Windows Runtime. Vous deviez redémarrer l’application pour que le changement de thème soit activé pour les styles et les modèles XAML. Cela n’est pas une bonne expérience utilisateur, afin que les applications sont vivement recommandées de recompile et cible Windows8.1 afin qu’ils peuvent utiliser des styles avec des utilisations **ThemeResource** et pouvant basculer dynamiquement les thèmes quand l’utilisateur. Applications qui ont été compilées pour le package Windows8 mais s’exécutant sur Windows8.1 continue à utiliser le comportement de package Windows8.
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>Prise en charge d’outils au moment de la conception pour l’extension de balisage **{ThemeResource}**
 

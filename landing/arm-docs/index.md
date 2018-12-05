@@ -1,6 +1,6 @@
 ---
 layout: LandingPage
-description: Cette page fournit les informations vous permettant de commencer à développer des applications UWP et win32 ARM64.
+description: Cette page fournit les informations pour pouvoir commencer à développer win32 ARM64 et les applications UWP.
 title: Windows10 sur ARM
 author: msatranjr
 ms.author: misatran
@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: Windows 10 sur ARM, ARM, créer des applications win32 ARM64, génération de pilotes ARM64
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463591"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693224"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 sur ARM
 Windows 10 s’exécute sur les ordinateurs munis de processeurs ARM. Cette page fournit les informations pour en savoir plus sur la plateforme et de commencer à développer des applications. Nous vous encourageons également à fournir vos commentaires en utilisant les liens en bas de la page.
@@ -24,11 +24,11 @@ Regardez et découvrez comment Windows 10 s’exécute sur ARM.
 <ul class="cols cols3">
     <li>
         <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
-        <h3>Création d’applications de C++ Win32 ARM64</h3><p>Découvrez comment installer les outils de ARM64 pour Visual Studio. Puis nous allons Guide à travers les étapes de création et de compilation d’un nouveau projet 64 ARM.</p>
+        <h3>Création d’applications de C++ Win32 ARM64</h3><p>Découvrez comment installer les outils de ARM64 pour Visual Studio. Puis nous allons vous guidons à travers les étapes de création et de compilation d’un nouveau projet 64 ARM.</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>Build 2018 Windows 10 sur ARM pour les développeurs</h3><p>En savoir plus sur Windows 10 sur appareils ARM, comment la magie de x86 works émulation et enfin l’envoi et de créer des applications pour Windows 10 sur ARM. Nous être sera montrant comment créer des applications de ARM64 pour les ordinateurs de bureau et UWP.</p>
+        <h3>Build 2018 Windows 10 sur ARM pour les développeurs</h3><p>En savoir plus sur Windows 10 sur appareils ARM, comment la magie de x86 émulation fonctionne et enfin l’envoi et de créer des applications pour Windows 10 sur ARM. Nous être sera montrant comment créer des applications de ARM64 pour les ordinateurs de bureau et UWP.</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
@@ -89,7 +89,7 @@ Découvrez la plateforme en fonction de ces ressources.
 </ul>
 
 ## <a name="developing-for-windows-10-on-arm"></a>Développement pour Windows 10 sur ARM
-Démarrez la personnalisation de vos applications pour Windows 10 sur ARM et tirer parti des fonctionnalités disponibles il.  
+Démarrez la personnalisation de vos applications vers Windows 10 sur ARM et tirer parti des fonctionnalités disponibles il.  
 
 <ul class="cardsF panelContent cols cols3">
     <li>
@@ -101,7 +101,7 @@ Démarrez la personnalisation de vos applications pour Windows 10 sur ARM et tir
                     </div>
                     </a>
                 <div class="cardText">
-                    <h3>Création d’applications ARM64 avec le Kit de développement</h3>
+                    <h3>Création d’applications ARM64 avec le SDK</h3>
                     <p class="x-hidden-focus">Consultez ce billet de blog où nous vous guidons par le biais de la compilation de vos applications en tant qu’ARM64 à s’exécuter en mode natif sur Windows 10 sur ARM.</p>
                 </div>
             </div>
@@ -131,7 +131,7 @@ Démarrez la personnalisation de vos applications pour Windows 10 sur ARM et tir
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>Le débogage sur ARM</h3>
+                    <h3>Débogage sur ARM</h3>
                     <p class="x-hidden-focus">Obtenir votre code en cours d’exécution effectue en toute transparence sur Windows 10 sur ARM.</p>
                 </div>
             </div>
@@ -192,7 +192,7 @@ Démarrez la personnalisation de vos applications pour Windows 10 sur ARM et tir
 </ul>-->
 
 ## <a name="let-us-know-if-you-have-feedback"></a>Faites-nous savoir si vous avez des commentaires
-Nous lançons continuellement notre produit par des commentaires en exploitant de vous et nos clients existants. Si vous avez une idée, sont bloqués sur un problème ou que vous souhaitez simplement partager l’étendue des votre expérience est, ces liens vous aidera.
+Nous lançons continuellement notre produit par des commentaires en exploitant de vous et nos clients existants. Si vous avez une idée, sont bloqués sur un problème ou que vous souhaitez simplement partager l’importance votre expérience est, ces liens vous aidera.
 
 <ul class="cardsM cols cols3">
 <li>

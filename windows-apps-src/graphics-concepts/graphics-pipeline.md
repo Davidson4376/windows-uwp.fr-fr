@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55621cec768e0aac680c3a84fd803e591459a97d
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8465438"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713839"
 ---
 # <a name="graphics-pipeline"></a>Pipeline graphique
 
@@ -28,7 +28,7 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 
 ## <a name="input-assembler-stage"></a>Étape de l’assembleur d’entrée
 
-|-|-| | Objectif | [L’étape d’assembleur d’entrée (IA)](input-assembler-stage--ia-.md) fournit primitive et les données de voisinage au pipeline, tels que des triangles, lignes et points, incluant des ID sémantiques pour vous aider à améliorer l’efficacité des nuanceurs en restreignant le traitement aux primitives qui n’ont pas été déjà traitées. | | Entrée | Données de primitive (triangles, lignes et/ou points), à partir des mémoires tampons renseignées par dans la mémoire. Données de contiguïté éventuelles. Un triangle serait 3 vertex pour chaque triangle et éventuellement 3 vertex pour les données de voisinage par triangle. | | Sortie | Les primitives avec valeurs attachées générées par le système (par exemple, un ID de primitive, un ID d’instance ou un ID de vertex). |
+|-|-| | Objectif | [L’étape d’assembleur d’entrée (IA)](input-assembler-stage--ia-.md) fournit primitive et les données de voisinage dans le pipeline, tels que des triangles, lignes et points, incluant des ID sémantiques pour vous aider à améliorer l’efficacité des nuanceurs en restreignant le traitement aux primitives qui n’ont pas été déjà traitées. | | Entrée | Données de primitive (triangles, lignes et/ou points), à partir des mémoires tampons renseignées par dans la mémoire. Données de contiguïté éventuelles. Un triangle serait 3 vertex pour chaque triangle et éventuellement 3 vertex pour les données de voisinage par triangle. | | Sortie | Les primitives avec valeurs attachées générées par le système (par exemple, un ID de primitive, un ID d’instance ou un ID de vertex). |
 
 ## <a name="vertex-shader-stage"></a>Étape du nuanceur de vertex
 
@@ -36,7 +36,7 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
  
 ## <a name="hull-shader-stage"></a>Étape du nuanceur de coque
  
-|-|-| | Objectif | L' [étape du nuanceur de coque (HS)](hull-shader-stage--hs-.md) est l’un des étapes de pavage qui décomposent efficacement une surface unique d’un modèle dans un grand nombre de triangles. Un nuanceur de coque est invoqué une fois par patch et transforme les points de contrôle d’entrée qui définissent une surface d’ordre bas en points de contrôle constituant un patch. Ce nuanceur effectue également certains calculs par patch afin de fournir des données pour l’étape du Paveur (TS) et l’étape du nuanceur de domaine (DS). | | Entrée | Entre 1 et les points de contrôle d’entrée 32, qui définissent conjointement une surface d’ordre bas. | | Sortie | Entre 1 et 32 points de contrôle de sortie, qui composent un patch. Le nuanceur de coque déclare l’état de l’étape du Paveur (TS), y compris le nombre de points de contrôle, le type de face de patch et le type de partitionnement à utiliser lors du pavage. |
+|-|-| | Objectif | L' [étape du nuanceur de coque (HS)](hull-shader-stage--hs-.md) est l’un des étapes de pavage qui décomposent efficacement une surface unique d’un modèle dans un grand nombre de triangles. Un nuanceur de coque est invoqué une fois par patch et transforme les points de contrôle d’entrée qui définissent une surface d’ordre bas en points de contrôle constituant un patch. Ce nuanceur effectue également certains calculs par patch afin de fournir des données pour l’étape du Paveur (TS) et l’étape du nuanceur de domaine (DS). | | Entrée | Entre 1 et les points de contrôle d’entrée 32, qui définissent conjointement une surface d’ordre bas. | | Sortie | Entre 1 et 32 points de contrôle de sortie qui composent un patch. Le nuanceur de coque déclare l’état de l’étape du Paveur (TS), y compris le nombre de points de contrôle, le type de face de patch et le type de partitionnement à utiliser lors du pavage. |
 
 ## <a name="tessellator-stage"></a>Étape du paveur
 
@@ -64,7 +64,7 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 
 ## <a name="output-merger-stage"></a>Étape de fusion de sortie
  
-|-|-| | Objectif | L' [étape de fusion / sortie (OM)](output-merger-stage--om-.md) combine plusieurs types de données de sortie (valeurs du nuanceur de pixels, informations de profondeur et gabarit) avec le contenu de la cible de rendu de profondeur/gabarit tampons pour générer le résultat final du pipeline. | | Entrée | Les entrées de fusion / sortie sont l’état du Pipeline, les données de pixel générées par les nuanceurs de pixels, le contenu des cibles de rendu et le contenu des tampons de profondeur/gabarit. | | Sortie | Couleur de pixel finale du rendu. |
+|-|-| | Objectif | L' [étape de fusion / sortie (OM)](output-merger-stage--om-.md) combine plusieurs types de données de sortie (valeurs du nuanceur de pixels, informations de profondeur et gabarit) avec le contenu de la cible de rendu de profondeur/gabarit tampons pour générer le résultat final du pipeline. | | Entrée | Les entrées de fusion / sortie sont l’état du Pipeline, les données de pixel générées par les nuanceurs de pixels, le contenu des cibles de rendu et le contenu des mémoires tampons de profondeur/gabarit. | | Sortie | Couleur de pixel finale du rendu. |
 
 ## <a name="related-topics"></a>Articles connexes
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces, publicités, tailles, bannière
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bc59026f8e2ba9b736db8514508ca9ccfad62f8
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461516"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713949"
 ---
 # <a name="supported-banner-ad-sizes"></a>Tailles des bannières prises en charge
 
@@ -28,7 +28,7 @@ Les tailles des bannières publicitaires suivantes sont prises en charge pour le
 > [!NOTE]
 > Pour une expérience optimale, nous vous recommandons d’utiliser les tailles suivantes sur les appareils Windows 10 Mobile: 300 x 50, 320 x 50 et 640 x 100.
 
-Le tableau suivant fournit des exemples qui illustrent chaque taille de publicité de bannière.
+Le tableau suivant fournit des exemples qui illustrent la taille de chaque publicité bannière.
 
 <table>
 <colgroup>

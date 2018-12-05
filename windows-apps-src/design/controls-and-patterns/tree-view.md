@@ -1,5 +1,5 @@
 ---
-description: Vous pouvez créer une arborescence extensible en liant la propriété ItemsSource à une source de données hiérarchiques, ou vous pouvez créer et gérer les objets TreeViewNode vous-même.
+description: Vous pouvez créer une arborescence en liant la propriété ItemsSource à une source de données hiérarchiques, ou vous pouvez créer et gérer les objets TreeViewNode vous-même.
 title: Arborescence
 label: Tree view
 template: detail.hbs
@@ -14,11 +14,11 @@ dev_langs:
 - vb
 ms.custom: RS5
 ms.openlocfilehash: 753d0cd808daef96aa16c34c3962201ca73e5be9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464904"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689473"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -100,7 +100,7 @@ Voici un exemple d'arborescence simple déclarée en XAML. Vous ajoutez généra
 </TreeView>
 ```
 
-Dans la plupart des cas, votre arborescence présente les données à partir d’une source de données, afin que vous déclarez le contrôle racine TreeView en XAML, en règle générale, mais ajoutez les objets TreeViewNode dans le code ou à l’aide de la liaison de données.
+Dans la plupart des cas, votre arborescence présente les données à partir d’une source de données, donc vous déclarez le contrôle racine TreeView en XAML, en règle générale, mais ajoutez les objets TreeViewNode dans le code ou à l’aide de la liaison de données.
 
 ### <a name="bind-to-a-hierarchical-data-source"></a>Lier à une source de données hiérarchiques
 
@@ -117,11 +117,11 @@ Pour créer une arborescence à l’aide de la liaison de données, définissez 
 </TreeView>
 ```
 
-Consultez _vue de l’arborescence à l’aide de la liaison de données_ de la section exemples pour obtenir le code complet.
+Voir _arborescence à l’aide de la liaison de données_ de la section exemples pour obtenir le code complet.
 
 #### <a name="items-and-item-containers"></a>Éléments et conteneurs d’éléments
 
-Si vous utilisez TreeView.ItemsSource, ces API est disponibles pour obtenir l’élément de données ou de nœud à partir du conteneur et vice versa.
+Si vous utilisez TreeView.ItemsSource, ces API sont disponibles pour obtenir l’élément de données ou de nœud à partir du conteneur et vice versa.
 
 | **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
 | - | - |
@@ -206,11 +206,11 @@ Vous pouvez fournir un [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) pou
 
 ### <a name="item-container-style"></a>Style de conteneur d’éléments
 
-Si vous utilisez ItemsSource ou RootNodes, les éléments réelles utilisées pour afficher chaque nœud – appelée le «conteneur»: est un objet [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) . Vous pouvez définir le style du conteneur à l’aide de TreeView ItemContainerStyle ou ItemContainerStyleSelector propriétés.
+Si vous utilisez ItemsSource ou RootNodes, les éléments réelles utilisées pour afficher chaque nœud – appelée le «conteneur»: est un objet [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) . Vous pouvez appliquer un style du conteneur à l’aide du TreeView ItemContainerStyle ou ItemContainerStyleSelector propriétés.
 
 ### <a name="item-template-selectors"></a>Sélecteurs de modèle d’élément
 
-Vous pouvez choisir de définir un DataTemplate pour les éléments de vue arborescence basés sur le type d’élément différent. Par exemple, dans une application de l’Explorateur de fichiers, vous pouvez utiliser un modèle de données pour les dossiers et l’autre pour les fichiers.
+Vous pouvez choisir de définir un DataTemplate pour les éléments de vue arborescence basés sur le type d’élément différent. Par exemple, dans une application de l’Explorateur de fichiers, vous pouvez utiliser un modèle de données pour les dossiers et une autre pour les fichiers.
 
 ![Dossiers et fichiers à l’aide de différents modèles de données](images/treeview-icons.png)
 
@@ -383,11 +383,11 @@ Le contrôle TreeView prend en charge la sélection unique et la sélection mult
 
 Lors de la sélection multiple est activée, une case à cocher s’affiche en regard de chaque nœud d’arborescence, et les éléments sélectionnés sont mis en surbrillance. Un utilisateur peut sélectionner ou désélectionner un élément à l’aide de la case à cocher. Le fait de cliquer sur l’élément permet toujours de l'appeler.
 
-Activant ou en désélectionnant un nœud parent sera sélectionner ou désélectionner tous les enfants sous ce nœud. Si certains, mais pas la totalité, des enfants sous un nœud parent sont sélectionnés, la case à cocher pour le nœud parent s’affiche comme indéterminé (rempli avec une boîte noire).
+Sélectionner ou annuler un nœud parent sera sélectionner ou désélectionner tous les enfants sous ce nœud. Si certains, mais pas la totalité, des enfants sous un nœud parent sont sélectionnés, la case à cocher pour le nœud parent s’affiche comme indéterminé (rempli avec une boîte noire).
 
 ![Sélection multiple dans une arborescence](images/treeview-selection.png)
 
-Activant ou en désélectionnant un nœud parent sera sélectionner ou désélectionner tous les enfants sous ce nœud. Si certains, mais pas la totalité, des enfants sous un nœud parent sont sélectionnés, la case à cocher pour le nœud parent s’affiche comme indéterminé (rempli avec une boîte noire).
+Sélectionner ou annuler un nœud parent sera sélectionner ou désélectionner tous les enfants sous ce nœud. Si certains, mais pas la totalité, des enfants sous un nœud parent sont sélectionnés, la case à cocher pour le nœud parent s’affiche comme indéterminé (rempli avec une boîte noire).
 
 ![Sélection multiple dans une arborescence](images/treeview-selection.png)
 
