@@ -1,17 +1,17 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application WindowsPhone Silverlight qu’affiche des données groupées dans un élément LongListSelector.
-title: WindowsPhone Silverlight à l’étude de cas UWP, Bookstore2
+title: Étude de cas UWP, Bookstore2 WindowsPhone Silverlight
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8465970"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8688833"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight à l’étude de cas UWP: Bookstore2
 
@@ -120,7 +120,7 @@ Vous pouvez à présent générer et exécuter l’application. Voici comment ce
 
 ![Application UWP sur un appareil mobile avec les modifications du code source initial](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-Le modèle d’affichage et les vues avec zoom avant et arrière fonctionnent ensemble correctement. Toutefois, cette approche nécessite un peu plus de travail de stylisation et de création de modèles. Par exemple, les styles et pinceaux corrects n'est pas encore utilisés, afin que le texte est invisible sur les en-têtes de groupe que vous pouvez cliquer pour effectuer un zoom arrière. Si vous exécutez l’application sur un appareil de bureau, vous verrez un second problème, ce qui est que l’application n’adapte pas encore son interface utilisateur pour fournir la meilleure expérience et l’utilisation de l’espace sur des appareils plus grands où windows peuvent être sensiblement taille de l’écran d’un appareil mobile. Nous allons donc résoudre ces problèmes dans les sections ci-après ([Stylisation et création de modèles initiaux](#initial-styling-and-templating), [Interface utilisateur adaptative](#adaptive-ui) et [Stylisation finale](#final-styling)).
+Le modèle d’affichage et les vues avec zoom avant et arrière fonctionnent ensemble correctement. Toutefois, cette approche nécessite un peu plus de travail de stylisation et de création de modèles. Par exemple, les styles et pinceaux corrects n'est pas encore utilisés, afin que le texte est invisible sur les en-têtes de groupe que vous pouvez cliquer pour effectuer un zoom arrière. Si vous exécutez l’application sur un appareil de bureau, vous verrez un second problème, c'est-à-dire que l’application n’adapte pas encore son interface utilisateur pour fournir la meilleure expérience et l’utilisation de l’espace sur des appareils plus grands où windows peuvent être sensiblement taille de l’écran d’un appareil mobile. Nous allons donc résoudre ces problèmes dans les sections ci-après ([Stylisation et création de modèles initiaux](#initial-styling-and-templating), [Interface utilisateur adaptative](#adaptive-ui) et [Stylisation finale](#final-styling)).
 
 ## <a name="initial-styling-and-templating"></a>Stylisation et création de modèles initiaux
 
@@ -301,4 +301,4 @@ Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus
 
 ## <a name="conclusion"></a>Conclusion
 
-Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. Toutes les installations et les concepts de **l’élément LongListSelector**de WindowsPhone Silverlight — et bien plus encore, à être disponibles pour une application UWP sous la forme de **SemanticZoom**, **ListView**, **GridView**et **CollectionViewSource**a été trouvé. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.
+Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. Toutes les installations et les concepts de **l’élément LongListSelector**de WindowsPhone Silverlight et bien plus encore, à être disponibles pour une application UWP sous la forme de **SemanticZoom**, **ListView**, **GridView**et **CollectionViewSource**a été trouvé. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.

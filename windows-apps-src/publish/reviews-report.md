@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ec883e7bcb98d69673b520df918e085182d35ec
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461255"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693036"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
@@ -40,7 +40,7 @@ Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette pa
 -   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n’ont pas encore été mis à jour par le client.
 -   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous ne souhaitez visualiser que les avis de clients appartenant à ce marché.
 -   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients utilisant celui-ci.
--   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie des informations](#review-insight-categories) à afficher uniquement les avis que nous avons associées à cette catégorie. 
+-   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie insight](#review-insight-categories) affiche uniquement les avis que nous avons associées à cette catégorie. 
 
 > [!TIP]
 > Si cette page ne contient aucun avis, assurez-vous que vos filtres n’ont pas exclu la totalité des avis concernant votre application. Par exemple, si vous filtrez les avis en fonction d’un système d’exploitation non pris en charge par votre application, aucun avis n’apparaîtra sur cette page.
@@ -107,12 +107,12 @@ Les commentaires qui n'ont pas été rédigés dans votre langue sont traduits p
 
 Notez que les évaluations sont traduites par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez le comparer à la traduction ou utiliser un autre moyen de traduction.
 
-Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origine à gauche par le client recherche est effectuée (et non un texte traduit), même si vous avez la case à cocher **d’avis par translation** activée.
+Comme indiqué plus haut, lorsque recherche votre avis, uniquement du texte d’origine à gauche par le client est recherchée (et aucun texte traduit), même si vous avez la case à cocher **traduire d’avis** activée.
 
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) ou l' [QU'API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md) pour répondre à la plupart des avis rédigés par vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) ou l' [QU'API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md) pour répondre à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 

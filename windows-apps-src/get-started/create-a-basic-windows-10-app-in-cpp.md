@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462818"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8690378"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Créer une application «Hello world» en C++ / CX
 
 > [!IMPORTANT]
-> Ce didacticiel utilise C++ / CX. Microsoft a publié C++ / WinRT: une projection moderne entièrement standard C ++ 17 langue pour les API Windows Runtime (WinRT). Pour plus d’informations sur cette langue, veuillez consulter [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
+> Ce didacticiel utilise C++ / CX. Microsoft a publié C++ / WinRT: une entièrement standard C ++ 17 projection de langage moderne API Windows Runtime (WinRT). Pour plus d’informations sur cette langue, veuillez consulter [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
 
 Avec Microsoft Studio2017 visuel, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10 avec une interface utilisateur qui est définie dans le balisage langage XAML (Extensible Application).
 
@@ -26,7 +26,7 @@ Avec Microsoft Studio2017 visuel, vous pouvez utiliser C++ / CX pour développer
 ## <a name="before-you-start"></a>Avant de commencer
 
 -   Pour suivre ce didacticiel, vous devez utiliser Visual StudioCommunity 2017 ou l’une des versions de Visual Studio2017, autres que Community sur un ordinateur qui exécute Windows 10. Pour télécharger les éléments nécessaires, voir [Obtenir les outils](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   Nous supposons que vous avez une connaissance de base de C++ / CX, XAML et les concepts abordés dans [vue d’ensemble du code XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   Nous supposons que vous avez une connaissance de base de C++ / CX, XAML et les concepts abordés dans la [vue d’ensemble du code XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre** > **Rétablir la disposition de la fenêtre**.
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>Comparatif entre les applications de bureau C++ et les applications Windows
@@ -61,7 +61,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 ## <a name="hello-world-store-app-in-ccx"></a>Application de Store Hello World en C++ / CX
 
-Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé des applications pour Windows8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, un pour l’application Windows, l’un pour l’application téléphonique et l’autre avec code partagé. La Universal Windows Platform (UWP) Windows 10 permet de disposer que d’un projet, qui s’exécute sur tous les appareils, y compris les ordinateurs de bureau et portables exécutant Windows 10, les appareils tels que les tablettes, les téléphones mobiles, les appareils de réalité virtuelle, et ainsi de suite.
+Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé des applications pour Windows8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, un pour l’application Windows, l’un pour l’application téléphonique et l’autre avec code partagé. Windows 10 Universal Windows Platform (UWP) rend possible d’avoir qu’un seul projet, qui s’exécute sur tous les appareils, y compris les ordinateurs de bureau et portables exécutant Windows 10, les appareils tels que les tablettes, les téléphones mobiles, les appareils de réalité virtuelle, et ainsi de suite.
 
 Commençons par les bases:
 
@@ -117,7 +117,7 @@ Si vous examinez le code dans les fichiers App.xaml.h et App.xaml.cpp dans le pr
 
 **Classes ref**
 
-Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++ / CX, la durée de vie de ces types est régie par le décompte (pas le garbage collection) afin que vous ne supprimez jamais explicitement ces objets de références automatique. Vous pouvez créer vos propres classes ref également.
+Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++ / CX, la durée de vie de ces types est régie par le décompte (non le nettoyage) afin que vous ne supprimez jamais explicitement ces objets de références automatique. Vous pouvez créer vos propres classes ref également.
 
 ```cpp
 namespace HelloWorld
@@ -334,7 +334,7 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-    **Conseil**bien qu’il n’existe aucun texte dans ce [**contrôle TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit afin que vous pouvez le sélectionner.  
+    **Conseil**bien qu’il n’existe aucun texte dans ce [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit afin que vous pouvez le sélectionner.  
 
     Votre code XAML doit maintenant se présenter ainsi:
 

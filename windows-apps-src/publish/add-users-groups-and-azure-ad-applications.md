@@ -1,39 +1,39 @@
 ---
 Description: You can add users, groups, and Azure AD applications to your Partner Center account.
-title: Ajouter des utilisateurs, des groupes et applications Azure AD à votre compte espace partenaires
+title: Ajouter des utilisateurs, groupes et applications Azure AD à votre compte espace partenaires
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multi-utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd300aa6a37c205e01c6f73d95ef1818d516fc0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461398"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685803"
 ---
-# <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Ajouter des utilisateurs, des groupes et applications Azure AD à votre compte espace partenaires
+# <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Ajouter des utilisateurs, groupes et applications Azure AD à votre compte espace partenaires
 
-La section **aux utilisateurs** de [L’espace partenaires](https://partner.microsoft.com/dashboard) (sous **paramètres de compte**) vous permet d’utiliser Azure Active Directory pour ajouter des utilisateurs à votre compte espace partenaires. Chaque utilisateur reçoit un rôle (ou un ensemble d’autorisations personnalisées) qui définit son accès au compte. Vous pouvez également ajouter des [groupes d’utilisateurs](#groups) et [des applications Azure AD](#azure-ad-applications) pour leur accorder un accès à votre compte espace partenaires.
+La section **des utilisateurs** de [L’espace partenaires](https://partner.microsoft.com/dashboard) (sous **paramètres de compte**) vous permet d’utiliser Azure Active Directory pour ajouter des utilisateurs à votre compte espace partenaires. Chaque utilisateur reçoit un rôle (ou un ensemble d’autorisations personnalisées) qui définit son accès au compte. Vous pouvez également ajouter des [groupes d’utilisateurs](#groups) et des [applications Azure AD](#azure-ad-applications) à leur accorder un accès à votre compte espace partenaires.
 
 Après avoir ajouté des utilisateurs au compte, vous pouvez [modifier les détails du compte](#edit), [changer les rôles et les autorisations](set-custom-permissions-for-account-users.md) ou [supprimer des utilisateurs](#remove).
 
 > [!IMPORTANT]
-> Pour pouvoir ajouter des utilisateurs à votre compte, vous devez première [associer votre compte du centre de l’espace avec le client d’Azure Active Directory de votre organisation](associate-azure-ad-with-dev-center.md). 
+> Pour ajouter des utilisateurs à votre compte, vous devez première [associer votre compte du centre de l’espace avec le client d’Azure Active Directory de votre organisation](associate-azure-ad-with-partner-center.md). 
 
 Lorsque vous ajoutez des utilisateurs, vous devez spécifier l’accès à votre compte espace partenaires en leur attribuant un [rôle ou ensemble d’autorisations personnalisées](set-custom-permissions-for-account-users.md). 
 
-N’oubliez pas que tous les utilisateurs de l’espace partenaires (y compris les groupes et applications Azure AD) doivent avoir un compte actif dans [un client Azure AD qui est associé à votre compte espace partenaires](associate-azure-ad-with-dev-center.md). La gestion des utilisateurs s’effectue dans un seul client à la fois. Vous devez vous connecter avec un compte de gestionnaire pour le client dans lequel vous souhaitez ajouter ou modifier des utilisateurs. Création d’un utilisateur dans l’espace partenaires crée également un compte pour cet utilisateur dans le client Azure AD auquel vous êtes connecté, et apporter des modifications au nom de l’utilisateur dans l’espace partenaires sera répercutée dans le locataire Azure AD de votre organisation.
+N’oubliez pas que tous les utilisateurs de l’espace partenaires (y compris les groupes et applications Azure AD) doivent avoir un compte actif dans [un client Azure AD qui est associé à votre compte espace partenaires](associate-azure-ad-with-partner-center.md). La gestion des utilisateurs s’effectue dans un seul client à la fois. Vous devez vous connecter avec un compte de gestionnaire pour le client dans lequel vous souhaitez ajouter ou modifier des utilisateurs. Création d’un utilisateur dans l’espace partenaires crée également un compte pour cet utilisateur dans le client Azure AD auquel vous êtes connecté, et apporter des modifications au nom d’un utilisateur dans l’espace partenaires sera répercutée dans le locataire Azure AD de votre organisation.
 
 > [!NOTE]
-> Si votre organisation utilise [l’intégration d’annuaires](http://go.microsoft.com/fwlink/p/?LinkID=724033) pour synchroniser le service d’annuaire local avec votre compte Azure AD, il se peut que vous ne pourrez pas créer de nouveaux utilisateurs, de groupes ou des applications Azure AD dans l’espace partenaires. Vous (ou un autre administrateur de votre annuaire local) devrez créer ces éléments directement dans le répertoire local avant de la vous serez en mesure d’afficher et les ajouter dans l’espace partenaires.
+> Si votre organisation utilise [l’intégration d’annuaires](http://go.microsoft.com/fwlink/p/?LinkID=724033) pour synchroniser le service d’annuaire local avec votre compte Azure AD, vous ne serez pas en mesure de créer de nouveaux utilisateurs, de groupes ou des applications Azure AD dans l’espace partenaires. Vous (ou un autre administrateur de votre annuaire local) devrez créer ces éléments directement dans le répertoire local avant de la vous serez en mesure d’afficher et les ajouter dans l’espace partenaires.
 
 
 <span id="users" />
 
 ## <a name="add-users-to-your-partner-center-account"></a>Ajouter des utilisateurs à votre compte espace partenaires
 
-Pour ajouter des utilisateurs à votre compte espace partenaires, accédez à la page **utilisateurs** dans les **paramètres de compte** , puis sélectionnez **Ajouter des utilisateurs.** Vous devez être connecté avec un compte de gestionnaire pour le client AzureAD que vous souhaitez utiliser. 
+Pour ajouter des utilisateurs à votre compte espace partenaires, accédez à la page **utilisateurs** dans les **paramètres du compte** et sélectionnez **Ajouter des utilisateurs.** Vous devez être connecté avec un compte de gestionnaire pour le client AzureAD que vous souhaitez utiliser. 
 
 ### <a name="add-existing-users"></a>Ajouter des utilisateurs existants 
 
@@ -67,7 +67,7 @@ Si vous êtes connecté avec un compte de gestionnaire qui dispose également de
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), sélectionnez **Ajouter des utilisateurs**, puis choisissez **créer de nouveaux utilisateurs**.
 2.  Entrez le prénom, le nom et le nom d’utilisateur du nouvel utilisateur.
-3.  Pour que le nouvel utilisateur dispose d’un [compte d’administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) dans l’annuaire de votre organisation, cochez la case **Faire de cet utilisateur un administrateur global dans AzureAD, avec contrôle complet de toutes les ressources de l’annuaire**. Ainsi, l’utilisateur a un accès complet à toutes les fonctionnalités administratives de votre annuaire Azure AD. Ils serez en mesure d’ajouter et gérer des utilisateurs dans l’annuaire de votre organisation (mais pas dans l’espace centre, sauf si vous accorder au compte [rôle/les autorisations](set-custom-permissions-for-account-users.md)appropriées). Si vous cochez cette case, vous devrez fournir un **e-mail de récupération de mot de passe** pour l’utilisateur.
+3.  Pour que le nouvel utilisateur dispose d’un [compte d’administrateur général](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) dans l’annuaire de votre organisation, cochez la case **Faire de cet utilisateur un administrateur global dans AzureAD, avec contrôle complet de toutes les ressources de l’annuaire**. Ainsi, l’utilisateur a un accès complet à toutes les fonctionnalités administratives de votre annuaire Azure AD. Ils serez en mesure d’ajouter et gérer des utilisateurs dans l’annuaire de votre organisation (mais pas dans l’espace centre, sauf si vous accordez au compte [rôle/les autorisations](set-custom-permissions-for-account-users.md)appropriées). Si vous cochez cette case, vous devrez fournir un **e-mail de récupération de mot de passe** pour l’utilisateur.
 4.  Si vous avez coché la case pour **Faire de cet utilisateur un administrateur global dans AzureAD**, entrez une adresse e-mail que l’utilisateur peut utiliser s’ils souhaitent récupérer son mot de passe.
 5.  Dans la section **Appartenance au groupe**, sélectionnez les groupes auxquels doit appartenir le nouvel utilisateur.
 6.  Dans la section **Rôles**, spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués à l’utilisateur.
@@ -92,7 +92,7 @@ Les utilisateurs que vous avez invités recevront une invitation par e-mail à r
 Si vous devez renvoyer une invitation, recherchez l’utilisateur sur votre page **Utilisateurs** et sélectionnez son adresse e-mail (ou le texte indiquant **Invitation en attente**). Puis, au bas de la page, cliquez sur **Renvoyer l’invitation**.
 
 > [!IMPORTANT]
-> Les utilisateurs extérieurs que vous invitez à rejoindre votre compte espace partenaires peut être affecté aux mêmes rôles et autorisations que les autres utilisateurs. Toutefois, les utilisateurs extérieurs ne pourront pas effectuer certaines tâches dans VisualStudio, telles que l’association d’une application avec le Store ou la création de packages à charger dans le Store. Si un utilisateur a besoin d’effectuer ces tâches, choisissez **Créer de nouveaux utilisateurs** au lieu de **Inviter des utilisateurs extérieurs**. (Si vous ne souhaitez pas ajouter ces utilisateurs à votre client AzureAD existant, vous pouvez [créer un nouveau client](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account), puis créer de nouveaux comptes d’utilisateur eux dans ce client.) 
+> Les utilisateurs extérieurs que vous invitez à rejoindre votre compte espace partenaires peut être affecté aux mêmes rôles et autorisations que les autres utilisateurs. Toutefois, les utilisateurs extérieurs ne pourront pas effectuer certaines tâches dans VisualStudio, telles que l’association d’une application avec le Store ou la création de packages à charger dans le Store. Si un utilisateur a besoin d’effectuer ces tâches, choisissez **Créer de nouveaux utilisateurs** au lieu de **Inviter des utilisateurs extérieurs**. (Si vous ne souhaitez pas ajouter ces utilisateurs à votre client AzureAD existant, vous pouvez [créer un nouveau client](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account), puis créer de nouveaux comptes d’utilisateur eux dans ce client.) 
 
 
 ### <a name="changing-a-users-directory-password"></a>Modification du mot de passe d’annuaire d’un utilisateur
@@ -129,7 +129,7 @@ Vous pouvez ajouter un groupe à partir de l’annuaire de votre organisation à
 
 Si vous souhaitez accorder l’accès de l’espace partenaires à un nouveau groupe, vous pouvez créer un nouveau groupe dans la section **des utilisateurs** . Notez que le nouveau groupe sera créé dans l’annuaire de votre organisation, pas seulement dans votre compte espace partenaires.
 
-1.  Dans la page **utilisateurs** (sous **Paramètres développeur**), cliquez sur **Ajouter des groupes**.
+1.  Dans la page **utilisateurs** (sous **paramètres de développement**), cliquez sur **Ajouter des groupes**.
 2.  Sur la page suivante, sélectionnez le **Nouveau groupe**.
 3.  Entrez le nom d’affichage du nouveau groupe.
 4.  Spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués au groupe. Tous les membres du groupe seront en mesure d’accéder à votre compte de l’espace partenaires avec les autorisations que vous appliquez au groupe, quels que soient les rôles/autorisations associés à leur compte individuel.
@@ -163,7 +163,7 @@ Vous pouvez autoriser des applications ou services qui font partie de Azure votr
 Si vous souhaitez accorder l’accès de l’espace partenaires à un nouvel Azure AD compte d’application, vous pouvez en créer un dans la section **des utilisateurs** . Notez que cela crée un nouveau compte dans l’annuaire de votre organisation, et pas seulement dans votre compte espace partenaires.
 
 > [!TIP]
-> Si vous utilisez principalement cette application Azure AD pour l’authentification de l’espace partenaires et que vous n’avez pas besoin d’aux utilisateurs d’y accéder directement, vous pouvez saisir une adresse valide pour **l’URL de réponse** et l' **URI ID d’application**, tant que ces valeurs ne sont pas utilisées par n’importe quel autre Azure Application de publicité dans votre répertoire.
+> Si vous utilisez principalement cette application Azure AD pour l’authentification de l’espace partenaires et que vous n’avez pas besoin d’aux utilisateurs d’y accéder directement, vous pouvez saisir une adresse valide pour **l’URL de réponse** et l' **URI ID d’application**, tant que ces valeurs ne sont pas utilisés par n’importe quel autre Azure Application de publicité dans votre répertoire.
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), sélectionnez **Ajouter des applications Azure AD**.
 2.  Sur la page suivante, sélectionnez **l’application nouvel Azure AD**.
@@ -201,15 +201,15 @@ Si votre application AzureAD lit et écrit des données dans Microsoft AzureAD, 
 Une fois que vous avez ajouté des utilisateurs, des groupes et/ou des applications Azure AD à votre compte espace partenaires, vous pouvez modifier leurs informations de compte. 
 
 > [!IMPORTANT]
-> Modifications apportées aux [rôles ou autorisations](set-custom-permissions-for-account-users.md) affecteront uniquement l’accès au centre de l’espace. Toutes les autres modifications (par exemple, le changement de nom d’un utilisateur ou l’appartenance au groupe, ou l’URL de réponse et les URI ID d’application pour une application Azure AD) seront répercutées dans le locataire Azure AD de votre organisation également dans votre compte espace partenaires. 
+> Les modifications apportées aux [rôles ou autorisations](set-custom-permissions-for-account-users.md) affecteront uniquement l’accès au centre de l’espace. Toutes les autres modifications (par exemple, le changement de nom d’un utilisateur ou l’appartenance au groupe, ou l’URL de réponse et les URI ID d’application pour une application Azure AD) seront répercutées dans le locataire Azure AD de votre organisation également dans votre compte espace partenaires. 
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), sélectionnez le nom de l’utilisateur, un groupe ou un compte d’application Azure AD que vous souhaitez modifier.
 2.  Apportez les modifications souhaitées. Les éléments que vous pouvez modifier sont les suivants:
     -   Dans le cas d’un **utilisateur**, vous pouvez modifier le prénom, le nom ou le nom d’utilisateur. Vous pouvez également sélectionner ou désélectionner des groupes dans la section **Appartenance au groupe** pour mettre à jour l’appartenance au groupe d’un utilisateur.
     -   Dans le cas d’un **groupe**, vous pouvez modifier le nom du groupe. (Pour mettre à jour l’appartenance au groupe, modifiez les utilisateurs que vous souhaitez ajouter ou supprimer au niveau du groupe et apportez des modifications à la section **Appartenance au groupe**.)
     -   Dans le cas d’une **application AzureAD**, vous pouvez renseigner les champs **URL de réponse** ou **URI ID d’application**.
-    N’oubliez pas que ces modifications seront effectuées dans l’annuaire de votre organisation également comme dans votre compte espace partenaires.
-3.  Les modifications relatives à l’accès de l’espace partenaires, sélectionnez ou désélectionnez les rôles que vous souhaitez appliquer, ou sélectionnez **Personnaliser les autorisations** et apportez les modifications souhaitées. Ces modifications affecteront uniquement l’espace partenaires accéder et ne changera pas les autorisations au sein du locataire Azure AD de votre organisation.
+    N’oubliez pas que ces modifications seront effectuées dans l’annuaire de votre organisation, également comme dans votre compte espace partenaires.
+3.  Les modifications relatives à l’accès de l’espace partenaires, sélectionnez ou désélectionnez les rôles que vous souhaitez appliquer, ou sélectionnez **Personnaliser les autorisations** et apportez les modifications souhaitées. Ces modifications affecteront uniquement l’espace partenaires accéder et ne changeront pas les autorisations au sein du locataire Azure AD de votre organisation.
 3.  Cliquez sur **Enregistrer**.
 
 
@@ -226,7 +226,7 @@ Sur la page **utilisateurs** (sous **paramètres de compte**), sélectionnez le 
 Pour supprimer un utilisateur, groupe ou application Azure AD à partir de votre compte espace partenaires, sélectionnez le lien **Supprimer** qui s’affiche en leur nom sur la page **utilisateurs** . Après avoir confirmé que vous souhaitez supprimer, cet utilisateur, groupe ou application Azure AD sera n’est plus en mesure d’accéder à votre compte espace partenaires (sauf si vous l’ajoutez à nouveau ultérieurement).
 
 > [!IMPORTANT]
-> Suppression d’un utilisateur, groupe ou application Azure AD signifie qu’il n’ont plus accès à votre compte espace partenaires. Cette opération ne supprime **pas** l’utilisateur, le groupe ou l’application AzureAD de l’annuaire de votre organisation.
+> Suppression d’un utilisateur, un groupe ou une application Azure AD signifie qu’il n’ont plus accès à votre compte espace partenaires. Cette opération ne supprime **pas** l’utilisateur, le groupe ou l’application AzureAD de l’annuaire de votre organisation.
 
  
 

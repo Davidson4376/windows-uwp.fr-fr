@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d5563a9909ba3d6cb3deaae43bcf9e55b4b2c880
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8478125"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8686754"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>Restrictions d’accès aux tuiles avec des mappages en double
 

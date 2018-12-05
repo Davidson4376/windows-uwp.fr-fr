@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows10, uwp, personnaliser, description,version antérieure
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb21d56df357640734e9e5026783cc398468f0a
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460899"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696795"
 ---
 # <a name="create-platform-specific-store-listings"></a>Créer des descriptions dans le Store spécifiques à la plateforme
 
 
 Si votre application publiée précédemment comporte des packages ciblant différents systèmes d’exploitation, vous avez la possibilité de personnaliser certaines parties de votre description dans le Windows Store pour les clients utilisant des versions antérieures du système d’exploitation (Windows 8.x ou version antérieure et/ou Windows Phone 8.x ou version antérieure). 
 
-Les clients sur Windows 10 (y compris Xbox) voient toujours la valeur par défaut, [la description dans le Windows Store](create-app-store-listings.md). Vous ne verrez pas la possibilité de créer des descriptions du Windows Store spécifique à la plateforme, sauf si vous avez déjà publié votre application avec des packages qui prennent en charge une ou plusieurs versions du système d’exploitation antérieures. 
+Les clients sur Windows 10 (y compris Xbox) voient toujours la valeur par défaut, [la description dans le Windows Store](create-app-store-listings.md). Vous ne verrez pas la possibilité de créer des descriptions spécifiques à la plateforme, sauf si vous avez déjà publié votre application avec des packages qui prennent en charge une ou plusieurs versions du système d’exploitation antérieures. 
 
 > [!IMPORTANT]
 > À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
-Descriptions du Windows Store spécifique à la plateforme peut être utile si vous voulez mentionner des fonctionnalités qui apparaissent uniquement dans une version de système d’exploitation, ou que vous voulez fournir des captures d’écran spécifiques à un système d’exploitation particulier (indépendamment du type de périphérique).
+Descriptions du Windows Store spécifique à la plateforme peut être utile si vous voulez mentionner des fonctionnalités qui apparaissent uniquement dans une version de système d’exploitation, ou souhaitez proposer des captures d’écran spécifiques à un système d’exploitation particulier (indépendamment du type de périphérique).
 
 > [!NOTE]
 > La création d’une description dans le Store spécifique à la plateforme dans une langue donnée n’entraîne pas la création de cette description dans toutes les autres langues prises en charge par votre application, même si vous avez saisi les informations de description dans le Store associées à ces langues. Il vous faudra créer la description dans le Windows Store spécifique à la plateforme pour chacune des langues. Notez également que vous ne pouvez pas [Importer et exporter des données de description dans le Windows Store](import-and-export-store-listings.md) pour les annonces spécifiques à la plateforme.

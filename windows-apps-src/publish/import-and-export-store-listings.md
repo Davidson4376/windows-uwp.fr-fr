@@ -6,22 +6,22 @@ ms.topic: article
 keywords: Windows10, uwp, importer des descriptions dans le store, exporter des descriptions du store, importer exporter, description dans le store csv
 ms.localizationpriority: medium
 ms.openlocfilehash: 5630a9019aa11b87f06744e03ae74ec38c792d41
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458318"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8692937"
 ---
 # <a name="import-and-export-store-listings"></a>Importer et exporter des descriptions dans le Store
 
-Au lieu d' [entrer des informations de votre description dans le Windows Store directement dans l’espace partenaires](create-app-store-listings.md), vous avez la possibilité d’ajouter ou de mettre à jour les infos en exportant vos descriptions dans un fichier .csv, entrer vos informations et composants, puis en important le fichier mis à jour. Vous pouvez utiliser cette méthode pour créer des descriptions à partir de zéro ou pour mettre à jour des descriptions déjà créées.
+Au lieu d' [entrer des informations de votre description dans le Windows Store directement dans l’espace partenaires](create-app-store-listings.md), vous avez la possibilité d’ajouter ou de mettre à jour les infos en exportant vos descriptions dans un fichier .csv, entrez vos informations et composants, puis en important le fichier mis à jour. Vous pouvez utiliser cette méthode pour créer des descriptions à partir de zéro ou pour mettre à jour des descriptions déjà créées.
 
 Cette option est particulièrement utile si vous souhaitez créer ou mettre à jour des descriptions dans le Store en plusieurs langues pour votre produit puisque vous pouvez copier/coller les mêmes informations dans plusieurs champs et facilement apporter des modifications qui doivent s’appliquer à des langues spécifiques. Toutefois, vous ne pouvez pas utiliser cette méthode pour créer ou mettre à jour des [descriptions du Windows Store spécifique à la plateforme](create-platform-specific-store-listings.md) pour les applications qui prennent en charge des versions antérieures du système d’exploitation publiée précédemment. 
 
 > [!TIP]
 > Vous pouvez également utiliser cette fonctionnalité pour importer et exporter les détails d’une description dans le WindowsStore concernant une extension. Pour les extensions, le processus fonctionne de la même façon, à l’exception du fait que [seuls les champs applicables aux extensions](#add-ons) sont inclus.
 
-N’oubliez pas que vous pouvez toujours créer ou mettre à jour des descriptions directement dans l’espace partenaires (même si vous avez déjà utilisé la méthode d’importation/exportation). Mise à jour directement dans l’espace partenaires peut être plus facile lorsque vous rendez simplement une modification simple, mais vous pouvez utiliser ces deux méthodes à tout moment.
+N’oubliez pas que vous pouvez toujours créer ou mettre à jour des descriptions directement dans l’espace partenaires (même si vous avez déjà utilisé la méthode d’importation/exportation). Mise à jour directement dans l’espace partenaires peut être plus facile lorsque vous proposez simplement une simple modification, mais vous pouvez utiliser ces deux méthodes à tout moment.
 
 ## <a name="export-listings"></a>Exporter des descriptions
 
@@ -77,7 +77,7 @@ Si vous souhaitez utiliser un nouveau composant que vous n’avez pas encore ajo
 > [!TIP]
 > Pour optimiser l’importation de vos descriptions sous la forme d’un dossier, veillez à utiliser la dernière version de MicrosoftEdge, de Chrome ou de Firefox.
 
-Par exemple, si votre dossier racine est nommé **my_folder** et que vous souhaitez utiliser une image appelée **screenshot1.png** pour **DesktopScreenshot1**, vous pouvez ajouter screenshot1.png à la racine de ce dossier, puis entrer **my_folder/screenshot1.png** dans le champ **DesktopScreenshot1**. En revanche, si vous créez un sous-dossier images dans votre dossier racine, puis que vous placez screenshot1.jpg dans ce sous-dossier, vous devrez entrer le chemin d’accès **my_folder/images/screenshot1.png**. Notez qu’une fois que vous importez vos annonces à l’aide d’un dossier, les chemins d’accès à vos images seront convertis aux URL vers les fichiers dans l’espace partenaires la prochaine fois que vous exporterez vos descriptions. Vous pouvez copier et coller ces URL pour les réutiliser (par exemple, si vous souhaitez utiliser les mêmes composants dans les descriptions en plusieurs langues). 
+Par exemple, si votre dossier racine est nommé **my_folder** et que vous souhaitez utiliser une image appelée **screenshot1.png** pour **DesktopScreenshot1**, vous pouvez ajouter screenshot1.png à la racine de ce dossier, puis entrer **my_folder/screenshot1.png** dans le champ **DesktopScreenshot1**. En revanche, si vous créez un sous-dossier images dans votre dossier racine, puis que vous placez screenshot1.jpg dans ce sous-dossier, vous devrez entrer le chemin d’accès **my_folder/images/screenshot1.png**. Notez qu’une fois que vous importez vos annonces à l’aide d’un dossier, chemins d’accès à vos images seront convertis aux URL vers les fichiers dans l’espace partenaires la prochaine fois que vous exporterez vos descriptions. Vous pouvez copier et coller ces URL pour les réutiliser (par exemple, si vous souhaitez utiliser les mêmes composants dans les descriptions en plusieurs langues). 
 
 > [!IMPORTANT]
 > Si votre description exportée inclut des bandes-annonces, n’oubliez pas que la suppression de l’URL de la bande-annonce ou son image miniature de votre fichier .csv supprimera complètement le fichier supprimé à partir de l’espace partenaires, et vous ne serez n’est plus en mesure d’accéder (sauf s’il est également utilisé dans ano frais de description où il n’a pas encore été supprimé). 
@@ -97,11 +97,11 @@ Si nous détectons des problèmes, vous obtiendrez un message vous invitant à e
 
 Aucune des informations de votre fichier .csv ne sera enregistrée dans l’espace partenaires jusqu'à ce que toutes les erreurs dans votre fichier ont été résolus, même pour les champs dépourvus d’erreurs. Une fois que vous avez importé un fichier .csv exempt d’erreurs, les informations de description que vous avez fournies seront enregistrées dans l’espace partenaires et seront utilisée pour cette soumission.
 
-Vous pouvez continuer à mettre à jour vos descriptions en important un autre fichier .csv mis à jour, soit en apportant des modifications directement dans l’espace partenaires.
+Vous pouvez continuer à mettre à jour vos descriptions, soit en important un autre fichier .csv mis à jour, soit en apportant des modifications directement dans l’espace partenaires.
 
 ## <a name="add-ons"></a>Extensions
 
-Pour les extensions, importer et exporter des descriptions du Windows Store utilise le même processus décrit ci-dessus, à ceci près que vous ne verrez les trois champs applicables aux [descriptions de module complémentaire](create-add-on-store-listings.md): **Description**, le **titre**et **StoreLogo300x300** () dénommé sous forme **d’icône** dans la page de description dans le Windows Store dans l’espace partenaires). Le champ **Title** est obligatoire, tandis que les deux autres champs sont facultatifs.
+Pour les extensions, importer et exporter des descriptions du Windows Store utilise le même processus décrit ci-dessus, à ceci près que vous ne verrez les trois champs applicables aux [descriptions de module complémentaire](create-add-on-store-listings.md): ( **Description**, le **titre**et **StoreLogo300x300** dénommé sous forme **d’icône** dans la page de description du Windows Store dans l’espace partenaires). Le champ **Title** est obligatoire, tandis que les deux autres champs sont facultatifs.
 
 Notez que les descriptions de chaque extension de votre application dans le WindowsStore doivent être importées et exportées séparément par l’intermédiaire de la page de vue d’ensemble de la soumission de ces extensions.
 

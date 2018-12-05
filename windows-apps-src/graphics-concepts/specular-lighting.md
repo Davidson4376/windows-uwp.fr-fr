@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458055"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691783"
 ---
 # <a name="specular-lighting"></a>Éclairage spéculaire
 
@@ -55,7 +55,7 @@ La valeur pour Cₛ possède l'une des valeurs suivantes:
 -   couleur2 du vertex, si la source du matériau spéculaire est la couleur du vertex spéculaire, et que la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur spéculaire du matériau
 
-**Remarque**  si aucune des deux options de source du matériau spéculaire sont utilisée et la couleur du vertex n’est pas fournie, la couleur spéculaire du matériau est utilisée.
+**Remarque**  si l’option de source du matériau spéculaire est utilisée et la couleur du vertex n’est pas fournie, la couleur spéculaire du matériau est utilisée.
 
  
 
