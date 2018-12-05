@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, tarification, prix de l’application, vente d’applications, modification de prix, prix personnalisé, prix, tarif, coût, remplacer le prix de base, prix au format libre, format libre
 ms.localizationpriority: medium
-ms.openlocfilehash: d901ec630c680adfaa637d5555fc2182749bec89
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: ea873d2c1f78762741d6272fafe1496d6b3a71ea
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462219"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696775"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Définir et planifier le prix de l’application
 
@@ -32,10 +32,10 @@ Chaque niveau de prix a une valeur correspondante dans chacune des devises du Wi
 
 Dans la section **Tarification**, cliquez sur **Afficher la table de conversion** pour voir les prix correspondants dans toutes les devises. Cela permet également d'afficher un numéro d’identification associé à chaque niveau de prix. Vous en aurez besoin si vous utilisez l'[API de soumission au Microsoft Store](../monetize/manage-app-submissions.md#price-tiers) pour entrer des prix. Vous pouvez cliquer sur **Télécharger** pour télécharger une copie de la table des niveaux de prix sous forme de fichier .csv.
 
-N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Nous vous conseillons également de consulter les [considérations de prix pour des marchés spécifiques](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
+N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Nous vous conseillons également de consulter les [considérations de prix pour des marchés spécifiques](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!NOTE]
-> Si vous choisissez l’option **empêcher l’acquisition** sous **rendre ce produit disponible mais non détectable dans le Windows Store** dans la section [visibilité](choose-visibility-options.md#discoverability) ), vous ne serez pas en mesure de définir la tarification pour votre soumission (comme personne ne sera en mesure d’acquérir l’application que s’ils utilisent un code promotionnel pour obtenir l’application gratuitement).
+> Si vous choisissez l’option **empêcher l’acquisition** sous **rendre ce produit disponible mais non détectable dans le Windows Store** dans la section [visibilité](choose-visibility-options.md#discoverability) ), vous ne serez pas en mesure de définir la tarification pour votre soumission (comme personne ne sera en mesure d’acquérir l’application à moins d’utiliser un code promotionnel pour obtenir l’application gratuitement).
 
 ## <a name="schedule-price-changes"></a>Planifier des changements de prix
 

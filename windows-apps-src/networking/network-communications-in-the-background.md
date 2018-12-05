@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464831"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685783"
 ---
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
 Pour poursuivre la communication réseau alors qu’elle n’est pas au premier plan, votre application peut utiliser des tâches en arrière-plan et l’autre de ces deux options.
-- Broker de socket. Si votre application utilise des sockets pour les connexions à long terme puis, lorsqu’il quitte le premier plan, elle peut déléguer la propriété d’un socket à un broker de socket système. Le broker puis: active votre application lorsque le trafic atteint le socket; propriété revenir à votre application; et votre application traite alors le trafic entrant.
+- Broker de socket. Si votre application utilise des sockets pour les connexions à long terme, lorsqu’il quitte le premier plan, elle peut déléguer la propriété d’un socket à un broker de socket système. Le broker puis: active votre application lorsque le trafic atteint le socket; transfère la propriété à votre application; et votre application traite alors le trafic entrant.
 - Déclencheurs de canal de contrôle. 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>Exécution d’opérations réseau dans les tâches en arrière-plan

@@ -4,14 +4,14 @@ description: Découvrez comment déboguer une tâche en arrière-plan, notamment
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: e0ae12bbb2bad1fbcd663f5be8f26656d640afc8
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463867"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8687001"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -110,7 +110,7 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Comment déclencher suspension, reprise et des événements en arrière-plan dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Comment déclencher de suspension, reprise et événements dans les applications UWP en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  

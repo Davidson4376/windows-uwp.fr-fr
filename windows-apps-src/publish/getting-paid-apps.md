@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
 ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8465249"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8714059"
 ---
 # <a name="getting-paid"></a>Rémunération
 Voici quelques informations importantes sur la rémunération de paiement pour vos applications, d’extensions et vos revenus publicitaires.
@@ -63,7 +63,7 @@ Pour mettre des paiements en attente, accédez à **Paramètres du compte**. Sou
 Une fois que vous avez configuré l’état de mise en attente des paiements sur **Activé**, tous les paiements sont mis en attente jusqu’à ce que vous basculiez à nouveau le curseur sur **Désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
 
 > [!NOTE]
-> Votre sélection de **l’état de mise en attente du paiement** s’applique à **toutes les** sources de revenus payées par le biais du programme pour les développeurs Windows dans l’espace partenaires (Microsoft Store, publicité, place de marché Microsoft Azure, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
+> Votre sélection de **l’état de mise en attente du paiement** s’applique à **toutes les** sources de revenus payées par le biais du programme pour les développeurs Windows dans l’espace partenaires (Microsoft Store, publicité, Azure Marketplace, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
 
 
  
