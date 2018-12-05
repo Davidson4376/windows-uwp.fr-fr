@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, contacts, calendrier, rendez-vous, messages électroniques
 ms.localizationpriority: medium
 ms.openlocfilehash: a2ccf75796140723270e49a7b967ce234d41baf1
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8694895"
+ms.locfileid: "8740662"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Contacts, Mes Contacts et calendrier
 
