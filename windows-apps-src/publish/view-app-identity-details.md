@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 114524294a5b77165167601c1479b6c3894bb29b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8478374"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693485"
 ---
 # <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 

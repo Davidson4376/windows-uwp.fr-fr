@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx, latence d’entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8476907"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8694545"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimiser la latence d’entrée pour les jeux UWP DirectX
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461834"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8694436"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
@@ -26,7 +26,7 @@ Lorsque vous déterminez le rôle ou les autorisations à appliquer, gardez à l
 -   Un utilisateur ayant un certain rôle (ou un ensemble d’autorisations personnalisées) peut également faire partie d’un groupe ayant un rôle différent (ou un ensemble d’autorisations). Dans ce cas, l’utilisateur a accès à toutes les fonctionnalités associées à la fois au groupe et au compte individuel.
 
 > [!TIP]
-> Cette rubrique est spécifique au programme Windows applications développeur dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour développeurs de matériel, voir [Gestion des rôles d’utilisateurs](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour applications de bureau Windows, voir [Programme pour applications de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
+> Cette rubrique est spécifique au programme de développeur d’applications Windows dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour développeurs de matériel, voir [Gestion des rôles d’utilisateurs](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour applications de bureau Windows, voir [Programme pour applications de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users).
 
 
 <span id="roles" />
@@ -43,8 +43,8 @@ Par défaut, un ensemble de rôles standard est présenté pour vous permettre d
 
 | Rôle                 | Description              |
 |----------------------|--------------------------|
-| Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Cela inclut la gestion des utilisateurs dans l’espace partenaires, mais notez que la possibilité de créer et supprimer des utilisateurs dans le client Azure AD dépend d’autorisations du compte dans Azure AD. Autrement dit, si un utilisateur le rôle Manager est attribué, mais ne dispose pas des autorisations d’administrateur global dans l’organisation Azure AD, ils ne pourra à créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (Toutefois, ils peuvent modifier le rôle de l’espace partenaires de l’utilisateur). <p> Notez que si le compte de l’espace partenaires est associé à plusieurs client Azure AD, un Manager ne peut pas voir tous les détails d’un utilisateur (y compris le prénom, nom, e-mail de récupération de mot de passe, et s’il est un administrateur global Azure AD), sauf si elles sont connecté au même client que cet utilisateur avec un compte disposant des autorisations d’administrateur global pour ce client. Toutefois, ils peuvent ajouter et supprimer des utilisateurs dans n’importe quel client qui est associé au compte de l’espace partenaires. |
-| Développeur            | Peut charger des packages, soumettre des applications et extensions et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. Peut accéder à la fonctionnalité [Des expériences Cross-Device](https://go.microsoft.com/fwlink/?linkid=874042) . Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
+| Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Cela inclut la gestion des utilisateurs dans l’espace partenaires, mais notez que la possibilité de créer et supprimer des utilisateurs du client Azure AD dépend d’autorisations du compte dans Azure AD. Autrement dit, si un utilisateur le rôle Manager est attribué, mais n’a pas d’autorisations d’administrateur global dans l’organisation Azure AD, ils ne pourra à créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (Toutefois, il peuvent modifier le rôle de l’espace partenaires de l’utilisateur). <p> Notez que si le compte de l’espace partenaires est associé à plusieurs client Azure AD, un Manager ne peut pas voir tous les détails d’un utilisateur (y compris le prénom, nom, e-mail de récupération de mot de passe, et s’il est un administrateur global Azure AD), sauf si elles sont connecté au même client que cet utilisateur avec un compte disposant des autorisations d’administrateur global pour ce client. Toutefois, ils peuvent ajouter et supprimer des utilisateurs dans n’importe quel client qui est associé au compte de l’espace partenaires. |
+| Développeur            | Peut charger des packages, soumettre des applications et extensions et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. La fonctionnalité [Cross-Device expériences](https://go.microsoft.com/fwlink/?linkid=874042) sont accessibles. Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
 | Contributeur professionnel | Peut afficher des rapports [d’intégrité](health-report.md) et [d’utilisation](usage-report.md). Impossible de créer ou soumettre des produits, de modifier des paramètres de compte ou d’afficher des informations financières.   |
 | Contributeur financier  | Peut afficher des [rapports sur les revenus](payout-summary.md), des informations financières et des rapports d’acquisition. Il ne peut apporter aucune modification aux applications, extensions et paramètres de compte.    |
 | Responsable marketing             | Peut [répondre aux avis de clients](respond-to-customer-reviews.md) et afficher des [rapports analytiques](analytics.md) non financiers. Il ne peut apporter aucune modification aux applications, extensions et paramètres de compte.      |

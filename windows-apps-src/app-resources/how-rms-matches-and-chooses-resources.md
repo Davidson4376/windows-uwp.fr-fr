@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8480556"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8695713"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Comment le système de gestion des ressources met en correspondance et sélectionne les ressources
 Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, dans une certaine mesure, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à renvoyer. Pour ce faire, il prend en compte l’ensemble des qualificateurs afin de classer tous les candidats.

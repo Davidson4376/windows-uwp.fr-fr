@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e72dc726143d17f605283fa801f8e286c2c58878
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461967"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691863"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implémenter la navigation entre deux pages
 
@@ -316,7 +316,7 @@ Pour finir, chaque fois qu’une page est chargée dans la trame, cette page est
 
 Notre application navigue entre deux pages, mais elle n’effectue pour le moment rien d’intéressant. Souvent, lorsqu’une application possède plusieurs pages, celles-ci doivent partager des informations. Passons des informations de la première page à la deuxième page.
 
-Dans Page1.xaml, remplacez le **contrôle HyperlinkButton** que vous avez ajouté précédemment avec l' suivant [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+Dans Page1.xaml, remplacez le **contrôle HyperlinkButton** que vous avez ajouté précédemment avec suivant [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 Ici, nous ajoutons une étiquette [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) et un objet [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) pour entrer une chaîne de texte.
 

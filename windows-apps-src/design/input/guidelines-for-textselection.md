@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457922"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8694865"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
@@ -60,7 +60,7 @@ Si votre application nécessite une interface utilisateur personnalisée qui pre
 
 Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). À l’instar des autres interactions Windowstouch, les interactions chronométrées sont limitées à un appui sur le maintenez le mouvement pour afficher une interface utilisateur informative. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
-Possible de Windowsrecognizes deux États pour les interactions de sélection, modifiables et non modifiable et ajuste l’interface utilisateur de sélection, le retour et la fonctionnalité en conséquence.
+Possible Windowsrecognizes deux États pour les interactions de sélection, modifiables et non modifiable et ajuste l’interface utilisateur de sélection, retour et la fonctionnalité en conséquence.
 
 **Contenu modifiable**
 

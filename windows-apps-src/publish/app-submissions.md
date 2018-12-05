@@ -7,11 +7,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 444243bdb1d50146ba54af4f1417103566f97f93
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463262"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693606"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
@@ -23,7 +23,7 @@ Vous pouvez démarrer votre soumission lorsque votre application est terminée e
 > [!NOTE]
 > Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) actif dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour pouvoir soumettre des applications dans le Microsoft Store.
 
-Une fois votre application est publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans l’espace partenaires. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **mise à jour** en regard de la soumission la plus récente affichée sur sa page de **présentation** . Vous pouvez également [Supprimer une application à partir du magasin](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour effectuer cette opération (et mettez-le à disposition plus tard, si vous souhaitez que).
+Une fois que votre application est publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans l’espace partenaires. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **mise à jour** en regard de la soumission la plus récente affichée sur sa page de **présentation** . Vous pouvez également [Supprimer une application à partir du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour effectuer cette opération (et mettez-le à disposition plus tard, si vous souhaitez obtenir).
 
 > [!NOTE]
 > Cette section de la documentation explique comment créer une soumission d’application dans l’espace partenaires. Sinon, vous pouvez utiliser [l’API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission d’applications.
@@ -99,7 +99,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Image Windows10 et Xbox (Image principale super16:9)**     | Nos recommandations        | [Image Windows 10 et Xbox (art d’image principale Super 16:9)
 ] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Images Xbox**     | Requis pour un affichage correct si vous publiez sur Xbox        | [Les images Xbox
-] (app-captures d’écran-et-images.md #xbox-images) |
+] (application captures d’écran et images.md #xbox-images) |
 | **Champs supplémentaires**  | Facultatif                                    | [Champs supplémentaires](create-app-store-listings.md#supplemental-fields) 
 | **Termes de recherche**              | Facultatif                                    | [Termes de recherche](create-app-store-listings.md#search-terms)         |
 | **Informations de copyright et de marque déposée** | Facultatif                                 | [Informations de copyright et de marque déposée](create-app-store-listings.md#copyright-and-trademark-info) |

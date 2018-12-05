@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464808"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696166"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>Portage WindowsPhone Silverlight vers UWP pour les e/s, d’appareil et modèle d’application
 
@@ -22,7 +22,7 @@ Le code qui s’intègre à l’appareil proprement dit et à ses capteurs impli
 
 ## <a name="application-lifecycle-process-lifetime-management"></a>Cycle de vie des applications (gestion de la durée de vie des processus)
 
-Votre application WindowsPhone Silverlight contient du code pour enregistrer et restaurer l’état de l’application et son état d’affichage afin pour que puisse être désactivée puis réactivée. Le cycle de vie des applications de plateforme Windows universelle (UWP) a similitudes avec celui des applications WindowsPhone Silverlight, dans la mesure où ils sont tous deux conçus avec le même objectif de renforcer les ressources disponibles pour l’application que l’utilisateur a choisi de le au premier plan à tout moment. Vous constaterez que votre code s’adapte assez facilement au nouveau système.
+Votre application WindowsPhone Silverlight contient du code pour enregistrer et restaurer l’état de l’application et son état d’affichage pour prendre en charge est désactivée puis réactivée. Le cycle de vie des applications de plateforme Windows universelle (UWP) a similitudes avec celui des applications WindowsPhone Silverlight, dans la mesure où ils sont tous deux conçus avec le même objectif de renforcer les ressources disponibles pour l’application que l’utilisateur a choisi de le au premier plan à tout moment. Vous constaterez que votre code s’adapte assez facilement au nouveau système.
 
 **Remarque**  application WindowsPhone Silverlight en appuyant sur le bouton matériel **précédent** automatiquement s’arrête. Si vous appuyez sur le bouton matériel **Précédent** d’un appareil mobile, une application UWP *ne s’arrête pas* automatiquement. Au lieu de cela, l’application est suspendue, puis peut être arrêtée par la suite. Toutefois, ces détails sont transparents pour une application qui réagit de façon appropriée aux événements touchant le cycle de vie de l’application.
 
@@ -67,7 +67,7 @@ Voir également [Compilation conditionnelle et code adaptatif](wpsl-to-uwp-porti
 
 ## <a name="device-status"></a>État de l’appareil
 
-Une application WindowsPhone Silverlight permettre utiliser la classe **Microsoft.Phone.Info.DeviceStatus** pour obtenir des informations sur l’appareil sur lequel l’application est en cours d’exécution. S’il n’existe pas d’équivalent UWP direct pour l’espace de noms **Microsoft.Phone.Info**, voici certains événements et propriétés que vous pouvez utiliser dans une application UWP à la place des appels aux membres de la classe **DeviceStatus**.
+Une application WindowsPhone Silverlight permettre utiliser la classe de **Microsoft.Phone.Info.DeviceStatus** pour obtenir des informations sur l’appareil sur lequel l’application est en cours d’exécution. S’il n’existe pas d’équivalent UWP direct pour l’espace de noms **Microsoft.Phone.Info**, voici certains événements et propriétés que vous pouvez utiliser dans une application UWP à la place des appels aux membres de la classe **DeviceStatus**.
 
 | Silverlight pour Windows Phone                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

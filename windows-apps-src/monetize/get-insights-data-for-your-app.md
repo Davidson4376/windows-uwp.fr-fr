@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft St
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1847f22f52eb066115b5681e745e74ec74f77f7d
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8474710"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8694193"
 ---
 # <a name="get-insights-data"></a>Obtenir des données d’analyse
 
