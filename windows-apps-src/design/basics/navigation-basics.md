@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459961"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8697374"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -55,7 +55,7 @@ Commençons par les principes de base d’une navigation réussie:
 
 ### <a name="consistency"></a>Cohérence
 
-La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont suivant les conventions standard pour les icônes et familier avec, emplacement et le style seront rendre la navigation prévisible et intuitive pour les utilisateurs.
+La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont connaissant et suivant les conventions standard pour les icônes, emplacement et le style rendra navigation prévisible et intuitive pour les utilisateurs.
 
 ![image des composants d'une page](images/nav/page-components.svg)
 

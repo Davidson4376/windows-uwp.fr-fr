@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463317"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713261"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -52,7 +52,7 @@ En bref, factorisez vos chaînes en morceaux fonctionnant dans tous les contexte
 
 Considérez la chaîne suivante: «le {0} pas pu être synchronisé.»
 
-Divers mots pourraient remplacer {0}, par exemple, «rendez-vous», «tâche» ou «document». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle («Der», «Die», «Das») doivent correspondre au mot paramétré:
+Divers mots pourraient remplacer {0}, par exemple «rendez-vous», «tâche» ou «document». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle («Der», «Die», «Das») doivent correspondre au mot paramétré:
 
 | Anglais                                    | Allemand                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,7 +60,7 @@ Divers mots pourraient remplacer {0}, par exemple, «rendez-vous», «tâche» o
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-Un autre exemple, la phrase «me rappeler dans {0} minute (s).» Si «minute(s)» fonctionne en français, cela n’est pas forcément le cas avec d’autres langues. Par exemple, le polonais utilise «minuta», «minuty» ou «minut» selon le contexte.
+Autre exemple, la phrase «me rappeler dans {0} minute (s).» Si «minute(s)» fonctionne en français, cela n’est pas forcément le cas avec d’autres langues. Par exemple, le polonais utilise «minuta», «minuty» ou «minut» selon le contexte.
 
 Pour résoudre ce problème, localisez la phrase entière, plutôt qu’un mot individuel. Cela peut paraître comme une charge de travail supplémentaire et une solution dépourvue d’élégance, mais il s’agit de la solution optimale pour les raisons suivantes :
 

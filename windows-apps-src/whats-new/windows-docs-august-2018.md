@@ -6,11 +6,11 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: da8bc3b441a1b619e086934f277cb14be6bcc37a
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473679"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8712937"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en août 2018
 
@@ -50,7 +50,7 @@ Une liste des [extensions d’API Microsoft héritées](https://developer.mozill
 
 Nous avons ajouté 250 [C++ / WinRT](../cpp-and-winrt-apis/index.md) code descriptions vers des rubriques dans notre documentation, qui l’accompagne existant C + / exemples de code CX.
 
-### <a name="project-rome"></a>Projet «Rome»
+### <a name="project-rome"></a>Project Rome
 
 Le site de [documentation du projet «Rome»](https://docs.microsoft.com/windows/project-rome/) a été réorganisé dans une approche de la fonctionnalité de priorité. Cela doit facilitent pour les développeurs de rechercher qu’ils recherchent et pour implémenter des fonctionnalités de leur choix sur plusieurs plateformes.
 
