@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, données, types
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b0b529bbf397b76acb1eb589095a84f5c85745c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462635"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707693"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Types de données C++ et C++/WinRT standard
 
-Avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler APIs Windows Runtime à l’aide de types de données C++ Standard, y compris certains types de données de bibliothèque C++ Standard. Vous pouvez transmettre des chaînes standard aux API (voir [Gestion des chaînes en C++ / WinRT](strings.md)), et vous pouvez passer initialiseur listes et conteneurs standard à des API qui attendre une collection indiquent au niveau sémantique équivalente.
+Avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler APIs Windows Runtime à l’aide de types de données C++ Standard, y compris certains types de données de bibliothèque C++ Standard. Vous pouvez transmettre des chaînes standard aux API (voir [Gestion des chaînes en C++ / WinRT](strings.md)), et vous pouvez passer initialiseurs listes et conteneurs standard à des API qui attendre une collection sémantique équivalente.
 
 ## <a name="standard-initializer-lists"></a>Listes d’initialiseurs standard
 Une liste d’initialiseurs (**std::initializer_list**) est une construction de la bibliothèque C++ standard. Vous pouvez utiliser des listes d’initialiseurs lorsque vous appelez certains constructeurs et méthodes Windows Runtime. Par exemple, vous pouvez appeler [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) avec une telle liste.
@@ -89,7 +89,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT lie **std::vector** comme un paramètre de collection Windows Runtime. Par conséquent, vous pouvez transmettre un **std::vector&lt;winrt::hstring&gt;**, et il sera converti dans la collection Windows Runtime appropriée de **winrt::hstring**. Il existe un détail supplémentaire à l’esprit si l’appelé est asynchrone. En raison des détails d’implémentation de ce cas, vous devez fournir une valeur rvalue, afin que vous devez fournir une copie ou un déplacement du vecteur. Dans l’exemple de code ci-dessous, nous déplaçons la propriété du vecteur vers l’objet de type de paramètre accepté par l’appelé asynchrone (et nous pouvons veiller à ne pas accéder aux `vecH` à nouveau après l’avoir déplacé). Si vous souhaitez en savoir plus sur rvalues, consultez [catégories de valeur et références pour eux](cpp-value-categories.md).
+C++/WinRT lie **std::vector** comme un paramètre de collection Windows Runtime. Par conséquent, vous pouvez transmettre un **std::vector&lt;winrt::hstring&gt;**, et il sera converti dans la collection Windows Runtime appropriée de **winrt::hstring**. Il existe un détail supplémentaire à l’esprit si l’appelé est asynchrone. En raison des détails d’implémentation de ce cas, vous devez fournir une valeur rvalue, afin que vous devez fournir une copie ou un déplacement du vecteur. Dans l’exemple de code ci-dessous, nous déplaçons la propriété du vecteur vers l’objet du type de paramètre accepté par l’appelé asynchrone (et nous pouvons veiller à ne pas accéder aux `vecH` à nouveau après l’avoir déplacé). Si vous souhaitez en savoir plus sur rvalues, consultez [les catégories de valeurs et références sur ces derniers](cpp-value-categories.md).
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -110,7 +110,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ## <a name="raw-arrays-and-pointer-ranges"></a>Tableaux bruts et plages de pointeurs
 En gardant en tête qu’un type équivalent peut exister dans l’avenir dans la bibliothèque C++ standard, vous pouvez également travailler directement avec **array_view**, par choix ou par nécessité.
 
-**array_view** a des constructeurs de conversion à partir d’un tableau brut et à partir d’une plage de **T&ast; ** (pointeurs vers le type d’élément).
+**array_view** a des constructeurs de conversion à partir d’un tableau brut et parmi une plage de **T&ast; ** (pointeurs vers le type d’élément).
 
 ```cppwinrt
 using namespace winrt;
@@ -128,8 +128,8 @@ Une série de constructeurs, d’opérateurs, de fonctions et d’itérateurs so
 
 Pour plus d’exemples et d’informations, consultez la rubrique sur les informations de référence sur les API [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view).
 
-## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt; ** et constructions itération standard
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) est un exemple d’une API Windows Runtime qui renvoie une collection de type [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (projetées en C++ / WinRT sous la forme **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; ** ). Vous pouvez utiliser ce type avec des constructions itération standard, tels que basée sur la plage `for`.
+## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt; ** et constructions d’itération standard
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) est un exemple d’une API Windows Runtime qui renvoie une collection de type [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (projetées en C++ / WinRT sous la forme **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; ** ). Vous pouvez utiliser ce type avec des constructions itération standard, tels que basé `for`.
 
 ```cppwinrt
 // main.cpp
@@ -150,7 +150,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 ```
 
 ## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>Coroutines C++ avec APIs asynchrone Windows Runtime
-Vous pouvez continuer à utiliser la [Bibliothèque de modèles parallèles (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) lors de l’appeler asynchrone Windows Runtime APIs. Toutefois, dans de nombreux cas, coroutines C++ fournissent un idiome efficace et plus facilement codé en dur pour interagir avec les objets asynchrones. Pour plus d’informations et des exemples de code, voir [opérations concurrentes et asynchrones avec C++ / WinRT](concurrency.md).
+Vous pouvez continuer à utiliser la [Bibliothèque de modèles parallèles (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) lors de l’appeler asynchrone Windows Runtime APIs. Toutefois, dans de nombreux cas, coroutines C++ fournissent un idiome efficace et plus facilement codé en dur pour l’interaction avec des objets asynchrones. Pour plus d’informations et des exemples de code, voir [opérations concurrentes et asynchrones avec C++ / WinRT](concurrency.md).
 
 ## <a name="important-apis"></a>API importantes
 * [IVector&lt;T&gt; interface](/uwp/api/windows.foundation.collections.ivector_t_)

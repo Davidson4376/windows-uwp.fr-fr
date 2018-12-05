@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, point de service, PDV, lecteur de bande magnétique
 ms.localizationpriority: medium
 ms.openlocfilehash: 1805213c7c30ccbc67fb96098f11480703589bb4
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459614"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8705352"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>Obtenir et comprendre les données de bande magnétique
 
-Une fois que vous avez configuré votre lecteur de bande magnétique dans votre application en utilisant les étapes décrites dans la [mise en route avec le Point de Service](pos-basics.md), vous êtes prêt à commencer à obtenir des données à partir de celui-ci.
+Une fois que vous avez configuré votre lecteur de bande magnétique dans votre application en suivant les étapes décrites dans la [mise en route avec le Point de Service](pos-basics.md), vous êtes prêt à commencer à obtenir des données à partir de celui-ci.
 
 ## <a name="subscribe-to-datareceived-events"></a>S’abonner à * DataReceived événements
 
@@ -58,7 +58,7 @@ Le Gestionnaire d’événements sera transmis la [ClaimedMagneticStripeReader](
 
 ## <a name="get-the-data"></a>Obtenir les données
 
-Pour les événements **AamvaCardDataReceived** et **BankCardDataReceived** , vous pouvez obtenir des données directement à partir de l’objet *arguments* . L’exemple suivant illustre l’obtention de plusieurs propriétés et de les affecter à des variables de membre:
+Pour les événements **AamvaCardDataReceived** et **BankCardDataReceived** , vous pouvez obtenir des données directement à partir de l’objet *arguments* . L’exemple suivant illustre l’obtention des propriétés quelques et leur affectation aux variables de membre:
 
 ```cs
 private string _accountNumber;
@@ -78,7 +78,7 @@ private void Reader_BankCardDataReceived(
 
 Toutefois, certaines données, y compris toutes les données à partir de l’événement **VendorSpecificDataReceived** , doivent être récupérées par le biais de l’objet de **Report** , qui est une propriété du paramètre *args* . Il s’agit du type [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport).
 
-Vous pouvez utiliser la propriété [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) pour déterminer quel type de carte a été balayé et utilisez-la pour indiquer comment vous interprétez les données à partir de [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)et [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
+Vous pouvez utiliser la propriété [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) pour déterminer quel type de carte a été passée et utilisez-la pour indiquer comment vous interprétez les données à partir de [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)et [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
 
 Les données à partir de chacune des pistes sont représentées en tant qu’objets [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) . À partir de cette classe, vous pouvez obtenir les types de données suivants:
 

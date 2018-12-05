@@ -7,17 +7,17 @@ keywords: Windows 10, uwp, Microsoft Store Services SDK, ciblées des notificati
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: f60780186256e7f78a9596c979c79bfc704ae4c2
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459825"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8708881"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Configurer votre application pour les notifications Push ciblées
 
 Vous pouvez utiliser la page de **notifications Push** dans l’espace partenaires pour entrer directement en contact avec les clients en envoyant des notifications push ciblées aux appareils sur lesquels votre application de plateforme Windows universelle (UWP) est installée. Vous pouvez utiliser des notifications push ciblées afin d’inciter vos clients à effectuer une action, par exemple évaluer une application ou essayer une nouvelle fonctionnalité. Vous pouvez envoyer différents types de notificationsPush, dont les notificationstoast, les notifications par vignette et les notifications XML brutes. Vous pouvez également effectuer le suivi des lancements d’applications provoqués par vos notificationsPush. Pour plus d’informations sur cette fonctionnalité, consultez la page [Envoyer des notifications Push aux clients de vos applications](../publish/send-push-notifications-to-your-apps-customers.md).
 
-Vous pouvez envoyer des notifications push ciblées à vos clients à partir de l’espace partenaires, vous devez utiliser une méthode de la classe [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) dans le Microsoft Store Services SDK afin d’inscrire votre application pour recevoir des notifications. Vous pouvez utiliser des méthodes supplémentaires de cette classe pour signaler au centre de l’espace que votre application a été lancée en réponse à une notification push ciblée (si vous souhaitez suivre la fréquence des lancements d’applications provoqués par vos notifications) et pour arrêter de recevoir des notifications.
+Vous pouvez envoyer des notifications push ciblées à vos clients à partir de l’espace partenaires, vous devez utiliser une méthode de la classe [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) dans le Microsoft Store Services SDK afin d’inscrire votre application pour recevoir des notifications. Vous pouvez utiliser les méthodes supplémentaires de cette classe pour signaler au centre de l’espace que votre application a été lancée en réponse à une notification push ciblée (si vous souhaitez suivre la fréquence des lancements d’applications provoqués par vos notifications) et pour arrêter de recevoir des notifications.
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 
@@ -57,7 +57,7 @@ Pour inscrire votre application pour recevoir des notifications push ciblées à
 
 ### <a name="how-targeted-push-notifications-are-routed-to-customers"></a>Comment les notifications Push ciblées sont dirigées vers les clients
 
-Lorsque votre application appelle **RegisterNotificationChannelAsync**, cette méthode recueille le compte Microsoft du client actuellement connecté à l’appareil. Plus tard, lorsque vous envoyez une notification push ciblée à un segment incluant ce client, l’espace partenaires envoie la notification sur des appareils qui sont associées à un compte Microsoft de ce client.
+Lorsque votre application appelle **RegisterNotificationChannelAsync**, cette méthode recueille le compte Microsoft du client actuellement connecté à l’appareil. Plus tard, lorsque vous envoyez une notification push ciblée à un segment incluant ce client, l’espace partenaires envoie la notification aux périphériques associés au compte Microsoft de ce client.
 
 Si le client qui a démarré votre application confie son appareil à un tiers qui l'utilise alors que celui-ci est toujours connecté au compte Microsoft du client, n’oubliez pas que cette personne peut voir la notification ciblant le client d’origine. Cela peut avoir des conséquences inattendues, en particulier concernant les applications qui offrent des services que les clients peuvent utiliser lorsqu'ils se connectent. Pour empêcher les autres utilisateurs de voir vos notifications ciblées dans un tel cas, utilisez la méthode [UnregisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) lorsque les clients se déconnectent de votre application. Pour plus d’informations, voir [Annuler l’inscription pour les notifications push](#unregister) plus loin dans cet article.
 

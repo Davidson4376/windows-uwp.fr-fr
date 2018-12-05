@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, publication, prétraitement, certification, publication, en attente, soumettre, publier, état, heure
 ms.localizationpriority: medium
 ms.openlocfilehash: 733d5ff882d7ed7c574f6fe6fedd28b79c3913d9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457965"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8710446"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 
@@ -45,9 +45,9 @@ Lorsque votre application a obtenu la certification, il est prêt à déplacer v
 
 Les packages de votre application sont signés numériquement pour être protégés contre toute falsification après leur publication. Une fois que cette phase a commencé, vous ne pouvez plus annuler votre soumission ni en modifier la date de sortie.
 
-Pour les applications nouvelles et mises à jour qui incluent des modifications aux packages de l’application, le processus de publication s’effectue dans les 24 heures. Pour les mises à jour uniquement modifier les options telles que des informations de description, mais ne modifiez pas les packages de l’application, le processus de publication prendra moins d’une heure.
+Pour les applications nouvelles et mises à jour qui incluent des modifications aux packages de l’application, le processus de publication s’effectue dans les 24 heures. Pour les mises à jour uniquement modifier les options telles que des informations de description dans le Store, mais ne modifiez pas les packages de l’application, le processus de publication prendra moins d’une heure.
 
-Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de la soumission de votre application vous permet de savoir quand vos nouveaux packages et les détails de l’annonce de Windows Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation pris en charge. Les étapes qui n’ont pas encore été réalisées s’affichent comme **En attente**. Votre application reste en phase de publication jusqu'à ce que le processus se termine, ce qui signifie que les nouveaux packages et/ou descriptions sont disponibles pour tous les clients potentiels de votre application.
+Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de la soumission de votre application vous permet de savoir quand vos nouveaux packages et les informations de description sont disponibles pour les clients sur chacune de vos versions de système d’exploitation pris en charge. Les étapes qui n’ont pas encore été réalisées s’affichent comme **En attente**. Votre application reste en phase de publication jusqu'à ce que le processus se termine, ce qui signifie que les nouveaux packages et/ou descriptions sont disponibles pour tous les clients potentiels de votre application.
 
 ## <a name="in-the-store"></a>Dans le Store 
 

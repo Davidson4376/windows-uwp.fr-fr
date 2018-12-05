@@ -1,6 +1,6 @@
 ---
 ms.assetid: 94bb7ad9-cf50-61a8-ad42-48b9bdb9ed36
-title: Page d’accueil (accueil)
+title: Page d’accueil (Dev Home)
 description: Fournit des informations sur la page d’accueil de l’application accueil du développeur pour Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
@@ -8,13 +8,13 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461175"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8706757"
 ---
-# <a name="home-page-dev-home"></a>Page d’accueil (accueil)
+# <a name="home-page-dev-home"></a>Page d’accueil (Dev Home)
    
   
 La page **d’accueil** de l’outil accueil du développeur permet d’accéder rapidement aux tâches qui sont effectuées régulièrement sur une console de développement.   
@@ -38,8 +38,8 @@ La page **d’accueil** contient les volets suivants:
 Le volet **actions rapides** contienne les boutons suivants qui permettent d’accéder rapidement aux actions courantes:   
  
    *  **Code confidentiel afficher Visual Studio:** Affiche un code qui vous permet de coupler la console de développement avec l’installation de Visual Studio sur votre ordinateur.   
-   *  **Bac à sable de modification:** Vous permet de modifier le bac à sable de la console est en.   
-   *  **Console de redémarrage:** Le redémarrage de la console de développement.   
+   *  **Bac à sable de modification:** Permet de modifier le bac à sable participe à la console.   
+   *  **Console de redémarrage:** Au redémarrage de la console de développement.   
    *  **Quitter le Mode développeur:** Retourne la console en mode commercial et redémarre la console.   
    *  **Lancement accueil:** Lance l’écran d’accueil de vente au détail.   
    *  **Inscrire un jeu à partir d’un emplacement réseau partagé:** Inscrit un jeu à partir d’un emplacement partagé sur le réseau.   
@@ -73,7 +73,7 @@ Le volet de **comptes de Test** peut être utilisé pour effectuer les actions s
    *  Permet d’afficher la liste des utilisateurs inscrits sur la console.  
    *  Connectez-vous à un utilisateur ou déconnexion d’un simple clic.  
    *  Ajouter des comptes d’utilisateurs et invités.  
-   *  Afficher les détails des comptes d’utilisateurs et invités.  
+   *  Afficher les détails des comptes utilisateurs et invités.  
 
   
 <a id="ID4EFE"></a>

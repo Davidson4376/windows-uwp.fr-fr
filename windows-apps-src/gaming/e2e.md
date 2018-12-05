@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
 ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459145"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707891"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows10
 
@@ -1358,7 +1358,7 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>Activer les achats de produits in-app (module complémentaire)
 
-Une extension (produit in-app) est un article supplémentaire que les joueurs peuvent acheter dans le jeu. Les modules complémentaires peuvent être niveaux de jeu, les éléments ou tout autre chose susceptibles de plaire à vos joueurs. Utilisés à bon escient, les modules complémentaires peuvent fournir des revenus tout en améliorant l’expérience de jeu. Vous définissez et publiez des modules complémentaires de votre jeu par le biais de l’espace partenaires et activez les achats dans l’application dans le code de votre jeu.
+Une extension (produit in-app) est un article supplémentaire que les joueurs peuvent acheter dans le jeu. Les modules complémentaires peuvent être des niveaux de jeu, des éléments ou tout autre chose susceptibles de plaire à vos joueurs. Utilisés à bon escient, les modules complémentaires peuvent fournir des revenus tout en améliorant l’expérience de jeu. Vous définissez et publiez des modules complémentaires de votre jeu par le biais de l’espace partenaires et activez les achats dans l’application dans le code de votre jeu.
 
 <table>
     <colgroup>
@@ -1536,7 +1536,7 @@ Les informations et guides suivants contribuent à rendre le processus de soumis
 
 ### <a name="publishing"></a>Publication
 
-Vous utiliserez [L’espace partenaires](https://partner.microsoft.com/dashboard) pour publier et de gérer vos packages de jeu.
+Vous allez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) pour pouvoir publier et gérer vos packages de jeu.
 
 <table>
     <colgroup>
@@ -1570,7 +1570,7 @@ Vous utiliserez [L’espace partenaires](https://partner.microsoft.com/dashboard
     </colgroup>
     <tr>
         <td>Apprenez à utiliser l’installation en continu et les packages facultatifs (vidéos)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP Nextgen: création componentizedapps extensible, capable de flux de données,</a></td>
+        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP Nextgen: création componentizedapps extensible, capable de flux,</a></td>
     </tr>
     <tr>
         <td>Diviser et regrouper du contenu pour activer l’installation en continu</td>

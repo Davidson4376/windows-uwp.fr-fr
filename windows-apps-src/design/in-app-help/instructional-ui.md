@@ -9,11 +9,11 @@ keywords: windows10, uwp
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
 ms.openlocfilehash: b39507fb1333fdb642601c6b4828c3d160c6ceb5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8468029"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709351"
 ---
 # <a name="instructional-ui-guidelines"></a>Recommandations en matière d’interface utilisateur d’instructions
 

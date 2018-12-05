@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459848"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709149"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame2D
 
@@ -26,7 +26,7 @@ MonoGame est une infrastructure légère de développement de jeux. Ce didactici
 
 ## <a name="prerequisites"></a>Éléments prérequis
 +   Windows10 et Microsoft Visual Studio2017.  [Cliquez ici pour savoir comment prendre en main VisualStudio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ L’infrastructure de développement de bureau .NET. Si vous n’avez pas encore cela installé, vous pouvez l’obtenir en ré-exécutant le programme d’installation de Visual Studio et en modifiant votre installation de Visual Studio 2017.
++ L’infrastructure de développement de bureau .NET. Si vous n’avez pas encore cela installé, vous pouvez l’obtenir en réexécuter le programme d’installation de Visual Studio et en modifiant votre installation de Visual Studio 2017.
 +   Connaissances élémentaires de C# ou d'un langage de programmation similaire orienté objet. [Cliquez ici pour savoir comment commencer en C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 +   La connaissance de concepts informatiques élémentaires tels que les classes, les méthodes ou les variables sera un plus.
 
@@ -66,7 +66,7 @@ Maintenant que vous avez créé le projet, ouvrez le fichier **Game1.cs** depuis
 
 **protected override void UnloadContent()** Cette méthode est utilisée pour décharger le contenu autre que celui du Gestionnaire de contenu. Nous ne l’utilisons pas du tout.
 
-**protected override void Update (GameTime gameTime)** Cette méthode est appelée une fois pour chaque cycle de la boucle de jeu. Ici, nous mettons à jour les états de n’importe quel objet ou de n’importe quelle variable utilisée dans le jeu. Cela inclut des éléments tels que la position d’un objet, sa vitesse ou sa couleur. Il s’agit également où l’entrée utilisateur est gérée. Bref, cette méthode traite chaque partie de la logique du jeu à l'exception du dessin des objets à l’écran.
+**protected override void Update (GameTime gameTime)** Cette méthode est appelée une fois pour chaque cycle de la boucle de jeu. Ici, nous mettons à jour les états de n’importe quel objet ou de n’importe quelle variable utilisée dans le jeu. Cela inclut des éléments tels que la position d’un objet, sa vitesse ou sa couleur. Il s’agit également dans lequel l’entrée utilisateur est gérée. Bref, cette méthode traite chaque partie de la logique du jeu à l'exception du dessin des objets à l’écran.
 **protected override void Draw(GameTime gameTime)** C'est là que les objets sont dessinés sur l’écran à l’aide des positions données par la méthode Update.
 
 ## <a name="draw-a-sprite"></a>Dessin d'un sprite
@@ -484,7 +484,7 @@ dino.Draw(spriteBatch);
 
 Dans MonoGame, les nouveaux appels à **spriteBatch.Draw** dessineront par-dessus tous les appels antérieurs. Cela signifie que les sprites dino et le Brocoli seront affichées sur le sprite herbe existant, afin qu’ils puissent jamais être masqués herbe, quelle que soit leur position.
 
-Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure de modifier votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer à une vitesse croissante.
+Essayez maintenant d’exécuter le jeu et de déplacer le dino avec les touches de direction et la barre d’espace. Si vous avez suivi les étapes ci-dessus, vous devez être en mesure de modifier votre avatar déplacer au sein de la fenêtre de jeu et le Brocoli doit générer une vitesse croissante.
 
 ![Obstacle et avatar du joueur](images/monogame-tutorial-2.png)
 
@@ -648,7 +648,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 Cela appelle la méthode **RectangleCollision** que nous avons créée dans **SpriteClass**et marque le jeu comme étant terminé si elle retourne true.
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. Ajout de l’entrée utilisateur permettant de réinitialiser le jeu
-Ajoutez ce code à la méthode **KeyboardHandler** , pour permettre à l’utilisateur à réinitialiser le jeu sur ENTRÉE:
+Ajoutez ce code à la méthode **KeyboardHandler** , pour permettre à l’utilisateur à réinitialiser le jeu si elles appuyez sur ENTRÉE:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

@@ -6,12 +6,12 @@ ms.date: 11/20/2018
 ms.topic: article
 keywords: Windows10, uwp, taxes, taxes sur les applications, exigences fiscales, développement commercial, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bf36e8e5e07c73e8c59088be167e9dfb584c60
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8480031"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709867"
 ---
 # <a name="tax-details-for-paid-apps"></a>Informations fiscales pour les applications payantes
 
@@ -19,7 +19,7 @@ ms.locfileid: "8480031"
 Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous.
 
 > [!NOTE]
-> L’Ajustement du développement commercial peut avoir des implications de paiement dans un nombre limité de pays/régions. Pour plus de détails sur l’Ajustement du développement commercial et les marchés dans lesquels il s’applique, consultez le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et la liste des [pays/régions impliqués](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
+> L’Ajustement du développement commercial peut avoir des implications de paiement dans un nombre limité de pays/régions. Pour plus de détails sur l’Ajustement du développement commercial et les marchés dans lesquels il s’applique, consultez le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et la liste des [pays/régions impliqués](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
 > Les taux d’imposition sont susceptibles de changer à tout moment. Microsoft ne peut pas garantir que les taux figurant dans les tableaux ci-dessous seront toujours exacts.

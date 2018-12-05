@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ffcbc3d1c11c8f756b6307b15b87c14b09f65c4
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463109"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8712388"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
 
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` est un identificateur de ressource faisant référence à une ressource localisable dans un fichier Ressources (.resw). Pour une langue par défaut de l’anglais (États-Unis), il serait défini à une valeur de «{0} | {1}«et un commentaire indiquerait que»{0}» correspond à la date et de «{1}«est le temps. De cette manière, les traducteurs sont en mesure d'ajuster les éléments de format selon les besoins. Ils peuvent par exemple changer l’ordre des éléments, si une langue ou une région spécifique utilise plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère «|» par tout autre caractère de séparation.
+`CustomDateTimeFormatString` est un identificateur de ressource faisant référence à une ressource localisable dans un fichier Ressources (.resw). Pour une langue par défaut de l’anglais (États-Unis), il serait défini à une valeur de «{0} | {1}«et un commentaire indiquerait que»{0}» correspond à la date et «{1}«est le temps. De cette manière, les traducteurs sont en mesure d'ajuster les éléments de format selon les besoins. Ils peuvent par exemple changer l’ordre des éléments, si une langue ou une région spécifique utilise plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère «|» par tout autre caractère de séparation.
 
 Il existe une autre manière d'implémenter cet exemple: il suffit d'interroger les deuxformateurs concernant leurs motifs de format, de les concaténer ensemble, puis de construire un troisième formateur à partir du motif de format résultant.
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, lien, protocole windows store, lien vers une application, lien vers application
 ms.localizationpriority: medium
 ms.openlocfilehash: 59df207adf44cea04505e41a3323da1743170c46
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487281"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701378"
 ---
 # <a name="link-to-your-app"></a>Créer un lien vers votre application
 
@@ -37,7 +37,7 @@ Pour créer votre badge, visitez la page [Microsoft Store badges](http://go.micr
 
 ## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>Créer un lien direct vers votre application dans le Microsoft Store
 
-Vous pouvez créer un lien qui lance le Microsoft Store et accéder directement à la page de description de votre application sans ouvrir un navigateur à l’aide de la **ms-windows-store:** schéma d’URI.
+Vous pouvez créer un lien permettant d’ouvrir le Microsoft Store et accéder directement à la page de description de votre application sans ouvrir un navigateur à l’aide de la **ms-windows-store:** schéma d’URI.
 
 Ces liens sont utiles si vous savez que vos utilisateurs travaillent sur un appareil Windows et que vous voulez qu’ils accèdent directement à la page de description dans le WindowsStore. Par exemple, vous pouvez utiliser ce lien après la vérification des chaînes de l’agent utilisateur dans un navigateur pour confirmer que le système d’exploitation de l’utilisateur prend en charge le WindowsStore, ou lorsque vous communiquez déjà par le biais d’une applicationUWP.
 

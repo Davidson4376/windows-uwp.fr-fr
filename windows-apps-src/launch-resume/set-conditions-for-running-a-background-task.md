@@ -4,18 +4,18 @@ description: Découvrez comment définir des conditions qui contrôlent le momen
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458500"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8706797"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
@@ -27,9 +27,9 @@ ms.locfileid: "8458500"
 
 Découvrez comment définir des conditions spécifiant à quel moment votre tâche en arrière-plan s’exécutera.
 
-Parfois, les tâches en arrière-plan doit remplir certaines conditions pour être remplies pour que la tâche en arrière-plan réussisse. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée une fois que le déclencheur est activé. La tâche en arrière-plan sera alors être en file d’attente, mais ne s’exécute jusqu'à ce que toutes les conditions requises sont satisfaites.
+Parfois, les tâches en arrière-plan doit remplir certaines conditions pour être remplies pour que la tâche en arrière-plan réussisse. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée une fois que le déclencheur est activé. La tâche en arrière-plan est ensuite mise en file, mais elle ne fonctionnera pas jusqu'à ce que toutes les conditions requises sont remplies.
 
-Affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et le processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
+Affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et configuration requise du processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
 
 Il est également possible de combiner plusieurs conditions en appelant **AddCondition** plusieurs fois sur le même [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Veillez à ne pas ajouter de conditions conflictuelles, telles que **UserPresent** et **UserNotPresent**.
 
@@ -39,7 +39,7 @@ Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à 
 
 Cette rubrique concerne aussi bien les tâches en arrière-plan qui s’exécutent hors processus que celles qui s’exécutent dans le même processus que l’application au premier plan.
 
-Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) pour représenter la condition qui doit être en vigueur pour exécuter une tâche en arrière-plan. Dans le constructeur, spécifiez la condition qui doit être remplie avec une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) .
+Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) pour représenter la condition qui doit être effective pour exécuter une tâche en arrière-plan. Dans le constructeur, spécifiez la condition qui doit être remplie avec une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) .
 
 Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie la condition **InternetAvailable** :
 

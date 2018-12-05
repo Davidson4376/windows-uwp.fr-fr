@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, auteur, COM, c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460555"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8710789"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Créer des composants COM avec C++/WinRT
 
@@ -68,9 +68,9 @@ Consultez également [des composants COM consommer avec C++ / WinRT](consume-com
 
 ## <a name="a-more-realistic-and-interesting-example"></a>Un exemple plus réaliste et intéressant
 
-Le reste de cette rubrique vous guide tout au processus de création d’un projet d’application de console minimal qui utilise C++ / WinRT pour implémenter une fabrique de classe et de base coclasse (composant COM ou classe COM). L’exemple d’application montre comment fournir une notification toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
+Le reste de cette rubrique vous guide tout au processus de création d’un projet d’application console minimal qui utilise C++ / WinRT pour implémenter une fabrique de classe et coclasse de base (composant COM ou classe COM). L’exemple d’application montre comment envoyer une notification de toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
 
-Vous trouverez plus d’informations sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utilisent C++ / WinRT, même si, par conséquent, nous recommandons que vous préférez le code présenté dans cette rubrique.
+Vous trouverez plus d’informations sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utilisent C++ / WinRT, toutefois, nous vous conseillons donc que vous préférez le code présenté dans cette rubrique.
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Créez un projet d’Application Console Windows (ToastAndCallback)
 
@@ -85,7 +85,7 @@ Ouvrez `pch.h`et ajoutez `#include <unknwn.h>` avant l’inclut pour n’importe
 #include <winrt/Windows.Foundation.h>
 ```
 
-Ouvrez `main.cpp`et supprimer les using-directives qui génère le modèle de projet. À leur place, collez le code suivant (ce qui nous obtenons les bibliothèques, les en-têtes et les noms de type dont nous avons besoin).
+Ouvrez `main.cpp`et supprimer les using-directives qui génère le modèle de projet. À leur place, collez le code suivant (ce qui nous obtenons les bibliothèques, les en-têtes et les noms de type que nous devons).
 
 ```cppwinrt
 #pragma comment(lib, "shell32")
@@ -104,7 +104,7 @@ using namespace Windows::Data::Xml::Dom;
 using namespace Windows::UI::Notifications;
 ```
 
-## <a name="implement-the-coclass-and-class-factory"></a>Implémentez la fabrique de classe et coclasse
+## <a name="implement-the-coclass-and-class-factory"></a>Implémentez la fabrique coclasse et des classes
 
 En C++ / WinRT, vous implémentez coclasses et les fabriques de classes, en dérivant de la structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) . Immédiatement après les trois-directives using ci-dessus (et avant `main`), collez ce code pour implémenter votre composant d’activateur de notification COM toast.
 
@@ -164,19 +164,19 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 L’implémentation de la coclasse ci-dessus suit le même modèle qui est présenté dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Par conséquent, vous pouvez utiliser la même technique pour implémenter les interfaces COM, ainsi que des interfaces Windows Runtime. Des composants COM et les classes Windows Runtime exposent leurs fonctionnalités via des interfaces. Chaque interface COM dérive en fin de compte de l’interface [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Windows Runtime est basé sur COM&mdash;une distinction étant des interfaces Windows Runtime au final dérivent à partir de l' [**interface IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (et **IInspectable** dérive de **IUnknown**).
 
-Dans la coclasse dans le code ci-dessus, nous implémentez la méthode **INotificationActivationCallback::Activate** , qui est la fonction qui est appelée lorsque l’utilisateur clique sur le bouton de rappel sur une notification toast. Toutefois, avant que cette fonction peut être appelée, une instance de la coclasse doit être créé, et c’est le rôle de la fonction **IClassFactory::CreateInstance** .
+Dans la coclasse dans le code ci-dessus, nous implémentez la méthode **INotificationActivationCallback::Activate** , qui est la fonction qui est appelée lorsque l’utilisateur clique sur le bouton de rappel dans une notification toast. Toutefois, avant que cette fonction peut être appelée, une instance de la coclasse doit être créé, et c’est le rôle de la fonction **IClassFactory::CreateInstance** .
 
-La coclasse que nous avons simplement implémentées est appelée l' *activateur COM* pour les notifications, et qui présente son id de classe (CLSID) sous la forme de la `callback_guid` identificateur (de type **GUID**) que vous voyez ci-dessus. Nous allons utiliser cet identificateur plus tard, sous la forme d’un raccourci du menu Démarrer et une entrée de Registre Windows. L’activateur COM CLSID et le chemin d’accès à son serveur COM associé (qui est le chemin d’accès de l’exécutable que nous créons ici) est le mécanisme par lequel une notification toast sait quel classe pour créer une instance de lorsque son rappel de bouton est cliqué (si le notification est cliquée dans le centre de notifications ou non).
+La coclasse que nous avons simplement implémentées est appelée l' *activateur COM* pour les notifications, et qui présente son id de classe (CLSID) sous la forme de la `callback_guid` identificateur (de type **GUID**) que vous voyez ci-dessus. Nous allons utiliser cet identificateur plus tard, sous la forme d’un raccourci du menu Démarrer et une entrée de Registre Windows. L’activateur COM CLSID et le chemin d’accès à son serveur COM associé (qui est le chemin d’accès de l’exécutable que nous créons ici) est le mécanisme par lequel une notification toast sait quel classe pour créer une instance de lorsque son rappel de bouton est cliqué (si le notification est effectuée dans le centre de notifications ou non).
 
 ## <a name="best-practices-for-implementing-com-methods"></a>Meilleures pratiques pour l’implémentation de méthodes COM.
 
-Techniques de gestion des erreurs et de gestion de ressources peuvent aller dans pair. Il est plus pratique et plus pratique d’utiliser les exceptions que les codes d’erreur. Et si vous n’utilisiez l’idiome (RAII) de ressource-acquisition-est-d’initialisation, puis vous pouvez éviter explicitement vérification des codes d’erreur et puis en libérant explicitement les ressources. Ces contrôles explicite rendent votre code alambiqué profiter plus que nécessaire, et vous permet de bogues beaucoup d’endroits à masquer. Au lieu de cela, utilisez RAII et lever/catch exceptions. De cette façon, votre allocations de ressources sont à toute exception, et votre code est simple.
+Techniques de gestion des erreurs et de gestion de ressources peuvent accéder en pair. Il est plus pratique et plus pratique d’utiliser les exceptions que les codes d’erreur. Et si vous n’utilisiez l’idiome (RAII) de ressource-acquisition-est-initialisation, puis vous pouvez éviter explicitement recherchant codes d’erreur et en libérant explicitement les ressources. Ces contrôles explicite que votre code alambiqué profiter plus que nécessaire, et vous permet de bogues beaucoup d’endroits pour masquer. Au lieu de cela, utilisez RAII et lever/catch exceptions. De cette façon, votre allocations de ressources sont à toute exception, et votre code est simple.
 
-Toutefois, vous up ne doit pas autoriser les exceptions comme caractère d’échappement vos implémentations de méthode COM. Vous pouvez vous assurer qu’à l’aide de la `noexcept` spécificateur sur vos méthodes COM. Il est OK pour les exceptions à lever n’importe où dans le graphique des appels de votre méthode, tant que vous gérez les avant la fermeture de votre méthode. Si vous utilisez `noexcept`, mais que vous autorisez ensuite une exception comme caractère d’échappement votre méthode, alors votre application se termine.
+Toutefois, vous n’autorisez des exceptions comme caractère d’échappement vos implémentations de méthode COM. Vous pouvez vous assurer qu’à l’aide de la `noexcept` spécificateur sur vos méthodes COM. Il est OK pour les exceptions à lever n’importe où dans le graphique des appels de votre méthode, tant que vous gérez avant la fermeture de votre méthode. Si vous utilisez `noexcept`, mais que vous autorisez ensuite une exception comme caractère d’échappement votre méthode, alors votre application s’arrêtera.
 
 ## <a name="add-helper-types-and-functions"></a>Ajouter des fonctions et des types d’assistance
 
-Dans cette étape, nous allons ajouter certains types d’assistance et les fonctions qui rend le reste du code utilisent de. C’est le cas, avant de `main`, ajoutez le code suivant.
+Dans cette étape, nous allons ajouter certains types d’assistance et les fonctions qui rend le reste du code utilisent de. Tel est le cas, avant de `main`, ajoutez le code suivant.
 
 ```cppwinrt
 struct prop_variant : PROPVARIANT
@@ -248,7 +248,7 @@ std::wstring get_shortcut_path()
 
 ## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>Implémentez les fonctions restantes et la fonction de point d’entrée wmain
 
-Le modèle de projet génère un `main` fonction pour vous. Supprimez cet `main` fonctionner et à sa place collez ce code de description, qui inclut le code pour inscrire votre coclasse, puis à fournir un toast capable d’appeler de nouveau votre application.
+Le modèle de projet génère un `main` fonction pour vous. Supprimez cet `main` fonctionne et à sa place collez ce code de description, qui inclut le code pour inscrire votre coclasse, puis pour transmettre un toast capable d’appeler de nouveau votre application.
 
 ```cppwinrt
 void register_callback()
@@ -412,19 +412,19 @@ Générer l’application et ensuite l’exécuter au moins une fois en tant qu�
 
 ## <a name="in-process-com-server"></a>Serveur COM in-process
 
-L’application d’exemple *ToastAndCallback* ci-dessus fonctionne comme un serveur COM local (ou out-of-process). Cela est indiqué par la clé de Registre de Windows [LocalServer32](/windows/desktop/com/localserver32) que vous utilisez pour inscrire le CLSID de sa coclasse. Un serveur COM local héberge son coclass(es) à l’intérieur d’un binaire exécutable (une `.exe`).
+L’application d’exemple *ToastAndCallback* ci-dessus fonctionne comme un serveur COM local (ou out-of-process). Cela est indiqué par la clé de Registre de Windows [LocalServer32](/windows/desktop/com/localserver32) que vous permet d’enregistrer le CLSID de sa coclasse. Un serveur COM local héberge son coclass(es) à l’intérieur d’un binaire exécutable (une `.exe`).
 
 Vous pouvez également (et sans doute plus probable), vous pouvez choisir d’héberger votre coclass(es) à l’intérieur d’une bibliothèque de liens dynamiques (un `.dll`). Un serveur COM sous la forme d’une DLL est appelé sur un serveur de COM in-process, et il est indiqué par le CLSID en cours d’inscription à l’aide de la clé de Registre de Windows [InprocServer32](/windows/desktop/com/inprocserver32) .
 
-### <a name="create-a-dynamic-link-library-dll-project"></a>Créez un projet de bibliothèque de liens dynamiques (DLL)
+### <a name="create-a-dynamic-link-library-dll-project"></a>Créer un projet de bibliothèque de liens dynamiques (DLL)
 
 Vous pouvez commencer la tâche de création d’un serveur de COM in-process en créant un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows Desktop** > projet de**Bibliothèque de liens dynamiques (DLL)** .
 
 Pour ajouter C++ / WinRT prise en charge pour le nouveau projet, suivez les étapes décrites dans [Modifier un projet d’application de bureau Windows pour ajouter C++ / WinRT support](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
-### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>Implémenter la coclasse, fabrique de classe et des exportations de serveur in-process
+### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>Implémentez la coclasse, fabrique de classe et des exportations de serveur in-process
 
-Ouvrez `dllmain.cpp`et à y ajouter le listing du code indiqué ci-dessous.
+Ouvrez `dllmain.cpp`et à y ajouter le listing du code illustré ci-dessous.
 
 Si vous disposez déjà d’une DLL qui implémente C++ / WinRT Windows Runtime classes, puis vous avez déjà la fonction **DllCanUnloadNow** illustrée ci-dessous. Si vous souhaitez ajouter coclasses à cette DLL, vous pouvez ajouter la fonction **DllGetClassObject** .
 

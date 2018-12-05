@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e212e16039d49e3ffd08aa5886d48c61ee24e9e
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479568"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8710549"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -139,7 +139,7 @@ Le tableau suivant répertorie les autres réseaux actuellement pris en charge p
 
 ### <a name="supported-markets-for-ad-networks"></a>Marchés pris en charge pour les réseaux publicitaires
 
-Les réseaux publicitaires disponibles proposent des publicités dans tous les [marchés pris en charge](define-pricing-and-market-selection.md#microsoft-store-consumer-markets), avec les exceptions suivantes.
+Les réseaux publicitaires disponibles proposent des publicités dans tous les [marchés pris en charge](define-market-selection.md#microsoft-store-consumer-markets), avec les exceptions suivantes.
 
 |  Réseau publicitaire  |  Marchés pris en charge  |
 |--------------|---------------------|

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a77cb67891b3cfcb814e66fd14db9e79a0bff1c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460614"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8706449"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
-La page **Packages** est, vous pouvez charger tous les fichiers de package (.msix, .msixupload, .msixbundle, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger tous vos packages pour la même application sur cette page, et quand un client télécharge votre application, le Windows Store propose automatiquement au client avec le package qui fonctionne le mieux à leur appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareilsWindows10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
+La page **Packages** est, vous pouvez charger tous les fichiers de package (.msix, .msixupload, .msixbundle, .appx, .appxupload et/ou .appxbundle) pour l’application que vous soumettez. Vous pouvez charger tous vos packages pour la même application sur cette page, et quand un client télécharge votre application, le Windows Store propose automatiquement au client avec le package qui vous convient le mieux à leur appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareilsWindows10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
 > [!IMPORTANT]
 > À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
@@ -32,7 +32,7 @@ Pour charger des packages, faites-les glisser dans le champ de chargement, ou cl
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer une partie ou la totalité des packages dans cette soumission.
 
-Si nous détectons des erreurs avec un package lors de la validation il, nous affichons un message pour vous indiquer quel est le problème. Vous devez supprimer le package et résoudre le problème puis essayez de le charger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
+Si nous détectons des erreurs avec un package lors de la validation il, nous affichons un message pour vous indiquer quel est le problème. Vous devez supprimer le package, résoudre le problème et essayez de le charger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
 
 
 ## <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
