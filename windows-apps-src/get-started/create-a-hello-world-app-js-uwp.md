@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487301"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701805"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
 
-Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple «Hello, world» qui cible la plateforme Windows universelle (UWP) sur Windows 10. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
+Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple «Hello, world» qui cible la plateforme Windows universelle (UWP) sur Windows 10. Un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 > [!NOTE]
 > Ce didacticiel utilise Visual Studio Community2017. Si vous utilisez une autre version de Visual Studio, son aspect vous semblera peut-être légèrement différent.
@@ -155,7 +155,7 @@ Vous pouvez maintenant exécuter l’application en appuyant sur F5. L’applica
 ## <a name="summary"></a>Résumé
 
 
-Félicitations, vous avez créé une application JavaScript pour Windows 10 et la plateforme UWP! Cet exemple est ridiculement simple, mais vous pouvez désormais commencer à ajouter vos bibliothèques et infrastructures JavaScript préférées pour créer votre propre application. Comme il s'agit d'une application UWP, vous pouvez la publier dans le Windows Store. Pour obtenir un exemple d’ajout d’infrastructures tierces, consultez les projets suivants:
+Félicitations, vous avez créé une application JavaScript pour Windows 10 et UWP! Cet exemple est ridiculement simple, mais vous pouvez désormais commencer à ajouter vos bibliothèques et infrastructures JavaScript préférées pour créer votre propre application. Comme il s'agit d'une application UWP, vous pouvez la publier dans le Windows Store. Pour obtenir un exemple d’ajout d’infrastructures tierces, consultez les projets suivants:
 
 * [Jeu UWP2D simple pour le Microsoft Store, écrit en JavaScript et CreateJS](get-started-tutorial-game-js2d.md)
 * [Jeu UWP3D pour le Microsoft Store, écrit en JavaScript et threeJS](get-started-tutorial-game-js3d.md)

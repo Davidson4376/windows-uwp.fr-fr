@@ -1,32 +1,32 @@
 ---
 title: Suivre les modifications de système de fichiers en arrière-plan
-description: Décrit comment effectuer le suivi des modifications dans les fichiers et dossiers dans l’arrière-plan que les utilisateurs les déplacement dans le système.
+description: Décrit comment effectuer le suivi des modifications dans les fichiers et dossiers en arrière-plan aux utilisateurs les déplacement dans le système.
 ms.date: 11/20/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e90692753924572a932767b9c188ed6d24f94593
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459752"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701861"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>Suivre les modifications de système de fichiers en arrière-plan
 
-La classe [StorageLibraryChangeTracker](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker) permet aux applications de suivre les modifications dans les fichiers et dossiers que les utilisateurs les déplacement dans le système. À l’aide de la classe **StorageLibraryChangeTracker** , une application peut effectuer le suivi:
+La classe [StorageLibraryChangeTracker](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker) permet aux applications de suivre les modifications dans les fichiers et dossiers que les utilisateurs les déplacement dans le système. À l’aide de la classe **StorageLibraryChangeTracker** , une application peut suivre:
 
 - Notamment ajouter des opérations de fichier, supprimer, modifier.
-- Opérations de dossier comme renomme et de suppressions.
+- Opérations de dossier telles que des déplacements et des suppressions.
 - Les fichiers et dossiers déplacement sur le lecteur.
 
-Utilisez ce guide pour apprendre le modèle de programmation pour travailler avec la modification de la mise hors tension, d’afficher un exemple de code et comprendre les différents types d’opérations de fichier qui sont suivies par **StorageLibraryChangeTracker**.
+Utilisez ce guide pour apprendre le modèle de programmation pour travailler avec la modification de la mise hors tension, d’afficher un exemple de code et comprendre les différents types d’opérations sur les fichiers qui sont suivies par **StorageLibraryChangeTracker**.
 
 **StorageLibraryChangeTracker** fonctionne pour les bibliothèques de l’utilisateur, ou pour n’importe quel dossier sur l’ordinateur local. Cela inclut des lecteurs secondaires ou des lecteurs amovibles, mais n’inclut pas de lecteurs NAS ou des lecteurs réseau.
 
 ## <a name="using-the-change-tracker"></a>À l’aide de la modification de la mise hors tension
 
-Le dispositif de suivi des modifications est implémentée sur le système en tant qu’un tampon circulaire stockant les opérations de système de fichiers *N* derniers. Les applications sont en mesure de lire les modifications sur la mémoire tampon et de les traiter ensuite dans leurs propres expériences. Une fois que l’application a terminé avec les modifications marque les modifications comme traité, elle ne sera jamais les afficher à nouveau.
+Le dispositif de suivi de modification est implémentée sur le système comme un tampon circulaire stockant les opérations de système de fichiers *N* dernières. Les applications sont en mesure de lire les modifications sur la mémoire tampon et de les traiter ensuite dans leurs propres expériences. Une fois que l’application a terminé avec les modifications marque les modifications comme traité, elle ne sera jamais les afficher à nouveau.
 
 Pour utiliser le dispositif de suivi des modifications sur un dossier, procédez comme suit:
 
@@ -54,15 +54,15 @@ Quelques remarques importantes:
 
 ![L’activation d’un dispositif de suivi des modifications vide](images/changetracker-enable.png)
 
-### <a name="wait-for-changes"></a>Attendez que les modifications
+### <a name="wait-for-changes"></a>Attendre des modifications
 
-Une fois que le dispositif de suivi des modifications est initialisé, il commence à enregistrer toutes les opérations qui se produisent au sein d’une bibliothèque, même lorsque l’application n’est pas en cours d’exécution. Les applications peuvent s’inscrire pour être activée chaque fois qu’il est une modification en inscrivant pour l’événement [StorageLibraryChangedTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) .
+Une fois que le dispositif de suivi de modification est initialisée, elle commence à enregistrer toutes les opérations qui se produisent au sein d’une bibliothèque, même lorsque l’application n’est pas en cours d’exécution. Les applications peuvent s’inscrire pour être activée chaque fois qu’il est une modification en inscrivant pour l’événement [StorageLibraryChangedTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) .
 
-![Modifications ajoutées à la modification de la mise hors tension sans l’application leur lecture](images/changetracker-waiting.png)
+![Modifications ajoutées à la modification de la mise hors tension sans que l’application leur lecture](images/changetracker-waiting.png)
 
 ### <a name="read-the-changes"></a>Lire les modifications
 
-L’application peut alors demander les modifications à partir de la modification de la mise hors tension d’et recevoir une liste des modifications apportées depuis la dernière fois qu’elle est activée. Le code ci-dessous montre comment obtenir une liste des modifications à partir de la modification de la mise hors tension.
+L’application peut ensuite rechercher d’éventuelles modifications à partir de la modification de la mise hors tension et recevoir une liste des modifications apportées depuis la dernière fois, qu'il extrait. Le code ci-dessous montre comment obtenir une liste des modifications à partir de la modification de la mise hors tension.
 
 ```csharp
 StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
@@ -76,7 +76,7 @@ L’application est alors chargée de traiter les modifications dans sa propre e
 ![Les modifications de lecture à partir de la modification de la mise hors tension dans une base de données d’application](images/changetracker-reading.png)
 
 > [!TIP]
-> Le deuxième appel à activer consiste à se défendre contre une condition de concurrence si l’utilisateur ajoute un autre dossier à la bibliothèque pendant que votre application lit modifications. Sans l’appel supplémentaire à **Activer** le code échoue avec ecSearchFolderScopeViolation (0 x 80070490) si l’utilisateur change les dossiers dans leur bibliothèque
+> Le deuxième appel à activer consiste à vous défendre contre une condition de concurrence si l’utilisateur ajoute un autre dossier à la bibliothèque pendant que votre application lit modifications. Sans l’appel supplémentaire pour **Activer** le code échoue avec ecSearchFolderScopeViolation (0 x 80070490) si l’utilisateur modifie les dossiers dans leur bibliothèque
 
 ### <a name="accept-the-changes"></a>Accepter les modifications
 
@@ -88,14 +88,14 @@ await changeReader.AcceptChangesAsync();
 
 ![Marquage des modifications en tant que lus afin qu’ils ne jamais être affichées à nouveau](images/changetracker-accepting.png)
 
-L’application maintenant reçoit les nouvelles modifications lors de la lecture de la modification de la mise hors tension à l’avenir.
+L’application recevrez désormais nouvelles modifications lors de la lecture de la modification de la mise hors tension à l’avenir.
 
-- Si vous avez apportée entre appelant [ReadBatchAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync) et [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync), le pointeur sera uniquement être avancée de la dernière modification de l’application a vu. Ces autres modifications seront toujours disponibles la prochaine fois qu’il appelle **ReadBatchAsync**.
-- Ne pas l’acceptation des modifications entraînera le système renvoyer le même ensemble de modifications de la prochaine fois que l’application appelle **ReadBatchAsync**.
+- Si vous avez apportée entre appelant [ReadBatchAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync) et [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync), le pointeur sera uniquement être avancée de la dernière modification de l’application a vu. Ces autres modifications toujours sera disponibles la prochaine fois qu’elle appelle **ReadBatchAsync**.
+- N’accepte ne pas les modifications entraînera le système renvoyer le même ensemble de modifications à la prochaine fois que l’application appelle **ReadBatchAsync**.
 
 ## <a name="important-things-to-remember"></a>Points importants à retenir
 
-Lorsque vous utilisez la modification de la mise hors tension, il y a plusieurs choses que vous devez garder à l’esprit pour vous assurer que tout fonctionne correctement.
+Lorsque vous utilisez le dispositif de suivi des modifications, il y a plusieurs choses que vous devez garder à l’esprit pour vous assurer que tout fonctionne correctement.
 
 ### <a name="buffer-overruns"></a>Dépassements de mémoire tampon
 
@@ -112,17 +112,17 @@ Il est rare d’obtenir ces cas, mais nous ne voulons pas le dispositif de suivi
 
 La classe [StorageLibrary](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) existe en tant qu’un groupe virtuel des dossiers racine qui contiennent d’autres dossiers. Pour rapprocher cela avec un dispositif de suivi du changement du système de fichier, nous avons effectué des options suivantes:
 
-- Les modifications apportées aux descendants les racine des dossiers de bibliothèques seront représentées dans la modification de la mise hors tension. Les dossiers de bibliothèque racine est disponible à l’aide de la propriété de [dossiers](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) .
+- Les modifications apportées aux descendants des dossiers de bibliothèque racine seront représentées dans le dispositif de suivi des modifications. Les dossiers de bibliothèque racine est disponible à l’aide de la propriété de [dossiers](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) .
 - Ajout ou la suppression des dossiers racine à partir d’un **StorageLibrary** (via [RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) et [RequestRemoveFolderAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)) ne crée pas une entrée dans le dispositif de suivi des modifications. Ces modifications peuvent être suivies par le biais de l’événement [DefinitionChanged](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) ou en énumérant les dossiers racine dans la bibliothèque à l’aide de la propriété de [dossiers](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) .
-- Si un dossier dont le contenu déjà qu’il est ajouté à la bibliothèque, il sera pas un changement de notification ou modifier des entrées de mise hors tension générées. Les modifications suivantes aux descendants de ce dossier seront générer des notifications et modifier les entrées de la mise hors tension.
+- Si un dossier dont le contenu déjà qu’il est ajouté à la bibliothèque, il sera pas un changement de notification ou modifier des entrées de mise hors tension générées. Les modifications suivantes aux descendants de ce dossier seront générer des notifications et modifier des entrées de la mise hors tension.
 
 ### <a name="calling-the-enable-method"></a>Appeler la méthode d’activation
 
-Les applications doivent appeler [Activer](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) dès qu’ils démarrent le système de fichiers de suivi et avant chaque énumération des modifications. Cela permet de garantir que toutes les modifications seront capturées par la modification de la mise hors tension.  
+Les applications doivent appeler [Activer](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) dès qu’ils démarrent le système de fichiers de suivi et avant chaque énumération des modifications. Cela permet de garantir que toutes les modifications seront capturées par le dispositif de suivi des modifications.  
 
 ## <a name="putting-it-together"></a>Synthèse éléments
 
-Voici tout le code qui est utilisé pour s’inscrire pour que les modifications de la bibliothèque vidéo et commencer à extraire les modifications apportées à partir de la modification de la mise hors tension.
+Voici tout le code qui est utilisé pour inscrire les modifications apportées à partir de la bibliothèque de vidéos et commencer à extraire les modifications apportées à partir de la modification de la mise hors tension.
 
 ```csharp
 private async void EnableChangeTracker()

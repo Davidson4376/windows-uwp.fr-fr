@@ -1,24 +1,24 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Tests d’application Pont du bureau Windows
-description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour sa conversion vers une application UWP.
+description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour la conversion vers une application UWP.
 ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460819"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701200"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
 [Les applications pont du bureau](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications de plateforme Windows universelle (UWP) à l’aide du [Pont du bureau](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier.appx ou .appxbundle) ciblant Windows10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
-Tests facultatifs des applications pont du bureau Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
+Tests facultatifs des applications pont du bureau Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons d’examen des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
 
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 
@@ -220,7 +220,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 > La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présentent qui n’est pas une API autorisée pour les applications UWP. 
 
 > [!NOTE]
-> Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
+> Applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
@@ -228,7 +228,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 Le test s’assure que l’application ne demande pas de contrôle de compte d’utilisateur lors de l’exécution.
 
 **Détails du test**  
-Une application ne peut pas demander l’élévation d’administrateur ni UIAccess conformément à la politique du Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
+Une application ne peut pas demander une élévation administrateur ni UIAccess conformément à la politique du Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
 
 **Actions correctives**  
 Les applications doivent s’exécuter en tant qu’utilisateur interactif. Pour plus d’informations, voir [Vue d’ensemble de la sécurité UIAutomation](https://go.microsoft.com/fwlink/?linkid=839440).

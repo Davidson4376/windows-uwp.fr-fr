@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
 ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463738"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8703476"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -28,7 +28,7 @@ Notez que vous ne serez pas en mesure de configurer des dates dans la section **
 > [!IMPORTANT]
 > Les dates que vous spécifiez dans la section Planification s’appliquent uniquement aux clients sous Windows10.
 >
->Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, n’importe quelle date **empêcher l’acquisition** que vous sélectionnez s’appliquera pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [visibilité](choose-visibility-options.md#discoverability) , ou si vous sélectionnez **rendre votre application indisponible** à partir de la page de **Présentation de l’application** ).
+>Si votre application publiée précédemment prend en charge les versions antérieures du système d’exploitation, n’importe quelle date **empêcher l’acquisition** que vous sélectionnez ne s’applique pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [visibilité](choose-visibility-options.md#discoverability) , ou si vous sélectionnez **rendre votre application indisponible** à partir de la page de **Présentation de l’application** ).
 
 
 ## <a name="base-schedule"></a>Planification de base

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeu, directx, entrée, souris, tactile, contrôle
 ms.localizationpriority: medium
 ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8475919"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8697354"
 ---
 # <a name="game-input-for-directx-games"></a>Entrée de jeu pour jeux DirectX
 

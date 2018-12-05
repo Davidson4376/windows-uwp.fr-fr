@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
 title: Obtenir l’utilisation d’applications mensuelles
 ms.date: 08/15/2018
 ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457789"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701474"
 ---
 # <a name="get-monthly-app-usage"></a>Obtenir l’utilisation d’applications mensuelles
 
@@ -82,14 +82,14 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | Valeur                     | Type    | Description                                                                                 |
 |---------------------------|---------|---------------------------------------------------------------------------------------------|
 | date                      | chaîne  | La première date dans la plage de dates pour les données d’utilisation. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates.                          |
-| applicationId             | chaîne  | L’ID Windows Store de l’application pour laquelle vous récupérez les données d’utilisation.                            |
+| applicationId             | chaîne  | L’ID Store de l’application pour laquelle vous récupérez les données d’utilisation.                            |
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                                                |
 | market                    | chaîne  | Le code de pays ISO 3166 du marché dans lequel le client a utilisé votre application.                   |
-| packageVersion            | chaîne  | La version du package dans lequel l’utilisation s’est produite.                                            |
+| packageVersion            | chaîne  | La version du package où l’utilisation s’est produite.                                            |
 | deviceType                | chaîne  | L’une des chaînes suivantes qui spécifie le type d’appareil où l’utilisation s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablette**</li><li>**IoT**</li><li>**Serveur**</li><li>**Holographic**</li><li>**Inconnu**</li></ul>                                                                                                                           |
 | subscriptionName          | chaîne  | Indique si l’utilisation a été par le biais de Xbox Game Pass.                                              |
 | monthlySessionCount       | long    | Le nombre de sessions utilisateur au cours du mois.                                              |
-| engagementDurationMinutes | double  | Les minutes dans lequel les utilisateurs sont activement à l’aide de votre application exprimée par une période distincte, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                               |
+| engagementDurationMinutes | double  | Les minutes dans lesquels les utilisateurs sont activement à l’aide de votre application exprimée par une période distincte, qui commence au lance de l’application (début du processus) et se termine lorsqu’il termine (fin du processus) ou après une période d’inactivité.                               |
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                                           |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                                        |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.                    |

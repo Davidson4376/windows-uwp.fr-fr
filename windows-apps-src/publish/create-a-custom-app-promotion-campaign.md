@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
 ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458283"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701454"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
@@ -26,7 +26,7 @@ Il existe deux principaux types de données associés à des campagnes personnal
 
 Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit:
 
-* Vous pouvez afficher les données concernant les vues de page et les conversions de votre application ou module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et les **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
+* Vous pouvez afficher les données concernant les vues de page et les conversions de votre application ou module complémentaire à partir des tableaux **vues de page d’application et les conversions par ID de campagne** et **conversions totale de campagnes** dans le [rapport sur les Acquisitions](acquisitions-report.md).
 * Si votre application est une application de plateforme Windows universelle (UWP), vous pouvez utiliser les API du SDK Windows pour récupérer par programme l’ID de campagne personnalisée qui a abouti à une conversion.
 
 ## <a name="example-custom-campaign-scenario"></a>Exemple de scénario de campagne personnalisée

@@ -6,11 +6,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 20bb514a15963befb5b96a1b01a6c057e8f27482
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8485016"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701121"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en mai 2018
 
@@ -89,7 +89,7 @@ Packages facultatifs dans votre application peuvent maintenant contenir c# du co
 
 [Les transitions de page](../design/motion/page-transitions.md) dirigent les utilisateurs entre les pages d’une application. Ils permettent aux utilisateurs de comprendre où ils se trouvent dans la hiérarchie de navigation et fournir des commentaires sur la relation entre les pages.
 
-### <a name="project-rome"></a>Projet «Rome»
+### <a name="project-rome"></a>Project Rome
 
 L’équipe de projet «Rome» a entièrement révisé leur iOS et Android kits de développement logiciel, ajouter de nouvelles fonctionnalités telles que des activités de l’utilisateur et la refactorisation une grande partie de leur code afin d’offrir une expérience de programmation cohérente entre les différents kits de développement. [Tous les nouvelle référence d’API et la documentation de procédures](https://docs.microsoft.com/windows/project-rome/) est soumis dynamiques lors de la conférence des développeurs Build 2018.
 
