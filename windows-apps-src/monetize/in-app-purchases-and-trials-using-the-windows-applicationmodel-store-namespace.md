@@ -7,11 +7,11 @@ ms.topic: article
 keywords: uwp, achats dans l’application, extensions, versions d’évaluation, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690849"
+ms.locfileid: "8739911"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store
 

@@ -3,11 +3,11 @@ title: Informations de référence sur les API de code confidentiel SSH Device P
 description: Découvrez comment supprimer par programmation tous les codes confidentiels SSH approuvés.
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddf15d3cdb4089a8ef010a4ae46d247a06a10d7
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705233"
+ms.locfileid: "8741207"
 ---
 # <a name="ssh-pins-api-reference"></a>Informations de référence sur les codes confidentiels SSH API
 Vous pouvez supprimer tous les codes confidentiels SSH approuvés sur votre Kit de développement à l’aide de cette API REST.

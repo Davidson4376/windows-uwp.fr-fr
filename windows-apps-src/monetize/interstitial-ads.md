@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
 ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8713989"
+ms.locfileid: "8741857"
 ---
 # <a name="interstitial-ads"></a>Spots
 

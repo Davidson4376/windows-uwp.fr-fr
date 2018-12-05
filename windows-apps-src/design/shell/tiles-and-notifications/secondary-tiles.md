@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, uwp, vignettes secondaires
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699264"
+ms.locfileid: "8736800"
 ---
 # <a name="secondary-tiles"></a>Vignettes secondaires
 
