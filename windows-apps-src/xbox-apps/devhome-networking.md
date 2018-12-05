@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462918"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696008"
 ---
 # <a name="networking-page-dev-home"></a>Page de mise en réseau (Dev Home)
    
@@ -33,7 +33,7 @@ La page de **mise en réseau** contient les volets suivants:
 ## <a name="network-simulation"></a>Simulation de réseau  
    
   
-Le volet de **simulation de réseau** s’exécute une simulation de réseau pour tester par rapport aux différents profils de la bande passante.   
+Le volet de **simulation de réseau** s’exécute une simulation de réseau à tester les profils de la bande passante différentes.   
   
 <a id="ID4EOB"></a>
 

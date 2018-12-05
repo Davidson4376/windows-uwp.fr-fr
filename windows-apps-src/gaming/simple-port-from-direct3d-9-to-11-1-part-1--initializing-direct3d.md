@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, direct3d 11, initialisation, portage, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460769"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696328"
 ---
 # <a name="initialize-direct3d-11"></a>Initialiser Direct3D 11
 
@@ -73,7 +73,7 @@ Pour commencer, nous créons le périphérique. Nous obtenons la liste des nivea
 
 Après avoir créé le périphérique Direct3D11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
 
-> **Remarque**  D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu du Microsoft Store est requis pour prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
+> **Remarque**  D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu du Microsoft Store est nécessaire pour prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
 
  
 
