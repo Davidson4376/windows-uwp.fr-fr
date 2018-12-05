@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3212128a5fda9f6c5c811b2725b97f64655588b1
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458789"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713608"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>Prise en main de la plateforme Windows universelle (UWP) pour les développeurs iOS
 
@@ -22,9 +22,9 @@ Dans cette section, nous abordons ces aspects progressivement. Nous allons donc 
 
 Windows 10 introduit une nouvelle plateforme pour la création d’applications conviviales sur le bureau, un ordinateur portable, tablette, les appareils de téléphone et bien plus encore. Compte tenu de la multitude de fonctionnalités uniques qu’offrent les applications UWP, un portage direct de votre application iOS vous priverait de ces fonctionnalités. Nous vous encourageons donc à tester les nouveaux contrôles et les nouvelles fonctions pour déterminer en quoi ils peuvent simplifier votre travail de développement et vous inciter à créer des applications.
 
-L’essentiel est que vous ne vous limitiez pas à effectuer le portage de votre application. Vous devez **réinventer** votre application afin de tirer parti des nouvelles fonctionnalités et des nouveaux appareils. N’optez pas pour le plus petit dénominateur commun, mais créez des expériences riches qui exploitent les fonctionnalités uniques de Windows 10, par exemple, les vignettes dynamiques, les notifications et l’interaction avec Cortana.
+L’essentiel est que vous ne vous limitiez pas à effectuer le portage de votre application. Vous devez **réinventer** votre application afin de tirer parti des nouvelles fonctionnalités et des nouveaux appareils. N’optez pas pour le plus petit dénominateur commun, mais créez des expériences riches qui exploitent les fonctionnalités uniques de Windows 10, par exemple, les vignettes dynamiques, notifications et l’interaction avec Cortana.
 
-Pour vous familiariser avec ces procédures pas à pas, vous aurez besoin d’un ordinateur avec Windows 10 et Microsoft Visual Studio est installé. Vous pouvez télécharger depuis le [développeur téléchargements pour la programmation d’applications UWP](https://developer.microsoft.com/en-us/windows/downloads). Vous n’avez pas de PC? Aucun souci, vous pouvez utiliser votre MAC : voir [Installation de Windows et des outils de développement sur votre Mac](setting-up-your-mac-with-windows-10.md).
+Pour vous familiariser avec ces procédures pas à pas, vous aurez besoin d’un ordinateur avec Windows 10 et Microsoft Visual Studio est installé. Vous pouvez télécharger depuis les [téléchargements aux développeurs pour la programmation d’applications UWP](https://developer.microsoft.com/en-us/windows/downloads). Vous n’avez pas de PC? Aucun souci, vous pouvez utiliser votre MAC : voir [Installation de Windows et des outils de développement sur votre Mac](setting-up-your-mac-with-windows-10.md).
 
 | Rubrique | Description |
 |-------|-------------|
