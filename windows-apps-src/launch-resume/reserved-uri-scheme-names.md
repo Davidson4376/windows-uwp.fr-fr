@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708431"
+ms.locfileid: "8734366"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Noms de schéma d’URI et de fichier réservés
 

@@ -3,11 +3,11 @@ title: 'Unity: Gestion de version de votre projet UWP'
 description: Version de votre projet UWP Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8691049"
+ms.locfileid: "8732395"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: Gestion de version de votre projet UWP
 

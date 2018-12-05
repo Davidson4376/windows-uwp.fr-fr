@@ -3,11 +3,11 @@ title: Référence sur les API les informations d’identification réseau Devic
 description: Apprenez à ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699111"
+ms.locfileid: "8730970"
 ---
 # <a name="network-credentials-api-reference"></a>Référence de l’API d’informations d’identification réseau
 Vous pouvez ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées sur votre Kit de développement à l’aide de cette API REST.

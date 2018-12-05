@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, prise en main
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f4e38d590fc2e905221c71c1fbc6b137f5fdea0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8481696"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8730013"
 ---
 # <a name="start-coding"></a>Commencer le codage
 

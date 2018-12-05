@@ -4,14 +4,14 @@ title: Device Portal pour Xbox
 description: Découvrez comment activer Device Portal pour XboxOne.
 ms.date: 02/12/2017
 ms.topic: article
-keywords: Windows 10, uwp, portal de l’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459792"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8734786"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -195,7 +195,7 @@ Espace de travail vide que vous pouvez personnaliser à votre convenance. Vous p
 
 ### <a name="game-event-data"></a>Données d’événement de jeu
 
-Sur la page de **données d’événement de jeu** , vous pouvez afficher un graphique en temps réel à ce flux dans le nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre console Xbox One. S’il existe des événements du jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre de jeu) décrivant chaque événement dans une table de données sous le graphique de données. Le tableau est uniquement disponible s’il existe des événements enregistrés.
+Sur la page de **données d’événement de jeu** , vous pouvez afficher un graphique en temps réel à ce flux du nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre console Xbox One. S’il existe des événements du jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre de jeu) décrivant chaque événement dans une table de données sous le graphique de données. Le tableau est uniquement disponible s’il existe des événements enregistrés.
 
 ![Données d’événement de jeu](images/device-portal-xbox-22.PNG)
 
