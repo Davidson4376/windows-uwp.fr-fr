@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: b49ba463e39d09b915ce3925f94ae7d9f11a9a47
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458005"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8697807"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>Prise en main du scanneur de code-barres à caméra
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>Étape1: Ajouter des déclarations de fonctionnalités à votre manifeste d’application
@@ -85,7 +85,7 @@ Un aperçu caméra est nécessaire pour que l’utilisateur pointe avec succès 
 > [!TIP]
 > Voir [Héberger l'aperçu](pos-camerabarcode-hosting-preview.md) pour héberger l’aperçu du scanneur de codes-barres à caméra dans votre application.
 
-## <a name="step-8-initiate-scan"></a>Étape 8: Analyse d’initier 
+## <a name="step-8-initiate-scan"></a>Étape 8: Analyse de début 
 Vous pouvez lancer le processus de lecture en appelant [**StartSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).  
 En fonction de la valeur de [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived), le scanneur peut lire un seul code-barres puis s'arrêter, ou lire en continu jusqu'à ce que vous appeliez [**StopSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync).
 
