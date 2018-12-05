@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux , portage, tampons de sommets, données, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708261"
+ms.locfileid: "8735229"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Porter les tampons et données de sommets
 

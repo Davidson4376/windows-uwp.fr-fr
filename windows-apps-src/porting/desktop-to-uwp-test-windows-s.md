@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10 S, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b17697612d50d10ecfbb07388207527a4cb39b
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704082"
+ms.locfileid: "8731587"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Tester votre application Windows pour Windows10 en modeS.
 

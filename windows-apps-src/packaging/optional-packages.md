@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, empaqueter une extension, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: e19f9673090501d59e260a698f9968a8f98f1cd5
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.openlocfilehash: f62d6c99acc75033403fac7a498308cea6f7d3f8
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699041"
+ms.locfileid: "8750245"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Packages facultatifs et création d’ensembles connexes
 Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Celles-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
@@ -34,7 +34,7 @@ Pendant que vous lisez cet article, il est recommandé que vous procédez ainsi 
 
 ## <a name="optional-packages"></a>Packages facultatifs
 Pour créer un package facultatif dans Visual Studio, vous devez:
-1. Assurez-vous de votre application **Min Version de la plateforme cible** est défini sur: 10.0.15063.0.
+1. Assurez-vous de votre application **Min Version de la plateforme cible** est défini sur: 10.0.15063.0 ou une version ultérieure.
 2. À partir de votre projet de **package principal** , ouvrez le `Package.appxmanifest` fichier. Accédez à l’onglet «Packages» et prenez note de votre **nom de famille de package**, qui est tout ce qui précède le caractère «_».
 3. À partir de votre projet de **package facultatif** , bouton droit sur le `Package.appxmanifest` et sélectionnez **Ouvrir avec > Éditeur XML (texte)**.
 4. Recherchez le `<Dependencies>` élément dans le fichier. Ajoutez la ligne suivante:
@@ -62,6 +62,7 @@ Si vous souhaitez charger du code à partir d’un package facultatif dans le pa
 2. À partir de la fenêtre, recherchez les modèles installés pour «.txt» et ajoutez un nouveau fichier texte.
 > [!IMPORTANT]
 > Le nouveau fichier texte doit être nommé: `Bundle.Mapping.txt`.
+
 3. Dans le `Bundle.Mapping.txt` fichier que vous allez spécifier les chemins d’accès relatifs à des projets de package facultatif ou les packages externes. Un exemple `Bundle.Mapping.txt` fichier doit ressembler à ceci:
 
 ```syntax
@@ -75,7 +76,7 @@ Si vous souhaitez charger du code à partir d’un package facultatif dans le pa
 
 Lorsque votre solution est configurée de cette façon, Visual Studio crée un manifeste de l’ensemble d’applications pour le package principal avec toutes les métadonnées requises pour les ensembles connexes. 
 
-Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier d’ensembles connexes ne fonctionne que sur Windows 10, version 1703. En outre, la plateforme Min Version de votre application cible doit être définie à 10.0.15063.0.
+Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier d’ensembles connexes ne fonctionne que sur Windows 10, version 1703 ou ultérieure. En outre, la plateforme Min Version de votre application cible doit être définie à 10.0.15063.0 ou une version ultérieure.
 
 ## Problèmes connus<a name="known_issues"></a>
 

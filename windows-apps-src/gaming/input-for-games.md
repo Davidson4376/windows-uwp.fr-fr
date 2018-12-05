@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690945"
+ms.locfileid: "8738985"
 ---
 # <a name="input-for-games"></a>Entrées pour les jeux
 
