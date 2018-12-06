@@ -4,11 +4,11 @@ description: Cet ensemble de rubriques présente plusieurs scénarios de portage
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704029"
+ms.locfileid: "8746614"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>Exemples de portage pas à pas depuis OpenGL ES 2.0
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8458859"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8750800"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas: création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 
@@ -97,7 +97,7 @@ function basics2() {
 
 Notez que la première lettre majuscule de chaque nom de membre est remplacée par une minuscule. Cette transformation fait partie de la prise en charge que JavaScript fournit pour permettre l’utilisation naturelle de Windows Runtime. Les espaces de noms et les noms de classe utilisent la casse Pascal. Les noms de membres utilisent la casse mixte, à l’exception des noms d’événements, qui sont en minuscules. Consultez l’article [Utilisation de Windows Runtime en JavaScript](https://msdn.microsoft.com/library/hh710230.aspx). Les règles de casse mixte peuvent prêter à confusion. Une série de majuscules initiales apparaît normalement en minuscules, mais si trois lettres majuscules sont suivies par une minuscule, seules les deux premières lettres apparaissent en minuscules : par exemple, un membre nommé IDStringKind apparaît comme idStringKind. Dans Visual Studio, vous pouvez générer votre projet de composant Windows Runtime, puis utiliser IntelliSense dans votre projet JavaScript pour voir la casse correcte.
 
-De la même façon, .NET Framework fournit une prise en charge pour permettre l’utilisation naturelle de Windows Runtime en code managé. Ce sujet est abordé dans les sections suivantes de cet article et dans les articles de la [Création de composants Windows Runtime en c# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Prise en charge de .NET Framework pour les applications UWP et Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
+De la même façon, .NET Framework fournit une prise en charge pour permettre l’utilisation naturelle de Windows Runtime en code managé. Ce sujet est abordé dans les sections suivantes de cet article et dans les articles de [Création de composants Windows Runtime en c# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) et [Prise en charge de .NET Framework pour les applications UWP et Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## <a name="create-a-simple-user-interface"></a>Créer une interface utilisateur simple
 
@@ -268,7 +268,7 @@ Dans le projet SampleComponent, ajoutez une nouvelle classe **public sealed** (c
 > End Class
 > ```
 
-Le Gestionnaire d’événements suit le modèle d’événement .NET Framework familier, à ceci près que l’expéditeur de l’événement (dans ce cas, l’objet PropertySet) est casté en le IObservableMap&lt;de chaîne, l’objet&gt; interface (IObservableMap (Of String, Object) dans Visual Basic), qui est une instanciation de l’interface Windows Runtime [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (Vous pouvez caster l’expéditeur en son type si nécessaire.) En outre, les arguments d’événement sont présentés comme une interface plutôt qu’en tant qu’objet.
+Le Gestionnaire d’événements suit le modèle d’événement .NET Framework familier, à ceci près que l’expéditeur de l’événement (dans ce cas, l’objet PropertySet) est casté en le IObservableMap&lt;chaîne, objet&gt; interface (IObservableMap (Of String, Object) dans Visual Basic), qui est une instanciation de l’interface Windows Runtime [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (Vous pouvez caster l’expéditeur en son type si nécessaire.) En outre, les arguments d’événement sont présentés comme une interface plutôt qu’en tant qu’objet.
 
 Dans le fichier default.js, ajoutez la fonction Runtime1 comme indiqué. Ce code crée un objet PropertySetStats, obtient sa collection PropertySet et ajoute son propre gestionnaire d’événements, la fonction onMapChanged, pour gérer l’événement MapChanged. Après avoir modifié la collection, runtime1 appelle la méthode DisplayStats pour afficher un récapitulatif des types de modifications.
 
@@ -411,7 +411,7 @@ En plus de retourner les types Windows Runtime que vous avez créés dans votre 
 
 Notez que le dictionnaire doit être retourné comme une interface implémentée par [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) et qui mappe vers une interface Windows Runtime. Dans ce cas, l’interface est IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) en Visual Basic). Lorsque le type Windows Runtime IMap&lt;int, string&gt; est transmis au code managé, il apparaît sous la forme IDictionary&lt;int, string&gt;. L’inverse est également vrai lorsque le type managé est transmis à JavaScript.
 
-**Important**lorsqu’un type managé implémente plusieurs interfaces, JavaScript utilise l’interface qui apparaît en premier dans la liste. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+**Important**lorsqu’un type managé implémente plusieurs interfaces, JavaScript utilise l’interface qui s’affiche en premier dans la liste. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
  
 

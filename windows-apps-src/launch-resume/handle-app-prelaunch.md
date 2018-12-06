@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462885"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8745766"
 ---
 # <a name="handle-app-prelaunch"></a>Gérer le prélancement d’une application
 
@@ -110,7 +110,7 @@ private void TryEnablePrelaunch()
 }
 ```
 
-Remarque Les `TryEnablePrelaunch()` fonctionner, ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` est pris en compte dans cette fonction est parce que lorsqu’une méthode est appelée, le JIT (juste-à-compilation de temps) tente de compiler la totalité de la méthode. Si votre application est en cours d’exécution sur une version de Windows 10 qui ne prend pas en charge `CoreApplication.EnablePrelaunch()`, puis le JIT échouera. En tenant compte de l’appel de méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()`, nous permet d’éviter ce problème.
+Remarque Les `TryEnablePrelaunch()` fonctionner, ci-dessus. La raison pour laquelle l’appel à `CoreApplication.EnablePrelaunch()` est pris en compte dans cette fonction est dans la mesure où lorsqu’une méthode est appelée, le JIT (juste-à-compilation de temps) tente de compiler la totalité de la méthode. Si votre application s’exécute sur une version de Windows 10 qui ne prend pas en charge `CoreApplication.EnablePrelaunch()`, puis le JIT échouera. En tenant compte de l’appel de méthode qui est appelée uniquement lorsque l’application détermine que la plateforme prend en charge `CoreApplication.EnablePrelaunch()`, nous permet d’éviter ce problème.
 
 Il est également le code dans l’exemple ci-dessus que vous pouvez supprimer les commentaires si votre application doit refuser de prélancement lors de l’exécution sur Windows 10, version 1511. Dans la version 1511, toutes les applications UWP ont été choisies automatiquement dans le prélancement, ce qui peut ne pas convenir pour votre application.
 
