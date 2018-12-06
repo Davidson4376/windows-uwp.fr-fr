@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, API de soumission au Microsoft Store, exemples de code
 ms.localizationpriority: medium
 ms.openlocfilehash: f60668ba81bbaefe2c190f7212618684797366bf
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687287"
+ms.locfileid: "8758087"
 ---
 # <a name="code-examples-for-the-submission-api"></a>Exemples de code pour l’API de soumission
 
