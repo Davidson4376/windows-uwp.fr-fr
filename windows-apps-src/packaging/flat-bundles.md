@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, création de packages, configuration de package, ensemble plat
 ms.localizationpriority: medium
 ms.openlocfilehash: b7066b7f2e5bd72ebee3169e03c7940b6fef4dba
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708444"
+ms.locfileid: "8741737"
 ---
 # <a name="flat-bundle-app-packages"></a>Packages d'application d'ensemble plat 
 
