@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f31381dd4bfcecd33d4934b4bcd1a9af0ff8411a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731291"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780765"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 

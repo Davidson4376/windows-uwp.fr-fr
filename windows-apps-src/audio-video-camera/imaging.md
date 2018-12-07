@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736957"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787915"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 
@@ -45,7 +45,7 @@ Appelez la méthode [**OpenAsync**](https://msdn.microsoft.com/library/windows/a
 
 Pour enregistrer un élément **SoftwareBitmap** dans un fichier, obtenez une instance de **StorageFile** sur laquelle l’image sera enregistrée. Cet exemple utilise un élément [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre à l’utilisateur de sélectionner un fichier de sortie.
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 Appelez la méthode [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) de l’objet **StorageFile** pour obtenir un flux d’accès aléatoire sur lequel écrire l’image. Appelez la méthode statique [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) pour obtenir une instance de la classe [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) pour le flux spécifié. Le premier paramètre de **CreateAsync** est un GUID représentant le codec qui doit être utilisé pour encoder l’image. La classe **BitmapEncoder** expose une propriété qui contient l’ID de chaque codec pris en charge par l’encodeur, telle que [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 
