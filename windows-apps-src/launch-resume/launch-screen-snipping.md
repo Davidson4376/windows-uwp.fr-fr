@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750843"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792251"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 

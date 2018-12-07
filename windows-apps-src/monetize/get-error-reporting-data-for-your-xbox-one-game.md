@@ -5,12 +5,12 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 22dff391e787e1763cb730272ba9cea029758c99
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750024"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791280"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>Obtenir les données rapport d’erreurs pour votre console Xbox One jeu
 
@@ -47,7 +47,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit du jeu Xbox One pour lequel vous récupérez les données de rapport d’erreurs. Pour obtenir l’ID produit de votre jeu, accédez à votre jeu dans le portail de développement Xbox (XDP) et récupérez l’ID produit à partir de l’URL. Par ailleurs, si vous téléchargez vos données d’intégrité à partir du rapport analytique de partenaires Windows, l’ID de produit est inclus dans le fichier .tsv. |  Oui  |
+| applicationId | chaîne | L' **ID Store** du jeu Xbox One pour lequel vous récupérez les données de rapport d’erreurs. L' **ID Windows Store** est disponible sur la page identité des applications dans l’espace partenaires. Exemple **d’ID du Windows Store** : 9wzdncrfj3q8. |  Oui  |
 | startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```.  |  Non  |
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapports d’erreurs. La valeur par défaut est la date du jour. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```. |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
@@ -60,7 +60,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-example"></a>Exemple de requête
 
-Les exemples suivants illustrent plusieurs requêtes de récupération des données de rapport erreur du jeu Xbox One. Remplacez la valeur *applicationId* par l’ID de produit pour votre jeu.
+Les exemples suivants illustrent plusieurs requêtes de récupération des données de rapport erreur du jeu Xbox One. Remplacez la valeur *applicationId* par l' **ID Windows Store** pour votre jeu.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failurehits?applicationId=BRRT4NJ9B3D1&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -89,7 +89,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | Valeur           | Type    | Description        |
 |-----------------|---------|---------------------|
 | date            | chaîne  | Date de début des données d’erreur, au format ```yyyy-mm-dd```. Si la requête spécifie un jour unique, cette valeur est cette date. Si la requête spécifie une plage de dates plus étendue, cette valeur correspond à la première date de la plage de dates. Pour les demandes qui spécifient une valeur *aggregationLevel* **d’heure**, cette valeur inclut également une valeur d’heure au format ```hh:mm:ss``` dans le fuseau horaire local dans lequel l’erreur s’est produite.  |
-| applicationId   | chaîne  | L’ID de produit du jeu Xbox One pour lequel vous souhaitez récupérer des données d’erreur.   |
+| applicationId   | chaîne  | L' **ID Store** du jeu Xbox One pour lequel vous souhaitez récupérer des données d’erreur.   |
 | applicationName | chaîne  | Le nom complet du jeu.   |
 | failureName     | chaîne  | Le nom de l'échec, qui se compose de quatre partie: une ou plusieurs classes de problème, un code de vérification d'exception ou de bogue, le nom de l'image où l'erreur s'est produite et le nom de la fonction associée.  |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.   |

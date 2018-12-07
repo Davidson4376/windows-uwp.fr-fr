@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740117"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790894"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Optimisation des options d’interface ListView et GridView
 

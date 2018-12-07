@@ -5,12 +5,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 795155ab38be11987d978d8c3843a73b7d359277
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 465253be7ebf8cf7794004c0a6832a78cb0ced69
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755045"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792628"
 ---
 # <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
  
@@ -25,6 +25,9 @@ Pour obtenir les outils de développement les plus récents, consultez [Téléch
 
 > [!NOTE]
 > Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Store, il vous faudra une autorisation. Packages facultatifs et ensembles connexes peuvent être utilisés pour les applications cœur de métier (LOB) ou d’entreprise sans autorisation de l’espace partenaires s’ils ne sont pas soumis au Windows Store. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
+
+> [!NOTE]
+> Packages facultatifs contenant le code exécutable doivent faire partie d’un [ensemble connexe](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets). Vous ne serez pas en mesure d’exécuter du code à partir d’un package facultatif, sauf si elle fait partie d’un ensemble connexe.
 
 ## <a name="c-optional-packages-with-executable-code"></a>Packages facultatifs C++ avec code exécutable
 
