@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, itinéraire, carte, localisation, indications
 ms.localizationpriority: medium
 ms.openlocfilehash: dd93a092ee0db0821e9326d0f9ffa86890850b87
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756423"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807627"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Afficher des itinéraires et indications sur une carte
 

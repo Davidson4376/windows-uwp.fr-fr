@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c6664d13e76a5774172094d632de9db25109fdc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758619"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799843"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>Prise en charge des balises HTTP Live Streaming (HLS)
 Le tableau suivant répertorie les balises HLS prises en charge pour les applications UWP.
