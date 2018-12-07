@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, portage, boucle de jeu, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732974"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793800"
 ---
 # <a name="port-the-game-loop"></a>Porter la boucle de jeu
 
@@ -131,7 +131,7 @@ Marquez d’un signet le [Forum Aux Questions (FAQ) sur le portage DirectX 11](d
 
 Les modèles UWP DirectX incluent une infrastructure de périphérique Direct3D robuste prête à l’emploi avec votre jeu UWP. Pour obtenir des conseils sur la sélection du modèle approprié, voir [Créer un projet de jeu DirectX à partir d’un modèle](user-interface.md).
 
-Consultez les articles détaillés suivants sur le développement des jeux du Microsoft Store :
+Consultez les articles de développement de jeux Microsoft Store détaillés suivants:
 
 -   [Procédure pas à pas: jeu UWP simple avec DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Audio pour les jeux](working-with-audio-in-your-directx-game.md)

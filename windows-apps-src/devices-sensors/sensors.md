@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c29673a0b41b4f071d438f0c03255c2d73831dc5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752821"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799863"
 ---
 # <a name="sensors"></a>Capteurs
 

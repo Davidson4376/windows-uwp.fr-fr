@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 962002d635c3e6edbf1f9581a4cbc57fbd5b1d96
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730109"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796608"
 ---
 # <a name="coordinate-systems-and-geometry"></a>Systèmes de coordonnées et géométrie
 

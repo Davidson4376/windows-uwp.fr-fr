@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b1e8958874ede50a18f2d2446c8f156361210e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730210"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795848"
 ---
 # <a name="multipass-texture-blending"></a>Fusion de textures multipasse
 

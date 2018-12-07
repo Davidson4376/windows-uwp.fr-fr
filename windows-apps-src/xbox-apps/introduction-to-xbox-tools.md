@@ -7,11 +7,11 @@ keywords: windows10, uwp, xboxone, outils
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738002"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795006"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Présentation des outils Xbox One
 

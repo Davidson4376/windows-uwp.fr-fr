@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, asynchrone, threads, de thread
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747069"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794840"
 ---
 # <a name="threading-and-async-programming"></a>Threads et programmation asynchrone
 Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.

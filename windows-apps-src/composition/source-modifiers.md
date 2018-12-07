@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745809"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799499"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>Tirer pour actualiser à l'aide de modificateurs de source
 

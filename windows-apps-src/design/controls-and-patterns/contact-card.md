@@ -10,11 +10,11 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: b04a8f616e9f6c7726a222f4a7264b9580ddee3a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749728"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798852"
 ---
 # <a name="contact-card"></a>Carte de visite
 

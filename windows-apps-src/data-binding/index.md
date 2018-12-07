@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755215"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799286"
 ---
 # <a name="data-binding"></a>Liaison de données
 

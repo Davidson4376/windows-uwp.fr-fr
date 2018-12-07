@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a486f27d390a651cec0dcad82246a858bab2f33
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739668"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795739"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge mes contacts à une application
 
