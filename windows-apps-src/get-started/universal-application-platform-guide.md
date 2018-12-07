@@ -6,12 +6,12 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: c174bb81deb84d3638a948555e045168c89f02a7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: b54c33ab3807c26faba6a8cadd5318b4365f9ded
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737663"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796934"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 
@@ -145,7 +145,7 @@ Pour obtenir une introduction plus générale, voir [Introduction au développem
 - Pour obtenir la liste complète des API Win32 disponibles pour les applications UWP, voir [Ensembles d’API pour les applications UWP](https://msdn.microsoft.com/library/windows/desktop/mt186421) et [DLL pour les applications UWP](https://msdn.microsoft.com/library/windows/desktop/mt186422).
 - Voir [Universal Windows apps in .NET (Applications Windows universelles dans .NET)](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net) pour obtenir une vue d’ensemble de l’écriture des applications UWP .NET.
 - Pour obtenir la liste des types .NET que vous pouvez utiliser dans une application UWP, voir [.NET pour les applications UWP](https://msdn.microsoft.com/library/mt185501.aspx)
-- [.NET Native - What it means for Universal Windows Platform (UWP) developers [Les implications de .NET Native pour les développeurs d’applications de plateforme Windows universelle (UWP)]](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
+- [Compilation d’applications avec .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/)
 - Découvrez comment ajouter des expériences modernes pour les utilisateurs Windows 10 à votre application de bureau et comment les distribuer dans le Microsoft Store avec le [Pont du bureau](https://developer.microsoft.com/windows/bridges/desktop).
 
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>Comment la plateforme Windows universelle est lié à APIs Windows Runtime

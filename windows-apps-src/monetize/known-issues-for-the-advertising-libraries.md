@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743310"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789103"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 

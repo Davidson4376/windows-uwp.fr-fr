@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: b58ba8122d5db6cb898c5e6258794960cdc1c1f9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: c85624cec36d3e782b0c97ad810062e9b817eb98
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754247"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790186"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Préparer le package d’une application de bureau
 
@@ -71,7 +71,7 @@ Cet article rappelle les points à connaître avant de créer un package d'appli
     <tr><td>2015 et 2017 (VC14)</td><td>Prise en charge</td><td>Pris en charge</td>
     </table>
 
-    Remarque: dans tous les cas, vous devez créer une liaison vers la toute dernière version de CRT disponible publiquement.
+    Remarque: Dans tous les cas, vous devez lier à la dernière version CRT disponible publiquement.
 
 + __Votre application installe et charge les assemblys du dossier Windows côte-à-côte__. Par exemple, votre application utilise des bibliothèques runtime C VC8 ou VC9 et les lie dynamiquement à partir du dossier côte-à-côte de Windows, ce qui signifie que votre code utilise les fichiers DLL courants à partir d’un dossier partagé. Ceci n’est pas pris en charge. Vous devez les lier de manière statique en créant dans votre code un lien direct vers les fichiers de bibliothèque redistribuables.
 

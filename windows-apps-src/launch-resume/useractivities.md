@@ -5,12 +5,12 @@ keywords: activité utilisateur, activités utilisateur, chronologie, cortana re
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749974"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790828"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Ce code permet de détecter si l’application a été activée via un protocole. Si tel est le cas, il recherche ce que doit faire l'application pour reprendre la tâche pour laquelle elle est activée. Comme il s'agit d'une application simple, la seule activité que cette application permet de reprendre consiste à vous mettre sur la page secondaire lors de l’ouverture de l'application.
+Ce code permet de détecter si l’application a été activée via un protocole. Si tel est le cas, il recherche ce que doit faire l'application pour reprendre la tâche pour laquelle elle est activée. Est une application simple, la seule activité que reprend l’exécution de cette application est placer vous sur la page secondaire lors de l’ouverture de l’application.
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Utiliser des cartes adaptatives pour améliorer l’expérience relative à la Chronologie
 

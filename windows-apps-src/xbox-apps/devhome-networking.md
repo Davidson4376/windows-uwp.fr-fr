@@ -8,11 +8,11 @@ keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740337"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797222"
 ---
 # <a name="networking-page-dev-home"></a>Page de mise en réseau (Dev Home)
    

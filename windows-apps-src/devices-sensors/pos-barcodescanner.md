@@ -7,11 +7,11 @@ keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734396"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790103"
 ---
 # <a name="barcode-scanner"></a>Scanneur de code-barres
 

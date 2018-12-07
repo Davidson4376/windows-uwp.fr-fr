@@ -1,13 +1,15 @@
 ---
 title: API CPUSets pour le développement de jeux
 description: Cet article présente la nouvelle APICPUSets disponible sur la plateformeUWP et aborde des informations clés sur le développement de jeux et d’applications.
+ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 942c6b79d3b26e620ebb6e1318e1f7ffd75f929c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.date: 02/08/2017
+ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753506"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792163"
 ---
 # <a name="cpusets-for-game-development"></a>API CPUSets pour le développement de jeux
 

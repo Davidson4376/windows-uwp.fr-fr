@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables, abonnement
 ms.localizationpriority: medium
 ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743852"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789209"
 ---
 # <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 

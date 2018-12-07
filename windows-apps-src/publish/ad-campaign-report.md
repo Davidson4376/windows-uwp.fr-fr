@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e44374d56796ea2151424a11df1652892f247b6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754905"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795455"
 ---
 # <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 
