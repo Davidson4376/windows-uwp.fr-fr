@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755898"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783507"
 ---
 # <a name="stream-output-so-stage"></a>Étape Stream Output
 
@@ -41,7 +41,7 @@ Les données de vertex issues d'une étape précédente du nuanceur.
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
 
-L'étape de sortie de flux (SO) sort (diffuse) en continu les données de vertex de l'étape active précédente, telle que l'étape du nuanceur de géométrie (GS), et les stocke dans une ou plusieurs mémoires tampon en mémoire. Si l'étape du nuanceur de géométrie (GS) est inactive et que l'étape de sortie de flux (SO) diffuse en continu les données de vertex de l'étape du nuanceur de domaine (DS) (ou de l'étape du nuanceur de vertex (VS) si l'étape DS est également inactive) et les stocke dans des mémoires tampon en mémoire.
+L’étape de sortie de flux (SO) sort (diffuse) en continu les données de vertex de l’étape active précédente, telle que l’étape du nuanceur de géométrie (GS), et les stocke dans une ou plusieurs mémoires tampon en mémoire. Si l’étape du nuanceur de géométrie (GS) est inactif, l’étape de sortie de flux (SO) diffuse en continu les données de vertex de l’étape du nuanceur de domaine (DS) dans les mémoires tampon en mémoire (ou si DS est également inactive, à partir de l’étape Vertex Shader (VS)).
 
 Lorsqu’une bande de triangles ou de lignes est liée à l’étape d’assembleur d’entrée (IA), chaque bande est convertie en une liste avant qu’ils sont diffusées. Les vertex sont toujours écrits sous forme de primitives complètes (par exemple, 3 vertex à la fois pour les triangles); les primitives incomplètes ne sont jamais diffusées. Types de primitives avec Voisinage ignorent les données de voisinage avant la diffusion en continu de données.
 
