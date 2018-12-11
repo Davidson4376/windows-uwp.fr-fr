@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, pub, publicités, installer, SDK, bibliothèque de publicités
 ms.localizationpriority: medium
 ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8781580"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8876707"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK MicrosoftAdvertising
 

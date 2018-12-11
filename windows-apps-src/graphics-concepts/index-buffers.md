@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d08006fa2f32812f97daef5135a98dce16c4e5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790656"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8876609"
 ---
 # <a name="index-buffers"></a>Mémoires tampons d’index
 
