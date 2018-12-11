@@ -2,12 +2,14 @@
 title: Référence sur les API les informations d’identification réseau Device Portal
 description: Apprenez à ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
 ms.localizationpriority: medium
-ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: ac30d8db830c51ee40653feb49b443ed44502617
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730970"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883048"
 ---
 # <a name="network-credentials-api-reference"></a>Référence de l’API d’informations d’identification réseau
 Vous pouvez ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées sur votre Kit de développement à l’aide de cette API REST.

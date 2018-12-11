@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, options de jeu, bandes-annonces, descriptions avancées, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 59306e32fe1fcc68978c977b89934e64d85b8cc8
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796957"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880397"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Exemple de code Python: soumission d’applications avec options de jeu et bandes-annonces
 

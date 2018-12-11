@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786206"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885238"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Mappages .NET Framework des types Windows Runtime
 

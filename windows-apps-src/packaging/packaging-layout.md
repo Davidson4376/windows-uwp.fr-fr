@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786943"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885212"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Création de package à l'aide de la disposition de mise en package  
 

@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 9c362cfde71ef3bb75840216c787403846d3da95
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8792261"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8882513"
 ---
 # <a name="custom-dependency-properties"></a>Propriétés de dépendance personnalisées
 

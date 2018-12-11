@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8788587"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885401"
 ---
 # <a name="hull-shader-hs-stage"></a>Étape du nuanceur de coque (HS)
 

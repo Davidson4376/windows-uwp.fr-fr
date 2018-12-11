@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 467be141d2c198bc95c93771ffa9cf2ad8fd6c0d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780577"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8881223"
 ---
 # <a name="text-controls"></a>Contrôles de texte
 

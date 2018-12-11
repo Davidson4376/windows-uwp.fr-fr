@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, l’impression 3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0bfaa06c749567fb38254be06ac9e8fd01fe61
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8806453"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8882021"
 ---
 # <a name="3d-printing"></a>Impression3D
 

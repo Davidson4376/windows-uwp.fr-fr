@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 751cda36fc58d0e6add9204327a74ec947c9fc53
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8788092"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885260"
 ---
 # <a name="xfieldmodifier-attribute"></a>Attribut x:FieldModifier
 

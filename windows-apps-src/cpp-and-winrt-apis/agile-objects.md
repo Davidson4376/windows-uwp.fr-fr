@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748258"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887234"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
 

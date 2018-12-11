@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, gestion des erreurs, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b2ffd15a07dc6f1018bd28cf9799e1e5209c0b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739213"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880818"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour XAML/C#
 
