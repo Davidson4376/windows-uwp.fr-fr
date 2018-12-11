@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: a50ab5f70faa0c8f8b73eada38444bcafd444d8b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743620"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899536"
 ---
 # <a name="collections-with-cwinrt"></a>Collections avec C++/WinRT
 
