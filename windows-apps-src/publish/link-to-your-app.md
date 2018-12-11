@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, lien, protocole windows store, lien vers une application, lien vers application
 ms.localizationpriority: medium
 ms.openlocfilehash: 59df207adf44cea04505e41a3323da1743170c46
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785808"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8893105"
 ---
 # <a name="link-to-your-app"></a>Créer un lien vers votre application
 

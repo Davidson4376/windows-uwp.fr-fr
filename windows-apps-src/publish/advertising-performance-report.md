@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752961"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892985"
 ---
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8788277"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8893994"
 ---
 # <a name="operations-available-on-streaming-resources"></a>Opérations disponibles sur les ressources de diffusion en continu
 

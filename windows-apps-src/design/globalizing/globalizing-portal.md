@@ -5,16 +5,16 @@ title: Globalisation et localisation
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 12/7/2018
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ee09374db54678dbe0152b996537771fd1bfd1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738843"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892352"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 
@@ -65,3 +65,4 @@ La plupart des équipes de localisation utilisent des outils spéciaux pour faci
 | [Conception de votre application pour le texte bidirectionnel](design-for-bidi-text.md) | Concevez votre application afin de fournir un support de texte bidirectionnel (BiDi). Ainsi, vous pourrez combiner les scripts des systèmes d'écriture de gauche à droite et de droite à gauche. |
 | [Utiliser le kit de ressources MultilingualAppToolkit4.0](use-mat.md) | Le kit de ressources MultilingualAppToolkit(MAT)4.0 est intégré à MicrosoftVisualStudio2017 pour fournir aux applications UWP un support de traduction, la gestion des fichiers de traduction et des outils d'éditeur. |
 | [FAQ et résolution des problèmes du kit de ressources MultilingualAppToolkit4.0](mat-faq-troubleshooting.md) | Cette rubrique présente des réponses aux questions fréquentes et aux problèmes relatives au kit de ressources MultilingualAppToolkit4.0. |
+| [Préparer votre application pour la modification d’une ère japonais](japanese-era-change.md) | Apprenez-en plus sur la modification d’ère japonais mai 2019 et comment préparer votre application. |
