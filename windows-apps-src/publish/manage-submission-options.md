@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, mise en attente de publication, date de publication, envoi de la soumission à publier, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fb075a4d8766f4f9bfc352160c6a1f5d99d9a0e
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8828238"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888591"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8795537"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887646"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Obtenir la trace de pile concernant une erreur dans votre application de bureau
 

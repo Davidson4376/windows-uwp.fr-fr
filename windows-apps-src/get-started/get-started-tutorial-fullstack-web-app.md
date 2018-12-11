@@ -6,11 +6,11 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8805873"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888875"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: déclencheur de tâche en arrière-plan, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 237f342029f8d9bc0bbec1fcef5c7059cbf09840
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8779277"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887593"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Déclencher une tâche en arrière-plan à partir de votre application
 

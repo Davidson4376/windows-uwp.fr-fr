@@ -7,11 +7,11 @@ keywords: windows 10, uwp, annonces, publicité, AdMediatorControl, AdControl, m
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794598"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8882321"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Mettre à jour votre application avec les bibliothèques de publicités les plus récentes pour bannières publicitaires
 

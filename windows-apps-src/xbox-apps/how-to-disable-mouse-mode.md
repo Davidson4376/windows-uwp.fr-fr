@@ -7,11 +7,11 @@ keywords: windows10, uwp
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740610"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887528"
 ---
 # <a name="how-to-disable-mouse-mode"></a>Désactivation du mode souris
 Le mode souris est activé par défaut sur toutes les applications. Toutes les applications qui ne le refusent pas reçoivent un pointeur de souris (semblable à celui du navigateurMicrosoftEdge de la console). Nous vous recommandons vivement de désactiver cette fonctionnalité et d’optimiser la navigation par commande directionnelle.   

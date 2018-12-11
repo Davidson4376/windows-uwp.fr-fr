@@ -7,11 +7,11 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du pack
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
 ms.openlocfilehash: 08450b7aa9608e610a31d114059dd49e3ef3e10c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8808424"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888341"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>Interrompre le lancement d’une soumission d’applications
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows10, uwp, carte, emplacement, fonctionnalité de localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783303"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890048"
 ---
 # <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
