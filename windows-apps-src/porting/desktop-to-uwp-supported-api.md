@@ -8,11 +8,11 @@ keywords: windows10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c89c3ace4b85852f93bb0d5edf4c520403f39b44
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790275"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891857"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>API UWP disponibles pour une application de bureau empaquetée
 
