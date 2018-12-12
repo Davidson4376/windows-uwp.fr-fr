@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f85bf490bd1dd68e2d0ba31335f2fc0f89fe27b0
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8887749"
+ms.locfileid: "8944054"
 ---
 # <a name="coordinate-systems"></a>Systèmes de coordonnées
 
