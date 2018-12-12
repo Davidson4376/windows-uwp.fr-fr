@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8876688"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8929890"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Vecteurs normaux de face et de vertex
 
