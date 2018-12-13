@@ -1,16 +1,16 @@
 ---
 title: Animations basées sur le temps
 description: Utilisez des classes KeyFrameAnimation pour modifier votre interface utilisateur au fil du temps.
-ms.date: 10/10/2017
+ms.date: 12/12/2018
 ms.topic: article
 keywords: Windows10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1fe8c1fcb641c3bc79f1f058befe6f4b44044a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934368"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968573"
 ---
 # <a name="time-based-animations"></a>Animations basées sur le temps
 
@@ -62,22 +62,22 @@ En gardant ces concepts à l’esprit, examinons la formule générale qui perme
 1. À l’aide du modèle d’animation, commencez à ajouter des images clés et à définir des propriétés de l’animation.
     - Une image clé au minimum est obligatoire (image clé 100% ou 1f).
     - Il est recommandé de définir une durée également.
-1. Une fois que vous êtes prêt à exécuter cette animation, appelez StartAnimation(...) sur le CompositionObject, en ciblant la propriété à animer. Plus précisément:
-    - `Visual.StartAnimation("targetProperty", CompositionAnimation animation);`
-    - `Visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. Si vous disposez d’une animation en cours d’exécution et que vous souhaitez arrêter l’animation ou le groupe d’animations, vous pouvez utiliser ces API:
-    - `Visual.StopAnimation("targetProperty");`
-    - `Visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
+1. Une fois, vous êtes prêt à exécuter cette animation, appelez StartAnimation(...) sur le CompositionObject, ciblant la propriété que vous souhaitez animer. Plus précisément:
+    - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
+    - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
+1. Si vous disposez d’une animation en cours d’exécution et que vous souhaitez arrêter l’Animation ou le groupe d’Animation, vous pouvez utiliser ces API:
+    - `visual.StopAnimation("targetProperty");`
+    - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
 Examinons un exemple pour voir cette formule en action.
 
 ## <a name="example"></a>Exemple
 
-Dans cet exemple, vous voulez animer le décalage d’un élément visuel de <0,0,0> à <20,20,20> pendant 1seconde. En outre, vous voulez voir les éléments visuels s'animer entre ces positions 10fois.
+Dans cet exemple, si vous voulez animer le décalage d’un élément visuel de < 0,0,0 > à < 200,0,0 > plus de 1 seconde. En outre, vous voulez voir les éléments visuels s'animer entre ces positions 10fois.
 
 ![Animation par images clés](images/animation/animated-rectangle.gif)
 
-Tout d’abord, vous démarrez en identifiant le CompositionObject et la propriété à animer. Dans ce cas, le carré rouge est représenté par un élément visuel de composition nommé `redSquare`. Vous démarrez votre animation à partir de cet objet.
+Tout d’abord, vous démarrez en identifiant le CompositionObject et la propriété à animer. Dans ce cas, le carré rouge est représenté par un élément visuel de composition nommé `redVisual`. Vous démarrez votre animation à partir de cet objet.
 
 Ensuite, comme vous voulez animer la propriété Offset, vous devez créer un Vector3KeyFrameAnimation (Offset est de type Vector3). Vous définissez également les images clés correspondantes pour la KeyFrameAnimation.
 
@@ -86,7 +86,7 @@ Ensuite, comme vous voulez animer la propriété Offset, vous devez créer un Ve
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-Ensuite, nous allons définir les propriétés de la KeyFrameAnimation pour décrire sa durée, ainsi que le comportement à animer 10fois entre les deux positions (actuelle et <200,0,0>).
+Ensuite, vous définissez les propriétés de la KeyFrameAnimation pour décrire sa durée, ainsi que le comportement à animer entre les deux positions (actuelle et < 200,0,0 >) 10 fois.
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
@@ -98,13 +98,13 @@ Ensuite, nous allons définir les propriétés de la KeyFrameAnimation pour déc
 Enfin, pour exécuter une animation, vous devez la démarrer sur une propriété d’un CompositionObject.
 
 ```csharp
-redVisual.StartAnimation("Offset.X", animation);
+redVisual.StartAnimation("Offset", animation);
 ```
 
 Voici le code complet:
 
 ```csharp
-private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
+private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
 { 
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
@@ -112,6 +112,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
+    redVisual.StartAnimation("Offset", animation);
 } 
 ```
