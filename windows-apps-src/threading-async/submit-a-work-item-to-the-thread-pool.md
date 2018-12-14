@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, threads, pool de threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a0865480cf65495465470e72fb4f14baa9619a9a
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937053"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970924"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
@@ -199,7 +199,7 @@ std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
-auto workItem = ref new WorkItemHandler(
+auto workItem = ref new Windows::System::Threading::WorkItemHandler(
     \[this, n, nthPrime](IAsyncAction^ workItem)
 {
     unsigned int progress = 0; // For progress reporting.

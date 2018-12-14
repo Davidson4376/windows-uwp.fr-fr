@@ -6,12 +6,12 @@ ms.date: 06/28/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 05ff8dd78f58910512291b819d59d68f682cc93c
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940020"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970934"
 ---
 # <a name="file-access-permissions"></a>Autorisations d’accès aux fichiers
 
@@ -254,7 +254,7 @@ Le tableau qui suit dresse une liste d’emplacements supplémentaires auxquels 
 
 | Emplacement | Fonctionnalité | API Windows.Storage |
 |----------|------------|---------------------|
-| Tous les fichiers auxquels l’utilisateur a accès. Par exemple: documents, images, photos, téléchargements, bureau, OneDrive, etc. | broadFileSystemAccess<br><br>Il s’agit d’une fonctionnalité restreinte. À la première utilisation, le système invite l’utilisateur à autoriser l’accès. L’accès est configurable dans Paramètres > Confidentialité > Système de fichiers. Si vous soumettez une application au Store qui déclare cette fonctionnalité, vous devrez fournir des descriptions supplémentaires de la raison pour laquelle votre application a besoin de cette fonctionnalité, et comment elle a l’intention de l’utiliser.<br>Cette fonctionnalité fonctionne pour les API dans l'espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). | Non applicable |
+| Tous les fichiers auxquels l’utilisateur a accès. Par exemple: documents, images, photos, téléchargements, bureau, OneDrive, etc. | broadFileSystemAccess<br><br>Il s’agit d’une fonctionnalité restreinte. L’accès est configurable dans **paramètres** > **confidentialité** > **système de fichiers**. Dans la mesure où les utilisateurs peuvent autoriser ou refuser l’autorisation n’importe quel moment dans les **paramètres**, vous devez vous assurer que votre application est résiliente à ces modifications. Si vous trouvez que votre application n’a pas accès, vous pouvez choisir d’invite l’utilisateur à modifier le paramètre en fournissant un lien vers l’article de la [confidentialité et l’accès au système de fichiers de Windows 10](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy) . Notez que l’utilisateur doit fermer l’application, définissez le paramètre et relancez l’application. Si elles activer/désactiver le paramètre pendant l’exécution de l’application, la plateforme suspend votre application afin que vous pouvez enregistrer l’état, puis force fermer l’application pour pouvoir appliquer le nouveau paramètre. Dans la mise à jour du mois d’avril 2018, la valeur par défaut pour l’autorisation est activée. Dans la mise à jour octobre 2018, la valeur par défaut est désactivé.<br /><br />Si vous soumettez une application au Store qui déclare cette fonctionnalité, vous devrez fournir des descriptions supplémentaires de la raison pour laquelle votre application a besoin de cette fonctionnalité, et comment elle a l’intention de l’utiliser.<br>Cette fonctionnalité fonctionne pour les API dans l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) . Consultez la section **exemple** à la fin de cet article pour obtenir un exemple illustrant comment activer cette fonctionnalité dans votre application. | Non applicable |
 | Documents | DocumentsLibrary <br><br>Remarque: vous devez ajouter des associations de types de fichiers dans le manifeste de l’application pour déclarer les types de fichiers spécifiques auxquels votre application pourra accéder dans cet emplacement. <br><br>Utilisez cette fonctionnalité si votre application:<br>- facilite l’accès hors connexion interplateforme à du contenu OneDrive spécifique à l’aide d’URL ou d’ID de ressource OneDrive valides;<br>-Enregistre les fichiers ouverts sur le OneDrive de l’utilisateur automatiquement en mode hors connexion | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | Musique     | MusicLibrary <br>Voir également [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | Images  | PicturesLibrary<br> Voir également [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
