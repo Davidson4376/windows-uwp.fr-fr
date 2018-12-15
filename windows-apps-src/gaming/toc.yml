@@ -1,0 +1,651 @@
+items:
+- name: Prise en main
+  href: ../gaming/getting-started.md
+- name: Guide de développement de jeux Windows10
+  href: ../gaming/e2e.md
+- name: Programmation de jeux
+  href: ../gaming/index.md
+  items:
+  - name: Planification
+    href: ../gaming/planning.md
+    items:
+    - name: Technologies de jeu
+      href: ../gaming/game-development-platform-guide.md
+    - name: Accessibilité des jeux
+      href: ../gaming/accessibility-for-games.md
+    - name: Cloud pour les jeux
+      href: ../gaming/cloud-for-games.md
+    - name: Monétisation pour les jeux
+      href: ../gaming/monetization-for-games.md
+    - name: Approbation de concept
+      href: ../gaming/concept-approval.md
+    - name: Créer un package de votre jeu
+      href: ../gaming/package-your-windows-store-directx-game.md
+  - name: Programmation UWP
+    href: ../gaming/uwp-programming.md
+    items:
+    - name: Audio pour les jeux
+      href: ../gaming/working-with-audio-in-your-directx-game.md
+    - name: Diffusion et capture de jeu
+      href: ../gaming/game-broadcast-and-capture.md
+      items:
+      - name: Gérer la diffusion de jeu
+        href: ../gaming/manage-game-broadcasting.md
+      - name: Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu
+        href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
+    - name: Entrées pour les jeux
+      href: ../gaming/input-for-games.md
+      items:
+      - name: Boîtier de commande et vibrations
+        href: ../gaming/gamepad-and-vibration.md
+      - name: Stick arcade
+        href: ../gaming/arcade-stick.md
+      - name: Volant de course et retour de force
+        href: ../gaming/racing-wheel-and-force-feedback.md
+      - name: Manche à balai
+        href: ../gaming/flight-stick.md
+      - name: Contrôleur de jeu brut
+        href: ../gaming/raw-game-controller.md
+      - name: Casque
+        href: ../gaming/headset.md
+      - name: Contrôleur de navigation d’interface utilisateur
+        href: ../gaming/ui-navigation-controller.md
+      - name: Pratiques de saisie pour les jeux
+        href: ../gaming/input-practices-for-games.md
+      - name: Données de Registre pour les contrôleurs de jeu
+        href: ../gaming/registry-data-for-game-controllers.md
+    - name: API .NET manquantes dans Unity et UWP
+      href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
+    - name: Mise en réseau pour les jeux
+      href: ../gaming/work-with-networking-in-your-directx-game.md
+  - name: Vidéos de développement de jeux
+    href: ../gaming/game-development-videos.md
+- name: Programmation DirectX
+  href: ../gaming/directx-programming.md
+  items:
+  - name: Prise en main
+    href: ../gaming/directx-getting-started.md
+    items:
+    - name: Objet application
+      href: ../gaming/about-the-uwp-user-interface-and-directx.md
+    - name: Modèles de projet et outils
+      href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
+      items:
+      - name: Modèles de projet de jeu
+        href: ../gaming/user-interface.md
+      - name: Outils Visual Studio
+        href: ../gaming/set-up-visual-studio-for-game-development.md
+      - name: Outils Graphics Diagnostics
+        href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
+    - name: Lancement et reprise des applications
+      href: ../gaming/launching-and-resuming-apps-directx-and-cpp.md
+      items:
+      - name: Activer une application
+        href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
+      - name: Suspendre une application
+        href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
+      - name: Relancer une application
+        href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
+  - name: Exemples
+    href: ../gaming/directx-samples.md
+    items:
+    - name: Jeu UWP simple
+      href: ../gaming/tutorial--create-your-first-uwp-directx-game.md
+      items:
+      - name: Configurer le projet
+        href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
+      - name: InfrastructureUWP
+        href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
+      - name: Gestion du flux de jeu
+        href: ../gaming/tutorial-game-flow-management.md
+      - name: Objet de jeu principal
+        href: ../gaming/tutorial--defining-the-main-game-loop.md
+      - name: Infrastructure de rendu I
+        href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
+      - name: Infrastructure de rendu II
+        href: ../gaming/tutorial-game-rendering.md
+      - name: Ajouter une IU
+        href: ../gaming/tutorial--adding-a-user-interface.md
+      - name: Ajouter des contrôles
+        href: ../gaming/tutorial--adding-controls.md
+      - name: Ajouter du son
+        href: ../gaming/tutorial--adding-sound.md
+      - name: Étendre le jeu
+        href: ../gaming/tutorial-resources.md
+    - name: Marble Maze
+      href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
+      items:
+      - name: Principes de base
+        href: ../gaming/marble-maze-sample-fundamentals.md
+      - name: Structure d’application
+        href: ../gaming/marble-maze-application-structure.md
+      - name: Ajouter du contenu visuel
+        href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
+      - name: Ajouter des entrées et interactivité
+        href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
+      - name: Ajouter des éléments audio
+        href: ../gaming/adding-audio-to-the-marble-maze-sample.md
+  - name: Concepts graphiques Direct3D
+    href: ../graphics-concepts/index.md
+    items:
+    - name: Systèmes de coordonnées et géométrie
+      href: ../graphics-concepts/coordinate-systems-and-geometry.md
+      items:
+      - name: Systèmes de coordonnées
+        href: ../graphics-concepts/coordinate-systems.md
+      - name: Primitives
+        href: ../graphics-concepts/primitives.md
+        items:
+        - name: Listes de points
+          href: ../graphics-concepts/point-lists.md
+        - name: Listes de lignes
+          href: ../graphics-concepts/line-lists.md
+        - name: Bandes de lignes
+          href: ../graphics-concepts/line-strips.md
+        - name: Listes de triangles
+          href: ../graphics-concepts/triangle-lists.md
+        - name: Bandes de triangles
+          href: ../graphics-concepts/triangle-strips.md
+      - name: Vecteurs normaux à une face ou un sommet
+        href: ../graphics-concepts/face-and-vertex-normal-vectors.md
+      - name: Rectangles
+        href: ../graphics-concepts/rectangles.md
+      - name: Interpolation de triangles
+        href: ../graphics-concepts/triangle-interpolation.md
+      - name: Vecteurs, sommets et quaternions
+        href: ../graphics-concepts/vectors--vertices--and-quaternions.md
+      - name: Transformations
+        href: ../graphics-concepts/transforms.md
+        items:
+        - name: Vue d’ensemble de la transformation
+          href: ../graphics-concepts/transform-overview.md
+        - name: Transformation du monde
+          href: ../graphics-concepts/world-transform.md
+        - name: Transformation de la vue
+          href: ../graphics-concepts/view-transform.md
+        - name: Transformation de la projection
+          href: ../graphics-concepts/projection-transform.md
+      - name: Fenêtres d’affichage et découpage
+        href: ../graphics-concepts/viewports-and-clipping.md
+    - name: Mémoires tampons de sommets et d’index
+      href: ../graphics-concepts/vertex-and-index-buffers.md
+      items:
+      - name: Introduction aux mémoires tampons
+        href: ../graphics-concepts/introduction-to-buffers.md
+      - name: Mémoires tampons d’index
+        href: ../graphics-concepts/index-buffers.md
+    - name: Appareils
+      href: ../graphics-concepts/devices.md
+      items:
+      - name: Types d’appareil
+        href: ../graphics-concepts/device-types.md
+      - name: Mode Fenêtre ou Plein écran
+        href: ../graphics-concepts/windowed-vs--full-screen-mode.md
+      - name: Appareils perdus
+        href: ../graphics-concepts/lost-devices.md
+      - name: Chaînes de permutation
+        href: ../graphics-concepts/swap-chains.md
+      - name: Introduction aux règles de rastérisation
+        href: ../graphics-concepts/introduction-to-rasterization-rules.md
+    - name: Éclairage
+      href: ../graphics-concepts/lights-and-materials.md
+      items:
+      - name: Vue d’ensemble de l’éclairage
+        href: ../graphics-concepts/lighting-overview.md
+      - name: Types de lumière
+        href: ../graphics-concepts/light-types.md
+      - name: Propriétés de lumière
+        href: ../graphics-concepts/light-properties.md
+      - name: Formules mathématiques d’éclairage
+        href: ../graphics-concepts/mathematics-of-lighting.md
+        items:
+        - name: Éclairage ambiant
+          href: ../graphics-concepts/ambient-lighting.md
+        - name: Éclairage diffus
+          href: ../graphics-concepts/diffuse-lighting.md
+        - name: Éclairage spéculaire
+          href: ../graphics-concepts/specular-lighting.md
+        - name: Éclairage émissif
+          href: ../graphics-concepts/emissive-lighting.md
+        - name: Transformations de l’espace de caméra
+          href: ../graphics-concepts/camera-space-transformations.md
+        - name: Atténuation et facteur de point lumineux
+          href: ../graphics-concepts/attenuation-and-spotlight-factor.md
+    - name: Mémoires tampons de profondeurs et de gabarits
+      href: ../graphics-concepts/depth-and-stencil-buffers.md
+      items:
+      - name: Mémoires tampons de profondeurs
+        href: ../graphics-concepts/depth-buffers.md
+      - name: Mémoires tampons de gabarits
+        href: ../graphics-concepts/stencil-buffers.md
+    - name: Textures
+      href: ../graphics-concepts/textures.md
+      items:
+      - name: Introduction aux textures
+        href: ../graphics-concepts/introduction-to-textures.md
+      - name: Concepts de texture de base
+        href: ../graphics-concepts/basic-texturing-concepts.md
+      - name: Modes d’adressage de texture
+        href: ../graphics-concepts/texture-addressing-modes.md
+      - name: Filtrage de textures
+        href: ../graphics-concepts/texture-filtering.md
+        items:
+        - name: Échantillonnage des points les plus proches
+          href: ../graphics-concepts/nearest-point-sampling.md
+        - name: Filtrage de textures bilinéaires
+          href: ../graphics-concepts/bilinear-texture-filtering.md
+        - name: Filtrage de textures anisotropiques
+          href: ../graphics-concepts/anisotropic-texture-filtering.md
+        - name: Filtrage de textures avec mipmaps
+          href: ../graphics-concepts/texture-filtering-with-mipmaps.md
+      - name: Ressources de texture
+        href: ../graphics-concepts/texture-resources.md
+      - name: Habillage de texture
+        href: ../graphics-concepts/texture-wrapping.md
+      - name: Fusion de textures
+        href: ../graphics-concepts/texture-blending.md
+        items:
+        - name: Étapes de fusion
+          href: ../graphics-concepts/blending-stages.md
+        - name: Fusion de textures multipasse
+          href: ../graphics-concepts/multipass-texture-blending.md
+      - name: Mappage lumineux avec textures
+        href: ../graphics-concepts/light-mapping-with-textures.md
+        items:
+        - name: Cartes de lumière monochrome
+          href: ../graphics-concepts/monochrome-light-maps.md
+        - name: Cartes de lumière en couleur
+          href: ../graphics-concepts/color-light-maps.md
+        - name: Cartes de lumière spéculaire
+          href: ../graphics-concepts/specular-light-maps.md
+        - name: Cartes de lumière diffuse
+          href: ../graphics-concepts/diffuse-light-maps.md
+      - name: Ressources de texture compressées
+        href: ../graphics-concepts/compressed-texture-resources.md
+        items:
+        - name: Textures opaques et alpha 1bit
+          href: ../graphics-concepts/opaque-and-1-bit-alpha-textures.md
+        - name: Textures avec canaux alpha
+          href: ../graphics-concepts/textures-with-alpha-channels.md
+        - name: Compression de blocs
+          href: ../graphics-concepts/block-compression.md
+        - name: Formats de texture compressés
+          href: ../graphics-concepts/compressed-texture-formats.md
+    - name: Pipeline graphique
+      href: ../graphics-concepts/graphics-pipeline.md
+      items:
+      - name: Étape de l’assembleur d’entrée (IA)
+        href: ../graphics-concepts/input-assembler-stage--ia-.md
+        items:
+        - name: Topologies de primitive
+          href: ../graphics-concepts/primitive-topologies.md
+        - name: Utilisation de valeurs générées par le système
+          href: ../graphics-concepts/using-system-generated-values.md
+      - name: Étape Vertex Shader (VS)
+        href: ../graphics-concepts/vertex-shader-stage--vs-.md
+      - name: Étape Hull Shader (HS)
+        href: ../graphics-concepts/hull-shader-stage--hs-.md
+      - name: Étape Tessellator (TS)
+        href: ../graphics-concepts/tessellator-stage--ts-.md
+      - name: Étape Domain Shader (DS)
+        href: ../graphics-concepts/domain-shader-stage--ds-.md
+      - name: Étape Geometry Shader (GS)
+        href: ../graphics-concepts/geometry-shader-stage--gs-.md
+      - name: Étape Stream Output
+        href: ../graphics-concepts/stream-output-stage--so-.md
+      - name: Étape Rastériseur (RS)
+        href: ../graphics-concepts/rasterizer-stage--rs-.md
+      - name: Étape Pixel Shader (PS)
+        href: ../graphics-concepts/pixel-shader-stage--ps-.md
+      - name: Étape Output Merger (OM)
+        href: ../graphics-concepts/output-merger-stage--om-.md
+        items:
+        - name: Configuration de la fonctionnalité de profondeur-gabarit
+          href: ../graphics-concepts/configuring-depth-stencil-functionality.md
+      - name: Objets d’état
+        href: ../graphics-concepts/state-objects.md
+    - name: Affichages
+      href: ../graphics-concepts/views.md
+      items:
+      - name: Affichage des mémoires tampons de constantes (CBV)
+        href: ../graphics-concepts/constant-buffer-view--cbv-.md
+      - name: Affichage des mémoires tampons de sommets (VBV) et d’index (IBV)
+        href: ../graphics-concepts/vertex-buffer-view--vbv-.md
+      - name: Affichage des ressources de nuanceur (SRV) et des accès sans ordre (UAV)
+        href: ../graphics-concepts/shader-resource-view--srv-.md
+      - name: Échantillonneur
+        href: ../graphics-concepts/sampler.md
+      - name: Affichage de la cible du rendu (RTV)
+        href: ../graphics-concepts/render-target-view--rtv-.md
+      - name: Affichage du gabarit de profondeur (DSV)
+        href: ../graphics-concepts/depth-stencil-view--dsv-.md
+      - name: Affichage de la sortie du flux (SOV)
+        href: ../graphics-concepts/stream-output-view--sov-.md
+      - name: Affichage ordonné du rastériseur (ROV)
+        href: ../graphics-concepts/rasterizer-ordered-view--rov-.md
+    - name: Pipeline de calcul
+      href: ../graphics-concepts/compute-pipeline.md
+      items:
+      - name: Étape Compute Shader (CS)
+        href: ../graphics-concepts/compute-shader-stage--cs-.md
+    - name: Ressources
+      href: ../graphics-concepts/resources.md
+      items:
+      - name: Types de ressource
+        href: ../graphics-concepts/resource-types.md
+      - name: Choix d’une ressource
+        href: ../graphics-concepts/choosing-a-resource.md
+      - name: Copie et consultation des données des ressources
+        href: ../graphics-concepts/copying-and-accessing-resource-data.md
+      - name: Affichages de texture
+        href: ../graphics-concepts/texture-views.md
+    - name: Ressources de diffusion en continu
+      href: ../graphics-concepts/streaming-resources.md
+      items:
+      - name: Besoin en ressources de diffusion en continu
+        href: ../graphics-concepts/the-need-for-streaming-resources.md
+      - name: Création de ressources de diffusion en continu
+        href: ../graphics-concepts/creating-streaming-resources.md
+        items:
+        - name: Mappages dans un pool de vignettes
+          href: ../graphics-concepts/mappings-are-into-a-tile-pool.md
+          items:
+          - name: Création d’un pool de vignettes
+            href: ../graphics-concepts/tile-pool-creation.md
+          - name: Redimensionnement d’un pool de vignettes
+            href: ../graphics-concepts/tile-pool-resizing.md
+          - name: Suivi des risques ou ressources d’un pool de vignettes
+            href: ../graphics-concepts/hazard-tracking-versus-tile-pool-resources.md
+        - name: Paramètres de création de ressources de diffusion en continu
+          href: ../graphics-concepts/streaming-resource-creation-parameters.md
+          items:
+          - name: Espace d’adresse disponible pour les ressources de diffusion en continu
+            href: ../graphics-concepts/address-space-available-for-streaming-resources.md
+        - name: Paramètres de création d’un pool de vignettes
+          href: ../graphics-concepts/tile-pool-creation-parameters.md
+        - name: Partage de ressources de diffusion en continu avec des processus et des appareils
+          href: ../graphics-concepts/streaming-resource-cross-process-and-device-sharing.md
+          items:
+          - name: Formats de gabarit non pris en charge par les ressources de diffusion en continu
+            href: ../graphics-concepts/stencil-formats-not-supported-with-streaming-resources.md
+        - name: Opérations disponibles sur les ressources de diffusion en continu
+          href: ../graphics-concepts/operations-available-on-streaming-resources.md
+        - name: Opérations disponibles sur les pools de vignettes
+          href: ../graphics-concepts/operations-available-on-tile-pools.md
+        - name: Restitution de la surface d’une ressource de diffusion en continu sous forme de mosaïque
+          href: ../graphics-concepts/how-a-streaming-resource-s-area-is-tiled.md
+          items:
+          - name: Restitution des sous-ressources Texture2D et Texture2DArray sous forme de mosaïque
+            href: ../graphics-concepts/texture2d-and-texture2darray-subresource-tiling.md
+          - name: Restitution de la sous-ressource Texture3D sous forme de mosaïque
+            href: ../graphics-concepts/texture3d-subresource-tiling.md
+          - name: Mosaïque de mémoires tampons
+            href: ../graphics-concepts/buffer-tiling.md
+          - name: Compression de mipmaps
+            href: ../graphics-concepts/mipmap-packing.md
+      - name: Accès du pipeline aux ressources de diffusion en continu
+        href: ../graphics-concepts/pipeline-access-to-streaming-resources.md
+        items:
+        - name: Comportement du SRV avec les vignettes non mappées
+          href: ../graphics-concepts/srv-behavior-with-non-mapped-tiles.md
+        - name: Comportement de l’UAV avec les vignettes non mappées
+          href: ../graphics-concepts/uav-behavior-with-non-mapped-tiles.md
+        - name: Comportement du rastériseur avec les vignettes non mappées
+          href: ../graphics-concepts/rasterizer-behavior-with-non-mapped-tiles.md
+        - name: Restrictions d’accès aux vignettes avec des mappages en double
+          href: ../graphics-concepts/tile-access-limitations-with-duplicate-mappings.md
+        - name: Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu
+          href: ../graphics-concepts/streaming-resources-texture-sampling-features.md
+        - name: Exposition des ressources de diffusion en continu HLSL
+          href: ../graphics-concepts/hlsl-streaming-resources-exposure.md
+      - name: Niveaux de fonctionnalité des ressources de diffusion en continu
+        href: ../graphics-concepts/streaming-resources-features-tiers.md
+        items:
+        - name: Niveau1
+          href: ../graphics-concepts/tier-1.md
+        - name: Niveau2
+          href: ../graphics-concepts/tier-2.md
+        - name: Niveau3
+          href: ../graphics-concepts/tier-3.md
+    - name: Annexes
+      href: ../graphics-concepts/appendix.md
+      items:
+      - name: Règles en matière de virgule flottante
+        href: ../graphics-concepts/floating-point-rules.md
+      - name: Conversion de types de données
+        href: ../graphics-concepts/data-type-conversion.md
+      - name: Règles de rastérisation
+        href: ../graphics-concepts/rasterization-rules.md
+      - name: Compression de blocs de texture
+        href: ../graphics-concepts/texture-block-compression.md
+        items:
+        - name: Format BC6H
+          href: ../graphics-concepts/bc6h-format.md
+        - name: Format BC7
+          href: ../graphics-concepts/bc7-format.md
+  - name: Principes de base
+    href: ../gaming/directx-fundamentals.md
+    items:
+    - name: Graphismes 2D
+      href: ../gaming/working-with-2d-graphics-in-your-directx-game.md
+    - name: Graphismes 3D de base
+      href: ../gaming/an-introduction-to-3d-graphics-with-directx.md
+      items:
+      - name: Configurer les ressources
+        href: ../gaming/setting-up-directx-resources.md
+      - name: Tracer des primitives
+        href: ../gaming/creating-shaders-and-drawing-primitives.md
+      - name: Utilisez la profondeur et des effets
+        href: ../gaming/using-depth-and-effects-on-primitives.md
+      - name: Appliquer des textures
+        href: ../gaming/applying-textures-to-primitives.md
+      - name: Créer le maillage de base
+        href: ../gaming/create-a-basic-mesh.md
+    - name: Charger les ressources
+      href: ../gaming/load-a-game-asset.md
+      items:
+      - name: BasicLoader
+        href: ../gaming/complete-code-for-basicloader.md
+      - name: BasicReaderWriter
+        href: ../gaming/complete-code-for-basicreaderwriter.md
+      - name: DDSTextureLoader
+        href: ../gaming/complete-code-for-ddstextureloader.md
+  - name: Ajouter des fonctionnalités
+    href: ../gaming/directx-add-features.md
+    items:
+    - name: Technologie d'interopérabilité DirectX et XAML
+      href: ../gaming/directx-and-xaml-interop.md
+    - name: Entrée de jeu
+      href: ../gaming/directx-game-input.md
+      items:
+      - name: Contrôles de déplacement/vue
+        href: ../gaming/tutorial--adding-move-look-controls-to-your-directx-game.md
+      - name: Mouvements de souris relatifs
+        href: ../gaming/relative-mouse-movement.md
+      - name: Contrôles tactiles
+        href: ../gaming/tutorial--adding-touch-controls-to-your-directx-game.md
+    - name: Prise en charge de l’orientation de l’écran
+      href: ../gaming/supporting-screen-rotation-directx-and-cpp.md
+  - name: Optimisation et sujets avancés
+    href: ../gaming/directx-optimization-and-advanced-topics.md
+    items:
+    - name: Programmation asynchrone
+      href: ../gaming/asynchronous-programming-directx-and-cpp.md
+    - name: Scénarios de suppression de périphérique
+      href: ../gaming/handling-device-lost-scenarios.md
+    - name: Échantillonnage multiple
+      href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
+    - name: Optimiser la boucle d’entrée et de rendu
+      href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
+    - name: Réduire la latence avec des chaînes d’échange
+      href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
+    - name: Mise à l’échelle et superpositions de chaînes d’échange
+      href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
+  - name: Portage de DirectX 9 vers UWP
+    href: ../gaming/porting-your-directx-9-game-to-windows-store.md
+    items:
+    - name: DirectX 9vers DirectX 11.1
+      href: ../gaming/porting-considerations.md
+      items:
+      - name: Planifier votre projet de portage
+        href: ../gaming/plan-your-directx-port.md
+      - name: Différences clés
+        href: ../gaming/understand-direct3d-11-1-concepts.md
+      - name: Fonctionnalités du plan
+        href: ../gaming/feature-mapping.md
+    - name: Procédure pas à pas simple
+      href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
+      items:
+      - name: Initialiser Direct3D 11
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
+      - name: Convertir l’infrastructure de rendu
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
+      - name: Porter la boucle de jeu
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md
+    - name: Implémenter des volumes d’ombre
+      href: ../gaming/implementing-depth-buffers-for-shadow-mapping.md
+      items:
+      - name: Créer un tampon de profondeur
+        href: ../gaming/create-depth-buffer-resource--view--and-sampler-state.md
+      - name: Générer le rendu du mappage d’ombre dans le tampon de profondeur
+        href: ../gaming/render-the-shadow-map-to-the-depth-buffer.md
+      - name: Générer le rendu de la scène avec un test de profondeur
+        href: ../gaming/render-the-scene-with-depth-testing.md
+      - name: Prise en charge des divers équipements
+        href: ../gaming/target-a-range-of-hardware.md
+    - name: FAQ
+      href: ../gaming/directx-porting-faq.md
+  - name: Port OpenGL vers Direct3D
+    href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
+    items:
+    - name: Map OpenGL vers Direct3D
+      href: ../gaming/map-concepts-and-infrastructure.md
+      items:
+      - name: Planifier votre projet de portage
+        href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
+      - name: EGL et DXGI
+        href: ../gaming/moving-from-egl-to-dxgi.md
+      - name: Mémoires tampons, uniformes, sommets
+        href: ../gaming/porting-uniforms-and-attributes.md
+      - name: Pipeline de nuanceurs
+        href: ../gaming/change-your-shader-loading-code.md
+    - name: Convertisseur Port OpenGL vers Direct3D
+      href: ../gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md
+      items:
+      - name: Objets de nuanceur
+        href: ../gaming/port-the-shader-config.md
+      - name: Mémoires tampons et données de sommets
+        href: ../gaming/port-the-vertex-buffers-and-data-config.md
+      - name: GLSL
+        href: ../gaming/port-the-glsl.md
+      - name: Dessiner sur l’écran
+        href: ../gaming/draw-to-the-screen.md
+    - name: Référence OpenGL vers Direct3D
+      href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
+      items:
+      - name: GLSL vers HLSL
+        href: ../gaming/glsl-to-hlsl-reference.md
+- name: Plateforme UWP sur XboxOne
+  href: ../xbox-apps/index.md
+  items:
+  - name: Mise en route
+    href: ../xbox-apps/getting-started.md
+  - name: Nouveautés
+    href: ../xbox-apps/whats-new.md
+  - name: Activation du mode Développeur XboxOne
+    href: ../xbox-apps/devkit-activation.md
+  - name: Désactivation du Mode développeur sur XboxOne
+    href: ../xbox-apps/devkit-deactivation.md
+  - name: Configuration de l’environnement de développement
+    href: ../xbox-apps/development-environment-setup.md
+  - name: Exemples
+    href: ../xbox-apps/samples.md
+  - name: Problèmes connus
+    href: ../xbox-apps/known-issues.md
+  - name: FAQ
+    href: ../xbox-apps/frequently-asked-questions.md
+  - name: Outils
+    href: ../xbox-apps/introduction-to-xbox-tools.md
+    items:
+    - name: Accueil du développeur
+      href: ../xbox-apps/dev-home.md
+      items:
+      - name: Page d’accueil
+        href: ../xbox-apps/devhome-home.md
+      - name: Page de Xbox Live
+        href: ../xbox-apps/devhome-live.md
+      - name: Page de paramètres
+        href: ../xbox-apps/devhome-settings.md
+      - name: Page de capture multimédia
+        href: ../xbox-apps/devhome-capture.md
+      - name: Page de mise en réseau
+        href: ../xbox-apps/devhome-networking.md
+      - name: Page des performances
+        href: ../xbox-apps/devhome-performance.md
+    - name: Compagnon du mode de développement Xbox
+      href: ../xbox-apps/xbox-dev-mode-companion.md
+    - name: Fiddler
+      href: ../xbox-apps/uwp-fiddler.md
+  - name: Meilleures pratiques pour Xbox
+    href: ../xbox-apps/tailoring-for-xbox.md
+    items:
+    - name: Comment désactiver le mode souris
+      href: ../xbox-apps/how-to-disable-mouse-mode.md
+    - name: Comment désactiver la mise à l’échelle
+      href: ../xbox-apps/disable-scaling.md
+    - name: Comment désactiver le balayage
+      href: ../xbox-apps/turn-off-overscan.md
+  - name: Allocation de ressources système
+    href: ../xbox-apps/system-resource-allocation.md
+  - name: Présentation des applications multi-utilisateurs
+    href: ../xbox-apps/multi-user-applications.md
+  - name: Intégration de jeux existants dans Xbox
+    href: ../xbox-apps/development-lanes-landing.md
+    items:
+    - name: CustomC++
+      href: ../xbox-apps/development-lanes-custom-cpp.md
+    - name: Unity
+      href: ../xbox-apps/development-lanes-unity.md
+    - name: HTML/JS
+      href: ../xbox-apps/development-lanes-html.md
+  - name: API REST pour le portail d'appareil Xbox
+    href: ../xbox-apps/reference.md
+    items:
+    - name: /api/app/packagemanager/register
+      href: ../xbox-apps/wdp-loose-folder-register-api.md
+    - name: /api/app/packagemanager/upload
+      href: ../xbox-apps/wdp-folder-upload.md
+    - name: /ext/app/deployinfo
+      href: ../xbox-apps/uwp-deployinfo-api.md
+    - name: /ext/app/sshpins
+      href: ../xbox-apps/uwp-sshpins-api.md
+    - name: /ext/fiddler
+      href: ../xbox-apps/wdp-fiddler-api.md
+    - name: /ext/httpmonitor/sessions
+      href: ../xbox-apps/wdp-httpMonitor-api.md
+    - name: /ext/networkcredential
+      href: ../xbox-apps/uwp-networkcredentials-api.md
+    - name: /ext/remoteinput
+      href: ../xbox-apps/uwp-remoteinput-api.md
+    - name: /ext/remoteinput/controllers
+      href: ../xbox-apps/uwp-remoteinput-controllers-api.md
+    - name: /ext/screenshot
+      href: ../xbox-apps/wdp-media-capture-api.md
+    - name: /ext/settings
+      href: ../xbox-apps/wdp-xboxsettings-api.md
+    - name: /ext/smb/developerfolder
+      href: ../xbox-apps/wdp-smb-api.md
+    - name: /ext/user
+      href: ../xbox-apps/wdp-user-management.md
+    - name: /ext/xbox/info
+      href: ../xbox-apps/wdp-xboxinfo-api.md
+    - name: /ext/xboxlive/sandbox
+      href: ../xbox-apps/wdp-sandbox-api.md
+- name: XboxLive
+  href: ../xbox-live/TOC.md
+ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962581"
