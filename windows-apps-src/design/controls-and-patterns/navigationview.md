@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e436e45e70980e9f75749b3a9377f61b636f890
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c86ddee3558da23cd8bea5e0f16c6a8695babf84
+ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928546"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973950"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -620,6 +620,25 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 
         NavView.Header =
             ((muxc.NavigationViewItem)NavView.SelectedItem)?.Content?.ToString();
+    }
+}
+```
+
+Vous trouverez ci-dessous un [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/index) version du gestionnaire **NavView_ItemInvoked** à partir de l’exemple en c# code ci-dessus. La technique en C++ / WinRT gestionnaire consiste à vous consiste à stocker (dans la balise de la [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) le nom complet du type de la page à laquelle vous voulez accéder. Dans le gestionnaire, vous effectuer une conversion unboxing cette valeur, le transformer en un objet [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) et l’utiliser pour accéder à la page de destination. Il n’est pas nécessaire pour la variable de mappage nommée `_pages` que vous voyez dans l’exemple c#; et vous serez en mesure de créer des tests unitaires confirmer que les valeurs à l’intérieur de vos balises sont d’un type valide. Consultez également [conversions Boxing et unboxing de valeurs scalaires vers IInspectable avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+
+```cppwinrt
+void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
+{
+    if (args.IsSettingsInvoked())
+    {
+        // Navigate to Settings.
+    }
+    else if (args.InvokedItemContainer())
+    {
+        Windows::UI::Xaml::Interop::TypeName pageTypeName;
+        pageTypeName.Name = unbox_value<hstring>(args.InvokedItemContainer().Tag());
+        pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+        ContentFrame().Navigate(pageTypeName, nullptr);
     }
 }
 ```

@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7083152efb4cf871f8abebf6d2970d2da4ba06e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b755e8d165d58ce4303d9fefe6d051abce6c9765
+ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926091"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973940"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
@@ -71,7 +71,7 @@ Le facteur d’échelle détermine la taille des éléments d’interface utilis
 :::row-end:::  
 
 
-Dans la mesure où les ressources d’icône d’application sont des images bitmap et images bitmap ne bien à l’échelle, nous vous recommandons de fournir une version chaque ressource d’icône pour chaque facteur d’échelle: 100 %, 125 %, 150 %, 200 % et 400 %. C’est un grand nombre d’icônes! Fortunatly, Visual Studio fournit un outil qui facilite la générer et mettre à jour ces icônes. 
+Dans la mesure où les ressources d’icône d’application sont des images bitmap et images bitmap ne bien à l’échelle, nous vous recommandons de fournir une version chaque ressource d’icône pour chaque facteur d’échelle: 100 %, 125 %, 150 %, 200 % et 400 %. C’est un grand nombre d’icônes! Heureusement, Visual Studio fournit un outil qui facilite la création générer et mettre à jour ces icônes. 
 
 ## <a name="microsoft-store-listing-image"></a>Image de description dans le Microsoft Store
 
