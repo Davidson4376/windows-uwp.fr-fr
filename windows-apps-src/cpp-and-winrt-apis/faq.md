@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: b162fbaaeda8e1ded1f0d3e1d75c840dfa543f4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a0018047b74ffa385cdd758578f3bdad9078c03
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934804"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976906"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptible d’avoir sur la création et l’utilisation de Windows Runtime APIs avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -149,6 +149,10 @@ a.f();
 ```
 
 Le modèle recommandé ci-dessus s’applique pas seulement à C++ / WinRT, mais à tous les projections de langage Windows Runtime.
+
+## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Comment activer une chaîne en un type&mdash;pour la navigation, par exemple?
+
+À la fin de l' [exemple de code de mode de Navigation](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (qui est principalement en c#), il existe un C++ / WinRT extrait de code montrant comment procéder.
 
 > [!NOTE]
 > Si cette rubrique n’a pas répondu à votre question, vous pouvez trouver de l’aide en consultant la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html), ou à l’aide de la [ `c++-winrt` balise sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

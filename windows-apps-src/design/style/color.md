@@ -7,12 +7,12 @@ keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 55e93cdbeec5aad487d7c03c1877095dc13955b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e6547267a1d0b478fdda8698bd1dcf89523442b
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947861"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976896"
 ---
 # <a name="color"></a>Couleur
 
@@ -213,7 +213,7 @@ Lorsque vous utilisez du texte en couleur sur un arrière-plan en couleur, véri
 
 Le graphique ci-dessous illustre un exemple des différentes nuances claires et foncées de la couleur d’accentuation. Il décrit également comment le type peut être appliqué sur une surface en couleur.
 
-![couleur sur couleur](images/color/color-on-color.svg)
+![couleur sur couleur](images/color/color-on-color.png)
 
 Pour plus d’informations sur l’application de styles aux contrôles, voir [Styles XAML](../controls-and-patterns/xaml-styles.md).
 
