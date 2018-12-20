@@ -2,7 +2,7 @@
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Énumérer et interroger des fichiers et dossiers
 description: Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers.
-ms.date: 06/28/2018
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e964650e90870ef09d8d1b142917f96b61002544
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931582"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980277"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
@@ -25,9 +25,9 @@ Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un apparei
 Pour obtenir des conseils sur le stockage des données de votre application de plateforme Windows universelle, consultez la classe [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> Consultez également l’[exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> Pour obtenir un exemple complet, consultez l' [exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 

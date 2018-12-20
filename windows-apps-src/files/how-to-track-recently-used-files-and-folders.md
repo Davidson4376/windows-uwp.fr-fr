@@ -2,16 +2,16 @@
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: Suivre les fichiers et dossiers récemment utilisés
 description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des fichiers utilisés récemment de votre application.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a810c097b4f162395106e74b68d5e9cdb2f8538
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 21e0516e3de4085e9ad2f3b67cb5ed497d907f5c
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930051"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980367"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
 
@@ -25,11 +25,9 @@ Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en
 Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), ce qui signifie que des objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (qui représentent des fichiers) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
 
 > [!NOTE]
-> Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) et l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> Pour connaître les exemples complètes, consultez l' [exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995)et l' [exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) .
 
- 
-
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 

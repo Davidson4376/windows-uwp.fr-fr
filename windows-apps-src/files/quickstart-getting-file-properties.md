@@ -2,20 +2,18 @@
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Obtenir les propriétés du fichier
 description: Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0747dd3b8992ab456bdb00a4dc7157211eb8ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932981"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980357"
 ---
 # <a name="get-file-properties"></a>Obtenir les propriétés du fichier
-
-
 
 **API importantes**
 
@@ -26,10 +24,7 @@ ms.locfileid: "8932981"
 Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
 > [!NOTE]
-> Consultez également l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
-
- 
-
+> Pour obtenir un exemple complet, consultez l' [exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -45,9 +40,8 @@ Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fic
 
 De nombreuses propriétés de fichier de haut niveau sont accessibles en tant que membres de la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). Ces propriétés incluent les attributs des fichiers, le type de contenu, la date de création, le nom d’affichage, le type de fichier, etc.
 
-**Remarque**n’oubliez pas de déclarer la fonctionnalité **picturesLibrary** .
-
- 
+> [!NOTE]
+> N’oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
 
 Cet exemple énumère tous les fichiers de la bibliothèque d’images, en accédant à quelques-unes des propriétés de niveau supérieur de chaque fichier.
 

@@ -2,16 +2,16 @@
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: Accès au contenu du Groupement résidentiel
 description: Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932226"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980297"
 ---
 # <a name="accessing-homegroup-content"></a>Accès au contenu du Groupement résidentiel
 
@@ -34,7 +34,7 @@ Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utili
     Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins l’une des fonctionnalités suivantes: **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
     > [!NOTE]
-    >  Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application, quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.     
+    > Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application, quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.     
 
 -   **Comprendre comment utiliser les sélecteurs de fichiers**
 

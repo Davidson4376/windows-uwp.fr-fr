@@ -2,16 +2,16 @@
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
 description: Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes FileOpenPicker et FileSavePicker pour accéder à des fichiers et la classe FolderPicker pour accéder à un dossier.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed2c1715ebb682aed3da4b55ef94cc0c60f8391
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 04534316c3357dfecc4a94b91dcab42f8238dec6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921162"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980327"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
 
@@ -115,39 +115,39 @@ Utiliser un sélecteur de fichiers consiste à créer et à personnaliser un obj
 
     - **Pour sélectionner un fichier**
 
-    ```cs
-    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-    if (file != null)
-    {
-        // Application now has read/write access to the picked file
-        this.textBlock.Text = "Picked photo: " + file.Name;
-    }
-    else
-    {
-        this.textBlock.Text = "Operation cancelled.";
-    }
-    ```
+        ```cs
+        Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+        if (file != null)
+        {
+            // Application now has read/write access to the picked file
+            this.textBlock.Text = "Picked photo: " + file.Name;
+        }
+        else
+        {
+            this.textBlock.Text = "Operation cancelled.";
+        }
+        ```
 
     - **Pour sélectionner plusieurs fichiers**  
 
-    ```cs
-    var files = await picker.PickMultipleFilesAsync();
-    if (files.Count > 0)
-    {
-        StringBuilder output = new StringBuilder("Picked files:\n");
-
-        // Application now has read/write access to the picked file(s)
-        foreach (Windows.Storage.StorageFile file in files)
+        ```cs
+        var files = await picker.PickMultipleFilesAsync();
+        if (files.Count > 0)
         {
-            output.Append(file.Name + "\n");
+            StringBuilder output = new StringBuilder("Picked files:\n");
+    
+            // Application now has read/write access to the picked file(s)
+            foreach (Windows.Storage.StorageFile file in files)
+            {
+                output.Append(file.Name + "\n");
+            }
+            this.textBlock.Text = output.ToString();
         }
-        this.textBlock.Text = output.ToString();
-    }
-    else
-    {
-        this.textBlock.Text = "Operation cancelled.";
-    }
-    ```
+        else
+        {
+            this.textBlock.Text = "Operation cancelled.";
+        }
+        ```
 
 ## <a name="pick-a-folder-complete-code-listing"></a>Sélectionner un dossier: code complet
 
