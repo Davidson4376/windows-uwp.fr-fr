@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bc39c3aa59ca9624cc4664136b6294c07ed56083
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933762"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981423"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puceNFC
 
@@ -382,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** Importantes ** hérité binaire SMS interception prend en charge le Windows Phone 8.1 a été supprimée et remplacée par la nouvelle plus large prise en charge SMS dans Windows 10 Mobile, mais toutes les applications Windows Phone 8.1 héritées élargie des doivent mettre à jour pour utiliser le nouveau SMS Mobile Windows 10 API.
+<b>Important</b>  hérité binaire SMS interception prend en charge le Windows Phone 8.1 a été supprimée et remplacée par la nouvelle plus large prise en charge SMS dans Windows 10 Mobile, mais toutes les applications Windows Phone 8.1 héritées élargie des doivent mettre à jour pour utiliser le nouveau SMS Mobile Windows 10 API.

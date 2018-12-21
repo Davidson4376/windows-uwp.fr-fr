@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app converter, interface utilisateur multilingue, assembly satellite
 ms.localizationpriority: medium
-ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927952"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981453"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows10 dans une application ou un jeu hérité
 
@@ -158,7 +158,7 @@ Pour plus d’informations sur le fichier `AppXManifest.xml` et la disposition d
 
 Enfin, si vous utilisez Visual Studio pour créer un projet et que vous y migrez votre code existant, consultez [la documentation MSDN pour la création d’un projet UWP ](https://msdn.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). Vous pouvez inclure votre code existant dans le nouveau projet, mais vous devrez probablement apporter des modifications significatives à ce dernier (en particulier dans l’interface utilisateur) en vue d'une exécution en tant qu'UWP «pure». Ces modifications ne sont pas abordées dans ce document.
 
-***
+---
 
 ## <a name="phase-1-localize-the-application-manifest"></a>Phase 1: Localiser le manifeste d’application
 
@@ -178,7 +178,7 @@ Si vous souhaitez créer les ressources manuellement:
  * Utilisez le code BCP-47 approprié si votre langue par défaut n’est pas l'anglais américain 
 0. Dans le fichier XML, ajoutez le contenu suivant, le <span style="background-color: yellow">texte mis en surbrillance</span> étant remplacé par le texte correspondant à votre application, dans votre langue par défaut.
 
-**Remarque:** des restrictions s’appliquent à la longueur de certaines de ces chaînes. Pour plus d’informations, voir [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live).
+[!Note] Il existe des restrictions sur les longueurs de certaines de ces chaînes. Pour plus d’informations, voir [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live).
 
 <blockquote>
 <pre>
@@ -303,7 +303,7 @@ Maintenant que le fichier PRI est généré, vous pouvez créer et signer le pac
  * `/f` définit le mappage de fichier à utiliser (créé à l’étape précédente) 
  * `/p` définit le nom du package de sortie
  * `/o` définit sur Remplacer le fichier de sortie s’il existe.
-0. Une fois le package créé, il doit être signé. Le moyen le plus simple d’obtenir un certificat de signature est en créant un projet Windows universel vide dans Visual Studio et de copie le `.pfx` fichier qu’il crée, mais vous pouvez en créer un manuellement à l’aide de la `MakeCert` et `Pvk2Pfx` utilitaires comme décrit dans [la **comment créer un package d’application certificat de signature** sur MSDN] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
+0. Une fois le package créé, il doit être signé. Le moyen le plus simple d’obtenir un certificat de signature est en créant un projet Windows universel vide dans Visual Studio et en copiant le `.pfx` fichier qu’il crée, mais vous pouvez en créer un manuellement à l’aide de la `MakeCert` et `Pvk2Pfx` utilitaires comme décrit dans <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">la création d’une certificat de signature de package d’application</a>, une rubrique sur MSDN. 
  * **Important:** si vous créez manuellement un certificat de signature, assurez-vous que vous placez les fichiers dans un répertoire autre que votre projet source ou package source; sinon, celui-ci risquera d'être inclus dans le package, y compris la clé privée!
 0. Pour signer le package, utilisez la commande suivante. Notez que le `Publisher` spécifié dans l'élément `Identity` du `AppxManifest.xml` doit correspondre au `Subject` du certificat (il ne s’agit **pas** de l'élément `<PublisherDisplayName>`, qui est le nom complet localisé à afficher aux utilisateurs). Comme toujours, remplacez les noms de fichiers `contoso_demo...` par les noms correspondants à votre projet, et (**très important**) vérifiez que le fichier `.pfx` ne se trouve pas dans le répertoire actif (sinon, il sera créé et inclus dans votre package, y compris la clé de signature privée!):
 

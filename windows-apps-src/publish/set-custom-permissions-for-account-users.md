@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d1581757cb16cf2ed5d0082a6a0e4a4e09299361
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947981"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981503"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
@@ -170,7 +170,7 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les extens
     <tr><td align="left">    <b>Utilisation</b> </td><td>    Peut afficher le <a href="usage-report.md">rapport d’utilisation</a> du produit.     </td><td>    Non applicable       </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Intégrité</b> </td><td>    Peut afficher le <a href="health-report.md">rapport d’intégrité</a> du produit.    </td><td>    Non applicable     </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Retour d’expérience du client</b>    </td><td>    Peut visualiser les rapports <a href="reviews-report.md">Avis</a> et <a href="feedback-report.md">Commentaires</a> concernant le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation <b>Contacter le client</b> doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
-    <tr><td align="left">    <b>Analyse Xbox</b> </td><td>    Peut afficher le [rapport d’analytique Xbox](xbox-analytics-report.md) pour le produit.    </td><td>    N/A   </td><td>    N/A       </td><td>    Non applicable          </td></tr>
+    <tr><td align="left">    <b>Analyse Xbox</b> </td><td>    Peut afficher le <a href="xbox-analytics-report.md">rapport d’analytique Xbox</a> pour le produit.    </td><td>    N/A   </td><td>    N/A       </td><td>    Non applicable          </td></tr>
     </tbody>
     </table>
 

@@ -3,12 +3,12 @@ description: ''
 title: Contenu en tant qu’objets
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942400"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981443"
 ---
 # <a name="content-as-objects"></a>Contenu en tant qu’objets
 
@@ -35,7 +35,7 @@ Une hiérarchie visuelle claire indique aux utilisateurs quels sont les élémen
   <p>Par conséquent, comment créer une hiérarchie visuelle claire? Avec les versions antérieures de Windows10, vous pouviez utiliser les espaces, la position et la typographie pour définir une hiérarchie visuelle. </p>
   </div>
   <div class="side-by-side-content-right">
-    ![Disposition plate](images/content-as-objects/flat-layout.png)
+    <a href="images/content-as-objects/flat-layout.png">Disposition plate</a>
     
   </div>
 </div>
@@ -43,7 +43,7 @@ Une hiérarchie visuelle claire indique aux utilisateurs quels sont les élémen
 
 Avec Windows10 RS2, nous avons ajouté littéralement une autre dimension: la profondeur. 
 
-![Profondeur de disposition](images/content-as-objects/depth-in-layout2.png)
+<a href="images/content-as-objects/depth-in-layout2.png">Profondeur de disposition</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>Utiliser la profondeur pour établir une hiérarchie 
@@ -59,7 +59,7 @@ Avec Windows10 RS2, nous avons ajouté littéralement une autre dimension: la pr
     </p>
   </div>
   <div class="side-by-side-content-right">
-    ![Profondeur de disposition](images/content-as-objects/elements-forward-backward.png) 
+    <a href="images/content-as-objects/elements-forward-backward.png">Profondeur de disposition</a> 
     
   </div>
 </div>
@@ -76,13 +76,12 @@ Avec Windows10 RS2, nous avons ajouté littéralement une autre dimension: la pr
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Au-delà de l’arrière-plan** <br/>
-Cette couche se trouve derrière l’application.  Lorsque des éléments sont déplacés vers cette couche, nous recommandons de les rendre non interactifs. Les éléments de cette couche ont l’effet de parallaxe le plus lent et sont fixés à la fenêtre d’application. TODO: Cette couche est-elle mise à l’échelle? 
+<b>Au-delà de l’arrière-plan</b> Cette couche se trouve derrière l’application.  Lorsque des éléments sont déplacés vers cette couche, nous recommandons de les rendre non interactifs. Les éléments de cette couche ont l’effet de parallaxe le plus lent et sont fixés à la fenêtre d’application. TODO: Cette couche est-elle mise à l’échelle? 
 
 <p>Des exemples d’éléments d’arrière-plan incluent une image derrière du contenu. TODO: Exemple, TODO: Exemple.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Couche Au-delà de l’arrière-plan d’une application](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Couche Au-delà de l’arrière-plan d’une application</a>
     
   </div>
 </div>
@@ -93,13 +92,12 @@ Cette couche se trouve derrière l’application.  Lorsque des éléments sont d
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Couche passive** <br/>
-Il s’agit de la couche de base de l’application, où les éléments d’interface utilisateur se trouvent par défaut.  Les éléments se déplacent en temps réel sur cette couche (sans effet de parallaxe), ils sont fixés à la fenêtre d’application et sont rendus à l’échelle 100%. 
+<b>Couche passive</b> Il s’agit la couche de base de l’application, où les éléments d’interface utilisateur se trouvent par défaut.  Les éléments se déplacent en temps réel sur cette couche (sans effet de parallaxe), ils sont fixés à la fenêtre d’application et sont rendus à l’échelle 100%. 
 
 <p>Exemples d’éléments: arrière-plan d’application, texte, interface utilisateur secondaire, telle que l’interface utilisateur de navigation de l’application.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Couche passive d’une application](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Couche passive d’une application</a>
     
   </div>
 </div>
@@ -110,13 +108,12 @@ Il s’agit de la couche de base de l’application, où les éléments d’inte
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Appels à l’action** <br/>
-Cette couche est destinée aux éléments interactifs auxquels vous donnez la priorité par rapport aux éléments de la couche passive. Les éléments sur cette couche ont un effet de parallaxe moyen et sont fixés à la fenêtre d’application. TODO: Les éléments de cette couche sont-ils mis à l’échelle ou ont-ils une ombre portée?
+<b>Appels à l’action</b> Cette couche est destinée aux éléments interactifs auxquels vous donnez la priorité aux éléments de la couche passive. Les éléments sur cette couche ont un effet de parallaxe moyen et sont fixés à la fenêtre d’application. TODO: Les éléments de cette couche sont-ils mis à l’échelle ou ont-ils une ombre portée?
 
 <p>Exemples d'éléments: listes, grilles, commandes principales (TODO: comme...).</p> 
   </div>
   <div class="side-by-side-content-right">
-    ![Couche Appel à l'action d’une application](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Couche Appel à l'action d’une application</a>
     
   </div>
 </div>
@@ -126,13 +123,12 @@ Cette couche est destinée aux éléments interactifs auxquels vous donnez la pr
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Couche principale** <br/>
-Cette couche est réservée à l’élément ayant la priorité la plus élevé sur l’écran à un moment donné.  Les éléments de cette couche peuvent dépasser les limites de la fenêtre d’application et être mis à l'échelle. Ils ont automatiquement une ombre portée.
+<b>Couche principale</b> Cette couche est pour l’élément de priorité plus élevé sur l’écran en temps.  Les éléments de cette couche peuvent dépasser les limites de la fenêtre d’application et être mis à l'échelle. Ils ont automatiquement une ombre portée.
 
 <p>Exemples d’éléments: éléments photographiques, élément sélectionné.</p>  
   </div>
   <div class="side-by-side-content-right">
-    ![Couche principale d’une application](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Couche principale d’une application</a>
     
   </div>
 </div>

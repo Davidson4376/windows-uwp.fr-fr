@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, minuteur, threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 2537bad82fc4a17b964f5871ab6ae1434c417f66
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9cad23f5f82ce70b3a9920726d054b59446925b8
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940085"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981523"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Utiliser un minuteur pour envoyer un élément de travail
 
 
-** API importantes **
+<b>API importantes</b>
 
 -   [**Espace de noms Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/BR208383)
 -   [**Espace de noms Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/BR229642)

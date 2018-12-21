@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e64feb8938be3e7338c87acdf8fd18fb13e525b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 400d80018201c8ae048cb4a5d326fa560b9cdd5c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947951"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981393"
 ---
 # <a name="xbox-best-practices"></a>Bonnes pratiques pour Xbox
 
@@ -73,4 +73,5 @@ L’événement de **Développement d’applications sur Xbox** est un excellent
 ## <a name="see-also"></a>Articles associés
 
 - [UWP sur XboxOne](index.md)
-- [Conception pour Xbox et télévision](../design/devices/designing-for-tv.md)
+- [Conception pour Xbox et la télévision](../design/devices/designing-for-tv.md)
+- [Applications Web progressives pour Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

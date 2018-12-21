@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930140"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981533"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Lancer l’application MicrosoftStore
 
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID WindowsStore est recommandé pour les clients Windows10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex: PFN) sont toujours prises en charge.</p>
-<p>Ces valeurs peuvent être disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) sur la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">identité de l’application</a> dans la section Gestion des applications pour chaque application.</p>
+<p>Ces valeurs peuvent être disponibles dans <a href="https://partner.microsoft.com/dashboard">L’espace partenaires</a> sur la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">identité de l’application</a> dans la section Gestion des applications pour chaque application.</p>
 </td>
 <td>
 ID WindowsStore <p>(recommandé)</p>
@@ -57,7 +57,7 @@ ID WindowsStore <p>(recommandé)</p>
 </tr>
 <tr>
 <td>ID de produit (Windows Phone 7.x/8.x)</td>
-<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
+<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d</td>
 </tr>
 <tr>
 <td>ID de produit (Windows 8.x)</td>

@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 56586e3c26c2adc07bad58e3ee072b4dc57db2ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946407"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981413"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applicationsUWP
 
@@ -106,7 +106,7 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">Bloc de texte</a>, <a href="../controls-and-patterns/text-box.md">zone de texte</a>, <a href="../controls-and-patterns/rich-edit-box.md">zone d’édition enrichie</a></p>
 </td>
 <td align="left">Affiche le texte. Certains éléments permettent à l’utilisateur de modifier du texte. Pour plus d’informations, voir <a href="../controls-and-patterns/text-controls.md">Contrôles de texte</a>.
-<p>Pour savoir comment afficher du texte, voir [Typographie](../style/typography.md).</p>
+<p>Pour savoir comment afficher du texte, voir <a href="../style/typography.md">Typographie</a>.</p>
 </td>
 </tr>
 <tr class="odd">

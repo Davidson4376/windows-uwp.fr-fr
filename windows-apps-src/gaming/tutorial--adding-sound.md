@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, son
 ms.localizationpriority: medium
-ms.openlocfilehash: 94044e3d10df15cb1cb256d86ced798395e6af6f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7ceef2da582f5d825949afdf2e116862c990165c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923770"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981383"
 ---
 # <a name="add-sound"></a>Ajouter du son
 
@@ -337,7 +337,7 @@ Déclencheurs d’effets sonores sont définis dans méthode [Simple3DGame::Upda
 
 Dans la mesure où l’interaction entre les objets de diffère sensiblement selon le jeu, nous n’allons pas pour discuter de la dynamique des objets jeu ici. Si vous avez besoin de comprendre son implémentation, passez à la méthode [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) .
 
-En principe, lorsqu’une collision se produit, il déclenche l’effet sonore pour lire du contenu en appelant la méthode [SoundEffect::PlaySound]((soundeffectplaysound-method). Cette méthode arrête des effets sonores qui est en cours de lecture et files d’attente de la mémoire tampon en mémoire avec les données audio souhaités. Il utilise des voix source pour définir le volume, envoyer des données audio et démarrer la lecture.
+En principe, lorsqu’une collision se produit, il déclenche l’effet sonore pour lire du contenu en appelant la méthode **SoundEffect::PlaySound**. Cette méthode arrête des effets sonores qui est en cours de lecture et files d’attente de la mémoire tampon en mémoire avec les données audio souhaités. Il utilise des voix source pour définir le volume, envoyer des données audio et démarrer la lecture.
 
 ### <a name="soundeffectplaysound-method"></a>Méthode SoundEffect::PlaySound
 
