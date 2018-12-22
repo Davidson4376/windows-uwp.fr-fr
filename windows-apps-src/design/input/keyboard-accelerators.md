@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
+ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921593"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "8981878"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -193,9 +193,9 @@ L’attribut ScopeOwner de l’élément MenuFlyoutItem.KeyboardAccelerators ind
 
 ## <a name="invoke-a-keyboard-accelerator"></a>Appeler un raccourci clavier 
 
-L’objet [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) utilise le [modèle de contrôle UI Automation (UIA)](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx) pour exécuter une action lorsqu’un raccourci est appelé.
+L’objet [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) utilise le [modèle de contrôle UI Automation (UIA)](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview) pour exécuter une action lorsqu’un raccourci est appelé.
 
-Les UIA [modèles de contrôle] exposent les fonctionnalités des contrôles courants. Par exemple, le contrôle Button implémente le modèle de contrôle [Invoke](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx) pour prendre en charge l’événement Click (un contrôle est généralement appelé par clic, double-clic ou en appuyant sur Entrée, un raccourci clavier prédéfini ou une autre combinaison de touches). Lorsqu’un raccourci clavier est utilisé pour appeler un contrôle, l’infrastructure XAML recherche si le contrôle implémente le modèle de contrôle Invoke et, si tel est le cas, l’active (il n’est pas nécessaire d’écouter l’événement KeyboardAcceleratorInvoked).
+Les UIA [modèles de contrôle] exposent les fonctionnalités des contrôles courants. Par exemple, le contrôle Button implémente le modèle de contrôle [Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) pour prendre en charge de l’événement Click (un contrôle est généralement appelé par clic, double-clic ou en appuyant sur entrée, un raccourci clavier prédéfini ou une autre combinaison de touches). Lorsqu’un raccourci clavier est utilisé pour appeler un contrôle, l’infrastructure XAML recherche si le contrôle implémente le modèle de contrôle Invoke et, si tel est le cas, l’active (il n’est pas nécessaire d’écouter l’événement KeyboardAcceleratorInvoked).
 
 Dans l’exemple suivant, Ctrl+S déclenche l’événement Click, car le bouton implémente le modèle Invoke.
 
@@ -218,10 +218,12 @@ Si aucune correspondance n’est identifiée, le raccourci n’est pas valide et
 ## <a name="custom-keyboard-accelerator-behavior"></a>Comportement des raccourcis clavier personnalisés
 
 L’événement Invoked de l’objet [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) est déclenché lorsque le raccourci est exécuté. L’objet d’événement [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) inclut les propriétés suivantes:
-- **Handled** (Boolean): définir cette propriété sur true empêche l'événement de déclencher le modèle de contrôle et arrête la propagation d'événements du raccourci. La valeur par défaut est false.
-- **Element** (DependencyObject): objet qui contient le raccourci.
 
-Nous montrons ici comment définir une collection de raccourcis clavier et comment gérer l’événement Invoked.
+- [**Géré**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (Boolean): ce paramètre sur true empêche l’événement de déclencher le modèle de contrôle et arrête la propagation d’événements raccourci. La valeur par défaut est false.
+- [**Élément**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): l’objet associé à l’accélérateur.
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): le raccourci clavier utilisé pour déclencher l’événement Invoked.
+
+Nous montrons ici comment définir une collection de raccourcis clavier pour les éléments dans un contrôle ListView et comment gérer l’événement Invoked pour chaque raccourci.
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -229,19 +231,20 @@ Nous montrons ici comment définir une collection de raccourcis clavier et comme
     <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
     <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>
 ```
 
 ``` csharp
-void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+void SelectAllInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  CustomSelectAll(MyListView);
+  MyListView.SelectAll();
   args.Handled = true;
 }
 
 void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  Refresh(MyListView);
+  MyListView.SelectionMode = ListViewSelectionMode.None;
+  MyListView.SelectionMode = ListViewSelectionMode.Multiple;
   args.Handled = true;
 }
 ```
@@ -257,7 +260,7 @@ Si un contrôle est désactivé, le raccourci associé est également désactiv�
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A"
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -487,7 +490,7 @@ Nous allons examiner ici certains aspects de bas niveau des raccourcis clavier.
 
 ### <a name="when-an-accelerator-is-invoked"></a>Quand un raccourci est appelé
 
-Les raccourcis sont constitués de deux types de touches: les touches de modification et les touches de non-modification. Les touches de modification incluent les touches Maj, Menu, Ctrl et Windows, qui sont exposées via [VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers). Les touches de non-modification sont n’importe quelle touche virtuelle, comme Suppr, F3, barre d’espace, Échap et toutes les touches alphanumériques et touches de ponctuation. Un raccourci clavier est appelé lorsque l’utilisateur appuie sur une touche de non-modification tout en maintenant enfoncée(s) une ou plusieurs touches de modification. Par exemple, si l’utilisateur appuie sur Ctrl+Maj+M, lorsque la touche M est enfoncée l’infrastructure vérifie les touches de modification (Ctrl et Maj) et déclenche le raccourci, s’il existe.
+Les raccourcis sont constitués de deux types de touches: les touches de modification et les touches de non-modification. Les touches de modification incluent les touches Maj, Menu, Ctrl et Windows, qui sont exposées via [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers). Les touches de non-modification sont n’importe quelle touche virtuelle, comme Suppr, F3, barre d’espace, Échap et toutes les touches alphanumériques et touches de ponctuation. Un raccourci clavier est appelé lorsque l’utilisateur appuie sur une touche de non-modification tout en maintenant enfoncée(s) une ou plusieurs touches de modification. Par exemple, si l’utilisateur appuie sur Ctrl+Maj+M, lorsque la touche M est enfoncée l’infrastructure vérifie les touches de modification (Ctrl et Maj) et déclenche le raccourci, s’il existe.
 
 > [!NOTE]
 > Par conception, le raccourci est à répétition automatique (par exemple, lorsque l’utilisateur appuie sur Ctrl+Maj, puis maintient enfoncée la touche M, le raccourci est appelé de façon répétée jusqu'à ce que la touche M soit relâchée). Ce comportement ne peut pas être modifié.
@@ -499,7 +502,7 @@ Les événements d’entrée se produisent dans un ordre spécifique que vous po
 
 En XAML, une frappe est traitée comme s’il existe uniquement un pipeline de propagation d’entrée. Ce pipeline d’entrée est utilisé par les événements KeyDown/KeyUp et les entrées de caractères. Par exemple, si le focus est positionné sur un élément et que l’utilisateur appuie sur une touche, un événement KeyDown est déclenché sur l’élément, suivi par le parent de l’élément, et ainsi de suite jusqu'au haut de l’arborescence, jusqu'à ce que la propriété args.Handled soit définie sur true.
 
-L’événement KeyDown est également utilisé par certains contrôles pour implémenter les raccourcis de contrôle intégrés. Lorsqu’un contrôle est associé à un raccourci clavier, il gère l’événement KeyDown, ce qui signifie qu’il n'y aura pas de propagation d'événements KeyDown. Par exemple, RichEditBox prend en charge la copie avec Ctrl+C. Lorsque vous appuyez sur Ctrl, l’événement KeyDown est déclenché et se propage, mais lorsque l’utilisateur appuie sur C en même temps, l’événement KeyDown est marqué Handled et n’est pas déclenché (sauf si le paramètre handledEventsToo de [UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) est défini sur true).
+L’événement KeyDown est également utilisé par certains contrôles pour implémenter les raccourcis de contrôle intégrés. Lorsqu’un contrôle est associé à un raccourci clavier, il gère l’événement KeyDown, ce qui signifie qu’il n'y aura pas de propagation d'événements KeyDown. Par exemple, RichEditBox prend en charge la copie avec Ctrl+C. Lorsque vous appuyez sur Ctrl, l’événement KeyDown est déclenché et se propage, mais lorsque l’utilisateur appuie sur C en même temps, l’événement KeyDown est marqué Handled et n’est pas déclenché (sauf si le paramètre handledEventsToo de [UIElement.AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) est défini sur true).
 
 #### <a name="the-characterreceived-event"></a>Événement CharacterReceived
 
