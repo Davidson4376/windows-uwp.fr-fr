@@ -8,12 +8,12 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f81c435690c7bf17066be5f49de4994f146fc5c9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 22ad7a1ac6160fd8b1cfb70c69f299c5d89192d3
+ms.sourcegitcommit: 17896441726714fa66b5ca4f9df2cdb2259f360e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945178"
+ms.lasthandoff: 12/26/2018
+ms.locfileid: "8988238"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
@@ -128,7 +128,7 @@ Ici, nous utilisons la `AcceptsReturn` et `TextWrapping` propriétés du contrô
 
 ### <a name="specify-text-trimming-behavior"></a>Spécifier le comportement de découpage de texte
 
-Si un saut de ligne n’est pas le comportement par défaut, la plupart des contrôles de texte permettent de spécifier des points de suspension pour le comportement de découpage de texte ou images votre texte. Découpage est recommandé pour les points de suspension car ellipses occupent l’espace eux-mêmes.
+Si un saut de ligne n’est pas le comportement par défaut, la plupart des contrôles de texte vous permettent d’extraction votre texte soit spécifier des points de suspension pour le comportement de découpage de texte. Découpage est recommandé pour les points de suspension car ellipses occupent l’espace eux-mêmes.
 
 > [!NOTE]
 > Si vous avez besoin découper votre texte, tronqué à la fin de la chaîne, et non au début.

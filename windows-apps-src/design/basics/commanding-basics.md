@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7ef7927af7acc8f437a323f374ae7dbf8a36d452
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0f78ffb01bf29076733af40b365e91592c71e9c8
+ms.sourcegitcommit: 17896441726714fa66b5ca4f9df2cdb2259f360e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939027"
+ms.lasthandoff: 12/26/2018
+ms.locfileid: "8988248"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
@@ -23,7 +23,7 @@ Dans une application de plateforme Windows universelle (UWP), les *éléments de
 
 ## <a name="provide-the-best-command-experience"></a>Fournir la meilleure expérience de commande
 
-Le plus important d’une interface de commande est quelles votre tentative permettre à un utilisateur d’accomplir. Lorsque vous planifiez les fonctionnalités de votre application, envisagez les étapes requises pour effectuer ces tâches et les expériences utilisateur que vous souhaitez activer. Une fois que vous avez effectué une version préliminaire de ces expériences, puis vous pouvez prendre des décisions sur les outils et les interactions pour les implémenter.
+Le plus important d’une interface de commande est ce que vous essayez permettre à un utilisateur à accomplir. Lorsque vous planifiez les fonctionnalités de votre application, envisagez les étapes requises pour effectuer ces tâches et les expériences utilisateur que vous souhaitez activer. Une fois que vous avez effectué une version préliminaire de ces expériences, puis vous pouvez prendre des décisions sur les outils et les interactions pour les implémenter.
 
 Voici certaines expériences d’application courants:
 
