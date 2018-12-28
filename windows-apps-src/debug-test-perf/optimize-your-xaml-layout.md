@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ab894a9ba9c51b091e593503be2db57ba3b1a913
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c00b406f77758266c68a16b078192517caaa14bf
+ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936483"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "8990215"
 ---
 # <a name="optimize-your-xaml-layout"></a>Optimiser votre disposition XAML
 
@@ -75,7 +75,7 @@ Option 2 : Un seul élément [**Grid**](https://msdn.microsoft.com/library/windo
 L’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) ajoute une certaine complexité, mais utilise un seul élément panneau.
 
 ```xml
-  <Grid>
+<Grid>
   <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />

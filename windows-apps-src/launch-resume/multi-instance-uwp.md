@@ -5,12 +5,12 @@ keywords: applications UWP à instances multiples
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cceac0cf4b9cc4c13c0e99ce5beffad70787256
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 89ffa2f3480664131af6664988bd9fb31687fe32
+ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940880"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "8990205"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 
@@ -25,7 +25,7 @@ Cette rubrique décrit comment créer une application de plateforme Windows univ
 
 Si vous créez une nouvelle application à instances multiples, vous pouvez installer les **modèles .VSIX de projets d’applications à instances multiples**, disponibles dans le [Visual Studio Marketplace](https://aka.ms/E2nzbv). Une fois que vous avez installé les modèles, ils sont disponibles dans la boîte de dialogue **Nouveau projet** sous **Visual C# > Windows universel** (ou **Autres langages > Visual C++ > Windows universel**).
 
-Deux modèles sont installés: **Application UWP à instances multiples**, qui fournit le modèle pour la création d’une application à instances multiples, et **Application UWP de redirection à instances multiples**, qui fournit une logique supplémentaire sur laquelle vous pouvez vous appuyer pour lancer une nouvelle instance ou activer de manière sélective une instance qui a déjà été lancée. Par exemple, vous souhaitez peut-être éviter que plusieurs instances modifient simultanément un même document, afin de mettre au premier plan l’instance où ce fichier est ouvert, au lieu de lancer une nouvelle instance.
+Deux modèles sont installés: **Application UWP à instances multiples**, qui fournit le modèle pour la création d’une application à instances multiples, et **Application UWP de redirection à instances multiples**, qui fournit une logique supplémentaire sur laquelle vous pouvez vous appuyer pour lancer une nouvelle instance ou activer de manière sélective une instance qui a déjà été lancée. Par exemple, peut-être vous souhaitez uniquement une seule instance à la fois modifient le même document, afin de mettre l’instance où ce fichier ouvrir au premier plan, plutôt que de lancer une nouvelle instance.
 
 Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanifest` fichier. Notez les préfixes d’espace de noms `desktop4` et `iot2`: seuls les projets qui ciblent le bureau, ou les projets Internet des objets (IoT), prend en charge l’instanciation multiple.
 
