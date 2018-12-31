@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
+ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941277"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "8990327"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -74,6 +74,9 @@ Si vous exécutez votre application et cliquez sur le bouton «Se connecter», e
 ![Volet Paramètres du compte](images/tb-1.png)
 
 Le volet est vide, car le système propose uniquement un interpréteur de commandes de l’interface utilisateur. Il revient au développeur de programmer le remplissage du volet avec les fournisseurs d’identité. 
+
+> [!TIP]
+> Si vous le souhaitez, vous pouvez utiliser **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** au lieu d' **[Afficher](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, qui renverra un **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, pour rechercher l’état de l’opération. 
 
 ## <a name="register-for-accountcommandsrequested"></a>S’inscrire à AccountCommandsRequested
 

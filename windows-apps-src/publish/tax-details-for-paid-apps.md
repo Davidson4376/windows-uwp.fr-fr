@@ -2,16 +2,16 @@
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 title: Informations fiscales pour les applications payantes
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 11/20/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: Windows10, uwp, taxes, taxes sur les applications, exigences fiscales, développement commercial, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 896a92e009b7d9c33554f77d8da56730625f1f85
+ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924119"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "8990337"
 ---
 # <a name="tax-details-for-paid-apps"></a>Informations fiscales pour les applications payantes
 
@@ -46,7 +46,7 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Autriche                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.       | 70% du (prix sélectionné moins 20% de taxe)     | Microsoft          |
 | Azerbaïdjan                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Bahamas                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Bahreïn                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Bahreïn                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du (prix sélectionné moins 5% de taxe)                 | Microsoft          |
 | Bangladesh                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Barbade                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Bélarus                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                  | 70% du (prix sélectionné moins 20% de taxe)         | Microsoft          |
