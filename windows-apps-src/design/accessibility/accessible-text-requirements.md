@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfcdc0782515928740a9c01b409b5170540cb27
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 888de987d507f0a1a21458c299605ebcc7b1bc70
+ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934504"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "8990472"
 ---
 # <a name="accessible-text-requirements"></a>Exigences de texte accessible  
 
@@ -114,25 +114,31 @@ Si vous utilisez les contrôles intrinsèques du format HTML, l’implémentatio
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
 
-## <a name="text-in-graphics"></a>Texte dans les graphiques  
+## <a name="text-in-graphics"></a>Texte dans les graphiques
+
 Dans la mesure du possible, évitez d’inclure du texte dans un graphique. Par exemple, tout texte que vous placez dans le fichier source d’image et qui est affiché dans l’application en tant qu’élément [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) n’est pas automatiquement accessible ou lisible par les technologies d’assistance. Si vous devez utiliser du texte dans des graphiques, assurez-vous que la valeur [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) que vous fournissez comme équivalent de alt text comprend ce texte ou un résumé de la signification du texte. Des considérations semblables s’appliquent si vous créez des caractères texte à partir de vecteurs dans le cadre d’un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) ou à l’aide de [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921).
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
 
-## <a name="text-font-size"></a>Modification de la taille des polices  
-Beaucoup de lecteurs ont du mal à lire le texte d’une application quand celui-ci utilise une taille de police trop petite. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que la police du texte de l’interface utilisateur de votre application soit suffisamment grande. Windows propose également certaines technologies d’assistance, qui permettent aux utilisateurs de modifier la taille de l’affichage des applications, ou de l’affichage en général.
+## <a name="text-font-size-and-scale"></a>Mise à l’échelle et la taille de police de texte
 
-* Certains utilisateurs modifient les valeurs de haute résolution de leur affichage principal dans le cadre de leurs options d’accessibilité. Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**. Les options de dimensionnement réellement disponibles varient, car elles dépendent des caractéristiques de l’appareil d’affichage.
-* La Loupe peut agrandir une zone sélectionnée de l’interface utilisateur. Cependant, la Loupe est difficile à utiliser pour lire un texte.
+Les utilisateurs peuvent avoir des difficultés à lire le texte d’une application lorsque les utilisations de polices sont simplement trop petit, vérifiez que n’importe quel texte dans votre application est une taille raisonnable en premier lieu.
 
-<span id="Text_scale_factor"/>
-<span id="text_scale_factor"/>
-<span id="TEXT_SCALE_FACTOR"/>
+Une fois que vous avez terminé l’évident, Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti des et ajuster à leurs propres besoins et préférences pour la lecture de texte. Ces situations sont les suivantes :
 
-## <a name="text-scale-factor"></a>Facteur d’échelle de police  
-Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque sa valeur est **true**, le paramètre appelé **Mise à l’échelle du texte** sur le téléphone (**Paramètres &gt; Options d’ergonomie**) entraîne l’agrandissement de la taille du texte dans l’élément concerné. La mise à l’échelle affecte davantage le texte pour lequel la valeur **FontSize** est faible que le texte pour lequel la valeur **FontSize** est élevée. Vous pouvez toutefois désactiver cet agrandissement automatique en définissant la propriété **IsTextScaleFactorEnabled** d’un élément sur **false**. Essayez ce balisage, ajustez le paramètre **Taille du texte** sur le téléphone, puis observez les éléments **TextBlock**:
+* La Loupe, ce qui vous permet d’agrandir une zone sélectionnée de l’interface utilisateur. Vous devez vous assurer de que la disposition du texte dans votre application ne rendre difficiles à utiliser la loupe pour la lecture.
+* Paramètres globaux de mise à l’échelle et la résolution dans **Paramètres -> système -> Affichage -> mise à l’échelle et disposition**. Exactement les options de dimensionnement disponibles varient comme cela varie selon les fonctionnalités du périphérique d’affichage.
+* Paramètres de taille de texte dans **Paramètres-& gt; Options d’ergonomie-& gt; affichage**. Réglez le paramètre de **rendre le texte plus grand** pour ne spécifier que la taille du texte prise en charge des contrôles sur toutes les applications et tous les écrans (tous les contrôles de texte UWP prennent en charge le texte expérience sans aucune personnalisation ou la création de modèles de mise à l’échelle). 
+> [!NOTE]
+> Le paramètre **Vérifier tout plus large** permet à un utilisateur de spécifier leur taille par défaut pour le texte et les applications en général sur leur écran principal uniquement.
+
+Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque **true**, la taille du texte dans cet élément peut être mis à l’échelle. La mise à l’échelle affecte le texte qui possède une petite **FontSize** à un niveau plus élevé que cela affecte le texte qui a une grande **FontSize**. Vous pouvez désactiver le redimensionnement automatique en définissant la propriété de **IsTextScaleFactorEnabled** d’un élément sur la **valeur false**. 
+
+Pour plus d’informations, voir [mise à l’échelle du texte](https://docs.microsoft.com/windows/uwp/design/input/text-scaling) .
+
+Ajoutez le balisage suivant pour une application et l’exécuter. Réglez le paramètre de **la taille du texte** et voir ce qui se produit à chaque **contrôle TextBlock**.
 
 XAML
 ```xml
@@ -143,9 +149,9 @@ XAML
     Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
 ```  
 
-Cependant, ne désactivez pas l’agrandissement automatique systématiquement, car la mise à l’échelle du texte de l’interface utilisateur à travers toutes les applications constitue une expérience d’accessibilité importante pour les utilisateurs qui s’attendent à ce qu’elle fonctionne aussi dans votre application.
+Nous vous déconseillons de désactiver texte mise à l’échelle de la mise à l’échelle textes d’interface utilisateur universellement sur toutes les applications étant une expérience d’accessibilité important pour les utilisateurs.
 
-Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) et la propriété [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment:
+Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) et la propriété [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment:
 
 C#
 ```csharp
@@ -163,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-La valeur de **TextScaleFactor** est un double appartenant à la plage \[1,2\]. Le texte le plus petit subit un agrandissement de cette ampleur. Vous pouvez par exemple utiliser la valeur pour adapter des éléments graphiques au texte. Gardez toutefois à l’esprit que tout le texte n’est pas mis à l’échelle selon le même facteur. En règle générale, plus la taille du texte initial est élevée, moins le texte est affecté par la mise à l’échelle.
+La valeur de **TextScaleFactor** est un double dans la plage \[1,2.25\]. Le texte le plus petit subit un agrandissement de cette ampleur. Vous pouvez par exemple utiliser la valeur pour adapter des éléments graphiques au texte. Gardez toutefois à l’esprit que tout le texte n’est pas mis à l’échelle selon le même facteur. En règle générale, plus la taille du texte initial est élevée, moins le texte est affecté par la mise à l’échelle.
 
 Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
@@ -176,6 +182,8 @@ Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Rubriques connexes  
+
+* [Mise à l’échelle du texte](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Accessibilité](accessibility.md)
 * [Informations d’accessibilité élémentaires](basic-accessibility-information.md)
 * [Exemple d’affichage de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238579)
