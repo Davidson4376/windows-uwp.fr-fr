@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 802555f6b1e6f928edf43806226ac497a437b4ff
+ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943469"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991757"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -44,23 +44,19 @@ Voici la page de paramètres pour la famille d’appareils de bureau:
 
 ![Pour afficher vos options, accédez aux Paramètres, sélectionnez Mise à jour et sécurité, puis Pour les développeurs.](images/devmode-pc-options.png)
 
-Voici la page des paramètres relative à la famille d’appareils mobiles:
-
-![Accédez aux Paramètres de votre téléphone, puis choisissez Mise à jour et sécurité.](images/devmode-mob.png)
-
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Quel paramètre choisir: Charger la version test des applications ou Mode développeur?
 
  Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
 
 -   *Applications du Microsoft Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
 -   *Charger la version test des applications* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le MicrosoftStore. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
--   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de VisualStudio en mode débogage. 
+-   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de VisualStudio en mode débogage.
 
 Par défaut, vous pouvez uniquement installer des applications de plateforme Windows universelle (UWP) à partir du MicrosoftStore. La modification de ces paramètres en vue d’utiliser les fonctionnalités de développement peut entraîner la modification du niveau de sécurité de votre appareil. N’installez pas d’applications à partir de sources non vérifiées.
 
 ### <a name="sideload-apps"></a>Charger la version test des applications
 
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le MicrosoftStore. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *ApplicationsUWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans MicrosoftIntune](https://technet.microsoft.com/library/dn646955.aspx).
+La définition de chargement indépendant d’applications est généralement utilisé par des sociétés ou écoles qui ont besoin d’installer des applications personnalisées sur les appareils gérés sans passer par le biais du Microsoft Store ou toute autre utilisateur qui ont besoin d’exécuter des applications à partir de sources autres que Microsoft. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *ApplicationsUWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans MicrosoftIntune](https://technet.microsoft.com/library/dn646955.aspx).
 
 Informations spécifiques à la famille d’appareils
 
@@ -90,7 +86,7 @@ Pour chaque famille d’appareils, des fonctionnalités de développement suppl�
 
 Cette image montre les fonctionnalités du mode développeur pour Windows10:
 
-![Options du mode développeur](images/devmode-mob-options.png) 
+![Options du mode développeur](images/devmode-mob-options.png)
 
 ### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Portail d’appareil
 
@@ -103,7 +99,7 @@ Pour obtenir des instructions d’installation spécifiques pour l’appareil, v
 - [Device Portal pour appareils mobiles](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal pour Xbox](../debug-test-perf/device-portal-xbox.md)
 
-Si vous rencontrez des difficultés pour activer le Mode développeur ou Device Portal, consultez le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour chercher des solutions à ces problèmes, ou visitez [Échec de l’installation du package Mode développeur ou du lancement de Device Portal](#failure-to-install-developer-mode-package) pour plus d’informations et savoir quelles bases de connaissances WSUS autoriser pour débloquer le package Mode développeur. 
+Si vous rencontrez des difficultés pour activer le Mode développeur ou Device Portal, consultez le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour chercher des solutions à ces problèmes, ou visitez [Échec de l’installation du package Mode développeur ou du lancement de Device Portal](#failure-to-install-developer-mode-package) pour plus d’informations et savoir quelles bases de connaissances WSUS autoriser pour débloquer le package Mode développeur.
 
 ### <a name="ssh"></a>SSH
 
@@ -114,7 +110,7 @@ Les servicesSSH sont activés dès lors que vous activez la découverte d'appare
 
 Pour tirer parti des services SSH, vous pouvez activer la découverte d’appareils pour permettre le couplage de code PIN. Si vous avez l’intention d’exécuter un autre service SSH, vous pouvez le configurer sur un autre port ou désactiver les services SSH du mode développeur. Pour désactiver les services SSH, désactivez la découverte d’appareils.  
 
-La connexion SSH s’effectue via le compte DevToolsUser, qui accepte un mot de passe pour l’authentification.  Ce mot de passe est le code PIN qui s’affiche sur l’appareil après avoir appuyé sur le bouton de couplage de la découverte d’appareils. Il est valide uniquement lorsque le code PIN est affiché.  Un sous-système SFTP est également activé pour la gestion manuelle du dossier DevelopmentFiles, dans lequel les déploiements de fichiers isolés sont installés à partir de Visual Studio. 
+La connexion SSH s’effectue via le compte DevToolsUser, qui accepte un mot de passe pour l’authentification.  Ce mot de passe est le code PIN qui s’affiche sur l’appareil après avoir appuyé sur le bouton de couplage de la découverte d’appareils. Il est valide uniquement lorsque le code PIN est affiché.  Un sous-système SFTP est également activé pour la gestion manuelle du dossier DevelopmentFiles, dans lequel les déploiements de fichiers isolés sont installés à partir de Visual Studio.
 
 #### <a name="caveats-for-ssh-usage"></a>Avertissements concernant l’utilisation de SSH
 Le serveur SSH existant utilisé dans Windows n’est pas encore conforme au protocole. De ce fait, l’utilisation d’un client SFTP ou SSH peut nécessiter une configuration spéciale.  En particulier, le sous-système SFTP exécutant la version3 ou inférieure, tout client qui se connecte doit être configuré de façon à anticiper un ancien serveur.  Sur des appareils plus anciens, le serveurSSH utilise `ssh-dss` pour l’authentification de clé publique, ce qui est déconseillé par OpenSSH.  Pour se connecter à ces appareils, le clientSSH doit être configuré manuellement pour accepter `ssh-dss`.  
@@ -129,7 +125,7 @@ N’activer la découverte d’appareils que si vous envisagez de faire de l’a
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>Optimisations pour l’Explorateur Windows, Bureau à distance et PowerShell (Bureau uniquement)
 
- Pour la famille d’appareils de bureau, la page de paramètres **Pour les développeurs** propose des raccourcis vers les paramètres qui vous permettent d’optimiser votre PC pour les tâches de développement. Pour chaque paramètre, vous pouvez cocher la case correspondante et cliquer sur **Appliquer**, ou cliquez sur le lien **Afficher les paramètres** pour ouvrir la page de paramètres de cette option. 
+ Pour la famille d’appareils de bureau, la page de paramètres **Pour les développeurs** propose des raccourcis vers les paramètres qui vous permettent d’optimiser votre PC pour les tâches de développement. Pour chaque paramètre, vous pouvez cocher la case correspondante et cliquer sur **Appliquer**, ou cliquez sur le lien **Afficher les paramètres** pour ouvrir la page de paramètres de cette option.
 
 
 ## <a name="notes"></a>Remarques
@@ -141,9 +137,9 @@ Vous pouvez utiliser plusieurs outils pour déployer une application à partir d
 -   Vous pouvez utiliser [Portail d’appareil](../debug-test-perf/device-portal.md) pour effectuer un déploiement de votre navigateur vers un appareil mobile exécutant Windows10 version1511 ou ultérieure. Utilisez la page **[Applications](../debug-test-perf/device-portal.md#apps-manager)** dans Device Portal pour charger un package d’application (.appx) sur le serveur et l’installer sur l’appareil.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Échec de l’installation du package Mode développeur
-Parfois, en raison de problèmes réseau ou d’administration, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est nécessaire pour un déploiement **à distance** sur ce PC - à l’aide de Device Portal depuis un navigateur ou de la fonction Découverte d’appareils pour activer SSH--mais pas pour un développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de Visual Studio, ou à partir de cet appareil sur un autre appareil. 
+Parfois, en raison de problèmes réseau ou d’administration, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est nécessaire pour un déploiement **à distance** sur ce PC - à l’aide de Device Portal depuis un navigateur ou de la fonction Découverte d’appareils pour activer SSH--mais pas pour un développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de Visual Studio, ou à partir de cet appareil sur un autre appareil.
 
-Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
+Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore.
 
 > [!NOTE]
 > Si le Mode développeur ne s’installe pas correctement, nous vous encourageons à soumettre une demande de commentaires. Dans l’application **Hub de commentaires** , sélectionnez **Ajouter des nouveaux commentaires**et choisissez la catégorie de la **Plateforme de développement** et la sous-catégorie **Le Mode développeur** . Envoi de commentaires permettra à Microsoft de résoudre le problème que vous avez rencontré.
@@ -152,23 +148,24 @@ Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US
 
 «Le package Mode développeur n’a pas pu être localisé dans Windows Update. Code d’erreur 0x80004005. En savoir plus»   
 
-Cette erreur peut se produire en raison d’un problème de connectivité réseau, des paramètres d’Entreprise ou d’un package manquant. 
+Cette erreur peut se produire en raison d’un problème de connectivité réseau, des paramètres d’Entreprise ou d’un package manquant.
 
 Pour résoudre ce problème:
 
-1. Assurez-vous que votre ordinateur est connecté à Internet. 
-2. Si vous utilisez un ordinateur appartenant à un domaine, adressez-vous à votre administrateur réseau. Le package Mode développeur, comme toutes les fonctionnalités à la demande, est bloqué par défaut dans WSUS. 2.1. Pour débloquer le package Mode développeur dans les versions précédentes et actuelles, les bases de connaissances suivantes doivent être autorisées dans WSUS: 4016509, 3180030, 3197985  
+1. Assurez-vous que votre ordinateur est connecté à Internet.
+2. Si vous utilisez un ordinateur appartenant à un domaine, adressez-vous à votre administrateur réseau. Le package Mode développeur, comme toutes les fonctionnalités à la demande, est bloqué par défaut dans WSUS.
+2.1. Pour débloquer le package Mode développeur dans les versions précédentes et actuelles, les bases de connaissances suivantes doivent être autorisées dans WSUS: 4016509, 3180030, 3197985  
 3. Recherchez les mises à jour de Windows dans Paramètres > Mises à jour et sécurité > Mises à jour Windows.
-4. Vérifiez que le package Mode développeur Windows est présent dans Paramètres &gt; Système &gt; Applications et fonctionnalités &gt; Gérer les fonctionnalités facultatives &gt; Ajouter une fonctionnalité. S’il n’est pas présent, Windows ne peut pas trouver le package approprié pour votre ordinateur. 
+4. Vérifiez que le package Mode développeur Windows est présent dans Paramètres &gt; Système &gt; Applications et fonctionnalités &gt; Gérer les fonctionnalités facultatives &gt; Ajouter une fonctionnalité. S’il n’est pas présent, Windows ne peut pas trouver le package approprié pour votre ordinateur.
 
-Après avoir suivi les étapes ci-dessus, désactivez puis réactivez le Mode développeur pour vérifier le correctif. 
+Après avoir suivi les étapes ci-dessus, désactivez puis réactivez le Mode développeur pour vérifier le correctif.
 
 
 ### <a name="failed-to-install-the-package"></a>Échec de l’installation du package
 
 «Échec d’installation du package Mode développeur. Code d’erreur 0x80004005. En savoir plus»
 
-Cette erreur peut se produire en raison d’incompatibilités entre votre version de Windows et le package Mode développeur. 
+Cette erreur peut se produire en raison d’incompatibilités entre votre version de Windows et le package Mode développeur.
 
 Pour résoudre ce problème:
 
@@ -178,7 +175,7 @@ Pour résoudre ce problème:
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>Utiliser des stratégies de groupe ou des clés de Registre pour activer un appareil
 
-Pour la plupart des développeurs, vous pouvez utiliser l’application Paramètres pour activer votre appareil pour le débogage. Dans certains scénarios, comme les tests automatisés, vous pouvez employer d’autres méthodes pour activer votre appareil de bureau Windows10 pour le développement.  Notez que ces étapes n’activeront pas le serveur SSH ou n’autoriseront pas l’appareil à être ciblé pour le déploiement distant et le débogage. 
+Pour la plupart des développeurs, vous pouvez utiliser l’application Paramètres pour activer votre appareil pour le débogage. Dans certains scénarios, comme les tests automatisés, vous pouvez employer d’autres méthodes pour activer votre appareil de bureau Windows10 pour le développement.  Notez que ces étapes n’activeront pas le serveur SSH ou n’autoriseront pas l’appareil à être ciblé pour le déploiement distant et le débogage.
 
 Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant à activer l’appareil, sauf si vous disposez de Windows10 Famille. Si vous disposez de Windows10 Famille, vous devez exécuter des commandes regedit ou PowerShell pour définir les clés de Registre directement en vue d’activer votre appareil.
 
