@@ -1,35 +1,29 @@
 ---
 title: Créer un package d’application avec l’outil MakeAppx.exe
 description: MakeAppx.exe crée, chiffre, déchiffre et extrait les fichiers des packages d’applications et des ensembles d’applications.
-ms.date: 06/21/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows10, uwp, création de packages
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943010"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991605"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 
 
-L'outil **MakeAppx.exe** crée des packages d’application et des ensembles de packages d’application. **MakeAppx.exe** extrait également les fichiers d’un package d’application ou d’un ensemble d’applications, et chiffre ou déchiffre les packages d’application et les ensembles d’applications. Cet outil est inclus dans le SDK Windows10 et peut s’utiliser à partir d’une invite de commandes ou d’un fichier de script.
+**MakeAppx.exe** crée des packages d’application (.msix ou .appx) et application des ensembles de packages (.msixbundle ou .appxbundle). **MakeAppx.exe** extrait également les fichiers d’un package d’application ou d’un ensemble d’applications, et chiffre ou déchiffre les packages d’application et les ensembles d’applications. Cet outil est inclus dans le SDK Windows10 et peut s’utiliser à partir d’une invite de commandes ou d’un fichier de script.
 
-> [!IMPORTANT] 
-> Si vous avez utilisé VisualStudio pour développer votre application, nous vous recommandons d’utiliser l’Assistant VisualStudio pour créer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec VisualStudio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> [!IMPORTANT]
+> Si vous avez utilisé VisualStudio pour développer votre application, nous vous recommandons d’utiliser l’Assistant VisualStudio pour créer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec VisualStudio](packaging-uwp-apps.md).
 
-Notez que **MakeAppx.exe** ne crée pas de fichier .appxupload. Le fichier .appxupload est créé dans le cadre du processus de création de packages Visual Studio et contient deux autres fichiers: .msix ou .appx et .appxsym. Le fichier .appxsym est un fichier .pdb compressé contenant les symboles publics de votre application utilisés pour [incident analytique](../publish/health-report.md) dans l’espace partenaires. Vous pouvez également envoyer un fichier .appx normal, mais aucune information d’incident analytique ou de débogage ne sera disponible. Pour plus d’informations sur l’envoi de packages au Store, consultez [Chargement des packages d’application](../publish/upload-app-packages.md). 
-
- Mises à jour de cet outil dans la version la plus récente de Windows 10 n’affectent pas l’utilisation de package .appx. Vous pouvez continuer à utiliser cet outil avec des packages .appx, ou utilisez l’outil avec prise en charge pour les packages .msix comme décrit ci-dessous.
-
-Pour créer manuellement un fichier .appxupload:
-- Placez les .msix et .appxsym dans un dossier
-- Compressez le dossier.
-- Remplacez l’extension.zip du dossier compressé par .appxupload.
+> [!IMPORTANT]
+> Notez que **MakeAppx.exe** ne crée pas un [package d’application télécharger le fichier (.appxupload ou .msixupload)](packaging-uwp-apps.md#types-of-app-packages), qui est le type de package d’application valide pour les [soumissions à l’espace partenaires](../publish/upload-app-packages.md)recommandé. Le téléchargement de fichier de package d’application est généralement [créé dans le cadre du processus de création de packages Visual Studio](packaging-uwp-apps.md#create-an-app-package-upload-file), bien qu’il peut également être créé manuellement.
 
 ## <a name="using-makeappxexe"></a>Utilisation de MakeAppx.exe
 
@@ -111,7 +105,7 @@ Options propres à la commande **pack**:
 
 Les exemples d’utilisation suivants illustrent certaines syntaxes possibles pour la commande **pack**:
 
-``` syntax 
+``` syntax
 MakeAppx pack [options] /d <content directory> /p <output package name>
 MakeAppx pack [options] /f <mapping file> /p <output package name>
 MakeAppx pack [options] /m <app package manifest> /f <mapping file> /p <output package name>
@@ -200,7 +194,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 
 L’outil **MakeAppx.exe** peut également chiffrer ou déchiffrer un package ou un ensemble d’applications. Vous devez simplement indiquer le nom du package, le nom du package de sortie, et si le chiffrement ou le déchiffrement doit utiliser un fichier de clé (/kf) ou la touche de test global (/kt).
 
-Le chiffrement et le déchiffrement ne sont pas disponibles dans l’Assistant de création de packages de Visual Studio. 
+Le chiffrement et le déchiffrement ne sont pas disponibles dans l’Assistant de création de packages de Visual Studio.
 
 Options propres aux commandes **encrypt** et **decrypt**:
 
@@ -251,7 +245,7 @@ Exemple de fichier de mappage (sans l’option /m):
 "\\MyServer\path\icon.png"              "icon.png"
 "my app files\readme.txt"               "my app files\readme.txt"
 "CustomManifest.xml"                    "AppxManifest.xml"
-``` 
+```
 
 Lorsque vous utilisez un fichier de mappage, vous pouvez choisir d’utiliser l’option /m ou non. L’option /m permet à l’utilisateur de spécifier les métadonnées des ressources du fichier de mappage à inclure dans le manifeste généré. Si vous utilisez l’option /m, le fichier de mappage doit contenir une section commençant par la ligne «[ResourceMetadata]», suivie de lignes qui spécifient «ResourceDimensions» et «ResourceId». Un package d’application peut contenir plusieurs «ResourceDimensions», mais il ne peut avoir qu’un seul «ResourceId».
 
@@ -269,11 +263,11 @@ Exemple de fichier de mappage (avec l’option /m):
 
 ## <a name="semantic-validation-performed-by-makeappxexe"></a>Validation sémantique effectuée par MakeAppx.exe
 
-**MakeAppx.exe** effectue une validation sémantique limitée, conçue pour détecter les erreurs de déploiement les plus courantes et garantir la validité du package d’application. Sélectionnez l’option /nv pour ne pas effectuer la validation dans **MakeAppx.exe**. 
+**MakeAppx.exe** effectue une validation sémantique limitée, conçue pour détecter les erreurs de déploiement les plus courantes et garantir la validité du package d’application. Sélectionnez l’option /nv pour ne pas effectuer la validation dans **MakeAppx.exe**.
 
 Cette validation vérifie que:
 - tous les fichiers référencés dans le manifeste du package sont inclus dans le package d’application;
 - une application n’a pas deuxclés identiques;
-- une application n’utilise pas un protocole interdit figurant dans cette liste: SMB, FILE, MS-WWA-WEB, MS-WWA. 
+- une application n’utilise pas un protocole interdit figurant dans cette liste: SMB, FILE, MS-WWA-WEB, MS-WWA.
 
 Cette validation sémantique n’est pas complète. Elle ne vise qu’à détecter les erreurs courantes. **MakeAppx.exe** ne garantit pas l’installation correcte des packages qu’il crée.

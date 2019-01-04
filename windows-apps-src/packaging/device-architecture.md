@@ -5,12 +5,12 @@ ms.date: 7/13/2017
 ms.topic: article
 keywords: windows10, uwp, création de packages, architecture, configuration de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 15b1b8531390cf1b83c15e0aec1d371266417a87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ce92f4da57b99638f393125d3aed11a4bd91bb6
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947771"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991595"
 ---
 # <a name="app-package-architectures"></a>Architectures de package d'application
 
@@ -18,30 +18,34 @@ Les packages d’application sont configurés pour s’exécuter sur une archite
 - x86
 - x64
 - ARM
+- ARM64
 
 Il est **vivement** recommandé de générer votre package d’application afin de cibler toutes les architectures. En désélectionnant une architecture d’appareil, vous limitez le nombre de périphériques sur lesquels votre application peut s’exécuter, ce qui limite également le nombre de personnes qui peuvent utiliser votre application!
 
 ## <a name="windows-10-devices-and-architectures"></a>Appareils et architectures Windows10
 
 > [!div class="mx-tableFixed"]
-| ArchitectureUWP | Bureau (x86)      | Bureau (x64)      | Bureau (ARM)      | Appareils mobiles             | HoloLens           | Xbox               | IoT standard (dépendant du périphérique) | Surface Hub        |
+| ArchitectureUWP | Bureau (x86)      | Bureau (x64)      | Bureau (ARM)      | Appareils mobiles             | HoloLens et Windows Mixed Reality           | Xbox               | IoT standard (dépendant du périphérique) | Surface Hub        |
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
 | x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
 | x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
-| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
- 
+| ARM et ARM64              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
 
-Parlons de ces architectures plus en détail. 
+
+Parlons de ces architectures plus en détail.
 
 ### <a name="x86"></a>x86
-Le choix de l’option x86 est généralement la configuration la plus sûre pour un package d’application, car l'application s’exécutera sur presque tous les appareils. Un package d’application avec la configuration x86 ne s’exécutera pas sur certains appareils, par exemple la console Xbox ou certains appareils IoT standard. Toutefois, pour un PC, un package x86 représente le choix le plus sûr et qui offre la plus grande portée de déploiement sur les appareils. Un nombre important d'appareils Windows10 continuent à exécuter la version x86 de Windows. 
+Le choix de l’option x86 est généralement la configuration la plus sûre pour un package d’application, car l'application s’exécutera sur presque tous les appareils. Un package d’application avec la configuration x86 ne s’exécutera pas sur certains appareils, par exemple la console Xbox ou certains appareils IoT standard. Toutefois, pour un PC, un package x86 représente le choix le plus sûr et qui offre la plus grande portée de déploiement sur les appareils. Un nombre important d'appareils Windows10 continuent à exécuter la version x86 de Windows.
 
 ### <a name="x64"></a>x64
 Cette configuration est utilisée moins fréquemment que la configuration x86. Il convient de noter que cette configuration est réservée aux postes de travail utilisant les versions 64bits de Windows10, [les applications UWP sur Xbox](https://docs.microsoft.com/windows/uwp/xbox-apps/system-resource-allocation) et Windows10 IoT Standard sur le Joule Intel.
 
-### <a name="arm"></a>ARM
-La configuration Windows10 sur ARM inclut certains PC de bureau, appareils mobiles et quelques appareils IoT Standard (Rasperry Pi 2, Raspberry Pi 3 et DragonBoard). Les PC de bureau Windows10 sur ARM sont une nouveauté de la famille Windows, donc si vous êtes développeur d’applications UWP, vous devriez soumettre des packages ARM au Windows Store pour une expérience optimale sur ces PC. 
+### <a name="arm-and-arm64"></a>ARM et ARM64
+La configuration Windows10 sur ARM inclut certains PC de bureau, appareils mobiles et quelques appareils IoT Standard (Rasperry Pi 2, Raspberry Pi 3 et DragonBoard). Les PC de bureau Windows10 sur ARM sont une nouveauté de la famille Windows, donc si vous êtes développeur d’applications UWP, vous devriez soumettre des packages ARM au Windows Store pour une expérience optimale sur ces PC.
 
-Découvrez cette discussion //Build pour voir une démonstration de [Windows10 sur ARM](https://channel9.msdn.com/Events/Build/2017/P4171) et en savoir plus sur son fonctionnement. 
+>[!NOTE]
+> Pour générer votre application UWP en mode natif cible la plateforme ARM64, vous devez disposer de Visual Studio 2017 version 15.9 ou une version ultérieure. Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
 
-Pour plus d’informations sur des sujets spécifiques à IoT, voir [Déploiement d’une application avec Visual Studio](https://developer.microsoft.com/windows/iot/Docs/AppDeployment).
+Pour plus d’informations, voir [Windows 10 sur ARM](../porting/apps-on-arm.md). Découvrez cette discussion //Build pour voir une démonstration de [Windows10 sur ARM](https://channel9.msdn.com/Events/Build/2017/P4171) et en savoir plus sur son fonctionnement.
+
+Pour plus d’informations sur des sujets spécifiques à IoT, voir [déploiement d’une application avec Visual Studio](https://developer.microsoft.com/windows/iot/Docs/AppDeployment).
