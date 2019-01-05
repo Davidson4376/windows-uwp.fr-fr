@@ -5,12 +5,12 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
-ms.openlocfilehash: fc38dfff99e5bef9de686d754444ee93375c7895
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0eccacb4d99437a482faceb7825a3cc3dbcc475
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943704"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992242"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML; liaison à une propriété C++/WinRT
 Une propriété qui peut être efficacement liée à un contrôle XAML est appelée «propriété *observable*». Ce concept est basé sur le modèle de conception logicielle appelé «*modèle observateur*». Cette rubrique montre comment implémenter des propriétés observables dans [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)et comment lier des contrôles XAML.
@@ -53,7 +53,7 @@ namespace Bookstore
 
 Enregistrez le fichier et générez le projet. Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer un fichier de métadonnées Windows Runtime (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) décrivant la classe runtime. Puis, l’outil `cppwinrt.exe` est exécuté pour générer les fichiers de code source et vous aider à créer et utiliser votre classe runtime. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BookSku** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` et `BookSku.cpp`.
 
-Copiez les fichiers stub `BookSku.h` et `BookSku.cpp` à partir de `\Bookstore\Bookstore\Generated Files\sources\` dans le dossier de projet, à savoir `\Bookstore\Bookstore\`. Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
+Cliquez sur le nœud de projet, puis cliquez sur **Ouvrir le dossier dans l’Explorateur de fichiers**. Cela ouvre le dossier du projet dans l’Explorateur de fichiers. Il, copiez les fichiers stub `BookSku.h` et `BookSku.cpp` à partir de la `\Bookstore\Bookstore\Generated Files\sources\` dossier et dans le dossier du projet, qui est `\Bookstore\Bookstore\`. Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
 
 ## <a name="implement-booksku"></a>Implémenter **BookSku**
 Maintenant, nous allons ouvrir `\Bookstore\Bookstore\BookSku.h` et `BookSku.cpp`, et implémenter notre classe runtime. Dans `BookSku.h`, ajoutez un constructeur qui prend un [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), un membre privé pour stocker la chaîne de titre, et un autre pour l’événement que nous allons générer lorsque le titre change. Après avoir effectué ces modifications, votre `BookSku.h` se présente comme suit.

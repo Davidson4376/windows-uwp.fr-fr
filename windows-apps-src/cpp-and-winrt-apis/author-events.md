@@ -5,12 +5,12 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f076ca259d10cc5bd49daea66741ead6e117c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bbc9fcd2b29183352fd06a7d7403aad2d0f011d9
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945303"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992252"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -43,7 +43,7 @@ namespace BankAccountWRC
 
 Enregistrez le fichier. La génération du projet ne réussite pour le moment, mais générez maintenant est une chose à faire dans la mesure où il génère des fichiers de code source dans lequel vous allez implémenter la classe runtime **BankAccount** utile. Par conséquent, lancez-vous et construire maintenant (les erreurs de génération vous devriez voir à ce stade ont à faire avec `Class.h` et `Class.g.h` n’a ne pas été trouvée). Pendant le processus de génération, le `midl.exe` outil est exécuté pour créer le fichier de métadonnées de votre composant Windows Runtime (qui est `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Puis, l’outil `cppwinrt.exe` est exécuté (avec l’option `-component`) pour générer les fichiers de code source vous aidant à créer votre composant. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BankAccount** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` et `BankAccount.cpp`.
 
-Dans l’Explorateur de fichiers, copiez les fichiers stub `BankAccount.h` et `BankAccount.cpp` à partir du dossier `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` dans le dossier qui contient vos fichiers de projet, qui est `\BankAccountWRC\BankAccountWRC\`et remplacez les fichiers dans la destination. Maintenant, nous allons ouvrir `BankAccount.h` et `BankAccount.cpp`, et implémenter notre classe runtime. Dans `BankAccount.h`, ajoutez deux membres privés à l’implémentation (*pas* à l’implémentation d’usine) de BankAccount.
+Cliquez sur le nœud de projet, puis cliquez sur **Ouvrir le dossier dans l’Explorateur de fichiers**. Cela ouvre le dossier du projet dans l’Explorateur de fichiers. Il, copiez les fichiers stub `BankAccount.h` et `BankAccount.cpp` à partir du dossier `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` et dans le dossier qui contient vos fichiers de projet, qui est `\BankAccountWRC\BankAccountWRC\`et remplacez les fichiers dans la destination. Maintenant, nous allons ouvrir `BankAccount.h` et `BankAccount.cpp`, et implémenter notre classe runtime. Dans `BankAccount.h`, ajoutez deux membres privés à l’implémentation (*pas* à l’implémentation d’usine) de BankAccount.
 
 ```cppwinrt
 // BankAccount.h

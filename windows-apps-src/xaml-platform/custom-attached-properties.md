@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 12aabe7a17a9bc62c5e6da27fe019e540db725df
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923007"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992232"
 ---
 # <a name="custom-attached-properties"></a>Propriétés jointes personnalisées
 
@@ -120,19 +120,21 @@ End Class
 // GameService.idl
 namespace UserAndCustomControls
 {
+    [default_interface]
     runtimeclass GameService : Windows.UI.Xaml.DependencyObject
     {
         GameService();
         static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        Boolean IsMovable;
+        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
-    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
-    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
@@ -204,7 +206,10 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## <a name="using-your-custom-attached-property-in-xaml"></a>Utilisation de votre propriété jointe personnalisée en XAML
+## <a name="setting-your-custom-attached-property-from-xaml-markup"></a>Définition de votre propriété jointe personnalisée à partir du balisage XAML
+
+> [!NOTE]
+> Si vous utilisez C++ / WinRT, vous pouvez passer directement à la section suivante ([définissant votre propriété jointe personnalisée impérative avec C++ / WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt)).
 
 Après avoir défini votre propriété jointe et inclus ses membres de prise en charge dans le cadre d’un type personnalisé, vous devez rendre les définitions accessibles pour l’utilisation XAML. Pour cela, vous devez mapper un espace de noms XAML qui fera référence à l’espace de noms de code qui contient la classe pertinente. Dans les cas où vous avez défini la propriété jointe dans le cadre d’une bibliothèque, vous devez inclure cette dernière dans le package de l’application.
 
@@ -230,7 +235,32 @@ Si vous définissez la propriété sur un élément qui se trouve également dan
 ```
 
 > [!NOTE]
-> Si vous écrivez un UI XAML avec C++, vous devez inclure l’en-tête du type personnalisé qui définit la propriété jointe, chaque fois qu’une page XAML utilise ce type. Chaque page XAML a un en-tête code-behind .xaml.h associé. C’est là que vous devez inclure (à l’aide de **\#include**) l’en-tête pour la définition du type de propriétaire de la propriété jointe.
+> Si vous écrivez un UI XAML avec C++ / CX, alors vous devez inclure l’en-tête du type personnalisé qui définit la propriété jointe, chaque fois qu’une page XAML utilise ce type. Chaque page XAML a un en-tête code-behind associé (. xaml.h). C’est là que vous devez inclure (à l’aide de **\#include**) l’en-tête pour la définition du type de propriétaire de la propriété jointe.
+
+## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>Définition de votre propriété jointe personnalisée impérative avec C++ / WinRT
+
+Si vous utilisez C++ / WinRT, alors vous pouvez accéder à une propriété jointe personnalisée à partir du code impératif, mais pas dans le balisage XAML. Le code ci-dessous montre comment.
+
+```xaml
+<Image x:Name="gameServiceImage"/>
+```
+
+```cppwinrt
+// MainPage.h
+...
+#include "GameService.h"
+...
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    GameService::SetIsMovable(gameServiceImage(), true);
+}
+...
+```
 
 ## <a name="value-type-of-a-custom-attached-property"></a>Type de valeur d’une propriété jointe personnalisée
 
