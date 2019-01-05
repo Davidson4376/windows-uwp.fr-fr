@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0a90772e01885a7361cd51b54fc6e5ea9930bfbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 07c095e661327ba1b64c4ba897937c8e3e905140
+ms.sourcegitcommit: d705a79d037baa764790d3d8daa9321ed0ac9ebc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920558"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992189"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
@@ -49,7 +49,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-L’exemple suivant illustre ce que peut contenir un fichier spécifié par le paramètre **secondaryFileAccessToken** de **ms-capture d’écran** :
+L’exemple suivant illustre ce que peut contenir un fichier spécifié par le paramètre **secondarySharedAccessToken** de **ms-screensketch** :
 
 ```json
 {
