@@ -6,14 +6,14 @@ label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: windows10, uwp, win32, bureau, notifications toast, envoyer un toast, envoyer un toast local, pont du bureau, C#, C sharp
+keywords: Windows 10, uwp, win32, bureau, toast notifications, envoyer un toast, envoyer toast local, pont du bureau, c#, c sharp, notification toast, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c32ba5928d3c272ef77a70790640346fb000762
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3436433c8086c2801f1ee2174a51525e48c2f7c9
+ms.sourcegitcommit: fae67a53ab1468a31120293653ade9541085bdd7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926137"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992310"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale depuis des applications de bureau en C#
 
