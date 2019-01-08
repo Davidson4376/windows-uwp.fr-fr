@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52a60189d7fba39709aa679dbff79551b151e5a4
+ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937218"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992613"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en décembre2017
 
@@ -58,7 +58,7 @@ Voir [Étendre votre application de bureau avec des composants UWP modernes](htt
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>Les extensions d’abonnement sont désormais disponibles pour les développeurs dans le programme Insider du Centre de développement Windows
 
-Tous les développeurs qui ont rejoint le [programme Insider du Centre de développement](../publish/dev-center-insider-program.md) peuvent désormais utiliser les extensions d’abonnement pour vendre des produits numériques dans leurs applications (comme des fonctionnalités d'application ou du contenu numérique) avec une facturation périodique automatique; Pour plus d’informations, consultez l’article [Activer les extensions d’abonnement de votre application](../monetize/enable-subscription-add-ons-for-your-app.md).
+Tous les développeurs qui ont rejoint le programme Insider du Centre de développement peuvent désormais utiliser les extensions d’abonnement pour vendre des produits numériques dans leurs applications (comme des fonctionnalités d'application ou du contenu numérique) avec une facturation périodique automatique; Pour plus d’informations, consultez l’article [Activer les extensions d’abonnement de votre application](../monetize/enable-subscription-add-ons-for-your-app.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 

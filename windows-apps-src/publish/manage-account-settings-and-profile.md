@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
-ms.openlocfilehash: b3a95e4e9eddbe47feb513f66856949baecdab8b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c4f7bd6d7aa085c3d5066d3b486583c5b3f37182
+ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931324"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992603"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
@@ -45,7 +45,6 @@ La modification du nom d'affichage de l’éditeur nous incite aussi souvent à 
 Voici certains des autres éléments que vous trouverez dans la section **Paramètres du compte**.
 
 - **Statut de vérification**: lorsque votre compte est en cours de la vérification du processus (par exemple, lors de l’inscription initiale ou une fois que vous mettez à jour vos informations de contact considérablement), vous pouvez examiner votre état de vérification ici.
-- **Programme Insider du centre de développement**: vous pouvez choisir ou en dehors du [Programme Insider du centre de développement](dev-center-insider-program.md) à partir de la main page **paramètres du compte** .
 - **Compte de paiement** et **Profil fiscal**: cet emplacement vous permet de [configurer votre compte de paiement et vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette opération avant de facturer des applications ou des extensions.
 - **Associations d’entreprise**: acceptez les invitations d’entreprises qui souhaitent publier des applications pour leur usage exclusif. Pour plus d’informations, consultez l’article [Distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 - **Les utilisateurs**: ajouter des utilisateurs à votre compte et leur affecter des rôles et autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
