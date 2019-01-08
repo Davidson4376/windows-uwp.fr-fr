@@ -3,7 +3,7 @@ Description: Menus and context menus display a list of commands or options when 
 title: Menus et menus contextuels
 label: Menus and context menus
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 01/08/2019
 ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 038bb15029a3d9893c5b32558546ecf07066043b
-ms.sourcegitcommit: 43149cd43e8169edfbd241428ba49e56b64bfd0d
+ms.openlocfilehash: 3f585af5cff4b135760bf14b902b2783715392ed
+ms.sourcegitcommit: 404ec20d276adfd9e47f88a94efd4b9cf0725656
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 01/08/2019
-ms.locfileid: "8995050"
+ms.locfileid: "8995433"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -216,7 +216,8 @@ Les contrôles permettant de faire disparaître les contrôles, tels que des men
 
 ## <a name="create-a-menu-bar"></a>Créer une barre de menus
 
-> **Version d’évaluation**: nécessite une barre de menus [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> [!IMPORTANT]
+> Barre de menus requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou de la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Vous utilisez les mêmes éléments pour créer des menus dans une barre de menus, comme dans un menu volant. Toutefois, au lieu de regroupement d’objets MenuFlyoutItem dans un MenuFlyout, vous les regrouper dans un élément MenuBarItem. Chaque MenuBarItem est ajouté à la barre de menus, comme un menu de niveau supérieur.
 
