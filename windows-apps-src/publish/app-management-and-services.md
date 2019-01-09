@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
+ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937963"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8997394"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
-Vous pouvez gérer et afficher les détails de chacune de vos applications dans [l’espace partenaires et configurer des services comme les notifications, A / B test et les cartes.
+Vous pouvez gérer et afficher les détails de chacune de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard/)et configurez des services comme les notifications, A / B test et les cartes.
 
 Lorsque vous travaillez avec une application dans l’espace partenaires, vous verrez des sections dans le menu de navigation de gauche pour la **Gestion des applications**et **Services** . Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
 
@@ -49,7 +49,7 @@ Pour plus d’informations, consultez l’article [Gérer des droits sur les pro
 
 ## <a name="administrator-consent"></a>Consentement de l’administrateur
 
-f votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
+Si votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
 
 Pour plus d’informations, voir la [demande de consentement pour un client entière](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
