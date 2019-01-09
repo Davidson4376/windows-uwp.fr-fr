@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc18577015db5384c2a1f13e8a48758634a053a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 75cde09068bcc310bcd5be2033227fa620b96f53
+ms.sourcegitcommit: 1322dd5478026176d7b3e635ea0046de3f744656
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937103"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8996567"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Nouveautés de Windows 10 pour les développeurs, build 17763
 
@@ -33,7 +33,7 @@ Mouvement dans Fluent Design | L’utilisation de mouvement dans le système Flu
 Transitions de page | [Les transitions de page](../design/motion/page-transitions.md) dirigent les utilisateurs entre les pages d’une application. Ils permettent aux utilisateurs de comprendre où ils se trouvent dans la hiérarchie de navigation et fournir des commentaires sur la relation entre les pages.
 Mise à l’échelle du texte | Les nouvelles [recommandations de mise à l’échelle de texte](../design/input/text-scaling.md) explique comment mettre à jour vos applications pour prendre en charge les comportements de mise à l’échelle texte nouveau, ce qui offrent la possibilité pour les utilisateurs de modifier la taille de police relative sur le système d’exploitation et des applications individuelles. Au lieu d’à l’aide d’une application de la Loupe (qui généralement simplement vous permet d’agrandir tous les éléments au sein d’une zone de l’écran et présente ses propres problèmes de facilité d’utilisation), la modification de la résolution d’affichage ou vous fier PPP (qui redimensionne tous les éléments en fonction de l’affichage et de l’affichage type d’échelle distance), un utilisateur peut accéder rapidement à un paramètre de redimensionner uniquement du texte, cela peut aller de 100 % (la taille par défaut) jusqu'à 225 %.
 Kits de ressources | [Adobe XD et kits de ressources Adobe Illustrator](../design/downloads/index.md) ont été mis à jour avec de nouvelles fonctionnalités. Ces kits de ressources de conception fournissent des contrôles et modèles de disposition pour la conception d’applications UWP.
-Les commandes de l’interface utilisateur | Mises à jour à l' [infrastructure de commandes UWP](../design/basics/commanding-basics.md) incluent une meilleure encapsulation d’un objet de commande (comportement, étiquette, icône, les raccourcis clavier, touche d’accès rapide et description) et un ensemble standard de commandes courantes, y compris les couper, copier, coller, quittez, etc.., ce qui élimine la nécessité de définir ces propriétés manuellement. </br> La nouvelle classe [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand) fournit une classe de base pour deveining le comportement de la commande d’un élément d’interface utilisateur interactif qui effectue une action lorsqu’il est appelé. Il s’agit de la classe parente pour [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand), qui expose un ensemble de commandes de plate-forme standard avec des propriétés prédéfinies. 
+Les commandes de l’interface utilisateur | Mises à jour à l' [infrastructure de commandes UWP](../design/basics/commanding-basics.md) incluent une meilleure encapsulation d’un objet de commande (comportement, étiquette, icône, les raccourcis clavier, touche d’accès rapide et description) et un ensemble standard de commandes courantes, y compris les couper, copier, coller, quittez, etc.., ce qui élimine la nécessité de définir ces propriétés manuellement. </br> La nouvelle classe [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand) fournit une classe de base pour définir le comportement de la commande d’un élément d’interface utilisateur interactif qui effectue une action lorsqu’il est appelé. Il s’agit de la classe parente pour [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand), qui expose un ensemble de commandes de plate-forme standard avec des propriétés prédéfinies. 
 Bibliothèque de l’interface utilisateur de Windows | La [Bibliothèque de l’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation. </br> Pour plus d’informations sur les nouveautés dans la bibliothèque de l’interface utilisateur de Windows, voir [cette liste des API des espaces de noms inclus dans le package NuGet.](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="develop-windows-apps"></a>Développer des applications Windows
@@ -64,7 +64,7 @@ Présentation de l’application par défaut | L' [Application par défaut de Wi
 Tableau de bord | Le [Tableau de bord Windows 10 Iot Core](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup) permet désormais aux développeurs qui utilisent un Dragonboard 410 C ou NXP Flash FFUs personnalisés sur leur appareil.
 Clavier visuel | Le [clavier visuel pour les appareils IoT](https://docs.microsoft.com/windows/iot-core/develop-your-app/onscreenkeyboard) utilise désormais les mêmes composants de clavier tactile en tant que l’édition de bureau de Windows. Cela permet de fonctionnalités, telles que le mode dictée, prise en charge IME et un ensemble complet d’étendue d’entrée.
 Barres de titre pour les boîtes de dialogue se connecter | Windows 10 IoT standard offre désormais la possibilité de configurer [les barres de titre des boîtes de dialogue système](https://docs.microsoft.com/windows/iot-core/develop-your-app/signindialogtitlebars).
-Wake on tactile | [Wake on tactile](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/wakeontouch) permet à votre écran de l’appareil désactiver la fonctionnalité tandis que d’inactivité, tout en activant rapidement lorsqu’un utilisateur appuie sur son écran. 
+Wake on tactile | [Wake on tactile](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/wakeontouch) permet à votre écran de l’appareil désactiver la fonctionnalité tandis que d’inactivité, tout en activant rapidement lorsqu’un utilisateur appuie sur son écran.
 Windows.System.Update | Le nouvel [espace de noms Windows.System.Update](https://docs.microsoft.com/uwp/api/windows.system.update) permet un contrôle interactif des mises à jour du système. Cet espace de noms est uniquement disponible pour Windows 10 IoT standard.
 
 ## <a name="web-development"></a>Développementweb
