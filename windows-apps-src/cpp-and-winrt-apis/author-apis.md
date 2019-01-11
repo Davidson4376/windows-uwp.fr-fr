@@ -1,16 +1,16 @@
 ---
 description: Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base **winrt::implements**, directement ou indirectement.
 title: Créer des API avec C++/WinRT
-ms.date: 10/03/2018
+ms.date: 01/10/2019
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5b0f2c5a9941e8f82e77cbaaf2d38badb41ce7c0
+ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943397"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001565"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -311,7 +311,28 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation a été généré par le `cppwinrt.exe` outil) qui rend cela possible.
+Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation a été généré par le `cppwinrt.exe` outil) qui rend cela possible. Vous pouvez transmettre une valeur de type d’implémentation directement à une méthode qui attend une valeur de type projeté correspondant. À partir d’une fonction de membre de type de mise en œuvre, vous pouvez transmettre `*this` à une méthode qui attend une valeur de type projeté correspondant.
+
+```cppwinrt
+// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
+
+void MyOtherType::DoWork(MyProject::MyType const&){ ... }
+
+...
+
+void FreeFunction(MyProject::MyOtherType const& ot)
+{
+    MyType myimpl;
+    ot.DoWork(myimpl);
+}
+
+...
+
+void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+{
+    ot.DoWork(*this);
+}
+```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Dérivation à partir d’un type qui possède un constructeur non défini par défaut
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) est un exemple d’un constructeur non défini par défaut. Il n’existe aucun constructeur par défaut, de ce fait, pour construire un **ToggleButtonAutomationPeer**, vous devez transmettre un *owner*. Par conséquent, si vous dérivez de **ToggleButtonAutomationPeer**, vous devez fournir un constructeur qui prend un *owner* et le transmet à la base. Voyons à quoi cela ressemble dans la pratique.
