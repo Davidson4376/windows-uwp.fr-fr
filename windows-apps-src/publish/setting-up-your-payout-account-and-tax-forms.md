@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a24e038dc2645b0aea7b1e7e516886af9a9e6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 81aa15892bf39209c31238878e0ca19a996d0b3e
+ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930259"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "9000274"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -42,8 +42,8 @@ Un compte de revenu est le compte bancaire vers lequel nous transférons l'argen
  
 **Pour configurer votre compte de paiement**
 
-1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône **paramètres de compte** dans le coin supérieur droit, puis sélectionnez les **paramètres de développement**.
-2.  Dans le menu de navigation de gauche, sélectionnez le **compte de revenu**.
+1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage **paramètres** dans le coin supérieur droit, puis sélectionnez les **paramètres de développement**.
+2.  Dans le menu de navigation de gauche de la page Paramètres, sélectionnez le **compte de revenu**.
 
    > [!NOTE]
    > Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.

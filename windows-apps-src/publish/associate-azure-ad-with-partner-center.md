@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f807799740d7e832da2f6a6fa3ea63e00deaee4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: aacfdb0044fa9b9368ecbd032629ed5e572ece99
+ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931486"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "9000264"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
 
@@ -31,7 +31,7 @@ Un seul client Azure AD peut être associé à plusieurs comptes espace partenai
 
 Si votre organisation utilise déjà Azure AD, suivez ces étapes pour lier votre compte espace partenaires.
 
-1.  À partir de [L’espace partenaires](https://partner.microsoft.com/dashboard) , sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de développeur**. Dans le menu **paramètres** , sélectionnez **des clients**.
+1.  À partir de [L’espace partenaires](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de développeur**. Dans le menu **paramètres** , sélectionnez **des clients**.
 2.  Sélectionnez **associer Azure AD avec votre compte espace partenaires**.
 3.  Entrez vos informations d’identification Azure AD pour le client que vous souhaitez associer.
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre locataire AzureAD. Pour valider l’association, sélectionnez **Confirmer**.
