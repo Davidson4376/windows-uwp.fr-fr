@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981413"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004605"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applicationsUWP
 
@@ -38,11 +38,6 @@ Les pages d’accueil, également connues sous le nom d’écrans bannière, app
 
 Les collections permettent aux utilisateurs de parcourir les groupes de contenu ou de données. L’[affichage Grille](../controls-and-patterns/item-templates-gridview.md) est idéal pour les photos ou les contenus centrés sur les médias; le [mode Liste](../controls-and-patterns/item-templates-listview.md) est, quant à lui, plus particulièrement destiné aux données ou aux contenus riches en texte.
 
-### <a name="hub"></a>Hub
-
-![hub](images/content-basics/hub.png)
-
-Les [hubs](../controls-and-patterns/hub.md) sont conçus pour favoriser le «lèche-vitrines». L’important est de montrer la grande diversité de contenus tout en restant bref. Les utilisateurs disposent donc ainsi d’un bon aperçu du contenu offert. Par exemple, la section1 du hub peut contenir un écran bannière, la section2 une collection, la section3 une autre collection, et ainsi de suite.
 
 ### <a name="masterdetail"></a>Maître/Détail
 

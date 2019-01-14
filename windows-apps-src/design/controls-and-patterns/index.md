@@ -8,12 +8,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f1a2b5ae514222ed6ef06cc7099a0261747dbc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4db09a311d84f4bfdcb81895d7cf0d2e20b8c8a8
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930620"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004575"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  
@@ -67,8 +67,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <li style="list-style-type: none;"><a href="flipview.md">Vue symétrique</a></li>
 
 <li style="list-style-type: none;"><a href="forms.md">Formulaires</a></li>
-
-<li style="list-style-type: none;"><a href="hub.md">Hub</a></li>
 
 <li style="list-style-type: none;"><a href="hyperlinks.md">Liens hypertexte</a></li>
 

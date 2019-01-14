@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d1d5b04b13795a075e7111ed898243ed59e7b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5060012c90ec9cfef093021f44b39321f452e01c
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935773"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004595"
 ---
 # <a name="sound"></a>Son
 
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>Navigation dans une page
 
-La navigation entre les panneaux ou les vues d’une page de l’application (voir [Hub](../controls-and-patterns/hub.md) ou [Onglets et sélecteurs de vue](../controls-and-patterns/tabs-pivot.md)) donne généralement lieu à un mouvement bidirectionnel. Cela signifie que vous pouvez accéder à la vue/au panneau suivants ou précédents sans quitter la page de l’application sur laquelle vous vous trouvez.
+Lors de la navigation entre les panneaux ou les vues d’une page de l’application (voir [onglets et sélecteurs de vue](../controls-and-patterns/tabs-pivot.md)), il est généralement un mouvement bidirectionnel. Cela signifie que vous pouvez accéder à la vue/au panneau suivants ou précédents sans quitter la page de l’application sur laquelle vous vous trouvez.
 
 L’expérience audio associée à ce concept de navigation est représentée par les sons **MovePrevious** et **MoveNext**.
 
