@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
+ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945951"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004502"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -284,15 +284,9 @@ Les exemples de code ci-dessus montrent comment gérer toutes ces entrées.
 
 Auparavant, les applicationsUWP utilisaient [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) pour la navigation vers l’arrière. L’API continuera d’être pris en charge pour garantir la compatibilité descendante, mais nous vous recommandons n’est plus de vous fier [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Au lieu de cela, votre application doit disposer de son propre bouton Précédent.
 
-Si votre application continue à l’aide de [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), puis le système de l’interface utilisateur rendra le système de bouton précédent:
+Si votre application continue à l’aide de [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), puis le système de l’interface utilisateur rendra le système de bouton précédent à l’intérieur de la barre de titre. (Les interactions utilisateur et d’apparence du bouton précédent restent inchangées à partir des versions antérieures.)
 
-- Si votre application n’est **pas à onglets**, le bouton précédent est rendu à l’intérieur de la barre de titre. Les interactions utilisateur et d’expérience visuelle du bouton précédent restent inchangées à partir des versions précédentes.
-
-    ![Bouton précédent de la barre de titre](images/nav-back-pc.png)
-
-- Si une application est **à onglets**, alors que le bouton précédent s’affiche à l’intérieur d’un nouveau système vers l’arrière barre.
-
-    ![Système dessiné précédent de barre de boutons](images/back-nav/tabs.png)
+![Bouton précédent de la barre de titre](images/nav-back-pc.png)
 
 ### <a name="system-back-bar"></a>Précédent système barre
 
