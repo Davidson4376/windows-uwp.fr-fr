@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5e3a29a252b091b1e52dbea5fa7af5058488ed5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
+ms.sourcegitcommit: be52da74f0b3f24973286792afa4f5e80799161b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946595"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "9009516"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
@@ -172,7 +172,7 @@ Les données itinérantes d’une application sont disponibles dans le Cloud du 
 
 ### <a name="roaming-pre-requisites"></a>Conditions préalables d’itinérance
 
-Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur décide de ne pas utiliser un compte Microsoft ou s’il désactive les fonctionnalités d’itinérance des données, il peut continuer à se servir de votre application. Toutefois, les données d’application sont gérées de manière locale sur chaque appareil.
+Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur décide de ne pas utiliser un compte Microsoft ou désactive les fonctionnalités d’itinérance des données, elle sera toujours en mesure d’utiliser votre application, mais les données d’application seront locales sur chaque appareil.
 
 Les données stockées dans [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) sont transférées uniquement si un utilisateur a « approuvé » un appareil. Si un appareil n’est pas approuvé, les données sécurisées dans ce coffre ne seront pas itinérantes.
 
