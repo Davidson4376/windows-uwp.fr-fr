@@ -6,12 +6,12 @@ keywords: une application à la communication, communication interprocessus, IPC
 ms.date: 1/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9029c8ee3a930e66ebdbd0c4d0681d87486a8393
-ms.sourcegitcommit: 6e2027f8ebc1d891d27ea6b2e4676d592871bcc7
+ms.openlocfilehash: 5239bff53bb0e5383bce28b4d781a0ab6a41c3af
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9011259"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013958"
 ---
 # <a name="create-and-consume-an-app-service"></a>Créer et utiliser un service d’application
 
@@ -214,17 +214,9 @@ L’appel à [SendResponseAsync](https://msdn.microsoft.com/library/windows/apps
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>Déployer l’application de service et obtenir le nom de la famille de packages
 
-Le fournisseur de services d’application doit être déployé avant que vous pouvez l’appeler à partir d’un client. Vous devez également le nom de famille de package de service d’application pour l’appeler.
+Le fournisseur de services d’application doit être déployé avant que vous pouvez l’appeler à partir d’un client. Vous pouvez la déployer en sélectionnant **Générer > Solution de déploiement** dans Visual Studio.
 
-Une façon d’obtenir le nom de famille de package de l’application de service d’application consiste à appeler [Windows.ApplicationModel.Package.Current.Id.FamilyName](https://msdn.microsoft.com/library/windows/apps/br224670) à partir d’au sein du projet **AppServiceProvider** (par exemple, du constructeur de **l’application** dans ** App.Xaml.cs**) et noter le résultat. Pour exécuter **AppServiceProvider** dans Visual Studio, définissez-le en tant que projet de démarrage dans la fenêtre **Explorateur de solutions** et exécutez le projet.
-
-Une autre façon d’obtenir le nom de famille consiste à déployer la solution (**Build &gt; déployer la Solution**) et notez le nom complet du package dans la fenêtre **sortie** (**vue &gt; sortie**). Vous devez supprimer les informations de la plateforme de la chaîne dans la fenêtre de **sortie** pour obtenir le nom du package. Par exemple, si le nom complet du package indiqué dans la fenêtre de **sortie** ont été:
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_1.0.0.0_x86__8wekyb3d8bbwe`
-
-Ensuite, vous devez extraire `1.0.0.0\_x86\_\_`, en laissant les éléments suivants en tant que le nom de famille du package:
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_8wekyb3d8bbwe`
+Vous devez également le nom de famille de package du fournisseur de services d’application pour l’appeler. Vous pouvez l’obtenir en ouvrant le fichier de **Package.appxmanifest** du projet **AppServiceProvider** dans la vue de concepteur (double-cliquez dessus dans l' **Explorateur de solutions**). Sélectionnez l’onglet **packages** , copiez la valeur en regard du **nom de famille de Package**et collez-le quelque part comme le bloc-notes pour le moment.
 
 ## <a name="write-a-client-to-call-the-app-service"></a>Écrire un client pour appeler le service d’application
 
