@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0211e451c3e700da34d24e39a5045f9e046020a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0b360425755a7dc2249a284d9f68761ce3c783ef
+ms.sourcegitcommit: 92ce837841ae8f16d203e919dbf5c4436bee56e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933612"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015254"
 ---
 # <a name="audio-graphs"></a>Graphiques audio
 
@@ -80,7 +80,7 @@ Un nœud d’entrée d’appareil transmet l’audio au graphique à partir d’
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-Pour indiquer un appareil de capture audio spécifique pour le nœud d’entrée d’appareil, vous pouvez utiliser la classe [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) pour obtenir la liste des appareils disponibles sur le système en appelant [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) et en utilisant le sélecteur d’appareil de rendu audio renvoyé par [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). Vous pouvez choisir l’un des objets **DeviceInformation** renvoyés par programme ou afficher l’interface utilisateur pour permettre à l’utilisateur de sélectionner un appareil pour le transmettre à [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
+Si vous souhaitez indiquer un appareil de capture audio spécifique pour le nœud d’entrée d’appareil, vous pouvez utiliser la classe [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) pour obtenir la liste des périphériques de capture audio disponibles du système en appelant la méthode [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) et passage de l’audio de rendu sélecteur d’appareil renvoyé par [**Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector). Vous pouvez choisir l’un des objets **DeviceInformation** renvoyés par programme ou afficher l’interface utilisateur pour permettre à l’utilisateur de sélectionner un appareil pour le transmettre à [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
