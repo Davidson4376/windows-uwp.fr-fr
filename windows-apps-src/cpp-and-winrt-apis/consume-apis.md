@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd26bfe2643b7130227e758083d820ce6be7d24e
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919952"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014744"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
 
@@ -122,6 +122,20 @@ private:
 ```
 
 Tous les constructeurs sur le type projeté *sauf* le constructeur `nullptr_t` entraînent la création d'un objet Windows Runtime de sauvegarde. Le constructeur `nullptr_t` est essentiellement un no-op. Il attend que l’objet projeté soit initialisé à un moment ultérieur. Par conséquent, qu'une classe runtime ait un constructeur par défaut ou non, vous pouvez utiliser cette technique pour obtenir une initialisation différée efficace.
+
+Cette considération affecte d’autres endroits où vous appelez le constructeur par défaut, comme dans des vecteurs et les cartes. Envisagez de cet exemple de code.
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup[2] = value;
+```
+
+L’affectation crée un nouveau **TextBlock**et puis remplace immédiatement avec `value`. Voici la solution.
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup.insert_or_assign(2, value);
+```
 
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>Si l’API est implémentée dans un composant Windows Runtime
 Cette section s’applique, que vous ayez créé le composant vous-même ou qu’il provienne d’un fournisseur.

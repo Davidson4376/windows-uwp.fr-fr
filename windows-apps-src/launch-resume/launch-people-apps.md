@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935614"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014704"
 ---
 # <a name="launch-the-people-app"></a>Lancer l’application Contacts
 
@@ -58,7 +58,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 </div>
 <div> 
 </div></td>
-<td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
+<td align="left">MS-people: viewcontact?ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;E-mail =&lt;e-mail&gt;&amp;ContactName =&lt;nom&gt;&amp;Contact =&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">Ouvre une page d’enregistrement de contact dans l’application Contacts, permettant d’enregistrer le contact donné avec le numéro de téléphone ou l’adresse électronique fournis.
