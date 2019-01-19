@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 23343ea88b0347ac3e8cb5d41812a24d619be986
-ms.sourcegitcommit: 28fa37c2106ceb0ebe2c06ec74198b7ee97a9b88
+ms.openlocfilehash: 618b9d556d3c855c5aed888f0639393bdaaec52e
+ms.sourcegitcommit: 6b417970ee42b46d0a3a2307229376e41e70f8c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "9015420"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "9015664"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -22,7 +22,7 @@ Nous vous recommandons également de vous familiariser avec les [directives en m
 
 ## <a name="put-your-strings-into-resources-files-resw"></a>Placer vos chaînes dans les fichiers Ressources (.resw)
 
-Ne codez pas en dur les opérateurs de chaîne dans votre code impératif, dans le balisage XAML ou dans le manifeste du package de votre application. Il convient plutôt de placer vos chaînes dans des fichiers Ressources (.resw) afin de pouvoir les adapter aux différents marchés locaux, quels que soient les codes binaires de votre application. Pour plus de détails, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md).
+Ne les opérateurs de chaîne de coder en dur dans votre code impératif, le balisage XAML, ou dans le manifeste de package de votre application. Il convient plutôt de placer vos chaînes dans des fichiers Ressources (.resw) afin de pouvoir les adapter aux différents marchés locaux, quels que soient les codes binaires de votre application. Pour plus de détails, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md).
 
 Cette rubrique vous présente également comment ajouter des commentaires à votre fichier Ressources (.resw) par défaut. Par exemple, si vous adoptez une voix ou un ton informel, veillez à le stipuler dans les commentaires. Afin de minimiser les dépenses, confirmez également que seules les chaînes devant être traduites sont fournies aux traducteurs.
 
@@ -64,9 +64,9 @@ Autre exemple, la phrase «me rappeler dans {0} minute (s).» Si «minute(s)» f
 
 Pour résoudre ce problème, localisez la phrase entière, plutôt qu’un mot individuel. Cela peut paraître comme une charge de travail supplémentaire et une solution dépourvue d’élégance, mais il s’agit de la solution optimale pour les raisons suivantes :
 
--   Un message grammaticalement correct sera affiché pour toutes les langues.
--   Votre traducteur n’aura pas besoin de vous demander par quoi les chaînes seront remplacées.
--   Vous n’aurez pas besoin d’implémenter un correctif de code onéreux lorsqu’un problème de ce type se révélera une fois votre application terminée.
+- Un message grammaticalement correct sera affiché pour toutes les langues.
+- Votre traducteur n’aura pas besoin de vous demander par quoi les chaînes seront remplacées.
+- Vous n’aurez pas besoin d’implémenter un correctif de code onéreux lorsqu’un problème de ce type se révélera une fois votre application terminée.
 
 ## <a name="other-considerations-for-strings"></a>Autres éléments à prendre en considération pour les chaînes
 
@@ -82,13 +82,22 @@ Peuso-localisez votre application pour découvrir tout problème d'adaptabilité
 
 ## <a name="deployment-considerations"></a>Considérations relatives au déploiement
 
-Lorsque vous installez votre application qui contient les données de langues localisées, vous pouvez constater qu’uniquement la langue par défaut est disponible pour l’application, même si vous avez inclus initialement des ressources pour plusieurs langues. Cela se produit en raison de la manière du que processus d’installation est optimisé pour installer uniquement les ressources de langue qui correspondent à la langue actuelle et la culture de l’appareil. Cela signifie que si votre appareil est configuré pour en-us lorsque vous installez l’application uniquement l’en-nous ressources linguistiques seront installés. Si vous modifiez la langue par défaut du système d’exploitation de l’application affiche toujours uniquement en-us, ressources, car c’est le seul langage installé pour l’application. Pour l’instant, il est impossible d’installer la prise en charge de langue supplémentaire de votre application après l’installation initiale. 
+Lorsque vous installez une application qui contient les données de langues localisées, il est possible que seule la langue par défaut est disponible pour l’application même si vous avez inclus initialement des ressources pour plusieurs langues. Il s’agit dans la mesure où le processus d’installation est optimisé pour installer uniquement les ressources de langue qui correspondent à la langue actuelle et la culture de l’appareil. Par conséquent, si votre appareil est configuré pour en-US, seules les ressources de langue en-US sont installés avec votre application.
 
-Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, vous pouvez créer un fichier de configuration pour le package d’application qui indique que certaines ressources sont requises lors de l’installation. Dans ce fichier de configuration, vous pouvez exiger n’importe quelle ressource être installées, y compris les ressources linguistiques. Pour plus d’informations sur les ressources garantissant sont installés reportez-vous à ce document: [vous assurer que les ressources sont installées sur un appareil, quel que soit l’indique si un appareil nécessite les](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))
- 
-Cette fonctionnalité installation optimisée est activée automatiquement lorsque vous générez un fichier appxbundle pour votre application lors de l’emballage. Si vous le souhaitez pour vous assurer que toutes les ressources sont installés vous pouvez désactiver la génération d’appxbundle lorsque vous empaquetez votre application. Cela n’est cependant recommandé, car elle peut augmenter l’heure d’installation de votre application. Au lieu de cela, vous devez créer un fichier de configuration de mise en package conformément au paragraphe précédent et nécessitent uniquement les ressources nécessaires, ce qui permet le programme d’installation continuer à optimiser les ressources devenues inutiles. 
- 
-Vous pouvez désactiver la génération d’appxbundle et inclure toutes les ressources empaquetées en définissant l’attribut «Générer un ensemble d’applications» et «jamais». 
+> [!NOTE]
+> Il n’est pas possible d’installer la prise en charge de langue supplémentaire de votre application après l’installation initiale. Si vous modifiez la langue par défaut après l’installation d’une application, l’application continue à utiliser uniquement les ressources de langue d’origine.
+
+Si vous souhaitez vérifier que toutes les ressources de langue sont disponibles après l’installation, créez un fichier de configuration pour le package d’application qui indique que certaines ressources sont requises lors de l’installation (y compris les ressources de langue). Cette fonctionnalité installation optimisée est activée automatiquement lorsque .appxbundle de votre application est générée lors de l’emballage. Pour plus d’informations, voir [Assurez-vous que les ressources sont installées sur un appareil, quel que soit l’indique si un appareil en a besoin](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
+
+Si vous le souhaitez, pour vous assurer que toutes les ressources sont installées (pas seulement un sous-ensemble), vous pouvez désactiver la génération de .appxbundle lorsque vous empaquetez votre application. Cela n’est pas recommandé toutefois car elle peut augmenter l’heure d’installation de votre application.
+
+Désactiver la génération automatique de le .appxbundle en définissant l’attribut «Générer un ensemble d’applications» et «jamais»:
+
+1. Dans Visual Studio, cliquez sur le nom du projet
+2. Sélectionnez **Store** -> **créer des packages d’application …**
+3. Dans la boîte de dialogue **Créer vos Packages** , sélectionnez **je souhaite créer des packages à charger dans le Microsoft Store à l’aide d’un nouveau nom de l’application** , puis cliquez sur **suivant**.
+4. Dans la boîte de dialogue **Sélectionner un nom d’application** , sélectionnez/Créer une application nom de votre package.
+5. Dans la boîte de dialogue **Sélectionner et configurer des Packages** , définissez **un ensemble d’applications de générer** sur **jamais**.
 
 ## <a name="geopolitical-awareness"></a>Conscience géopolitique
 
@@ -128,12 +137,13 @@ Envisagez ces options.
 - **Les fichiers de ressources peuvent être traduits en étant ouverts directement dans le projet.** Cette approche fonctionne bien pour un projet qui possède un volume réduit de chaînes devant être traduites en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche a l’avantage d’être rapide, de ne requérir aucun outil et de minimiser les risques d’erreurs de traduction. Mais elle n’est pas évolutive. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
 - **Les fichiers de ressources de type chaîne sont au format texte XML ou ResJSON et peuvent être confiés pour traduction à l’aide d’un éditeur de texte. Les fichiers traduits pourront alors être copiés en retour dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
 
-Un transfert vers des traducteurs peut être nécessaire pour d’autres fichiers, tels que des images ou des fichiers audio.
+> [!NOTE]
+> Localisation peut également être nécessaire pour les autres ressources, notamment des images et des fichiers audio.
 
-De plus, considérez ces suggestions.
+Vous devez également envisager les éléments suivants:
 
-- **Utilisez un outil de localisation.** De nombreux outils de localisation sont disponibles pour analyser les fichiers de ressources et permettre la modification par les traducteurs des seules chaînes traduisibles. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, consultez [Comment utiliser le kit de ressources MultilingualApToolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
-- **Faites appel à un prestataire de localisation.** Considérez l’utilisation d’un prestataire de localisation si votre projet contient un volume élevé de chaînes et doit être traduit en de nombreuses langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
+- **Outils de localisation** Un certain nombre d’outils de localisation est disponible pour analyser les fichiers de ressources et permettre uniquement les chaînes traduisibles modification par les traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, consultez [Comment utiliser le kit de ressources MultilingualApToolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
+- **Fournisseurs de localisation** Envisagez d’utiliser un prestataire de localisation si votre application contient des chaînes étendues qui doivent être traduites en un grand nombre de langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>Utiliser des touches d’accès rapide et des étiquettes cohérentes
 
@@ -145,8 +155,8 @@ Les caractères japonais kanji possèdent la propriété d’avoir plusieurs lec
 
 Les *furigana* contournent ce problème en permettant à l’utilisateur ou au créateur de spécifier la prononciation des caractères utilisés. Si vous utilisez la procédure suivante pour ajouter des furigana au nom de votre application, vous pouvez garantir qu’elle sera classée à l’emplacement approprié dans la liste des applications. Si le nom de votre application contient des caractères kanji et qu’aucun furigana n’est fourni lorsque la langue de l’interface utilisateur ou l’ordre de tri est défini sur le japonais, Windows s’efforce de générer la prononciation appropriée. Toutefois, il est possible de classer les noms d’applications contenant des prononciations rares ou uniques sous une prononciation plus courante. Ainsi, la meilleure pratique pour les applications japonaises (notamment celles dont le nom contient des caractères kanji) consiste à fournir une version avec furigana de leur nom d’application dans le cadre du processus de localisation japonaise.
 
-1.  Ajoutez «ms-resource:Appname» comme nom complet du package et nom complet de l’application.
-2.  Créez un dossier ja-JP sous le dossier «strings» et ajoutez deux fichiers de ressources comme suit:
+1. Ajoutez «ms-resource:Appname» comme nom complet du package et nom complet de l’application.
+2. Créez un dossier ja-JP sous le dossier «strings» et ajoutez deux fichiers de ressources comme suit:
 
     ``` syntax
     strings\
@@ -156,28 +166,28 @@ Les *furigana* contournent ce problème en permettant à l’utilisateur ou au c
             Resources.resw
     ```
 
-3.  Dans Resources.resw pour le dossier général ja-JP: ajoutez une ressource de type chaîne pour le nom d’application «希蒼».
-4.  Dans Resources.altform-msft-phonetic.resw pour les ressources japonaises avec furigana: ajoutez la valeur de furigana pour le nom d’application «のあ».
+3. Dans Resources.resw pour le dossier général ja-JP: ajoutez une ressource de type chaîne pour le nom d’application «希蒼».
+4. Dans Resources.altform-msft-phonetic.resw pour les ressources japonaises avec furigana: ajoutez la valeur de furigana pour le nom d’application «のあ».
 
 L’utilisateur peut rechercher le nom d’application « 希蒼 » en utilisant à la fois la valeur de furigana « のあ » (noa) et la valeur phonétique (en utilisant la fonction **GetPhonetic** à partir de l’éditeur de méthode d’entrée (IME)) « まれあお » (mare-ao).
 
 Le classement suit le format de l’application **Région** du Panneau de configuration:
 
--   Sous un paramètre régional utilisateur japonais,
-    -   Si les furigana sont activés, alors le nom «希蒼» est classé sous «の».
-    -   En l’absence de furigana, alors le nom «希蒼» est classé sous «ま».
--   Sous un paramètre régional d’utilisateur non japonais,
-    -   Si les furigana sont activés, alors le nom «希蒼» est classé sous «の».
-    -   En l’absence de furigana, alors le nom «希蒼» est classé sous «漢字».
+- Sous un paramètre régional utilisateur japonais,
+  - Si les furigana sont activés, alors le nom «希蒼» est classé sous «の».
+  - En l’absence de furigana, alors le nom «希蒼» est classé sous «ま».
+- Sous un paramètre régional d’utilisateur non japonais,
+  - Si les furigana sont activés, alors le nom «希蒼» est classé sous «の».
+  - En l’absence de furigana, alors le nom «希蒼» est classé sous «漢字».
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Directives en matière de globalisation](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
-* [Adaptez vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md)
-* [Mise à jour d’images suite à des événements de modification de valeur de qualificateur](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [Directives en matière de globalisation](guidelines-and-checklist-for-globalizing-your-app.md)
+- [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
+- [Adaptez vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md)
+- [Mise à jour d’images suite à des événements de modification de valeur de qualificateur](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>Exemples
 
-* [Exemple de ressources d’application et de localisation](http://go.microsoft.com/fwlink/p/?linkid=254478)
+- [Exemple de ressources d’application et de localisation](http://go.microsoft.com/fwlink/p/?linkid=254478)
