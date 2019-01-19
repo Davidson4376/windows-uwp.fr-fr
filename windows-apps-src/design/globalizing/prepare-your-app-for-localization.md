@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 23343ea88b0347ac3e8cb5d41812a24d619be986
+ms.sourcegitcommit: 28fa37c2106ceb0ebe2c06ec74198b7ee97a9b88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938296"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015420"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -79,6 +79,16 @@ L'utilisation d'une voix ou d'un ton informel dans vos chaînes est un bon choix
 ## <a name="pseudo-localization"></a>Pseudo-localisation
 
 Peuso-localisez votre application pour découvrir tout problème d'adaptabilité. La pseudo-localisation est un type de localisation test ou de test de divulgation. Vous produisez un ensemble de ressources qui ne sont pas réellement traduites. Elles en ont seulement l'apparence. Vos chaînes sont environ 40% plus longues que les chaînes de votre langue par défaut. Par exemple, elles contiennent des séparateurs afin que vous puissiez avoir un aperçu de leur possible tronquage dans l'interface utilisateur.
+
+## <a name="deployment-considerations"></a>Considérations relatives au déploiement
+
+Lorsque vous installez votre application qui contient les données de langues localisées, vous pouvez constater qu’uniquement la langue par défaut est disponible pour l’application, même si vous avez inclus initialement des ressources pour plusieurs langues. Cela se produit en raison de la manière du que processus d’installation est optimisé pour installer uniquement les ressources de langue qui correspondent à la langue actuelle et la culture de l’appareil. Cela signifie que si votre appareil est configuré pour en-us lorsque vous installez l’application uniquement l’en-nous ressources linguistiques seront installés. Si vous modifiez la langue par défaut du système d’exploitation de l’application affiche toujours uniquement en-us, ressources, car c’est le seul langage installé pour l’application. Pour l’instant, il est impossible d’installer la prise en charge de langue supplémentaire de votre application après l’installation initiale. 
+
+Si vous souhaitez vous assurer que toutes les ressources de langue sont disponibles après l’installation, vous pouvez créer un fichier de configuration pour le package d’application qui indique que certaines ressources sont requises lors de l’installation. Dans ce fichier de configuration, vous pouvez exiger n’importe quelle ressource être installées, y compris les ressources linguistiques. Pour plus d’informations sur les ressources garantissant sont installés reportez-vous à ce document: [vous assurer que les ressources sont installées sur un appareil, quel que soit l’indique si un appareil nécessite les](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))
+ 
+Cette fonctionnalité installation optimisée est activée automatiquement lorsque vous générez un fichier appxbundle pour votre application lors de l’emballage. Si vous le souhaitez pour vous assurer que toutes les ressources sont installés vous pouvez désactiver la génération d’appxbundle lorsque vous empaquetez votre application. Cela n’est cependant recommandé, car elle peut augmenter l’heure d’installation de votre application. Au lieu de cela, vous devez créer un fichier de configuration de mise en package conformément au paragraphe précédent et nécessitent uniquement les ressources nécessaires, ce qui permet le programme d’installation continuer à optimiser les ressources devenues inutiles. 
+ 
+Vous pouvez désactiver la génération d’appxbundle et inclure toutes les ressources empaquetées en définissant l’attribut «Générer un ensemble d’applications» et «jamais». 
 
 ## <a name="geopolitical-awareness"></a>Conscience géopolitique
 
