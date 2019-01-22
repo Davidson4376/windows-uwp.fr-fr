@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: eb8d430619ad05cea1212b48850f52f27056c658
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c7ca724279a6a4d41b1f7757428af8eab403549
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930937"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024206"
 ---
 # <a name="alignment-margin-padding"></a>Alignement, marge, remplissage
 
@@ -84,7 +84,7 @@ Voici les mêmes éléments TextBox et Grid avec des valeurs positives pour Marg
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4" Width="200">
-    <TextBox Text="This is text in a TextBox." Margin="20" Padding="24,16"/>
+    <TextBox Text="This is text in a TextBox." Margin="20" Padding="16,24"/>
 </Grid>
 ```
 

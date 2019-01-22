@@ -5,16 +5,16 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b547394657fc992474ac0ef9e79719e3ab8f31e1
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929666"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024226"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Créer un fichier de programme d'installation d'application avec VisualStudio
 
-En démarrant avec la version 1804 de Windows10 et la mise à jour 15.7 de VisualStudio2017, les applications à chargement de version test peuvent être configurées pour recevoir des mises à jour automatiques à l'aide d'un fichier `.appinstaller`. VisualStudio prend en charge l'autorisation de ces mises à jour.
+À compter de Windows 10, Version 1803 et Visual Studio 2017, version 15.7 de mise à jour, les applications chargées de manière indépendante peuvent être configurées pour recevoir des mises à jour automatiques à l’aide un `.appinstaller` fichier. VisualStudio prend en charge l'autorisation de ces mises à jour.
 
 ## <a name="app-installer-file-location"></a>Emplacement du fichier du programme d'installation d'application
 Le fichier `.appinstaller` peut être hébergé dans un emplacement partagé tel qu'un point de terminaison HTTP ou un dossier partagé UNC. Il comprend alors le chemin de destination des packages d'application à installer. Les utilisateurs installent l'application à partir de l'emplacement partagez et autorisent des vérifications périodiques de nouvelles mises à jour. 
@@ -25,7 +25,7 @@ Le fichier `.appinstaller` peut être hébergé dans un emplacement partagé tel
 Vous pouvez configurer la propriété `TargetPlatformMinVersion` lorsque vous créez le projet ou la modifier ultérieurement à partir des propriétés du projet. 
 
 >[!IMPORTANT]
-> Le fichier du programme d'installation d'application est généré uniquement lorsque la `TargetPlatformMinVersion` est la version 1804 ou ultérieure de Windows10.
+> Le fichier de programme d’installation d’application n’est généré lorsque le `TargetPlatformMinVersion` est Windows 10, Version 1803 ou une version ultérieure.
 
 
 ### <a name="create-packages"></a>Créer des packages
