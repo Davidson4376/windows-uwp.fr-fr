@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, ce qui de, les nouveaux
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 87ab438de08ed5d6165343e7b9c4a559f37b351e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 986b0e896ca00e1fc15a6ed265ea1e98103524f3
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927008"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024578"
 ---
 # <a name="whats-new-in-cwinrt"></a>Quelles sont les nouveautés en C++ / WinRT
 
@@ -31,7 +31,7 @@ Le tableau ci-dessous contient les actualités et se change en [C++ / WinRT](/wi
 
 Autres modifications.
 
-- **Nouveauté**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) retourne désormais `void*` à la place de `HSTRING`. Vous pouvez utiliser `static_cast<HSTRING>(get_abi(my_hstring));` pour obtenir une HSTRING.
+- **Nouveauté**. [**WinRT::get_abi(WinRT::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) maintenant renvoie `void*` à la place de `HSTRING`. Vous pouvez utiliser `static_cast<HSTRING>(get_abi(my_hstring));` pour obtenir une HSTRING.
 - **Nouveauté**. [**WinRT::put_abi(WinRT::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) maintenant renvoie `void**` à la place de `HSTRING*`. Vous pouvez utiliser `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` pour obtenir une HSTRING *.
 - **Nouveauté**. HRESULT est désormais projetée en tant que **winrt::hresult**. Si vous avez besoin HRESULT (d’un contrôle de type ou de prendre en charge les caractéristiques de type), vous pouvez `static_cast` un **winrt::hresult**. Dans le cas contraire, **winrt::hresult** convertit en HRESULT, tant que vous incluez `unknwn.h` avant que vous incluez des C++ / WinRT en-têtes.
 - **Nouveauté**. GUID est désormais projeté en tant que **winrt::guid**. Pour les API que vous implémentez, vous devez utiliser **winrt::guid** pour les paramètres GUID. Dans le cas contraire, **winrt::hresult** convertit en GUID, tant que vous incluez `unknwn.h` avant que vous incluez des C++ / WinRT en-têtes.
@@ -44,7 +44,7 @@ Autres modifications.
 - Pointeurs intelligents renforcés. Auparavant, les revokers événement n’a pas pu révoquer quand déplacement attribué une nouvelle valeur. Cela a permis de découvrir un problème dans lequel les classes de pointeur intelligent n’ont pas été gérer de façon fiable attribution automatique; racine dans le [**modèle de structure winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr). **WinRT::com_ptr** a été corrigée et les revokers événement fixés pour gérer sémantique de déplacement correctement afin qu’ils révoquer lors de l’attribution.
 
 > [!NOTE]
-> Avec la version 1.0.181002.2 (ou version ultérieure) de la [C++ / Extension WinRT Visual Studio (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix) installé, création d’un nouveau C++ / WinRT projet installe automatiquement le [package Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) pour ce projet. Le package Microsoft.Windows.CppWinRT NuGet fournit améliorée C++ / WinRT projet build prise en charge, qui devient votre projet portable entre un ordinateur de développement et d’un agent de build (sur lequel seul le package NuGet et pas VSIX, est installé).
+> Avec la version 1.0.181002.2 (ou version ultérieure) de la [C++ / Extension WinRT Visual Studio (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix) installé, création d’un nouveau C++ / WinRT projet installe automatiquement le [package Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) pour ce projet. Le package Microsoft.Windows.CppWinRT NuGet fournit améliorée C++ / WinRT projet build prise en charge, qui devient votre projet portable entre un ordinateur de développement et d’un agent de build (sur lequel seul le package NuGet et pas VSIX, est installé).
 >
 > Pour un projet existant&mdash;une fois que vous avez installé la version 1.0.181002.2 (ou version ultérieure) du projet VSIX&mdash;nous recommandons que vous ouvrez le projet dans Visual Studio, cliquez sur **le projet** \> **Gérer les Packages NuGet …**  \>  **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de recherche, puis cliquez sur **installer** pour installer le package de ce projet.
 

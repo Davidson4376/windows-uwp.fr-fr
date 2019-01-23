@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, présentation
 ms.localizationpriority: medium
-ms.openlocfilehash: b92d0def08267c36497f0afd24d23308bc4a2e85
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a79302b13b45bf2319c4db2e527d8ef2b293d5f2
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927564"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024618"
 ---
 # <a name="introduction-to-cwinrt"></a>Présentation de C++/WinRT
 &nbsp;
@@ -21,7 +21,7 @@ C++/WinRT est une projection de langage C++17 moderne entièrement standard pour
 C++ / WinRT est remplacement recommandé par Microsoft pour le [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) projection de langage et la [Bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). La liste complète des [rubriques sur C++ / WinRT](index.md#topics-about-cwinrt) contient des informations sur les deux en interopérant avec lui et Portage depuis, C++ / CX et WRL.
 
 > [!IMPORTANT]
-> Deux des éléments les plus importants de C++/WinRT à connaître sont décrits dans les sections [Prise en charge du Kit de développement logiciel (SDK) pour C++/WinRT](#sdk-support-for-cwinrt) et [Prise en charge de Visual Studio pour C++/WinRT et VSIX](#visual-studio-support-for-cwinrt-and-the-vsix).
+> Deux des éléments les plus importants de C++/WinRT à connaître sont décrits dans les sections [Prise en charge du Kit de développement logiciel (SDK) pour C++/WinRT](#sdk-support-for-cwinrt) et [Prise en charge de Visual Studio pour C++/WinRT et VSIX](#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## <a name="language-projections"></a>Projections de langage
 Windows Runtime est basé sur les API COM (Component Object Model) et est conçu pour être accessible via des *projections de langage*. Une projection masque les détails COM et fournit une expérience de programmation plus naturelle pour un langage donné.
@@ -34,7 +34,7 @@ Lorsque vous naviguez dans des [API UWP Windows](https://docs.microsoft.com/uwp/
 
 Avec C++/WinRT, vous pouvez également implémenter vos propres classes runtime en utilisant du code C++ standard, sans avoir recours à une programmation de style COM. Pour une classe runtime, vous décrivez seulement vos types dans un fichier IDL, et `midl.exe` et `cppwinrt.exe` génèrent vos fichiers de code source de modèle d'implémentation pour vous. Vous pouvez également implémenter simplement des interfaces en dérivant d'une classe de base C++/WinRT. Pour plus d’informations, voir [Créer des API avec C++/WinRT](author-apis.md).
 
-## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>Prise en charge de Visual Studio pour C++/WinRT et VSIX
+## <a name="visual-studio-support-for-cwinrt-xaml-and-the-vsix"></a>Prise en charge de Visual Studio pour C++ / WinRT et VSIX XAML
 Pour les modèles de projet C++/WinRT dans Visual Studio, mais aussi les propriétés et cibles MSBuild C++/WinRT, téléchargez et installez l’[extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) à partir de [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 > [!NOTE]
@@ -42,7 +42,7 @@ Pour les modèles de projet C++/WinRT dans Visual Studio, mais aussi les propri�
 >
 > Pour un projet existant&mdash;une fois que vous avez installé la version 1.0.181002.2 (ou version ultérieure) du projet VSIX&mdash;nous recommandons que vous ouvrez le projet dans Visual Studio, cliquez sur **le projet** \> **Gérer les Packages NuGet …**  \>  **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de recherche, puis cliquez sur **installer** pour installer le package de ce projet.
 
-Vous aurez besoin de Visual Studio 2017 (vous devez au moins la version 15,6, mais nous vous recommandons d’au moins la version 15.7) et du SDK Windows version 10.0.17134.0 (Windows 10, version 1803). Si vous n’avez pas déjà installé, vous devrez installer l’option **Outils de plateforme Windows universelle C++** dans Visual Studio Installer. Et, dans les **paramètres**Windows > **mise à jour \ & sécurité** > **pour les développeurs**, choisissez l’option de **mode développeur** , plutôt que l’option de **chargement indépendant d’applications** .
+Vous aurez besoin de Visual Studio 2017 (vous devez au moins la version 15,6, mais nous vous recommandons d’au moins la version 15.7) et du SDK Windows version 10.0.17134.0 (Windows 10, version 1803). Si vous n’avez pas déjà installé, vous devrez installer l’option **Outils de plateforme Windows universelle C++** dans Visual Studio Installer. Et, dans les **paramètres**Windows > **mise à jour de sécurité de \&** > **pour les développeurs**, choisissez l’option de **mode développeur** , plutôt que l’option de **chargement indépendant d’applications** .
 
 Vous serez alors en mesure de créer et de concevoir ou d’ouvrir, C++ / WinRT de projet dans Visual Studio et le déployer. Par ailleurs, vous pouvez convertir un projet existant en ajoutant le `<CppWinRTEnabled>true</CppWinRTEnabled>` propriété à son `.vcxproj` fichier.
 
@@ -70,6 +70,8 @@ Modèle de projet pour une application cliente C+/WinRT pour Windows Desktop, av
 Modèle de projet pour une application de plateforme Windows universelle (UWP) qui possède une interface utilisateur XAML.
 
 Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Puis, utilisez ces définitions de type de stub comme référence pour implémenter vos classes runtime locales. Nous vous recommandons de déclarer chaque classe runtime dans son propre fichier IDL.
+
+Support surface de conception XAML de Visual Studio pour C++ / WinRT est proche de la parité avec c#. Une exception est l’onglet **événements** de la fenêtre **Propriétés** . Avec un projet c#, vous pouvez utiliser cet onglet pour ajouter des gestionnaires d’événements; avec C++ / WinRT projet, cette fonctionnalité n’est pas présente. Toutefois, voir [gérer des événements en utilisant des délégués en C++ / WinRT](handle-events.md) pour plus d’informations sur l’ajout de gestionnaires d’événements à votre code.
 
 ### <a name="core-app-cwinrt"></a>Core App (C++/WinRT)
 Modèle de projet pour une application de plateforme Windows universelle (UWP) qui n’utilise pas XAML.

@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a0018047b74ffa385cdd758578f3bdad9078c03
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.openlocfilehash: 3be87431d421b2307bc298934adc991d6e71c6ab
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976906"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024508"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptible d’avoir sur la création et l’utilisation de Windows Runtime APIs avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -27,7 +27,7 @@ Voir [comment recibler votre C++ / WinRT projet vers une version ultérieure du 
 Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à soit cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez).
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Quelles sont les exigences pour l’[extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix)?
-[VSIX](https://aka.ms/cppwinrt/vsix) applique une version cible du SDK Windows minimale de 10.0.17134.0 (Windows10, version1803). Vous avez également besoin de Visual Studio2017 (au moins la version15,6; nous recommandons au moins la version15.7). Vous pouvez identifier un projet qui utilise VSIX par la présence de `<CppWinRTEnabled>true</CppWinRTEnabled>` dans `<PropertyGroup Label="Globals">` dans le fichier `.vcxproj`. Pour plus d’informations, voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+[VSIX](https://aka.ms/cppwinrt/vsix) applique une version cible du SDK Windows minimale de 10.0.17134.0 (Windows10, version1803). Vous avez également besoin de Visual Studio2017 (au moins la version15,6; nous recommandons au moins la version15.7). Vous pouvez identifier un projet qui utilise VSIX par la présence de `<CppWinRTEnabled>true</CppWinRTEnabled>` dans `<PropertyGroup Label="Globals">` dans le fichier `.vcxproj`. Pour plus d’informations, voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## <a name="whats-a-runtime-class"></a>Qu’est-ce qu’une *classe runtime*?
 Une classe runtime est un type qui peut être activé et utilisé via des interfaces COM modernes, généralement au-delà des limites exécutables. Toutefois, une classe runtime peut également être utilisée au sein de l’unité de compilation qui l’implémente. Vous déclarez une classe runtime dans le langage IDL (Interface Definition Language), et vous pouvez l’implémenter en C++ standard à l’aide de C++/WinRT.
@@ -89,7 +89,7 @@ windows.com
 
 Étant donné que C++/WinRT utilise les fonctionnalités de la norme C++17, vous devez utiliser les indicateurs de compilateur nécessaires pour obtenir cette prise en charge; ces indicateurs diffèrent d’un compilateur à un autre.
 
-Visual Studio est l’outil de développement que nous prenons en charge et recommandons pour C++/WinRT. Voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+Visual Studio est l’outil de développement que nous prenons en charge et recommandons pour C++/WinRT. Voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>Pourquoi la fonction d’implémentation généré pour une propriété en lecture seule n’a pas la `const` qualificateur?
 
