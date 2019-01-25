@@ -8,12 +8,13 @@ ms.author: mijacobs
 ms.date: 08/4/2017
 keywords: windows uwp, plateforme windows universelle, Windows Runtime, API, api windows, informations de référence de l’api windows, api winrt, informations de référence de l’api windows, api uwp, informations de référence de l’api uwp, développer une application uwp, concevoir une application uwp, publier une application uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b31e29d0967c8514de0566647c657574f6e5930
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.technology: uwp-conceptual-docs
+ms.openlocfilehash: 419f1e87d2cb0ff87b210e9f746e3617f51d6776
+ms.sourcegitcommit: f433f926ddd94fe1d0fdd0057cb39b74e83b4f8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939907"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "9029045"
 ---
 # <a name="universal-windows-platform-documentation"></a>Documentation sur la plateforme Windows universelle
 La plateforme Windows universelle (UWP) vous permet de créer des applications pour n’importe quel appareil Windows (téléphones, console Xbox One, casque HoloLens, etc.) et de les publier dans le MicrosoftStore.
@@ -268,7 +269,7 @@ La plateforme Windows universelle (UWP) vous permet de créer des applications p
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Communauté et support</h3>
+                        <h3>Communauté et Support</h3>
                         <p>
                             <a href="https://twitter.com/WindowsDocs">@WindowsDocssur Twitter</a>
                         </p>
@@ -276,7 +277,7 @@ La plateforme Windows universelle (UWP) vous permet de créer des applications p
                             <a href="http://aka.ms/OneDevMinute">OneDevMinute sur YouTube</a>
                         </p>
                         <p>
-                            <a href="https://developer.microsoft.com/windows/support">Prise en charge du développeur Windows</a>
+                            <a href="https://developer.microsoft.com/windows/support">Support technique pour les développeurs Windows</a>
                         </p>
                     </div>
                 </div>
