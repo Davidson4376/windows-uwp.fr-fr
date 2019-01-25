@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
-ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
+ms.openlocfilehash: c74d4ebd08dfeddfb4a0149cffcd7bb845ceff11
+ms.sourcegitcommit: 4ee300bfa6a238d3ce7674036ec1c574bb025210
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004502"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "9029942"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -296,8 +296,6 @@ Si votre application continue à l’aide de [AppViewBackButtonVisibility](https
 Le système vers l’arrière barre est une «bande» qui est insérée entre la bande d’onglet et la zone de contenu de l’application. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande a une hauteur verticale de 32 pixels pour garantir une taille cible tactile adéquate pour le bouton précédent.
 
 La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton précédent est visible, le système vers l’arrière barre s’insère et contenu de l’application vers le bas par 32 pixels en dessous de la bande d’onglet. Lorsque le bouton précédent est masqué, le système vers l’arrière barre est supprimée de manière dynamique, décalage de contenu de l’application 32 pixels pour répondre à la bande d’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application vers le haut ou vers le bas, nous vous recommandons de prévoir un [bouton précédent dans l’application](#back-button).
-
-[Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet application et de revenir au système barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
 [Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet application et de revenir au système barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
