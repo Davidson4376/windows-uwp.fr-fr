@@ -6,16 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: b33cf07ef10d0891f2747a06caf098b7d37b62f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938819"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031385"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
 Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure du dispositif complémentaire Windows Hello, un dispositif complémentaire peut enrichir considérablement l’expérience Windows Hello même en l’absence de biométrie (par exemple, si l’ordinateur de bureau Windows10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
+
+> **Remarque** Microsoft s’être deprecating l’infrastructure du dispositif complémentaire Windows Hello à l’avenir et publiera plus tôt possible la date de délai adéquat pour déployer des solutions alternatives de disposer de clients.
 
 > **Remarque** L’infrastructure du dispositif complémentaire Windows Hello est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir l’approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
