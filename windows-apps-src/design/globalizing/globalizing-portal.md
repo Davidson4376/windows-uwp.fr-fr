@@ -9,12 +9,12 @@ ms.date: 12/7/2018
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944340"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035420"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 
@@ -36,6 +36,10 @@ Votre code doit fonctionner de manière égale dans toutes les cultures que vous
 - Formatage de date et d’heure
 - Conventions numériques, de devise, de poids et de mesure
 - Règles de tri
+
+>[!NOTE]
+> Pour obtenir la liste des codes de pays/région standard utilisées par Microsoft, consultez la [Liste des pays/région officielle](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+
 
 L'**adaptabilité** constitue le processus de préparation d'une application globalisée pour la localisation et/ou la vérification que l'application est prête pour la localisation. Le fait de rendre une application correctement localisable signifie que le processus de localisation ultérieur sera dépourvu de défaillance dans l'application. Le caractère localisable de l'application nécessite que son code exécutable soit proprement séparé des ressources localisables de l'application.
 
@@ -65,4 +69,4 @@ La plupart des équipes de localisation utilisent des outils spéciaux pour faci
 | [Conception de votre application pour le texte bidirectionnel](design-for-bidi-text.md) | Concevez votre application afin de fournir un support de texte bidirectionnel (BiDi). Ainsi, vous pourrez combiner les scripts des systèmes d'écriture de gauche à droite et de droite à gauche. |
 | [Utiliser le kit de ressources MultilingualAppToolkit4.0](use-mat.md) | Le kit de ressources MultilingualAppToolkit(MAT)4.0 est intégré à MicrosoftVisualStudio2017 pour fournir aux applications UWP un support de traduction, la gestion des fichiers de traduction et des outils d'éditeur. |
 | [FAQ et résolution des problèmes du kit de ressources MultilingualAppToolkit4.0](mat-faq-troubleshooting.md) | Cette rubrique présente des réponses aux questions fréquentes et aux problèmes relatives au kit de ressources MultilingualAppToolkit4.0. |
-| [Préparer votre application pour la modification d’une ère japonais](japanese-era-change.md) | Apprenez-en plus sur la modification d’ère japonais mai 2019 et comment préparer votre application. |
+| [Préparer votre application pour le changement d’ère du Japon](japanese-era-change.md) | Apprenez-en plus sur la modification d’ère japonais mai 2019 et comment préparer votre application. |

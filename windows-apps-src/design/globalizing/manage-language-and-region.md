@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 43aeccecee5b4b2d7a2d5fa1082fb619e87e7268
-ms.sourcegitcommit: 51ea7eae59684400e7813a9dd3376d5e7bfb3635
+ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "8972043"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035400"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 Pour configurer une liste ordonnée de langues d'affichage ou simplement une seule langue d'affichage favorites, les utilisateurs Windows peuvent accéder à **Paramètres** > **Heure et langue** > **Région et langue**. Les langues peuvent comporter des variantes régionales. Par exemple, vous pouvez sélectionner l'espagnol d'Espagne, l'espagnol du Mexique, l'espagnol des États-Unis, etc.
@@ -191,6 +191,9 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 </tr>
 </tbody>
 </table>
+
+>[!NOTE]
+> Pour obtenir la liste des codes de pays/région standard utilisées par Microsoft, consultez la [Liste des pays/région officielle](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
 
 ## <a name="important-apis"></a>API importantes
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
