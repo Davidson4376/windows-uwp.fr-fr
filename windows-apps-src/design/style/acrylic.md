@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
-ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
+ms.openlocfilehash: b47991add56868fe534b0460ec65336e94f433e9
+ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970982"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035529"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -72,7 +72,7 @@ La caractéristique d’acrylique la plus remarquable est sa transparence. Il ex
 
 ## <a name="when-to-use-acrylic"></a>Quand utiliser l'acrylique
 
-* Utiliser l’ACRYLIQUE dans l’application pour prendre en charge de l’interface utilisateur, par exemple, NavigationView ou les éléments de commandes en ligne.
+* Utiliser l’ACRYLIQUE dans l’application pour prendre en charge de l’interface utilisateur, telles que sur les surfaces qui peuvent se superposer quand faites défiler ou interagi avec le contenu.
 * Utiliser l’ACRYLIQUE en arrière-plan pour les éléments d’interface utilisateur temporaires, comme les menus contextuels, menus volants et l’interface utilisateur de la lumière-dimsissable.<br />À l’aide de l’ACRYLIQUE dans les scénarios temporaires permet de maintenir une relation visuelle avec le contenu qui a déclenché l’interface utilisateur temporaire.
 
 Si vous utilisez l’ACRYLIQUE dans l’application sur des surfaces de navigation, envisagez d’étendre le contenu sous le volet ACRYLIQUE pour améliorer le flux sur votre application. À l’aide de NavigationView fait pour vous automatiquement. Toutefois, pour éviter de créer un effet de répartition, essayez de ne pas placer plusieurs éléments de bord à bord ACRYLIQUE - cela peut créer une intersection indésirable entre les deux surfaces floues. ACRYLIQUE est un outil pour harmoniser la présentation visuelle de vos conceptions, mais peut entraîner un bruit visuel est utilisé de manière incorrecte.
@@ -107,7 +107,7 @@ La plupart de nos contrôles utiliseront ACRYLIQUE par défaut. [MenuFlyouts](ht
 L'acrylique adapte automatiquement son apparence à une vaste gamme d’appareils et de contextes.
 
 En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, à la fois l’ACRYLIQUE en arrière-plan et l’ACRYLIQUE dans l’application apparaissent comme une couleur unie:
- - Lorsque l’utilisateur désactive la transparence dans Paramètres > Personnalisation > couleurs
+ - Lorsque l’utilisateur désactive la transparence dans les paramètres > personnalisation > couleur
  - Lorsque le mode économiseur de batterie est activé
  - Lorsque l’application est exécutée sur un matériel bas de gamme
 
