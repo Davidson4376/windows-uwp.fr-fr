@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, un contrôle personnalisé basé sur un modèle,
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e929f217c71a90540803b180e6e79b98802f9c7a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 24739e79b3999309aef9c1c6b35afd9ef2bbc9ab
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943654"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9036991"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 
@@ -21,7 +21,7 @@ ms.locfileid: "8943654"
 Une des fonctionnalités plus puissantes de la plateforme Windows universelle (UWP) est la flexibilité que la pile de l’interface utilisateur (UI) fournit pour créer des contrôles personnalisés en fonction du type XAML [**contrôle**](/uwp/api/windows.ui.xaml.controls.control) . L’infrastructure XAML UI offre des fonctionnalités telles que les [Propriétés de dépendance personnalisées](/windows/uwp/xaml-platform/custom-dependency-properties) et les propriétés jointes et [modèles de contrôle](/windows/uwp/design/controls-and-patterns/control-templates), rendant facile à créer des contrôles riche et personnalisables. Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé (basé sur un modèle) avec C++ / WinRT.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Créer une application vide (BgLabelControlApp)
-Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **application vide (C++ / WinRT)** de projet et nommez-le *BgLabelControlApp*.
+Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **application vide (C++ / WinRT)** de projet et nommez-le *BgLabelControlApp*. Dans une section ultérieure de cette rubrique, vous serez redirigé vers la génération de votre projet (ne générez pas d’ici là).
 
 Nous allons créer une nouvelle classe pour représenter un contrôle personnalisé (basé sur un modèle). La création et l’utilisation de la classe se feront au sein de la même unité de compilation. Mais nous voulons être en mesure d’instancier cette classe à partir du balisage XAML, c’est pourquoi qu'il doit s’agir d’une classe runtime. Et nous allons utiliser C++/WinRT à la fois pour la créer et l’utiliser.
 
@@ -149,7 +149,7 @@ Ouvrez `MainPage.xaml`, qui contient le balisage XAML pour notre page d’interf
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-En outre, ajoutez les éléments suivants incluent la directive `MainPage.h` afin que le type de **MainPage** (il s’agit d’une combinaison de compilation de balisage XAML et le code impératif) est prenant en charge du type de contrôle personnalisé **BgLabelControl** .
+En outre, ajoutez les éléments suivants incluent la directive `MainPage.h` afin que le type de **MainPage** (il s’agit d’une combinaison de compilation de balisage XAML et le code impératif) est prenant en charge du type de contrôle personnalisé **BgLabelControl** . Si vous souhaitez utiliser **BgLabelControl** à partir d’une autre page XAML, puis ajoutez cette même inclure trop directive au fichier d’en-tête pour cette page. Ou bien, vous pouvez également suffit simplement de placer un seul inclure la directive dans votre fichier d’en-tête précompilé.
 
 ```cppwinrt
 // MainPage.h

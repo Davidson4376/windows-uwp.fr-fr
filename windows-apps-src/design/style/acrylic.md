@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b47991add56868fe534b0460ec65336e94f433e9
-ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
+ms.openlocfilehash: 85579ac0dcc6f64a87c37c92ae46a8f42162af08
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035529"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037331"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -55,7 +55,7 @@ ACRYLIQUE est un type de [pinceau](https://docs.microsoft.com/en-us/uwp/api/Wind
         If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
+        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -334,7 +334,7 @@ Nous avons affiné les composants clés de l'acrylique pour définir ses propri�
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles associés
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: a76a03eaff3d831b48e7b86c0b70ff2cbae7360a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936215"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037011"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
@@ -59,7 +59,7 @@ Associez InkCanvas avec un élément InkToolbar pour fournir une interface utili
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/InkCanvas">ouvrir l’application et voir l'objet InkCanvas en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -166,7 +166,7 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 
 - [Exemple SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)- Montre 8scénarios autour des fonctionnalités de personnalisation et d’extensibilité des contrôles InkCanvas et InkToolbar. Chaque scénario fournit des indications de base sur les situations courantes d’entrée manuscrite et les implémentations de contrôles.
 - [Exemple de ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)- Montre des scénarios d’entrée manuscrite plus avancés.
-- [Exemple de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles associés
 

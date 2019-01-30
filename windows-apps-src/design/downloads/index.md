@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7089f4b6e28056f44a6ad5d37aa90f6cf84784df
-ms.sourcegitcommit: 05335f65dfe497ef4027b7249c0119fc59e355e2
+ms.openlocfilehash: 09fa50319defd90479ca93e4ba1b920948fbb9d3
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "8964672"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9036921"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
@@ -40,7 +40,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
-        v1806, June 2018<br>
+        v1901, January 2019<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
@@ -126,7 +126,7 @@ Un exemple d’applicationUWP qui programme des déjeuners avec vos amis et vos 
 
 ![Galerie de contrôles XAML](images/xaml-controls-gallery.png)
 **Galerie de contrôles XAML**<br>
-Cet exemple offre une démonstration interactive de tous les contrôles XAML. Il présente une variété de dispositions, de la plus basique à la plus évolutive, et ait apparaître e balisage que vous pouvez copier dans votre projet. Remarque: Le fichier de téléchargement et le référentiel GitHub désignent actuellement cet exemple d’application comme «UI Basics (XAML)». <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Télécharger l’exemple Galerie de contrôles XAML</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Découvrir l'exemple Galerie de contrôles XAML sur GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Télécharger l’application Galerie de contrôles XAML à partir du Store</a></p>
+Cet exemple offre une démonstration interactive de tous les contrôles XAML. Il présente une variété de dispositions, de la plus basique à la plus évolutive, et ait apparaître e balisage que vous pouvez copier dans votre projet. Remarque: Le fichier de téléchargement et le référentiel GitHub désignent actuellement cet exemple d’application comme «UI Basics (XAML)». <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Télécharger l’exemple Galerie de contrôles XAML</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Découvrir l'exemple Galerie de contrôles XAML sur GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Télécharger l’application Galerie de contrôles XAML à partir du Store</a></p>
 
 ## <a name="want-more-code"></a>Vous voulez plus de code?
 
