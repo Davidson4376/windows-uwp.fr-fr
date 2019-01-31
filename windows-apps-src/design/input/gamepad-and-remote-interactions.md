@@ -1,33 +1,26 @@
 ---
-Description: TODO
-title: Interactions entre le boîtier de commande et la télécommande
-ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
-label: Gamepad and remote interactions
-template: detail.hbs
-isNew: true
-ms.date: 02/08/2017
-ms.topic: article
-keywords: windows10, uwp
-ms.localizationpriority: medium
-ms.openlocfilehash: daf0452a30d494b3835ea043eee7d596921b0a75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946254"
+auteur de tête <<<<<<<: Description Karl non-Microsoft Bridge: optimiser votre application pour l’entrée de boîtier de commande Xbox et la télécommande.
+=== Description: TODO
+>>>>>>> maître titre: ms.assetid d’interactions avec le boîtier de commande et la télécommande: étiquette 784a08dc-2736-4bd3-bea0-08da16b1bd47: boîtier de commande et le modèle d’interactions à distance: isNew detail.hbs: true <<<<<<< HEAD ms.author: kbridge =======
+maître MS.date: 08/02/2017 ms.topic: l’article de mots clés: windows 10, uwp ms.localizationpriority: moyenne
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 
-![Télécommande et bouton multidirectionnel](images/dpad-remote/dpad-remote.png)
+![image clavier et boîtier de commande](images/keyboard/keyboard-gamepad.jpg)
 
-Les applications de plateforme Windows universelle (UWP) prennent désormais en charge les entrées à l'aide du boîtier de commande et de la télécommande, qui sont les périphériques d’entrée principaux de la Xbox et de la télévision.
+***Modèles d’interaction communs sont partagés entre le boîtier de commande, télécommande et le clavier***
 
-Les applications UWP doivent être optimisées pour ces types d’appareils d’entrée, comme c’est le cas pour les entrées via le clavier et la souris d’un ordinateur, et pour les entrées tactiles sur un téléphone ou une tablette.
+Le bon fonctionnement de votre application avec un boîtier de commande et une télécommande représente l’étape la plus importante de l’optimisation des expériences «10-foot». Vous pouvez cependant apporter des améliorations relatives aux boîtiers de commande et aux télécommandes pour optimiser l’expérience d’interaction utilisateur sur un appareil où leurs actions sont relativement limitées.
+
+Les applications Universal Windows Platform (UWP) prennent désormais en charge les entrées du boîtier de commande et de la télécommande. 
+
+Les boîtiers de commandes et les télécommandes sont les principaux appareils d’entrée utilisables avec une Xbox et un téléviseur. 
+
+Les applications UWP doivent être optimisées pour ces types d’appareils d’entrée, comme c’est le cas pour les entrées via le clavier et la souris d’un ordinateur, et pour les entrées tactiles sur un téléphone ou une tablette. 
 
 Il est essentiel de s’assurer que votre application fonctionne correctement avec ces appareils d’entrée lorsque vous les optimisez pour une Xbox et un téléviseur.
 
-> [!NOTE] 
-> Vous pouvez maintenant brancher le boîtier de commande et l’utiliser avec des applications UWP sur un ordinateur, ce qui facilite la validation du travail.
+Vous pouvez maintenant brancher le boîtier de commande et l’utiliser avec des applications UWP sur un ordinateur, ce qui facilite la validation du travail.
 
 Pour garantir une expérience utilisateur réussie et agréable avec l’application UWP lors de l’utilisation d’un boîtier de commande ou d’une télécommande, envisagez ce qui suit:
 

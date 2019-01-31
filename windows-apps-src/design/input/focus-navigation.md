@@ -1,6 +1,6 @@
 ---
 title: Navigation en mode focus pour clavier, boîtier de commande, télécommande et outils d’accessibilité
-Description: ''
+Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 label: ''
 template: detail.hbs
 keywords: clavier, contrôleur de jeu, télécommande, navigation, navigation directionnelle interne, zone directionnelle, stratégie de navigation, entrée, interaction utilisateur, accessibilité, facilité d’utilisation
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76e62a4fcccec91fc6b3a083671ff68af2202e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
+ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934036"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "9041047"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Navigation en mode focus pour clavier, boîtier de commande, télécommande et outils d’accessibilité
 
@@ -28,7 +28,7 @@ Utilisez la navigation en mode focus pour fournir des expériences d’interacti
 
 La navigation en mode focus désigne le mécanisme sous-jacent qui permet aux utilisateurs de naviguer et d’interagir avec l’interface utilisateur d’une application UWP à l’aide d’un clavier, d’un boîtier de commande ou d’une télécommande.
 
-> [!NOTE] 
+> [!NOTE]
 > Les dispositifs d’entrée sont généralement classés en tant que dispositifs de pointage, tels que l’interaction tactile, le pavé tactile, le stylet et la souris, et dispositifs qui n’effectuent pas de pointage, tels que clavier, le boîtier de commande et la télécommande.
 
 Cette rubrique décrit comment optimiser une application UWP et générer des expériences d’interaction personnalisées pour les utilisateurs qui s’appuient sur des types d’entrée qui n’effectuent pas de pointage. 
@@ -40,14 +40,16 @@ Voir [Gérer les entrées du pointeur](handle-pointer-input.md) pour obtenir des
 Pour plus d’informations sur la création d’applications et d’expériences pour le clavier, voir [Interactions avec le clavier](keyboard-interactions.md).
 
 ## <a name="general-guidance"></a>Recommandations d’ordre général
+
 Seuls les éléments d’interface utilisateur qui nécessitent l’interaction de l’utilisateur doivent prendre en charge la navigation en mode focus; les éléments qui ne nécessitent aucune action, comme les images statiques, n’ont pas besoin du focus pour le clavier. Les lecteurs d’écran et les outils d’accessibilité similaires annoncent cependant ces éléments statiques, même lorsqu’ils ne sont pas inclus dans la navigation en mode focus. 
 
 Il est important de se souvenir que, contrairement à la navigation avec un dispositif de pointage, tel que la souris ou la fonctionnalité tactile, la navigation en mode focus est linéaire. Au moment d’implémenter la navigation en mode focus, envisagez la manière dont un utilisateur interagira avec votre application et comment devrait se dérouler la navigation logique. Dans la plupart des cas, nous recommandons que le comportement de navigation en mode focus personnalisé suive le modèle de lecture préféré inhérente à la culture de l’utilisateur.
 
 Certaines autres considérations de navigation en mode focus incluent les éléments suivants:
+
 - Les contrôles sont-ils regroupés logiquement?
-- Existe-t-il des groupes de contrôles avec une plus grande importance? 
-   - Si oui, ces groupes contiennent-ils des sous-groupes?
+- Existe-t-il des groupes de contrôles avec une plus grande importance?
+  - Si oui, ces groupes contiennent-ils des sous-groupes?
 - La disposition nécessite-t-elle une navigation directionnelle personnalisée (touches de direction) et un ordre de tabulation?
 
 Le livre électronique [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) (Conception de logiciels accessibles) comporte un excellent chapitre sur la *conception de la hiérarchie logique*.
@@ -57,13 +59,12 @@ Le livre électronique [Engineering Software for Accessibility](https://www.micr
 La région de navigation interne2D d’un contrôle, ou d’un groupe de contrôles, est appelée «zone directionnelle». Lorsque le focus se déplace sur cet objet, les touches de direction du clavier (gauche, droite, haut et bas) peuvent être utilisées pour naviguer entre les éléments enfants au sein de la zone directionnelle.
 
 ![zone directionnelle](images/keyboard/directional-area-small.png)
-
-*Région de navigation interne2D, ou zone directionnelle, d’un groupe de contrôles*
+*région de navigation interne 2D, ou zone directionnelle, d’un groupe de contrôles*
 
 Vous pouvez utiliser la propriété [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) (qui peut avoir les valeurs [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), [Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), ou [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) pour gérer la navigation interne2D avec les touches de direction du clavier.
 
-> [!NOTE]  
-> L’ordre de tabulation n’est pas affecté par cette propriété. Pour éviter une expérience de navigation confuse, nous recommandons que les éléments enfants d’une zone directionnelle ne soient *pas* explicitement spécifiés dans l’ordre de navigation par tabulations de votre application. Consultez les propriétés [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) et [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) pour plus d’informations sur le comportement de la tabulation pour un élément.  
+> [!NOTE]
+> L’ordre de tabulation n’est pas affecté par cette propriété. Pour éviter une expérience de navigation confuse, nous recommandons que les éléments enfants d’une zone directionnelle ne soient *pas* explicitement spécifiés dans l’ordre de navigation par tabulations de votre application. Consultez les propriétés [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) et [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) pour plus d’informations sur le comportement de la tabulation pour un élément.
 
 ### <a name="autohttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode-default-behavior"></a>[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (comportement par défaut)
 
@@ -74,8 +75,7 @@ Lorsqu’il est défini sur Auto, le comportement de navigation directionnelle e
 Définissez **XYFocusKeyboardNavigation** sur **Disabled** pour bloquer la navigation directionnelle sur le contrôle et ses éléments enfants.
 
 ![Comportement désactivé de XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-
-*Comportement désactivé de XYFocusKeyboardNavigation*
+*comportement désactivé de XYFocusKeyboardNavigation*
 
 Dans cet exemple, le [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) principal (ContainerPrimary) a sa propriété **XYFocusKeyboardNavigation** définie sur **Enabled**. Tous les éléments enfants héritent de ce paramètre et il est possible d’y naviguer avec les touches de direction. Toutefois, les éléments B3 et B4 sont dans un [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) secondaire (ContainerSecondary), avec **XYFocusKeyboardNavigation** défini sur **Disabled**, ce qui remplace le conteneur principal et désactive la navigation avec les touches de direction vers lui-même et entre ses éléments enfants.
 
@@ -131,9 +131,8 @@ Définissez **XYFocusKeyboardNavigation** sur **Enabled** pour prendre en charge
 
 Lorsqu’elle est définie, la navigation avec les touches de direction est limitée aux éléments situés dans la zone directionnelle. La navigation par tabulation n’est pas affectée, comme tous les contrôles restent accessibles via la hiérarchie de leur ordre de tabulation.
 
-![Comportement activé de XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-
-*Comportement activé de XYFocusKeyboardNavigation*
+![XYFocusKeyboardNavigation activé comportement](images/keyboard/xyfocuskeyboardnav-enabled.gif)
+*XYFocusKeyboardNavigation activé comportement*
 
 Dans cet exemple, le [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) principal (ContainerPrimary) a sa propriété **XYFocusKeyboardNavigation** définie sur **Enabled**. Tous les éléments enfants héritent de ce paramètre et il est possible d’y accéder avec les touches de direction. Les éléments B3 et B4 sont dans un [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) secondaire(ContainerSecondary) où **XYFocusKeyboardNavigation** n’est pas défini, qui hérite du paramètre de conteneur principal. L’élément B5 n’est pas dans une zone directionnelle déclarée et ne prend pas en charge la navigation avec les touches de direction, mais il prend pas en charge le comportement de navigation par tabulation standard.
 
@@ -195,9 +194,8 @@ Vous pouvez avoir plusieurs niveaux de zones directionnelles imbriquées. Si tou
 
 Voici un exemple de deux zones directionnelles imbriquées dans un élément qui ne prend pas explicitement en charge la navigation directionnelle2D. Dans ce cas, la navigation directionnelle n’est pas prise en charge entre les deux zones imbriquées.
 
-![Comportement activé et imbriqué de XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-
-*Comportement activé et imbriqué de XYFocusKeyboardNavigation*
+![XYFocusKeyboardNavigation comportement activé et imbriqué](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
+*XYFocusKeyboardNavigation comportement activé et imbriqué*
 
 Voici un exemple plus complexe de troiszones directionnelles imbriquées dans lesquelles:
 
