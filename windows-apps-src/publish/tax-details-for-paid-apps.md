@@ -1,30 +1,31 @@
 ---
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
-title: Informations fiscales pour les applications payantes
+title: Informations fiscales
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 01/02/2019
+ms.date: 01/31/2019
 ms.topic: article
 keywords: Windows10, uwp, taxes, taxes sur les applications, exigences fiscales, développement commercial, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 896a92e009b7d9c33554f77d8da56730625f1f85
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: cf57fa923297b8e4a57d7c5ca4668868bfae7038
+ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990337"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042489"
 ---
-# <a name="tax-details-for-paid-apps"></a>Informations fiscales pour les applications payantes
+# <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Informations fiscales pour les développeurs d’application/jeu Windows et les éditeurs Azure Marketplace
 
 
-Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous.
+Pour comprendre votre taxe considérations pour la sélection du prix et responsabilité fiscale sous le contrat développeur d’applications ou d’un contrat d’éditeur modernes, voir votre pays/régions de la distribution dans les tableaux ci-dessous.
 
 > [!NOTE]
 > L’Ajustement du développement commercial peut avoir des implications de paiement dans un nombre limité de pays/régions. Pour plus de détails sur l’Ajustement du développement commercial et les marchés dans lesquels il s’applique, consultez le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et la liste des [pays/régions impliqués](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
-> Les taux d’imposition sont susceptibles de changer à tout moment. Microsoft ne peut pas garantir que les taux figurant dans les tableaux ci-dessous seront toujours exacts.
-> 
-> La responsabilité fiscale inhérente aux pays ou régions du revendeur et aux circonstances (comme décrit [ci-dessous](#reseller-countriesregions)) est couverte par l'ExposéC du [Contrat du développeur d'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), nonobstant les informations contenues dans le tableau ci-dessous
+> Responsabilité fiscale aux pays/régions des revendeurs et aux circonstances (comme décrit [ci-dessous](#reseller-countriesregions)) est couverte par l’exposé C du [Contrat développeur d’applications](https://docs.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement), nonobstant les informations contenues dans le tableau ci-dessous.
+> Notez que la colonne **implication de paiement** s’applique uniquement aux développeurs d’application/jeu Windows. Les taux d’imposition indiqué dans cette colonne est susceptibles de changer à tout moment, et Microsoft ne peut pas garantir que les taux figurant dans les tableaux ci-dessous seront toujours exacts.
+
+
 
  
 
@@ -110,7 +111,7 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Allemagne                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 19% de taxe) | Microsoft          |
 | Ghana                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Gibraltar                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Grèce                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 24% de taxe) | Microsoft          |
+| Grèce                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 24% de taxe) | Microsoft          |
 | Groenland                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Grenade                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Guadeloupe                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
@@ -192,13 +193,13 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Autorité palestinienne            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Panama                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Papouasie-Nouvelle-Guinée                 | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Paraguay                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Pérou                             | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné            | Développeur          |
-| Philippines                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Paraguay                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Pérou                             | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné            | Développeur          |
+| Philippines                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Pologne                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 23% de taxe) | Microsoft          |
 | Portugal                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 23% de taxe) | Microsoft          |
-| Qatar                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| La Réunion                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Qatar                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| La Réunion                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Roumanie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 19% de taxe) | Microsoft          |
 | Russie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 18% de taxe) | Microsoft          |
 | Rwanda                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
@@ -207,12 +208,12 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Saint-Kitts-et-Nevis            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Sainte-Lucie                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Saint-Martin (partie Français)       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Saint-Vincent-et-les Grenadines | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Saint-Vincent-et-les Grenadines | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | État indépendant des Samoa                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Saint-Marin                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | São Tomé-et-Príncipe            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Arabie saoudite                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du (prix sélectionné moins 5% de taxe)                 | Microsoft          |
-| Sénégal                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Sénégal                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Serbie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 20% de taxe) | Microsoft          |
 | Seychelles                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Sierra Leone                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
@@ -220,51 +221,58 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Sint Maarten (partie néerlandaise)        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
 | Slovaquie                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 20% de taxe) | Microsoft          |
 | Slovénie                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 22% de taxe) | Microsoft          |
-| Salomon (îles)                  | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Somalie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Salomon (îles)                  | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Somalie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Afrique du Sud                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countriesregions) | 70% du prix sélectionné                 | Développeur          |
 | Espagne                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 21% de taxe) | Microsoft          |
-| Sri Lanka                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Suriname                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Svalbard et Jan Mayen                 | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Swaziland                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Sri Lanka                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Suriname                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Svalbard et Jan Mayen                 | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Swaziland                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Suède                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 25% de taxe) | Microsoft          |
 | Suisse                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 8% de taxe)  | Microsoft          |
 | Taiwan                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70% du (prix sélectionné moins 5% de taxe)  | Microsoft          |
-| Tadjikistan                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Tanzanie                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Thaïlande                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Timor-Leste                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Togo                             | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Tokelau                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Tonga                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Trinité-et-Tobago              | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Tunisie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Tadjikistan                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Tanzanie                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Thaïlande                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Timor-Leste                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Togo                             | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Tokelau                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Tonga                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Trinité-et-Tobago              | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Tunisie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Turquie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du (prix sélectionné moins 18% de taxe) | Microsoft          |
-| Turkménistan                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Turks et Caïcos (îles)         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Tuvalu                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Îles mineures éloignées des États-Unis      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Îles Vierges (É.-U.)              | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Ouganda                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Ukraine                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Turkménistan                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Turks et Caïcos (îles)         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Tuvalu                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Îles mineures éloignées des États-Unis      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Îles Vierges (É.-U.)              | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Ouganda                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Ukraine                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Émirats arabes unis             | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du (prix sélectionné moins 5% de taxe)                 | Microsoft          |
 | Royaume-Uni                   | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.            | 70% du (prix sélectionné moins 20% de taxe) | Microsoft          |
 | États-Unis (y compris Porto Rico)  | Les taxes sont ajoutées au prix sélectionné.                                                                                                      | 70% du prix sélectionné                 | Microsoft          |
-| Uruguay                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Ouzbékistan                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Vanuatu                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Cité du Vatican                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Venezuela                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Uruguay                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Ouzbékistan                       | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Vanuatu                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Cité du Vatican                     | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Venezuela                        | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Vietnam                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countriesregions) | 70% du prix sélectionné                 | Développeur          |
-| Wallis-et-Futuna                | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Yémen                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Zambie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
-| Zimbabwe                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70% du prix sélectionné                 | Développeur          |
+| Wallis-et-Futuna                | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Yémen                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Zambie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
+| Zimbabwe                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 
- 
+Ce qui suit s’applique uniquement à Azure Marketplace éditeurs, nonobstant toute contraire ci-dessus: 
 
-## <a name="mixed-remittance-countriesregions"></a>Pays/régions de versement mixte
+| Pays/région                   | Considérations fiscales pour la sélection des prix                                                                                                             | Gestion des taxes                    | 
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Australie (pour les achats effectués par le biais de tous les scénarios d’achat de client à l’exception de contrat entreprise) | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. | Microsoft |
+| Australie (uniquement pour les achats effectués via le scénario d’achat de client accord entreprise) | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. | Publisher |
+| Brésil | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. | Éditeur **(voir le revendeur pays/régions)** |
+| Mexique | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. | Éditeur **(voir le revendeur pays/régions)** |
+
+## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>Pays/régions de versement mixte pour les développeurs d’application/jeu Windows
 
 
 Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store dans les pays/régions ci-dessous. Les [rapports](payout-summary.md#downloading-payment-transactions) que Microsoft met à votre disposition identifieront les transactions pour lesquelles un partenaire de facturation a recueilli les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store. À l’exception des transactions décrites dans ces rapports, ni Microsoft, ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits in-app dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis et de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits in-app.
@@ -274,20 +282,23 @@ Certains partenaires de facturation Microsoft peuvent recueillir et verser les t
 | Afrique du Sud                       |
 | Vietnam                            |
 
- 
-
 ## <a name="reseller-countriesregions"></a>Pays/régions des revendeurs
 
-
 Dans certains pays ou régions, Microsoft fait office de revendeur, plutôt que d’agent, pour la mise à disposition de vos applications et produits in-app dans le Windows Store. Pour plus d’informations sur les modalités et conditions relatives aux pays/régions des revendeurs, voir le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+
+Ce qui suit s’applique uniquement aux développeurs de jeux / d’application Windows:   
 
 |                    Pays/régions des revendeurs                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
 | Chine (sauf sur les appareils de communication mobiles exécutant Windows Phone 7.x et sur les ordinateurs personnels exécutant Windows8.x) |
 | Brésil (uniquement pour les achats effectués sur des appareils exécutant Windows10)     |
 
- 
+Ce qui suit s’applique uniquement à Azure Marketplace éditeurs: 
 
+|                    Pays/régions des revendeurs                                                                          |
+|------------------------------------------------------------------------------------------------------------------------|
+| Brésil (pour les achats effectués par le biais de tous les scénarios d’achat de client à l’exception de fournisseur de solutions cloud) |
+| Mexique (uniquement pour les achats effectués via le scénario d’achat de client accord entreprise) |
 
 
  
