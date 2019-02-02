@@ -1,16 +1,16 @@
 ---
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Demander des évaluations et des avis pour votre app
-ms.date: 06/15/2018
+ms.date: 01/22/2019
 ms.topic: article
 keywords: windows10, uwp, évaluations et avis
 ms.localizationpriority: medium
-ms.openlocfilehash: 377b71dba2fb62dfc562b56d40e65e43b0bd49c9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
+ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946860"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042635"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Demander des évaluations et des avis pour votre app
 
@@ -25,38 +25,87 @@ Lorsque vous êtes prêt à analyser vos données d’évaluations et avis, vous
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Afficher une boîte de dialogue d'évaluation et d'avis dans votre app
 
-Pour lancer par programme une boîte de dialogue à partir de votre app, afin d'inviter vos clients à évaluer votre app et à soumettre un avis, appelez la méthode [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Communiquez le chiffre entier 16 pour le paramètre *requestKind* et une chaîne vide pour le paramètre *parametersAsJson* comme indiqué dans cet exemple de code. Cet exemple requiert la bibliothèque [Json.NET](http://www.newtonsoft.com/json) de Newtonsoft, et doit utiliser des instructions pour les espaces de noms **Windows.Services.Store**, **System.Threading.Tasks** et **Newtonsoft.Json.Linq **.
+Pour lancer par programme une boîte de dialogue à partir de votre application afin d’inviter vos clients à évaluer votre application et à soumettre un avis, appelez la méthode [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) dans l’espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) . 
 
 > [!IMPORTANT]
 > La demande d'affichage de la boîte de dialogue d'évaluations et d'avis peut être appelée sur le thread d'interface utilisateur de votre app.
 
 ```csharp
-public async Task<bool> ShowRatingReviewDialog()
-{
-    StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
-        StoreContext.GetDefault(), 16, String.Empty);
+using Windows.ApplicationModel.Store;
 
-    if (result.ExtendedError == null)
+private StoreContext _storeContext;
+
+public async Task Initialize()
+{
+    if (App.IsMultiUserApp) // pseudo-code
     {
-        JObject jsonObject = JObject.Parse(result.Response);
-        if (jsonObject.SelectToken("status").ToString() == "success")
-        {
-            // The customer rated or reviewed the app.
-            return true;
-        }
+        IReadOnlyList<User> users = await User.FindAllAsync();
+        User firstUser = users[0];
+        _storeContext = StoreContext.GetForUser(firstUser);
+    }
+    else
+    {
+        _storeContext = StoreContext.GetDefault();
+    }
+}
+
+private async Task PromptUserToRateApp()
+{
+    // Check if we’ve recently prompted user to review, we don’t want to bother user too often and only between version changes
+    if (HaveWePromptedUserInPastThreeMonths())  // pseudo-code
+    {
+        return;
     }
 
-    // There was an error with the request, or the customer chose not to
-    // rate or review the app.
-    return false;
+    StoreRateAndReviewResult result = await 
+        _storeContext.RequestRateAndReviewAppAsync();
+
+    // Check status
+    switch (result.Status)
+    { 
+        case StoreRateAndReviewStatus.Succeeded:
+            // Was this an updated review or a new review, if Updated is false it means it was a users first time reviewing
+            if (result.UpdatedExistingRatingOrReview)
+            {
+                // This was an updated review thank user
+                ThankUserForReview(); // pseudo-code
+            }
+            else
+            {
+                // This was a new review, thank user for reviewing and give some free in app tokens
+                ThankUserForReviewAndGrantTokens(); // pseudo-code
+            }
+            // Keep track that we prompted user and don’t do it again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+            break;
+
+        case StoreRateAndReviewStatus.CanceledByUser:
+            // Keep track that we prompted user and don’t prompt again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+
+            break;
+
+        case StoreRateAndReviewStatus.NetworkError:
+            // User is probably not connected, so we’ll try again, but keep track so we don’t try too often
+            SetUserHasBeenPromptedButHadNetworkError(); // pseudo-code
+
+            break;
+
+        // Something else went wrong
+        case StoreRateAndReviewStatus.OtherError:
+        default:
+            // Log error, passing in ExtendedJsonData however it will be empty for now
+            LogError(result.ExtendedError, result.ExtendedJsonData); // pseudo-code
+            break;
+    }
 }
 ```
 
-La méthode **SendRequestAsync** utilise un système de requête basée sur un nombre entier simple ainsi que les paramètres de données JSON pour exposer les divers opérations Store sur les apps. Lorsque vous communiquez le chiffre entier 16 au paramètre *requestKind*, vous émettez une requête d'affichage de la boîte de dialogue d’évaluations et d'avis et envoyez les données associées au Store. Cette méthode a été introduite dans Windows10, version1607 et peut être utilisée uniquement dans les projets qui ciblent **Windows10 Anniversary Edition (version10.0; build 14393)** ou une version ultérieure dans Visual Studio. Pour obtenir une vue d’ensemble de cette méthode, voir [Envoyer des demandes au MicrosoftStore](send-requests-to-the-store.md).
+La méthode **RequestRateAndReviewAppAsync** a été introduite dans Windows 10, version 1809, et peut être utilisé uniquement dans les projets qui ciblent Windows **10 octobre 2018 Update (version 10.0; Build 17763)** ou une version ultérieure dans Visual Studio.
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>Données de réponse pour les requêtes d’évaluations et d'avis
 
-Une fois que vous aurez soumis la requête d'affichage de la boîte de dialogue d'évaluations et d'avis, la propriété [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) de la valeur de retour [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) contiendra une chaîne au format JSON qui indiquera que la requête a abouti.
+Une fois que vous envoyez la demande pour afficher l’évaluation et passez en revue la boîte de dialogue, la propriété [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) de la classe [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) contient une chaîne au format JSON qui indique si la demande a réussi.
 
 L’exemple suivant montre la valeur de retour pour cette requête après qu'un client a soumis avec succès une évaluation ou un avis.
 
@@ -81,11 +130,11 @@ L’exemple suivant montre la valeur de retour pour cette requête après qu'un 
 
 Le tableau ci-après décrit les champs qui figurent dans la chaîne de données au format JSON.
 
-|  Champ  |  Description  |
-|----------------------|---------------|
-|  *status*                   |  Une chaîne qui indique si le client a soumis avec succès une évaluation ou un avis. Les valeurs prises en charge sont  **success** et **aborted**.   |
-|  *data*                   |  Un objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou un avis existant(e). L'objet *data* est uniquement inclus dans les réponses de réussite.   |
-|  *errorDetails*                   |  Une chaîne qui contient les détails de l’erreur relative à la demande. |
+| Champ          | Description                                                                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| *status*       | Une chaîne qui indique si le client a soumis avec succès une évaluation ou un avis. Les valeurs prises en charge sont  **success** et **aborted**. |
+| *data*         | Un objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou un avis existant(e). L'objet *data* est uniquement inclus dans les réponses de réussite. |
+| *errorDetails* | Une chaîne qui contient les détails de l’erreur relative à la demande.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Lancer la page d'évaluations et d'avis pour votre app dans le MicrosoftStore
 
