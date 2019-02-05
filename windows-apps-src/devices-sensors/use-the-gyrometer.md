@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8257a8a0c6b8ca320adb04bfb64b0308a4cbefd3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930176"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050502"
 ---
 # <a name="use-the-gyrometer"></a>Utiliser le gyromètre
 
@@ -180,4 +180,4 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
  ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de gyromètre](http://go.microsoft.com/fwlink/p/?linkid=241379)
+* [Exemple de gyromètre](https://go.microsoft.com/fwlink/p/?linkid=241379)

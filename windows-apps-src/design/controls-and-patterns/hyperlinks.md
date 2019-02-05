@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a22c33f3c975e5c1e797f52d7c4e81ea008b61
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036981"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058600"
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
@@ -158,7 +158,7 @@ Dans la mesure où un élément Hyperlink n’est pas un [UIElement](https://msd
 
 **Contenu**
 
-L’élément Hyperlink a des restrictions sur le contenu qui peut exister dans sa collection [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx). Plus précisément, un élément Hyperlink autorise uniquement les types [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) et d’autres types [Span]() qui ne sont pas un autre élément Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) ne peut pas être dans la collection Inlines d’un élément Hyperlink. Toute tentative d’ajout de contenu restreint lève une exception d’argument invalide ou une exception d’analyse XAML.
+L’élément Hyperlink a des restrictions sur le contenu qui peut exister dans sa collection [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx). Plus précisément, un élément Hyperlink autorise uniquement les types [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) et d’autres types [Span](/uwp/api/windows.ui.xaml.documents.span) qui ne sont pas un autre élément Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) ne peut pas être dans la collection Inlines d’un élément Hyperlink. Toute tentative d’ajout de contenu restreint lève une exception d’argument invalide ou une exception d’analyse XAML.
 
 **Élément Hyperlink et comportement de thème/style**
 

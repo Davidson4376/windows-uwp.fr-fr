@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 90c86e071b0e1d2a07d7755ba23cb6418ca0022a
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050952"
+ms.locfileid: "9058570"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -165,7 +165,7 @@ Les contrôles des boutons de la barre de l’application sont caractérisés pa
 
 ### <a name="other-content"></a>Autre contenu
 
-Vous pouvez ajouter des autres contrôles à un menu volant barre de commandes par les encapsuler dans un AppBarElementContainer. Cela vous permet d’ajouter des contrôles comme [DropDownButton]() ou un [bouton partagé](), ou ajouter des conteneurs tels que [StackPanel]() pour créer une interface utilisateur plus complexe.
+Vous pouvez ajouter des autres contrôles à un menu volant barre de commandes par les encapsuler dans un AppBarElementContainer. Cela vous permet d’ajouter des contrôles comme [DropDownButton](buttons.md) ou un [bouton partagé](buttons.md), ou ajouter des conteneurs tels que [StackPanel](buttons.md) pour créer une interface utilisateur plus complexe.
 
 Pour pouvoir être ajoutées aux collections de commande principale ou secondaire d’un volant de barre de commandes, un élément doit implémenter l’interface [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) . AppBarElementContainer est un wrapper qui implémente cette interface, vous pouvez ajouter un élément à une barre de commandes même si elle n’a pas implémenter l’interface proprement dite.
 
@@ -174,7 +174,7 @@ Ici, un AppBarElementContainer est utilisé pour ajouter des éléments supplém
 > [!TIP]
 > Par défaut, éléments conçus pour le canevas d’application ne peuvent pas ressembler droite dans une barre de commandes. Lorsque vous ajoutez un élément à l’aide de AppBarElementContainer, il existe certaines étapes à suivre pour rendre l’élément correspondent à d’autres éléments de barre de commandes:
 >
-> - Remplacer les pinceaux par défaut avec le [style léger](/design/controls-and-patterns/xaml-styles#lightweight-styling) pour que l’élément en arrière-plan et bordure correspondent à des boutons de la barre d’application.
+> - Remplacer les pinceaux par défaut avec le [style léger](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) pour que l’élément en arrière-plan et bordure correspondent à des boutons de la barre d’application.
 > - Ajuster la taille et la position de l’élément.
 > - Placez les icônes dans une fenêtre avec une largeur et hauteur de 16 px.
 

@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: 5c3732927c59cb768ef522a847f79f82994852b7
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 4845b20ed74642f6fb34ea40dd774c91ae378e7b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980397"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050279"
 ---
 # <a name="file-access-permissions"></a>Autorisations d’accès aux fichiers
 
@@ -90,7 +90,7 @@ Il existe deux manières principales pour accéder aux fichiers et dossiers de v
     
     Le préfixe «ms-appx:///» de l’URI fait référence au répertoire d’installation de l’application. Pour en savoir plus sur l’utilisation des URI d’application, voir [Comment utiliser des URI pour référencer du contenu](https://msdn.microsoft.com/library/windows/apps/hh781215).
 
-En outre, contrairement à d’autres emplacements, vous pouvez également accéder à des fichiers dans le répertoire d’installation de votre application à l’aide de certaines [API Win32 et COM pour les applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) et de certaines [fonctions de la bibliothèque C/C++ standard à partir de Microsoft VisualStudio](http://msdn.microsoft.com/library/hh875057.aspx).
+En outre, contrairement à d’autres emplacements, vous pouvez également accéder à des fichiers dans le répertoire d’installation de votre application à l’aide de certaines [API Win32 et COM pour les applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) et de certaines [fonctions de la bibliothèque C/C++ standard à partir de Microsoft VisualStudio](https://msdn.microsoft.com/library/hh875057.aspx).
 
 Le répertoire d’installation de l’application est un emplacement en lecture seule. Vous ne pouvez pas accéder au répertoire d’installation par le biais du sélecteur de fichiers.
 

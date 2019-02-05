@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce639faac66e93b65a398e6d9cdc700546fc68ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a205fb151d1c9e6614dc97ccde639e43720aa8a9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941813"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058590"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Animation connectée pour les applications UWP
 
@@ -53,7 +53,7 @@ Les animations connectées sont généralement utilisées lorsque l'utilisateur 
 ## <a name="configure-connected-animation"></a>Configurer l’animation connectée
 
 > [!IMPORTANT]
-> Cette fonctionnalité nécessite que version de cible de votre application soit Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure. La propriété de Configuration n’est pas disponible dans le SDK antérieures. Vous pouvez cibler une version minimale inférieure à SDK 17763 à l’aide du code adaptatif ou le XAML conditionnel. Pour plus d’informations, voir les [applications adaptatives de Version](/debug-test-perf/version-adaptive-apps).
+> Cette fonctionnalité nécessite que version de cible de votre application soit Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure. La propriété de Configuration n’est pas disponible dans le SDK antérieures. Vous pouvez cibler une version minimale inférieure à SDK 17763 à l’aide du code adaptatif ou le XAML conditionnel. Pour plus d’informations, voir les [applications adaptatives de Version](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 À compter de Windows 10, version 1809, plus les animations connectées génèrent Fluent design en fournissant l’animation des configurations adaptées spécifiquement pour vers l’avant et vers l’arrière navigation entre les pages.
 
@@ -61,16 +61,16 @@ Vous spécifiez une configuration de l’animation en définissant la propriét�
 
 Le tableau suivant décrit les configurations disponibles. Pour plus d’informations sur les principes du mouvement appliqué dans ces animations, voir la [direction et gravité](index.md).
 
-| [GravityConnectedAnimationConfiguration]() |
+| [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |
 | Cela est la configuration par défaut et est recommandée pour la navigation vers l’avant. |
 Lorsque l’utilisateur navigue vers l’avant dans l’application (de A à B), l’élément connecté s’affiche physiquement» pour mener à bien la page». En procédant ainsi, l’élément s’affiche pour déplacer vers l’avant dans un espace de z et supprime un peu comme un effet de gravité tenant. Pour résoudre les effets de gravité, l’élément gains de vitesse et accélère dans sa position finale. Le résultat est une animation «mise à l’échelle et dip». |
 
-| [DirectConnectedAnimationConfiguration]() |
+| [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) |
 | - |
 | Lorsque l’utilisateur navigue vers l’arrière dans l’application (B vers A), l’animation est plus directe. L’élément connecté convertit linéaire des B à l’aide une decelerate cubique courbe de Bézier fonction d’accélération. L’affordance visuelle vers l’arrière renvoie l’utilisateur à leur état antérieur aussi vite que possible tout en conservant le contexte du flux de navigation. |
 
-| [BasicConnectedAnimationConfiguration]() |
+| [BasicConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration) |
 | - |
 | Il s’agit de la valeur par défaut (et uniquement) animation utilisée dans les versions antérieures de Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
 
@@ -118,7 +118,7 @@ if (animation != null)
 
 Cet exemple montre l’utilisation de ConnectedAnimationService pour créer une transition pour la navigation vers l’avant entre deux pages (Page_A à Page_B).
 
-La configuration de l’animation recommandée pour la navigation vers l’avant est [GravityConnectedAnimationConfiguration](). Il s’agit de la valeur par défaut, vous n’avez pas besoin de définir la propriété de [Configuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) , sauf si vous souhaitez spécifier une autre configuration.
+La configuration de l’animation recommandée pour la navigation vers l’avant est [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration). Il s’agit de la valeur par défaut, vous n’avez pas besoin de définir la propriété de [Configuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) , sauf si vous souhaitez spécifier une autre configuration.
 
 Configuration de l’animation dans la page source.
 
@@ -185,7 +185,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Pour la navigation vers l’arrière (Page_B à Page_A), vous suivez les mêmes étapes, mais les pages source et destination sont inversés.
 
-Lorsque l’utilisateur navigue vers l’arrière, ils s’attendent à l’application à retourner à l’état précédent dès que possible. Par conséquent, la configuration recommandée est [DirectConnectedAnimationConfiguration](). Cette animation est plus rapide, plus direct et utilise la fonctionnalité de décélération.
+Lorsque l’utilisateur navigue vers l’arrière, ils s’attendent à l’application à retourner à l’état précédent dès que possible. Par conséquent, la configuration recommandée est [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration). Cette animation est plus rapide, plus direct et utilise la fonctionnalité de décélération.
 
 Configuration de l’animation dans la page source.
 
@@ -314,8 +314,8 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="dos-and-donts"></a>À faire et à ne pas faire
 
 - Utilisez une animation connectée dans les transitions de page où un élément est commun aux pages source et destination.
-- Utilisez [GravityConnectedAnimationConfiguration]() pour la navigation vers l’avant.
-- Utilisez [DirectConnectedAnimationConfiguration]() pour la navigation vers l’arrière.
+- Utilisez [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) pour la navigation vers l’avant.
+- Utilisez [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) pour la navigation vers l’arrière.
 - N’attendez pas demandes réseau ou d’autres opérations asynchrones longues entre la préparation et de démarrage d’une animation connectée. Vous devrez peut-être charger au préalable les informations nécessaires pour exécuter la transition à l'avance, ou utiliser une image d'espace réservé basse résolution pendant le chargement d’une image haute résolution dans l’affichage de destination.
 - Utilisez [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) pour éviter une animation de transition dans une **image** si vous utilisez **ConnectedAnimationService**, dans la mesure où les animations connectées ne sont pas destinées à être utilisées simultanément avec la navigation par défaut transitions. Consultez [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) pour en savoir plus sur l’utilisation des transitions de navigation.
 

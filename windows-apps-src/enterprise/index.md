@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4517d3fc917cb306281e9050f8554119ff987007
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044503"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058580"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -47,7 +47,7 @@ Voir [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNa
 
 Nous avons publié nouveaux contrôles UWP XAML qui remplissent l’écart entre une application de bureau classique l’interface utilisateur et un UI UWP.
 
-Par exemple, les nouveaux contrôles de [barre de menus](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [bouton partagé](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)et [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) offrent des moyens plus souples pour exposer des commandes et [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) Commençons par l’utilisateur entrer les valeurs qui ne sont pas répertoriées dans une liste prédéfinie d’options.
+Par exemple, les nouveaux contrôles de [barre de menus](/windows/uwp/design/controls-and-patterns/menus), [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [bouton partagé](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)et [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) offrent des moyens plus souples pour exposer des commandes et [EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) Commençons par l’utilisateur entrer les valeurs qui ne sont pas répertoriées dans une liste prédéfinie d’options.
 
 ![Barre de menus](images/menu-bar.png)
 
@@ -68,7 +68,7 @@ La bibliothèque de l’interface utilisateur de Windows est un ensemble de pack
 
 ![Bibliothèque de l’interface utilisateur de Windows](images/win-ui.png)
 
-Voir la [Bibliothèque de l’interface utilisateur de Windows (version d’évaluation)](https://docs.microsoft.com/en-us/uwp/toolkits/winui/).
+Voir la [Bibliothèque de l’interface utilisateur de Windows (version d’évaluation)](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 <a id="xaml-islands" />
 
@@ -161,7 +161,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 |-------|-------------|
 | [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631) | Dans ce guide introductif, vous allez vous familiariser avec la plateforme UWP Windows 10. Vous découvrirez, entre autres, ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
 | [Exemple de code d’interface utilisateur XAML adaptative](https://go.microsoft.com/fwlink/p/?LinkId=619992) | Cet exemple de code montre toutes les options de disposition possibles et les contrôles de votre application, quel que soit le type d’appareil et vous permet d’interagir avec les volets pour découvrir comment réaliser les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
-| [Rubrique Xamarin]() | Xamarin pour le ciblage téléphonique |
+| [Rubrique Xamarin](/xamarin/) | Xamarin pour le ciblage téléphonique |
 
 ## <a name="deployment"></a>Déploiement
 

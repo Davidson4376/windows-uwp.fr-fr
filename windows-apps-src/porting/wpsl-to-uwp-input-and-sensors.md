@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2235e8781d8a795145c7080bfd846c58b6253629
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947921"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049223"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>Portage WindowsPhone Silverlight vers UWP pour les e/s, d’appareil et modèle d’application
 
@@ -72,7 +72,7 @@ Une application WindowsPhone Silverlight permettre utiliser la classe de **Micro
 | Silverlight pour Windows Phone                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Propriétés **ApplicationCurrentMemoryUsage** et **ApplicationCurrentMemoryUsageLimit** | Propriétés [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) et [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836)                                                                                                                                    |
-| Propriété **ApplicationPeakMemoryUsage**                                                 | Utilisez les outils de profilage de mémoire de Visual Studio. Pour plus d’informations, voir [Analyser l’utilisation de la mémoire](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
+| Propriété **ApplicationPeakMemoryUsage**                                                 | Utilisez les outils de profilage de mémoire de Visual Studio. Pour plus d’informations, voir [Analyser l’utilisation de la mémoire](https://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
 | Propriété **DeviceFirmwareVersion**                                                      | Propriété [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) (famille d’appareils de bureau uniquement)                                                                                                                                                                             |
 | Propriété **DeviceHardwareVersion**                                                      | Propriété [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) (famille d’appareils de bureau uniquement)                                                                                                                                                                             |
 | Propriété **DeviceManufacturer**                                                         | Propriété [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) (famille d’appareils de bureau uniquement)                                                                                                                                                                                |

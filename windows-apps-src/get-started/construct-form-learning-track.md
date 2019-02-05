@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows10, piste d'apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c316ac97211e85b782bdbf8f5642889a7726a95
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037051"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058530"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 
@@ -135,7 +135,7 @@ Si vous créez des dispositions plus complexes avec plusieurs éléments visuels
 
 Bien qu'il s'agisse ici de la création d'un formulaire, les concepts de dispositions et de contrôles s'appliquent à toutes les interfaces utilisateur XAML que vous pouvez créer. N’hésitez pas à revenir en arrière par le biais de la documentation, nous vous permettent de faire des essais avec le formulaire dont vous disposez, ajouter de nouvelles fonctionnalités de l’interface utilisateur et à améliorer davantage l’expérience utilisateur. Si vous souhaitez obtenir des instructions pas à pas sur les fonctionnalités de disposition plus détaillées, consultez notre [didacticiel de disposition adaptative](../design/basics/xaml-basics-adaptive-layout.md)
 
-Les formulaires n'existent pas nécessairement en dehors de tout contexte: vous pouvez aller plus loin et incorporer le vôtre dans un [modèle Maître/Détails](../design/controls-and-patterns/master-details.md) ou un [contrôle pivot](../design/controls-and-patterns/tabs-pivot.md). Ou si vous souhaitez vous attaquer au code-behind de votre formulaire, vous pouvez commencer avec notre [vue d’ensemble des événements](../xaml-platform/events-and-routed-events-overview.md).
+Les formulaires n'existent pas nécessairement en dehors de tout contexte: vous pouvez aller plus loin et incorporer le vôtre dans un [modèle Maître/Détails](../design/controls-and-patterns/master-details.md) ou un [contrôle pivot](../design/controls-and-patterns/pivot.md). Ou si vous souhaitez vous attaquer au code-behind de votre formulaire, vous pouvez commencer avec notre [vue d’ensemble des événements](../xaml-platform/events-and-routed-events-overview.md).
 
 ## <a name="useful-apis-and-docs"></a>API et documents utiles
 
@@ -161,7 +161,7 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 | [Formulaires](../design/controls-and-patterns/forms.md) | Conseils généraux sur la création de formulaires. |
 | [Panneaux de disposition](../design/layout/layout-panels.md) | Fournit une vue d’ensemble des types de panneaux de disposition et des endroits où les utiliser. |
 | [Modèle Maître/Détails](../design/controls-and-patterns/master-details.md) | Modèle de conception qui peut être implémenté dans un ou plusieurs formulaires. |
-| [Contrôle Pivot](../design/controls-and-patterns/tabs-pivot.md) | Contrôle qui peut contenir un ou plusieurs formulaires. |
+| [Contrôle Pivot](../design/controls-and-patterns/pivot.md) | Contrôle qui peut contenir un ou plusieurs formulaires. |
 | [Conception réactive](../design/layout/responsive-design.md) | Vue d’ensemble des principes généraux de la conception réactive. | 
 | [Dispositions dynamiques avec XAML](../design/layout/layouts-with-xaml.md) | Informations spécifiques sur les états visuels et d’autres implémentations de conception réactive. |
 | [Tailles d’écran pour une conception réactive](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Conseils sur les tailles d'écran à prendre en compte pour les dispositions dynamiques. |

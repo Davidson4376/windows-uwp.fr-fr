@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ccff9d892fbedc62cf1b54e374a0071877805731
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921000"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050432"
 ---
 # <a name="pair-devices"></a>Coupler des appareils
 
@@ -68,7 +68,7 @@ Si vous souhaitez annuler le jumelage d’un appareil, vous devez commencer par 
 ## <a name="sample"></a>Exemple
 
 
-Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), cliquez [ici](http://go.microsoft.com/fwlink/?LinkID=620536).
+Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), cliquez [ici](https://go.microsoft.com/fwlink/?LinkID=620536).
 
  
 

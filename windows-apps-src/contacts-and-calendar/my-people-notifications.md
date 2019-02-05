@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: db25954b7fc6541ac5f5900236e61cb8da488be6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922380"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058720"
 ---
 # <a name="my-people-notifications"></a>Notifications de mes contacts
 
@@ -78,7 +78,7 @@ En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-
 > Si votre application utilise les [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
 > S’il n’est pas garanti que les ID distants utilisés par votre application soient stables et uniques, vous pouvez utiliser la [classe RemoteIdHelper](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass) afin d’ajouter une balise unique à l’ensemble de vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser du tout la propriété RemoteID et de créer à la place une propriété personnalisée étendue dans laquelle stocker les ID distants de vos contacts.
 
-Outre la deuxième liaison et sa charge utile, vous devez inclure une autre charge utile dans la première liaison pour la notification toast de secours. La notification utilisera celle-ci si elle est forcée de revenir à un toast régulier (expliqué plus en détail à la [fin de cet article](https://review.docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
+Outre la deuxième liaison et sa charge utile, vous devez inclure une autre charge utile dans la première liaison pour la notification toast de secours. La notification utilisera celle-ci si elle est forcée de revenir à un toast régulier (expliqué plus en détail à la [fin de cet article](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
 
 ## <a name="creating-the-notification"></a>Création de la notification
 Vous pouvez créer un modèle de notification de mes contacts comme vous créeriez une [notification toast](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).

@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050832"
+ms.locfileid: "9058770"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Traiter des trames audio avec MediaFrameReader
 
@@ -49,7 +49,7 @@ Si la requête retourne une ou plusieurs sources d’images, vous pouvez examine
 
 Obtenez une nouvelle instance de **MediaFrameReader** en appelant [**MediaCapture.CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_), qui passe l’objet **MediaFrameSource** que vous avez sélectionné dans l’étape précédente. Par défaut, les trames audio sont obtenues en mode d’acquisition en mémoire tampon, il est donc peu probable que les images soient perdues, bien que cela puisse se produire si vous ne traitez pas les trames audio assez rapidement et saturez la mémoire tampon allouée du système.
 
-Enregistrez un gestionnaire pour l’événement [**MediaFrameReader.FrameArrived**](*https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived), qui est déclenché par le système quand une nouvelle trame de données audio est disponible. Appelez [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) pour commencer l’acquisition des trames audio. Si le lecteur d’images ne parvient pas à démarrer, la valeur d’état retournée par l’appel aura une valeur autre que [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus).
+Enregistrez un gestionnaire pour l’événement [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived), qui est déclenché par le système quand une nouvelle trame de données audio est disponible. Appelez [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) pour commencer l’acquisition des trames audio. Si le lecteur d’images ne parvient pas à démarrer, la valeur d’état retournée par l’appel aura une valeur autre que [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus).
 
 [!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
 

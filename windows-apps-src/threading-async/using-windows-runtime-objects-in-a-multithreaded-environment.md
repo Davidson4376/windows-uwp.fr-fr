@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows10, uwp, minuteur, threads
 ms.localizationpriority: medium
-ms.openlocfilehash: ad0d342d773723981138619a07ea6ee37ecdc8dd
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044972"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058500"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Utilisation des objets Windows Runtime dans un environnement multi-thread
 Cet article décrit la façon dont le .NETFramework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.
@@ -161,6 +161,6 @@ Par défaut, les classes dans le composant qui peut être activé sont agiles. T
 Concernant les objets qui s’exécutent sur l’interface utilisateur de thread et qui lèvent des exceptions lorsqu’ils sont appelés à partir d’un thread autre que le thread d’interface utilisateur, vous pouvez utiliser l'objet [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) du thread d’interface utilisateur pour distribuer l’appel.
 
 ## <a name="see-also"></a>Voir aussi
-[Guide sur C#](/dotnet/articles/csharp/)
+[Guide sur C#](/dotnet/csharp/)
 
-[Guide de Visual Basic](/dotnet/articles/visual-basic/)
+[Guide de Visual Basic](/dotnet/visual-basic/)

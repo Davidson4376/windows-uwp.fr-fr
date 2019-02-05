@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 428f6787dfeb18d7ebf02f96acea2a6ab55c7fe7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c7a40d81171113656a39dda2fe02e0701fdd8ba4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938590"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050359"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Portage d’un projet Windows Runtime8.x vers un projet UWP
 
@@ -39,7 +39,7 @@ Vous constaterez qu’une légère refactorisation et/ou l’ajout de code adapt
 -   Vous devez être en mesure de supprimer une grande partie des directives de compilation conditionnelle dans le code source de votre application 8.1 universelle si vous avez uniquement besoin prendre en charge Windows 10. Voir [Compilation conditionnelle et code adaptatif](#conditional-compilation-and-adaptive-code) dans cette rubrique.
 -   Pour utiliser des fonctionnalités qui ne sont pas disponibles sur toutes les familles d’appareils (imprimantes, scanneurs, bouton de l’appareil photo, etc.), vous pouvez écrire du code adaptatif. Voir le troisième exemple de la section [Compilation conditionnelle et code adaptatif](#conditional-compilation-and-adaptive-code) dans cette rubrique.
 -   Si vous souhaitez prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10, vous pouvez conserver trois projets dans la même solution et partager du code avec un projet partagé. Vous pouvez également partager des fichiers de code source entre des projets. Pour ce faire, procédez comme suit : dans Visual Studio, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, sélectionnez **Ajouter un élément existant**, sélectionnez les fichiers à partager, puis cliquez sur **Ajouter en tant que lien**. Stockez vos fichiers de code source dans un dossier commun sur le système de fichiers sur lequel les projets liés peuvent les voir. N’oubliez pas de les ajouter dans le contrôle de code source.
--   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, consultez l’article [Création de composants Windows Runtime en C# et Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Il existe également des bibliothèques de classes portables, qui prend en charge le sous-ensemble d’API .NET disponibles dans le .NET Framework pour Windows 8.1, Windows Phone 8.1 et les applications Windows 10 (.NET Core), ainsi que .NET Framework. Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec toutes ces plateformes. Utilisez VisualStudio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx).
+-   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, consultez l’article [Création de composants Windows Runtime en C# et Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Il existe également des bibliothèques de classes portables, qui prend en charge le sous-ensemble d’API .NET disponibles dans le .NET Framework pour Windows 8.1, Windows Phone 8.1 et les applications Windows 10 (.NET Core), ainsi que .NET Framework. Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec toutes ces plateformes. Utilisez VisualStudio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](https://msdn.microsoft.com/library/gg597391.aspx).
 
 ## <a name="extension-sdks"></a>Kits de développement logiciel (SDK) d’extension
 
@@ -172,8 +172,8 @@ Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Développer des applications pour la plateforme Windows universelle](http://msdn.microsoft.com/library/dn975273.aspx)
+* [Développer des applications pour la plateforme Windows universelle](https://msdn.microsoft.com/library/dn975273.aspx)
 * [Vb et Windows Runtime 8.x application à l’aide de modèles (c#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx)
+* [Développement interplateforme avec la bibliothèque de classes portable](https://msdn.microsoft.com/library/gg597391.aspx)
 
