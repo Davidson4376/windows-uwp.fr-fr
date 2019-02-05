@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a0c36430c6dd993c86ae1833631e55e1a8bdca4c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7075df3d5c3de0dd7d756432400dfe934651c5b4
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050319"
+ms.locfileid: "9058761"
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -146,7 +146,7 @@ Voici à quoi ressemble la zone de texte après un ajout de texte.
 
 ### <a name="format-the-text-display"></a>Mettre en forme l’affichage du texte
 
-Pour aligner le texte figurant dans une zone de texte, utilisez la propriété [TextAlignment](). Pour aligner la zone de texte dans la disposition de la page, utilisez les propriétés [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) et [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
+Pour aligner le texte figurant dans une zone de texte, utilisez la propriété [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment). Pour aligner la zone de texte dans la disposition de la page, utilisez les propriétés [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) et [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
 
 Bien que la zone de texte prenne uniquement en charge du texte sans mise en forme, vous pouvez personnaliser l’affichage du texte dans la zone de texte pour l’adapter à vos besoins. Vous pouvez définir les propriétés [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) standard, comme [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) et [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx) pour modifier l’apparence du texte. Ces propriétés affectent uniquement la façon dont le texte s’affiche localement dans la zone de texte. Par conséquent, si vous devez copier et coller ce texte dans un contrôle de texte enrichi, par exemple, aucune mise en forme n’est appliquée.
 
