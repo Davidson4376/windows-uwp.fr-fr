@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
+ms.sourcegitcommit: f01e7abae23b91bbaa007055942e93587c0ec137
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050932"
+ms.locfileid: "9059011"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 
@@ -61,13 +61,15 @@ ms.locfileid: "9050932"
 | Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
 | Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
 | Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Zebra         | DS2208²                        | 2D         | USB          | Poche     | Scanneur de PDV HID           |
 | Zebra         | DS2278                         | 2D         | USB          | Poche     | Scanneur de PDV HID           |
-| Zebra         | DS8108²                        | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Zebra         | DS8108³                        | 2D         | USB          | Poche     | Scanneur de PDV HID           |
 |
 
 
 ¹ mise à jour pour prendre en charge des codes-barres 2D via Honeywell <br/>
-² le microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](https://www.zebra.com/123Scan). 
+Microprogramme minimum ² 009 (2018.07.09) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan).<br/>
+³ du microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
 
 
 <hr>
