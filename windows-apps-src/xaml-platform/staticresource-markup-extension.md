@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4f8c723dee8e943351d268ac678c8acc77efcbf4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936344"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051132"
 ---
 # <a name="staticresource-markup-extension"></a>Extension de balisage {StaticResource}
 
@@ -50,7 +50,7 @@ L’[extension de balisage {ThemeResource}](themeresource-markup-extension.md) e
 
 ### <a name="an-example-staticresource-usage"></a>Exemple d’utilisation de {StaticResource}
 
-Cet exemple de code XAML provient de l’[exemple de liaison de données XAML](http://go.microsoft.com/fwlink/p/?linkid=226854).
+Cet exemple de code XAML provient de l’[exemple de liaison de données XAML](https://go.microsoft.com/fwlink/p/?linkid=226854).
 
 ```xml
 <StackPanel Margin="5">

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: eecd7a3ff86de5db9693bf6ce597e2b1e00bb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c6e1eafbce5eca1570161da1656c0242228ff7de
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947603"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044586"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
@@ -30,7 +30,7 @@ Vous pouvez publier des applications métiers directement à l’attention des e
 Lorsque vous envisagez de publier des applications métier exclusivement à l’attention d’une entreprise, la première étape consiste à établir l’association entre votre compte et le magasin privé de l’entreprise.
 
 > [!IMPORTANT]
-> Ce processus d’association doit être lancé par l’entreprise et doit utiliser l’adresse de messagerie associée au compte Microsoft qui a été utilisé pour créer le compte de développeur. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
+> Ce processus d’association doit être lancé par l’entreprise et doit utiliser l’adresse de messagerie associée au compte Microsoft qui a été utilisé pour créer le compte de développeur. Pour plus d’informations, voir [Utilisation des applications métier](https://go.microsoft.com/fwlink/p/?LinkId=698846).
 
 Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations en accédant à la section **Associations d’entreprise** de vos **Paramètres de compte** (pour autant que vous êtes connecté avec le compte Microsoft qui a été utilisé pour ouvrir le compte de développeur).
 
@@ -73,7 +73,7 @@ Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de 
 > [!NOTE]
 > Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir [exclu ce marché](define-pricing-and-market-selection.md) lorsque vous avez soumis l’application. 
 
-Pour plus d’informations, consultez les articles [Utilisation des applications cœur de métier](http://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l’aide de votre magasin privé](http://go.microsoft.com/fwlink/p/?LinkId=698847).
+Pour plus d’informations, consultez les articles [Utilisation des applications cœur de métier](https://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l’aide de votre magasin privé](https://go.microsoft.com/fwlink/p/?LinkId=698847).
 
 
 ## <a name="update-lob-apps"></a>Mettre à jour des applications métiers
@@ -94,7 +94,7 @@ En mettant vos applications à la disposition d’une entreprise par le biais de
 
 Dans certains cas, les entreprises ne souhaitent pas leurs applications cœur de métier par le biais de l’espace partenaires (par exemple, pour des raisons de conformité ou lorsque les applications qui requièrent des fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser MicrosoftStore pour Entreprises ni MicrosoftStore pour Éducation.
 
-Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
+Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
 
  
 

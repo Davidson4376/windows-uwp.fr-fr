@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, l’impression 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918778"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048266"
 ---
 # <a name="3d-printing-from-your-app"></a>Impression3D à partir de votre application
 
@@ -65,7 +65,7 @@ Dans votre méthode `OnLoadClick`, utilisez la classe [**FileOpenPicker**](https
 À ce stade, vous êtes en mesure de charger un fichier de données3D dans la mémoire de votre application. Il existe de nombreux formats de données de géométrie 3D, mais ils ne sont pas tous adaptés à l’impression3D. Windows10 utilise le type de fichier 3D Manufacturing Format (.3mf) pour toutes les tâches d’impression3D.
 
 > [!NOTE]  
-> Le type de fichier.3mf offre d’autres fonctionnalités non abordées dans ce tutoriel. Pour en savoir plus sur le format3MF et les fonctionnalités proposées aux fabricants et clients de produits3D, reportez-vous à la [Spécification 3MF](http://3mf.io/what-is-3mf/3mf-specification/). Pour savoir comment utiliser ces fonctionnalités à l’aide des API Windows10, consultez le didacticiel [Générer un package3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf).
+> Le type de fichier.3mf offre d’autres fonctionnalités non abordées dans ce tutoriel. Pour en savoir plus sur le format3MF et les fonctionnalités proposées aux fabricants et clients de produits3D, reportez-vous à la [Spécification 3MF](https://3mf.io/what-is-3mf/3mf-specification/). Pour savoir comment utiliser ces fonctionnalités à l’aide des API Windows10, consultez le didacticiel [Générer un package3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf).
 
 L’application [3DBuilder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) peut ouvrir les formats de fichier3D les plus courants et les enregistrer sous forme de fichiers.3mf. Dans cet exemple, où le type de fichier peut varier, une solution très simple consiste à ouvrir l’application 3D Builder et à inviter l’utilisateur à enregistrer les données importées dans un fichier .3mf, puis à le recharger.
 

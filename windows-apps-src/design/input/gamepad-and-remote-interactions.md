@@ -1,8 +1,22 @@
 ---
-auteur de tête <<<<<<<: Description Karl non-Microsoft Bridge: optimiser votre application pour l’entrée de boîtier de commande Xbox et la télécommande.
-=== Description: TODO
->>>>>>> maître titre: ms.assetid d’interactions avec le boîtier de commande et la télécommande: étiquette 784a08dc-2736-4bd3-bea0-08da16b1bd47: boîtier de commande et le modèle d’interactions à distance: isNew detail.hbs: true <<<<<<< HEAD ms.author: kbridge =======
-maître MS.date: 08/02/2017 ms.topic: l’article de mots clés: windows 10, uwp ms.localizationpriority: moyenne
+author: Karl-Bridge-Microsoft
+Description: Optimize your app for input from Xbox gamepad and remote control.
+title: Interactions entre le boîtier de commande et la télécommande
+ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
+label: Gamepad and remote interactions
+template: detail.hbs
+isNew: true
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+keywords: windows10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 022724064ad1e7f5551b6676bf256ca5cf6e4b8e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048556"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interactions entre le boîtier de commande et la télécommande
 

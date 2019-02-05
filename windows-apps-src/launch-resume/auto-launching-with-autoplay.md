@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f49d70ceadad8309419846aa26cb9f97df1c82ff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947122"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047434"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Démarrage automatique avec lecture automatique
 
 Vous pouvez utiliser la **lecture automatique** pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD. Vous pouvez également utiliser la **lecture automatique** pour proposer votre application en tant qu’option quand des utilisateurs partagent des fichiers entre deuxPC à l’aide de la fonction de proximité (appui).
 
-> **Remarque**si vous êtes fabricant de périphériques et que vous voulez associer votre [application pour périphériques du Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkID=301381) comme un gestionnaire de **lecture automatique** pour votre appareil, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour en savoir plus, voir [Lecture automatique pour les applications pour périphériques du MicrosoftStore](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **Remarque**si vous êtes fabricant de périphériques et que vous voulez associer votre [application pour périphériques du Microsoft Store](https://go.microsoft.com/fwlink/p/?LinkID=301381) comme un gestionnaire de **lecture automatique** pour votre appareil, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour en savoir plus, voir [Lecture automatique pour les applications pour périphériques du MicrosoftStore](https://go.microsoft.com/fwlink/p/?LinkId=306684).
 
 ## <a name="register-for-autoplay-content"></a>S’inscrire pour le contenu de lecture automatique
 

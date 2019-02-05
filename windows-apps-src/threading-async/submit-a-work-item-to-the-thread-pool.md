@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, threads, pool de threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 08608bc5715031f9ddf5b6bec05e7c86737f7e10
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981373"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048616"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](https://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 <b>API importantes</b>
 
@@ -350,7 +350,7 @@ Notez que le gestionnaire d’achèvement vérifie si l’élément de travail a
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Vous pouvez en savoir plus, téléchargez le code à partir de ce démarrage rapide de la [Création d’un pool de threads de travail exemple d’élément](http://go.microsoft.com/fwlink/p/?LinkID=328569) écrite pour Windows8.1, puis réutilisez le code source dans une application Windows 10 win\_unap.
+Vous pouvez en savoir plus, téléchargez le code à partir de ce démarrage rapide de la [Création d’un pool de threads de travail exemple d’élément](https://go.microsoft.com/fwlink/p/?LinkID=328569) écrite pour Windows8.1, puis réutilisez le code source dans une application Windows 10 win\_unap.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

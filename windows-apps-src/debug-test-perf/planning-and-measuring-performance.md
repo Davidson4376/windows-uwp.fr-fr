@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921563"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050762"
 ---
 # <a name="planning-for-performance"></a>Planification des performances
 
@@ -104,7 +104,7 @@ Vous pouvez désormais utiliser vos objectifs de performances pour déterminer l
 
 **Lancer et reprendre l’application **
 
--   Retardez l’écran de démarrage de l’application et ne l’étendez que si cela est nécessaire. Pour plus d’informations, voir [Création d’une expérience de lancement d’application rapide et fluide](http://go.microsoft.com/fwlink/p/?LinkId=317595) et [Afficher un écran de démarrage plus longtemps](https://msdn.microsoft.com/library/windows/apps/Mt187309).
+-   Retardez l’écran de démarrage de l’application et ne l’étendez que si cela est nécessaire. Pour plus d’informations, voir [Création d’une expérience de lancement d’application rapide et fluide](https://go.microsoft.com/fwlink/p/?LinkId=317595) et [Afficher un écran de démarrage plus longtemps](https://msdn.microsoft.com/library/windows/apps/Mt187309).
 -   Désactivez les animations qui se produisent immédiatement après la disparition de l’écran de démarrage, car celles-ci entraînent uniquement une perception de retard du moment du démarrage de l’application.
 
 **Interface utilisateur adaptative et orientation**
@@ -152,7 +152,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 // ...
 ```
 
-Reportez-vous également à l’[exemple de journalisation](http://go.microsoft.com/fwlink/p/?LinkId=529576).
+Reportez-vous également à l’[exemple de journalisation](https://go.microsoft.com/fwlink/p/?LinkId=529576).
 
 Une fois votre application instrumentée, vous pouvez tester et mesurer les performances de l’application.
 

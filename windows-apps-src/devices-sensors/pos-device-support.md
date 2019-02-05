@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946900"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050932"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 
 ## <a name="barcode-scanner"></a>Scanneur de code-barres
 | Connectivité | Prise en charge |
 | -------------|-------------|
-| USB          | <p>Windows contient un pilote de classe prêt à l'emploi pour les scanneurs de codes-barres connectés par USB. Il repose sur la spécification du tableau d’utilisation des scanneurs pour point de service (POS) HID (8c) définie par [USB.org](http://www.usb.org/developers/hidpage/). Consultez le tableau ci-dessous pour obtenir la liste des appareils compatibles connus.  Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **Scanneur USB.HID.POS**. </p><p>Windows prend également en charge l’implémentation des pilotes spécifiques du fournisseur pour gérer des scanneurs de code-barres supplémentaires qui ne reconnaissent pas la norme de scanneur USB.HID.POS. Pour connaître la disponibilité des pilotes spécifiques du fournisseur, contactez le fabricant de votre scanneur de code-barres.</p><p>Les fabricants de scanneur de code-barres peuvent consulter le [Guide de conception de pilote de scanneur de code-barres](https://aka.ms/pointofservice-drv) pour en savoir plus sur la création d’un pilote de scanneur de code-barres personnalisé</p> |
+| USB          | <p>Windows contient un pilote de classe prêt à l'emploi pour les scanneurs de codes-barres connectés par USB. Il repose sur la spécification du tableau d’utilisation des scanneurs pour point de service (POS) HID (8c) définie par [USB.org](https://www.usb.org/developers/hidpage/). Consultez le tableau ci-dessous pour obtenir la liste des appareils compatibles connus.  Consultez le manuel de votre scanneur de code-barres ou contactez le fabricant pour savoir comment configurer votre scanneur en mode **Scanneur USB.HID.POS**. </p><p>Windows prend également en charge l’implémentation des pilotes spécifiques du fournisseur pour gérer des scanneurs de code-barres supplémentaires qui ne reconnaissent pas la norme de scanneur USB.HID.POS. Pour connaître la disponibilité des pilotes spécifiques du fournisseur, contactez le fabricant de votre scanneur de code-barres.</p><p>Les fabricants de scanneur de code-barres peuvent consulter le [Guide de conception de pilote de scanneur de code-barres](https://aka.ms/pointofservice-drv) pour en savoir plus sur la création d’un pilote de scanneur de code-barres personnalisé</p> |
 | Bluetooth    | <p>Windows prend en charge les scanneurs de codes-barres Bluetooth basés sur le protocole et l'interface SPP-SSI (Serial Port Protocol - Simple Serial Interface). Pour connaître la liste des appareils compatibles connus, reportez-vous au tableau ci-après. Consultez le manuel de votre scanneur de codes-barres ou contactez son fabricant pour savoir comment le configurer en mode **SPP-SSI**.</p> |
 | Webcam       | <p>À partir de Windows10, version1803, vous pouvez lire des codes-barres via un objectif de caméra standard à partir d’une application Windows universelle. Il est recommandé d'utiliser une caméra qui prend en charge la mise au point automatique et une résolution minimale de 1920 x 1440.  Certaines caméras à résolution plus faible peuvent lire les codes-barres standards s'ils sont imprimés suffisamment grands.  Les codes-barres comportant des éléments plus fins peuvent nécessiter des caméras d'une résolution supérieure.</p>| 
 |
@@ -67,7 +67,7 @@ ms.locfileid: "8946900"
 
 
 ¹ mise à jour pour prendre en charge des codes-barres 2D via Honeywell <br/>
-² le microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
+² le microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](https://www.zebra.com/123Scan). 
 
 
 <hr>

@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: a9e796eee76025e7697c08669e6942e0d69206f7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923489"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045568"
 ---
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 
@@ -162,7 +162,7 @@ Maintenant que les tampons de données ont été obtenus, vous pouvez lire à pa
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Implémenter l’interface IBasicVideoEffect à l’aide du traitement matériel
 
 
-La création d’un effet vidéo personnalisé à l’aide du traitement matériel (GPU) est presque identique à l’utilisation du traitement logiciel tel que décrit ci-dessus. Cette section vous explique les différences dans un effet qui utilise le traitement matériel. Cet exemple utilise l’API Windows Runtime Win2D. Pour plus d’informations sur l’utilisation de Win2D, voir la [documentation Win2D](http://go.microsoft.com/fwlink/?LinkId=519078).
+La création d’un effet vidéo personnalisé à l’aide du traitement matériel (GPU) est presque identique à l’utilisation du traitement logiciel tel que décrit ci-dessus. Cette section vous explique les différences dans un effet qui utilise le traitement matériel. Cet exemple utilise l’API Windows Runtime Win2D. Pour plus d’informations sur l’utilisation de Win2D, voir la [documentation Win2D](https://go.microsoft.com/fwlink/?LinkId=519078).
 
 Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que vous avez créé comme décrit dans la section **Ajouter un effet personnalisé à votre application** au début de cet article.
 
@@ -241,5 +241,5 @@ Pour obtenir des instructions générales sur la création des compositions mult
 ## <a name="related-topics"></a>Rubriquesassociées
 * [Accès à l’aperçu simple de l’appareil photo](simple-camera-preview-access.md)
 * [Compositions multimédias et modification](media-compositions-and-editing.md)
-* [Documentation Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Documentation Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Lecture de contenu multimédia](media-playback.md)

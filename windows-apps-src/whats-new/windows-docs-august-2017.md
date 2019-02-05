@@ -5,18 +5,18 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aeb6f60396b270a78df5203106635436fe2dabe5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922842"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050782"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en août2017
 
 La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les vidéos qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
 
-[Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/your-first-app.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -30,7 +30,7 @@ Utilisez la nouvelle extension [WindowsTemplateStudio](https://aka.ms/wtsinstall
 
 Vous pouvez désormais afficher un aperçu du code [XAML conditionnel](../debug-test-perf/conditional-xaml.md) afin de créer des [applications adaptatives de version](../debug-test-perf/version-adaptive-apps.md). Le XAML conditionnel vous permet d'utiliser la méthode ApiInformation.IsApiContractPresent dans le balisage XAML, afin que vous puissiez définir des propriétés et instancier des objets dans le balisage en fonction de la présence d’une API, sans avoir à utiliser le code-behind.
 
-### <a name="game-mode"></a>Mode jeu
+### <a name="game-mode"></a>Mode de jeu
 
 Les API [mode jeu](https://msdn.microsoft.com/library/windows/desktop/mt808808) pour la plateforme Windows universelle (UWP) vous permettent de créer une expérience de jeu optimale, en tirant parti du mode jeu de Windows10. Ces API sont situées dans l’en-tête **&lt;expandedresources.h&gt;**.
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e28a4a7abaacd8b2de60c6163055bd9d667ba412
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e190a6d5134cc1fba4ac8be970bb8d90847700e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946910"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044413"
 ---
 # <a name="camera"></a>Caméra
 
@@ -50,14 +50,14 @@ Cette section fournit des recommandations relatives à la création d’applicat
 
 ## <a name="uwp-app-samples-for-camera"></a>Exemple d’application UWP pour l’appareil photo
 
-* [Exemple de détection des visages de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
-* [Exemple d’image d’aperçu de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
-* [Exemple HDR de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
-* [Exemple des contrôles manuels de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
-* [Exemple de profil de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
-* [Exemple de résolution de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
-* [Kit de démarrage de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
-* [Exemple de stabilisation vidéo de l’appareil photo](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
+* [Exemple de détection des visages de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
+* [Exemple d’image d’aperçu de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
+* [Exemple HDR de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
+* [Exemple des contrôles manuels de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
+* [Exemple de profil de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
+* [Exemple de résolution de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
+* [Kit de démarrage de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
+* [Exemple de stabilisation vidéo de l’appareil photo](https://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
 ## <a name="related-topics"></a>Rubriques connexes
 

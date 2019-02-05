@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942845"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048346"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -19,9 +19,9 @@ Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) po
 
 ## <a name="common-features-of-the-uri-schemes"></a>Fonctionnalités courantes des schémas d’URI
 
-Tous les schémas décrits dans cette rubrique suivent les règles de schéma d’URI standard pour la normalisation et l’extraction des ressources. Voir [RFC3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) pour la syntaxe générale d’un URI.
+Tous les schémas décrits dans cette rubrique suivent les règles de schéma d’URI standard pour la normalisation et l’extraction des ressources. Voir [RFC3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) pour la syntaxe générale d’un URI.
 
-Tous les schémas d’URI définissent la partie hiérarchique conformément à [RFC3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) en tant que composants d’autorité et de chemin d’accès de l’URI.
+Tous les schémas d’URI définissent la partie hiérarchique conformément à [RFC3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) en tant que composants d’autorité et de chemin d’accès de l’URI.
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -267,7 +267,7 @@ Les développeurs de composants spécifiques situés dans une couche au-dessus d
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [URI (Uniform Resource Identifier): syntaxe générique](http://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [URI (Uniform Resource Identifier): syntaxe générique](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Création de packages d’application](../packaging/index.md)
 * [Faire référence à une image ou une autre ressource à partir du code et du balisage XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, répondre, réponses, passez en revue
 ms.localizationpriority: medium
-ms.openlocfilehash: 1feb6f463fe018d356d678b23199716ad0cbd3e8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0d45b5144bb13e66c506c4a55115bf252288064d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920623"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048206"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
@@ -46,7 +46,7 @@ Lorsque vous répondez à l’avis d’un clients, respectez les consignes suiva
 >
 > Microsoft se réserve le droit de révoquer la possibilité pour un développeur d’envoyer des réponses, notamment si les réponses de ce développeur entraînent un nombre anormalement élevé de signalements de réponses inappropriées, ou si ces réponses incitent un nombre inhabituel de clients à choisir de ne pas recevoir de réponses aux avis.
 
-Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si un avis de votre application contient des propos injurieux, profanes ou abusif, ouvrez une [demande de support](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si un avis de votre application contient des propos injurieux, profanes ou abusif, ouvrez une [demande de support](https://go.microsoft.com/fwlink/p/?LinkID=401178).
 
 
 ## <a name="use-customer-reviews-to-improve-your-app"></a>Utiliser les avis des clients pour améliorer votre application

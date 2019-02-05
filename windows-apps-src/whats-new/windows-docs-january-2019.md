@@ -5,18 +5,18 @@ keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils
 ms.date: 1/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f224663506cbb60f6c1476caccb5ecffefeaf7b
-ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
+ms.openlocfilehash: cc5323ba12fa72fb5350e62f74206ea72fe96497
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014393"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046129"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en janvier 2019
 
 La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et les vidéos suivantes ont été mis à disposition en janvier.
 
-[Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -70,7 +70,7 @@ Notre [Forum aux questions](https://docs.microsoft.com/windows/communitytoolkit/
 
 ### <a name="progressive-web-apps"></a>Applications web progressives
 
-Applications Web progressives sont des sites web qui fonctionnent comme des applications natives sur les navigateurs et un large éventail d’appareils Windows 10. [Regardez la vidéo](https://youtu.be/ugAewC3308Y) pour en savoir plus, puis [consultez les documents](http://aka.ms/Windows-PWA) de prise en main.
+Applications Web progressives sont des sites web qui fonctionnent comme des applications natives sur les navigateurs et un large éventail d’appareils Windows 10. [Regardez la vidéo](https://youtu.be/ugAewC3308Y) pour en savoir plus, puis [consultez les documents](https://aka.ms/Windows-PWA) de prise en main.
 
 ### <a name="vs-code-series"></a>Série de Code Visual Studio
 

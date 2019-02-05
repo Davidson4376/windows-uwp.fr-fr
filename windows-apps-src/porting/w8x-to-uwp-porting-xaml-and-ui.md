@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ddeee438e946dd28a78d59d163f59cb1114aa65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4de36ba8c87c764ff1280e2c886d1ff8692b3246
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929419"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046033"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime8.x vers UWP
 
@@ -106,7 +106,7 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Dans une application du Windows Phone Store, un contrôle [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) exécute une boucle entre la dernière section et la première. Dans une application de 8.x Windows Runtime et dans une application Windows 10, les sections de hub n’exécutent aucune boucle. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Dans une application du Windows Phone Store, l’image d’arrière-plan d’un contrôle [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) se déplace en parallaxe par rapport aux sections de hub. Dans une application de 8.x Windows Runtime et dans une application Windows 10, l’effet parallaxe n’est pas utilisé. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | Dans une application 8.1 universelle, la propriété [**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) rend interactifs l’en-tête de section et le glyphe de chevron rendu en regard de ce dernier. Dans une application Windows 10, il existe une affordance interactive «En savoir plus» en regard de l’en-tête, mais l’en-tête proprement dit n’est pas interactif. **IsHeaderInteractive** détermine toujours si l’interaction déclenche l’événement [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953). |
-| **MessageDialog** | Si vous utilisez **MessageDialog**, préférez [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972), plus flexible. Voir également l’[exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=619992) (en anglais). |
+| **MessageDialog** | Si vous utilisez **MessageDialog**, préférez [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972), plus flexible. Voir également l’[exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=619992) (en anglais). |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** et **PickerFlyout** sont déconseillés pour une application Windows 10. Dans le cas d’un menu volant à sélection unique, utilisez [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030) ; pour des expériences plus complexes, préférez [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | La propriété [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) est déconseillée dans une application Windows 10, et sa configuration n’a aucun effet. Utilisez [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) à la place, par défaut sur **Peek** (dans lesquels un glyphe de œil affiche, comme dans une application de 8.x Windows Runtime). Voir également l’article [Recommandations en matière de zones de mot de passe](https://msdn.microsoft.com/library/windows/apps/dn596103). |
 | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | Le contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) est désormais universel et n’est plus limité aux appareils mobiles. |
@@ -122,7 +122,7 @@ Pour plus d’informations sur les contrôles des applications UWP, voir [Contr�
 
 ##  <a name="design-language-in-windows10"></a>Langage de conception dans Windows 10
 
-Il existe certaines différences légères, mais importantes dans le langage de conception entre les applications universelles 8.1 et Windows 10. Pour plus de détails, voir [Conception](http://dev.windows.com/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
+Il existe certaines différences légères, mais importantes dans le langage de conception entre les applications universelles 8.1 et Windows 10. Pour plus de détails, voir [Conception](https://dev.windows.com/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>Pixels effectifs, distance d’affichage et facteurs d’échelle
 
@@ -247,7 +247,7 @@ Le langage de conception a évolué pour Windows 10 et, par conséquent, certain
 
 Dans d’autres cas, les clés de ressources ne sont plus prises en charge. L’éditeur de balisageXAML dans VisualStudio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `ListViewItemTextBlockStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
 
-Pour les clés qui sont toujours prises en charge, les modifications apportées au langage de conception signifient que les propriétés définies par certains styles ont changé. Par exemple, `TitleTextBlockStyle` définit **FontSize** sur 14,667 px dans une application de 8.x Windows Runtime et sur 18,14 px dans une application Windows Phone Store. Toutefois, le même style définit **FontSize** sur une quantité plus élevée 24 px dans une application Windows 10. Passez en revue vos conceptions et dispositions et utilisez les styles appropriés aux endroits adéquats. Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](http://dev.windows.com/design).
+Pour les clés qui sont toujours prises en charge, les modifications apportées au langage de conception signifient que les propriétés définies par certains styles ont changé. Par exemple, `TitleTextBlockStyle` définit **FontSize** sur 14,667 px dans une application de 8.x Windows Runtime et sur 18,14 px dans une application Windows Phone Store. Toutefois, le même style définit **FontSize** sur une quantité plus élevée 24 px dans une application Windows 10. Passez en revue vos conceptions et dispositions et utilisez les styles appropriés aux endroits adéquats. Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](https://dev.windows.com/design).
 
 Voici la liste complète des clés qui ne sont plus prises en charge.
 
@@ -424,7 +424,7 @@ Quand l’utilisateur commence à taper, l’événement **TextChanged** est dé
     </AutoSuggestBox>
 ```
 
-Voir également l’[exemple de portage AutoSuggestBox](http://go.microsoft.com/fwlink/p/?linkid=619996) (en anglais).
+Voir également l’[exemple de portage AutoSuggestBox](https://go.microsoft.com/fwlink/p/?linkid=619996) (en anglais).
 
 ## <a name="semanticzoom-changes"></a>Modifications SemanticZoom
 
@@ -460,7 +460,7 @@ Dans les applications Windows Runtime 8.x et Windows Phone Store, la famille de 
 
 Dans les applications Windows Runtime 8.x et Windows Phone Store, la langue par défaut pour le texte est définie sur la langue de la build, ou sur en-us. Dans une application Windows 10, la langue par défaut est définie sur la langue de l’application supérieure (substitution des polices). Vous pouvez définir explicitement la propriété [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066), mais le comportement de substitution des polices se révélera plus efficace si vous ne définissez aucune valeur pour cette propriété.
 
-Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=533896). Voir également la section [Contrôles](#controls-and-control-styles-and-templates) ci-dessus relative aux modifications apportées aux contrôles de texte.
+Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](https://go.microsoft.com/fwlink/p/?LinkID=533896). Voir également la section [Contrôles](#controls-and-control-styles-and-templates) ci-dessus relative aux modifications apportées aux contrôles de texte.
 
 ## <a name="theme-changes"></a>Modifications de thème
 

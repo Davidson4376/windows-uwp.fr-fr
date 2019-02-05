@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 173164106e068e3fa081c8d7ddf7838d5b3d18db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ffc2f31b52e7913905c7d64ab797b2939cfb313d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927455"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045222"
 ---
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 Ce que vous devez faire pour toute application réseau.
@@ -45,7 +45,7 @@ Le broker de socket est destiné à remplacer les déclencheurs de canal de cont
 ### <a name="choosing-a-network-trigger"></a>Choix d’un déclencheur réseau
 Il existe des cas où les deux types de déclencheurs seraient appropriés. Lorsque vous choisissez le type de déclencheur à utiliser dans votre application, tenez compte des conseils suivants.
 
--   Si vous utilisez [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) ou [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), vous devez opter pour [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+-   Si vous utilisez [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) ou [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638), vous devez opter pour [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 -   Si vous utilisez des **StreamSockets** compatibles avec les notifications push, vous pouvez utiliser des déclencheurs de canal de contrôle. Toutefois, il est préférable d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Cela permet au système de libérer de la mémoire et de réduire la consommation d’énergie quand la connexion n’est pas activement utilisée.
 -   Si vous souhaitez réduire l’encombrement mémoire de votre application quand celle-ci ne traite pas activement de demandes réseau, préférez [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) chaque fois que possible.
 -   Si vous souhaitez que votre application puisse recevoir des données quand le système est en mode de veille connectée, utilisez [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
@@ -507,4 +507,4 @@ Les API de réseau prennent en charge différentes méthodes permettant de récu
 -   D’autres API fournissent une méthode pour récupérer la valeur **HRESULT** réelle.
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Améliorations de l’API de réseau dans Windows10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Améliorations de l’API de réseau dans Windows10](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

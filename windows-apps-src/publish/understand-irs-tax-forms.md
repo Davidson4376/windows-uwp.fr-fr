@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt, impôt sur le revenu, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb25887d9bc40bd9c596cd437b7d2d6d06047020
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918540"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047311"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -23,8 +23,8 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 
 | Déclaration fiscale de l’IRS | Description | Disponibilité |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Imprimées des déclarations seront versions avant **le 31 janvier**, et les copies .pdf sont disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) (dans **paramètres du compte > profil fiscal**) en même temps |
-|1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Imprimées des déclarations seront versions avant **le 15 mars**, et les copies .pdf sont disponibles dans l’espace partenaires (dans **paramètres du compte > profil fiscal**) en même temps |
+|1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Imprimées des déclarations seront versions avant **le 31 janvier**, et les copies .pdf sont disponibles dans [L’espace partenaires](https://partner.microsoft.com/dashboard) ( **paramètres de compte > profil fiscal**) en même temps |
+|1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Imprimées des déclarations seront versions avant **le 15 mars**, et les copies .pdf sont disponibles dans l’espace partenaires (dans les **paramètres de compte > profil fiscal**) en même temps |
 
 > [!NOTE]
 > L’adresse, que nous utilisons sur les déclarations fiscales de l’IRS provient de l’adresse figurant dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
@@ -127,4 +127,4 @@ J’ai reçu au moins 600dollars de Microsoft, en paiement d’activités autres
 
 
 > [!NOTE]
-> Si vous avez une question ou un problème concernant les **déclarations fiscales de l’IRS**, créez un [ticket de support](http://aka.ms/storesupport). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.
+> Si vous avez une question ou un problème concernant les **déclarations fiscales de l’IRS**, créez un [ticket de support](https://aka.ms/storesupport). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.

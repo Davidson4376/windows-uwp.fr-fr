@@ -6,16 +6,16 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows10, uwp, annonces, publicités, procédures pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 423b005028ca7796dbab81d2c26a68c3d74fc922
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919703"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050712"
 ---
 # <a name="implement-ads-in-your-app"></a>Intégrer des publicités dans votre application
 
-Les articles de cette section vous montrent comment ajouter des bannières publicitaires, des spots et des publicités natives aux applications à l’aide du SDK Microsoft Advertising. Pour obtenir des exemples de projet complets, consultez les [exemples de publicité sur GitHub](http://aka.ms/githubads).
+Les articles de cette section vous montrent comment ajouter des bannières publicitaires, des spots et des publicités natives aux applications à l’aide du SDK Microsoft Advertising. Pour obtenir des exemples de projet complets, consultez les [exemples de publicité sur GitHub](https://aka.ms/githubads).
 
 ## <a name="in-this-section"></a>Dans cette section
 

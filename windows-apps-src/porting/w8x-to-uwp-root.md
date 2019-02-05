@@ -1,17 +1,17 @@
 ---
-description: Si vous disposez d’une application 8.1 universelle \#8212;whether elle cible Windows8.1, Windows Phone 8.1, ou les deux \#8212;then que vous constaterez que votre code source et vos compétences portage seront effectue en toute transparence pour Windows 10.
+description: 'Si vous disposez d’un app&\ 8.1 universelle #8212; qu’elle cible Windows8.1, Windows Phone 8.1 ou both&\ #8212; puis vous constaterez que votre code source et vos compétences le portage seront effectue en toute transparence vers Windows 10.'
 title: Passer de Windows Runtime8.x à UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c94b2a9a1ad13db4051d276aaff9a082f95f33fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7d0a75ae4306535d37c5c2d776fda2cbdc3a0634
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938620"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047687"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>Passer de Windows Runtime8.x à UWP
 
@@ -55,9 +55,9 @@ Lors du portage d’une application 8.1 universelle vers le modèle d’applicat
 
 -   **Affichage**. L’affichage (ainsi que le modèle d’affichage) constitue l’interface utilisateur de votre application. Dans l’idéal, l’affichage se compose de balises liées aux propriétés observables d’un modèle d’affichage. Une autre méthode (courante et pratique, mais uniquement sur le court terme) consiste à faire en sorte que le code impératif d’un fichier code-behind manipule directement des éléments de l’interface utilisateur. Dans les deux cas, le balisage et la conception de votre interface utilisateur (et même le code impératif qui manipule les éléments de l’interface utilisateur) se révéleront simples à porter.
 -   **Modèles d’affichage et modèles de données**. Même si vous n’adoptez pas pleinement les modèles avec séparation des responsabilités (comme MVVM), il existe inévitablement du code dans votre application, qui joue le rôle de modèle d’affichage et de modèle de données. Le code du modèle d’affichage utilise des types dans les espaces de noms de l’infrastructure de l’interface utilisateur. Le modèle de données et le modèle d’affichage exploitent également un système d’exploitation non visuel, ainsi que des API .NET Framework (y compris les API d’accès aux données). Ces API sont [également disponibles pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/br211369) de sorte que la majeure partie de ce code, si ce n’est l’intégralité, pourra être portée sans modification.
--   **Services cloud**. Il est probable que certains éléments de votre application (peut-être la plus grande partie) s’exécutent sur le cloud, sous la forme de services. La partie de l’application qui s’exécute sur l’appareil du client se connecte à ces services. Il s’agit de la partie d’une application distribuée qui a de grandes chances de rester intacte lors du portage de la partie destinée au client. Si vous n’avez pas encore envisagé cette possibilité, nous vous recommandons d’opter pour des services de cloud computing pour votre application UWP. Ainsi, [Microsoft Azure Mobile Services](http://azure.microsoft.com/services/mobile-services/) propose des composants principaux puissants et efficaces que votre application peut appeler pour bénéficier de services allant de la simple notification de mise à jour des vignettes dynamiques aux différentes fonctions d’évolutivité ultra-puissantes offertes par une batterie de serveurs.
+-   **Services cloud**. Il est probable que certains éléments de votre application (peut-être la plus grande partie) s’exécutent sur le cloud, sous la forme de services. La partie de l’application qui s’exécute sur l’appareil du client se connecte à ces services. Il s’agit de la partie d’une application distribuée qui a de grandes chances de rester intacte lors du portage de la partie destinée au client. Si vous n’avez pas encore envisagé cette possibilité, nous vous recommandons d’opter pour des services de cloud computing pour votre application UWP. Ainsi, [Microsoft Azure Mobile Services](https://azure.microsoft.com/services/mobile-services/) propose des composants principaux puissants et efficaces que votre application peut appeler pour bénéficier de services allant de la simple notification de mise à jour des vignettes dynamiques aux différentes fonctions d’évolutivité ultra-puissantes offertes par une batterie de serveurs.
 
-Avant ou pendant le portage, vérifiez si vous pouvez améliorer votre application en la refactorisant, afin de regrouper l’ensemble du code présentant une finalité similaire sous la forme de couches, ce qui vous permet d’éviter toute répartition arbitraire. La factorisation de votre application en couches comme celles que nous venons de décrire vous permet de vous assurer que votre application est correcte, de la tester, de l’exécuter et de l’entretenir, en toute simplicité. Vous pouvez rendre des fonctionnalités plus réutilisables en suivant le modèle Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)). Ce modèle gère de manière séparée les éléments de l’interface utilisateur, les composants professionnels et les données. Même au sein de l’interface utilisateur, ce modèle peut séparer les états et les comportements des éléments visuels, qui seront testés séparément. Grâce au modèle MVVM, vous pouvez écrire vos données et votre logique métier une seule fois et l’utiliser sur tous les appareils, quelle que soit l’interface utilisateur. En outre, ce modèle vous permettra probablement de réutiliser la majeure partie du modèle d’affichage et des zones d’affichage sur l’ensemble des appareils.
+Avant ou pendant le portage, vérifiez si vous pouvez améliorer votre application en la refactorisant, afin de regrouper l’ensemble du code présentant une finalité similaire sous la forme de couches, ce qui vous permet d’éviter toute répartition arbitraire. La factorisation de votre application en couches comme celles que nous venons de décrire vous permet de vous assurer que votre application est correcte, de la tester, de l’exécuter et de l’entretenir, en toute simplicité. Vous pouvez rendre des fonctionnalités plus réutilisables en suivant le modèle Model-View-ViewModel ([MVVM](https://msdn.microsoft.com/magazine/dd419663.aspx)). Ce modèle gère de manière séparée les éléments de l’interface utilisateur, les composants professionnels et les données. Même au sein de l’interface utilisateur, ce modèle peut séparer les états et les comportements des éléments visuels, qui seront testés séparément. Grâce au modèle MVVM, vous pouvez écrire vos données et votre logique métier une seule fois et l’utiliser sur tous les appareils, quelle que soit l’interface utilisateur. En outre, ce modèle vous permettra probablement de réutiliser la majeure partie du modèle d’affichage et des zones d’affichage sur l’ensemble des appareils.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -73,5 +73,5 @@ Avant ou pendant le portage, vérifiez si vous pouvez améliorer votre applicati
 
 **Documentation**
 * [Informations de référence sur Windows Runtime](https://msdn.microsoft.com/library/windows/apps/br211377)
-* [Développement d’applications Windows universelles pour tous les appareils Windows](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [Développement d’applications Windows universelles pour tous les appareils Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [Conception de l’expérience utilisateur des applications](https://msdn.microsoft.com/library/windows/apps/hh767284)

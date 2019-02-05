@@ -6,12 +6,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: f18a1db19c3a8c6632a8cbc3104dc1328f97fdb4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919735"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048902"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>Préciser les ressources par défaut que votre application utilise
 
@@ -44,7 +44,7 @@ Vous pouvez configurer ce que sont ces valeurs par défaut de deux manières. Vo
    </default>
    ```
    
-   **Remarque** la valeur `LANGUAGE-TAG(S)`doit être synchronisée avec la langue par défaut de votre application. S’il s’agit d’une [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) unique, la langue par défaut de votre application doit être la même balise. Si c’est une liste séparée par des virgules de balises de langue, la langue par défaut de votre application doit être la première balise dans la liste. Vous définissez la langue par défaut dans le champ **Langue par défaut** dans l’onglet **Application** du fichier source du manifeste du package d’application (`Package.appxmanifest`).
+   **Remarque** la valeur `LANGUAGE-TAG(S)`doit être synchronisée avec la langue par défaut de votre application. S’il s’agit d’une [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) unique, la langue par défaut de votre application doit être la même balise. Si c’est une liste séparée par des virgules de balises de langue, la langue par défaut de votre application doit être la première balise dans la liste. Vous définissez la langue par défaut dans le champ **Langue par défaut** dans l’onglet **Application** du fichier source du manifeste du package d’application (`Package.appxmanifest`).
 
 4. Chaque élément `<qualifier>`indique à Visual Studio quelle valeur utiliser comme valeur par défaut pour chaque nom de qualificateur. Avec le contenu du fichier que vous avez actuellement, vous n’avez pas véritablement modifié le comportement de Visual Studio. En d’autres termes, Visual Studio *se comportait déjà comme si* ce fichier était présent avec ce contenu, car c’est le comportement par défaut. Pour remplacer une valeur par défaut par votre propre valeur par défaut, vous devez donc modifier une valeur dans le fichier. Voici un exemple de l’aspect que peut avoir le fichier si vous avez modifié les trois premières valeurs.
    ```xml
@@ -103,5 +103,5 @@ Enregistrez et fermez-le, puis générez une nouvelle fois votre projet.
 ## <a name="related-topics"></a>Rubriquesassociées
 
 * [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
-* [Balise de langueBCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balise de langueBCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)

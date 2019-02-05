@@ -6,33 +6,33 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b65dd07a89b1617f805c17bf43a3ce3f5f3282f
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.openlocfilehash: 4f28204edeec7a1f256eae803095edf587532117
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968593"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046093"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
 Voici une vue d’ensemble de comment s’inscrire pour un compte de développeur Windows dans [L’espace partenaires](https://partner.microsoft.com/dashboard).
 
 > [!NOTE]
-> Lorsque vous vous inscrivez pour obtenir un compte de développeur, nous utilisons l’adresse e-mail que vous fournissez dans vos infos de contact pour vous envoyer des communications par courrier électronique concernant votre compte. Parfois, ces communications peuvent inclure des messages d’information sur nos programmes. Si vous choisissez de ne pas recevoir ces messages d’information (en ne les [acceptant pas](http://go.microsoft.com/fwlink/p/?LinkId=533280)), sachez que nous vous enverrons des messages électroniques sur les transactions (pour vous signaler que votre application a été certifiée ou qu’un versement est en cours, par exemple). Ces messages sur les transactions sont un aspect nécessaire de la gestion de votre compte. Tant que vous n’aurez pas fermé ce dernier, vous continuerez à en recevoir.
+> Lorsque vous vous inscrivez pour obtenir un compte de développeur, nous utilisons l’adresse e-mail que vous fournissez dans vos infos de contact pour vous envoyer des communications par courrier électronique concernant votre compte. Parfois, ces communications peuvent inclure des messages d’information sur nos programmes. Si vous choisissez de ne pas recevoir ces messages d’information (en ne les [acceptant pas](https://go.microsoft.com/fwlink/p/?LinkId=533280)), sachez que nous vous enverrons des messages électroniques sur les transactions (pour vous signaler que votre application a été certifiée ou qu’un versement est en cours, par exemple). Ces messages sur les transactions sont un aspect nécessaire de la gestion de votre compte. Tant que vous n’aurez pas fermé ce dernier, vous continuerez à en recevoir.
 
 ## <a name="the-account-signup-process"></a>Le processus d’ouverture de compte
 
 > [!NOTE]
 > Dans certains cas, les écrans et les champs que vous voyez au moment de vous inscrire pour un compte de développeur peuvent varier légèrement des éléments indiqués ci-dessous. Toutefois, les informations de base et le processus restent les mêmes.
 
-1.  Accédez à la [page d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), puis cliquez sur **S’inscrire**.
+1.  Accédez à la [page d’inscription](https://go.microsoft.com/fwlink/p/?LinkId=615100), puis cliquez sur **S’inscrire**.
 2.  Si vous n’êtes pas déjà connecté avec un compte Microsoft, connectez-vous maintenant ou créez un compte Microsoft. Le compte Microsoft que vous utilisez ici sera celui qui vous permettra de vous connecter à votre compte de développeur.
 3.  Choisissez votre [pays/région](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) de résidence ou dans lequel se situe votre entreprise. Vous ne pourrez pas faire de changements par la suite.
 4.  Sélectionnez votre [type de compte de développeur](account-types-locations-and-fees.md) (individuel ou d’entreprise). Choisissez bien le type de compte souhaité, car vous ne pourrez pas le modifier par la suite.
 5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50caractères au maximum). Choisissez ce nom soigneusement, car les clients pourront le voir dans le cadre de leur navigation et en viendront à connaître vos applications par ce nom. Pour les comptes d’entreprise, veillez à utiliser le nom d’entreprise enregistré ou l’appellation commerciale de votre organisation. Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à utiliser ce nom. 
 
    > [!NOTE]
-   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
 6.  Entrez les infos de contact à utiliser pour votre compte de développeur.
 
@@ -72,7 +72,7 @@ Si vous avez besoin d’avoir plusieurs personnes accès le compte d’entrepris
 
 Nous utilisons les informations de sécurité que vous fournissez pour renforcer le niveau de sécurité de votre compte Microsoft en l’associant à plusieurs formes d’authentification. Cela rend les accès non autorisés à votre compte Microsoft (et à votre compte de développeur) beaucoup plus difficiles. En outre, si vous oubliez votre mot de passe ou que quelqu’un d’autre tente d’accéder à votre compte, nous serons en mesure de vous contacter pour confirmer la propriété et/ou rétablir le contrôle approprié de votre compte.
 
-Vous devez disposer d’au moins deux adresses e-mail et/ou numéros de téléphone pour votre compte Microsoft. Nous recommandons d’en ajouter autant que possible. Gardez à l’esprit que certaines informations de sécurité doivent être confirmées avant d’être valides. En outre, vérifiez fréquemment vos informations de sécurité pour vous assurer qu’elles sont à jour. Vous pouvez gérer vos informations de sécurité en accédant à https://account.microsoft.com/security et en vous connectant à l’aide de votre compte Microsoft. Pour plus d’informations, consultez [les informations de sécurité et de codes de sécurité](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) .
+Vous devez disposer d’au moins deux adresses e-mail et/ou numéros de téléphone pour votre compte Microsoft. Nous recommandons d’en ajouter autant que possible. Gardez à l’esprit que certaines informations de sécurité doivent être confirmées avant d’être valides. En outre, vérifiez fréquemment vos informations de sécurité pour vous assurer qu’elles sont à jour. Vous pouvez gérer vos informations de sécurité en accédant à https://account.microsoft.com/security et en vous connectant à l’aide de votre compte Microsoft. Pour plus d’informations, voir [les codes de sécurité de sécurité informations &](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) .
 
 Lorsque vous connectez à l’espace partenaires à l’aide de votre compte Microsoft, le système peut vous demander de confirmer votre identité en envoyant un code de sécurité que vous devez fournir pour terminer le processus de connexion. Nous vous recommandons d’identifier les PC que vous utilisez souvent en tant *qu’appareils approuvés*. Lorsque vous vous connectez à partir d’un périphérique de confiance, vous généralement n’invité pour un code, bien que peut parfois vous être demandé dans des situations spécifiques ou si vous n’avez pas encore connecté sur cet appareil dans un certain temps. Pour plus d’informations, voir [Ajouter un périphérique de confiance à votre compte Microsoft](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) .
 

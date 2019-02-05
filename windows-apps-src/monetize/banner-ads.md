@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, annonces, publicité, AdControl, bannières publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: e8754790fac07e6e1babdb44888cfd1ff138c230
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938231"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9045877"
 ---
 # <a name="banner-ads"></a>Bannières publicitaires
 
@@ -31,5 +31,5 @@ Bannières publicitaires sont des publicités à affichage statique qui utilisen
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
 * [Configurer des unités publicitaires pour votre application](set-up-ad-units-in-your-app.md)

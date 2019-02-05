@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e6c68841440120b783713ef0a591e39a7c7eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942822"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046572"
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité  
 
@@ -188,11 +188,11 @@ Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Prise en charge de la technologie d’assistance dans les applications qui gèrent l’interopérabilité entre XAML et Microsoft DirectX  
-Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisateur XAML (à l’aide de la classe [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) ou [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) n’est pas accessible. L’[exemple XAML SwapChainPanel DirectX interop](http://go.microsoft.com/fwlink/p/?LinkID=309155) montre comment créer des homologues UI Automation pour le contenu DirectX hébergé. Cette technique permet de rendre le contenu hébergé accessible via UI Automation.
+Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisateur XAML (à l’aide de la classe [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) ou [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) n’est pas accessible. L’[exemple XAML SwapChainPanel DirectX interop](https://go.microsoft.com/fwlink/p/?LinkID=309155) montre comment créer des homologues UI Automation pour le contenu DirectX hébergé. Cette technique permet de rendre le contenu hébergé accessible via UI Automation.
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibilité](accessibility.md)
 * [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

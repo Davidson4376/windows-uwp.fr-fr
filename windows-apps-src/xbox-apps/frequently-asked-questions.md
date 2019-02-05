@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922264"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046948"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions
 
@@ -71,7 +71,7 @@ Vous pouvez [publier des applications](../publish/index.md) par le biais de l’
 
 ### <a name="can-i-publish-my-game"></a>Puis-je publier mon jeu?
 
-Vous pouvez utiliser UWP et votre console XboxOne en mode développeur pour créer et tester vos jeux sur XboxOne. Pour publier des jeuxUWP, vous devez vous enregistrer auprès de [ID@XBOX](http://www.xbox.com/Developers/id) ou intégrer le [Programme de créateurs de Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator). Pour plus d’informations, voir la page [Vue d’ensemble du programme pour les développeurs](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html).
+Vous pouvez utiliser UWP et votre console XboxOne en mode développeur pour créer et tester vos jeux sur XboxOne. Pour publier des jeuxUWP, vous devez vous enregistrer auprès de [ID@XBOX](https://www.xbox.com/Developers/id) ou intégrer le [Programme de créateurs de Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator). Pour plus d’informations, voir la page [Vue d’ensemble du programme pour les développeurs](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html).
 
 ### <a name="will-the-standard-game-engines-work"></a>Les moteurs de jeu standard fonctionneront-ils?
 

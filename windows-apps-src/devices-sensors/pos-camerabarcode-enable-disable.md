@@ -5,12 +5,12 @@ ms.date: 05/1/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e1d955ce7e70f2f2a454823020df38db66e47d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6b802dfa44f36768dc2446ee1d15bf9ca6d4f9f3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930427"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051042"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>Activer ou désactiver le décodeur logiciel qui est fourni avec Windows
 Dans Windows10, version1803, le décodeur logiciel est installé et activé par défaut.  Vous pouvez désactiver le logiciel de décodage qui est fourni avec Windows si vous ne souhaitez pas utiliser le scanneur de code-barres à caméra ou que vous avez acheté un décoder tiers qui fonctionne avec les API Windows.Devices.PointOfService.BarcodeScanner et ne souhaitez pas utiliser les deux.
@@ -46,7 +46,7 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning] 
-> De graves problèmes peuvent se produire si vous modifiez le registre de façon incorrecte.  Pour vous protéger, sauvegardez le registre avant de le modifier.  Vous pourrez ainsi restaurer le registre en cas de problème.  Pour plus d'informations sur la sauvegarde et la restauration du registre, cliquez sur le numéro ci-après pour afficher l'article correspondant dans la Base de connaissances Microsoft: <br/><br/> [322756](http://support.microsoft.com/kb/322756) Comment sauvegarder et restaurer le registre dans Windows.
+> De graves problèmes peuvent se produire si vous modifiez le registre de façon incorrecte.  Pour vous protéger, sauvegardez le registre avant de le modifier.  Vous pourrez ainsi restaurer le registre en cas de problème.  Pour plus d'informations sur la sauvegarde et la restauration du registre, cliquez sur le numéro ci-après pour afficher l'article correspondant dans la Base de connaissances Microsoft: <br/><br/> [322756](https://support.microsoft.com/kb/322756) Comment sauvegarder et restaurer le registre dans Windows.
 
 > [!NOTE]
 > Le décodeur logiciel intégré à Windows10 est fourni avec l'autorisation de [**Digimarc Corporation**](https://www.digimarc.com/).

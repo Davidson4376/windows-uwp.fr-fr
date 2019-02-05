@@ -1,17 +1,17 @@
 ---
 title: Gérer l’activation des URI
-description: Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut pour un nom de schéma d’URI (Uniform Resource Identifier).
+description: Découvrez comment inscrire une application pour qu’elle devienne le gestionnaire par défaut d’un nom de schéma URI (Uniform Resource Identifier).
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ms.date: 07/05/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d8cbb3d7e245b747a7637726df9559f5fa87a6d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946061"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046412"
 ---
 # <a name="handle-uri-activation"></a>Gérer l’activation des URI
 
@@ -155,7 +155,7 @@ En cas de lancement via l’activation de protocole, les applications doivent en
 N’importe quelle application ou n’importe quel site web peut utiliser votre nom de schéma d’URI, y compris des applications et sites malveillants. Par conséquent, toute donnée reçue dans cet URI peut provenir d’une source non approuvée. Nous vous recommandons de ne jamais effectuer une action permanente en fonction des paramètres que vous recevez dans un URI. Par exemple, les paramètres d’URI peuvent être utilisés pour lancer l’application sur la page de compte d’un utilisateur, mais nous vous recommandons de ne jamais les utiliser pour modifier directement le compte de l’utilisateur.
 
 > [!NOTE]
-> Si vous créez un nouveau nom de schéma d’URI pour votre application, veillez à suivre les recommandations de [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
+> Si vous créez un nouveau nom de schéma d’URI pour votre application, veillez à suivre les recommandations de [RFC 4395](https://go.microsoft.com/fwlink/p/?LinkID=266550). Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
 
 > [!NOTE]
 > En cas de lancement via un contrat de protocole, assurez-vous que le bouton précédent fait revenir l’utilisateur à l’écran qui a lancé l’application et non au contenu précédent de l’application.

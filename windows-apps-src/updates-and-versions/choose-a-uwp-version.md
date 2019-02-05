@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp, version, build, versions, windows, choisir, mettre à jour, mises à jour
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fed67ca6547ec8c8f90bc67a7be1f0d97af475df
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931261"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047374"
 ---
 # <a name="choose-a-uwp-version"></a>Choisir une version d’UWP
 
@@ -20,7 +20,7 @@ Chaque version de Windows10 fournit de nouvelles fonctionnalités améliorées p
 > [!WARNING]
 > Projets UWP créés dans les versions actuelles de Visual Studio ne peut pas être ouvert dans Visual Studio 2015.
 
-Le tableau suivant décrit les versions de Windows10disponibles. Veuillez noter que ce tableau s’applique uniquement à la création d’applications UWP, qui sont uniquement prises en charge sur Windows10. Vous ne pouvez pas développer des applications UWP pour les versions antérieures de Windows, et vous devez [installer la version appropriée du Kit de développement (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) afin de cibler cette version. 
+Le tableau suivant décrit les versions de Windows10disponibles. Veuillez noter que ce tableau s’applique uniquement à la création d’applications UWP, qui sont uniquement prises en charge sur Windows10. Vous ne pouvez pas développer des applications UWP pour les versions antérieures de Windows, et vous devez [installer la version appropriée du Kit de développement (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) afin de cibler cette version. 
 
 | Version | Description |
 | --- | --- |

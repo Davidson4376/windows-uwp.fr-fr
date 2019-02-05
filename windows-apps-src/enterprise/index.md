@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cce98591cdaa78a887d7a5fb495e999a4ffc453
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4517d3fc917cb306281e9050f8554119ff987007
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945375"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044503"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -140,7 +140,7 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 | [Notions de base en matière de réseau](https://msdn.microsoft.com/library/windows/apps/mt280233) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
 | [Quelle technologie de réseau?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
 | [Sérialisation XML et SOAP](https://msdn.microsoft.com/library/90c86ass.aspx) | Sérialisation XML convertit les objets en un flux XML qui est conforme à un langage de définition de schéma XML (XSD) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) native ou une bibliothèque externe. |
-| [Sérialisation JSON](https://msdn.microsoft.com/library/windows/apps/br240639) | Sérialisation JSON (JavaScript objet notation des points) est un format populaire pour communiquer avec les API REST. Le [Newtonsoft Json.NET](http://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
+| [Sérialisation JSON](https://msdn.microsoft.com/library/windows/apps/br240639) | Sérialisation JSON (JavaScript objet notation des points) est un format populaire pour communiquer avec les API REST. Le [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
 
 ## <a name="devices"></a>Appareils
 
@@ -160,7 +160,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 | Rubrique | Description |
 |-------|-------------|
 | [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631) | Dans ce guide introductif, vous allez vous familiariser avec la plateforme UWP Windows 10. Vous découvrirez, entre autres, ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
-| [Exemple de code d’interface utilisateur XAML adaptative](http://go.microsoft.com/fwlink/p/?LinkId=619992) | Cet exemple de code montre toutes les options de disposition possibles et les contrôles de votre application, quel que soit le type d’appareil et vous permet d’interagir avec les volets pour découvrir comment réaliser les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
+| [Exemple de code d’interface utilisateur XAML adaptative](https://go.microsoft.com/fwlink/p/?LinkId=619992) | Cet exemple de code montre toutes les options de disposition possibles et les contrôles de votre application, quel que soit le type d’appareil et vous permet d’interagir avec les volets pour découvrir comment réaliser les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
 | [Rubrique Xamarin]() | Xamarin pour le ciblage téléphonique |
 
 ## <a name="deployment"></a>Déploiement

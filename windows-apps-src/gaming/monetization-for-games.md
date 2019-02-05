@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92d85f81be25eed5f0a43cafb4bb34d9f879c827
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929755"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050922"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -22,7 +22,7 @@ Par le passé, vous auriez simplement fixé un prix pour votre jeu, puis attendu
 Vous pouvez promouvoir et monétiser un jeu UWP de l’une ou de plusieurs des manières suivantes:
 * Préparez votre jeu dans le Microsoft Store, qui est un magasin en ligne, sécurisée offre [distribution dans le monde entier](#worldwide-distribution-channel). Dans le monde entier, les joueurs peuvent acheter votre jeu en ligne au [prix que vous avez fixé](#set-a-price-for-your-game).
 * Utilisez des API dans le SDK Windows pour créer des [achats dans le jeu](#in-game-purchases). Les joueurs peuvent acheter des articles à partir de votre jeu, ou acheter du contenu supplémentaire tel que des équipements supplémentaires, des apparences, des cartes ou des niveaux de jeu.
-* Utilisez les API dans le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) pour afficher des publicités à partir de réseaux publicitaires. Vous pouvez [afficher des publicités dans votre jeu](#display-ads-in-your-game) et offrir aux joueurs la possibilité de regarder des publicités vidéo en échange de récompenses dans le jeu.
+* Utilisez les API dans le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) pour afficher des publicités à partir de réseaux publicitaires. Vous pouvez [afficher des publicités dans votre jeu](#display-ads-in-your-game) et offrir aux joueurs la possibilité de regarder des publicités vidéo en échange de récompenses dans le jeu.
 * [Optimisez le potentiel de votre jeu par le biais de campagnes de publicité](#maximize-your-games-potential-through-ad-campaigns). Faites la promotion de votre jeu à l’aide de campagnes de publicité payantes, communautaires (gratuites) ou maison (gratuites) pour développer la base des utilisateurs.
 
 ## <a name="worldwide-distribution-channel"></a>Canal de distribution mondial
@@ -165,7 +165,7 @@ Pour obtenir la liste complète des pays et régions qui prennent en charge les 
 
 Les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) et [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) du SDK Microsoft Advertising sont utilisées pour permettre l’affichage de publicités dans les jeux.
 
-Pour commencer, téléchargez et installez le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp) avec Visual Studio2015 ou une version ultérieure. Pour plus d’informations, voir [Installer le SDK MicrosoftAdvertising](../monetize/install-the-microsoft-advertising-libraries.md).
+Pour commencer, téléchargez et installez le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) avec Visual Studio2015 ou une version ultérieure. Pour plus d’informations, voir [Installer le SDK MicrosoftAdvertising](../monetize/install-the-microsoft-advertising-libraries.md).
 
 #### <a name="implementation-guides"></a>Guides d’implémentation
 

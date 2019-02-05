@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, jeux, graphiques, diagnostics, outils, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945841"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047916"
 ---
 # <a name="graphics-diagnostics-tools"></a>Outils Graphics Diagnostics
 
@@ -32,7 +32,7 @@ Les fonctionnalités de diagnostic de graphiques incluent la possibilité de cr�
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-[Vue d’ensemble de Graphics Diagnostics dans VisualStudio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Vue d’ensemble de Graphics Diagnostics dans VisualStudio](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

@@ -6,14 +6,14 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: ac61d57a965e3a35c6eb7cfaf17d0f4ef2a02501
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1ab8dde9984ed0e4f7d99e7809361d928bebb718
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943305"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045425"
 ---
-# <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
+# <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Adaptez vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
 Cette rubrique explique le concept général des qualificateurs de ressource, leur utilisation et le rôle de chacun des noms de qualificateur. Consultez [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) pour un tableau de référence de toutes les valeurs de qualificateur possibles.
 
@@ -191,11 +191,11 @@ Il est peu probable que vous ayez besoin du nom de qualificateur `dxfeaturelevel
 
 ## <a name="homeregion"></a>HomeRegion
 
-Le qualificateur `homeregion` correspond au paramètre de pays ou de région de l’utilisateur. Il représente le lieu de résidence de l’utilisateur. Les valeurs incluent toute [balise de région BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) valide. Autrement dit, tout code de région de deux lettres au format **ISO3166-1 alpha-2**, ainsi que le jeu de codes géographiques de trois chiffres **ISO3166-1 numériques** pour les régions composées (voir [Classification M49 des codes de région de la Division de statistique de l'ONU](http://go.microsoft.com/fwlink/p/?linkid=247929)). Les codes de «groupements sélectionnés économiques et autres» ne sont pas valides.
+Le qualificateur `homeregion` correspond au paramètre de pays ou de région de l’utilisateur. Il représente le lieu de résidence de l’utilisateur. Les valeurs incluent toute [balise de région BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Autrement dit, tout code de région de deux lettres au format **ISO3166-1 alpha-2**, ainsi que le jeu de codes géographiques de trois chiffres **ISO3166-1 numériques** pour les régions composées (voir [Classification M49 des codes de région de la Division de statistique de l'ONU](https://go.microsoft.com/fwlink/p/?linkid=247929)). Les codes de «groupements sélectionnés économiques et autres» ne sont pas valides.
 
 ## <a name="language"></a>Language
 
-Un qualificateur `language` correspond au paramètre de langue d’affichage. Les valeurs incluent toute [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) valide. Pour une liste des langues, voir le [registre des sous-balises de langues IANA](http://go.microsoft.com/fwlink/p/?linkid=227303).
+Un qualificateur `language` correspond au paramètre de langue d’affichage. Les valeurs incluent toute [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Pour une liste des langues, voir le [registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303).
 
 Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code ou dans votre balisage XAML, retirez ces chaînes du code/balisage et placez-les dans un Fichier de ressources (`.resw`). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 
@@ -273,7 +273,7 @@ Le qualificateur `theme` est utilisé pour fournir les ressources qui correspond
 * [Détection de la plateforme d’exécution de votre application](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Présentation des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-manifest.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Classification M49 des codes de région de la Division de statistique de l'ONU](http://go.microsoft.com/fwlink/p/?linkid=247929)
-* [Registre des sous-balises de langues IANA](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Classification M49 des codes de région de la Division de statistique de l'ONU](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [Registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

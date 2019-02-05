@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, exemples de code, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9a98584fcac446a673bf76cd3d448e05455a89bb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924351"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045052"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -30,7 +30,7 @@ Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu�
 
 Ces exemples utilisent les bibliothèques suivantes:
 
-* [Apache Commons Logging1.2](http://commons.apache.org/proper/commons-logging) (commons-logging-1.2.jar).
+* [Apache Commons Logging1.2](https://commons.apache.org/proper/commons-logging) (commons-logging-1.2.jar).
 * [Apache HttpComponents Core4.4.5 et Apache HttpComponents Client4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar et httpclient-4.5.2.jar).
 * [JSR353 JSON Processing API1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) et [JSR353 JSON Processing Default Provider API1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar et javax.json-1.0.4.jar).
 

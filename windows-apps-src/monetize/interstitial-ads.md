@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943266"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047730"
 ---
 # <a name="interstitial-ads"></a>Spots
 
-Cette procédure pas à pas montre comment insérer des spots publicitaires dans les jeux et les applications de plateforme Windows universelle (UWP) pour Windows10. Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+Cette procédure pas à pas montre comment insérer des spots publicitaires dans les jeux et les applications de plateforme Windows universelle (UWP) pour Windows10. Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](https://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
 
@@ -36,7 +36,7 @@ Nous proposons deux types de spots publicitaires à utiliser dans vos applicatio
 
 ## <a name="prerequisites"></a>Éléments prérequis
 
-* Installer le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
+* Installer le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-an-interstitial-ad-into-your-app"></a>Intégrer un spot publicitaire dans votre application
 
@@ -52,7 +52,7 @@ Pour afficher des spots publicitaires dans votre application, suivez les instruc
 
 Cette section fournit des exemples en C#, mais VisualBasic et C++ sont également pris en charge pour les projets XAML/.NET. Pour voir un exemple de code complet en C#, consultez [Exemple de code pour spot publicitaire en C#](interstitial-ad-sample-code-in-c.md).
 
-1. Ouvrez votre projet dans Visual Studio.
+1. Ouvrez votre projet dans VisualStudio.
     > [!NOTE]
     > Si vous utilisez un projet existant, ouvrez le fichier Package.appxmanifest dans votre projet et assurez-vous que la fonctionnalité **Internet (Client)** est sélectionnée. Votre application a besoin de cette fonctionnalité pour recevoir des publicités tests et des publicités dynamiques.
 
@@ -105,7 +105,7 @@ Cette section fournit des exemples en C#, mais VisualBasic et C++ sont égalemen
 
 Les instructions ci-dessous partent du principe que vous avez créé un projet Windows universel pour JavaScript dans VisualStudio et que vous ciblez un processeur spécifique. Pour voir un exemple de code complet, consultez [Exemple de code pour spot publicitaire en JavaScript](interstitial-ad-sample-code-in-javascript.md).
 
-1. Ouvrez votre projet dans Visual Studio.
+1. Ouvrez votre projet dans VisualStudio.
 
 2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
@@ -239,5 +239,5 @@ Vous pouvez utiliser plusieurs contrôles **InterstitialAd** dans une seule appl
 * [Recommandations pour les spots publicitaires](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
 * [Exemple de code pour spot publicitaire en C#](interstitial-ad-sample-code-in-c.md)
 * [Exemple de code pour spot publicitaire en JavaScript](interstitial-ad-sample-code-in-javascript.md)
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
 * [Configurer des unités publicitaires pour votre application](set-up-ad-units-in-your-app.md)

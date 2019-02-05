@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: f2aad1b4d6abf9a05af9b9a938188c69d9cae7c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941320"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048366"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Ressources système pour les applications UWP et les jeux sur Xbox One
 
@@ -44,7 +44,7 @@ Le dépassement de ces limites entraînera des défaillances dans l'allocation d
 
 Pour le **développement d’applications**, les ressources disponibles peuvent être limitées par rapport à un PC standard et peuvent varier en fonction du nombre d’applications et de jeux en cours d’exécution sur le système.
 
-Pour le **développement de jeux** comme les autres consoles de jeu, XboxOne est un élément matériel spécialisé qui nécessite un kit de développement matériel spécifique pour offrir tout son potentiel. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel XboxOne, vous pouvez envisager de vous inscrire au programme [ID@Xbox](http://www.xbox.com/Developers/id) pour accéder aux kits de développement Xbox One.
+Pour le **développement de jeux** comme les autres consoles de jeu, XboxOne est un élément matériel spécialisé qui nécessite un kit de développement matériel spécifique pour offrir tout son potentiel. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel XboxOne, vous pouvez envisager de vous inscrire au programme [ID@Xbox](https://www.xbox.com/Developers/id) pour accéder aux kits de développement Xbox One.
 
 
 Pour plus d'informations sur les ressources système pour les applicationsUWP sur XboxOne, consultez la première partie de cette vidéo.

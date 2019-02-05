@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53539c73137b40d154db00fa9e340d81412764da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942178"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047554"
 ---
 # <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
 
@@ -144,7 +144,7 @@ Les grammaires SRGS offrent un ensemble complet de fonctionnalités pour vous ai
 -   utiliser la sémantique pour définir ce que la reconnaissance vocale signifie pour votre application ;
 -   spécifier des prononciations (soit intégrées à une grammaire, soit via un lien vers un lexique).
 
-Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](http://go.microsoft.com/fwlink/p/?LinkID=269886). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](http://go.microsoft.com/fwlink/p/?LinkID=269887).
+Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](https://go.microsoft.com/fwlink/p/?LinkID=269886). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](https://go.microsoft.com/fwlink/p/?LinkID=269887).
 
 Gardez à l’esprit les points suivants:
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Grammaires doivent être conformes à la spécification World Wide Web Consortium (W3C)[Sémantique SEMANTIC Interpretation for Speech Recognition () 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) .
+Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Grammaires doivent être conformes à la spécification World Wide Web Consortium (W3C)[Sémantique SEMANTIC Interpretation for Speech Recognition () 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765) .
 
 Ici, nous écoutons des variantes de «yes» et «no».
 
@@ -236,7 +236,7 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
 * [Interactions vocales](speech-interactions.md)
 
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

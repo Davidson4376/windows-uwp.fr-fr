@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, orientation de l’écran, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4e2cf915e510c3d6e3d702417b72c097a293f03c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924321"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051072"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>Prise en charge de l’orientation de l’écran (DirectX et C++)
 
@@ -391,7 +391,7 @@ Comme indiqué dans la troisième puce, lorsqu’une application appelle [**Noti
 ## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>Annexe A : application de matrices pour la rotation de l’écran (2D)
 
 
-Dans l’exemple de code fourni dans [Redimensionnement de la chaîne d’échange et prérotation de son contenu](#resizing-the-swap-chain-and-pre-rotating-its-contents) (et dans l'[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), vous aurez peut-être remarqué que nous avions des matrices de rotation distinctes pour la sortie Direct2D et la sortie Direct3D. Examinons tout d’abord les matrices 2D.
+Dans l’exemple de code fourni dans [Redimensionnement de la chaîne d’échange et prérotation de son contenu](#resizing-the-swap-chain-and-pre-rotating-its-contents) (et dans l'[exemple de rotation de chaîne d’échange DXGI](https://go.microsoft.com/fwlink/p/?linkid=257600)), vous aurez peut-être remarqué que nous avions des matrices de rotation distinctes pour la sortie Direct2D et la sortie Direct3D. Examinons tout d’abord les matrices 2D.
 
 Il existe deux raisons pour lesquelles nous ne pouvons pas appliquer les mêmes matrices de rotation au contenu Direct2D et Direct3D :
 
@@ -488,7 +488,7 @@ La prochaine fois que vous présenterez la chaîne d’échange, votre image 2D 
 ## <a name="appendix-b-applying-matrices-for-screen-rotation-3-d"></a>Annexe B : application de matrices pour la rotation de l’écran (3D)
 
 
-Dans l’exemple de code fourni dans [Redimensionnement de la chaîne d’échange et prérotation de son contenu](#resizing-the-swap-chain-and-pre-rotating-its-contents) (et dans l’[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), nous avons défini une matrice de transformation spécifique pour chaque orientation d’écran possible. Examinons maintenant les matrices pour la rotation de scènes en 3D. Comme précédemment, vous créez un ensemble de matrices pour chacune des quatre orientations possibles. Pour éviter toute erreur d’arrondi et par conséquent les artefacts visuels mineurs, déclarez les matrices de manière explicite dans votre code.
+Dans l’exemple de code fourni dans [Redimensionnement de la chaîne d’échange et prérotation de son contenu](#resizing-the-swap-chain-and-pre-rotating-its-contents) (et dans l’[exemple de rotation de chaîne d’échange DXGI](https://go.microsoft.com/fwlink/p/?linkid=257600)), nous avons défini une matrice de transformation spécifique pour chaque orientation d’écran possible. Examinons maintenant les matrices pour la rotation de scènes en 3D. Comme précédemment, vous créez un ensemble de matrices pour chacune des quatre orientations possibles. Pour éviter toute erreur d’arrondi et par conséquent les artefacts visuels mineurs, déclarez les matrices de manière explicite dans votre code.
 
 La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées [x, y, z] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
 

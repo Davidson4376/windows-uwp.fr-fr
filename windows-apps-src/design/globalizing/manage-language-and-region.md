@@ -7,26 +7,26 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: d782e8cd64cb976df964c72199964c1d349d527e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035400"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045658"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Comprendre les langues de profil utilisateur et les langues du manifeste de l’application
 Pour configurer une liste ordonnée de langues d'affichage ou simplement une seule langue d'affichage favorites, les utilisateurs Windows peuvent accéder à **Paramètres** > **Heure et langue** > **Région et langue**. Les langues peuvent comporter des variantes régionales. Par exemple, vous pouvez sélectionner l'espagnol d'Espagne, l'espagnol du Mexique, l'espagnol des États-Unis, etc.
 
 Ils peuvent également suivre le chemin **Paramètres** > **Heure et langue** > **Région et langue** mais en dehors de la langue, les utilisateurs peuvent spécifier leur localisation (appelée Région) dans le monde. Notez que le paramètre de la langue d'affichage (et de la variante régionale) n'est pas déterminant dans le paramètre de région, et vice versa. Par exemple, un utilisateur peut habiter actuellement en France mais choisir Español (México) en tant que langue d'affichage Windows favorite.
 
-Pour les applications UWP, une langue est représentée sous la forme d’une [balise de langueBCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Par exemple, la balise de langue BCP-47 «en-US» correspond à l'anglais (États-Unis) dans **Paramètres**. Les API UWP adéquates acceptent et retournent les représentations de chaînes des balises de langue BCP-47.
+Pour les applications UWP, une langue est représentée sous la forme d’une [balise de langueBCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Par exemple, la balise de langue BCP-47 «en-US» correspond à l'anglais (États-Unis) dans **Paramètres**. Les API UWP adéquates acceptent et retournent les représentations de chaînes des balises de langue BCP-47.
 
-Consultez également le [registre des sous-balises de langues IANA](http://go.microsoft.com/fwlink/p/?linkid=227303).
+Consultez également le [registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303).
 
 Les troissections suivantes définissent les termes «liste de langues de profil utilisateur», «liste de langues de manifeste d'application» et «liste de langues d'exécution de l'application». Nous utiliserons ces termes dans cette rubriques et parmi d'autres concernant les fonctionnalités. Il est donc important que vous en compreniez le sens.
 
 ## <a name="user-profile-language-list"></a>Liste de langues de profil utilisateur
-La liste de langue de profil utilisateur désigne la liste qui est configurée par l'utilisateur dans **Paramètres** > **Heure et langue** > **Région et langues** > **Langues**. Dans le code, vous pouvez utiliser la propriété [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) pour accéder à la liste de langue de profil utilisateur en tant que liste des chaînes en lecture seule, dans laquelle chaque chaîne est une unique [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) telle que «en-US» ou «ja-JP».
+La liste de langue de profil utilisateur désigne la liste qui est configurée par l'utilisateur dans **Paramètres** > **Heure et langue** > **Région et langues** > **Langues**. Dans le code, vous pouvez utiliser la propriété [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) pour accéder à la liste de langue de profil utilisateur en tant que liste des chaînes en lecture seule, dans laquelle chaque chaîne est une unique [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) telle que «en-US» ou «ja-JP».
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
@@ -70,7 +70,7 @@ La troisième liste d'intérêt de langue constitue l'intersection des deux list
 
 De manière plus spécifique, la liste de langues d'exécution d'application est constituée de ces éléments.
 
-1.  **(Facultatif) Remplacement de la langue principale**. Le paramètre [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) est un paramètre de substitution simple pour les applications qui donnent aux utilisateurs leur propre choix de langue indépendant ou les applications qui ont une bonne raison de remplacer les langues par défaut. Pour en savoir plus, consultez [Exemple de ressources d’application et de localisation](http://go.microsoft.com/fwlink/p/?linkid=231501).
+1.  **(Facultatif) Remplacement de la langue principale**. Le paramètre [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) est un paramètre de substitution simple pour les applications qui donnent aux utilisateurs leur propre choix de langue indépendant ou les applications qui ont une bonne raison de remplacer les langues par défaut. Pour en savoir plus, consultez [Exemple de ressources d’application et de localisation](https://go.microsoft.com/fwlink/p/?linkid=231501).
 2.  **Les langues de l'utilisateur qui sont prises en charge par l'application**. Il s'agit de la liste de langues de profile utilisateur filtrée par la liste de langues du manifeste d'application. Le filtrage des langues de l’utilisateur par celles prises en charge par l’application préserve la cohérence entre les Kits de développement logiciel (SDK), les bibliothèques de classes, les packages d’infrastructure dépendants et l’application.
 3.  **Si 1 et 2 sont vides, la langue par défaut ou la première langue prise en charge par l’application.**. Si la liste de langues du profil utilisateur ne contient aucune des langues prises en charge par l’application, la langue d'exécution de l’application est la première langue prise en charge par l’application.
 
@@ -98,7 +98,7 @@ Nommez vos fichiers de ressources ou leurs dossiers avec les qualificateurs de r
 **Remarque** Même les ressources de langue par défaut de votre application doivent spécifier le qualificateur de langue. Par exemple, si votre langue par défaut est l’anglais (États-Unis), puis qualifier vos ressources en tant que `\Assets\Images\en-US\logo.png`.
 
 - Windows effectue une correspondance complexe, parmi les variantes régionales telles qu’en-US et en-GB. Par conséquent, inclure la balise secondaire région selon le cas. Consultez [Comment le système de gestion des ressources met en correspondance les balises de langue](../../app-resources/how-rms-matches-lang-tags.md).
-- Spécifiez une balise secondaire de script de langue dans le qualificateur lorsqu’il n’existe aucune valeur Suppress-Script définie pour la langue. Par exemple, au lieu de zh-CN ou zh-TW, utilisez zh-Hant, zh-Hant-TW ou zh-Hans (pour plus d’informations, consultez le [Registre des sous-balises de langues IANA](http://go.microsoft.com/fwlink/p/?linkid=227303)).
+- Spécifiez une balise secondaire de script de langue dans le qualificateur lorsqu’il n’existe aucune valeur Suppress-Script définie pour la langue. Par exemple, au lieu de zh-CN ou zh-TW, utilisez zh-Hant, zh-Hant-TW ou zh-Hans (pour plus d’informations, consultez le [Registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)).
 - Pour les langues qui un seul dialecte standard, il est inutile d’inclure le qualificateur de région. Par exemple, utiliser ja au lieu de ja-JP.
 - Certains outils et composants tels que les outils de traduction automatique peuvent trouver des balises de langue spécifiques, telles que des informations de langue régionale, ce qui s’avère utile pour analyser certaines données.
 
@@ -208,12 +208,12 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>Rubriquesassociées
-* [Balise de langueBCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Registre des sous-balises de langues IANA](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [Balise de langueBCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [Adapter vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Langues prises en charge](../../publish/supported-languages.md)
 * [Globaliser vos formats de date/heure/chiffres](use-global-ready-formats.md)
 * [Comment le système de gestion des ressources met en correspondance les balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>Exemples
-* [Exemple de ressources d’application et de localisation](http://go.microsoft.com/fwlink/p/?linkid=231501)
+* [Exemple de ressources d’application et de localisation](https://go.microsoft.com/fwlink/p/?linkid=231501)

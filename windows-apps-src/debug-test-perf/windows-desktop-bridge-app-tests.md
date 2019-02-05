@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932875"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046808"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
@@ -23,7 +23,7 @@ Tests facultatifs des applications pont du bureau Windows sont à titre d’info
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 
 ### <a name="1-digitally-signed-file-test"></a>1. Test des fichiers signés numériquement 
-**Contexte**  
+**Arrière-plan**  
 Ce test vérifie que tous les fichiers exécutables portables (PE) contiennent une signature valide. La présence de fichiers signés numériquement permet aux utilisateurs de savoir que le logiciel est authentique.
 
 **Détails du test**  
@@ -33,7 +33,7 @@ Le test analyse tous les fichiers exécutables portables contenus dans le packag
 Il est toujours recommandé de signer numériquement les fichiers. Pour plus d’informations, voir [Introduction à la signature de code](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx).
 
 ### <a name="2-file-association-verbs"></a>2. Verbes d’association de fichiers 
-**Contexte**  
+**Arrière-plan**  
 Ce test analyse le Registre de package pour vérifier si des verbes d’association de fichiers sont enregistrés. 
 
 **Détails du test**  
@@ -45,7 +45,7 @@ Voir [Pont du bureau vers UWP: extensions d’application](https://docs.microsof
 ### <a name="3-debug-configuration-test"></a>3. Test de configuration du débogage
 Ce test vérifie que le package appx n’est pas une version de débogage.
  
-**Contexte**  
+**Arrière-plan**  
 Pour pouvoir être certifiées pour le Microsoft Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
  
 **Détails du test**  
@@ -59,7 +59,7 @@ Testez l’application de manière à vérifier qu’il ne s’agit pas d’une 
 ### <a name="4-package-sanity-test"></a>4. Tests de validité des packages
 #### <a name="41-archive-files-usage"></a>4.1 Utilisation des fichiers archivés
 
-**Contexte**  
+**Arrière-plan**  
 Ce test vous permet de créer des applications Pont de bureau plus performantes pour s’exécuter sur les machines [Windows10S](https://www.microsoft.com/windows/windows-10-s).
 
 **Détails du test**  
@@ -71,7 +71,7 @@ Ce test vérifie tous les fichiers exécutables inclus dans des fichiers archiv�
 
 #### <a name="42-blocked-executables"></a>4.2 Fichiers exécutables bloqués
 
-**Contexte**  
+**Arrière-plan**  
 Ce test vous permet de créer des applications Pont de bureau plus performantes pour s’exécuter sur les machines [Windows10S](https://www.microsoft.com/windows/windows-10-s). 
 
 **Détails du test**  
@@ -133,7 +133,7 @@ Le fichier {filename} ne doit pas contenir de section de correspondance inverse.
 
 
 #### <a name="22-branding-validation"></a>2.2 Validation de la personnalisation
-**Contexte**  
+**Arrière-plan**  
 Les applications Pont du bureau doivent être complètes et pleinement fonctionnelles. Les applications qui utilisent les images par défaut (provenant des exemples ou exemples SDK) offrent une expérience utilisateur médiocre et sont difficilement identifiables dans le catalogue du Windows Store.
 
 **Détails du test**  
@@ -165,7 +165,7 @@ Confrontez le manifeste de l’application aux exigences décrites dans [Exigenc
 #### <a name="32-application-count"></a>3.2 Nombre d’applications
 Ce test vérifie qu’un package d’application (.appx, ensemble d’applications) contient une application. 
 
-**Contexte**  
+**Arrière-plan**  
 Ce test est implémenté conformément à la politique du WindowsStore. 
 
 **Détails du test**  
@@ -176,7 +176,7 @@ Assurez-vous que le package et l’ensemble d’applications satisfont aux exige
 
 
 #### <a name="33-registry-checks"></a>3.3 Vérifications du Registre
-**Contexte**  
+**Arrière-plan**  
 Ce test vérifie si l’application installe ou met à jour de nouveaux pilotes ou services.
 
 **Détails du test**  
@@ -205,7 +205,7 @@ Suivez les recommandations suivantes pour vous assurer que votre package d’app
 ### <a name="5-supported-api-test"></a>5. Test des API prises en charge
 Ce test vérifie si l’application utilise des API non conformes. 
 
-**Contexte**  
+**Arrière-plan**  
 Les applications Pont du bureau peuvent tirer parti de certaines API Win32héritées et d’API modernes (composants UWP). Ce test identifie les fichiers binaires managés qui utilisent des API non prises en charge.
  
 **Détails du test**  
@@ -224,7 +224,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
-**Contexte**  
+**Arrière-plan**  
 Le test s’assure que l’application ne demande pas de contrôle de compte d’utilisateur lors de l’exécution.
 
 **Détails du test**  
@@ -235,7 +235,7 @@ Les applications doivent s’exécuter en tant qu’utilisateur interactif. Pour
 
  
 ### <a name="7-windows-runtime-metadata-validation"></a>7. Validation des métadonnées WindowsRuntime
-**Contexte**  
+**Arrière-plan**  
 S’assure que les composants fournis avec une application sont conformes au système de type UWP.
 
 **Détails du test**  
@@ -260,7 +260,7 @@ Vérifiez qu’aucun type UWP ne se trouve dans l’espace de noms global ni dan
 La modification des protections de sécurité Windows par défaut peut exposer les clients à des risques accrus. 
 
 #### <a name="81-banned-file-analyzer"></a>8.1 Analyseur de fichiers non autorisés
-**Contexte**  
+**Arrière-plan**  
 Certains fichiers ont été mis à jour avec l’apport d’améliorations importantes en matière de sécurité et de fiabilité entre autres. Les applications Pont du bureau Windows doivent contenir les toutes dernières versions de ces fichiers, car les versions obsolètes présentent un risque. Le Kit de certification des applications Windows bloque ces fichiers afin de garantir que toutes les applications utilisent la version actuelle.
 
 **Détails du test**  
@@ -269,7 +269,7 @@ L’analyseur de fichiers non autorisés du Kit de certification des application
 Cette vérification échoue généralement si une application utilise une version «Release Preview» du fichier et non la dernière version officielle. 
 
 **Actions correctives**  
-Pour résoudre ce problème, utilisez la dernière version du [Kit de développement Bing cartes](http://go.microsoft.com/fwlink/p/?linkid=614880) pour les applications UWP.
+Pour résoudre ce problème, utilisez la dernière version du [Kit de développement Bing cartes](https://go.microsoft.com/fwlink/p/?linkid=614880) pour les applications UWP.
 
 #### <a name="82-private-code-signing"></a>8.2 Signature de code privé
 Teste l’existence de fichiers binaires de signature de code privé dans le package de l’application. 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows10, piste d'apprentissage, fichiers, e/s de fichier, lire un fichier, écrire un fichier, créer un fichier, écrire du texte, lire du texte
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921079"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045528"
 ---
 # <a name="work-with-files"></a>Travailler avec des fichiers
 
@@ -130,7 +130,7 @@ Voici un résumé rapide des API et d'autres documents utiles pour vous aider à
 | [Créer, écrire et lire un fichier](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Aborde la création, la lecture et l'écriture de texte, de données binaires et de flux. |
 | [Prise en main du stockage de données d’application en local](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | En plus de traiter des meilleures pratiques d’enregistrement des données locales, explique le rôle des dossiers LocalSettings et LocalCache. |
 | [Prise en main des données d’application itinérantes](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Une série de deux parties sur l’utilisation des données d’application itinérantes. |
-| [Recommandations en matière de données d’application itinérantes](http://msdn.microsoft.com/library/windows/apps/hh465094) | Suivez ces recommandations en matière d’itinérance des données lorsque vous concevez votre application. |
+| [Recommandations en matière de données d’application itinérantes](https://msdn.microsoft.com/library/windows/apps/hh465094) | Suivez ces recommandations en matière d’itinérance des données lorsque vous concevez votre application. |
 | [Stocker et récupérer des paramètres et autres données d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Fournit une vue d’ensemble des différents magasins de données d'application, tels que les dossiers locaux, itinérants et temporaires. Consultez la section [Données itinérantes](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) pour des instructions et des informations supplémentaires sur l’écriture de données qui se déplacent entre les appareils. |
 | [Autorisations d’accès aux fichiers](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Informations sur les emplacements du système de fichiers auxquels votre application peut accéder. |
 | [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Montre comment accéder aux fichiers et aux dossiers en permettant à l’utilisateur de choisir à l’aide d’une interface utilisateur de sélecteur. |
@@ -143,6 +143,6 @@ Voici un résumé rapide des API et d'autres documents utiles pour vous aider à
 |-----------------|---------------|
 | [Exemple de données d'application](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Montre comment stocker et récupérer des données spécifiques à chaque utilisateur à l’aide des API de données d’application. |
 | [Exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Montre comment créer, lire, écrire, copier et supprimer un fichier. |
-| [Exemple de sélecteur de fichiers](http://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Montre comment accéder aux fichiers et aux dossiers en permettant à l’utilisateur de les choisir à l'aide d'une interface utilisateur et comment enregistrer un fichier de sorte que l’utilisateur puisse spécifier le nom, le type de fichier et l’emplacement du fichier à enregistrer. |
+| [Exemple de sélecteur de fichiers](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Montre comment accéder aux fichiers et aux dossiers en permettant à l’utilisateur de les choisir à l'aide d'une interface utilisateur et comment enregistrer un fichier de sorte que l’utilisateur puisse spécifier le nom, le type de fichier et l’emplacement du fichier à enregistrer. |
 | [Exemple JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Indique comment encoder et décoder des objets, des tableaux, des chaînes, des chiffres et des valeurs booléennes JSON (JavaScript Object Notation) à l’aide de l'[espace de noms Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
 | [Exemples de code supplémentaires](https://developer.microsoft.com//windows/samples) | Choisissez **fichiers, dossiers et bibliothèques** dans la liste déroulante des catégories. |

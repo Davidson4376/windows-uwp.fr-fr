@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0019ded3b409acf0e6530bffa4ad73f85bfa8855
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942643"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051002"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -106,7 +106,7 @@ Cette section vous permet de fournir une conception graphique pour améliorer l�
 
 Les bandes-annonces sont de courtes vidéos qui permettent aux clients de voir votre produit en action et de s’en faire ainsi une meilleure idée. Elles s’affichent dans la partie supérieure de la description du Windows Store de votre application (à condition que vous incluez une image de [pochette d’image principale Super 16:9](#windows-10-and-xbox-image-169-super-hero-art) ). 
 
-Les bandes-annonces sont codées avec la fonctionnalité de diffusion en continu lisse [Smooth Streaming](http://www.iis.net/downloads/microsoft/smooth-streaming), qui adapte la qualité du flux vidéo fourni aux clients en temps réel, en fonction de la bande passante disponible et des ressources processeur.
+Les bandes-annonces sont codées avec la fonctionnalité de diffusion en continu lisse [Smooth Streaming](https://www.iis.net/downloads/microsoft/smooth-streaming), qui adapte la qualité du flux vidéo fourni aux clients en temps réel, en fonction de la bande passante disponible et des ressources processeur.
 
 > [!NOTE]
 > Les bandes-annonces s'affichent uniquement pour les clients sur Windows10, version1607 ou ultérieure (incluant Xbox).

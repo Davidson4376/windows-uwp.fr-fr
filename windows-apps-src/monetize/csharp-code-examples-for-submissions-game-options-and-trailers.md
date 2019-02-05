@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, exemples de code, options de jeu, bandes-annonces, listes avancées, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 041f07fd6b24af3658bc9cfffe07117e4b353831
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939635"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044260"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>Exemple de code C\#: soumission d’applications avec options de jeu et bandes-annonces
 
@@ -29,7 +29,7 @@ Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu�
 La configuration requise pour ces exemples est la suivante:
 
 * Ajoutez une référence à l'assembly System.Web de votre projet.
-* Installez le package NuGet [Newtonsoft.Json](http://www.newtonsoft.com/json) de Newtonsoft dans votre projet.
+* Installez le package NuGet [Newtonsoft.Json](https://www.newtonsoft.com/json) de Newtonsoft dans votre projet.
 
 <span id="create-app-submission" />
 

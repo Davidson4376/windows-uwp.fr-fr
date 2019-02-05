@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6d445e5164d542a7e10f136a5fb238c575f35c2d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942490"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048809"
 ---
 # <a name="export-restrictions-on-cryptography"></a>Restrictions à l’exportation liées à l’utilisation du chiffrement
 
@@ -25,9 +25,9 @@ Le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécu
 
  
 
-Pour obtenir plus d’informations sur le Département du Commerce des États-Unis et le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécurité ou BIS), voir [À propos du Bureau de l’industrie et de la sécurité](http://go.microsoft.com/fwlink/p/?LinkID=245644).
+Pour obtenir plus d’informations sur le Département du Commerce des États-Unis et le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécurité ou BIS), voir [À propos du Bureau de l’industrie et de la sécurité](https://go.microsoft.com/fwlink/p/?LinkID=245644).
 
-Pour plus d’informations sur la réglementation en vigueur aux États-Unis en matière de contrôle des exportations (« Export Administration Regulations » ou EAR) en ce qui concerne les technologies utilisant le chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+Pour plus d’informations sur la réglementation en vigueur aux États-Unis en matière de contrôle des exportations (« Export Administration Regulations » ou EAR) en ce qui concerne les technologies utilisant le chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](https://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 ## <a name="governed-uses"></a>Utilisations régies
 
@@ -43,7 +43,7 @@ Premièrement, déterminez si votre application utilise un type de chiffrement s
 -   Protection contre la copie ou gestion des droits numériques (DRM)
 -   Protection antivirus
 
-Pour obtenir la liste complète et actualisée des applications de chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+Pour obtenir la liste complète et actualisée des applications de chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](https://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 ## <a name="non-restricted-uses"></a>Utilisations non restreintes
 
@@ -55,8 +55,8 @@ Notez que certaines applications de chiffrement ne sont pas restreintes. Les tâ
 -   Gestion des droits numériques (DRM)
 -   Utilisation de signatures numériques
 
-Pour obtenir la liste complète et actualisée des applications de chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+Pour obtenir la liste complète et actualisée des applications de chiffrement, voir [Contrôles EAR des éléments utilisant le chiffrement](https://go.microsoft.com/fwlink/p/?LinkID=245645).
 
 Si votre application appelle, prend en charge, contient ou utilise un chiffrement pour une tâche quelconque ne figurant pas dans cette liste, elle a besoin d’un numéro ECCN (Export Commodity Classification Number).
 
-Si vous ne possédez pas de numéro ECCN, consultez l’article [Questions et réponses sur les numéros ECCN](http://go.microsoft.com/fwlink/p/?LinkID=245646).
+Si vous ne possédez pas de numéro ECCN, consultez l’article [Questions et réponses sur les numéros ECCN](https://go.microsoft.com/fwlink/p/?LinkID=245646).

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp, notifications ciblées, notifications push, toast, vignette
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 902a8d84c2a0cfa1549c4c3926e838e9bb8ed9c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9858665eaf36f5cd261dd1098b23aeecccf9179c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923136"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045778"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -45,7 +45,7 @@ De façon générale, vous devez effectuer trois opérations afin d’utiliser d
 Suivez ces étapes pour créer une notification dans l’espace partenaires et l’envoyer à un segment de clientèle particulier.
 
 > [!NOTE]
-> Avant d’une application peut recevoir des notifications de l’espace partenaires, vous devez tout d’abord appeler la méthode [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) dans votre application pour inscrire votre application pour recevoir des notifications. Cette méthode est disponible dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Pour plus d’informations sur l’appel de cette méthode, notamment pour consulter un exemple de code, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> Avant d’une application peut recevoir des notifications de l’espace partenaires, vous devez tout d’abord appeler la méthode [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) dans votre application pour inscrire votre application pour recevoir des notifications. Cette méthode est disponible dans le [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). Pour plus d’informations sur l’appel de cette méthode, notamment pour consulter un exemple de code, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 1. Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), développez la section **engager** , puis sélectionnez **les Notifications**.
 2. Sur la page **Notifications**, sélectionnez **Nouvelle notification**.

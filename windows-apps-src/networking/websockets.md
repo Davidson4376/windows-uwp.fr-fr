@@ -6,17 +6,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows10, uwp, mise en réseau, websocket, messagewebsocket et streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: 05f56f07aed0c9f97daffe3842952ce142f8159a
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035410"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045405"
 ---
 # <a name="websockets"></a>WebSockets
 Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S) et en prenant en charge à la fois les messages UTF-8 et les messages binaires.
 
-Avec le [protocole WebSocket](http://tools.ietf.org/html/rfc6455), les données sont transférées immédiatement via une connexion duplex intégral à un seul socket, ce qui permet d’échanger des messages entre les deux points de terminaison en temps réel. Les WebSockets conviennent parfaitement pour les jeux multijoueurs (en temps réel et au tour par tour), les notifications instantanées de réseau social, les affichages actualisés des informations de stock ou de météo et les autres applications nécessitant un transfert sécurisé et rapide des données.
+Avec le [protocole WebSocket](https://tools.ietf.org/html/rfc6455), les données sont transférées immédiatement via une connexion duplex intégral à un seul socket, ce qui permet d’échanger des messages entre les deux points de terminaison en temps réel. Les WebSockets conviennent parfaitement pour les jeux multijoueurs (en temps réel et au tour par tour), les notifications instantanées de réseau social, les affichages actualisés des informations de stock ou de météo et les autres applications nécessitant un transfert sécurisé et rapide des données.
 
 Pour établir une connexion WebSocket, l'établissement d'une liaison HTTP spécifique est échangée entre le client et le serveur. En cas de succès, le protocole de la couche d'application est «mis à niveau» depuis HTTP vers WebSockets, à l'aide de la connexion TCP précédemment établie. Lorsque cela se produit, le protocole HTTP n'est plus concerné. Les données peuvent être envoyées et reçues à l'aide du protocole WebSocket par les deux points de terminaison, jusqu'à ce que la connexion WebSocket soit fermée.
 
@@ -834,8 +834,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>Rubriquesassociées
-* [Protocole WebSocket](http://tools.ietf.org/html/rfc6455)
+* [Protocole WebSocket](https://tools.ietf.org/html/rfc6455)
 * [Sockets](sockets.md)
 
 ## <a name="samples"></a>Exemples
-* [Exemple de WebSocket](http://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [Exemple de WebSocket](https://go.microsoft.com/fwlink/p/?LinkId=620623)

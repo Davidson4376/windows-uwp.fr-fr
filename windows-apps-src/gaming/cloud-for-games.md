@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows10, uwp, jeux, services cloud
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925313"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045588"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -81,7 +81,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
         </td>
     </tr>
     <tr>
-        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games a créé <b>Age of Ascent</b>, un jeu3D épique dans l’espace de type MMO (en ligne massivement multijoueur) auquel il est possible de jouer sur les appareils équipés de navigateurs modernes. Par conséquent, ce jeu est utilisable sans plug-in sur des PC, ordinateurs portables, téléphones portables et autres appareils mobiles. Le jeu utilise ASP.NET Core, HTML5, WebGL et Azure.</td>
         <td>
             <ul>
@@ -96,7 +96,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.nextgames.com/">Next Games</a></td>
+        <td><a href="https://www.nextgames.com/">Next Games</a></td>
         <td>Next Games est le créateur du jeu vidéo <b>The Walking Dead: No Man’s Land</b> d’après une série originale d’AMC. Le jeu The Walking Dead utilisait Azure comme serveur principal. Le week-end de son ouverture, 1000000de téléchargements ont eu lieu. Dès la première semaine, il était numéro1 des applications gratuites de l’AppStore sur iPhone et iPad aux États-Unis, numéro1 des applications gratuites dans 12pays et numéro1 des jeux gratuits dans 13pays.
         </td>
         <td>
@@ -111,7 +111,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixels Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixels Squad</a></td>
         <td>Pixels Squad a développé <b>Crime Coast</b> à l’aide du moteur de jeu Unity et d’Azure. <b>Crime Coast</b> est un jeu social de stratégie disponible sur les plateformes Android, iOS et Windows. Ont été utilisés dans ce jeu le stockage d’objets Blob Azure, un cache Azure Redis géré, un ensemble d’ordinateurs virtuels IIS à charge équilibrée et un hub de notification Microsoft. Découvrez comment cette société a géré la mise à l’échelle et l’augmentation du nombre de joueurs avec 5000joueurs simultanés.
         </td>
         <td>
@@ -130,7 +130,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
 ### <a name="other-links"></a>Autres liens
 
 * [Hitman et Azure: créent des fonctions de jeu telles que la cible insaisissable qui ne sont possibles qu'en utilisant le cloud](https://channel9.msdn.com/Series/Hitman)
-* [Azure, l’arme secrète de Hitcents, Game Troopers et InnoSpark](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Azure, l’arme secrète de Hitcents, Game Troopers et InnoSpark](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [Les start-up du jeu du programme Bizspark utilisent Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
@@ -194,7 +194,7 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
     
 * [Programmes pour développeurs](e2e.md#developer-programs)
 
-    Microsoft propose plusieurs programmes pour développeurs tels que [ID@Xbox](http://www.xbox.com/Developers/id) et le [Programme Créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) pour vous aider à développer et à publier des jeux.
+    Microsoft propose plusieurs programmes pour développeurs tels que [ID@Xbox](https://www.xbox.com/Developers/id) et le [Programme Créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) pour vous aider à développer et à publier des jeux.
 
 ## <a name="learning-resources"></a>Ressources de formation
 
@@ -225,7 +225,7 @@ Nous cherchons constamment à innover et à ajouter de nouvelles fonctionnalité
 * [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)
-* [ID@Xbox](http://www.xbox.com/Developers/id)
+* [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
  

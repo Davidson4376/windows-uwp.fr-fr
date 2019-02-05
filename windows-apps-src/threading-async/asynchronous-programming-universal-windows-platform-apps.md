@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows10, uwp, asynchrone
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a8349b9a96dd67d64abb368f0fdadd822af2fe84
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924739"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048076"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans c#, Microsoft Visual Basic.NET, C++ et JavaScript.
@@ -63,7 +63,7 @@ En C++/CX, la programmation asynchrone est basée sur la [**task class**](https:
 La fonction [**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) fournit une prise en charge de la production d’API asynchrones qui peuvent être utilisées en JavaScript ou tout autre langage prenant en charge l’UWP. Pour plus d’informations, voir [Création d’opérations asynchrones en C++ / CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx).
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>Modèles asynchrones dans UWP utilisant JavaScript
-En JavaScript, la programmation asynchrone suit la norme [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) proposée en ayant des méthodes asynchrones qui retournent des objets promise. Les promesses sont utilisées à la fois dans l’UWP et dans la Bibliothèque Microsoft Windows pour JavaScript.
+En JavaScript, la programmation asynchrone suit la norme [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) proposée en ayant des méthodes asynchrones qui retournent des objets promise. Les promesses sont utilisées à la fois dans l’UWP et dans la Bibliothèque Microsoft Windows pour JavaScript.
 
 Un objet promise représente une valeur qui sera traitée dans le futur. Dans l’UWP, vous obtenez un objet promise à partir d’une fonction factory, qui, par convention, a un nom se terminant par «Async».
 
@@ -71,5 +71,5 @@ Dans de nombreux cas, il est presque aussi simple d’appeler une fonction async
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Appeler des API asynchrones en C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [Programmation asynchrone avec Async et Await (C# et Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [Programmation asynchrone avec Async et Await (C# et Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Exemple de scénarios de fonctionnalité Reversi : code asynchrone](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

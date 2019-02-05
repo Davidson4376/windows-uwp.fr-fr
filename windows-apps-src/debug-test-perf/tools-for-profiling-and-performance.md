@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30be8d13c7e549f8ed75060f614de5bbcdb6284f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: adaf1bc4b3cc70c3ceb22eb561d9782520415c4a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936496"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048036"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Outils de profilage et de performances
 
 
 Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP). Suivez ces liens pour découvrir comment utiliser ces outils.
 
-**Outil réactivité de l’interface utilisateur XAML dans Visual Studio**. Un des meilleurs outils à utiliser pour mesurer l’impact sur les performances au sein de votre application est l’outil de la réactivité de l’interface utilisateur XAML. Cela a été [mis à jour](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) pour prendre en charge d’autres scénarios.
+**Outil réactivité de l’interface utilisateur XAML dans Visual Studio**. Un des meilleurs outils à utiliser pour mesurer l’impact sur les performances au sein de votre application est l’outil de la réactivité de l’interface utilisateur XAML. Cela a été [mis à jour](https://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) pour prendre en charge d’autres scénarios.
 
 Voir aussi:
 

@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e9d0fdee4ba9f44f15c461e5a53dad28700023a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947039"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051102"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
+# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances de démarrage de votre application
 
 
 Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
@@ -103,7 +103,7 @@ Les performances de démarrage d’une application XAML sont en corrélation dir
 -   UserControls et les modèles de contrôle sont étendus et doivent donc également être pris en compte.
 -   Si vous créez du code XAML qui ne figure pas sur l’écran, vous devez indiquer pourquoi ces parties de code doivent être créées lors du démarrage.
 
-La fenêtre [Arborescence visuelle dynamique de Visual Studio](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) indique le nombre d’éléments enfant pour chaque nœud de l’arborescence.
+La fenêtre [Arborescence visuelle dynamique de Visual Studio](https://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) indique le nombre d’éléments enfant pour chaque nœud de l’arborescence.
 
 ![Arborescence visuelle dynamique](images/live-visual-tree.png)
 
@@ -323,7 +323,7 @@ Il est essentiel de prévoir l’affichage d’une page de chargement dans toute
 > End Class
 > ```
 
-Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](http://go.microsoft.com/fwlink/p/?linkid=234889).
+Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](https://go.microsoft.com/fwlink/p/?linkid=234889).
 
 ### <a name="phase-3"></a>Phase 3
 
@@ -339,7 +339,7 @@ C’est vous qui définissez le comportement de l’application à chaque phase 
 
 Le code réutilisable prend souvent la forme de modules (DLL) inclus dans un projet. Le chargement de ces modules nécessite des accès au disque, ce qui peut évidemment être coûteux en ressources. Cela peut avoir un impact sur les démarrages à chaud, même si c’est dans une moindre mesure que lors des démarrages à froid. En C# et Visual Basic, le CLR essaie le plus possible de différer ce coût en chargeant les assemblys à la demande : il ne charge un module que si celui-ci est référencé par une méthode exécutée. Par conséquent, dans le code de démarrage, référencez uniquement les assemblys nécessaires au lancement de votre application afin que le CLR ne charge pas de modules inutiles. Si le chemin de démarrage comporte des chemins de code inutilisés avec des références superflues, vous pouvez déplacer ces chemins de code vers d’autres méthodes pour éviter les chargements non nécessaires.
 
-Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) pour identifier les modules chargés au démarrage.
+Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) pour identifier les modules chargés au démarrage.
 
 ### <a name="make-smart-web-requests"></a>Effectuer des requêtes Web intelligentes
 

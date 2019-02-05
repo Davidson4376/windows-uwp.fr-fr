@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77b8f075e0eac02722c29eddddb6f188575ca18f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929188"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047504"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Définir le format, la résolution et la fréquence d’images pour MediaCapture
 
@@ -21,7 +21,7 @@ Cet article vous montre comment utiliser l’interface [**IMediaEncodingProperti
 
 Les profils de caméra offrent un moyen plus avancé de détecter et de définir les propriétés de flux de l’appareil photo, mais ne sont pas pris en charge pour tous les appareils. Pour plus d’informations voir [Profils d’appareil photo](camera-profiles.md).
 
-Le code figurant dans cet article a été adapté à partir de l’[exemple CameraResolution](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
+Le code figurant dans cet article a été adapté à partir de l’[exemple CameraResolution](https://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 > [!NOTE] 
 > Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article repose sur l’hypothèse que votre application possède déjà une instance de MediaCapture initialisée correctement.

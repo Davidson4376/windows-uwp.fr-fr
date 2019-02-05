@@ -6,12 +6,12 @@ ms.date: 11/26/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 51d671ef4542598322ec79d9cc3b16abd8105731
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.openlocfilehash: 69e73d020738e0bad5404f164417bbce35e5e60c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990502"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047873"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -66,7 +66,7 @@ Les fonctionnalités d’appareil permettent à votre application d’accéder �
 | **Microphone** | La fonctionnalité **microphone** donne accès au flux audio du microphone, ce qui permet à l’application d’effectuer un enregistrement audio à partir de microphones connectés. Les applications doivent gérer le cas où l’utilisateur a désactivé le microphone à partir de l’icône **Paramètres**. |
 | **Proximité** | La fonctionnalité **proximity** permet à plusieurs appareils très proches les uns des autres de communiquer entre eux. Cette fonctionnalité est généralement utilisée dans des jeux multijoueurs simples et dans des applications qui échangent des informations. Les périphériques tentent d’utiliser la technologie de communication qui offre la meilleure connexion possible, notamment Bluetooth, le WiFi et Internet. Cette fonctionnalité est utilisée uniquement pour initier la communication entre les appareils. |
 | **Webcam** | La fonctionnalité **webcam** fournit un accès au flux vidéo d’une caméra intégrée ou d’une webcam externe, ce qui permet à l’application de capturer des photos et des vidéos. Sur Windows, les applications doivent gérer le cas où l’utilisateur a désactivé la caméra à partir de l’icône **Paramètres**.<br/>La fonctionnalité **webcam** ne donne accès qu’au flux vidéo. Pour autoriser l’accès au flux audio, la fonctionnalité **microphone** doit être ajoutée. |
-| **USB** | La fonctionnalité d’appareil **usb** permet d’accéder aux API dans [Mise à jour du package du manifeste de l’application pour un périphérique USB](http://go.microsoft.com/fwlink/p/?LinkId=302259). |
+| **USB** | La fonctionnalité d’appareil **usb** permet d’accéder aux API dans [Mise à jour du package du manifeste de l’application pour un périphérique USB](https://go.microsoft.com/fwlink/p/?LinkId=302259). |
 | **Périphérique d’interface utilisateur (HID)** | La fonctionnalité d’appareil **humaninterfacedevice** prend en charge l’accès aux API dans [Comment spécifier des fonctionnalités de périphérique pour HID](https://msdn.microsoft.com/library/windows/apps/Dn263091). |
 | **Point de service (POS)** | La fonctionnalité d’appareil **pointOfService** permet d’accéder aux API dans l’espace de noms [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071). Cet espace de noms permet à votre application d’accéder aux scanneurs de codes-barres et aux lecteurs de bande magnétique de points de vente (PDV). L’espace de noms offre une interface indépendante du fournisseur qui permet d’accéder aux appareils POS de différents constructeurs à partir d’une application UWP. |
 | **Bluetooth** | La fonctionnalité d’appareil **bluetooth** permet aux applications de communiquer avec des appareils Bluetooth déjà couplés par le biais des protocoles GATT (Generic Attribute) ou RFCOMM (Classic Basic Rate).<br/>Cette fonctionnalité est requise pour l’utilisation de certaines API de l’espace de noms [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413). |

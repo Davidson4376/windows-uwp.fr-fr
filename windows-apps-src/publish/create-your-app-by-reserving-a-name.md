@@ -6,12 +6,12 @@ ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 122be597bbf772d891b7e9839dfc4d9039754b00
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.openlocfilehash: 41020055e664d58f36e50eaf4e1cff1e28eeec37
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968583"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044736"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
@@ -36,7 +36,7 @@ Réserver un nom est la première étape de création d’une application dans l
 Ce nom est maintenant réservé pour vous et vous pourrez [soumettre](app-submissions.md) l’application lorsque vous serez prêt. 
 
 > [!NOTE]
-> Il est possible que vous ne puissiez pas réserver un nom, même si vous ne voyez aucune application portant ce nom dans le MicrosoftStore. Cela est généralement dû au fait qu’un autre développeur a réservé ce nom, mais n’a pas encore soumis son application. Si vous ne parvenez pas à réserver un nom sur lequel vous détenez un quelconque droit, ou si vous voyez une autre application dans le MicrosoftStore qui utilise ce nom, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
+> Il est possible que vous ne puissiez pas réserver un nom, même si vous ne voyez aucune application portant ce nom dans le MicrosoftStore. Cela est généralement dû au fait qu’un autre développeur a réservé ce nom, mais n’a pas encore soumis son application. Si vous ne parvenez pas à réserver un nom sur lequel vous détenez un quelconque droit, ou si vous voyez une autre application dans le MicrosoftStore qui utilise ce nom, [contactez Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777).
 
 Une fois le nom réservé, vous disposez de troismois pour soumettre cette application. Si vous ne soumettez pas l’application dans ce délai, la réservation du nom expire et un autre développeur peut alors être en mesure d’utiliser ce nom pour une autre application. Vous obtenez parfois un message d'erreur si vous tentez de soumettre une application dont vous avez laissé le nom expirer.
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a69cfdf96d6c7d3426b8d1ba414a42ff48a117
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4f4c80ca1d031c69f5f70cdf85e90ea1d5887830
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926958"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047198"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme Windows universelle (UWP) complexe
 
@@ -65,7 +65,7 @@ Le terme « entonnoir » provient de la forme de cette technique. À l’extrém
 
 Quand vous êtes satisfait de votre concept, vous êtes prêt pour la prochaine étape: la création du plan de votre application. L’architecture de l’information donne à votre contenu l’intégrité structurelle dont il a besoin. Il permet de définir le modèle de navigation de votre application et, en fin de compte, son identité. En planifiant l’organisation de votre contenu et la façon dont vos utilisateurs vont le découvrir, vous pouvez vous faire une meilleure idée du ressenti des utilisateurs face à votre application.
 
-Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) , par exemple, lance directement dans un hub qui fournit l’accès à la bibliothèque, Windows store, actualités et statistiques de l’utilisateur. L’expérience est ciblée, afin que les utilisateurs peuvent obtenir et bénéficier rapidement des livres. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
+Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](https://go.microsoft.com/fwlink/p/?LinkID=268089) , par exemple, lance directement dans un hub qui fournit l’accès à la bibliothèque, Windows store, actualités et statistiques de l’utilisateur. L’expérience est ciblée, afin que les utilisateurs peuvent obtenir et bénéficier rapidement des livres. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
 
 Pour obtenir des recommandations à ce sujet, voir [Informations de base relatives à la conception de la navigation](../design/basics/navigation-basics.md).
 

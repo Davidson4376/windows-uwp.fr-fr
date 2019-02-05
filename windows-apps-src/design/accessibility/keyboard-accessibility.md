@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 938b5b3cdd2e23995a1031875a28f178e0c97a26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931130"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045518"
 ---
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
@@ -148,7 +148,7 @@ XAML
 
 Pour des raisons de simplicité, l’exemple précédent omet l’utilisation de ressources pour des chaînes telles que Ctrl+A. Toutefois, vous devez également tenir compte des touches de raccourci durant la localisation. La localisation des touches de raccourci est pertinente car le choix de la touche à utiliser dépend généralement de l’étiquette de texte visible pour l’élément.
 
-Pour obtenir de l’aide supplémentaire sur l’implémentation de touches de raccourci, voir la section [Touches de raccourci](http://go.microsoft.com/fwlink/p/?linkid=221825) dans la rubrique Recommandations en matière d’interactions utilisateur Windows.
+Pour obtenir de l’aide supplémentaire sur l’implémentation de touches de raccourci, voir la section [Touches de raccourci](https://go.microsoft.com/fwlink/p/?linkid=221825) dans la rubrique Recommandations en matière d’interactions utilisateur Windows.
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -249,5 +249,5 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 * [Accessibilité](accessibility.md)
 * [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [Exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

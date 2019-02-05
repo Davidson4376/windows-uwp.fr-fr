@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd829881892eece08c30fcd665bdf21a1f43471
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945060"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050812"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
@@ -157,14 +157,14 @@ Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’
 Une grammaire personnalisée est conçue et créée par vous-même, et installé sur votre application. La reconnaissance vocale à l’aide d’une contrainte personnalisée est effectuée sur l’appareil.
 
 -   Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programmation.
--   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
+-   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
     Voici quelques conseils pour la création de grammaires SRGS :
 
     -   Limitez chaque grammaire. Les grammaires qui contiennent peu d’expressions ont tendance à offrir une reconnaissance plus précise que les grammaires complexes qui contiennent de nombreuses expressions. Il est préférable d’utiliser plusieurs grammaires de taille réduite pour les différents scénarios plutôt qu’une seule grammaire pour la totalité de l’application.
     -   Indiquez aux utilisateurs ce qu’ils doivent dire pour chaque contexte d’application, et activez et désactivez les grammaires selon les besoins.
     -   Concevez chaque grammaire de manière à ce que les utilisateurs puissent prononcer une commande de différentes manières. Par exemple, vous pouvez utiliser la règle **GARBAGE** pour accepter la saisie vocale que votre grammaire ne définit pas. Cela permet aux utilisateurs de prononcer des mots supplémentaires qui n’ont aucune signification pour votre application. Par exemple, «donnez-moi», «et», «euh», «peut-être», etc.
-    -   Utilisez l’élément [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
+    -   Utilisez l’élément [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
     -   Évitez de définir des expressions dans votre grammaire qui ne contiennent qu’une seule syllabe. La reconnaissance tend à être plus précise pour les expressions contenant au moins deux syllabes.
     -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que «matin», «châtain» et «latin» peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
 
@@ -175,9 +175,9 @@ Une grammaire personnalisée est conçue et créée par vous-même, et installé
 
 Si votre application contient un vocabulaire spécialisé avec des mots inhabituels, fictifs ou dont la prononciation est particulière, vous pouvez améliorer leur reconnaissance en définissant des prononciations personnalisées.
 
-Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx).
+Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx).
 
-Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
+Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
 
 ## <a name="testing"></a>Test
 
@@ -200,7 +200,7 @@ Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elle
 -   En reliant une séquence de mots inhabituels ou en prononçant des numéros de référence ou des signes de ponctuation, l’expression risque de devenir incompréhensible.
 -   La parole peut manquer de naturel lorsque la prosodie ou l’intonation est différente de la façon dont un locuteur natif prononcerait une expression.
 
-Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section 
 
@@ -220,7 +220,7 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 
  **Exemples**
 
-* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

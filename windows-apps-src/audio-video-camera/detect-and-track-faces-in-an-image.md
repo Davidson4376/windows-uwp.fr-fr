@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 970fbcef984f28e779ea7c133de95f7f7f99be8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923522"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045930"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Détecter les visages dans des images ou des vidéos
 
@@ -23,7 +23,7 @@ Cette rubrique montre comment utiliser [**FaceDetector**](https://msdn.microsoft
 
 Pour une autre méthode de suivi des visages à l’aide de [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), voir [Analyse de scène pour la capture multimédia](scene-analysis-for-media-capture.md).
 
-Le code contenu dans cet article a été adapté à partir des exemples [Détection des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) et [Suivi des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Vous pouvez télécharger ces exemples pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
+Le code contenu dans cet article a été adapté à partir des exemples [Détection des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) et [Suivi des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Vous pouvez télécharger ces exemples pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 ## <a name="detect-faces-in-a-single-image"></a>Détecter des visages dans une seule image
 
@@ -98,8 +98,8 @@ Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/a
 ## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Analyse de scène de capture multimédia](scene-analysis-for-media-capture.md)
-* [Exemple de détection des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Exemple de suivi des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Exemple de détection des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Exemple de suivi des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Camera](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Lecture de contenu multimédia](media-playback.md)

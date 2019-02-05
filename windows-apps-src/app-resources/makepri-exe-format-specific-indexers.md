@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: e6938807a589337489f07f5865e02a580a72dae2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925856"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044626"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Indexeurs spécifiques au format de MakePri.exe
 
@@ -311,7 +311,7 @@ L’indexeur ResJSON est identifié par un attribut `type` RESJSON. Il indexe le
 </xs:schema>\
 ```
 
-Un fichier `.resjson` contient du texte JSON (voir [The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt)). Le fichier doit contenir un objet JSON unique avec des propriétés hiérarchiques. Chaque propriété doit être un autre objet JSON ou une valeur de chaîne.
+Un fichier `.resjson` contient du texte JSON (voir [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). Le fichier doit contenir un objet JSON unique avec des propriétés hiérarchiques. Chaque propriété doit être un autre objet JSON ou une valeur de chaîne.
 
 Les propriétés JSON dont les noms commencent par un trait de soulignement («_») ne sont pas compilées dans le fichier PRI final, mais sont gérées dans le fichier journal.
 
@@ -400,4 +400,4 @@ L’attribut `initialPath` place toutes les ressources sous ce chemin d’accès
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md)
 * [Fichier de configuration de MakePri.exe](makepri-exe-configuration.md)
-* [The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt)
+* [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

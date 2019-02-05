@@ -1,17 +1,17 @@
 ---
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Découvrez comment activer les achats in-app et les versions d’évaluation dans les applications UWP qui ciblent les versions antérieures à Windows10 version1607.
-title: Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store
+title: Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, achats dans l’application, extensions, versions d’évaluation, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946124"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046978"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store
 
@@ -155,7 +155,7 @@ Cette section présente le fichierXSD qui définit la structure du fichier Windo
 5. Basculez vers le fichier WindowsStoreProxy.xml dans Visual Studio.
 6. Dans le menu **XML**, cliquez sur **Schémas**, puis recherchez la ligne correspondant au fichier WindowsStoreProxy.xsd dans la liste. Si l’emplacement du fichier n’est pas celui que vous souhaitez (par exemple, si le fichier temporaire s’affiche toujours), cliquez sur **Ajouter**. Accédez au fichier, puis cliquez sur **OK**. Vous devez maintenant voir ce fichier dans la liste. Vérifiez qu’une coche apparaît dans la colonne **Utilisation** de ce schéma.
 
-Une fois ceci fait, les modifications apportées à WindowsStoreProxy.xml sont soumises au schéma. Pour plus d’informations, consultez [Procédure: sélectionner les schémas XML à utiliser](http://go.microsoft.com/fwlink/p/?LinkId=403014).
+Une fois ceci fait, les modifications apportées à WindowsStoreProxy.xml sont soumises au schéma. Pour plus d’informations, consultez [Procédure: sélectionner les schémas XML à utiliser](https://go.microsoft.com/fwlink/p/?LinkId=403014).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml

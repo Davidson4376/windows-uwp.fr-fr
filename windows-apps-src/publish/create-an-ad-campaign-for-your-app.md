@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ece97d2e2cf96d2905902fd563f1de9027aa64a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c198bf9ebb8eb6f409277bfe09af6881530d5a7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919994"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047088"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
@@ -74,7 +74,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge MicrosoftStore s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]
-            > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Si le texte n’est pas conforme aux [politiques Bing Ads](http://go.microsoft.com/fwlink?LinkId=398341), le slogan personnalisé sera rejeté. Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
+            > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Si le texte n’est pas conforme aux [politiques Bing Ads](https://go.microsoft.com/fwlink?LinkId=398341), le slogan personnalisé sera rejeté. Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
         * Pour personnaliser l’annonce davantage, développez **Personnaliser la conception d’annonce/Voir toutes les tailles d’annonces** et choisissez l’une des options suivantes:
             * **Couleur d’arrière-plan**. Choisissez parmi les options disponibles.
             * **Images**. Choisissez l’une des images disponibles (issues de la description de votre application dans le WindowsStore).
@@ -84,13 +84,13 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
     * **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions de publicités. Notez que si vous avez sélectionné un segment de clientèle précédemment, vous devez utiliser des options créatives personnalisées. Vous pouvez charger des fichiers distincts pour chacune des tailles de publicité disponibles. Les fichiers doivent répondre aux exigences et directives suivantes:
         * Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40Ko.
-        * Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
+        * Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](https://go.microsoft.com/fwlink?LinkId=532595).
         * Le contenu de vos conceptions d’annonces doit être approprié à l’application dont vous faites la promotion. Les conceptions d’annonces qui ne sont pas liées à l’application ne seront pas distribuées aux publicités au sein des autres applications.
         * Tout le contenu de vos conceptions d’annonces doit être clairement lisible. Par exemple, le contenu ne doit pas être flou, pixellisé ni déformé.
 
 12.  Si vous disposez d’un [compte Premium](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), vous pouvez utiliser la zone **URL de destination** pour contrôler ce qui se passe lorsqu’un client clique sur votre publicité.
     * Si vous laissez la zone vide, quand un client clique sur votre annonce, la liste de vos applications dans le Windows Store s’affiche.
-    * Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le MicrosoftStore. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](http://support.kochava.com/) et de [Tune](https://help.tune.com/).
+    * Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le MicrosoftStore. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](https://support.kochava.com/) et de [Tune](https://help.tune.com/).
     * Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez spécifier un [URI de lien ciblé](../launch-resume/handle-uri-activation.md) pour rediriger les clients du segment sélectionné vers une page spécifique de votre application.
     * Si vous spécifiez une destination qui n’est pas la page de description de votre application ni une page interne à votre application, votre campagne est automatiquement suspendue.
 

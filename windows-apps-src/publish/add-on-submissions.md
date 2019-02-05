@@ -1,23 +1,23 @@
 ---
 Description: Add-ons (or in-app products) are published through Partner Center.
-title: Soumissions d'extensions
+title: Soumissions de modules complémentaires
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, uwp, iap, achat in-app, produit in-app, soumission iap
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dc3e9b928c544b8552abc6c289c682694f623c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 28383ed82c418ff15806c325d6eab5a05f9987bf
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924255"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045062"
 ---
 # <a name="add-on-submissions"></a>Soumissions d'extensions
 
 Les extensions (parfois appelées produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Un module complémentaire peut être une amusante nouvelle fonctionnalité, un nouveau jeu niveau, ou tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les extensions constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
 
-Les modules complémentaires sont publiés par le biais de [L’espace partenaires](https://partner.microsoft.com/dashboard)et vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100)actif. Vous devez également [activer les extensions](../monetize/in-app-purchases-and-trials.md) dans le code de votre application.
+Les modules complémentaires sont publiés par le biais de [L’espace partenaires](https://partner.microsoft.com/dashboard)et vous devez disposer d’un [compte de développeur](https://go.microsoft.com/fwlink/p/?LinkId=615100)actif. Vous devez également [activer les extensions](../monetize/in-app-purchases-and-trials.md) dans le code de votre application.
 
 La première étape dans le processus de soumission d’extension consiste à créer l’extension dans l’espace partenaires en [définissant son type et l’ID de produit](set-your-add-on-product-id.md). Après cela, vous allez créer une soumission afin que votre extension peut être achetée par le biais du Microsoft Store. Vous pouvez soumettre une extension au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-publication) des extensions sans avoir à soumettre une nouvelle fois l’application.
 

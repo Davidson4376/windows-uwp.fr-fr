@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows10, uwp, threads, asynchrone, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920508"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045963"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>Programmation asynchrone en C++/CX
 > [!NOTE]
@@ -289,7 +289,7 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Création d’opérations asynchrones en C++/CX pour des applications UWP](https://msdn.microsoft.com/library/hh750082)
-* [Informations de référence en matière de langage Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Informations de référence en matière de langage Visual C++](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Programmation asynchrone][AsyncProgramming]
 * [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)

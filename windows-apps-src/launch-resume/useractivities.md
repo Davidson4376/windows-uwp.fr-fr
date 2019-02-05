@@ -5,12 +5,12 @@ keywords: activité utilisateur, activités utilisateur, chronologie, cortana re
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941793"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046199"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 
@@ -34,7 +34,7 @@ Un objet [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmo
 
 1. L'URI [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) est utilisé pour la reprise de l’application avec un contexte spécifique. En général, ce lien se présente sous forme de gestionnaire de protocole pour un schéma (par exemple, «my-app://page2?action=edit») ou d’AppUriHandler (par exemple, http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) expose une classe qui permet à l’utilisateur d’identifier visuellement une activité avec un titre, une description ou des éléments de carte adaptative.
-3. Enfin, [Contenu](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) est l'emplacement où vous pouvez stocker les métadonnées de l’activité qui peuvent être utilisées pour regrouper et récupérer des activités dans un contexte spécifique. Cela se présente souvent sous forme de données [http://schema.org](http://schema.org).
+3. Enfin, [Contenu](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) est l'emplacement où vous pouvez stocker les métadonnées de l’activité qui peuvent être utilisées pour regrouper et récupérer des activités dans un contexte spécifique. Cela se présente souvent sous forme de données [http://schema.org](https://schema.org).
 
 Pour ajouter un objet **UserActivity** à votre application:
 
@@ -103,7 +103,7 @@ Ce code permet de détecter si l’application a été activée via un protocole
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Utiliser des cartes adaptatives pour améliorer l’expérience relative à la Chronologie
 
-Les activités utilisateur s’affichent dans Cortana et la Chronologie. Lorsque les activités apparaissent dans la Chronologie, nous les affichons à l’aide de l'infrastructure [Carte adaptative](http://adaptivecards.io/). Si vous ne spécifiez pas une carte adaptative pour chaque activité, la Chronologie crée automatiquement une carte d’activité simple sur la base du nom et de l'icône de votre application, du champ titre et du champ de description facultatif. Ci-dessous se trouve un exemple de charge utile de carte adaptative et la carte générée.
+Les activités utilisateur s’affichent dans Cortana et la Chronologie. Lorsque les activités apparaissent dans la Chronologie, nous les affichons à l’aide de l'infrastructure [Carte adaptative](https://adaptivecards.io/). Si vous ne spécifiez pas une carte adaptative pour chaque activité, la Chronologie crée automatiquement une carte d’activité simple sur la base du nom et de l'icône de votre application, du champ titre et du champ de description facultatif. Ci-dessous se trouve un exemple de charge utile de carte adaptative et la carte générée.
 
 ![Une carte adaptative](images/adaptivecard.png)]
 
@@ -157,7 +157,7 @@ Une fois que votre application ou service est authentifié(e) avec un compte Mic
 Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) pour que votre application s’affiche dans la Chronologie et dans Cortana.
 * En savoir plus sur les [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Consultez l'[exemple de code](https://github.com/Microsoft/project-rome).
-* Voir des [cartes adaptatives plus sophistiquées](http://adaptivecards.io/).
+* Voir des [cartes adaptatives plus sophistiquées](https://adaptivecards.io/).
 * Publiez un objet **UserActivity** à partir d’iOS, d'Android ou de votre service web via [MicrosoftGraph](https://developer.microsoft.com/graph/).
 * En savoir plus sur le [projet Rome sur GitHub](https://github.com/Microsoft/project-rome)
 
@@ -169,7 +169,7 @@ Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/win
 
 * [Activités de l’utilisateur (documentation du projet «Rome»)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Cartes adaptatives](https://docs.microsoft.com/adaptive-cards/)
-* [Visualiseur de cartes adaptatives, exemples](http://adaptivecards.io/)
+* [Visualiseur de cartes adaptatives, exemples](https://adaptivecards.io/)
 * [Gérer l’activation des URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Interagir avec vos clients sur toute plateforme à l’aide de MicrosoftGraph, du flux d’activité et des cartes adaptatives](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)
