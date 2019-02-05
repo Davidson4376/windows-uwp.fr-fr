@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 93aee51ae558009827f755f759c4bb587564d1cd
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 194e8578244fee72d0f122ee96caaf22bf2b8807
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036881"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058690"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -32,7 +32,7 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 | **API de la plateforme** | **API de bibliothèque de l’interface utilisateur Windows** |
 | - | - |
-| [Classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe de barre de menus](/uwp/api/windows.ui.xaml.controls.menubar), de la [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [Classe de barre de menus](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [Classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe de barre de menus](/uwp/api/windows.ui.xaml.controls.menubar), de la [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [Classe de barre de menus](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 

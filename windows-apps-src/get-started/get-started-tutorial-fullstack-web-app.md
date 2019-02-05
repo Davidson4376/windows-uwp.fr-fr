@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932615"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049546"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 
@@ -20,7 +20,7 @@ ms.locfileid: "8932615"
 
 Ce didacticiel en deux parties offre une présentation rapide des technologies de développement Web fullstack modernes lorsque vous créez un jeu de mémoire simple qui fonctionne à la fois dans le navigateur et en tant qu’application Web hébergée pour le Microsoft Store. Dans la partie I, vous allez générer un service REST API simple pour le serveur principal du jeu. En hébergeant la logique du jeu dans le cloud en tant que service API, vous conservez l’état du jeu afin que votre utilisateur puisse continuer à jouer à sa même instance de jeu sur différents appareils. Dans la partie II, vous allez générer l’interface utilisateur frontale en tant qu'application Web à page unique avec une disposition réactive.
 
-Nous allons utiliser certaines des technologies Web les plus populaires, y compris l'exécution [Node.js](https://nodejs.org/en/) et [Express](http://expressjs.com/) pour le développement côté serveur, l'infrastructure d'interface utilisateur [Bootstrap](http://getbootstrap.com/), le modèle de moteur [Pug](https://www.npmjs.com/package/pug) et [Swagger](http://swagger.io/tools/) pour la création des API RESTful. Vous gagnerez également en expérience au niveau du [portail Azure](https://ms.portal.azure.com/) pour l’hébergement dans le cloud et l’utilisation de l'éditeur [Visual Studio Code](https://code.visualstudio.com/).
+Nous allons utiliser certaines des technologies Web les plus populaires, y compris l'exécution [Node.js](https://nodejs.org/en/) et [Express](https://expressjs.com/) pour le développement côté serveur, l'infrastructure d'interface utilisateur [Bootstrap](https://getbootstrap.com/), le modèle de moteur [Pug](https://www.npmjs.com/package/pug) et [Swagger](https://swagger.io/tools/) pour la création des API RESTful. Vous gagnerez également en expérience au niveau du [portail Azure](https://ms.portal.azure.com/) pour l’hébergement dans le cloud et l’utilisation de l'éditeur [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -28,7 +28,7 @@ Si vous ne disposez pas encore de ces ressources sur votre ordinateur, suivez ce
 
  - [Node.js](https://nodejs.org/en/download/) - Veillez à sélectionner l’option pour ajouter un Node à votre environnement PATH.
 
- - [Générateur Express](http://expressjs.com/en/starter/generator.html)- Après avoir installé Node, installez Express en exécutant `npm install express-generator -g`
+ - [Générateur Express](https://expressjs.com/en/starter/generator.html)- Après avoir installé Node, installez Express en exécutant `npm install express-generator -g`
 
  - [VisualStudioCode](https://code.visualstudio.com/)
 
@@ -38,7 +38,7 @@ Si vous décidez de quitter (ou de reporter) la partie relative à Azure, ignore
 
 ## <a name="part-i-build-a-rest-api-backend"></a>Partie I: créer un serveur principal de l’API REST
 
-Nous allons tout d’abord créer une API de jeu simple pour alimenter l'application Web de la mémoire de jeu. Nous allons utiliser [Swagger](http://swagger.io/) pour définir notre API et générer le code de la structure ainsi qu'une interface utilisateur Web pour le test manuel.
+Nous allons tout d’abord créer une API de jeu simple pour alimenter l'application Web de la mémoire de jeu. Nous allons utiliser [Swagger](https://swagger.io/) pour définir notre API et générer le code de la structure ainsi qu'une interface utilisateur Web pour le test manuel.
 
 Si vous souhaitez ignorer cette partie et passer directement à la [Partie II: Créer une application Web à page unique](#part-ii-build-a-single-page-web-appl), voici le [code finalisé pour la partie I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Suivez les instructions *README* pour obtenir le code opérationnel localement ou consultez *5. Héberger votre service API sur Azure et activer CORS* pour l’exécuter à partir d’Azure.
 
@@ -111,11 +111,11 @@ Spécifie une carte à révéler et recherche une correspondance pour la carte r
 
 ### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. Spécification de l’API et génération de codes stubs
 
-Nous allons utiliser [Swagger](http://swagger.io/) pour transformer la structure de l'API de notre jeu de mémoire pour en faire un code de serveur Node.js opérationnel. Voici comment vous pouvez définir nos [API de jeu de mémoire en tant que métadonnées Swagger](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json). Nous l’utiliserons pour générer des stubs de code serveur.
+Nous allons utiliser [Swagger](https://swagger.io/) pour transformer la structure de l'API de notre jeu de mémoire pour en faire un code de serveur Node.js opérationnel. Voici comment vous pouvez définir nos [API de jeu de mémoire en tant que métadonnées Swagger](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json). Nous l’utiliserons pour générer des stubs de code serveur.
 
 1. Créez un nouveau dossier (dans votre répertoire local *GitHub*, par exemple) et téléchargez le fichier [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) contenant nos définitions d’API du jeu la mémoire. Assurez-vous que le nom de votre dossier ne contient pas d’espaces.
 
-2. Ouvrez votre interpréteur de commandes favori ([ou utilisez le terminal intégré de Visual Studio Code](https://code.visualstudio.com/docs/editor/integrated-terminal)) pour ce dossier et exécutez la commande NPM (Node Package Manager) suivante pour installer l'outil de génération de code [Yeoman](http://yeoman.io/) (yo) et le générateur Swagger pour votre environnement Node global (**-g**):
+2. Ouvrez votre interpréteur de commandes favori ([ou utilisez le terminal intégré de Visual Studio Code](https://code.visualstudio.com/docs/editor/integrated-terminal)) pour ce dossier et exécutez la commande NPM (Node Package Manager) suivante pour installer l'outil de génération de code [Yeoman](https://yeoman.io/) (yo) et le générateur Swagger pour votre environnement Node global (**-g**):
 
     ```
     npm install -g yo
@@ -135,14 +135,14 @@ Nous allons utiliser [Swagger](http://swagger.io/) pour transformer la structure
 
     Répondez à tous les autres éléments de votre choix; les informations sont principalement destinées à renseigner le fichier *package.json* avec vos coordonnées afin que vous puissiez distribuer votre code comme package NPM.
 
-5. Enfin, installez toutes les dépendances (répertoriées dans *package.json*) pour la prise en charge de votre nouveau projet et de [l’interface utilisateur Swagger](http://swagger.io/swagger-ui/).
+5. Enfin, installez toutes les dépendances (répertoriées dans *package.json*) pour la prise en charge de votre nouveau projet et de [l’interface utilisateur Swagger](https://swagger.io/swagger-ui/).
 
     ```
     npm install
     npm install swaggerize-ui
     ```
 
-    Ouvrez maintenant Code Visual Studio et **Fichier** > **Ouvrir le dossier... **et accédez au répertoire MemoryGameAPI. Il s'agit du serveur d’API Node.js que vous venez de créer! Celui-ci utilise l'infrastructure d'application Web [ExpressJS](http://expressjs.com/en/4x/api.html) courante pour structurer et exécuter votre projet.
+    Ouvrez maintenant Code Visual Studio et **Fichier** > **Ouvrir le dossier... **et accédez au répertoire MemoryGameAPI. Il s'agit du serveur d’API Node.js que vous venez de créer! Celui-ci utilise l'infrastructure d'application Web [ExpressJS](https://expressjs.com/en/4x/api.html) courante pour structurer et exécuter votre projet.
 
 ### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. Personnalisez le code du serveur et configurez le débogage
 
@@ -209,7 +209,7 @@ Il est temps d’exécuter votre serveur! Et tant que nous y sommes, nous allons
 ]
 ```
 
-Appuyez maintenant sur F5 et ouvrez votre navigateur sur [http://localhost:8000](http://localhost:8000). La page doit s’ouvrir et afficher l’interface utilisateur Swagger pour notre API de jeu de mémoire, et à partir de là, vous pourrez développer les détails et renseigner les champs de chacune des méthodes. Vous pouvez même essayer d’appeler les API, bien que leurs réponses contiendront uniquement des données fictives (fournies par le module [Swagmock](https://www.npmjs.com/package/swagmock)). Il est temps d’ajouter notre logique de jeu pour rendre ces API effectives.
+Appuyez maintenant sur F5 et ouvrez votre navigateur sur [http://localhost:8000](https://localhost:8000). La page doit s’ouvrir et afficher l’interface utilisateur Swagger pour notre API de jeu de mémoire, et à partir de là, vous pourrez développer les détails et renseigner les champs de chacune des méthodes. Vous pouvez même essayer d’appeler les API, bien que leurs réponses contiendront uniquement des données fictives (fournies par le module [Swagmock](https://www.npmjs.com/package/swagmock)). Il est temps d’ajouter notre logique de jeu pour rendre ces API effectives.
 
 ### <a name="3-set-up-your-route-handlers"></a>3. Configurer vos gestionnaires d’itinéraire
 
@@ -235,7 +235,7 @@ Cette couche de notre programme représente les cartes mémoire elles-mêmes et 
 
 Par souci de simplicité, nous stockons notre tableau de jeu dans une variable globale (`global.board`) sur notre serveur Node. Toutefois dans la pratique, vous utiliseriez le stockage dans le Cloud (comme le [Cloud Datastore](https://cloud.google.com/datastore/) de Google ou Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) pour faire de cette installation un service d’API de mémoire de jeu viable, prenant en charge simultanément plusieurs jeux et joueurs.
 
-Assurez-vous d’avoir enregistré toutes les modifications dans VS Code, lancez à nouveau votre serveur (F5 dans VS Code ou `npm start` depuis le shell, puis accédez à [http://localhost:8000](http://localhost:8000)) pour tester l’API de jeu.
+Assurez-vous d’avoir enregistré toutes les modifications dans VS Code, lancez à nouveau votre serveur (F5 dans VS Code ou `npm start` depuis le shell, puis accédez à [http://localhost:8000](https://localhost:8000)) pour tester l’API de jeu.
 
 Chaque fois que vous appuyez sur le bouton **Essayez!** de l'une des fonctions **/jeu**, **/deviner**, ou **/nouveau**, vérifiez le **Corps de réponse** et le **Code de réponse** subséquents ci-dessous pour vérifier que tout fonctionne comme prévu.
 
@@ -284,7 +284,7 @@ Si vous avez réussi toutes les étapes jusqu'à présent et qu'Azure diffuse d�
 
 ### <a name="going-further"></a>Aller plus loin
 
-Pour faire de l’API du jeu de mémoire un service principal viable pour une application de production, vous devez développer le code pour prendre en charge plusieurs jeux et joueurs. Pour ce faire, vous devrez probablement raccorder l'[authentification](http://swagger.io/docs/specification/authentication/) (pour la gestion des identités des joueurs), une [base de données NoSQL](https://docs.microsoft.com/en-us/azure/documentdb/) (pour le suivi des jeux et des joueurs) et certains éléments de base [tests d'unité](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) correspondant à votre API.
+Pour faire de l’API du jeu de mémoire un service principal viable pour une application de production, vous devez développer le code pour prendre en charge plusieurs jeux et joueurs. Pour ce faire, vous devrez probablement raccorder l'[authentification](https://swagger.io/docs/specification/authentication/) (pour la gestion des identités des joueurs), une [base de données NoSQL](https://docs.microsoft.com/en-us/azure/documentdb/) (pour le suivi des jeux et des joueurs) et certains éléments de base [tests d'unité](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) correspondant à votre API.
 
 Voici quelques ressources utiles pour aller plus loin:
 
@@ -296,15 +296,15 @@ Voici quelques ressources utiles pour aller plus loin:
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>Partie II: Générer une application web à page unique
 
-Maintenant que vous avez créé (ou [téléchargé](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) le [serveur principal de l’API REST](#part-i-build-a-rest-api-backend) dans la partie I, vous êtes prêt à créer le serveur frontal du jeu de mémoire à page unique avec l'environnement [Node](https://nodejs.org/en/), [Express](http://expressjs.com/) et [Bootstrap ](http://getbootstrap.com/).
+Maintenant que vous avez créé (ou [téléchargé](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) le [serveur principal de l’API REST](#part-i-build-a-rest-api-backend) dans la partie I, vous êtes prêt à créer le serveur frontal du jeu de mémoire à page unique avec l'environnement [Node](https://nodejs.org/en/), [Express](https://expressjs.com/) et [Bootstrap ](https://getbootstrap.com/).
 
 La partie II de ce didacticiel vous permettra de vous familiariser avec: 
 
 * [Node.js](https://nodejs.org/en/): pour créer le serveur hébergeant votre jeu
-* [jQuery](http://jquery.com/): une bibliothèque JavaScript
-* [Express](http://expressjs.com/): pour l’infrastructure d’application web
+* [jQuery](https://jquery.com/): une bibliothèque JavaScript
+* [Express](https://expressjs.com/): pour l’infrastructure d’application web
 * [Pug](https://pugjs.org/): (anciennement Jade) pour le moteur de création de modèles
-* [Bootstrap](http://getbootstrap.com/): pour la disposition réactive
+* [Bootstrap](https://getbootstrap.com/): pour la disposition réactive
 * [Visual Studio Code](https://code.visualstudio.com/): pour la création, l'affichage de markdown et le débogage de code
 
 ### <a name="1-create-a-nodejs-application-by-using-express"></a>1. Création d’une application Node.js à l’aide d'Express
@@ -333,7 +333,7 @@ Commençons par créer le projet Node.js à l’aide d'Express.
     npm start
     ```
 
-5. Affichez votre application en accédant à [http://localhost:3000/](http://localhost:3000/).
+5. Affichez votre application en accédant à [http://localhost:3000/](https://localhost:3000/).
 
     ![Capture d’écran de http://localhost:3000/](./images/express.png)
 
@@ -464,14 +464,14 @@ Vous pouvez trouver les fichiers dont vous avez besoin pour cette partie du dida
 > [!TIP] 
 > Si vous utilisez Visual Studio Code, sélectionnez toutes les lignes de code pour lesquelles vous souhaitez supprimer les commentaires, et appuyez sur Ctrl + K, U
 
-Nous utiliserons ici [`jQuery.ajax()`](http://api.jquery.com/jQuery.ajax/) et la méthode **PLACER**[`/guess`](#part-i-build-a-rest-api-backend) créée dans la partie I. 
+Nous utiliserons ici [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) et la méthode **PLACER**[`/guess`](#part-i-build-a-rest-api-backend) créée dans la partie I. 
 
 Ce code s’exécute dans l’ordre suivant.
 
 * L'`id`de la première carte sélectionnée par l’utilisateur est ajouté en tant que première valeur du tableau [] selectedCards: `selectedCards[0]` 
 * La valeur (`id`) dans `selectedCards[0]`est validée sur le serveur à l’aide de la méthode [`/guess`](#part-i-build-a-rest-api-backend)
 * Le serveur répond avec la `value`de cette carte (un entier)
-* Un [glyphicon d’amorçage](http://getbootstrap.com/components/) est ajouté à l’arrière de la carte dont `id`est `selectedCards[0]`
+* Un [glyphicon d’amorçage](https://getbootstrap.com/components/) est ajouté à l’arrière de la carte dont `id`est `selectedCards[0]`
 * La`value` de la première carte (à partir du serveur) est stockée dans le `selectedCardsValues[]`tableau:`selectedCardsValues[0]`. 
 
 La seconde devinette de l’utilisateur suit la même logique. Si les cartes sélectionnées par l’utilisateur ont les mêmes ID (par exemple, `selectedCards[0] == selectedCards[1]`), elles correspondent! La classe CSS `.matched`est ajoutée aux cartes correspondantes (qui deviennent vertes) et les cartes restent retournées.
@@ -540,7 +540,7 @@ Ce fichier étend le fichier layout.pug et donnera le rendu de notre jeu. Dans l
 > N’oubliez pas: Pug est sensible aux espaces blancs. Assurez-vous que toutes vos mises en retrait sont correctes!
 
 ### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Utilisation du système de grille de Bootstrap pour créer une disposition réactive
-Le [système de grille](http://getbootstrap.com/css/#grid) de Bootstrap est un système de grille fluide qui s’adapte à une grille au fil des modifications de la fenêtre d’affichage d’un appareil. Les cartes dans ce jeu utilisent des classes de système de grille Bootstrap prédéfinies pour la disposition, notamment:
+Le [système de grille](https://getbootstrap.com/css/#grid) de Bootstrap est un système de grille fluide qui s’adapte à une grille au fil des modifications de la fenêtre d’affichage d’un appareil. Les cartes dans ce jeu utilisent des classes de système de grille Bootstrap prédéfinies pour la disposition, notamment:
 * `.container-fluid`: spécifie le conteneur fluide pour la grille
 * `.row-fluid`: spécifie les lignes fluides
 * `.col-xs-3`: spécifie le nombre de colonnes
@@ -607,7 +607,7 @@ L'ajout d’un mouvement de retournement à l’aide de la [transformation CSS](
     transform: rotateY(180deg);
     ```
 
-    Le style défini dans `cards.flip`est activé et désactivé dans la fonction `flipCard` à l’aide de [`.toggleClass()`](http://api.jquery.com/toggleClass/). 
+    Le style défini dans `cards.flip`est activé et désactivé dans la fonction `flipCard` à l’aide de [`.toggleClass()`](https://api.jquery.com/toggleClass/). 
 
     ``` javascript
     $(card).toggleClass("flip");
@@ -620,9 +620,9 @@ Félicitations! Vous avez terminé de créer l’application Web! Testons-la.
 
 1. Ouvrez une invite de commandes dans le répertoire de votre mémoire et entrez la commande suivante: `npm start`
 
-2. Dans votre navigateur, accédez à [http://localhost:3000/](http://localhost:3000/) et jouez!
+2. Dans votre navigateur, accédez à [http://localhost:3000/](https://localhost:3000/) et jouez!
 
-3. Si vous rencontrez des erreurs, vous pouvez utiliser les outils de débogage Node.js de Visual Studio Code en appuyant sur la touche F5 de votre clavier et en saisissant `Node.js`. Pour plus d’informations sur le débogage dans Visual Studio Code, consultez cet [article ](http://code.visualstudio.com/docs/editor/debugging#_launch-configurations). 
+3. Si vous rencontrez des erreurs, vous pouvez utiliser les outils de débogage Node.js de Visual Studio Code en appuyant sur la touche F5 de votre clavier et en saisissant `Node.js`. Pour plus d’informations sur le débogage dans Visual Studio Code, consultez cet [article ](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations). 
 
     Vous pouvez également comparer votre code à celui fourni dans le dossier Final.
 

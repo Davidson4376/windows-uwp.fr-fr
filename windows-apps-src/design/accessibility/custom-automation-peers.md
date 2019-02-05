@@ -1,19 +1,19 @@
 ---
 Description: Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
-title: Homologues d’automatisation personnalisés
+title: Homologues d’automation personnalisés
 label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3affe5f142c56314d132ba488d87c6f285723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 13bf5d60b547f71d0cd83e5790236534d05d2544
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920133"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050532"
 ---
 # <a name="custom-automation-peers"></a>Homologues d’automatisation personnalisés  
 
@@ -318,7 +318,7 @@ Pour obtenir une liste des modèles de fournisseurs disponibles dans l’implém
 
 Un homologue peut signaler qu’il prend en charge plusieurs modèles. Dans ce cas, la substitution doit inclure la logique de chemin d’accès de retour pour chaque valeur [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) prise en charge et renvoyer l’homologue dans chaque cas correspondant. L’appelant doit généralement ne demander qu’une seule interface à la fois et il lui incombe d’effectuer un cast vers l’interface attendue.
 
-Voici un exemple de substitution de [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) pour un homologue personnalisé. Il indique la prise en charge de deux modèles, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) et [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). Il s’agit ici d’un contrôle d’affichage multimédia qui peut s’afficher en plein écran (mode bascule) et qui possède une barre de progression dans laquelle les utilisateurs peuvent sélectionner une position (contrôle de plage). Ce code provient de l’[exemple d’accessibilitéXAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
+Voici un exemple de substitution de [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) pour un homologue personnalisé. Il indique la prise en charge de deux modèles, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) et [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). Il s’agit ici d’un contrôle d’affichage multimédia qui peut s’afficher en plein écran (mode bascule) et qui possède une barre de progression dans laquelle les utilisateurs peuvent sélectionner une position (contrôle de plage). Ce code provient de l’[exemple d’accessibilitéXAML](https://go.microsoft.com/fwlink/p/?linkid=238570).
 
 
 ```csharp
@@ -538,7 +538,7 @@ Au-delà de cet aspect, les homologues doivent être relativement conservateurs 
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
-* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)

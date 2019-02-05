@@ -6,17 +6,17 @@ ms.topic: article
 keywords: Windows10s, toujours connecté, restrictions, windows10 sur ARM
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 5fa05e1dfd04208ba547a692473fc3df136e6e4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42a2866642d11d1d97cc7b0b663486723499a5cf
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919275"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058670"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>Restrictions des applications et expériences sur ARM
 Windows10 sur ARM présente les restrictions nécessaires suivantes:
 
-- **Seuls les pilotes ARM64 sont pris en charge**. Comme dans toutes les architectures, les pilotes en mode noyau, les pilotes [Infrastructure de pilote en mode utilisateur (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) et les pilotes d'impression doivent être compilés pour correspondre à l'architecture du système d'exploitation. Tandis que les systèmes d'exploitation ARM présentent des fonctionnalités permettant d'émuler les applications x86 en mode utilisateur, les pilotes implémentés pour les autres architectures (notamment x64 et x86) ne sont actuellement pas émulées et, par conséquent, elle ne sont pas prises en charge sur cette plateforme. Toute application fonctionnant avec son propre pilote personnalisé devra être transférée vers ARM64. Dans les scénarios limités, l'application peut s'exécuter en tant qu'application x86 sous émulation, mais la partie pilote de l'application doit être transférée sur ARM64. Pour plus d’informations sur la compilation de votre pilote pour ARM64, consultez [Génération de pilotes ARM64 avec le kit WDK](https://review.docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers?branch=rs4-arm64).
+- **Seuls les pilotes ARM64 sont pris en charge**. Comme dans toutes les architectures, les pilotes en mode noyau, les pilotes [Infrastructure de pilote en mode utilisateur (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) et les pilotes d'impression doivent être compilés pour correspondre à l'architecture du système d'exploitation. Tandis que les systèmes d'exploitation ARM présentent des fonctionnalités permettant d'émuler les applications x86 en mode utilisateur, les pilotes implémentés pour les autres architectures (notamment x64 et x86) ne sont actuellement pas émulées et, par conséquent, elle ne sont pas prises en charge sur cette plateforme. Toute application fonctionnant avec son propre pilote personnalisé devra être transférée vers ARM64. Dans les scénarios limités, l'application peut s'exécuter en tant qu'application x86 sous émulation, mais la partie pilote de l'application doit être transférée sur ARM64. Pour plus d’informations sur la compilation de votre pilote pour ARM64, consultez [Génération de pilotes ARM64 avec le kit WDK](/windows-hardware/drivers/develop/building-arm64-drivers).
 
 - **Les applications x64 ne sont pas prises en charge**. Windows10 sur ARM ne prend pas en charge l'émulation des applications x64.
 

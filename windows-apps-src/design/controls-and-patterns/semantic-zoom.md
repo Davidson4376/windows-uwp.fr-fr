@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5689fd967756025872fd45bf242076e854e700aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048096"
+ms.locfileid: "9058790"
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -80,7 +80,7 @@ Les 3éléments dont vous avez besoin pour un zoom sémantique sont les suivants
 - Une vue avec zoom avant qui affiche les données au niveau de l’élément.
 - Une vue avec zoom arrière qui affiche les données au niveau du groupe.
 
-Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser un affichage Liste avec des données regroupées. Pour plus d’informations, voir [Affichage Liste et affichage Grille](listview-and-gridview.md) et [Regroupement d’éléments dans une liste](). 
+Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser un affichage Liste avec des données regroupées. Pour plus d’informations, voir [l’affichage liste et affichage grille](listview-and-gridview.md). 
 
 > **Remarque**&nbsp;&nbsp;Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx). L’infrastructure XAML fournit 3contrôles qui implémentent cette interface: ListView, GridView et Hub.
  

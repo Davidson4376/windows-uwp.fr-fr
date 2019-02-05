@@ -5,16 +5,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows10, uwp, pub, publicité, médiation publicitaire
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945751"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049816"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Service de médiation publicitaire de Microsoft
 
-Lorsque vous utilisez le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp) pour [afficher des publicités dans vos applications](display-ads-in-your-app.md), vous pouvez éventuellement utiliser le service de médiation publicitaire de Microsoft pour optimiser vos revenus publicitaires. Cet article présente une vue d'ensemble du service de médiation publicitaire et de ses objectifs.
+Lorsque vous utilisez le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) pour [afficher des publicités dans vos applications](display-ads-in-your-app.md), vous pouvez éventuellement utiliser le service de médiation publicitaire de Microsoft pour optimiser vos revenus publicitaires. Cet article présente une vue d'ensemble du service de médiation publicitaire et de ses objectifs.
 
 Le service de médiation publicitaire fait partie de la [plateforme de monétisation des publicités de Microsoft](https://developer.microsoft.com/windows/ad-monetization-platform). Cette plateforme comprend les éléments suivants.
 
@@ -55,6 +55,6 @@ Le service de médiation publicitaire collabore avec différents réseaux public
 
 ## <a name="related-topics"></a>Rubriquesconnexes
 
-* [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp)
+* [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp)
 * [Paramètres de médiation](../publish/in-app-ads.md#mediation-settings)
 * [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md)

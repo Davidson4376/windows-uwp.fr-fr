@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05cf78d7dec260b990d2ce71662e3db6eb07d07f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ebba5abe0de8014a21d2e651534dacc118705fff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941215"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050156"
 ---
 # <a name="getting-started-common-controls"></a>Prise en main: Contrôles courants
 
@@ -30,14 +30,14 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Sélecteur de dates (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Vue image (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> Voir également [Image et ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Libellé (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> Voir aussi [Démarrage rapide: affichage de texte](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Voir [Bing cartes pour les applications UWP](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Voir [Bing cartes pour les applications UWP](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Contrôleur de navigation (UINavigationController) et contrôleur de navigation délégué (UINavigationControllerDelegate) | [Trame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Contrôle de page (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Vue sélecteur (UIPickerView) et vue déléguée sélecteur (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> Voir aussi [Ajout de zones de liste déroulante et de zones de liste](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
 | Barre de progression (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> Voir aussi [Démarrage rapide: ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Vue de défilement (UIScrollView) et vue déléguée de défilement (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  Voir aussi [Exemple de zoom, panoramique et défilement XAML (Extensible Application Markup Language)](http://go.microsoft.com/fwlink/p/?LinkId=238577) |
+| Vue de défilement (UIScrollView) et vue déléguée de défilement (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  Voir aussi [Exemple de zoom, panoramique et défilement XAML (Extensible Application Markup Language)](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
 | Barre de recherche (UISearchBar) et barre de recherche déléguée (UISearchBarDelegate) | Voir [Ajout d’une fonctionnalité de recherche à une application](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  Voir aussi [Démarrage rapide : ajout d’une fonctionnalité de recherche à une application](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
-| Contrôle segmenté (UISegmentedControl) | Aucun |
+| Contrôle segmenté (UISegmentedControl) | None |
 | Curseur (UISlider) | [Slider](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  Voir aussi [Comment ajouter un curseur](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
 | Contrôleur de vue fractionnée (UISplitViewController) et contrôleur de vue fractionnée délégué (UISplitViewControllerDelegate) | Aucun |
 | Switch (UISwitch) | [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/br209712) <br/>  Voir aussi [Comment ajouter un bouton bascule](https://msdn.microsoft.com/library/windows/apps/xaml/hh868198) |
@@ -46,7 +46,7 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Champ de texte (UITextField) et champ de texte délégué (UITextFieldDelegate) | [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  Voir aussi [Afficher et modifier du texte](https://msdn.microsoft.com/library/windows/apps/mt280218) |
 | Vue de texte (UITextView) et vue de texte déléguée (UITextViewDelegate) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  Voir aussi [Démarrage rapide: affichage de texte](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
 | Vue (UIView) et contrôleur de vue (UIViewController) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Vue Web (UIWebView) et vue Web déléguée (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  Voir aussi [Exemple de contrôle d’affichage Web XAML](http://go.microsoft.com/fwlink/p/?LinkId=238582) |
+| Vue Web (UIWebView) et vue Web déléguée (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  Voir aussi [Exemple de contrôle d’affichage Web XAML](https://go.microsoft.com/fwlink/p/?LinkId=238582) |
 | Fenêtre (UIWindow) | [Trame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/>  Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 
 Pour obtenir d’autres contrôles, voir [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
@@ -59,6 +59,6 @@ Pour obtenir d’autres contrôles, voir [Liste des contrôles](https://msdn.mic
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [build 2014: Le point sur l’interface utilisateur et les contrôles XAML](http://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [build 2014 : Développement d’applications à l’aide de l’infrastructure d’interface utilisateur XAML commune](http://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [build 2014 : Création d’applications convergées XAML à l’aide de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [build 2014: Le point sur l’interface utilisateur et les contrôles XAML](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [build 2014 : Développement d’applications à l’aide de l’infrastructure d’interface utilisateur XAML commune](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [build 2014 : Création d’applications convergées XAML à l’aide de Visual Studio](https://go.microsoft.com/fwlink/p/?LinkID=397876)

@@ -6,12 +6,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: Windows10, uwp, capture vidéo
 ms.localizationpriority: medium
-ms.openlocfilehash: a654739490043b9f821e7906fa8cf9e3e7259fed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919932"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058630"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
 
@@ -56,7 +56,7 @@ L’exemple suivant montre comment initialiser un objet **TimedMetadataStreamDes
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Appelez [MediaEncodingProfile.SetTimedMetadataTracks](**https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks**) pour ajouter le descripteur de flux de métadonnées au profil d’encodage. L’exemple suivant illustre une méthode d’assistance qui accepte deux descripteurs de flux vidéo, un descripteur de flux audio et un descripteur de flux de métadonnées synchronisées, et renvoie un objet **MediaEncodingProfile** qui peut être utilisé pour encoder les flux.
+Appelez [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) pour ajouter le descripteur de flux de métadonnées dans le profil d’encodage. L’exemple suivant illustre une méthode d’assistance qui accepte deux descripteurs de flux vidéo, un descripteur de flux audio et un descripteur de flux de métadonnées synchronisées, et renvoie un objet **MediaEncodingProfile** qui peut être utilisé pour encoder les flux.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 

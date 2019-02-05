@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ed1c7f01e8cb06f6950f2ad23a42605e97c1a0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 80f9c8bad9445bd9cfef9b09c00f99929fda37aa
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050732"
+ms.locfileid: "9058660"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Appliquer des correctifs à l’exécution à un package MSIX à l’aide de l’infrastructure de prise en charge de Package
 
@@ -86,7 +86,7 @@ Examinons chaque tâche.
 
 ### <a name="create-the-package-layout-folder"></a>Créer le dossier de disposition de package
 
-Si vous disposez déjà d’un fichier .msix (ou .appx), vous pouvez décompresser son contenu dans un dossier de disposition qui fera office de la zone de transit de votre package. Vous pouvez le faire à partir d’une invite de commandes à l’aide de l’outil de makemsix, selon votre chemin d’installation du SDK, il s’agit où vous trouverez l’outil makeappx.exe sur votre PC Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files ( x86) \Windows Kits\10\bin\x64\makeappx.exe
+Si vous disposez déjà d’un fichier .msix (ou .appx), vous pouvez décompresser son contenu dans un dossier de disposition qui fera office de la zone de transit de votre package. Vous pouvez le faire à partir d’une invite de commandes à l’aide d’outil MakeAppx, selon votre chemin d’installation du SDK, il s’agit où vous trouverez l’outil makeappx.exe sur votre PC Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files ( x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -514,7 +514,7 @@ Visual Studio vous donne le développement plus simple et l’expérience de dé
 
 Tout d’abord, débogage F5 s’exécute l’application à déployer des fichiers libres dans le chemin d’accès de dossier de la mise en package, au lieu de l’installation à partir d’un .msix / package .appx.  Le dossier de disposition en règle générale, n’a pas les mêmes restrictions de sécurité qu’un dossier de package installé. Par conséquent, il ne peut pas être possible de reproduire les erreurs de refus d’accès package chemin d’accès avant d’appliquer un correctif de runtime.
 
-Pour résoudre ce problème, utilisez .msix / déploiement du package .appx plutôt que F5 perdre le déploiement de fichiers.  Pour créer un .msix / créer un package .appx fichier, utilisez l’utilitaire [MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) dans le SDK Windows, comme décrit ci-dessus. Ou, à partir d’au sein de Visual Studio, cliquez sur le nœud de votre projet d’application et sélectionnez **Store**->**Créer des Packages d’application**.
+Pour résoudre ce problème, utilisez .msix / déploiement du package .appx plutôt que F5 perdre le déploiement de fichiers.  Pour créer un .msix / créer un package .appx fichier, utilisez l’utilitaire [MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) dans le SDK Windows, comme décrit ci-dessus. Ou, à partir d’au sein de Visual Studio, cliquez sur le nœud de votre projet d’application et sélectionnez **Store**->**Créer des Packages d’application**.
 
 Un autre problème avec Visual Studio est qu’il n’a pas de prise en charge intégrée pour attacher à tous les processus enfants lancées par le débogueur.   Cela rend difficiles à déboguer une logique dans le chemin de démarrage de l’application cible, qui doit être liée manuellement par Visual Studio après le lancement.
 

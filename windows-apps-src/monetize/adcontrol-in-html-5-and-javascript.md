@@ -6,22 +6,22 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows10, uwp, annonces publicitaires, publicité, AdControl, contrôle de publicité, javascript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b834343aafb91fee1e75f9df7ed2a752992fa2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 556493ffc901021310036cfb417c3c3b815c529e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936248"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049596"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>AdControl en HTML5 et JavaScript
 
 Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher des bannières publicitaires dans une application de plateforme Windows universelle (UWP) JavaScript/HTML pour Windows10.
 
-Pour obtenir un exemple de projet complet présentant la méthode pour ajouter des bannières publicitaires à une application JavaScript/HTML, consultez les [exemples de publicité sur GitHub](http://aka.ms/githubads).
+Pour obtenir un exemple de projet complet présentant la méthode pour ajouter des bannières publicitaires à une application JavaScript/HTML, consultez les [exemples de publicité sur GitHub](https://aka.ms/githubads).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Installer le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
+* Installer le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 > [!NOTE]
 > Si vous avez installé la SDK Windows 10 version 10.0.14393 (mise à jour anniversaire) ou une version ultérieure du SDK Windows, vous devez également installer la bibliothèque [WinJS](https://github.com/winjs/winjs) . Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel Windows (Kit SDK Windows) pour Windows10, mais depuis le SDK Windows10 version10.0.14393 (mise à jour anniversaire), elle doit être installée séparément. 
@@ -139,6 +139,6 @@ Vous pouvez utiliser plusieurs objets **AdControl** dans une seule application (
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Recommandations pour les bannières publicitaires](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
 * [Configurer des unités publicitaires pour votre application](set-up-ad-units-in-your-app.md)
 * [Gestion des erreurs dans la procédure pas à pas pour JavaScript](error-handling-in-javascript-walkthrough.md)

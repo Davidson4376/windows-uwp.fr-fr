@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c33504fcc785aa2f1fc94796e47fe097fbea96
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5182981483069d42339ad71a5347dc9c6c36ed58
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931532"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058740"
 ---
 # <a name="using-lights-in-windows-ui"></a>L’utilisation des éclairages dans l’interface utilisateur Windows
 
@@ -22,7 +22,7 @@ Activer les APIs Windows.UI.Composition vous permettent de créer des effets et 
 Éclairage de la composition vous permet de créer intéressant de l’interface utilisateur en autorisant:
 
 - Transformation d’un éclairage indépendant d’autres objets dans la scène pour activer les scénarios immersives comme les scènes de la lecture de musique.
-- La possibilité d’associer un objet avec une lumière afin qu’ils se déplacent indépendamment du reste de la scène pour activer des scénarios tels que Fluent [révéler](/design/style/reveal.md) la mise en surbrillance.
+- La possibilité d’associer un objet avec une lumière afin qu’ils se déplacent indépendamment du reste de la scène pour activer des scénarios tels que Fluent [révéler](/design/style/reveal) la mise en surbrillance.
 - Transformation de la lumière et la scène entière en tant qu’un groupe pour créer des matériaux et profondeur.
 
 Éclairage de la composition prend en charge trois concepts clés: **la lumière**, les **cibles**et **SceneLightingEffect**.
@@ -74,7 +74,7 @@ Concept | Détails
 **Lumière ambiante** | Ajout d’une lumière non ambiante à votre scène désactive tous les lumière existante.  Éléments non ciblés par une lumière non ambiante seront affiche en noirs.  Pour éclairer les éléments visuels environnants ne pas ciblés par la lumière dans un moyen naturel, utilisez une lumière ambiante conjointement avec d’autres lumières.
 **Nombre de lumières** | Vous pouvez utiliser n’importe quel deux lumières de composition non ambiante dans n’importe quelle combinaison de cibler votre interface utilisateur. Les éclairages ambiantes ne sont pas restreintes; repérer, point et les lumières distantes sont.
 **Durée de vie** | CompositionLight peut rencontrer des conditions de durée de vie (exemple: le garbage collector peuvent recycler l’objet light avant d’être utilisé).  Nous vous recommandons de conserver une référence à vos lumières en ajoutant des éclairages en tant que membre pour aider à l’application à gérer la durée de vie.
-**Transformations** | Les lumières doivent être placés dans un nœud au-dessus de l’interface utilisateur qui utilise des effets comme les [transformations de perspective](/design/layout/3-d-perspective-effects.md) dans votre structure visuelle pour être dessinés correctement.
+**Transformations** | Les lumières doivent être placés dans un nœud au-dessus de l’interface utilisateur qui utilise des effets comme les [transformations de perspective](/design/layout/3-d-perspective-effects) dans votre structure visuelle pour être dessinés correctement.
 **Cibles et l’espace de coordonnées** | CoordinateSpace est alors utilisée est l’espace visuel dans lequel toutes les propriétés de lumières doivent être définies. CompositionLight.Targets doit être dans l’arborescence CoordinateSpace est alors utilisée.
 
 ## <a name="lighting-properties"></a>Propriétés d’éclairage

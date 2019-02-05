@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a29f58ff8dc842fd985a44f94ff44baea51dc2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941001"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058550"
 ---
 # <a name="web-view"></a>Affichage web
  
@@ -73,7 +73,7 @@ webView1.Navigate("http://www.contoso.com");
 
 Pour accéder à un URI avec une requête POST et des en-têtes HTTP, utilisez la méthode [NavigateWithHttpRequestMessage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx). Cette méthode prend uniquement en charge [HttpMethod.Post](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) et [HttpMethod.Get](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) pour la valeur de propriété [HttpRequestMessage.Method](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx). 
 
-Pour charger du contenu non compressé et non chiffré à partir des magasins de données [LocalFolder]() ou [TemporaryFolder]() de votre application, utilisez la méthode **Navigate** avec un **Uri** qui fait appel au [schéma ms-appdata](). La prise en charge de l’affichage web pour ce schéma nécessite que vous placiez votre contenu dans un sous-dossier à l’intérieur du dossier local ou temporaire. Cela permet l’accès à des URI tels que ms-appdata:///local/*dossier*/*fichier*.html et ms-appdata:///temp/*dossier*/*fichier*.html. (Pour charger des fichiers compressés ou chiffrés, voir [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
+Pour charger du contenu non compressé et non chiffré à partir des magasins de données [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) ou [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) de votre application, utilisez la méthode **Navigate** avec un **Uri** qui fait appel au [schéma ms-appdata](/windows/uwp/app-resources/uri-schemes). La prise en charge de l’affichage web pour ce schéma nécessite que vous placiez votre contenu dans un sous-dossier à l’intérieur du dossier local ou temporaire. Cela permet l’accès à des URI tels que ms-appdata:///local/*dossier*/*fichier*.html et ms-appdata:///temp/*dossier*/*fichier*.html. (Pour charger des fichiers compressés ou chiffrés, voir [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
 
 Chacun de ces sous-dossiers de premier niveau est isolé du contenu des autres sous-dossiers de premier niveau. Par exemple, vous pouvez accéder à ms-appdata:///temp/dossier1/fichier.html, mais ce fichier ne peut pas contenir de lien vers ms-appdata:///temp/dossier2/fichier.html. Vous pouvez toutefois ajouter des liens vers du contenu HTML dans le package d’application à l’aide du **schéma ms-appx-web** et vers du contenu web à l’aide des schémas d’URI **http** et **https**.
 

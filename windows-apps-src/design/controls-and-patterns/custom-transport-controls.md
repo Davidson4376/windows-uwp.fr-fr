@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2101eba9c78c87339af5f1bd46e6afc81eacf6af
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047424"
+ms.locfileid: "9058650"
 ---
 # <a name="create-custom-transport-controls"></a>Créer des contrôles de transport personnalisés
 
@@ -57,7 +57,7 @@ Le [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 - La troisième section contient l’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) qui rassemble ces différents éléments MediaTransportControls et définit la manière dont les composants sont disposés.
 
 > [!NOTE]
-> Pour plus d’informations sur la modification des modèles, consultez [Control templates](). Utilisez un éditeur de texte ou des éditeurs similaires de votre IDE pour ouvrir les fichiers XAML dans \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*version SDK*)\Generic. Le style et le modèle par défaut de chaque contrôle sont définis dans le fichier **generic.xaml**. Pour rechercher le modèle MediaTransportControls dans generic.xaml, recherchez «MediaTransportControls».
+> Pour plus d’informations sur la modification des modèles, consultez [Control templates](/windows/uwp/design/controls-and-patterns/control-templates). Utilisez un éditeur de texte ou des éditeurs similaires de votre IDE pour ouvrir les fichiers XAML dans \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*version SDK*)\Generic. Le style et le modèle par défaut de chaque contrôle sont définis dans le fichier **generic.xaml**. Pour rechercher le modèle MediaTransportControls dans generic.xaml, recherchez «MediaTransportControls».
 
 Dans les sections suivantes, vous allez apprendre à personnaliser plusieurs des éléments principaux des contrôles de transport:
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): permet à l’utilisateur de parcourir ses fichiers multimédias et d’afficher la progression
@@ -91,7 +91,7 @@ Si vous souhaitez simplement modifier l’apparence de l’élément MediaTransp
 </MediaPlayerElement>
 ```
 
-Pour en savoir plus sur la modification des styles et des modèles, voir [Contrôles de style]() et [Modèles de contrôle]().
+Pour en savoir plus sur la modification des styles et des modèles, voir [Contrôles de style](/windows/uwp/design/controls-and-patterns/xaml-styles) et [Modèles de contrôle](/windows/uwp/design/controls-and-patterns/control-templates).
 
 ### <a name="create-a-derived-control"></a>Créer un contrôle dérivé
 

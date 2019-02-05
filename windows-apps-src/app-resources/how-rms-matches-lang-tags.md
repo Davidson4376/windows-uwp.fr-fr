@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 4914a448432206e2418fe110c0b49517a7145e0b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ccbfa5f06d336604160f98dd44c27cc0cf1b0aed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937976"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050582"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>Comment le système de gestion des ressources met en correspondance les balises de langue
 
@@ -21,7 +21,7 @@ La rubrique précédente ([Comment le système de gestion des ressources met en 
 
 Les ressources dotées de qualificateurs de balise de langue sont comparées et notées en fonction de la liste de langues d’exécution de l’application. Pour obtenir des définitions des listes de langues différentes, consultez [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](../design/globalizing/manage-language-and-region.md). La mise en correspondance pour la première langue d’une liste se produit avant la mise en correspondance de la deuxième langue d’une liste, même pour d’autres variantes régionales. Par exemple, une ressource pour en-GB est choisie à la place d’une ressource fr-CA si la langue d’exécution de l’application est en-US. Une ressource fr-CA est choisie uniquement s’il n’y aucune ressource pour une forme d’en (notez que la langue par défaut de l’application n’a pas pu être définie sur une forme d’en dans ce cas).
 
-Le mécanisme de notation utilise les données incluses dans le registre de sous-balises [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) et d’autres sources de données. Il utilise une échelle de notation avec différentes qualités de correspondance et, lorsque plusieurs candidats sont disponibles, il sélectionne le candidat avec le meilleur score.
+Le mécanisme de notation utilise les données incluses dans le registre de sous-balises [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) et d’autres sources de données. Il utilise une échelle de notation avec différentes qualités de correspondance et, lorsque plusieurs candidats sont disponibles, il sélectionne le candidat avec le meilleur score.
 
 Ainsi, vous pouvez utiliser des balises avec des termes génériques pour un contenu linguistique, avec néanmoins la possibilité de spécifier un contenu spécifique si nécessaire. Par exemple, votre application peut contenir plusieurs chaînes anglaises qui sont communes aux États-Unis, à la Grande-Bretagne et à d’autres régions. Le marquage de ces chaînes avec la balise «en» (Anglais) réduit les besoins en espace et en localisation. Lorsqu’une distinction s’avère nécessaire, par exemple dans une chaîne contenant le mot «color/colour» en anglais, les versions américaine et britannique peuvent être marquées séparément à l’aide des sous-balises de langue et de région, «en-US» et «en-GB «, respectivement.
 
@@ -74,7 +74,7 @@ Les balises correspondent pour les sous-balises de langue et de script, mais ell
 
 #### <a name="macro-region-match"></a>Correspondance de macrorégion
 
-Les balises correspondent pour les sous-balises de langue et de script, les deux balises ont des sous-balises de région et l’une de ces sous-balises correspond à une macrorégion qui englobe l’autre région. Les sous-balises de macrorégion sont toujours numériques et sont dérivées des codes de pays et de région de la Classification M49 de la Division de statistique de l’ONU. Pour plus d’informations sur les relations englobantes, voir [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](http://go.microsoft.com/fwlink/p/?LinkId=247929).
+Les balises correspondent pour les sous-balises de langue et de script, les deux balises ont des sous-balises de région et l’une de ces sous-balises correspond à une macrorégion qui englobe l’autre région. Les sous-balises de macrorégion sont toujours numériques et sont dérivées des codes de pays et de région de la Classification M49 de la Division de statistique de l’ONU. Pour plus d’informations sur les relations englobantes, voir [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](https://go.microsoft.com/fwlink/p/?LinkId=247929).
 
 **Remarque: ** les codes de l’ONU pour les «groupements économiques» ou les «autres groupements» ne sont pas pris en charge dans BCP-47.
  
@@ -126,7 +126,7 @@ Lorsqu’une valeur de script de suppression est définie pour une sous-balise d
 
 Dans certains cas, la mise en correspondance est effectuée dans le cadre d’un processus plus large de mise en correspondance d’une langue et d’une liste de langues. Par exemple, il peut exister une correspondance entre une seule ressource de langue et la liste de langues d’une application. Le score de la correspondance est pondéré en fonction de la position de la première langue correspondante dans la liste. Plus la position de la langue est basse dans la liste, plus le score est faible.
 
-Lorsque la liste de langues contient deux ou plusieurs variantes régionales ayant les mêmes sous-balises de langue et de script, les comparaisons de la première balise de langue sont notées uniquement pour des correspondances exactes, de variante et de région. La notation des correspondances partielles est reportée à la dernière variante régionale. Cela permet aux utilisateurs de contrôler avec précision le comportement des correspondances pour leur liste de langues. Ce comportement peut autoriser la préférence d’une correspondance exacte pour un élément secondaire de la liste par rapport à une correspondance partielle pour le premier élément de la liste, s’il existe une troisième élément qui correspond à la langue et au script du premier. Voici un exemple.
+Lorsque la liste de langues contient deux ou plusieurs variantes régionales ayant les mêmes sous-balises de langue et de script, les comparaisons de la première balise de langue sont notées uniquement pour des correspondances exactes, de variante et de région. La notation des correspondances partielles est reportée à la dernière variante régionale. Cela permet aux utilisateurs de contrôler avec précision le comportement des correspondances pour leur liste de langues. Ce comportement peut autoriser la préférence d’une correspondance exacte pour un élément secondaire de la liste par rapport à une correspondance partielle pour le premier élément de la liste, s’il existe une troisième élément qui correspond à la langue et au script du premier. Voici un exemple:
 
 - Liste de langues (dans l’ordre): «pt-PT» (Portugais (Portugal)), «en-US» (Anglais (États-Unis)), «pt-BR» (Portugais (Brésil)).
 - Ressources: «en-US», «pt-BR».
@@ -189,6 +189,6 @@ L’anglais requiert une attention particulière. Si une application ajoute la l
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Comment le système de gestion des ressources met en correspondance et sélectionne les ressources](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](../design/globalizing/manage-language-and-region.md)
-* [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](http://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](https://go.microsoft.com/fwlink/p/?LinkId=247929)

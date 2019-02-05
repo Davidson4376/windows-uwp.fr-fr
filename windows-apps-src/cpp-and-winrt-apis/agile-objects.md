@@ -5,12 +5,12 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945244"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058620"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
 
@@ -63,7 +63,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 ## <a name="opting-out-of-agile-object-support"></a>Refus de prise en charge des objets agiles
 
-Vous pouvez choisir explicitement de refuser la prise en charge des objets agiles en transmettant la structure de marqueur [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) en tant qu’argument de modèle à votre classe de base.
+Vous pouvez choisir explicitement de refuser la prise en charge des objets agiles en transmettant la structure de marqueur [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) en tant qu’argument de modèle à votre classe de base.
 
 Si vous dérivez directement de **winrt::implements**.
 
@@ -120,7 +120,7 @@ L’appel [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-func
 * [Modèle de structure winrt::agile_ref](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Modèle de structure winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 * [Modèle de fonction winrt::make_agile](/uwp/cpp-ref-for-winrt/make-agile)
-* [Structure de marqueur winrt::non_agile](/uwp/cpp-ref-for-winrt/non_agile)
+* [Structure de marqueur winrt::non_agile](/uwp/cpp-ref-for-winrt/non-agile)
 * [Fonction winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [Fonction winrt::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

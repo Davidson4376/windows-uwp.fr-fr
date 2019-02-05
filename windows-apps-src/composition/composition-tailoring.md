@@ -5,14 +5,14 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6252ce3d2e213602250f6c24f8867767accecbe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922591"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058710"
 ---
-# <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnalisation des effets et des expériences à l’aide de l’interface utilisateur Windows
+# <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnalisation des effets & expériences à l’aide de l’interface utilisateur Windows
 
 L’interface utilisateur de Windows fournit plusieurs effets magnifiques, les animations et les moyens de différenciation. Toutefois, les attentes des utilisateurs pour les performances et possibilités de personnalisation de la réunion sont toujours une partie de la création d’applications réussies nécessaire. La plateforme Windows universelle prend en charge une famille volumineux et variée d’appareils, qui ont des fonctionnalités différentes. Pour offrir une expérience inclusive pour tous vos utilisateurs, vous devez vous assurer de la mise à l’échelle vos applications sur tous les appareils et de respecter les préférences de l’utilisateur. Personnalisation de l’interface utilisateur peut fournir un moyen efficace pour tirer parti des fonctionnalités de l’appareil et garantir une expérience utilisateur agréable et inclusive.
 
@@ -22,7 +22,7 @@ Personnalisation de l’interface utilisateur est une catégorie large cernée d
 - Prise en charge des paramètres utilisateur pour les animations
 - L’optimisation de l’interface utilisateur pour les capacités matérielles donnée
 
-Ici, nous allons décrire comment personnaliser les effets et animations avec la couche visuelle dans les zones ci-dessus, mais il existe de nombreux autres moyens d’adapter votre application afin de garantir une expérience optimale à l’utilisateur final. Documentation de conseils est disponibles sur la façon d' [adapter votre interface utilisateur](/design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) aux différents appareils et [créer une interface utilisateur réactive](/design/layout/responsive-design.md).
+Ici, nous allons décrire comment personnaliser les effets et animations avec la couche visuelle dans les zones ci-dessus, mais il existe de nombreux autres moyens d’adapter votre application afin de garantir une expérience optimale à l’utilisateur final. Documentation de conseils est disponibles sur la façon d' [adapter votre interface utilisateur](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) aux différents appareils et [créer une interface utilisateur réactive](/windows/uwp/design/layout/responsive-design).
 
 ## <a name="user-effects-settings"></a>Paramètres utilisateur des effets
 
@@ -30,7 +30,7 @@ Les utilisateurs peuvent personnaliser leur expérience de Windows pour diverses
 
 ### <a name="transparency-effects-settings"></a>Paramètres des effets de transparence
 
-Une tels paramètre d’effet les utilisateurs peuvent personnaliser est l’activation des effets de transparence marche/arrêt. Cela se trouvent dans l’application paramètres sous Personnalisation > couleurs, ou via l’application Paramètres > d’ergonomie > affichage.
+Une tels paramètre d’effet les utilisateurs peuvent personnaliser est l’activation des effets de transparence marche/arrêt. Cela trouverez dans l’application paramètres sous personnalisation > couleurs, ou par le biais des paramètres application > d’ergonomie > affichage.
 
 ![Option de transparence dans les paramètres](images/tailoring-transparency-setting.png)
 
@@ -59,7 +59,7 @@ private void Uisettings_AdvancedEffectsEnabledChanged(UISettings sender, object 
 
 ## <a name="animations-settings"></a>Paramètres d’animations
 
-De même, les applications doivent écouter et répondre à la propriété [UISettings.AnimationsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) pour garantir des animations sont activées ou désactivé en fonction des paramètres utilisateur Paramètres > d’ergonomie > affichage.
+De même, les applications doivent écouter et répondre à la propriété [UISettings.AnimationsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) pour vous assurer des animations sont activées ou désactivé en fonction des paramètres d’utilisateur dans les paramètres > d’ergonomie > affichage.
 
 ![Option d’animations dans les paramètres](images/tailoring-animations-setting.png)
 
