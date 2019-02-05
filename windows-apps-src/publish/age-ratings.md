@@ -1,21 +1,21 @@
 ---
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
-title: Évaluations de l’âge
+title: Classification par âge
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.date: 05/08/2018
 ms.topic: article
 keywords: windows10, uwp, évaluation de l’âge, classification des jeux, iarc, évaluation, questionnaire, organisme de classification, contrôle d'accès au contenu
 ms.localizationpriority: medium
-ms.openlocfilehash: f8268e4f3fa6517da480c2ab220863de9523e845
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3582328a0f013c2f7b4ccc9affb5b61ca643761c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927194"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049081"
 ---
 # <a name="age-ratings"></a>Évaluations de l’âge
 
-La page **Classification par âge** du [processus de soumission d’application](app-submissions.md) vous permet de fournir des informations sur votre application, afin que cette dernière reçoive les classifications par âge et contenu administrées par le système d’évaluation de [l’International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854). Cette classification fait référence à l’adéquation du contenu de l’application, plutôt qu’à l’âge du public cible de votre application.
+La page **Classification par âge** du [processus de soumission d’application](app-submissions.md) vous permet de fournir des informations sur votre application, afin que cette dernière reçoive les classifications par âge et contenu administrées par le système d’évaluation de [l’International Age Ratings Coalition (IARC)](https://go.microsoft.com/fwlink/p/?LinkId=716854). Cette classification fait référence à l’adéquation du contenu de l’application, plutôt qu’à l’âge du public cible de votre application.
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>Répondre au questionnaire relatif à la classification par âge
 
@@ -35,7 +35,7 @@ La prochaine fois que vous mettrez à jour votre application, l’ensemble des c
 <span id="boards" />
 
 > [!NOTE]
-> La loi sud-coréenne exige que les jeux disponibles en Corée du Sud soient évalués par rapport au [GRB (Game Rating Board)](http://go.microsoft.com/fwlink/p/?LinkId=228256) de Corée du Sud. Si vous soumettez un jeu et que vous souhaitez le proposer en Corée du Sud, vous devez renseigner cette section supplémentaire et charger votre certificat d’évaluation. Notez que si votre application n'est pas un jeu ou que vous ne souhaitez pas la proposer en Corée du Sud, vous pouvez laisser cette section vide.
+> La loi sud-coréenne exige que les jeux disponibles en Corée du Sud soient évalués par rapport au [GRB (Game Rating Board)](https://go.microsoft.com/fwlink/p/?LinkId=228256) de Corée du Sud. Si vous soumettez un jeu et que vous souhaitez le proposer en Corée du Sud, vous devez renseigner cette section supplémentaire et charger votre certificat d’évaluation. Notez que si votre application n'est pas un jeu ou que vous ne souhaitez pas la proposer en Corée du Sud, vous pouvez laisser cette section vide.
 
 > [!NOTE]
 > Si vous soumettez un jeu qui sera disponible à Taïwan, vous êtes obligé par la loi d’enregistrer la notation CSRR fournie à l’aide de [ce formulaire](https://go.microsoft.com/fwlink/?linkid=867281). 

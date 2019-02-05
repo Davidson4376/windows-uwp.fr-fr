@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 114524294a5b77165167601c1479b6c3894bb29b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937820"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050006"
 ---
 # <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 
@@ -46,7 +46,7 @@ Les valeurs supplémentaires ci-après font référence à la famille de package
 
 Vous pouvez partager le lien d’accès direct à la page de votre application afin d’aider vos clients à trouver cette dernière dans le WindowsStore. Ce lien présente le format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**. Lorsqu’un client clique sur ce lien, la page de description web de votre application s’affiche. Sur les appareils Windows, l’application du WindowsStore lancera et affichera également la description de votre application.
 
-L’**ID Windows Store** de votre application figure également dans cette section. Cet IDStore peut être utilisé pour [générer des badges WindowsStore](http://go.microsoft.com/fwlink/p/?LinkId=534236) ou pour identifier votre application.
+L’**ID Windows Store** de votre application figure également dans cette section. Cet IDStore peut être utilisé pour [générer des badges WindowsStore](https://go.microsoft.com/fwlink/p/?LinkId=534236) ou pour identifier votre application.
 
 Le **lien du protocole WindowsStore** vous permet de créer un lien d’accès direct à votre application dans le WindowsStore sans ouvrir un navigateur, par exemple lorsque vous établissez ce lien à partir d’une application. Pour plus d’informations, consultez l’article [Créer un lien vers votre application](link-to-your-app.md).
 

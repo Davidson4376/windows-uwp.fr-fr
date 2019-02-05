@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d67bb7c7fd2173e1406669367935efdb09967ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2535818d5362b1ffe4b7b35c7b4079bee73a511f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932522"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046053"
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
 Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
@@ -82,7 +82,7 @@ Notez les appels de méthode asynchrone définis à l’aide de promesses JavaSc
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### <a name="uploading-multiple-files"></a>Chargement de plusieurs fichiers
 **Identifier les fichiers et la destination du chargement**
@@ -178,7 +178,7 @@ Notez les appels de méthode asynchrone définis à l’aide de promesses JavaSc
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### <a name="adding-additional-operation-control-methods"></a>Ajout de méthodes de contrôle des opérations supplémentaires
 Le niveau de contrôle peut être augmenté en implémentant des méthodes [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) supplémentaires. Par exemple, en intégrant le code suivant à l’exemple ci-dessus, nous pouvons inclure la possibilité d’annuler l’opération.

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ab12f79670428fa2b6affa91240787f75bc51bc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e5b273df8120d982f263c4411012baa715b2820c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921261"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044240"
 ---
 # <a name="getting-started-what-next"></a>Prise en main: Et ensuite?
 
@@ -24,7 +24,7 @@ Avec ces informations de base, vous pouvez commencer à écrire des applications
 -   [Utilisation de vignettes, de badges et de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259) : comment créer des vignettes, mettre à jour les vignettes et leurs badges, envoyer des notifications toast, afficher des mises à jour de vignettes et de badges et mettre ces derniers à jours dans l’écran de verrouillage.
 -   [Lancement, reprise et multitâche](https://msdn.microsoft.com/library/windows/apps/hh770837) : comment lancer automatiquement, activer, suspendre et relancer des applications, et comment travailler avec des tâches en arrière-plan.
 -   [Recommandations en matière de données d’application itinérantes](https://msdn.microsoft.com/library/windows/apps/hh465094) : comment garantir une expérience optimale à l’utilisateur final dans le cas d’applications utilisées sur plusieurs appareils (par exemple un PC au travail et une tablette à la maison).
--   [Créer votre première application Windows Runtime en C# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138) : rubrique traitant du développement Windows Phone.
+-   [Créer votre première application Windows Runtime en C# ou Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=394138) : rubrique traitant du développement Windows Phone.
 -   [Vidéos pour développeurs iOS et Android](https://msdn.microsoft.com/library/windows/apps/dn393982) : aide supplémentaire, cette fois dans un format visuel.
 
 Pensez aussi surtout à consulter nos [ressources de communauté](https://developer.microsoft.com/en-us/windows/support) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.

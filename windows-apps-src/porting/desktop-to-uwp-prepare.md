@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: c85624cec36d3e782b0c97ad810062e9b817eb98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 49238ba1b72cf3daf46fb076432a478e9f381bc6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927091"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047956"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Préparer le package d’une application de bureau
 
@@ -118,7 +118,7 @@ Le démarrage d’un utilitaire constitue souvent un moyen pratique de chercher 
 
 **Trouvez des réponses à vos questions**
 
-Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 **Transmettre des commentaires ou suggérer des fonctionnalités**
 

@@ -1,17 +1,17 @@
 ---
-title: Rapport de campagne de publicité
+title: Rapport de campagne publicitaire
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: Le rapport de campagne de publicité dans l’espace partenaires vous permet de visualiser les performances de vos campagnes de promotion d’annonce.
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e44374d56796ea2151424a11df1652892f247b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947479"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046838"
 ---
 # <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 
@@ -65,7 +65,7 @@ Le suivi de l’installation s’effectue dans le WindowsStore sur un téléphon
 
 1.  Le client n’a pas désactivé le ciblage.
 2.  Le client est connecté à un compte Microsoft.
-3.  Le client répond aux exigences [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) (aucun suivi n’est possible pour les clients qui ne répondent pas aux exigences COPPA).
+3.  Le client répond aux exigences [COPPA](https://go.microsoft.com/fwlink?LinkId=536558) (aucun suivi n’est possible pour les clients qui ne répondent pas aux exigences COPPA).
 
 Par conséquent, il est possible que le suivi d’installation d’application sous-estime le nombre réel d’installations générées par une campagne de publicité. Veuillez noter que vous pouvez visualiser le nombre total d’installations d’une application (par le biais de campagnes de publicité et dans le cas contraire) dans le rapport [Acquisitions](acquisitions-report.md) disponible dans l’espace partenaires.
 

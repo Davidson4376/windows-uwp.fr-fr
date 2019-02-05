@@ -1,17 +1,17 @@
 ---
 Description: Follow these best practices for geofencing in your app.
-title: Recommandations concernant la clôture virtuelle des apps
+title: Recommandations concernant la clôture virtuelle des applications
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, carte, emplacement, définition de clôture virtuelle
 ms.localizationpriority: medium
-ms.openlocfilehash: e29bcdb8c36cc8cbbb5de11d669da1249e10d706
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3fe7cb84d4ae265ed20a6a74b76e4f08dd4c1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924832"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047404"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Recommandations concernant la clôture virtuelle des apps
 
@@ -129,7 +129,7 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
 
 * [Configurer une clôture virtuelle](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [Exemple de géolocalisation UWP (géolocalisation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Exemple de géolocalisation UWP (géolocalisation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

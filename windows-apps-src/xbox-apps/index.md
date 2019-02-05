@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bcffedfea6903c5e62222529b5e7fb8f6f8366e
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: c2689218c8e3885815585424901453b9fc07f2d6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981463"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050962"
 ---
 # <a name="uwp-on-xbox-one"></a>UWP sur XboxOne
 
 Prise en main de la création d’applications pour la plateforme Windows universelle (UWP) sur XboxOne.
 
-UWP sur XboxOne prend en charge le développement d’applications et de jeux. Il n’est pas nécessaire de faire partie d’un programme de développeurs pour essayer, créer et tester des jeux ou des applications sur Xbox. Il vous suffit d’un [compte de développeur](https://developer.microsoft.com/en-us/store/register) dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Lorsque vous êtes prêt à publier et à vendre des jeux sur XboxOne ou à profiter de XboxLive sur Windows10, vous devez intégrer le [Programme Créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) ou présenter le statut de développeur [ID@Xbox](http://www.xbox.com/Developers/id). Si vous prévoyez d’être un développeur ID@Xbox, nous vous recommandons d’adhérer dans un premier temps au programme avant de vous inscrire à un compte de développeur. Pour plus d’informations, voir la page [Vue d’ensemble du programme pour les développeurs](../xbox-live/developer-program-overview.md).
+UWP sur XboxOne prend en charge le développement d’applications et de jeux. Il n’est pas nécessaire de faire partie d’un programme de développeurs pour essayer, créer et tester des jeux ou des applications sur Xbox. Il vous suffit d’un [compte de développeur](https://developer.microsoft.com/en-us/store/register) dans [L’espace partenaires](https://partner.microsoft.com/dashboard). Lorsque vous êtes prêt à publier et à vendre des jeux sur XboxOne ou à profiter de XboxLive sur Windows10, vous devez intégrer le [Programme Créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) ou présenter le statut de développeur [ID@Xbox](https://www.xbox.com/Developers/id). Si vous prévoyez d’être un développeur ID@Xbox, nous vous recommandons d’adhérer dans un premier temps au programme avant de vous inscrire à un compte de développeur. Pour plus d’informations, voir la page [Vue d’ensemble du programme pour les développeurs](../xbox-live/developer-program-overview.md).
 
 Cette section comprend la procédure de configuration, un guide détaillant le processus d’authentification, des informations sur l’installation des versions requises de Visual Studio et des outils Windows 10, et la procédure de création, d’exécution et de débogage de votre première application simple. 
 
@@ -40,7 +40,7 @@ Cette section comprend la procédure de configuration, un guide détaillant le p
 |[Présentation des applications multi-utilisateurs](multi-user-applications.md)| Décrit les applications multi-utilisateurs sur XboxOne. |
 | [Automatisation des tâches de développement Xbox One](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | Le projet WindowsDevicePortalWrapper sur GitHub fournit une bibliothèque qui vous permet d’automatiser les tâches de développement courantes telles que le déploiement ou le lancement d’une application. Le projet inclut un exemple, XboxWdpDriver.exe, qui montre comment utiliser les API pour les tâches courantes. |
 |[Intégration de jeux existants dansXbox](development-lanes-landing.md)|Selon la technologie sur laquelle est basé votre jeu, nous pouvons vous fournir des instructions détaillées permettant d’accélérer le processus de publication de votre jeu sur Xbox à l’aide des UWP.|
-|[Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  Décrit les fonctionnalités UWP qui ne sont pas encore entièrement fonctionnelles sur Xbox One.|
+|[Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox One](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  Décrit les fonctionnalités UWP qui ne sont pas encore entièrement fonctionnelles sur Xbox One.|
 
 ## <a name="videos"></a>Vidéos
 

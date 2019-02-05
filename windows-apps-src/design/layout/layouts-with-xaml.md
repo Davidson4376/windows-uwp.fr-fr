@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82a528b3ec98f56e1079e11ec1123d86de15d50f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919984"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049396"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -117,7 +117,7 @@ Contrôle de panneau | Description
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<li>Les éléments sont empilés sur une ligne unique, verticalement ou horizontalement.</li><li>Les valeurs Stretch sont respectées pour les propriétés HorizontalAlignment/VerticalAlignment dans la direction opposée de la propriété Orientation. Si la taille d’un élément n’est pas définie explicitement, ce dernier s’étire pour remplir la largeur disponible (ou la hauteur si la valeur de la propriété Orientation est Horizontal). Dans la direction spécifiée par la propriété Orientation, l’élément adapte sa taille à son contenu.</li><li>Le contenu enfant apparaît rogné s’il est plus grand que le panneau.</li><li>La taille du contenu n’est pas limitée par les bordures du panneau dans la direction spécifiée par la propriété Orientation, de sorte que le contenu de défilement s’étire au-delà des bordures du panneau et n’affiche pas de barres de défilement. Vous devez limiter explicitement la hauteur (ou la largeur) du contenu enfant pour que les barres de défilement s’affichent.</li>
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) |<li>Les éléments sont disposés en lignes ou en colonnes qui sont automatiquement renvoyés à la ligne ou dans une nouvelle colonne lorsque la valeur MaximumRowsOrColumns est atteinte.</li><li>La disposition des éléments en ligne ou en colonne est spécifiée par la propriété Orientation.</li><li>Les éléments peuvent s’étendre sur plusieurs lignes et colonnes via les propriétés jointes VariableSizedWrapGrid.RowSpan et VariableSizedWrapGrid.ColumnSpan.</li><li>Les valeurs Stretch sont ignorées pour les propriétés HorizontalAlignment/VerticalAlignment. Les éléments sont dimensionnés selon la spécification des propriétés ItemHeight et ItemWidth. Si ces propriétés ne sont pas définies, l’élément dans la première cellule adapte sa taille au contenu et toutes les autres cellules héritent de cette taille.</li><li>Le contenu enfant apparaît rogné s’il est plus grand que le panneau.</li><li>La taille du contenu est limitée par les bordures du panneau, de sorte que le contenu de défilement affiche des barres de défilement si nécessaire.</li>
 
-Pour des informations détaillées et des exemples de ces panneaux, voir [Panneaux de disposition](layout-panels.md). Voir également [Exemple de techniques réactives](http://go.microsoft.com/fwlink/p/?LinkId=620024).
+Pour des informations détaillées et des exemples de ces panneaux, voir [Panneaux de disposition](layout-panels.md). Voir également [Exemple de techniques réactives](https://go.microsoft.com/fwlink/p/?LinkId=620024).
 
 Les panneaux de disposition vous permettent d’organiser votre interface utilisateur dans des groupes logiques de contrôles. Lorsque vous les utilisez avec les paramètres de propriété appropriés, vous profitez d’une certaine prise en charge du redimensionnement automatique, du repositionnement et de l’ajustement dynamique des éléments de l’interface utilisateur. Toutefois, la plupart des dispositions d’interface utilisateur nécessitent des modifications supplémentaires lorsque la taille de la fenêtre est considérablement modifiée. Pour ce faire, vous pouvez utiliser les états visuels.
 
@@ -254,13 +254,13 @@ Cet exemple montre comment définir la propriété jointe [**RelativePanel.Align
 
 ### <a name="custom-state-triggers"></a>Déclencheurs d’état personnalisés
 
-Vous pouvez étendre la classe [**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) pour créer des déclencheurs personnalisés pour de multiples situations. Par exemple, vous pouvez créer un élément StateTrigger pour déclencher différents états selon le type d’entrée, puis augmenter les marges autour d’un contrôle lorsque le type d’entrée est tactile. Sinon, vous pouvez créer un élément StateTrigger pour appliquer différents états selon la famille d’appareils sur laquelle l’application est exécutée. Pour des exemples montrant comment créer des déclencheurs personnalisés et les utiliser pour créer des expériences d’interface utilisateur optimisées à partir d’une seule vue XAML, voir [Exemple de déclencheurs d’état](http://go.microsoft.com/fwlink/p/?LinkId=620025).
+Vous pouvez étendre la classe [**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) pour créer des déclencheurs personnalisés pour de multiples situations. Par exemple, vous pouvez créer un élément StateTrigger pour déclencher différents états selon le type d’entrée, puis augmenter les marges autour d’un contrôle lorsque le type d’entrée est tactile. Sinon, vous pouvez créer un élément StateTrigger pour appliquer différents états selon la famille d’appareils sur laquelle l’application est exécutée. Pour des exemples montrant comment créer des déclencheurs personnalisés et les utiliser pour créer des expériences d’interface utilisateur optimisées à partir d’une seule vue XAML, voir [Exemple de déclencheurs d’état](https://go.microsoft.com/fwlink/p/?LinkId=620025).
 
 ### <a name="visual-states-and-styles"></a>Styles et états visuels
 
 Vous pouvez utiliser des ressources Style dans les états visuels pour appliquer un ensemble de modifications de propriété à plusieurs contrôles. Pour plus d’informations sur les styles, voir [Application de styles aux contrôles](../controls-and-patterns/xaml-styles.md).
 
-Dans ce code XAML simplifié tiré de l’exemple de déclencheurs d’état, une ressource Style est appliquée à un contrôle Button afin d’ajuster la taille et les marges pour une entrée tactile ou à l’aide de la souris. Pour le code complet et la définition du déclencheur d’état personnalisé, voir [Exemple de déclencheurs d’état](http://go.microsoft.com/fwlink/p/?LinkId=620025).
+Dans ce code XAML simplifié tiré de l’exemple de déclencheurs d’état, une ressource Style est appliquée à un contrôle Button afin d’ajuster la taille et les marges pour une entrée tactile ou à l’aide de la souris. Pour le code complet et la définition du déclencheur d’état personnalisé, voir [Exemple de déclencheurs d’état](https://go.microsoft.com/fwlink/p/?LinkId=620025).
 
 ```xaml
 <Page ... >
@@ -389,7 +389,7 @@ else
 }
 ```
 
-Vous pouvez également utiliser des critères différents pour déterminer à quelle page accéder. Pour plus d’exemples, consultez l’exemple de [Vues multiples personnalisées](http://go.microsoft.com/fwlink/p/?LinkId=620636), qui utilise la fonction [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) pour vérifier la taille physique d’un affichage intégré.
+Vous pouvez également utiliser des critères différents pour déterminer à quelle page accéder. Pour plus d’exemples, consultez l’exemple de [Vues multiples personnalisées](https://go.microsoft.com/fwlink/p/?LinkId=620636), qui utilise la fonction [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) pour vérifier la taille physique d’un affichage intégré.
 
 ## <a name="related-topics"></a>Rubriquesassociées
 - [Didacticiel: Créer des dispositions adaptatives](../basics/xaml-basics-adaptive-layout.md)

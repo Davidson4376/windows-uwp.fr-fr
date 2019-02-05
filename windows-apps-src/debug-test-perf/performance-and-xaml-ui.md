@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b65a62c2a6182e3b120f8ae8cb6b5fe3a0bf45aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c105425be5b8eb56f32956f126a8f6c2c4f30f2e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936261"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050852"
 ---
 # <a name="performance"></a>Performances
 
 
 Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs. Cette section vous montre comment organiser votre flux de travail de performances, corriger les problèmes d’animation et de fréquence d’images, et régler le temps de démarrage, la durée de navigation par page et l’utilisation de la mémoire.
 
-Si vous n’avez pas déjà fait, une étape qui nous l’avons vu dans significative des performances porter votre application vers Windows 10. Certaines optimisations XAML (par exemple, [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) sont uniquement disponibles dans les applications Windows 10. Voir les [applications de portage de Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) et la session //build/ [déplacement vers la plateforme Windows universelle](http://channel9.msdn.com/Events/Build/2015/3-741).
+Si vous n’avez pas déjà fait, une étape qui nous l’avons vu dans significative des performances porter votre application vers Windows 10. Certaines optimisations XAML (par exemple, [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) sont uniquement disponibles dans les applications Windows 10. Voir les [applications de portage de Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) et la session //build/ [déplacement vers la plateforme Windows universelle](https://channel9.msdn.com/Events/Build/2015/3-741).
 
 | Rubrique | Description |
 |-------|-------------|

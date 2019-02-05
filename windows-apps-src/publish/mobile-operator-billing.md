@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f751735c2387ab5009e2e6f19f68db304916ec
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980387"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045678"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
@@ -19,7 +19,7 @@ ms.locfileid: "8980387"
 Le MicrosoftStore propose la facturation de l’opérateur mobile comme mode de paiement pour les appareils exécutant Windows10, les téléphones exécutant Windows10Mobile et les consoles Xbox One. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats dans le Store à l’aide de son compte mobile.
 
 > [!TIP]
->  Si l’opérateur mobile d’un client propose la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez ces [étapes](http://go.microsoft.com/fwlink/p/?LinkId=523993).
+>  Si l’opérateur mobile d’un client propose la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez ces [étapes](https://go.microsoft.com/fwlink/p/?LinkId=523993).
 
 Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez suggérer un opérateur mobile dont le nom n’est pas répertorié ci-dessous, contactez cet opérateur mobile et demandez-lui d’ajouter ce mode de paiement.
 

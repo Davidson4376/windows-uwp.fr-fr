@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows10, uwp, géocodage, carte, emplacement
 ms.localizationpriority: medium
-ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a30ca89242b15866019fffc6972bdae7086f3f7e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920314"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046442"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Effectuer un géocodage et un géocodage inverse
 
@@ -121,8 +121,8 @@ town = Redmond
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Vidéo: Tirant parti des cartes et emplacement sur un téléphone, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)

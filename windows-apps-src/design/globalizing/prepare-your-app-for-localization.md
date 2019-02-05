@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 618b9d556d3c855c5aed888f0639393bdaaec52e
-ms.sourcegitcommit: 6b417970ee42b46d0a3a2307229376e41e70f8c9
+ms.openlocfilehash: fb16f682e5e1f57196737a6e15a9ffbadbfd0e84
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "9015664"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050882"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -190,4 +190,4 @@ Le classement suit le format de l’application **Région** du Panneau de config
 
 ## <a name="samples"></a>Exemples
 
-- [Exemple de ressources d’application et de localisation](http://go.microsoft.com/fwlink/p/?linkid=254478)
+- [Exemple de ressources d’application et de localisation](https://go.microsoft.com/fwlink/p/?linkid=254478)

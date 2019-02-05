@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921785"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050702"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -23,7 +23,7 @@ Si vous souhaitez simplement capturer du contenu vidéo ou des photos, comme c�
 > Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows10, version 1607.
 
 > [!NOTE] 
-> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230).
+> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230).
 
 > [!NOTE] 
 > Un nouvel ensemble d’API permettant d’utiliser **MediaFrameReader** avec des données audio a été introduit dans Windows10, version1803. Pour plus d’informations, voir [Traiter des trames audio avec MediaFrameReader](process-audio-frames-with-mediaframereader.md).
@@ -151,7 +151,7 @@ Lorsque vous avez fini de lire les images, assurez-vous d’arrêter le lecteur 
 Pour plus d’informations sur le nettoyage de vos objets de capture multimédia lorsque votre application est interrompue, consultez la section [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
 
 ## <a name="the-framerenderer-helper-class"></a>La classe d’assistance FrameRenderer
-Le [profil d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230) Windows universel fournit une classe d’assistance qui facilite l’affichage d’images de sources couleur, infrarouges et de profondeur dans votre application. Généralement, vous ne vous contentez pas d’afficher les données infrarouge et de profondeur à l’écran, mais cette classe d’assistance est un outil utile permettant d’illustrer la fonctionnalité du lecteur d’images et de déboguer votre propre implémentation du lecteur d’images.
+Le [profil d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230) Windows universel fournit une classe d’assistance qui facilite l’affichage d’images de sources couleur, infrarouges et de profondeur dans votre application. Généralement, vous ne vous contentez pas d’afficher les données infrarouge et de profondeur à l’écran, mais cette classe d’assistance est un outil utile permettant d’illustrer la fonctionnalité du lecteur d’images et de déboguer votre propre implémentation du lecteur d’images.
 
 La classe d’assistance **FrameRenderer** implémente les méthodes suivantes.
 
@@ -253,7 +253,7 @@ Pour plus d’informations sur l’utilisation des profils d’appareil photo, v
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Profils d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [Profils d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 
  

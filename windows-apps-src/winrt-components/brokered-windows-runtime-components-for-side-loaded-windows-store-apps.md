@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: d9665ba3af10091ddc652198d5340e00456a65a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9ebac70d56fcdf1bf717d763daf4ac1bd9c06d4b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934524"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048416"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants WindowsRuntime du service Broker pour les applications installées hors UWP
 
@@ -19,7 +19,7 @@ Cet article traite une fonctionnalité prise en charge par Windows 10, ce qui pe
 
 ## <a name="introduction"></a>Introduction
 
->**Remarque**l’exemple de code qui accompagne ce livre blanc peut être téléchargé pour[Visual Studio 2015 et 2017](https://aka.ms/brokeredsample). Le modèle Microsoft Visual Studio permettant de générer des composants Windows Runtime du service Broker peut être téléchargé ici: [modèle Visual Studio2015 destiné aux applications Windows universelles pour Windows10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Remarque**l’exemple de code qui accompagne ce livre blanc peut être téléchargé pour[Visual Studio 2015 & 2017](https://aka.ms/brokeredsample). Le modèle Microsoft Visual Studio permettant de générer des composants Windows Runtime du service Broker peut être téléchargé ici: [modèle Visual Studio2015 destiné aux applications Windows universelles pour Windows10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 Windows inclut une nouvelle fonctionnalité appelée*Composants Windows Runtime du service Broker pour les applications installées hors Windows Store*. Nous utilisons le terme IPC (Inter-Process Communication) pour décrire la capacité à exécuter des composants logiciels de bureau existants dans un processus (composant de bureau) lors de l’interaction avec ce code dans une application UWP. Il s’agit d’un modèle bien connu des développeurs d’entreprise car les applications de base de données et les applications qui utilisent les services NT dans Windows partagent une architecture à plusieurs processus similaire.
 
@@ -52,7 +52,7 @@ Le contrat entre l’application installée hors Windows Store et le composant d
 
 L’application installée hors Store est une application UWP normale à une exception près: elle est installée à partir d’un emplacement autre que le Microsoft Store. La plupart des mécanismes d’installation sont identiques: le manifeste et le package de l’application sont identiques (un ajout au manifeste est décrit plus en détail ultérieurement). Lorsque l’installation hors Windows Store est activée, un script PowerShell simple peut installer les certificats nécessaires et l’application elle-même. La meilleure pratique standard stipule que l’application installée hors Windows Store doit réussir le test de certification WACK inclus dans le menu Projet/Store de Visual Studio.
 
->**Remarque**hors peut être activée dans paramètres -&gt; mise à jour et sécurité -&gt; pour les développeurs.
+>**Remarque**hors peut être activée dans paramètres -&gt; mise à jour de sécurité & -&gt; pour les développeurs.
 
 Il est à noter que le mécanisme App Broker n’est fourni dans le cadre de la Mise à jour Windows10 qu’en version 32bits. Le composant de bureau doit être 32bits.
 Les applications installées hors Windows Store peuvent être 64bits (si un proxy 64bits et un proxy 32bits sont inscrits), mais cela n’est pas la norme. La création de l’application en C\# à l’aide d’une configuration «neutre» et la valeur par défaut «préférer 32bits» créent des applications installées hors Windows Store 32bits.
@@ -499,7 +499,7 @@ d) Un fichier \*\_p.c (MyWinRTComponent_\p.c)
 
 **Étape5:** ajoutez ces quatre fichiers générés au projet «MyWinRTProxy».
 
-**Étape 6:** Ajouter un fichier de définition au projet «MyWinRTProxy»**(projet > Ajouter un nouvel élément > Code > fichier de définition de Module**) et mettre à jour le contenu:
+**Étape 6:** Ajouter un fichier de définition au projet «MyWinRTProxy»**(> ajouter un nouvel élément > Code > fichier de définition de Module de projet**) et mettre à jour le contenu:
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -592,13 +592,13 @@ La liste du module pour un serveur du service broker doit répertorier*clrhost.d
 
 -   [Modèles de projets pour les composants WinRT du service Broker pour Windows10 et VS2015](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
--   [Exemple de composant WinRT du service Broker pour NorthwindRT](http://go.microsoft.com/fwlink/p/?LinkID=397349)
+-   [Exemple de composant WinRT du service Broker pour NorthwindRT](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 
--   [Création d’applications du Microsoft Store fiables et dignes de confiance](http://go.microsoft.com/fwlink/p/?LinkID=393644)
+-   [Création d’applications du Microsoft Store fiables et dignes de confiance](https://go.microsoft.com/fwlink/p/?LinkID=393644)
 
 -   [Contrats et extensions des applications (applications du Windows Store)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
 
 -   [Comment installer des applications hors Windows Store sur Windows10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
--   [Déploiement d’applications UWP pour les entreprises](http://go.microsoft.com/fwlink/p/?LinkID=264770)
+-   [Déploiement d’applications UWP pour les entreprises](https://go.microsoft.com/fwlink/p/?LinkID=264770)
 

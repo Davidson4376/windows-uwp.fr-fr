@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81aa15892bf39209c31238878e0ca19a996d0b3e
-ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
+ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "9000274"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048046"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -70,7 +70,7 @@ Selon votre pays ou votre région, vous avez la possibilité de créer un compte
 
 Questions courantes concernant l'utilisation de PayPal comme mode de paiement :
 
--   **Comment configurer les paramètres PayPal pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](http://go.microsoft.com/fwlink/p/?linkid=513139).
+-   **Comment configurer les paramètres PayPal pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](https://go.microsoft.com/fwlink/p/?linkid=513139).
 -   **Mon pays ou ma région sont-ils pris en charge?** Pour savoir si PayPal est un mode de paiement pris en charge, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
 -   **Mon compte PayPal doit-il être enregistré dans la même pays/région que mon compte du centre de partenaires?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
 -   **Dois-je accepter les paiements PayPal manuellement?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.

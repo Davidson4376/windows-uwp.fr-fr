@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3527cae294f2268b2457b9fe9a6593cf1b539ee8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923813"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050146"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 
 ## <a name="a-simple-2d-uwp-game-for-the-microsoft-store-written-in-javascript-and-createjs"></a>Jeu UWP2D simple pour le Microsoft Store, écrit en JavaScript et CreateJS
 
 
-![Feuille de sprite Dino en marche](images/JS2D_1.png)
+![Feuille de sprite Dino marcheur](images/JS2D_1.png)
 
 
 ## <a name="introduction"></a>Introduction
@@ -38,9 +38,9 @@ Ce projet est généré avec JavaScript à l’aide de Visual Studio. Avec quelq
 Pour jouer avec ce projet, vous aurez besoin des éléments suivants:
 
 * Un ordinateur Windows (physique ou virtuel) exécutant la version actuelle de Windows10.
-* Visual Studio. Visual Studio Community Edition peut être téléchargé gratuitement à partir de la [page d’accueil de Visual Studio](http://visualstudio.com).
+* Visual Studio. Visual Studio Community Edition peut être téléchargé gratuitement à partir de la [page d’accueil de Visual Studio](https://visualstudio.com).
 
-Ce projet utilise l'infrastructure JavaScript CreateJS. CreateJS est un ensemble d’outils gratuit, publié sous une licence MIT, conçu pour faciliter la création de jeux sprite. Les bibliothèques CreateJS sont déjà présentes dans le projet (recherchez *js/easeljs-0.8.2.min.js* et *js/preloadjs-0.6.2.min.js* dans la vue Explorateur de solutions). Vous trouverez plus d’informations sur CreateJS sur la [page d’accueil CreateJS](http://www.createjs.com).
+Ce projet utilise l'infrastructure JavaScript CreateJS. CreateJS est un ensemble d’outils gratuit, publié sous une licence MIT, conçu pour faciliter la création de jeux sprite. Les bibliothèques CreateJS sont déjà présentes dans le projet (recherchez *js/easeljs-0.8.2.min.js* et *js/preloadjs-0.6.2.min.js* dans la vue Explorateur de solutions). Vous trouverez plus d’informations sur CreateJS sur la [page d’accueil CreateJS](https://www.createjs.com).
 
 
 ## <a name="getting-started"></a>Prise en main
@@ -134,7 +134,7 @@ Recherchez le code ci-dessous et supprimez les commentaires (\\) à partir de la
     ];
 ```
 
-JavaScript a besoin d'un peu d'aide pour le chargement de ressources telles que des images. Nous utilisons donc une fonctionnalité de la bibliothèque CreateJS, appelée [LoadQueue](http://www.createjs.com/docs/preloadjs/classes/LoadQueue.html), qui permet de précharger des images. Nous ne pouvons pas savoir combien de temps prendra le chargement des images. C'est pourquoi nous utilisons la fonctionnalité LoadQueue pour s'en occuper. Une fois les images disponibles, la file d’attente nous indiquera qu’elles sont prêtes. Pour ce faire, nous créons d’abord un nouvel objet qui répertorie toutes nos images, puis un objet LoadQueue. Vous pouvez voir dans le code suivant une configuration qui permet d'appeler la fonction nommée **loadingComplete()** lorsque tout est prêt.
+JavaScript a besoin d'un peu d'aide pour le chargement de ressources telles que des images. Nous utilisons donc une fonctionnalité de la bibliothèque CreateJS, appelée [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html), qui permet de précharger des images. Nous ne pouvons pas savoir combien de temps prendra le chargement des images. C'est pourquoi nous utilisons la fonctionnalité LoadQueue pour s'en occuper. Une fois les images disponibles, la file d’attente nous indiquera qu’elles sont prêtes. Pour ce faire, nous créons d’abord un nouvel objet qui répertorie toutes nos images, puis un objet LoadQueue. Vous pouvez voir dans le code suivant une configuration qui permet d'appeler la fonction nommée **loadingComplete()** lorsque tout est prêt.
 
 ```
     // Now we create a special queue, and finally a handler that is
@@ -162,9 +162,9 @@ Exécutez à nouveau l’application (appuyez sur F5) et vous verrez les nuages 
 
 ### <a name="3-moving-the-clouds"></a>3. Déplacement des nuages
 
-Nous allons maintenant faire en sorte que les nuages se déplacent. Le secret pour que les nuages (et n'importe quel élément, en fait) se déplacent consiste à configurer une fonction [ticker](http://www.createjs.com/docs/easeljs/classes/Ticker.html) qui est appelée à plusieurs reprises, plusieurs fois par seconde. Chaque fois que cette fonction est appelée, elle redessine les graphiques dans un emplacement légèrement différent.
+Nous allons maintenant faire en sorte que les nuages se déplacent. Le secret pour que les nuages (et n'importe quel élément, en fait) se déplacent consiste à configurer une fonction [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) qui est appelée à plusieurs reprises, plusieurs fois par seconde. Chaque fois que cette fonction est appelée, elle redessine les graphiques dans un emplacement légèrement différent.
 
-<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">Consultez le stylet <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds (CreateJS - Animation de nuages)</a> de Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) sur <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">Consultez le stylet <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds (CreateJS - Animation de nuages)</a> de Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) sur <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
 Le code nécessaire se trouve déjà dans le fichier **main.js**, fourni par la bibliothèque CreateJS, EaselJS. Il se présente ainsi:
@@ -217,7 +217,7 @@ Un jeu avec lequel vous ne pouvez pas interagir n’est pas un jeu. Nous allons 
 
 Nous avons maintenant deux fonctions appelées chaque fois que le joueur appuie sur une touche ou clique sur la souris. Les deux événements appellent une fonction **userDidSomething()** qui ressemble à la variable gamestate pour déterminer l’action du jeu en cours et l’étape suivante qui doit se produire en conséquence.
 
-Gamestate est un modèle de conception courant utilisé dans les jeux. Tout événement se produit dans la fonction **gameLoop()** appelée par le minuteur du ticker. Le gameLoop() effectue un suivi pour déterminer si le jeu est en cours ou en «game over state» (état fin de partie) ou «ready-to-play state» (état prêt à jouer) ou d'autre états définis par l’auteur, à l’aide d’une variable. Cette variable d’état est testée dans une instruction switch, qui définit les autres fonctions appelées. Par conséquent, si l’état est défini sur «playing» (lecture), les fonctions qui permettent de faire sauter le dinosaure et de déplacer les barils seront appelées. Si le dinosaure est tué par quelque chose, la variable gamestate est définie sur «game over state» et le message «Game over!» s’affiche à la place. Si les modèles de conception de jeux vous intéressent, le livre [Modèles de programmation de jeu](http://gameprogrammingpatterns.com/) est très utile.
+Gamestate est un modèle de conception courant utilisé dans les jeux. Tout événement se produit dans la fonction **gameLoop()** appelée par le minuteur du ticker. Le gameLoop() effectue un suivi pour déterminer si le jeu est en cours ou en «game over state» (état fin de partie) ou «ready-to-play state» (état prêt à jouer) ou d'autre états définis par l’auteur, à l’aide d’une variable. Cette variable d’état est testée dans une instruction switch, qui définit les autres fonctions appelées. Par conséquent, si l’état est défini sur «playing» (lecture), les fonctions qui permettent de faire sauter le dinosaure et de déplacer les barils seront appelées. Si le dinosaure est tué par quelque chose, la variable gamestate est définie sur «game over state» et le message «Game over!» s’affiche à la place. Si les modèles de conception de jeux vous intéressent, le livre [Modèles de programmation de jeu](https://gameprogrammingpatterns.com/) est très utile.
 
 Essayez de relancer l’application et vous pourrez enfin commencer à jouer. Appuyez sur espace (ou cliquez sur la souris ou appuyez sur l’écran) pour lancer l'animation. 
 
@@ -271,7 +271,7 @@ Pour plus d’informations, voir la [publication de votre application UWP](https
 
 Quelle est l'étape suivante? Voici quelques suggestions de fonctionnalités à ajouter à votre (future) application primée.
 
-1. Effets sonores. La bibliothèque CreateJS inclut la prise en charge de sons, à l'aide d'une bibliothèque appelée [SoundJS](http://www.createjs.com/soundjs).
+1. Effets sonores. La bibliothèque CreateJS inclut la prise en charge de sons, à l'aide d'une bibliothèque appelée [SoundJS](https://www.createjs.com/soundjs).
 2. Prise en charge du boîtier de commande. Il existe une [API disponible](https://gamedevelopment.tutsplus.com/tutorials/using-the-html5-gamepad-api-to-add-controller-support-to-browser-games--cms-21345).
 3. Améliorez considérablement ce jeu! Cela dépend de vous, mais il existe un grand nombre de ressources disponibles en ligne. 
 

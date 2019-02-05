@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923968"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049051"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
@@ -116,7 +116,7 @@ En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.
 ## <a name="localize-the-string-resources"></a>Localiser les ressources de chaîne
 1. Faites une copie de votre fichier de ressources (.resw) pour une autre langue.
     1. Sous «Strings», créez un sous-dossier et nommez-le «de-DE» pour Allemand (Allemagne).
-   <br>**Remarque**pour le nom du dossier, vous pouvez utiliser n’importe quelle [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
+   <br>**Remarque**pour le nom du dossier, vous pouvez utiliser n’importe quelle [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
    2. Faites une copie de `Strings/en-US/Resources.resw` dans le dossier `Strings/de-DE`.
 2. Traduisez les chaînes.
     1. Ouvrez `Strings/de-DE/Resources.resw` et traduisez les valeurs dans la colonne Valeur. Il n’est pas nécessaire de traduire les commentaires.
@@ -291,6 +291,6 @@ Un package d’infrastructure peut accéder à ses propres ressources avec un UR
 * [Directive x:Uid](../xaml-platform/x-uid-directive.md)
 * [propriétés jointes](../xaml-platform/attached-properties-overview.md)
 * [Éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [Balise de langueBCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balise de langueBCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
 * [Comment charger des ressources de chaîne](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

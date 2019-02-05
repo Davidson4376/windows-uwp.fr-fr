@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 153d73a75b48d61cb490a903c6657c42638c6674
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939251"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049686"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portage d’interface vers UWP et WindowsPhone Silverlight XAML
 
@@ -161,9 +161,9 @@ Les fonctionnalités associées aux liaisons des applications UWP présentent ac
 -   Il n’existe aucune prise en charge intégrée pour la validation de l’entrée des données et les interfaces [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) et [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx).
 -   La classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) n’inclut pas les propriétés de mise en forme étendues disponibles dans WindowsPhone Silverlight. Toutefois, vous pouvez implémenter [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) pour produire une mise en forme personnalisée.
 -   Les méthodes [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) acceptent des chaînes de langage comme paramètres au lieu d’objets [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx).
--   La classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) ne fournit pas de prise en charge intégrée pour le tri et le filtrage, et le regroupement fonctionne différemment. Pour plus d’informations, voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946) et [Exemple de liaison de données](http://go.microsoft.com/fwlink/p/?linkid=226854).
+-   La classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) ne fournit pas de prise en charge intégrée pour le tri et le filtrage, et le regroupement fonctionne différemment. Pour plus d’informations, voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946) et [Exemple de liaison de données](https://go.microsoft.com/fwlink/p/?linkid=226854).
 
-Bien que les mêmes fonctionnalités de liaison sont toujours majoritairement prises en charge, Windows 10 offre la possibilité d’une nouvelle et mécanisme de liaison plus performant liaisons compilées, qui utilisent l’extension de balisage {x: Bind}. Voir [Liaison de données : accroître les performances de votre application grâce aux nouvelles améliorations de la liaison de données XAML](http://channel9.msdn.com/Events/Build/2015/3-635) et [Exemple x:Bind](http://go.microsoft.com/fwlink/p/?linkid=619989) (en anglais).
+Bien que les mêmes fonctionnalités de liaison sont toujours majoritairement prises en charge, Windows 10 offre la possibilité d’une nouvelle et mécanisme de liaison plus performant liaisons compilées, qui utilisent l’extension de balisage {x: Bind}. Voir [Liaison de données : accroître les performances de votre application grâce aux nouvelles améliorations de la liaison de données XAML](https://channel9.msdn.com/Events/Build/2015/3-635) et [Exemple x:Bind](https://go.microsoft.com/fwlink/p/?linkid=619989) (en anglais).
 
 ## <a name="binding-an-image-to-a-view-model"></a>Liaison d’une propriété Image à un modèle d’affichage
 
@@ -205,7 +205,7 @@ Pour plus d’informations sur les contrôles UWP, voir [Contrôles par fonction
 
 ##  <a name="design-language-in-windows10"></a>Langage de conception dans Windows 10
 
-Il existe certaines différences de langage de conception entre les applications WindowsPhone Silverlight et applications Windows 10. Pour plus de détails, voir [Conception](http://dev.windows.com/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
+Il existe certaines différences de langage de conception entre les applications WindowsPhone Silverlight et applications Windows 10. Pour plus de détails, voir [Conception](https://dev.windows.com/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
 
 ## <a name="localization-and-globalization"></a>Localisation et globalisation
 
@@ -313,7 +313,7 @@ Le texte (ou la typographie) constitue un aspect important d’une application U
 
 Styles TextBlock système pour les applications Windows 10
 
-Dans une application WindowsPhone Silverlight, la famille de polices par défaut est Segoe WP. Dans une application Windows 10, la famille de polices par défaut est Segoe UI. Par conséquent, les métriques de police dans votre application peuvent être différentes. Si vous souhaitez reproduire l’aspect de votre texte WindowsPhone Silverlight, vous pouvez définir vos propres métriques à l’aide des propriétés telles que [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) et [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](http://dev.windows.com/design).
+Dans une application WindowsPhone Silverlight, la famille de polices par défaut est Segoe WP. Dans une application Windows 10, la famille de polices par défaut est Segoe UI. Par conséquent, les métriques de police dans votre application peuvent être différentes. Si vous souhaitez reproduire l’aspect de votre texte WindowsPhone Silverlight, vous pouvez définir vos propres métriques à l’aide des propriétés telles que [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) et [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](https://dev.windows.com/design).
 
 ## <a name="theme-changes"></a>Modifications de thème
 

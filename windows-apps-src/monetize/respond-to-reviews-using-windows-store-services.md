@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows10, uwp, API d'avis du MicrosoftStore, répondre aux avis
 ms.localizationpriority: medium
-ms.openlocfilehash: 95de2cc1de1b71a435fc8d4388f599c417132814
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 677108e692bbc702778cad3c42a45b4f5408b8cd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944455"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044513"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Répondre aux avis à l’aide des services du Windows Store
 
@@ -32,7 +32,7 @@ Les étapes suivantes décrivent le processus de bout en bout:
 
 Avant d’écrire le code d’appel de l’API d’avis du MicrosoftStore, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
 * Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API d’avis du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]

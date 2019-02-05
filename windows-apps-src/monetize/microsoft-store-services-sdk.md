@@ -6,19 +6,19 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c283f9edd33b8c39ebccd0a71019741a0d1448
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921010"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044300"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le MicrosoftStore Services SDK
 
 Le Microsoft Store Services SDK fournit des fonctionnalités qui vous aident à conquérir des clients dans vos applications de plateforme Windows universelle (UWP), par exemple, l’envoi de notifications ciblées à vos applications et en cours d’exécution A / B d’expériences dans vos applications. Ce kit de développement logiciel(SDK) est une extension pour VisualStudio2015 et d’autres versions de VisualStudio.
 
 > [!NOTE]
-> Pour afficher des publicités dans vos applications UWP, utilisez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) au lieu du MicrosoftStore Services SDK. Les bibliothèques de publicités ont été déplacées depuis le MicrosoftStore Services SDK vers le SDK MicrosoftAdvertising. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md).
+> Pour afficher des publicités dans vos applications UWP, utilisez le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) au lieu du MicrosoftStore Services SDK. Les bibliothèques de publicités ont été déplacées depuis le MicrosoftStore Services SDK vers le SDK MicrosoftAdvertising. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md).
 
 
 
@@ -48,7 +48,7 @@ Le Microsoft Store Services SDK nécessite les éléments suivants:
 
 Il existe deux options pour installer le Microsoft Store Services SDK sur votre ordinateur de développement:
 
-* **Programme d’installation MSI**&nbsp;&nbsp;Vous pouvez installer le SDK via le programme d’installation MSI, disponible [ici](http://aka.ms/store-em-sdk).
+* **Programme d’installation MSI**&nbsp;&nbsp;Vous pouvez installer le SDK via le programme d’installation MSI, disponible [ici](https://aka.ms/store-em-sdk).
 * **Package NuGet**&nbsp;&nbsp;Vous pouvez installer le Kit de développement logiciel sous forme de package NuGet.
 
 Microsoft publie régulièrement de nouvelles versions du Microsoft Store Services SDK avec des améliorations des performances et de nouvelles fonctionnalités. Si vous possédez des projets existants qui utilisent le SDK et que vous souhaitez utiliser la dernière version, téléchargez et installez la dernière version du SDK sur votre ordinateur de développement.
@@ -68,7 +68,7 @@ Pour installer le Microsoft Store Services SDK via le programme d’installation
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Téléchargez et installez le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). L’installation peut prendre quelques minutes. Attendez la fin du processus.
+3.  Téléchargez et installez le [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). L’installation peut prendre quelques minutes. Attendez la fin du processus.
 
 4.  Redémarrez VisualStudio.
 
@@ -99,7 +99,7 @@ Pour installer les bibliothèques du Microsoft Store Services SDK via NuGet:
 
 5. Dans la zone de recherche, entrez **Microsoft.Services.Store.Engagement**, puis installez le package Microsoft.Services.Store.Engagement. Lorsque l’installation du package est terminée, enregistrez votre solution.
     > [!NOTE]
-    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur ```repositoryPath``` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projetVisual Studio vers un dossier différent présentant un chemin plus court. Le problème peut également être déclenchée par votre chemin d’accès de packages global est trop long. Dans ce cas, ajoutez le ```globalPackagesFolder``` valeur dans votre fichier nuget.config.
+    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur ```repositoryPath``` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projetVisual Studio vers un dossier différent présentant un chemin plus court. Le problème peut également être déclenchée par votre chemin d’accès de packages global est trop long. Dans ce cas, ajoutez le ```globalPackagesFolder``` valeur dans votre fichier nuget.config.
 
 6. Fermez la solution Visual Studio qui contient votre projet, puis rouvrez la solution.
 

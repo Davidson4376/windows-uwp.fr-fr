@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 12772d81742815b8d739f61aee9461e64f970ef2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5417a2cded6dab98747569acc4e6e92356361482
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935709"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050822"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
@@ -64,7 +64,7 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 ### <a name="step-2"></a>Étape2
 Ajoutez du code au gestionnaire des événements qui traite l’achèvement des tâches en arrière-plan.
 
-Par exemple, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
+Par exemple, l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -122,7 +122,7 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 ### <a name="step-2"></a>Étape2
 Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
 
-Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args*:
+Ainsi, l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args*:
 
 ```csharp
 private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
@@ -158,7 +158,7 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 ### <a name="step-1"></a>Étape1
 Lorsque l’application inscrit une tâche en arrière-plan pour la première fois, elle doit s’inscrire pour recevoir les mises à jour de progression et d’achèvement de la tâche au cas où celle-ci s’exécuterait pendant que l’application est toujours active au premier plan.
 
-Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) appelle la fonction suivante pour chaque tâche en arrière-plan qu’il inscrit :
+Ainsi, l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) appelle la fonction suivante pour chaque tâche en arrière-plan qu’il inscrit :
 
 ```csharp
 private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
@@ -217,7 +217,7 @@ void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskReg
 ### <a name="step-2"></a>Étape2
 Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire des événements de progression et d’achèvement. Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
-Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask:
+Ainsi, l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask:
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -299,4 +299,4 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)

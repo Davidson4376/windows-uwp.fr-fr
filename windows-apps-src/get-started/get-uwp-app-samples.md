@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows10, uwp, exemple de code, exemples de code
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946294"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049716"
 ---
 # <a name="get-uwp-app-samples"></a>Obtenir des exemples d’applications UWP
 
@@ -28,7 +28,7 @@ Le fichierZIP contient toujours les exemples les plus récents. Vous n’avez pa
 
 
 > [!NOTE]
-> L’ouverture, la création et l’exécution d’exemples UWP requièrent l’installation de VisualStudio2015 ou version ultérieure et du SDK Windows. Vous pouvez obtenir une copie gratuite de Visual Studio Community avec une assistance pour la création d’applications UWP [ici](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Téléchargements des outils de développement Windows").  
+> L’ouverture, la création et l’exécution d’exemples UWP requièrent l’installation de VisualStudio2015 ou version ultérieure et du SDK Windows. Vous pouvez obtenir une copie gratuite de Visual Studio Community avec une assistance pour la création d’applications UWP [ici](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Téléchargements des outils de développement Windows").  
 >
 > Veillez également à décompresser l’intégralité de l’archive, et pas seulement les exemples. Tous les exemples dépendent du dossier SharedContent de l’archive. Les exemples de fonctionnalités UWP utilisent des fichiers liés dans VisualStudio pour réduire la duplication de fichiers communs, notamment les fichiers de modèles d’exemples et les composants d’images. Ces fichiers communs sont stockés dans le dossier SharedContent à la racine du référentiel et sont référencés dans les fichiers de projet à l’aide de liens.
 

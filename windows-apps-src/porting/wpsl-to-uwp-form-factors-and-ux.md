@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dbba9dbdf6bc3df02657cc03b9264e74664318b4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936463"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045162"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage WindowsPhone Silverlight vers UWP pour différents facteurs de forme et expériences utilisateur
 
@@ -30,7 +30,7 @@ En un mot comme en cent, la réponse à cette question est subjective. En fait, 
 
 Objectivement, la taille d’un écran est mesurée en pouces et en pixels physiques (bruts). La connaissance de ces deux métriques vous permet de déterminer le nombre de pixels inclus dans un pouce. La valeur obtenue porte le nom de densité en pixels (DPI, Dots Per Inch). On parle également de PPP, ou pixels par pouce. L’inverse de la densité en pixels est la taille physique des pixels, sous la forme d’une fraction d’un pouce. La densité en pixels est également appelée *résolution*, même si ce terme est souvent utilisé pour indiquer le nombre de pixels.
 
-Lorsque la distance d’affichage augmente, toutes ces métriques objectives *semblent* correspondre à des valeurs plus petites et sont résolues sous la forme d’une *taille réelle* de l’écran, associée à la *résolution effective* de ce dernier. En général, l’appareil que vous placez le plus près de vos yeux est votre téléphone, suivi de votre tablette, puis de l’écran de votre PC. Enfin, les appareils plus éloignés sont les [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) et les écrans de télévision. Pour compenser cette distance, les appareils ont tendance à être de plus en plus grands en fonction de la distance d’affichage. Lorsque vous définissez les tailles des éléments de votre interface utilisateur, vous les exprimez en unités appelées pixels effectifs (epx). Et Windows 10 prendra en compte la résolution et la distance de visualisation standard à partir d’un appareil, pour calculer la taille optimale de vos éléments d’interface utilisateur en pixels physiques afin d’optimiser l’expérience de visualisation. Voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md).
+Lorsque la distance d’affichage augmente, toutes ces métriques objectives *semblent* correspondre à des valeurs plus petites et sont résolues sous la forme d’une *taille réelle* de l’écran, associée à la *résolution effective* de ce dernier. En général, l’appareil que vous placez le plus près de vos yeux est votre téléphone, suivi de votre tablette, puis de l’écran de votre PC. Enfin, les appareils plus éloignés sont les [Surface Hub](https://www.microsoft.com/microsoft-surface-hub) et les écrans de télévision. Pour compenser cette distance, les appareils ont tendance à être de plus en plus grands en fonction de la distance d’affichage. Lorsque vous définissez les tailles des éléments de votre interface utilisateur, vous les exprimez en unités appelées pixels effectifs (epx). Et Windows 10 prendra en compte la résolution et la distance de visualisation standard à partir d’un appareil, pour calculer la taille optimale de vos éléments d’interface utilisateur en pixels physiques afin d’optimiser l’expérience de visualisation. Voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 Même dans ce cas, nous vous recommandons de tester votre application avec différents appareils afin que vous puissiez vérifier chaque expérience par vous-même.
 
@@ -64,7 +64,7 @@ Reportez-vous à la liste [Valorisation de la réutilisation du code et du balis
 
 ## <a name="more-info-and-design-guidelines"></a>Informations supplémentaires et recommandations de conception
 
--   [Concevoir des UWP apps](http://dev.windows.com/design)
+-   [Concevoir des UWP apps](https://dev.windows.com/design)
 -   [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394)
 -   [Planifier différents facteurs de forme](https://msdn.microsoft.com/library/windows/apps/dn958435)
 

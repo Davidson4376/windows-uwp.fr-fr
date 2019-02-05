@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows10, uwp, carte, emplacement, clics-infos
 ms.localizationpriority: medium
-ms.openlocfilehash: f67c93a6f56fd466d981bce10eb41c16ff8da1f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bfb307093889c5a40a452d2d406f02224ab5eab1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930249"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050642"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
 Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML. Un point d’intérêt est un point spécifique sur la carte, qui représente un élément intéressant. Il peut s’agir, par exemple, de l’emplacement d’une entreprise, d’une localité ou d’un ami.
 
-Pour en savoir plus sur l’affichage des points d’intérêt dans votre app, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub: [exemple de carte UWP (plateforme Windows universelle)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
+Pour en savoir plus sur l’affichage des points d’intérêt dans votre app, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub: [exemple de carte UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 Affichez des punaises, des images et des formes sur la carte en ajoutant des objets [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) et [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) à une collection **MapElements** d'un objet [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ensuite, ajoutez cet objet de couche à la collection **Couches** d’un contrôle de carte.
 
@@ -92,7 +92,7 @@ Gardez à l’esprit les considérations suivantes lorsque vous travaillez avec 
 
 ## <a name="add-a-3d-pushpin"></a>Ajoutez une punaise 3D
 
-Vous pouvez ajouter des objets 3D à une carte. Utilisez la catégorie [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) pour importer un objet 3D à partir d'un fichier [3D Manufacturing Format (3MF)](http://3mf.io/specification/).
+Vous pouvez ajouter des objets 3D à une carte. Utilisez la catégorie [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) pour importer un objet 3D à partir d'un fichier [3D Manufacturing Format (3MF)](https://3mf.io/specification/).
 
 Cette image utilise des tasses de café en 3D pour indiquer les emplacements des cafés dans un quartier.
 
@@ -186,7 +186,7 @@ L'élément [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windo
 
 ## <a name="add-a-shape"></a>Ajoutez une forme.
 
-Utilisez la classe [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) pour afficher une forme multipoint sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une zone rouge bordée de bleu sur la carte.
+Utilisez la classe [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) pour afficher une forme multipoint sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une zone rouge bordée de bleu sur la carte.
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>Ajouter un ligne
 
 
-Utilisez la classe [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) pour afficher une ligne sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une ligne en pointillé sur la carte.
+Utilisez la classe [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) pour afficher une ligne sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une ligne en pointillé sur la carte.
 
 ```csharp
 public void DrawLineOnMap()
@@ -474,10 +474,10 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)

@@ -6,12 +6,12 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f70d768ad6589e210826f94f73249ed1ea272e1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944096"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045608"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Cycle de vie d’une application de plateforme Windows universelle (UWP) Windows10
 
@@ -64,7 +64,7 @@ Du fait du prélancement, la méthode **OnLaunched()** de l’application peut �
 
 Windows affiche un écran de démarrage pour l’application lancée. Pour configurer cet écran de démarrage, consultez [Ajout d’un écran de démarrage](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331).
 
-Lorsque l’écran de démarrage s’affiche, votre application doit enregistrer les gestionnaires d’événements et configurer l’interface utilisateur personnalisée dont elle a besoin pour la page initiale. Vérifiez que ces tâches s’exécutent dans le constructeur de l’application et dans la méthode **OnLaunched()** en quelques secondes. Sinon, le système peut penser que votre application ne répond pas et l’arrêter. Si une application doit demander des données au réseau ou récupérer de grandes quantités de données sur le disque, ces activités doivent être effectuées hors du lancement. Une application peut utiliser son interface utilisateur de chargement personnalisée ou un écran de démarrage étendu, pendant l’exécution de ces longues opérations. Pour plus d’informations, consultez [Afficher un écran de démarrage plus longtemps](create-a-customized-splash-screen.md) et cet [exemple d’écran de démarrage](http://go.microsoft.com/fwlink/p/?linkid=234889).
+Lorsque l’écran de démarrage s’affiche, votre application doit enregistrer les gestionnaires d’événements et configurer l’interface utilisateur personnalisée dont elle a besoin pour la page initiale. Vérifiez que ces tâches s’exécutent dans le constructeur de l’application et dans la méthode **OnLaunched()** en quelques secondes. Sinon, le système peut penser que votre application ne répond pas et l’arrêter. Si une application doit demander des données au réseau ou récupérer de grandes quantités de données sur le disque, ces activités doivent être effectuées hors du lancement. Une application peut utiliser son interface utilisateur de chargement personnalisée ou un écran de démarrage étendu, pendant l’exécution de ces longues opérations. Pour plus d’informations, consultez [Afficher un écran de démarrage plus longtemps](create-a-customized-splash-screen.md) et cet [exemple d’écran de démarrage](https://go.microsoft.com/fwlink/p/?linkid=234889).
 
 Une fois lancée, l’application adopte l’état **Running** et l’écran de démarrage disparaît (ses ressources et objets sont effacés).
 
@@ -129,7 +129,7 @@ Sachez que, si elle application exécute une activité en arrière-plan, votre a
 
 ### <a name="asynchronous-work-and-deferrals"></a>Tâches asynchrones et reports
 
-Si vous effectuez un appel asynchrone dans votre gestionnaire, le contrôle revient immédiatement de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](http://aka.ms/Kt66iv) sur l’objet [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) sur l’objet [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) renvoyé.
+Si vous effectuez un appel asynchrone dans votre gestionnaire, le contrôle revient immédiatement de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](https://aka.ms/Kt66iv) sur l’objet [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) sur l’objet [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) renvoyé.
 
 Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu'à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deuxéventualités prévalant*.
 
@@ -191,7 +191,7 @@ Nous recommandons que les applications ne puissent se fermer par programme qu’
 
 La procédure en cas de blocage du système est conçue pour permettre aux utilisateurs de revenir à ce qu’ils étaient en train de faire, aussi rapidement que possible. Vous ne devez pas fournir de boîte de dialogue d’avertissement ou d’autres notifications, car celles-ci retarderont l’utilisateur.
 
-Si votre application se bloque, cesse de répondre ou génère une exception, un rapport de problèmes est envoyé à Microsoft via les [paramètres de commentaires et diagnostics](http://go.microsoft.com/fwlink/p/?LinkID=614828) de l’utilisateur. Microsoft vous fournit un sous-ensemble des données d’erreur dans le rapport de problèmes pour que vous puissiez les utiliser afin d’améliorer votre application. Vous pouvez consulter ces données dans la page Qualité du tableau de bord.
+Si votre application se bloque, cesse de répondre ou génère une exception, un rapport de problèmes est envoyé à Microsoft via les [paramètres de commentaires et diagnostics](https://go.microsoft.com/fwlink/p/?LinkID=614828) de l’utilisateur. Microsoft vous fournit un sous-ensemble des données d’erreur dans le rapport de problèmes pour que vous puissiez les utiliser afin d’améliorer votre application. Vous pouvez consulter ces données dans la page Qualité du tableau de bord.
 
 Lorsque l’utilisateur active une application après une panne, son gestionnaire d’événements d’activation reçoit une valeur [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) de **NotRunning** et doit afficher son interface utilisateur et ses données d’origine. Après une panne, n’utilisez pas de manière automatique les données d’application utilisées pour **Resuming** avec **Suspended**, car ces données peuvent être endommagées. Consultez [Recommandations en matière d’interruption et de reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088).
 

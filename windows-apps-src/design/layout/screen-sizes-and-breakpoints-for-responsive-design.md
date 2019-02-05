@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0959c9bc09782538cdb15a68c46b0797d4b7d230
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925651"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048136"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
@@ -90,7 +90,7 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Utilisez jusqu’à deuxcolonnes/zones.
 - Affichez la zone de recherche.
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode partiel de manière à ce qu’une bande étroite d’icônes soit toujours affichée.
-- Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](http://go.microsoft.com/fwlink/?LinkId=760736).
+- Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](https://go.microsoft.com/fwlink/?LinkId=760736).
 
 ### <a name="large"></a>Grande
 - Définissez une marge de 24px de part et d’autre de la fenêtre afin de créer une séparation visuelle au niveau des bords gauche et droit de la fenêtre de l’application.
@@ -100,6 +100,6 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode ancré pour qu’il soit toujours affiché.
 
 >[!TIP] 
-> Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows 10 compatibles à un moniteur, souris et clavier à apporter leurs téléphones fonctionnent comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
+> Avec [**Continuum pour téléphones**](https://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows 10 compatibles à un moniteur, souris et clavier à apporter leurs téléphones fonctionnent comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
 
 

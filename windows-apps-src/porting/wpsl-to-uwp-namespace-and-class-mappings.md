@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9acd42f57117fb01eef4ba8f87d35664be21cf32
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926209"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048819"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>Mappage des API UWP WindowsPhone Silverlight
 
@@ -28,7 +28,7 @@ En outre, dans une application Windows 10, vous pourrez bénéficier du code nat
 | WindowsPhone Silverlight | Windows Runtime |
 | ------------------------- | --------------- |
 | Publicité | |
-| Classe **Microsoft.Advertising.Mobile.UI.AdControl** | Classe [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) |
+| Classe **Microsoft.Advertising.Mobile.UI.AdControl** | Classe [AdControl](https://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) |
 | Alarmes, rappels et agents d’arrière-plan | |
 | Classe **Microsoft.Phone.BackgroundAgent** | Classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) |
 | Espace de noms **Microsoft.Phone.Scheduler** | Espace de noms [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) |
@@ -52,11 +52,11 @@ En outre, dans une application Windows 10, vous pourrez bénéficier du code nat
 | (SWT = **System.Windows.Threading**) <br/> Classe **SWT.DispatcherTimer** | Classe [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) |
 | Blend pour Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> Classe **MEDC.GeometryHelper** | Aucun équivalent direct |
-| Espace de noms **Microsoft.Expression.Interactivity** | Espace de noms [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) |
-| Espace de noms **Microsoft.Expression.Interactivity.Core** | Espace de noms [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) |
+| Espace de noms **Microsoft.Expression.Interactivity** | Espace de noms [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) |
+| Espace de noms **Microsoft.Expression.Interactivity.Core** | Espace de noms [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> Classe **MEIC.ExtendedVisualStateManager** | Aucun équivalent direct |
 | Espace de noms **Microsoft.Expression.Interactivity.Input** | Aucun équivalent direct |
-| Espace de noms **Microsoft.Expression.Interactivity.Media** | Espace de noms [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) |
+| Espace de noms **Microsoft.Expression.Interactivity.Media** | Espace de noms [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) |
 | Espace de noms **Microsoft.Expression.Shapes** | Aucun équivalent direct |
 | (MI = **Microsoft.Internal**) <br/> Interface **MI.IManagedFrameworkInternalHelper** | Aucun équivalent direct |
 | Données de contacts et calendrier | |
@@ -109,7 +109,7 @@ En outre, dans une application Windows 10, vous pourrez bénéficier du code nat
 | Classes **Microsoft.Devices.Camera** et **Microsoft.Devices.PhotoCamera** | Classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124). Également la classe [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) (Windows uniquement). |
 | Classe **Microsoft.Devices.CameraButtons** | Classe [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) |
 | Classe **Microsoft.Devices.CameraVideoBrushExtensions** | Classe [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) |
-| Classe **Microsoft.Devices.Environment** | Aucun équivalent direct. Pour contourner ce problème, utilisez la compilation conditionnelle et définissez un symbole personnalisé. Vous pouvez peut-être concevoir une solution de contournement à l’aide de la propriété [IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx). |
+| Classe **Microsoft.Devices.Environment** | Aucun équivalent direct. Pour contourner ce problème, utilisez la compilation conditionnelle et définissez un symbole personnalisé. Vous pouvez peut-être concevoir une solution de contournement à l’aide de la propriété [IsAttached](https://msdn.microsoft.com/library/e299w87h.aspx). |
 | Classe **Microsoft.Devices.MediaHistory** | Aucun équivalent direct |
 | Classe **Microsoft.Devices.VibrateController** | Classe [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) |
 | Classe **Microsoft.Devices.Radio.FMRadio** | Aucun équivalent direct |
@@ -121,7 +121,7 @@ En outre, dans une application Windows 10, vous pourrez bénéficier du code nat
 | (ST = **System.Threading**) <br/> Propriété **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Propriété **S.CultureInfo.CurrentCulture** |
 | (ST = **System.Threading**) <br/> Propriété **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Propriété **S.CultureInfo.CurrentUICulture** |
 | Graphismes et animation | |
-| Espaces de noms**Microsoft.Xna.Framework.\***, [Bibliothèque de classes de XNA Framework](http://go.microsoft.com/fwlink/p/?LinkId=263769), [Bibliothèque de classes du contenu à venir](http://go.microsoft.com/fwlink/p/?LinkId=263770) | Aucun équivalent direct. En règle générale, utilisez [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) avec C++. Voir [Développement de jeux](https://msdn.microsoft.com/library/windows/apps/hh452744) et [Interopérabilité de DirectX et XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
+| Espaces de noms**Microsoft.Xna.Framework.\***, [Bibliothèque de classes de XNA Framework](https://go.microsoft.com/fwlink/p/?LinkId=263769), [Bibliothèque de classes du contenu à venir](https://go.microsoft.com/fwlink/p/?LinkId=263770) | Aucun équivalent direct. En règle générale, utilisez [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) avec C++. Voir [Développement de jeux](https://msdn.microsoft.com/library/windows/apps/hh452744) et [Interopérabilité de DirectX et XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
 | Classe **Microsoft.Xna.Framework.Audio.Microphone** | Classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) |
 | Classe **Microsoft.Xna.Framework.Audio.SoundEffect** | Classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) |
 | Espace de noms **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> Espace de noms [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) |

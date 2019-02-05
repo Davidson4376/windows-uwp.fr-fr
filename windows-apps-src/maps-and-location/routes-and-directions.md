@@ -6,12 +6,12 @@ ms.date: 09/20/2017
 ms.topic: article
 keywords: windows10, uwp, itinéraire, carte, localisation, indications
 ms.localizationpriority: medium
-ms.openlocfilehash: dd93a092ee0db0821e9326d0f9ffa86890850b87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 218ca052a3e525a1f7cfc2ce18542a5a30c61e5e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944623"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049256"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Afficher des itinéraires et indications sur une carte
 
@@ -20,7 +20,7 @@ ms.locfileid: "8944623"
 Demandez des itinéraires et indications, et affichez-les dans votre app.
 
 >[!Note]
->Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’[exemple de carte pour plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
+>Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’[exemple de carte pour plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 >Si la cartographie n’est pas une fonction essentielle de votre app, envisagez de lancer l’app Cartes Windows à la place. Vous pouvez utiliser les schémas d’URI `bingmaps:`, `ms-drive-to:` et `ms-walk-to:` afin de lancer l’application Cartes Windows en accédant à des cartes, itinéraires et indications étape par étape spécifiques. Pour plus d’informations, voir [Lancer l’application Cartes Windows](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
  
@@ -242,7 +242,7 @@ private async void ShowRouteOnMap()
 ## <a name="related-topics"></a>Rubriquesassociées
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)

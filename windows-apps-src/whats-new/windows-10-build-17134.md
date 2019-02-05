@@ -5,18 +5,18 @@ keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités
 ms.date: 4/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 72319e7d97bfaaff4595c56a09fb7d3a874faa50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 570e9c463175475db15bd15adbb6b9b88cb9ff39
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923214"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046279"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Nouveautés pour les développeurs dans Windows10, build17134
 
-Windows10, build 17134 (également appelée mise à jour d'avril ou version1803), en combinaison avec Visual Studio2017 et le kit de développement logiciel mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows10, build 17134 (également appelée mise à jour d'avril ou version1803), en combinaison avec Visual Studio2017 et le kit de développement logiciel mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
-Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d'instructions, susceptibles d'intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au SDK Windows, voir [Modifications apportées aux API de Windows10 build17134](windows-10-build-17134-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows10, voir [Nouveautés intéressantes de Windows10](http://go.microsoft.com/fwlink/?LinkId=823181). Voir également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour une vue d’ensemble des ajouts de fonctionnalités passés et futurs à la plateforme Windows.
+Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d'instructions, susceptibles d'intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au SDK Windows, voir [Modifications apportées aux API de Windows10 build17134](windows-10-build-17134-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows10, voir [Nouveautés intéressantes de Windows10](https://go.microsoft.com/fwlink/?LinkId=823181). Voir également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour une vue d’ensemble des ajouts de fonctionnalités passés et futurs à la plateforme Windows.
 
 ## <a name="design--ui"></a>Conception et interface utilisateur
 

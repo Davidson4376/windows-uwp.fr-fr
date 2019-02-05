@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c75a6c487fe4a7f7cb56deff869b36309a4b9c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921762"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050842"
 ---
 # <a name="conditional-xaml"></a>XAML conditionnel
 
@@ -59,7 +59,7 @@ Nous discuterons de ces méthodes plus en détail dans les sections suivantes de
 
 Dans cet exemple, vous allez afficher «Bonjour, XAMLconditionnel» comme contenu d’un bloc de texte si l’application s’exécute sur FallCreatorsUpdate ou version ultérieure. Par défaut, aucun contenu ne sera affiché si l’application s’exécute sur une version précédente.
 
-Tout d’abord, définissez un espace de noms personnalisé avec le préfixe «contract5Present» et utilisez l’espace de nomsXAML par défaut http://schemas.microsoft.com/winfx/2006/xaml/presentation)comme schéma contenant la propriété [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Pour rendre cet espace de noms conditionnel, ajoutez le séparateur «?». après le schéma.
+Tout d’abord, définissez un espace de noms personnalisé avec le préfixe «contract5Present» et utilisez l’espace de nomsXAML par défaut https://schemas.microsoft.com/winfx/2006/xaml/presentation)comme schéma contenant la propriété [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Pour rendre cet espace de noms conditionnel, ajoutez le séparateur «?». après le schéma.
 
 Définissez ensuite une instruction conditionnelle qui renvoie **true** sur les appareils exécutant FallCreatorsUpdate ou une version ultérieure Utilisez la méthode ApiInformation **IsApiContractPresent** pour vérifier la version5 de UniversalApiContract. La version5 de UniversalApiContract a été publiée avec FallCreatorsUpdate (SDK 16299).
 

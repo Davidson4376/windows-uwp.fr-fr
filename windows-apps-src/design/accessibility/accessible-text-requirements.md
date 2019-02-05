@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 888de987d507f0a1a21458c299605ebcc7b1bc70
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990472"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050742"
 ---
 # <a name="accessible-text-requirements"></a>Exigences de texte accessible  
 
@@ -28,13 +28,13 @@ Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’
 ## <a name="contrast-ratios"></a>Coefficients de contraste  
 Bien que les utilisateurs aient toujours la possibilité de basculer en mode de contraste élevé, la conception de votre application en ce qui concerne le texte doit considérer cette option comme un dernier recours. L’idéal consiste à s’assurer que le texte de votre application remplit certains critères établis quant au niveau de contraste entre le texte et son arrière-plan. L’évaluation du niveau de contraste est basée sur des techniques déterministes qui ne prennent pas en compte la teinte. Par exemple, si vous avez du texte rouge sur fond vert, ce texte risque de ne pas être lisible pour quelqu’un souffrant de daltonisme. La vérification et la correction du coefficient de contraste peuvent éliminer ce genre de problème d’accessibilité.
 
-Les recommandations en matière de contraste du texte documentées ici sont basées sur une norme d’accessibilité Web intitulée [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](http://go.microsoft.com/fwlink/p/?linkid=221823). Ces conseils se trouvent dans la spécification *Techniques W3C pour WCAG 2.0*.
+Les recommandations en matière de contraste du texte documentées ici sont basées sur une norme d’accessibilité Web intitulée [G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://go.microsoft.com/fwlink/p/?linkid=221823). Ces conseils se trouvent dans la spécification *Techniques W3C pour WCAG 2.0*.
 
 Pour être considéré comme accessible, le texte visible doit présenter un coefficient de contraste de luminosité minimal de 4,5 pour 1 par rapport à l’arrière-plan. Les exceptions comprennent les logos et le texte accessoire tel que le texte qui fait partie d’un composant d’interface utilisateur inactif.
 
 Le texte décoratif et qui ne véhicule aucune information est exclu. Par exemple, si des mots aléatoires sont utilisés pour créer un arrière-plan, et que ces mots peuvent être réorganisés ou remplacés sans changer le sens, ils sont considérés comme étant décoratifs et n’ont pas besoin de répondre à ce critère.
 
-Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
+Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
 > Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à saisir manuellement des valeurs de couleur de premierplan et d’arrière-plan dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application, puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran.
@@ -129,8 +129,8 @@ Les utilisateurs peuvent avoir des difficultés à lire le texte d’une applica
 Une fois que vous avez terminé l’évident, Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti des et ajuster à leurs propres besoins et préférences pour la lecture de texte. Ces situations sont les suivantes :
 
 * La Loupe, ce qui vous permet d’agrandir une zone sélectionnée de l’interface utilisateur. Vous devez vous assurer de que la disposition du texte dans votre application ne rendre difficiles à utiliser la loupe pour la lecture.
-* Paramètres globaux de mise à l’échelle et la résolution dans **Paramètres -> système -> Affichage -> mise à l’échelle et disposition**. Exactement les options de dimensionnement disponibles varient comme cela varie selon les fonctionnalités du périphérique d’affichage.
-* Paramètres de taille de texte dans **Paramètres-& gt; Options d’ergonomie-& gt; affichage**. Réglez le paramètre de **rendre le texte plus grand** pour ne spécifier que la taille du texte prise en charge des contrôles sur toutes les applications et tous les écrans (tous les contrôles de texte UWP prennent en charge le texte expérience sans aucune personnalisation ou la création de modèles de mise à l’échelle). 
+* Paramètres de mise à l’échelle et la résolution globaux dans **paramètres->System->Display->Scale et la disposition**. Exactement les options de dimensionnement disponibles varient comme cela varie selon les fonctionnalités du périphérique d’affichage.
+* Paramètres de taille de texte dans les **paramètres->Ease d’accès->Display**. Réglez le paramètre de **rendre le texte plus grand** pour ne spécifier que la taille du texte prise en charge des contrôles sur toutes les applications et tous les écrans (tous les contrôles de texte UWP prennent en charge le texte expérience sans aucune personnalisation ou la création de modèles de mise à l’échelle). 
 > [!NOTE]
 > Le paramètre **Vérifier tout plus large** permet à un utilisateur de spécifier leur taille par défaut pour le texte et les applications en général sur leur écran principal uniquement.
 
@@ -186,6 +186,6 @@ Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :
 * [Mise à l’échelle du texte](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Accessibilité](accessibility.md)
 * [Informations d’accessibilité élémentaires](basic-accessibility-information.md)
-* [Exemple d’affichage de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238579)
-* [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [Exemple d’affichage de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=238579)
+* [Exemple de modification de texte XAML](https://go.microsoft.com/fwlink/p/?linkid=251417)
+* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570) 

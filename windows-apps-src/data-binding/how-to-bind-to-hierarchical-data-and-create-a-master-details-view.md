@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 194bbeefbd3ca5f8237bb3449ec935211056aea3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923681"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049094"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Lier des données hiérarchiques et créer un affichage maître/détails
 
 
 
-> **Remarque**consultez également l' [exemple maître/détails](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Remarque**consultez également l' [exemple maître/détails](https://go.microsoft.com/fwlink/p/?linkid=619991).
 
 Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) lorsque cela est possible et l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante), si nécessaire.
 

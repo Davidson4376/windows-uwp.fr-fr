@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037351"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049114"
 ---
 # <a name="reveal-focus"></a>Révéler Focus
 
@@ -163,7 +163,7 @@ Si vous souhaitez utiliser uniquement l’éclat sans le visuel du focus princip
 
 ## <a name="use-your-own-focus-visuals"></a>Utiliser vos propres visuels de focus
 
-Une autre façon de personnaliser le Focus de révéler consiste à désactiver les visuels de focus fournis par le système en dessinant vos propres à l’aide des états visuels. Pour plus d’informations, voir [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895).
+Une autre façon de personnaliser le Focus de révéler consiste à désactiver les visuels de focus fournis par le système en dessinant vos propres à l’aide des états visuels. Pour plus d’informations, voir [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895).
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Révéler Focus et Fluent Design System
@@ -175,7 +175,7 @@ Révéler que focus est un composant de Fluent Design System qui ajoute de la lu
 - [Principales fonctionnalités de révéler](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Conception pour Xbox et TV](/windows/uwp/design/devices/designing-for-tv)
 - [Interactions entre le boîtier de commande et la télécommande](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 - [Effets de composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [De la science dans le système: Fluent Design et la Profondeur](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [De la science dans le système: Fluent Design et la Lumière](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

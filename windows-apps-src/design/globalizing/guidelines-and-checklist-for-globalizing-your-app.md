@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2dc5186c028aa8f20c2cc1d697f1749b4f1765
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bdc7e5de3be941f2622c04d515e5e1211247b9a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930680"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047241"
 ---
 # <a name="guidelines-for-globalization"></a>Directives en matière de globalisation
 
@@ -29,7 +29,7 @@ Concevez et développez votre application afin qu'elle fonctionne de manière ap
 | Prenez en charge les formats de papier internationaux. | Les formats de papier les plus courants diffèrent entre les pays. Par conséquent, si vous incluez des fonctionnalités qui dépendent du format de papier telles que l’impression, veillez à prendre en charge et tester les formats internationaux courants. |
 | Enregistrez la langue du clavier ou de l’IME. | Lorsque votre application invite l'utilisateur à saisir du texte, enregistrez la balise de langue pour le type de clavier actuellement activé ou l'éditeur de mode de saisi (IME). Cela garantit que, lorsque la saisie est affichée ultérieurement, elle sera présentée à l’utilisateur dans le format approprié. Utilisez la propriété [**Language.CurrentInputMethodLanguageTag**](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag) pour obtenir la langue d’entrée actuelle. |
 | N’utilisez pas la langue pour supposer la région d’un utilisateur et n’utilisez pas la région pour supposer la langue d’un utilisateur. | La langue et la région sont des concepts distincts. Un utilisateur peut parler une variante régionale d’une langue, telle qu’en-GB pour l’anglais parlé en Grande-Bretagne, tout en étant situé dans un autre pays ou région. Déterminez si votre application requière une connaissance de la langue de l’utilisateur (par exemple pour le texte de l’interface utilisateur) ou de son emplacement géographique (par exemple pour la licence). Pour plus d'informations, consultez [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](manage-language-and-region.md). |
-| Les règles de comparaison des balises de langue ne sont pas insignifiantes. | [Les balises de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) sont complexes. Il existe un certain nombre de problèmes lors de la comparaison de balises de langue, dont notamment des problèmes de correspondance entre les informations de script, les balises héritées et les différentes variantes régionales. Le système de gestion des ressources dans Windows s’occupe des correspondances pour vous. Vous pouvez spécifier un ensemble de ressources dans des langues quelconques et le système choisit celle qui est appropriée pour l’utilisateur et l’application. Consultez [Ressources d'application et système de gestion des ressources](../../app-resources/index.md) et [Comment le système de gestion de ressources fait correspondre les balises de langue](../../app-resources/how-rms-matches-lang-tags.md). |
+| Les règles de comparaison des balises de langue ne sont pas insignifiantes. | [Les balises de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) sont complexes. Il existe un certain nombre de problèmes lors de la comparaison de balises de langue, dont notamment des problèmes de correspondance entre les informations de script, les balises héritées et les différentes variantes régionales. Le système de gestion des ressources dans Windows s’occupe des correspondances pour vous. Vous pouvez spécifier un ensemble de ressources dans des langues quelconques et le système choisit celle qui est appropriée pour l’utilisateur et l’application. Consultez [Ressources d'application et système de gestion des ressources](../../app-resources/index.md) et [Comment le système de gestion de ressources fait correspondre les balises de langue](../../app-resources/how-rms-matches-lang-tags.md). |
 | Il convient de concevoir votre interface utilisateur pour accommoder les différentes longueurs de texte et tailles de police, ainsi que les contrôles de saisie de texte. | Dans la mesure où la longueur des chaînes traduites vers différentes langues peuvent varier, vos contrôle d'interface utilisateur devront se dimensionner de façon dynamique à leur contenu. Les caractères courants dans d'autres langues incluent certains symboles inférieurs ou supérieurs qui ne sont pas courants en Anglais (par exemple, Å ou Ņ). Utilisez les tailles de police et les hauteurs de ligne standard pour fournir un espace vertical adéquat. N'oubliez pas que les polices d'autres langues peuvent nécessite des tailles de police minimum plus grande pour rester lisible. Consultez les clases de l'espace de noms [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live). |
 | Prenez en charge la mise en miroir de l'ordre de lecture. | L’alignement de texte et le sens de lecture peuvent être de gauche à droite (par exemple, comme en français) ou de droite à gauche (DàG, comme en arabe ou en hébreu). Si vous localisez votre produit dans des langues qui utilisent un sens de lecture différent du vôtre, veillez à ce que la disposition de vos éléments d’interface utilisateur prenne en charge la mise en miroir. Même des éléments tels que les boutons Précédent, les effets de transition de l’interface utilisateur et les images peuvent avoir à être mis en miroir. Pour plus d’informations, consultez [Ajuster la disposition et les polices, prendre en charge l'écriture DàG](adjust-layout-and-fonts--and-support-rtl.md). |
 | Affichez correctement le texte et les polices. | Les paramètres optimaux de police, taille de police et direction du texte varient en fonction des différents marchés. Pour plus d’informations, consultez [**Ajuster la disposition et les polices, prendre en charge l'écriture DàG**](adjust-layout-and-fonts--and-support-rtl.md) et [Polices internationales](loc-international-fonts.md). |
@@ -46,7 +46,7 @@ Concevez et développez votre application afin qu'elle fonctionne de manière ap
 * [Recommendations en matière d'utilisation des chaînes](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
 * [Globaliser vos formats de date/heure/chiffres](use-global-ready-formats.md)
 * [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](manage-language-and-region.md)
-* [Balises de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balises de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Ressources d’application et système de gestion des ressources](../../app-resources/index.md)
 * [Comment le système de gestion des ressources met en correspondance les balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
 * [Ajuster la disposition et les polices, et prendre en charge l'écriture DàG](adjust-layout-and-fonts--and-support-rtl.md)
@@ -55,4 +55,4 @@ Concevez et développez votre application afin qu'elle fonctionne de manière ap
 
 ## <a name="samples"></a>Exemples
 
-* [Exemple de préférences de globalisation](http://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Exemple de préférences de globalisation](https://go.microsoft.com/fwlink/p/?linkid=231608)

@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: e2c1be80ada3e337a4bf7353b854ae4cbe5bd99a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990327"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050982"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
 Cet article explique comment utiliser la classe **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des API du Gestionnaire de comptes web de Windows10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers sur leur compte OneDrive). Pour obtenir l’autorisation et l’accès utilisateur, les étapes sont similaires quel que soit le fournisseur d’identité, à condition qu’il prenne en charge le Gestionnaire de compte web.
 
 > [!NOTE]
-> Pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620621).
+> Pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
 
 ## <a name="get-set-up"></a>Préparation
 
@@ -430,6 +430,6 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 
 [Service Broker d’authentification web](web-authentication-broker.md)
 
-[Exemple de gestion de comptes web](http://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Exemple de gestion de comptes web](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 [Application de planification de déjeuners](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

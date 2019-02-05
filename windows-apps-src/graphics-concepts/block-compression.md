@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b7726067055b92ae51c01d4d056a2a11624204db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934348"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047208"
 ---
 # <a name="block-compression"></a>Compression de blocs
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-Pour réinterpréter «f» comme type de «u», utilisez [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx):
+Pour réinterpréter «f» comme type de «u», utilisez [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx):
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-Dans la réinterprétation précédente, la valeur sous-jacente des données ne change pas; [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) réinterprète la virgule flottante en tant qu’entier non signé.
+Dans la réinterprétation précédente, la valeur sous-jacente des données ne change pas; [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) réinterprète la virgule flottante en tant qu’entier non signé.
 
 Pour effectuer le type de conversion le plus courant, utilisez l’attribution suivante:
 

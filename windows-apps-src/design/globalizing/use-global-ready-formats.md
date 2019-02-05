@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a2b0125944a8a4db66b41d26fcd4a0aa35b5b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933749"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048606"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>Globaliser vos formats de date/heure/chiffres
 
@@ -173,7 +173,7 @@ Pour les scénarios dans lesquels les fonctionnalités offertes varient seulemen
 
 ## <a name="samples"></a>Exemples
 
-* [Exemple de détails et d’opérations mathématiques dans un calendrier](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Exemple de mise en forme des dates et heures](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [Exemple de préférences de globalisation](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Exemple de mise en forme et d’analyse des nombres](http://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Exemple de détails et d’opérations mathématiques dans un calendrier](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [Exemple de mise en forme des dates et heures](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [Exemple de préférences de globalisation](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Exemple de mise en forme et d’analyse des nombres](https://go.microsoft.com/fwlink/p/?linkid=231620)

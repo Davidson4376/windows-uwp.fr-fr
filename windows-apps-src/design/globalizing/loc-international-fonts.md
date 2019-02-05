@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c525c79287a81421c68fca5bed3393b4d230d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942683"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046652"
 ---
 # <a name="international-fonts"></a>Polices internationales
 
 Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que l’anglais des États-Unis.
 
-Dans le tableau suivant, la colonne «Balise de langue» répertorie la [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) de la langue. Pour obtenir la liste des balises de langue prises en charge par le MicrosoftStore, voir [Langues prises en charge](../../publish/supported-languages.md).
+Dans le tableau suivant, la colonne «Balise de langue» répertorie la [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) de la langue. Pour obtenir la liste des balises de langue prises en charge par le MicrosoftStore, voir [Langues prises en charge](../../publish/supported-languages.md).
 
 | Langue | Balise de langue | Police utilisé dans Windows |
 | --------- | ----------- | -------------------- |
@@ -135,5 +135,5 @@ La police Meiryo UI est utilisée dans Windows. Windows inclut Yu Gothic et Yu M
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Balise de langueBCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Balise de langueBCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Langues prises en charge](../../publish/supported-languages.md)

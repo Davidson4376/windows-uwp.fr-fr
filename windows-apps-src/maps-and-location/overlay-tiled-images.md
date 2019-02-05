@@ -6,18 +6,18 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows10, uwp, carte, emplacement, images, superposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b9c4335a99e7b0f17da0fb9ddb520cc917e398
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942301"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046432"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Superposer des images sous forme de vignettes sur une carte
 
 Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
 
-**Astuce** Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’exemple de carte pour [plateforme Windows universelle (UWP) ](http://go.microsoft.com/fwlink/p/?LinkId=619977) sur Github.
+**Astuce** Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’exemple de carte pour [plateforme Windows universelle (UWP) ](https://go.microsoft.com/fwlink/p/?LinkId=619977) sur Github.
 
 <a id="tileintro" />
 
@@ -35,7 +35,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 (Les coordonnées X et Y représentent l’emplacement de la vignette individuelle au sein de la carte du monde, au niveau de détail spécifié. Le système de numérotation des vignettes démarre à partir de la valeur {0, 0}, dans le coin supérieur gauche de la carte. Par exemple, la vignette située à {1, 2} se trouve dans la deuxième colonne de la troisième ligne de la grille de vignettes.)
 
-Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette CartesBing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette CartesBing](https://go.microsoft.com/fwlink/p/?LinkId=626692).
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>Superposer des vignettes à partir d’une source de vignette
 
@@ -421,7 +421,7 @@ Pour remplacer entièrement la carte par défaut par des vignettes personnalisé
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)

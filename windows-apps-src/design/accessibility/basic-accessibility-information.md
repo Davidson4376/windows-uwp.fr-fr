@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7526ec4f32f641f152709e6968f3dc442c2a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8320b2b4abb5e49bbf589b360cc9cc2e0e033f79
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934554"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050329"
 ---
 # <a name="expose-basic-accessibility-information"></a>Présenter des informations d’accessibilité élémentaires  
 
@@ -141,7 +141,7 @@ L’un des outils que vous pouvez utiliser pour tester l’accessibilité s’ap
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>Noms accessibles tirés de données dynamiques  
-Windows prend en charge de nombreux contrôles qui peuvent servir à afficher des valeurs provenant d’une source de données associée, grâce à une fonctionnalité appelée *liaison de données*. Lors du remplissage de listes avec des éléments de données, vous devrez peut-être appliquer une technique qui définit les noms accessibles des éléments de listes liés aux données une fois la liste initiale remplie. Pour plus d’informations, voir « Scénario 4 » dans l’[Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
+Windows prend en charge de nombreux contrôles qui peuvent servir à afficher des valeurs provenant d’une source de données associée, grâce à une fonctionnalité appelée *liaison de données*. Lors du remplissage de listes avec des éléments de données, vous devrez peut-être appliquer une technique qui définit les noms accessibles des éléments de listes liés aux données une fois la liste initiale remplie. Pour plus d’informations, voir « Scénario 4 » dans l’[Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -157,5 +157,5 @@ Notez que les propriétés jointes telles les propriétés [**AutomationProperti
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Test de l’accessibilité](accessibility-testing.md)

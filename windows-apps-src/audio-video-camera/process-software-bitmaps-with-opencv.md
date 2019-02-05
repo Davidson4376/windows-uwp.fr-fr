@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f76744070a7557939d1d7f2307113852737072
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ccc3f22d0485faa0df01828f1a6f807d2a1ce555
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938567"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046898"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Traiter les images bitmaps avec OpenCV
 
@@ -20,7 +20,7 @@ Cet article explique comment utiliser la classe **[SoftwareBitmap](https://docs.
 Les exemples de cet article vous expliquent comment créer un composant Windows Runtime en code natif qui peuvent être utilisés à partir d’une application UWP, y compris une application créée avec C#. Ce composant d’assistance expose une méthode unique, **Blur**, qui utilisera la fonction de traitement flou d’image d'OpenCV. Le composant implémente les méthodes privées qui obtiennent un pointeur vers le tampon de données d’image sous-jacent. Celui-ci peut être utilisé directement par la bibliothèque OpenCV, ce qui permet d'étendre plus facilement le composant d’assistance de façon à implémenter d'autres fonctionnalités de traitement OpenCV. 
 
 * Pour une présentation de l’utilisation de la méthode **SoftwareBitmap**, consultez la section [Créer, modifier et enregistrer des images bitmap](imaging.md). 
-* Pour plus d’informations sur l’utilisation de la bibliothèque OpenCV, accédez à [http://opencv.org](http://opencv.org).
+* Pour plus d’informations sur l’utilisation de la bibliothèque OpenCV, accédez à [http://opencv.org](https://opencv.org).
 * Pour savoir comment utiliser le composant d’assistance OpenCV illustré dans cet article avec **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** pour implémenter le traitement d’images en temps réel des images à partir d’un appareil photo, consultez [Utiliser OpenCV avec MediaFrameReader](use-opencv-with-mediaframereader.md).
 * Pour obtenir un exemple de code complet qui implémente différents effets, voir la [Profils d’appareil photo + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) dans le référentiel Windows Universal Samples GitHub.
 

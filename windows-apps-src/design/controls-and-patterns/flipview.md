@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a34a53e5a332276c121324d9cf891a506aadb7f7
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: ac4e5bb7c761ad6661647cb88f831ffa652b6241
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037111"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048799"
 ---
 # <a name="flip-view"></a>Vue symétrique
 
@@ -204,7 +204,7 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ![Exemple d’indicateur de contexte](images/controls_contextindicator.jpg)
 
-Pour obtenir un exemple de code montrant comment ajouter un indicateur de contexte à un FlipView, consultez [Exemple de ListView XAML](http://go.microsoft.com/fwlink/p/?LinkID=311760).
+Pour obtenir un exemple de code montrant comment ajouter un indicateur de contexte à un FlipView, consultez [Exemple de ListView XAML](https://go.microsoft.com/fwlink/p/?LinkID=311760).
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 

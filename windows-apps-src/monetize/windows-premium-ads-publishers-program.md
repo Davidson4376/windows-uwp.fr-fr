@@ -5,16 +5,16 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows10, uwp, annonces, publicitaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 638854066c02edb923c8d4153f2125142d6b966b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1d747d35148965480cb34714cde7859203a7424d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941747"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050752"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Programme Éditeurs de publicités Premium Windows
 
-Dans le cadre de nos efforts en continu afin que les développeurs Windows MONÉTISER leurs applications par le biais de publicités, nous vous proposons le [Programme éditeurs de publicités Premium Windows](http://www.windowspremiumapps.com). Il s’agit d’une collection organisée de compatible annonce des applications et les jeux qui se trouvent en haut de gamme en termes d’utilisation, d’engagement et d’expérience. Ces applications et les jeux sont la visibilité certifiés et ait un public globalement distribué d’utilisateurs identifiables qui sont hautement enclenchée.
+Dans le cadre de nos efforts en continu afin que les développeurs Windows MONÉTISER leurs applications par le biais de publicités, nous vous proposons le [Programme éditeurs de publicités Premium Windows](https://www.windowspremiumapps.com). Il s’agit d’une collection organisée de compatible annonce des applications et les jeux qui se trouvent en haut de gamme en termes d’utilisation, d’engagement et d’expérience. Ces applications et les jeux sont la visibilité certifiés et ait un public globalement distribué d’utilisateurs identifiables qui sont hautement enclenchée.
 
 Les annonceurs à partir de réseaux publicitaires de nos partenaires peuvent identifier ces applications séparément et proposer des publicités à la premium, haut rendement exclusivement à ces applications pour le plus élevé retour sur investissement de leurs campagnes. Pour les développeurs, cela signifie que les applications qui font partie de ce programme peuvent obtenir plus de revenus publicitaires.
 

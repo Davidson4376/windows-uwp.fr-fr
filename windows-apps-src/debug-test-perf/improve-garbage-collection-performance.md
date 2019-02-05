@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3940f519706fba6d795d60344cbd83337ae482
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f22b893d0c55cb9220e0894527836a0bb5e750b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931094"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049856"
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)
 
 
 Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Remarque**intervenir dans le comportement par défaut du RÉCUPÉRATEUR est fortement indicatif générale des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
+**Remarque**intervenir dans le comportement par défaut du RÉCUPÉRATEUR est fortement indicatif générale des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](https://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
 
  
 

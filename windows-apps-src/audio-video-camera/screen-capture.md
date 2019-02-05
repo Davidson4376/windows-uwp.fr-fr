@@ -6,12 +6,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows10, uwp, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946500"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049976"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -166,7 +166,7 @@ Lorsque la méthode **Recreate** est appelée, toutes les images existantes sont
 L’extrait de code suivant est un exemple de bout en bout de l’implémentation de capture d’écran dans une application UWP. Dans cet exemple, nous avons un bouton dans le serveur frontal qui, lorsque vous cliquez dessus, appelle la méthode **Button_ClickAsync** .
 
 > [!NOTE]
-> Cet extrait de code utilise [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu des graphiques 2D. Consultez leur documentation pour savoir comment configurer pour votre projet.
+> Cet extrait de code utilise [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu des graphiques 2D. Consultez leur documentation pour savoir comment configurer pour votre projet.
 
 ```cs
 using Microsoft.Graphics.Canvas;

@@ -1,17 +1,17 @@
 ---
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
-title: Soumissions d’applications
+title: Soumissions d’application
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: liste de vérification, windows, uwp, soumission, soumettre, jeu, application
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 444243bdb1d50146ba54af4f1417103566f97f93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944360"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044912"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
@@ -21,7 +21,7 @@ Après avoir [créé votre application en réservant un nom](create-your-app-by-
 Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour apportées à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
 
 > [!NOTE]
-> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) actif dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour pouvoir soumettre des applications dans le Microsoft Store.
+> Vous devez disposer d’un [compte de développeur](https://go.microsoft.com/fwlink/p/?LinkId=615100) actif dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour pouvoir soumettre des applications dans le Microsoft Store.
 
 Une fois que votre application est publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans l’espace partenaires. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **mise à jour** en regard de la soumission la plus récente affichée sur sa page de **présentation** . Vous pouvez également [Supprimer une application à partir du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour effectuer cette opération (et mettez-le à disposition plus tard, si vous souhaitez obtenir).
 
@@ -44,8 +44,8 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | **Public**                | Par défaut: public non privé | [Public](choose-visibility-options.md#audience) |
 | **Détectabilité**                | Par défaut: rendre cette application accessible et détectable dans le Store | [Détectabilité](choose-visibility-options.md#discoverability) |
 | **Planification**                  | Par défaut: publication dès que possible        | [Configurer une planification précise de la publication](configure-precise-release-scheduling.md) |
-| **Prix de base**                | Obligatoire                                    | [Définition et planification du prix de l’application](set-and-schedule-app-pricing.md)              |
-| **Essai gratuit**                | Par défaut: aucune version d'essai gratuit                      | [Essai gratuit](set-app-pricing-and-availability.md#free-trial)              |
+| **Prix de base**                | Requis                                    | [Définition et planification du prix de l’application](set-and-schedule-app-pricing.md)              |
+| **Évaluation gratuite**                | Par défaut: aucune version d'essai gratuit                      | [Essai gratuit](set-app-pricing-and-availability.md#free-trial)              |
 | **Prix de vente**              | Facultatif                                    | [Commercialiser des applications et composants additionnels](put-apps-and-add-ons-on-sale.md)           |
 | **Gestion des licences organisationnelles**    | Par défaut : autoriser l'acquisition en volume par des organisations | [Options de gestion des licences organisationnelles](organizational-licensing.md)        |
       |
@@ -93,7 +93,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Description**               | Obligatoire                                    | [Rédiger une description convaincante de l’application](write-a-great-app-description.md) |
 | **Nouveautés de cette version**   | Facultatif                                 | [Notes de publication](create-app-store-listings.md#whats-new-in-this-version)       |
 | **Fonctionnalités de l’application**              | Facultatif                                    | [Fonctionnalités du produit](create-app-store-listings.md#product-features)         |
-| **Captures d'écran**               | Obligatoire (au moins une capture d’écran, quatre ou plus recommandées)          | [Captures d'écran](app-screenshots-and-images.md#screenshots)          |
+| **Captures d’écran**               | Obligatoire (au moins une capture d’écran, quatre ou plus recommandées)          | [Captures d'écran](app-screenshots-and-images.md#screenshots)          |
 | **Logos Store**               | Recommandé; obligatoire pour certaines versions du système d’exploitation | [Logos Store](app-screenshots-and-images.md#store-logos)             |
 | **Bandes-annonces**                  | Facultatif                                    | [Bandes-annonces](app-screenshots-and-images.md#trailers)                | 
 | **Image Windows10 et Xbox (Image principale super16:9)**     | Nos recommandations        | [Image Windows 10 et Xbox (art d’image principale Super 16:9)

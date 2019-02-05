@@ -6,16 +6,16 @@ ms.date: 08/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, éducation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f308e42e1dbb1d3654d3fc557a9d5e29ef6f6b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933127"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049366"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
 
-[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui génère des évaluations en ligne verrouillé pour les tests stratégiques, ce qui permet aux enseignants de se concentrer sur l’évaluation de contenu au lieu de la façon de fournir un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
+[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui génère des évaluations en ligne verrouillé pour les tests stratégiques, ce qui permet aux enseignants de se concentrer sur l’évaluation de contenu au lieu de la façon de fournir un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
 
 Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, consultez [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
 
@@ -205,7 +205,7 @@ Obtient la liste des adresses MAC pour l’appareil. L’application de test doi
 **Paramètres**  
 * `callback` - Fonction à appeler lorsque cet appel est terminé. Elle doit être au format: `Function(String addressArray)` où `addressArray` est au format:`"['00:11:22:33:44:55','etc']"`.
 
-**Notes**  
+**Remarques**  
 Il est difficile de s’appuient sur les adressesIP sources pour faire la distinction entre les ordinateurs utilisateur final dans les serveurs de tests, car les pare-feu/NAT/proxys sont couramment utilisés dans les établissements scolaires. Les adresses MAC permettent à l’application de faire la distinction entre les ordinateurs clients finaux derrière un pare-feu commun à des fins de diagnostic.
 
 **Configuration requise**  

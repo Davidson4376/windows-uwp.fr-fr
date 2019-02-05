@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9714488473bf4bdc118fd56129ea67e00019dcb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934764"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047341"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>Effets d’analyse de cadres caméra
 
@@ -97,7 +97,7 @@ Si vous voulez effectuer des actions une fois la détection effectuée, comme de
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-Dans le gestionnaire de l’événement, vous pouvez obtenir une liste de tous les visages détectés dans une trame en accédant à la propriété [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) de la classe [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774). La propriété [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) est une structure [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) qui décrit le rectangle contenant le visage détecté sous forme d’unités par rapport aux dimensions du flux d’aperçu. Pour afficher l’exemple de code qui transforme les coordonnés du flux d’aperçu en coordonnées d’écran, voir l’[exemple de détection des visages UWP](http://go.microsoft.com/fwlink/?LinkId=619486).
+Dans le gestionnaire de l’événement, vous pouvez obtenir une liste de tous les visages détectés dans une trame en accédant à la propriété [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) de la classe [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774). La propriété [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) est une structure [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) qui décrit le rectangle contenant le visage détecté sous forme d’unités par rapport aux dimensions du flux d’aperçu. Pour afficher l’exemple de code qui transforme les coordonnés du flux d’aperçu en coordonnées d’écran, voir l’[exemple de détection des visages UWP](https://go.microsoft.com/fwlink/?LinkId=619486).
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 

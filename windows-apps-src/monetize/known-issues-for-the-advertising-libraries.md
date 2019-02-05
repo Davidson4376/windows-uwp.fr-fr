@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939377"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049177"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 
@@ -48,7 +48,7 @@ Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment 
 
 Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/en-us/windows/support). Dans cette page, choisissez **Contactez-nous**.
 
-Vous pouvez également publier une question sur le [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
+Vous pouvez également publier une question sur le [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
@@ -91,7 +91,7 @@ La définition des propriétés associées aux bordures, héritées par la class
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
+Pour plus d’informations sur les derniers problèmes connus et pour publier des questions liées au SDK Microsoft Advertising, visitez le [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
  
 

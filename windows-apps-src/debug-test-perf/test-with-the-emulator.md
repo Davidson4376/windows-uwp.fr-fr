@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df03c6f10f106868213fe812b2f303d7675c567b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942593"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050126"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -237,7 +237,7 @@ Vous pouvez également utiliser l’outil de simulation de terminal de MasterCar
 -   Activez la case à cocher de l’écouteur **Activer MasterCard** sous les fenêtres de l’éditeur de script et lancez le simulateur de MasterCard.
 -   Grâce à cet outil, vous pouvez générer des commandes qui sont transmises à votre application exécutée sur l’émulateur par le biais de l’outil NFC.
 
-Pour en savoir plus sur la prise en charge de l’émulationHCE et le développement d’applicationsHCE dans Windows10Mobile, consultez le [blog de l’équipe NFC de Microsoft](http://go.microsoft.com/fwlink/?LinkId=534749).
+Pour en savoir plus sur la prise en charge de l’émulationHCE et le développement d’applicationsHCE dans Windows10Mobile, consultez le [blog de l’équipe NFC de Microsoft](https://go.microsoft.com/fwlink/?LinkId=534749).
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>Création de scripts pour les tests HCE
 
@@ -656,7 +656,7 @@ Pour désactiver l’accélération matérielle:
 
 ## <a name="support-resources"></a>Ressources de support
 
-Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows10, consultez le [forum sur les outils Windows 10](http://go.microsoft.com/fwlink/?LinkId=534765). Pour voir tous les forums ayant trait au développement Windows10, cliquez sur [ce lien](http://go.microsoft.com/fwlink/?LinkId=535000).
+Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows10, consultez le [forum sur les outils Windows 10](https://go.microsoft.com/fwlink/?LinkId=534765). Pour voir tous les forums ayant trait au développement Windows10, cliquez sur [ce lien](https://go.microsoft.com/fwlink/?LinkId=535000).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

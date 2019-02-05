@@ -8,12 +8,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: bceb36516d542503fe665f0b793cd960bb6171e2
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037281"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044280"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  
@@ -132,6 +132,6 @@ Obtenez l'application _Galerie de contrôles XAML_ à partir du MicrosoftStore p
 
 ## <a name="additional-controls"></a>Contrôles supplémentaires
 
-Les contrôles supplémentaires pour le développementUWP sont disponibles auprès de sociétés comme <a href="http://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="http://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> et <a href="http://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.  
+Les contrôles supplémentaires pour le développementUWP sont disponibles auprès de sociétés comme <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> et <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.  
 
 Si vous souhaitez en savoir plus sur ces contrôles, consultez l’exemple de <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">base de données de commande clients</a> sur GitHub. Cet exemple utilise le contrôle de grille de données et la validation de saisie des données de Telerik, qui font partie intégrante de leur interface utilisateur de la suiteUWP. L’interface utilisateur de la suiteUWP est une collection de plus de 20commandes, disponible sous la forme de projetOpenSource via .NET Foundation.

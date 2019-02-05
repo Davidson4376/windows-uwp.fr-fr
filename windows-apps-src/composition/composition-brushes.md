@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c995c5a9513bea44664bcb395cd604ba2668c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7a7f080a3de18ec0acc8fe68d8f0282d92f46125
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926355"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050992"
 ---
 # <a name="composition-brushes"></a>Pinceaux de composition
 Tous les éléments visibles à l’écran à partir d’une application UWP sont visible dans la mesure où il a été peint par un pinceau. Pinceaux activer vous permettent de peindre des objets d’interface (UI) utilisateur avec le contenu allant de couleurs simples et solides pour les images ou des dessins chaîne d’effets complexes. Cette rubrique présente les concepts de peinture avec CompositionBrush.
@@ -134,9 +134,9 @@ _imageVisual.Size = new Vector2(156, 156);
 ```
 
 ### <a name="paint-with-a-custom-drawing"></a>Peindre avec un dessin personnalisé
-Un [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) peut également être utilisé pour peindre une zone avec des pixels à partir d’un ICompositionSurface rendus à l’aide de [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm) (ou D2D).
+Un [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) peut également être utilisé pour peindre une zone avec des pixels à partir d’un ICompositionSurface rendus à l’aide de [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm) (ou D2D).
 
-Le code suivant montre qu'un élément SpriteVisual peint avec une exécution rendue sur une ICompositionSurface de texte à l’aide de Win2D. Notez que pour pouvoir utiliser Win2D, vous devez inclure le package [NuGet Win2D](http://www.nuget.org/packages/Win2D.uwp) dans votre projet.
+Le code suivant montre qu'un élément SpriteVisual peint avec une exécution rendue sur une ICompositionSurface de texte à l’aide de Win2D. Notez que pour pouvoir utiliser Win2D, vous devez inclure le package [NuGet Win2D](https://www.nuget.org/packages/Win2D.uwp) dans votre projet.
 
 ```cs
 Compositor _compositor;
@@ -444,7 +444,7 @@ Le tableau suivant fournit une liste des scénarios et si XAML ou Composition, u
 |Peindre une zone avec animée NineGrid stretch                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Peindre une zone avec une chaîne d’échange                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) avec l’interopérabilité de chaîne d’échange
 |Peindre une zone avec une vidéo                                                 |[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272.aspx)                                                                                                  |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) avec l’interopérabilité multimédia
-|Peindre une zone avec un dessin 2D personnalisé                                       |[CanvasControl](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) à partir de Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) avec l’interopérabilité Win2D
+|Peindre une zone avec un dessin 2D personnalisé                                       |[CanvasControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) à partir de Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) avec l’interopérabilité Win2D
 |Peindre une zone avec masque non animées                                       |Utilisez les [formes](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes) XAML pour définir un masque   |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Peindre une zone avec un masque animé.                                        |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)                                                                                           |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Peindre une zone avec un effet de filtre animé                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)

@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 006507d4665f5578310b8d3e31fb8f7fba4117a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f9e1f285f53f2f4c9f160b573141666609560c00
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934744"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049756"
 ---
 # <a name="enterprise-shared-storage"></a>Stockage partagé d’entreprise
 
-Le stockage partagé se compose de deux emplacements où les applications dotées de la fonctionnalité restreinte **enterpriseDeviceLockdown** et d’un certificat d’entreprise disposent d’un accès complet en lecture et écriture. Notez que la fonctionnalité **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagés de l’entreprise. Pour plus d’informations sur l’API, voir l’espace de noms [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331).  
+Le stockage partagé se compose de deux emplacements où les applications dotées de la fonctionnalité restreinte **enterpriseDeviceLockdown** et d’un certificat d’entreprise disposent d’un accès complet en lecture et écriture. Notez que la fonctionnalité **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagés de l’entreprise. Pour plus d’informations sur l’API, voir l’espace de noms [**Windows.Embedded.DeviceLockdown**](https://go.microsoft.com/fwlink/?LinkId=699331).  
 
 Ces emplacements sont définis sur le disque local:
 - \Data\SharedData\Enterprise\Persistent
@@ -27,7 +27,7 @@ Stockage partagé d’entreprise prend en charge les scénarios suivants.
 
 - Vous pouvez partager des données au sein de l’ instance d’une application, entre les instances de la même application, ou encore entre les applications en supposant qu’elles disposent de la fonctionnalité et du certificat appropriés.
 - Vous pouvez stocker des données sur le disque dur local dans le dossier \Data\SharedData\Enterprise\Persistent qui seront conservées même après la réinitialisation de l’appareil.
-- Vous pouvez manipuler des fichiers (lecture, écriture, suppression) sur un appareil via le service de gestion des périphériques mobiles (GPM). Pour plus d’informations sur l’utilisation du stockage partagé d’entreprise, voir [Fournisseur de services de configuration (CSP) EnterpriseExtFileSystem](http://go.microsoft.com/fwlink/?LinkId=699333).
+- Vous pouvez manipuler des fichiers (lecture, écriture, suppression) sur un appareil via le service de gestion des périphériques mobiles (GPM). Pour plus d’informations sur l’utilisation du stockage partagé d’entreprise, voir [Fournisseur de services de configuration (CSP) EnterpriseExtFileSystem](https://go.microsoft.com/fwlink/?LinkId=699333).
 
 ## <a name="access-enterprise-shared-storage"></a>Accéder au stockage partagé d’entreprise
 

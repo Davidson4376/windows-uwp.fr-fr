@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: c27891b47bb9f7774799c912cc6f4cae3cea92bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944655"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046725"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>Utilisation de Fiddler avec XboxOne lors du développement pour UWP
 
@@ -19,14 +19,14 @@ Fiddler est un proxy de débogageweb qui consigne tout le trafic HTTP et HTTPS e
 
 En fonctionnement normal, une console qui communique via un proxy court le risque que ses communications soient modifiées par celui-ci, ce qui permet des triches éventuelles des joueurs. Par conséquent, les consoles sont conçues pour ne pas autoriser les communications via un proxy. SI vous utilisez Fiddler avec votre kit de développement XboxOne, vous devez effectuer une configuration spéciale sur le kit de développement pour lui permettre d’utiliser le proxy Fiddler. 
 
-Fiddler est un logiciel gratuit, disponible au téléchargement sur le [site web de Fiddler](http://www.fiddler2.com/fiddler2/). 
+Fiddler est un logiciel gratuit, disponible au téléchargement sur le [site web de Fiddler](https://www.fiddler2.com/fiddler2/). 
 
 Fiddler peut modifier l’état du réseau signalé par la console. Si une connexion en amont est désactivée à partir de l’ordinateur exécutant Fiddler, la console peut ne pas détecter cette déconnexion jusqu’à ce que l’authentification de la console expire. Si vous utilisez Fiddler, veillez à fermer la connexion entre la console et l’ordinateur exécutant Fiddler, plutôt que d’utiliser Fiddler pour simuler une déconnexion.
 
 ### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>Installer et activer Fiddler sur votre ordinateur de développement
 Suivez la procédure ci-après pour installer et activer Fiddler pour la surveillance du trafic à partir de votre kit de développement:
 
-1. Installez Fiddler sur votre PC de développement en suivant les instructions du [site web Fiddler](http://www.fiddler2.com/fiddler2/). 
+1. Installez Fiddler sur votre PC de développement en suivant les instructions du [site web Fiddler](https://www.fiddler2.com/fiddler2/). 
 2. Lancez Fiddler, puis sélectionnez **Fiddler Options** à partir du menu **Tools.** 
 3. Sélectionnez l’onglet **Connections** et assurez-vous que l’option **Allow remote computers to connect** est sélectionnée. 
 4. Cliquez sur **OK** pour accepter vos modifications des paramètres. Une boîte de dialogue s’affiche alors, indiquant que Fiddler doit être redémarré pour que les modifications prennent effet, et que vous devrez configurer votre pare-feu manuellement. Cliquez sur **OK** dans cette boîte de dialogue, mais *ne redémarrez pas immédiatement Fiddler*.
@@ -41,11 +41,11 @@ Suivez la procédure ci-après pour installer et activer Fiddler pour la surveil
   | Action            | Autoriser                          |
   | Substituer          | Non                             |
   | Programme           | *Chemin d’accès à fiddler.exe*          |
-  | LocalAddress      | Indéfini                            |
-  | RemoteAddress     | Indéfini                            |
+  | LocalAddress      | Indifférent                            |
+  | RemoteAddress     | Indifférent                            |
   | Protocole          | TCP                            |
-  | LocalPort         | Indéfini                            |
-  | RemotePort        | Indéfini                            |
+  | LocalPort         | Indifférent                            |
+  | RemotePort        | Indifférent                            |
   | AllowedUsers      | Indéfini                            |
   | AllowedComputers  | Indéfini                            |
 

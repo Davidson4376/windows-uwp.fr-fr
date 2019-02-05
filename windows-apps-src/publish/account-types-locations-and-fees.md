@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: 3163b4c89cc1d0bf3e4adfdea39222dfcb5a3ee1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9fda6fc33ab82283047e4bdf4b78d21f78a577c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934634"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045708"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -20,7 +20,7 @@ Les fenêtres du programme dans [L’espace partenaires](https://partner.microso
 > [!NOTE]
 > Lorsque vous ouvrez votre compte de développeur, veillez à se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) avec le compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
 
-Au [début du processus d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deuxtypes de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
+Au [début du processus d’inscription](https://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deuxtypes de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 
 Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entreprises. Pour les comptes d’entreprise, nous mettons en place une [vérification](#account-verification) renforcée afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Les comptes individuels sont généralement adaptés aux développeurs indépendants, même si vous avez la possibilité d’ajouter d’autres utilisateurs de compte aux deux types de comptes.
 

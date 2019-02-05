@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, uwp, minuteur, threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cad23f5f82ce70b3a9920726d054b59446925b8
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 0ee5142997e3d4824152adf6d0b26bccb8a30f7f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981523"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044134"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Utiliser un minuteur pour envoyer un élément de travail
 
@@ -221,7 +221,7 @@ Si le compte à rebours du minuteur se poursuit alors que l’élément de trava
 
 Les applications de plateforme Windows universelle (UWP) ne peuvent pas utiliser **Thread.Sleep**, car cela peut bloquer le thread d’interface utilisateur. Vous pouvez utiliser un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) pour créer un élément de travail à la place. Cela retarde la tâche accomplie par l’élément de travail sans bloquer le thread d’interface utilisateur.
 
-Pour obtenir un exemple de code complet illustrant les éléments de travail, les éléments de travail de minuteur et les éléments de travail périodiques, voir l’[exemple de pool de threads](http://go.microsoft.com/fwlink/p/?linkid=255387). L’exemple de code a été écrit pour Windows8.1, mais le code peut être réutilisé dans Windows 10.
+Pour obtenir un exemple de code complet illustrant les éléments de travail, les éléments de travail de minuteur et les éléments de travail périodiques, voir l’[exemple de pool de threads](https://go.microsoft.com/fwlink/p/?linkid=255387). L’exemple de code a été écrit pour Windows8.1, mais le code peut être réutilisé dans Windows 10.
 
 Pour plus d’informations sur la répétition de minuteurs, voir [Créer un élément de travail périodique](create-a-periodic-work-item.md).
 

@@ -1,16 +1,16 @@
 ---
-title: Ajout de la prise en charge mes contacts à une application
+title: Ajout de la prise en charge de Mes Contacts à une application
 description: Explique comment ajouter la prise en charge de mes contacts à une application et comment épingler et désépingler des contacts
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a486f27d390a651cec0dcad82246a858bab2f33
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947552"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044443"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge mes contacts à une application
 
@@ -252,7 +252,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [Partage de mes contacts](my-people-sharing.md)
 + [Notifications de mes contacts](my-people-notifications.md)
 + [Vidéo Channel9 sur l’ajout de la prise en charge de mes contacts à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Exemple d’intégration de mes contacts](http://aka.ms/mypeoplebuild2017)
++ [Exemple d’intégration de mes contacts](https://aka.ms/mypeoplebuild2017)
 + [Exemples de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Documentation sur la classe PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Connecter votre application à des actions sur une carte de visite](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

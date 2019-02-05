@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows10, uwp, pub, publicités, spots, c#, exemple de code
 ms.localizationpriority: medium
-ms.openlocfilehash: a8276e1a9639b23a965c5a608fb951d1e1035133
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 075d98d49ba7e878abc7e800af84984bdb93e3a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947883"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045085"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Exemple de code pour spot publicitaire en C\# #  
 
-Cette rubrique indique l’exemple de code complet pour une application de plateforme Windows universelle (UWP) de base en C# et XAML, qui comporte un spot vidéo publicitaire. Pour connaître les instructions pas à pas pour configurer votre projet pour qu’il utilise ce code, voir [Spots publicitaires](interstitial-ads.md). Pour obtenir un exemple de projet complet, consultez les [exemples de publicité sur GitHub](http://aka.ms/githubads).
+Cette rubrique indique l’exemple de code complet pour une application de plateforme Windows universelle (UWP) de base en C# et XAML, qui comporte un spot vidéo publicitaire. Pour connaître les instructions pas à pas pour configurer votre projet pour qu’il utilise ce code, voir [Spots publicitaires](interstitial-ads.md). Pour obtenir un exemple de projet complet, consultez les [exemples de publicité sur GitHub](https://aka.ms/githubads).
 
 ## <a name="code-example"></a>Exemple de code
 
@@ -39,5 +39,5 @@ Cet exemple d’application utilise deuxboutons pour demander, puis lancer un sp
  
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
  

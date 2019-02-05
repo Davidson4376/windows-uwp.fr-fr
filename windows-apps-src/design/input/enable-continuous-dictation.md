@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0865b229faad646901ab76f46982e738b2830035
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939645"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046642"
 ---
 # <a name="continuous-dictation"></a>Dictée continue
 
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Interactions vocales](speech-interactions.md)
 
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

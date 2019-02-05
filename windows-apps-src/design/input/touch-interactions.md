@@ -8,12 +8,12 @@ keywords: entrées tactiles, pointeur, entrées, interactions avec l’utilisate
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940493"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048641"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -591,17 +591,17 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 **Exemples**
 
-* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
 
-* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Entrée : exemple de fonctionnalités de périphériques](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : mouvements et manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  

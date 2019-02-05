@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 55068ef3f0a0a0d01c61746bde02ddb7aa4ef885
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923565"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046532"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Problèmes connus avec UWP dans le programme pour les développeurs Xbox
 
 Cette rubrique décrit les problèmes connus liés à la plateforme UWP dans le programme pour les développeurs Xbox. Pour plus d’informations sur ce programme, voir [UWP sur Xbox](index.md). 
 
-\[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour les appareils universels, consultez [Fonctionnalités UWP non encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
+\[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour les appareils universels, consultez [Fonctionnalités UWP non encore prises en charge sur Xbox](https://go.microsoft.com/fwlink/?LinkID=760755).\]
 
 La liste ci-après répertorie certains problèmes connus que vous pourriez rencontrer, mais cette liste n’est pas exhaustive. 
 
@@ -56,11 +56,11 @@ Cela peut affecter les développeurs Xbox souhaitant copier sur un autre emplace
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Ports réseau bloqués sur Xbox One
 
-Les applications de plateforme Windows universelle (UWP) sur les appareils XboxOne ne sont pas autorisées à établir une liaison aux ports dans la plage [57344, 65535]&nbsp;(numéros de port inclus). Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port 0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
+Les applications de plateforme Windows universelle (UWP) sur les appareils XboxOne ne sont pas autorisées à établir une liaison aux ports dans la plage [57344, 65535]&nbsp;(numéros de port inclus). Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port 0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
 ## <a name="uwp-api-coverage"></a>Couverture des API UWP
 
-Les APIUWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, voir [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
+Les APIUWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, voir [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](https://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>Avertissement de sécurité déclenché par l’accès à WDP

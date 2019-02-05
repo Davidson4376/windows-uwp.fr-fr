@@ -8,12 +8,12 @@ keywords: périphérique, numériseur, entrées, interactions
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932938"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048496"
 ---
 # <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **Exemples**
-* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **Exemples d’archive**
-* [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée: exemple de fonctionnalités de périphériques](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929439"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044473"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
@@ -135,7 +135,7 @@ Lors de la réception d’une demande d’annulation, la méthode qui effectue l
 
 Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** est défini sur true, arrêter le travail empêche de poursuivre.
 
-L' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan.
+L' [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -181,7 +181,7 @@ else
 
 Modifiez la méthode **Run** de sorte qu’une fois le travail arrêté, elle enregistre si la tâche terminée ou a été annulée. Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
 
-L' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings.
+L' [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -255,13 +255,13 @@ else
 
 ## <a name="remarks"></a>Remarques
 
-Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
+Vous pouvez télécharger l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
 
-À des fins d’illustration, l’exemple de code présente uniquement des portions de la méthode **Run** (et le minuteur de rappel) de l' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+À des fins d’illustration, l’exemple de code présente uniquement des portions de la méthode **Run** (et le minuteur de rappel) de l' [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 ## <a name="run-method-example"></a>Exemple de méthode Run
 
-La terminer méthode **Run** et le code de rappel de minuteur, à partir de l' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour le contexte.
+La terminer méthode **Run** et le code de rappel de minuteur, à partir de l' [exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour le contexte.
 
 ```csharp
 // The Run method is the entry point of a background task.
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 - [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 - [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-- [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+- [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)

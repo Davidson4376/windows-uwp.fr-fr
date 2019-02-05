@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac71b1fd876c5fec67bcdc292f407a04211de88c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927685"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048436"
 ---
 # <a name="generate-a-3mf-package"></a>Générer un package 3MF
 
@@ -28,7 +28,7 @@ Ce guide décrit la structure du document3D Manufacturing Format, ainsi que les 
 
 3MF (3D Manufacturing Format) est un ensemble de conventions régissant la description en langage XML de l’apparence et de la structure de modèles3D à des fins de fabrication (impression 3D). Ce format définit une série de pièces (dont certaines sont requises et d’autres facultatives) et leurs relations, de façon à fournir toutes les informations nécessaires à un périphérique de fabrication 3D. Un jeu de données conforme au format 3MF peut être enregistré dans un fichier présentant l’extension.3mf.
 
-Dans Windows 10, la classe [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) dans l’espace de noms **Windows.Graphics.Printing3D** est analogue à un fichier .3mf unique, et autres classes mappent aux éléments XML particulières dans le fichier. Ce guide décrit la façon dont chacune des parties principales d’un document3MF peut être créée et définie par programmation, le mode d’utilisation de l’extension3MF Materials, ainsi que les procédures de conversion et d’enregistrement d’un objet **Printing3D3MFPackage** en fichier.3mf. Pour plus d’informations sur les normes3MF ou sur l’extension3MF Materials, voir la [Spécification 3MF](http://3mf.io/what-is-3mf/3mf-specification/).
+Dans Windows 10, la classe [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) dans l’espace de noms **Windows.Graphics.Printing3D** est analogue à un fichier .3mf unique, et autres classes mappent aux éléments XML particulières dans le fichier. Ce guide décrit la façon dont chacune des parties principales d’un document3MF peut être créée et définie par programmation, le mode d’utilisation de l’extension3MF Materials, ainsi que les procédures de conversion et d’enregistrement d’un objet **Printing3D3MFPackage** en fichier.3mf. Pour plus d’informations sur les normes3MF ou sur l’extension3MF Materials, voir la [Spécification 3MF](https://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -43,7 +43,7 @@ La classe **Printing3D3MFPackage** représente un document3MF complet, au cœur 
 
 ## <a name="metadata"></a>Métadonnées
 
-La partie modèle d’un document3MF peut contenir des métadonnées sous la forme de paires de chaînes clé/valeur stockées dans la propriété **Metadata**. Il existe un certain nombre de noms de métadonnées prédéfinis, mais d’autres paires peuvent être ajoutées sous la forme d’une extension (décrite plus en détail dans la [spécification3MF](http://3mf.io/what-is-3mf/3mf-specification/)). Le destinataire du package (périphérique de fabrication3D) est chargé de déterminer si et comment les métadonnées doivent être traitées, mais il est conseillé d’inclure dans le package3MF le maximum d’informations de base:
+La partie modèle d’un document3MF peut contenir des métadonnées sous la forme de paires de chaînes clé/valeur stockées dans la propriété **Metadata**. Il existe un certain nombre de noms de métadonnées prédéfinis, mais d’autres paires peuvent être ajoutées sous la forme d’une extension (décrite plus en détail dans la [spécification3MF](https://3mf.io/what-is-3mf/3mf-specification/)). Le destinataire du package (périphérique de fabrication3D) est chargé de déterminer si et comment les métadonnées doivent être traitées, mais il est conseillé d’inclure dans le package3MF le maximum d’informations de base:
 
 [!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
 

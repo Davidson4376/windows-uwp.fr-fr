@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f58485b6f6829b9eec0495cce088304b181a2b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 606ab4489b86b1fbba7346b4a503339c4c19f7d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940671"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048316"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -184,7 +184,7 @@ Sur l’appareil distant, la disposition est inscrite à l’emplacement par dé
 
 Dans Windows 10, les performances de démarrage des applications UWP sont améliorées en lançant de manière proactive, puis en les suspendant dans une technique appelée [prélancement](https://msdn.microsoft.com/library/windows/apps/Mt593297). De nombreuses applications fonctionnent dans ce mode sans configuration particulière, mais certaines doivent peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement.
 
-Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt;**Autres cibles de débogage** -&gt; **Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt; **Autres cibles de débogage** -&gt;**Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d’informations, voir [Déboguer le prélancement d’applications UWP](http://go.microsoft.com/fwlink/p/?LinkId=717245).
+Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt;**Autres cibles de débogage** -&gt; **Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt; **Autres cibles de débogage** -&gt;**Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d’informations, voir [Déboguer le prélancement d’applications UWP](https://go.microsoft.com/fwlink/p/?LinkId=717245).
 
 Vous pouvez définir les options de déploiement suivantes dans la page de propriétés de **débogage** du projet de démarrage:
 
@@ -206,7 +206,7 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
 
 ## <a name="symbols"></a>Symboles
 
-Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](http://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](http://aka.ms/winsymbols).
+Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](https://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](https://aka.ms/winsymbols).
 
 Pour définir les options de symbole de Visual Studio, sélectionnez **Outils&gt; Options**, puis accédez à **Débogage&gt; Symboles** dans la boîte de dialogue.
 
@@ -223,7 +223,7 @@ Vous pouvez ajouter des chemins en utilisant le délimiteur `‘;’`. Vous pouv
 
 ## <a name="windbg"></a>WinDbg
 
-WinDbg est un débogueur puissant fourni avec la suite d’outils de débogage pour Windows, qui est incluse dans le [SDK Windows](http://go.microsoft.com/fwlink/p/?LinkID=271979). Lors de l’installation du SDK Windows, vous pouvez installer les outils de débogage pour Windows en tant que produit autonome. Si WinDbg s’avère très utile pour le débogage de code natif, nous ne le recommandons pas pour les applications écrites en code managé ou HTML5.
+WinDbg est un débogueur puissant fourni avec la suite d’outils de débogage pour Windows, qui est incluse dans le [SDK Windows](https://go.microsoft.com/fwlink/p/?LinkID=271979). Lors de l’installation du SDK Windows, vous pouvez installer les outils de débogage pour Windows en tant que produit autonome. Si WinDbg s’avère très utile pour le débogage de code natif, nous ne le recommandons pas pour les applications écrites en code managé ou HTML5.
 
 Pour utiliser WinDbg avec les applications UWP, vous devez commencer par désactiver la Gestion de la durée de vie des processus (PLM) de votre package d’application à l’aide de PLMDebug, comme décrit dans [Outils de test et de débogage pour la Gestion de la durée de vie des processus](testing-debugging-plm.md).
 

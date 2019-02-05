@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9911323010f691d1fa59c35306a7173cd08a0faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df7c1bbbc77374b8afb4272e1d9618c8294a4b6e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920709"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047986"
 ---
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
@@ -21,7 +21,7 @@ Si vous rencontrez des erreurs après avoir envoyé votre application au Windows
 
 Si vous soumettez une application UWP, vous pouvez voir une erreur au cours de prétraitement si votre fichier de package n’est pas un fichier .msixupload ou .appxupload généré par Visual Studio pour le Windows Store. N’oubliez pas que vous suivez les étapes décrites dans le [Package d’une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md) lors de la création du fichier de package de votre application et uniquement chargez le fichier .msixupload ou .appxupload sur la page de [Packages](upload-app-packages.md) de la soumission, non sur un .msix/appx ou .msixbundle/appxbundle .
 
-Si une erreur de compilation s'affiche, assurez-vous que vous êtes en mesure de générer correctement votre application en mode Release. Pour plus d'informations, voir [Erreurs du compilateur natif interne .NET](http://go.microsoft.com/fwlink/p/?LinkID=613098).
+Si une erreur de compilation s'affiche, assurez-vous que vous êtes en mesure de générer correctement votre application en mode Release. Pour plus d'informations, voir [Erreurs du compilateur natif interne .NET](https://go.microsoft.com/fwlink/p/?LinkID=613098).
 
 ## <a name="desktop-application"></a>Application de bureau
 

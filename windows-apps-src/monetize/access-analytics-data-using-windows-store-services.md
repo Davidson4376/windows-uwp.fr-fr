@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f0df87f8ed5339c977dbd468f8aa2a7877f0d9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939139"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046402"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -30,7 +30,7 @@ Les étapes suivantes décrivent le processus de bout en bout:
 
 Avant d’écrire le code d’appel de l’API d’analyse du MicrosoftStore, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
 * Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API d’analyse du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]
@@ -115,7 +115,7 @@ Les méthodes supplémentaires suivantes sont disponibles pour les comptes de d�
 | Scénario       | Méthodes      |
 |---------------|--------------------|
 | Acquisitions |  <ul><li>[Obtenir des acquisitions de jeu Xbox One](get-xbox-one-game-acquisitions.md)</li><li>[Obtenir des acquisitions d’extensions XboxOne](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| Erreurs |  <ul><li>[Obtenir les données rapport d’erreurs pour votre console Xbox One jeu](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Obtenir des détails sur une erreur dans votre console Xbox One jeu](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre console Xbox One du jeu](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
+| Erreurs |  <ul><li>[Obtenir les données de rapports d’erreurs pour votre jeu Xbox One](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Obtenir les détails d’une erreur dans votre jeu Xbox One](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre jeu Xbox One](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Télécharger le fichier CAB concernant une erreur dans votre jeu Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
@@ -123,7 +123,7 @@ Comptes de développeur qui font partie du [programme de tableau de bord du mat�
 
 ## <a name="code-example"></a>Exemple de code
 
-L’exemple de code suivant montre comment obtenir un jeton d’accès AzureAD et appeler l’API d’analyse du MicrosoftStore à partir d’une app de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](http://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du MicrosoftStore.
+L’exemple de code suivant montre comment obtenir un jeton d’accès AzureAD et appeler l’API d’analyse du MicrosoftStore à partir d’une app de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](https://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du MicrosoftStore.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]

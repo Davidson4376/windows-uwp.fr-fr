@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 26b665f68932f7a90127ee99414f984f5d9f2005
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918990"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046778"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder à des capteurs et des appareils depuis une tâche en arrière-plan
 
@@ -20,7 +20,7 @@ ms.locfileid: "8918990"
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. Par exemple, en fonction du lieu où votre application s’exécute, elle peut utiliser une tâche en arrière-plan pour synchroniser les données et les périphériques ou surveiller les capteurs. Pour préserver l’autonomie de la batterie et garantir le consentement de l’utilisateur approprié, l’utilisation de [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) est soumise aux stratégies décrites dans cette rubrique.
 
-Pour accéder aux capteurs ou aux périphériques en arrière-plan, créez une tâche en arrière-plan qui utilise [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Pour voir comment procéder sur un PC, consultez l’article [Exemple de périphérique USB personnalisé](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). Pour voir comment procéder sur un téléphone, consultez l’article [Exemple de capteurs en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=393307).
+Pour accéder aux capteurs ou aux périphériques en arrière-plan, créez une tâche en arrière-plan qui utilise [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Pour voir comment procéder sur un PC, consultez l’article [Exemple de périphérique USB personnalisé](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). Pour voir comment procéder sur un téléphone, consultez l’article [Exemple de capteurs en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=393307).
 
 > [!Important]
 > **DeviceUseTrigger** ne peut pas être utilisé avec des tâches en arrière-plan intégrées au processus. Les informations fournies dans cette rubrique s’appliquent uniquement aux tâches en arrière-plan qui s’exécutent en dehors du processus.
@@ -33,7 +33,7 @@ Lorsque l’utilisateur ne voit plus votre application, Windows la suspend ou l�
 
 ### <a name="limitation-critical-device-operations"></a>Limitation : opérations de périphérique critiques
 
-Certaines opérations de périphériques critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour en savoir plus, voir [Synchronisation et mise à jour des périphériques pour les applications de périphérique du Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=306619).
+Certaines opérations de périphériques critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de périphérique permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour en savoir plus, voir [Synchronisation et mise à jour des périphériques pour les applications de périphérique du Microsoft Store](https://go.microsoft.com/fwlink/p/?LinkId=306619).
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>Protocoles/API pris en charge dans une tâche en arrière-plan DeviceUseTrigger
 
@@ -91,7 +91,7 @@ Pour utiliser [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/
 
 -   Les tâches en arrière-plan qui utilisent [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) peuvent être annulées par Windows lorsque certaines spécifications de la stratégie ne sont plus satisfaites, y compris la durée maximale en arrière-plan (temps horloge). Il importe de prendre en compte ces spécifications de la stratégie lors de l’utilisation de ces tâches en arrière-plan pour interagir avec votre appareil périphérique.
 
-**Conseil**pour comprendre le fonctionnement de ces tâches en arrière-plan, téléchargez un exemple. Pour voir comment procéder sur un PC, consultez l’article [Exemple de périphérique USB personnalisé](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). Pour voir comment procéder sur un téléphone, consultez l’article [Exemple de capteurs en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=393307).
+**Conseil**pour comprendre le fonctionnement de ces tâches en arrière-plan, téléchargez un exemple. Pour voir comment procéder sur un PC, consultez l’article [Exemple de périphérique USB personnalisé](https://go.microsoft.com/fwlink/p/?LinkId=301975 ). Pour voir comment procéder sur un téléphone, consultez l’article [Exemple de capteurs en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=393307).
  
 ## <a name="frequency-and-foreground-restrictions"></a>Restrictions de fréquence et de premier plan
 

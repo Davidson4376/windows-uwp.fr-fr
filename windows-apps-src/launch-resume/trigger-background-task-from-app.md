@@ -5,12 +5,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: déclencheur de tâche en arrière-plan, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 237f342029f8d9bc0bbec1fcef5c7059cbf09840
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 02e4bf3d7977c9bdd675f264a37e608a5082ef4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935373"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050722"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Déclencher une tâche en arrière-plan à partir de votre application
 
@@ -155,7 +155,7 @@ Une tâche en arrière-plan s’exécutent uniquement à l’aide d’un **Appli
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Libérer de la mémoire lorsque l’application bascule en arrière-plan](reduce-memory-usage.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Reporter la suspension d’une application avec l’exécution étendue](run-minimized-with-extended-execution.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)

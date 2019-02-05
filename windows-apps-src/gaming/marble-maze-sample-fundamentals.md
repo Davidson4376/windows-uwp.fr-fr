@@ -6,12 +6,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, exemples, directx, principes de base
 ms.localizationpriority: medium
-ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d41a9fe2363e5d5c462fb0646fbcc2479c756119
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946377"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049386"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Principes de base de l’exemple MarbleMaze
 
@@ -21,7 +21,7 @@ ms.locfileid: "8946377"
 Cette rubrique présente les principales caractéristiques du projet MarbleMaze, notamment la façon dont il utilise Visual C++ dans l’environnement WindowsRuntime, mais également la façon dont il est créé, structuré et généré. Cette rubrique décrit également plusieurs des conventions utilisées dans le code.
 
 > [!NOTE]
-> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
+> L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://go.microsoft.com/fwlink/?LinkId=624011).
 
 Ce document traite certains points importants relatifs à la planification et au développement de votre jeu de plateforme Windows universelle (UWP).
 
@@ -38,9 +38,9 @@ Si vous avez téléchargé et extrait l’exemple, vous pouvez ouvrir le fichier
 
 Nous sommes partis d’un projet existant pour la création du projet Visual Studio pour Marble Maze. Toutefois, si vous ne disposez pas déjà d’un projet offrant les fonctionnalités de base nécessaires à votre jeu pour UWP en DirectX, nous vous recommandons de créer un projet à partir du modèle VisualStudio **Application DirectX11 (Windows universel)** qui fournit une application3D avec les fonctionnalités de base en question. Pour cela, procédez comme suit:
 
-1. Dans Visual Studio 2017, sélectionnez **fichier > Nouveau > projet …**
+1. Dans Visual Studio 2017, sélectionnez le **fichier > > nouveau projet …**
 
-2. Dans la fenêtre **Nouveau projet** , dans le volet gauche, sélectionnez **installés > Modèles > Visual C++**.
+2. Dans la fenêtre **Nouveau projet** , dans le volet gauche, sélectionnez **> de modèles installés > Visual C++**.
 
 3. Dans la liste du milieu, sélectionnez **Application DirectX 11 (Windows universel)**. Si vous ne voyez pas cette option, vous devrez pas les composants requis installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou supprimant des charges de travail et les composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur l’installation des composants supplémentaires.
 

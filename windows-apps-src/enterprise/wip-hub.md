@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: b65da20c8931f74800f817ecba0139b14d0447ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946101"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049496"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
@@ -67,7 +67,7 @@ Si vous êtes prêt à rendre votre application compatible, reportez-vous à l�
 
 **Pour les applications de bureau que vous créez à l’aide de C++**
 
-[Guide du développeur sur la Protection des informations Windows (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+[Guide du développeur sur la Protection des informations Windows (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Créer une application non compatible qui utilise des données d’entreprise

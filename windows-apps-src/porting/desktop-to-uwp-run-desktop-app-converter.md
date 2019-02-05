@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 392c8c181906e9e403f2204689b5e0406ea0f914
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920947"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047823"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -291,7 +291,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-ExpandedBaseImage &lt;chaîne&gt;  |Facultatif |Chemin d’accès complet vers une image de base déjà développée.|
 |-LogFile &lt;chaîne&gt;  |Facultatif |Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé. |
 | -Sign [&lt;SwitchParameter&gt;] |Facultatif |Indique à ce script qu’il doit signer le package d’application Windows produit à l’aide d’un certificat généré à des fins de test. Ce commutateur doit être présent en même temps que le commutateur ```-MakeAppx```. |
-|&lt;Paramètres communs&gt; |Requis |Cette applet de commande prend en charge les paramètres courants: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
+|&lt;Paramètres communs&gt; |Requis |Cette applet de commande prend en charge les paramètres courants: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216). |
 | -Verify [&lt;SwitchParameter&gt;] |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à l’outil DAC de vérifier que le package d’application par rapport à l’application empaquetée et les exigences de Microsoft Store. Le résultat obtenu est un rapport de validation «VerifyReport.xml», qui s’affiche de manière plus efficace dans un navigateur. Ce commutateur doit être présent en même temps que le commutateur `-MakeAppx`. |
 |-PublishComRegistrations| Facultatif| Analyse toutes les inscriptions COM publiques effectuées par votre programme d’installation et publie celles qui sont valides dans votre manifeste. Utilisez cet indicateur seulement si vous souhaitez rendre ces enregistrements accessibles à d’autres applications. Il n’est pas nécessaire d’employer cet indicateur si ces enregistrements ne doivent être utilisés que par votre application. <br><br>Consultez [cet article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) pour vous assurer que vos inscriptions COM fonctionnent comme prévu après la création du package de votre application.
 
@@ -370,7 +370,7 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 
 ## <a name="telemetry-from-desktop-app-converter"></a>Télémétrie de Desktop App Converter
 
-Le Convertisseur d’applications de bureau peut collecter des informations sur vous et votre utilisation du logiciel et les envoyer à Microsoft. Vous pouvez en savoir plus sur la collecte et l’utilisation de données de Microsoft dans la documentation des produits et dans la [Déclaration de confidentialité Microsoft](http://go.microsoft.com/fwlink/?LinkId=521839). Vous acceptez de respecter toutes les dispositions applicables de la Déclaration de confidentialité de Microsoft.
+Le Convertisseur d’applications de bureau peut collecter des informations sur vous et votre utilisation du logiciel et les envoyer à Microsoft. Vous pouvez en savoir plus sur la collecte et l’utilisation de données de Microsoft dans la documentation des produits et dans la [Déclaration de confidentialité Microsoft](https://go.microsoft.com/fwlink/?LinkId=521839). Vous acceptez de respecter toutes les dispositions applicables de la Déclaration de confidentialité de Microsoft.
 
 Par défaut, la télémétrie est activée pour le Convertisseur d’applications de bureau. Ajoutez la clé de Registre suivante pour configurer la télémétrie selon un paramètre de votre choix:  
 
@@ -388,7 +388,7 @@ Desktop App Converter ne prend pas en charge Unicode. Par conséquent, aucun car
 
 **Trouvez des réponses à vos questions**
 
-Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 Vous pouvez également vous référer à [cette](desktop-to-uwp-known-issues.md#app-converter) liste des problèmes connus.
 

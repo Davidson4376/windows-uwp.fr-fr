@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c33e2890ce962f1321ef40ca0e0605e0f4e1f5f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5d2c80fd30d158f0890ed70311cdf83dce2058e5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944393"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046622"
 ---
 # <a name="manage-issues-with-audio-input"></a>Gérer les problèmes liés aux entrées audio
 
@@ -108,7 +108,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 * [Interactions vocales](speech-interactions.md)
 
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

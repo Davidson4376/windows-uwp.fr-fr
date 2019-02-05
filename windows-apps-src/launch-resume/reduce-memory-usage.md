@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9716483d7df51c2c02d2f9c88e5a4cec05437cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942984"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046602"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>Libérer de la mémoire quand l’application bascule en arrière-plan
 
@@ -103,5 +103,5 @@ Lorsqu’une application passe de l’arrière-plan au premier plan, elle reçoi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de lecture de contenu multimédia en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=800141) - explique comment libérer de la mémoire lorsque votre application passe en arrière-plan.
+* [Exemple de lecture de contenu multimédia en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=800141) - explique comment libérer de la mémoire lorsque votre application passe en arrière-plan.
 * [Outils de diagnostic](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - utilisez les outils de diagnostic pour analyser les événements de nettoyage de la mémoire et vérifier que votre application libère de la mémoire de manière optimale.

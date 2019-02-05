@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, technologie, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942964"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048526"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Technologies de jeu des applications UWP
 
@@ -323,7 +323,7 @@ De nombreuses API sont liées au développement de jeux, mais tous les jeux ne d
 
 Le [Programme créateurs Xbox Live](https://developer.microsoft.com/games/xbox/xboxlive/creator) permet aux développeurs d’intégrer Xbox Live dans ses jeux UWP et les publier sur Xbox One et Windows 10. Intégrez dans votre titre des fonctionnalités sociales de Xbox Live telles que la connexion, la présence, les classements, etc., avec un temps de développement minime. Les fonctionnalités sociales de Xbox Live visent à faire croître votre public de façon drastique en vous faisant connaître auprès de plus de 55millions de joueurs actifs.
 
-Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficier d’une aide en termes de marketing et de développement et avoir la chance de figurer dans le Windows Store Xbox One principal, soumettez une demande de participation au programme [ID@Xbox](http://www.xbox.com/developers/id). Pour voir les fonctionnalités disponibles pour les programmes Créateurs Xbox Live et ID@Xbox, voir le [tableau des fonctionnalités](../xbox-live/developer-program-overview.md#feature-table).
+Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficier d’une aide en termes de marketing et de développement et avoir la chance de figurer dans le Windows Store Xbox One principal, soumettez une demande de participation au programme [ID@Xbox](https://www.xbox.com/developers/id). Pour voir les fonctionnalités disponibles pour les programmes Créateurs Xbox Live et ID@Xbox, voir le [tableau des fonctionnalités](../xbox-live/developer-program-overview.md#feature-table).
 
 Pour plus d’informations, accédez à [Ajout de Xbox Live à votre jeu](e2e.md#adding-xbox-live-to-your-game).
 
@@ -332,7 +332,7 @@ Pour plus d’informations, accédez à [Ajout de Xbox Live à votre jeu](e2e.md
 
 ### <a name="uwp-games-without-directx"></a>Jeux UWP sans DirectX
 
-Des jeux plus simples, sans exigences de performances minimales, tels des jeux de carte ou de plateau, peuvent être écrits sans DirectX et ne nécessitent pas nécessairement une écriture en C++. Ces types de jeux peuvent utiliser tout langage pris en charge par UWP, tel que C#, Visual Basic, C++ et HTML/JavaScript. Si votre jeu ne requiert pas une performance particulière ni un graphisme intensif, consultez l’[exemple de jeu tactile en JavaScript et HTML5](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031).
+Des jeux plus simples, sans exigences de performances minimales, tels des jeux de carte ou de plateau, peuvent être écrits sans DirectX et ne nécessitent pas nécessairement une écriture en C++. Ces types de jeux peuvent utiliser tout langage pris en charge par UWP, tel que C#, Visual Basic, C++ et HTML/JavaScript. Si votre jeu ne requiert pas une performance particulière ni un graphisme intensif, consultez l’[exemple de jeu tactile en JavaScript et HTML5](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031).
 
 ### <a name="game-engines"></a>Moteurs de jeu
 

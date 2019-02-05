@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923126"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047158"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
@@ -22,7 +22,7 @@ Le [Kit de Certification des applications Windows](windows-app-certification-kit
 
 Surveille l’application au cours des tests de certification afin d’enregistrer quand elle cesse de répondre ou se bloque.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Les applications qui cessent de répondre ou qui se bloquent peuvent conduire à la perte de données ou une expérience médiocre du point de vue de l’utilisateur.
 
@@ -70,7 +70,7 @@ Les applications doivent utiliser les fonctions d’assistance de l’API Versio
 
 Ce test permet de vérifier que l’application dispose d’un gestionnaire d’annulation pour les tâches en arrière-plan déclarées. Il doit exister une fonction dédiée qui sera appelée lorsque la tâche est annulée. Ce test s’applique uniquement aux applications déployées.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Les applications du Windows Store peuvent inscrire un processus qui s’exécute en arrière-plan. Par exemple, une application de messagerie peut de temps à autre effectuer un test ping sur un serveur. Toutefois, si le système d’exploitation a besoin de ces ressources, il annule la tâche en arrière-plan, et les applications doivent gérer correctement cette annulation. Les applications qui ne disposent pas d’un gestionnaire d’annulation peuvent se bloquer ou ne pas se fermer lorsque l’utilisateur essaie de les fermer.
 
@@ -86,7 +86,7 @@ Ajoutez le gestionnaire d’annulation à votre application. Pour plus d’infor
 
 Ce test permet de vérifier qu’un package d’application (APPX, ensemble d’applications) contient une seule application. Il a été modifié dans le kit afin d’en faire un test autonome.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Ce test a été implémenté conformément à la politique du Windows Store.
 
@@ -104,7 +104,7 @@ Assurez-vous que le package et que l’ensemble d’applications satisfont aux e
 
 Teste le contenu du manifeste d’application pour vérifier qu’il est correct.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Les applications doivent avoir un manifeste d’application correctement mis en forme.
 
@@ -168,7 +168,7 @@ Les tests BinScope Binary Analyzer vérifient que les fonctionnalités de sécur
 
 L’attribut AllowPartiallyTrustedCallersAttribute (APTCA) autorise l’accès au code entièrement fiable à partir de code partiellement fiable dans des assemblys signés. Lorsque vous appliquez l’attribut APTCA à un assembly, les appelants partiellement fiables peuvent accéder à cet assembly pendant toute la durée de vie de l’assembly, ce qui peut compromettre la sécurité.
 
-**Ce que vous devez faire si votre application échoue à ce test**
+**Que faire si votre application échoue à ce test?**
 
 N’utilisez pas l’attribut APTCA sur les assemblys portant un nom fort, à moins que votre projet ne l’exige et que vous ayez conscience des risques encourus. Assurez-vous alors que toutes les API sont protégées avec des demandes de sécurité appropriées d’accès au code. L’attribut APTCA est sans effet lorsque l’assembly fait partie d’une application UWP (plateforme Windows universelle).
 
@@ -182,7 +182,7 @@ Ce test est uniquement réalisé sur le code managé (C#, .NET, etc.).
 
 Un gestionnaire d’exceptions est exécuté lorsque l’application rencontre une condition exceptionnelle, telle qu’une erreur de type « division par zéro ». L’adresse du gestionnaire d’exceptions étant stockée sur la pile lors de l’appel d’une fonction, elle peut faire l’objet d’une attaque par saturation de la mémoire tampon si un logiciel malveillant parvient à remplacer la pile.
 
-**Ce que vous devez faire si votre application échoue à ce test**
+**Que faire si votre application échoue à ce test?**
 
 Activez l’option /SAFESEH dans la commande de l’éditeur de liens lorsque vous générez votre application. Cette option est activée par défaut dans les configurations Release de Visual Studio. Vérifiez que cette option est activée dans les instructions de génération pour tous les modules exécutables dans votre application.
 
@@ -196,7 +196,7 @@ Le test n’est pas effectué sur les binaires 64bits ni sur les binaires du cir
 
 Ce test vérifie qu’une application n’exécute pas du code qui est stocké dans un segment de données.
 
-**Ce que vous devez faire si votre application échoue à ce test**
+**Que faire si votre application échoue à ce test?**
 
 Activez l’option /NXCOMPAT dans la commande de l’éditeur de liens lorsque vous générez votre application. Cette option est activée par défaut dans les versions de l’éditeur de liens qui prennent en charge la prévention de l’exécution des données (PED).
 
@@ -319,7 +319,7 @@ Vérifiez que l’application a été compilée en tant que version de publicati
 
 Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Remarque**les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
+> **Remarque**les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](https://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
 
 ## <a name="performance-tests"></a>Tests de performances
 
@@ -495,7 +495,7 @@ Remplacez les images par défaut par quelque chose de plus singulier et de plus 
 
 Teste l’application afin de vérifier qu’il ne s’agit pas d’une version de débogage.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Pour pouvoir être certifiées pour le Microsoft Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
 
@@ -513,7 +513,7 @@ Testez l’application de manière à vérifier qu’il ne s’agit pas d’une 
 
 ### <a name="utf-8-file-encoding"></a>Codage de fichier UTF-8
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Les fichiers HTML, CSS et JavaScript doivent être encodés au format UTF-8 avec une marque d’ordre d’octet (BOM) pour bénéficier de la mise en cache du bytecode et éviter certaines conditions d’erreur d’exécution.
 
@@ -531,7 +531,7 @@ Ouvrez le fichier affecté et sélectionnez **Enregistrer sous** dans le menu **
 
 Teste les applications Microsoft Direct3D pour s’assurer qu’elles ne se bloquent pas avec les matériels vidéo plus anciens.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Microsoft Store nécessite toutes les applications à l’aide de Direct3D pour un rendu correct ou échouent de manière cartes graphiques de 9\-1 au niveau de fonctionnalité.
 
@@ -543,13 +543,13 @@ Le test est validé si les applications assurent un rendu précis avec le niveau
 
 ### <a name="corrective-action"></a>Action corrective
 
-Assurez-vous que votre application s’affiche correctement avec le niveau de fonctionnalité Direct3D 9\-1, même si vous vous attendez à ce qu’elle s’exécute à un niveau de fonctionnalité supérieur. Pour plus d’informations, voir [Développement pour différents niveaux de fonctionnalités Direct3D](http://go.microsoft.com/fwlink/p/?LinkID=253575).
+Assurez-vous que votre application s’affiche correctement avec le niveau de fonctionnalité Direct3D 9\-1, même si vous vous attendez à ce qu’elle s’exécute à un niveau de fonctionnalité supérieur. Pour plus d’informations, voir [Développement pour différents niveaux de fonctionnalités Direct3D](https://go.microsoft.com/fwlink/p/?LinkID=253575).
 
 ### <a name="direct3d-trim-after-suspend"></a>Découpage Direct3D après suspension
 
 > **Remarque**ce test s’applique uniquement aux applications UWP développées pour Windows8.1 et versions ultérieures.
 
-### <a name="background"></a>Contexte
+### <a name="background"></a>Arrière-plan
 
 Si l’application n’appelle pas [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) sur son périphérique Direct3D, elle ne libère pas la mémoire allouée pour sa précédente tâche3D. Cela augmente le risque que les applications soient arrêtées en raison de la sollicitation de la mémoire système.
 

@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947791"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048476"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
 Utilisez la **MONÉTISER** &gt; page **publicités dans l’application** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) pour créer et gérer des unités publicitaires pour:
 
-* Les applications de plateforme Windows universelle (UWP) qui utilisent le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp).
-* Publié sur Windows 8.x et des applications Windows Phone 8.x qui utilisent la [SDK Microsoft Advertising pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk).
+* Les applications de plateforme Windows universelle (UWP) qui utilisent le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp).
+* Publié sur Windows 8.x et des applications Windows Phone 8.x qui utilisent la [SDK Microsoft Advertising pour Windows et Windows Phone 8.x](https://aka.ms/store-8-sdk).
 
 > [!IMPORTANT]
 > À compter du 31 octobre 2018, produits nouvellement créés ne peuvent pas inclure des packages ciblant 8.x/Windows Windows Phone 8.x ou version antérieure. Pour plus d’informations, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
@@ -70,7 +70,7 @@ Après avoir créé des unités publicitaires pour une ou plusieurs applications
 Pour modifier les [paramètres de médiation](#mediation) pour une unité publicitaire UWP ou la [conformité à la réglementation COPPA](#coppa) pour l’application dans laquelle l’unité publicitaire est utilisée, cliquez sur le nom de l'unité publicitaire.
 
 > [!NOTE]
-> Si une unité publicitaire n’a aucune activité pour les six derniers mois, nous des étiquettes comme **inactif**et supprimerons de l’espace partenaires. Vous pouvez utiliser des filtres pour afficher uniquement les unités publicitaires **Actives** ou **Inactives**. Si vous voyez des unités publicitaires qui, à votre avis, sont marquées à tort comme **Inactives**, [contactez le support](http://aka.ms/storesupport).
+> Si une unité publicitaire n’a aucune activité pour les six derniers mois, nous des étiquettes comme **inactif**et supprimerons de l’espace partenaires. Vous pouvez utiliser des filtres pour afficher uniquement les unités publicitaires **Actives** ou **Inactives**. Si vous voyez des unités publicitaires qui, à votre avis, sont marquées à tort comme **Inactives**, [contactez le support](https://aka.ms/storesupport).
 
 <span id="mediation" />
 
@@ -115,9 +115,9 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 | Publicités pour l’installation d’applications Microsoft | Sélectionnez cette option pour proposer des publicités pour l’installation d’applications ou des publicités pour la réactivation d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes de publicité pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, spot bannière, native  |
 | Recommandations de contenu MSN |  Sélectionnez cette option pour proposer des publicités à partir des recommandations de contenu MSN. |  Bannière, spot bannière  |
 | Outbrain |  Sélectionnez cette option pour proposer des publicités à partir de [Outbrain](https://www.outbrain.com/). |  Bannière, spot bannière  |
-| Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](http://www.revcontent.com/). |  Bannière, native  |
+| Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](https://www.revcontent.com/). |  Bannière, native  |
 | Smaato |  Sélectionnez cette option pour proposer des publicités à partir de [Smaato](https://www.smaato.com/). |  Bannière  |
-| smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](http://www.smartclip.com/). |  Spot vidéo  |
+| smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](https://www.smartclip.com/). |  Spot vidéo  |
 | SpotX |  Sélectionnez cette option pour proposer des publicités à partir de [SpotX](https://www.spotx.tv/). |  Spot vidéo  |
 | Taboola |  Sélectionnez cette option pour proposer des publicités à partir de [Taboola](https://www.taboola.com/). |  Bannière  |
 | Undertone | Sélectionnez cette option pour proposer des publicités à partir de [Undertone](https://www.undertone.com/). | Bannière |
@@ -159,4 +159,4 @@ Dans le cadre de la réglementation COPPA (Children's Online Privacy Protection 
 Le paramètre **Conformité avec la réglementation COPPA** que vous choisissez est automatiquement appliqué à toutes les unités publicitaires de l’application sélectionnée.
 
 > [!IMPORTANT]
-> Si votre application s’adresse aux enfants de moins de 13ans, la réglementation COPPA vous impose certaines obligations. Pour plus d’informations sur les obligations qui vous incombent, veuillez consulter [cette page](http://go.microsoft.com/fwlink/p/?linkid=536558).
+> Si votre application s’adresse aux enfants de moins de 13ans, la réglementation COPPA vous impose certaines obligations. Pour plus d’informations sur les obligations qui vous incombent, veuillez consulter [cette page](https://go.microsoft.com/fwlink/p/?linkid=536558).

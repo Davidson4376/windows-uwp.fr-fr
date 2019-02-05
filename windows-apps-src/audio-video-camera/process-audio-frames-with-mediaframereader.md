@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944894"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050832"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Traiter des trames audio avec MediaFrameReader
 
@@ -21,7 +21,7 @@ Cet article vous explique comment utiliser un objet [**MediaFrameReader**](https
 > Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows10, version1803.
 
 > [!NOTE] 
-> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230).
+> Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230).
 
 ## <a name="setting-up-your-project"></a>Configuration de votre projet
 Le processus d’acquisition de trames audio est en grande partie identique à l’acquisition d’autres types d’images multimédias. Comme avec toute application utilisant **MediaCapture**, vous devez déclarer que votre application utilise la fonctionnalité *webcam* avant de tenter d’accéder à un appareil photo. Si votre application capture à partir d’un périphérique audio, vous devez également déclarer la fonctionnalité *microphone*. 
@@ -79,7 +79,7 @@ Vous pouvez utiliser un objet [**AudioFrame**](https://docs.microsoft.com/uwp/ap
 * [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Caméra](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Profils d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [Profils d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [Graphiques audio](audio-graphs.md)
  
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, AdMediatorControl, AdControl, migrer
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920166"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048676"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Mettre à jour votre application avec les bibliothèques de publicités les plus récentes pour bannières publicitaires
 
@@ -19,7 +19,7 @@ Depuis le 1er avril 2017, nous ne servons plus de bannières publicitaires aux a
 
 ## <a name="overview"></a>Vue d'ensemble
 
-Les applications UWP qui affichent des bannières publicitaires doivent utiliser le contrôle **AdControl** provenant des bibliothèques de publicités distribuées dans le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp). Ce SDK prend en charge un ensemble minimal de fonctionnalités, notamment la possibilité de servir des médias enrichis HTML5 via les [spécifications MRAID (définitions de l’interface publicitaire Rich-Media mobile) 1.0](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) définies par l’Interactive Advertising Bureau (IAB). La plupart de nos annonceurs veulent profiter de ces fonctionnalités. C’est pourquoi nous demandons aux développeurs d’utiliser une de ces versions de SDK pour rendre notre écosystème d’applications plus attrayant pour eux, ce qui par ailleurs augmentera vos revenus.
+Les applications UWP qui affichent des bannières publicitaires doivent utiliser le contrôle **AdControl** provenant des bibliothèques de publicités distribuées dans le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp). Ce SDK prend en charge un ensemble minimal de fonctionnalités, notamment la possibilité de servir des médias enrichis HTML5 via les [spécifications MRAID (définitions de l’interface publicitaire Rich-Media mobile) 1.0](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) définies par l’Interactive Advertising Bureau (IAB). La plupart de nos annonceurs veulent profiter de ces fonctionnalités. C’est pourquoi nous demandons aux développeurs d’utiliser une de ces versions de SDK pour rendre notre écosystème d’applications plus attrayant pour eux, ce qui par ailleurs augmentera vos revenus.
 
 Avant la publication de ce Kit de développement, nous avions créé la classe **AdControl** dans plusieurs versions plus anciennes du SDK publicitaire. Ces anciennes versions des SDK publicitaires ne sont plus prises en charge, car elles ne gèrent pas les fonctionnalités publicitaires minimales décrites ci-dessus. Depuis le 1er avril 2017, nous ne servons plus de bannières publicitaires aux applications qui utilisent une version non prise en charge du SDK publicitaire. Si vous disposez d’une application qui utilise toujours une version non prise en charge du SDK publicitaire, vous constaterez le comportement suivant:
 
@@ -27,14 +27,14 @@ Avant la publication de ce Kit de développement, nous avions créé la classe *
 
 * Lorsque le contrôle **AdControl** de votre application demande une nouvelle publicité, l’événement **ErrorOccurred** du contrôle est déclenché et la propriété **ErrorCode** des arguments d’événement prend la valeur **NoAdAvailable**.
 
-* Toutes les unités publicitaires associées à votre application seront désactivées. Vous ne pouvez pas supprimer ces unités publicitaires désactivée à partir de votre compte du centre de DePartnerv. Si vous mettez à jour votre application pour qu’elle utilise un [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) pris en charge, ignorez ces unités publicitaires et créez-en de nouvelles.
+* Toutes les unités publicitaires associées à votre application seront désactivées. Vous ne pouvez pas supprimer ces unités publicitaires désactivée à partir de votre compte du centre de DePartnerv. Si vous mettez à jour votre application pour qu’elle utilise un [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) pris en charge, ignorez ces unités publicitaires et créez-en de nouvelles.
 
 * En outre, les bannières publicitaires ne seront plus servies aux unités publicitaires utilisées dans plusieurs applications. Assurez-vous que vos unités publicitaires ne sont utilisées que dans une seule application.
 
-Si vous disposez d’une application existante (qui se trouve déjà dans le Store ou est en cours de développement) qui affiche des bannières publicitaires à l’aide du contrôle **AdControl** et si vous avez des doutes sur le SDK publicitaire utilisé dans votre application, suivez les instructions de cet article pour déterminer si vous devez mettre à jour votre application pour qu’elle utilise un SDK pris en charge. Si vous rencontrez des problèmes ou si vous avez besoin d’une assistance, [contactez le support](http://go.microsoft.com/fwlink/?LinkId=393643).
+Si vous disposez d’une application existante (qui se trouve déjà dans le Store ou est en cours de développement) qui affiche des bannières publicitaires à l’aide du contrôle **AdControl** et si vous avez des doutes sur le SDK publicitaire utilisé dans votre application, suivez les instructions de cet article pour déterminer si vous devez mettre à jour votre application pour qu’elle utilise un SDK pris en charge. Si vous rencontrez des problèmes ou si vous avez besoin d’une assistance, [contactez le support](https://go.microsoft.com/fwlink/?LinkId=393643).
 
 > [!NOTE]
-> Si votre application utilise déjà le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp) (pour les applications UWP), vous n’avez pas besoin de lui apporter des modifications supplémentaires.
+> Si votre application utilise déjà le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) (pour les applications UWP), vous n’avez pas besoin de lui apporter des modifications supplémentaires.
 
 ## <a name="prerequisites"></a>Éléments prérequis
 
@@ -76,7 +76,7 @@ Si votre application utilise une ancienne version du SDK, suivez ces instruction
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Installez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp).
+3.  Installez le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp).
 
 ## <a name="part-3-update-your-project"></a>Partie 3: Mettez à jour votre projet
 

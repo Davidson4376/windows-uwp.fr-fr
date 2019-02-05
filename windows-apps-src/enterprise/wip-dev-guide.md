@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows10, uwp, wip, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: 229d97c137344de26be0168be437825bea8e9700
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f022045787512f6baea679633d5327b6ba4caf8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932542"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048356"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Guide du développeur sur la Protection des informations Windows
 
@@ -21,7 +21,7 @@ Une application *compatible* fait la distinction entre les données personnelles
 
 Dans ce guide, nous allons vous montrer comment créer une stratégie de ce type. Une fois cette stratégie créée, les administrateurs de stratégie pourront faire confiance à votre application pour l’utilisation des données de leur organisation. De plus, les employés apprécieront que vous ayez conservé leurs données personnelles intactes sur leur appareil même s’ils se sont désinscrits de la gestion des périphériques mobiles (GPM) de leur organisation ou s’ils ont quitté totalement l’organisation.
 
-__Remarque__ Ce guide vous aide à rendre compatible une application UWP. Si vous souhaitez rendre compatible une application de bureau Windows C++, consultez le [Guide du développeur sur la Protection des informations Windows (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+__Remarque__ Ce guide vous aide à rendre compatible une application UWP. Si vous souhaitez rendre compatible une application de bureau Windows C++, consultez le [Guide du développeur sur la Protection des informations Windows (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
 
 Pour en savoir plus sur la stratégie de Protection des informations Windows et les applications compatibles, reportez-vous ici: [Protection des informations Windows](wip-hub.md).
 
@@ -1163,4 +1163,4 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-[Exemple de Protection des informations Windows](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[Exemple de Protection des informations Windows](https://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)

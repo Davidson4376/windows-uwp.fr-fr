@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore
 ms.localizationpriority: medium
-ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922799"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049466"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
@@ -41,7 +41,7 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 
 Avant d’écrire le code d’appel de l’API de soumission au MicrosoftStore, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
 * Vous devez [associer une application Azure AD avec votre compte espace partenaires](#associate-an-azure-ad-application-with-your-windows-partner-center-account) et obtenez votre client l’ID client et clé. Vous avez besoin de ces valeurs pour obtenir un jeton d’accès Azure AD, qui vous servira dans les appels à l’API de soumission au MicrosoftStore.
 

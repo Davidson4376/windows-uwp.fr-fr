@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multi-utilisateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 326bb547ac5b0d31f5112d7d5737ddad0d592dd5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942065"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046938"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Ajouter des utilisateurs, groupes et applications Azure AD à votre compte espace partenaires
 
@@ -26,7 +26,7 @@ Lorsque vous ajoutez des utilisateurs, vous devez spécifier l’accès à votre
 N’oubliez pas que tous les utilisateurs de l’espace partenaires (y compris les groupes et applications Azure AD) doivent avoir un compte actif dans [un client Azure AD qui est associé à votre compte espace partenaires](associate-azure-ad-with-partner-center.md). La gestion des utilisateurs s’effectue dans un seul client à la fois. Vous devez vous connecter avec un compte de gestionnaire pour le client dans lequel vous souhaitez ajouter ou modifier des utilisateurs. Création d’un utilisateur dans l’espace partenaires crée également un compte pour cet utilisateur dans le client Azure AD auquel vous êtes connecté, et apporter des modifications au nom d’un utilisateur dans l’espace partenaires sera répercutée dans le locataire Azure AD de votre organisation.
 
 > [!NOTE]
-> Si votre organisation utilise [l’intégration d’annuaires](http://go.microsoft.com/fwlink/p/?LinkID=724033) pour synchroniser le service d’annuaire local avec votre compte Azure AD, vous ne serez pas en mesure de créer de nouveaux utilisateurs, de groupes ou des applications Azure AD dans l’espace partenaires. Vous (ou un autre administrateur de votre annuaire local) devrez créer ces éléments directement dans le répertoire local avant de la vous serez en mesure d’afficher et les ajouter dans l’espace partenaires.
+> Si votre organisation utilise [l’intégration d’annuaires](https://go.microsoft.com/fwlink/p/?LinkID=724033) pour synchroniser le service d’annuaire local avec votre compte Azure AD, vous ne serez pas en mesure de créer de nouveaux utilisateurs, de groupes ou des applications Azure AD dans l’espace partenaires. Vous (ou un autre administrateur de votre annuaire local) devrez créer ces éléments directement dans le répertoire local avant de la vous serez en mesure d’afficher et les ajouter dans l’espace partenaires.
 
 
 <span id="users" />

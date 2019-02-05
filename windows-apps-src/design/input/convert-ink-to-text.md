@@ -8,12 +8,12 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 07ed74af3ebe558c6a82cd799cb6aa1efa035e46
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980377"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048982"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Reconnaître les traits WindowsInk en tant que texte et formes
 
@@ -475,7 +475,7 @@ Consultez la rubrique portant sur la propriété [**InkRecognizer.Name**](https:
 
 Votre application peut interroger l’ensemble des moteurs de reconnaissance de l’écriture manuscrite installés et utiliser l’un d’entre eux ou laisser un utilisateur sélectionner sa langue par défaut.
 
-**Remarque**  les utilisateurs peuvent voir une liste des langues installées en accédant à **paramètres -&gt; heure et langue**. Les langues installées figurent sous **Langues**.
+**Remarque**  les utilisateurs peuvent voir une liste des langues installées en accédant à **paramètres -&gt; & temps langue**. Les langues installées figurent sous **Langues**.
 
 Pour installer de nouveaux modules linguistiques et activer la reconnaissance de l’écriture manuscrite pour cette langue, procédez comme suit:
 
@@ -862,9 +862,9 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
 * [Exemple de reconnaissance de l’écriture manuscrite WindowsInk (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 **Autres exemples**
-* [Exemple d’entrée manuscrite simple (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Exemple d’entrée manuscrite complexe (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Exemple d’entrée manuscrite (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Exemple d’entrée manuscrite simple (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Exemple d’entrée manuscrite complexe (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Exemple d’entrée manuscrite (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [Prise en main du didacticiel: prendre en charge l’entrée manuscrite dans votre application UWP](https://aka.ms/appsample-ink)
 * [Exemple de livre de coloriage](https://aka.ms/cpubsample-coloringbook)
 * [Exemple de notes de famille](https://aka.ms/cpubsample-familynotessample)

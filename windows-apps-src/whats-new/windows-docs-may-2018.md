@@ -5,18 +5,18 @@ keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 20bb514a15963befb5b96a1b01a6c057e8f27482
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: be67c83a986602318adf995bae35c09e5a7a4997
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926335"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048666"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en mai 2018
 
 La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs, vidéos et exemples suivants ont été mis à disposition du mois de mai coïncider avec la conférence [Microsoft Build 2018](https://www.microsoft.com/build) des développeurs.
 
-[Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -99,7 +99,7 @@ La fonctionnalité jeux est disponible dans les versions d’évaluation Windows
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="get-started"></a>Prise en main
+### <a name="get-started"></a>Commencer
 
 Nous avons aux retraités rajeunit notre Get démarré contenu avec les nouvelles pistes d’apprentissage. Ces nouvelles rubriques objectif est d’offrir aux nouveaux développeurs Windows 10 avec les informations sur les tâches courantes ils souhaitent accomplir. Ils ne sont pas des didacticiels et ne fournissent pas une procédure pas à pas PORTATIF, mais au lieu de cela souligner lorsqu’il existe une documentation existante et comment l’utiliser. Consultez l’article revisitée [commencer à coder](../get-started/create-uwp-apps.md) page, ou à découvrir chaque piste d’apprentissage individuels:
 

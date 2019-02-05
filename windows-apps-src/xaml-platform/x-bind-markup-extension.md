@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1d8e065b76a79a6733d1fa066cd924d07a8fc7c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925200"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045365"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -28,9 +28,9 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 
 **Exemples d’applications illustrant {x:Bind}**
 
--   [Exemple avec {x:Bind}](http://go.microsoft.com/fwlink/p/?linkid=619989)
+-   [Exemple avec {x:Bind}](https://go.microsoft.com/fwlink/p/?linkid=619989)
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
--   [Exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=619992)
+-   [Exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 

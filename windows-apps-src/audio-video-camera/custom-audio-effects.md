@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 5278a845e56f1df76cc663bbb0c517b589a23524
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e04b3a764c170fa3e3e0ce1372e72b73795b5b12
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921962"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049326"
 ---
 # <a name="custom-audio-effects"></a>Effets audio personnalisés
 
@@ -147,7 +147,7 @@ L’extrait de code suivant illustre l’ajout de l’effet audio personnalisé 
 ## <a name="related-topics"></a>Rubriquesconnexes
 * [Accès à l’aperçu simple de l’appareil photo](simple-camera-preview-access.md)
 * [Compositions multimédias et modification](media-compositions-and-editing.md)
-* [Documentation Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Documentation Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Lecture de contenu multimédia](media-playback.md)
 
  

@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a06859d6580720150383f2995505e671c0a31a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947234"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049626"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
@@ -79,7 +79,7 @@ Le meilleur moyen de tester l’accessibilité de votre clavier consiste à déb
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
 
 ## <a name="verify-the-contrast-ratio-of-visible-text"></a>Vérifier le coefficient de contraste du texte visible  
-Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Les exceptions comprennent les éléments d’interface utilisateur inactifs, ainsi que les logos et le texte décoratif qui ne transmettent pas d’informations et peuvent être réorganisés sans modifier la signification. Pour plus d’informations sur le coefficient de contraste et les exceptions, voir [Exigences de texte accessible](accessible-text-requirements.md). Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
+Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Les exceptions comprennent les éléments d’interface utilisateur inactifs, ainsi que les logos et le texte décoratif qui ne transmettent pas d’informations et peuvent être réorganisés sans modifier la signification. Pour plus d’informations sur le coefficient de contraste et les exceptions, voir [Exigences de texte accessible](accessible-text-requirements.md). Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
 > Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à entrer des valeurs de couleur de premierplan et d’arrière-plan manuellement dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran, ou à exécuter l’outil tout en ouvrant des fichiers bitmap sources dans un programme d’édition d’images plutôt que pendant que cette image est chargée par l’application.
@@ -163,5 +163,5 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 * [Accessibilité](accessibility.md)
 * [Pratiques à éviter](practices-to-avoid.md)
 * [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Accessibilité dans Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Accessibilité dans Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

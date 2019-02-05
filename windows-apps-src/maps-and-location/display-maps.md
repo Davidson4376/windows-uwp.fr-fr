@@ -6,18 +6,18 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: Windows10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 03c864a6e8bc6191f63a2b6fd55d8eb23ad965e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924361"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046988"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
 Vous pouvez afficher une carte dans une fenêtre pouvant faire l'objet d'un abandon interactif, appelée carte *placecard* ou dans un contrôle de carte complet.
 
-Télécharger l'[exemple de carte](http://go.microsoft.com/fwlink/p/?LinkId=619977) afin de tester certaines des fonctionnalités décrites dans ce guide.
+Télécharger l'[exemple de carte](https://go.microsoft.com/fwlink/p/?LinkId=619977) afin de tester certaines des fonctionnalités décrites dans ce guide.
 
 <a id="placecard" />
 
@@ -455,10 +455,10 @@ Gérez les modifications qui se produisent lorsque l’utilisateur ou l’applic
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Obtenir l’emplacement actuel](get-location.md)
 * [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

@@ -6,12 +6,12 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: b54c33ab3807c26faba6a8cadd5318b4365f9ded
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8d6609d73090d7d981d992bef4ca8ce6be3cc20a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922723"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044553"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 
@@ -68,7 +68,7 @@ Certains aspects de l’interface utilisateur de votre application s’adaptent 
 
 Un magasin d’applications unifié rend votre application disponible sur les appareils Windows 10 tels que PC, tablette, Xbox, HoloLens, Surface Hub et Internet des objets (IoT). Vous pouvez soumettre votre application au Store et la rendre disponible sur tous les types d’appareils ou uniquement sur ceux que vous choisissez. Vous pouvez soumettre et gérer toutes vos applications pour appareils Windows au même endroit. Vous avez une application de bureau C++ que vous souhaitez moderniser grâce aux fonctionnalités UWP et commercialiser dans le Microsoft Store? Cela ne pose aucun problème.
 
-À des fins de télémétrie et d’analyse détaillées, les applications UWP s’intègrent avec [Application Insights](http://azure.microsoft.com/services/application-insights/): un outil crucial pour comprendre vos utilisateurs et améliorer vos applications.
+À des fins de télémétrie et d’analyse détaillées, les applications UWP s’intègrent avec [Application Insights](https://azure.microsoft.com/services/application-insights/): un outil crucial pour comprendre vos utilisateurs et améliorer vos applications.
 
 ### <a name="monetize-your-app"></a>Monétiser votre application
 
@@ -115,7 +115,7 @@ Consultez [Se préparer](get-set-up.md) pour télécharger les outils dont vous 
 
 Le nom du système de conception Microsoft est Fluent. Le système Fluent Design est un ensemble de fonctionnalités UWP combinées avec les meilleures pratiques pour créer des applications qui s’exécutent parfaitement sur tous les types d’appareils fonctionnant sous Windows. Les expériences Fluent s’adaptent parfaitement aux différents appareils (tablettes ou ordinateurs portables, PC ou téléviseurs, ainsi que sur des appareils de réalité virtuelle). Consultez la section [Système Fluent Design pour les applications UWP](https://docs.microsoft.com/windows/uwp/design/fluent-design-system) pour obtenir une présentation du système Fluent Design.
 
-Une bonne [conception](http://go.microsoft.com/fwlink/?LinkId=258848) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont celle-ci se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de conception](https://dev.windows.com/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://msdn.microsoft.com/library/windows/apps/dn958439). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../design/devices/index.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
+Une bonne [conception](https://go.microsoft.com/fwlink/?LinkId=258848) est le processus consistant à décider comment les utilisateurs doivent interagir avec votre application, ainsi que la manière dont celle-ci se présentera et fonctionnera. L’expérience utilisateur jouant un rôle considérable dans la satisfaction que procurera votre application, ne lésinez pas sur cette étape. La rubrique [Notions de base de conception](https://dev.windows.com/design) présente la conception d’une application Windows universelle. Pour plus d’informations sur la conception d’applications UWP susceptibles d’enchanter les utilisateurs, voir [Présentation des applications de la plateforme Windows universelle (UWP) pour les concepteurs](https://msdn.microsoft.com/library/windows/apps/dn958439). Avant de commencer à coder, voir [Notions fondamentales sur les appareils](../design/devices/index.md) pour réfléchir à l’expérience d’interaction de l’utilisation de votre application sur les différents facteurs de forme que vous voulez cibler.
 
 En plus de l’interaction sur différents appareils, [planifiez votre application](https://msdn.microsoft.com/library/windows/apps/hh465427) pour bénéficier des avantages liés à l’utilisation de plusieurs appareils. Exemple:
 
@@ -125,7 +125,7 @@ En plus de l’interaction sur différents appareils, [planifiez votre applicati
 
 ### <a name="add-services"></a>Ajouter des services
 
-- Utilisez les [services cloud](http://go.microsoft.com/fwlink/?LinkId=526377) pour synchroniser les données sur tous les appareils.
+- Utilisez les [services cloud](https://go.microsoft.com/fwlink/?LinkId=526377) pour synchroniser les données sur tous les appareils.
 - Découvrez comment vous [connecter aux services Web](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504) pour renforcer l’expérience de votre application.
 - Découvrez comment [Ajouter Cortana sur votre application](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382) pour que votre application puisse répondre aux commandes vocales.
 - Incluez des [Notifications Push](https://msdn.microsoft.com/library/windows/apps/mt187203) et des [achats dans l’application](https://msdn.microsoft.com/library/windows/apps/mt219684) dans votre planification. Ces fonctionnalités doivent opérer sur tous les appareils.

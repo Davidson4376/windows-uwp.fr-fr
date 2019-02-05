@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, l’impression
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926262"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046382"
 ---
 # <a name="customize-the-print-preview-ui"></a>Personnaliser l’interface utilisateur d’aperçu avant impression
 
@@ -25,7 +25,7 @@ ms.locfileid: "8926262"
 
 Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. Pour plus d’informations sur l’impression, consultez [Imprimer à partir de votre application](print-from-your-app.md).
 
-**Conseil**la plupart des exemples de cette rubrique est basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+**Conseil**la plupart des exemples de cette rubrique est basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
  
 
@@ -187,4 +187,4 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 * [Instructions de conception concernant l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Vidéo de la build 2015 : développement d’applications qui impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [Exemple d’impression UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)

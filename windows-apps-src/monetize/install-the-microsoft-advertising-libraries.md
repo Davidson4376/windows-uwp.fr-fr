@@ -6,16 +6,16 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, pub, publicités, installer, SDK, bibliothèque de publicités
 ms.localizationpriority: medium
-ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939337"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047750"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK MicrosoftAdvertising
 
-Pour afficher des publicités dans vos applications UWP pour Windows10, installez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp). Ce kit de développement logiciel(SDK) est une extension de VisualStudio2015 et des versions ultérieures.
+Pour afficher des publicités dans vos applications UWP pour Windows10, installez le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp). Ce kit de développement logiciel(SDK) est une extension de VisualStudio2015 et des versions ultérieures.
 
 > [!NOTE]
 > Si vous développez une application UWP JavaScript/HTML et que vous avez installé le SDK Windows 10 version 10.0.14393 (mise à jour anniversaire) ou une version ultérieure, vous devez également installer la bibliothèque [WinJS](https://github.com/winjs/winjs) . Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel pour Windows10, mais depuis le SDK Windows10 version10.0.14393 (Mise à jour anniversaire), elle doit être installée séparément.
@@ -35,7 +35,7 @@ Pour installer le SDK Microsoft Advertising via le programme d’installationMSI
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Téléchargez et installez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp). L’installation peut prendre quelques minutes. Attendez la fin du processus.
+3.  Téléchargez et installez le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp). L’installation peut prendre quelques minutes. Attendez la fin du processus.
 
 4.  Redémarrez VisualStudio.
 
@@ -66,7 +66,7 @@ Pour installer le SDKMicrosoft Advertising dans un projet UWP spécifique via Nu
 
 5. Dans la zone de recherche, tapez **Microsoft.Advertising.XAML** (pour un projet XAML) ou **Microsoft.Advertising.JS** (pour un projet JavaScript/HTML) et installez le package correspondant. Lorsque l’installation du package est terminée, enregistrez votre solution.
     > [!NOTE]
-    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur ```repositoryPath``` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projetVisual Studio vers un dossier différent présentant un chemin plus court.
+    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur ```repositoryPath``` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projetVisual Studio vers un dossier différent présentant un chemin plus court.
 
 6. Fermez votre solution, puis rouvrez-la.
 
@@ -101,7 +101,7 @@ Vous trouverez des procédures pas à pas montrant comment commencer à utiliser
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Comprendre les packages d’infrastructure du SDK Microsoft Advertising
 
-La bibliothèque Microsoft.Advertising.dll du [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) (pour applications UWP) est configurée comme un *package d’infrastructure*. Cette bibliothèque contient les API publicitaires des espaces de noms [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) et [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
+La bibliothèque Microsoft.Advertising.dll du [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) (pour applications UWP) est configurée comme un *package d’infrastructure*. Cette bibliothèque contient les API publicitaires des espaces de noms [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) et [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
 
 Cette bibliothèque étant un package d’infrastructure, cela signifie que dès qu’un utilisateur installe une version de votre application qui l’utilise, elle sera automatiquement mise à jour sur l’appareil via WindowsUpdate lors de la publication d’une nouvelle version de la bibliothèque intégrant des correctifs et améliorant ses performances. Ainsi, vos clients sont toujours assurés de disposer de la dernière version disponible de la bibliothèque sur leurs appareils.
 

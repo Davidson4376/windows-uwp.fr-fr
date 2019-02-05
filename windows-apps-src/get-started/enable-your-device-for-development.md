@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 802555f6b1e6f928edf43806226ac497a437b4ff
-ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
+ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991757"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044942"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -68,7 +68,7 @@ Informations spécifiques à la famille d’appareils
 Le paramètre **Charger la version test des applications** est une option plus sécurisée que le mode développeur, car vous ne pouvez pas installer d’applications sans certificat approuvé sur l’appareil.
 
 > [!NOTE]
-> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le MicrosoftStore, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; MicrosoftStore de cette [déclaration de confidentialité](http://go.microsoft.com/fwlink/?LinkId=521839).
+> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le MicrosoftStore, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; MicrosoftStore de cette [déclaration de confidentialité](https://go.microsoft.com/fwlink/?LinkId=521839).
 
 
 ### <a name="developer-mode"></a>Mode développeur
@@ -133,7 +133,7 @@ Dans les versions antérieures de Windows10Mobile, une option de vidages sur inc
 
 Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows10 sur un appareil Windows10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans les deux cas, seul le package d’application (.appx/.appxbundle) est installé, et non les certificats.
 
--   Utilisez l’outil de déploiement d’applications Windows10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
+-   Utilisez l’outil de déploiement d’applications Windows10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
 -   Vous pouvez utiliser [Portail d’appareil](../debug-test-perf/device-portal.md) pour effectuer un déploiement de votre navigateur vers un appareil mobile exécutant Windows10 version1511 ou ultérieure. Utilisez la page **[Applications](../debug-test-perf/device-portal.md#apps-manager)** dans Device Portal pour charger un package d’application (.appx) sur le serveur et l’installer sur l’appareil.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Échec de l’installation du package Mode développeur

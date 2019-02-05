@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920581"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046492"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>Espaces de noms XAML et mappage d’espaces de noms
 
@@ -65,7 +65,7 @@ L’espace de noms XAML «d:» est destiné à la prise en charge de concepteur,
 
 -   **Attribut d:DataContext :** vous pouvez définir cet attribut sur une racine de page ou un contrôle pour remplacer tout [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) explicite ou hérité que cet objet a sans cela.
 -   **Attribut d:DesignSource :** spécifie une source de données au moment de la conception pour un [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), en remplacement de [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
--   **Extensions de balisage d:DesignInstance et d:DesignData :** ces extensions de balisage sont utilisées pour fournir les ressources de données au moment de la conception pour **d:DataContext** ou **d:DesignSource**. Nous ne documentons pas de manière exhaustive ici l’utilisation des ressources de données au moment de la conception. Pour plus d’informations, voir [Attributs au moment de la conception](http://go.microsoft.com/fwlink/p/?LinkId=272504). Pour obtenir des exemples d’utilisation, voir [Exemples de données sur l’aire de conception et pour la création d’un prototype](https://msdn.microsoft.com/library/windows/apps/mt517866).
+-   **Extensions de balisage d:DesignInstance et d:DesignData :** ces extensions de balisage sont utilisées pour fournir les ressources de données au moment de la conception pour **d:DataContext** ou **d:DesignSource**. Nous ne documentons pas de manière exhaustive ici l’utilisation des ressources de données au moment de la conception. Pour plus d’informations, voir [Attributs au moment de la conception](https://go.microsoft.com/fwlink/p/?LinkId=272504). Pour obtenir des exemples d’utilisation, voir [Exemples de données sur l’aire de conception et pour la création d’un prototype](https://msdn.microsoft.com/library/windows/apps/mt517866).
 
 ### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

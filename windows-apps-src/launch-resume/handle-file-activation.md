@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925896"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046512"
 ---
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
@@ -129,13 +129,13 @@ Lorsque votre application est lancée via l’activation des fichiers, vous deve
 
 ## <a name="remarks"></a>Remarques
 
-Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053).
+Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](https://go.microsoft.com/fwlink/p/?LinkID=142053).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 ### <a name="complete-example"></a>Exemple complet
 
-* [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Exemple de lancement d’association](https://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 ### <a name="concepts"></a>Concepts
 

@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932668"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047271"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -43,7 +43,7 @@ Les étapes suivantes montrent comment activer le portail d’appareilXbox, qui 
 
 Le portail d’appareilXbox fournit un ensemble de pages standard similaires à ce qui est disponible sur le portail d’appareilWindows, ainsi que plusieurs pages uniques. Pour en obtenir une description détaillée, voir [Vue d’ensemble du portail d’appareilWindows](device-portal.md). Les sections suivantes décrivent les pages qui sont propres au portail d’appareilXbox.
 
-### <a name="home"></a>Accueil
+### <a name="home"></a>Home
 
 Similaire à la page **Apps manager** (Gestionnaire d’applications) du portail d’appareilWindows, la page **Accueil** du portail d’appareilXbox répertorie les applications et les jeux installés sous **Mes jeux et applications**. Vous pouvez cliquer sur le nom d’un jeu ou d’une application pour afficher plus d’informations à son sujet, comme le **nom de la famille de packages**. Dans le menu déroulant **Actions**, vous pouvez agir sur le jeu ou sur l’application, notamment en la **lançant**.
 
@@ -165,7 +165,7 @@ Un capteur Kinect doit être connecté à la console afin de modifier ces param�
 
 * **When idle, turn off after** (En cas d’inactivité, éteindre après(minutes)): éteint l’appareil après le délai d’inactivité défini.
 
-* **Mode d’alimentation**: mode d’alimentation de l’appareil. Pour plus d’informations, voir [À propos des modes d’alimentation Économie d’énergie et Démarrage instantané](http://support.xbox.com/xbox-one/console/learn-about-power-modes).
+* **Mode d’alimentation**: mode d’alimentation de l’appareil. Pour plus d’informations, voir [À propos des modes d’alimentation Économie d’énergie et Démarrage instantané](https://support.xbox.com/xbox-one/console/learn-about-power-modes).
 
 * **Automatically boot console when connected to power** (Démarrer automatiquement la console en cas de branchement à l’alimentation): l’appareil s’allume automatiquement lorsqu’il est connecté à une source d’alimentation.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: e9eafde0596ad3156f52a7a2f0a1566444a9836a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918957"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046788"
 ---
 # <a name="bluetooth-le-advertisements"></a>Annonces publicitaires BluetoothLE
 
@@ -29,7 +29,7 @@ Un développeur peut exécuter deuxfonctions principales à l’aide des API d�
 -   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): écouter les balises proches et les filtrer en fonction de la charge utile ou de la proximité.  
 -   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
 
-L’exemple de code complet est disponible dans l’[exemple d’annonce Bluetooth](http://go.microsoft.com/fwlink/p/?LinkId=619990) sur Github.
+L’exemple de code complet est disponible dans l’[exemple d’annonce Bluetooth](https://go.microsoft.com/fwlink/p/?LinkId=619990) sur Github.
 
 ## <a name="basic-setup"></a>Configuration de base
 

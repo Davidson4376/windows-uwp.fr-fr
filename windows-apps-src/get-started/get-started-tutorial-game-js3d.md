@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942786"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047773"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -35,7 +35,7 @@ Vous souhaitez avoir un aperçu de l’application que nous allons développer a
 
 Pour jouer avec ce projet, vous aurez besoin des éléments suivants:
 -   Un ordinateur Windows (physique ou virtuel) exécutant la version actuelle de Windows10.
--   Visual Studio. Visual Studio Community Edition peut être téléchargé gratuitement à partir de la [page d’accueil de Visual Studio](http://visualstudio.com/).
+-   Visual Studio. Visual Studio Community Edition peut être téléchargé gratuitement à partir de la [page d’accueil de Visual Studio](https://visualstudio.com/).
 Ce projet utilise la bibliothèque JavaScript **three.js**. **Three.js** est publié sous la licence MIT. Cette bibliothèque est déjà présente dans le projet (recherchez `js/libs` dans la vue Explorateur de solutions). Vous trouverez plus d’informations sur cette bibliothèque sur la page d’accueil de [**three.js**](https://threejs.org/).
 
 ## <a name="getting-started"></a>Prise en main

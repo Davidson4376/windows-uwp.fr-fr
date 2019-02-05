@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941156"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044360"
 ---
 # <a name="getting-paid"></a>Rémunération
 Voici quelques informations importantes sur la rémunération de paiement pour vos applications, d’extensions et vos revenus publicitaires.
@@ -21,7 +21,7 @@ Voici quelques informations importantes sur la rémunération de paiement pour v
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
-Quand vous [créez un compte de développeur](http://go.microsoft.com/fwlink/p/?LinkID=615100), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Ce contrat détaille la relation qui vous unit à Microsoft en ce qui concerne la vente d'applications dans le Microsoft Store, notamment les frais facturés par Microsoft pour chaque vente réalisée par le biais du Store.
+Quand vous [créez un compte de développeur](https://go.microsoft.com/fwlink/p/?LinkID=615100), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Ce contrat détaille la relation qui vous unit à Microsoft en ce qui concerne la vente d'applications dans le Microsoft Store, notamment les frais facturés par Microsoft pour chaque vente réalisée par le biais du Store.
 
 Dans la plupart des cas, les frais du Windows Store sont de 30 %. Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Pour toute question, reportez-vous à ce document.
 

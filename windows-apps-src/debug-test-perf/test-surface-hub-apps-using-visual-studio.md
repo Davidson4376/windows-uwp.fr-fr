@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b40fd56a85be6dce441324a427790cda28f9d7ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: db481fac1bdcb9e79762f52aee48574e987c4cbb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929531"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048882"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Tester les applications de Surface Hub à l’aide de Visual Studio
 Le simulateur de Visual Studio fournit un environnement dans lequel vous pouvez concevoir, développer, déboguer et tester des applications de plateforme Windows universelle (UWP), y compris les applications que vous avez conçues pour Microsoft Surface Hub. Le simulateur n’utilise pas la même interface utilisateur en tant que Surface Hub, mais il est utile pour tester comment votre application se présente et se comporte de la taille d’écran du Surface Hub et résolutions.
@@ -69,7 +69,7 @@ Pour ajouter des résolutions de SurfaceHub au simulateur:
     ![Résolutions du simulateur VisualStudio](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [Activer le mode tablette](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet) afin de simuler l’expérience d’un Surface Hub.
+   > [Activer le mode tablette](https://windows.microsoft.com/windows-10/getstarted-like-a-tablet) afin de simuler l’expérience d’un Surface Hub.
 
 ## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>Déployer des applications sur un appareil Surface Hub à partir de Visual Studio
 Le déploiement manuel d’une application sur un Surface Hub est un processus simple.
@@ -85,7 +85,7 @@ Par défaut, Surface Hub installe uniquement des applications depuis le Microsof
    > [!NOTE]
    > Accéder à l’application paramètres sur Surface Hub nécessite des privilèges d’administration.
 
-2. Accédez à **mise à jour et sécurité \ > pour les développeurs**.
+2. Accédez à **mettre à jour & sécurité \> pour les développeurs**.
 
 3. Choisissez **Mode développeur** et acceptez le message d’avertissement.
 

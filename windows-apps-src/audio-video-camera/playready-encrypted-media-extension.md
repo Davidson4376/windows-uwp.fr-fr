@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945073"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047291"
 ---
 # <a name="playready-encrypted-media-extension"></a>Extension EME (Encrypted Media Extension) PlayReady
 
@@ -61,7 +61,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 
 Cette section décrit la version de l’extension EME (Encrypted Media Extension) W3C prise en charge par PlayReady.
 
-PlayReady pour les applications web est actuellement lié à l’[ébauche du document W3C sur l’extension EME (Encrypted Media Extension) datée du 10mai2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). Cette prise en charge sera remplacée par la spécification EME mise à jour dans les prochaines versions de Windows.
+PlayReady pour les applications web est actuellement lié à l’[ébauche du document W3C sur l’extension EME (Encrypted Media Extension) datée du 10mai2013](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/). Cette prise en charge sera remplacée par la spécification EME mise à jour dans les prochaines versions de Windows.
 
 ## <a name="use-hardware-drm"></a>Utiliser la gestion des droits numériques en fonction du matériel
 
@@ -78,7 +78,7 @@ Il arrive que certains contenus ne soient pas pris en charge par la gestion des 
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application web.
 
-L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de streaming multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt sécurisé :
 

@@ -6,12 +6,12 @@ ms.date: 1/25/2017
 ms.topic: article
 keywords: windows10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ef6e364f8c6c88400d2d47a0591d4b7432c33215
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923740"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048016"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
@@ -30,7 +30,7 @@ Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir
 * [Principes de base de C# pour les néophytes](https://go.microsoft.com/fwlink/?linkid=850801)
 * [Principes de base de VB pour les néophytes](https://go.microsoft.com/fwlink/?linkid=850802)
 * [Guide pour le développeur vers Windows10](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [Microsoft Virtual Academy](https://www.microsoftvirtualacademy.com/)
 
 Si vous souhaitez consulter des ressources un peu plus amusantes que «Hello, World!», essayez ces didacticiels:
 
@@ -46,8 +46,8 @@ Tirer parti de vos compétences en programmation C++ pour créer des application
 
 En savoir plus sur C++:
 
-* [C++: A General Purpose Language and Library Jump Start (C++: Mise en route rapide avec un langage et une bibliothèque généralistes)](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++: A General Purpose Language and Library Jump Start (C++: Mise en route rapide avec un langage et une bibliothèque généralistes)](https://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+* [Académie virtuelle Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 Si vous souhaitez consulter des ressources un peu plus amusantes que «Hello, World!», essayez ces didacticiels:
 
@@ -71,9 +71,9 @@ Les applications web peuvent être facilement empaquetées dans l’infrastructu
 
 Vous avez besoin d’actualiser vos compétences web?
 
-* [Principes de base de JavaScript pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [HTML5 &amp; CSS3 Fundamentals for Absolute Beginners (Principes de base de HTML5 et CSS3 pour les néophytes)](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [Principes de base de JavaScript pour les néophytes](https://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [HTML5 &amp; CSS3 Fundamentals for Absolute Beginners (Principes de base de HTML5 et CSS3 pour les néophytes)](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="see-also"></a>Articles associés
 

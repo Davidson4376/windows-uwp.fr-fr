@@ -5,12 +5,12 @@ keywords: activité utilisateur, activités utilisateur, chronologie, cortana re
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33103ebfc7ee3e26a11de781af7981bce78b349c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e98f5d73cf2d1afb26a823ed417c8980d118485c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930980"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046878"
 ---
 # <a name="user-activities-best-practices"></a>Bonnes pratiques des activités utilisateur
 
@@ -101,7 +101,7 @@ Dans l’exemple suivant, les métadonnées de contenu JSON, en suivant les norm
 
 * [Activités de l’utilisateur (documentation du projet «Rome»)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Cartes adaptatives](https://docs.microsoft.com/adaptive-cards/)
-* [Visualiseur de cartes adaptatives, exemples](http://adaptivecards.io/)
+* [Visualiseur de cartes adaptatives, exemples](https://adaptivecards.io/)
 * [Gérer l’activation des URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Interagir avec vos clients sur toute plateforme à l’aide de MicrosoftGraph, du flux d’activité et des cartes adaptatives](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

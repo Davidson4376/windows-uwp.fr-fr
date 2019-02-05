@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037011"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047893"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
@@ -84,7 +84,7 @@ L’ajout d’un InkCanvas à votre application nécessite une seule ligne de ba
 ```
 
 > [!NOTE]
-> Pour la personnalisation InkCanvas détaillée à l’aide d’InkPresenter, consultez l’article [«Interactions avec le stylo et le stylet dans les applicationsUWP»](http://windowsstyleguide/input/pen-and-stylus-interactions/).
+> Pour la personnalisation InkCanvas détaillée à l’aide d’InkPresenter, consultez l’article [«Interactions avec le stylo et le stylet dans les applicationsUWP»](https://windowsstyleguide/input/pen-and-stylus-interactions/).
 
 Le contrôle InkToolbar doit être utilisé en association avec un contrôle InkCanvas. L’intégration d’un contrôle InkToolbar (et de tous les outils intégrés) dans votre application nécessite une ligne supplémentaire de balisage:
 
@@ -170,6 +170,6 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 
 ## <a name="related-articles"></a>Articles associés
 
-- [Interactions avec le stylo et le stylet dans les applicationsUWP](http://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Reconnaître les traits d’encre](http://windowsstyleguide/input/convert-ink-to-text/)
-- [Stocker et récupérer des traits d’encre](http://windowsstyleguide/input/save-and-load-ink/)
+- [Interactions avec le stylo et le stylet dans les applicationsUWP](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [Reconnaître les traits d’encre](https://windowsstyleguide/input/convert-ink-to-text/)
+- [Stocker et récupérer des traits d’encre](https://windowsstyleguide/input/save-and-load-ink/)

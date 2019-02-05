@@ -6,17 +6,17 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 09bda2bda5f6f8731b64321d3282f540e6c50db4
-ms.sourcegitcommit: 4e12e820141fa5c3e61052ec78452b4032a974da
+ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999754"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045638"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](https://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, un PC équipé d’une manette Xbox, ou le dernier jeu rayon avec une souris et un clavier. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
 

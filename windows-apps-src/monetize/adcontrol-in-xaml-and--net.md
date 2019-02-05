@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows10, uwp, annonces, publicité, AdControl, contrôle de publicité, XAML, .net, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8784de7025a2e9efa8e9e02be14c94579730a1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920407"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050186"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl en XAML et .NET
 
@@ -19,11 +19,11 @@ ms.locfileid: "8920407"
 Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) pour afficher des bannières publicitaires dans une application de plateforme Windows universelle (UWP) XAML pour Windows10 implémentées avec C#.
 
 > [!NOTE]
-> Le Kit de développement MicrosoftAdvertising prend également en charge les applications XAML qui sont implémentées à l’aide de C++. Pour obtenir un exemple de projet complet, consultez les [exemples de publicité sur GitHub](http://aka.ms/githubads).
+> Le Kit de développement MicrosoftAdvertising prend également en charge les applications XAML qui sont implémentées à l’aide de C++. Pour obtenir un exemple de projet complet, consultez les [exemples de publicité sur GitHub](https://aka.ms/githubads).
 
 ## <a name="prerequisites"></a>Éléments prérequis
 
-* Installer le [SDK MicrosoftAdvertising](http://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
+* Installer le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>Intégrer une bannière publicitaire dans votre application
 
@@ -149,5 +149,5 @@ Vous pouvez utiliser plusieurs objets **AdControl** dans une seule application (
 
 * [Recommandations pour les bannières publicitaires](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Procédure pas à pas pour gérer les erreurs dans XAML/C#](error-handling-in-xamlc-walkthrough.md).
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Exemples de publicité sur GitHub](https://aka.ms/githubads)
 * [Configurer des unités publicitaires pour votre application](set-up-ad-units-in-your-app.md)

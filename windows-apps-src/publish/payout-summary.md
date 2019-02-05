@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
-ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e9ab2d2d096c6c0a639a831bb7d09f6d1d044a0c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919879"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046239"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 
@@ -20,7 +20,7 @@ La page **Résumé du paiement** affiche le détail des sommes rapportées par v
 
 Si vous utilisez la publicité pour générer des revenus, les informations de paiement concernant vos revenus publicitaires sont présentées sur la page **Résumé du paiement**. Nous allons montrer l’application dans laquelle ces revenus ont été gagnés ou «non mappés» pour les unités publicitaires utilisées dans plusieurs applications, ou qui ne peuvent pas être mappés à une application spécifique. 
 
-Si vous vendez des produits dans Place de marché MicrosoftAzure, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des informations supplémentaires concernant les rapports sur les revenus liés à Place de marché MicrosoftAzure sont disponibles [ici](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+Si vous vendez des produits dans Place de marché MicrosoftAzure, la page **Résumé du paiement** vous présente également des informations sur les paiements qui vous ont été versés. Pour plus d’informations sur le processus de paiement d’Azure Marketplace, voir [Politiques concernant la participation à Microsoft Azure Marketplace](https://go.microsoft.com/fwlink/p/?LinkId=722436) et [Microsoft Azure Marketplace Publisher Agreement (Contrat d’éditeur Microsoft Azure Marketplace)](https://go.microsoft.com/fwlink/p/?LinkID=699560 ). Des informations supplémentaires concernant les rapports sur les revenus liés à Place de marché MicrosoftAzure sont disponibles [ici](https://go.microsoft.com/fwlink/p/?LinkID=722439).
 
 > [!NOTE]
 > Pour que vous soyez éligible à la perception de revenus, vos revenus doivent atteindre le [seuil de paiement](payment-thresholds-methods-and-timeframes.md) applicable. Si vos revenus sont inférieurs au seuil fixé, le montant restera dans la catégorie **Réservé** jusqu’à ce que ce seuil soit atteint. Pour plus de détails sur le seuil de paiement applicable aux revenus de l’application, consultez le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Pour les revenus publicitaires, le seuil de paiement est fixé à 50USD (ou son équivalent dans la devise locale). 

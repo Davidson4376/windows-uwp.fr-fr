@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bc0f6d53181a88b02ecda19b3aed745febe40
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921706"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047534"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 
@@ -283,7 +283,7 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 
 ### <a name="frosted-glass"></a>Verre givré
 
-Créez un effet qui estompe et teint le contenu en arrière-plan. Notez que les développeurs doivent installer le package NuGet Win2D pour utiliser des effets. Consultez la [page d’accueil Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm) pour obtenir les instructions d’installation.
+Créez un effet qui estompe et teint le contenu en arrière-plan. Notez que les développeurs doivent installer le package NuGet Win2D pour utiliser des effets. Consultez la [page d’accueil Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm) pour obtenir les instructions d’installation.
 
 #### <a name="implementation-overview"></a>Vue d’ensemble de l’implémentation
 

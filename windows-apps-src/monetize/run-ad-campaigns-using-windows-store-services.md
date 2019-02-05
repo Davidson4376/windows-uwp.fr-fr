@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: 35b2df09bcac553eeb939f516e950150cf2ee40d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929409"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044676"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Gérer des campagnes publicitaires à l’aide des services du Windows Store
 
@@ -36,7 +36,7 @@ Avant d’écrire le code d’appel de l’API de promotions du MicrosoftStore, 
 
 * Avant de pouvoir créer et démarrer une campagne de publicité à l’aide de cette API, vous devez d’abord [créer une campagne de publicité payée à l’aide de la page de **campagnes de publicité** dans l’espace partenaires](../publish/create-an-ad-campaign-for-your-app.md), et vous devez ajouter au moins un instrument de paiement sur cette page. Après cela, vous serez en mesure de créer des lignes de livraison facturables pour les campagnes publicitaires à l’aide de cette API. Lignes de livraison des campagnes publicitaires que vous créez à l’aide de cette API factureront automatiquement l’instrument de paiement par défaut sélectionné sur la page de **campagnes de publicité** dans l’espace partenaires.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un nouvel Azure AD dans l’espace partenaires](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) pour sans frais supplémentaires.
 
 * Vous devez associer une application Azure AD à votre compte espace partenaires, récupérer l’ID de locataire et ID de client pour l’application et générer une clé. L’application Azure AD est l’app ou le service à partir duquel vous allez appeler l’API de promotions du MicrosoftStore. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
     > [!NOTE]
@@ -100,7 +100,7 @@ Le diagramme suivant illustre la relation entre les campagnes, les chaînes de d
 
 ## <a name="code-example"></a>Exemple de code
 
-L’exemple de code suivant montre comment obtenir un jeton d’accès AzureAD et appeler l’API de promotions du MicrosoftStore à partir d’une app de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](http://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API de promotions du MicrosoftStore.
+L’exemple de code suivant montre comment obtenir un jeton d’accès AzureAD et appeler l’API de promotions du MicrosoftStore à partir d’une app de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](https://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API de promotions du MicrosoftStore.
 
 [!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 

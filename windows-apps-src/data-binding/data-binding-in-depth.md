@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: dcaad17df5c036069dcdd729e662e5418db7646e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fe86656756eab9d9286d68c2a37357a9b824561e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923509"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048942"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
@@ -40,14 +40,14 @@ Quel que soit le mode, il existe deux types de liaison et qu’ils sont tous deu
 
 **Exemples d’applications illustrant {x:Bind}**
 
--   [Exemple avec {x:Bind}](http://go.microsoft.com/fwlink/p/?linkid=619989).
+-   [Exemple avec {x:Bind}](https://go.microsoft.com/fwlink/p/?linkid=619989).
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
--   [Exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
+-   [Exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Exemples d’applications illustrant {Binding}**
 
--   Téléchargez l’application [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950).
--   Téléchargez l’application [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952).
+-   Téléchargez l’application [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950).
+-   Téléchargez l’application [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952).
 
 ## <a name="every-binding-involves-these-pieces"></a>Chaque liaison implique les éléments suivants
 
@@ -606,7 +606,7 @@ La technique de liaison d’événement est similaire à l’implémentation et 
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>Liaison à une collection de dossiers ou de fichiers
 
-Vous pouvez utiliser les API dans l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) pour récupérer des données liées aux dossiers et aux fichiers. Toutefois, les différentes méthodes **GetFilesAsync**, **GetFoldersAsync** et **GetItemsAsync** ne retournent pas de valeurs qui conviennent pour la liaison aux contrôles de listes. Vous devez plutôt lier les valeurs retournées des méthodes [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) et [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) de la classe [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). L’exemple de code suivant provenant de l’[exemple StorageDataSource et GetVirtualizedFilesVector](http://go.microsoft.com/fwlink/p/?linkid=228621) illustre le modèle d’utilisation classique. Pensez à déclarer la fonctionnalité **picturesLibrary** dans le manifeste de votre package d’application et à vérifier que le dossier de votre bibliothèque d’images contient des images.
+Vous pouvez utiliser les API dans l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) pour récupérer des données liées aux dossiers et aux fichiers. Toutefois, les différentes méthodes **GetFilesAsync**, **GetFoldersAsync** et **GetItemsAsync** ne retournent pas de valeurs qui conviennent pour la liaison aux contrôles de listes. Vous devez plutôt lier les valeurs retournées des méthodes [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) et [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) de la classe [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). L’exemple de code suivant provenant de l’[exemple StorageDataSource et GetVirtualizedFilesVector](https://go.microsoft.com/fwlink/p/?linkid=228621) illustre le modèle d’utilisation classique. Pensez à déclarer la fonctionnalité **picturesLibrary** dans le manifeste de votre package d’application et à vérifier que le dossier de votre bibliothèque d’images contient des images.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -673,9 +673,9 @@ ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
 </GridView>
 ```
 
-Vous pouvez implémenter le modèle «is-a-group» de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
+Vous pouvez implémenter le modèle «is-a-group» de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
 
-L’exemple suivant illustre le modèle «is-a-group» avec [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). Cette fois-ci, nous regroupons les ouvrages par genre, avec le nom du genre affiché dans les en-têtes des groupes. Cela est indiqué par le chemin de la propriété «Key» en référence à la valeur du groupe [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx).
+L’exemple suivant illustre le modèle «is-a-group» avec [LINQ](https://msdn.microsoft.com/library/bb397926.aspx). Cette fois-ci, nous regroupons les ouvrages par genre, avec le nom du genre affiché dans les en-têtes des groupes. Cela est indiqué par le chemin de la propriété «Key» en référence à la valeur du groupe [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx).
 
 ```csharp
 using System.Linq;
@@ -724,7 +724,7 @@ Gardez à l’esprit que pour utiliser [{x:Bind}](https://msdn.microsoft.com/lib
     </GridView>
 ```
 
-Un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) offre à vos utilisateurs un excellent moyen de visualiser et de parcourir les données groupées. L’exemple d’application [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) montre comment utiliser le contrôle **SemanticZoom**. Dans cette application, vous pouvez afficher une liste d’ouvrages regroupés par auteur (vue avec zoom avant) ou vous pouvez effectuer un zoom arrière pour afficher une liste de raccourcis pour les auteurs (vue avec zoom arrière). Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Les vues avec zoom avant et zoom arrière sont en fait des contrôles **ListView** ou **GridView** liés au même objet **CollectionViewSource**.
+Un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) offre à vos utilisateurs un excellent moyen de visualiser et de parcourir les données groupées. L’exemple d’application [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) montre comment utiliser le contrôle **SemanticZoom**. Dans cette application, vous pouvez afficher une liste d’ouvrages regroupés par auteur (vue avec zoom avant) ou vous pouvez effectuer un zoom arrière pour afficher une liste de raccourcis pour les auteurs (vue avec zoom arrière). Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Les vues avec zoom avant et zoom arrière sont en fait des contrôles **ListView** ou **GridView** liés au même objet **CollectionViewSource**.
 
 ![Illustration d’un contrôle SemanticZoom](images/sezo.png)
 

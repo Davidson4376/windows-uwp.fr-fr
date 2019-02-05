@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: b317ba9280baef885bf6487d4bc0745112575dce
-ms.sourcegitcommit: 061de8e92935b5e438aa26ef63a6fac4acc4109d
+ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009906"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049446"
 ---
 # <a name="windows-hello"></a>WindowsHello
 
@@ -19,7 +19,7 @@ Cet article décrit la nouvelle technologie Windows Hello est fourni en tant que
 
 Notez que cet article est axé sur le développement d’applications. Pour plus d’informations sur l’architecture et l’implémentation de Windows Hello, voir le [Guide de WindowsHello sur TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
-Pour obtenir un exemple du code complet, voir l’[exemple de code WindowsHello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
+Pour obtenir un exemple du code complet, voir l’[exemple de code WindowsHello sur GitHub](https://go.microsoft.com/fwlink/?LinkID=717812).
 
 Pour une procédure pas à pas sur la création d’une application UWP à l’aide de WindowsHello et le service d’authentification de stockage, voir les articles [Créer une application de connexion Microsoft Passport](microsoft-passport-login.md) et [Créer un service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md).
 
@@ -275,7 +275,7 @@ Le diagramme de séquence ci-après illustre un flux de demande-réponse:
 
 ![Flux de demande-réponse WindowsHello](images/passport-challenge-response.png)
 
-Ensuite, le serveur doit valider la signature. Lorsque vous demandez la clé publique et envoyez au serveur à des fins de future validation, il est dans un objet blob codé ASN.1 en BLOB PublicKeyInfo ASN.1. Si vous examinez [code exemple de Windows Hello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), vous verrez qu’il existe des classes d’assistance pour les fonctions Crypt32 pour traduire l’objet blob codé ASN.1 en à un objet blob CNG, qui est plus couramment utilisé. L’objet blob contient l’algorithme de clé publique (RSA) et la clé publique RSA.
+Ensuite, le serveur doit valider la signature. Lorsque vous demandez la clé publique et envoyez au serveur à des fins de future validation, il est dans un objet blob codé ASN.1 en BLOB PublicKeyInfo ASN.1. Si vous examinez [code exemple de Windows Hello sur GitHub](https://go.microsoft.com/fwlink/?LinkID=717812), vous verrez qu’il existe des classes d’assistance pour les fonctions Crypt32 pour traduire l’objet blob codé ASN.1 en à un objet blob CNG, qui est plus couramment utilisé. L’objet blob contient l’algorithme de clé publique (RSA) et la clé publique RSA.
 
 Dans l’exemple, la raison pour laquelle nous convertir l’objet blob codé ASN.1 en un objet blob CNG est afin qu’il puisse être utilisé avec CNG (/ windows/bureau/SecCNG/cng-portail) et l’API BCrypt. Si vous recherchez l’objet blob CNG, il vous pointe vers la [structure BCRYPT_KEY_BLOB](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)de connexes. Cette surface d’API peut être utilisée pour l’authentification et le chiffrement dans les applications Windows. ASN.1 est une norme documentée pour communiquer les structures de données qui peuvent être sérialisés et il est généralement utilisé dans le chiffrement à clé publique et avec des certificats. C’est pourquoi les informations de clé publiques sont renvoyées de cette manière. La clé publique est une clé RSA; et c’est l’algorithme par Windows Hello lorsqu’il connecte à des données.
 
@@ -407,9 +407,9 @@ Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
 
 ### <a name="61-articles-and-sample-code"></a>6.1 Articles et exemple de code
 
-- [Présentation de Windows Hello](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Présentation de Windows Hello](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 - [Détails d’implémentation de Windows Hello](https://msdn.microsoft.com/library/mt589441)
-- [Exemple de code WindowsHello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+- [Exemple de code WindowsHello sur GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 Terminologie
 

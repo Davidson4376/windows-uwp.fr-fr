@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, exemples de code, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924235"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044982"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code C\#: soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -29,7 +29,7 @@ Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu�
 Ces exemples utilisent les bibliothèques suivantes:
 
 * Microsoft.WindowsAzure.Storage.dll. Cette bibliothèque est disponible dans le [kit de développement logiciel Microsoft Azure SDK pour .NET](https://azure.microsoft.com/downloads/), ou vous pouvez l’obtenir en installant le [package NuGet WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage).
-* Package NuGet [Newtonsoft.Json](http://www.newtonsoft.com/json) de Newtonsoft.
+* Package NuGet [Newtonsoft.Json](https://www.newtonsoft.com/json) de Newtonsoft.
 
 ## <a name="main-program"></a>Programme principal
 

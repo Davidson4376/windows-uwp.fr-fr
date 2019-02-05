@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows10, uwp, réseau publicitaire, métadonnées d’application
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fd0381d9ec8917f381cfeb045d58bfa3436de74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934418"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049426"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>API de métadonnées d’application pour les réseaux publicitaires
 
@@ -135,8 +135,8 @@ Pour plus d’informations sur les valeurs figurant dans le corps de réponse, v
 | windowsStoreGuid           | chaîne  | L’ID de produit (Windows8.x) pour l’application. Il s’agit d’un GUID. |
 | storeCategory           | chaîne  | La catégorie pour l’application dans le Windows Store. Pour les valeurs prises en charge, voir [Tableau des catégories et sous-catégories](../publish/category-and-subcategory-table.md) pour les applications du Windows Store.  |
 | iabCategory           | chaîne  | La catégorie de contenu pour l’application, telle que définie par l’Interactive Advertising Bureau (IAB). Par exemple, **Actualités** ou **Sports**. Pour obtenir la liste des catégories de contenu, voir la page [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) (Taxonomie du contenu du laboratoire technique IAB) sur le site web IAB.   |
-| iabCategoryId           | chaîne  | L’ID de la catégorie de contenu pour l’application. Par exemple, **IAB12** est l’ID de la catégorie Actualités, et **IAB17** est l’ID de la catégorie Sports. Pour obtenir une liste des ID de catégorie de contenu, voir la section 5.1 du document [OpenRTB API Specification](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) (Spécification API OpenRTB). |
-| coppa           | Valeur booléenne  | True si l’application s’adresse à des enfants âgés de moins de 13ans et a donc des obligations en vertu du Children’s Online Privacy Protection Act (COPPA), sinon, false.  |
+| iabCategoryId           | chaîne  | L’ID de la catégorie de contenu pour l’application. Par exemple, **IAB12** est l’ID de la catégorie Actualités, et **IAB17** est l’ID de la catégorie Sports. Pour obtenir une liste des ID de catégorie de contenu, voir la section 5.1 du document [OpenRTB API Specification](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) (Spécification API OpenRTB). |
+| coppa           | Booléen  | True si l’application s’adresse à des enfants âgés de moins de 13ans et a donc des obligations en vertu du Children’s Online Privacy Protection Act (COPPA), sinon, false.  |
 | downloadUrl           | chaîne  | Le lien vers la description de l’application dans le Windows Store. Ce lien est au format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
 | isLive           | Valeur booléenne  | Vrai, si l’application est actuellement disponible sur le Windows Store; sinon, faux.  |
 | iconUrls           | tableau  |  Un tableau d’une ou de plusieurs chaînes qui contiennent les chemins d’accès relatifs aux URL d’icônes associées à l’application. Pour récupérer les icônes, faites précéder les URL de *http* ou *https*.  |

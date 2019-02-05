@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945881"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048176"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight à l’étude de cas UWP: Bookstore2
 
@@ -22,9 +22,9 @@ Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](
 
 ## <a name="downloads"></a>Téléchargements
 
-[Téléchargez le Bookstore2WPSL8 WindowsPhone Silverlight application](http://go.microsoft.com/fwlink/p/?linkid=522601).
+[Téléchargez le Bookstore2WPSL8 WindowsPhone Silverlight application](https://go.microsoft.com/fwlink/p/?linkid=522601).
 
-[Téléchargez le Bookstore2Universal\_10 Windows 10 application](http://go.microsoft.com/fwlink/?linkid=532952).
+[Téléchargez le Bookstore2Universal\_10 Windows 10 application](https://go.microsoft.com/fwlink/?linkid=532952).
 
 ##  <a name="the-windowsphone-silverlight-app"></a>L’application Silverlight pour WindowsPhone
 

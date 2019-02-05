@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf84846fc34a7b93f168abc1dfa31e9f743be209
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.openlocfilehash: 33814efca80bd4ad6348f730242d2edab1edda97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999922"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050196"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 
@@ -300,7 +300,7 @@ Dans le cadre de la définition d’événements personnalisés, la façon dont 
     - Pour le gestionnaire d’événements, il est conseillé d’utiliser [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx), car il possède une traduction intégrée vers le délégué d’événement générique Windows Runtime [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
     - Ne basez pas votre classe de données d’événements sur la classe [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx), car elle n’effectue pas de traduction vers Windows Runtime. Utilisez une classe de données d’événements existante ou aucune classe de base.
     - Si vous utilisez des accesseurs personnalisés, voir [Événements personnalisés et accesseurs d’événement dans les composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
-    - Si vous ne savez pas exactement quel est le modèle d’événement .NET standard, voir la rubrique relative à la [Définition d’événements pour les classes Silverlight personnalisées](http://msdn.microsoft.com/library/dd833067.aspx). Elle est rédigée pour Microsoft Silverlight, mais elle constitue néanmoins un bon résumé du code et des concepts relatifs au modèle d’événement .NET standard.
+    - Si vous ne savez pas exactement quel est le modèle d’événement .NET standard, voir la rubrique relative à la [Définition d’événements pour les classes Silverlight personnalisées](https://msdn.microsoft.com/library/dd833067.aspx). Elle est rédigée pour Microsoft Silverlight, mais elle constitue néanmoins un bon résumé du code et des concepts relatifs au modèle d’événement .NET standard.
 - Pour C++/CX, voir [Événements (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
     - Utilisez des références nommées même pour vos propres utilisations d’événements personnalisés. N’utilisez pas d’expression lambda pour les événements personnalisés, car cela peut créer une référence circulaire.
 
@@ -313,6 +313,6 @@ La définition d’un événement personnalisé s’effectue généralement dans
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Démarrage rapide : entrée tactile](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
 * [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [Événements et délégués .NET](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [Événements et délégués .NET](https://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)

@@ -5,18 +5,18 @@ keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils
 ms.date: 7/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d445f31d22baaafeb16c004543770cf5d6df05a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 83d890983cfe32aaf1204b21552a7d72d89d9675
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935863"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049636"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en juillet 2018
 
 La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs, vidéos et exemples suivants ont été mis à disposition dans le mois de juillet.
 
-[Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
+[Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -34,7 +34,7 @@ Consultez nos guides PWA pour:
 
 ### <a name="notepad"></a>Bloc-notes
 
-Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom, enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Windows Insiders](https://insider.windows.com/). 
+Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](https://aka.ms/ant-man). Zoom, enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Windows Insiders](https://insider.windows.com/). 
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
@@ -72,11 +72,11 @@ En outre, nous avons apportées certaines mises à jour vers les pages existante
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Prise en main pour les développeurs: créer et personnaliser un formulaire sur Windows 10
 
-Désormais, notre [documentation prise en main](../get-started/index.md) pour les développeurs Windows fournissent une expérience pratique avec la tâche de développement d’application de base. Cette vidéo vous guide au travers de ces rubriques et décrit les principes fondamentaux de la création d’un formulaire de l’interface utilisateur dans votre application. [Regardez la vidéo](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) pour voir le code en action, puis [consultez la rubrique vous-même.](http://aka.ms/CreateForms)
+Désormais, notre [documentation prise en main](../get-started/index.md) pour les développeurs Windows fournissent une expérience pratique avec la tâche de développement d’application de base. Cette vidéo vous guide au travers de ces rubriques et décrit les principes fondamentaux de la création d’un formulaire de l’interface utilisateur dans votre application. [Regardez la vidéo](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) pour voir le code en action, puis [consultez la rubrique vous-même.](https://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>Améliorer votre robot avec chat personnalité de projet
 
-Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler de manière plus conversationnel pour interagir avec les clients. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique.
+Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler de manière plus conversationnel pour interagir avec les clients. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](https://aka.ms/PersonalityChat) pour une expérience pratique.
 
 ### <a name="one-dev-question"></a>Question sur le développement
 

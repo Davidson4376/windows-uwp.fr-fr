@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a39dfcfaab8b42afc98b7fe786a05908d49d16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 682a743e45626939242af963fba47ca82a13a90e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923628"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048506"
 ---
 # <a name="getting-started-navigation"></a>Prise en main: Navigation
 
@@ -79,7 +79,7 @@ public BlankPage()
 
 Vous pouvez également vous procurer ou définir la propriété [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) de la classe **Frame** pour gérer le nombre de pages de l’historique de navigation qu’il est possible de mettre en cache.
 
-Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) et [Exemple d’animations de personnages XAML](http://go.microsoft.com/fwlink/p/?LinkID=242401).
+Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) et [Exemple d’animations de personnages XAML](https://go.microsoft.com/fwlink/p/?LinkID=242401).
 
 **Remarque**pour plus d’informations sur la navigation pour les applications UWP en JavaScript et HTML, consultez [démarrage rapide: utilisation de la navigation de page unique](https://msdn.microsoft.com/library/windows/apps/hh452768).
  

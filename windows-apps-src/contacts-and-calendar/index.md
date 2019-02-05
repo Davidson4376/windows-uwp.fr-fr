@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows10, uwp, contacts, calendrier, rendez-vous, messages électroniques
 ms.localizationpriority: medium
-ms.openlocfilehash: a2ccf75796140723270e49a7b967ce234d41baf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 239dbaa7799d9991a63223d1cd8706d34445a16b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945678"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048236"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Contacts, Mes Contacts et calendrier
 
@@ -35,8 +35,8 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 
 ## <a name="related-topics"></a>Rubriquesconnexes
 
-* [Exemple d’API de rendez-vous](http://go.microsoft.com/fwlink/p/?linkid=309836)
-* [Exemple d’API du Gestionnaire de contacts](http://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [Exemple d’application du sélecteur de contacts](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Exemple de gestion des actions de contact](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Exemple d’API de rendez-vous](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Exemple d’API du Gestionnaire de contacts](https://go.microsoft.com/fwlink/p/?LinkID=310079)
+* [Exemple d’application du sélecteur de contacts](https://go.microsoft.com/fwlink/p/?linkid=231575)
+* [Exemple de gestion des actions de contact](https://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [Exemple d’intégration à une carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

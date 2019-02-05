@@ -5,12 +5,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, développement web, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e2081f0dbe163dcbcf35d83ea111caf573dacfb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1d8029752790e19adc5eb4266615372fb346e001
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919069"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050106"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Prise en charge l’ajout de WebVR à un jeu Babylon.js 3D
 
@@ -132,7 +132,7 @@ Avec les informations stockées dans le `headset` variable, nous serons désorma
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>Création et en sélectionnant la caméra initiale
 
-Avec Babylon.js, WebVR peut être ajouté rapidement à l’aide de la [`WebVRFreeCamera`](http://doc.babylonjs.com/classes/3.1/webvrfreecamera). Cette caméra peut prendre saisie au clavier et vous permet d’utiliser un casque de réalité virtuelle pour contrôler la rotation de «head».
+Avec Babylon.js, WebVR peut être ajouté rapidement à l’aide de la [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera). Cette caméra peut prendre saisie au clavier et vous permet d’utiliser un casque de réalité virtuelle pour contrôler la rotation de «head».
 
 
 ### <a name="step-1-checking-for-headsets"></a>Étape 1: Vérification des casques

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a859f27ff24dba15f7e4fde66a8d54a84a8bf4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f5fe7cad12193b409c4923f876b47cae0852aa9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925783"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045558"
 ---
 # <a name="play-media-in-the-background"></a>Lire du contenu multimédia en arrière-plan
 Cet article vous explique comment configurer votre application de telle sorte que le contenu multimédia continue à être lu quand votre application est déplacée du premier plan vers l’arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. 
@@ -25,7 +25,7 @@ Scénarios de lecture audio en arrière-plan:
 L’implémentation audio en arrière-plan décrite dans cet article permettra à votre application de s’exécuter universellement sur tous les appareils Windows, y compris les appareils mobiles, de bureau et Xbox.
 
 > [!NOTE]
-> Le code de cet article a été adapté de [l’exemple Contenu audio en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=800141) UWP.
+> Le code de cet article a été adapté de [l’exemple Contenu audio en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=800141) UWP.
 
 ## <a name="explanation-of-one-process-model"></a>Explication du modèle à processus unique
 Avec Windows10, version 1607, un nouveau modèle à processus unique simplifie considérablement la prise en charge de l’audio d’arrière-plan. Auparavant, votre application devait gérer un processus en arrière-plan en plus de l’application de premier plan. De votre côté, vous deviez communiquer manuellement les modifications d’état de communication entre les deuxprocessus. Sous le nouveau modèle, vous ajoutez simplement la capacité d’audio d’arrière-plan à votre manifeste d’application, de manière à ce que votre application continue à lire le contenu audio lorsqu’elle se déplace vers l’arrière-plan. Deuxévénements de cycle de vie d’application, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground), indiquent à votre application les moments d’entrée et de sortie de l’arrière-plan. Quand votre application se déplace au sein des transitions à destination et en provenance de l’arrière-plan, les contraintes de mémoire mises en place par le système peuvent être modifiées, afin que vous puissiez utiliser ces événements pour évaluer votre consommation courante de mémoire et libérer des ressources vous permettant de rester sous la limite.

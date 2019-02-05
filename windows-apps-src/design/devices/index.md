@@ -8,12 +8,12 @@ keywords: appareil, entrées, interactions
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de67a61b4d5982675d32e0446b67d7cf70051923
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936364"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049906"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)
 
@@ -49,7 +49,7 @@ Entrées
 -   Écran tactile sur ordinateur portable et ordinateur tout-en-un.
 -   Des boîtiers de commande, tels que des manettes Xbox, sont parfois utilisés.
 
-Fonctionnalités de l’appareil type
+Fonctionnalités classiques d’appareil
 -   Appareil photo
 -   Microphone
 
@@ -81,7 +81,7 @@ Entrées
 -   Souris (parfois)
 -   Voix (parfois)
 
-Fonctionnalités de l’appareil type
+Fonctionnalités classiques d’appareil
 -   Appareil photo
 -   Microphone
 -   Capteurs de mouvement
@@ -129,7 +129,7 @@ Fonctionnalités de l’appareil type
 
 Appareils informatiques parmi les plus utilisés actuellement, les téléphones peuvent proposer de nombreuses fonctions, malgré un espace à l’écran réduit et des commandes d’entrée limitées. Les téléphones sont disponibles dans différentes tailles. Les téléphones de grande taille sont appelés des phablettes. L’expérience liée à l’utilisation de l’application sur une phablette est similaire à celle que propose un téléphone, mais l’espace disponible sur l’écran d’une phablette permet d’apporter des modifications significatives au comportement de consommation du contenu de l’utilisateur.
 
-Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un moniteur et même utiliser une souris et un clavier pour leurs téléphones utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
+Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un moniteur et même utiliser une souris et un clavier pour leurs téléphones utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](https://go.microsoft.com/fwlink/p/?LinkID=699431).)
 
 Tailles d’écran
 -   De 4 à 5 pouces pour les téléphones

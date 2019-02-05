@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920063"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048116"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime8.x vers UWP : Bookstore1
 
@@ -26,9 +26,9 @@ Les rubriques précédentes de cette section décrivent les différences entre l
 
 ## <a name="downloads"></a>Téléchargements
 
-[Téléchargez l’application 8.1 universelle Bookstore1\_81](http://go.microsoft.com/fwlink/?linkid=532946).
+[Téléchargez l’application 8.1 universelle Bookstore1\_81](https://go.microsoft.com/fwlink/?linkid=532946).
 
-[Téléchargez le Bookstore1Universal\_10 Windows 10 application](http://go.microsoft.com/fwlink/?linkid=532950).
+[Téléchargez le Bookstore1Universal\_10 Windows 10 application](https://go.microsoft.com/fwlink/?linkid=532950).
 
 ## <a name="the-universal-81-app"></a>Application8.1 universelle
 

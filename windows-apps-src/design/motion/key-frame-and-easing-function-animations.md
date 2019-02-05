@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 145912f08075678c98dfb34ac491e123577c69e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 696a3f0f065c209bec28f774224da6e4c8d93275
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946664"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046322"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>Animations par images clés et animations de fonctions d’accélération
 
@@ -75,7 +75,7 @@ Les images clés discrètes n’utilisent aucune interpolation. Lorsqu’un **Ke
 
 ### <a name="spline-key-frames"></a>Images clés Spline
 
-Une image clé Spline génère une transition variable entre les valeurs en fonction de la valeur de la propriété **KeySpline**. Cette propriété précise les premier et dernier points de contrôle d’une courbe de Bézier qui décrit l’accélération de l’animation. Une propriété [**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) définit une relation fonction-temps où le graphique fonction-temps a la forme de la courbe de Bézier. En général, vous spécifiez une valeur **KeySpline** dans une chaîne d’attributs raccourcie XAML qui comporte quatre valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) séparées par des espaces ou des virgules. Ces valeurs sont des paires X,Y pour deux points de contrôle de la courbe de Bézier. X correspond au temps et Y est le modificateur de fonction de la valeur. Chaque valeur doit toujours être comprise entre 0 et 1. Sans modification des points de contrôle définis par **KeySpline**, la ligne droite de 0,0 à 1,1 est la représentation de la fonction dans le temps pour une interpolation linéaire. Vos points de contrôle modifient la forme de la courbe et par conséquent le comportement de la fonction dans le temps pour l’animation de spline. Un graphique est probablement le meilleur moyen de le représenter visuellement. Vous pouvez exécuter l’[exemple de visualiseur de courbe clé Silverlight](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample) dans un navigateur pour voir comment les points de contrôle modifient la courbe et comment une animation exemple s’exécute lorsqu’elle est utilisée en tant que valeur **KeySpline**.
+Une image clé Spline génère une transition variable entre les valeurs en fonction de la valeur de la propriété **KeySpline**. Cette propriété précise les premier et dernier points de contrôle d’une courbe de Bézier qui décrit l’accélération de l’animation. Une propriété [**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) définit une relation fonction-temps où le graphique fonction-temps a la forme de la courbe de Bézier. En général, vous spécifiez une valeur **KeySpline** dans une chaîne d’attributs raccourcie XAML qui comporte quatre valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) séparées par des espaces ou des virgules. Ces valeurs sont des paires X,Y pour deux points de contrôle de la courbe de Bézier. X correspond au temps et Y est le modificateur de fonction de la valeur. Chaque valeur doit toujours être comprise entre 0 et 1. Sans modification des points de contrôle définis par **KeySpline**, la ligne droite de 0,0 à 1,1 est la représentation de la fonction dans le temps pour une interpolation linéaire. Vos points de contrôle modifient la forme de la courbe et par conséquent le comportement de la fonction dans le temps pour l’animation de spline. Un graphique est probablement le meilleur moyen de le représenter visuellement. Vous pouvez exécuter l’[exemple de visualiseur de courbe clé Silverlight](https://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample) dans un navigateur pour voir comment les points de contrôle modifient la courbe et comment une animation exemple s’exécute lorsqu’elle est utilisée en tant que valeur **KeySpline**.
 
 L’exemple suivant montre trois images clés différentes appliquées à une animation, la dernière étant une animation de courbe clé pour une valeur [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)). Notez la chaîne 0.6,0.0 0.9,0.00 appliquée pour **KeySpline**. Cela produit une courbe où l’animation semble s’exécuter d’abord lentement, puis atteint rapidement la valeur juste avant que le **KeyTime** soit atteint.
 
