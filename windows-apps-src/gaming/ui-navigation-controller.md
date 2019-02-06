@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, interface utilisateur, navigation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc879ba89dc3c70ebc08d948b25f31bc30a3c6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926454"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059710"
 ---
 # <a name="ui-navigation-controller"></a>Contrôleur de navigation d’interface utilisateur
 
@@ -35,7 +35,7 @@ Le nombre et la variété de contrôles pris en charge par chaque type de périp
 
 Les périphériques de navigation doivent prendre en charge toutes les commandes de navigation contenues dans l’_ensemble obligatoire_. Il s’agit des commandes directionnelles (haut, bas, gauche et droite), ainsi que des commandes d’affichage, de menu, d’acceptation et d’annulation.
 
-Les commandes directionnelles sont conçues pour une [navigation en mode focusXY](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction) simple entre des éléments d’interface utilisateur. Les commandes d’affichage et de menu s’utilisent pour afficher des informations de jeu (souvent de manière temporaire, parfois sous forme modale) et pour basculer entre les contextes de jeu et de menu, respectivement. Les commandes d’acceptation et d’annulation sont conçues pour recevoir des réponses affirmatives (oui) et des réponses négatives (non), respectivement.
+Les commandes directionnelles sont conçues pour une [navigation en mode focusXY](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) simple entre des éléments d’interface utilisateur. Les commandes d’affichage et de menu s’utilisent pour afficher des informations de jeu (souvent de manière temporaire, parfois sous forme modale) et pour basculer entre les contextes de jeu et de menu, respectivement. Les commandes d’acceptation et d’annulation sont conçues pour recevoir des réponses affirmatives (oui) et des réponses négatives (non), respectivement.
 
 Le tableau suivant récapitule ces commandes et leurs usages prévus, illustrés par des exemples.
 | Commande | Usage prévu

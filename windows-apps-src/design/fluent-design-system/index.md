@@ -6,12 +6,12 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cc0af4cba5d4d14c862724cd199c9e6ab221a24d
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942420"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059720"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Les créateurs d’application système pour les fenêtres de conception Fluent
 
@@ -52,7 +52,7 @@ En plus de conseils de conception, nos articles Fluent Design également vous mo
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
-    <TextBox Text="Design with XAML" Margin="20" Padding="24,16"/>
+    <TextBox Text="Design with XAML" Margin="20" Padding="16,24"/>
 </Grid>
 ```
 

@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
-ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
+ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "9041047"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059700"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Navigation en mode focus pour clavier, boîtier de commande, télécommande et outils d’accessibilité
 
@@ -425,7 +425,7 @@ Les types d’entrée qui n’effectuent pas de pointage, tels qu’un clavier, 
 
 Dans cette section, nous abordons comment spécifier une stratégie de navigation préférée et optimiser la navigation en mode focus au sein de votre application par le biais d’un ensemble de propriétés de stratégie de navigation qui prennent en charge tous les types d’entrée basés sur le focus qui n’effectuent pas de pointage.
 
-Pour obtenir des informations plus générales sur la création d’applications et d’expériences pour Xbox/TV, voir [Interactions avec le clavier](keyboard-interactions.md) et [Conception pour Xbox et TV](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction).
+Pour obtenir des informations plus générales sur la création d’applications et expériences pour Xbox/TV, voir [Interactions avec le clavier](keyboard-interactions.md), [la conception pour Xbox et télévision](../devices/designing-for-tv.md)et [boîtier de commande et les interactions avec le contrôle à distance](gamepad-and-remote-interactions.md).
 
 ### <a name="navigation-strategies"></a>Stratégies de navigation
 

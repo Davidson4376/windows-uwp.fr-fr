@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 400d80018201c8ae048cb4a5d326fa560b9cdd5c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981393"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059730"
 ---
 # <a name="xbox-best-practices"></a>Bonnes pratiques pour Xbox
 
@@ -22,11 +22,11 @@ Par défaut, toutes les applications UWP sont exécutées sur Xbox One sans aucu
 
 ### <a name="do-turn-off-mouse-mode"></a>*À faire:* Désactiver le mode souris
 
-Les utilisateurs Xbox adorent leurs contrôleurs. Pour optimiser les entrées de la manette, [désactivez le mode souris](how-to-disable-mouse-mode.md) et activez la navigation directionnelle (également appelée [focus X-Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Attention aux interruptions du focus et l’interface utilisateur inaccessible.
+Les utilisateurs Xbox adorent leurs contrôleurs. Pour optimiser les entrées, le contrôleur [désactiver le mode souris](how-to-disable-mouse-mode.md) et activer la navigation directionnelle (également appelée [interaction et navigation en mode focus XY](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)). Attention aux interruptions du focus et l’interface utilisateur inaccessible.
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*À faire:* Tracer un rectangle de focus qui soit approprié à une expérience TV («10-foot experience»).
 
-La plupart des utilisateurs Xbox sont assis dans leur salon face à leur télévision, donc gardez en tête que le rectangle de focus standard est difficile à voir à une distance de 3mètres ( 10-foot). Pour être sûr que l’utilisateur voit toujours clairement l’élément d’interface utilisateur qui a le focus d’entrée, suivez les recommandations présentées dans [Visuel du focus](../design/devices/designing-for-tv.md#focus-visual). En XAML, vous obtenez ce comportement sans rien faire lorsque votre application s’exécute sur Xbox. Par contre, vous devez utiliser un style CSS personnalisé pour les applications HTML.
+La plupart des utilisateurs Xbox sont assis dans leur salon face à leur télévision, donc gardez en tête que le rectangle de focus standard est difficile à voir à une distance de 3mètres ( 10-foot). Pour être sûr que l’utilisateur voit toujours clairement l’élément d’interface utilisateur qui a le focus d’entrée, suivez les recommandations présentées dans [Visuel du focus](../design/input/gamepad-and-remote-interactions.md#focus-visual). En XAML, vous obtenez ce comportement sans rien faire lorsque votre application s’exécute sur Xbox. Par contre, vous devez utiliser un style CSS personnalisé pour les applications HTML.
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*À faire:* Intégrer la classe SystemMediaTransportControls
 
