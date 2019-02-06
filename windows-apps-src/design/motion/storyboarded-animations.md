@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 212ef252e7d123ebf457a6584f77addb04fdfb2c
+ms.sourcegitcommit: a5f5bd724e65ce4a62d28dfd9080afb127886d6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943150"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059990"
 ---
 # <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
 
@@ -265,7 +265,8 @@ Le fait que l’activation des animations dépendantes repose sur le développeu
 En tant que développeur d’application, vous pouvez également choisir d’appliquer un paramètre pour toute l’application qui désactive toujours les animations dépendantes, même celles où la propriété **EnableDependentAnimation** a la valeur **true**. Voir [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> Si vous composez des états visuels pour un contrôle à l’aide de Visual Studio, le concepteur émet des avertissements chaque fois que vous tentez d’appliquer une animation dépendante à une propriété d’état visuel.
+> Si vous utilisez le volet Animation dans Blend pour Visual Studio 2017, chaque fois que vous tentez d’appliquer une animation dépendante à une propriété d’état visuel, avertissements seront affichera dans le concepteur. Avertissements ne s’afficheront pas dans la sortie de génération ou d’une liste d’erreurs. Si vous modifiez du code XAML manuellement, le concepteur affichera pas un message d’avertissement. Lors de l’exécution lors du débogage de sortie de débogage du volet de la sortie affiche un avertissement qui n’est pas indépendante de l’animation et sera ignorée.
+
 
 ## <a name="starting-and-controlling-an-animation"></a>Démarrage et contrôle d’une animation
 
