@@ -1,20 +1,21 @@
 ---
 description: L’extension de balisage permet aux fonctions à utiliser dans le balisage.
 title: Fonctions dans x:Bind
-ms.date: 04/26/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 38573bf4602c88d2e04d4bf29b39191045eddec8
-ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
+ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024216"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060033"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
-**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
+> [!NOTE]
+> Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](data-binding-in-depth.md).
 
 À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de:
 
@@ -54,7 +55,7 @@ class ColorEntry
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
-``` syntax
+```xaml
 <object property="{x:Bind pathToFunction.FunctionName(functionParameter1, functionParameter2, ...), bindingProperties}" ... />
 ```
 
@@ -75,6 +76,7 @@ Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNa
     </StackPanel>
 </Page>
 ```
+
 ```csharp
 namespace MyNamespace
 {
@@ -86,6 +88,7 @@ namespace MyNamespace
 ```
 
 Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir des scénarios simples, comme la date de mise en forme, la mise en forme de texte, concaténations de texte, etc., par exemple:
+
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -105,9 +108,9 @@ La fonction en cours de liaison doit:
 - Les types d’arguments doivent correspondre aux données transmises. Nous ne faisons pas de conversions restrictives.
 - Le type de retour de la fonction doit correspondre au type de la propriété qui utilise la liaison.
 
-À partir de la prochaine mise à jour majeure vers Windows 10, le moteur de liaison réagir aux notifications de modification de propriété déclenchées avec le nom de la fonction et réévaluer les liaisons en fonction des besoins. Exemple : 
+Le moteur de liaison réagit à la modification de propriété déclenchement avec le nom de la fonction de notifications et réévaluer les liaisons si nécessaire. Exemple :
 
-```XAML
+```xaml
 <DataTemplate x:DataType="local:Person">
    <StackPanel>
       <TextBlock Text="{x:Bind FullName}" />
@@ -115,6 +118,7 @@ La fonction en cours de liaison doit:
    </StackPanel>
 </DataTemplate>
 ```
+
 ```csharp
 public class Person:INotifyPropertyChanged
 {
@@ -148,7 +152,7 @@ public class Person:INotifyPropertyChanged
     public string FullName
     {
         get { return this.fullName; }
-        set 
+        set
         {
             this.fullName = value;
             this.OnPropertyChanged ();
@@ -175,6 +179,7 @@ Plusieurs arguments peuvent être spécifiés dans la fonction. Ils sont sépar�
 ### <a name="two-way-function-bindings"></a>Liaisons de fonctions bidirectionnelles
 
 Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être spécifiée pour la direction inverse de la liaison. Cette opération est effectuée à l’aide de la propriété de liaison **BindBack** . Dans l’exemple indiqué ci-dessous, la fonction doit prendre un argument qui est la valeur qui doit être transmises en retour au modèle.
+
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

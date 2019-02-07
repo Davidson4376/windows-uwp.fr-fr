@@ -1,16 +1,16 @@
 ---
 title: Accès rapide aux propriétés de fichier dans UWP
 description: Rassemblez efficacement une liste des fichiers et de leurs propriétés à partir d’une bibliothèque à utiliser dans une application UWP.
-ms.date: 03/22/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows10, uwp, fichier, propriétés
 ms.localizationpriority: medium
-ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926534"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060053"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Accès rapide aux propriétés de fichier dans UWP 
 
@@ -118,6 +118,5 @@ Les applications peuvent demander à l’utilisateur d'ajouter l’emplacement �
 [Référence API QueryOptions](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Énumérer et interroger des fichiers et dossiers](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Autorisations d’accès aux fichiers](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
-[Procédure pas à pas relative à l'accès rapide aux propriétés](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  
