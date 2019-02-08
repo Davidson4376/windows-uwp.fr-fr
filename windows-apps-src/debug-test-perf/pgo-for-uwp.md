@@ -1,12 +1,15 @@
 ---
 title: Exécution de l’optimisation guidée par profil (PGO) sur des applications de plateforme Windows universelle (UWP)
+description: Un guide pas à pas dans l’application d’optimisation de guidée par profil (PGO) aux applications de plateforme Windows universelle (UWP).
+ms.date: 02/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d7321f0ef49c12ac4506fb72fab937fde77f740
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.topic: article
+ms.openlocfilehash: 8c19ea1701c6b5e82e66a54223620dace57de4b6
+ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940358"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "9062481"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>Exécution de l’optimisation guidée par profil sur des applications de plateforme Windows universelle 
  
