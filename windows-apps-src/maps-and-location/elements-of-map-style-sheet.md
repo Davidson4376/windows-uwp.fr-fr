@@ -7,12 +7,12 @@ ms.date: 03/16/2017
 ms.topic: article
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecf83b25a8f448cb0ac22bbad0aa2d4f687c721
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a02dee15173ea8ec2bf98ddf0ad3dbca2fdfc041
+ms.sourcegitcommit: bbec71985647fa81d3e0995875d8406ad4004af1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925631"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "9063249"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
@@ -96,7 +96,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des sommets de volcan. |
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des points d’eau, tels qu’une cascade. |
 | >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant n’importe quel emplacement intéressante. |
-| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des locaiton entreprises. |
+| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant n’importe quel emplacement de l’entreprise. |
 | >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant touristiques tels que musées, zoos, etc.. |
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des emplacements d’utilisation générale de la Communauté. |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des établissements scolaires et les autres éducation liées à des emplacements. |
@@ -135,7 +135,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes à péage. |
 | >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies ferrées. |
 | >>> trail                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Sentiers de promenade au sein des parcs ou sentiers de randonnée pédestre. |
-| >>> passerelle                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Passerelle avec élévation de privilèges. |
+| passerelle >>>                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Passerelle avec élévation de privilèges. |
 | >>> waterRoute               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Lignes de ferry. |
 | >> water                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Tout type de plan d’eau. Comprend notamment les océans et les ruisseaux. |
 | >>> river                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Rivières, ruisseaux ou autres passages d’eau.  Notez que cet élément peut prendre la forme d’une ligne ou d’un polygone et qu’il peut être relié à des plans d’eau autres que des rivières. |
@@ -182,7 +182,7 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 | shadedReliefVisible          | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant s’il convient ou non de dessiner l’ombrage des hauteurs sur la carte. |
 | shadedReliefDarkColor        | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du côté foncé d’un relief par ombres portées.  Le canal alpha représente la valeur alpha maximale. |
 | shadedReliefLightColor       | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du côté clair d’un relief par ombres portées.  Le canal alpha représente la valeur alpha maximale. |
-| shadowColor                  | Couleur   |      |      |      |  ✔️   | La couleur de l’ombre derrière les icônes qui utilisent des ombres. |
+| shadowColor                  | Couleur   |      |      |      |  ✔   | La couleur de l’ombre derrière les icônes qui utilisent des ombres. |
 | spaceColor                   | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB de la zone entourant la carte. |
 | useDefaultImageColors        | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   | Un indicateur qui indique si les couleurs d’origine dans le format SVG doivent être utilisé au lieu recherche de l’entrée de palette de couleurs d’une image. |
 
@@ -228,7 +228,7 @@ Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapele
 
 | Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
-| Arrière-plan de la forme             | Flottant   |      |      |      |  ✔️   | Forme à utiliser en tant que l’arrière-plan de l’icône--en remplaçant toute forme qui existe à cet endroit. |
+| Arrière-plan de la forme             | Flottant   |      |      |      |  ✔   | Forme à utiliser en tant que l’arrière-plan de l’icône--en remplaçant toute forme qui existe à cet endroit. |
 | stemAnchorRadiusScale        | Flottant   |      |      |  ✔   |  ✔   | Valeur de mise à l’échelle du point d'ancrage du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
 | stemColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de la ligne verticale sortant du bas de l’icône en mode3D. |
 | stemHeightScale              | Flottant   |      |      |  ✔   |  ✔   | Valeur de mise à l’échelle de la longueur du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la largeur par défaut et la valeur *2* pour obtenir une largeur deux fois plus grande. |
