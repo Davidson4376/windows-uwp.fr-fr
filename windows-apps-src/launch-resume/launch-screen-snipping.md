@@ -1,17 +1,17 @@
 ---
 title: Lancer la capture d’écran
-description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application capture & croquis ou d’en ouvrir une nouvelle capture.
+description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application de croquis & capture ou d’en ouvrir une nouvelle capture.
 ms.date: 8/1/2017
 ms.topic: article
 keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 07c095e661327ba1b64c4ba897937c8e3e905140
-ms.sourcegitcommit: d705a79d037baa764790d3d8daa9321ed0ac9ebc
+ms.openlocfilehash: 2bddea1dd2b5f21a145bde789f1ad760bb5e556a
+ms.sourcegitcommit: b126940932935ebd2965ea68078798fb6e876b23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "8992189"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "9065986"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
@@ -27,21 +27,22 @@ La **ms-screenclip:** URI permet à votre application ouvrir et démarrer une no
 | --- | --- | --- | --- |
 | source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
 | delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes complètes, entre l’appel de l’URI et quand commence la capture d’écran. |
+| callbackformat | chaîne | non | Ce paramètre n’est pas disponible. |
 
-## <a name="launching-the-snip--sketch-app"></a>Lancer la capture et une application de croquis
+## <a name="launching-the-snip--sketch-app"></a>Lancement de l’application de croquis & capture
 
-La **ms-screensketch:** URI vous permet par programmation lancer l’application de capture et Sketch et ouvrez une image spécifique dans cette application pour annotation.
+La **ms-screensketch:** URI vous permet par programmation lancer l’application de croquis & capture et ouvrez une image spécifique dans cette application pour annotation.
 
 **ms-screensketch:** accepte les paramètres suivants:
 
 | Paramètre | Type | Requis | Description |
 | --- | --- | --- | --- |
-| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application de capture et Sketch. Récupérée à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
+| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application de croquis & capture. Récupérée à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
 | secondarySharedAccessToken | chaîne | non | Une chaîne qui identifie un fichier JSON avec les métadonnées relatives à la capture. Les métadonnées peuvent inclure un champ **clipPoints** avec un tableau de coordonnées x et y et/ou un [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
 | isTemporary | bool | non | Si définie sur True, écran Esquisse essaie de supprimer le fichier après l’avoir ouvert. |
 
-L’exemple suivant appelle la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image à la capture et Sketch à partir de l’application de l’utilisateur.
+L’exemple suivant appelle la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image à la capture & esquisse à partir de l’application de l’utilisateur.
 
 ```csharp
 
