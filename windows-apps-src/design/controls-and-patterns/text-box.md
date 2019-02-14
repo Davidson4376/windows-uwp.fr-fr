@@ -11,23 +11,20 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7075df3d5c3de0dd7d756432400dfe934651c5b4
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 212b5843a302c8210cd01dd0ab4017eda016098a
+ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058761"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9075122"
 ---
 # <a name="text-box"></a>Zone de texte
-
- 
 
 Le contrôle TextBox permet à un utilisateur de taper du texte dans une application. Il est généralement utilisé pour capturer une seule ligne de texte, mais peut être configuré pour la saisie de plusieurs lignes. Le texte s’affiche sous la forme d’un texte brut uniforme simple.
 
 Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout («X») permet à un utilisateur de supprimer rapidement l’ensemble du texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
 
 > **API importantes**: [classe TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [propriété Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
-
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
@@ -86,6 +83,18 @@ Voici la zone de texte résultant de ce code XAML.
 
 Il est courant d’utiliser une zone de texte pour accepter l’entrée de données dans un formulaire, et de recourir à la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir la chaîne de texte complète à partir de la zone de texte. Vous utilisez généralement un événement tel qu’un clic sur un bouton d’envoi pour accéder à la propriété Text, mais vous pouvez gérer l’événement [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) ou [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) si vous avez besoin d’effectuer une opération spécifique lorsque le texte change.
 
+Cet exemple montre comment obtenir et définir le contenu en cours d’une zone de texte.
+
+```xaml
+<TextBox name="SampleTextBox" Text="Sample Text"/>
+```
+
+```csharp
+string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = "Sample text retrieved";
+```
+
 Vous pouvez ajouter un contrôle [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (ou étiquette) et un contrôle [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (ou filigrane) à la zone de texte pour indiquer à l’utilisateur le rôle de cette zone. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) au lieu de la propriété Header. Pour plus d’informations sur la conception, voir l’article *Recommandations en matière d’étiquettes*.
 
 Vous pouvez restreindre le nombre de caractères que l’utilisateur peut taper en définissant la propriété [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx). Toutefois, la propriété MaxLength ne limite pas la longueur du texte collé. Si cet aspect a de l’importance pour votre application, utilisez l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) pour modifier le texte collé.
@@ -97,6 +106,7 @@ La zone de texte inclut un bouton Effacer tout («X») qui s’affiche lorsque d
 Le bouton Effacer tout s’affiche uniquement pour les zones de texte modifiables d’une seule ligne qui contiennent du texte et qui présentent le focus.
 
 Le bouton Effacer tout n’apparaît pas dans l’un des cas suivants:
+
 - **IsReadOnly** présente la valeur **true**.
 - **AcceptsReturn** présente la valeur **true**.
 - **TextWrap** présente une valeur différente de **NoWrap**.
@@ -111,10 +121,10 @@ Une zone de texte en lecture seule présente le même aspect qu’une zone de te
 Un utilisateur peut sélectionner et copier du texte.
 IsEnabled
 
-
 ### <a name="enable-multi-line-input"></a>Activer la saisie multiligne
 
 Deux propriétés vous permettent d’indiquer si le contrôle de zone de texte peut ou non afficher du texte sur plusieurs lignes. En règle générale, vous définissez ces deux propriétés pour configurer une zone de texte multiligne.
+
 - Pour que la zone de texte autorise et afficher les caractères de saut de ligne ou de retour chariot, définissez la propriété [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) sur **true**.
 - Pour activer la fonctionnalité de renvoi de texte à la ligne, définissez la propriété [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) sur **Wrap**. Le texte est alors automatiquement renvoyé à la ligne quand il atteint le bord de la zone de texte, quels que soient les caractères séparateurs de ligne.
 
@@ -244,46 +254,45 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 
 ## <a name="recommendations"></a>Recommandations
 
--   Utilisez un texte d’étiquette ou d’espace réservé si l’objectif de la zone de texte n’est pas clair. Une étiquette reste toujours visible, qu’il y ait ou non une valeur dans la zone de saisie de texte. Le texte d’espace réservé s’affiche initialement dans la zone de saisie de texte, mais disparaît après qu’une valeur a été entrée.
--   Attribuez à la zone de texte une largeur appropriée pour la plage de valeurs qui peuvent être entrées. La longueur des mots varie selon la langue. Par conséquent, tenez compte de la localisation si vous destinez votre application au marché international.
--   Une zone de saisie de texte se compose généralement d’une seule ligne (`TextWrap = "NoWrap"`). Si les utilisateurs doivent entrer ou modifier une longue chaîne de caractères, utilisez une zone de saisie de texte multiligne (`TextWrap = "Wrap"`).
--   En règle générale, une zone de saisie de texte est utilisée pour du texte modifiable. Vous pouvez toutefois utiliser une zone de saisie de texte en lecture seule. Le contenu de la zone pourra être lu, sélectionné et copié, mais pas modifié.
--   Pour réduire l’encombrement de l’écran, vous pouvez choisir d’afficher certaines zones de saisie de texte uniquement lorsque la case de contrôle associée est cochée. Vous pouvez également lier l’état activé d’une zone de saisie de texte à un contrôle de type case à cocher.
--   Déterminez comment doit se comporter une zone de saisie de texte quand l’utilisateur appuie dessus alors qu’elle contient déjà une valeur. Le comportement par défaut prévoit la modification de la valeur plutôt que son remplacement. Le point d’insertion est inséré entre deux mots et aucune sélection de texte n’est faite. Si la valeur d’une zone de saisie de texte a toutes les chances d’être remplacée par l’utilisateur, modifiez le comportement de la zone afin que tout le texte existant soit sélectionné lorsque le contrôle reçoit le focus, et que la sélection soit remplacée par la nouvelle valeur entrée.
+- Utilisez un texte d’étiquette ou d’espace réservé si l’objectif de la zone de texte n’est pas clair. Une étiquette reste toujours visible, qu’il y ait ou non une valeur dans la zone de saisie de texte. Le texte d’espace réservé s’affiche initialement dans la zone de saisie de texte, mais disparaît après qu’une valeur a été entrée.
+- Attribuez à la zone de texte une largeur appropriée pour la plage de valeurs qui peuvent être entrées. La longueur des mots varie selon la langue. Par conséquent, tenez compte de la localisation si vous destinez votre application au marché international.
+- Une zone de saisie de texte se compose généralement d’une seule ligne (`TextWrap = "NoWrap"`). Si les utilisateurs doivent entrer ou modifier une longue chaîne de caractères, utilisez une zone de saisie de texte multiligne (`TextWrap = "Wrap"`).
+- En règle générale, une zone de saisie de texte est utilisée pour du texte modifiable. Vous pouvez toutefois utiliser une zone de saisie de texte en lecture seule. Le contenu de la zone pourra être lu, sélectionné et copié, mais pas modifié.
+- Pour réduire l’encombrement de l’écran, vous pouvez choisir d’afficher certaines zones de saisie de texte uniquement lorsque la case de contrôle associée est cochée. Vous pouvez également lier l’état activé d’une zone de saisie de texte à un contrôle de type case à cocher.
+- Déterminez comment doit se comporter une zone de saisie de texte quand l’utilisateur appuie dessus alors qu’elle contient déjà une valeur. Le comportement par défaut prévoit la modification de la valeur plutôt que son remplacement. Le point d’insertion est inséré entre deux mots et aucune sélection de texte n’est faite. Si la valeur d’une zone de saisie de texte a toutes les chances d’être remplacée par l’utilisateur, modifiez le comportement de la zone afin que tout le texte existant soit sélectionné lorsque le contrôle reçoit le focus, et que la sélection soit remplacée par la nouvelle valeur entrée.
 
-**Zones de saisie d’une seule ligne**
+### <a name="single-line-input-boxes"></a>Zones de saisie d’une seule ligne
 
--   Utilisez plusieurs zones de texte d’une ligne pour la saisie de plusieurs éléments de texte de petite taille. Si les zones de texte sont de nature apparentées, regrouper-les.
+- Utilisez plusieurs zones de texte d’une ligne pour la saisie de plusieurs éléments de texte de petite taille. Si les zones de texte sont de nature apparentées, regrouper-les.
 
--   Faites en sorte que la taille des zones de texte d’une ligne soit légèrement supérieure à l’entrée la plus longue prévue. Si cette opération élargit le contrôle de manière excessive, divisez ce dernier en deux contrôles. Par exemple, vous pouvez fractionner une entrée d’adresse unique sous la forme «Ligne d’adresse1» et «Ligne d’adresse2».
--   Définissez un nombre maximal de caractères pouvant être entrés. Si la source de données de stockage n’accepte pas les chaînes d’entrée longues, limitez la longueur des entrées et utilisez une fenêtre contextuelle de validation pour indiquer à l’utilisateur qu’il a atteint la limite.
--   Utilisez des contrôles de saisie de texte d’une ligne pour recueillir de petits éléments de texte.
+- Faites en sorte que la taille des zones de texte d’une ligne soit légèrement supérieure à l’entrée la plus longue prévue. Si cette opération élargit le contrôle de manière excessive, divisez ce dernier en deux contrôles. Par exemple, vous pouvez fractionner une entrée d’adresse unique sous la forme «Ligne d’adresse1» et «Ligne d’adresse2».
+- Définissez un nombre maximal de caractères pouvant être entrés. Si la source de données de stockage n’accepte pas les chaînes d’entrée longues, limitez la longueur des entrées et utilisez une fenêtre contextuelle de validation pour indiquer à l’utilisateur qu’il a atteint la limite.
+- Utilisez des contrôles de saisie de texte d’une ligne pour recueillir de petits éléments de texte.
 
     L’exemple suivant montre une zone de texte d’une ligne destinée à saisir une réponse à une question de sécurité. La réponse devant être brève, il convient d’utiliser ici une zone de texte d’une seule ligne.
 
     ![Saisie de données élémentaire](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
 
--   Utilisez un ensemble de contrôles de saisie de texte d’une ligne courts et de taille fixe pour entrer des données ayant un format spécifique.
+- Utilisez un ensemble de contrôles de saisie de texte d’une ligne courts et de taille fixe pour entrer des données ayant un format spécifique.
 
     ![Entrée de données formatées](images/textinput_example_productkey.png)
 
--   Utilisez un contrôle de saisie de texte d’une ligne sans contraintes pour entrer ou modifier des chaînes, en association avec un bouton de commande qui permette aux utilisateurs de sélectionner les valeurs valides.
+- Utilisez un contrôle de saisie de texte d’une ligne sans contraintes pour entrer ou modifier des chaînes, en association avec un bouton de commande qui permette aux utilisateurs de sélectionner les valeurs valides.
 
     ![Saisie de données assistée](images/textinput_example_assisted.png)
 
+### <a name="multi-line-text-input-controls"></a>Zones de saisie de texte multiligne
 
-**Zones de saisie de texte multiligne**
-
--   Quand vous créez une zone de texte enrichi, proposez des boutons de style et implémentez leurs actions.
--   Utilisez une police cohérente avec le style de votre application.
--   Faites en sorte que la hauteur du contrôle de texte soit suffisante pour recevoir des entrées classiques.
--   Pour la saisie de longues chaînes de texte dont le nombre de mots ou de caractères est limité, utilisez une zone de texte brut et ajoutez un compteur en temps réel qui affiche à l’utilisateur le nombre de caractères ou de mots autorisés restants avant d’atteindre la limite. Vous devez créer le compteur vous-même. Placez-le sous la zone de texte en question et mettez-le à jour de façon dynamique à mesure que l’utilisateur entre chaque mot ou caractère.
+- Quand vous créez une zone de texte enrichi, proposez des boutons de style et implémentez leurs actions.
+- Utilisez une police cohérente avec le style de votre application.
+- Faites en sorte que la hauteur du contrôle de texte soit suffisante pour recevoir des entrées classiques.
+- Pour la saisie de longues chaînes de texte dont le nombre de mots ou de caractères est limité, utilisez une zone de texte brut et ajoutez un compteur en temps réel qui affiche à l’utilisateur le nombre de caractères ou de mots autorisés restants avant d’atteindre la limite. Vous devez créer le compteur vous-même. Placez-le sous la zone de texte en question et mettez-le à jour de façon dynamique à mesure que l’utilisateur entre chaque mot ou caractère.
 
     ![Texte long](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
 
--   Ne laissez pas les contrôles de saisie de texte s’allonger en hauteur lorsque les utilisateurs entrent le texte.
--   N’utilisez pas de zone de texte de plusieurs lignes quand les utilisateurs n’ont besoin que d’une seule ligne.
--   N’utilisez pas de contrôle de texte enrichi si un contrôle de texte brut est approprié.
+- Ne laissez pas les contrôles de saisie de texte s’allonger en hauteur lorsque les utilisateurs entrent le texte.
+- N’utilisez pas de zone de texte de plusieurs lignes quand les utilisateurs n’ont besoin que d’une seule ligne.
+- N’utilisez pas de contrôle de texte enrichi si un contrôle de texte brut est approprié.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 

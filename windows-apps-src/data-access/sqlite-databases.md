@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 3780423b0c2fc2bbe1ebc81054e13997d5ebde7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
+ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934594"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9075142"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de donnéesSQLite dans une applicationUWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. Ce guide vous explique comment procéder.
@@ -83,7 +83,7 @@ La mise à jour de la version minimale de votre projet UWP vers FallCreatorsUpda
 
 Tout d’abord, vous pouvez utiliser des bibliothèques.NET Standard2.0 au lieu de bibliothèques de classes régulières. Cela signifie que vous pouvez partager votre code d’accès aux données avec n’importe quelle autre application.NET, par exemple, une application WPF, Windows Forms, Android, iOS ou ASP.NET.
 
-Deuxièmement, votre application ne dispose pas de bibliothèquesSQLite de package. Au lieu de cela, votre application peut utiliser la version de SQLite est installée avec Windows. Cette solution est particulièrement intéressante.
+Deuxièmement, votre application n’a pas de bibliothèques SQLite de package. Au lieu de cela, votre application peut utiliser la version de SQLite est installée avec Windows. Cette solution est particulièrement intéressante.
 
 : heavy_check_mark: réduit la taille de votre application, car vous n’êtes pas obligé de télécharger le fichier binaireSQLite puis de l’empaqueter dans votre application.
 
