@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, présentation
 ms.localizationpriority: medium
-ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
-ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
+ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042603"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079217"
 ---
 # <a name="introduction-to-cwinrt"></a>Présentation de C++/WinRT
 &nbsp;
@@ -111,6 +111,8 @@ Avec la dernière version de l’extension VSIX, il n’est pas valide pour un p
 Comme indiqué ci-dessus, C++ / WinRT projet doit maintenant avoir le package NuGet installé qu’il contient.
 
 Dans la mesure où les `<CppWinRTEnabled>` élément est désormais obsolète, vous pouvez éventuellement modifier votre `.vcxproj`et supprimer l’élément. Il n’est pas strictement nécessaire, mais il s’agit d’une option.
+
+En outre, si votre `.vcxproj` contient `<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>`, vous pouvez le supprimer afin que vous puissiez créer sans nécessiter de C++ / extension WinRT VSIX à installer.
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>Types personnalisés dans la projection C++/WinRT
 En votre C++ / WinRT de programmation, vous pouvez utiliser les fonctionnalités de langage C++ standard et [les types de données C++ Standard et C++ / WinRT](std-cpp-data-types.md)&mdash;, y compris certains types de données de bibliothèque C++ Standard. Toutefois, vous prendrez également connaissance de certains types de données personnalisés dans la projection, que vous pourrez choisir d’utiliser. Par exemple, nous utilisons [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) dans l’exemple de code de démarrage rapide de [Prise en main de C++/WinRT](get-started.md).
