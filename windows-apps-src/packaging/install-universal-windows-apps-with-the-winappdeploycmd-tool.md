@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec673236f41d4128e6aa5702f4d54f43c55890ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
+ms.sourcegitcommit: d6bc0c73df105482cab00c41e80c7c98d6834874
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937953"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "9079772"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 
@@ -22,7 +22,7 @@ Vous devez simplement le SDK Windows 10 pour exécuter l’outil WinAppDeployCmd
 
 Pour un déploiement vers des appareils mobiles, vous devez d’abord créer un package. Pour plus d’informations, voir [cet article](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-L’outil **WinAppDeployCmd.exe** se trouve ici sur votre PC Windows 10: **C:\\Program Files (x86) \\Windows Kits\\10\\bin\\<SDK Version>\\x86\\WinAppDeployCmd.exe** (basé sur le chemin d’installation pour le Kit de développement). 
+L’outil **WinAppDeployCmd.exe** se trouve ici sur votre PC Windows 10: **C:\\Program Files (x86) \\Windows Kits\\10\\bin\\&lt;Version du SDK&gt;\\x86\\WinAppDeployCmd.exe** (basé sur le chemin d’installation pour le Kit de développement). 
 > [!NOTE]
 > Dans la version15063 et les versions ultérieures du kit SDK, celui-ci est installé côte-à-côte des dossiers spécifiques à la version.  Les kits SDK précédents (version 14393 et antérieures) sont écrits directement sur le dossier parent.
 
