@@ -2,16 +2,16 @@
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Langues prises en charge
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 10/25/2018
+ms.date: 02/20/2019
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
+ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938019"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083707"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
@@ -43,7 +43,7 @@ Codes de langue qui ne sont pas inclus ici ne sont pas prises en charge par le W
 | Bulgare             | bg, bg-bg                                                                                                                                                                                             |
 | Catalan               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
 | Cherokee              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
-| Chinois (simplifié)  | zh, zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
+| Chinois (simplifié)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
 | Chinois (traditionnel) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
 | Croate              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
 | Tchèque                 | cs, cs-cz                                                                                                                                                                                             |

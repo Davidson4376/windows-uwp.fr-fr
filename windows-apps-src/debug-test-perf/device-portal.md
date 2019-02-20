@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Vue d’ensemble de Windows Device Portal
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
-ms.date: 12/12/2017
+ms.date: 2/19/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bffdb31e9001bd0b2abe873780ef507c2073b46
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 372524b5a5f002e68c02a8f298703cb7ef99bfdf
+ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946697"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083717"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -33,7 +33,7 @@ Chaque appareil possède des instructions spécifiques concernant la connexion �
 Famille d’appareils | Activé par défaut? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
-IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | Non applicable
+IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | N/A
 Xbox | Activer dans le mode de développement | Désactivé | 11443 | Non applicable
 Bureau| Activer dans le mode de développement | 50080\* | 50043\* | Non applicable
 Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
@@ -65,20 +65,47 @@ Les outils qui sont communes à familles d’appareils sont décrits ici. D’au
 
 Le Gestionnaire d’applications constitue une installation ou la désinstallation et les fonctionnalités de gestion pour application des packages et des ensembles de sur l’appareil hôte.
 
-![Page du Gestionnaire Device Portal applications](images/device-portal/wdp-apps.png)
+![Page du Gestionnaire Device Portal applications](images/device-portal/WDP_AppsManager2.png)
 
-- **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées dans local, réseau ou web héberge et enregistrer des fichiers libres à partir des partages réseau.
-- **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et fermez-les si nécessaire.
+* **Déployer les applications**: déployer des applications empaquetées à partir du réseau local, ou web hôtes et enregistrer des fichiers libres à partir des partages réseau.
+* **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil.
+* **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et fermez-les si nécessaire.
 
-#### <a name="install-an-app"></a>Installer une application
+#### <a name="install-sideload-an-app"></a>Installer (chargement indépendant) une application
+
+Vous pouvez charger des applications au cours du développement à l’aide de Windows Device Portal:
 
 1.  Lorsque vous avez créé un package d’application, vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
+
   ![Installation d’applications](images/device-portal/iot-installapp0.png)
-2.  De section du Gestionnaire de Device Portal applications, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
-3.  Cliquez sur **Parcourir** et recherchez votre package d’application.
-3.  Cliquez sur **Parcourir** et recherchez le fichier de certificat (_.cer_) (non requis sur tous les appareils.)
-4.  Cases à cocher le respectifs si vous souhaitez installer facultatifs ou les packages d’infrastructure, ainsi que l’installation de l’application. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
-5.  Cliquez sur **suivant** pour passer à l’étape suivante et **installer** pour lancer l’installation. 
+
+2. Dans Windows Device Portal, accédez à la page **Gestionnaire des applications** .
+
+3. Dans la section des **applications de déploiement** , sélectionnez **Le stockage Local**.
+
+4. Sous **Sélectionnez le package d’application**, sélectionnez **Choisir un fichier** et recherchez le package d’application que vous souhaitez charger de manière indépendante.
+
+5. Sous **Sélectionnez le fichier de certificat (.cer) utilisé pour signer le package d’application**, sélectionnez **Choisir un fichier** et accédez au certificat associé à ce package d’application.
+
+6. Cases à cocher le respectifs si vous souhaitez installer facultatifs ou les packages d’infrastructure, ainsi que l’installation d’application, puis cliquez sur **suivant** pour choisir les.
+
+7. Sélectionnez **installer** pour lancer l’installation.
+
+8. Si l’appareil exécute Windows 10 en mode S, et il est la première fois que le certificat a été installé sur l’appareil, redémarrez l’appareil.
+
+#### <a name="install-a-certificate"></a>Installer un certificat
+
+Par ailleurs, vous pouvez installer le certificat via Windows Device Portal et installer l’application par le biais d’autres moyens:
+
+1. Dans Windows Device Portal, accédez à la page **Gestionnaire des applications** .
+
+2. Dans la section des **applications de déploiement** , sélectionnez **Installer le certificat**.
+
+3. Sous **Sélectionnez le fichier de certificat (.cer) utilisé pour signer un package d’application**, sélectionnez **Choisir un fichier** et accédez au certificat associé au package d’application que vous souhaitez charger de manière indépendante.
+
+4. Sélectionnez **installer** pour lancer l’installation.
+
+5. Si l’appareil exécute Windows 10 en mode S, et il est la première fois que le certificat a été installé sur l’appareil, redémarrez l’appareil.
 
 #### <a name="uninstall-an-app"></a>Désinstaller une application
 1.  Assurez-vous que votre application n’est pas en cours d’exécution. 
