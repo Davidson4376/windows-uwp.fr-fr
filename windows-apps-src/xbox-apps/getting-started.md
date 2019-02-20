@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a8f217322d6d10b91ebc82c3434c88e9d11128f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c94d27e87853b570268e3a39fe941c817b3eda6a
+ms.sourcegitcommit: eaee5a45d5eace64c69e67691e5330b466cc74c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930166"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083257"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Prise en main du développement d’applications UWP sur XboxOne
 
@@ -39,7 +39,7 @@ Avant de commencer, vous devez effectuer les opérations suivantes:
 
 2.  Installez le dernier [SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
-3.  Activer le Mode développeur sur votre ordinateur de développement (**paramètres / mise à jour et sécurité / pour les développeurs ou utilisent les fonctionnalités de développement / mode développeur**).
+3.  Activer le Mode développeur sur votre ordinateur de développement (**paramètres / mise à jour & sécurité / pour les développeurs ou utilisent les fonctionnalités de développement / mode développeur**).
 
 Maintenant que votre PC de développement est prêt, vous pouvez regarder cette vidéo ou poursuivre votre lecture pour savoir comment configurer votre console XboxOne pour le développement, et créer une application UWP que vous déploierez sur celle-ci.
 </br>
@@ -48,7 +48,7 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 ## <a name="setting-up-your-xbox-one-console"></a>Configuration de votre console XboxOne
 
-1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application, obtenez le code d’activation et puis entrez-le la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxactivate) dans votre compte espace partenaires. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
+1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application, obtenez le code d’activation et puis entrez-le la page **consoles Xbox One de la gérer** dans votre compte de développeur d’application l’espace partenaires. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
 
 2.  Ouvrez l’application **Dev Mode Activation** et sélectionnez **basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
   
