@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: dbd2c6c9f5e3cf2200f9b260687f05718178868a
+ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050652"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9082882"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame2D
 
@@ -67,6 +67,7 @@ Maintenant que vous avez créé le projet, ouvrez le fichier **Game1.cs** depuis
 **protected override void UnloadContent()** Cette méthode est utilisée pour décharger le contenu autre que celui du Gestionnaire de contenu. Nous ne l’utilisons pas du tout.
 
 **protected override void Update (GameTime gameTime)** Cette méthode est appelée une fois pour chaque cycle de la boucle de jeu. Ici, nous mettons à jour les états de n’importe quel objet ou de n’importe quelle variable utilisée dans le jeu. Cela inclut des éléments tels que la position d’un objet, sa vitesse ou sa couleur. Il s’agit également dans lequel l’entrée utilisateur est gérée. Bref, cette méthode traite chaque partie de la logique du jeu à l'exception du dessin des objets à l’écran.
+
 **protected override void Draw(GameTime gameTime)** C'est là que les objets sont dessinés sur l’écran à l’aide des positions données par la méthode Update.
 
 ## <a name="draw-a-sprite"></a>Dessin d'un sprite
@@ -565,7 +566,7 @@ if (!gameStarted)
 
 Tout d’abord, nous créons deux chaînes, une pour chaque ligne de texte à dessiner. Ensuite, nous mesurons la largeur et la hauteur de chaque ligne une fois imprimée, à l’aide de la méthode **SpriteFont.MeasureString(String)**. Cela nous donne la taille en tant qu'objet **Vector2**, avec la propriété **X** contenant sa largeur, et **Y** sa hauteur.
 
-Enfin, nous traçons chaque ligne. Pour centrer le texte horizontalement, nous rendons la valeur **X** de son vecteur de position égale à **screenWidth / 2 - textSize.X / 2**
+Enfin, nous traçons chaque ligne. Pour centrer le texte horizontalement, nous effectuons la valeur **X** de son vecteur de position égale à **screenWidth / 2 - textSize.X / 2**.
 
 **Défi:** comment modifier la procédure ci-dessus afin de centrer le texte verticalement et horizontalement?
 
@@ -576,7 +577,12 @@ Essayez d’exécuter le jeu! Voyez-vous l’écran de présentation au démarra
 ## <a name="collision-detection"></a>Détection des collisions
 Nous avons un brocoli qui vous suit partout, ainsi qu'un score qui augmente chaque fois qu’un nouveau brocoli est créé, mais pour l'instant, il n’existe aucun moyen de perdre réellement à ce jeu. Il nous faut un moyen de savoir si les sprites dino et brocolis entrent en collision et, quand c'est le cas, de déclarer que le jeu est fini.
 
-### <a name="1-rectangular-collision"></a>1. Collision rectangulaire
+### <a name="1-get-the-textures"></a>1. Obtention des textures
+La dernière image que nous avons besoin, est un pour «jeu dépassé». [Cliquez ici pour télécharger l’image](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/game-over.png).
+
+Tout comme avant le rectangle vert, images ninja-cat et Brocoli, ajouter cette image à **Content.mgcb** via le **MonoGame Pipeline**, en le nommant «jeu-over.png».
+
+### <a name="2-rectangular-collision"></a>2. collision rectangulaire
 Lorsque des collisions sont détectées dans un jeu, les objets sont souvent simplifiés pour réduire la complexité des calculs nécessaires. Nous allons traiter à la fois l'avatar du joueur et l'obstacle brocoli comme des rectangles afin de détecter leurs collisions.
 
 Ouvrez **SpriteClass.cs** et ajoutez une nouvelle variable de classe:
@@ -602,7 +608,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 
 Cette méthode détecte si les deux objets rectangulaires se sont heurtés. L’algorithme fonctionne cherche à voir s’il existe un espace entre deux des côtés des rectangles. Si c'est le cas, c'est qu'il n'y a aucune collision. Inversement, s'il n'y a aucun espace, c'est qu'une collision s'est produite.
 
-### <a name="2-load-new-textures"></a>2. Chargement de nouvelles textures
+### <a name="3-load-new-textures"></a>3. chargement de nouvelles textures
 
 Ouvrez ensuite **Game1.cs** et ajoutez deux nouvelles variables de classe, l'une pour stocker la texture du sprite signifiant la fin du jeu et une valeur booléenne pour suivre l’état du jeu:
 
@@ -623,7 +629,7 @@ Enfin, chargez la texture dans **gameOverTexture** dans la méthode **LoadConten
 gameOverTexture = Content.Load<Texture2D>("game-over");
 ```
 
-### <a name="3-implement-game-over-logic"></a>3. Implémentation de la logique «jeu terminé»
+### <a name="4-implement-game-over-logic"></a>4. implémenter la logique «jeu terminé»
 Ajoutez ce code à la méthode **Update**, juste après l'appel de la méthode **KeyboardHandler**:
 
 ```CSharp
@@ -647,7 +653,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 
 Cela appelle la méthode **RectangleCollision** que nous avons créée dans **SpriteClass**et marque le jeu comme étant terminé si elle retourne true.
 
-### <a name="4-add-user-input-for-resetting-the-game"></a>4. Ajout de l’entrée utilisateur permettant de réinitialiser le jeu
+### <a name="5-add-user-input-for-resetting-the-game"></a>5. Ajout de l’entrée utilisateur permettent de réinitialiser le jeu
 Ajoutez ce code à la méthode **KeyboardHandler** , pour permettre à l’utilisateur à réinitialiser le jeu si elles appuyez sur ENTRÉE:
 
 ```CSharp
@@ -658,7 +664,7 @@ if (gameOver && state.IsKeyDown(Keys.Enter))
 }
 ```
 
-### <a name="5-draw-game-over-splash-and-text"></a>5. Dessin de l’écran et du texte de fin de jeu
+### <a name="6-draw-game-over-splash-and-text"></a>6. dessin de jeu sur l’écran et du texte
 Pour finir, ajoutez ce code à la méthode Draw, juste après le premier appel de **spriteBatch.Draw** (il doit s’agir de l’appel qui dessine la texture herbe).
 
 ```CSharp
