@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ca733ef88eb8b575b8974f71f9395800d5de3875
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f2810221aca0399d037fc56f7f3ac783a2c0df12
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935171"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086667"
 ---
 # <a name="device-information-properties"></a>Propriétés d’informations d’appareil
 
@@ -153,7 +153,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.AepService.ParentAepIsPaired** | Booléen | Indique si l’objet **AssociationEndpoint** parent est associé au système.                           |
 | **System.Devices.AepService.ProtocolId**        | GUID    | Identité du protocole utilisé pour détecter cet appareil.                                                           |
 | **System.Devices.AepService.ServiceClassId**    | GUID    | Identité du service représenté par cet appareil.                                                             |
-| **System.Devices.AeoService.ServiceId**         | Chaîne  | Identité de ce service. Il s’agit également de la valeur de [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id). |
+| **System.Devices.AepService.ServiceId**         | Chaîne  | Identité de ce service. Il s’agit également de la valeur de [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | Chaîne  | Meilleur nom d’affichage pour le service.                                                                           |
 
  

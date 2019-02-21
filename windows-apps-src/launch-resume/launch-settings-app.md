@@ -6,12 +6,12 @@ ms.date: 1/8/2019
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
-ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
+ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "8996074"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086657"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -103,7 +103,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 |Page Paramètres| URI |
 |-------------|-----|
-| Autorisations et historique | ms-settings:cortana-permissions |
+| Autorisations & historique | ms-settings:cortana-permissions |
 | En savoir plus | ms-settings:cortana-moredetails |
 | Cortana sur mes appareils | ms-settings:cortana-notifications |
 | Parler à Cortana | ms-settings:cortana-language<br/>MS-paramètres: cortana<br/>MS-paramètres: cortana-talktocortana |
@@ -136,7 +136,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Audio | ms-settings:easeofaccess-audio |
 | Sous-titres codés | ms-settings:easeofaccess-closedcaptioning |
 | Filtres de couleur | MS-paramètres: easeofaccess-colorfilter |
-| Taille du curseur et de pointeur | MS-paramètres: easeofaccess-cursorandpointersize |
+| Taille du pointeur curseur & | MS-paramètres: easeofaccess-cursorandpointersize |
 | Écran | ms-settings:easeofaccess-display |
 | Contrôle visuel | ms-settings:easeofaccess-eyecontrol |
 | Polices | ms-settings:fonts |
@@ -288,7 +288,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Bureau à distance | ms-settings:remotedesktop |
 | Téléphone | MS-paramètres: téléphone (**déconseillées dans Windows 10, version 1809 et versions ultérieures**) |
 | Alimentation et mise en veille | ms-settings:powersleep |
-| Sons | ms-settings:sounds |
+| Son | MS-paramètres: son |
 | Stockage | ms-settings:storagesense |
 | Assistant Stockage | ms-settings:storagepolicies |
 
