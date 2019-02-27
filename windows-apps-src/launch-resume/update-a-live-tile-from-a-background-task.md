@@ -7,12 +7,12 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d5d9e1b93c9f769a748a6a44d0ed77f5bd3a9da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919562"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114455"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
@@ -185,7 +185,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Syndication;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234238
 
 namespace ContosoApp
 {

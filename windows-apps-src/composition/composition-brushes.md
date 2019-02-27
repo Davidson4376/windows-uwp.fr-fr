@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7f080a3de18ec0acc8fe68d8f0282d92f46125
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: eb0d48cee4fe6698ec371c882c913affa5af7729
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050992"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114565"
 ---
 # <a name="composition-brushes"></a>Pinceaux de composition
 Tous les éléments visibles à l’écran à partir d’une application UWP sont visible dans la mesure où il a été peint par un pinceau. Pinceaux activer vous permettent de peindre des objets d’interface (UI) utilisateur avec le contenu allant de couleurs simples et solides pour les images ou des dessins chaîne d’effets complexes. Cette rubrique présente les concepts de peinture avec CompositionBrush.
@@ -191,7 +191,7 @@ CompositionSurfaceBrush _videoBrush;
 _mediaPlayer = new MediaPlayer();
 
 // Get a source from a URI. This could also be from a file via a picker or a stream
-var source = MediaSource.CreateFromUri(new Uri("http://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
+var source = MediaSource.CreateFromUri(new Uri("https://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
 var item = new MediaPlaybackItem(source);
 _mediaPlayer.Source = item;
 _mediaPlayer.IsLoopingEnabled = true;

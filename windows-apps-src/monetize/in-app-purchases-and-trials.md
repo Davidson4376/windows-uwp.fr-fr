@@ -6,12 +6,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables, abonnement
 ms.localizationpriority: medium
-ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a8bad5207c5907beb91e5664b4bc7e140ab036b
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945991"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114675"
 ---
 # <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 
@@ -175,7 +175,7 @@ Si votre application utilise des API de l'espace de noms **Windows.Services.Stor
     > [!NOTE]
     > Après avoir effectué ces étapes, vous pouvez continuer et mettre à jour le code de votre application, puis déboguer votre projet mis à jour sur votre ordinateur de développement sans soumettre de nouveaux packages d’application au WindowsStore. Il vous suffit de télécharger la version WindowsStore de votre application sur votre ordinateur de développement pour obtenir la licence locale qui sera utilisée pour les tests. Vous devez uniquement soumettre les nouveaux packages d’application au WindowsStore après avoir terminé vos tests et proposer à vos clients les fonctionnalités liées aux achats in-app ou à la version d’évaluation de votre application.
 
-Si votre application utilise l'espace de noms **Windows.ApplicationModel.Store**, vous pouvez utiliser la classe [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) dans votre application pour simuler les informations de licence pendant le test, avant de soumettre votre application au WindowsStore. Pour plus d’informations, voir [Prise en main des classes CurrentApp et CurrentAppSimulator] (in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes).  
+Si votre application utilise l'espace de noms **Windows.ApplicationModel.Store**, vous pouvez utiliser la classe [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) dans votre application pour simuler les informations de licence pendant le test, avant de soumettre votre application au WindowsStore. Pour plus d’informations, voir [vous familiariser avec les classes CurrentApp et CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes).  
 
 > [!NOTE]
 > L’espace de noms **Windows.Services.Store** ne fournit pas une classe que vous pouvez utiliser pour simuler des informations de licence lors d’un test. Si vous utilisez l'espace de noms **Windows.Services.Store** pour implémenter les achats dans l'application ou les versions d’évaluation, vous devez publier votre application dans le Windows Store et télécharger l’application sur votre appareil de développement pour utiliser sa licence à des fins de test, comme indiqué ci-dessus.
@@ -227,7 +227,7 @@ Pour configurer un objet **StoreContext** dans une application de bureau qui uti
 
 Chaque produit dans le WindowsStore a au moins une *référence (SKU)*, et chaque référence (SKU) a au moins une *disponibilité*. Ces concepts sont employés par la plupart des développeurs dans l’espace partenaires, et la plupart des développeurs ne définissent jamais les références (SKU) ou les disponibilités de leurs applications ou des modules complémentaires. Toutefois, comme le modèle d’objet des produits du WindowsStore dans l’espace de noms **Windows.Services.Store** contient des références (SKU) et des disponibilités, la compréhension de ces concepts de base peut être utile pour certains scénarios.
 
-| Objet |  Description  |
+| Object |  Description  |
 |---------|-------------------|
 | Produit  |  Un *produit* désigne un type de produit disponible dans le WindowsStore, notamment une application ou une extension. <p/><p/> Chaque produit dans le Windows Store est associé à un objet [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx). Cette classe fournit des propriétés qui vous permettent d’accéder à des données, telles que l’ID WindowsStore du produit, les images et vidéos de la liste du WindowsStore, ainsi que des informations tarifaires. Elle fournit également des méthodes que vous pouvez utiliser pour acheter le produit. |
 | SKU |  Une *référence (SKU)* est une version spécifique d’un produit avec sa propre description, son prix et d’autres détails uniques sur le produit. Chaque application ou module complémentaire a une référence (SKU) par défaut. Le seul cas où la plupart des développeurs ont plusieurs références (SKU) pour une application, c’est lorsqu’ils publient une version complète de leur application et une version d’évaluation. Dans le catalogue du WindowsStore, chacune de ces versions a une référence (SKU) différente de la même application. <p/><p/> Certains éditeurs peuvent définir leurs propres références (SKU). Par exemple, un grand éditeur de jeux peut commercialiser un jeu avec une référence (SKU) qui affiche du sang vert sur les marchés qui n’autorisent pas le sang rouge et une autre référence (SKU) montrant du sang rouge sur tous les autres marchés. Autre possibilité, un éditeur qui vend des contenus vidéo numériques peut publier deuxréférences (SKU) pour une vidéo: une pour la version haute définition et une autre pour la version en définition standard. <p/><p/> Chaque référence (SKU) dans le Windows Store est associé à un objet [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx). Chaque [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) a une propriété [Skus](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.skus) que vous pouvez utiliser pour accéder aux références (SKU) du produit. |

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: db4cde6f8c195101ec31de26c00ffa7325e08d71
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929023"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114485"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
@@ -71,7 +71,7 @@ Pour télécharger une commande de codes promotionnels complétée et distribuer
     -   **Nom du produit**: nom de l’application ou du module complémentaire auquel le code est associé.
     -   **Nom de la commande**: nom de la commande dans laquelle ce code a été généré.
     -   **Code promotionnel**: code proprement dit. Il s’agit d’une chaîne de 5x5 caractères alphanumériques séparés par des traits d’union. Par exemple: DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
-    -   **URL donnant droit**: URL permettant à un client d’utiliser le code et d’installer votre application ou module complémentaire. L’URL est au format suivant: http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt; code_promotionnel >
+    -   **URL donnant droit**: URL permettant à un client d’utiliser le code et d’installer votre application ou module complémentaire. L’URL est au format suivant: https://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt; promotional_code>
     -   **Date de début**: date à laquelle ce code devient actif.
     -   **Date d’expiration**: date à laquelle ce code expire.
     -   **ID de code**: ID unique de ce code.

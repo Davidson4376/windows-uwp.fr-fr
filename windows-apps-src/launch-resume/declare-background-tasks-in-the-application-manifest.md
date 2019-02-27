@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d987eac76c13b8ceb34a8779903a8067ed6a607
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048696"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114515"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -107,7 +107,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 Répétez l’étape2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
 
-L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509). Il illustre l’utilisation de deuxclasses de tâche en arrière-plan avec au total troistypes de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
+L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( https://go.microsoft.com/fwlink/p/?linkid=227509). Il illustre l’utilisation de deuxclasses de tâche en arrière-plan avec au total troistypes de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
 
 ```xml
 <Applications>

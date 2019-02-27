@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049546"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114575"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 
@@ -209,7 +209,7 @@ Il est temps d’exécuter votre serveur! Et tant que nous y sommes, nous allons
 ]
 ```
 
-Appuyez maintenant sur F5 et ouvrez votre navigateur sur [http://localhost:8000](https://localhost:8000). La page doit s’ouvrir et afficher l’interface utilisateur Swagger pour notre API de jeu de mémoire, et à partir de là, vous pourrez développer les détails et renseigner les champs de chacune des méthodes. Vous pouvez même essayer d’appeler les API, bien que leurs réponses contiendront uniquement des données fictives (fournies par le module [Swagmock](https://www.npmjs.com/package/swagmock)). Il est temps d’ajouter notre logique de jeu pour rendre ces API effectives.
+Appuyez maintenant sur F5 et ouvrez votre navigateur sur [https://localhost:8000](https://localhost:8000). La page doit s’ouvrir et afficher l’interface utilisateur Swagger pour notre API de jeu de mémoire, et à partir de là, vous pourrez développer les détails et renseigner les champs de chacune des méthodes. Vous pouvez même essayer d’appeler les API, bien que leurs réponses contiendront uniquement des données fictives (fournies par le module [Swagmock](https://www.npmjs.com/package/swagmock)). Il est temps d’ajouter notre logique de jeu pour rendre ces API effectives.
 
 ### <a name="3-set-up-your-route-handlers"></a>3. Configurer vos gestionnaires d’itinéraire
 
@@ -235,7 +235,7 @@ Cette couche de notre programme représente les cartes mémoire elles-mêmes et 
 
 Par souci de simplicité, nous stockons notre tableau de jeu dans une variable globale (`global.board`) sur notre serveur Node. Toutefois dans la pratique, vous utiliseriez le stockage dans le Cloud (comme le [Cloud Datastore](https://cloud.google.com/datastore/) de Google ou Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) pour faire de cette installation un service d’API de mémoire de jeu viable, prenant en charge simultanément plusieurs jeux et joueurs.
 
-Assurez-vous d’avoir enregistré toutes les modifications dans VS Code, lancez à nouveau votre serveur (F5 dans VS Code ou `npm start` depuis le shell, puis accédez à [http://localhost:8000](https://localhost:8000)) pour tester l’API de jeu.
+Assurez-vous d’avoir enregistré toutes les modifications dans VS Code, lancez à nouveau votre serveur (F5 dans VS Code ou `npm start` depuis le shell, puis accédez à [https://localhost:8000](https://localhost:8000)) pour tester l’API de jeu.
 
 Chaque fois que vous appuyez sur le bouton **Essayez!** de l'une des fonctions **/jeu**, **/deviner**, ou **/nouveau**, vérifiez le **Corps de réponse** et le **Code de réponse** subséquents ci-dessous pour vérifier que tout fonctionne comme prévu.
 
@@ -333,7 +333,7 @@ Commençons par créer le projet Node.js à l’aide d'Express.
     npm start
     ```
 
-5. Affichez votre application en accédant à [http://localhost:3000/](https://localhost:3000/).
+5. Affichez votre application en accédant à [https://localhost:3000/](https://localhost:3000/).
 
     ![Capture d’écran de http://localhost:3000/](./images/express.png)
 
@@ -620,7 +620,7 @@ Félicitations! Vous avez terminé de créer l’application Web! Testons-la.
 
 1. Ouvrez une invite de commandes dans le répertoire de votre mémoire et entrez la commande suivante: `npm start`
 
-2. Dans votre navigateur, accédez à [http://localhost:3000/](https://localhost:3000/) et jouez!
+2. Dans votre navigateur, accédez à [https://localhost:3000/](https://localhost:3000/) et jouez!
 
 3. Si vous rencontrez des erreurs, vous pouvez utiliser les outils de débogage Node.js de Visual Studio Code en appuyant sur la touche F5 de votre clavier et en saisissant `Node.js`. Pour plus d’informations sur le débogage dans Visual Studio Code, consultez cet [article ](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations). 
 

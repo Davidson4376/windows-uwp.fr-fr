@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c8729a6d2ac828f3d7b257681d64f4c7834587
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: b480e96621e143e283a2556bdbef394aaf7dbc07
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048869"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114465"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
@@ -24,13 +24,13 @@ Pour obtenir la [Certification Windows](https://msdn.microsoft.com/windows/deskt
 Conditions préalables pour tester une application Windows universelle :
 
 -   Vous devez installer et exécuter Windows 10.
--   Vous devez installer la [version du Kit de Certification des applications Windows 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
+-   Vous devez installer la [version du Kit de Certification des applications Windows 10]( https://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
 -   Vous devez [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
 **Remarque concernant les mises à niveau sur site**
 
-L’installation d’une nouvelle version du [Kit de certification des applications Windows]( http://go.microsoft.com/fwlink/p/?LinkID=309666) remplace toute version précédente du Kit qui est installée sur l’ordinateur.
+L’installation d’une nouvelle version du [Kit de certification des applications Windows]( https://go.microsoft.com/fwlink/p/?LinkID=309666) remplace toute version précédente du Kit qui est installée sur l’ordinateur.
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>Validez votre application Windows de manière interactive à l’aide du Kit de certification des applications Windows
 

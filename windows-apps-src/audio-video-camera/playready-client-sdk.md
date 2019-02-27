@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 181568d705f24c97af0d62f951a88102d3d008db
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 40df746d89757b481a47cefeaeda3f8a34091014
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049167"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114605"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -77,7 +77,7 @@ Les nouvelles interfaces, classes et énumérations suivantes ont été ajoutée
 -   Classe [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375)
 -   Énumérateur [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265)
 
-Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fonctionnalités de la gestion des droits numériques par PlayReady. L’exemple peut être téléchargé à partir de [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
+Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fonctionnalités de la gestion des droits numériques par PlayReady. L’exemple peut être téléchargé à partir de [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
 ## <a name="things-to-consider"></a>Points à prendre en considération
 
@@ -507,7 +507,7 @@ Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt s
 -   Lorsque la présentation multimédia s’arrête car la fin du contenu a été atteinte ou lorsque l’utilisateur a arrêté la présentation multimédia en cours de lecture.
 -   Lorsque la session précédente se termine inopinément (par exemple, en raison d’un blocage du système ou de l’application). L’application devra contrôler, au moment du démarrage ou de l’arrêt, s’il y a des sessions d’arrêt sécurisé en attente et envoyer les demandes séparément de la lecture de tout autre contenu multimédia.
 
-Pour obtenir un exemple d’implémentation de l’arrêt sécurisé, consultez le fichier securestop.cs dans l’exemple PlayReady disponible à l’adresse [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
+Pour obtenir un exemple d’implémentation de l’arrêt sécurisé, consultez le fichier securestop.cs dans l’exemple PlayReady disponible à l’adresse [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Utiliser la gestion des droits numériques par PlayReady sur XboxOne
 

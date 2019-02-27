@@ -5,12 +5,12 @@ keywords: windows10, uwp, abonnements, extensions, achats dans l’application, 
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 44553d2a772dcfe3b46ea196d6f6bb7c20fdfec0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046685"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114475"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -27,7 +27,7 @@ Les extensions d’abonnement des applications UWP prennent en charge les foncti
 * Vous pouvez ajouter des périodes d’essai gratuits d'une semaine ou d'unmois à votre abonnement.
 * Le SDK Windows [fournit des API](#code-examples) que vous pouvez utiliser dans votre application pour obtenir des informations sur les extensions d’abonnement disponibles pour l’application et activer l’achat d’une extension d’abonnement. Nous fournissons également des API REST que vous pouvez appeler à partir de vos services pour [gérer les abonnements d’un utilisateur](#manage-subscriptions).
 * Vous pouvez afficher des rapports d'analyse qui indiquent le nombre d’acquisitions d’abonnement, les abonnés actifs et les abonnements annulés au cours d'une période donnée.
-* Les clients peuvent gérer leur abonnement sur la page [http://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft. Les clients peuvent utiliser cette page pour afficher tous les abonnements qu’ils ont acquis, annuler un abonnement et modifier le formulaire de paiement associé à leur abonnement.
+* Les clients peuvent gérer leur abonnement sur la page [https://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft. Les clients peuvent utiliser cette page pour afficher tous les abonnements qu’ils ont acquis, annuler un abonnement et modifier le formulaire de paiement associé à leur abonnement.
 
 ## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>Étapes pour activer les extensions d'abonnement de votre application
 
@@ -109,7 +109,7 @@ Une fois que votre application est mise à jour dans le Windows Store et que les
 
 ## <a name="cancellations"></a>Annulations
 
-Les clients peuvent utiliser la page [http://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft afin d'afficher tous les abonnements qu'ils ont acquis, annuler un abonnement et modifier le moyen de paiement associé à leur abonnement. Si un client annule un abonnement via cette page, il continuera d'avoir accès à ce dernier pendant toute la durée de la période de facturation en cours. Aucun remboursement ne sera émis pour une partie de la période de facturation actuelle. Son abonnement sera désactivé au terme de la période de facturation en cours.
+Les clients peuvent utiliser la page [https://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft afin d'afficher tous les abonnements qu'ils ont acquis, annuler un abonnement et modifier le moyen de paiement associé à leur abonnement. Si un client annule un abonnement via cette page, il continuera d'avoir accès à ce dernier pendant toute la durée de la période de facturation en cours. Aucun remboursement ne sera émis pour une partie de la période de facturation actuelle. Son abonnement sera désactivé au terme de la période de facturation en cours.
 
 Vous pouvez également annuler un abonnement pour le compte d’un utilisateur à l’aide de notre API REST qui permet de [modifier l’état de facturation d’un abonnement pour un utilisateur donné](change-the-billing-state-of-a-subscription-for-a-user.md).
 
@@ -124,7 +124,7 @@ Nous n’offrons pas de périodes de grâce pour la facturation de l’abonnemen
 Les scénarios suivants ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 
 * La vente d'abonnements aux clients directement via le Windows Store n’est pas prise en charge pour l’instant. Les abonnements sont disponibles pour les achats in-app de produits numériques uniquement.
-* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [http://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers la période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
+* Les clients ne peuvent pas modifier les périodes d'abonnement via la page [https://account.microsoft.com/services](https://account.microsoft.com/services) de leur compte Microsoft. Pour basculer vers la période d’abonnement, les clients doivent annuler leur abonnement actuel et acheter un abonnement avec une période d’abonnement différente à partir de votre application.
 * Le changement de niveau n’est actuellement pas pris en charge pour les extensions d’abonnement (par exemple, passer un client d'un abonnement de base à un abonnement premium avec plus de fonctionnalités).
 * Les codes de [vente](../publish/put-apps-and-add-ons-on-sale.md) et les [codes promotionnels](../publish/generate-promotional-codes.md) ne sont actuellement pas pris en charge pour les extensions d’abonnement.
 

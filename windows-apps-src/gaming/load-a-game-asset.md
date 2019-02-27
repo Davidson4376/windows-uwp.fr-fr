@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, chargement des ressources
 ms.localizationpriority: medium
-ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937208"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114585"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Charger des ressources dans votre jeu DirectX
 
@@ -690,7 +690,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 Dans ce code, une fois que vous avez lu les données octets du fichier CSO, vous créez le nuanceur de vertex en appelant [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524). Après cela, vous créez votre schéma d’entrée pour le nuanceur dans la même lambda.
 
-D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, peuvent également nécessiter une configuration spécifique. Le code complet d’une variété de méthodes de chargement de nuanceur est fourni dans [Code complet de BasicLoader](complete-code-for-basicloader.md) et dans l’[exemple de chargement de ressources Direct3D]( http://go.microsoft.com/fwlink/p/?LinkID=265132).
+D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, peuvent également nécessiter une configuration spécifique. Le code complet d’une variété de méthodes de chargement de nuanceur est fourni dans [Code complet de BasicLoader](complete-code-for-basicloader.md) et dans l’[exemple de chargement de ressources Direct3D]( https://go.microsoft.com/fwlink/p/?LinkID=265132).
 
 ## <a name="remarks"></a>Remarques
 
@@ -698,7 +698,7 @@ D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, p
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de chargement de ressources Direct3D]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [Exemple de chargement de ressources Direct3D]( https://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [Code complet de BasicLoader](complete-code-for-basicloader.md)
 * [Code complet de BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Code complet de DDSTextureLoader](complete-code-for-ddstextureloader.md)

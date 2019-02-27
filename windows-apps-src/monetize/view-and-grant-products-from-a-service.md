@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
-ms.openlocfilehash: a749550c1dc644c4a9fb3f91530503adf192246e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050259"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114505"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -253,5 +253,5 @@ Voici un exemple de revendications de clé d’ID du MicrosoftStore décodées.
 * [Modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renouveler une clé d’ID du MicrosoftStore](renew-a-windows-store-id-key.md)
 * [Intégration d’applications à Azure Active Directory](https://go.microsoft.com/fwlink/?LinkId=722502)
-* [Présentation du manifeste de l’application Azure Active Directory]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [Présentation du manifeste de l’application Azure Active Directory]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [Jeton et types de réclamations pris en charge](https://go.microsoft.com/fwlink/?LinkId=722501)

@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 1feffac4d9b616c2fadff0080c3282e4200f3be7
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044473"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114435"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
@@ -85,7 +85,7 @@ private:
 
 Dans la méthode **OnCanceled** que vous avez créé à l’étape 1, définissez la variable indicateur **\_CancelRequested** sur **true**.
 
-L' complet [exemple de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) , méthode **OnCanceled** définit **\_CancelRequested** sur **true** et écrit une sortie de débogage peuvent se révéler utiles.
+L' complet [exemple de tâche en arrière-plan]( https://go.microsoft.com/fwlink/p/?linkid=227509) , méthode **OnCanceled** définit **\_CancelRequested** sur **true** et écrit une sortie de débogage peuvent se révéler utiles.
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
