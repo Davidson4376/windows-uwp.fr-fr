@@ -4,32 +4,12 @@ description: Cette feuille de route propose une vue d’ensemble de fonctionnali
 title: Entreprise
 ms.date: 08/30/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: 'windows10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058580"
 ---
 # <a name="enterprise"></a>Entreprise
 
-Cet article fournit une vue d’ensemble de fonctionnalités principales d’entreprise fournis par la plateforme Windows universelle (UWP) pour les applications Windows 10.
-
-## <a name="whats-new-and-recent-for-enterprise-applications"></a>Nouveautés et récents pour les applications d’entreprise
-
-> [!div class="checklist"]
-> * [WindowsTemplateStudio](#template-studio)
-> * [Contrôles pour créer des interfaces utilisateur de bureau-Style](#desktop-style-UI)
-> * [Contrôles pour prendre en charge des scénarios d’entreprise](#enterprise)
-> * [Bibliothèque de l’interface utilisateur de Windows](#UI-library)
-> * [Contrôles UWP dans des applications de bureau](#xaml-islands)
-> * [.NET Standard2.0](#standard)
-> * [Connectivité SQL Server](#sql-server)
-> * [Déploiement MSIX](#MSIX)
-
-Pour une vidéo qui illustre certaines de ces fonctionnalités en détail, consultez [Construire rapidement des Applications cœur de métier avec UWP et de Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
+Cet article fournit une vue d’ensemble de fonctionnalités principales d’entreprise fournis par la plateforme Windows universelle (UWP) pour les applications Windows 10. Pour une vidéo qui illustre certaines de ces fonctionnalités en détail, consultez [Construire rapidement des Applications cœur de métier avec UWP et de Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502).
 
 <a id="template-studio" />
 

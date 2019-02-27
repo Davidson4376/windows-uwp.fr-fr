@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948021"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117819"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
@@ -43,7 +43,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Langage de conception.</strong><br><br>Ensemble de conventions qui prévoient la manière dont les applications sur la plateforme doivent se présenter et se comporter.</td>
 <td align="left">Les <strong>recommandations en matière de conception d’applications Android</strong> fournissent un langage visuel à suivre par les concepteurs et développeurs Android.</td>
 <td align="left">Les <strong>recommandations en matière d’interface utilisateur</strong> fournissent des conseils aux concepteurs et développeurs iOS.</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>Conception et interface utilisateur</strong></a> vous montre comment créer une application parfaitement adaptée à tous les appareils Windows10. Vous y trouverez des notions de base en matière de conception d’interface utilisateur (UI), des techniques de conception réactives et une liste complète de recommandations détaillées.<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>Conception et interface utilisateur</strong></a> vous montre comment créer une application parfaitement adaptée à tous les appareils Windows10. Vous y trouverez des notions de base en matière de conception d’interface utilisateur (UI), des techniques de conception réactives et une liste complète de recommandations détaillées.<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Langage de balisage d’interface utilisateur.</strong> <br><br>Langage de balisage effectuant le rendu et décrivant une interface utilisateur et ses composants. Chaque plateforme fournit un éditeur à des fins de modification visuelle et du balisage.<br/></td>
@@ -55,7 +55,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Contrôles d’interface utilisateur intégrés.</strong> <br><br>Éléments d’interface utilisateur réutilisables fournis par la plateforme, tels que des boutons, des contrôles de liste et des contrôles de texte.</td>
 <td align="left">Classes <strong>view</strong> et <strong>view group</strong> prédéfinies désignées sous les termes widgets, dispositions, champs de texte, conteneurs, contrôles date/heure et contrôles d’expert.</td>
 <td align="left"><strong>Vues</strong> et <strong>contrôles</strong> de la bibliothèque d’objets Xcode et répertoriés dans le catalogue d’interface utilisateur UIKit. Les vues comprennent les vues d’images, les vues de sélecteur et les vues de défilement. Les contrôles comprennent les boutons, les sélecteurs de dates et les champs de texte.</td>
-<td align="left">La plateforme XAML propose un vaste ensemble de <strong>contrôles intégrés</strong>, tels que des boutons, des contrôles de liste, des panneaux, des contrôles de texte, des barres de commandes, des sélecteurs, du contenu multimédia et l’entrée manuscrite.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a></td>
+<td align="left">La plateforme XAML propose un vaste ensemble de <strong>contrôles intégrés</strong>, tels que des boutons, des contrôles de liste, des panneaux, des contrôles de texte, des barres de commandes, des sélecteurs, du contenu multimédia et l’entrée manuscrite.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer des événements</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Gestion des événements de contrôle.</strong> <br><br>Définition de la logique qui s’exécute lorsque des événements sont déclenchés dans des contrôles d’interface utilisateur.</td>

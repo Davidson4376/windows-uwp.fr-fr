@@ -1,6 +1,6 @@
 ---
 Description: The following article describes all of the properties and elements within tile content.
-title: Schéma du contenu de la vignette
+title: Schéma de contenu de vignette
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 07/28/2017
 ms.topic: article
 keywords: windows10, uwp, vignette, notification par vignette, contenu de vignette, schéma, charge utile de vignette
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ac975ae3893b1d3d591133862d0ff3733cca6b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f12f1c2b6ac158b6f8e837fd3d6a64f96939ed99
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925137"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117729"
 ---
 # <a name="tile-content-schema"></a>Schéma du contenu de la vignette
 
@@ -67,7 +67,7 @@ L’objet de liaison contient le contenu visuel pour une taille de vignette spé
 | Propriété | Type | Requis | Description |
 |---|---|---|---|
 | **Contenu** | [ITileBindingContent](#itilebindingcontent) | false | Le contenu visuel à afficher sur la vignette. Un des [TileBindingContentAdaptive](#tilebindingcontentadaptive), [TileBindingContentIconic](#TileBindingContentIconic), [TileBindingContentContact](#TileBindingContentContact), [TileBindingContentPeople](#TileBindingContentPeople) ou [TileBindingContentPhotos](#TileBindingContentPhotos). |
-| **Branding** | [TileBranding](#tilebranding) | false | La forme que la vignette doit utiliser pour afficher la marque de l’application. Par défaut, hérite de la personnalisation de la vignette par défaut. |
+| **Branding** | TileBranding | false | La forme que la vignette doit utiliser pour afficher la marque de l’application. Par défaut, hérite de la personnalisation de la vignette par défaut. |
 | **DisplayName** | chaîne | false | Chaîne facultative pour remplacer le nom d’affichage de la vignette pour cette taille de vignette. |
 | **Arguments** | chaîne | false | Nouveauté dans la mise à jour anniversaire: données définies par l’application qui sont retransmises à votre application via la propriété TileActivatedInfo sur LaunchActivatedEventArgs lorsque l’utilisateur lance votre application à partir de la vignette dynamique. Cela vous permet de savoir quelles sont les notifications de vignette que votre utilisateur a vues lorsqu'il a appuyé sur votre Vignette dynamique. Sur les appareils non équipés de la mise à jour anniversaire, cela sera simplement ignoré. |
 | **BaseUri** | Uri | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
@@ -92,7 +92,7 @@ Pris en charge dans toutes les tailles. Il s’agit de la méthode recommandée 
 
 | Propriété | Type | Requis | Description |
 |---|---|---|---|
-| **Children** | IList<[ITileBindingContentAdaptiveChild](#ITileBindingContentAdaptiveChild)> | false | Les éléments visuels en ligne. Des objets [AdaptiveText](#adaptivetext), [AdaptiveImage](#adaptiveimage) et [AdaptiveGroup](#adaptivegroup) peuvent être ajoutés. Les enfants sont affichés sous forme de StackPanel vertical. |
+| **Children** | IList<ITileBindingContentAdaptiveChild> | false | Les éléments visuels en ligne. Des objets [AdaptiveText](#adaptivetext), [AdaptiveImage](#adaptiveimage) et [AdaptiveGroup](#adaptivegroup) peuvent être ajoutés. Les enfants sont affichés sous forme de StackPanel vertical. |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | Une image d’arrière-plan facultatif qui est affichée derrière tout le contenu de la vignette, en pleine page. |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | Une image furtive facultative qui s'anime à partir du haut de la vignette. |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | Contrôle l’empilement de texte (alignement vertical) du contenu des enfants dans son intégralité. |
@@ -189,7 +189,7 @@ Les groupes indiquent au niveau sémantique si le contenu du groupe doit s’aff
 
 | Propriété | Type | Requis |Description |
 |---|---|---|---|
-| **Enfants** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
+| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
 
 
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup

@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dd3d20aa39ea471618e7707d066c67a6547f9f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058750"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117659"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Adaptez vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -130,7 +130,7 @@ Le qualificateur `contrast` permet de fournir les ressources qui correspondent l
 
 ## <a name="custom"></a>Personnalisé
 
-Votre application peut définir une valeur pour le qualificateur `custom`. Les ressources qui correspondent le mieux à cette valeur sont alors chargées. Par exemple, vous pouvez souhaiter charger des ressources en fonction de la licence de votre application. Lorsque votre application se lance, elle vérifie sa licence et utilise celle-ci comme valeur du qualificateur `custom` en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_), comme illustré dans l’exemple de code.
+Votre application peut définir une valeur pour le qualificateur `custom`. Les ressources qui correspondent le mieux à cette valeur sont alors chargées. Par exemple, vous pouvez souhaiter charger des ressources en fonction de la licence de votre application. Lorsque votre application se lance, elle vérifie sa licence et utilise celle-ci comme valeur du qualificateur `custom` en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), comme illustré dans l’exemple de code.
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -263,7 +263,7 @@ Le qualificateur `theme` est utilisé pour fournir les ressources qui correspond
 ## <a name="important-apis"></a>API importantes
 
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>Rubriques associées
 

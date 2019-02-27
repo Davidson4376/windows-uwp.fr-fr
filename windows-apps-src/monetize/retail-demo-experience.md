@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, application de démonstration commerciale
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d6baaff5ca2af781e72c9b4643fa1ea0624e0eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947686"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117669"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application
 
@@ -61,7 +61,7 @@ Les applications prenant en charge RDX qui ne répondent pas à ces exigences de
 
 * **Aucune communication anonyme**. Dans la mesure où un client à l’aide d’un appareil de démonstration commerciale est un utilisateur anonyme, ils ne doivent pas être en mesure de messages ou partager du contenu à partir de l’appareil.
 
-* **Créer des expériences cohérentes à l’aide du processus de nettoyage**. Chaque client doit vivre la même expérience lorsqu’il utilise un appareil de démonstration commerciale. Votre application doit utiliser le [processus de nettoyage](#clean-up-process) pour revenir à l’état par défaut même après chaque utilisation. Nous ne voulons pas le client suivant pour voir quel le client précédent a fait. Cela inclut les scores, les réussites et les déverrouillages.
+* **Créer des expériences cohérentes à l’aide du processus de nettoyage**. Chaque client doit vivre la même expérience lorsqu’il utilise un appareil de démonstration commerciale. Votre application doit utiliser le [processus de nettoyage](#cleanup-process) pour revenir à l’état par défaut même après chaque utilisation. Nous ne voulons pas le client suivant pour voir quel le client précédent a fait. Cela inclut les scores, les réussites et les déverrouillages.
 
 * **Contenu approprié par âge**. Tous les contenus d’application doivent être affecté une catégorie adolescents ou inférieure évaluation. Pour en savoir plus, consultez [l’obtention de votre application est classifiée par IARC](https://www.globalratings.com/for-developers.aspx) et [classifications ESRB](https://www.esrb.org/ratings/ratings_guide.aspx).
 

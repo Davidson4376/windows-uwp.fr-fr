@@ -6,12 +6,12 @@ ms.date: 06/08/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d1fac6d735d4f6915dea1af531dffa666607fe3
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941096"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117809"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -95,7 +95,7 @@ Cette image montre une application Windows Forms qui ouvre une interface utilisa
 >[!NOTE]
 >Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. C’est l’approche stable pris en charge à l’affichage des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continueront à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
-### <a name="the-design-pattern"></a>Modèle de conception
+### <a name="the-design-pattern"></a>Le modèle de conception
 
 Pour afficher une interface utilisateur XAML, procédez comme suit:
 
@@ -103,7 +103,7 @@ Pour afficher une interface utilisateur XAML, procédez comme suit:
 
 :two: [Créez une interface utilisateur avec XAML](#xaml-UI)
 
-:three: [Ajoutez une extension de protocole au projet UWP](#protocol)
+:three: [Ajoutez une extension de protocole au projet UWP](#add-a-protocol-extension)
 
 :four: [Démarrez l’application UWP à partir de votre application de bureau](#start)
 

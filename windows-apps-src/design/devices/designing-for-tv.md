@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116491"
+ms.locfileid: "9117579"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
@@ -122,7 +122,7 @@ La taille des éléments interactifs de l’interface utilisateur doit être d�
 
 #### <a name="number-of-clicks"></a>Nombre de clics.
 
-Lorsque l’utilisateur navigue d’un bord de l’écran de télévision à l’autre, la simplification de votre interface utilisateur doit se faire en **sixclics** maximum. Là encore s’applique le principe de la **simplicité**. Pour en savoir plus, voir [Chemin nécessitant le moins de clics](#path-of-least-clicks).
+Lorsque l’utilisateur navigue d’un bord de l’écran de télévision à l’autre, la simplification de votre interface utilisateur doit se faire en **sixclics** maximum. Là encore s’applique le principe de la **simplicité**. 
 
 ![6 icônes pour traverser](images/designing-for-tv/six-clicks.png)
 
@@ -462,7 +462,7 @@ Bien que les boutons UWP standard fonctionnent correctement sur les télévision
 
 L’interface utilisateur imbriquée expose les éléments actionnables imbriqués inclus dans un élément d’interface utilisateur conteneur où l’élément imbriqué et l’élément conteneur peuvent prendre le focus indépendamment l’un de l’autre.
 
-L’interface utilisateur imbriquée est parfaitement indiquée pour certains types d’entrée, mais pas toujours pour les manettes de jeu et les télécommandes, qui font appel à la navigation XY. Veillez à suivre les recommandations fournies dans cette rubrique pour vous assurer que votre interface utilisateur est optimisée pour l’environnement TV (visualisation à 3mètres) et que l’utilisateur peut facilement accéder à tous les éléments interactifs. Une solution courante consiste à placer des éléments de l’interface utilisateur imbriquée dans un `ContextFlyout` (voir [CommandBar et ContextFlyout](#commandbar-and-contextflyout)).
+L’interface utilisateur imbriquée est parfaitement indiquée pour certains types d’entrée, mais pas toujours pour les manettes de jeu et les télécommandes, qui font appel à la navigation XY. Veillez à suivre les recommandations fournies dans cette rubrique pour vous assurer que votre interface utilisateur est optimisée pour l’environnement TV (visualisation à 3mètres) et que l’utilisateur peut facilement accéder à tous les éléments interactifs. Une solution courante consiste à placer des éléments d’interface utilisateur imbriquées dans un `ContextFlyout`.
 
 Pour plus d’informations sur l’interface utilisateur imbriquée, voir [Interface utilisateur imbriquée dans des éléments de liste](../controls-and-patterns/nested-ui.md).
 
@@ -558,7 +558,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
                     "Windows.Xbox");
 ```
 
-Après avoir effectué cette vérification, vous pouvez effectuer les réglages appropriés de votre interface utilisateur dans le bloc de code. Un exemple illustratif se trouve dans l’[exemple de couleur UWP](#uwp-color-sample).
+Après avoir effectué cette vérification, vous pouvez effectuer les réglages appropriés de votre interface utilisateur dans le bloc de code. 
 
 ## <a name="summary"></a>Résumé
 

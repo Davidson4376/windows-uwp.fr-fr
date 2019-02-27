@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
-ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931294"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117779"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Infrastructure de renduI: présentation du rendu
 
@@ -71,10 +71,10 @@ void App::Initialize(
 
 ## <a name="display-the-graphics-by-rendering-the-frame"></a>Afficher les graphiques avec le rendu de l’image
 
-La scène du jeu doit restituer le rendu lorsque le jeu est lancé. Les instructions pour restituer le rendu démarrent dans la méthode [__GameMain::Run__](#gameamainrun-method), comme illustré ci-dessous.
+La scène du jeu doit restituer le rendu lorsque le jeu est lancé. Les instructions pour restituer le rendu démarrent dans la méthode [__GameMain::Run__](#gamemainrun-method), comme illustré ci-dessous.
 
 Le flux simple est le suivant:
-1. __Mise à jour__
+1. __Mettre à jour__
 2. __Afficher__
 3. __Présent__
 
@@ -130,7 +130,7 @@ Consultez l'article [Gestion du flux de jeux](tutorial-game-flow-management.md) 
 
 Le rendu est implémenté en appelant la méthode [__GameRenderer::Render__](#gamerendererrender-method) dans __GameMain::Run__.
 
-Si le [rendu stéréo](#stereo-rendering) est activé, il y a deux passes de rendu: une pour le œil droit et une pour le œil gauche. Dans chaque passe de rendu, nous lions la cible du rendu et la [vue de profondeur-gabarit](#depth-stencil-view) à l'appareil. Nous effaçons également la vue de profondeur-gabarit par la suite.
+Si le [rendu stéréo](#stereo-rendering) est activé, il y a deux passes de rendu: une pour le œil droit et une pour le œil gauche. Dans chaque passe de rendu, nous lions la cible du rendu et la vue de profondeur-gabarit à l'appareil. Nous effaçons également la vue de profondeur-gabarit par la suite.
 
 > [!Note]
 > Le rendu stéréo peut être obtenu à l’aide d’autres méthodes telles que la passe stéréo unique à l’aide de l’instanciation de vertex ou des nuanceurs de géométrie. La méthode avec deux passes de rendu est plus lente, mais elle est plus pratique pour obtenir un rendu stéréo.
@@ -146,7 +146,7 @@ Dans cet exemple de jeu, le convertisseur est conçu pour utiliser un schéma de
 
 Définissez le contexte Direct3D pour utiliser un schéma de vertex d'entrée. Les objets du schéma d’entrée décrivent comment diffuser les données de la mémoire tampon du vertex dans le [pipeline de rendu](#rendering-pipeline). 
 
-Ensuite, nous avons paramétré le contexte Direct3D pour qu'il utilise les mémoires [tampons constantes](#constant-buffers) définies plus tôt, qui sont utilisées par le stade de pipeline du [nuanceur de vertex](#vertex-shaders-and-pixel-shaders) et le stade de pipeline du [nuanceur de pixels](#vertex-shaders-and-pixel-shaders). 
+Ensuite, nous avons paramétré le contexte Direct3D pour qu'il utilise les mémoires tampons constantes définies plus tôt, qui sont utilisées par le stade de pipeline du [nuanceur de vertex](#vertex-shaders-and-pixel-shaders) et le stade de pipeline du [nuanceur de pixels](#vertex-shaders-and-pixel-shaders). 
 
 > [!Note]
 > Consultez [Infrastructure de rendu II: rendu de jeu](tutorial-game-rendering.md) pour plus d’informations sur la définition des mémoires tampons constantes.
@@ -338,11 +338,11 @@ Lors du rendu de la scène, vous parcourez tous les objets qui doivent être ren
 * Le __m\_constantBufferChangesEveryPrim__ contient des paramètres pour chaque objet.  Il inclut l’objet de la matrice de transformation universelle ainsi que les propriétés du matériel telles que la couleur et l'exposant spéculaire pour les calculs d’éclairage.
 * Définir le contexte Direct3D pour utiliser le schéma de vertex d’entrée afin que les données de l’objet de maillage soient transmises à l’étape d’assembleur d’entrée (IA) du [pipeline de rendu](#rendering-pipeline)
 * Définissez le contexte Direct3D pour utiliser un [tampon d’index](#index-buffer) dans l’étape IA. Fournissez les informations des primitives: type, ordre des données.
-* Soumettez un appel de dessin pour dessiner la primitive indexée, non instanciée. La méthode __GameObject::Render__ met à jour la mémoire [tampon constante](#constant-buffer-or-shader-constant-buffer) de la primitive avec les données propres à une primitive donnée. Cela aboutit à un appel __DrawIndexed__ sur le contexte pour dessiner la géométrie de chaque primitive. Plus spécifiquement, cet appel de dessin met en file d’attente des commandes et des données pour le processeur graphique virtuel (GPU), comme paramétré par les données de la mémoire tampon constante. Chaque appel de dessin exécute le [nuanceur de vertex](#vertex-shaders-and-pixel-shaders) une fois par vertex, puis le [nuanceur de pixels](#vertex-shaders-and-pixel-shaders) une fois pour chaque pixel de chaque triangle dans la primitive. Les textures font partie de l’état utilisé par le nuanceur de pixels pour effectuer le rendu.
+* Soumettez un appel de dessin pour dessiner la primitive indexée, non instanciée. La méthode __GameObject::Render__ met à jour la mémoire [tampon constante](#constant-buffer-or-shader-constant-buffer) de la primitive avec les données propres à une primitive donnée. Cela aboutit à un appel __DrawIndexed__ sur le contexte pour dessiner la géométrie de chaque primitive. Plus spécifiquement, cet appel de dessin met en file d’attente des commandes et des données pour le processeur graphique virtuel (GPU), comme paramétré par les données de la mémoire tampon constante. Chaque appel de dessin exécute le nuanceur de vertex une fois par vertex, puis le [nuanceur de pixels](#vertex-shaders-and-pixel-shaders) une fois pour chaque pixel de chaque triangle dans la primitive. Les textures font partie de l’état utilisé par le nuanceur de pixels pour effectuer le rendu.
 
 Les mémoires tampons constantes ont plusieurs fonctions:
     * Le jeu utilise plusieurs mémoires tampons constantes, mais n’a besoin de les mettre à jour qu’une seule fois par primitive. Comme indiqué plus haut, les mémoires tampons constantes servent de données pour les nuanceurs qui sont exécutés pour chaque primitive. Certaines données sont statiques (__m_constantBufferNeverChanges__), certaines données sont constantes sur la trame (__m\_constantBufferChangesEveryFrame__), comme la position de la caméra, et certaines données sont propres à la primitive, comme ses couleurs et textures (__m\_constantBufferChangesEveryPrim__)
-    * Le [convertisseur](#renderer) de jeu répartit ces données entrantes entre différentes mémoires tampons constantes pour optimiser la bande passante de mémoire utilisée par l’UC et le GPU. Cette approche permet également de réduire la quantité de données dont le GPU doit assurer le suivi. Le GPU a une longue file d’attente de commandes et que, chaque fois que le jeu appelle __Draw__, cette commande est mise en file d’attente avec les données qui lui sont associées. Lorsque le jeu met à jour la mémoire tampon constante de primitives et émet la commande __Draw__ suivante, le pilote graphique ajoute cette commande suivante et les données associées à la file d’attente. Si le jeu dessine 100primitives, la file d’attente peut contenir 100copies des données de la mémoire tampon constante. Pour réduire la quantité de données envoyées par le jeu au GPU, le jeu utilise une mémoire tampon constante de primitives distincte qui contient uniquement les mises à jour pour chaque primitive.
+    * Le convertisseur de jeu répartit ces données entrantes entre différentes mémoires tampons constantes pour optimiser la bande passante de mémoire utilisée par l’UC et le GPU. Cette approche permet également de réduire la quantité de données dont le GPU doit assurer le suivi. Le GPU a une longue file d’attente de commandes et que, chaque fois que le jeu appelle __Draw__, cette commande est mise en file d’attente avec les données qui lui sont associées. Lorsque le jeu met à jour la mémoire tampon constante de primitives et émet la commande __Draw__ suivante, le pilote graphique ajoute cette commande suivante et les données associées à la file d’attente. Si le jeu dessine 100primitives, la file d’attente peut contenir 100copies des données de la mémoire tampon constante. Pour réduire la quantité de données envoyées par le jeu au GPU, le jeu utilise une mémoire tampon constante de primitives distincte qui contient uniquement les mises à jour pour chaque primitive.
 
 #### <a name="gameobjectrender-method"></a>Méthode GameObject::Render
 

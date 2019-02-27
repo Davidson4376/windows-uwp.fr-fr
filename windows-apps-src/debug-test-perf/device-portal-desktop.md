@@ -6,12 +6,12 @@ ms.date: 02/6/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: c499c14d98f63836d80134aac70b2c80902f049b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116131"
+ms.locfileid: "9117799"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour WindowsDesktop
 
@@ -39,7 +39,7 @@ Vous pouvez activer le portail d’appareil dans la section **Pour les développ
 
 ![Section Portail d’appareil de l’application Paramètres](images/device-portal/device-portal-desk-settings.png) 
 
-Une fois le portail d’appareil activé, des liens Web permettant d’y accéder apparaissent en bas de cette section. Notez le numéro de port apparaissant à la fin des URL: ce numéro est généré de manière aléatoire lorsque le portail d’appareil est activé, mais il doit rester cohérent entre deux redémarrages de l’ordinateur. Pour définir les numéros de port manuellement afin qu’ils restent permanents, voir [Définition des numéros de port](device-portal-desktop.md#setting-port-numbers).
+Une fois le portail d’appareil activé, des liens Web permettant d’y accéder apparaissent en bas de cette section. Notez le numéro de port apparaissant à la fin des URL: ce numéro est généré de manière aléatoire lorsque le portail d’appareil est activé, mais il doit rester cohérent entre deux redémarrages de l’ordinateur. 
 
 Ces liens offrent deux modes de connexion au portail d’appareil: sur le réseau local (y compris le VPN) ou via l’hôte local.
 

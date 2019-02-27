@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, son
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ceef2da582f5d825949afdf2e116862c990165c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 8d5a976ef65bee5efc3329afc98bf198d094b037
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981383"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117839"
 ---
 # <a name="add-sound"></a>Ajouter du son
 
@@ -22,7 +22,7 @@ Dans cette rubrique, nous créons un moteur audio simple à l’aide de [XAudio2
 
 ## <a name="objective"></a>Objectif
 
-Ajouter des sons dans l’exemple de jeu à l’aide de [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
+Ajouter des sons dans l’exemple de jeu à l’aide de [XAudio2](/windows/desktop/xaudio2/xaudio2-introduction).
 
 ## <a name="define-the-audio-engine"></a>Définir le moteur audio
 
@@ -51,7 +51,7 @@ Dans __Simple3DGame::Initialize__, où __m\_controller__ et __m\_renderer__ sont
  * Créez __m\_audioController__, qui est une instance de la classe [Audio](#audioh) .
  * Créer les ressources audio nécessaires à l’aide de la méthode [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) . Ici, deux objets __XAudio2__ &mdash; un objet de moteur de musique et un objet de moteur audio et une voix de contrôle pour chacun d’eux ont été créés. L’objet de moteur de musique peut être utilisé pour la musique en arrière-plan pour votre jeu. Le moteur audio peut être utilisé pour lire les effets sonores dans votre jeu. Pour plus d’informations, voir [créer et initialiser les ressources audio](#create-and-initialize-the-audio-resources).
  * Créez __mediaReader__, qui est une instance de classe [MediaReader](#mediareaderh) . [MediaReader](#mediareaderh), qui est une classe d’assistance pour la classe [SoundEffect](#soundeffecth) , lit les petits fichiers audio de manière synchrone à partir de l’emplacement du fichier et renvoie les données audio comme un tableau d’octets.
- * Utilisez [MediaReader::LoadMedia](#mediareaderloadmedia-method) pour charger des fichiers audio à partir de son emplacement et créez une variable __targetHitSound__ pour contenir les données audio .wav chargé. Pour plus d’informations, voir [charger le fichier audio](#load-audio). 
+ * Utilisez [MediaReader::LoadMedia](#mediareaderloadmedia-method) pour charger des fichiers audio à partir de son emplacement et créez une variable __targetHitSound__ pour contenir les données audio .wav chargé. Pour plus d’informations, voir [charger le fichier audio](#load-audio-file). 
 
 Les effets sonores sont associés à l’objet jeu. Par conséquent, lorsqu’une collision se produit avec cet objet de jeu, il déclenche l’effet audio à lire. Dans cet exemple de jeu, nous avons effets sonores pour les munitions (ce qui nous permet de tirer sur cibles avec) et pour la cible. 
     
@@ -469,11 +469,11 @@ Il existe trois types d’objets vocaux XAudio2: source, sous-mixée et matriça
 * Les voix sous-mixées et de matriçage mixent les signaux provenant de toutes les voix qui les alimentent et opèrent sur le résultat. 
 * Les voix de matriçage recevoir des données à partir des voix sources et voix prémixées et envoie ces données au matériel audio.
 
-Pour plus d’informations, accédez à la [voix XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415824.aspx).
+Pour plus d’informations, accédez à la [voix XAudio2](/windows/desktop/xaudio2/xaudio2-voices).
 
 ### <a name="audio-graph"></a>Graphique audio
 
-Graphique audio est une collection de [voix XAudio2](#xaudio2-voice-objects). Audio démarre sur un côté d’un graphique audio dans les voix sources, si vous le souhaitez passe par le biais d’un ou plusieurs voix prémixées et se terminant à une voix de contrôle. Un graphique audio contient une voix source pour chaque son en cours de lecture, zéro ou plusieurs voix prémixées et une voix mastérisée. Le graphique audio plus simple et au minimum nécessaire pour rendre un bruit de XAudio2, est une seule voix source sortie directement dans une voix de contrôle. Pour plus d’informations, accédez à [graphiques Audio](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
+Graphique audio est une collection de [voix XAudio2](/windows/desktop/xaudio2/xaudio2-voices). Audio démarre sur un côté d’un graphique audio dans les voix sources, si vous le souhaitez passe par le biais d’un ou plusieurs voix prémixées et se terminant à une voix de contrôle. Un graphique audio contient une voix source pour chaque son en cours de lecture, zéro ou plusieurs voix prémixées et une voix mastérisée. Le graphique audio plus simple et au minimum nécessaire pour rendre un bruit de XAudio2, est une seule voix source sortie directement dans une voix de contrôle. Pour plus d’informations, accédez à [graphiques Audio](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
 
 ### <a name="additional-reading"></a>Documentation supplémentaire
 

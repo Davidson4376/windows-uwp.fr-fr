@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 869ab9994f10070797fb4b803b1189127d84eadf
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049686"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117709"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portage d’interface vers UWP et WindowsPhone Silverlight XAML
 
@@ -205,7 +205,7 @@ Pour plus d’informations sur les contrôles UWP, voir [Contrôles par fonction
 
 ##  <a name="design-language-in-windows10"></a>Langage de conception dans Windows 10
 
-Il existe certaines différences de langage de conception entre les applications WindowsPhone Silverlight et applications Windows 10. Pour plus de détails, voir [Conception](https://dev.windows.com/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
+Il existe certaines différences de langage de conception entre les applications WindowsPhone Silverlight et applications Windows 10. Pour plus de détails, voir [Conception](https://developer.microsoft.com/en-us/windows/apps/design). Malgré les changements en matière de langage, nos principes de conception restent cohérents : être attentif aux détails, mais toujours viser la simplicité en se concentrant sur le contenu sans superflu, en réduisant à tout prix les éléments visuels et en restant authentique en matière de domaine numérique ; utiliser la hiérarchie visuelle, en particulier avec la typographie ; concevoir à l’aide d’une grille et donner vie à vos expériences grâce à des animations fluides.
 
 ## <a name="localization-and-globalization"></a>Localisation et globalisation
 
@@ -313,7 +313,7 @@ Le texte (ou la typographie) constitue un aspect important d’une application U
 
 Styles TextBlock système pour les applications Windows 10
 
-Dans une application WindowsPhone Silverlight, la famille de polices par défaut est Segoe WP. Dans une application Windows 10, la famille de polices par défaut est Segoe UI. Par conséquent, les métriques de police dans votre application peuvent être différentes. Si vous souhaitez reproduire l’aspect de votre texte WindowsPhone Silverlight, vous pouvez définir vos propres métriques à l’aide des propriétés telles que [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) et [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](https://dev.windows.com/design).
+Dans une application WindowsPhone Silverlight, la famille de polices par défaut est Segoe WP. Dans une application Windows 10, la famille de polices par défaut est Segoe UI. Par conséquent, les métriques de police dans votre application peuvent être différentes. Si vous souhaitez reproduire l’aspect de votre texte WindowsPhone Silverlight, vous pouvez définir vos propres métriques à l’aide des propriétés telles que [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) et [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](https://developer.microsoft.com/en-us/windows/apps/design).
 
 ## <a name="theme-changes"></a>Modifications de thème
 

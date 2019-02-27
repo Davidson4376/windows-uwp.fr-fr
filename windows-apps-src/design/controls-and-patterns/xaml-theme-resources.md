@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 770896f467ff3a2c24fff65fdf16f1e13c83b688
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933547"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117609"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -430,7 +430,7 @@ Voici un [Button](https://msdn.microsoft.com/library/windows/apps/br209265) auqu
 
 ## <a name="troubleshooting-theme-resources"></a>Résolution des problèmes liés aux ressources de thème
 
-Si vous ne suivez pas les [recommandations pour l’utilisation de ressources de thème](#guidelines-for-using-theme-resources), vous constaterez peut-être un comportement inattendu lié aux thèmes dans votre application.
+Si vous ne suivez pas les [recommandations pour l’utilisation de ressources de thème](#guidelines-for-custom-theme-resources), vous constaterez peut-être un comportement inattendu lié aux thèmes dans votre application.
 
 Par exemple, lorsque vous ouvrez un menu volant sur le thème clair, certaines parties de votre application sur le thème foncé changent également, comme si elles faisaient partie du thème clair. Ou, si vous naviguez vers une page sur le thème clair puis revenez en arrière, la page d’origine sur le thème foncé (ou certaines parties de cette page) se présente comme si elle était soumise au thème clair.
 

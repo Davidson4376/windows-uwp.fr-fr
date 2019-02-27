@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: c0113f039ccd2d2df0c155b77295afef194018ce
-ms.sourcegitcommit: f7b8112a99097c7c8a76b028aef436d1a5c68cdb
+ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "9099459"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117739"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows10
 
@@ -1070,7 +1070,7 @@ Distincte de la conception de l’expérience utilisateur, la conception d’un 
     </colgroup>
     <tr>
         <td>Informations de base et recommandations sur la conception UWP</td>
-        <td><a href="https://dev.windows.com/design">Conception des applications UWP</a></td>
+        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Conception des applications UWP</a></td>
     </tr>
     <tr>
         <td>Conception des états de cycle de vie d’application</td>

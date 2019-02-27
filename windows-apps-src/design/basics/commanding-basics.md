@@ -5,17 +5,18 @@ ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 10/01/2018
+ms.author: mijacobs
+ms.date: 11/01/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f78ffb01bf29076733af40b365e91592c71e9c8
-ms.sourcegitcommit: 17896441726714fa66b5ca4f9df2cdb2259f360e
+ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/26/2018
-ms.locfileid: "8988248"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117589"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
@@ -25,7 +26,7 @@ Dans une application de plateforme Windows universelle (UWP), les *éléments de
 
 Le plus important d’une interface de commande est ce que vous essayez permettre à un utilisateur à accomplir. Lorsque vous planifiez les fonctionnalités de votre application, envisagez les étapes requises pour effectuer ces tâches et les expériences utilisateur que vous souhaitez activer. Une fois que vous avez effectué une version préliminaire de ces expériences, puis vous pouvez prendre des décisions sur les outils et les interactions pour les implémenter.
 
-Voici certaines expériences d’application courants:
+Voici certaines expériences de commande courants:
 
 - Envoi d’informations
 - Sélection de paramètres et d’options
@@ -33,7 +34,7 @@ Voici certaines expériences d’application courants:
 - Ouverture, enregistrement et suppression de fichiers
 - Modification ou création de contenu
 
-Faites preuve de créativité avec la conception de votre expérience de commande. Choisissez quels périphériques d’entrée votre application prend en charge, et comment votre application répond à chaque appareil. En prenant en charge la gamme de fonctionnalités et de préférences vous rendez votre application comme accessible que possible, portable et utilisable.
+Faites preuve de créativité avec la conception de votre expérience de commande. Choisissez quels périphériques d’entrée votre application prend en charge, et comment votre application répond à chaque appareil. En prenant en charge la gamme de fonctionnalités et de préférences vous rendre votre application comme étant utilisables, portable et accessibles que possible (voir la [conception de commandes pour les applications de plateforme Windows universelle (UWP)](../controls-and-patterns/commanding.md) pour plus d’informations).
 
 
 
@@ -143,10 +144,10 @@ Voici une liste de quelques-unes des surfaces de commande les plus courantes.
 
 ## <a name="provide-command-feedback"></a>Fournir des commentaires de commande 
 
-Commentaires de commande communique aux utilisateurs qu’une interaction ou une commande a été détectée et comment elle a été interprétée et gérée, et si elle a réussi ou non. Cela permet aux utilisateurs de comprendre ce qu’ils ont fait et ce qu’ils peuvent faire ensuite. Idéalement, les commentaires doivent être intégrés naturellement à l'interface utilisateur pour que les utilisateurs n’aient pas à être interrompus ou à prendre de mesures supplémentaires, à moins que cela ne soit absolument nécessaire.
+Commentaires de commande communique aux utilisateurs qu’une interaction ou une commande a été détectée et comment la commande a été interprétée et gérée, et si la commande a réussi ou non. Cela permet aux utilisateurs de comprendre ce qu’ils ont fait et ce qu’ils peuvent faire ensuite. Idéalement, les commentaires doivent être intégrés naturellement à l'interface utilisateur pour que les utilisateurs n’aient pas à être interrompus ou à prendre de mesures supplémentaires, à moins que cela ne soit absolument nécessaire.
 
 > [!NOTE]
-> Ne pas fournir des commentaires à moins que ce soit absolument nécessaire et le retour n’est pas disponible ailleurs. Maintenir la version de votre application, l’interface utilisateur propre et aérée, sauf si vous ajoutez de valeur.
+> Fournir des commentaires uniquement lorsque cela est nécessaire et uniquement s’il n’est pas disponible ailleurs. Maintenir la version de votre application, l’interface utilisateur propre et aérée, sauf si vous ajoutez de valeur.
 
 Voici quelques solutions pour fournir des commentaires dans votre application.
 

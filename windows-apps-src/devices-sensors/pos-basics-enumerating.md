@@ -5,25 +5,25 @@ ms.date: 10/08/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 7759186d45d3488336a1b793d173d6d1f21aa601
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 27d25864941b9d73c9b12e6329eab79fac1b15bf
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918934"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117699"
 ---
 # <a name="enumerating-point-of-service-devices"></a>Énumération d'appareils de point de service
 Dans cette section, vous allez découvrir comment [définir un sélecteur d’appareil](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) qui sert à interroger les appareils disponibles pour le système et comment utiliser ce sélecteur pour énumérer les appareils de point de service à l’aide d’une des méthodes suivantes:
 
-**Méthode 1:** [Utilisez un sélecteur d’appareil](#method-1:-use-a-device-picker)
+**Méthode 1:** [Utilisez un sélecteur d’appareil](#method-1-use-a-device-picker)
 <br/>
 Afficher un sélecteur d’appareil de l’interface utilisateur et demander à l’utilisateur de choisir un appareil connecté. Cette méthode gère la mise à jour de la liste lorsque les périphériques sont reliés et supprimés et est plus simple et plus sûre que les autres méthodes.
 
-**Méthode 2:** [Obtenir le premier périphérique disponible](#Method-1:-get-first-available-device)<br />Utilisez [GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) pour accéder au premier périphérique disponible dans une classe de périphérique de Point de Service spécifique.
+**Méthode 2:** [Obtenir le premier périphérique disponible](#method-2-get-first-available-device)<br />Utilisez [GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) pour accéder au premier périphérique disponible dans une classe de périphérique de Point de Service spécifique.
 
-**Méthode 3:** [Capture instantanée d’appareils](#Method-2:-Snapshot-of-devices)<br />Énumérer une capture instantanée d’appareils de Point de Service qui sont présents sur le système à un moment donné dans le temps. Cela est utile si vous souhaitez créer votre propre interface utilisateur ou devez énumérer les appareils sans afficher d’interface à l’utilisateur. [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) retient résultats jusqu'à ce que l’énumération soit terminée.
+**Méthode 3:** [Capture instantanée d’appareils](#method-3-snapshot-of-devices)<br />Énumérer une capture instantanée d’appareils de Point de Service qui sont présents sur le système à un moment donné dans le temps. Cela est utile si vous souhaitez créer votre propre interface utilisateur ou devez énumérer les appareils sans afficher d’interface à l’utilisateur. [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) retient résultats jusqu'à ce que l’énumération soit terminée.
 
-**Méthode 4:** [Énumérer et observer](#Method-3:-Enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) est un modèle d’énumération plus puissant et plus souple qui vous permet d’énumérer les appareils actuellement présents, et également recevoir des notifications lorsque des périphériques sont ajoutés ou supprimés à partir du système.  Cela est utile si vous souhaitez tenir à jour une liste des périphériques en arrière-plan pour les afficher dans votre interface utilisateur au lieu d’attendre qu'une capture instantanée se produise.
+**Méthode 4:** [Énumérer et observer](#method-4-enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) est un modèle d’énumération plus puissant et plus souple qui vous permet d’énumérer les appareils actuellement présents, et également recevoir des notifications lorsque des périphériques sont ajoutés ou supprimés à partir du système.  Cela est utile si vous souhaitez tenir à jour une liste des périphériques en arrière-plan pour les afficher dans votre interface utilisateur au lieu d’attendre qu'une capture instantanée se produise.
 
 ## <a name="define-a-device-selector"></a>Définir un sélecteur d’appareil
 Le sélecteur d’appareil permet de limiter les appareils que vous parcourez lors de l’énumération de ceux-ci.  Cela vous permettra d’obtenir des résultats pertinents uniquement et de réduire le temps que nécessaire pour énumérer les appareils de votre choix.

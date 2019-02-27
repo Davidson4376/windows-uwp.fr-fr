@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e7d60c0b612a8067ac4c225dff9da5da428f1a1
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924945"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117649"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Revendication de périphérique de point de Service et activer le modèle
 
@@ -19,7 +19,7 @@ ms.locfileid: "8924945"
 Une fois que vous avez créé un objet d’appareil PointOfService, vous devez le revendiquer à l’aide de la méthode de revendication appropriée pour le type de périphérique avant de pouvoir utiliser le périphérique pour l'entrée ou la sortie.  La revendication accorde à l’application un accès exclusif à de nombreuses fonctions du périphérique pour vous assurer qu’une application n’interfère pas avec l’utilisation de l’appareil par une autre application.  Une seule application peut revendiquer un périphérique PointOfService pour une utilisation exclusive à la fois. 
 
 > [!Note]
-> L’action de revendication établit un accès exclusif à un appareil, mais ne le ne pas placer dans un état opérationnel.  Pour plus d’informations, consultez [Activer l’appareil pour les opérations d’e/s](#Enable-device-for-I/O-operations) .
+> L’action de revendication établit un accès exclusif à un appareil, mais ne le ne pas placer dans un état opérationnel.  Pour plus d’informations, consultez [Activer l’appareil pour les opérations d’e/s](#enable-device-for-io-operations) .
 
 ### <a name="apis-used-to-claim--release"></a>API utilisées pour revendiquer / de publication
 

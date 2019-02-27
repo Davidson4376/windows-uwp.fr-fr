@@ -2,15 +2,15 @@
 title: Quelles sont les nouveautés dans la documentation Windows en mai 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 pour les mois de mai 2018 et la conférence Microsoft Build.
 keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, mai, build
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be67c83a986602318adf995bae35c09e5a7a4997
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048666"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116221"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en mai 2018
 
@@ -99,7 +99,7 @@ La fonctionnalité jeux est disponible dans les versions d’évaluation Windows
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="get-started"></a>Commencer
+### <a name="get-started"></a>Prise en main
 
 Nous avons aux retraités rajeunit notre Get démarré contenu avec les nouvelles pistes d’apprentissage. Ces nouvelles rubriques objectif est d’offrir aux nouveaux développeurs Windows 10 avec les informations sur les tâches courantes ils souhaitent accomplir. Ils ne sont pas des didacticiels et ne fournissent pas une procédure pas à pas PORTATIF, mais au lieu de cela souligner lorsqu’il existe une documentation existante et comment l’utiliser. Consultez l’article revisitée [commencer à coder](../get-started/create-uwp-apps.md) page, ou à découvrir chaque piste d’apprentissage individuels:
 

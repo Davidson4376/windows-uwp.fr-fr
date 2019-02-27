@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114575"
+ms.locfileid: "9117719"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 
@@ -40,7 +40,7 @@ Si vous décidez de quitter (ou de reporter) la partie relative à Azure, ignore
 
 Nous allons tout d’abord créer une API de jeu simple pour alimenter l'application Web de la mémoire de jeu. Nous allons utiliser [Swagger](https://swagger.io/) pour définir notre API et générer le code de la structure ainsi qu'une interface utilisateur Web pour le test manuel.
 
-Si vous souhaitez ignorer cette partie et passer directement à la [Partie II: Créer une application Web à page unique](#part-ii-build-a-single-page-web-appl), voici le [code finalisé pour la partie I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Suivez les instructions *README* pour obtenir le code opérationnel localement ou consultez *5. Héberger votre service API sur Azure et activer CORS* pour l’exécuter à partir d’Azure.
+Si vous souhaitez ignorer cette partie et passer directement à la [Partie II: Créer une application Web à page unique](#part-ii-build-a-single-page-web-application), voici le [code finalisé pour la partie I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Suivez les instructions *README* pour obtenir le code opérationnel localement ou consultez *5. Héberger votre service API sur Azure et activer CORS* pour l’exécuter à partir d’Azure.
 
 ### <a name="game-overview"></a>Vue d’ensemble du jeu
 

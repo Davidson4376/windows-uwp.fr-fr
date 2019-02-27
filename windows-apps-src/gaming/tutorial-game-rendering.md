@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows10, uwp, jeux, rendu
 ms.localizationpriority: medium
-ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934644"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117749"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Infrastructure de renduII: rendu de jeu
 
@@ -42,7 +42,7 @@ Voici quelques concepts qui peuvent vous être utiles pour la conception du conv
     * L’utilisation de plusieurs tampons constants avec des fréquences différentes permet de réduire la quantité de données à envoyer à l’unité de traitement graphique (GPU) par trame. Cet exemple répartit les constantes en plusieurs tampons en fonction de la fréquence à laquelle elles doivent être mises à jour. Il s’agit d’une recommandation pour la programmation Direct3D. 
     * Dans cet exemple de jeu, 4tampons constants sont définis.
         1. __m\_constantBufferNeverChanges__ contient les paramètres d’éclairage. Il est défini une fois dans la méthode __FinalizeCreateGameDeviceResources__ et ne change plus jamais.
-        2. __m\_constantBufferChangeOnResize__ contient la matrice de projection. La matrice de projection dépend de la taille et des proportions de la fenêtre. Elle est définie dans [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method) puis mise à jour une fois que les ressources ont été chargées dans la méthode [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Si le rendu est en3D, elle est également modifiée deux fois par trame.
+        2. __m\_constantBufferChangeOnResize__ contient la matrice de projection. La matrice de projection dépend de la taille et des proportions de la fenêtre. Elle est définie dans [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) puis mise à jour une fois que les ressources ont été chargées dans la méthode [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Si le rendu est en3D, elle est également modifiée deux fois par trame.
         3. __m\_constantBufferChangesEveryFrame__ contient la matrice globale. Cette matrice dépend de la position de la caméra et de la direction de la vue (perpendiculaire à la projection) et change une fois par trame dans la méthode __Render__. Cela a été détaillé précédemment dans __Infrastructure de renduI: Présentation du rendu__, sous la méthode [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
         4. __m\_constantBufferChangesEveryPrim__ contient la matrice de modèle et les propriétés matérielles de chaque primitive. La matrice de modèle transforme les vertex des coordonnées locales en coordonnées universelles. Ces constantes sont spécifiques à chaque primitive et sont mises à jour pour chaque appel de dessin. Cela a été décrit précédemment dans __Infrastructure de renduI: Présentation du rendu__, sous [Rendu de primitive](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * Les objets de ressources du nuanceur qui contiennent les textures des primitives sont également définis dans cette classe.
@@ -158,7 +158,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 Dans l’exemple de jeu (et dans le modèle __DirectX11App (Windows universel)__ de VisualStudio), la création et le chargement des ressources du jeu sont implémentés à l’aide des deux méthodes suivantes appelées à partir du constructeur __GameRenderer__:
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>Méthode CreateDeviceDependentResources
 
@@ -590,7 +590,7 @@ Les ressources de taille de la fenêtre sont mises à jour comme suit:
 
 Pour cet exemple de jeu, plusieurs appels de méthode sont identiques à la méthode [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Pour la procédure de codage pas à pas, revenez à la section précédente.
 
-Les modifications de l’affichage à tête haute et du rendu de la taille de la fenêtre de superposition du jeu sont détaillées dans l’article [Ajouter une interface utilisateur](#tutorial--adding-a-user-interface).
+Les modifications de l’affichage à tête haute et du rendu de la taille de la fenêtre de superposition du jeu sont détaillées dans l’article [Ajouter une interface utilisateur](tutorial--adding-a-user-interface.md).
 
 ```cpp
 // Initializes view parameters when the window size changes.
