@@ -2,16 +2,16 @@
 title: Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 description: Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un large éventail d’appareils exécutant Windows10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 keywords: windows10, uwp, universelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6609d73090d7d981d992bef4ca8ce6be3cc20a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: a4fb5020eafb838074b8dec43b8a5d07596ab7a0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044553"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116311"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 

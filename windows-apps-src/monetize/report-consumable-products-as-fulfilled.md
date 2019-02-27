@@ -2,16 +2,16 @@
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Utilisez cette méthode dans l’API de collection du MicrosoftStore pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur.
 title: Signaler le traitement de la commande d’un produit consommable
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, traiter, produit consommable
 ms.localizationpriority: medium
-ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935660"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116025"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Signaler le traitement de la commande d’un produit consommable
 
@@ -58,7 +58,7 @@ Pour plus d’informations, voir [Gérer les droits sur les produits à partir d
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | L’utilisateur pour lequel cet élément est utilisé. Pour plus d’informations, voir le tableau suivant.        | Oui      |
 | itemId        | chaîne       | La valeur *itemId* renvoyée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec *trackingId*      | Non       |
-| trackingId    | guid         | ID de suivi unique fourni par le développeur. Utilisez ce paramètre avec *itemId*.         | Non       |
+| trackingId    | GUID         | ID de suivi unique fourni par le développeur. Utilisez ce paramètre avec *itemId*.         | Non       |
 | productId     | chaîne       | la valeur *productId* renvoyée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec *transactionId*   | Non       |
 | transactionId | guid         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes. Utilisez ce paramètre avec *productId*.<ul><li>Propriété [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).</li><li>Accusé de réception de l’application ou du produit retourné par [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync), [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) ou [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync).</li><li>Le paramètre *transactionId* renvoyé par une [demande de produits](query-for-products.md).</li></ul>   | Non       |
 

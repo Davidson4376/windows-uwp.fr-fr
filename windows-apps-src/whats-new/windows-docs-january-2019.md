@@ -2,15 +2,15 @@
 title: Quelles sont les nouveautés dans la documentation Windows en janvier 2019 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 janvier 2019
 keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, janvier
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5323ba12fa72fb5350e62f74206ea72fe96497
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046129"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116251"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en janvier 2019
 

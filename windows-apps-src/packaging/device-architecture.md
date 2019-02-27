@@ -1,16 +1,16 @@
 ---
-title: Architectures de package d'application
+title: Architectures de package d’application
 description: En savoir plus sur les architectures de processeur que vous devez utiliser lorsque vous générez votre package d’application UWP.
-ms.date: 7/13/2017
+ms.date: 07/13/2017
 ms.topic: article
 keywords: windows10, uwp, création de packages, architecture, configuration de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce92f4da57b99638f393125d3aed11a4bd91bb6
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.openlocfilehash: 338dac1d43e08257fa00b51c0c311a090f3d95c0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991595"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116108"
 ---
 # <a name="app-package-architectures"></a>Architectures de package d'application
 

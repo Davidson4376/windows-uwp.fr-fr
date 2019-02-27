@@ -1,16 +1,16 @@
 ---
 title: POSPrinter
 description: Cet article répertorie les fonctionnalités POSPrinter disponibles pour les applications UWP et renvoie vers les articles de procédures décrivant leur utilisation.
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: b1b01f366c5a094e538424c57091fb2589eae329
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 11937934230b2c977e8e328fae0e693e8c1ab95a
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930368"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116421"
 ---
 # <a name="posprinter"></a>POSPrinter
 

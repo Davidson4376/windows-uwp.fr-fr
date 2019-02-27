@@ -2,16 +2,16 @@
 title: Afficher un écran de démarrage plus longtemps
 description: Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable.
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.date: 2/19/2019
+ms.date: 02/19/2019
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b455088a210dd6211cf25111e4c04ba2e4e0db
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.openlocfilehash: bed81def33eedb79619b49ff698a3f45f31bdb62
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114495"
+ms.locfileid: "9116331"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>Afficher un écran de démarrage plus longtemps
 

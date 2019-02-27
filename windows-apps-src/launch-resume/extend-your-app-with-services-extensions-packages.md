@@ -1,16 +1,16 @@
 ---
 title: Étendre votre application avec des services, des extensions et des packages
 description: Explique comment créer une tâche en arrière-plan qui s’exécute lorsque votre application du Windows store de plateforme Windows universelle (UWP) est mis à jour.
-ms.date: 05/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows10, uwp, étendre, agencer, service d’application, package, extension
 ms.localizationpriority: medium
-ms.openlocfilehash: fd14ce6248f7017160a0c6b222e31ba55e9d2977
-ms.sourcegitcommit: f35480718452a8d95b1862581449a038b63184de
+ms.openlocfilehash: 47ab6491d09775bf86f0f484fc96d85bd07f53a4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "9015097"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116181"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Étendre votre application avec des services, des extensions et des packages
 

@@ -2,16 +2,16 @@
 title: Lancer l’application Paramètres Windows
 description: Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 1/8/2019
+ms.date: 01/08/2019
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
-ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
+ms.openlocfilehash: 87074e9871fae6be32e2862fc547097898baede8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "9086657"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116471"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 

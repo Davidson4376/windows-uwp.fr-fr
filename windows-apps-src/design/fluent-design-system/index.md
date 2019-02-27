@@ -1,17 +1,11 @@
 ---
 description: Découvrez Fluent Design et comment l'intégrer à vos applications.
 title: Système Fluent Design pour Windows
-keywords: disposition d’application uwp, plateforme windows universelle, conception d’application, interface, système fluent design
-ms.date: 3/7/2018
+keywords: 'disposition d’application uwp, plateforme windows universelle, conception d’application, interface, système fluent design'
+ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cc0af4cba5d4d14c862724cd199c9e6ab221a24d
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059720"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Les créateurs d’application système pour les fenêtres de conception Fluent
 

@@ -2,15 +2,15 @@
 title: Modifications des API Windows10, build17134
 description: Les développeurs peuvent utiliser la liste suivante pour identifier les nouveaux espaces de noms ou les espaces de noms modifiés dans Windows10, build17134.
 keywords: nouveautés, nouveauté, mises à jour, Windows10, plus récent, api, 17134
-ms.date: 4/10/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4682b6deac68d74d40576d0eb9cbafc6bfdd1d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4b0860021386c52ead3defb17c1b3ba56d65f224
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925210"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116411"
 ---
 # <a name="new-apis-in-windows-10-build-17134"></a>Nouvelles API de Windows10, build17134
 

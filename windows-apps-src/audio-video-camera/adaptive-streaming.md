@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d983de8f9f58e5c9fe6b048b98ea00ebef7197c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923409"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116341"
 ---
 # <a name="adaptive-streaming"></a>Streaming adaptatif
 
@@ -95,7 +95,7 @@ L’événement [**DownloadCompleted**](https://docs.microsoft.com/uwp/api/Windo
 [!code-cs[AMSDownloadCompleted](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadCompleted)]
 
 ## <a name="gather-adaptive-streaming-telemetry-data-with-adaptivemediasourcediagnostics"></a>Collecter les données de télémétrie de diffusion en continu adaptative avec AdaptiveMediaSourceDiagnostics
-L’élément **AdaptiveMediaSource** expose une propriété [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource?branch=master.Diagnostics) qui renvoie un objet [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics). Utilisez cet objet pour vous inscrire à l’événement [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable). Cet événement est destiné à être utilisé pour la collecte de télémétrie et ne doit pas servir à modifier le comportement de l’application au moment de l’exécution. Cet événement de diagnostic est déclenché pour de très nombreuses raisons. Pour déterminer le motif du déclenchement de l’événement, examinez la propriété [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) de l’objet [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) transmis dans cet événement. Les raisons possibles englobent les erreurs d’accès à la ressource demandée et les erreurs d’analyse du fichier manifeste de diffusion en continu. Pour obtenir la liste des situations susceptibles de déclencher un événement de diagnostic, consultez l’article concernant [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype). De même que les arguments d’autres événements de diffusion en continu adaptative, l’élément **AdaptiveMediaSourceDiagnosticAvailableEventArgs** fournit une propriété **RequestId** pour la mise en corrélation des informations de demande entre différents événements.
+L’élément **AdaptiveMediaSource** expose une propriété [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) qui renvoie un objet [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics). Utilisez cet objet pour vous inscrire à l’événement [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable). Cet événement est destiné à être utilisé pour la collecte de télémétrie et ne doit pas servir à modifier le comportement de l’application au moment de l’exécution. Cet événement de diagnostic est déclenché pour de très nombreuses raisons. Pour déterminer le motif du déclenchement de l’événement, examinez la propriété [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) de l’objet [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) transmis dans cet événement. Les raisons possibles englobent les erreurs d’accès à la ressource demandée et les erreurs d’analyse du fichier manifeste de diffusion en continu. Pour obtenir la liste des situations susceptibles de déclencher un événement de diagnostic, consultez l’article concernant [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype). De même que les arguments d’autres événements de diffusion en continu adaptative, l’élément **AdaptiveMediaSourceDiagnosticAvailableEventArgs** fournit une propriété **RequestId** pour la mise en corrélation des informations de demande entre différents événements.
 
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 

@@ -2,7 +2,7 @@
 description: Révéler est un effet visuel qui permet d'ajouter de la profondeur et une meilleure mise au point des éléments interactifs de votre application.
 title: Principales fonctionnalités de révéler
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows10, uwp
 pm-contact: kisai
@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5647d60cc043e167f8e2962680a88c750cc2eb1
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037261"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116401"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
@@ -262,7 +262,7 @@ Lorsque vous activez révéler sur un contrôle personnalisé ou remodélisé ou
 * Pour les éléments de commandes adjacents qui sont si proches qu’ils se touchent: ajoutez une marge de 1pixel entre les deuxéléments. 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
-### <a name="do"></a>Faire:
+### <a name="do"></a>faire:
 - Utilisez Révéler sur des éléments sur lesquels l'utilisateur peut agir (barres de commandes, menus de navigation)
 - Utilisez Révéler dans les regroupements d’éléments interactifs qui n’ont pas de séparateurs visuels par défaut (listes, rubans)
 - Utilisez Révéler dans les zones à densité élevée d'éléments interactifs (scénarios de commandes)

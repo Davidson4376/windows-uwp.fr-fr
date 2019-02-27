@@ -2,15 +2,15 @@
 title: Nouveautés apportées dans la documentation Windows en février2018 - Développer des applicationsUWP
 description: De nouvelles fonctionnalités, des vidéos et des conseils aux développeurs ont été ajoutés à la documentation du développeur Windows10 en février2018.
 keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, windows10, février
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ff57fb32d9c65c675ca63ae0c644b146226795
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044220"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115836"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en février2018
 

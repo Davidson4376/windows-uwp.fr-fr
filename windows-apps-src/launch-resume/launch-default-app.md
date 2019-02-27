@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919034"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116461"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
@@ -46,7 +46,7 @@ Cette rubrique décrit les schémas d’URI suivants qui sont intégrés dans Wi
 <br>
 Par exemple, l’URI suivant ouvre le navigateur par défaut et affiche le site web Bing.
 
-`http://bing.com`
+`https://bing.com`
 
 Vous pouvez également lancer des schémas d’URI personnalisés. Si aucune application n’est installée pour gérer cet URI, vous pouvez recommander à l’utilisateur une application à installer. Pour plus d’informations, voir [Recommander une application si aucune application n’est disponible pour gérer l’URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 
@@ -244,4 +244,4 @@ Utilisez la **msnweather:** schéma d’URI pour lancer l’application Météo.
 
 | Schéma d’URI | Résultats |
 |------------|---------|
-| msnweather://Forecast?la= \[latitude\] & lo = \ [longitude\] | Lance l’application Météo dans la page des prévisions basée sur un coordonnées d’emplacement géographique.<br>`latitude` fait référence à la latitude de la localisation.<br> `longitude` fait référence à la longitude de la localisation.<br> |
+| msnweather://Forecast?la= \[latitude\]&lo=\[longitude\] | Lance l’application Météo dans la page des prévisions basée sur un coordonnées d’emplacement géographique.<br>`latitude` fait référence à la latitude de la localisation.<br> `longitude` fait référence à la longitude de la localisation.<br> |

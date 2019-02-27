@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b61c36143749ddb358cea1d4cf59f43ecb8c6338
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037091"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116451"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -143,7 +143,7 @@ Vous pouvez utiliser la propriété PaneDisplayMode pour positionner le volet au
 Le volet NavigationView peut contenir:
 
 - Objets [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) . Éléments de navigation pour accéder à des pages spécifiques.
-- Objets [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) . Séparateurs pour regrouper les éléments de navigation. Définissez la propriété [Opacity](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) sur 0 pour restituer le séparateur en tant qu’espace.
+- Objets [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) . Séparateurs pour regrouper les éléments de navigation. Définissez la propriété [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) sur 0 pour restituer le séparateur en tant qu’espace.
 - Objets [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) . En-têtes pour libeller des groupes d’éléments.
 - Un contrôle [AutoSuggestBox](auto-suggest-box.md) facultatif permettant de recherche au niveau de l’application. Affectez le contrôle à la propriété [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) .
 - Un point d’entrée facultatif pour les [paramètres d’application](../app-settings/app-settings-and-data.md). Pour masquer l’élément paramètres, définissez la propriété [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) sur **false**.

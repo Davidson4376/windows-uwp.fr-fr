@@ -3,7 +3,7 @@ Description: Command bar flyouts give users inline access to your app's most com
 title: Menu volant de barre de commandes
 label: Command bar flyout
 template: detail.hbs
-ms.date: 10/2/2018
+ms.date: 10/02/2018
 ms.topic: article
 keywords: windows10, uwp
 pm-contact: abarlow
@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 90c86e071b0e1d2a07d7755ba23cb6418ca0022a
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058570"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116291"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 

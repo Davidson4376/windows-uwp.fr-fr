@@ -1,18 +1,18 @@
 ---
 description: Découvrez comment utiliser des couleurs d’accentuation et des thèmes dans vos applications UWP.
 title: Couleur dans les applications UWP
-ms.date: 4/7/2018
+ms.date: 04/7/2018
 ms.topic: article
 keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cbe2a62d52d546e06d3da3250dcd0f7394ba39c5
-ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
+ms.openlocfilehash: 49d891888e26b6ce4c9f94e92605eaf7d619b6f3
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035539"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116151"
 ---
 # <a name="color"></a>Couleur
 

@@ -2,16 +2,16 @@
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Utilisez cette méthode dans l’API de collection du MicrosoftStore pour obtenir tous les produits possédés par un client pour les apps associées à votre ID client AzureAD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres.
 title: Demander des produits
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows10, uwp, API de collection du MicrosoftStore, afficher produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 700cb111f74a4534f2f5e1de70eddfb88b456aa7
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922466"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116191"
 ---
 # <a name="query-for-products"></a>Demander des produits
 
@@ -74,9 +74,9 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 
 L’objet ProductSkuId contient les paramètres ci-dessous.
 
-| Paramètre | Type   | Description          | Obligatoire |
+| Paramètre | Type   | Description          | Requis |
 |-----------|--------|----------------------|----------|
-| productId | chaîne | L'[ID Store](in-app-purchases-and-trials.md#store-ids) pour un [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du MicrosoftStore. Exemple d’ID WindowsStore pour un produit: 9NBLGGH42CFD. | Oui      |
+| productId | chaîne | L'[ID Store](in-app-purchases-and-trials.md#store-ids) pour un [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du MicrosoftStore. Exemple d’ID Store pour un produit: 9NBLGGH42CFD. | Oui      |
 | skuID     | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence](in-app-purchases-and-trials.md#products-skus-and-availabilities) d’un produit dans le catalogue du MicrosoftStore. Exemple d’ID WindowsStore pour une référence (SKU): 0010.       | Oui      |
 
 

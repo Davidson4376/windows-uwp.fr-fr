@@ -1,17 +1,17 @@
 ---
 title: Gestionnaire de comptes web
 description: Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des API du Gestionnaire de comptes web de Windows10.
-ms.date: 12/6/2017
+ms.date: 12/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: e2c1be80ada3e337a4bf7353b854ae4cbe5bd99a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050982"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116045"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 

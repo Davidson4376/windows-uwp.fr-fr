@@ -3,7 +3,7 @@ Description: Customize the built-in handwriting view for ink to text input that 
 title: Saisie de texte avec l’affichage de l’écriture manuscrite
 label: Text input with the handwriting view
 template: detail.hbs
-ms.date: 10/13/18
+ms.date: 10/13/2018
 ms.topic: article
 keywords: windows10, uwp
 pm-contact: sewen
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3660586b856205721bfa8e9cbb3e72df4fd3ad43
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f7b31898e6a90410e4edc73ee36f71a7e4d94155
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921696"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116281"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Saisie de texte avec l’affichage de l’écriture manuscrite
 
@@ -63,7 +63,7 @@ Dans cet exemple, nous désactivons l’affichage de l’écriture manuscrite en
 
 ## <a name="specify-the-alignment-of-the-handwriting-view"></a>Spécifier l’alignement de la vue de l’écriture manuscrite
 
-La vue de l’écriture manuscrite est située au-dessus du contrôle de texte sous-jacent et dimensionnée en fonction des préférences de l’écriture manuscrite de l’utilisateur (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> taille de police lors de l’écriture directement dans le champ de texte **). L’affichage est automatiquement aligné par rapport au contrôle de texte et son emplacement dans l’application.
+La vue de l’écriture manuscrite est située au-dessus du contrôle de texte sous-jacent et dimensionnée en fonction des préférences de l’écriture manuscrite de l’utilisateur (voir les paramètres de **-> périphériques-> stylet & Windows Ink - > l’écriture manuscrite-> taille de police lors de l’écriture directement dans le champ de texte **). L’affichage est automatiquement aligné par rapport au contrôle de texte et son emplacement dans l’application.
 
 L’interface utilisateur de l’application n’est pas réorganisé pour prendre en charge le plus grand contrôle, afin que le système peut provoquer l’affichage pour masquer l’interface utilisateur important.
 
@@ -99,7 +99,7 @@ Si votre application déjà fournit robuste, la fonctionnalité de reconnaissanc
 
 ## <a name="use-handwriting-font-preferences"></a>Utiliser les préférences de police de l’écriture manuscrite
 
-Un utilisateur peut choisir d’une collection prédéfinie de polices basées sur l’écriture manuscrite à utiliser lorsque le rendu du texte basé sur la reconnaissance des entrées manuscrites (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
+Un utilisateur peut choisir d’une collection prédéfinie de polices basées sur l’écriture manuscrite à utiliser lorsque le rendu du texte basé sur la reconnaissance des entrées manuscrites (voir **paramètres-> périphériques-> stylet & Windows Ink-> l’écriture manuscrite-> police lors de l’utilisation de l’écriture manuscrite**).
 
 > [!NOTE]
 > Les utilisateurs peuvent même créer une police en fonction de leur propres l’écriture manuscrite.

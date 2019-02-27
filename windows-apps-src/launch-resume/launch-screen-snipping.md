@@ -1,17 +1,17 @@
 ---
 title: Lancer la capture d’écran
 description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application de croquis & capture ou d’en ouvrir une nouvelle capture.
-ms.date: 8/1/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2bddea1dd2b5f21a145bde789f1ad760bb5e556a
-ms.sourcegitcommit: b126940932935ebd2965ea68078798fb6e876b23
+ms.openlocfilehash: 06e988387f574b74d511b14a2ebca24b0a149158
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "9065986"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116171"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 

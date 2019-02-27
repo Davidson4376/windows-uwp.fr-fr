@@ -3,16 +3,16 @@ description: Entrées et propriétés d’une feuille de style de carte
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Référence de feuille de style de carte
-ms.date: 03/16/2017
+ms.date: 03/19/2017
 ms.topic: article
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: a02dee15173ea8ec2bf98ddf0ad3dbca2fdfc041
-ms.sourcegitcommit: bbec71985647fa81d3e0995875d8406ad4004af1
+ms.openlocfilehash: f199e08f74ace4e6c8b123a701af19469b029aed
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "9063249"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116441"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
