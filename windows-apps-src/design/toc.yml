@@ -67,6 +67,8 @@ items:
     href: controls-and-patterns/index.md
   - name: Présentation des contrôles et des événements
     href: controls-and-patterns/controls-and-events-intro.md
+  - name: Présentation des commandes
+    href: controls-and-patterns/commanding.md
   - name: Index des contrôles par fonction
     href: controls-and-patterns/controls-by-function.md
   - name: Entrée élémentaire
@@ -89,7 +91,7 @@ items:
       href: controls-and-patterns/toggles.md
   - name: Collections
     items:
-    - name: Présentation
+    - name: Vue d'ensemble
       href: controls-and-patterns/lists.md
     - name: Vue symétrique
       href: controls-and-patterns/flipview.md
@@ -562,9 +564,9 @@ items:
       href: in-app-help/external-help.md
 - name: Kits de ressources de conception
   href: downloads/index.md
-ms.openlocfilehash: af1472f7650982783ac08da2c73ebb5046401f3c
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
-ms.translationtype: HT
+ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004565"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117448"

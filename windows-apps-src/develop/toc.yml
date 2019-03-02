@@ -245,6 +245,8 @@ items:
       href: ../files/quickstart-listing-files-and-folders.md
     - name: Créer, écrire et lire un fichier
       href: ../files/quickstart-reading-and-writing-files.md
+    - name: Meilleures pratiques pour écrire dans des fichiers
+      href: ../files/best-practices-for-writing-to-files.md
     - name: Obtenir les propriétés du fichier
       href: ../files/quickstart-getting-file-properties.md
     - name: Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
@@ -1513,9 +1515,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: Utilisation des objets Windows Runtime dans un environnement multi-thread
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: 30584a90fbfaf39ed66cf90fd27575ff055ef69e
-ms.sourcegitcommit: a774dac901ad6ad3a85520ef75ee9a1029aa9792
+ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9070379"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115936"
