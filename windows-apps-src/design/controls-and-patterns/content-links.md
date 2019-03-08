@@ -1,21 +1,21 @@
 ---
-Description: Use content links to embed rich data in your text controls.
+Description: Utilisez les liens de contenu pour incorporer des données riches dans vos contrôles de texte.
 title: Liens de contenu dans les contrôles de texte
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946447"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648534"
 ---
 # <a name="content-links-in-text-controls"></a>Liens de contenu dans les contrôles de texte
 
@@ -23,24 +23,24 @@ Les liens de contenu offrent un moyen d'incorporer des données enrichies dans v
 
 Lorsque l’utilisateur préfixe une entrée avec un symbole esperluette (@) dans un contrôle RichEditBox, une liste de suggestions de personnes et/ou de lieux correspondant à l’entrée s'affiche. Si, par exemple, l’utilisateur sélectionne un lieu, un lien de type ContentLink vers ce lieu est inséré dans le texte. Si l’utilisateur appelle le lien de contenu dans le contrôle RichEditBox, un menu volant s’affiche avec une carte et des informations supplémentaires sur le lieu en question.
 
-> **API importantes**: [classe ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [classe ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [classe RichEditTextRange](/uwp/api/windows.ui.text.richedittextrange)
+> **API importantes**: [ContentLink class](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo class](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange class](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> L’API de liens de contenu est réparties dans les espaces de noms suivants: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents et Windows.UI.Text.
+> Les API pour obtenir des liens de contenu sont réparties sur les espaces de noms suivants : Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents et Windows.UI.Text.
 
 
 
 ## <a name="content-links-in-rich-edit-vs-text-block-controls"></a>Liens de contenu dans une édition enrichie par opposition aux contrôles de bloc de texte
 
-Vous pouvez utiliser les liens de contenu de deux façons:
+Vous pouvez utiliser les liens de contenu de deux façons :
 
 1. Dans un [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox), l’utilisateur peut ouvrir un sélecteur pour ajouter un lien de contenu en préfixant le texte avec un symbole @. Le lien de contenu est stocké dans le cadre du contenu texte enrichi.
 1. Dans un contrôle [TextBlock](/uwp/api/windows.ui.xaml.controls.textblock) ou [RichTextBlock](/uwp/api/windows.ui.xaml.controls.richtextblock), le lien de contenu est un élément de texte dont l'utilisation et le comportement sont très similaires à ceux d'un [Lien hypertexte](/uwp/api/windows.ui.xaml.documents.hyperlink).
 
 Voici à quoi ressemblent les liens de contenu par défaut dans un contrôle RichEditBox et dans un contrôle TextBlock.
 
-![lien de contenu dans une zone d’édition enrichie](images/content-link-default-richedit.png)
-![lien de contenu dans un bloc de texte](images/content-link-default-textblock.png)
+![zone d’édition de lien de contenu dans riche](images/content-link-default-richedit.png)
+![lien contenu dans le bloc de texte](images/content-link-default-textblock.png)
 
 Les différences d’utilisation, de rendu et de comportement sont traitées en détail dans les sections suivantes. Ce tableau vous donne une comparaison rapide des principales différences entre un lien de contenu dans un contrôle RichEditBox et dans un bloc de texte.
 
@@ -48,7 +48,7 @@ Les différences d’utilisation, de rendu et de comportement sont traitées en 
 | --------- | ----------- | ---------- |
 | Utilisation | Instance ContentLinkInfo | Élément de texte ContentLink |
 | Curseur | Déterminé par type de lien de contenu, ne peut pas être modifié. | Déterminé par la propriété Cursor, **null** par défaut |
-| Info-bulle | Pas de rendu | Affiche un texte secondaire |
+| ToolTip | Pas de rendu | Affiche un texte secondaire |
 
 ## <a name="enable-content-links-in-a-richeditbox"></a>Activer les liens de contenu dans un contrôle RichEditBox
 
@@ -61,10 +61,10 @@ Le lien de contenu peut être enregistré avec le contenu de texte enrichi, et v
 
 ### <a name="content-link-providers"></a>Fournisseurs de liens de contenu
 
-Vous activez des liens de contenu dans un contrôle RichEditBox en ajoutant un ou plusieurs fournisseurs de liens de contenu à la collection [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders). Deuxfournisseurs de liens de contenu sont intégrés à l’infrastructure XAML.
+Vous activez des liens de contenu dans un contrôle RichEditBox en ajoutant un ou plusieurs fournisseurs de liens de contenu à la collection [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders). Deux fournisseurs de liens de contenu sont intégrés à l’infrastructure XAML.
 
-- [ContactContentLinkProvider](/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider): recherche des contacts à l’aide de l'application **Contacts**.
-- [PlaceContentLinkProvider](/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider): recherche des lieux à l’aide de l'application **Cartes**.
+- [ContactContentLinkProvider](/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider) : recherche des contacts à l’aide de l'application **Contacts**.
+- [PlaceContentLinkProvider](/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider) : recherche des lieux à l’aide de l'application **Cartes**.
 
 > [!IMPORTANT]
 > La valeur par défaut de la propriété RichEditBox.ContentLinkProviders est **null**, non une collection vide. Vous avez besoin de créer explicitement la [ContentLinkProviderCollection](/uwp/api/windows.ui.xaml.documents.contentlinkprovidercollection) avant d’ajouter des fournisseurs de liens de contenu.
@@ -125,12 +125,12 @@ Lorsque l’utilisateur effectue une sélection dans le sélecteur de personnes 
 
 L’objet ContentLinkInfo contient les informations qui permettent d'afficher, d'appeler et de gérer le lien de contenu.
 
-- **DisplayText**: il s’agit de la chaîne qui s’affiche lorsque le lien de contenu est restitué. Dans un contrôle RichEditBox, l’utilisateur peut modifier le texte d’un lien de contenu après sa création, ce qui modifie la valeur de cette propriété.
-- **SecondaryText**: cette chaîne est affichée dans l’info-bulle d’un lien de contenu rendu.
+- **DisplayText** : il s’agit de la chaîne qui s’affiche lorsque le lien de contenu est restitué. Dans un contrôle RichEditBox, l’utilisateur peut modifier le texte d’un lien de contenu après sa création, ce qui modifie la valeur de cette propriété.
+- **SecondaryText** : cette chaîne est affichée dans l’info-bulle d’un lien de contenu rendu.
   - Dans un lien de contenu de type Place créé par le sélecteur, elle contient l’adresse du lieu, si disponible.
-- **Uri**: lien vers plus d’informations sur l’objet de la liaison de contenu. Cet Uri peut ouvrir une application installée ou un site Web.
-- **Id**: il s’agit d'un compteur par contrôle en lecture seule, créé par le contrôle RichEditBox. Il sert à suivre cette propriété ContentLinkInfo au cours d'actions telles que la suppression ou la modification. Si la propriété ContentLinkInfo est coupée et recollée dans le contrôle, elle obtiendra de nouvelles valeurs d’Id. Les valeurs d'ID sont incrémentielles.
-- **LinkContentKind**: chaîne qui décrit le type de liaison de contenu. Les types de contenu intégrés sont _Places_ et _Contacts_. La valeur est sensible à la casse.
+- **Uri** : lien vers plus d’informations sur l’objet de la liaison de contenu. Cet Uri peut ouvrir une application installée ou un site Web.
+- **Id** : il s’agit d'un compteur par contrôle en lecture seule, créé par le contrôle RichEditBox. Il sert à suivre cette propriété ContentLinkInfo au cours d'actions telles que la suppression ou la modification. Si le ContentLinkInfo est couper et coller dans le contrôle, elle obtiendra un nouveau code. Les valeurs d’ID sont incrémentielles.
+- **LinkContentKind** : chaîne qui décrit le type de liaison de contenu. Les types de contenu intégrés sont _Places_ et _Contacts_. La valeur est sensible à la casse.
 
 #### <a name="link-content-kind"></a>Type de contenu de lien
 
@@ -144,25 +144,25 @@ Il existe plusieurs situations où le LinkContentKind est important.
 
 La propriété Uri fonctionne de façon similaire à la propriété NavigateUri d’un lien hypertexte. Lorsqu’un utilisateur clique dessus, elle lance l’Uri dans le navigateur par défaut, ou dans l’application enregistrée pour le protocole particulier spécifié dans la valeur de l’Uri.
 
-Le comportement spécifique des 2types de lien de contenu intégrés sont décrits ici.
+Le comportement spécifique des 2 types de lien de contenu intégrés sont décrits ici.
 
 ##### <a name="places"></a>Places
 
-Le sélecteur Places crée une propriété ContentLinkInfo avec une racine d'Uri de https://maps.windows.com/. Ce lien peut être ouvert de 3manières différentes:
+Le sélecteur Places crée une propriété ContentLinkInfo avec une racine d'Uri de https://maps.windows.com/. Ce lien peut être ouvert de 3 manières différentes :
 
-- Si LinkContentKind = «Places», il ouvre une fiche d’informations dans un menu volant. Le menu volant est similaire à celui du sélecteur de lien de contenu. Il fait partie de Windows et s’exécute dans un processus distinct de votre application.
-- Si LinkContentKind n’est pas «Places», il tente d’ouvrir l'application **Cartes** à l’endroit spécifié. Par exemple, cela peut se produire si vous avez modifié le LinkContentKind dans le Gestionnaire d’événements ContentLinkChanged.
+- Si LinkContentKind = « Places », il ouvre une fiche d’informations dans un menu volant. Le menu volant est similaire à celui du sélecteur de lien de contenu. Il fait partie de Windows et s’exécute dans un processus distinct de votre application.
+- Si LinkContentKind n’est pas « Places », il tente d’ouvrir l'application **Cartes** à l’endroit spécifié. Par exemple, cela peut se produire si vous avez modifié le LinkContentKind dans le Gestionnaire d’événements ContentLinkChanged.
 - Si l’Uri ne peut pas être ouvert dans l’application Cartes, la carte est ouverte dans le navigateur par défaut. Cela se produit généralement lorsque les paramètres _Applications pour les sites web_ de l’utilisateur n'autorisent pas l’ouverture de l’Uri avec l'application **Cartes**.
 
-##### <a name="people"></a>People
+##### <a name="people"></a>Personnes
 
 Le sélecteur People crée un ContentLinkInfo avec un Uri qui utilise le protocole **ms-people**.
 
-- Si LinkContentKind = «People», il ouvre une fiche d’informations dans un menu volant. Le menu volant est similaire à celui du sélecteur de lien de contenu. Il fait partie de Windows et s’exécute dans un processus distinct de votre application.
-- Si LinkContentKind n’est pas «People», il ouvre l'application **Contacts**. Par exemple, cela peut se produire si vous avez modifié le LinkContentKind dans le Gestionnaire d’événements ContentLinkChanged.
+- Si LinkContentKind = « People », il ouvre une fiche d’informations dans un menu volant. Le menu volant est similaire à celui du sélecteur de lien de contenu. Il fait partie de Windows et s’exécute dans un processus distinct de votre application.
+- Si LinkContentKind n’est pas « People », il ouvre l'application **Contacts**. Par exemple, cela peut se produire si vous avez modifié le LinkContentKind dans le Gestionnaire d’événements ContentLinkChanged.
 
 > [!TIP]
-> Pour plus d’informations sur l’ouverture d’autres applications et sites Web à partir de votre application, consultez les rubriques sous [lancer une application avec un Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> Pour plus d’informations sur l’ouverture des autres applications et les sites Web à partir de votre application, consultez les rubriques sous [lancer une application avec un Uri](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### <a name="invoked"></a>Invoked
 
@@ -198,10 +198,10 @@ private void editor_ContentLinkInvoked(RichEditBox sender, ContentLinkInvokedEve
 
 Vous pouvez utiliser l'événement [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged) pour être informé lorsqu’un lien de contenu est ajouté, modifié ou supprimé. Cela vous permet d’extraire le lien de contenu du texte et de l’utiliser à d’autres endroits dans votre application. Cela est illustré plus loin dans la section Exemples.
 
-Les propriétés de l'objet [ContentLinkChangedEventArgs](/uwp/api/windows.ui.xaml.controls.contentlinkchangedeventargs) sont:
+Les propriétés de l'objet [ContentLinkChangedEventArgs](/uwp/api/windows.ui.xaml.controls.contentlinkchangedeventargs) sont :
 
-- **ChangedKind**: cette énumération ContentLinkChangeKind est l’action contenue dans le ContentLink. Par exemple, si le ContentLink est inséré, supprimé ou modifié.
-- **Info**: le ContentLinkInfo qui était la cible de l’action.
+- **ChangedKind** : cette énumération ContentLinkChangeKind est l’action contenue dans le ContentLink. Par exemple, si le ContentLink est inséré, supprimé ou modifié.
+- **Info** : le ContentLinkInfo qui était la cible de l’action.
 
 Cet événement est déclenché pour chaque action ContentLinkInfo. Par exemple, si l’utilisateur copie et colle plusieurs liens de contenu dans le contrôle RichEditBox à la fois, cet événement se déclenche pour chaque élément ajouté. Ou, si l’utilisateur sélectionne et supprime plusieurs liens de contenu en même temps, cet événement se déclenche pour chaque élément supprimé.
 
@@ -262,7 +262,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 Pour utiliser un lien de contenu dans un contrôle TextBlock ou RichTextBlock, vous utilisez l'élément de texte [ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink) (à partir de l'espace de noms Windows.UI.Xaml.Documents).
 
-Les sources courantes d'un ContentLink dans un bloc de texte sont:
+Les sources courantes d'un ContentLink dans un bloc de texte sont :
 
 - Un lien de contenu créé par un sélecteur que vous avez extrait à partir d’un contrôle RichTextBlock.
 - Un lien de contenu vers un lieu que vous créez dans votre code.

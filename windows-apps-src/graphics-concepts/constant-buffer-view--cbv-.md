@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e850ba16be7a8d2621f061015d39c8b334cab2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939119"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651064"
 ---
 # <a name="constant-buffer-view-cbv"></a>Affichage des mémoires tampons de constantes (CBV)
 
@@ -26,7 +26,7 @@ La disposition de la mémoire tampon de constantes doit correspondre à la dispo
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichages](views.md)
+[Affichage](views.md)
 
  
 

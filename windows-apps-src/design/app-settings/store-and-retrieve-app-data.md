@@ -1,43 +1,43 @@
 ---
-Description: Learn how to store and retrieve local, roaming, and temporary app data.
+Description: Découvrez comment stocker et récupérer des données d’application locale, itinérantes et temporaires.
 title: Stocker et récupérer des paramètres et autres données d’application
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
-ms.sourcegitcommit: be52da74f0b3f24973286792afa4f5e80799161b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602674"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
 Les *données d’application* sont des données mutables spécifiques à une application particulière. Elles comprennent l’état d’exécution, les préférences utilisateur et d’autres paramètres. Les données d’application diffèrent des *données utilisateur* que l’utilisateur crée et gère en utilisant l’application. Elles incluent les fichiers de documents ou multimédias, les transcriptions de courrier électronique ou de communication ou les enregistrements de base de données dont le contenu a été créé par l’utilisateur. Les données utilisateur peuvent s’avérer utiles ou judicieuses pour plusieurs applications. Il s’agit souvent de données que l’utilisateur veut manipuler ou transmettre sous forme d’entité indépendante de l’application elle-même, par exemple un document.
 
-**Remarque importante sur les données d’application: **la durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
+**Remarque importante à propos des données d’application :** La durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
 
 ## <a name="types-of-app-data"></a>Types de données d’application
 
 
-Il existe deux types de données d’application: les fichiers et les paramètres.
+Il existe deux types de données d’application : les fichiers et les paramètres.
 
 -   **Paramètres**
 
     Utilisez les paramètres pour stocker les préférences de l’utilisateur et les informations relatives à l’état de l’application. L’API de données d’application permet de créer et récupérer facilement des paramètres (exemples fournis plus loin dans cet article).
 
-    Voici les types de données que vous pouvez utiliser pour les paramètres d’application:
+    Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
 
     -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-    -   **Booléen**
+    -   **Boolean**
     -   **Char16**, **String**
     -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) : ensemble de paramètres d’application associés qui doivent être sérialisés et désérialisés de façon atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): Un ensemble de paramètres d’application connexes qui doit être sérialisé et désérialisé de manière atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
 -   **Fichiers**
 
     Utilisez des fichiers pour stocker des données binaires ou pour activer vos propres types sérialisés personnalisés.
@@ -168,21 +168,21 @@ Les données itinérantes d’une application sont disponibles dans le Cloud du 
 -   Ne rendez pas itinérantes des données d’application spécifiques à un appareil. Certaines informations ne sont pertinentes que d’un point de vue local, par exemple le chemin d’accès d’un fichier local. Si vous décidez de rendre itinérantes des informations locales, assurez-vous que l’application peut récupérer son état d’exécution si ces informations ne sont pas valides sur l’appareil secondaire.
 -   Ne rendez pas itinérants de grands ensembles de données d’application. Il existe une limite à la quantité de données d’application qu’une application peut utiliser de manière itinérante. Servez-vous de la propriété [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) pour atteindre cette limite. Si une application atteint cette limite, l’itinérance des données n’est plus possible tant que la taille du magasin de données d’application reste au-dessus de cette limite. Quand vous concevez votre application, vous devez penser à restreindre les grandes quantités de données pour éviter de dépasser cette limite. Par exemple, si l’enregistrement de l’état d’une partie demande 10 Ko, l’application pourrait autoriser l’utilisateur à conserver seulement 10 parties au maximum.
 -   N’utilisez pas l’itinérance pour les données qui reposent sur une synchronisation instantanée. Windows ne garantit pas une synchronisation instantanée. L’itinérance peut être retardée de manière importante si un utilisateur est hors connexion ou sur un réseau dont la latence est élevée. Assurez-vous que votre interface utilisateur ne dépend pas d’une synchronisation instantanée.
--   N’utilisez pas d’itinérance pour les données qui changent fréquemment. Ainsi, si votre application effectue le suivi d’informations qui changent souvent, par exemple la position de lecture d’une chanson à la seconde près, ne stockez pas ces informations en tant que données d’application itinérantes. À la place, choisissez une représentation moins fréquente qui offre tout de même une expérience utilisateur intéressante, par exemple la chanson en cours de lecture.
+-   N’utilisez pas l’itinérance de données qui changent fréquemment. Ainsi, si votre application effectue le suivi d’informations qui changent souvent, par exemple la position de lecture d’une chanson à la seconde près, ne stockez pas ces informations en tant que données d’application itinérantes. À la place, choisissez une représentation moins fréquente qui offre tout de même une expérience utilisateur intéressante, par exemple la chanson en cours de lecture.
 
 ### <a name="roaming-pre-requisites"></a>Conditions préalables d’itinérance
 
-Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur décide de ne pas utiliser un compte Microsoft ou désactive les fonctionnalités d’itinérance des données, elle sera toujours en mesure d’utiliser votre application, mais les données d’application seront locales sur chaque appareil.
+Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur choisit de ne pas utiliser un compte Microsoft ou désactive les fonctionnalités d’itinérance des données, elle sera toujours en mesure d’utiliser votre application, mais les données d’application seront locales sur chaque appareil.
 
 Les données stockées dans [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) sont transférées uniquement si un utilisateur a « approuvé » un appareil. Si un appareil n’est pas approuvé, les données sécurisées dans ce coffre ne seront pas itinérantes.
 
-### <a name="conflict-resolution"></a>Résolution des conflits
+### <a name="conflict-resolution"></a>Résolution de conflits
 
-L’itinérance des données d’application n’est pas prévue pour être utilisée sur plusieurs appareils à la fois. Si un conflit se produit durant la synchronisation en raison du changement d’une unité de données sur deux appareils, le système favorise toujours la valeur écrite en dernier. Cette précaution garantit que l’application exploite les informations les plus récentes. Si l’unité de données est un composite de paramètre, la résolution des conflits se produit au niveau de l’unité du paramètre; en d’autres termes, le composite possédant le changement le plus récent est synchronisé.
+L’itinérance des données d’application n’est pas prévue pour être utilisée sur plusieurs appareils à la fois. Si un conflit se produit durant la synchronisation en raison du changement d’une unité de données sur deux appareils, le système favorise toujours la valeur écrite en dernier. Cette précaution garantit que l’application exploite les informations les plus récentes. Si l’unité de données est un composite de paramètre, la résolution des conflits se produit au niveau de l’unité du paramètre ; en d’autres termes, le composite possédant le changement le plus récent est synchronisé.
 
 ### <a name="when-to-write-data"></a>Quand écrire les données
 
-Selon la durée de vie prévue du paramètre, les données doivent être écrites à différents moments. Les données d’application qui changent rarement ou lentement doivent être écrites immédiatement. Toutefois, les données d’application qui évoluent fréquemment doivent être écrites seulement à intervalles réguliers (par exemple toutes les 5 minutes) et durant la suspension de l’application. Par exemple, une application de musique peut écrire le paramètre «chanson actuelle» au début de chaque nouvelle chanson, mais la position réelle dans la chanson doit être écrite uniquement au moment de l’interruption.
+Selon la durée de vie prévue du paramètre, les données doivent être écrites à différents moments. Les données d’application qui changent rarement ou lentement doivent être écrites immédiatement. Toutefois, les données d’application qui évoluent fréquemment doivent être écrites seulement à intervalles réguliers (par exemple toutes les 5 minutes) et durant la suspension de l’application. Par exemple, une application de musique peut écrire le paramètre « chanson actuelle » au début de chaque nouvelle chanson, mais la position réelle dans la chanson doit être écrite uniquement au moment de l’interruption.
 
 ### <a name="excessive-usage-protection"></a>Protection contre une utilisation excessive
 

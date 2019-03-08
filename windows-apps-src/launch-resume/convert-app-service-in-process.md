@@ -3,15 +3,15 @@ title: Convertir un service d’application pour qu’il s’exécute dans le m�
 description: Convertissez un code de service d’application qui s’exécutait dans un processus distinct en arrière-plan en code qui s’exécute dans le même processus que votre fournisseur de service d’application.
 ms.date: 11/03/2017
 ms.topic: article
-keywords: Windows 10, uwp, service d’application
+keywords: Windows 10, uwp, le service d’application
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927111"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643414"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 
@@ -38,13 +38,13 @@ Transformer un service d’application de modèle en dehors du processus en mod�
 >   </Applications>
 > ```
 
-Supprimer le `EntryPoint` attribut à partir de la `<Extension>` élément dans la mesure où [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) est maintenant le point d’entrée qui sera utilisé lorsque le service d’application est appelé.
+Supprimer le `EntryPoint` attribut à partir de la `<Extension>` élément parce que maintenant [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) est le point d’entrée qui sera utilisé lorsque le service d’application est appelé.
 
 La seconde modification consiste à déplacer la logique de service de son projet de tâche distinct en arrière-plan dans les méthodes qui peuvent être appelées à partir de **OnBackgroundActivated()**.
 
-À présent, votre application peut directement exécuter votre service d’application. Par exemple, dans App.xaml.cs:
+À présent, votre application peut directement exécuter votre service d’application. Par exemple, dans App.xaml.cs :
 
-[!NOTE] Le code ci-dessous est différent de celui fourni par exemple 1 (out-of-process service). Le code ci-dessous est fourni uniquement à des fins d’illustration et ne doit pas être utilisé dans le cadre de l’exemple 2 (service dans le processus).  Pour poursuivre la transition de l’article à partir de l’exemple 1 (service out-of-process) dans l’exemple 2 (service intraprocessus) continuer à utiliser le code fourni par exemple 1 au lieu du exemples de code ci-dessous.
+[!NOTE] Le code ci-dessous est différent de celui fourni par exemple 1 (out-of-process service). Le code ci-dessous est fourni à titre d’illustration uniquement et ne doit pas être utilisé dans le cadre de l’exemple 2 (dans le processus de service).  Pour continuer la transition de l’article à partir de l’exemple 1 (service out-of-process) dans l’exemple 2 (dans le processus de service) continuer à utiliser le code fourni par exemple 1 au lieu de l’illustration de code ci-dessous.
 
 ``` cs
 using Windows.ApplicationModel.AppService;

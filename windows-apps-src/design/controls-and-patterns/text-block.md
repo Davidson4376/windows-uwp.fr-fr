@@ -1,22 +1,22 @@
 ---
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-Description: Text block is the primary control for displaying read-only text in apps.
+Description: Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications.
 title: Bloc de texte
 label: Text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 692b8837f3bd74dfc5f74bee02786213c9a898f2
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058520"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599384"
 ---
 # <a name="text-block"></a>Bloc de texte
 
@@ -24,13 +24,13 @@ ms.locfileid: "9058520"
 
  Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné.
  
- > **API importantes**: [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [propriété Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx), [propriété Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
+ > **API importantes**: [Classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [propriété Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx), [de la propriété Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Un bloc de texte est généralement plus facile à utiliser et offre de meilleures performances en termes de rendu de texte qu’un bloc de texte enrichi. C’est pourquoi il est recommandé pour la plupart des textes d’interface utilisateur d’application. Vous pouvez facilement visualiser et utiliser le texte d’un bloc de texte dans votre application en obtenant la valeur de la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx). Il propose également de nombreuses options de mise en forme similaires pour personnaliser la manière dont votre texte est restitué.
 
-Même si vous pouvez placer des sauts de ligne dans le texte, un bloc de texte est conçu pour afficher un seul paragraphe et ne prend pas en charge le retrait du texte. Utilisez un élément **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inline, tels que des images.
+Même si vous pouvez placer des sauts de ligne dans le texte, un bloc de texte est conçu pour afficher un seul paragraphe et ne prend pas en charge le retrait du texte. Utilisez un contrôle **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inclus, tels que des images.
 
 Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
 
@@ -43,7 +43,7 @@ Pour plus d’informations sur le choix du contrôle de texte approprié, voir l
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TextBlock">ouvrir l’application et voir le contrôle TextBlock en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -70,7 +70,7 @@ textBlock1.Text = "Hello, world!";
 
 ### <a name="content-model"></a>Modèle de contenu
 
-Les deux propriétés utilisables pour ajouter du contenu à un élément TextBlock sont : [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) et [Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx).
+Il existe deux propriétés que vous pouvez utiliser pour ajouter du contenu à un bloc de texte : [Texte](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) et [Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx).
 
 La méthode la plus courante pour afficher du texte est de définir la propriété Text sur une valeur de chaîne, comme illustré dans l’exemple précédent.
 
@@ -88,22 +88,22 @@ Les éléments dérivés de la classe Inline, tels que Bold, Italic, Run, Span e
 Dans la mesure du possible, XAML utilise un chemin de code plus efficace pour la disposition du texte. Ce chemin rapide permet à la fois de diminuer l’utilisation de mémoire globale et de réduire considérablement le temps processeur requis pour mesurer et organiser le texte. Ce chemin rapide s’applique uniquement au contrôle TextBlock. Celui-ci doit donc être préféré au contrôle RichTextBlock dans la mesure du possible.
 
 Certaines conditions exigent un contrôle TextBlock afin de revenir à un chemin de code plus riche en fonctionnalités et exigeant en ressources de processeur pour le rendu du texte. Pour conserver le rendu du texte sur le chemin rapide, veillez à suivre ces recommandations lors de la définition des propriétés répertoriées ici.
-- [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): la condition la plus importante est que le chemin rapide soit utilisé uniquement lorsque vous définissez le texte en définissant explicitement la propriété Text en XAML ou dans le code (comme illustré dans les exemples précédents). La définition du texte via la collection Inlines du contrôle TextBlock (telle que `<TextBlock>Inline text</TextBlock>`) désactive le chemin rapide en raison de la complexité potentielle liée à de multiples formats.
-- [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): seule la valeur par défaut0 permet d’utiliser le chemin rapide.
-- [TextTrimming](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): seules les valeurs **None**, **CharacterEllipsis** et **WordEllipsis** permettent d’utiliser le chemin rapide. La valeur **Clip** désactive le chemin rapide.
+- [Texte](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): La condition la plus importante est que le chemin d’accès rapide est utilisée uniquement lorsque vous définissez le texte en définissant explicitement la propriété de texte, dans le XAML ou dans le code (comme indiqué dans les exemples précédents). La définition du texte via la collection Inlines du contrôle TextBlock (telle que `<TextBlock>Inline text</TextBlock>`) désactive le chemin rapide en raison de la complexité potentielle liée à de multiples formats.
+- [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): Uniquement la valeur par défaut 0 est le chemin d’accès rapide.
+- [TextTrimming](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): Uniquement les **aucun**, **CharacterEllipsis**, et **WordEllipsis** valeurs sont le chemin d’accès rapide. La valeur **Clip** désactive le chemin rapide.
 
-> **Remarque**&nbsp;&nbsp;Dans les versions antérieures à Windows10, version1607, des propriétés supplémentaires ont également un impact sur le chemin rapide. Si votre application est exécutée dans une version antérieure de Windows, ces conditions entraînent également l’affichage de votre texte sur le chemin lent. Pour plus d’informations sur les versions, voir Code adaptatif de version.
-- [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): seules les valeurs par défaut des différentes propriétés Typography permettent d’utiliser le chemin rapide.
-- [LineStackingStrategy](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): si [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) est différent de0, les valeurs **BaselineToBaseline** et **MaxHeight** désactivent le chemin rapide.
-- [IsTextSelectionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): seule la valeur **false** permet d’utiliser le chemin rapide. La définition de cette propriété sur **true** désactive le chemin rapide.
+> **Remarque**&nbsp;&nbsp;Dans les versions antérieures à Windows 10, version 1607, des propriétés supplémentaires ont également un impact sur le chemin rapide. Si votre application est exécutée dans une version antérieure de Windows, ces conditions entraînent également l’affichage de votre texte sur le chemin lent. Pour plus d’informations sur les versions, voir Code adaptatif de version.
+- [Typographie](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): Seules les valeurs par défaut pour les différentes propriétés de typographie sont le chemin d’accès rapide.
+- [LineStackingStrategy](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): Si [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) est pas égal à 0, le **BaselineToBaseline** et **MaxHeight** valeurs désactiver le chemin d’accès rapide.
+- [IsTextSelectionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): Uniquement **false** est le chemin d’accès rapide. La définition de cette propriété sur **true** désactive le chemin rapide.
 
 Vous pouvez définir la propriété [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) sur **true** pendant le débogage pour déterminer si le texte utilise le chemin rapide pour le rendu. Quand cette propriété est définie sur true, le texte qui utilise le chemin rapide s’affiche en vert clair.
 
->**Conseil**&nbsp;&nbsp;Cette fonctionnalité est expliquée en détail dans cette session à partir de la build2015 - [Performances XAML: techniques d’optimisation des expériences d’application Windows universelle générée en XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
+>**Conseil**&nbsp;&nbsp;cette fonctionnalité est expliquée en détail dans cette session à partir de la Build 2015 - [les performances de XAML : Techniques pour optimiser les expériences d’application universelle Windows créées avec XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
 
 
-Vous définissez généralement les paramètres de débogage dans la substitution de méthode [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) dans la page code-behind pour App.xaml, comme ceci:
+Vous définissez généralement les paramètres de débogage dans la substitution de méthode [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) dans la page code-behind pour App.xaml, comme ceci :
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -127,7 +127,7 @@ Dans cet exemple, le premier contrôle TextBlock est affiché à l’aide du che
 <StackPanel/>
 ```
 
-Lorsque vous exécutez ce code XAML en mode débogage avec la propriété IsTextPerformanceVisualizationEnabled définie sur true, le résultat se présente ainsi:
+Lorsque vous exécutez ce code XAML en mode débogage avec la propriété IsTextPerformanceVisualizationEnabled définie sur true, le résultat se présente ainsi :
 
 ![Texte affiché en mode débogage](images/text-block-rendering-performance.png)
 
@@ -140,7 +140,7 @@ Bien que la propriété Text stocke du texte brut, vous pouvez appliquer différ
 >**Remarque**&nbsp;&nbsp;N’oubliez pas, comme indiqué dans la section précédente, que les éléments de texte insérés et les valeurs typographiques par défaut ne sont pas restitués sur le chemin rapide.
 
 
-### <a name="inline-elements"></a>Éléments insérés
+### <a name="inline-elements"></a>Éléments inline
 
 L’espace de noms [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) propose une variété d’éléments de texte inline utilisables pour mettre en forme votre texte, par exemple Bold, Italic, Run, Span, et LineBreak.
 
@@ -164,7 +164,7 @@ Voici comment définir, dans un contrôle TextBlock, plusieurs chaînes de texte
 </TextBlock>
 ```
 
-Résultat:
+Résultat :
 
 ![Texte mis en forme avec des éléments Run](images/text-block-run-examples.png)
 
@@ -195,9 +195,9 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 ## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
-- [Recommandations en matière de vérification orthographique](text-controls.md)
-- [Ajout de la fonctionnalité de recherche](search.md)
-- [Recommandations en matière de saisie de texte](text-controls.md)
-- [Classe TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Classe PasswordBox Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [Instructions pour la vérification orthographique](text-controls.md)
+- [Ajout de la recherche](search.md)
+- [Instructions pour l’entrée de texte](text-controls.md)
+- [Classe de zone de texte](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [String.Length, propriété](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

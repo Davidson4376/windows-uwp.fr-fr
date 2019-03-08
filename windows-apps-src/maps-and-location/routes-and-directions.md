@@ -4,20 +4,20 @@ description: Demandez des itinéraires et indications, et affichez-les dans votr
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 09/20/2017
 ms.topic: article
-keywords: windows10, uwp, itinéraire, carte, localisation, indications
+keywords: windows 10, uwp, itinéraire, carte, localisation, indications
 ms.localizationpriority: medium
 ms.openlocfilehash: 218ca052a3e525a1f7cfc2ce18542a5a30c61e5e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049256"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646684"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Afficher des itinéraires et indications sur une carte
 
 
 
-Demandez des itinéraires et indications, et affichez-les dans votre app.
+Demandez des itinéraires et indications, et affichez-les dans votre application.
 
 >[!Note]
 >Pour plus d’informations sur l’utilisation de cartes dans votre app, téléchargez l’[exemple de carte pour plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
@@ -39,7 +39,7 @@ Les classes pour les itinéraires et les indications sont associées comme suit 
 
 Obtenez des itinéraires et des indications pour des déplacements en voiture ou à pied en appelant les méthodes de la classe [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938). Par exemple, [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) ou [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953).
 
-Lorsque vous demandez un itinéraire:
+Lorsque vous demandez un itinéraire :
 
 * Vous pouvez indiquer uniquement un point de départ et un point d’arrivée, ou une série de positions pour calculer l’itinéraire.
 
@@ -51,14 +51,14 @@ Lorsque vous demandez un itinéraire:
 
 * Vous pouvez spécifier des restrictions (par exemple, aucun trajet par autoroute).
 
-## <a name="display-directions"></a>Afficher des itinéraires
+## <a name="display-directions"></a>Afficher des indications
 
 L’objet [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) contient un objet [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) accessible via sa propriété [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940).
 
 L’objet [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) calculé a des propriétés qui indiquent le temps pour parcourir l’itinéraire, la longueur de celui-ci et la collection d’objets [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) qui contiennent les étapes de l’itinéraire. Chaque objet **MapRouteLeg** contient une collection d’objets [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). L’objet **MapRouteManeuver** contient des indications accessibles via sa propriété [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964).
 
 >[!IMPORTANT]
->Vous devez spécifier une clé d’authentification pour Cartes avant de pouvoir utiliser les services de carte. Pour plus d’informations, voir [Demander une clé d’authentification de cartes](authentication-key.md).
+>Vous devez spécifier une clé d’authentification pour Cartes avant de pouvoir utiliser les services de carte. Pour plus d’informations, voir [Demander une clé d’authentification pour Cartes](authentication-key.md).
 
  
 
@@ -141,7 +141,7 @@ You have reached your destination.
 Pour afficher un [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) sur un [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), créez un [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) avec **MapRoute**. Ajoutez ensuite **MapRouteView** à la collection [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) de **MapControl**.
 
 >[!IMPORTANT]
->Pour pouvoir utiliser les services de carte ou le contrôle de carte, vous devez spécifier une clé d’authentification de cartes. Pour plus d’informations, voir [Demander une clé d’authentification de cartes](authentication-key.md).
+>Pour pouvoir utiliser les services de carte ou le contrôle de carte, vous devez spécifier une clé d’authentification de cartes. Pour plus d’informations, voir [Demander une clé d’authentification pour Cartes](authentication-key.md).
 
  
 
@@ -194,7 +194,7 @@ Cet exemple affiche ce qui suit sur un [**MapControl**](https://msdn.microsoft.c
 
 ![Contrôle de carte avec l’itinéraire affiché.](images/routeonmap.png)
 
-Voici une version de cet exemple utilisant un point de position *via* entre deux points de position *arrêt*:
+Voici une version de cet exemple utilisant un point de position *via* entre deux points de position *arrêt* :
 
 ```csharp
 using System;
@@ -239,10 +239,10 @@ private async void ShowRouteOnMap()
 }
 ```
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
+* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)

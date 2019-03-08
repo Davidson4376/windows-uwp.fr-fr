@@ -4,30 +4,30 @@ description: Nous chargeons des données brutes, appliquées à une primitive 3D
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, textures, directx
+keywords: Windows 10, uwp, jeux, textures, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: a857f62839841a2e20c4f6b6cf753e9d85dcb32c
-ms.sourcegitcommit: 7ba0637453bc2de1ca6922be97625cbcf9c32df5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "9099609"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601654"
 ---
 # <a name="apply-textures-to-primitives"></a>Appliquer des textures aux primitives
 
 Dans cette rubrique, nous chargeons des données de texture brutes et les appliquons à une primitive 3D à l’aide du cube que nous avons créé à la rubrique [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md). Nous introduisons aussi un modèle simple de produits/points d’éclairage, où la tonalité (plus clair ou plus sombre) des surfaces du cube se détermine en fonction de leur distance et de l’angle relatifs à une source de lumière.
 
-**Objectif :** appliquer des textures aux primitives.
+**Objectif :** Pour appliquer des textures à primitives.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Pour obtenir le meilleur parti de cette rubrique, vous devez être familiarisé avec C++. Vous devez également expérience de base avec les concepts de programmation graphique. Et, dans l’idéal, vous devez avoir déjà suivi avec [démarrage rapide: configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md), [Création de nuanceurs et tracer des primitives](creating-shaders-and-drawing-primitives.md)et [effets sur des primitives et profondeur à l’aide](using-depth-and-effects-on-primitives.md).
+Pour obtenir le meilleur parti de cette rubrique, vous devez être familiarisé avec C++. Vous devez également une expérience basique avec des concepts de programmation de graphiques. Et, dans l’idéal, vous devez avoir déjà suivi avec [Guide de démarrage rapide : configuration des ressources de DirectX et affichage d’une image](setting-up-directx-resources.md), [création nuanceurs et primitives de dessin](creating-shaders-and-drawing-primitives.md), et [Using profondeur et les effets sur les primitives](using-depth-and-effects-on-primitives.md).
 
-**Durée de réalisation :** 20 minutes.
+**Durée :** 20 minutes.
 
 <a name="instructions"></a>Instructions
 ------------
-### <a name="1-defining-variables-for-a-textured-cube"></a>1. Définition de variables pour un cube avec texture
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. Définition de variables pour un cube de texture
 
 Tout d’abord, nous devons définir les structures **BasicVertex** et **ConstantBuffer** pour le cube auquel est appliquée une texture. Ces structures spécifient les positions, les orientations et les textures de vertex pour le cube et le type d’affichage de ce dernier. À défaut, nous déclarons des variables comme nous l’avons fait dans le didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
 
@@ -60,19 +60,19 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. Création de nuanceurs de vertex et de nuanceurs de pixels par le biais d’éléments de surface et de texture
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. Création des nuanceurs de sommets et de pixels avec des éléments de surface et de texture
 
 Nous créons ici des nuanceurs de vertex et nuanceurs de pixels plus complexes que ceux du didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md). Le nuanceur de vertex de l’application transforme chaque position de vertex en espace de projection et passe la coordonnée de texture du vertex à travers le nuanceur de pixels.
 
-Le tableau de structures [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) de l’application qui décrit la disposition du code du nuanceur de vertex inclut trois éléments de disposition : un élément définit la position du vertex, un autre définit le vecteur normal de la surface (c’est-à-dire l’orientation habituelle de la surface) et un troisième élément qui définit les coordonnées de texture.
+Tableau de l’application de [ **D3D11\_entrée\_élément\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures qui décrivent la disposition du code du nuanceur de sommets comporte trois éléments de disposition : un seul élément définit la position du vertex, un autre élément définit le vecteur normal surface (la direction dans laquelle la surface fait face normalement) et le troisième élément définit les coordonnées de texture.
 
 Nous créons les tampons de vertex, d’index et constant qui définissent un cube avec texture en orbite.
 
-**Pour définir un cube en orbite avec texture**
+**Pour définir un cube de texture orbite**
 
-1.  Tout d’abord, définissez le cube. Chaque vertex se voit attribué une position, un vecteur normal de surface et des coordonnées de texture. Nous utilisons plusieurs vertex pour chaque coin dans le but de permettre à différents vecteurs normaux et coordonnées de texture d’être définis pour chaque face.
-2.  Ensuite, nous décrivons les tampons vertex et d’index ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) à l’aide de la définition du cube. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) une fois pour chaque tampon.
-3.  Ensuite, nous créons une mémoire tampon constante ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) pour transmettre la matrice de modèle, la matrice globale et la matrice de projection au nuanceur de vertex. Nous pouvons ensuite utiliser le tampon constant pour faire pivoter le cube et lui appliquer une projection de perspective. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) pour créer la mémoire tampon constante.
+1.  Nous commençons par définir le cube. Chaque vertex se voit attribué une position, un vecteur normal de surface et des coordonnées de texture. Nous utilisons plusieurs vertex pour chaque coin dans le but de permettre à différents vecteurs normaux et coordonnées de texture d’être définis pour chaque face.
+2.  Ensuite, nous décrivons les mémoires tampons de vertex et d’index ([**D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [ **D3D11\_SUBRESOURCE\_Données**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) à l’aide de la définition du cube. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) une fois pour chaque tampon.
+3.  Ensuite, nous créons un mémoire tampon constante ([**D3D11\_tampon\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) pour passer des matrices de projection, de modèle et d’affichage pour le nuanceur de sommets. Nous pouvons ensuite utiliser le tampon constant pour faire pivoter le cube et lui appliquer une projection de perspective. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) pour créer la mémoire tampon constante.
 4.  Enfin, nous indiquons la transformation de la vue correspondant à une position de caméra de X = 0, Y = 1, Z = 2.
 
 ```cppcx
@@ -261,7 +261,7 @@ auto createCubeTask = (createPSTask && createVSTask).then([this]()
 });
 ```
 
-### <a name="3-creating-textures-and-samplers"></a>3. Création de textures et d’échantillons
+### <a name="3-creating-textures-and-samplers"></a>3. Création des échantillonneurs et des textures
 
 Dans cette rubrique, nous appliquons les données de texture à un cube plutôt que des couleurs comme dans le didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
 
@@ -270,10 +270,10 @@ Nous exploitons les données de texture brutes pour créer des textures.
 **Pour créer des textures et des échantillonneurs**
 
 1.  Tout d’abord, nous effectuons la lecture des données de texture brutes du fichier texturedata.bin sur disque.
-2.  Nous construisons ensuite une structure [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) qui fait référence aux données brutes de texture.
-3.  Nous remplissons ensuite une structure [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) pour décrire la texture. Nous transmettons les structures [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) et **D3D11\_TEXTURE2D\_DESC** dans un appel à [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) pour créer la texture.
-4.  Ensuite, nous créons une vue de ressource/nuanceur de la texture de sorte que les nuanceurs puissent utiliser la texture. Pour créer la vue de ressource/nuanceur, nous remplissons une structure [**D3D11\_SHADER\_RESOURCE\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476211) pour décrire la vue et transmettre sa description et la texture à [**ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519). En règle générale, vous devez faire correspondre la description de la vue et celle de la texture.
-5.  Nous créons ensuite un état d’échantillonneur pour la texture. Cet état d’échantillonneur utilise les données de texture appropriées pour indiquer comment la couleur d’une coordonnée de texture particulière se détermine. Nous remplissons une structure [**D3D11\_SAMPLER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476207) pour décrire l’état de l’échantillonneur. Nous transmettons ensuite la structure **D3D11\_SAMPLER\_DESC** dans un appel à [**ID3D11Device::CreateSamplerState**](https://msdn.microsoft.com/library/windows/desktop/ff476518) pour créer l’état de l’échantillonneur.
+2.  Ensuite, nous construisons une [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure qui fait référence à ces données brutes de texture.
+3.  Ensuite, nous remplir un [ **D3D11\_TEXTURE2D\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476253) structure pour décrire la texture. Ensuite, nous transmettons le [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) et **D3D11\_TEXTURE2D\_DESC** structures dans un l’appel à [ **ID3D11Device::CreateTexture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff476521) pour créer la texture.
+4.  Ensuite, nous créons une vue de ressource/nuanceur de la texture de sorte que les nuanceurs puissent utiliser la texture. Pour créer la vue de ressource de nuanceur, nous remplir un [ **D3D11\_NUANCEUR\_ressource\_vue\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476211) pour décrire la vue de ressource de nuanceur et transmet la description de vue de ressource de nuanceur et la texture à [ **ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519). En règle générale, vous devez faire correspondre la description de la vue et celle de la texture.
+5.  Nous créons ensuite un état d’échantillonneur pour la texture. Cet état d’échantillonneur utilise les données de texture appropriées pour indiquer comment la couleur d’une coordonnée de texture particulière se détermine. Nous remplir un [ **D3D11\_échantillonneur\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476207) structure pour décrire l’état d’échantillonnage. Ensuite, nous transmettons le **D3D11\_échantillonneur\_DESC** structure dans un appel à [ **ID3D11Device::CreateSamplerState** ](https://msdn.microsoft.com/library/windows/desktop/ff476518) pour créer l’état d’échantillonnage.
 6.  Enfin, nous déclarons une variable *degree* qui sert à animer le cube en le faisant tourner à chaque image.
 
 ```cppcx
@@ -384,19 +384,19 @@ auto constructSubresourceTask = loadTDTask.then([this](const std::vector<byte>& 
 float degree = 0.0f;
 ```
 
-### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. Rotation et dessin du cube avec texture, et présentation de l’image rendue
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. Rotation et le cube de texture de dessin et présentation de l’image rendue
 
 Comme dans les didacticiels précédents, l’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons la fonction inline **rotationY** (BasicMath.h) en indiquant une valeur de rotation pour définir les valeurs chargées de faire pivoter la matrice de modèle du cube sur l’axe Y. Nous appelons ensuite [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) pour mettre à jour le tampon constant et faire pivoter le modèle du cube. Ensuite, nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser la cible de sortie et la vue de profondeur/gabarit. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue, puis appelons [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) pour effacer le tampon de profondeur.
 
 Dans la boucle sans fin, nous traçons également le cube avec texture sur la surface bleue.
 
-**Pour tracer le cube avec texture**
+**Pour dessiner le cube de texture**
 
-1.  Tout d’abord, nous appelons [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) pour décrire le flux des données du tampon de vertex à l’étape de l’assembleur/entrée.
+1.  Tout d’abord, nous appelons [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) pour décrire le flux des données du tampon vertex à l’étape de l’assembleur d’entrée.
 2.  Ensuite, nous appelons [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) et [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) pour lier les tampons de vertex et d’index à l’étape de l’assembleur/entrée.
-3.  Puis nous appelons [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) à l’aide de la valeur [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) pour indiquer à l’étape de l’assembleur d’entrée d’interpréter les données de vertex comme une bande de triangles.
+3.  Ensuite, nous appelons [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) avec la [ **D3D11\_PRIMITIFS\_topologie\_ TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) valeur à spécifier pour la phase d’assembleur d’entrée interpréter les données de vertex comme une bande de triangles.
 4.  Nous appelons [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) pour initialiser l’étape du nuanceur de vertex avec son code, et [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) pour initialiser l’étape du nuanceur de pixels avec le code correspondant.
-5.  Ensuite, nous appelons [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) pour définir le tampon constant utilisé par l’étape du pipeline de nuanceur de vertex.
+5.  Ensuite, nous appelons [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) pour définir le tampon constant utilisé par l’étape du pipeline de vertex shader.
 6.  Nous appelons [**PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) pour établir la liaison entre la vue de ressource/nuanceur de la texture et l’étape du pipeline du nuanceur de pixels.
 7.  Nous appelons [**PSSetSamplers**](https://msdn.microsoft.com/library/windows/desktop/ff476471) pour attribuer l’étape du pipeline du nuanceur de pixels à l’état de l’échantillonneur.
 8.  Enfin, nous appelons [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) pour tracer le cube et l’envoyer au pipeline de rendu.
@@ -505,6 +505,6 @@ DX::ThrowIfFailed(
 );
 ```
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Dans cette rubrique, nous avons chargé les données de texture brutes et appliquées à une primitive 3D.
+Dans cette rubrique, nous avons chargé les données brutes de texture et appliqué ces données à une primitive de 3D.

@@ -3,19 +3,19 @@ title: Configuration de builds automatisées pour votre application UWP
 description: Configuration de builds automatisées pour produire des packages de chargement indépendant et/ou pour le Store.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923846"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590894"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
-Vous pouvez utiliser Visual Studio Team Services (VSTS) pour créer des builds automatisées pour les projetsUWP.
+Vous pouvez utiliser Visual Studio Team Services (VSTS) pour créer des builds automatisées pour les projets UWP.
 Cet article vous présente différentes méthodes d’utilisation.  Il vous explique également comment effectuer ces tâches à l’aide de la ligne de commande afin de procéder à l’intégration avec d’autres systèmes de génération tels que AppVeyor.
 
 ## <a name="select-the-right-type-of-build-agent"></a>Sélection du type approprié d’agent de build
@@ -23,11 +23,11 @@ Cet article vous présente différentes méthodes d’utilisation.  Il vous expl
 Choisissez le type d’agent de build que vous souhaitez que VSTS utilise lors de l’exécution du processus de génération.
 Un agent de build hébergé est déployé avec les outils et Kits de développement logiciel (SDK) les plus courants. Il fonctionne dans la plupart des cas. Consultez l’article [Logiciels sur le serveur de build hébergé](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software). Toutefois, si vous souhaitez contrôler davantage les étapes de génération, vous pouvez créer un agent de build personnalisé. Vous pouvez utiliser le tableau suivant pour vous aider à prendre une décision.
 
-| **Scénario** | **Agent personnalisé** | **Agent de build hébergé** |
+| **Scénario** | **Agent personnalisé** | **Agent de Build hébergé** |
 |-------------|----------------|----------------------|
 | Build UWP de base (y compris native .NET)| :white_check_mark: | :white_check_mark: |
 | Génération de packages pour le chargement indépendant| :white_check_mark: | :white_check_mark: |
-| Génération de packages pour la soumission au Store| :white_check_mark: | :white_check_mark: |
+| Génération de packages pour la soumission au Windows Store| :white_check_mark: | :white_check_mark: |
 | Utilisation de certificats personnalisés| :white_check_mark: | |
 | Build ciblant un Kit de développement logiciel (SDK) Windows personnalisé| :white_check_mark: |  |
 | Exécution de tests unitaires| :white_check_mark: |  |
@@ -39,17 +39,17 @@ Si vous choisissez de créer une agent de build personnalisé, vous devez utilis
 
 Pour en savoir plus, consultez [Déployer un agent sur Windows](https://www.visualstudio.com/docs/build/admin/agents/v2-windows).
 
-Pour exécuter des tests unitaires UWP, vous devez effectuer les opérations suivantes:
+Pour exécuter des tests unitaires UWP, vous devez effectuer les opérations suivantes :
 
 - Déployer et démarrer votre application
 - Exécuter l’agent VSTS en mode interactif
 - Configurer votre agent pour qu’il se connecte automatiquement après un redémarrage
 
-## <a name="set-up-an-automated-build"></a>Configurer une build automatisée
+## <a name="set-up-an-automated-build"></a>Configuration d’une build automatisée
 
 Nous allons commencer par la définition de la build UWP par défaut disponible dans VSTS, puis vous expliquer comment configurer cette définition afin d’effectuer des tâches de génération plus avancées.
 
-**Ajout du certificat de votre projet à un référentiel de code source**
+**Ajouter le certificat de votre projet à un référentiel de code source**
 
 VSTS fonctionne avec les référentiels de code basés sur TFS et sur GIT.
 Si vous utilisez un référentiel Git, ajoutez le fichier de certificat de votre projet au référentiel pour que l’agent de build puisse signer le package de l'application. Si vous ne procédez pas ainsi, le référentiel Git ignore le fichier de certificat.
@@ -59,7 +59,7 @@ Pour ajouter le fichier de certificat à votre référentiel, cliquez avec le bo
 
 Nous évoquons la [gestion avancée des certificats](#certificates-best-practices) plus loin dans ce guide.
 
-Pour créer votre première définition de build dans VSTS, accédez à l’onglet Builds, puis sélectionnez le bouton+.
+Pour créer votre première définition de build dans VSTS, accédez à l’onglet Builds, puis sélectionnez le bouton +.
 
 ![création d’une définition de build](images/building-screen2.png)
 
@@ -67,12 +67,12 @@ Dans la liste des modèles de définition de build, choisissez le modèle *Plate
 
 ![sélection d’une build UWP](images/building-screen3.png)
 
-Cette définition de build contient les tâches de génération suivantes:
+Cette définition de build contient les tâches de génération suivantes :
 
 - Restauration NuGet **\*.sln
 - Générer la solution **\*.sln
 - Publier les symboles
-- Publier l’artefact: déposer
+- Publier l’artefact : déposer
 
 #### <a name="configure-the-nuget-restore-build-task"></a>Configuration de la tâche Restauration NuGet
 
@@ -82,7 +82,7 @@ Cette tâche restaure les packages NuGet définis dans votre projet. Certains pa
 
 #### <a name="configure-the-build-solution-build-task"></a>Configuration de la tâche Générer la solution
 
-Cette tâche compile toutes les solutions solution se trouve dans le dossier de travail en fichiers binaires et produit le fichier de package d’application sortie.
+Cette tâche compile une solution qui est dans le dossier de travail pour les fichiers binaires et produit le fichier de package d’application de la sortie.
 Cette tâche utilise des arguments MSbuild.  Vous devez spécifier la valeur de ces arguments. Inspirez-vous du tableau suivant.
 
 |**Argument MSBuild**|**Valeur**|**Description**|
@@ -114,7 +114,7 @@ VSTS utilise le dossier `$(Build.ArtifactStagingDirectory)\AppxPackages` que nou
 
 ![artefacts](images/building-screen6.png)
 
-Étant donné que nous avons attribué à la propriété `UapAppxPackageBuildMode` la valeur `StoreUpload`, le dossier d’artefacts inclut le package recommandé pour la soumission au Store (.appxupload). Notez que vous pouvez également soumettre un package d’application standard (.appx/.msix) ou un ensemble d’applications (.appxbundle/.msixbundle) dans le Windows Store. Dans le cadre de cet article, nous allons utiliser le fichier .appxupload.
+Étant donné que nous avons attribué à la propriété `UapAppxPackageBuildMode` la valeur `StoreUpload`, le dossier d’artefacts inclut le package recommandé pour la soumission au Store (.appxupload). Notez que vous pouvez également envoyer un package d’application standard (.appx/.msix) ou un lot d’applications (.appxbundle/.msixbundle) vers le Store. Dans le cadre de cet article, nous allons utiliser le fichier .appxupload.
 
 >[!NOTE]
 > Par défaut, l’agent VSTS conserve les derniers packages de l'application générés. Si vous voulez stocker uniquement les artefacts de la version actuelle, configurez la build pour nettoyer le répertoire des fichiers binaires. Pour ce faire, ajoutez une variable nommée `Build.Clean` et définissez-la sur la valeur `all`. Plus en savoir plus, consultez [Spécifier le référentiel](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way).
@@ -123,7 +123,7 @@ VSTS utilise le dossier `$(Build.ArtifactStagingDirectory)\AppxPackages` que nou
 
 Ensuite, vous devez générer la définition de build pour créer une build automatisée. Le tableau suivant décrit chaque type de build automatisée que vous pouvez créer.
 
-|**Type de build**|**Artefact**|**Fréquence recommandée**|**Description**|
+|**Type de Build**|**Artifact**|**Fréquence recommandée**|**Description**|
 |-----------------|------------|-------------------------|---------------|
 |Intégration continue|Journal de génération, Résultats des tests|Chaque validation|Ce type de build est rapide et s’exécute plusieurs fois par jour.|
 |Build de déploiement continu pour le chargement indépendant|Packages de déploiement|Quotidienne |Ce type de build peut inclure des tests unitaires, mais cela prend un peu plus de temps. Cela permet d’effectuer des tests manuels et vous pouvez l’intégrer avec d’autres outils comme HockeyApp.|
@@ -138,7 +138,7 @@ Ce type de build vous aide à diagnostiquer rapidement les problèmes liés au c
 Si vous voulez exécuter des tests unitaires UWP dans le cadre de votre build CI, vous devez utiliser un agent de build personnalisé à la place de l’agent de build hébergé.
 
 >[!NOTE]
-> Si vous regroupez plusieurs applications dans une même solution, il se peut que vous receviez une erreur. Consultez la rubrique suivante pour vous aider à résoudre l’erreur: [Traiter les erreurs qui s’affichent lorsque vous regroupez plusieurs applications dans une même solution.](#bundle-errors)
+> Si vous regroupez plusieurs applications dans une même solution, il se peut que vous receviez une erreur. Consultez la rubrique suivante pour résoudre cette erreur : [Résoudre les erreurs qui apparaissent lorsque vous regroupez plusieurs applications dans la même solution.](#bundle-errors)
 
 ### <a name="configure-a-ci-build-definition"></a>Configuration d’une définition de build CI
 
@@ -146,8 +146,7 @@ Utilisez le modèle UWP par défaut pour créer une définition de build. Ensuit
 
 ![Déclencheur CI](images/building-screen7.png)
 
-Dans la mesure où la build CI n’est pas déployée pour les utilisateurs, il est judicieux de conserver les différents numéros de contrôle de version afin d’éviter toute confusion avec les builds CD. Exemple :
-`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
+Dans la mesure où la build CI n’est pas déployée pour les utilisateurs, il est judicieux de conserver les différents numéros de contrôle de version afin d’éviter toute confusion avec les builds CD. Par exemple : `$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
 
 #### <a name="configure-a-custom-build-agent-for-unit-testing"></a>Configurer un agent de build personnalisé pour les tests unitaires
 
@@ -171,15 +170,14 @@ Les tests unitaires UWP sont exécutés dans le contexte d’un fichier appxreci
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appxrecipe
 ```
 
-Afin que les tests s'exécutent, un paramètre de console devra être ajouté au fichier vstest.console.exe. Ce paramètre peut être fourni via: **Options d'exécution => Autres options de console**. Veuillez ajouter le paramètre suivant:
+Afin que les tests s'exécutent, un paramètre de console devra être ajouté au fichier vstest.console.exe. Ce paramètre peut être fournir via : **Options d’exécution = > autres options de console**. Veuillez ajouter le paramètre suivant :
 
 ```ps
 /framework:FrameworkUap10
 ```
 
 >[!NOTE]
-> Utilisez la commande suivante pour exécuter les tests unitaires localement à partir de la ligne de commande:
-`"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
+> Utilisez la commande suivante pour exécuter les tests unitaires localement à partir de la ligne de commande : `"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
 
 #### <a name="access-test-results"></a>Accès aux résultats des tests
 
@@ -206,16 +204,16 @@ L’utilisation de la chaîne d’outil native .NET est une partie importante du
 
 #### <a name="address-errors-that-appear-when-you-bundle-more-than-one-app-in-the-same-solution"></a>Traiter les erreurs qui s’affichent lorsque vous regroupez plusieurs applications dans une même solution
 
-Si vous ajoutez plusieurs projets UWP à votre solution puis tentez de créer une offre groupée, il se peut que vous receviez une erreur comme celle-ci:
+Si vous ajoutez plusieurs projets UWP à votre solution puis tentez de créer une offre groupée, il se peut que vous receviez une erreur comme celle-ci :
 
 ```ps
 MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle
 ```
 
 Cette erreur s’affiche car l’application qui doit apparaître dans l’offre groupée n’est pas clairement définie au niveau de la solution.
-Pour résoudre ce problème, ouvrez chaque fichier de projet et ajoutez les propriétés suivantes à la fin du premier élément `<PropertyGroup>`:
+Pour résoudre ce problème, ouvrez chaque fichier de projet et ajoutez les propriétés suivantes à la fin du premier élément `<PropertyGroup>` :
 
-|**Projet**|**Propriétés**|
+|**Project**|**Propriétés**|
 |-------|----------|
 |App|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
@@ -224,7 +222,7 @@ Ensuite, supprimez l’argument msbuild `AppxBundle` de l’étape de générati
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>Configuration d’une build de déploiement continu pour le chargement indépendant
 
-Lorsque ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’un ensemble d’applications application à partir de la section artefacts de la page de résultats de build.
+Lorsque ce type de build est terminée, les utilisateurs peuvent télécharger le fichier de groupement d’application à partir de la section des artefacts de la page de résultats de build.
 Si vous voulez effectuer un test bêta de l’application en créant une distribution plus complète, vous pouvez utiliser le service HockeyApp. Ce service offre des fonctionnalités améliorées de test bêta, d’analyse des utilisateurs et de diagnostic d’incidents.
 
 ### <a name="applying-version-numbers-to-your-builds"></a>Application des numéros de version à vos builds
@@ -238,79 +236,79 @@ Définissez le format de numéro de build dans l’onglet *Général* de la déf
 
 ![version de la build](images/building-screen12.png)
 
-Par exemple, si vous définissez le format de numéro de build sur la valeur suivante:
+Par exemple, si vous définissez le format de numéro de build sur la valeur suivante :
 
 ```ps
 $(BuildDefinitionName)_1.1.$(DayOfYear)$(Rev:r).0
 ```
 
-VSTS génère un numéro de version comme:
+VSTS génère un numéro de version comme :
 
 ```ps
 CI_MyUWPApp_1.1.2501.0
 ```
 
 >[!NOTE]
->Le Store exige que le dernier numéro de la version soit0.
+>Le Store exige que le dernier numéro de la version soit 0.
 
-Pour pouvoir extraire le numéro de version et l’appliquer au manifeste et/ou aux fichiers `AssemblyInfo`, utilisez un script PowerShell personnalisé (disponible [ici](https://go.microsoft.com/fwlink/?prd=12560&pver=14&plcid=0x409&clcid=0x9&ar=DevCenter&sar=docs)). Ce script lit le numéro de version à partir de la variable d’environnement `BUILD_BUILDNUMBER`, puis modifie les fichiers AssemblyInfo et AppxManifest. Veillez à ajouter ce script à votre référentiel de code source, puis à configurer une tâche de génération PowerShell comme indiqué ici:
+Pour pouvoir extraire le numéro de version et l’appliquer au manifeste et/ou aux fichiers `AssemblyInfo`, utilisez un script PowerShell personnalisé (disponible [ici](https://go.microsoft.com/fwlink/?prd=12560&pver=14&plcid=0x409&clcid=0x9&ar=DevCenter&sar=docs)). Ce script lit le numéro de version à partir de la variable d’environnement `BUILD_BUILDNUMBER`, puis modifie les fichiers AssemblyInfo et AppxManifest. Veillez à ajouter ce script à votre référentiel de code source, puis à configurer une tâche de génération PowerShell comme indiqué ici :
 
 ![mise à jour de version](images/building-screen13.png)
 
 La variable `$(AppxVersion)` contient le numéro de version. Vous pouvez utiliser ce numéro dans d’autres étapes de génération.
 
-#### <a name="optional-integrate-with-hockeyapp"></a>Facultatif: Intégration avec HockeyApp
+#### <a name="optional-integrate-with-hockeyapp"></a>Facultatif : Intégrer avec HockeyApp
 
 D’abord, installez l’extension Visual Studio [HockeyApp](https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp). Vous devrez installer cette extension en tant qu’administrateur VSTS.
 
 ![application hockey](images/building-screen14.png)
 
-Ensuite, configurez la connexion HockeyApp en vous aidant de ce guide: [Utilisation de HockeyApp avec Visual Studio Team Services (VSTS) ou Team Foundation Server (TFS).](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)
+Ensuite, configurez la connexion de HockeyApp à l’aide de ce guide : [Comment utiliser HockeyApp avec Visual Studio Team Services (VSTS) ou Team Foundation Server (TFS).](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)
 Vous pouvez utiliser votre compte Microsoft, votre compte de réseau social ou simplement une adresse e-mail pour configurer votre compte HockeyApp. Le mode Gratuit inclut deux applications, un propriétaire et aucune restriction de données.
 
 Ensuite, vous pouvez créer une application HockeyApp manuellement ou en chargeant un fichier de package d’application existant. Pour plus d'informations, consultez [Création d'une nouvelle application](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app).
 
-Pour utiliser un fichier de package d’application existant, ajouter une étape de génération et définissez le paramètre de chemin d’accès du fichier binaire de l’étape de génération.
+Pour utiliser un fichier de package d’application existant, ajoutez une étape de génération et définissez le paramètre de chemin d’accès du fichier binaire de l’étape de génération.
 
 ![configuration de l’application hockey](images/building-screen15.png)
 
-Pour définir ce paramètre, combinez le nom de l’application, la variable AppxVersion et les plateformes prises en charge en une seule chaîne comme celle-ci:
+Pour définir ce paramètre, combinez le nom de l’application, la variable AppxVersion et les plateformes prises en charge en une seule chaîne comme celle-ci :
 
 ```ps
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-Bien que la tâche HockeyApp vous permet de spécifier le chemin d’accès au fichier de symboles, il est recommandé d’inclure les symboles avec l’offre groupée.
+Bien que la tâche de HockeyApp vous permet de spécifier le chemin d’accès au fichier de symboles, il est recommandé d’inclure les symboles avec l’offre groupée.
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>Configuration d’une build de déploiement continu qui soumet un package au Store
 
 Pour générer des packages de soumission au Store, associez votre application au Store à l’aide de l’Assistant Association au Store dans Visual Studio.
 
-![association au Store](images/building-screen16.png)
+![association au Windows Store](images/building-screen16.png)
 
 L'assistant d'association du Store génère un fichier nommé Package.StoreAssociation.xml qui contient les informations d’association au Store. Si vous stockez votre code source dans un référentiel public tel que GitHub, ce fichier contient tous les noms réservés de l’application pour ce compte. Vous pouvez exclure ou supprimer ce fichier avant de le rendre publique.
 
-Si vous n’avez pas accès au compte de l’espace partenaires qui a été utilisé pour publier l’application, vous pouvez suivre les instructions fournies dans ce document: [vous créez une application pour une partie 3e? Création du package de leur application du Windows Store](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
+Si vous n’avez pas accès au compte de partenaires qui a été utilisé pour publier l’application, vous pouvez suivre les instructions fournies dans ce document : [Création d’une application pour un 3e partie ? Comment créer un package leur application de Store](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
 
-Vous devez ensuite vérifier que l’étape de génération inclut le paramètre suivant:
+Vous devez ensuite vérifier que l’étape de génération inclut le paramètre suivant :
 
 ```ps
 /p:UapAppxPackageBuildMode=StoreUpload
 ```
 
-Cela génère un fichier de chargement qui peut être soumis au Windows Store.
+Cela générera un fichier de téléchargement peut être envoyé vers le Store.
 
 #### <a name="configure-automatic-store-submission"></a>Configuration de la soumission automatique au Store
 
 Utilisez l’extension Visual Studio Team Services pour le Microsoft Store pour l’intégration avec l’API Store et envoyez votre package d'application au Store.
 
-Vous devez vous connecter à votre compte espace partenaires avec Azure Active Directory (AD) et créez une application dans votre Active Directory pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension.
+Vous avez besoin pour vous connecter à votre compte espace partenaires avec Azure Active Directory (AD), puis créer une application dans votre AD pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension.
 
-Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et configurer avec votre ID d’application et l’emplacement du fichier de chargement.
+Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et configurez-le avec votre ID d’application et l’emplacement du fichier de téléchargement.
 
-![configurer l’espace partenaires](images/building-screen17.png)
+![configurer des partenaires](images/building-screen17.png)
 
-Où la valeur du paramètre `Package File` est:
+Où la valeur du paramètre `Package File` est :
 
 ```ps
 $(Build.ArtifactStagingDirectory)\
@@ -327,9 +325,9 @@ Vous devez activer manuellement cette build. Vous pouvez l’utiliser pour mettr
 
 Si vous souhaitez distribuer votre application sans la publier dans le Store, vous pouvez charger indépendamment votre application directement sur les appareils, dans la mesure où ces appareils approuvent le certificat utilisé pour signer le package de l’application.
 
-Utilisez le script PowerShell `Add-AppDevPackage.ps1` pour installer des applications. Ce script s’ajouter le certificat à la section Certification racine de confiance pour l’ordinateur local et ensuite installer ou mettre à jour le fichier de package d’application.
+Utilisez le script PowerShell `Add-AppDevPackage.ps1` pour installer des applications. Ce script est ajouter le certificat à la section de Certification racines pour l’ordinateur local et ensuite installer ou mettre à jour le fichier de package d’application.
 
-#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Chargement indépendant de votre application avec la mise à jour anniversaire de Windows10
+#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Chargement indépendant de votre application avec la mise à jour anniversaire de Windows 10
 
 Dans la mise à jour Windows 10 anniversaire, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en choisissant le bouton Installer dans une boîte de dialogue.
 
@@ -338,7 +336,7 @@ Dans la mise à jour Windows 10 anniversaire, vous pouvez double-cliquez sur le 
 >[!NOTE]
 > Cette méthode n’installe pas le certificat ou les dépendances associées.
 
-Si vous souhaitez distribuer vos packages d’application Windows à partir d’un site Web comme VSTS ou HockeyApp, vous devez ajouter ce site à la liste des sites de confiance dans votre navigateur. Sinon, Windows marque le fichier comme verrouillé.
+Si vous souhaitez distribuer vos packages d’application Windows à partir d’un site Web tels que VSTS ou HockeyApp, vous devez l’ajouter à la liste des sites de confiance dans votre navigateur. Sinon, Windows marque le fichier comme verrouillé.
 
 <span id="certificates-best-practices"/>
 
@@ -358,19 +356,19 @@ MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.1
 
 Vous pouvez utiliser l’outil Pvk2Pfx pour générer un fichier PFX contenant la clé privée protégée par un mot de passe.
 
-Fournissez ces certificats pour chaque rôle d’ordinateur:
+Fournissez ces certificats pour chaque rôle d’ordinateur :
 
-|**Ordinateur**|**Utilisation**|**Certificat**|**Magasin de certificats**|
+|**Machine**|**Utilisation**|**Certificate**|**Certificat Store**|
 |-----------|---------|---------------|---------------------|
 |Ordinateur de développement/génération|Signature des builds|MyCert.PFX|Utilisateur actuel/Personnel|
-|Ordinateur de développement/génération|Exécution|MyCert.cer|Ordinateur local/Personnes autorisées|
-|Utilisateur|Exécution|MyCert.cer|Ordinateur local/Personnes autorisées|
+|Ordinateur de développement/génération|Run|MyCert.cer|Ordinateur local/Personnes autorisées|
+|Utilisateur|Run|MyCert.cer|Ordinateur local/Personnes autorisées|
 
->Remarque: vous pouvez également utiliser un certificat d’entreprise déjà approuvé par vos utilisateurs.
+>Remarque: Vous pouvez également utiliser un certificat d’entreprise qui est déjà approuvé par vos utilisateurs.
 
 #### <a name="sign-your-uwp-app"></a>Connexion de votre application UWP
 
-Visual Studio et MSBuild offrent différentes options pour gérer le certificat que vous utilisez pour signer l’application:
+Visual Studio et MSBuild offrent différentes options pour gérer le certificat que vous utilisez pour signer l’application :
 
 L’une des options consiste à inclure le certificat avec la clé privée (normalement sous la forme d’un fichier .PFX) dans votre solution, puis à référencer le pfx dans le fichier de projet. Vous pouvez gérer cela à l’aide de l’onglet Package de l’éditeur de manifeste.
 
@@ -388,7 +386,7 @@ Pour enregistrer votre certificat, il vous suffit de double-cliquer sur le fichi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Créer votre application .NET pour Windows](https://www.visualstudio.com/docs/build/get-started/dot-net)
-- [Création de packages d’applicationsUWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [Chargement indépendant d’applications métier dans Windows10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-- [Créer un certificat de signature de package](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Générer votre application .NET pour Windows](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [Empaquetage d’applications UWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Chargement de version test des applications métier dans Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [Créer un certificat pour la signature du package](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

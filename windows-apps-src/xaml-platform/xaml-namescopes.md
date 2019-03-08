@@ -4,14 +4,14 @@ title: Namescopes XAML
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe6119e9cac162486d23472f5d5876924b7ef9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928420"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589814"
 ---
 # <a name="xaml-namescopes"></a>Namescopes XAML
 
@@ -28,9 +28,9 @@ Vous pouvez également utiliser la méthode utilitaire [**FindName**](https://ms
 
 ### <a name="more-about-build-actions-and-xaml"></a>Plus d’informations sur les actions de génération et le langage XAML
 
-Ce qui se passe techniquement, c’est que le code XAML lui-même subit une passe du compilateur de balisage en même temps que la classe partielle qu’il définit pour le code-behind et lui-même sont compilés ensemble. Chaque élément objet avec un attribut **Name** ou [x:Name](x-name-attribute.md) défini dans le balisage génère un champ interne portant un nom qui correspond au nom XAML. Ce champ est initialement vide. Ensuite, la classe génère une méthode **InitializeComponent** qui est appelée uniquement à l’issue du chargement de tout le code XAML. Au sein de la logique **InitializeComponent**, chaque champ interne est alors renseigné à l’aide de la valeur de retour [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) de la chaîne de nom équivalente. Vous pouvez observer cette infrastructure à titre personnel en examinant les fichiers «.g» (générés) créés pour chaque page XAML dans le sous-dossier /obj d’un projet d’application Windows Runtime à l’issue de la compilation. Vous pouvez également considérer les champs et la méthode **InitializeComponent** comme des membres de vos assemblys obtenus en y réfléchissant ou en examinant le contenu linguistique de leur interface.
+Ce qui se passe techniquement, c’est que le code XAML lui-même subit une passe du compilateur de balisage en même temps que la classe partielle qu’il définit pour le code-behind et lui-même sont compilés ensemble. Chaque élément objet avec un attribut **Name** ou [x:Name](x-name-attribute.md) défini dans le balisage génère un champ interne portant un nom qui correspond au nom XAML. Ce champ est initialement vide. Ensuite, la classe génère une méthode **InitializeComponent** qui est appelée uniquement à l’issue du chargement de tout le code XAML. Au sein de la logique **InitializeComponent**, chaque champ interne est alors renseigné à l’aide de la valeur de retour [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) de la chaîne de nom équivalente. Vous pouvez observer cette infrastructure à titre personnel en examinant les fichiers « .g » (générés) créés pour chaque page XAML dans le sous-dossier /obj d’un projet d’application Windows Runtime à l’issue de la compilation. Vous pouvez également considérer les champs et la méthode **InitializeComponent** comme des membres de vos assemblys obtenus en y réfléchissant ou en examinant le contenu linguistique de leur interface.
 
-**Remarque**spécifiquement pour les extensions de composant Visual c++ (C++ / CX) les applications, le champ de sauvegarde d’une référence de **x: Name** n’est pas créé pour l’élément racine d’un fichier XAML. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++/CX, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Remarque**  spécifiquement pour les extensions du composant Visual C++ (C++ / c++ / CX) applications, un champ de stockage pour un **x : Name** référence n’est pas créée pour l’élément racine d’un fichier XAML. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++/CX, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>Création d’objets au moment de l’exécution avec XamlReader.Load
 
@@ -74,15 +74,15 @@ Les modèles en langage XAML offrent la possibilité de réutiliser et réappliq
 </Page>
 ```
 
-Ici, le même modèle est appliqué à deux contrôles différents. Si les modèles n’avaient pas de namescopes XAML discrets, le nom «MyTextBlock» utilisé dans le modèle entraînerait un conflit de noms. Chaque instanciation du modèle possède son propre namescope XAML, si bien que dans cet exemple, le namescope XAML de chaque modèle instancié contiendrait exactement un seul nom. Toutefois, le namescope XAML racine ne contient pas le nom de l’un ou l’autre des modèles.
+Ici, le même modèle est appliqué à deux contrôles différents. Si les modèles n’avaient pas de namescopes XAML discrets, le nom « MyTextBlock » utilisé dans le modèle entraînerait un conflit de noms. Chaque instanciation du modèle possède son propre namescope XAML, si bien que dans cet exemple, le namescope XAML de chaque modèle instancié contiendrait exactement un seul nom. Toutefois, le namescope XAML racine ne contient pas le nom de l’un ou l’autre des modèles.
 
 En raison des namescopes XAML distincts, la recherche d’éléments nommés au sein d’un modèle à partir de l’étendue de la page dans laquelle le modèle est appliqué requiert une autre technique. Au lieu d’appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) sur un objet dans l’arborescence d’objets, vous obtenez d’abord l’objet auquel le modèle est appliqué, puis vous appelez [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416). Si vous êtes l’auteur d’un contrôle et que vous générez une convention selon laquelle un élément nommé particulier dans un modèle appliqué est la cible d’un comportement défini par le contrôle lui-même, vous pouvez utiliser la méthode **GetTemplateChild** de votre code d’implémentation du contrôle. La méthode **GetTemplateChild** est protégée, donc seul l’auteur du contrôle y a accès. En outre, il existe des conventions que les auteurs de contrôles doivent suivre afin de nommer des composants et des composants de modèles pour signaler ces derniers comme des valeurs d’attribut appliquées à la classe des contrôles. Cette technique rend détectables les noms des composants importants par les utilisateurs des contrôles, susceptibles de vouloir appliquer un autre modèle, ce qui impliquerait de remplacer les composants nommés afin de conserver les fonctionnalités des contrôles.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Vue d’ensemble du langage XAML](xaml-overview.md)
-* [Attribut x:Name](x-name-attribute.md)
-* [Démarrage rapide: modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Vue d’ensemble du langage XAML](xaml-overview.md)
+* [attribut x : Name](x-name-attribute.md)
+* [Démarrage rapide : Modèles de contrôle](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
  

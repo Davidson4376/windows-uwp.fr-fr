@@ -4,14 +4,14 @@ title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.date: 06/03/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046755"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648824"
 ---
 # <a name="sockets"></a>Sockets
 Les sockets constituent une technologie de transfert de données de faible niveau en priorité du nombre de protocoles de réseau implémentés. UWP offre les classes TCP et socket UDP pour les applications de serveur client ou pair à paire, que les connexions soient de longue durée ou qu'une connexion établie ne soit pas requise.
@@ -35,7 +35,7 @@ Vous devrez [déclarer une fonctionnalité d’application](../packaging/app-cap
 Au lieu de `privateNetworkClientServer`, vous pouvez déclarer `internetClientServer` si vous vous connectez via Internet. **StreamSocket** et **StreamSocketListener** ont toutes deux besoin de l'une de ces fonctionnalités d'application à déclarer.
 
 ### <a name="an-echo-client-and-server-using-tcp-sockets"></a>Un écho client et serveur à l'aide de sockets TCP
-Construire une [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) et commencer à écouter les connexions TCP entrantes. L'événement [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) est déclenché chaque fois qu’un client établit une connexion avec la **StreamSocketListener **.
+Construire une [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) et commencer à écouter les connexions TCP entrantes. L'événement [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) est déclenché chaque fois qu’un client établit une connexion avec la **StreamSocketListener** .
 
 Construisez également un [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), établissez une connexion au serveur, envoyez une demande et recevez une réponse.
 
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-L’exemple suivant est adéquat pour n’importe quel langage UWP et pas seulement pour C#. Il repose sur le comportement dans [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) et [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) qui envoient les lots ensemble. La technique appelle [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) sur ce flux de sortie qui, à compter de Windows 10, est assuré de revenir uniquement une fois toutes les opérations sur le flux de sortie terminées.
+L’exemple suivant est adéquat pour n’importe quel langage UWP et pas seulement pour C#. Il repose sur le comportement dans [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) et [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) qui envoient les lots ensemble. Les appels technique [ **FlushAsync** ](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) sur ce flux de sortie qui, à compter de Windows 10, est garanti pour retourner uniquement une fois que toutes les opérations sur le flux de sortie s’est terminé.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1276,14 +1276,14 @@ Certaines limitations importantes découlent de l’utilisation d’envoi par lo
 
 -   Vous ne pouvez pas modifier le contenu des instances **IBuffer** en cours d’écriture tant que l’écriture asynchrone n’est pas terminée.
 -   Le modèle **FlushAsync** fonctionne uniquement sur **StreamSocket.OutputStream** et **DatagramSocket.OutputStream**.
--   Le modèle **FlushAsync** fonctionne uniquement dans Windows 10 à partir.
+-   Le **FlushAsync** modèle fonctionne uniquement dans Windows 10 et qui interviennent.
 -   Dans les autres cas, utilisez [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) au lieu du modèle **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Partage de port pour DatagramSocket
 Vous pouvez configurer une [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) pour qu'elle coexiste avec d’autres sockets Win32 ou UWP en multidiffusion, liée à la même adresse et au même port. Pour cela, définissez la [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) sur `true` avant de lier ou de connecter la socket. Vous accédez à une instance de **DatagramSocketControl** à partir de l'objet **DatagramSocket** lui-même via sa propriété [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control).
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Fourniture d’un certificat client avec la classe StreamSocket
-[**Windows.Networking.StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application client communique. Dans certains cas, l’application client doit également s’authentifier auprès du serveur à l’aide d’un certificat client SSL/TLS. Vous pouvez fournir au certificat client la propriété [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) avant de lier ou de connecter la socket (elle doit être définie avant l'établissement d'une liaison SSL/TLS). Vous accédez à une instance de **StreamSocketControl** à partir de l'objet **StreamSocket** lui-même via sa propriété [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control). Si le serveur demande le certificat client, Windows répond avec le certificat client que vous avez fourni.
+[**StreamSocket** ](/uwp/api/Windows.Networking.Sockets.StreamSocket) prend en charge à l’aide de SSL/TLS pour authentifier le serveur qui communique avec l’application cliente. Dans certains cas, l’application client doit également s’authentifier auprès du serveur à l’aide d’un certificat client SSL/TLS. Vous pouvez fournir au certificat client la propriété [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) avant de lier ou de connecter la socket (elle doit être définie avant l'établissement d'une liaison SSL/TLS). Vous accédez à une instance de **StreamSocketControl** à partir de l'objet **StreamSocket** lui-même via sa propriété [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control). Si le serveur demande le certificat client, Windows répond avec le certificat client que vous avez fourni.
 
 Utilisez un remplacement de [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) qui emploie un [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel), comme illustré dans cet exemple de code minimal.
 
@@ -1377,10 +1377,10 @@ Le constructeur [**HostName**](/uwp/api/Windows.Networking.HostName) peut produi
 * [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques connexes
 * [Communication entre les applications](/windows/uwp/app-to-app/index)
-* [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Comment définir les fonctionnalités de réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
+* [Concurrence et des opérations asynchrones avec C / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Comment définir des fonctionnalités de réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
 * [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 ## <a name="samples"></a>Exemples

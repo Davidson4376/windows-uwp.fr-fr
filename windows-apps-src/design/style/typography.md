@@ -3,15 +3,15 @@ description: Découvrez comment utiliser la typographie de votre application pou
 title: Typographie des applications UWP
 ms.date: 04/06/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944721"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610024"
 ---
 # <a name="typography"></a>Typographie
 
@@ -40,7 +40,7 @@ Pour afficher les langues autres que l’anglais ou pour sélectionner une autre
 
 ## <a name="size-and-scaling"></a>Taille et mise à l’échelle
 
-Les tailles de police utilisées dans les applications UWP sont automatiquement mises à l’échelle sur tous les appareils. L’algorithme de mise à l’échelle garantit qu’une police de 24pixels sur un appareil Surface Hub placé à une distance de 3mètres est aussi lisible qu’une police de 24pixels sur un téléphone doté d’un écran 5pouces distant de quelques centimètres.
+Les tailles de police utilisées dans les applications UWP sont automatiquement mises à l’échelle sur tous les appareils. L’algorithme de mise à l’échelle garantit qu’une police de 24 pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible qu’une police de 24 pixels sur un téléphone doté d’un écran 5 pouces distant de quelques centimètres.
 
 ![distances d’affichage des différents appareils](images/type/scaling-chart.svg)
 
@@ -154,7 +154,7 @@ Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous
     :::column-end:::
 :::row-end:::
 
-**Remarque**: si les conteneurs ne sont pas clairement définis (par exemple, sans couleur d’arrière-plan de différenciation), ou s’il existe un lien pour afficher plus de texte, utilisez des ellipses.
+**Remarque** : Si les conteneurs ne sont pas bien définis (par exemple, aucune différenciation couleur d’arrière-plan), ou lorsqu’il existe un lien pour afficher plus de texte, puis utiliser des points de suspension.
 
 ## <a name="languages"></a>Langues 
 
@@ -192,7 +192,7 @@ Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Malgun Gothic;">Malgun Gothic</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left">Police d’interface utilisateur pour le coréen.</td>
 </tr>
 <tr class="even">
@@ -207,17 +207,17 @@ Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Myanmar Text;">Myanmar Text</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left">Police de substitution pour le script du Myanmar.</td>
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
-<td align="left">Normal, Semilight, Gras</td>
+<td align="left">Normal, Semi-fin, Gras</td>
 <td align="left">Police d’interface utilisateur pour les scripts d’Asie du Sud (bangla, dévanâgarî, goudjrati, gurmukhi, kannada, malayalam, odia, ol tchiki, cinghalais, sora sompeng, tamoul et telugu)</td>
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: SimSun;">SimSun</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left">Police Chinese UI héritée. </td>
 </tr>
 <tr class="even">
@@ -293,7 +293,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <tbody>
 <tr class="odd">
 <td style="font-family: Cambria;">Cambria</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left">Police serif qui prend en charge les scripts d’Europe (latin, grec et cyrillique).</td>
 </tr>
 <tr class="even">
@@ -302,7 +302,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <td align="left">Police serif à largeur fixe qui prend en charge les scripts d’Europe et du Moyen-Orient (latin, grec, cyrillique, arabe, arménien et hébreu).</td>
 </tr>
 <tr class="odd">
-<td style="font-family: Georgia;">Georgia</td>
+<td style="font-family: Georgia;">Géorgie</td>
 <td align="left">Normal, Italique, Gras, Italique gras</td>
 <td align="left">Prend en charge les scripts d’Europe (latin, grec et cyrillique).</td>
 </tr>
@@ -329,23 +329,23 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <tbody>
 <tr class="odd">
 <td align="left">Segoe MDL2 Assets</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left">Police d’interface utilisateur pour les icônes d’application. Pour plus d’informations, voir l’article <a href="segoe-ui-symbol-font.md">Recommandations en matière d’icônes Segoe MDL2</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Emoji</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Symbol</td>
-<td align="left">Normal</td>
+<td align="left">Normale</td>
 <td align="left">Police de substitution pour les symboles</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
 * [Ressources de thème XAML](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)

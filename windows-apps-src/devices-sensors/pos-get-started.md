@@ -3,14 +3,14 @@ title: Prise en main de la technologie de point de service
 description: Cet article comporte des informations sur la prise en main des API UWP de point de vente.
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows10, uwp, point de vente, pdv
+keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115999"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661154"
 ---
 # <a name="getting-started-with-point-of-service"></a>Prise en main de la technologie de point de service
 
@@ -28,7 +28,7 @@ Lorsque vous connectez un périphérique de point de service comme un scanneur d
 Certains périphériques de point de service peuvent ne pas apparaître dans l’application Paramètres tant qu'ils n'ont pas été énumérés par programmation à l’aide des API de point de service.
 
 ### <a name="getting-a-single-point-of-service-device-with-getdefaultasync"></a>Obtention d’un seul périphérique de point de service avec GetDefaultAsync
-Dans un cas d’utilisation simple, vous pouvez n'avoir qu'un seul périphérique de point de service connecté au PC sur lequel l’application s'exécute, et souhaiter configurer celui-ci aussi rapidement que possible. Pour ce faire, récupérez l’appareil «par défaut» avec la méthode **GetDefaultAsync**, comme illustré ici.
+Dans un cas d’utilisation simple, vous pouvez n'avoir qu'un seul périphérique de point de service connecté au PC sur lequel l’application s'exécute, et souhaiter configurer celui-ci aussi rapidement que possible. Pour ce faire, récupérez l’appareil « par défaut » avec la méthode **GetDefaultAsync**, comme illustré ici.
 
 ```Csharp
 using Windows.Devices.PointOfService;
@@ -36,7 +36,7 @@ using Windows.Devices.PointOfService;
 BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 ```
 
-Si l’appareil par défaut est trouvé, l’objet appareil récupéré est prêt pour la revendication. La «revendication» d'un appareil fournit à une application un accès exclusif à celui-ci, ce qui empêche les conflits de commandes provenant de divers processus.
+Si l’appareil par défaut est trouvé, l’objet appareil récupéré est prêt pour la revendication. La « revendication » d'un appareil fournit à une application un accès exclusif à celui-ci, ce qui empêche les conflits de commandes provenant de divers processus.
 
 > [!NOTE] 
 > Si plusieurs périphériques de point de service sont connectés au PC, **GetDefaultAsync** renvoie le premier appareil détecté. Pour cette raison, utilisez **FindAllAsync**, sauf si êtes sûr qu’un seul périphérique de point de service est visible par l’application.
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>Conservation de l’appareil
-Lorsque vous utilisez un périphérique de point de service via une connexion réseau ou Bluetooth, il se peut que vous soyez amené à partager l’appareil avec d’autres applications sur le réseau. (Pour plus d’informations à ce sujet, voir [Partage d'appareils](#sharing-a-device-between-apps).) Dans d'autres cas, vous voudrez peut-être rester connecté à l’appareil pour une utilisation prolongée. Cet exemple montre comment conserver un scanneur de code-barres revendiqué après qu’une autre application a demandé la libération de l’appareil.
+Lorsque vous utilisez un périphérique de point de service via une connexion réseau ou Bluetooth, il se peut que vous soyez amené à partager l’appareil avec d’autres applications sur le réseau. (Pour plus d’informations à ce sujet, consultez [appareils partage](#sharing-a-device-between-apps).) Dans d’autres cas, vous souhaiterez conserver l’appareil pour un usage prolongé. Cet exemple montre comment conserver un scanneur de code-barres revendiqué après qu’une autre application a demandé la libération de l’appareil.
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -207,10 +207,10 @@ if (claimedBarcodeScanner != null)
 > [!NOTE]
 > Les classes de périphériques de point de service revendiquées et non revendiquées implémentent l'[interface IClosable](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). Si un périphérique est connecté à une application via le réseau ou Bluetooth, les objets revendiqués et non revendiqués doivent être supprimés avant qu'une autre application puisse s'y connecter.
 
-## <a name="see-also"></a>Articles associés
-+ [Exemple de scanneur de code-barres](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Exemple de caisse enregistreuse]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
+## <a name="see-also"></a>Voir également
++ [Exemple de scanneur de codes-barres](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
++ [Exemple de tiroir de trésorerie]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [Exemple d’affichage de ligne](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [Exemple de lecteur de bande magnétique](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [Exemple d’imprimante de POS](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
++ [Exemple de POSPrinter](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

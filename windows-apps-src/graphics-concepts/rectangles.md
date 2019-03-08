@@ -1,6 +1,6 @@
 ---
 title: Rectangles
-description: Dans la programmationDirect3D et Windows, les objets à l’écran sont appelés «rectangles englobants».
+description: Dans la programmation Direct3D et Windows, les objets à l'écran sont appelés « rectangles englobants ».
 ms.assetid: 3B78AE66-2C1A-4191-BDCA-D737E33460BA
 keywords:
 - Rectangles
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947911"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608014"
 ---
 # <a name="rectangles"></a>Rectangles
 
 
-Dans la programmationDirect3D et Windows, les objets à l'écran sont appelés «rectangles englobants». Les côtés d’un rectangle englobant sont toujours parallèles aux côtés de l’écran, ce qui signifie que le rectangle peut être décrit par deux points: l’angle supérieur gauche et l’angle inférieur droit.
+Dans la programmation Direct3D et Windows, les objets à l'écran sont appelés « rectangles englobants ». Les côtés d'un rectangle englobant sont toujours parallèles aux côtés de l'écran, ce qui signifie que le rectangle peut être décrit par deux points : l'angle supérieur gauche et l'angle inférieur droit.
 
 ## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>Rectangles englobants
 
@@ -37,14 +37,14 @@ Dans l’exemple précédent, les membres left et top sont les coordonnées x et
 
 ![illustration du rectangle délimité par les valeurs left, top, right et bottom](images/rect.png)
 
-La colonne de pixels du bord droit et la ligne de pixels du bord inférieur ne sont pas incluses dans la structure RECT. Par exemple, le résultat du verrouillage d’une structure RECT avec des membres {10, 10, 138, 138} est un objet de 128pixels de largeur et hauteur.
+La colonne de pixels du bord droit et la ligne de pixels du bord inférieur ne sont pas incluses dans la structure RECT. Par exemple, le résultat du verrouillage d’une structure RECT avec des membres {10, 10, 138, 138} est un objet de 128 pixels de largeur et hauteur.
 
 Dans un souci d’efficacité, de cohérence et de simplicité d’utilisation, toutes les fonctions de présentation Direct3D fonctionnent avec les rectangles.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
 
  
 

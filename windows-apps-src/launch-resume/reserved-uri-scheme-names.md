@@ -4,14 +4,14 @@ description: Cette rubrique répertorie les noms de schéma d’URI et de fichie
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921857"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650624"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Noms de schéma d’URI et de fichier réservés
 
@@ -108,7 +108,7 @@ Les types de fichiers suivants sont réservés au système d’exploitation
 <tr><td>explorer.closesession</td><td>ms-settings:batterysaver-usagedetails</td><td>ms-settings:windowsupdate</td><td>wmp11.assocprotocol.mms</td></tr>
 <tr><td>explorer.erasedisc</td><td>ms-settings:bluetooth</td><td>ms-settings:workplace</td><td>wsffile</td></tr>
 <tr><td>explorer.zipselection</td><td>ms-settings:connecteddevices</td><td>ms-windows-store</td><td>wsfile</td></tr>
-<tr><td>file</td><td>ms-settings:cortanasearch</td><td>ms-word</td><td>wshfile</td></tr>
+<tr><td>fichier</td><td>ms-settings:cortanasearch</td><td>ms-word</td><td>wshfile</td></tr>
 <tr><td>fonfile</td><td>ms-settings:datasense</td><td>ocxfile</td><td>xbls</td></tr>
 <tr><td>hlpfile</td><td>ms-settings:dateandtime</td><td>office</td><td>zune</td></tr>
 <tr><td>htafile</td><td>ms-settings:display</td><td>onenote</td><td></td></tr>

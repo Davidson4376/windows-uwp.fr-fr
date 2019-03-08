@@ -1,27 +1,27 @@
 ---
-Description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
+Description: Votre application peut charger des fichiers de ressources d’image contenant des images adaptées pour le facteur d’échelle de l’affichage, le thème, contraste élevé et d’autres contextes d’exécution.
 title: Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929495"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592024"
 ---
-# <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées à l’échelle, au thème, au contraste élevé et à d’autres contextes
-Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de VisualStudio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié et correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
+# <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
+Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié, correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
 
 Une ressource d’image est contenue dans un fichier de ressources d’image. Vous pouvez également imaginer l’image comme une ressource, et le fichier qui la contient comme un fichier de ressources. Ces types de fichiers de ressources se trouvent dans le dossier \Assets de votre projet. Pour obtenir des informations générales sur l’utilisation des qualificateurs dans les noms de vos fichiers de ressources d’image, voir [Personnaliser vos ressources pour la langue, la mise à l'échelle et d'autres qualificateurs](tailor-resources-lang-scale-contrast.md).
 
 Les qualificateurs courants utilisés pour les images sont notamment [scale](tailor-resources-lang-scale-contrast.md#scale), [theme](tailor-resources-lang-scale-contrast.md#theme), [contrast](tailor-resources-lang-scale-contrast.md#contrast) et [targetsize](tailor-resources-lang-scale-contrast.md#targetsize).
 
 ## <a name="qualify-an-image-resource-for-scale-theme-and-contrast"></a>Appliquer des qualificateurs de mise à l’échelle, de thème et de contraste à une image
-La valeur par défaut du qualificateur `scale` est `scale-100`. Par conséquent, ces deux variantes sont équivalentes (elles fournissent toutes les deux une image à l’échelle100, ou avec le facteur d’échelle1).
+La valeur par défaut du qualificateur `scale` est `scale-100`. Par conséquent, ces deux variantes sont équivalentes (elles fournissent toutes les deux une image à l’échelle 100, ou avec le facteur d’échelle 1).
 
 ```
 \Assets\Images\logo.png
@@ -35,7 +35,7 @@ Vous pouvez utiliser des qualificateurs dans les noms de dossiers au lieu des no
 \Assets\Images\scale-100\logo.png
 ```
 
-Voici maintenant une illustration de la façon dont vous pouvez fournir des variantes d’une ressource d’image &mdash; nommée `/Assets/Images/logo.png` &mdash; pour différents paramètres d’échelle de l’affichage, de thème et de contraste élevé. Cet exemple utilise des noms de dossiers.
+Voici maintenant une illustration de la façon dont vous pouvez fournir des variantes d’une ressource d’image &mdash; nommée `/Assets/Images/logo.png`&mdash; pour différents paramètres d’échelle de l’affichage, de thème et de contraste élevé. Cet exemple utilise des noms de dossiers.
 
 ```
 \Assets\Images\contrast-standard\theme-dark
@@ -81,11 +81,11 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 
 Pour tous les scénarios illustrés dans ces exemples, utilisez la surcharge de [constructeur Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) qui déduit le [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité accéder par défaut au package de l’application comme dans l’exemple ci-dessus.
 
-Notez comment dans ces exemples d’URI, le schéma («`ms-appx`» ou «`ms-appx-web`») est suivi de «`://`», lui-même suivi d’un chemin d’accès absolu. Dans un chemin d’accès absolu, le caractère «`/`» de début indique que le chemin d’accès doit être interprété à partir de la racine du package.
+Notez comment dans ces exemples d’URI, le schéma (« `ms-appx` » ou « `ms-appx-web` ») est suivi de « `://` », lui-même suivi d’un chemin d’accès absolu. Dans un chemin d’accès absolu, le caractère « `/` » de début indique que le chemin d’accès doit être interprété à partir de la racine du package.
 
-**Remarque:** Les schémas d’URI `ms-resource` (pour les [ressources de chaînes](localize-strings-ui-manifest.md)) et `ms-appx(-web)` (pour les images et autres ressources) effectuent une mise en correspondance automatique des schémas d’URI pour trouver la ressource la plus appropriée pour le contexte actuel. Le schéma d’URI `ms-appdata` (qui est utilisé pour charger les données de l’application) n’effectue pas cette mise en correspondance automatique, mais vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger explicitement les ressources appropriées à partir des données de l’application à l’aide de leur nom de fichier physique complet dans l’URI. Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md). Les schémas d’URI web (par exemple, `http`, `https` et `ftp`) n’effectuent pas de mise en correspondance automatique non plus. Pour savoir comment procéder dans ce cas, voir [Hébergement et chargement d’images dans le cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+**Remarque :** Les schémas d’URI `ms-resource` (pour les [ressources de chaînes](localize-strings-ui-manifest.md)) et `ms-appx(-web)` (pour les images et autres ressources) effectuent une mise en correspondance automatique des schémas d’URI pour trouver la ressource la plus appropriée pour le contexte actuel. Le schéma d’URI `ms-appdata` (qui est utilisé pour charger les données de l’application) n’effectue pas cette mise en correspondance automatique, mais vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger explicitement les ressources appropriées à partir des données de l’application à l’aide de leur nom de fichier physique complet dans l’URI. Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md). Les schémas d’URI web (par exemple, `http`, `https` et `ftp`) n’effectuent pas de mise en correspondance automatique non plus. Pour savoir comment procéder dans ce cas, voir [Hébergement et chargement d’images dans le cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
-Les chemins d’accès absolus constituent un bon choix si vos fichiers d’image restent où ils se trouvent dans la structure du projet. Si vous voulez être en mesure de déplacer un fichier image, mais souhaitez qu’il reste dans le même emplacement par rapport à son fichier de balisageXAML de référence, alors au lieu d’utiliser un chemin d’accès absolu, vous pouvez envisager d’utiliser un chemin d’accès relatif au fichier de balisage le contenant. Si vous procédez ainsi, il n’est pas nécessaire d’utiliser un schéma d’URI. Vous pourrez toujours bénéficier de la mise en correspondance automatique des qualificateurs dans ce cas, mais uniquement parce que vous utilisez le chemin d’accès relatif dans le balisage XAML.
+Les chemins d’accès absolus constituent un bon choix si vos fichiers d’image restent où ils se trouvent dans la structure du projet. Si vous voulez être en mesure de déplacer un fichier image, mais souhaitez qu’il reste dans le même emplacement par rapport à son fichier de balisage XAML de référence, alors au lieu d’utiliser un chemin d’accès absolu, vous pouvez envisager d’utiliser un chemin d’accès relatif au fichier de balisage le contenant. Si vous procédez ainsi, il n’est pas nécessaire d’utiliser un schéma d’URI. Vous pourrez toujours bénéficier de la mise en correspondance automatique des qualificateurs dans ce cas, mais uniquement parce que vous utilisez le chemin d’accès relatif dans le balisage XAML.
 
 ```xaml
 <Image Source="Assets/Images/logo.png"/>
@@ -194,11 +194,11 @@ private void RefreshUIImages()
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>Rubriques associées
-* [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
-* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
-* [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
-* [Prise en charge des vignettes et toasts pour la langue, la mise à l’échelle et le contraste élevé](tile-toast-language-scale-contrast.md)
+## <a name="related-topics"></a>Rubriques connexes
+* [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](localize-strings-ui-manifest.md)
+* [Store et de récupérer les paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
+* [La prise en charge de vignette et toast de langage, de mise à l’échelle et de contraste élevé](tile-toast-language-scale-contrast.md)
 * [Éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [Mise en miroir des images](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
-* [Internationalisation et localisation](../design/globalizing/globalizing-portal.md)
+* [Globalisation et localisation](../design/globalizing/globalizing-portal.md)

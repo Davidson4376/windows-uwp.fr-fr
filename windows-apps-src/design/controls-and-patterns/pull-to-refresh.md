@@ -1,11 +1,11 @@
 ---
-Description: Use the pull-to-refresh control to get new content into a list.
+Description: Utilisez le contrôle de l’extraire pour actualiser pour obtenir le nouveau contenu dans une liste.
 title: Tirer pour actualiser
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 pm-contact: predavid
 design-contact: kimsea
@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932835"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659254"
 ---
 # <a name="pull-to-refresh"></a>Tirer pour actualiser
 
@@ -27,7 +27,7 @@ La commande Tirer pour actualiser permet à l’utilisateur de dérouler une lis
 
 ![gif tirer pour actualiser](images/Pull-To-Refresh.gif)
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez Tirer pour actualiser lorsque vous avez une liste ou une grille de données que l’utilisateur est susceptible de vouloir actualiser régulièrement et si votre application est susceptible de s’exécuter sur des appareils tactiles.
 
@@ -35,7 +35,7 @@ Vous pouvez également utiliser le [RefreshVisualizer](/uwp/api/windows.ui.xaml.
 
 ## <a name="refresh-controls"></a>Actualiser les contrôles
 
-Tirer pour actualiser est activé par 2contrôles.
+Tirer pour actualiser est activé par 2 contrôles.
 
 - **RefreshContainer** - Un ContentControl qui fournit un wrapper pour l’expérience Tirer pour actualiser. Il gère les interactions tactiles et l’état de son visualiseur d'actualisation interne.
 - **RefreshVisualizer** - encapsule la visualisation d'actualisation expliquée dans la section suivante.
@@ -44,11 +44,11 @@ Le contrôle principal est le **RefreshContainer**, que vous placez comme wrappe
 
 ## <a name="refresh-visualization"></a>Visualisation d'actualisation
 
-La visualisation d’actualisation par défaut est un compteur de progression circulaire utilisé pour indiquer quand une actualisation se produit, ainsi que sa progression une fois qu'elle est lancée. Le visualiseur d'actualisation possède 5états.
+La visualisation d’actualisation par défaut est un compteur de progression circulaire utilisé pour indiquer quand une actualisation se produit, ainsi que sa progression une fois qu'elle est lancée. Le visualiseur d'actualisation possède 5 états.
 
  La distance dont l’utilisateur a besoin pour tirer une liste vers le bas pour lancer une actualisation s'appelle le _seuil_. L'[État](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.State) du visualiseur est déterminé par l’état de l’extraction par rapport à ce seuil. Les valeurs possibles sont contenues dans l'énumération [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate).
 
-### <a name="idle"></a>Inactif
+### <a name="idle"></a>Idle
 
 L’état par défaut du visualiseur est **Inactif**. L’utilisateur n’interagit pas avec le RefreshContainer via l’interaction tactile et aucune actualisation n'est en cours.
 
@@ -62,15 +62,15 @@ Lorsque l’utilisateur tire la liste dans la direction spécifiée par la propr
 
     ![seuil préalable de tirer pour actualiser](images/ptr-prethreshold.png)
 
-    Visuellement, l’icône apparaît désactivée (opacité de 60%). En outre, l’icône tourne selon une rotation complète avec l’action de défilement.
+    Visuellement, l’icône apparaît désactivée (opacité de 60 %). En outre, l’icône tourne selon une rotation complète avec l’action de défilement.
 
 - Si l’utilisateur extrait la liste au-delà du seuil, le visualiseur passe de **Interaction** à **En attente**.
 
     ![tirer pour actualiser au niveau du seuil](images/ptr-atthreshold.png)
 
-    Visuellement, l’icône passe à 100% d'opacité et augmente en taille par impulsions jusqu'à 150%, puis revient à une taille de 100% lors de la transition.
+    Visuellement, l’icône passe à 100 % d'opacité et augmente en taille par impulsions jusqu'à 150 %, puis revient à une taille de 100 % lors de la transition.
 
-### <a name="pending"></a>En attente
+### <a name="pending"></a>Pending
 
 Lorsque l’utilisateur a tiré la liste au-delà du seuil, le visualiseur n’est plus dans l'état **En attente**.
 
@@ -79,7 +79,7 @@ Lorsque l’utilisateur a tiré la liste au-delà du seuil, le visualiseur n’e
 
 ![seuil postérieur de tirer pour actualiser](images/ptr-postthreshold.png)
 
-Visuellement, l’icône est à 100% en taille et en opacité. Dans cet état, l’icône continue à se déplacer vers le bas avec l’action de défilement, mais ne tourne plus.
+Visuellement, l’icône est à 100 % en taille et en opacité. Dans cet état, l’icône continue à se déplacer vers le bas avec l’action de défilement, mais ne tourne plus.
 
 ### <a name="refreshing"></a>Actualisation
 
@@ -101,7 +101,7 @@ Lorsque l’utilisateur tire dans la direction de l’actualisation à partir d�
 
 Par défaut, l’utilisateur tire une liste de haut en bas pour lancer une actualisation. Si vous disposez d’une liste ou d'une grille avec une orientation différente, vous devez modifier le sens de traction du conteneur d’actualisation pour les faire correspondre.
 
-La propriété [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) prend l'une de ces valeurs de [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection): **BottomToTop**, **TopToBottom**, **RightToLeft** ou **LeftToRight**.
+Le [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) propriété prend l’une de ces [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) valeurs : **Bas en haut**, **TopToBottom**, **RightToLeft**, ou **LeftToRight**.
 
 Lorsque vous modifiez le sens de traction, la position de départ du compteur de progression du visualiseur tourne automatiquement de sorte que la flèche commence à la position approprié pour le sens de traction. Si nécessaire, vous pouvez modifier la propriété [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation) pour remplacer le comportement automatique. Dans la plupart des cas, nous recommandons de laisser la valeur par défaut **Automatique**.
 
@@ -116,7 +116,7 @@ L'ajout de la fonctionnalité tirer pour actualiser à une liste nécessite seul
 > [!NOTE]
 > Vous pouvez instancier un RefreshVisualizer seul. Toutefois, nous vous recommandons d'encapsuler votre contenu dans un RefreshContainer et d'utiliser le RefreshVisualizer fourni par la propriété RefreshContainer.Visualizer, même pour des scénarios non tactiles. Dans cet article, nous partons du principe que le visualiseur s'obtient toujours à partir du conteneur d’actualisation.
 
-> En outre, utilisez les membres RequestRefresh et RefreshRequested du conteneur d’actualisation pour des raisons pratiques. `refreshContainer.RequestRefresh()` équivaut à `refreshContainer.Visualizer.RequestRefresh()` et déclenche à la fois l'événement RefreshContainer.RefreshRequested et les événements RefreshVisualizer.RefreshRequested.
+> En outre, utilisez les membres RequestRefresh et RefreshRequested du conteneur d’actualisation pour des raisons pratiques. `refreshContainer.RequestRefresh()` équivaut à `refreshContainer.Visualizer.RequestRefresh()`, et soit déclenche l’événement RefreshContainer.RefreshRequested et les événements RefreshVisualizer.RefreshRequested.
 
 ### <a name="request-a-refresh"></a>Demander une actualisation
 
@@ -331,9 +331,9 @@ public class ListItemData
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Interactions tactiles](../input/touch-interactions.md)
-- [Affichage Liste et affichage Grille](listview-and-gridview.md)
-- [Modèles et conteneurs d’éléments](item-containers-templates.md)
-- [Animations par expressions](../../composition/composition-animation.md)
+- [Vue liste et l’affichage de grille](listview-and-gridview.md)
+- [Modèles et des conteneurs d’éléments](item-containers-templates.md)
+- [Animations d’expression](../../composition/composition-animation.md)

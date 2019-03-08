@@ -1,23 +1,23 @@
 ---
-title: Référence pour le portage d’OpenGL ES2.0 sur Direct3D11
-description: Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES2.0 sur Direct3D11.
+title: Référence pour le portage d’OpenGL ES 2.0 sur Direct3D 11
+description: Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES 2.0 vers Direct3D 11.
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, opengl, direct3d 11
+keywords: windows 10, uwp, jeux, opengl, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939304"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644074"
 ---
-# <a name="opengl-es-20-to-direct3d-11-reference"></a>Informations de référence pour le portage d’OpenGLES2.0 vers Direct3D11
+# <a name="opengl-es-20-to-direct3d-11-reference"></a>Référence pour le portage d’OpenGL ES 2.0 sur Direct3D 11
 
 
 
-Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES2.0 sur Direct3D11.
+Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGL ES 2.0 vers Direct3D 11.
 ## 
 <table>
 <colgroup>
@@ -32,8 +32,8 @@ Vous trouverez dans ces rubriques de référence un index de mappage d’API ain
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="glsl-to-hlsl-reference.md">Informations de référence sur le passage de GLSL vers HLSL</a></p></td>
-<td align="left"><p>Si vous avez pour projet de créer un jeu pour UWP, vous allez <a href="port-from-opengl-es-2-0-to-directx-11-1.md">porter votre architecture graphique OpenGLES2.0 vers Direct3D 11</a>, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).</p></td>
+<td align="left"><p><a href="glsl-to-hlsl-reference.md">Référence de GLSL-HLSL</a></p></td>
+<td align="left"><p>Si vous avez pour projet de créer un jeu pour UWP, vous allez <a href="port-from-opengl-es-2-0-to-directx-11-1.md">porter votre architecture graphique OpenGL ES 2.0 vers Direct3D 11</a>, ce qui impliquera de porter votre code GLSL (OpenGL Shader Language) vers le code Microsoft HLSL (High Level Shader Language).</p></td>
 </tr>
 </tbody>
 </table>

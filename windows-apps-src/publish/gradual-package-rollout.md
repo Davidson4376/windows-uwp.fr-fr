@@ -1,24 +1,24 @@
 ---
-Description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
-title: Lancement progressif de packages
+Description: Lorsque vous publiez une mise à jour d’une soumission, vous pouvez choisir de déployer progressivement les packages de mise à jour pour un pourcentage des clients de votre application sur Windows 10.
+title: Lancement de package progressif
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: cada2da4b587340f38901f9a4ec5504d9d3c57de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927806"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645124"
 ---
-# <a name="gradual-package-rollout"></a>Lancement progressif de packages
+# <a name="gradual-package-rollout"></a>Lancement de package progressif
 
-Lorsque vous publiez une mise à jour d’une soumission, vous pouvez choisir de déployer progressivement les packages mis à jour pour un pourcentage des clients de votre application sur Windows 10 (y compris Xbox). Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
+Lorsque vous publiez une mise à jour à une soumission, vous pouvez choisir de déployer progressivement les packages mis à jour à un pourcentage de clients de votre application sur Windows 10 (y compris Xbox). Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
 
 > [!IMPORTANT]
-> Vos choix de lancement s’appliquent à tous vos packages, mais uniquement pour les clients qui exécutent des versions de système d’exploitation prenant en charge des versions d’évaluation de package (Windows.Desktop build10586 ou version ultérieure, Windows.Mobile build10586.63 ou version ultérieure et Xbox), y compris les clients qui obtiennent l’application par le biais du [service de gestion de licences (en ligne) du WindowsStore](organizational-licensing.md) dans [MicrosoftStore pour Entreprises](https://businessstore.microsoft.com/store) ou [MicrosoftStore pour Éducation](https://educationstore.microsoft.com/store). Lorsque vous utilisez le déploiement progressif de packages, les clients utilisant des versions antérieures du système d’exploitation n’obtiennent pas les packages de la dernière soumission tant que vous n’avez pas finalisé le déploiement de packages comme décrit ci-dessous.
+> Vos choix de lancement s’appliquent à tous vos packages, mais uniquement pour les clients qui exécutent des versions de système d’exploitation prenant en charge des versions d’évaluation de package (Windows.Desktop build 10586 ou version ultérieure, Windows.Mobile build 10586.63 ou version ultérieure et Xbox), y compris les clients qui obtiennent l’application par le biais du [service de gestion de licences (en ligne) du Windows Store](organizational-licensing.md) dans [Microsoft Store pour Entreprises](https://businessstore.microsoft.com/store) ou [Microsoft Store pour Éducation](https://educationstore.microsoft.com/store). Lorsque vous utilisez le déploiement progressif de packages, les clients utilisant des versions antérieures du système d’exploitation n’obtiennent pas les packages de la dernière soumission tant que vous n’avez pas finalisé le déploiement de packages comme décrit ci-dessous.
 
 Notez que les informations de description du Windows Store que vous avez entrées lors de votre dernière soumission sont visibles de tous les clients. Les paramètres de déploiement s’appliquent uniquement aux packages reçus par les clients. Cela concerne les nouvelles acquisitions et les mises à jour reçues par les clients existants.
 
@@ -28,7 +28,7 @@ Notez que les informations de description du Windows Store que vous avez entrée
 
 ## <a name="setting-the-rollout-percentage"></a>Définition du pourcentage de déploiement
 
-Vous pouvez choisir de déployer votre mise à jour sur la page **Packages** d’une soumission mise à jour. Pour ce faire, activez la case à cocher **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows10 uniquement)**. Ensuite, entrez le pourcentage de clients qui devront obtenir la mise à jour lors de la première publication de la soumission. Par exemple, vous pouvez entrer5 si vous souhaitez commencer par déployer la mise à jour pour un faible pourcentage de clients de votre application.
+Vous pouvez choisir de déployer votre mise à jour sur la page **Packages** d’une soumission mise à jour. Pour ce faire, activez la case à cocher **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows 10 uniquement)**. Ensuite, entrez le pourcentage de clients qui devront obtenir la mise à jour lors de la première publication de la soumission. Par exemple, vous pouvez entrer 5 si vous souhaitez commencer par déployer la mise à jour pour un faible pourcentage de clients de votre application.
 
 Cliquez sur **Mettre à jour** pour enregistrer vos choix. Une fois que votre application a terminé le processus de certification, les packages sont distribués aux clients conformément au pourcentage que vous avez spécifié. Cela concerne les nouvelles acquisitions et les mises à jour effectuées par les clients existants.
 
@@ -45,6 +45,6 @@ Avant de pouvoir créer une nouvelle soumission, vous devez mettre un terme au d
 Si vous avez confiance dans la mise à jour et que vous voulez la rendre disponible pour tous vos clients, cliquez sur **Finaliser le déploiement de package** pour distribuer les derniers packages à tous vos clients.
 
 > [!TIP]
-> La redéfinition du pourcentage de lancement sur 100% ne garantit pas que tous vos clients obtiendront les packages des dernières soumissions, car certains clients utilisent probablement des versions de système d’exploitation ne prenant pas en charge le lancement. Vous devez finaliser le déploiement pour arrêter la distribution des packages plus anciens et mettre à jour les clients existants avec les nouvelles versions.
+> La redéfinition du pourcentage de lancement sur 100 % ne garantit pas que tous vos clients obtiendront les packages des dernières soumissions, car certains clients utilisent probablement des versions de système d’exploitation ne prenant pas en charge le lancement. Vous devez finaliser le déploiement pour arrêter la distribution des packages plus anciens et mettre à jour les clients existants avec les nouvelles versions.
 
 Si vous constatez des problèmes avec la mise à jour et que vous ne souhaitez plus la distribuer, vous pouvez cliquer sur **Arrêter le déploiement de l’application** pour arrêter la distribution des packages de la dernière soumission. Une fois que vous arrêtez un déploiement de packages, ces packages ne sont plus distribués aux clients. Seuls les packages de la soumission précédente sont utilisés pour les nouveaux clients ou ceux qui effectuent une mise à jour. Toutefois, les clients qui disposaient déjà des packages les plus récents conservent ces packages. La version précédente ne sera pas rétablie pour eux. Pour fournir une mise à jour à ces clients, vous devez créer une nouvelle soumission avec les packages que vous souhaitez qu’ils obtiennent. Notez que si vous utilisez un déploiement progressif lors de votre soumission suivante, les clients qui disposaient du package que vous avez interrompu pourront s’ils le souhaitent obtenir la mise à jour comme ils pouvaient obtenir le package interrompu. Le nouveau déploiement se situera entre votre dernière soumission finalisée et votre soumission la plus récente. Une fois que vous interrompez un déploiement de packages, ces packages ne sont plus distribués à aucun client.

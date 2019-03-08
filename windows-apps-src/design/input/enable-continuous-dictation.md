@@ -1,5 +1,5 @@
 ---
-Description: Learn how to capture and recognize long-form, continuous dictation speech input.
+Description: Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
 title: Activer la dictée continue
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0865b229faad646901ab76f46982e738b2830035
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606254"
 ---
 # <a name="continuous-dictation"></a>Dictée continue
 
@@ -26,7 +26,7 @@ Dans [Reconnaissance vocale](speech-recognition.md), vous avez appris à capture
 Pour les sessions de reconnaissance vocale en continu plus longues, tel qu’un texte dicté ou un e-mail, utilisez la propriété [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) d’un [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) afin d’obtenir un objet [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896).
 
 > [!NOTE]
-> Prise en charge linguistique de dictée dépend de l' [appareil](https://docs.microsoft.com/windows/uwp/design/devices/) où votre application est en cours d’exécution. Pour les PC et ordinateurs portables, uniquement en-US est reconnue, lorsqu’une Xbox et les téléphones peuvent reconnaître toutes les langues prises en charge par la reconnaissance vocale. Pour plus d’informations, consultez [spécifier la langue de reconnaissance vocale](specify-the-speech-recognizer-language.md).
+> Prise en charge de la dictée varie selon le [appareil](https://docs.microsoft.com/windows/uwp/design/devices/) où votre application est en cours d’exécution. Pour les PC et ordinateurs portables, uniquement en-US est reconnu, tandis que Xbox et téléphones peuvent reconnaître toutes les langues prises en charge par la reconnaissance vocale. Pour plus d’informations, consultez [spécifier la langue du module de reconnaissance vocale](specify-the-speech-recognizer-language.md).
 
 ## <a name="set-up"></a>Configuration
 
@@ -68,12 +68,12 @@ Pendant l’initialisation de la reconnaissance vocale en continu, vous devez :
 - Si vous mettez à jour l’interface utilisateur de votre application dans les gestionnaires d’événements de reconnaissance continue, récupérez le répartiteur pour le thread d’interface utilisateur.
 - Initialisez le module de reconnaissance vocale.
 - Compilez la grammaire de dictée intégrée.
-    **Remarque**  la reconnaissance vocale nécessite au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, une grammaire de dictée prédéfinie est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
+    **Remarque**    la reconnaissance vocale nécessite au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, une grammaire de dictée prédéfinie est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 - Configurez les détecteurs d’événements pour les événements de reconnaissance.
 
 Nous initialisons la reconnaissance vocale dans l’événement de page [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 
-1. Comme les événements déclenchés par le module de reconnaissance vocale se produisent sur un thread d’arrière-plan, créez une référence pour le répartiteur pour les mises à jour du thread d’interface utilisateur. [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) est toujours appelé sur le thread d’interface utilisateur.
+1. Comme les événements déclenchés par le module de reconnaissance vocale se produisent sur un thread d’arrière-plan, créez une référence pour le répartiteur pour les mises à jour du thread d’interface utilisateur. [**OnNavigatedTo** ](https://msdn.microsoft.com/library/windows/apps/br227508) est toujours appelée sur le thread d’interface utilisateur.
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -106,14 +106,14 @@ Nous pouvons ensuite utiliser la propriété [**ContinuousRecognitionSession**](
 Deux événements sont particulièrement essentiels :
 
 - [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900), qui se produit lorsque le module de reconnaissance a généré des résultats.
-- [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899), qui se produit lorsque la session de reconnaissance en continu est terminée.
+- [**Terminé**](https://msdn.microsoft.com/library/windows/apps/dn913899), qui se produit lorsque la session de reconnaissance continue s’est terminée.
 
 L’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché lorsque l’utilisateur parle. Le module de reconnaissance écoute l’utilisateur en continu et déclenche périodiquement un événement qui transmet un segment d’entrée vocale. Examinez l’entrée vocale à l’aide de la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) de l’argument d’événement et prenez les mesures appropriées dans le gestionnaire d’événements, par exemple en ajoutant du texte à un objet StringBuilder.
 
-En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non: Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deux propriétés spécifiques :
+En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non : Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deux propriétés spécifiques :
 
-- [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
-- [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) indique que le module de reconnaissance a relativement bien compris les mots énoncés.
+- [**État** ](https://msdn.microsoft.com/library/windows/apps/dn631440) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
+- [**Confiance** ](https://msdn.microsoft.com/library/windows/apps/dn631434) indique la confiance relative que le module de reconnaissance compris les mots corrects.
 
 Voici les étapes de base associées à la prise en charge de la reconnaissance continue :  
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Nous vérifions ensuite la propriété [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434). Si la valeur de confiance est de [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) ou plus, nous ajoutons du texte au StringBuilder. Nous mettons également à jour l’interface utilisateur lorsque nous collectons des entrées.
 
-    **Remarque**l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le fait [exemple vocal et TTS]), vous devez distribuer les mises à jour au thread d’interface utilisateur via la méthode [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur.
+    **Remarque**  le [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900) événement est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le \[exemple de reconnaissance vocale et synthèse vocale\] est), vous devez distribuer les mises à jour pour le thread d’interface utilisateur via la [ **RunAsync** ](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur (méthode).
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Le gestionnaire d’événements vérifie la propriété d’état afin de savoir si la reconnaissance a réussi. Il gère également le cas où l’utilisateur cesse de parler. Souvent, un [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) est considérée comme réussi lorsque l’utilisateur a fini de parler. Vous devez gérer ce cas dans votre code afin d’offrir une expérience optimale.
 
-    **Remarque**l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le fait [exemple vocal et TTS]), vous devez distribuer les mises à jour au thread d’interface utilisateur via la méthode [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur.
+    **Remarque**  le [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900) événement est déclenché sur un thread d’arrière-plan qui ne peut pas mettre à jour l’interface utilisateur directement. Si un gestionnaire doit mettre à jour l’interface utilisateur (comme le \[exemple de reconnaissance vocale et synthèse vocale\] est), vous devez distribuer les mises à jour pour le thread d’interface utilisateur via la [ **RunAsync** ](https://msdn.microsoft.com/library/windows/apps/hh750317) du répartiteur (méthode).
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -203,7 +203,7 @@ private async void ContinuousRecognitionSession_Completed(
 ## <a name="provide-ongoing-recognition-feedback"></a>Fournir des commentaires en cours de reconnaissance
 
 
-Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots «poids» et «pois» est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
+Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots « poids » et « pois » est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
 Cela peut entraîner une expérience peu agréable, dans la mesure où l’utilisateur continue de parler sans qu’aucun résultat n’apparaisse, jusqu’à ce que le moteur de reconnaissance soit suffisamment certain pour déclencher l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
@@ -244,8 +244,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 La reconnaissance peut être arrêtée de deux façons :
 
--   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) vous permet d’attendre des événements de reconnaissance complets ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continue d’être déclenché jusqu’à ce que toutes les opérations de reconnaissance en attente soit terminées).
--   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) arrête la session de reconnaissance immédiatement et ignore les résultats en attente.
+-   [**StopAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913908) permet tout en attente d’événements de reconnaissance complètes ([**ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900) continue d’être levée jusqu'à ce que tous les en attente de la reconnaissance des opérations sont terminées).
+-   [**CancelAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913898) termine la session de reconnaissance immédiatement et ignore les résultats en attente.
 
 Une fois la vérification de l’état du module de reconnaissance vocale terminée, nous arrêtons la session en appelant la méthode [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) de la propriété [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) du module de reconnaissance vocale.
 
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [Interactions vocales](speech-interactions.md)
 
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [La reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

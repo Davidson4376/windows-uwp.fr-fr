@@ -4,14 +4,14 @@ description: La latence d’entrée peut avoir un impact important sur un jeu. S
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, directx, latence d’entrée
+keywords: windows 10, uwp, jeux, directx, latence d’entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934096"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601744"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimiser la latence d’entrée pour les jeux UWP DirectX
 
@@ -31,7 +31,7 @@ Il est important de bien comprendre les exigences de votre jeu en matière de la
 ## <a name="power-efficiency"></a>Efficacité énergétique
 
 
-Dans le contexte de la latence d’entrée, l’«efficacité énergétique» fait référence au taux d’utilisation du GPU par un jeu. Un jeu qui utilise moins de ressources GPU est plus économe en énergie et permet un accroissement de l’autonomie de la batterie. Cela est également vrai pour l’UC.
+Dans le contexte de la latence d’entrée, l’« efficacité énergétique » fait référence au taux d’utilisation du GPU par un jeu. Un jeu qui utilise moins de ressources GPU est plus économe en énergie et permet un accroissement de l’autonomie de la batterie. Cela est également vrai pour l’UC.
 
 Si un jeu peut dessiner du contenu sur la totalité de l’écran en moins de 60 images par seconde (actuellement, il s’agit de la vitesse de rendu maximale sur la plupart des écrans) sans dégrader l’expérience de l’utilisateur, il sera plus économe en énergie en dessinant moins souvent. Certains jeux ne mettent à jour l’écran qu’en réponse à une entrée utilisateur. Ainsi, ces jeux ne dessinent pas le même contenu à plusieurs reprises à 60 images par seconde.
 
@@ -60,7 +60,7 @@ Quand le contenu d’un jeu DirectX est rendu et qu’il est prêt à être pré
 
 Nous montrerons l’implémentation de la boucle de jeu pour chacun des scénarios mentionnés précédemment en itérant un simple jeu de puzzle. Les points de décision, les avantages et les compromis abordés durant chaque implémentation peuvent servir de repères pour vous aider à optimiser vos applications en atteignant une latence d’entrée faible et une efficacité énergétique élevée.
 
-## <a name="scenario-1-render-on-demand"></a>Scénario 1 : rendu à la demande
+## <a name="scenario-1-render-on-demand"></a>Scénario 1 : Effectuer le rendu à la demande
 
 
 La première itération du jeu de puzzle ne met à jour l’écran qu’au moment où l’utilisateur déplace une pièce de puzzle. Un utilisateur peut faire glisser une pièce de puzzle vers son emplacement ou l’ancrer à son emplacement en la sélectionnant, puis en appuyant sur la destination appropriée. Dans le second cas, la pièce de puzzle saute vers sa destination sans animations, ni effets d’aucune sorte.
@@ -91,12 +91,12 @@ void App::Run()
 }
 ```
 
-## <a name="scenario-2-render-on-demand-with-transient-animations"></a>Scénario 2 : rendu à la demande avec animations de transition
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>Scénario 2 : Effectuer le rendu à la demande avec les animations temporaires
 
 
 Dans la deuxième itération, le jeu est modifié afin qu’au moment où l’utilisateur sélectionne une pièce de puzzle et appuie sur sa destination, la pièce s’anime à l’écran jusqu’à ce qu’elle atteigne sa destination.
 
-Comme précédemment, le code a une boucle de jeu à thread unique qui utilise **ProcessOneAndAllPending** pour répartir les événements d’entrée en file d’attente. La différence est la suivante: durant une animation, la boucle utilise **CoreProcessEventsOption::ProcessAllIfPresent** afin de ne pas attendre de nouveaux événements d’entrée. Si aucun événement n’est en attente, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) est immédiatement retourné et permet à l’application de présenter l’image suivante de l’animation. Quand l’animation est terminée, la boucle revient à **ProcessOneAndAllPending** pour limiter les mises à jour de l’écran.
+Comme précédemment, le code a une boucle de jeu à thread unique qui utilise **ProcessOneAndAllPending** pour répartir les événements d’entrée en file d’attente. La différence est la suivante : durant une animation, la boucle utilise **CoreProcessEventsOption::ProcessAllIfPresent** afin de ne pas attendre de nouveaux événements d’entrée. Si aucun événement n’est en attente, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) est immédiatement retourné et permet à l’application de présenter l’image suivante de l’animation. Quand l’animation est terminée, la boucle revient à **ProcessOneAndAllPending** pour limiter les mises à jour de l’écran.
 
 ``` syntax
 void App::Run()
@@ -139,12 +139,12 @@ void App::Run()
 
 Pour prendre en charge la transition entre **ProcessOneAndAllPending** et **ProcessAllIfPresent**, l’application doit suivre l’état afin de savoir si l’animation est en cours. Pour ce faire, dans l’application puzzle, ajoutez une nouvelle méthode qui peut être appelée durant la boucle de jeu sur la classe GameState. La branche d’animation de la boucle de jeu entraîne des mises à jour de l’état de l’animation via l’appel de la nouvelle méthode Update de GameState.
 
-## <a name="scenario-3-render-60-frames-per-second"></a>Scénario 3 : rendu de 60 images par seconde
+## <a name="scenario-3-render-60-frames-per-second"></a>Scénario 3 : Restituer 60 frames par seconde
 
 
 Dans la troisième itération, l’application affiche un minuteur qui indique à l’utilisateur le temps qu’il a passé sur le puzzle. Dans la mesure où elle affiche le temps écoulé à la milliseconde près, elle doit afficher 60 images par seconde pour garder l’affichage à jour.
 
-Comme dans les scénarios 1 et 2, l’application comporte une boucle de jeu à thread unique. La différence avec ce scénario est la suivante: dans la mesure où le rendu est constant, l’application n’a plus besoin de suivre les modifications d’état du jeu comme dans les deux premiers scénarios. Ainsi, elle peut utiliser **ProcessAllIfPresent** par défaut pour le traitement des événements. Si aucun événement n’est en attente, **ProcessEvents** est immédiatement retourné et affiche ensuite l’image suivante.
+Comme dans les scénarios 1 et 2, l’application comporte une boucle de jeu à thread unique. La différence avec ce scénario est la suivante : dans la mesure où le rendu est constant, l’application n’a plus besoin de suivre les modifications d’état du jeu comme dans les deux premiers scénarios. Ainsi, elle peut utiliser **ProcessAllIfPresent** par défaut pour le traitement des événements. Si aucun événement n’est en attente, **ProcessEvents** est immédiatement retourné et affiche ensuite l’image suivante.
 
 ``` syntax
 void App::Run()
@@ -175,14 +175,14 @@ void App::Run()
 
 Cette approche est la plus simple pour écrire un jeu, car il n’est pas nécessaire de suivre un état supplémentaire pour déterminer le moment où un affichage doit être effectué. Elle permet d’atteindre le rendu le plus rapide possible avec une réactivité raisonnable par rapport aux entrées en fonction d’un intervalle de minuteur.
 
-Toutefois, cette facilité de développement a un prix. Le rendu à 60images par seconde consomme plus d’énergie que le rendu à la demande. Il est préférable d’utiliser **ProcessAllIfPresent** quand le jeu change, ce qui est affiché à chaque image. Cela entraîne également une augmentation de la latence d’entrée de 16,7ms, car l’application bloque désormais la boucle de jeu en fonction de l’intervalle de synchronisation de l’affichage au lieu de **ProcessEvents**. Certains événements d’entrée peuvent être annulés, car la file d’attente n’est traitée qu’une seule fois par image (60Hz).
+Toutefois, cette facilité de développement a un prix. Le rendu à 60 images par seconde consomme plus d’énergie que le rendu à la demande. Il est préférable d’utiliser **ProcessAllIfPresent** quand le jeu change, ce qui est affiché à chaque image. Cela entraîne également une augmentation de la latence d’entrée de 16,7 ms, car l’application bloque désormais la boucle de jeu en fonction de l’intervalle de synchronisation de l’affichage au lieu de **ProcessEvents**. Certains événements d’entrée peuvent être annulés, car la file d’attente n’est traitée qu’une seule fois par image (60 Hz).
 
-## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>Scénario 4 : rendu de 60 images par seconde avec la latence d’entrée la plus basse possible
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>Scénario 4 : Restituer 60 frames par seconde et atteindre la latence d’entrée plus faible possible
 
 
 Certains jeux peuvent ignorer ou compenser l’augmentation de la latence d’entrée décrite au scénario 3. Toutefois, si une faible latence d’entrée est essentielle pour l’expérience du jeu et les sensations des joueurs, les jeux qui affichent 60 images par seconde doivent traiter les entrées sur un thread distinct.
 
-La quatrième itération du jeu de puzzle se fonde sur le scénario 3 en séparant le traitement des entrées et le rendu graphique de la boucle de jeu en threads distincts. Avec des threads distincts, chaque entrée est assurée de ne jamais être retardée par la sortie graphique. Cependant, il en résulte un code plus complexe. Dans le scénario4, le thread d’entrée appelle [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) avec [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), qui attend les nouveaux événements et répartit tous les événements disponibles. Il garde ce comportement jusqu’à ce que la fenêtre soit fermée ou que le jeu appelle [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
+La quatrième itération du jeu de puzzle se fonde sur le scénario 3 en séparant le traitement des entrées et le rendu graphique de la boucle de jeu en threads distincts. Avec des threads distincts, chaque entrée est assurée de ne jamais être retardée par la sortie graphique. Cependant, il en résulte un code plus complexe. Dans le scénario 4, le thread d’entrée appelle [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) avec [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), qui attend les nouveaux événements et répartit tous les événements disponibles. Il garde ce comportement jusqu’à ce que la fenêtre soit fermée ou que le jeu appelle [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Le modèle **DirectX 11 et application XAML (Windows universel)** dans Microsoft Visual Studio2015 sépare la boucle de jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
+Le **DirectX 11 et XAML application (Windows universel)** modèle dans Microsoft Visual Studio 2015 fractionne la boucle du jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Autres façons de réduire la latence d’entrée
 
@@ -244,15 +244,15 @@ Les jeux DirectX répondent aux entrées de l’utilisateur en mettant à jour c
 
 Figure 1
 
-![Figure 1: latence d’entrée dans DirectX ](images/input-latency1.png)
+![Figure 1 : latence d’entrée dans DirectX ](images/input-latency1.png)
 
-Dans Windows8.1, DXGI a introduit l’indicateur **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** pour la chaîne d’échange, ce qui permet aux applications de réduire facilement cette latence sans devoir implémenter des heuristiques afin de garder la file d’attente actuelle vide. Les chaînes d’échange créées avec cet indicateur sont appelées chaînes d’échange d’attente. La figure 2 illustre approximativement le cycle de vie et la réponse à un événement d’entrée durant l’utilisation de chaînes d’échange d’attente :
+Dans Windows 8.1, DXGI introduit le **DXGI\_échange\_chaîne\_indicateur\_FRAME\_latence\_WAITABLE\_objet** indicateur pour l’échange chaîne, ce qui permet aux applications de facilement réduire cette latence sans avoir à implémenter des heuristiques pour garder la file d’attente présent vide. Les chaînes d’échange créées avec cet indicateur sont appelées chaînes d’échange d’attente. La figure 2 illustre approximativement le cycle de vie et la réponse à un événement d’entrée durant l’utilisation de chaînes d’échange d’attente :
 
-Figure 2
+Figure 2
 
 ![Figure 2 : latence d’entrée dans une chaîne d’échange d’attente DirectX](images/input-latency2.png)
 
-Ces schémas nous montrent que les jeux peuvent réduire la latence d’entrée de deuximages complètes s’ils sont capables d’afficher et de présenter chaque image dans la limite des 16,7ms définie par le taux de rafraîchissement de l’écran. L’exemple de jeu de puzzle utilise les chaînes d’échange d’attente et contrôle la limite de la file d’attente actuelle en appelant:` m_deviceResources->SetMaximumFrameLatency(1);`
+Ces schémas nous montrent que les jeux peuvent réduire la latence d’entrée de deux images complètes s’ils sont capables d’afficher et de présenter chaque image dans la limite des 16,7 ms définie par le taux de rafraîchissement de l’écran. L’exemple de poster puzzle utilise des chaînes de permutation pouvant être attendu et contrôle de la limite actuelle de la file d’attente en appelant :` m_deviceResources->SetMaximumFrameLatency(1);`
 
  
 

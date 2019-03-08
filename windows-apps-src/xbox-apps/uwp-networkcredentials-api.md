@@ -1,47 +1,47 @@
 ---
-title: Référence sur les API les informations d’identification réseau Device Portal
-description: Apprenez à ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
+title: Informations de référence sur les API d’identification réseau de Device Portal
+description: Découvrez comment ajouter, supprimer ou mettre à jour les informations d’identification réseau par programmation.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: ac30d8db830c51ee40653feb49b443ed44502617
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934684"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659214"
 ---
-# <a name="network-credentials-api-reference"></a>Référence de l’API d’informations d’identification réseau
-Vous pouvez ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées sur votre Kit de développement à l’aide de cette API REST.
+# <a name="network-credentials-api-reference"></a>Informations de référence sur les API d’identification réseau
+L’API REST vous permet d’ajouter, supprimer ou mettre à jour les informations d’identification réseau stockées dans votre kit de développement.
 
 ## <a name="get-existing-credentials"></a>Obtenir des informations d’identification existantes
 
-**Requête**
+**Demande**
 
-Vous pouvez obtenir une liste des actions stockées, ainsi que le nom d’utilisateur de l’utilisateur qui possède des informations d’identification pour ce partage réseau.
+Vous pouvez obtenir une liste des actions stockées, ainsi que le nom de l’utilisateur disposant d’informations d’identification pour ce partage réseau.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 GET | /ext/networkcredential
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
-- Aucun
+- Aucune
 
 **Réponse**   
 
-- Tableau JSON au format suivant:
+- Tableau JSON au format suivant :
 * Informations d’identification
   * NetworkPath - le chemin d’accès au partage réseau.
-  * Username: le nom d’utilisateur qui a des informations d’identification stockées.
+  * Username - nom d’utilisateur propriétaire des informations d’identification stockées.
 
 **Code d’état**
 
@@ -53,37 +53,37 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## <a name="add-or-update-stored-credentials-for-a-user"></a>Ajouter ou mettre à jour les informations d’identification stockées d’un utilisateur
+## <a name="add-or-update-stored-credentials-for-a-user"></a>Ajouter ou mettre à jour les informations d’identification stockées pour un utilisateur
 
-**Requête**
+**Demande**
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 POST | /ext/networkcredential
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès du partage réseau vous ajoutez les informations d’identification pour accéder à. |
+| NetworkPath        | Le chemin d’accès réseau du partage pour lequel vous ajoutez des informations d’identification. |
 <br>
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
-- Les éléments JSON suivants:
+- Les éléments JSON suivants :
 * NetworkPath - le chemin d’accès au partage réseau.
-* Username: le nom d’utilisateur pour stocker les informations d’identification sous.
-* -Le mot de passe nouvelle ou mise à jour pour cet utilisateur.
+* Username - nom d’utilisateur sous lequel sont stockées les informations d’identification.
+* Password - mot de passe nouveau ou mis à jour pour cet utilisateur.
 
 **Réponse**   
 
-- Aucun  
+- Aucune  
 
 **Code d’état**
 
@@ -95,34 +95,34 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## <a name="remove-stored-credentials-for-a-share"></a>Supprimez les informations d’identification stockées pour un partage.
+## <a name="remove-stored-credentials-for-a-share"></a>Supprime les informations d’identification stockées pour un partage.
 
-**Requête**
+**Demande**
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /ext/networkcredential
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| NetworkPath        | Le chemin d’accès réseau pour le partage à partir duquel vous supprimez les informations d’identification stockées. |
+| NetworkPath        | Le chemin d’accès réseau au partage duquel vous supprimez les informations d’identification stockées. |
 <br>
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
-- Aucun
+- Aucune
 
 **Réponse**   
 
-- Aucun 
+- Aucune 
 
 **Code d’état**
 
@@ -130,12 +130,12 @@ Cette API comporte les codes d’état attendus suivants.
 
 Code d’état HTTP      | Description
 :------     | :-----
-204 | La demande les informations d’identification a réussi.
+204 | La demande des informations d’identification a réussi.
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox
 

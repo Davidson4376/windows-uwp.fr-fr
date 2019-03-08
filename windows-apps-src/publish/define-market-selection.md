@@ -1,5 +1,5 @@
 ---
-Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
+Description: Le Microsoft Store touche des clients dans plus de 200 pays et régions dans le monde.
 title: Définir la sélection du marché
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: 980dc41303a2689c0f86415beb6ba9adb44fe39c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936720"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646244"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
 
-Le Microsoft Store touche des clients dans plus de 200pays et régions dans le monde. Vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [Tarification et disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
+Le Microsoft Store touche des clients dans plus de 200 pays et régions dans le monde. Vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [Tarification et disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
 
-Pour plus d’informations aider à adapter votre application pour les clients dans le monde entier, consultez les [recommandations en matière de globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et à [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
+Pour plus d’informations aider à rendre votre application aux clients dans le monde entier, consultez [instructions pour la globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
 > Bien que cet article fasse référence aux applications, la sélection du marché des soumissions d’extensions applique le même processus.
@@ -34,19 +34,19 @@ Par défaut, tous les marchés sont sélectionnés. Vous pouvez désélectionner
 Notez que vos sélections s’appliquent ici uniquement aux nouvelles acquisitions. Si une personne possède déjà votre application dans un certain marché et que vous supprimez ultérieurement ce marché, les personnes qui possèdent déjà l’application dans ce marché peuvent continuer à l'utiliser, mais n'obtiendront pas les mises à jour que vous soumettez, et aucun nouveau client sur ce marché ne peut obtenir votre application.
 
 > [!IMPORTANT]
-> Il est votre responsabilité de vous conformer à toute obligation légale locale, même si ces obligations ne sont pas répertoriées ici ni dans l’espace partenaires.
+> Il vous incombe à satisfaire aux contraintes légales locales, même si ces exigences ne sont pas répertoriés ici ou dans le centre de partenaires.
 
 Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
 
 > [!NOTE]
-> Pour les applications précédemment publiées qui incluent des packages ciblant package Windows8 ou Windows8.1, certains marchés individuels sont traités comme un seul marché «Rest of World». Pour plus d’informations, voir [Marchés «Reste du monde» pour Windows8.x](#rest-of-world-markets-for-windows-8x).
+> Pour les applications précédemment publiées qui incluent les packages ciblant Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un marché « Monde » unique. Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8x).
 
 Vous verrez également une case à cocher qui vous permet d’indiquer si vous souhaitez proposer votre application dans un marché que le Windows Store peut ajouter à l’avenir. Si vous laissez cette case à cocher activée, et que nous ajoutons ultérieurement de nouveaux marchés, le prix de base et la date de disponibilité générale de votre soumission seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas cette option, vous pouvez désactiver cette case, auquel cas votre application ne sera pas répertoriée dans les éventuels futurs marchés (bien que vous puissiez toujours les ajouter ultérieurement).
  
 
-## <a name="microsoft-store-consumer-markets"></a>Marchés grand public de Microsoft Store
+## <a name="microsoft-store-consumer-markets"></a>Marchés des consommateurs de Microsoft Store
 
-Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés comportant un astérisque prennent en charge le Microsoft Store sur Xbox One; Vous verrez **Xbox** en regard de leurs noms dans la fenêtre contextuelle de **la sélection du marché** .
+Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés avec un astérisque prennent en charge le Microsoft Store sur Xbox One ; Vous verrez **Xbox** en regard de leurs noms dans le **sélection du marché** fenêtre contextuelle.
 
 
 <table>
@@ -65,7 +65,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   </tr>
   <tr>
     <td>Antarctique</td>
-    <td>Antigua et Barbuda</td>
+    <td>Antigua-et-Barbuda</td>
     <td>Argentine</td>
     <td>Arménie</td>
   </tr>
@@ -108,7 +108,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Burkina-Faso</td>
     <td>Burundi</td>
-    <td>Cabo Verde</td>
+    <td>Cap Vert</td>
     <td>Cambodge</td>
   </tr>
   <tr>
@@ -148,7 +148,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>République dominicaine</td>
   </tr>
   <tr>
-    <td>Équateur (République de l’)</td>
+    <td>Équateur (République de)</td>
     <td>Égypte</td>
     <td>Salvador</td>
     <td>Guinée équatoriale</td>
@@ -252,13 +252,13 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Maldives</td>
     <td>Mali</td>
-    <td>Malte (République de)</td>
+    <td>Malte</td>
     <td>Marshall (îles)</td>
   </tr>
   <tr>
     <td>Martinique</td>
     <td>Mauritanie</td>
-    <td>Maurice (île)</td>
+    <td>Maurice</td>
     <td>Mayotte</td>
   </tr>
   <tr>
@@ -388,8 +388,8 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Tuvalu</td>
   </tr>
   <tr>
-    <td>Îles mineures éloignées des États-Unis</td>
-    <td>Îles Vierges (É.-U.)</td>
+    <td>ÉTATS-UNIS Îles mineures éloignées des</td>
+    <td>ÉTATS-UNIS Îles vierges</td>
     <td>Ouganda</td>
     <td>Ukraine</td>
   </tr>
@@ -402,7 +402,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Ouzbékistan</td>
     <td>Vanuatu</td>
-    <td>Cité du Vatican</td>
+    <td>Vatican (État de la Cité du)</td>
     <td>Venezuela</td>
   </tr>
   <tr>
@@ -476,9 +476,9 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
-Si votre application publiée précédemment comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés spécifiques dans l’espace partenaires.
+Si votre application publiée précédemment inclut les packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique « monde » pour les clients qui utilisent le Store sur Windows 8.x, même si elles sont affichées comme des marchés dans le centre de partenaires.
 
-Si vous laissez la sélection du marché par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela, et votre application sera disponible pour tous les marchés possibles. Toutefois, si vous souhaitez exclure certains marchés, n’oubliez pas que l’exclusion d’un seul de ces marchés «Rest of World» signifie que votre application ne sera disponible dans *n’importe quel* des marchés «Rest of World» pour les clients utilisant le package Windows8 ou Windows8.1.
+Si vous laissez la sélection de la mise sur le marché par défaut lors de la soumission de votre application, vous n’avez pas à vous soucier de cela, et votre application sera disponible pour tous les marchés possible. Toutefois, si vous souhaitez exclure certains marchés, gardez à l’esprit qui à l’exclusion au moins un des ces signifie que les marchés du « Monde » votre application n’est pas disponible dans *tout* de la « monde » marchés pour les clients sur Windows 8 ou Windows 8.1.
 
 Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants :
 
@@ -496,7 +496,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Antarctique</td>
   </tr>
   <tr>
-    <td>Antigua et Barbuda</td>
+    <td>Antigua-et-Barbuda</td>
     <td>Arménie</td>
     <td>Aruba</td>
     <td>Azerbaïdjan</td>
@@ -528,7 +528,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Burkina-Faso</td>
     <td>Burundi</td>
-    <td>Cabo Verde</td>
+    <td>Cap Vert</td>
     <td>Cambodge</td>
   </tr>
   <tr>
@@ -553,7 +553,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Djibouti</td>
     <td>Dominique</td>
     <td>République dominicaine</td>
-    <td>Équateur (République de l’)</td>
+    <td>Équateur (République de)</td>
   </tr>
   <tr>
     <td>Salvador</td>
@@ -625,7 +625,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Marshall (îles)</td>
     <td>Martinique</td>
     <td>Mauritanie</td>
-    <td>Maurice (île)</td>
+    <td>Maurice</td>
   </tr>
   <tr>
     <td>Mayotte</td>
@@ -714,12 +714,12 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Tuvalu</td>
     <td>Ouganda</td>
-    <td>Îles mineures éloignées des États-Unis</td>
-    <td>Îles Vierges (É.-U.)</td>
+    <td>ÉTATS-UNIS Îles mineures éloignées des</td>
+    <td>ÉTATS-UNIS Îles vierges</td>
   </tr>
   <tr>
     <td>Ouzbékistan</td>
-    <td>Cité du Vatican</td>
+    <td>Vatican (État de la Cité du)</td>
     <td>Venezuela</td>
     <td>Vietnam</td>
   </tr>
@@ -738,4 +738,4 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 </table>
 
 > [!NOTE]
-> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
+> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire pour un compte de développeur, consultez [types de compte, emplacements et frais](account-types-locations-and-fees.md).

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, annonces, publicité, notes de publication
 ms.localizationpriority: medium
 ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050862"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601224"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Notes de publication des bibliothèques de publicités
 
 
 
 
-Cette section propose des notes de publication relatives à la version actuelle des bibliothèques Microsoft Advertising. Ces bibliothèques prennent en charge les applications XAML et JavaScript/HTML pour Windows 10, Windows8.1, Windows Phone 8.1 et WindowsPhone8.
+Cette section propose des notes de publication relatives à la version actuelle des bibliothèques Microsoft Advertising. Ces bibliothèques prennent en charge les applications XAML et JavaScript/HTML pour Windows 10, Windows 8.1, Windows Phone 8.1 et Windows Phone 8.
 
 ## <a name="installation"></a>Installation
 
@@ -27,11 +27,11 @@ Les bibliothèques de publicités Microsoft sont désormais disponibles au sein 
 
 ## <a name="uninstall-previous-versions"></a>Désinstaller les versions précédentes
 
-Avant d’installer la toute dernière version du SDK Microsoft Advertising, il est recommandé de désinstaller toutes ses instances précédentes. Pour plus d’informations, voir [Installer le SDK MicrosoftAdvertising](install-the-microsoft-advertising-libraries.md).
+Avant d’installer la toute dernière version du SDK Microsoft Advertising, il est recommandé de désinstaller toutes ses instances précédentes. Pour plus d’informations, voir [Installer le SDK Microsoft Advertising](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="target-architecture-specific-build-outputs"></a>Cibler des sorties de génération propres à une architecture
 
-Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouvez pas cibler **TouteUC** dans votre projet. Si votre projet cible la plateforme **TouteUC**, vous pouvez voir un message d’avertissement dans votre projet une fois que vous avez ajouté une référence aux bibliothèques de publicités Microsoft. Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Pour plus d’informations, voir [Problèmes connus](known-issues-for-the-advertising-libraries.md).
+Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouvez pas cibler **Toute UC** dans votre projet. Si votre projet cible la plateforme **Toute UC**, vous pouvez voir un message d’avertissement dans votre projet une fois que vous avez ajouté une référence aux bibliothèques de publicités Microsoft. Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Pour plus d’informations, voir [Problèmes connus](known-issues-for-the-advertising-libraries.md).
 
 ## <a name="c-support"></a>Support C++
 
@@ -43,7 +43,7 @@ Dans la version actuelle des bibliothèques de publicités Microsoft contenues d
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>Les propriétés latitude et longitude ne sont plus disponibles
 
-La classe **AdControl** ne possède plus les propriétés **Latitude** et **Longitude** pour les applicationsUWP. À la place, le code intégré au contrôle de publicité détecte et envoie ces valeurs aux serveurs de publicités pour le compte de l’application.
+La classe **AdControl** ne possède plus les propriétés **Latitude** et **Longitude** pour les applications UWP. À la place, le code intégré au contrôle de publicité détecte et envoie ces valeurs aux serveurs de publicités pour le compte de l’application.
 
 
  

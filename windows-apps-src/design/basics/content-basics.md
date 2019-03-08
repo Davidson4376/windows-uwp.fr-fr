@@ -1,24 +1,24 @@
 ---
-Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
-title: Informations de base relatives à la conception de contenu pour les applications de plateformeWindows universelle (UWP)
+Description: Vue d’ensemble de modèles de page courants et les éléments d’interface utilisateur pour afficher le contenu dans votre application UWP.
+title: Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
 ms.date: 12/1/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004605"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594584"
 ---
-# <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applicationsUWP
+# <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applications UWP
 
-Une application a principalement pour objet d’offrir un accès à un contenu. Dans la mesure où les applications répondent à des buts différents, leur contenu se présente sous de nombreuses formes: dans une application de retouche photo, la photo est le contenu; dans une application de voyage, les cartes et les informations sur les destinations sont le contenu; et ainsi de suite. 
+Une application a principalement pour objet d’offrir un accès à un contenu. Dans la mesure où les applications répondent à des buts différents, leur contenu se présente sous de nombreuses formes : dans une application de retouche photo, la photo est le contenu ; dans une application de voyage, les cartes et les informations sur les destinations sont le contenu ; et ainsi de suite. 
 
 Cet article fournit une vue d’ensemble de la présentation de contenu dans votre application. Nous y décrivons les éléments d’interface utilisateur et les modèles de page courants que vous pouvez utiliser pour afficher le contenu, quelle qu’en soit la forme.
 
@@ -36,14 +36,14 @@ Les pages d’accueil, également connues sous le nom d’écrans bannière, app
 
 ![galerie](images/content-basics/gridview.png)
 
-Les collections permettent aux utilisateurs de parcourir les groupes de contenu ou de données. L’[affichage Grille](../controls-and-patterns/item-templates-gridview.md) est idéal pour les photos ou les contenus centrés sur les médias; le [mode Liste](../controls-and-patterns/item-templates-listview.md) est, quant à lui, plus particulièrement destiné aux données ou aux contenus riches en texte.
+Les collections permettent aux utilisateurs de parcourir les groupes de contenu ou de données. L’[affichage Grille](../controls-and-patterns/item-templates-gridview.md) est idéal pour les photos ou les contenus centrés sur les médias ; le [mode Liste](../controls-and-patterns/item-templates-listview.md) est, quant à lui, plus particulièrement destiné aux données ou aux contenus riches en texte.
 
 
 ### <a name="masterdetail"></a>Maître/Détail
 
 ![maître et détails](images/content-basics/master-detail.png)
 
-Le modèle [maître/détails](../controls-and-patterns/master-details.md) se compose du mode Liste (maître) et d’une vue de contenu (détail). Ces deux volets sont figés et offrent un défilement vertical. Il existe une relation claire entre l’élément de liste et la vue de contenu: lorsque l’élément de la vue maître est sélectionné, la vue détaillée est mise à jour en conséquence. Outre la navigation dans la vue détaillée, il est possible d’ajouter et de supprimer des éléments de la vue maître.
+Le modèle [maître/détails](../controls-and-patterns/master-details.md) se compose du mode Liste (maître) et d’une vue de contenu (détail). Ces deux volets sont figés et offrent un défilement vertical. Il existe une relation claire entre l’élément de liste et la vue de contenu : lorsque l’élément de la vue maître est sélectionné, la vue détaillée est mise à jour en conséquence. Outre la navigation dans la vue détaillée, il est possible d’ajouter et de supprimer des éléments de la vue maître.
 
 ### <a name="details"></a>Détails
 
@@ -80,7 +80,7 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <tr class="odd">
 <td align="left">Audio et vidéo<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">Contrôles de transport et de lecture de média</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">Contrôles de la lecture et le transport de multimédias</a></td>
 <td align="left">Lit du contenu audio et vidéo.</td>
 </tr>
 <tr class="even">
@@ -92,7 +92,7 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <tr class="odd">
 <td align="left">Collections <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">Mode Liste et affichage Grille</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">Vue liste et l’affichage de grille</a></td>
 <td align="left">Présente les éléments dans une liste interactive ou une grille. Utilisez ces éléments pour permettre aux utilisateurs de sélectionner un film parmi une liste de nouveautés ou de gérer un inventaire.</td>
 </tr>
 <tr class="even">
@@ -113,7 +113,7 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <tr class="even">
 <td align="left">WebView</td>
 <td align="left"><a href="../controls-and-patterns/web-view.md">WebView</a></td>
-<td align="left">Restitue le contenuHTML.</td>
+<td align="left">Restitue le contenu HTML.</td>
 </tr>
 </tbody>
 </table>

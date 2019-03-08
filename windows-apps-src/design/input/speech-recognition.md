@@ -1,5 +1,5 @@
 ---
-Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
+Description: La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 title: Reconnaissance vocale
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
@@ -9,11 +9,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048546"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608074"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
@@ -26,17 +26,17 @@ La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API
 
 ## <a name="configure-speech-recognition"></a>Configurer la reconnaissance vocale
 
-Pour prendre en charge la reconnaissance vocale avec votre application, l’utilisateur doit se connecter et activer un microphone sur leur appareil et acceptez la politique de confidentialité Microsoft accorder l’autorisation de votre application pour l’utiliser.
+Pour prendre en charge la reconnaissance vocale avec votre application, l’utilisateur doit se connecter et activer un microphone sur leur appareil et accepter la politique de confidentialité de Microsoft l’octroi d’autorisation pour votre application pour l’utiliser.
 
-Invite automatiquement l’utilisateur avec une boîte de dialogue système demande d’autorisation d’accès et utiliser le microphone de l’alimentation audio venez de définir (exemple à partir de [reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897) illustré ci-dessous), le **Microphone** [appareil fonctionnalité](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) dans le [manifeste du package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Pour plus d’informations, voir les [déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+Pour inviter automatiquement l’utilisateur avec une boîte de dialogue système demande l’autorisation d’accéder à et utiliser des flux audio du microphone (exemple à partir de la [la reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897) illustré ci-dessous), définissez simplement le  **Microphone** [fonctionnalité de l’appareil](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) dans le [manifeste de package d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Pour plus d’informations, consultez [déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ![Politique de confidentialité pour l’accès au microphone](images/speech/privacy.png)
 
-Si l’utilisateur clique sur Oui pour accorder l’accès au microphone, votre application est ajoutée à la liste des applications approuvées sur les paramètres-> confidentialité-page du Microphone >. Toutefois, comme l’utilisateur peut choisir de désactiver ce paramètre à tout moment, vous devez vérifier que votre application a accès au microphone avant de tenter de l’utiliser.
+Si l’utilisateur clique sur Oui pour accorder l’accès au microphone, votre application est ajoutée à la liste des applications approuvées sur les paramètres -> confidentialité -> page de Microphone. Toutefois, comme l’utilisateur peut choisir de désactiver ce paramètre à tout moment, vous devez confirmer que votre application a accès à l’aide du microphone avant de tenter de l’utiliser.
 
-Si vous souhaitez également prendre en charge de la dictée, Cortana, ou la reconnaissance vocale autres services (par exemple, une [Grammaire prédéfinie](#predefined-grammars) définies dans une contrainte de rubrique), vous devez également confirmer que **la reconnaissance vocale en ligne** (paramètres-> confidentialité-> vocale) est activée.
+Si vous souhaitez également prendre en charge de la dictée, de Cortana ou d’autres services de reconnaissance vocale (comme un [prédéfinis grammaire](#predefined-grammars) définies dans une contrainte de rubrique), vous devez également confirmer que **la reconnaissance vocale en ligne** (Paramètres -> confidentialité -> vocale) est activée.
 
-Cet extrait de code montre comment votre application peut vérifier s’il existe un microphone et si elle est autorisé à l’utiliser.
+Cet extrait de code montre comment votre application peut vérifier si un microphone est présent et si elle a l’autorisation de l’utiliser.
 
 ```csharp
 public class AudioCapturePermissions
@@ -210,7 +210,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
 
-Vous pouvez utiliser les types de contraintes suivantes pour reconnaître la saisie vocale.
+Vous pouvez utiliser les types suivants de contraintes de reconnaissance de la saisie vocale.
 
 ### <a name="predefined-grammars"></a>Grammaires prédéfinies
 
@@ -220,15 +220,15 @@ La grammaire de dictée de texte libre par défaut peut reconnaître la plupart 
 
 La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-**Remarque**étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineux, et dans la mesure où ils sont en ligne (pas sur l’appareil), performances ne peuvent pas être aussi bonnes qu’avec une grammaire personnalisée installée sur l’appareil.     
+**Remarque**  car des grammaires de la dictée et recherche de web prédéfinis peuvent être volumineux, et qu’ils sont en ligne (pas sur l’appareil), performances ne peuvent pas être aussi rapides qu’avec une syntaxe personnalisée installée sur l’appareil.     
 
-Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
+Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
-Pour utiliser les contraintes de service web, vous devez activer la prise en charge de la saisie vocale et de la dictée dans **Paramètres** en activant l’option «Reconnaître ma voix» dans la page **Paramètres -> Confidentialité -> Voix, entrée manuscrite et frappe**.
+Pour utiliser les contraintes de service web, vous devez activer la prise en charge de la saisie vocale et de la dictée dans **Paramètres** en activant l’option « Reconnaître ma voix » dans la page **Paramètres -> Confidentialité -> Voix, entrée manuscrite et frappe**.
 
 Nous indiquons ici comment vérifier si la saisie vocale est activée et comment ouvrir la page Paramètres -> Confidentialité -> Voix, entrée manuscrite et frappe si cette fonction n’est pas activée.
 
-Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Voir [Gestion des exceptions pour les applications enC# ou VisualBasic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Consultez [gestion des exceptions pour dans C\# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
@@ -257,29 +257,29 @@ catch (Exception exception)
 }
 ```
 
-Voir [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446).
+Consultez [ **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446).
 
-### <a name="programmatic-list-constraints"></a>Contraintes de liste de programmation 
+### <a name="programmatic-list-constraints"></a>Contraintes de la liste par programmation 
 
 Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programme.
 
 Une contrainte de liste se compose d’un tableau de chaînes qui correspondent à la saisie vocale acceptée par votre application en vue d’une opération de reconnaissance vocale. Pour créer une contrainte de liste dans votre application, vous devez créer un objet de contrainte de liste de reconnaissance vocale et lui passer un tableau de chaînes. Vous devez ensuite ajouter cet objet à la collection de contraintes du moteur de reconnaissance vocale. La reconnaissance vocale fonctionne quand le moteur de reconnaissance vocale reconnaît l’une des chaînes du tableau.
 
-Voir [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421).
+Consultez [ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421).
 
 ### <a name="srgs-grammars"></a>Grammaires SRGS
 
-Contrairement à une contrainte de liste de programmation, une grammaire SRGS (Speech Recognition Grammar Specification) est un document statique au format XML défini par la norme [SRGS version1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
+Contrairement à une contrainte de liste de programmation, une grammaire SRGS (Speech Recognition Grammar Specification) est un document statique au format XML défini par la norme [SRGS version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
- Voir [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412).
+ Consultez [ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412).
 
 ### <a name="voice-command-constraints"></a>Contraintes de commandes vocales
 
 Utilisez un fichier XML VCD (Voice Command Definition) pour définir les commandes que l’utilisateur peut prononcer pour lancer des actions au moment de l’activation de votre application. Pour plus d’informations, voir [Lancer une application au premier plan avec les commandes vocales de Cortana](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
-Voir [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
+Consultez [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
-**Remarque**le type de type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
+**Remarque**  le type du type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous souhaitez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
 Pour apprendre à utiliser des contraintes, voir [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md).
 
 La grammaire de dictée prédéfinie d’une application Windows universelle reconnaît la plupart des mots et des expressions courtes dans une langue donnée. Elle est activée par défaut lorsqu’un objet du moteur de reconnaissance vocale est instancié sans contraintes personnalisées.
@@ -313,13 +313,13 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 Quand votre application tente une reconnaissance vocale en appelant la méthode [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), plusieurs écrans s’affichent dans l’ordre suivant.
 
-Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web):
+Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web) :
 
 -   Écran **Écoute**
 -   Écran **Réflexion**
 -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
-Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS:
+Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS :
 
 -   Écran **Écoute**
 -   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
@@ -373,7 +373,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 **Concepteurs**
 * [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
 **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [La reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

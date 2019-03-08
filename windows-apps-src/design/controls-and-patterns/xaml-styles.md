@@ -11,11 +11,11 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0bed73a3b0d21329c5195be0772538f3a99bdcd
-ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "9062461"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648424"
 ---
 # <a name="xaml-styles"></a>Styles XAML
 
@@ -27,7 +27,7 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 
 ## <a name="style-basics"></a>Bases des styles
 
-Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3boutons avec un style définissant les propriétés [BorderBrush](https://msdn.microsoft.com/library/windows/apps/br209397), [BorderThickness](https://msdn.microsoft.com/library/windows/apps/br209399) et [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
+Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3 boutons avec un style définissant les propriétés [BorderBrush](https://msdn.microsoft.com/library/windows/apps/br209397), [BorderThickness](https://msdn.microsoft.com/library/windows/apps/br209399) et [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
 
 ![Boutons stylés](images/styles-rainbow-buttons.png)
 
@@ -75,7 +75,7 @@ Voici deux boutons illustrant les styles implicite et explicite.
 
 ![Boutons aux styles implicite et explicite](images/styles-buttons-implicit-explicit.png)
 
-Dans cet exemple, l’[attribut x:Key](../../xaml-platform/x-key-attribute.md) est associé au premier style et le type cible de ce dernier est [Button](https://msdn.microsoft.com/library/windows/apps/br209265). La propriété [Style](https://msdn.microsoft.com/library/windows/apps/br208743) du premier bouton est définie sur cette clé: le style est donc appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut x:Key n’est associé à ce dernier: le style est donc appliqué implicitement au deuxième bouton.
+Dans cet exemple, l’[attribut x:Key](../../xaml-platform/x-key-attribute.md) est associé au premier style et le type cible de ce dernier est [Button](https://msdn.microsoft.com/library/windows/apps/br209265). La propriété [Style](https://msdn.microsoft.com/library/windows/apps/br208743) du premier bouton est définie sur cette clé : le style est donc appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut x:Key n’est associé à ce dernier : le style est donc appliqué implicitement au deuxième bouton.
 
 ```XAML
 <Page.Resources>
@@ -149,7 +149,7 @@ Pour appliquer rapidement des styles à vos contrôles, cliquez avec le bouton d
 
 Le remplacement des pinceaux système est généralement effectué au niveau de l’application ou de la page. Dans les deux cas, la substitution de la couleur s’appliquera à tous les contrôles qui font référence à ce pinceau (dans un code XAML, de nombreux contrôles peuvent référencer le même pinceau système).
 
-![boutons stylisés](images/LightweightStyling_ButtonStatesExample.png)
+![Boutons stylés](images/LightweightStyling_ButtonStatesExample.png)
 
 ```XAML
 <Page.Resources>
@@ -165,15 +165,15 @@ Le remplacement des pinceaux système est généralement effectué au niveau de 
 </Page.Resources>
 ```
 
-Pour les états du type PointerOver (souris déplacée sur le bouton), **PointerPressed** (activation du bouton), ou Disabled (impossible d’interagir avec le bouton). Ces terminaisons sont ajoutées sur les noms de style léger d’origine: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. En modifiant également ces pinceaux, vous aurez la garantie que vos contrôles utiliseront une couleur cohérente avec celle du thème de votre application.
+Pour les états du type PointerOver (souris déplacée sur le bouton), **PointerPressed** (activation du bouton), ou Disabled (impossible d’interagir avec le bouton). Ces fins sont ajoutés sur les noms de style léger d’origine : **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. Modification de ces formes, permet de garantir que vos contrôles sont colorés manière cohérente pour le thème de votre application.
 
 Le fait de placer ces remplacements de pinceau au niveau **App.Resources** a pour effet d’affecter tous les boutons de l’ensemble de votre application, et non une seule page.
 
 ### <a name="per-control-styling"></a>Création d’un style par contrôle
 
-Dans d’autres cas, il peut être souhaitable de modifier un seul contrôle sur une même page afin de lui affecter un style donné, sans altérer les autres versions de ce contrôle:
+Dans d’autres cas, il peut être souhaitable de modifier un seul contrôle sur une même page afin de lui affecter un style donné, sans altérer les autres versions de ce contrôle :
 
-![boutons stylisés](images/LightweightStyling_CheckboxExample.png)
+![Boutons stylés](images/LightweightStyling_CheckboxExample.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>
@@ -200,7 +200,7 @@ Dans d’autres cas, il peut être souhaitable de modifier un seul contrôle sur
 <CheckBox Content="Normal CheckBox" Margin="5"/>
 ```
 
-Cela affecterait uniquement cet élément «Special CheckBox» sur la page qui contenait ce contrôle.
+Cela affecterait uniquement cet élément « Special CheckBox » sur la page qui contenait ce contrôle.
 
 ## <a name="modify-the-default-system-styles"></a>Modifier les styles système par défaut
 

@@ -3,14 +3,14 @@ title: API expérimentales
 description: Comprendre les API expérimentales
 ms.date: 11/13/2017
 ms.topic: article
-keywords: windows10, uwp, expérimentale, api
+keywords: windows 10, uwp, expérimentale, api
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6e236368134086081141e220088358f4897033
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927465"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657944"
 ---
 # <a name="experimental-apis"></a>API expérimentales
 
@@ -19,7 +19,7 @@ Les API expérimentales en sont à un stade précoce de conception et sont susce
 Ces API sont évaluées en externe à l’aide de [SDK Windows Insider](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) afin que les développeurs puissent les essayer et fournir des commentaires avant de les intégrer à la plateforme officielle. Lors de leur évaluation, il n’existe aucune promesse de stabilité ou d'engagement.
 
 ## <a name="consuming-experimental-apis"></a>Utilisation d'API expérimentales
-IntelliSense vous indique si une API est expérimentale. Lorsque vous utilisez une API expérimentale, vous recevez également un avertissement du compilateur tel que «... sert uniquement à des fins d’évaluation et est susceptible d’être modifiée ou supprimée dans de futures mises à jour.»
+IntelliSense vous indique si une API est expérimentale. Lorsque vous utilisez une API expérimentale, vous recevez également un avertissement du compilateur tel que « ... sert uniquement à des fins d’évaluation et est susceptible d’être modifiée ou supprimée dans de futures mises à jour. »
 
 Ces avertissements contribuent à vous protéger contre la création de dépendances sur des API expérimentales dans le cadre de projets de production. Pour les projets expérimentaux, vous pouvez ignorer ou désactiver ces avertissements.
 

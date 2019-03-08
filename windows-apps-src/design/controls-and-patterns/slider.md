@@ -1,23 +1,23 @@
 ---
-Description: Lets the user set a value in a given range.
+Description: Permet à l’utilisateur de définir une valeur comprise dans une plage donnée.
 title: Curseurs
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037081"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589924"
 ---
 # <a name="sliders"></a>Curseurs
 
@@ -25,12 +25,12 @@ ms.locfileid: "9037081"
 
 Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
 
-> **API importantes**: [classe Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [propriété Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [événement ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **API importantes**: [Classe Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [propriété Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [événement ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
 ![Contrôle de curseur](images/controls/slider.png)
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un curseur lorsque vous voulez donner la possibilité à l’utilisateur de spécifier des valeurs définies et contiguës (telles que le volume ou la luminosité) ou une plage de valeurs distinctes (comme les paramètres de résolution d’écran).
 
@@ -38,15 +38,15 @@ Un curseur représente un bon choix lorsque vous savez que les utilisateurs cons
 
 N’utilisez pas un curseur pour les paramètres binaires. Utilisez un [bouton bascule](toggles.md) à la place.
 
-Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur:
+Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur :
 
--   **Le paramètre s’apparente-t-il à une quantité relative?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
--   **Le paramètre est-il une valeur numérique exacte connue?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
--   **Un utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
--   **Le paramètre a-t-il une plage de quatre valeurs ou plus?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
--   **L’utilisateur peut-il changer la valeur?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
+-   **Le paramètre semble une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
+-   **Est le paramètre exact, appelée valeur numérique ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
+-   **Un utilisateur tireront parti de commentaires instantanés sur l’effet des modifications des paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
+-   **Le paramètre dispose d’une plage de valeurs de quatre ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
+-   **L’utilisateur peut modifier la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
 
-Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si:
+Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si :
 
 -   l’espace de l’écran est réduit ;
 -   l’utilisateur préfère probablement utiliser un clavier.
@@ -64,7 +64,7 @@ Utilisez un curseur si :
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Slider">ouvrir l’application et voir l'objet Curseur en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -117,7 +117,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   Veillez à ce que la taille du contrôle permette à l’utilisateur de définir facilement la valeur souhaitée. Pour les paramètres ayant des valeurs distinctes, assurez-vous que l’utilisateur peut facilement sélectionner n’importe quelle valeur à l’aide de la souris. Assurez-vous que les extrémités du curseur restent toujours dans les limites de la zone d’affichage.
 -   Fournissez un retour immédiat pendant ou juste après une sélection de l’utilisateur (lorsque cela est faisable). Par exemple, le contrôle du volume Windows émet un son pour indiquer le volume audio sélectionné.
--   Utilisez des étiquettes pour afficher les différentes valeurs de la plage. Exception : si le curseur est orienté à la verticale et que l’étiquette supérieure est Maximum, Haut, Plus ou un équivalent, vous n’êtes pas obligé d’ajouter les autres étiquettes, car la signification est évidente.
+-   Utilisez des étiquettes pour afficher les différentes valeurs de la plage. Exception : Si le curseur est orienté verticalement et l’étiquette du haut est Maximum, élevé, plus ou équivalent, vous pouvez omettre les autres étiquettes, car la signification est claire.
 -   Si vous désactivez le curseur, désactivez aussi l’ensemble des étiquettes ou retours visuels associés.
 -   Tenez compte de l’orientation du texte lorsque vous définissez la direction du flux et/ou l’orientation de votre curseur. Selon la langue, le script est lu de gauche à droite ou de droite à gauche.
 -   N’utilisez pas un curseur comme indicateur de progression.
@@ -145,7 +145,7 @@ La direction de la plage est le sens dans lequel vous déplacez le curseur lorsq
 
 ### <a name="steps-and-tick-marks"></a>Étapes et graduations
 
--   Utilisez des points d’ancrage si vous ne souhaitez pas que le curseur autorise des valeurs arbitraires entre la valeur minimale et la valeur maximale. Par exemple, si vous utilisez un curseur pour spécifier le nombre de tickets de cinéma à acheter, n’autorisez pas les valeurs à virgule flottante. Définissez un point d’ancrage de valeur1.
+-   Utilisez des points d’ancrage si vous ne souhaitez pas que le curseur autorise des valeurs arbitraires entre la valeur minimale et la valeur maximale. Par exemple, si vous utilisez un curseur pour spécifier le nombre de tickets de cinéma à acheter, n’autorisez pas les valeurs à virgule flottante. Définissez un point d’ancrage de valeur 1.
 -   Si vous spécifiez des points d’ancrage, veillez à ce que le dernier point corresponde à la valeur maximale du curseur.
 -   Utilisez la graduation lorsque vous voulez indiquer aux utilisateurs l’emplacement de valeurs importantes ou significatives. Par exemple, un curseur qui contrôle un zoom pourrait être pourvu de graduations pour 50 %, 100 % et 200 %.
 -   Affichez des graduations lorsque les utilisateurs ont besoin de connaître la valeur approximative du paramètre.
@@ -169,7 +169,7 @@ La direction de la plage est le sens dans lequel vous déplacez le curseur lorsq
     -   Étiquetez les deux extrémités de la plage du curseur, à moins que cela ne soit pas nécessaire avec une orientation verticale.
     -   Utilisez un seul mot, si possible, pour chaque étiquette.
     -   N’utilisez pas de ponctuation finale.
-    -   Veillez à ce que ces étiquettes soient descriptives et balancées. Exemples : Maximum/Minimum, Plus/Moins, Bas/Haut, Faible/Fort.
+    -   Veillez à ce que ces étiquettes soient descriptives et balancées. Exemples : Maximum/Minimum, plus/moins, Low/High, Soft/bruyant.
 -   **Étiquettes de valeur**
 
     Une étiquette de valeur affiche la valeur actuelle du curseur.
@@ -190,6 +190,6 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-topics"></a>Rubriquesassociées
-- [Boutons bascule](toggles.md)
-- [Classe Slider](https://msdn.microsoft.com/library/windows/apps/br209614)
+## <a name="related-topics"></a>Rubriques connexes
+- [Activer/désactiver commutateurs](toggles.md)
+- [Classe de curseur](https://msdn.microsoft.com/library/windows/apps/br209614)

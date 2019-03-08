@@ -1,18 +1,18 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+Description: Les applications de bureau empaquetées peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application empaquetée peut utiliser.
 Search.Product: eADQiWindows 10XVcnh
 title: API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
 ms.date: 10/27/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048849"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644714"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>API UWP disponibles pour une application de bureau empaquetée
 
@@ -23,14 +23,14 @@ La plupart des API UWP fonctionnent parfaitement sur les applications de bureau 
 <table><tr><th>Domaine de fonctionnalité</th><th>Détails</th><tr>
 <tr><td>Rendez-vous, contacts et messages électroniques</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>Authentification et identité des utilisateurs</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
-<tr><td>Tâches en arrière-plan</td><td>Bien que les applications empaquetées puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter <i>en tant que</i> tâches en arrière-plan. Pour plus d’informations, voir <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">Exemple de tâche en arrière-plan sur GitHub</a>.</td></tr>
+<tr><td>Tâches en arrière-plan</td><td>Bien que les applications empaquetées puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter <i>en tant que</i> tâches en arrière-plan. Pour plus d’informations, voir <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">l’exemple de tâche en arrière-plan sur GitHub</a>.</td></tr>
 <tr><td>Bluetooth</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>Chat et appels téléphoniques</td><td>Les applications empaquetées ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP.</td></tr>
 <tr><td>Activation des contrats</td><td>Seules les applications UWP complètes peuvent être activées par un contrat.</td></tr>
 <tr><td>Chiffrement</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>Géolocalisation</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>Sélecteurs de fichiers et de dossiers</td><td>Les applications empaquetées disposent d’un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP.</td></tr>
-<tr><td>Média</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Support</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>Point de service</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>Cartes à puce</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
 <tr><td>PlayReady</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
@@ -48,7 +48,7 @@ Certaines API UWP disponibles pour les applications de bureau complètes ne sont
 
 Voici une liste complète des API UWP prises en charge dans les applications empaquetées. Vous pouvez afficher les [API nouvellement prises en charge dans les applications empaquetées](#new) ou les [API prises en charge à la fois dans les applications empaquetées et dans les applications de bureau](#both).
 
-Pour des exemples d’utilisation des API WinRT, consultez [Exemples de Pont du bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Pour des exemples d’utilisation des API WinRT, consultez [Exemples de Pont du bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows 10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <a id="new" />
 
@@ -634,15 +634,15 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de Pont du 
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
-* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
+* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -1050,8 +1050,8 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de Pont du 
 
 **Trouvez des réponses à vos questions**
 
-Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions ? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Transmettre des commentaires ou suggérer des fonctionnalités**
+**Donner votre avis ou faire des suggestions de fonctionnalité**
 
 Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

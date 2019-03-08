@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b35fb71e51044ee6be6ed90001e3b5614c8cb45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655734"
 ---
 # <a name="camera-space-transformations"></a>Transformations de l’espace de caméra
 
@@ -27,7 +27,7 @@ N = N \* (wvMatrix⁻¹)<sup>T</sup>
 
 L’inversion matricielle et la transposition matricielle fonctionnent sur une matrice 4x4. La multiplication associe la normale à la partie 3x3 de la matrice 4x4 qui en résulte.
 
-Si l’état de rendu est défini de manière à normaliser les normales, les vecteurs normaux du vertex sont normalisés après la transformation dans l’espace de caméra, comme indiqué ci-après:
+Si l’état de rendu est défini de manière à normaliser les normales, les vecteurs normaux du vertex sont normalisés après la transformation dans l’espace de caméra, comme indiqué ci-après :
 
 N = norm(N)
 
@@ -39,9 +39,9 @@ La direction de la lumière dans l'espace de caméra, dans le cas d'une lumière
 
 L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
 
-Pour une lumière ponctuelle et un projecteur, la direction par rapport à la lumière est calculée comme suit:
+Pour une lumière ponctuelle et un projecteur, la direction par rapport à la lumière est calculée comme suit :
 
-L<sub>dir</sub> = norm(V \* Lₚ), où les paramètres sont définis dans le tableau suivant.
+L<sub>dir</sub> Norm (V \* Lₚ), où les paramètres sont définis dans le tableau suivant.
 
 | Paramètre       | Valeur par défaut | Type                                          | Description                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|
@@ -57,7 +57,7 @@ L<sub>dir</sub> = norm(V \* Lₚ), où les paramètres sont définis dans le tab
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Formules mathématiques d’éclairage](mathematics-of-lighting.md)
+[Mathématiques d’éclairage](mathematics-of-lighting.md)
 
  
 

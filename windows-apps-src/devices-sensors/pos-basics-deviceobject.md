@@ -3,14 +3,14 @@ title: Objets appareil PointOfService
 description: En savoir plus sur la création d’objets appareils PointOfService
 ms.date: 06/19/2018
 ms.topic: article
-keywords: windows10, uwp, point de vente, pdv
+keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934295"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596874"
 ---
 # <a name="pointofservice-device-objects"></a>Objets appareil PointOfService
 
@@ -37,14 +37,14 @@ Cet exemple tente de créer un nouvel objet BarcodeScanner avec FromIdAsync à l
 Une fois que vous avez un objet appareil, vous pouvez accéder aux méthodes, aux propriétés et aux événements de l'appareil.  
 
 ## <a name="device-object-lifecycle"></a>Cycle de vie de l'objet appareil
-Avant Windows8, les applications avaient un cycle de vie simple. Les applications Win32 et .NET sont en cours d’exécution ou pas et les périphériques PointOfService ont été généralement revendiqués pour le cycle de vie complet de l’application. Lorsqu’un utilisateur les réduit ou les ferme, elles continuent de s’exécuter. Cela ne posait aucun problème jusqu’à ce que les appareils mobiles et la gestion de l’alimentation prennent une importance croissante.
+Avant Windows 8, les applications avaient un cycle de vie simple. Les applications Win32 et .NET sont en cours d’exécution ou pas et les périphériques PointOfService ont été généralement revendiqués pour le cycle de vie complet de l’application. Lorsqu’un utilisateur les réduit ou les ferme, elles continuent de s’exécuter. Cela ne posait aucun problème jusqu’à ce que les appareils mobiles et la gestion de l’alimentation prennent une importance croissante.
 
-Windows8 a mis en place un nouveau modèle d’application, avec les applications UWP. Globalement, un état suspendu a été ajouté. Une application UWP est suspendue, lorsque l’utilisateur la réduit ou bascule vers une autre application. Autrement dit, les threads de l’application sont arrêtés et l’application reste en mémoire, sauf si le système d’exploitation a besoin de récupérer des ressources et tous les objets appareils représentant des périphériques PointOfService sont automatiquement fermés pour autoriser d’autres applications à accéder aux périphériques. Lorsque l’utilisateur revient à l’application, celle-ci peut rapidement reprendre un état d’exécution et restaurer les connexions des périphériques PointOfService, à condition que celles-ci soient toujours disponibles à la reprise.
+Windows 8 a mis en place un nouveau modèle d’application, avec les applications UWP. Globalement, un état suspendu a été ajouté. Une application UWP est suspendue, lorsque l’utilisateur la réduit ou bascule vers une autre application. Autrement dit, les threads de l’application sont arrêtés et l’application reste en mémoire, sauf si le système d’exploitation a besoin de récupérer des ressources et tous les objets appareils représentant des périphériques PointOfService sont automatiquement fermés pour autoriser d’autres applications à accéder aux périphériques. Lorsque l’utilisateur revient à l’application, celle-ci peut rapidement reprendre un état d’exécution et restaurer les connexions des périphériques PointOfService, à condition que celles-ci soient toujours disponibles à la reprise.
 
 Vous pouvez détecter la fermeture d’un objet pour une raison quelconque avec un <DeviceObject>. Le gestionnaire de l'événement Fermé note l’ID de l'appareil pour rétablir la connexion à l’avenir.   Vous pouvez également souhaiter gérer cette situation sur une notification de Suspension d'une application pour enregistrer l'ID de l'appareil afin de rétablir les connexions du périphérique sur une notification de Reprise d'une application.  Assurez-vous de ne pas doubler les gestionnaires d’événements et de ne pas dupliquer les actions pour l’objet appareil sur les deux <DeviceObject>.Fermé et Suspension d'une application.
 
 > [!TIP]
-> Reportez-vous aux rubriques suivantes pour plus d’informations sur le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows10:
-> - [Cycle de vie d’une application de plateforme Windows universelle (UWP) Windows10](../launch-resume/app-lifecycle.md)
-> - [Gérer la suspension d’une application](../launch-resume/suspend-an-app.md)
-> - [Gérer la reprise d’une application](../launch-resume/resume-an-app.md)
+> Reportez-vous aux rubriques suivantes pour plus d’informations sur le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows 10 :
+> - [Cycle de vie des applications plateforme Windows universelle (UWP) de Windows 10](../launch-resume/app-lifecycle.md)
+> - [Gérer la suspension d’application](../launch-resume/suspend-an-app.md)
+> - [Gérer la reprise de l’application](../launch-resume/resume-an-app.md)

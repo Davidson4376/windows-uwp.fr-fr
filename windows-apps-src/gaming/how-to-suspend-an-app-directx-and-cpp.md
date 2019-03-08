@@ -1,23 +1,23 @@
 ---
 title: Comment suspendre une application (DirectX et C++)
-description: Cet article indique comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système suspend votre application DirectX de plateforme Windows universelle (UWP).
+description: Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme UWP.
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, suspendre, directx
+keywords: windows 10, uwp, jeux, suspendre, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945711"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656034"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>Comment suspendre une application (DirectX et C++)
 
 
 
-Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme Windows universelle.
+Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme UWP.
 
 ## <a name="register-the-suspending-event-handler"></a>Enregistrer le gestionnaire d’événements de suspension
 
@@ -97,7 +97,7 @@ void App::Run()
 ## <a name="call-trim"></a>Appeler Trim()
 
 
-À compter de Windows8.1, toutes les applications DirectX UWP doivent appeler [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) lors de la suspension. Cet appel donne instruction au pilote graphique de libérer toutes les mémoires tampons temporaires allouées pour l’application, ce qui limite les chances de voir l’application se terminer pour cause de récupération des ressources de mémoire pendant qu’elle est à l’état de suspension. Il s’agit d’une condition de certification pour Windows8.1.
+À compter de Windows 8.1, toutes les applications DirectX UWP doivent appeler [ **IDXGIDevice3::Trim** ](https://msdn.microsoft.com/library/windows/desktop/dn280346) lors de la suspension. Cet appel donne instruction au pilote graphique de libérer toutes les mémoires tampons temporaires allouées pour l’application, ce qui limite les chances de voir l’application se terminer pour cause de récupération des ressources de mémoire pendant qu’elle est à l’état de suspension. Il s’agit d’une condition de certification pour Windows 8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -134,7 +134,7 @@ void DX::DeviceResources::Trim()
 
 Lorsque votre application traite l’événement [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), elle a également la possibilité de libérer les ressources exclusives et les descripteurs de fichiers. En libérant explicitement les ressources exclusives et les descripteurs de fichiers, vous permettez aux autres applications d’y accéder pendant que votre application ne les utilise pas. Lorsque l’application est activée après un arrêt, elle doit ouvrir ses ressources exclusives et descripteurs de fichiers.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 
 Le système suspend votre application chaque fois que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan.
@@ -145,7 +145,7 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Comment relancer une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [Comment reprendre une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
 * [Comment activer une application (DirectX et C++)](how-to-activate-an-app-directx-and-cpp.md)
 
  

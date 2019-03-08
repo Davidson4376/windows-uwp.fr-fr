@@ -4,15 +4,15 @@ title: Personnalisation de la barre de titre
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, uwp, barre de titre
+keywords: Windows 10, uwp, barre de titre
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923449"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648814"
 ---
 # <a name="title-bar-customization"></a>Personnalisation de la barre de titre
 
@@ -20,7 +20,7 @@ ms.locfileid: "8923449"
 
 Lorsque votre application s’exécute dans une fenêtre de bureau, vous pouvez personnaliser les barres de titre pour correspondre à la personnalité de votre application. Les API de personnalisation de barre de titre vous permettent de spécifier les couleurs des éléments de barre de titre ou d’étendre le contenu de votre application dans la zone de barre de titre et d’en prendre le contrôle total.
 
-> **API importantes**: [propriété ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [classe ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [classe CoreApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **API importantes**: [Propriété de ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [ApplicationViewTitleBar classe](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar classe](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Degrés de personnalisation de la barre de titre
 
@@ -33,7 +33,7 @@ L’autre option consiste à masquer la barre de titre par défaut et à la remp
 Lorsque vous optez pour une personnalisation complète, vous êtes responsable de placer le contenu dans la zone de barre de titre et vous pouvez définir votre propre zone pouvant être glissée. Les boutons système Retour, Fermer, Réduire et Agrandir sont toujours disponibles et gérés par le système, contrairement aux éléments tels que le titre de l’application. Vous devrez créer ces éléments par vous-même, selon les besoins de votre application.
 
 > [!NOTE]
-> La personnalisation simple des couleurs est disponible pour les applicationsUWP utilisant du code XAML, DirectX et HTML. La personnalisation complète est disponible uniquement pour les applicationsUWP en XAML.
+> La personnalisation simple des couleurs est disponible pour les applications UWP utilisant du code XAML, DirectX et HTML. La personnalisation complète est disponible uniquement pour les applications UWP en XAML.
 
 ## <a name="simple-color-customization"></a>Personnalisation simple des couleurs
 
@@ -69,7 +69,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 > [!TIP]
 > Le Kit de ressources de la Communauté Windows fournit des extensions qui vous permettent de définir ces propriétés de couleur en XAML. Pour plus d’informations, voir la [documentation du Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
 
-Il y a plusieurs choses à savoir lors de la définition des couleurs de la barre de titre:
+Il y a plusieurs choses à savoir lors de la définition des couleurs de la barre de titre :
 
 - La couleur d’arrière-plan des boutons n’est pas appliquée aux états de survol et d’activation du bouton Fermer. Le bouton Fermer utilise toujours la couleur définie par le système pour ces états.
 - Les propriétés de couleur des boutons sont appliquées au bouton système Retour lorsqu’il est utilisé. ([Voir Historique de navigation et navigation vers l’arrière](../basics/navigation-history-and-backwards-navigation.md).)
@@ -95,7 +95,7 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 ```
 
 > [!TIP]
-> Ce paramètre est conservé lorsque votre application est fermée et redémarrée. Dans VisualStudio, si vous définissez ExtendViewIntoTitleBar sur **true**et que vous voulez revenir à la valeur par défaut, vous devez la définir explicitement sur **false** et exécuter votre application pour remplacer le paramètre persistant.
+> Ce paramètre est conservé lorsque votre application est fermée et redémarrée. Dans Visual Studio, si vous définissez ExtendViewIntoTitleBar sur **true**et que vous voulez revenir à la valeur par défaut, vous devez la définir explicitement sur **false** et exécuter votre application pour remplacer le paramètre persistant.
 
 ### <a name="draggable-regions"></a>Zones pouvant être glissées
 
@@ -139,16 +139,16 @@ public MainPage()
 
 L’élément UIElement (`AppTitleBar`) fait partie du code XAML pour votre application. Vous pouvez soit déclarer et définir la barre de titre dans une page racine qui ne change pas, soit déclarer et définir une zone de barre de titre dans chaque page à laquelle votre application peut accéder. Si vous la définissez dans chaque page, vous devez vous assurer que la zone pouvant être glissée reste cohérente lorsqu’un utilisateur navigue dans votre application.
 
-Vous pouvez appeler SetTitleBar pour basculer vers un nouvel élément de barre de titre lorsque votre application est en cours d’exécution. Vous pouvez également transmettre **null** comme paramètre à SetTitleBar afin de rétablir le comportement de glissement par défaut. (Voir «Zone pouvant être glissée par défaut» pour plus d’informations.)
+Vous pouvez appeler SetTitleBar pour basculer vers un nouvel élément de barre de titre lorsque votre application est en cours d’exécution. Vous pouvez également transmettre **null** comme paramètre à SetTitleBar afin de rétablir le comportement de glissement par défaut. (Voir « Zone pouvant être glissée par défaut » pour plus d’informations.)
 
 > [!IMPORTANT]
 > La zone pouvant être glissée que vous spécifiez doit pouvoir faire l’objet d'un test de positionnement, ce qui signifie que, pour certains éléments, vous devrez peut-être définir un pinceau d’arrière-plan transparent. Consultez les remarques sur [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) pour plus d’informations.
 >
 >Par exemple, si vous définissez une grille comme votre zone pouvant être glissée, définissez `Background="Transparent"` pour qu’elle puisse être glissée.
 >
->Cette grille ne peut pas être glissée (mais les éléments visibles au sein de celle-ci le sont): `<Grid x:Name="AppTitleBar">`.
+>Cette grille ne peut pas être glissée (mais les éléments visibles au sein de celle-ci le sont) : `<Grid x:Name="AppTitleBar">`.
 >
->Cette grille a le même aspect, mais la grille entière peut être glissée: `<Grid x:Name="AppTitleBar" Background="Transparent">`.
+>Cette grille a le même aspect, mais la grille entière peut être glissée : `<Grid x:Name="AppTitleBar" Background="Transparent">`.
 
 #### <a name="default-draggable-region"></a>Zone pouvant être glissée par défaut
 
@@ -166,7 +166,7 @@ Vous pouvez tracer le contenu en dessous de la zone de contrôle de légende dé
 
 Vous pouvez gérer l’événement [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) pour répondre aux modifications de la taille des boutons de légende. Par exemple, cela peut se produire lorsque le bouton système Retour est affiché ou masqué. Gérez cet événement pour vérifier et mettre à jour le positionnement des éléments d'interface utilisateur qui dépendent de la taille de la barre de titre.
 
-Cet exemple montre comment ajuster la disposition de votre barre de titre pour prendre en compte les modifications comme l’affichage ou le masquage du bouton système Retour. `AppTitleBar`, `LeftPaddingColumn` et `RightPaddingColumn` sont déclarés dans le code XAML indiqué précédemment.
+Cet exemple montre comment ajuster la disposition de votre barre de titre pour prendre en compte les modifications comme l’affichage ou le masquage du bouton système Retour. `AppTitleBar`, `LeftPaddingColumn`, et `RightPaddingColumn` sont déclarés dans le XAML illustré précédemment.
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -231,7 +231,7 @@ Ici, l’élément `TitleBarButton` a un ordre de plan supérieur à `AppTitleBa
 
 Lorsque vous définissez ExtendViewIntoTitleBar sur **true**, vous pouvez rendre l’arrière-plan des boutons de légende transparent afin de laisser apparaître à travers l’arrière-plan de votre application. Vous définissez généralement l’arrière-plan sur [Colors.Transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors.Transparent) pour une transparence totale. Pour une transparence partielle, définissez le canal alpha pour la valeur [Color](https://docs.microsoft.com/uwp/api/windows.ui.color) sur laquelle vous avez défini la propriété.
 
-Ces propriétés ApplicationViewTitleBar peuvent être transparentes:
+Ces propriétés ApplicationViewTitleBar peuvent être transparentes :
 
 - ButtonBackgroundColor
 - ButtonHoverBackgroundColor
@@ -275,7 +275,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->Le mode _plein écran_ peut être activé uniquement s’il est pris en charge par votre application. Voir [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) pour plus d’informations. Le [_mode tablette_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) est une option utilisateur sur le matériel pris en charge, de sorte qu’un utilisateur peut choisir d’exécuter n’importe quelle application en mode tablette.
+>Le mode _plein écran_ peut être activé uniquement s’il est pris en charge par votre application. Voir [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) pour plus d’informations. [_Mode tablette_ ](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) étant une option de l’utilisateur sur le matériel pris en charge, un utilisateur peut choisir d’exécuter n’importe quelle application en mode tablette.
 
 ## <a name="full-customization-example"></a>Exemple de personnalisation complète
 
@@ -379,7 +379,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 - Définissez une zone pouvant être glissée le long du bord supérieur du canevas de l’application. La mise en correspondance avec la position des barres de titre système permet aux utilisateurs d'y accéder plus facilement.
 - Définissez une zone pouvant être glissée qui corresponde à la barre de titre visuelle (le cas échéant) sur le canevas de l’application.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Acrylique](../style/acrylic.md)
-- [Couleur](../style/color.md)
+- [Acrylic](../style/acrylic.md)
+- [Color](../style/color.md)

@@ -1,25 +1,25 @@
 ---
 title: Pipeline de calcul
-description: Le pipeline de calculDirect3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique.
+description: Le pipeline de calcul Direct 3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique.
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929702"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651114"
 ---
 # <a name="compute-pipeline"></a>Pipeline de calcul
 
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
+\[Certaines informations sont relatives à la version préliminaire du produit qui peut être substantiellement modifié avant sa commercialisation. Microsoft exclut toute garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 
-Le pipeline de calculDirect3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique. Le pipeline de calcul comporte seulement quelques étapes, où des données sont transmises de l’entrée vers la sortie via l’étape du nuanceur de calcul programmable.
+Le pipeline de calcul Direct 3D est conçu pour traiter les calculs pouvant être effectués principalement en parallèle du pipeline graphique. Le pipeline de calcul comporte seulement quelques étapes, où des données sont transmises de l’entrée vers la sortie via l’étape du nuanceur de calcul programmable.
 
 | | |
 |-|-|
@@ -57,7 +57,7 @@ Le pipeline de calculDirect3D est conçu pour traiter les calculs pouvant être 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Guide d’apprentissage des graphismes Direct3D](index.md)
+[Guide d’apprentissage graphiques Direct3D](index.md)
 
  
 

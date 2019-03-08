@@ -3,26 +3,26 @@ title: Répondre aux retours des clients
 description: Vous pouvez répondre directement à un commentaire laissé par vos clients dans le Hub de commentaires.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047564"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645074"
 ---
 # <a name="respond-to-customer-feedback"></a>Répondre aux retours des clients
 
-Vous pouvez utiliser le [rapport de commentaires](feedback-report.md) pour passer en revue les commentaires formulés par les clients Windows10 au sujet de votre application qu’ils ont publiés dans le Hub de commentaires, puis répondre directement à ces commentaires. Vous avez la possibilité de publier vos réponses dans le Hub de commentaires afin qu’elles soient visibles à tous (soit sous forme de commentaires individuels, soit en mettant à jour l’état d’une partie du commentaire et en ajoutant une description). Dans vos réponses, vous pouvez informer les clients sur de nouvelles fonctionnalités ou des correctifs de bogues, ou leur demander des commentaires plus précis sur la façon d’améliorer votre application. Vous pouvez également envoyer votre réponse par courrier électronique directement au client qui a laissé le commentaire.
+Vous pouvez utiliser le [rapport de commentaires](feedback-report.md) pour passer en revue les commentaires formulés par les clients Windows 10 au sujet de votre application qu’ils ont publiés dans le Hub de commentaires, puis répondre directement à ces commentaires. Vous avez la possibilité de publier vos réponses dans le Hub de commentaires afin qu’elles soient visibles à tous (soit sous forme de commentaires individuels, soit en mettant à jour l’état d’une partie du commentaire et en ajoutant une description). Dans vos réponses, vous pouvez informer les clients sur de nouvelles fonctionnalités ou des correctifs de bogues, ou leur demander des commentaires plus précis sur la façon d’améliorer votre application. Vous pouvez également envoyer votre réponse par courrier électronique directement au client qui a laissé le commentaire.
 
 > [!TIP]
-> Vous pouvez encourager les clients à laisser des commentaires à l’aide de l’API de commentaires du [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) pour ajouter un contrôle qui permettra aux clients de [lancer directement l’application Hub de commentaires à partir de votre application UWP](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet directement à partir de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
+> Vous pouvez encourager les clients à laisser des commentaires à l’aide de l’API de commentaires du [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) pour ajouter un contrôle qui permettra aux clients de [lancer directement l’application Hub de commentaires à partir de votre application UWP](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows 10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet directement à partir de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
 
 Pour répondre à n’importe quel commentaire, cliquez sur le lien **Répondre aux commentaires** qui s’affiche en regard du commentaire dans votre **rapport de commentaires**.
 
-[L’espace partenaires](https://partner.microsoft.com/dashboard) prend en charge les trois options pour répondre aux clients qui fournissent des commentaires à propos de votre application. Quelle que soit l’option que vous choisissez, n’oubliez pas que chaque réponse est soumise à une restriction de 1000caractères.
+[Partenaires](https://partner.microsoft.com/dashboard) prend en charge trois options pour répondre aux clients qui fournissent des commentaires concernant votre application. Quelle que soit l’option que vous choisissez, n’oubliez pas que chaque réponse est soumise à une restriction de 1 000 caractères.
 
 ## <a name="public-comments-in-feedback-hub"></a>Publication de commentaires publics dans le Hub de commentaires
 
@@ -42,11 +42,11 @@ Après avoir coché la case **Envoyer le commentaire sous forme de message**, en
 
 Pour les réponses publiques, vous disposez d’une troisième option qui consiste à définir l’état sur une partie des commentaires pour indiquer à vos clients que vous cherchez à corriger le problème, ou que vous l’avez déjà résolu. Lorsque vous mettez à jour l’état d’une partie des commentaires, celle-ci s’affiche avec les commentaires dans le Hub de commentaires.
 
-Pour utiliser cette option, sélectionnez la case **Mettre à jour l’état**. Sélectionnez ensuite l’une des options suivantes:
+Pour utiliser cette option, sélectionnez la case **Mettre à jour l’état**. Sélectionnez ensuite l’une des options suivantes :
 
-- **Investigation**: vous connaissez le problème et êtes en train de l’examiner.
-- **En cours**: vous êtes en train de résoudre un problème ou d’ajouter une fonctionnalité qui vous a été demandée.
-- **Terminé**: vous avez publié une mise à jour pour corriger le problème ou ajouter la fonctionnalité demandée.
+- **Examen**: Vous êtes conscient d’un problème et que vous recherchez dans celui-ci.
+- **Travailler dessus**: Vous êtes en train de résoudre un problème ou l’ajout d’une fonctionnalité demandée.
+- **Terminé**: Vous avez publié une mise à jour pour résoudre le problème ou d’ajouter la fonctionnalité demandée.
 
 Tout en mettant à jour l’état, vous pouvez entrer un commentaire pour fournir davantage d’informations, par exemple une estimation du délai de résolution du problème ou des informations complémentaires sur les dernières modifications apportées. Cette description s’affiche en haut de la liste des commentaires (et le rapport de commentaires indique l’état actuel et la description).
 
@@ -56,12 +56,12 @@ L’option **Mettre à jour l’état** vous permet de changer d’état chaque 
 ## <a name="guidelines-for-responses"></a>Recommandations en matière de réponses
 
 Quelle que soit la méthode utilisée pour répondre à des commentaires d’un client, vous devez suivre ces recommandations pour toutes vos réponses.
-- Les réponses ne doivent pas comporter plus de 1000caractères.
+- Les réponses ne doivent pas comporter plus de 1 000 caractères.
 - Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d’éléments d’applications numériques, en contrepartie de leurs commentaires publics.
-- N’incluez ni contenu marketing ni publicités dans votre réponse. N’oubliez pas que la personne qui a déposé un commentaire est déjà votre client.
-- Ne faites pas la promotion d’autres applications ou services dans votre réponse.
+- N'incluez ni contenu marketing ni publicités dans votre réponse. N’oubliez pas que la personne qui a déposé un commentaire est déjà votre client.
+- Ne faites pas la promotion d'autres applications ou services dans votre réponse.
 - Votre réponse doit être directement liée à l’application et au commentaire concernés.
-- N’incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
+- N'incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
 
 > [!NOTE]
 > En cas de réponse inappropriée à un commentaire, les clients peuvent signaler un développeur à Microsoft. Ils peuvent également choisir de ne plus recevoir de réponses à leurs commentaires par e-mail.

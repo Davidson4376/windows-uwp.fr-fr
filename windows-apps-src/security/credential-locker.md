@@ -1,28 +1,28 @@
 ---
 title: Stockage sécurisé des informations d’identification
-description: Cet article décrit comment des applications de plateformeWindows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+description: Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941760"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608384"
 ---
 # <a name="credential-locker"></a>Stockage sécurisé des informations d’identification
 
 
 
 
-Cet article décrit comment des applications de plateformeWindows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
 
 Supposons que vous ayez une application qui se connecte à un service pour accéder à des ressources protégées telles que des fichiers multimédias ou des réseaux sociaux. Votre service exige des informations de connexion pour chaque utilisateur. Vous avez créé une interface utilisateur dans votre application, qui obtient le nom et le mot de passe de l’utilisateur. Ces données sont ensuite utilisées pour connecter l’utilisateur au service. L’API de stockage sécurisé des informations d’identification vous permet de stocker les nom et mot de passe de votre utilisateur, puis de les récupérer facilement pour connecter automatiquement l’utilisateur lors de la prochaine ouverture de l’application, quel que soit l’appareil utilisé.
 
-Les identifiants utilisateur stockés dans le stockage sécurisé des informations d’identification n'arrivent *pas* à expiration, ne sont *pas* affectés par l'[**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)et ne seront *pas* effacés en cas d'inactivité comme les données itinérantes traditionnelles. Cependant, vous pouvez stocker uniquement jusqu'à 20identifiants par application dans le stockage sécurisé des informations d'identification.
+Les identifiants utilisateur stockés dans le stockage sécurisé des informations d’identification n'arrivent *pas* à expiration, ne sont *pas* affectés par l'[**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)et ne seront *pas* effacés en cas d'inactivité comme les données itinérantes traditionnelles. Cependant, vous pouvez stocker uniquement jusqu'à 20 identifiants par application dans le stockage sécurisé des informations d'identification.
 
 Le stockage sécurisé des informations d’identification fonctionne un peu différemment pour les comptes de domaine. Si des informations d’identification sont stockées avec votre compte Microsoft et que vous associez ce compte à un compte de domaine (comme le compte que vous utilisez au travail), vos informations sont transmises à ce compte de domaine. Toutefois, les nouvelles informations d’identification ajoutées lors de la connexion au compte de domaine ne seront pas transmises. Cela permet de s’assurer que les informations d’identification privées pour le domaine ne sont pas exposées à l’extérieur du domaine.
 

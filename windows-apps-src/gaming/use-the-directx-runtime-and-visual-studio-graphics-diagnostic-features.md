@@ -4,22 +4,22 @@ description: Découvrez comment obtenir et utiliser les fonctionnalités de diag
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, graphiques, diagnostics, outils, directx
+keywords: Windows 10, uwp, jeux, graphiques, diagnostics, outils, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047916"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608534"
 ---
 # <a name="graphics-diagnostics-tools"></a>Outils Graphics Diagnostics
 
 
 
-Avec Windows 10, les outils de diagnostic de graphiques sont désormais disponibles dans Windows en tant que fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
+Avec Windows 10, les outils de diagnostic de graphiques sont désormais disponibles dans Windows comme fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques :
 
-1.  Accédez à **paramètres**, sélectionnez **les applications**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
+1.  Accédez à **paramètres**, sélectionnez **applications**, puis cliquez sur **gestion des fonctionnalités facultatives**.
 2.  Cliquez sur **Ajouter une fonctionnalité**.   
 3.  Dans la liste **Fonctionnalités facultatives**, sélectionnez **Outils graphiques**, puis cliquez sur **Installer**.
 
@@ -32,7 +32,7 @@ Les fonctionnalités de diagnostic de graphiques incluent la possibilité de cr�
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-[Vue d’ensemble de Graphics Diagnostics dans VisualStudio](https://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Vue d’ensemble de Graphics Diagnostics dans Visual Studio](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

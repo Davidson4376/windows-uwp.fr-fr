@@ -1,22 +1,22 @@
 ---
-Description: Use nested UI to enable multiple actions on a list item
+Description: Utilisez l’interface utilisateur imbriquée pour permettre plusieurs actions sur un élément de liste
 title: Interface utilisateur imbriquée dans des éléments de liste
 label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8edb38b8ae91d836e283a8eb37830850bf504db4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929102"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661304"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 
@@ -26,28 +26,28 @@ L’interface utilisateur imbriquée est une interface utilisateur (UI) qui expo
 
 Vous pouvez utiliser l’interface utilisateur imbriquée pour présenter des options supplémentaires permettant d’accélérer la réalisation d’actions importantes. Toutefois, plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Vous devez être particulièrement vigilant lorsque vous choisissez d’utiliser ce modèle d’interface utilisateur. Cet article fournit des recommandations qui vont vous permettre de déterminer le meilleur mode de fonctionnement de votre interface utilisateur spécifique.
 
-> **API importantes**: [classe ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **API importantes**: [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 Dans cet article, nous abordons la création d’une interface utilisateur imbriquée dans les éléments [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) et [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Bien que les autres cas d’interface utilisateur imbriquée ne soient pas abordés dans cette section, ces concepts sont transférables. Avant de commencer, vous devez être familiarisé avec les instructions générales concernant l’utilisation des contrôles ListView ou GridView dans votre interface utilisateur, qui se trouvent dans les articles [Listes](lists.md) et [Affichage Liste et affichage Grille](listview-and-gridview.md).
 
-Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *interface utilisateur imbriquée*, comme suit:
+Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *interface utilisateur imbriquée*, comme suit :
 - *Liste* fait référence à une collection d’éléments contenus dans un affichage Liste ou Grille.
 - *Élément de liste* fait référence à un élément sur lequel un utilisateur peut entreprendre une action dans une liste.
 - *Interface utilisateur imbriquée* fait référence aux éléments d’interface utilisateur au sein d’un élément de liste sur lesquels un utilisateur peut entreprendre une action indépendamment d’agir sur l’élément de liste lui-même.
 
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-example-1.png)
 
-> REMARQUE&nbsp;&nbsp;Les contrôles ListView et GridView proviennent de la classe [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx); ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
+> REMARQUE&nbsp;&nbsp;Les contrôles ListView et GridView proviennent de la classe [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
 
 ## <a name="primary-and-secondary-actions"></a>Actions principales et secondaires
 
 Lorsque vous créez une interface utilisateur avec une liste, envisagez les actions que l’utilisateur peut entreprendre à partir de ces éléments de liste.  
 
-- Un utilisateur peut-il cliquer sur l’élément pour effectuer une action?
+- Un utilisateur peut-il cliquer sur l’élément pour effectuer une action ?
     - En règle générale, le fait de cliquer sur un élément de liste génère une action, mais pas nécessairement.
-- L’utilisateur peut-il effectuer plusieurs actions?
+- L’utilisateur peut-il effectuer plusieurs actions ?
     - Par exemple, le fait d’appuyer sur un e-mail de la liste a pour effet d’ouvrir ce dernier. Toutefois, l’utilisateur peut vouloir effectuer d’autres actions, telles que la suppression, avant d’ouvrir un e-mail. Le  fait d’accéder à cette action directement dans la liste pourrait intéresser l’utilisateur.
-- Comment les actions doivent être exposées à l’utilisateur?
+- Comment les actions doivent être exposées à l’utilisateur ?
     - Prenez en considération tous les types de saisie. Certaines formes d’interface utilisateur imbriquée fonctionnent parfaitement avec une méthode de saisie, mais peuvent ne pas fonctionner avec d’autres méthodes.  
 
 L’*action principale* est ce à quoi l’utilisateur s’attend qu’il se produise quand il appuie sur l’élément de liste.
@@ -58,7 +58,7 @@ Les *actions secondaires* sont généralement des accélérateurs associés à d
 
 Quand vous créez l’interface utilisateur de la liste, vous devez d’abord veiller à prendre en compte toutes les méthodes de saisie prises en charge par la plateforme Windows universelle. Pour plus d’informations sur les différents types d’entrée, voir [Notions fondamentales sur la saisie](../input/index.md).
 
-Après s’être assuré que votre application gère toutes les saisies prises en charge par la plateforme UWP, vous devez déterminer si les actions secondaires de votre application sont suffisamment importantes pour figurer comme accélérateurs dans la liste principale. N’oubliez pas que plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Avez-vous vraiment besoin de faire figurer les actions secondaires dans la liste principale de l’interface utilisateur ou pouvez-vous les placer ailleurs?
+Après s’être assuré que votre application gère toutes les saisies prises en charge par la plateforme UWP, vous devez déterminer si les actions secondaires de votre application sont suffisamment importantes pour figurer comme accélérateurs dans la liste principale. N’oubliez pas que plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Avez-vous vraiment besoin de faire figurer les actions secondaires dans la liste principale de l’interface utilisateur ou pouvez-vous les placer ailleurs ?
 
 Vous pouvez envisager de faire figurer des actions supplémentaires dans l’interface utilisateur de la liste principale lorsque ces actions doivent être accessibles à toute saisie en permanence.
 
@@ -109,9 +109,9 @@ Si votre interface utilisateur de liste comportant des éléments imbriqués pre
 
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-navigation.png)
 
-**Boîtier de commande**
+**Gamepad**
 
-Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, proposez l’expérience utilisateur suivante:
+Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, proposez l’expérience utilisateur suivante :
 
 - À partir de **A**, la touche directionnelle de droite met le focus sur l’élément **B**.
 - À partir de **B**, la touche directionnelle de droite met le focus sur l’élément **C**.
@@ -125,7 +125,7 @@ Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, propos
 
 **Clavier**
 
-Lorsque la saisie s’effectue à partir d’un clavier, voici ce qu’obtient utilisateur:
+Lorsque la saisie s’effectue à partir d’un clavier, voici ce qu’obtient utilisateur :
 
 - À partir de **A**, la touche TABULATION met le focus sur l’élément **B**.
 - À partir de **B**, la touche TABULATION met le focus sur l’élément **C**.
@@ -150,7 +150,7 @@ Ce type d’interface utilisateur a tendance à être beaucoup plus compliqué q
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-grouping.png)
 
 
-Pour terminer cette interface utilisateur, définissez les propriétés suivantes sur votre liste:
+Pour terminer cette interface utilisateur, définissez les propriétés suivantes sur votre liste :
 - [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) sur **Aucun**.
 - [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) sur **false**.
 - [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) sur **true**.
@@ -167,18 +167,18 @@ Pour terminer cette interface utilisateur, définissez les propriétés suivante
 
 Lorsque les éléments de liste n’effectuent aucune action, nous recommandons de procéder ainsi pour gérer la navigation avec un boîtier de commande ou un clavier.
 
-**Boîtier de commande**
+**Gamepad**
 
-Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, proposez l’expérience utilisateur suivante:
+Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, proposez l’expérience utilisateur suivante :
 
 - À partir de l’élément de liste, touche directionnelle vers le bas met le focus sur l’élément de liste suivant.
 - À partir de l’élément de liste, la touche gauche/droite n’est pas opérationnelle ou en présence d’un élément d’interface utilisateur sélectionnable à droite de la liste, met le focus sur celui-ci.
-- À partir de l’élément de liste, le bouton «A» met le focus sur l’interface utilisateur imbriquée dans la priorité haut/bas gauche/droite.
-- Depuis l’interface utilisateur imbriquée, suivez le modèle de navigation en mode focus XY.  Le système de focus permet de naviguer uniquement dans l’interface utilisateur imbriquée contenue au sein de l’élément de liste actuel jusqu’à ce que l’utilisateur appuie sur le bouton «B», ce qui a pour effet de remettre le focus sur l’élément de liste.
+- À partir de l’élément de liste, le bouton « A » met le focus sur l’interface utilisateur imbriquée dans la priorité haut/bas gauche/droite.
+- Depuis l’interface utilisateur imbriquée, suivez le modèle de navigation en mode focus XY.  Le système de focus permet de naviguer uniquement dans l’interface utilisateur imbriquée contenue au sein de l’élément de liste actuel jusqu’à ce que l’utilisateur appuie sur le bouton « B », ce qui a pour effet de remettre le focus sur l’élément de liste.
 
 **Clavier**
 
-Lorsque la saisie s’effectue à partir d’un clavier, voici ce qu’obtient utilisateur:
+Lorsque la saisie s’effectue à partir d’un clavier, voici ce qu’obtient utilisateur :
 
 - À partir de l’élément de liste, la flèche vers le bas met le focus sur l’élément de liste suivant.
 - À partir de l’élément de liste, il est impossible d’appuyer sur la touche gauche/droite.

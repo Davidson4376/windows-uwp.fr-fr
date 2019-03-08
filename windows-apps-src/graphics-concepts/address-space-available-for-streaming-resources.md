@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a591d805870df97ee03169b20e664316e094a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925044"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652374"
 ---
 # <a name="address-space-available-for-streaming-resources"></a>Espace d’adresse disponible pour les ressources de diffusion en continu
 
 
 Cette section spécifie l’espace d’adresse virtuel disponible pour les ressources de diffusion en continu.
 
-Les systèmes d’exploitation 64bits offrent au moins 40bits d’espace d’adresse virtuel (1téraoctet) disponible.
+Les systèmes d’exploitation 64 bits offrent au moins 40 bits d’espace d’adresse virtuel (1 téraoctet) disponible.
 
-Pour les systèmes d’exploitation 32bits, l’espace d’adresse est de 32bits (4Go). Pour les systèmesARM 32bits, la création de ressources de diffusion en continu individuelles peut échouer si l’allocation utilise plus de 27bits d’espace d’adresse (128Mo). Ceci inclut tout remplissage masqué dans l’espace d’adresse que le matériel peut utiliser pour les mipmaps, le remplissage de vignettes compressées ainsi que, éventuellement, les dimensions de surfaces de remplissage à des puissances de 2.
+Pour les systèmes d’exploitation 32 bits, l’espace d’adresse est de 32 bits (4 Go). Pour les systèmes ARM 32 bits, la création de ressources de diffusion en continu individuelles peut échouer si l’allocation utilise plus de 27 bits d’espace d’adresse (128 Mo). Ceci inclut tout remplissage masqué dans l’espace d’adresse que le matériel peut utiliser pour les mipmaps, le remplissage de vignettes compressées ainsi que, éventuellement, les dimensions de surfaces de remplissage à des puissances de 2.
 
 Sur les systèmes graphiques comportant une table de page distinctes pour le processeur graphique (GPU), la majeure partie de cet espace d’adresse sera disponible aux ressources GPU utilisées par l’application, même si les allocations de GPU effectuées par le pilote d’affichage tiennent dans le même espace.
 

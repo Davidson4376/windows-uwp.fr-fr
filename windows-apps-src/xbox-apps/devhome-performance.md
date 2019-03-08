@@ -1,54 +1,54 @@
 ---
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
-title: Page des performances (Dev Home)
-description: Fournit des informations sur la page de Performance de l’application accueil du développeur pour Xbox One.
+title: Page Performance (Outil Accueil du développeur)
+description: Fournit des informations sur la page Performance de l’application Outil Accueil du développeur pour Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925843"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646314"
 ---
-# <a name="performance-page-dev-home"></a>Page des performances (Dev Home)
+# <a name="performance-page-dev-home"></a>Page Performance (Outil Accueil du développeur)
    
   
-La page d’accueil du développeur des **performances** simule différents activité du disque et des conditions d’utilisation du processeur pour résoudre des problèmes.   
- ![Page d’accueil du développeur des performances](images/devhome_performance.png)   
+La page **Performances** sur l’outil Accueil du développeur simule plusieurs conditions d’activités de disque et d’utilisation du processeur dans le but de résoudre des problèmes.   
+ ![Page d’accueil du développement des performances](images/devhome_performance.png)   
   
-La page de **performances** contient les volets suivants:   
+La page **Performances** contient les volets suivants :   
  
    *  [Simulation de disque](#ID4EEB)  
-   *  [Simulation de processeur](#ID4EOB)  
+   *  [Simulation de l’UC](#ID4EOB)  
 
  
 <a id="ID4EEB"></a>
 
    
 
-## <a name="disk-simulation"></a>Simulation de disque  
+## <a name="disk-simulation"></a>Simulation du disque  
    
   
-Le volet de **simulation de disque** simule l’activité du disque du système ou d’autres applications.   
+Le volet **Simulation du disque** simule l’activité du disque à partir du système ou d’autres applications.   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="cpu-simulation"></a>Simulation de processeur  
+## <a name="cpu-simulation"></a>Simulation du CPU  
    
   
-Le volet de **Simulation de processeur** simule l’activité sur CPU6 (le noyau partagé).   
+Le volet **Simulation du CPU** simule l’activité sur le CPU6 (le cœur partagé).   
   
 <a id="ID4EYB"></a>
 
    
 
-## <a name="see-also"></a>Voir aussi  
- [Accueil du développeur sur la Console (Dev Home)](dev-home.md)
+## <a name="see-also"></a>Voir également  
+ [Accueil de développeur sur la Console (Dev accueil)](dev-home.md)
 
   

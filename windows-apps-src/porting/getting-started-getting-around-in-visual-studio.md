@@ -1,19 +1,19 @@
 ---
 description: Savoir maîtriser Visual Studio
-title: Apprentissage de VisualStudio
+title: Savoir maîtriser Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920443"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646334"
 ---
-# <a name="getting-started-getting-around-in-visual-studio"></a>Prise en main: Apprentissage de VisualStudio
+# <a name="getting-started-getting-around-in-visual-studio"></a>Mise en route : Savoir maîtriser Visual Studio
 
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>Savoir maîtriser Microsoft Visual Studio
@@ -54,7 +54,7 @@ Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. 
 
 Écrivons maintenant un code pour changer le contenu du contrôle **TextBlock** en « Hello, World! » après que l’utilisateur a appuyé sur le bouton.
 
-Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit:
+Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit :
 
 ![connexion d’un bouton avec un événement dans xcode](images/ios-to-uwp/xcode-add-button-event.png)
 
@@ -66,11 +66,11 @@ Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un 
 }
 ```
 
-Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit:
+Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit :
 
 ![liste des événements du bouton dans visual studio](images/ios-to-uwp/vs-button-event.png)
 
-Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute l’événement « myButton_Click » à la zone **Click**, puis ajoute et affiche le gestionnaire d’événements correspondant dans le fichier MainPage.xaml.cs, comme ceci.
+Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute ensuite l’événement « myButton\_cliquez sur « à la **cliquez sur** zone, puis ajoute et affiche le Gestionnaire d’événements correspondants dans le fichier MainPage.xaml.cs, comme suit.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -89,7 +89,7 @@ Accrochons à présent le contrôle **TextBlock**. Dans Xcode, vous feriez gliss
 @IBOutlet weak var myLabel : UILabel
 ```
 
-Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés:
+Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés :
 
 1.  Appuyez sur l’onglet du fichier MainPage.xaml.
 2.  Dans le volet **Conception**, appuyez sur le contrôle **TextBlock**.
@@ -98,7 +98,7 @@ Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela
 
 ![fenêtre des propriétés du libellé dans visual studio](images/ios-to-uwp/vs-label-properties.png)
 
-Ajoutons maintenant un peu de code à l’événement Click du bouton. Pour cela, appuyez sur le fichier MainPage.xaml.cs et ajoutez le code suivant au gestionnaire d’événements myButton_Click.
+Ajoutons maintenant un peu de code à l’événement Click du bouton. Pour ce faire, appuyez sur le fichier MainPage.xaml.cs et ajoutez le code suivant à la myButton\_Gestionnaire d’événements Click.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -108,7 +108,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Cela est similaire à ce que vous écririez dans Swift:
+Cela est similaire à ce que vous écririez dans Swift :
 
 ```swift
 @IBAction func buttonPressed(sender: UIButton) {
@@ -116,13 +116,13 @@ Cela est similaire à ce que vous écririez dans Swift:
 }
 ```
 
-Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton «Appuyez ici». Le contenu de l’étiquette «TextBlock» est remplacé par «Hello, World!» comme le montre la figure suivante.
+Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton « Appuyez ici ». Le contenu de l’étiquette « TextBlock » est remplacé par « Hello, World! » comme le montre la figure suivante.
 
-![résultats de l’exécution de la première procédure: Hello, World!](images/ios-to-uwp/vs-hello-world.png)
+![résultats de l’exécution de la première procédure : Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
 Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **Déboguer**, puis sur **Arrêter le débogage** (ou appuyez simplement sur Maj+F5). Notez que Visual Studio vous permet d’essayer l’application sur différents appareils pour vérifier la manière dont elle s’exécute.
 
 ## <a name="next-step"></a>Étape suivante
 
-[Prise en main : Contrôles courants](getting-started-common-controls.md)
+[Mise en route : Contrôles communs](getting-started-common-controls.md)
 

@@ -4,25 +4,25 @@ title: Fichiers et dossiers dans les bibliothèques de musique, d’images et de
 description: Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
 ms.date: 06/18/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926998"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661434"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
 
-Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque, et découvrir des photos, de la musique et des vidéos.
+Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos.
 
 Une bibliothèque est une collection virtuelle de dossiers, qui comprend un dossier connu par défaut, ainsi que d’autres dossiers que l’utilisateur a ajouté à la bibliothèque à l’aide de votre application ou d’une des applications intégrées. Par exemple, la bibliothèque d’images inclut le dossier connu d’images par défaut. L’utilisateur peut ajouter ou supprimer des dossiers dans la bibliothèque d’images à l’aide de votre application ou de l’application Photos intégrée.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 
--   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
@@ -30,7 +30,7 @@ Une bibliothèque est une collection virtuelle de dossiers, qui comprend un doss
 
     Dans Visual Studio, ouvrez le fichier manifeste de l’application dans le concepteur du manifeste. Dans la page **Fonctionnalités**, sélectionnez les bibliothèques gérées par votre application.
 
-    -   **Médiathèque**
+    -   **Bibliothèque musicale**
     -   **Bibliothèque d’images**
     -   **Vidéothèque**
 
@@ -160,7 +160,7 @@ Par défaut, les utilisateurs peuvent choisir de stocker les fichiers sur la car
 
 Il n’est pas nécessaire d’écrire d’autre code pour gérer cette possibilité. Les méthodes de l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) qui interrogent les dossiers connus combinent en toute transparence les résultats de requête issus de ces deux emplacements. De même, vous n’avez pas à spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour obtenir ces résultats combinés.
 
-Examinons l’état du stockage de l’appareil illustré dans l’image suivante:
+Examinons l’état du stockage de l’appareil illustré dans l’image suivante :
 
 ![Images sur le téléphone et la carte SD](images/phone-media-locations.png)
 
@@ -173,7 +173,7 @@ Sur les périphériques où l’appareil photo enregistre à la fois une image b
 
 Les dossiers Pellicule et Images enregistrées ne prennent pas en charge les requêtes profondes.
 
-**Ouverture d’une photo dans l’application qui l’a capturée**
+**Ouverture d’une photo dans l’application qui capturée**
 
 Si vous voulez laisser l’utilisateur rouvrir une photo dans l’application qui l’a capturée, vous pouvez enregistrer le **CreatorAppId** avec les métadonnées de la photo en utilisant du code similaire à celui de l’exemple suivant. Dans cet exemple, **testPhoto** est un [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 

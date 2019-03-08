@@ -1,17 +1,17 @@
 ---
-Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
+Description: Lors de la génération, le système de gestion des ressources crée un index de toutes les variantes de ressources qui sont incluses dans le package avec votre application. Lors de l’exécution, le système détecte les paramètres en vigueur pour l’utilisateur et l’ordinateur et charge les ressources les plus appropriées pour ces paramètres.
 title: Système de gestion des ressources
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931622"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598624"
 ---
 # <a name="resource-management-system"></a>Système de gestion des ressources
 Le système de gestion des ressources inclut des fonctionnalités pour la création et l’exécution. Lors de la génération, le système crée un index de toutes les variantes de ressources qui sont incluses dans le package avec votre application. Cet index est l’index de ressource de package, ou PRI (Package Resource Index) et il est également inclus dans le package de votre application. Lors de l’exécution, le système détecte les paramètres en vigueur pour l’utilisateur et l’ordinateur, consulte les informations dans le fichier PRI, puis charge automatiquement les ressources les plus appropriées pour ces paramètres.
@@ -23,10 +23,10 @@ Chaque package d’application doit contenir un index binaire des ressources de 
 - Un package contient généralement un fichier PRI unique par langue, nommé resources.pri.
 - Le fichier resources.pri situé à la racine de chaque package est automatiquement chargé lorsque le [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) est instancié.
 - Les fichiers PRI peuvent être créés et vidés à l’aide de l’outil [MakePRI.exe](compile-resources-manually-with-makepri.md).
-- Dans le cadre du développement d’application standard, vous n’aurez pas besoin de MakePRI.exe, car il est déjà intégré dans le flux de compilation de VisualStudio. En outre, VisualStudio prend en charge la modification des fichiers PRI dans une interface utilisateur dédiée. Toutefois, vos traducteurs et les outils qu’ils utilisent peuvent avoir recours à MakePRI.exe.
+- Dans le cadre du développement d’application standard, vous n’aurez pas besoin de MakePRI.exe, car il est déjà intégré dans le flux de compilation de Visual Studio. En outre, Visual Studio prend en charge la modification des fichiers PRI dans une interface utilisateur dédiée. Toutefois, vos traducteurs et les outils qu’ils utilisent peuvent avoir recours à MakePRI.exe.
 - Chaque fichier PRI contient une collection nommée de ressources, appelée un mappage de ressources. Lorsqu’un fichier PRI est chargé à partir d’un package, le nom du mappage de ressources est vérifié pour être sûr qu’il correspond au nom de l’identité du package.
 - Les fichiers PRI contiennent uniquement des données et ils n’utilisent donc pas le format exécutable portable (PE). Ils sont spécifiquement conçus pour contenir uniquement des données, comme le format de ressources pour Windows. Ils remplacent les ressources contenues dans les DLL dans le modèle d’application Win32.
-- La limite de taille d’un fichier PRI est 64kilo-octets.
+- La limite de taille d’un fichier PRI est 64 kilo-octets.
 
 ## <a name="uwp-api-access-to-app-resources"></a>Accès des API UWP aux ressources d’application
 
@@ -38,11 +38,11 @@ La classe [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core
 
 Un objet [**NamedResource**](/uwp/api/windows.applicationmodel.resources.core.namedresource?branch=live) représente une ressource logique individuelle avec plusieurs langues ou d’autres variantes qualifiées. Il décrit la vue logique de l’actif ou de la ressource, avec un identificateur de ressource de chaîne comme `Header1`, ou un nom de fichier de ressources comme `logo.jpg`.
 
-Un objet [**ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate?branch=live) représente une valeur de ressource concrète et ses qualificateurs, telle que la chaîne «HelloWorld» pour l’anglais ou «logo.scale-100.jpg» en tant que ressource d’image qualifiée, spécifique à la résolution **scale-100**.
+Un objet [**ResourceCandidate**](/uwp/api/windows.applicationmodel.resources.core.resourcecandidate?branch=live) représente une valeur de ressource concrète et ses qualificateurs, telle que la chaîne « Hello World » pour l’anglais ou « logo.scale-100.jpg » en tant que ressource d’image qualifiée, spécifique à la résolution **scale-100**.
 
 Les ressources disponibles pour une application sont stockées dans des collections hiérarchiques auxquelles vous pouvez accéder à l’aide d’un objet [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live). La classe **ResourceManager** permet d’accéder aux différentes instances de **ResourceMap** de niveau supérieur utilisées par l’application, correspondant aux différents packages pour l’application. La valeur [**MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) correspond au mappage de ressources pour le package d’application en cours, et elle exclut tous les packages d’infrastructure référencés. Chaque objet **ResourceMap** est nommé pour le nom de package qui est spécifié dans le manifeste du package. Un **ResourceMap** comporte des sous-arborescences (voir [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)) qui contiennent d’autres objets **NamedResource**. En général, les sous-arborescences correspondent aux fichiers de ressources qui contiennent la ressource. Pour plus d’informations, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Charger des images et des ressources adaptées à l’échelle, au thème, au contraste élevé et à d’autres contextes](images-tailored-for-scale-theme-contrast.md).
 
-En voici un exemple.
+Voici un exemple :
 
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
@@ -51,9 +51,9 @@ ResourceContext resourceContext = ResourceContext.GetForCurrentView()
 var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 ```
 
-**Remarque:** l’identificateur de ressource est considéré comme un fragment d’URI (Uniform Resource Identifier), soumis à la sémantique URI. Par exemple, `GetValue("Caption%20")` est traité comme `GetValue("Caption ")`. N’utilisez pas les caractères «?» ou «#» dans les identificateurs de ressource, car ils mettent fin à l’évaluation du chemin d’accès aux ressources. Par exemple, «MyResource?3» est traité comme «MyResource».
+**Remarque :** l’identificateur de ressource est considéré comme un fragment d’URI (Uniform Resource Identifier), soumis à la sémantique URI. Par exemple, `GetValue("Caption%20")` est traité comme `GetValue("Caption ")`. N’utilisez pas les caractères « ? » ou « # » dans les identificateurs de ressource, car ils mettent fin à l’évaluation du chemin d’accès aux ressources. Par exemple, « MyResource?3 » est traité comme « MyResource ».
 
-Le **ResourceManager** prend en charge l’accès aux ressources de chaîne d’une application, mais il permet également d’énumérer et d’inspecter les diverses ressources de fichier. Afin d’éviter les collisions entre les fichiers et d’autres ressources provenant d’un fichier, les chemins d’accès de fichiers indexés se trouvent tous dans une sous-arborescence «Files» **ResourceMap** réservée. Par exemple, le fichier `\Images\logo.png` correspond au nom de ressource `Files/images/logo.png`.
+Le **ResourceManager** prend en charge l’accès aux ressources de chaîne d’une application, mais il permet également d’énumérer et d’inspecter les diverses ressources de fichier. Afin d’éviter les collisions entre les fichiers et d’autres ressources provenant d’un fichier, les chemins d’accès de fichiers indexés se trouvent tous dans une sous-arborescence « Files » **ResourceMap** réservée. Par exemple, le fichier `\Images\logo.png` correspond au nom de ressource `Files/images/logo.png`.
 
 Les API [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) gèrent de manière transparente les références aux fichiers en tant que ressources et elles conviennent pour les scénarios d’utilisation classiques. Le **ResourceManager** doit uniquement être utilisé pour les scénarios avancés, par exemple lorsque vous souhaitez remplacer le contexte actuel.
 
@@ -65,6 +65,6 @@ Les ressources potentielles sont choisies en fonction d’un [**ResourceContext*
 * [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
-## <a name="related-topics"></a>Rubriques associées
-* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
-* [Charger des images et des ressources adaptées à l’échelle, au thème, au contraste élevé et à d’autres contextes](images-tailored-for-scale-theme-contrast.md)
+## <a name="related-topics"></a>Rubriques connexes
+* [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](localize-strings-ui-manifest.md)
+* [Charger des images et des ressources adaptées à la mise à l’échelle, thème, contraste élevé et d’autres utilisateurs](images-tailored-for-scale-theme-contrast.md)

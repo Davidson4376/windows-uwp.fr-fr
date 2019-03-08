@@ -8,40 +8,40 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934003"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651474"
 ---
 # <a name="textures-with-alpha-channels"></a>Textures avec canaux alpha
 
 
-Il existe deux façons de coder les mappages de texture qui présentent une transparence plus complexe. Dans chaque cas, un bloc décrivant la transparence précède le bloc de 64bits déjà décrit. La transparence est représentée sous forme d’un bitmap 4x4 avec 4bits par pixel (codage explicite) ou avec moins de bits et une interpolation linéaire similaire à ce qui est utilisé pour le codage de couleurs.
+Il existe deux façons de coder les mappages de texture qui présentent une transparence plus complexe. Dans chaque cas, un bloc décrivant la transparence précède le bloc de 64 bits déjà décrit. La transparence est représentée sous forme d’un bitmap 4 x 4 avec 4 bits par pixel (codage explicite) ou avec moins de bits et une interpolation linéaire similaire à ce qui est utilisé pour le codage de couleurs.
 
 Le bloc de transparence et le bloc de couleurs sont organisés comme indiqué dans le tableau suivant.
 
-| Adresse du mot | Bloc de 64bits                      |
+| Adresse du mot | Bloc de 64 bits                      |
 |--------------|-----------------------------------|
 | 3:0          | Bloc de transparence                |
-| 7:4          | Bloc de 64bits décrit précédemment |
+| 7:4          | Bloc de 64 bits décrit précédemment |
 
  
 
-## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Codage de texture explicite
+## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Encodage de texture explicite
 
 
-Pour un codage de texture explicite (format BC2), les composants alpha des texels qui décrivent la transparence sont codés dans un bitmap 4x4 avec 4bits par texel. Ces quatre bits peuvent être obtenus par le biais de différents moyens, comme un tramage ou à l’aide des quatre bits les plus importants des données alpha. Ils sont toutefois générés et utilisés comme ils sont, sans aucune interpolation.
+Pour un codage de texture explicite (format BC2), les composants alpha des texels qui décrivent la transparence sont codés dans un bitmap 4 x 4 avec 4 bits par texel. Ces quatre bits peuvent être obtenus par le biais de différents moyens, comme un tramage ou à l’aide des quatre bits les plus importants des données alpha. Ils sont toutefois générés et utilisés comme ils sont, sans aucune interpolation.
 
-Le diagramme suivant illustre un bloc de transparence de 64bits.
+Le diagramme suivant illustre un bloc de transparence de 64 bits.
 
-![diagramme d’un bloc de transparence de 64bits](images/colors4.png)
+![diagramme d’un bloc de transparence de 64 bits](images/colors4.png)
 
-**Remarque**  la méthode de compression de Direct3D utilise les quatre bits les plus importants.
+**Remarque**    la méthode de compression de Direct3D utilise les quatre bits les plus significatifs.
 
  
 
-Les tableaux suivants illustrent la façon dont les informations alpha sont disposées dans la mémoire, pour chaque mot de 16bits.
+Les tableaux suivants illustrent la façon dont les informations alpha sont disposées dans la mémoire, pour chaque mot de 16 bits.
 
 Disposition pour le mot 0:
 
@@ -54,7 +54,7 @@ Disposition pour le mot 0:
 
  
 
-\*Bit le moins important, bit le plus important (MSB)
+\*bit de poids faible, plus significatif de bits (MSB)
 
 Disposition pour le mot 1:
 
@@ -89,12 +89,12 @@ Disposition pour le mot 3:
 
  
 
-La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel transparent n’est pas utilisé dans ce format. Nous supposons que sans la comparaison de couleurs, les données de couleurs sont toujours traitées avec un mode à 4couleurs.
+La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel transparent n’est pas utilisé dans ce format. Nous supposons que sans la comparaison de couleurs, les données de couleurs sont toujours traitées avec un mode à 4 couleurs.
 
-## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>Interpolation alpha linéaire à trois bits
+## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>Trois bits une interpolation linéaire alpha
 
 
-Le codage de transparence pour le format BC3 est basé sur un concept similaire au codage linéaire utilisé pour la couleur. Deux valeurs alpha 8bits et un bitmap 4x4 avec trois bits par pixel sont stockés dans les huit premiers octets du bloc. Des valeurs alpha représentatives sont utilisées pour interpoler les valeurs alpha intermédiaires. Des informations supplémentaires sur la manière dont les deux valeurs alpha sont stockées sont disponibles. Si alpha\_0 est supérieur à alpha\_1, alors six valeurs alpha intermédiaires sont créées par l’interpolation. Sinon, quatre valeurs alpha intermédiaires sont interpolées entre les extrêmes alpha spécifiés. Les deux autres valeurs alpha implicites sont 0 (complètement transparent) et 255 (complètement opaque).
+Le codage de transparence pour le format BC3 est basé sur un concept similaire au codage linéaire utilisé pour la couleur. Deux valeurs alpha 8 bits et un bitmap 4 x 4 avec trois bits par pixel sont stockés dans les huit premiers octets du bloc. Des valeurs alpha représentatives sont utilisées pour interpoler les valeurs alpha intermédiaires. Des informations supplémentaires sur la manière dont les deux valeurs alpha sont stockées sont disponibles. Si alpha\_0 est supérieure à alpha\_1, alors six valeurs alphabétiques intermédiaires sont créés par l’interpolation. Sinon, quatre valeurs alpha intermédiaires sont interpolées entre les extrêmes alpha spécifiés. Les deux autres valeurs alpha implicites sont 0 (complètement transparent) et 255 (complètement opaque).
 
 L’exemple de code suivant illustre cet algorithme.
 
@@ -122,27 +122,27 @@ else {
 }
 ```
 
-La disposition de la mémoire du bloc alpha est la suivante:
+La disposition de la mémoire du bloc alpha est la suivante :
 
-| Octet | Alpha                                                          |
+| Byte | Alpha                                                          |
 |------|----------------------------------------------------------------|
 | 0    | Alpha\_0                                                       |
 | 1    | Alpha\_1                                                       |
 | 2    | \[0\]\[2\] (2 MSBs), \[0\]\[1\], \[0\]\[0\]                    |
-| 3    | \[1\]\[1\] (1 MSB), \[1\]\[0\], \[0\]\[3\], \[0\]\[2\] (1 LSB) |
+| 3    | \[1\]\[1\] 1 SIGNIFICATIF, \[1\]\[0\], \[0\]\[3\], \[0\] \[2\] (1 LSB) |
 | 4    | \[1\]\[3\], \[1\]\[2\], \[1\]\[1\] (2 LSBs)                    |
 | 5    | \[2\]\[2\] (2 MSBs), \[2\]\[1\], \[2\]\[0\]                    |
-| 6    | \[3\]\[1\] (1 MSB), \[3\]\[0\], \[2\]\[3\], \[2\]\[2\] (1 LSB) |
+| 6    | \[3\]\[1\] 1 SIGNIFICATIF, \[3\]\[0\], \[2\]\[3\], \[2\] \[2\] (1 LSB) |
 | 7    | \[3\]\[3\], \[3\]\[2\], \[3\]\[1\] (2 LSBs)                    |
 
  
 
-La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel transparent n’est pas utilisé avec ces formats. Nous supposons que sans la comparaison de couleurs, les données de couleurs sont toujours traitées en tant que mode à 4couleurs.
+La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel transparent n’est pas utilisé avec ces formats. Nous supposons que sans la comparaison de couleurs, les données de couleurs sont toujours traitées avec un mode à 4 couleurs.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Ressources de texture compressées](compressed-texture-resources.md)
+[Ressources de texture compressé](compressed-texture-resources.md)
 
  
 

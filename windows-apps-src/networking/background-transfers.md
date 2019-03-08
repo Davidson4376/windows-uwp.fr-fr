@@ -4,14 +4,14 @@ title: Transferts en arrière-plan
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ms.date: 03/23/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 20662a562e67ee836feb1da73a71c76228a550cb
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058680"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643814"
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
 Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
@@ -26,9 +26,9 @@ Si vous téléchargez peu de ressources et si l’opération est censée se term
 Quand une application utilise la fonctionnalité de transfert en arrière-plan pour lancer un transfert, la requête est configurée et initialisée à l’aide d’objets de classe [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) ou [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Chaque opération de transfert est gérée individuellement par le système et séparément de l’application appelante. Les informations sur la progression sont disponibles si vous voulez indiquer un état à l’utilisateur dans l’interface utilisateur de votre application. En outre, l’exécution de votre application peut être suspendue, reprise, annulée ou même lue à partir des données pendant le transfert. La manière dont les transferts sont gérés par le système favorise une consommation d’énergie intelligente et évite les problèmes qui peuvent se produire lorsqu’une application connectée se heurte à des événements tels qu’une interruption ou un arrêt de l’application, ou encore des modifications soudaines de l’état du réseau.
 
 > [!NOTE]
-> En raison des contraintes de ressource par application, une application ne doit pas effectuer plus de 200transferts (DownloadOperations + UploadOperations) à un moment donné. Si cette limite est dépassée, cela peut mettre la file d’attente de transfert de l’application dans un état irrécupérable.
+> En raison des contraintes de ressource par application, une application ne doit pas effectuer plus de 200 transferts (DownloadOperations + UploadOperations) à un moment donné. Si cette limite est dépassée, cela peut mettre la file d’attente de transfert de l’application dans un état irrécupérable.
 
-Quand une application est lancée, elle doit appeler [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) sur tous les objets existants [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) et [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadoperation) . Cela entraîne la fuite des transferts déjà effectué et finalement rendre l’utilisation de la fonctionnalité de transfert en arrière-plan inutiles.
+Lorsqu’une application est lancée, elle doit appeler [ **AttachAsync** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) sur toutes les existantes [ **DownloadOperation** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) et [  **UploadOperation** ](/uwp/api/windows.networking.backgroundtransfer.uploadoperation) objets. Ne pas cette opération entraîne la fuite des transferts déjà effectué et s’afficheront finalement inutiles de votre utilisation de la fonctionnalité de transfert en arrière-plan.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Exécution de demandes de fichiers authentifiées avec le transfert en arrière-plan
 Le transfert en arrière-plan fournit des méthodes qui prennent en charge les informations d’authentification serveur et proxy de base, les cookies et l’utilisation d’en-têtes HTTP personnalisés (par l’intermédiaire de la méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) pour chaque opération de transfert.
@@ -40,7 +40,7 @@ Par exemple, la stratégie de coût définie pour une opération peut indiquer q
 
 Bien que la fonctionnalité de transfert en arrière-plan possède ses propres mécanismes pour gérer les modifications de l’état du réseau, d’autres considérations générales ayant trait à la connectivité des applications connectées au réseau sont à prendre en compte. Pour plus d’informations, voir [Exploitation des informations de connexion réseau disponibles](https://msdn.microsoft.com/library/windows/apps/hh452983).
 
-> **Remarque**pour les applications en cours d’exécution sur les appareils mobiles, il existe des fonctionnalités qui permettent à l’utilisateur de surveiller et de limiter la quantité de données transférées en fonction du type de connexion, l’itinérance d’état, et planifier des données de l’utilisateur. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
+> **Remarque**  pour les applications qui s’exécutent sur des appareils mobiles, il existe des fonctionnalités qui permettent à l’utilisateur surveiller et limiter la quantité de données transférées en fonction du type de connexion, état, l’itinérance et plan de données de l’utilisateur. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
 
 Le tableau suivant indique les moments où les transferts en arrière-plan sont autorisés sur le téléphone pour chaque valeur [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138), en fonction de l’état actuel du téléphone. Vous pouvez utiliser la classe [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) pour déterminer l’état actuel du téléphone.
 
@@ -60,7 +60,7 @@ Les exemples qui suivent vous guident tout au long du processus de création et 
 ### <a name="uploading-a-single-file"></a>Chargement d’un fichier unique
 La création d’un chargement commence avec [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Cette classe sert à fournir les méthodes qui permettent à votre application de configurer le chargement avant de créer l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) qui en résulte. L’exemple qui suit montre comment y parvenir avec les objets [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) et [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) requis.
 
-**Identifier le fichier et la destination du chargement**
+**Identifier le fichier et destination pour le téléchargement**
 
 Avant de commencer avec la création d’un objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), nous devons avant tout identifier l’URI du lieu de chargement, ainsi que le fichier qui sera chargé. Dans l’exemple qui suit, la valeur *uriString* est remplie au moyen d’une chaîne issue d’entrées de l’interface utilisateur et la valeur *file* est remplie à l’aide de l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) renvoyé par une opération [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275).
 
@@ -72,7 +72,7 @@ Dans l’étape qui précède, les valeurs *uriString* et *file* sont transmises
 
 Ensuite, les propriétés de l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) fourni (*file*) sont utilisées par la classe [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) pour remplir l’en-tête de la demande et définir la propriété *SourceFile* à l’aide de l’objet **StorageFile**. La méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) est ensuite appelée pour insérer le nom de fichier, fourni comme chaîne, et la propriété [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220).
 
-Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) crée l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*chargement*).
+Pour finir, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) crée l’objet [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
 
 [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Create and initialize the upload operation")]
 
@@ -85,7 +85,7 @@ promise = upload.startAsync().then(complete, error, progress);
 L’appel de méthode asynchrone est suivi d’une instruction then indiquant les méthodes, définies par l’application, qui sont appelées lorsqu’un résultat de l’appel de méthode asynchrone est retourné. Pour plus d’informations sur ce modèle de programmation, voir [Programmation asynchrone en JavaScript à l’aide de promesses](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
 ### <a name="uploading-multiple-files"></a>Chargement de plusieurs fichiers
-**Identifier les fichiers et la destination du chargement**
+**Identifier les fichiers et la destination pour le téléchargement**
 
 Dans un scénario impliquant plusieurs fichiers transférés avec une seule opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), le processus commence comme habituellement en fournissant tout d’abord l’URI de destination et les informations de fichier local requis. Comme dans l’exemple de la section précédente, l’URI est fourni sous forme de chaîne par l’utilisateur final et [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) peut être utilisé pour offrir la possibilité d’indiquer les fichiers par le biais de l’interface utilisateur également. Toutefois, dans ce scénario, l’application doit plutôt appeler la méthode [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) pour permettre la sélection de plusieurs fichiers par le biais de l’interface utilisateur.
 
@@ -130,7 +130,7 @@ D’abord, la chaîne d’URI fournie par l’utilisateur est initialisée en ta
             });
 ```
 
-**Créer et initialiser l’opération de chargement à parties multiples**
+**Créer et initialiser l’opération de chargement de plusieurs parties**
 
 Avec notre tableau de contentParts rempli avec tous les objets [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) représentant chaque [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) pour le chargement, nous sommes prêts à appeler [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) à l’aide de l’[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) pour indiquer où la demande sera envoyée.
 
@@ -152,7 +152,7 @@ Avec notre tableau de contentParts rempli avec tous les objets [**BackgroundTran
 ### <a name="restarting-interrupted-upload-operations"></a>Redémarrage d’opérations de chargement interrompues
 Lors de l’achèvement ou de l’annulation d’une opération [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), toutes les ressources système associées sont libérées. Toutefois, si votre application est arrêtée avant que l’une de ces situations puisse se produire, toutes les opérations en cours sont suspendues et les ressources associées à chacune d’entre elles persistent. Si ces opérations ne sont pas énumérées et réintroduites dans la session d’application suivante, elles s’arrêteront et resteront présentes dans les ressources d’appareil.
 
-1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) que cette fonction renverra:
+1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) que cette fonction renverra :
 
     [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Restart interrupted upload operation")]
 
@@ -188,7 +188,7 @@ Le niveau de contrôle peut être augmenté en implémentant des méthodes [**Do
 ### <a name="enumerating-persisted-operations-at-start-up"></a>Énumération des opérations persistantes au démarrage
 Lors de l’achèvement ou de l’annulation d’une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), toutes les ressources système associées sont libérées. Toutefois, si votre application est arrêtée avant que l’un de ces événements ne se produise, les téléchargements sont suspendus et persistent en arrière-plan. Les exemples qui suivent expliquent comment réintroduire des téléchargements persistants dans une nouvelle session d’application.
 
-1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) que cette fonction renverra:
+1.  Avant de définir la fonction chargée d’énumérer les opérations persistantes, nous devons créer un tableau pour y stocker les objets [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) que cette fonction renverra :
 
     [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
@@ -199,7 +199,7 @@ Lors de l’achèvement ou de l’annulation d’une opération [**DownloadOpera
 1.  Vous pouvez désormais utiliser la liste remplie pour redémarrer des opérations en attente.
 
 ## <a name="post-processing"></a>Post-traitement
-Une nouvelle fonctionnalité dans Windows 10 est la possibilité d’exécuter le code de l’application à la fin d’un transfert en arrière-plan même lorsque l’application n’est pas en cours d’exécution. Par exemple, votre application pourrait mettre à jour une liste de films disponibles à l’issue du téléchargement d’un film, au lieu de rechercher la présence de nouveaux films à chaque démarrage. Elle pourrait également gérer un transfert de fichier ayant échoué en réessayant via un serveur ou un port différent. Le post-traitement est appelé pour tous les transferts, réussis ou non. Vous pouvez donc l’utiliser pour implémenter une logique personnalisée de gestion des erreurs et de nouvelle tentative.
+Une nouvelle fonctionnalité de Windows 10 est la capacité d’exécuter le code d’application à l’issue d’un transfert en arrière-plan même quand l’application n’est pas en cours d’exécution. Par exemple, votre application pourrait mettre à jour une liste de films disponibles à l’issue du téléchargement d’un film, au lieu de rechercher la présence de nouveaux films à chaque démarrage. Elle pourrait également gérer un transfert de fichier ayant échoué en réessayant via un serveur ou un port différent. Le post-traitement est appelé pour tous les transferts, réussis ou non. Vous pouvez donc l’utiliser pour implémenter une logique personnalisée de gestion des erreurs et de nouvelle tentative.
 
 Un post-traitement utilise l’infrastructure de tâche en arrière-plan existante. Vous créez une tâche en arrière-plan et l’associez à vos transferts avant de les démarrer. Les transferts sont ensuite exécutés en arrière-plan et, quand ils sont terminés, votre tâche en arrière-plan est appelée pour effectuer le post-traitement.
 
@@ -258,16 +258,16 @@ Il existe deux cas principaux de délai de connexion à prendre en considératio
 
 -   Lorsque vous établissez une nouvelle connexion pour un transfert, la demande de connexion est annulée si la connexion n’est pas établie dans un délai de cinq minutes.
 
--   Une fois la connexion établie, un message de requêteHTTP qui n’a reçu aucune réponse au bout de deux minutes est annulé.
+-   Une fois la connexion établie, un message de requête HTTP qui n’a reçu aucune réponse au bout de deux minutes est annulé.
 
-> **Remarque**soit le scénario, en supposant qu’il existe une connectivité Internet, de transfert en arrière-plan et tente une demande jusqu'à trois fois de soumettre automatiquement. Si aucune connectivitéInternet n’est décelée, les demandes supplémentaires attendront jusqu’à ce qu’elle le soit.
+> **Remarque**  dans les deux cas, en supposant qu’il existe une connectivité Internet, transfert en arrière-plan réessaie une demande jusqu'à trois fois automatiquement. Si aucune connectivité Internet n’est décelée, les demandes supplémentaires attendront jusqu’à ce qu’elle le soit.
 
 ## <a name="debugging-guidance"></a>Recommandations en matière de débogage
-L’arrêt d’une session de débogage dans Microsoft Visual Studio est comparable à la fermeture de votre application; les chargements PUT sont mis en pause et les chargements POST sont arrêtés. Même pendant le débogage, votre application doit énumérer, puis redémarrer ou annuler les chargements persistants. Par exemple, votre application peut annuler l’énumération des opérations de chargement persistantes, au démarrage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage.
+L’arrêt d’une session de débogage dans Microsoft Visual Studio est comparable à la fermeture de votre application ; les chargements PUT sont mis en pause et les chargements POST sont arrêtés. Même pendant le débogage, votre application doit énumérer, puis redémarrer ou annuler les chargements persistants. Par exemple, votre application peut annuler l’énumération des opérations de chargement persistantes, au démarrage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage.
 
 Vous pouvez faire en sorte que votre application annule l’énumération des opérations de téléchargement/chargement au démarrage durant une session de débogage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage. Notez que s’il existe des mises à jour du projet Visual Studio, par exemple des modifications du manifeste de l’application, et si l’application est désinstallée et redéployée, [**GetCurrentUploadsAsync**](https://msdn.microsoft.com/library/windows/apps/hh701149) ne peut pas énumérer les opérations créées à l’aide du déploiement d’application précédent.
 
-Lors de l’utilisation de Transfert en arrière-plan pendant le développement, vous pouvez vous trouver une situation dans laquelle les caches internes des opérations de transfert actives et terminées peuvent être désynchronisés. Cela peut entraîner l’incapacité de démarrer de nouvelles opérations de transfert ou d’interagir avec les opérations existantes et les objets [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030). Dans certains cas, toute tentative d’interaction avec des opérations existantes peut déclencher un blocage. Cela peut se produire si la propriété [**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033) a la valeur **Parallel**. Ce problème ne se produit que dans certains scénarios de développement et n’est pas applicable à l’utilisateur final de votre application.
+Quand vous utilisez le transfert en arrière-plan durant le développement, il arrive que les caches internes des opérations de transfert actives et terminées se désynchronisent. Cela peut entraîner l’incapacité à démarrer de nouvelles opérations de transfert ou à interagir avec les opérations et les objets [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) existants. Dans certains cas, toute tentative d’interaction avec des opérations existantes peut déclencher un blocage. Cela peut se produire si la propriété [**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033) a la valeur **Parallel**. Ce problème ne se produit que dans certains scénarios de développement et n’est pas applicable à l’utilisateur final de votre application.
 
 Quatre scénarios d’utilisation de Visual Studio peuvent provoquer ce problème.
 
@@ -282,7 +282,7 @@ Pour contourner ce problème, désinstallez complètement toutes les versions de
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Exceptions dans Windows.Networking.BackgroundTransfer
 Une exception est levée quand une chaîne d’URI non valide est transmise au constructeur pour l’objet [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998).
 
-**.NET:** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
+**.NET :** Le [ **Windows.Foundation.Uri** ](https://msdn.microsoft.com/library/windows/apps/br225998) type apparaît sous la forme [ **System.Uri** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans C# et VB.
 
 En C# et Visual Basic, cette erreur peut être évitée en utilisant la classe [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans .NET 4.5 et l’une des méthodes [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) pour tester la chaîne envoyée par l’utilisateur de l’application avant la construction de l’URI.
 
@@ -292,7 +292,7 @@ L’espace de noms [**Windows.Networking.backgroundTransfer**](https://msdn.micr
 
 Une erreur rencontrée sur une méthode asynchrone dans l’espace de noms [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) est retournée en tant que valeur **HRESULT**. La méthode [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) sert à convertir une erreur réseau résultant d’une opération de transfert en arrière-plan en valeur d’énumération [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818). La plupart des valeurs d’énumération **WebErrorStatus** correspondent à une erreur retournée par l’opération cliente HTTP ou FTP native. Une application peut filtrer sur des valeurs d’énumération **WebErrorStatus** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
-Pour les erreurs de validation de paramètre, une application peut également utiliser la valeur **HRESULT** à partir de l’exception pour obtenir des informations plus détaillées sur l’erreur à l’origine de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**.
+Pour les erreurs de validation de paramètre, une application peut également utiliser la valeur **HRESULT** à partir de l’exception pour obtenir des informations plus détaillées sur l’erreur à l’origine de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Pour la plupart des erreurs de validation de paramètre, le **HRESULT** retourné est **E\_INVALIDARG**.
 
 ## <a name="important-apis"></a>API importantes
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 490e2148026719f562b5fd17761546c4244850dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596124"
 ---
 # <a name="blending-stages"></a>Étapes de fusion
 
@@ -22,7 +22,7 @@ Une étape de fusion désigne un ensemble d’opérations de texture et leurs ar
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Fusion de textures](texture-blending.md)
+[Fusion de texture](texture-blending.md)
 
  
 

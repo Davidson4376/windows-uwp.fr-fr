@@ -3,15 +3,15 @@ title: Piste d'apprentissage - Afficher les clients dans une liste
 description: Découvrez ce que vous devez faire pour afficher une collection d’objets Client dans une liste.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: prise en main, uwp, windows10, piste d'apprentissage, liaison de données, liste
+keywords: prise en main, uwp, windows 10, piste d'apprentissage, liaison de données, liste
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947741"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651374"
 ---
 # <a name="display-customers-in-a-list"></a>Afficher les clients dans une liste
 
@@ -25,21 +25,21 @@ Nous allons commencer par une présentation rapide de la liaison de données - e
 
 La liaison de données est un moyen d’afficher les données d’une application dans son interface utilisateur. Cela permet d'établir une *séparation des responsabilités* dans votre application, en gardant votre interface utilisateur séparée de votre autre code. Cela crée un modèle conceptuel plus fluide et plus facile à lire et à gérer.
 
-Chaque liaison de données comporte deux parties:
+Chaque liaison de données comporte deux parties :
 
-* une source qui fournit les données à lier;
+* une source qui fournit les données à lier ;
 * une cible dans l’interface utilisateur où les données sont affichées.
 
-Pour implémenter une liaison de données, vous devez ajouter du code à la source qui fournit les données à la liaison. Vous devez également ajouter l'une des deux extensions de balisage à votre code XAML pour spécifier les propriétés de source de données. Voici la principale différence entre les deux:
+Pour implémenter une liaison de données, vous devez ajouter du code à la source qui fournit les données à la liaison. Vous devez également ajouter l'une des deux extensions de balisage à votre code XAML pour spécifier les propriétés de source de données. Voici la principale différence entre les deux :
 
-* [**x:Bind**](../xaml-platform/x-bind-markup-extension.md) est fortement typée et génère du code au moment de la compilation pour de meilleures performances. x:Bind est par défaut une liaison à usage unique optimisée pour l’affichage rapide des données en lecture seule qui ne changent pas.
-* [**Binding**](../xaml-platform/binding-markup-extension.md) est faiblement typée et assemblée lors de l’exécution. Elle produit de moins bonnes performances que x:Bind. Dans la plupart des cas, vous devez utiliser x:Bind au lieu de Binding. Toutefois, vous la trouverez probablement dans un ancien code. Binding est par défaut un transfert de données à sens unique optimisé pour les données en lecture seule susceptibles d'être modifiées à la source.
+* [**x : Bind** ](../xaml-platform/x-bind-markup-extension.md) est fortement typée et génère du code au moment de la compilation pour de meilleures performances. x:Bind est par défaut une liaison à usage unique optimisée pour l’affichage rapide des données en lecture seule qui ne changent pas.
+* [**Liaison** ](../xaml-platform/binding-markup-extension.md) est faiblement typé et assemblés lors de l’exécution. Elle produit de moins bonnes performances que x:Bind. Dans la plupart des cas, vous devez utiliser x:Bind au lieu de Binding. Toutefois, vous la trouverez probablement dans un ancien code. Binding est par défaut un transfert de données à sens unique optimisé pour les données en lecture seule susceptibles d'être modifiées à la source.
 
 Nous vous recommandons d’utiliser **x:Bind** chaque fois que c'est possible, comme nous allons l'illustrer dans les extraits de code de cet article. Pour plus d’informations sur les différences, consultez [Comparaison des fonctionnalités {x:Bind} et {Binding}](../data-binding/data-binding-in-depth.md#xbind-and-binding-feature-comparison).
 
 ## <a name="create-a-data-source"></a>Créer une source de données
 
-Tout d’abord, vous avez besoin d’une classe pour représenter vos données client. Pour vous donner un point de référence, nous allons illustrer le processus dans cet exemple simple:
+Tout d’abord, vous avez besoin d’une classe pour représenter vos données client. Pour vous donner un point de référence, nous allons illustrer le processus dans cet exemple simple :
 
 ```csharp
 public class Customer
@@ -62,7 +62,7 @@ Une fois que vous avez lié des données à votre contrôle ListView, nous vous 
 
 ## <a name="bind-data-to-your-list"></a>Lier des données à votre liste
 
-Maintenant que vous avez créé une interface utilisateur de base pour contenir vos liaisons, vous devez configurer votre source pour les fournir. Voici un exemple de la manière de procéder:
+Maintenant que vous avez créé une interface utilisateur de base pour contenir vos liaisons, vous devez configurer votre source pour les fournir. Voici un exemple de la manière de procéder :
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -92,25 +92,25 @@ public sealed partial class MainPage : Page
 </ListView>
 ```
 
-La [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md#binding-to-a-collection-of-items) vous explique comment régler un problème similaire dans sa section sur la liaison à une collection d’éléments. Le présent exemple illustre les étapes essentielles suivantes:
+La [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md#binding-to-a-collection-of-items) vous explique comment régler un problème similaire dans sa section sur la liaison à une collection d’éléments. Le présent exemple illustre les étapes essentielles suivantes :
 
 * Dans le code-behind de votre interface utilisateur, créez une propriété de type **ObservableCollection<T>** pour contenir les objets client.
 * Liez l'**ItemSource** de votre contrôle ListView à cette propriété.
 * Fournissez un **ItemTemplate** de base au contrôle ListView, qui configurera l’affichage de chaque élément dans la liste.
 
-N’hésitez pas à consulter la documentation [Affichage liste](../design/controls-and-patterns/listview-and-gridview.md) si vous souhaitez personnaliser la disposition, ajouter une sélection d’éléments ou adapter le **DataTemplate** que vous venez de créer. Mais que se passe-t-il si vous souhaitez modifier vos clients?
+N’hésitez pas à consulter la documentation [Affichage liste](../design/controls-and-patterns/listview-and-gridview.md) si vous souhaitez personnaliser la disposition, ajouter une sélection d’éléments ou adapter le **DataTemplate** que vous venez de créer. Mais que se passe-t-il si vous souhaitez modifier vos clients ?
 
 ## <a name="edit-your-customers-through-the-ui"></a>Modifier vos clients par le biais de l’interface utilisateur
 
-Vous avez affiché les clients dans une liste, mais la liaison de données B=binding vous permet d'en faire plus. Que se passe-t-il si vous pouvez modifier vos données directement à partir de l’interface utilisateur? Pour ce faire, nous allons tout d’abord parler des trois modes de liaison de données:
+Vous avez affiché les clients dans une liste, mais la liaison de données B=binding vous permet d'en faire plus. Que se passe-t-il si vous pouvez modifier vos données directement à partir de l’interface utilisateur ? Pour ce faire, nous allons tout d’abord parler des trois modes de liaison de données :
 
-* *À usage unique*: cette liaison de données est activée uniquement une fois et ne réagit pas aux modifications apportées.
-* *À sens unique*: cette liaison de données met à jour l’interface utilisateur avec les modifications apportées à la source de données.
-* *Bidirectionnelle*: cette liaison de données met à jour l’interface utilisateur avec les modifications apportées à la source de données et met également à jour les données avec les modifications apportées dans l’interface utilisateur.
+* *À usage unique*: Cette liaison de données est activée uniquement une fois et ne réagit pas aux modifications.
+* *Unidirectionnel*: Cette liaison de données met à jour l’interface utilisateur avec les modifications apportées à la source de données.
+* *Bidirectionnelle*: Cette liaison de données sera mise à jour de l’interface utilisateur avec les modifications apportées à la source de données et également mettre à jour les données avec toutes les modifications apportées dans l’interface utilisateur.
 
 Si vous avez suivi les extraits de code antérieurs, la liaison que vous avez apportée utilise x:Bind et ne spécifie pas de mode, ce qui produit une liaison à usage unique. Si vous souhaitez modifier vos clients directement à partir de l’interface utilisateur, vous devez la remplacer par une liaison bidirectionnelle, afin que les modifications des données soient transférées vers les objets client. [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md) contient des informations supplémentaires.
 
-La liaison bidirectionnelle met également à jour l’interface utilisateur si la source de données est modifiée. Pour que cela fonctionne, vous devez implémenter [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) sur la source et vous assurer que ses méthodes setter de propriété déclenchent l'événement **PropertyChanged**. Une pratique courante consiste à les faire appeler une méthode d’assistance telle que la méthode **OnPropertyChanged**, comme illustré ci-dessous:
+La liaison bidirectionnelle met également à jour l’interface utilisateur si la source de données est modifiée. Pour que cela fonctionne, vous devez implémenter [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) sur la source et vous assurer que ses méthodes setter de propriété déclenchent l'événement **PropertyChanged**. Une pratique courante consiste à les faire appeler une méthode d’assistance telle que la méthode **OnPropertyChanged**, comme illustré ci-dessous :
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -175,9 +175,9 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 
 ### <a name="useful-docs"></a>Documents utiles
 
-| Sujet | Description |
+| Rubrique | Description |
 |-------|----------------|
-| [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md) | Vue d’ensemble des principes de liaison de données |
+| [Liaison de données en profondeur](../data-binding/data-binding-in-depth.md) | Vue d’ensemble des principes de liaison de données |
 | [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md) | Informations conceptuelles détaillées sur la liaison de données. |
 | [Affichage de liste](../design/controls-and-patterns/listview-and-gridview.md) | Informations sur la création et la configuration d’un contrôle ListView, y compris l’implémentation d’un **DataTemplate** |
 
@@ -187,4 +187,4 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 |-----------------|---------------|
 | [Didacticiel de liaison de données](../data-binding/xaml-basics-data-binding.md) | Expérience interactive pas à pas sur les principes fondamentaux de la liaison de données. |
 | [ListView et GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | Découvrez des contrôles ListView plus complexes avec liaison de données |
-| [QuizGame](https://github.com/Microsoft/Windows-appsample-networkhelper) | Regardez la liaison de données en action, notamment la classe **BindableBase** (dans le dossier «Common») pour une implémentation standard de **INotifyPropertyChanged**. |
+| [QuizGame](https://github.com/Microsoft/Windows-appsample-networkhelper) | Regardez la liaison de données en action, notamment la classe **BindableBase** (dans le dossier « Common ») pour une implémentation standard de **INotifyPropertyChanged**. |

@@ -4,61 +4,61 @@ description: Examinons maintenant les détails de l’objet principal de l’exe
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ms.date: 10/24/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, objet principal
+keywords: windows 10, uwp, jeux, objet principal
 ms.localizationpriority: medium
 ms.openlocfilehash: 96aefc8b053dd7490f47910ca5bb79989855e1a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942440"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651494"
 ---
 # <a name="define-the-main-game-object"></a>Définir l’objet jeu principal
 
-Une fois que vous avez conçu l’infrastructure de base de l’exemple de jeu et implémenté une machine à états qui gère l’utilisation de niveau et les comportements du système, vous devez examiner les règles et la mécanique qui transforment l’exemple de jeu en un jeu. Nous allons examiner les détails de l’objet principal de l’exemple de jeu et comment convertir les règles du jeu en interactions avec le monde du jeu.
+Une fois que vous avez disposé l’infrastructure de base de l’exemple de jeu et implémenté une machine à états qui gère l’utilisateur de haut niveau et les comportements du système, vous souhaiterez examiner les règles et les mécanismes qui déclenchent l’exemple de jeu dans un jeu. Nous allons examiner les détails de l’objet principal de l’exemple de jeu et comment traduire des règles du jeu dans les interactions avec le monde du jeu.
 
 >[!Note]
 >Si vous n’avez pas encore téléchargé le dernier code de jeu pour cet exemple, accédez à [Exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une vaste collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [Obtenir des exemples de la plateforme Windows universelle (UWP) à partir de GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 ## <a name="objective"></a>Objectif
 
-Découvrez comment appliquer des techniques de développement de base pour implémenter les règles du jeu et les mécanismes pour un jeu UWP DirectX.
+Découvrez comment appliquer des techniques de développement de base pour implémenter des règles du jeu et mécanismes pour un jeu UWP DirectX.
 
 ## <a name="main-game-object"></a>Objet de jeu principal
 
-Dans cet exemple de jeu, __Simple3DGame__ est la classe de l’objet jeu principal. Une instance d’objet __Simple3DGame__ est créée dans la méthode __App::Load__ .
+Dans cet exemple de jeu, __Simple3DGame__ est la classe d’objet de jeu principale. Une instance de __Simple3DGame__ est construit dans le __App::Load__ (méthode).
 
-L’objet de classe __Simple3DGame__ :
+Le __Simple3DGame__ objet de classe :
 * Spécifie l’implémentation de la logique de jeu
-* Contient des méthodes qui communiquent:
-    * Modifications de l’état du jeu à la machine à états définie dans l’infrastructure d’application.
-    * Modifications de l’état du jeu à partir de l’application à l’objet jeu lui-même.
-    * Informations de mise à jour de l’interface utilisateur (superposition et affichage à tête haute) du jeu, les animations et physique (dynamique).
+* Contient des méthodes qui communiquent :
+    * Modifications de l’état du jeu à l’ordinateur d’état défini dans le cadre de l’application.
+    * Modifications de l’état du jeu à partir de l’application à l’objet de jeu lui-même.
+    * Détails de la mise à jour du jeu de l’interface utilisateur (recouvrement et affichage tête haute), d’animations et de physique (la dynamique).
 
     >[!Note]
-    >Mise à jour des graphiques est gérée par la classe __GameRenderer__ , qui contient des méthodes pour obtenir et utiliser des ressources de périphérique graphique utilisées par le jeu. Pour plus d’informations, voir [l’infrastructure de rendu i: présentation du rendu](tutorial--assembling-the-rendering-pipeline.md).
+    >La mise à jour de graphiques est gérée par le __GameRenderer__ (classe), qui contient des méthodes pour obtenir et utiliser des ressources de périphérique de graphiques utilisés par le jeu. Pour plus d’informations, consultez [framework rendu i : Introduction au rendu](tutorial--assembling-the-rendering-pipeline.md).
 
-* Sert de conteneur pour les données qui définissent une session de jeu, niveau, ou une durée, en fonction de la façon dont vous définissez votre jeu à un niveau élevé. Dans ce cas, les données d’état du jeu sont pour la durée de vie du jeu et sont initialisées une fois lorsqu’un utilisateur lance le jeu.
+* Sert de conteneur pour les données qui définit une session de jeu, niveau, ou la durée de vie, en fonction de la façon dont vous définissez votre jeu à un niveau élevé. Dans ce cas, les données d’état du jeu sont pour la durée de vie du jeu et sont initialisées une seule fois lorsqu’un utilisateur lance le jeu.
 
-Pour afficher les méthodes et les données définies dans cet objet de classe, accédez à [l’objet Simple3DGame](#simple3dgame-object).
+Pour afficher les méthodes et les données définies dans cet objet de classe, accédez à [Simple3DGame objet](#simple3dgame-object).
 
-## <a name="initialize-and-start-the-game"></a>Initialisation et démarrage du jeu
+## <a name="initialize-and-start-the-game"></a>Initialiser et démarrer le jeu
 
-Lorsqu’un joueur démarre le jeu, l’objet jeu doit initialiser son état, créer et ajouter la superposition, définir les variables qui suivent les performances du joueur et instancier les objets qui seront utilisés pour générer les niveaux. Dans cet exemple, cette opération est effectuée lors de la nouvelle instance de __GameMain__ est créée dans [__App::Load__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L115-L123). 
+Lorsqu’un joueur démarre le jeu, l’objet jeu doit initialiser son état, créer et ajouter la superposition, définir les variables qui suivent les performances du joueur et instancier les objets qui seront utilisés pour générer les niveaux. Dans cet exemple, cela s’effectue lorsque le nouveau __GameMain__ instance est créée en [ __App::Load__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L115-L123). 
 
-L’objet jeu, __Simple3DGame__, est créé dans le constructeur __GameMain__ . Il est ensuite initialisée à l’aide de la méthode [__Simple3DGame::Initialize__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L54-L250) pendant le [async créer la tâche dans le constructeur __GameMain__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L65-L74).
+L’objet de jeu, __Simple3DGame__, est créé dans le __GameMain__ constructeur. Il est ensuite initialisé à l’aide de la [ __Simple3DGame::Initialize__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L54-L250) méthode pendant le [async créer la tâche dans le __GameMain__ constructeur](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L65-L74).
 
-### <a name="simple3dgameinitialize-method"></a>Méthode Simple3DGame::Initialize
+### <a name="simple3dgameinitialize-method"></a>Simple3DGame::Initialize (méthode)
 
-L’exemple de jeu configure les composants suivants dans l’objet jeu:
+L’exemple de jeu configure les composants suivants dans l’objet de jeu :
 
 * Un nouvel objet lecture audio est créé.
 * Des tableaux pour les primitives graphiques du jeu sont créés, notamment des tableaux pour les primitives de niveau, les munitions et les obstacles.
-* Un emplacement pour enregistrer les données de l’état du jeu est créé: il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+* Un emplacement pour enregistrer les données de l’état du jeu est créé : il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
 * Un minuteur de jeu et la bitmap de superposition initiale, intégrée au jeu, sont créés.
 * Une nouvelle caméra est créée avec un ensemble spécifique de paramètres de vue et de projection.
 * Le périphérique d’entrée (contrôleur) étant défini sur les mêmes tangage et lacet de départ que la caméra, le joueur a une correspondance un-à-un entre la position du contrôle de départ et la position de la caméra.
-* L’objet joueur est créé et associé à l’état actif. Nous utilisons un objet sphère pour détecter la proximité du joueur pour les murs et aux obstacles et pour maintenir la version de l’appareil photo à partir de la prise placé dans une position qui peuvent s’interrompre l’immersion.
+* L’objet joueur est créé et associé à l’état actif. Nous utilisons un objet de la sphère pour détecter la proximité du joueur à murs et les obstacles et bien placé dans une position qui peut-être interrompre immersion que l’appareil photo.
 * La primitive du monde du jeu est créée.
 * Les obstacles sous forme de cylindres sont créés.
 * Les cibles (objets **Face**) sont créées et numérotées.
@@ -71,19 +71,19 @@ Le jeu a maintenant des instances de tous les principaux composants : le monde, 
 
 ## <a name="build-and-load-game-levels"></a>Créer et charger des niveaux de jeu
 
-La plupart des lourdes tâches pour la construction des niveaux est effectuée dans les fichiers __Level.h/.cpp__ trouvés dans le dossier __GameLevels__ de l’exemple de solution. Dans la mesure où il se concentre sur une implémentation très spécifique, nous n’allons pas aborder les ici. Il est important que le code pour chaque niveau soit exécuté en tant qu’objet __LevelN__ distinct. Si vous souhaitez étendre le jeu, vous pouvez créer un objet de **niveau** qui prend un numéro affecté en tant que paramètre et place de façon aléatoire les obstacles et cibles. Sinon, vous pouvez lui demander de charger les données de configuration de niveau à partir d’un fichier de ressources, ou même d’Internet.
+La plupart du gros du travail pour la construction de niveau est effectuée le __Level.h/.cpp__ fichiers trouvés dans le __GameLevels__ dossier de l’exemple de solution. Car elle se concentre sur une implémentation très spécifique, nous n’allons pas aborder les ici. Il est important que le code pour chaque niveau soit exécuté en tant qu’objet __LevelN__ distinct. Si vous souhaitez étendre le jeu, vous pouvez créer un **niveau** objet qui accepte un nombre affecté en tant que paramètre et de façon aléatoire place les obstacles et les cibles. Ou bien, vous pouvez y charger des données de configuration du niveau à partir d’un fichier de ressources, ou même Internet.
 
-## <a name="define-the-game-play"></a>Définir l’action de jeu
+## <a name="define-the-game-play"></a>Définir le jeu
 
-À ce stade, nous avons tous les composants nécessaires pour assembler le jeu. Les niveaux ont été construits en mémoire à partir des primitives et sont prêts pour le joueur d’interagir avec.
+À ce stade, nous avons tous les composants nécessaires pour assembler le jeu. Les niveaux ont été construits dans la mémoire depuis les primitives et sont prêts pour le joueur puisse commencer à interagir avec.
 
-Jeux meilleures estimée réagissent instantanément aux entrées du joueur et fournissent un retour immédiat. Cela est vrai pour n’importe quel type d’un jeu, à partir de rapidité et d’action en temps réel TIR à la première personne à des jeux de stratégie suivants sont bien pensés, tour par tour.
+Estimée meilleurs jeux réagissent instantanément à entrée d’un joueur et de fournissent des commentaires immédiats. Cela est vrai pour n’importe quel type d’un jeu, à partir de twitch-action, en temps réel tir subjectifs, aux jeux de stratégie bien pensée, en alternance.
 
-### <a name="simple3dgamerungame-method"></a>Méthode Simple3DGame::RunGame
+### <a name="simple3dgamerungame-method"></a>Simple3DGame::RunGame (méthode)
 
-Lorsque la lecture d’un niveau, le jeu est dans l’état __Dynamics__ . 
+Lors de la lecture d’un niveau, le jeu est dans le __Dynamics__ état. 
 
-[__GameMain::Update__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L261-L329) est la boucle de mise à jour principal qui met à jour l’état de l’application une fois par trame, comme illustré ci-dessous. Dans la boucle de mise à jour, elle appelle la méthode [__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418) pour gérer le travail si le jeu se trouve dans l’état __Dynamics__ .
+[__GameMain::Update__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L261-L329) est la boucle principale de mise à jour qui met à jour l’état de l’application une fois par frame, comme indiqué ci-dessous. Dans la boucle de mise à jour, il appelle le [ __Simple3DGame::RunGame__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418) méthode qui traitera la tâche si le jeu se trouve dans le __Dynamics__ état.
 
 ```cpp
 // Updates the application state once per frame.
@@ -109,28 +109,28 @@ void GameMain::Update()
       //...
 ```
           
-[__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418) gère l’ensemble des données qui définissent l’état actuel du jeu pour l’itération en cours de la boucle de jeu.
+[__Simple3DGame::RunGame__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418) gère le jeu de données qui définit l’état actuel de l’exécution du jeu pour l’itération actuelle de la boucle du jeu.
 
-Logique de flux de jeu dans __RunGame__:
-*  La méthode met à jour le minuteur qui compte à rebours les secondes jusqu’à ce que le niveau soit terminé, et vérifie si le délai imparti pour ce niveau a expiré. Il s’agit d’une des règles du jeu: lorsque le temps est écoulé et toutes les cibles n’ont pas été capture, vous n’avez.
+Jeux de logique de flux dans __RunGame__:
+*  La méthode met à jour le minuteur qui compte à rebours les secondes jusqu’à ce que le niveau soit terminé, et vérifie si le délai imparti pour ce niveau a expiré. Il s’agit d’une des règles du jeu : lorsque le temps est écoulé et toutes les cibles n’ont pas été capture, il est partie terminée.
 *  À la fin du temps imparti, la méthode place le jeu à l’état **TimeExpired**, puis revient à la méthode **Update** dans le code précédent.
 *  S’il reste du temps, le contrôleur de déplacement/vue est interrogé dans le cadre d’une mise à jour de la position de la caméra, en particulier une mise à jour de l’angle perpendiculaire de la vue du plan de la caméra (où le joueur regarde), et de la distance selon laquelle cet angle a bougé depuis la dernière fois que le contrôleur a été interrogé.
 *  La caméra est mise à jour en fonction des nouvelles données du contrôleur de déplacement/vue.
-*  La dynamique, ou les animations et comportements des objets du monde du jeu indépendants du contrôle du joueur, sont mis à jour. Dans cet exemple de jeu, la méthode [__UpdateDynamics()__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L436-L856) est appelée pour mettre à jour le mouvement des sphères de munitions qui ont été tirées, l’animation des colonnes d’obstacles et du déplacement des cibles. Pour plus d’informations, voir [mettre à jour le monde du jeu](#update-the-game-world).
-*  La méthode vérifie si les critères de réussite d’un niveau ont été remplis. Si tel est le cas, elle finalise le score du niveau et vérifie s’il s’agit du dernier niveau (6). S’il s’agit du dernier niveau, la méthode renvoie l’état de jeu **GameComplete**; sinon, elle renvoie l’état de jeu __LevelComplete__.
+*  La dynamique, ou les animations et comportements des objets du monde du jeu indépendants du contrôle du joueur, sont mis à jour. Dans cet exemple de jeu, le [ __UpdateDynamics()__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L436-L856) méthode est appelée pour mettre à jour le mouvement de la couleur des sphères munitions déclenché, l’animation des obstacles pilier et le déplacement des cibles. Pour plus d’informations, consultez [le monde du jeu de mise à jour](#update-the-game-world).
+*  La méthode vérifie si les critères de réussite d’un niveau ont été remplis. Si tel est le cas, elle finalise le score du niveau et vérifie s’il s’agit du dernier niveau (6). S’il s’agit du dernier niveau, la méthode renvoie l’état de jeu **GameComplete** ; sinon, elle renvoie l’état de jeu __LevelComplete__.
 *  Si le niveau n’est pas terminé, la méthode renvoie l’état de jeu __Active__.
 
 ## <a name="update-the-game-world"></a>Mettre à jour le monde du jeu
 
-Dans cet exemple, lorsque le jeu est en cours d’exécution, la méthode [__Simple3DGame::UpdateDynamics()__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L436-L856) est appelée à partir de la méthode [__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418) (qui est appelée à partir de [__GameMain::Update__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L261-L329)) pour mettre à jour les objets qui sont affichés dans une scène de jeu.
+Dans cet exemple, lors de l’exécution du jeu, le [ __Simple3DGame::UpdateDynamics()__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L436-L856) méthode est appelée à partir de la [ __Simple3DGame::RunGame__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418)(méthode) (qui est appelée à partir de [ __GameMain::Update__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L261-L329)) pour mettre à jour des objets qui sont rendus dans une scène de jeu.
 
-Dans la boucle __UpdateDynamics__ , appeler des méthodes qui sont utilisées pour définir le monde du jeu en mouvement, indépendamment du joueur d’entrée, créez une expérience de jeu immersive et le niveau *vivante*. Cela inclut les graphiques qui a besoin d’être rendue et effectue une boucle de l’animation en cours d’exécution pour remettre sur un vivante, monde même lorsqu’il n’existe aucune entrées du joueur. Par exemple, les arborescences vrillage dans le vent, les vagues cresting le rivage, tabac machines et monstres extraterrestres étirement et de déplacer. Il englobe également l’interaction entre les objets, y compris les collisions entre la sphère du joueur et le monde, ou entre les munitions et les obstacles et cibles.
+Dans le __UpdateDynamics__ boucle, appelez les méthodes qui sont utilisées pour définir le monde du jeu en mouvement, indépendamment de l’entrée d’un joueur, créer une expérience de jeu immersive et rendre le niveau arrivé *actif*. Cela inclut les graphiques qui doit être affiché et l’animation en cours d’exécution de boucles pour mettre sur un vivant world même lorsqu’il n’existe aucune entrée d’un joueur. Par exemple, les arborescences vrillage dans le vent, ondes cresting le long de lignes de la terre, fumeur de machines et étrangers monstres étirer et déplacement. Il englobe également l’interaction entre les objets, y compris les collisions entre la sphère du joueur et le monde, ou entre les munitions et les obstacles et cibles.
 
-La boucle de jeu doit toujours maintenir la version de mise à jour le monde du jeu si elle est basée sur la logique de jeu, des algorithmes physiques, ou qu’il s’agisse simplement aléatoires, sauf quand le jeu est expressément suspendu. 
+La boucle du jeu doit toujours conserver la mise à jour le monde du jeu si elle est basée sur la logique de jeu, les algorithmes physiques, ou s’il s’agit tout simplement aléatoire, sauf lorsque le jeu est en pause en particulier. 
 
 Dans l’exemple de jeu, ce principe porte le nom de *dynamique* et il englobe la montée et la chute des colonnes d’obstacles, ainsi que le mouvement et les comportements physiques des sphères de munitions lorsqu’elles sont tirées. 
 
-### <a name="simple3dgameupdatedynamics-method"></a>Méthode Simple3DGame::UpdateDynamics 
+### <a name="simple3dgameupdatedynamics-method"></a>Simple3DGame::UpdateDynamics (méthode) 
 
 Cette méthode traite quatre ensembles de calculs :
 
@@ -139,13 +139,13 @@ Cette méthode traite quatre ensembles de calculs :
 * L’intersection du joueur et des limites du monde.
 * Les collisions entre les sphères de munitions et les obstacles, les cibles, d’autres sphères de munitions et le monde.
 
-L’animation des obstacles est une boucle définie dans **Animate.h/.cpp**. Le comportement des munitions et des collisions sont définies par des algorithmes physiques simplifiés, fournis dans le code et paramétrés par un ensemble de constantes globales pour le monde du jeu, y compris les propriétés matérielles et de pesanteur. Tout cela est calculé dans l’espace de coordonnées du monde du jeu.
+L’animation des obstacles est une boucle définie dans **Animate.h/.cpp**. Le comportement de la munitions et des conflits sont définies par les algorithmes physique simplifiée, fourni dans le code et paramétrés par un ensemble de constantes globales pour le monde du jeu, y compris les propriétés de matériau et de gravité. Tout cela est calculé dans l’espace de coordonnées du monde du jeu.
 
 ### <a name="review-the-flow"></a>Passez en revue le flux
 
-Maintenant que nous avons mis à jour tous les objets dans la scène et calculé toutes les collisions, nous devons utiliser ces informations pour dessiner les modifications visuelles correspondantes. 
+Maintenant que nous avons mis à jour tous les objets dans la scène et calculé des conflits, nous devons utiliser ces informations pour dessiner l’élément visuel change correspondante. 
 
-Une fois que __GameMain::Update()__ se termine l’itération en cours de la boucle de jeu, l’exemple appelle immédiatement __Render()__ pour prendre les données d’objet mis à jour et générer une nouvelle scène à présenter au joueur, comme illustré ici. Ensuite, examinons le rendu.
+Après avoir __GameMain::Update()__ se termine l’itération actuelle de la boucle du jeu, l’exemple appelle immédiatement __Render()__ pour prendre les données de l’objet mis à jour et de générer une nouvelle scène à présenter à l’acteur, en tant que indiqué ici. Ensuite, examinons le rendu.
 
 ```cpp
 void GameMain::Run()
@@ -177,16 +177,16 @@ void GameMain::Run()
 }
 ```
 
-## <a name="render-the-game-worlds-graphics"></a>Rendu de graphiques du monde du jeu
+## <a name="render-the-game-worlds-graphics"></a>Rendu des graphiques de jeu mondial
 
 Nous conseillons de mettre à jour les graphiques d’un jeu chaque fois que possible, ce qui revient à le faire, au maximum, à chaque itération de la boucle de jeu principale. Lors de l’itération de la boucle, le jeu est mis à jour, avec ou sans intervention du joueur. Cela permet d’afficher correctement les animations et comportements calculés. Imaginez que nous ayons une simple scène comportant de l’eau qui ne bouge que lorsque le joueur appuie sur un bouton. Les effets visuels seraient terriblement ennuyeux. Un bon jeu doit avoir un aspect fluide.
 
-N’oubliez pas de boucle de l’exemple de jeu comme indiqué ci-dessus dans [__GameMain::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202). Si la fenêtre principale du jeu est visible et n’est pas ancrée ni désactivée, le jeu continue de mettre à jour et de restituer les résultats de cette mise à jour. La méthode [__de rendu__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameRenderer.cpp#L474-L624) , que nous allons examiner s’affiche une représentation de cet état. Cette opération est effectuée immédiatement après l’appel à **mettre à jour**, qui inclut **RunGame** pour mettre à jour des États, qui a été abordé dans la section précédente.
+Rappeler la boucle de l’exemple de jeu comme indiqué ci-dessus dans [ __GameMain::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202). Si la fenêtre principale du jeu est visible et n’est pas ancrée ni désactivée, le jeu continue de mettre à jour et de restituer les résultats de cette mise à jour. Le [ __restituer__ ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameRenderer.cpp#L474-L624) méthode nous allons examiner une représentation sous forme de cet état s’affiche désormais. Cela s’effectue immédiatement après un appel à **mettre à jour**, qui inclut **RunGame** aux États de mise à jour, ce qui a été abordé dans la section précédente.
 
 Cette méthode dessine la projection du monde en 3D, puis la superposition Direct2D au-dessus. Une fois terminé, elle présente la chaîne de permutation finale avec les tampons combinés à afficher.
 
 >[!Note]
->Il existe deux États de superposition Direct2D de l’exemple de jeu: un où le jeu affiche la superposition des informations du jeu qui contient la bitmap pour le menu de pause et celui où le jeu affiche le réticule avec les rectangles de déplacement / vue de l’écran tactile contrôleur. Le texte des scores est écrit dans les deux états. Pour plus d’informations, consultez [Infrastructure de rendu I: présentation du rendu](tutorial--assembling-the-rendering-pipeline.md).
+>Il existe deux États pour un segment de recouvrement de l’exemple de jeu Direct2D : un où le jeu affiche la superposition de jeu d’informations qui contient l’image bitmap pour le menu de pause et celui où le jeu affiche le réticule, ainsi que les rectangles pour l’apparence de déplacement écran tactile contrôleur. Le texte des scores est écrit dans les deux états. Pour plus d’informations, consultez [framework rendu i : Introduction au rendu](tutorial--assembling-the-rendering-pipeline.md).
 
 ### <a name="gamerendererrender-method"></a>Méthode GameRenderer::Render
 
@@ -235,29 +235,29 @@ void GameRenderer::Render()
 }
 ```
 
-## <a name="simple3dgame-object"></a>Objet Simple3DGame
+## <a name="simple3dgame-object"></a>Objet de Simple3DGame
 
-Voici les méthodes et les données qui sont définies dans la classe d’objet __Simple3DGame__ .
+Voici les méthodes et les données qui sont définies dans le __Simple3DGame__ classe d’objet.
 
 ### <a name="methods"></a>Méthodes
 
-Les méthodes internes définies sur **Simple3DGame** sont les suivantes:
+Les méthodes internes définies sur **Simple3DGame** incluent :
 
--   **Initialiser**: définit les valeurs de départ des variables globales et initialise les objets de jeu. Ce sujet est abordé dans la section [initialiser et démarrer le jeu](#initialize-and-start-the-game) .
--   **LoadGame**: initialise un nouveau niveau et commence son chargement.
--   **LoadLevelAsync**: démarre une tâche asynchrone (si vous n’êtes pas familiarisé avec les tâches asynchrones, voir [Bibliothèque de modèles parallèles](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) pour initialiser le niveau, puis invoquer une tâche asynchrone sur le convertisseur pour charger les ressources de niveau spécifique d’appareil. Cette méthode s’exécute dans un thread séparé; seules les méthodes [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) (par opposition aux méthodes [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**.
--   **FinalizeLoadLevel**: finit tout travail de chargement de niveau qui doit être exécuté sur le thread principal. Cela comprend tout appel aux méthodes ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) de contexte de périphérique Direct3D11.
--   **StartLevel**: démarre le jeu pour un nouveau niveau.
--   **PauseGame**: le jeu est suspendu.
--   **RunGame**: exécute une itération de la boucle de jeu. Cette méthode est appelée à partir d’**App::Update** une fois par itération de la boucle de jeu si le jeu présente l’état **Active**.
--   **OnSuspending** et **OnResuming**: suspend et reprend l’audio du jeu, respectivement.
+-   **Initialiser**: Définit les valeurs de départ des variables globales et initialise les objets jeu. Cela est couvert dans le [initialiser et démarrer le jeu](#initialize-and-start-the-game) section.
+-   **LoadGame**: Initialise un nouveau niveau et commence son chargement.
+-   **LoadLevelAsync**: Démarre une tâche asynchrone (si vous n’êtes pas familiarisé avec les tâches asynchrones, consultez [bibliothèque de modèles parallèles](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)) pour initialiser le niveau, puis appelez une tâche asynchrone sur le convertisseur pour charger les ressources de niveau spécifique d’appareil. Cette méthode s’exécute dans un thread séparé ; seules les méthodes [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) (par opposition aux méthodes [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**.
+-   **FinalizeLoadLevel**: Finit tout travail de chargement de niveau à effectuer sur le thread principal. Cela comprend tout appel aux méthodes ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) de contexte de périphérique Direct3D 11.
+-   **StartLevel**: Démarre le jeu sur un nouveau niveau.
+-   **PauseGame**: Suspend le jeu.
+-   **RunGame**: Exécute une itération de la boucle de jeu. Cette méthode est appelée à partir d’**App::Update** une fois par itération de la boucle de jeu si le jeu présente l’état **Active**.
+-   **OnSuspending** et **OnResuming**: Suspend et reprend la partie audio du jeu, respectivement.
 
-Et les méthodes privées:
+Et les méthodes privées :
 
--   **LoadSavedState** et **SaveState**: charge et enregistre l’état actuel du jeu, respectivement.
--   **SaveHighScore** et **LoadHighScore**: enregistre et charge le meilleur score différentes parties, respectivement.
--   **InitializeAmmo**: réinitialise l’état de chaque objet sphère utilisé comme MUNITION dans son état d’origine au début de chaque partie.
--   **UpdateDynamics**: il s’agit d’une méthode importante, car elle met à jour tous les objets jeu selon les routines d’animation prédéfinies, la physique et entrée de contrôle. Elle représente le cœur de l’interactivité qui définit le jeu. Ce sujet est abordé dans la section [mettre à jour le monde du jeu](#update-the-game-world) .
+-   **LoadSavedState** et **SaveState**: Charge et enregistre l’état actuel du jeu, respectivement.
+-   **SaveHighScore** et **LoadHighScore**: Enregistre et charge les meilleurs scores des différentes parties, respectivement.
+-   **InitializeAmmo**: Redéfinit l’état de chaque objet sphère utilisé comme munition dans son état d’origine au début de chaque partie.
+-   **UpdateDynamics**: Il s’agit d’une méthode importante, car elle met à jour tous les objets jeu selon l’entrée de contrôle, la physique et les routines d’animation prédéfinies. Elle représente le cœur de l’interactivité qui définit le jeu. Cela est couvert dans le [le monde du jeu de mise à jour](#update-the-game-world) section.
 
 Les autres méthodes publiques sont les accesseurs Get de propriété qui renvoient des informations sur la superposition et le jeu à l’infrastructure de l’application dans le but de les afficher.
 
@@ -265,12 +265,12 @@ Les autres méthodes publiques sont les accesseurs Get de propriété qui renvoi
 
 En haut de l’exemple de code, il existe quatre objets dont les instances sont mises à jour pendant l’exécution de la boucle de jeu.
 
--   **MoveLookController** objet: représente les entrées du joueur. Pour plus d’informations, consultez [Ajout de contrôles](tutorial--adding-controls.md).
--   Objet **GameRenderer** : représente le convertisseur Direct3D 11 dérivé de la classe **DirectXBase** qui gère tous les objets spécifiques au périphérique et leur rendu. Pour plus d’informations, voir [infrastructure de rendu I](tutorial--assembling-the-rendering-pipeline.md).
--   Objet **audio** : contrôle la lecture audio pour le jeu. Pour plus d’informations, consultez la section [Ajout audio](tutorial--adding-sound.md).
+-   **MoveLookController** objet : Représente l’entrée d’un joueur. Pour plus d’informations, consultez [Ajout de contrôles](tutorial--adding-controls.md).
+-   **GameRenderer** objet : Représente le convertisseur de Direct3D 11 dérivé de la **DirectXBase** classe qui gère tous les objets spécifiques à l’appareil et leur rendu. Pour plus d’informations, consultez [framework de rendu je](tutorial--assembling-the-rendering-pipeline.md).
+-   **Audio** objet : Contrôle la lecture audio pour le jeu. Pour plus d’informations, consultez [Ajout de son](tutorial--adding-sound.md).
 
 Le reste des variables du jeu contient les listes des primitives et leurs quantités respectives intégrées au jeu, ainsi que les données et contraintes propres au jeu.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-À présent, vous êtes probablement intrigué par le moteur de rendu réel: comment les appels aux méthodes __de rendu__ sur les primitives mises à jour obtient transformées en pixels sur votre écran. Ce sujet est abordé en deux parties &mdash; [infrastructure de rendu i: présentation du rendu](tutorial--assembling-the-rendering-pipeline.md) et [infrastructure de rendu II: rendu de jeu](tutorial-game-rendering.md). Si vous êtes davantage intéressé par la façon dont les contrôles du joueur mettent à jour l’état du jeu, voir [Ajouter des contrôles](tutorial--adding-controls.md).
+À ce stade, vous êtes probablement curieux de savoir le moteur de rendu réel : comment les appels à la __restituer__ méthodes sur les primitives de mise à jour obtient transformés en pixels sur votre écran. Ce sujet est traité en deux parties &mdash; [framework rendu i : Introduction au rendu](tutorial--assembling-the-rendering-pipeline.md) et [framework rendu II : Rendu de jeux](tutorial-game-rendering.md). Si vous êtes davantage intéressé par la façon dont les contrôles du joueur mettent à jour l’état du jeu, voir [Ajouter des contrôles](tutorial--adding-controls.md).

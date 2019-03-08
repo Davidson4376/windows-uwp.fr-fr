@@ -1,25 +1,25 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
+Description: Découvrez comment utiliser les transitions de page dans vos applications UWP.
 title: Transitions de page dans les applications UWP
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942241"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646454"
 ---
 # <a name="page-transitions"></a>Transitions de page
 
 Les transitions de page dirigent les utilisateurs entre les pages d’une application, en fournissant des commentaires comme la relation entre les pages. Les transitions de page aident les utilisateurs à comprendre s’ils se trouvent en haut d’une hiérarchie de navigation, se déplacent entre des pages sœur ou naviguent plus profondément dans la hiérarchie de pages.
 
-Deux animations différentes sont fournies pour la navigation entre les pages dans une application: *Actualisation de la page* et *Exploration*, et sont représentées par des sous-classes de [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+Deux animations différentes sont fournies pour la navigation entre les pages dans une application : *Actualisation de la page* et *Exploration*, et sont représentées par des sous-classes de [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
 
 ## <a name="page-refresh"></a>Actualisation de la page
 
@@ -37,7 +37,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Remarque**: un [**Cadre**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) utilise automatiquement [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) pour animer la navigation entre deux pages. Par défaut, l’animation est l'actualisation de la page.
+**Remarque** : Un [ **Frame** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) utilise automatiquement [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) pour animer la navigation entre les deux pages. Par défaut, l’animation est l'actualisation de la page.
 
 ## <a name="drill"></a>Exploration
 
@@ -56,9 +56,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>Diapositive horizontal
 
-Utilisez diapositive horizontal pour montrer que les pages sœur s’affichent en regard des autres. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) utilise automatiquement cette animation de navigation supérieure, mais si vous créez votre propre expérience de navigation horizontale, vous pouvez implémenter un glissement horizontal avec SlideNavigationTransitionInfo.
+Utilisez diapositive horizontal pour montrer que les pages sœurs s’affichent en regard de chacun des autres. Le [NavigationView](../controls-and-patterns/navigationview.md) contrôle utilise automatiquement cette animation de navigation supérieure, mais si vous générez votre propre expérience de navigation horizontale, vous pouvez implémenter une diapositive horizontal avec SlideNavigationTransitionInfo.
 
-Retranscrire est que l’utilisateur navigue entre les pages qui se trouvent en regard de l’autre. 
+Le sentiment souhaité est que l’utilisateur navigue entre les pages qui se trouvent en regard de chacun des autres. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -83,9 +83,9 @@ La suppression de l’animation est utile si vous créez votre propre transition
 
 Vous pouvez utiliser `Frame.GoBack(NavigationTransitionInfo)` pour lire une transition spécifique lors de la navigation vers l’arrière.
 
-Cela peut être utile lorsque vous modifiez le comportement de navigation basé dynamiquement sur la taille d’écran; par exemple, dans un scénario Maître/Détail réactif.
+Cela peut être utile lorsque vous modifiez le comportement de navigation basé dynamiquement sur la taille d’écran ; par exemple, dans un scénario Maître/Détail réactif.
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques connexes
 
-- [Naviguer entre deux pages](../basics/navigate-between-two-pages.md)
-- [Animations dans les applications UWP](index.md)
+- [Naviguer entre les deux pages](../basics/navigate-between-two-pages.md)
+- [Mouvement dans les applications UWP](index.md)

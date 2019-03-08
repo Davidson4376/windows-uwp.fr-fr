@@ -1,28 +1,28 @@
 ---
 title: Gérer la suspension d’une application
-description: Découvrez comment enregistrer d’importantes données d’application lorsque le système suspend l’exécution de votre application.
+description: Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941330"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599044"
 ---
 # <a name="handle-app-suspend"></a>Gérer la suspension d’une application
 
 **API importantes**
 
-- [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**La suspension**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
 Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application. L’exemple inscrit un gestionnaire pour l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) et enregistre une chaîne dans un fichier.
 
@@ -129,7 +129,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 Vous devez également libérer les ressources exclusives et les descripteurs de fichiers pour permettre aux autres applications d’y accéder lorsque votre application est suspendue. Appareils photo, périphériques d’E/S, appareils externes et ressources réseau sont autant d’exemples de ressources exclusives. En libérant explicitement les ressources exclusives et les descripteurs de fichiers, vous permettez aux autres applications d’y accéder lorsque votre application est suspendue. Lorsqu’elle est réactivée, l’application doit se réapproprier ses ressources exclusives et descripteurs de fichiers.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le système suspend votre application chaque fois que l’utilisateur passe à une autre application, au Bureau ou à l’écran d’accueil. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan.
 
@@ -137,21 +137,21 @@ Le système tente de conserver votre application et ses données en mémoire pen
 
 Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit donc enregistrer ses données d’application et libérer les ressources exclusives et descripteurs de fichiers au moment où elle est mise en suspens pour ensuite les restaurer lorsque l’application est activée après avoir été arrêtée.
 
-Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle renvoie immédiatement un retour de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](http://aka.ms/Kt66iv) sur l’objet [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) sur l’objet [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) renvoyé.
+Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle renvoie immédiatement un retour de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](https://aka.ms/Kt66iv) sur l’objet [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) sur l’objet [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) renvoyé.
 
-Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu'à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deuxéventualités prévalant*. Pour étendre la durée en l’état d’interruption en cours usage [ **ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
+Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu'à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deux éventualités prévalant*. Pour étendre la durée de l’état Interruption en cours, utilisez [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md).
 
 > [!NOTE]
-> Pour améliorer la réactivité du système dans Windows8.1, les applications disposent d’un accès de faible priorité aux ressources cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5secondes en priorité normale sur Windows ou de 1 à 10secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
+> Pour améliorer la réactivité du système dans Windows 8.1, les applications obtiennent un accès de basse priorité aux ressources une fois qu’ils sont suspendus. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5 secondes en priorité normale sur Windows ou de 1 à 10 secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
 
-**Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
+**Remarque sur le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows à partir de la suspension d’une application qui est attachée au débogueur. afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Vérifiez que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Cycle de vie de l’application](app-lifecycle.md)
-* [Gérer l’activation d’une application](activate-an-app.md)
-* [Gérer la reprise d’une application](resume-an-app.md)
-* [Recommandations en matière d’expérience utilisateur pour le lancement, la suspension et la reprise](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [Cycle de vie](app-lifecycle.md)
+* [Gérer l’activation d’application](activate-an-app.md)
+* [Gérer la reprise de l’application](resume-an-app.md)
+* [Les instructions de l’expérience utilisateur pour le lancement, suspendre et reprendre](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [Exécution étendue](run-minimized-with-extended-execution.md)
 
  

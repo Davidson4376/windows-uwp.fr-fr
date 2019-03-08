@@ -4,14 +4,14 @@ title: Optimiser votre balisage XAML
 description: L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921467"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593124"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
@@ -20,7 +20,7 @@ L’analyse du balisage XAML pour la construction d’objets en mémoire est chr
 
 Au démarrage, limitez le balisage XAML qui se charge uniquement à ce dont vous avez besoin pour votre interface utilisateur initiale. Examinez le balisage dans votre page initiale (y compris les ressources de page) et vérifiez que vous ne chargez pas des éléments supplémentaires qui ne sont pas immédiatement nécessaires. Ces éléments peuvent provenir de diverses sources, telles que des dictionnaires de ressources, des éléments initialement réduits ainsi que des éléments dessinés sur d’autres éléments.
 
-L’optimisation de votre code XAML pour plus d’efficacité nécessite des compromis; il n’existe pas toujours une solution unique pour chaque situation. Nous allons examiner certains problèmes courants et vous fournir quelques conseils qui vous aideront à faire les meilleurs choix possibles pour votre application.
+L’optimisation de votre code XAML pour plus d’efficacité nécessite des compromis ; il n’existe pas toujours une solution unique pour chaque situation. Nous allons examiner certains problèmes courants et vous fournir quelques conseils qui vous aideront à faire les meilleurs choix possibles pour votre application.
 
 ## <a name="minimize-element-count"></a>Limiter le nombre d’éléments
 
@@ -36,12 +36,12 @@ Nous allons examiner ici d'autres façons de réduire le nombre d’éléments q
 
 Si votre balisage XAML contient des éléments que vous n'affichez pas immédiatement, vous pouvez différer le chargement de ces derniers jusqu'à leur affichage. Par exemple, vous pouvez différer la création d'un contenu non visible, tel qu’un onglet secondaire dans une interface utilisateur à onglets. Ou, vous pouvez afficher les éléments dans une grille par défaut, en offrant à l'utilisateur la possibilité d'afficher les données dans une liste. Vous pouvez ainsi retarder le chargement de la liste jusqu'à ce qu’elle soit nécessaire.
 
-Utilisez l'[attribut x:Load](../xaml-platform/x-load-attribute.md) au lieu de la propriété [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) pour contrôler les cas dans lesquels un élément s’affiche. Si la visibilité d’un élément est définie sur **Collapsed**, l'élément sera ignoré lors de la passe de rendu, mais les coûts de l’instance d’objet en mémoire vous seront malgré tout facturés. Si vous utilisez x:Load à la place, l'infrastructure ne créera pas l’instance d’objet tant que celle-ci n'est pas nécessaire, ce qui contribuera à réduire les coûts mémoire. Le seul inconvénient est que vous payez une petite surcharge de mémoire (de 600octets environ) lorsque l’interface utilisateur n’est pas chargée.
+Utilisez l'[attribut x:Load](../xaml-platform/x-load-attribute.md) au lieu de la propriété [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility) pour contrôler les cas dans lesquels un élément s’affiche. Si la visibilité d’un élément est définie sur **Collapsed**, l'élément sera ignoré lors de la passe de rendu, mais les coûts de l’instance d’objet en mémoire vous seront malgré tout facturés. Si vous utilisez x:Load à la place, l'infrastructure ne créera pas l’instance d’objet tant que celle-ci n'est pas nécessaire, ce qui contribuera à réduire les coûts mémoire. Le seul inconvénient est que vous payez une petite surcharge de mémoire (de 600 octets environ) lorsque l’interface utilisateur n’est pas chargée.
 
 > [!NOTE]
-> Vous pouvez différer le chargement d’éléments en utilisant l'attribut [x:Load](../xaml-platform/x-load-attribute.md) ou [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md). L’attribut x:Lad est disponible à partir de Windows10CreatorUpdate (version1703, SDKbail15063). La version minimale ciblée par votre projet Visual Studio doit être *Windows10Creators Update (10.0, build15063)* pour pouvoir utiliser x:Load. Pour cibler des versions antérieures, utilisez x:DeferLoadStrategy.
+> Vous pouvez différer le chargement d’éléments en utilisant l'attribut [x:Load](../xaml-platform/x-load-attribute.md) ou [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md). L’attribut x:Lad est disponible à partir de Windows 10 Creator Update (version 1703, SDK bail 15063). La version minimale ciblée par votre projet Visual Studio doit être *Windows 10 Creators Update (10.0, build 15063)* pour pouvoir utiliser x:Load. Pour cibler des versions antérieures, utilisez x:DeferLoadStrategy.
 
-Les exemples suivants illustrent la différence de nombre d’éléments et de mémoire utilisée quand différentes techniques sont utilisées pour masquer les éléments d’interface utilisateur. Les contrôles ListView et GridView contenant des éléments identiques sont placés dans l'élément Grid racine d’une page. ListView n’est pas visible, contrairement à GridView qui est affiché. Dans chacun de ces exemples, le code XAML génère la même interface utilisateur sur l’écran. Nous utilisons les [outils de profilage et de performances](tools-for-profiling-and-performance.md) de VisualStudio pour vérifier le nombre d'éléments et la mémoire utilisée.
+Les exemples suivants illustrent la différence de nombre d’éléments et de mémoire utilisée quand différentes techniques sont utilisées pour masquer les éléments d’interface utilisateur. Les contrôles ListView et GridView contenant des éléments identiques sont placés dans l'élément Grid racine d’une page. ListView n’est pas visible, contrairement à GridView qui est affiché. Dans chacun de ces exemples, le code XAML génère la même interface utilisateur sur l’écran. Nous utilisons les [outils de profilage et de performances](tools-for-profiling-and-performance.md) de Visual Studio pour vérifier le nombre d'éléments et la mémoire utilisée.
 
 #### <a name="option-1---inefficient"></a>Option 1 - Inefficace
 
@@ -87,7 +87,7 @@ ListView et ses éléments enfants sont chargés en mémoire.
 
 ![Arborescence visuelle avec un affichage liste](images/memory-use-1.png)
 
-#### <a name="option-2---better"></a>Option 2: Meilleure
+#### <a name="option-2---better"></a>Option 2 : Meilleure
 
 Ici, la propriété Visibility de ListView est définie sur Collapsed (l'autre code XAML est identique à l’original). ListView est créé dans l’arborescence visuelle, mais pas ses éléments enfants. Toutefois, ces derniers sont chargés en mémoire, de sorte que la mémoire utilisée est identique à celle de l’exemple précédent.
 
@@ -126,7 +126,7 @@ ListView et ses éléments enfants ne sont pas chargés en mémoire.
 
 Les panneaux de disposition ont une propriété [Background](https://msdn.microsoft.com/library/windows/apps/BR227512), il n’est donc pas nécessaire de placer un [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) devant un panneau dans le but de le colorier.
 
-**Inefficace**
+**Inefficient**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -145,7 +145,7 @@ Les panneaux de disposition intègrent également des propriétés de bordure, i
 
 ### <a name="use-images-in-place-of-vector-based-elements"></a>Utiliser des images à la place des éléments vectoriels
 
-Si vous réutilisez suffisamment souvent le même élément vectoriel, il est alors plus efficace d’utiliser à la place un élément [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image). Les éléments vectoriels peuvent être plus onéreux car l’unité centrale doit créer chaque élément séparément. Le fichier image ne doit être décodé qu’une seule fois.
+Si vous réutilisez suffisamment souvent le même élément vectoriel, il est alors plus efficace d’utiliser à la place un élément [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image). Les éléments vectoriel peuvent être plus onéreux car l’unité centrale doit créer chaque élément séparément. Le fichier image ne doit être décodé qu’une seule fois.
 
 ## <a name="optimize-resources-and-resource-dictionaries"></a>Optimiser les ressources et les dictionnaires de ressources
 
@@ -155,7 +155,7 @@ D'une façon générale, nous avons optimisé [ResourceDictionary](https://docs.
 
 ### <a name="resources-with-xname"></a>Ressources pourvues de x:Name
 
-Utilisez l'[attribut x:Key](../xaml-platform/x-key-attribute.md) pour référencer vos ressources. Les ressources pourvues de l'[attribut x:Name](../xaml-platform/x-name-attribute.md) ne bénéficient pas de l’optimisation de la plateforme; elles sont instanciées dès que le ResourceDictionary est créé. En effet, x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément à référencer.
+Utilisez l'[attribut x:Key](../xaml-platform/x-key-attribute.md) pour référencer vos ressources. Les ressources pourvues de l'[attribut x:Name](../xaml-platform/x-name-attribute.md) ne bénéficient pas de l’optimisation de la plateforme ; elles sont instanciées dès que le ResourceDictionary est créé. En effet, x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément à référencer.
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary dans un UserControl
 
@@ -163,7 +163,7 @@ Un ResourceDictionary défini dans un [UserControl](https://docs.microsoft.com/u
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Étendue Ressource et ResourceDictionary
 
-Si une page référence un contrôle utilisateur ou une ressource définis dans un autre fichier, alors l’infrastructure analyse également ce fichier.
+Si une page fait référence à une commande utilisateur ou à une ressource définie dans un autre fichier, l’infrastructure analyse alors également ce fichier.
 
 Dans cet exemple, étant donné que le fichier _InitialPage.xaml_ utilise une ressource provenant du fichier _ExampleResourceDictionary.xaml_, la totalité du fichier _ExampleResourceDictionary.xaml_ doit être analysée au démarrage.
 
@@ -234,13 +234,13 @@ Si vous utilisez une ressource sur plusieurs pages au sein de votre application,
 </Page>
 ```
 
-Afin de rendre cet exemple plus efficace, déplacez `SecondPageTextBrush` dans _SecondPage.xaml_ et `ThirdPageTextBrush` dans _ThirdPage.xaml_. `InitialPageTextBrush` peut rester dans _App.xaml_ car les ressources de l’application doivent, dans tous les cas, être analysées au démarrage de l’application.
+Afin de rendre cet exemple plus efficace, déplacez `SecondPageTextBrush` dans _SecondPage.xaml_ et `ThirdPageTextBrush` dans _ThirdPage.xaml_. `InitialPageTextBrush` peut rester dans _App.xaml_ , car les ressources d’application doivent être analysées au démarrage de l’application dans tous les cas.
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Consolider plusieurs pinceaux ayant la même apparence dans une même ressource
 
-La plateforme XAML essaie de mettre en cache les objets couramment utilisés afin qu’ils puissent l’être aussi souvent que possible. Toutefois, le code XAML ne peut pas facilement identifier si un pinceau déclaré dans un balisage est le même qu’un pinceau déclaré dans un balisage différent. L’exemple ci-dessous utilise [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962), mais c’est encore plus probable et important avec [GradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210068). Recherchez également les pinceaux utilisant des couleurs prédéfinies, par exemple: `"Orange"` et `"#FFFFA500"` sont de la même couleur.
+La plateforme XAML essaie de mettre en cache les objets couramment utilisés afin qu’ils puissent l’être aussi souvent que possible. Toutefois, le code XAML ne peut pas facilement identifier si un pinceau déclaré dans un balisage est le même qu’un pinceau déclaré dans un balisage différent. L’exemple ci-dessous utilise [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962), mais c’est encore plus probable et important avec [GradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210068). Recherchez également les pinceaux utilisant des couleurs prédéfinies, par exemple : `"Orange"` et `"#FFFFA500"` sont de la même couleur.
 
-**Inefficace.**
+**Inefficient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -285,13 +285,13 @@ Utilisez [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com
 
 ### <a name="transparent-or-hidden-elements"></a>Éléments transparents ou masqués
 
-Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial, mais qu’il apparaît dans d’autres états visuels, utilisez x:Load pour contrôler son état ou définissez [Visibility](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** au niveau de l’élément proprement dit et remplacez la valeur par **Visible** dans les états appropriés. Il y a toutefois des exceptions: en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
+Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial, mais qu’il apparaît dans d’autres états visuels, utilisez x:Load pour contrôler son état ou définissez [Visibility](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** au niveau de l’élément proprement dit et remplacez la valeur par **Visible** dans les états appropriés. Il y a toutefois des exceptions : en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
 
 ### <a name="composite-elements"></a>Éléments composites
 
-Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150% des pixels nécessaires pour obtenir le résultat sont remplis.
+Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150 % des pixels nécessaires pour obtenir le résultat sont remplis.
 
-**Inefficace.**
+**Inefficient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -319,9 +319,9 @@ Utilisez un élément composite au lieu de disposer en couches les différents �
 
 ### <a name="layout-panels"></a>Panneaux de disposition
 
-Un panneau de disposition peut servir à deux choses : colorier une zone et disposer les éléments enfants. Si un élément plus éloigné dans l’ordre Z colore déjà une zone, alors un panneau de disposition situé au premier plan n’a pas besoin de la colorer également. À la place, il peut simplement se concentrer sur la disposition de ses enfants. Voici un exemple.
+Un panneau de disposition peut servir à deux choses : colorier une zone et disposer les éléments enfants. Si un élément plus éloigné dans l’ordre Z colore déjà une zone, alors un panneau de disposition situé au premier plan n’a pas besoin de la colorer également. À la place, il peut simplement se concentrer sur la disposition de ses enfants. Voici un exemple :
 
-**Inefficace.**
+**Inefficient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -352,7 +352,7 @@ Si la [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) doit fair
 
 Utilisez un élément [Border](https://msdn.microsoft.com/library/windows/apps/BR209253) pour dessiner une bordure autour d’un objet. Dans cet exemple, une [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) est utilisée comme bordure autour d’une [TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683). Mais tous les pixels de la cellule centrale sont surdessinés.
 
-**Inefficace.**
+**Inefficient.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -387,7 +387,7 @@ Tenez compte des marges. Deux éléments voisins risquent de se chevaucher si de
 
 Une forme constituée de nombreux éléments qui se chevauchent peut également occasionner un surdessin. Si vous configurez [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) sur **BitmapCache** sur l’[UIElement](https://msdn.microsoft.com/library/windows/apps/BR208911) contenant la forme composite, la plateforme affiche alors l’élément dans une image bitmap une seule fois, puis utilise cette image bitmap dans chaque image au lieu d’avoir recours au surdessin.
 
-**Inefficace.**
+**Inefficient.**
 
 ```xaml
 <Canvas Background="White">
@@ -425,7 +425,7 @@ Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Meilleures pratiques en matière de performances de démarrage de votre application](best-practices-for-your-app-s-startup-performance.md)
+- [Meilleures pratiques pour les performances de démarrage de votre application](best-practices-for-your-app-s-startup-performance.md)
 - [Optimiser votre disposition XAML](optimize-your-xaml-layout.md)
-- [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md)
-- [Outils de profilage et de performances](tools-for-profiling-and-performance.md)
+- [Optimisation de ListView et GridView UI](optimize-gridview-and-listview.md)
+- [Outils de profilage et performances](tools-for-profiling-and-performance.md)

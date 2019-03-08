@@ -6,32 +6,32 @@ ms.topic: article
 keywords: Windows 10, uwp, mise à jour, tâche en arrière-plan, updatetask, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933983"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603524"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Exécuter une tâche en arrière-plan lorsque votre application UWP est mise à jour
 
-Découvrez comment écrire une tâche en arrière-plan qui s’exécute une fois que votre application du Windows store de plateforme Windows universelle (UWP) est mis à jour.
+Découvrez comment écrire une tâche en arrière-plan qui s’exécute après la mise à jour de votre application du Windows Store de la plateforme Windows universelle (UWP).
 
-Une fois que l’utilisateur installe une mise à jour vers une application qui est installée sur l’appareil, la tâche de mise à jour la tâche en arrière-plan est appelé par le système d’exploitation. Cela permet à votre application effectuer des tâches d’initialisation telles que l’initialisation d’un nouveau canal de notification push, mise à jour du schéma de base de données et ainsi de suite, avant que l’utilisateur lance votre application mise à jour.
+La tâche en arrière-plan de mise à jour est appelée par le système d’exploitation une fois que l’utilisateur a installé une mise à jour d’une application installée sur l’appareil. Cela permet à votre application d’effectuer des tâches d’initialisation telles que l’initialisation d’un nouveau canal de notification Push, la mise à jour d’un schéma de base de données et ainsi de suite, avant que l’utilisateur ne lance votre application mise à jour.
 
-La tâche de mise à jour est différent de lancement d’une tâche en arrière-plan à l’aide de la gâchette [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) , car dans ce cas votre application doit s’exécuter au moins une fois avant qu’il est mis à jour afin d’inscrire la tâche en arrière-plan qui est activée par le ** ServicingComplete** déclencheur.  La tâche de mise à jour n’est pas inscrite et par conséquent, une application qui n’a jamais été exécutée, mais qui est mis à niveau, auront toujours sa tâche de mise à jour déclenchée.
+La tâche de mise à jour diffère du lancement d’une tâche en arrière-plan à l’aide du déclencheur [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType), car, dans ce cas, votre application doit s’exécuter au moins une fois avant d’être mise à jour, de manière à inscrire la tâche en arrière-plan qui sera activée par le déclencheur **ServicingComplete**.  Comme la tâche de mise à jour n’est pas inscrite, une application qui n’a jamais été exécutée, mais qui est mise à niveau, verra tout de même sa tâche de mise à jour déclenchée.
 
-## <a name="step-1-create-the-background-task-class"></a>Étape 1: Créer la classe de tâche en arrière-plan
+## <a name="step-1-create-the-background-task-class"></a>Étape 1 : Créer la classe de tâche en arrière-plan
 
-Comme avec d’autres types de tâches en arrière-plan, vous mettre en œuvre la tâche de mise à jour la tâche en arrière-plan en tant qu’un composant Windows Runtime. Pour créer ce composant, suivez les étapes décrites dans la section de **créer la classe de tâche en arrière-plan** de [créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). Les étapes sont les suivantes:
+Comme pour les autres types de tâches en arrière-plan, l’implémentation de la tâche en arrière-plan de mise à jour est réalisée sous forme de composant Windows Runtime. Pour créer ce composant, suivez les étapes de la section **Créer la classe de tâche en arrière-plan** de la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). Ces étapes sont les suivantes :
 
 - Ajout d’un projet de composant Windows Runtime à votre solution.
-- Création d’une référence au composant à partir de votre application.
-- Création d’une classe publique, sealed dans le composant qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
-- Implémentez la méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) , qui est le point d’entrée obligatoire qui est appelé lorsque la tâche de mise à jour est exécutée. Si vous souhaitez effectuer des appels asynchrones à partir de votre tâche en arrière-plan, [créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) explique comment utiliser un report dans votre méthode **Run** .
+- Création d’une référence entre votre application et le composant.
+- Création d’une classe public sealed dans le composant qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
+- Implémentation de la méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), qui correspond au point d’entrée requis appelé lors de l’exécution de la tâche de mise à jour. Si vous envisagez de passer des appels asynchrones à partir de votre tâche en arrière-plan, la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) explique comment utiliser un report dans votre méthode **Run**.
 
-Vous n’avez pas besoin d’enregistrer cette tâche en arrière-plan (la section «Inscrire la tâche en arrière-plan s’exécute» dans la rubrique **créer et inscrire une tâche en arrière-plan hors processus** ) pour utiliser la tâche de mise à jour. Il s’agit de la principale raison d’utiliser une tâche de mise à jour, car vous n’avez pas besoin d’ajouter du code à votre application pour inscrire la tâche et l’application ne doit pas s’exécuter au moins une fois avant la mise à jour pour inscrire la tâche en arrière-plan.
+Vous n’avez pas besoin d’inscrire cette tâche en arrière-plan (la section « Inscrire la tâche en arrière-plan à des fins d’exécution » dans la rubrique **Créer et inscrire une tâche en arrière-plan hors processus**) pour utiliser la tâche de mise à jour. Il s’agit du principal motif d’utilisation de la tâche de mise à jour car vous n’avez pas besoin d’ajouter du code à votre application pour inscrire la tâche et l’application n’a pas besoin de s’exécuter au moins une fois avant d’être mise à jour pour inscrire la tâche en arrière-plan.
 
-L’exemple de code suivant montre un point de départ de base pour une classe de tâche en arrière-plan tâche mise à jour en c#. La classe de tâche en arrière-plan elle-même - et toutes les autres classes dans le projet de tâche en arrière-plan - doivent être **public** et **sealed**. Votre classe de tâche en arrière-plan doit dériver de **IBackgroundTask** et avoir une méthode **Run()** publique avec la signature illustrée ci-dessous:
+L’exemple de code suivant présente un point de départ élémentaire pour une classe de tâche en arrière-plan de mise à jour en C#. La classe de tâche en arrière-plan elle-même, ainsi que toutes les autres classes au sein du projet de tâche en arrière-plan, doivent être des classes **public** et **sealed**. Votre classe de tâche en arrière-plan doit dériver de **IBackgroundTask** et présenter une méthode **Run()** publique avec la signature présentée ci-dessous :
 
 ```cs
 using Windows.ApplicationModel.Background;
@@ -48,9 +48,9 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>Étape 2: Déclarer votre tâche en arrière-plan dans le manifeste du package
+## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>Étape 2 : Déclarez votre tâche en arrière-plan dans le manifeste du package
 
-Dans l’Explorateur de solutions Visual Studio, cliquez sur **Package.appxmanifest** , cliquez sur **Afficher le Code** pour afficher le manifeste du package. Ajoutez le code suivant `<Extensions>` XML pour déclarer votre tâche de mise à jour:
+Dans l’explorateur de solutions Visual Studio, cliquez avec le bouton droit sur **Package.appxmanifest** et cliquez sur **Afficher le code** pour afficher le manifeste du package. Ajoutez les `<Extensions>` XML suivantes pour déclarer votre tâche de mise à jour :
 
 ```XML
 <Package ...>
@@ -68,31 +68,31 @@ Dans l’Explorateur de solutions Visual Studio, cliquez sur **Package.appxmanif
 </Package>
 ```
 
-Dans le code XML ci-dessus, vérifiez que le `EntryPoint` attribut a pour valeur le nom namespace.class de votre classe de tâche de mise à jour. Le nom respecte la casse.
+Dans le code XML ci-dessus, vérifiez que l’attribut `EntryPoint` est défini sur le nom namespace.class correspondant à la classe de votre tâche de mise à jour. Le nom est sensible à la casse.
 
-## <a name="step-3-debugtest-your-update-task"></a>Étape 3: Débogage/test votre tâche de mise à jour
+## <a name="step-3-debugtest-your-update-task"></a>Étape 3 : Votre tâche de mise à jour de débogage et de test
 
-Assurez-vous que vous avez déployé votre application sur votre ordinateur afin qu’il existe un élément pour mettre à jour.
+Assurez-vous d’avoir déployé votre application sur votre machine pour qu’il existe un élément à mettre à jour.
 
 Définissez un point d’arrêt dans la méthode Run() de votre tâche en arrière-plan.
 
-![point d’arrêt défini](images/run-func-breakpoint.png)
+![définition du point d’arrêt](images/run-func-breakpoint.png)
 
-Ensuite, dans l’Explorateur de solutions, cliquez sur le projet de votre application (et non le projet de tâche en arrière-plan), puis sur **Propriétés**. Dans la fenêtre de propriétés d’application, cliquez sur **Déboguer** de gauche, puis sélectionnez **ne pas lancer, mais déboguer mon code au démarrage**:
+Puis, dans l’explorateur de solutions, cliquez avec le bouton droit sur le projet de votre application (pas le projet de tâche en arrière-plan) et sur **Propriétés**. Dans la fenêtre Propriétés de l’application, cliquez sur **Déboguer** sur la gauche, puis sélectionnez **Ne pas lancer, mais déboguer mon code au démarrage** :
 
-![définir les paramètres de débogage](images/do-not-launch-but-debug.png)
+![définition des paramètres de débogage](images/do-not-launch-but-debug.png)
 
-Ensuite, pour vous assurer que le UpdateTask se déclenche, augmentez le numéro de version du package. Dans l’Explorateur de solutions, double-cliquez sur le fichier de votre application **Package.appxmanifest** pour ouvrir le Concepteur de packages et ensuite mettre à jour le numéro de **Build** :
+Ensuite, pour vous assurer que la tâche UpdateTask est déclenchée, augmentez le numéro de version du package. Dans l’explorateur de solutions, double-cliquez sur le fichier **Package.appxmanifest** de votre application pour ouvrir le concepteur de packages, puis mettez à jour le numéro de **Build** :
 
 ![mise à jour de la version](images/bump-version.png)
 
-Désormais, dans Visual Studio 2017 lorsque vous appuyez sur F5, mise à jour votre application et le système activera votre composant UpdateTask en arrière-plan. Le débogueur s’attache automatiquement pour le processus en arrière-plan. Obtenir rencontrer votre point d’arrêt et vous pouvez parcourir votre logique de code de mise à jour.
+Désormais, dans Visual Studio 2017 lorsque vous appuyez sur F5, votre application sera mise à jour et le système activera votre composant UpdateTask en arrière-plan. Le débogueur se connectera automatiquement au processus en arrière-plan. Votre point d’arrêt sera atteint et vous pourrez exécuter la logique de votre code de mise à jour.
 
-Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’application au premier plan du menu Démarrer de Windows au sein de la même session de débogage. Le débogueur s’attache à nouveau automatiquement, cette fois à votre processus de premier plan, et vous pouvez parcourir la logique de votre application.
+Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’application au premier plan depuis le menu Démarrer de Windows, dans la même session de débogage. Le débogueur se connecte à nouveau automatiquement, cette fois avec votre processus au premier plan, et vous pouvez exécuter la logique de votre application.
 
 > [!NOTE]
-> Les utilisateurs de Visual Studio 2015: les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques à déclencheur et testez le UpdateTask, à l’exception de Visual Studio ne sera pas attachée à celui-ci. Une autre procédure dans Visual Studio 2015 consiste à configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit l’UpdateTask en tant que son Point d’entrée et déclenche l’exécution directement à partir de l’application au premier plan.
+> Utilisateurs de Visual Studio 2015 : Les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques pour déclencher et tester UpdateTask, sauf que Visual Studio ne s’y connectera pas. Sinon, VS 2015 vous permet de configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit la tâche UpdateTask comme son point d’entrée et déclenche l’exécution directement depuis l’application au premier plan.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
-[Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[Créer et inscrire une tâche en arrière-plan out-of-process](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

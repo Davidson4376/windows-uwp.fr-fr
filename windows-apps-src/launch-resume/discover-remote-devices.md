@@ -1,17 +1,17 @@
 ---
 title: Détecter des appareils distants
-description: Apprenez à détecter des appareils distants depuis votre application à l'aide du projet «Rome».
+description: Apprenez à détecter des appareils distants depuis votre application à l'aide du projet « Rome ».
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.date: 02/08/2017
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
+keywords: appareils Windows 10, uwp, connectés, les systèmes distants, rome, project rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930855"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592134"
 ---
 # <a name="discover-remote-devices"></a>Détecter des appareils distants
 Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows signés avec le même compte Microsoft que l’appareil détecteur. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.
@@ -30,17 +30,17 @@ Les objets de filtrage doivent être construits avant ou pendant l’initialisat
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
 > [!NOTE]
-> La valeur du filtre «proximal» ne garantit pas le degré de proximité physique. Pour les scénarios qui requièrent une proximité physique fiable, utilisez la valeur [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) dans votre filtre. Actuellement, ce filtre autorise uniquement les périphériques découverts par Bluetooth. À mesure que de nouveaux mécanismes et protocoles de détection garantissant une proximité physique seront pris en charge, ils seront également inclus ici.  
-Il existe également une propriété dans la classe [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) qui indique si un appareil détecté existe en réalité au sein d’une proximité physique: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
+> La valeur du filtre « proximal » ne garantit pas le degré de proximité physique. Pour les scénarios qui requièrent une proximité physique fiable, utilisez la valeur [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) dans votre filtre. Actuellement, ce filtre autorise uniquement les périphériques découverts par Bluetooth. À mesure que de nouveaux mécanismes et protocoles de détection garantissant une proximité physique seront pris en charge, ils seront également inclus ici.  
+Il existe également une propriété dans le [ **RemoteSystem** ](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) classe qui indique si un appareil détecté est en fait au sein de la proximité physique : [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
 
 > [!NOTE]
-> Si vous souhaitez découvrir les appareils sur un réseau local (déterminé par votre sélection de filtre du type de découverte), votre réseau doit utiliser un profil «privé» ou «domaine». Votre appareil ne découvrira pas les autres appareils qui se trouvent sur un réseau «public».
+> Si vous souhaitez découvrir les appareils sur un réseau local (déterminé par votre sélection de filtre du type de découverte), votre réseau doit utiliser un profil « privé » ou « domaine ». Votre appareil ne découvrira pas les autres appareils qui se trouvent sur un réseau « public ».
 
-Lorsqu’une liste d’objets [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) est créée, il est possible de la transmettre au constructeur d’un **RemoteSystemWatcher**.
+Une fois créée, la liste des objets [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) peut être transmise au constructeur d’un **RemoteSystemWatcher**.
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
-Lorsque la méthode [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) de cet observateur est appelée, elle ne déclenche l’événement [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) que si un appareil correspondant à l’ensemble des critères suivants est détecté:
+Lorsque la méthode [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) de cet observateur est appelée, elle ne déclenche l’événement [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) que si un appareil correspondant à l’ensemble des critères suivants est détecté :
 * L’appareil est détectable par une connexion proximale.
 * Il s’agit d’un ordinateur de bureau ou d’un téléphone.
 * Il est considéré comme disponible.
@@ -48,7 +48,7 @@ Lorsque la méthode [**Start**](https://msdn.microsoft.com/library/windows/apps/
 Ensuite, la procédure de traitement des événements, de récupération des objets [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) et de connexion aux appareils distants est exactement le même que dans [Lancer une application sur un appareil distant](launch-a-remote-app.md). En résumé, les objets **RemoteSystem** sont stockés comme des propriétés d’objets [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), qui sont transmis avec chaque événement **RemoteSystemAdded**.
 
 ## <a name="discover-devices-by-address-input"></a>Détecter des appareils par entrée d’adresse
-Certains appareils ne peuvent pas être associés à un utilisateur ou détectés par un balayage, mais ils restent accessibles si l’application détectrice utilise une adresse directe. La classe [**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) permet de représenter l’adresse d’un appareil distant. Cette adresse est souvent stockée sous la forme d’une adresseIP, mais d’autres formats sont autorisés (pour plus d’informations, consultez la section [**Constructeur HostName**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)).
+Certains appareils ne peuvent pas être associés à un utilisateur ou détectés par un balayage, mais ils restent accessibles si l’application détectrice utilise une adresse directe. La classe [**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) permet de représenter l’adresse d’un appareil distant. Cette adresse est souvent stockée sous la forme d’une adresse IP, mais d’autres formats sont autorisés (pour plus d’informations, consultez la section [**Constructeur HostName**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)).
 
 Un objet **RemoteSystem** est récupéré si un objet **HostName** valide est fourni. Si l’adresse n’est pas valide, une référence d’objet `null` est renvoyée.
 
@@ -65,7 +65,7 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 
 ## <a name="cross-user-discovery"></a>Détection entre utilisateurs
 
-Les développeurs peuvent spécifier la détection de _tous_ les appareils à proximité de l’appareil du client, et non des seuls appareils enregistrés pour ce même utilisateur. Cela est implémenté par le biais d’un filtre **IRemoteSystemFilter** spécial, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). Son implémentation est similaire aux autres types de filtres:
+Les développeurs peuvent spécifier la détection de _tous_ les appareils à proximité de l’appareil du client, et non des seuls appareils enregistrés pour ce même utilisateur. Cela est implémenté par le biais d’un filtre **IRemoteSystemFilter** spécial, [**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter). Son implémentation est similaire aux autres types de filtres :
 
 ```csharp
 // Construct a user type filter that includes anonymous devices
@@ -78,7 +78,7 @@ RemoteSystemAuthorizationKindFilter authorizationKindFilter = new RemoteSystemAu
 
 ### <a name="checking-the-cross-user-sharing-settings"></a>Vérification des paramètres de partage entre utilisateurs
 
-Outre le filtre ci-dessus spécifié dans votre application de détection, l’appareil du client lui-même doit également être configuré pour autoriser les expériences partagées à partir d’appareils connectés avec d’autres utilisateurs. Il s’agit d’un paramètre système qu’il est possible d’interroger avec une méthode statique dans la classe **RemoteSystem**:
+Outre le filtre ci-dessus spécifié dans votre application de détection, l’appareil du client lui-même doit également être configuré pour autoriser les expériences partagées à partir d’appareils connectés avec d’autres utilisateurs. Il s’agit d’un paramètre système qu’il est possible d’interroger avec une méthode statique dans la classe **RemoteSystem** :
 
 ```csharp
 if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anonymous)) {
@@ -90,10 +90,10 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 
 Pour modifier ce paramètre, l’utilisateur doit ouvrir l’application **paramètres**. Dans le menu **Système** > **Expériences partagées** > **Partager avec d’autres appareils**, une liste déroulante permet à l’utilisateur d’indiquer les appareils avec lesquels leur système peut partager des contenus.
 
-![Page de paramètres Expériences partagées](images/shared-experiences-settings.png)
+![page de paramètres Expériences partagées](images/shared-experiences-settings.png)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Applications et appareils connectés (projet «Rome»)](connected-apps-and-devices.md)
-* [Lancer une application distante](launch-a-remote-app.md)
-* [Référence sur l’API Systèmes distants](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Applications connectées et les appareils (Project Rome)](connected-apps-and-devices.md)
+* [Lancer une application à distance](launch-a-remote-app.md)
+* [Référence de l’API de systèmes à distance](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
 * [Exemple de systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

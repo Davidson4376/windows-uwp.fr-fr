@@ -1,26 +1,26 @@
 ---
-description: Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique une entrée de l’utilisateur et une sortie vers ce dernier.
-title: Portage d’une application Windows Runtime8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
+description: Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique des entrées de l’utilisateur et des sorties vers ce dernier.
+title: Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922330"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645184"
 ---
-# <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Portage d’une application Windows Runtime8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
+# <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
 
 
 
 
 Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
 
-Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique l’entrée de l’utilisateur et la sortie vers ce dernier. Il peut également impliquer le traitement des données. Néanmoins, ce code n’est généralement pas pensé comme la couche interface utilisateur *ni* comme la couche de données. Ce code inclut l’intégration au contrôleur de vibrations, à l’accéléromètre, au gyroscope, au microphone et au haut-parleur (qui rejoignent la reconnaissance et la synthèse vocales), à la (géo)localisation et aux modalités d’entrée telles que l’écran tactile, la souris, le clavier et le stylet.
+Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique des entrées de l’utilisateur et des sorties vers ce dernier. Il peut également impliquer le traitement des données. Néanmoins, ce code n’est généralement pas pensé comme la couche interface utilisateur *ni* comme la couche de données. Ce code inclut l’intégration au contrôleur de vibrations, à l’accéléromètre, au gyroscope, au microphone et au haut-parleur (qui rejoignent la reconnaissance et la synthèse vocales), à la (géo)localisation et aux modalités d’entrée telles que l’écran tactile, la souris, le clavier et le stylet.
 
 ## <a name="application-lifecycle-process-lifetime-management"></a>Cycle de vie des applications (gestion de la durée de vie des processus)
 
@@ -32,16 +32,16 @@ Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.
 ## <a name="background-audio"></a>Contenu audio en arrière-plan
 
 
-Pour la propriété [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) , **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour les applications Windows 10. Utilisez plutôt le modèle d’application du Windows PhoneStore. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
+Pour le [ **MediaElement.AudioCategory** ](https://msdn.microsoft.com/library/windows/apps/br227352) propriété, **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour Applications Windows 10. Utilisez plutôt le modèle d’application du Windows Phone Store. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>Détection de la plateforme d’exécution de votre application
 
 
-La manière d’envisager le ciblage d’application change avec Windows 10. Selon le nouveau modèle conceptuel, une application cible la plateforme Windows universelle (UWP) et s’exécute sur tous les appareils Windows. Elle peut ensuite choisir d’activer des fonctionnalités exclusives à certaines familles d’appareils. Si nécessaire, l’application a également la possibilité de restreindre son ciblage à une ou plusieurs familles d’appareils spécifiques. Pour plus d’informations sur les familles d’appareils et savoir comment déterminer les familles d’appareils à cibler, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+La façon de penser ciblage d’application des modifications avec Windows 10. Selon le nouveau modèle conceptuel, une application cible la plateforme Windows universelle (UWP) et s’exécute sur tous les appareils Windows. Elle peut ensuite choisir d’activer des fonctionnalités exclusives à certaines familles d’appareils. Si nécessaire, l’application a également la possibilité de restreindre son ciblage à une ou plusieurs familles d’appareils spécifiques. Pour plus d’informations sur les familles d’appareils et savoir comment déterminer les familles d’appareils à cibler, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-Si votre application8.1 universelle intègre du code qui détecte le système d’exploitation sur lequel elle est exécutée, vous devrez peut-être changer cela en fonction de la raison de la logique. Si l’application transmet la valeur et n’intervient pas en conséquence, il peut être préférable de continuer à collecter les informations sur le système d’exploitation.
+Si votre application 8.1 universelle intègre du code qui détecte le système d’exploitation sur lequel elle est exécutée, vous devrez peut-être changer cela en fonction de la raison de la logique. Si l’application transmet la valeur et n’intervient pas en conséquence, il peut être préférable de continuer à collecter les informations sur le système d’exploitation.
 
-**Remarque**  nous vous recommandons de pas utiliser système d’exploitation ou la famille d’appareils pour détecter la présence de fonctionnalités. En règle générale, l’identification de la famille d’appareils ou du système d’exploitation actuel ne constitue pas le meilleur moyen de déterminer si une fonctionnalité particulière du système d’exploitation ou de la famille d’appareils est présente. Plutôt que de détecter le système d’exploitation ou la famille d’appareils (et le numéro de version), vérifiez directement la présence de la fonctionnalité à l’aide d’un test (voir [Compilation conditionnelle et code adaptatif](w8x-to-uwp-porting-to-a-uwp-project.md)). Si vous devez exiger un système d’exploitation ou une famille d’appareils spécifique, veillez à l’utiliser comme une version minimale prise en charge plutôt que de concevoir le test pour cette version particulière.
+**Remarque**    nous recommandons de n'utiliser pas système d’exploitation ou la famille de périphériques pour détecter la présence de fonctionnalités. En règle générale, l’identification de la famille d’appareils ou du système d’exploitation actuel ne constitue pas le meilleur moyen de déterminer si une fonctionnalité particulière du système d’exploitation ou de la famille d’appareils est présente. Plutôt que de détecter le système d’exploitation ou la famille d’appareils (et le numéro de version), vérifiez directement la présence de la fonctionnalité à l’aide d’un test (voir [Compilation conditionnelle et code adaptatif](w8x-to-uwp-porting-to-a-uwp-project.md)). Si vous devez exiger un système d’exploitation ou une famille d’appareils spécifique, veillez à l’utiliser comme une version minimale prise en charge plutôt que de concevoir le test pour cette version particulière.
 
  
 
@@ -66,10 +66,10 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 Voir également [Compilation conditionnelle et code adaptatif](w8x-to-uwp-porting-to-a-uwp-project.md).
 
-## <a name="location"></a>Localisation
+## <a name="location"></a>Emplacement
 
 
-Lorsqu’une application déclarant la fonctionnalité de localisation dans son manifeste de package d’application s’exécute sur Windows 10, le système invite l’utilisateur final à donner son consentement. Cela est vrai si l’application est une application Windows Phone Store ou une application Windows 10. Si votre application affiche sa propre invite de consentement personnalisée ou qu’elle fournit une bascule de type activation/désactivation, vous devrez donc supprimer ces éléments pour que l’utilisateur final ne soit invité qu’une seule fois à autoriser cette fonctionnalité.
+Lorsqu’une application qui déclare la fonctionnalité de localisation dans son application package manifeste s’exécute sur Windows 10, le système vous invite l’utilisateur final à donner son consentement. Cela est vrai si l’application est une application Windows Phone Store ou une application Windows 10. Si votre application affiche sa propre invite de consentement personnalisée ou qu’elle fournit une bascule de type activation/désactivation, vous devrez donc supprimer ces éléments pour que l’utilisateur final ne soit invité qu’une seule fois à autoriser cette fonctionnalité.
 
  
 

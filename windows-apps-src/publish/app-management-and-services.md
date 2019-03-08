@@ -1,33 +1,33 @@
 ---
-Description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
+Description: Gérer et afficher les détails relatifs à chacune de vos applications dans le centre de partenaires et configurer des services tels que A / B, test et mappe.
 title: Gestion des applications et services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049476"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610004"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
-Vous pouvez gérer et afficher les détails de chacune de vos applications dans [L’espace partenaires](https://partner.microsoft.com/dashboard/)et configurez des services comme les notifications, A / B test et les cartes.
+Vous pouvez gérer et afficher les détails relatifs à chacune de vos applications dans [partenaires](https://partner.microsoft.com/dashboard/)et configurer des services tels que des notifications, A / B test et mappe.
 
-Lorsque vous travaillez avec une application dans l’espace partenaires, vous verrez des sections dans le menu de navigation de gauche pour la **Gestion des applications**et **Services** . Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
+Lorsque vous travaillez avec une application dans le centre de partenaires, vous verrez des sections dans le menu de navigation gauche pour **Services** et **gestion des applications**. Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
 
 ## <a name="services"></a>Services
 
 La section **Services** vous permet de gérer les différents services pour vos applications.
 
-## <a name="xbox-live"></a>XboxLive
+## <a name="xbox-live"></a>Xbox Live
 
-Si vous publiez un jeu, vous pouvez activer le [Programme créateurs Xbox Live](https://xbox.com/developers/creators-program) sur cette page. Cela vous permet de démarrer la configuration et le tests des fonctionnalités Xbox Live et finalement publier votre jeu programme créateurs Xbox Live.
+Si vous publiez un jeu, vous pouvez activer le [programme Xbox Live Creators](https://xbox.com/developers/creators-program) sur cette page. Cela vous permet de démarrer la configuration et tests des fonctionnalités Xbox Live et finalement publier votre jeu de programme Xbox Live Creators.
 
-Pour plus d’informations, voir [vous familiariser avec le programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créez un nouveau titre du programme créateurs Xbox Live et les publier sur l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Pour plus d’informations, consultez [prise en main du programme Xbox Live Creators](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créer un nouveau titre de programme Xbox Live Creators et publier dans l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
 ## <a name="experimentation"></a>Expérimentation
 
@@ -37,21 +37,21 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 
 ## <a name="maps"></a>Cartes
 
-Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](https://go.microsoft.com/fwlink/p/?LinkId=614880). Pour savoir comment demander une clé d’authentification de cartes à partir du centre de développement Bing cartes et l’ajouter à votre application, consultez [demande une clé d’authentification de cartes](../maps-and-location/authentication-key.md) pour plus d’informations. 
+Pour utiliser les services cartographiques dans des applications ciblant Windows 10 ou Windows 8.x, visitez le [Centre de développement Bing Cartes](https://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations sur la façon de demander une clé d’authentification de mappages à partir du centre de développement Bing Maps et ajoutez-le à votre application, consultez [demander une clé d’authentification maps](../maps-and-location/authentication-key.md) pour plus d’informations. 
 
-Utiliser la page **cartes** uniquement pour les applications précédemment publiées pour Windows Phone 8.1 et versions antérieures. Pour utiliser les services cartographiques dans ces applications, vous devez demander un ID d’application de service carte et un jeton d’inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton**, nous allons générer un service de carte ID d’Application (**ApplicationID**) et mapper service (**AuthenticationToken**) du jeton d’authentification pour votre application. Veillez à ajouter ces valeurs à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](https://go.microsoft.com/fwlink/p/?LinkId=614882).
+Utilisez le **Maps** page uniquement pour les applications précédemment publiées pour Windows Phone 8.1 et versions antérieures. Pour utiliser les services de mappage dans ces applications, vous devrez demander un ID d’application de service map et un jeton à inclure dans le code de votre application. Lorsque vous cliquez sur **obtenir un jeton**, nous allons générer un ID d’Application de service Map (**ApplicationID**) et mapper le jeton d’authentification de service (**AuthenticationToken**) pour votre application. Veillez à ajouter ces valeurs à votre code avant que le package vous et soumettre votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](https://go.microsoft.com/fwlink/p/?LinkId=614882).
 
 ## <a name="product-collections-and-purchases"></a>Collections et achats de produits
 
-Pour utiliser le Microsoft Store API de collection et l’API d’achat de Microsoft Store pour accéder aux informations de propriété pour les applications et modules complémentaires, vous devez entrer associé ID clients Azure AD ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
+Pour utiliser le Microsoft Store API de collecte et de l’API d’achat de Microsoft Store pour accéder aux informations de la propriété pour les applications et modules complémentaires, vous devez entrer associé Azure AD ID client ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16 heures.
 
 Pour plus d’informations, consultez l’article [Gérer des droits sur les produits à partir d’un service](../monetize/view-and-grant-products-from-a-service.md).
 
 ## <a name="administrator-consent"></a>Consentement de l’administrateur
 
-Si votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
+Si votre produit s’intègre avec Azure AD et appelle les API qui demandent soit [autorisations d’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessitent le consentement administrateur, que vous entrez ici votre ID de Client Azure AD. Cela permet aux administrateurs qui acquièrent de l’application pour leur consentement de grant d’organisation de votre produit à agir au nom de tous les utilisateurs dans le locataire.
 
-Pour plus d’informations, voir la [demande de consentement pour un client entière](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
+Pour plus d’informations, consultez [demande de consentement d’un client entier](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
 ## <a name="app-management"></a>Gestion des applications
 
@@ -82,18 +82,18 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
-La section **WNS/MPNS** fournit des options pour vous aider à créer et envoyer des notifications aux clients de votre application. 
+Le **WNS/MPNS** section décrit les options pour vous aider à créer et envoyer des notifications pour les clients de votre application. 
 
 > [!TIP]
-> Pour les applications UWP, nous vous suggérons d’à l’aide de la fonctionnalité de **Notifications** dans l’espace partenaires. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
+> Pour les applications UWP, nous vous suggérons d’utiliser le **Notifications** fonctionnalité de partenaires. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de clients Windows 10 qui répondent aux critères que vous avez définies dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
 
-Selon le type de package de votre application et ses besoins spécifiques, vous pouvez également utiliser une des options suivantes: 
+Selon le type de package de votre application et ses besoins spécifiques, vous pouvez également utiliser une des options suivantes : 
 
--   **Windows Push Notification Services (WNS)** vous permet d’envoyer un toast, une vignette, un badge et des mises à jour brutes depuis votre propre service cloud. Pour plus d’informations, voir l’article [Vue d’ensemble des services de notifications Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
+-   **Windows Push Notification Services (WNS)** vous permet d’envoyer un toast, une vignette, un badge et des mises à jour brutes depuis votre propre service cloud. Pour plus d'informations, voir l'article [Vue d'ensemble des services de notifications Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
 -   **Microsoft Azure Mobile Apps** vous permet d’envoyer des notifications Push, d’authentifier et de gérer les utilisateurs des applications et de stocker les données des applications dans le cloud. Pour plus d’informations, voir la [documentation sur les applications mobiles](https://go.microsoft.com/fwlink/p/?LinkId=221116).
 
--   **Microsoft Push Notifications Service (MPNS)** utilisables avec les packages .xap précédemment publiées pour Windows Phone. Vous pouvez envoyer un nombre limité de notifications non authentifiées sans intervenir sur la configuration, bien que nous vous recommandons d’utiliser des notifications authentifiées pour éviter les seuils de limitation. Si vous utilisez MPNS, vous devez charger un certificat dans le champ fourni sur la page **WNS/MPNS** . Pour plus d’informations, voir [Configuration d’un service web authentifié pour envoyer des notifications Push pour Windows Phone 8](https://go.microsoft.com/fwlink/p/?LinkId=528736).
+-   **Service de Notifications Push Microsoft (MPNS)** utilisables avec les packages .xap précédemment publiées pour Windows Phone. Vous pouvez envoyer un nombre limité de notifications non authentifiées sans intervenir sur la configuration, bien que nous vous recommandons d’utiliser des notifications authentifiées pour éviter les seuils de limitation. Si vous utilisez MPNS, vous devez télécharger un certificat dans le champ fourni sur le **WNS/MPNS** page. Pour plus d’informations, voir [Configuration d’un service web authentifié pour envoyer des notifications Push pour Windows Phone 8](https://go.microsoft.com/fwlink/p/?LinkId=528736).
  
 
  

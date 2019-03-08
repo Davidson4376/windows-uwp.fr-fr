@@ -1,35 +1,35 @@
 ---
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
-description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour supprimer une version d’évaluation de package pour une application inscrite dans votre compte espace partenaires.
-title: Supprime une version d’évaluation du package
+description: Utilisez cette méthode dans l’API de soumission de Microsoft Store pour supprimer un vol de package pour une application qui est inscrit pour votre compte espace partenaires.
+title: Supprimer une version d’évaluation de package
 ms.date: 04/17/2018
 ms.topic: article
-keywords: windows 10, uwp, API de soumission au MicrosoftStore, supprimer une version d’évaluation
+keywords: windows 10, uwp, API de soumission au Microsoft Store, supprimer une version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930153"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641834"
 ---
-# <a name="delete-a-package-flight"></a>Supprime une version d’évaluation du package
+# <a name="delete-a-package-flight"></a>Supprimer une version d’évaluation de package
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour supprimer une version d’évaluation de package pour une application inscrite dans votre compte espace partenaires.
+Utilisez cette méthode dans l’API de soumission de Microsoft Store pour supprimer un vol de package pour une application qui est inscrit pour votre compte espace partenaires.
 
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au MicrosoftStore.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 ## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Méthode | URI de la requête                                                      |
+| Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
 
@@ -38,15 +38,15 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la version d’évaluation du package à supprimer. L’ID Store de l’application est disponible dans l’espace partenaires.  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour une version d’évaluation qui a été créée dans l’espace partenaires, cet ID est également disponible dans l’URL de la page de version d’évaluation dans l’espace partenaires.  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la version d’évaluation du package à supprimer. L’ID de Store pour l’application est disponible dans le centre de partenaires.  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour un vol a été créé dans le centre de partenaires, cet ID est également disponible dans l’URL de la page de vol de partenaires.  |
 
 
 ### <a name="request-body"></a>Corps de la requête
@@ -75,11 +75,11 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 |--------|------------------|
 | 400  | Les paramètres de la requête ne sont pas valides. |
 | 404  | La version d’évaluation du package spécifiée est introuvable.  |
-| 409  | La version d’évaluation du package spécifiée a été trouvée, mais il ne peut pas être supprimé dans son état actuel, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas prise en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Le vol de package spécifié a été trouvé, mais il ne peut pas être supprimé dans son état actuel, ou l’application utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Crée une version d’évaluation du package](create-a-flight.md)
-* [Obtenir une version d’évaluation du package](get-a-flight.md)
+* [Créer et gérer des envois à l’aide des services de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Créer un package de vol](create-a-flight.md)
+* [Obtenir un vol de package](get-a-flight.md)

@@ -1,5 +1,5 @@
 ---
-Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
+Description: En savoir plus sur les avantages de la globalisation et localisation de votre application, et exactement ce que signifient ces termes.
 Search.SourceType: Video
 title: Globalisation et localisation
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
@@ -7,20 +7,20 @@ label: Intro
 template: detail.hbs
 ms.date: 12/7/2018
 ms.topic: article
-keywords: windows10, uwp, globalisation, adaptabilité, localisation
+keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035420"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648224"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 
-Windows est utilisé dans le monde entier, par des publics de diverses langues, régions et cultures. Vos utilisateurs parlent différentes langues dans divers pays et régions. Certains utilisateurs parlent plusieurs langues. Ainsi, votre application s’exécute sur des configurations qui impliquent de nombreuses permutations des paramètres de langue, de région et de culture du système. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
+Windows est utilisé dans le monde entier par des publics de diverses cultures, régions et langues. Vos utilisateurs parlent différentes langues dans divers pays et régions. Certains utilisateurs parlent plusieurs langues. Ainsi, votre application s’exécute sur des configurations qui impliquent de nombreuses permutations des paramètres de langue, de région et de culture du système. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
 
-Cette vidéo vous informe brièvement comment préparer votre application à une utilisation dans le monde entier : [Introduction à la globalisation et à la localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
+Cette vidéo fournit une brève introduction sur la préparation de votre application pour le monde entier : [Introduction à la globalisation et localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
 La **globalisation** implique le processus de conception et de développement de votre application de manière à ce qu'elle fonctionne correctement dans les différents marchés internationaux (sur les systèmes de configurations de langues et de cultures différentes), sans avoir besoin de modification ou de personnalisation spécifique à la langue.
 
@@ -38,7 +38,7 @@ Votre code doit fonctionner de manière égale dans toutes les cultures que vous
 - Règles de tri
 
 >[!NOTE]
-> Pour obtenir la liste des codes de pays/région standard utilisées par Microsoft, consultez la [Liste des pays/région officielle](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> Pour obtenir la liste des codes de pays/région standard utilisés par Microsoft, consultez le [liste de pays/région officielle](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
 
 
 L'**adaptabilité** constitue le processus de préparation d'une application globalisée pour la localisation et/ou la vérification que l'application est prête pour la localisation. Le fait de rendre une application correctement localisable signifie que le processus de localisation ultérieur sera dépourvu de défaillance dans l'application. Le caractère localisable de l'application nécessite que son code exécutable soit proprement séparé des ressources localisables de l'application.
@@ -58,15 +58,15 @@ La plupart des équipes de localisation utilisent des outils spéciaux pour faci
 
 | Article | Description |
 |---------|-------------|
-| [Directives en matière de globalisation](guidelines-and-checklist-for-globalizing-your-app.md) | Concevez et développez votre application afin qu'elle fonctionne de manière appropriée sur les systèmes avec des configurations de langue et de culture différentes. |
-| [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](manage-language-and-region.md) | Cette rubrique défini les termes «liste de langues de profil utilisateur», «liste de langues de manifeste d'application» et «liste de langues d'exécution de l'application». Nous utiliserons ces termes dans cette rubriques et parmi d'autres concernant les fonctionnalités. Il est donc important que vous en compreniez le sens. |
-| [Globaliser vos formats de date/heure/chiffres](use-global-ready-formats.md) | Concevez votre application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Plus tard, vous serez en mesure d’adapter votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international. |
-| [Utiliser des modèles de format des dates et heures](use-patterns-to-format-dates-and-times.md) | Utilisez le classes de l'espace de noms [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) avec des modèles personnalisés pour afficher les dates et heures dans le format que vous désirez. |
-| [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md) | Concevez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, notamment le sens du flux DàG (de droite à gauche). |
-| [Valeurs de NumeralSystem](glob-numeralsystem-values.md) | Cette rubrique répertorie les valeurs disponibles pour la propriété **NumeralSystem** des différentes classes de l’espace de noms [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live). |
-| [Rendre votre application localisable](prepare-your-app-for-localization.md) | Une application localisée est une application qui peut être localisée pour d'autres marchés, langues ou régions sans présenter de défaillance fonctionnelle. Le caractère localisable de l'application nécessite que son code exécutable soit proprement séparé de ses ressources localisables. |
-| [Polices internationales](loc-international-fonts.md) | Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont localisées dans des langues autres que l’anglais des États-Unis. |
-| [Conception de votre application pour le texte bidirectionnel](design-for-bidi-text.md) | Concevez votre application afin de fournir un support de texte bidirectionnel (BiDi). Ainsi, vous pourrez combiner les scripts des systèmes d'écriture de gauche à droite et de droite à gauche. |
-| [Utiliser le kit de ressources MultilingualAppToolkit4.0](use-mat.md) | Le kit de ressources MultilingualAppToolkit(MAT)4.0 est intégré à MicrosoftVisualStudio2017 pour fournir aux applications UWP un support de traduction, la gestion des fichiers de traduction et des outils d'éditeur. |
-| [FAQ et résolution des problèmes du kit de ressources MultilingualAppToolkit4.0](mat-faq-troubleshooting.md) | Cette rubrique présente des réponses aux questions fréquentes et aux problèmes relatives au kit de ressources MultilingualAppToolkit4.0. |
-| [Préparer votre application pour le changement d’ère du Japon](japanese-era-change.md) | Apprenez-en plus sur la modification d’ère japonais mai 2019 et comment préparer votre application. |
+| [Instructions pour la globalisation](guidelines-and-checklist-for-globalizing-your-app.md) | Concevez et développez votre application afin qu'elle fonctionne de manière appropriée sur les systèmes avec des configurations de langue et de culture différentes. |
+| [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](manage-language-and-region.md) | Cette rubrique défini les termes « liste de langues de profil utilisateur », « liste de langues de manifeste d'application » et « liste de langues d'exécution de l'application ». Nous utiliserons ces termes dans cette rubriques et parmi d'autres concernant les fonctionnalités. Il est donc important que vous en compreniez le sens. |
+| [Globaliser vos formats de date/heure/nombre](use-global-ready-formats.md) | Concevez votre application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Plus tard, vous serez en mesure d’adapter votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international. |
+| [Utilisez des modèles et des modèles pour formater les dates et heures](use-patterns-to-format-dates-and-times.md) | Utilisez le classes de l'espace de noms [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) avec des modèles personnalisés pour afficher les dates et heures dans le format que vous désirez. |
+| [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md) | Concevez votre application pour prendre en charge les dispositions et les polices de plusieurs langues, notamment le sens du flux DàG (de droite à gauche). |
+| [Valeurs NumeralSystem](glob-numeralsystem-values.md) | Cette rubrique répertorie les valeurs disponibles pour la propriété **NumeralSystem** des différentes classes de l’espace de noms [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live). |
+| [Rendez votre application localisable](prepare-your-app-for-localization.md) | Une application localisée est une application qui peut être localisée pour d'autres marchés, langues ou régions sans présenter de défaillance fonctionnelle. Le caractère localisable de l'application nécessite que son code exécutable soit proprement séparé de ses ressources localisables. |
+| [Polices internationales](loc-international-fonts.md) | Cette rubrique répertorie les polices disponibles pour les applications UWP qui sont traduites dans des langues autres que des États-Unis Anglais. |
+| [Concevez votre application pour le texte bidirectionnel](design-for-bidi-text.md) | Concevez votre application afin de fournir un support de texte bidirectionnel (BiDi). Ainsi, vous pourrez combiner les scripts des systèmes d'écriture de gauche à droite et de droite à gauche. |
+| [Utilisez le Multilingual App Toolkit 4.0](use-mat.md) | Le kit de ressources Multilingual App Toolkit (MAT) 4.0 est intégré à Microsoft Visual Studio 2017 pour fournir aux applications UWP un support de traduction, la gestion des fichiers de traduction et des outils d'éditeur. |
+| [Multilingual App Toolkit 4.0 FAQ et dépannage](mat-faq-troubleshooting.md) | Cette rubrique présente des réponses aux questions fréquentes et aux problèmes relatives au kit de ressources Multilingual App Toolkit 4.0. |
+| [Préparer votre application pour la modification de l’ère japonais](japanese-era-change.md) | En savoir plus sur le changement d’ère du Japon de mai 2019 et comment préparer votre application. |

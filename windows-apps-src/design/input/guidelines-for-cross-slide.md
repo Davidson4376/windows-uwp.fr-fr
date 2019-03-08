@@ -1,17 +1,17 @@
 ---
-Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
+Description: Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 title: Recommandations en matière de glisser transversal
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658124"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -26,14 +26,14 @@ ms.locfileid: "9045192"
 
 Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 
-## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Choses à faire et
 
 
 -   Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction.
 -   Utilisez le glisser transversal pour la sélection d’éléments lorsque l’interaction d’appui n’est pas possible.
 -   N’utilisez pas le glisser transversal pour ajouter des éléments à une file d’attente.
 
-## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Instructions d’utilisation supplémentaires
 
 
 La sélection et le déplacement par glissement sont possibles uniquement à l’intérieur d’une zone de contenu capable de défiler en panoramique dans une direction (verticale or horizontale). Pour que chacune de ces interactions fonctionne, l’une des directions de mouvement panoramique doit être verrouillée. De plus, le mouvement doit être effectué perpendiculairement à la direction du mouvement panoramique.
@@ -46,7 +46,7 @@ Le schéma suivant indique les distances seuils utilisées par l’interaction d
 
 ![capture d’écran illustrant les processus de sélection et de glisser-déplacer.](images/crossslide-threshold.png)
 
-Pour conserver la fonctionnalité de mouvement panoramique, un petit seuil de 2,7mm (environ 10 pixels en résolution cible) doit être dépassé avant qu’une interaction de sélection ou de glissement soit activée. Ce petit seuil permet au système non seulement de différencier le glisser transversal du mouvement panoramique, mais également de distinguer un appui du glisser transversal et du mouvement panoramique.
+Pour conserver la fonctionnalité de mouvement panoramique, un petit seuil de 2,7 mm (environ 10 pixels en résolution cible) doit être dépassé avant qu’une interaction de sélection ou de glissement soit activée. Ce petit seuil permet au système non seulement de différencier le glisser transversal du mouvement panoramique, mais également de distinguer un appui du glisser transversal et du mouvement panoramique.
 
 Cette image montre comment un utilisateur appuie sur un élément dans l’interface utilisateur, mais déplace son doigt légèrement vers le bas au contact. Sans seuil, cette interaction serait interprétée comme un glisser transversal en raison du mouvement vertical effectué par l’utilisateur. Grâce au seuil, le mouvement est correctement interprété en tant que mouvement panoramique horizontal.
 
@@ -56,7 +56,7 @@ Voici quelques recommandations à prendre en compte quand vous ajoutez la foncti
 
 Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
 
-**Remarque**dans les cas où la zone de contenu panoramique dans deux directions, tels que les navigateurs web ou e-des lecteurs, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
+**Remarque**  dans les cas où la zone de contenu peut être panoramique dans deux directions, tels que des navigateurs web ou liseuses, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
 
  
 
@@ -69,7 +69,7 @@ Utilisez le glisser transversal pour les listes ou les collections qui défilent
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**Sélection**
+**En sélectionnant**
 
 La sélection consiste à marquer un ou plusieurs objets sans les lancer ni les activer. Cette action est comparable à celle qui consiste à cliquer avec la souris ou à utiliser la touche Maj + un clic sur un ou plusieurs objets.
 
@@ -79,11 +79,11 @@ Outre le seuil de distance, la sélection par glisser transversal est limitée �
 
 ![schéma indiquant la zone de seuil de la sélection.](images/crossslide-selection.png)
 
-L’interaction de glisser transversal est complétée par une interaction chronométrée de type appui prolongé, également appelée interaction «auto-révélatrice». Cette interaction supplémentaire active en effet une animation qui révèle l’action qui peut être effectuée sur l’objet. Pour plus d’informations sur l’interface utilisateur de résolution des ambiguïtés, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+L’interaction de glisser transversal est complétée par une interaction chronométrée de type appui prolongé, également appelée interaction « auto-révélatrice ». Cette interaction supplémentaire active en effet une animation qui révèle l’action qui peut être effectuée sur l’objet. Pour plus d’informations sur l’interface utilisateur de résolution des ambiguïtés, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
 Les captures d’écran suivantes expliquent le fonctionnement de l’animation auto-révélatrice.
 
-1.  Appuyez de manière prolongée pour démarrer l’animation pour l’interaction auto-révélatrice. L’état sélectionné de l’élément affecte ce que l’animation révèle: une coche en cas de non-sélection et aucune coche en cas de sélection.
+1.  Appuyez de manière prolongée pour démarrer l’animation pour l’interaction auto-révélatrice. L’état sélectionné de l’élément affecte ce que l’animation révèle : une coche en cas de non-sélection et aucune coche en cas de sélection.
 
     ![capture d’écran montrant un état de non-sélection.](images/crossslide-selfreveal1.png)
 
@@ -97,7 +97,7 @@ Les captures d’écran suivantes expliquent le fonctionnement de l’animation 
 
 Appuyez une fois pour effectuer une sélection dans une application qui ne comporte pas d’autre action principale que celle-ci. L’animation auto-révélatrice du glisser transversal s’affiche pour résoudre les ambiguïtés de cette fonctionnalité par rapport à l’interaction d’appui standard utilisée pour l’activation et la navigation.
 
-**Panier de sélection**
+**Panier**
 
 Le panier de sélection est une représentation dynamique et visuellement distincte des éléments qui ont été sélectionnés dans la liste ou la collection principale de l’application. Cette fonctionnalité est utile pour suivre les éléments sélectionnés et doit être utilisée par les applications dans les cas suivants :
 
@@ -123,7 +123,7 @@ C’est la raison pour laquelle l’interaction de sélection par glisser transv
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Glissement**
+**Drag**
 
 Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un emplacement à l’autre.
 
@@ -138,14 +138,14 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **Exemples d’archive**
-* [Entrée: exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : exemple de fonctionnalités d’appareils](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple de test de positionnement tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : exemple de mouvements Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : exemple de manipulations et de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

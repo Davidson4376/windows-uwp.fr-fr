@@ -4,14 +4,14 @@ description: Nous décrivons ici comment utiliser la profondeur, la perspective,
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, profondeur, effets, primitives, directx
+keywords: Windows 10, uwp, jeux, profondeur, effets, primitives, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939738"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646584"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>Utiliser la profondeur et les effets sur des primitives
 
@@ -19,20 +19,20 @@ ms.locfileid: "8939738"
 
 Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
 
-**Objectif :** créer un objet 3D et appliquer un éclairage de vertex de base et son coloriage.
+**Objectif :** Pour créer un objet 3D et appliquer des vertex de base d’éclairage et la couleur à celui-ci.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
 
 Nous supposons en outre que vous avez suivi les rubriques [Démarrage rapide : configuration de ressources DirectX et affichage d’une image](setting-up-directx-resources.md) et [Création de nuanceurs et traçage de primitives](creating-shaders-and-drawing-primitives.md).
 
-**Durée de réalisation :** 20 minutes.
+**Durée :** 20 minutes.
 
 <a name="instructions"></a>Instructions
 ------------
-### <a name="1-defining-cube-variables"></a>1. Définition des variables du cube
+### <a name="1-defining-cube-variables"></a>1. Définition de variables de cube
 
 Tout d’abord, nous devons définir les structures **SimpleCubeVertex** et **ConstantBuffer** pour le cube. Ces structures spécifient les positions et les couleurs de vertex pour le cube et le type d’affichage de ce dernier. Nous déclarons [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) et [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) à l’aide de [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx), et nous déclarons une instance de **ConstantBuffer**.
 
@@ -66,7 +66,7 @@ private:
 
 ### <a name="2-creating-a-depth-stencil-view"></a>2. Création d’une vue du stencil de profondeur
 
-En plus de créer la vue de la cible de rendu, nous devons créer une vue du stencil de profondeur. La vue de profondeur/gabarit permet à Direct3D d’effectuer efficacement le rendu d’objets proches de la caméra devant des objets plus éloignés. Avant de pouvoir créer une vue appliquée à un tampon de stencil de profondeur, nous devons créer ce tampon. Nous remplissons une structure [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) pour décrire le tampon de stencil de profondeur, puis nous appelons [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) pour créer ce tampon. Pour créer la vue du stencil de profondeur, nous remplissons une structure [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) afin de décrire la vue du stencil de profondeur, puis nous transmettons cette description et le tampon de stencil de profondeur à [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
+En plus de créer la vue de la cible de rendu, nous devons créer une vue du stencil de profondeur. La vue de profondeur/gabarit permet à Direct3D d’effectuer efficacement le rendu d’objets proches de la caméra devant des objets plus éloignés. Avant de pouvoir créer une vue appliquée à un tampon de stencil de profondeur, nous devons créer ce tampon. Nous remplir un [ **D3D11\_TEXTURE2D\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476253) pour décrire la mémoire tampon stencil de profondeur, puis appelez [ **ID3D11Device::CreateTexture2D**  ](https://msdn.microsoft.com/library/windows/desktop/ff476521) pour créer la mémoire tampon stencil de profondeur. Pour créer la vue du stencil de profondeur, nous remplir un [ **D3D11\_profondeur\_gabarit\_vue\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476112) pour décrire la vue du stencil de profondeur et de passer la description de vue du stencil de profondeur et de la mémoire tampon stencil de profondeur à [ **ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -111,9 +111,9 @@ En plus de créer la vue de la cible de rendu, nous devons créer une vue du ste
             );
 ```
 
-### <a name="3-updating-perspective-with-the-window"></a>3. Mise à jour de la perspective avec la fenêtre
+### <a name="3-updating-perspective-with-the-window"></a>3. Point de vue de la mise à jour avec la fenêtre
 
-Nous mettons à jour les paramètres de projection de la perspective pour la mémoire tampon constante en fonction des dimensions de la fenêtre. Nous corrigeons les paramètres pour appliquer un champ de vision de 70degrés avec une plage de profondeur de 0,01 à 100.
+Nous mettons à jour les paramètres de projection de la perspective pour la mémoire tampon constante en fonction des dimensions de la fenêtre. Nous corrigeons les paramètres pour appliquer un champ de vision de 70 degrés avec une plage de profondeur de 0,01 à 100.
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters
@@ -144,21 +144,21 @@ Nous mettons à jour les paramètres de projection de la perspective pour la mé
             );
 ```
 
-### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. Création de nuanceurs de vertex et de pixels à l’aide d’éléments de couleur
+### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. Création des nuanceurs de sommets et de pixels avec des éléments de couleur
 
 Pour l’application, nous créons des nuanceurs de vertex et de pixels plus complexes que ceux que nous avons décrits dans le didacticiel précédent, [Création de nuanceurs et traçage de primitives](creating-shaders-and-drawing-primitives.md). Le nuanceur de vertex de l’application transforme chaque position de vertex en espace de projection et transmet la couleur du vertex au nuanceur de pixels.
 
-Le tableau des structures [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) de l’application qui décrivent la disposition du code pour les nuanceurs de vertex comporte deux éléments de disposition : l’un définit la position du vertex, et l’autre définit la couleur.
+Tableau de l’application de [ **D3D11\_entrée\_élément\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures qui décrivent la disposition du code du nuanceur de sommets a deux éléments de disposition : un seul élément définit la position du sommet et l’autre élément définit la couleur.
 
 Nous créons les tampons vertex et d’index et la mémoire tampon constante pour définir un cube en orbite.
 
-**Pour définir un cube en orbite**
+**Pour définir un cube orbite**
 
 1.  Nous commençons par définir le cube. Nous attribuons à chaque vertex une couleur en plus d’une position. Cela permet au nuanceur de pixels de colorer différemment chaque face pour les distinguer facilement.
-2.  Ensuite, nous décrivons les tampons vertex et d’index ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) à l’aide de la définition du cube. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) une fois pour chaque tampon.
-3.  Ensuite, nous créons une mémoire tampon constante ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) pour transmettre la matrice de modèle, la matrice globale et la matrice de projection au nuanceur de vertex. Nous pouvons ensuite utiliser le tampon constant pour faire pivoter le cube et lui appliquer une projection de perspective. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) pour créer le tampon constant.
+2.  Ensuite, nous décrivons les mémoires tampons de vertex et d’index ([**D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [ **D3D11\_SUBRESOURCE\_Données**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) à l’aide de la définition du cube. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) une fois pour chaque tampon.
+3.  Ensuite, nous créons un mémoire tampon constante ([**D3D11\_tampon\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) pour passer des matrices de projection, de modèle et d’affichage pour le nuanceur de sommets. Nous pouvons ensuite utiliser le tampon constant pour faire pivoter le cube et lui appliquer une projection de perspective. Nous appelons [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) pour créer la mémoire tampon constante.
 4.  Ensuite, nous indiquons la transformation de la vue correspondant à une position de caméra de X = 0, Y = 1, Z = 2.
-5.  Enfin, nous déclarons une variable *degree* qui sert à animer le cube en le faisant pivoter à chaque image.
+5.  Enfin, nous déclarons une variable *degree* qui sert à animer le cube en le faisant tourner à chaque image.
 
 ```cpp
         
@@ -334,17 +334,17 @@ Nous créons les tampons vertex et d’index et la mémoire tampon constante pou
         
 ```
 
-### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. Rotation et dessin du cube, et présentation de l’image rendue
+### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. Rotation et le cube de dessin et présentation de l’image rendue
 
-L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons la fonction incluse **rotationY** (BasicMath.h) en indiquant une valeur de rotation pour définir les valeurs chargées de faire pivoter la matrice de modèle du cube sur l’axe Y. Nous appelons ensuite [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) pour mettre à jour la mémoire tampon constante et faire pivoter le modèle du cube. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu. Au cours de cet appel d’**OMSetRenderTargets**, nous transmettons la vue du stencil de profondeur. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue, puis nous appelons [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) pour effacer le tampon de profondeur.
+L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons la fonction inline **rotationY** (BasicMath.h) en indiquant une valeur de rotation pour définir les valeurs chargées de faire pivoter la matrice de modèle du cube sur l’axe Y. Nous appelons ensuite [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) pour mettre à jour le tampon constant et faire pivoter le modèle du cube. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu. Au cours de cet appel d’**OMSetRenderTargets**, nous transmettons la vue du stencil de profondeur. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue, puis appelons [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) pour effacer le tampon de profondeur.
 
 Dans la boucle sans fin, nous traçons également le cube sur la surface bleue.
 
-**Pour tracer le cube**
+**Pour dessiner le cube**
 
 1.  Tout d’abord, nous appelons [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) pour décrire le flux des données du tampon vertex à l’étape de l’assembleur d’entrée.
 2.  Ensuite, nous appelons [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) et [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) pour lier les tampons de vertex et d’index à l’étape de l’assembleur/entrée.
-3.  Puis nous appelons [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) à l’aide de la valeur [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) pour indiquer à l’étape de l’assembleur d’entrée d’interpréter les données de vertex comme une bande de triangles.
+3.  Ensuite, nous appelons [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) avec la [ **D3D11\_PRIMITIFS\_topologie\_ TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) valeur à spécifier pour la phase d’assembleur d’entrée interpréter les données de vertex comme une bande de triangles.
 4.  Nous appelons [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) pour initialiser l’étape du nuanceur de vertex avec son code, et [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) pour initialiser l’étape du nuanceur de pixels avec le code correspondant.
 5.  Ensuite, nous appelons [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) pour définir le tampon constant utilisé par l’étape du pipeline de vertex shader.
 6.  Enfin, nous appelons [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) pour tracer le cube et l’envoyer au pipeline de rendu.
@@ -448,7 +448,7 @@ Nous avons employé la profondeur, la perspective, la couleur et d’autres effe
 
 L’étape suivante consiste à appliquer des textures aux primitives.
 
-[Application de textures aux primitives](applying-textures-to-primitives.md)
+[Application de textures à primitives](applying-textures-to-primitives.md)
 
  
 

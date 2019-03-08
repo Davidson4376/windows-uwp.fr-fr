@@ -1,17 +1,17 @@
 ---
-Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
+Description: Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un périphérique client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut.
 title: Préciser les ressources par défaut que votre application utilise
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593984"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>Préciser les ressources par défaut que votre application utilise
 
@@ -25,7 +25,7 @@ Ces valeurs par défaut sont spécifiées sous la forme de valeurs de qualificat
 
 Vous pouvez configurer ce que sont ces valeurs par défaut de deux manières. Vous pouvez soit ajouter un fichier de configuration à votre projet, soit modifier votre fichier de projet directement. Utilisez l’option avec laquelle vous êtes le plus à l’aise, ou celle qui fonctionne le mieux avec votre système de génération.
 
-## <a name="option-1-use-priconfigdefaultxml-to-specify-default-qualifier-values"></a>Option1. Utilisez priconfig.default.xml pour spécifier des valeurs de qualificateur par défaut
+## <a name="option-1-use-priconfigdefaultxml-to-specify-default-qualifier-values"></a>Option 1. Utilisez priconfig.default.xml pour spécifier des valeurs de qualificateur par défaut
 
 1. Dans Visual Studio, ajoutez un nouvel élément à votre projet. Choisissez le fichier XML et nommez-le `priconfig.default.xml`.
 2. Dans l’Explorateur de solutions, sélectionnez `priconfig.default.xml`et vérifiez la fenêtre Propriétés. L’option Action de génération du fichier doit être définie sur Aucun, et Copier dans le répertoire de sortie sur Ne pas copier.
@@ -64,7 +64,7 @@ Vous pouvez configurer ce que sont ces valeurs par défaut de deux manières. Vo
 
 Pour vérifier que vos valeurs par défaut de remplacement sont pris en compte, recherchez le fichier `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml`et confirmez que son contenu correspond à vos choix. Si c’est le cas, vous avez correctement configuré les valeurs de qualificateur des ressources que votre application utilisera par défaut. Si aucune correspondance n’est trouvée pour les paramètres de l’utilisateur, les ressources dont le nom de fichier ou de dossier contient les valeurs de qualificateurs par défaut que vous avez définies ici seront utilisées.
 
-### <a name="how-does-this-work"></a>Comment cela fonctionne-t-il?
+### <a name="how-does-this-work"></a>Comment cela fonctionne-t-il ?
 
 En coulisse, Visual Studio lance un outil nommé `MakePri.exe` pour générer un fichier appelé un index de ressource de package (IRP), qui décrit toutes les ressources de votre application et qui indique quelles sont les ressources par défaut. Pour plus d’informations sur cet outil, consultez [Compiler des ressources manuellement avec MakePri.exe ](compile-resources-manually-with-makepri.md). Visual Studio envoie un fichier de configuration à `MakePri.exe`. Le contenu de votre fichier `priconfig.default.xml` est utilisé en tant qu’élément `<default>` de ce fichier de configuration, qui est la partie qui spécifie l’ensemble des valeurs de qualificateur qui sont considérées comme des valeurs par défaut. Ainsi, si vous ajoutez et modifiez `priconfig.default.xml`, vous influencez en fin de compte le contenu du fichier d’index de ressource de package que Visual Studio génère pour votre application et l’ajoute à son package d’application.
 
@@ -80,9 +80,9 @@ Si vous nommez votre fichier `priconfig.default.xml`, Visual Studio le reconnaî
 
 Remplacez `FILE-PATH-AND-NAME` par le chemin d’accès à votre fichier et son nom.
 
-## <a name="option-2-use-your-project-file-to-specify-default-qualifier-values"></a>Option2. Utilisez votre fichier de projet pour spécifier des valeurs de qualificateur par défaut
+## <a name="option-2-use-your-project-file-to-specify-default-qualifier-values"></a>Option 2. Utilisez votre fichier de projet pour spécifier des valeurs de qualificateur par défaut
 
-Ceci est une alternative à l’option1. Une fois que vous comprenez le fonctionnement de l’option1, vous pouvez choisir d’utiliser l’option2 à la place, si elle correspond mieux à votre flux de travail de développement et/ou de génération.
+Ceci est une alternative à l’option 1. Une fois que vous comprenez le fonctionnement de l’option 1, vous pouvez choisir d’utiliser l’option 2 à la place, si elle correspond mieux à votre flux de travail de développement et/ou de génération.
 
 Dans votre fichier de projet, entre les balises d’ouverture et de fermeture du premier élément `<PropertyGroup>`, ajoutez ce fichier XML.
 
@@ -100,8 +100,8 @@ Enregistrez et fermez-le, puis générez une nouvelle fois votre projet.
 
 **Remarque** chaque fois que vous modifiez la valeur `Language=`, vous devez synchroniser ce changement avec la langue par défaut de votre application dans le concepteur de manifeste (en ouvrant `Package.appxmanifest`).
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
-* [Balise de langueBCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)

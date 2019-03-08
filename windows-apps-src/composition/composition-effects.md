@@ -4,14 +4,14 @@ title: Effets de composition
 description: Les API d’effet permettent aux développeurs de personnaliser l’affichage de leur interface utilisateur.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045312"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653824"
 ---
 # <a name="composition-effects"></a>Effets de composition
 
@@ -27,11 +27,11 @@ Les effets peuvent également être appliqués à des éléments UIElements XAML
 
 ## <a name="effect-features"></a>Fonctionnalités d’effet
 
-- [Bibliothèque d’effets](./composition-effects.md#effect-library)
-- [Chaînage des effets](./composition-effects.md#chaining-effects)
+- [Bibliothèque d’effet](./composition-effects.md#effect-library)
+- [Le chaînage des effets](./composition-effects.md#chaining-effects)
 - [Prise en charge de l’animation](./composition-effects.md#animation-support)
-- [Propriétés des effets constant et animé](./composition-effects.md#constant-vs-animated-effect-properties)
-- [Plusieurs instances d’effet avec des propriétés indépendantes](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [Constante vs. Propriétés de l’effet d’animation](./composition-effects.md#constant-vs-animated-effect-properties)
+- [Plusieurs Instances d’effet avec des propriétés indépendantes](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>Bibliothèque d’effets
 
@@ -54,7 +54,7 @@ Actuellement, les compositions prennent en charge les effets suivants :
 | Sépia :                | convertit une image en tons sépia.                                                                                                                                                                                          |
 | Température et teinte : | ajuste la température et/ou la teinte d’une image.                                                                                                                                                                           |
 
-Pour plus d’informations, voir l’espace de noms [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) de Win2D. Les effets non pris en charge dans la composition sont indiqués par \[NoComposition\].
+Pour plus d’informations, voir l’espace de noms [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) de Win2D. Effets ne pas pris en charge dans une composition sont indiquées comme \[NoComposition\].
 
 ### <a name="chaining-effects"></a>Chaînage des effets
 
@@ -85,7 +85,7 @@ Les propriétés d’effet prennent en charge l’animation ; lors de la compila
 
 ### <a name="constant-vs-animated-effect-properties"></a>Propriétés des effets constant et animé
 
-Lors de la compilation, vous pouvez spécifier des propriétés d’effet dynamiques ou des propriétés d’effet «intégrées» sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme «<effect name>.<property name>». Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
+Lors de la compilation, vous pouvez spécifier des propriétés d’effet dynamiques ou des propriétés d’effet « intégrées » sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme « <effect name>.<property name> ». Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
 
 Lorsque vous compilez la description d’effet ci-dessus, vous avez la possibilité d’intégrer la saturation de sorte qu’elle soit égale à 0,5, ou de la rendre dynamique et de la définir de manière dynamique ou en l’animant.
 
@@ -125,7 +125,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 Voir l’[exemple Désaturation - Animation](https://go.microsoft.com/fwlink/?LinkId=785342) pour les propriétés d’effet animées avec des images clés et l’[exemple AlphaMask](https://go.microsoft.com/fwlink/?LinkId=785343) pour l’utilisation des effets et expressions.
 
-### <a name="multiple-effect-instances-with-independent-properties"></a>Instances d’effet multiples avec des propriétés indépendantes
+### <a name="multiple-effect-instances-with-independent-properties"></a>Plusieurs instances d’effet avec des propriétés indépendantes
 
 En indiquant qu’un paramètre doit être dynamique lors de la compilation d’effet, le paramètre peut ensuite être modifié sur la base d’une instance par effet. Cela permet à deux éléments visuels d’utiliser le même effet tout en étant affichés avec des propriétés d’effet différentes. Pour plus d’informations, voir l’[exemple](https://go.microsoft.com/fwlink/?LinkId=785344) de code utilisant les paramètres ColorSource et Blend.
 
@@ -135,10 +135,10 @@ Ce didacticiel de démarrage rapide vous montre comment utiliser certaines fonct
 
 - [Installation de Visual Studio](./composition-effects.md#installing-visual-studio)
 - [Création d’un projet](./composition-effects.md#creating-a-new-project)
-- [Installation de Win2D](./composition-effects.md#installing-win2d)
-- [Définition des bases de votre composition](./composition-effects.md#setting-your-composition-basics)
+- [L’installation Win2D](./composition-effects.md#installing-win2d)
+- [Définition de vos bases de Composition](./composition-effects.md#setting-your-composition-basics)
 - [Création d’un pinceau CompositionSurface](./composition-effects.md#creating-a-compositionsurface-brush)
-- [Création, compilation et application d’effets](./composition-effects.md#creating-compiling-and-applying-effects)
+- [Création, la compilation et l’application d’effets](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>Installation de Visual Studio
 
@@ -231,18 +231,18 @@ LoadImage(surfaceBrush);
     brush.Surface = imageSource.Surface;
     ```
 
-1. Exécuter votre application: le résultat doit être une image de chat désaturée:
+1. Exécuter votre application : le résultat doit être une image de chat désaturée :
 
 ![Image désaturée](images/composition-cat-desaturated.png)
 
 ## <a name="more-information"></a>Plus d’informations
 
-- [Microsoft: GitHub Composition](https://github.com/Microsoft/composition)
+- [Microsoft – GitHub de Composition](https://github.com/Microsoft/composition)
 - [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-- [Équipe de composition Windows sur Twitter](https://twitter.com/wincomposition)
+- [Équipe de Composition de Windows sur Twitter](https://twitter.com/wincomposition)
 - [Vue d’ensemble de la composition](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [Notions de base de l’arborescence visuelle](composition-visual-tree.md)
+- [Principes fondamentaux d’arborescence d’éléments visuels](composition-visual-tree.md)
 - [Pinceaux de composition](composition-brushes.md)
 - [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 - [Vue d’ensemble de l’animation](composition-animation.md)
-- [Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw](composition-native-interop.md)
+- [COMPOSITION natif DirectX et Direct2D l’interopérabilité avec BeginDraw et EndDraw](composition-native-interop.md)

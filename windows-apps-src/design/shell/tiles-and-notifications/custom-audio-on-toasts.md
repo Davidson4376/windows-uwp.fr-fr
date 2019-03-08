@@ -1,20 +1,20 @@
 ---
-Description: Learn how to use custom audio on your toast notifications.
+Description: Découvrez comment utiliser audio personnalisé sur vos notifications toast.
 title: Contenu audio personnalisé des toast
 label: Custom audio on toasts
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
-keywords: windows10, uwp, toast, contenu audio personnalisé, notification, audio, son
+keywords: windows 10, uwp, toast, contenu audio personnalisé, notification, audio, son
 ms.localizationpriority: medium
 ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944698"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644064"
 ---
-# <a name="custom-audio-on-toasts"></a>Contenu audio personnalisé des toasts
+# <a name="custom-audio-on-toasts"></a>Contenu audio personnalisé des toast
 
 Les notifications toast peuvent utiliser du contenu audio personnalisé, qui permet à votre application d’exprimer les effets sonores uniques de votre marque. Par exemple, une application de messagerie peut utiliser le propre son de message de ses notifications toast, afin que l’utilisateur puisse être instantanément informé de la réception d’une notification de l’application, au lieu d’entendre le son de notification générique.
 
@@ -22,12 +22,12 @@ Les notifications toast peuvent utiliser du contenu audio personnalisé, qui per
 
 Pour créer des notifications par le biais de code, nous vous recommandons vivement d’utiliser la bibliothèque UWP Community Toolkit Notifications, qui fournit un modèle d’objet pour le contenu XML de la notification. Vous pouvez construire manuellement le contenu XML de la notification, mais cette méthode est sujette aux erreurs et compliquée. La bibliothèque Notifications dans UWP Community Toolkit est créée et gérée par l’équipe propriétaire des notifications chez Microsoft.
 
-Installez [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) à partir de NuGet (nous utilisons la version1.0.0 dans cette documentation).
+Installez [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) à partir de NuGet (nous utilisons la version 1.0.0 dans cette documentation).
 
 
 ## <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
 
-`Windows.UI.Notifications` inclut les API de vignette et de toast. `Microsoft.Toolkit.Uwp.Notifications` inclut la bibliothèque Notifications.
+`Windows.UI.Notifications` inclut la vignette, puis l’API de Toast. `Microsoft.Toolkit.Uwp.Notifications` inclut la bibliothèque de Notifications.
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -52,9 +52,9 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="add-the-custom-audio"></a>Ajouter le contenu audio personnalisé
 
-Windows Mobile a toujours pris en charge le contenu audio personnalisé des notifications toast. Toutefois, Desktop a uniquement ajouté la prise en charge du contenu audio personnalisé dans la version1511 (build10586). Si vous envoyez un toast contenant des données audio personnalisées à un appareil de bureau avant la version1511, le toast est en mode silencieux. Par conséquent, pour la version préliminaire1511 de Desktop, vous Ne devez PAS inclure le contenu audio personnalisé de votre notification toast, afin que la notification utilise au moins le son de notification par défaut.
+Windows Mobile a toujours pris en charge le contenu audio personnalisé des notifications toast. Toutefois, Desktop a uniquement ajouté la prise en charge du contenu audio personnalisé dans la version 1511 (build 10586). Si vous envoyez un toast contenant des données audio personnalisées à un appareil de bureau avant la version 1511, le toast est en mode silencieux. Par conséquent, pour la version préliminaire 1511 de Desktop, vous Ne devez PAS inclure le contenu audio personnalisé de votre notification toast, afin que la notification utilise au moins le son de notification par défaut.
 
-**Problème connu**: si vous utilisez la version1511 de Desktop, le contenu audio personnalisé fonctionne uniquement si votre application est installée via le Store. Cela signifie que vous ne pouvez pas tester localement votre contenu audio personnalisé sur l'appareil de bureau avant de l’envoyer au Store, mais le contenu audio fonctionne correctement une fois installé à partir du Store. Nous avons résolu ce problème dans la mise à jour anniversaire, afin que le contenu audio personnalisé de votre application déployée localement fonctionne correctement.
+**Problème connu**: Si vous utilisez la Version 1511 de bureau, l’audio de toast personnalisé fonctionne uniquement si votre application est installée via le Store. Cela signifie que vous ne pouvez pas tester localement votre contenu audio personnalisé sur l'appareil de bureau avant de l’envoyer au Store, mais le contenu audio fonctionne correctement une fois installé à partir du Store. Nous avons résolu ce problème dans la mise à jour anniversaire, afin que le contenu audio personnalisé de votre application déployée localement fonctionne correctement.
 
 ```csharp
 ?
@@ -100,8 +100,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 - [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [Envoyer un toast local](send-local-toast.md)
-- [Documentation sur le contenu des toasts](adaptive-interactive-toasts.md)
+- [Documentation de contenu de toast](adaptive-interactive-toasts.md)

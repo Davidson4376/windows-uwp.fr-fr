@@ -1,38 +1,38 @@
 ---
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
+Description: Permet de sélectionner ou de désélectionner des éléments d’action. Peut être utilisée pour un ou plusieurs éléments de liste.
 title: Cases à cocher
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a13c0c3d0e91a3932b4f9a26e564fbf364e5551
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037121"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648894"
 ---
 # <a name="check-boxes"></a>Cases à cocher
 
  
 
-Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection: l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
+Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection : l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
 
-> **API importantes**: [classe CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316), [événement Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [propriété IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **API importantes**: [Classe de la case à cocher](https://msdn.microsoft.com/library/windows/apps/br209316), [événement activé](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [propriété IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec la question «Mémoriser mes informations?» scénario de connexion avec conditions d’utilisation du service.
+Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec la question « Mémoriser mes informations ? » scénario de connexion avec conditions d’utilisation du service.
 
 ![Case à cocher unique pour un choix individuel](images/checkbox1.png)
 
@@ -58,7 +58,7 @@ Les deux contrôles **case à cocher** et **case d’option** permettent à l’
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CheckBox">ouvrir l’application et voir l'objet CheckBox en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -183,7 +183,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 ### <a name="use-the-indeterminate-state"></a>Utiliser l’état indéterminé
 
-Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) et peut avoir trois états: 
+Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) et peut avoir trois états : 
 
 État | Propriété | Valeur
 ------|----------|------
@@ -195,7 +195,7 @@ Pour que la case à cocher indique l’état indéterminé, vous devez définir 
 
 Lorsque les options peuvent être regroupées, vous pouvez utiliser une case à cocher indéterminée pour représenter le groupe entier. Utilisez l’état indéterminé de la case à cocher quand un utilisateur sélectionne une partie, et non l’ensemble, des éléments dans le groupe.
 
-Dans l’exemple suivant, la propriété IsThreeState de la case à cocher «Select all» est définie sur **true**. La case à cocher «Select all» est sélectionnée si tous les éléments enfants sont sélectionnés; si tous les éléments enfants sont désélectionnés, la case à cocher l’est également. Sinon, la case à cocher reste indéterminée.
+Dans l’exemple suivant, la propriété IsThreeState de la case à cocher « Select all » est définie sur **true**. La case à cocher « Select all » est sélectionnée si tous les éléments enfants sont sélectionnés ; si tous les éléments enfants sont désélectionnés, la case à cocher l’est également. Sinon, la case à cocher reste indéterminée.
 
 ```xaml
 <StackPanel>
@@ -282,7 +282,7 @@ private void SetCheckedState()
 -   Assurez-vous que le but et l’état actuel de la case à cocher sont clairs.
 -   Limitez le texte de la case à cocher à deux lignes.
 -   Formulez le libellé de la case à cocher comme une instruction indiquant que la présence d’une coche correspond à une activation, et qu’à l’inverse, l’absence d’une coche correspond à une désactivation.
--   Utilisez la police par défaut à moins que vos instructions de personnalisation n’imposent d’en utiliser une autre.
+-   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
 -   Si le contenu du texte est dynamique, songez au redimensionnement du contrôle et à ses conséquences sur les effets visuels environnants.
 -   Si vous avez le choix entre plusieurs options mutuellement exclusives, pensez à utiliser des [cases d’option](radio-button.md).
 -   Ne placez pas deux groupes de cases à cocher en regard l’un de l’autre. Utilisez des étiquettes de groupe pour les distinguer.
@@ -294,9 +294,9 @@ private void SetCheckedState()
 
     ![Case à cocher avec un état indéterminé](images/checkbox4_spicy.png)
 
-    Utilisez plutôt un groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé.
+    Au lieu de cela, utilisez un groupe de cases d’option qui a trois options : Pas corsée corsée et supplémentaire corsée.
 
-    ![Groupe de cases d’options proposant trois options: Non épicé, Épicé et Très épicé.](images/spicyoptions.png)
+    ![Groupe de boutons radio avec trois options : Pas corsée corsée et supplémentaire corsée](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
@@ -304,6 +304,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) 
+- [Classe de la case à cocher](https://msdn.microsoft.com/library/windows/apps/br209316) 
 - [Cases d’option](radio-button.md)
-- [Commutateur bascule](toggles.md)
+- [Bouton bascule](toggles.md)

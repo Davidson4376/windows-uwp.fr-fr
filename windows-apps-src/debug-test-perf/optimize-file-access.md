@@ -1,22 +1,22 @@
 ---
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: Optimiser l’accès aux fichiers
-description: Créez des applications de plateforme Windows universelle (UWP) qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
+description: Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cacd915530bb599936730ec404a6e524fef0105d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922756"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597264"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers
 
 
-Créez des applications de plateforme Windows universelle (UWP) qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
+Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 
 Lorsque vous souhaitez accéder à une grande collection de fichiers et aux valeurs de propriétés autres que les propriétés courantes Name, FileType et Path, vous pouvez y accéder en créant [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) et en appelant [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319). La méthode **SetPropertyPrefetch** peut considérablement améliorer les performances des applications qui affichent une collection d’éléments obtenus à partir du système de fichiers, comme une collection d’images. Les exemples qui suivent montrent différentes manières d’accéder à des fichiers multiples.
 
@@ -133,7 +133,7 @@ Si vous réalisez plusieurs opérations sur des objets Windows.Storage tels que 
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Mise en mémoire tampon entre des flux UWP et .NET
 
-Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour ce faire, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer des conversions entre les types de flux UWP et .NET. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour permettre cela, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer une conversion entre les types de flux .NET et UWP. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
 Quand vous convertissez un flux UWP en flux .NET, vous créez en fait un adaptateur pour le flux UWP sous-jacent. Dans certaines circonstances, un coût d’exécution est associé à l’appel de méthodes sur des flux UWP. Ceci peut affecter la rapidité de votre application, notamment lorsque vous effectuez de nombreuses et fréquentes opérations de lecture ou écriture de faible taille.
 
@@ -196,7 +196,7 @@ Ce comportement de mise en mémoire tampon par défaut est souhaitable dans la p
 
 Lors de la lecture ou de l’écriture de grands jeux de données, vous pourrez peut-être augmenter le débit en lecture ou en écriture en fournissant une taille de mémoire tampon élevée aux méthodes d’extension [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)et [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx). Cela procure à l’adaptateur de flux une taille de mémoire tampon interne plus élevée. Par exemple, lors du passage d’un flux qui provient d’un gros fichier à un analyseur XML, celui-ci peut effectuer de nombreuses petites lectures séquentielles à partir du flux. Une mémoire tampon de grande taille peut réduire le nombre d’appels au flux UWP sous-jacent et accroître les performances.
 
-> **Remarque**  vous devez être prudent lors de la définition d’une taille de mémoire tampon qui est supérieure à environ 80 Ko, car cela peut provoquer la fragmentation sur le tas garbage collector (voir [l’amélioration des performances de garbage collection](improve-garbage-collection-performance.md)). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81920octets.
+> **Remarque**    vous devez être prudent lors de la définition d’une taille de mémoire tampon qui est supérieure à environ 80 Ko, cela peut entraîner la fragmentation sur le tas du garbage collector (consultez [améliorer les performances du garbage collection](improve-garbage-collection-performance.md) ). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81 920 octets.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -228,7 +228,7 @@ Les méthodes [**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/app
 > Await managedStream.CopyToAsync(destination, bufferSize:=1024 * 1024)
 > ```
 
-Cet exemple utilise une taille de mémoire tampon de 1Mo, ce qui est supérieur aux 80Ko recommandés plus haut. L’utilisation d’une mémoire tampon aussi grande peut améliorer le débit de l’opération de copie pour les très grands jeux de données (plusieurs centaines de mégaoctets). Toutefois, cette mémoire tampon est allouée sur la grande pile d’objets et pourrait potentiellement entraîner une dégradation du nettoyage de la mémoire. Il convient de configurer des tailles de mémoire tampon élevées uniquement si cela améliorera sensiblement les performances de votre application.
+Cet exemple utilise une taille de mémoire tampon de 1 Mo, ce qui est supérieur aux 80 Ko recommandés plus haut. L’utilisation d’une mémoire tampon aussi grande peut améliorer le débit de l’opération de copie pour les très grands jeux de données (plusieurs centaines de mégaoctets). Toutefois, cette mémoire tampon est allouée sur la grande pile d’objets et pourrait potentiellement entraîner une dégradation du nettoyage de la mémoire. Il convient de configurer des tailles de mémoire tampon élevées uniquement si cela améliorera sensiblement les performances de votre application.
 
 Lorsque vous travaillez avec un grand nombre de flux simultanément, vous souhaiterez peut-être réduire ou éliminer la surcharge sur la mémoire tampon. Vous pouvez spécifier une plus petite mémoire tampon, ou affecter la valeur 0 au paramètre *bufferSize* pour désactiver entièrement la mise en mémoire tampon pour cet adaptateur de flux. Vous pouvez tout de même obtenir un débit satisfaisant sans mise en mémoire tampon si vous effectuez de grandes opérations de lecture et d’écriture vers le flux managé.
 

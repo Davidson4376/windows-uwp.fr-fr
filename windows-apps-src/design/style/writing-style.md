@@ -1,17 +1,17 @@
 ---
 title: Style d’écriture
 description: Utiliser une voix et un ton adaptés est essentiel pour que le texte de votre application semble faire naturellement partie de sa conception.
-keywords: UWP, Windows10, texte, écriture, voix, ton, conception, interface utilisateur, expérience utilisateur
+keywords: UWP, Windows 10, texte, écriture, voix, ton, conception, interface utilisateur, expérience utilisateur
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116201"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662344"
 ---
 # <a name="writing-style"></a>Style d’écriture
 
@@ -87,9 +87,9 @@ Si vous ne vous considérez pas comme un écrivain, il peut être intimidant d�
 ### <a name="addressing-the-user"></a>S’adresser à l’utilisateur
 
 Parlez directement à l’utilisateur.
-* Utilisez «vous» lorsque vous vous adressez à l’utilisateur.
-* Utilisez «nous» pour faire référence à votre propre point de vue. Cela est plus chaleureux et donne à l’utilisateur l’impression de faire partie de l’expérience.
-* N’utilisez pas «je» ou «moi» pour faire référence au point de vue de l’application, même si vous êtes le seul à la créer.
+* Utilisez « vous » lorsque vous vous adressez à l’utilisateur.
+* Utilisez « nous » pour faire référence à votre propre point de vue. Cela est plus chaleureux et donne à l’utilisateur l’impression de faire partie de l’expérience.
+* N’utilisez pas « je » ou « moi » pour faire référence au point de vue de l’application, même si vous êtes le seul à la créer.
 
 :::row:::
     :::column:::
@@ -155,7 +155,7 @@ Les lecteurs ont l'habitude des contractions et s'attendent à en trouver. En le
 
 Les majuscules sont importantes, mais il est facile d’en abuser.
 * Mettez en majuscules les noms propres.
-* Mettez en majuscule le début de chaque chaîne de texte dans votre application: le début de chaque phrase, étiquette et titre.
+* Mettez en majuscule le début de chaque chaîne de texte dans votre application : le début de chaque phrase, étiquette et titre.
 
 :::row:::
     :::column:::
@@ -173,7 +173,7 @@ Les majuscules sont importantes, mais il est facile d’en abuser.
 
 Lorsqu’un problème se produit dans votre application, les utilisateurs font plus attention. Comme ils peuvent se sentir confus ou frustrés lorsqu’ils rencontrent un message d’erreur, un style et un ton adaptés peuvent avoir un impact particulièrement important.
 
-Avant tout, il est important que votre message d’erreur ne blâme pas l’utilisateur. Mais il est également important de ne pas le surcharger d'informations qu’il ne comprend pas. La plupart du temps, un utilisateur qui rencontre une erreur souhaite juste revenir à ce qu’il était en train de faire aussi rapidement et facilement que possible. Par conséquent, un message d’erreur que vous rédigez doit:
+Avant tout, il est important que votre message d’erreur ne blâme pas l’utilisateur. Mais il est également important de ne pas le surcharger d'informations qu’il ne comprend pas. La plupart du temps, un utilisateur qui rencontre une erreur souhaite juste revenir à ce qu’il était en train de faire aussi rapidement et facilement que possible. Par conséquent, un message d’erreur que vous rédigez doit :
 
 * **Soyez chaleureux et détendu** en utilisant le ton de la conversation et en évitant les termes inconnus et le jargon technique.
 
@@ -248,7 +248,7 @@ Votre application peut atteindre un public plus large si elle est écrite en ten
 
 Vous n’avez pas besoin d’être un rédacteur formé ou expérimenté pour fournir une expérience efficace à vos utilisateurs. Choisissez des mots avec lesquels vous êtes à l'aise. Les utilisateurs les apprécieront également. Mais parfois, cela n’est pas aussi facile qu’il y paraît. Si vous êtes bloqué, les techniques suivantes peuvent vous aider. 
 
-* Imaginez que vous parlez à un ami de votre application. Comment lui expliquerez-vous l’application? Comment souhaitez vous parler de ses fonctionnalités ou lui fournir des instructions? Mieux encore, expliquez l’application à une personne qui ne l’a pas encore utilisée. 
+* Imaginez que vous parlez à un ami de votre application. Comment lui expliquerez-vous l’application ? Comment souhaitez vous parler de ses fonctionnalités ou lui fournir des instructions ? Mieux encore, expliquez l’application à une personne qui ne l’a pas encore utilisée. 
 
 * Imaginez comment vous décririez une application complètement différente. Par exemple, si vous créez un jeu, pensez à ce que vous diriez ou écririez pour décrire une application financière ou journalistique. Le contraste dans le langage et la structure que vous utilisez peut vous aider à trouver les bons mots pour illustrer vos propos.
 

@@ -4,14 +4,14 @@ title: Personnaliser l’interface utilisateur d’aperçu avant impression
 description: Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, l’impression
+keywords: Windows 10, uwp, impression
 ms.localizationpriority: medium
 ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046382"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643974"
 ---
 # <a name="customize-the-print-preview-ui"></a>Personnaliser l’interface utilisateur d’aperçu avant impression
 
@@ -25,7 +25,7 @@ ms.locfileid: "9046382"
 
 Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. Pour plus d’informations sur l’impression, consultez [Imprimer à partir de votre application](print-from-your-app.md).
 
-**Conseil**la plupart des exemples de cette rubrique est basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+**Conseil**  la plupart des exemples de cette rubrique sont basées sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
  
 
@@ -34,21 +34,21 @@ Cette section décrit comment personnaliser les options d’impression et les pa
 Par défaut, l’interface utilisateur d’aperçu avant impression affiche les options d’impression [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) et [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486). Outre ces options, Windows fournit plusieurs autres options d’imprimante que vous pouvez ajouter à l’interface utilisateur d’aperçu avant impression.
 
 -   [**Liaison**](https://msdn.microsoft.com/library/windows/apps/BR226476)
--   [**Assemblage**](https://msdn.microsoft.com/library/windows/apps/BR226477)
+-   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
 -   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
 -   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
--   [**Type de média**](https://msdn.microsoft.com/library/windows/apps/BR226484)
+-   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
 -   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
 -   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
--   [**Agrafage**](https://msdn.microsoft.com/library/windows/apps/BR226488)
+-   [**Élément de base**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 
 Ces options sont définies dans la classe [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475). Vous pouvez ajouter ou supprimer des options dans la liste d’options affichées dans l’interface utilisateur d’aperçu avant impression. Vous pouvez également modifier l’ordre dans lequel elles apparaissent et définir les paramètres par défaut qui sont proposés à l’utilisateur.
 
 Toutefois, les modifications que vous apportez par le biais de cette méthode affectent uniquement l’interface utilisateur d’aperçu avant impression. L’utilisateur peut toujours accéder à l’ensemble des options prises en charge par l’imprimante en appuyant sur **Autres paramètres** dans l’interface utilisateur d’aperçu avant impression.
 
-**Remarque**bien que votre application puisse spécifier les options d’impression à afficher, seules celles qui sont prises en charge par l’imprimante sélectionnée sont affichées dans l’interface utilisateur d’aperçu avant impression. L’interface utilisateur d’impression n’affiche pas les options que l’imprimante sélectionnée ne prend pas en charge.
+**Remarque**  bien que votre application peut spécifier les options d’impression à afficher, uniquement ceux qui sont pris en charge par l’imprimante sélectionnée sont affichées dans l’interface utilisateur d’aperçu avant impression. L’interface utilisateur d’impression n’affiche pas les options que l’imprimante sélectionnée ne prend pas en charge.
 
  
 
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Important**appelant [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() supprime toutes les options d’impression de l’interface utilisateur, y compris le lien **d’autres paramètres** d’aperçu avant impression. Veillez à ajouter les options que vous voulez afficher dans l’interface utilisateur d’aperçu avant impression.
+**Important**  appelant [ **displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() supprime toutes les options d’impression à partir de l’aperçu avant impression de l’interface utilisateur, y compris le **davantage de paramètres** lien. Veillez à ajouter les options que vous voulez afficher dans l’interface utilisateur d’aperçu avant impression.
 
 ### <a name="specify-default-options"></a>Spécifier les options par défaut
 
@@ -185,6 +185,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions de conception concernant l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Vidéo de la build 2015 : développement d’applications qui impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Instructions de conception pour l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Build 2015 vidéo : Développement d’applications qui s’impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)

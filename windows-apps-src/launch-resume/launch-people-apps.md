@@ -4,20 +4,20 @@ description: Cette rubrique décrit le schéma d’URI ms-people. Votre applicat
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
-ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014704"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595564"
 ---
 # <a name="launch-the-people-app"></a>Lancer l’application Contacts
 
-Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
+Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques.
 
-## <a name="ms-people-uri-scheme-reference"></a>Référence de schéma d’URI ms-people:
+## <a name="ms-people-uri-scheme-reference"></a>ms-people: Référence de schéma d’URI
 
 <table>
 <colgroup>
@@ -58,7 +58,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 </div>
 <div> 
 </div></td>
-<td align="left">MS-people: viewcontact?ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;E-mail =&lt;e-mail&gt;&amp;ContactName =&lt;nom&gt;&amp;Contact =&lt;contactobj&gt;</td>
+<td align="left">ms-people:viewcontact?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">Ouvre une page d’enregistrement de contact dans l’application Contacts, permettant d’enregistrer le contact donné avec le numéro de téléphone ou l’adresse électronique fournis.
@@ -139,7 +139,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><b>Email</b></td>
+<td align="left"><b>Messagerie</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Adresse électronique du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
@@ -182,7 +182,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>Email</b></td>
+<td align="left"><b>Messagerie</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Adresse électronique du contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
@@ -219,7 +219,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
 </tr>
 <tr class="even">
-<td align="left"><b>Prénom</b></td>
+<td align="left"><b>FirstName</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Prénom du contact.</p></td>
 </tr>
@@ -285,13 +285,13 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Nickname</b></td>
+<td align="left"><b>surnom</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Surnom du contact.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>Notes</b></td>
+<td align="left"><b>Notes de publication</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Remarques concernant le contact.</p></td>
 </tr>
@@ -315,13 +315,13 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 </tr>
 
 <tr class="even">
-<td align="left"><b>Title</b></td>
+<td align="left"><b>Titre</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Titre du contact.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Website</b></td>
+<td align="left"><b>Site Web</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Site web du contact.</p></td>
 </tr>
@@ -357,7 +357,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 </tr>
 
 <tr class="odd">
-<td align="left"><b>WorkEmail</b></td>
+<td align="left"><b>E-mail professionnelle</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Adresse électronique professionnelle du contact.</p></td>
 </tr>

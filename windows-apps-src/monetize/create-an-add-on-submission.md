@@ -1,41 +1,41 @@
 ---
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
-description: Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une soumission d’extension pour une application inscrite dans l’espace partenaires.
-title: Crée une soumission d’extension
+description: Utilisez cette méthode dans l’API de soumission de Microsoft Store pour créer une nouvelle soumission de module complémentaire pour une application inscrite auprès de partenaires.
+title: Créer une soumission d’extension
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’extension, produit in-app, PIA
+keywords: windows 10, uwp, API de soumission au Microsoft Store, créer une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919315"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661704"
 ---
-# <a name="create-an-add-on-submission"></a>Crée une soumission d’extension
+# <a name="create-an-add-on-submission"></a>Créer une soumission d’extension
 
 
-Utilisez cette méthode dans l’API de soumission au Microsoft Store pour créer une nouvelle soumission d’extension (produit également appelé in-app ou PIA) pour une application inscrite dans votre compte espace partenaires. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-add-on-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-add-on-submission.md) pour permettre son intégration et sa publication.
+Utilisez cette méthode dans l’API de soumission de Microsoft Store pour créer une nouvelle soumission de module complémentaire (également appelés dans l’application produit ou produits) pour une application qui est inscrit pour votre compte espace partenaires. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-add-on-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-add-on-submission.md) pour permettre son intégration et sa publication.
 
-Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’extension à l’aide de l’API de soumission au MicrosoftStore, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
+Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’extension à l’aide de l’API de soumission au Microsoft Store, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
 > [!NOTE]
 > Cette méthode permet de créer une soumission pour une extension existante. Pour créer une extension, utilisez la méthode [Créer une extension](create-an-add-on.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au MicrosoftStore.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Créer une extension pour une de vos applications. Vous pouvez le faire dans l’espace partenaires, ou vous pouvez le faire à l’aide de la méthode de [créer une extension](create-an-add-on.md) .
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Créer un module complémentaire pour l’une de vos applications. Vous pouvez le faire dans le centre de partenaires, ou vous pouvez le faire à l’aide de la [créer un module complémentaire](create-an-add-on.md) (méthode).
 
 ## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Méthode | URI de la requête                                                      |
+| Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
 
@@ -44,14 +44,14 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension pour laquelle vous voulez créer une soumission. L’ID Windows Store est disponible dans l’espace partenaires, et il est inclus dans les données de réponse des requêtes pour [créer une extension](create-an-add-on.md) ou [obtenir des détails sur les extensions](get-all-add-ons.md).  |
+| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension pour laquelle vous voulez créer une soumission. L’ID de Store est disponible dans le centre de partenaires, et il est inclus dans les données de réponse pour les demandes au [créer un module complémentaire](create-an-add-on.md) ou [obtenir les détails du module complémentaire](get-all-add-ons.md).  |
 
 
 ### <a name="request-body"></a>Corps de la requête
@@ -69,7 +69,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Réponse
 
-L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la nouvelle soumission. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir la [ressource Soumission d’extension](manage-add-on-submissions.md#add-on-submission-object).
+L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la nouvelle soumission. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir [ressource de soumission d’extension](manage-add-on-submissions.md#add-on-submission-object).
 
 ```json
 {
@@ -151,15 +151,15 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 400  | Impossible de créer la soumission, car la requête n’est pas valide. |
-| 409  | La soumission n’a pas pu être créée en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de l’espace partenaires qui n’est [actuellement pas prise en charge par l’API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | L’envoi n’a pas pu être créé en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Gérer les soumissions de modules complémentaires](manage-add-on-submissions.md)
-* [Obtenir une soumission d’extension](get-an-add-on-submission.md)
-* [Valider une soumission d’extension](commit-an-add-on-submission.md)
-* [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
-* [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
-* [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
+* [Créer et gérer des envois à l’aide des services de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Gérer les envois de module complémentaire](manage-add-on-submissions.md)
+* [Obtenir une présentation du module complémentaire](get-an-add-on-submission.md)
+* [Valider une soumission de module complémentaire](commit-an-add-on-submission.md)
+* [Mettre à jour une module complémentaire soumission](update-an-add-on-submission.md)
+* [Supprimer un dépôt de module complémentaire](delete-an-add-on-submission.md)
+* [Obtenir l’état d’une soumission de module complémentaire](get-status-for-an-add-on-submission.md)

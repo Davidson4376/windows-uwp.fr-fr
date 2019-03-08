@@ -4,18 +4,18 @@ title: Envoyer un élément de travail au pool de threads
 description: Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, threads, pool de threads
+keywords: Windows 10, uwp, threads, pool de threads
 ms.localizationpriority: medium
 ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048616"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658014"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](https://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour Windows 8.x articles, consultez le [archive](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 <b>API importantes</b>
 
@@ -31,9 +31,9 @@ Créez un élément de travail en appelant [**RunAsync**](https://msdn.microsoft
 Trois versions de [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) sont disponibles pour que vous puissiez éventuellement spécifier la priorité de l’élément de travail et contrôler s’il est exécuté simultanément avec d’autres éléments de travail.
 
 >[!NOTE]
->Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
+>Utilisez [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à la thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche:
+L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche :
 
 ```csharp
 // The nth prime number to find.
@@ -277,7 +277,7 @@ Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status*
 
 Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
-L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape1:
+L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape 1 :
 
 ```cpp
 asyncAction->Completed = ref new AsyncActionCompletedHandler(
@@ -350,11 +350,11 @@ Notez que le gestionnaire d’achèvement vérifie si l’élément de travail a
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Vous pouvez en savoir plus, téléchargez le code à partir de ce démarrage rapide de la [Création d’un pool de threads de travail exemple d’élément](https://go.microsoft.com/fwlink/p/?LinkID=328569) écrite pour Windows8.1, puis réutilisez le code source dans une application Windows 10 win\_unap.
+Vous trouverez plus en téléchargeant le code à partir de ce démarrage rapide dans le [création d’un pool de threads de travail élément exemple](https://go.microsoft.com/fwlink/p/?LinkID=328569) écrite pour Windows 8.1, ou en réutilisant le code source dans un fichier win\_unap Windows 10 application.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
-* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
+* [Soumettre un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Meilleures pratiques pour utiliser le pool de threads](best-practices-for-using-the-thread-pool.md)
+* [Utiliser un minuteur pour soumettre un élément de travail](use-a-timer-to-submit-a-work-item.md)
  

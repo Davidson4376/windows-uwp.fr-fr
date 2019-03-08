@@ -4,21 +4,21 @@ title: Classes de paramètres du modèle
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b44aaf741c188658c7a639422b0d091f8db6e3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589784"
 ---
 # <a name="template-settings-classes"></a>Classes de paramètres du modèle
 
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Il est supposé que vous savez ajouter des contrôles à une interface utilisateur, définir leurs propriétés et joindre des gestionnaires d’événements. Pour obtenir des instructions sur l’ajout de contrôles à une application, voir [Ajouter des contrôles et gérer les événements](https://msdn.microsoft.com/library/windows/apps/mt228345). Nous partons également du principe que vous connaissez les bases de la définition d’un modèle personnalisé d’un contrôle en modifiant une copie du modèle par défaut. Pour plus d’informations, voir [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Il est supposé que vous savez ajouter des contrôles à une interface utilisateur, définir leurs propriétés et joindre des gestionnaires d’événements. Pour obtenir des instructions sur l’ajout de contrôles à une application, voir [Ajouter des contrôles et gérer les événements](https://msdn.microsoft.com/library/windows/apps/mt228345). Nous partons également du principe que vous connaissez les bases de la définition d’un modèle personnalisé d’un contrôle en modifiant une copie du modèle par défaut. Pour plus d’informations, consultez [Guide de démarrage rapide : Modèles de contrôle](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
 ## <a name="the-scenario-for-templatesettings-classes"></a>Scénario relatif aux classes **TemplateSettings**
 
@@ -26,14 +26,14 @@ Les classes **TemplateSettings** fournissent un ensemble de propriétés qui son
 
 Voici plusieurs classes **TemplateSettings**. Elles figurent toutes dans l’espace de noms [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Voici une liste des classes et un lien vers la propriété **TemplateSettings** du contrôle approprié. Cette propriété **TemplateSettings** indique comment accéder aux valeurs **TemplateSettings** du contrôle et établir des liaisons de modèle à ses propriétés :
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) : valeur [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499) : valeur [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948) : valeur [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856) : valeur [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248) : valeur [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721) : valeur [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804) : valeur [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813) : valeur [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): valeur de [ **ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): valeur de [ **GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): valeur de [ **ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): valeur de [ **ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): valeur de [ **ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): valeur de [ **SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): valeur de [ **ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): valeur de [ **ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
 Les propriétés **TemplateSettings** sont toujours destinées à être utilisées en XAML. Ce sont des sous-propriétés en lecture seule d’une propriété **TemplateSettings** en lecture seule d’un contrôle parent. Pour un scénario de contrôle personnalisé avancé, lorsque vous créez une classe basée sur [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) et pouvez donc influer sur la logique de contrôle, pensez à définir une propriété **TemplateSettings** personnalisée sur le contrôle pour communiquer des informations pouvant être utiles à toute personne qui recrée le modèle du contrôle. Pour la valeur de cette propriété en lecture seule, définissez une nouvelle classe **TemplateSettings** liée à votre contrôle qui possède des propriétés en lecture seule pour chacune des informations qui sont pertinentes pour les mesures de modèle, le positionnement d’animation, etc. et qui donnent aux appelants l’instance d’exécution de cette classe, qui est initialisée à l’aide de votre logique de contrôle. Les classes **TemplateSettings** sont dérivées de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) afin que les propriétés puissent utiliser le système de propriétés de dépendance pour les rappels de modification de propriété. Mais les identificateurs de propriété de dépendance pour les propriétés ne sont pas exposés comme API publique, car les propriétés **TemplateSettings** sont censées être en lecture seule pour les appelants.
 
@@ -95,9 +95,9 @@ Voici un autre exemple d’utilisation des modèles de contrôles XAML par défa
 
 À nouveau, comme le code XAML contient de nombreuses lignes dans le modèle, il ne s’agit là que d’un extrait. Et ce n’est là que l’un des états et des animations de thème qui utilisent chacun les mêmes propriétés [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Pour [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), l’utilisation des valeurs **ComboBoxTemplateSettings** par le biais des liaisons impose que les animations associées dans le modèle s’arrêteront et commenceront aux positions qui sont basées sur les valeurs partagées. La transition sera donc parfaite.
 
-**Remarque**  lorsque vous utilisez des valeurs **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous que vous définissez les propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Remarque**    quand vous utilisez **TemplateSettings** valeurs dans le cadre de votre modèle de contrôle, assurez-vous que vous définissez les propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Démarrage rapide: modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Démarrage rapide : Modèles de contrôle](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 

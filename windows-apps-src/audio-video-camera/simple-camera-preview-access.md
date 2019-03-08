@@ -1,22 +1,22 @@
 ---
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application de plateforme Windows universelle (UWP).
+description: Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application UWP.
 title: Afficher l’aperçu de l’appareil photo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938531"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644874"
 ---
 # <a name="display-the-camera-preview"></a>Afficher l’aperçu de l’appareil photo
 
 
-Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application de plateforme Windows universelle (UWP). La création d’une application qui capture des photos et des vidéos à l’aide de l’appareil photo nécessite que vous effectuiez des tâches telles que la gestion de l’orientation de l’appareil et de la caméra ou la définition des options de codage pour le fichier capturé. Pour certains scénarios d’application, vous pouvez simplement afficher le flux d’aperçu à partir de l’appareil photo sans tenir compte de ces autres considérations. Cet article vous montre comment effectuer cette opération avec un minimum de code. Vous devez toujours arrêter le flux d’aperçu correctement lorsque vous avez fini de l’utiliser en suivant les étapes ci-dessous.
+Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application UWP. La création d’une application qui capture des photos et des vidéos à l’aide de l’appareil photo nécessite que vous effectuiez des tâches telles que la gestion de l’orientation de l’appareil et de la caméra ou la définition des options de codage pour le fichier capturé. Pour certains scénarios d’application, vous pouvez simplement afficher le flux d’aperçu à partir de l’appareil photo sans tenir compte de ces autres considérations. Cet article vous montre comment effectuer cette opération avec un minimum de code. Vous devez toujours arrêter le flux d’aperçu correctement lorsque vous avez fini de l’utiliser en suivant les étapes ci-dessous.
 
 Pour plus d’informations sur l’écriture d’une application d’appareil photo qui capture les photos ou les vidéos, consultez la section [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
@@ -24,7 +24,7 @@ Pour plus d’informations sur l’écriture d’une application d’appareil ph
 
 Afin que votre application puisse accéder à l’appareil photo d’un appareil, vous devez déclarer que cette application utilise les fonctionnalités de l’appareil *webcam* et *microphone*. 
 
-**Ajouter des fonctionnalités au manifeste de l’application**
+**Ajouter des fonctionnalités pour le manifeste d’application**
 
 1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
 2.  Sélectionnez l’onglet **Fonctionnalités**.
@@ -67,13 +67,13 @@ Appelez la méthode [**RequestActive**](https://msdn.microsoft.com/library/windo
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 ## <a name="handle-changes-in-exclusive-control"></a>Gérer les modifications du contrôle exclusif
-Comme indiqué dans la section précédente, **StartPreviewAsync** lève une **FileLoadException** si une autre application dispose d’un contrôle exclusif du périphérique de capture. Depuis Windows10, version1703, vous pouvez inscrire un gestionnaire pour l’événement [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged), qui est déclenché à chaque fois que l’état du contrôle exclusif du périphérique change. Dans le gestionnaire de cet événement, vérifiez la propriété [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) pour voir l’état actuel. Si le nouvel état est **SharedReadOnlyAvailable**, vous savez que vous ne pouvez pas démarrer l’aperçu et vous pouvez mettre à jour votre interface utilisateur pour alerter l’utilisateur. Si le nouvel état est **ExclusiveControlAvailable**, vous pouvez essayer de redémarrer l’aperçu de l’appareil photo.
+Comme indiqué dans la section précédente, **StartPreviewAsync** lève une **FileLoadException** si une autre application dispose d’un contrôle exclusif du périphérique de capture. Depuis Windows 10, version 1703, vous pouvez inscrire un gestionnaire pour l’événement [MediaCapture.CaptureDeviceExclusiveControlStatusChanged](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged), qui est déclenché à chaque fois que l’état du contrôle exclusif du périphérique change. Dans le gestionnaire de cet événement, vérifiez la propriété [MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) pour voir l’état actuel. Si le nouvel état est **SharedReadOnlyAvailable**, vous savez que vous ne pouvez pas démarrer l’aperçu et vous pouvez mettre à jour votre interface utilisateur pour alerter l’utilisateur. Si le nouvel état est **ExclusiveControlAvailable**, vous pouvez essayer de redémarrer l’aperçu de l’appareil photo.
 
 [!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
 
 ## <a name="shut-down-the-preview-stream"></a>Arrêter le flux d’aperçu
 
-Lorsque vous avez fini d’utiliser le flux d’aperçu, vous devez toujours arrêter le flux et supprimer correctement les ressources associées afin de garantir que l’appareil photo est disponible pour d’autres applications sur l’appareil. Les étapes nécessaires à l’arrêt du flux d’aperçu sont les suivantes:
+Lorsque vous avez fini d’utiliser le flux d’aperçu, vous devez toujours arrêter le flux et supprimer correctement les ressources associées afin de garantir que l’appareil photo est disponible pour d’autres applications sur l’appareil. Les étapes nécessaires à l’arrêt du flux d’aperçu sont les suivantes :
 
 -   Si l’aperçu est activé sur l’appareil photo, appelez [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) afin d’arrêter le flux d’aperçu. Une exception est levée si vous appelez **StopPreviewAsync** alors que l’aperçu n’est pas exécuté.
 -   Définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) de **CaptureElement** sur null. Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) pour vous assurer que cet appel est exécuté sur le thread de l’interface utilisateur.
@@ -96,8 +96,8 @@ Dans le gestionnaire d’événements **Suspending**, vérifiez que la page est 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Obtenir une image d’aperçu](get-a-preview-frame.md)

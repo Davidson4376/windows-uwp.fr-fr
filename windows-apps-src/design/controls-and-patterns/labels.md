@@ -1,22 +1,22 @@
 ---
-Description: Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
+Description: Utilisez une étiquette pour indiquer à l’utilisateur ce qu’il doit entrer dans un contrôle adjacent. Vous pouvez également étiqueter un groupe de contrôles associés ou afficher un texte d’instructions à côté de ce type de groupe.
 title: Étiquettes
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926028"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654144"
 ---
 # <a name="labels"></a>Étiquettes
 
@@ -24,7 +24,7 @@ ms.locfileid: "8926028"
 
 Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
-> **API importantes**: propriété Header, [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **API importantes**: Propriété d’en-tête [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles dépourvus de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
 
@@ -39,19 +39,19 @@ En XAML, de nombreux contrôles disposent d’une propriété Header intégrée 
 
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
-* [Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [XAML UI principes de base, exemple](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Contrôles de texte](text-controls.md)
-* [Propriété TextBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [Propriété PasswordBox.Header](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [Propriété ToggleSwitch.Header](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [Propriété DatePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [Propriété TimePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [Propriété Slider.Header](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [Propriété ComboBox.Header](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [Propriété RichEditBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [Classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [Propriété de TextBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [Propriété de PasswordBox.Header](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [Propriété de ToggleSwitch.Header](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [Propriété de DatePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [Propriété de TimePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [Propriété de Slider.Header](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [Propriété de ComboBox.Header](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [Propriété de RichEditBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [Classe de TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 

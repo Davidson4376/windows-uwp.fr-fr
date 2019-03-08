@@ -1,30 +1,30 @@
 ---
-Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
-title: Envoyer des requêtes au MicrosoftStore
+Description: Vous pouvez utiliser la méthode SendRequestAsync pour envoyer des demandes pour le Microsoft Store pour les opérations qui n’ont pas encore d’une API disponible dans le SDK Windows.
+title: Envoyer des requêtes au Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows10, uwp, StoreRequestHelper, SendRequestAsync
+keywords: Windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942095"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589794"
 ---
-# <a name="send-requests-to-the-microsoft-store"></a>Envoyer des requêtes au MicrosoftStore
+# <a name="send-requests-to-the-microsoft-store"></a>Envoyer des requêtes au Microsoft Store
 
-Depuis la version1607 de Windows10, le SDK Windows fournit des API pour les opérations liées au MicrosoftStore (comme les achats dans l’application) dans l’espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Toutefois, bien que les services prenant en charge le WindowsStore soient constamment mis à jour, développés et améliorés entre les versions du système d’exploitation, les nouvelles API ne sont généralement ajoutées au SDK Windows qu’au moment de la publication des versions majeures du système d’exploitation.
+Depuis la version 1607 de Windows 10, le SDK Windows fournit des API pour les opérations liées au Microsoft Store (comme les achats dans l’application) dans l’espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Toutefois, bien que les services prenant en charge le Windows Store soient constamment mis à jour, développés et améliorés entre les versions du système d’exploitation, les nouvelles API ne sont généralement ajoutées au SDK Windows qu’au moment de la publication des versions majeures du système d’exploitation.
 
-Nous fournissons la méthode [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) car elle dispose d’une grande souplesse pour effectuer des opérations de WindowsStore disponibles pour les applications de plateforme Windows universelle (UWP) avant la publication d’une nouvelle version du SDK Windows. Vous pouvez utiliser cette méthode pour envoyer des requêtes au WindowsStore pour les nouvelles opérations ne disposant pas encore d’une API correspondante dans la dernière version du SDK Windows.
+Nous fournissons la méthode [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) car elle dispose d’une grande souplesse pour effectuer des opérations de Windows Store disponibles pour les applications de plateforme Windows universelle (UWP) avant la publication d’une nouvelle version du SDK Windows. Vous pouvez utiliser cette méthode pour envoyer des requêtes au Windows Store pour les nouvelles opérations ne disposant pas encore d’une API correspondante dans la dernière version du SDK Windows.
 
 > [!NOTE]
-> La méthode **SendRequestAsync** est disponible uniquement pour les applications ciblant la version1607 ou ultérieure de Windows10. Certaines requêtes prises en charge par cette méthode le sont uniquement dans les versions postérieures à la version1607 de Windows10.
+> La méthode **SendRequestAsync** est disponible uniquement pour les applications ciblant la version 1607 ou ultérieure de Windows 10. Certaines requêtes prises en charge par cette méthode le sont uniquement dans les versions postérieures à la version 1607 de Windows 10.
 
-**SendRequestAsync** est une méthode statique de la classe [StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper). Pour appeler cette méthode, vous devez lui transmettre les informations suivantes:
+**SendRequestAsync** est une méthode statique de la classe [StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper). Pour appeler cette méthode, vous devez lui transmettre les informations suivantes :
 * Un objet [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) fournissant des informations sur l’utilisateur pour lequel vous souhaitez effectuer l’opération. Pour plus d’informations sur cet objet, consultez [Démarrer avec la classe StoreContext](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
-* Un entier identifiant la requête que vous souhaitez transmettre au WindowsStore.
+* Un entier identifiant la requête que vous souhaitez transmettre au Windows Store.
 * Si la requête gère des arguments, vous pouvez également passer une chaîne au format JSON contenant les arguments à transmettre avec la requête.
 
 L’exemple qui suit montre comment appeler cette méthode. Cet exemple implique l’utilisation d’instructions pour les espaces de noms **Windows.Services.Store** et **System.Threading.Tasks**.
@@ -60,8 +60,8 @@ La méthode **SendRequestAsync** prend en charge un ensemble de requêtes pour l
 
 |  Valeur de type de requête  |  Description  |
 |----------------------|---------------|
-|  7                   |  Les demandes sont effectuées dans le contexte de l’appareil actuel. Cette valeur ne peut être utilisée que sur une version1703 ou ultérieure de Windows10.  |
-|  8                   |  Les requêtes sont effectuées dans le contexte de l’utilisateur actuellement connecté au WindowsStore. Cette valeur peut être utilisée sur une version1607 ou ultérieure de Windows10.  |
+|  7                   |  Les demandes sont effectuées dans le contexte de l’appareil actuel. Cette valeur ne peut être utilisée que sur une version 1703 ou ultérieure de Windows 10.  |
+|  8                   |  Les requêtes sont effectuées dans le contexte de l’utilisateur actuellement connecté au Windows Store. Cette valeur peut être utilisée sur une version 1607 ou ultérieure de Windows 10.  |
 
 Les requêtes de groupes de versions d’évaluation suivantes sont actuellement en place.
 
@@ -77,7 +77,7 @@ Cette requête récupère les variables distantes pour le groupe de versions d�
 |  *requestKind*                   |  Spécifiez 7 pour retourner le groupe de versions d’évaluation le plus élevé de l’appareil, ou spécifiez 8 pour retourner le groupe de versions d’évaluation le plus élevé de l’utilisateur actuel et du périphérique. Nous vous recommandons d’utiliser la valeur 8 pour le paramètre *requestKind*, dans la mesure où cette valeur renvoie le groupe de versions d’évaluation le plus élevé parmi tous les membres pour l’appareil et l’utilisateur en cours.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON contenant les données montrées dans l’exemple ci-dessous.  |
 
-L’exemple qui suit illustre le format des données JSON à transmettre à *parametersAsJson*. Le champ *type* doit être affecté à la chaîne *GetRemoteVariables*. Affectez le champ *projectId* à l’ID du projet dans lequel vous avez défini les variables distantes dans l’espace partenaires.
+L’exemple qui suit illustre le format des données JSON à transmettre à *parametersAsJson*. Le champ *type* doit être affecté à la chaîne *GetRemoteVariables*. Affecter le *projectId* champ à l’ID du projet dans lequel vous avez défini les variables à distance dans le centre de partenaires.
 
 ```json
 { 
@@ -90,7 +90,7 @@ Une fois cette requête soumise, la propriété [réponse](https://docs.microsof
 
 |  Champ  |  Description  |
 |----------------------|---------------|
-|  *anonyme*                   |  Valeur booléenne, où **true** (vrai) indique que l’identité de l’utilisateur ou du périphérique n’était pas présente dans la demande, et **false** (faux) indique que l’identité de l’utilisateur ou du périphérique était contenue dans la demande.  |
+|  *anonymous*                   |  Valeur booléenne, où **true** (vrai) indique que l’identité de l’utilisateur ou du périphérique n’était pas présente dans la demande, et **false** (faux) indique que l’identité de l’utilisateur ou du périphérique était contenue dans la demande.  |
 |  *name*                   |  Une chaîne contenant le nom du groupe de versions d’évaluation le plus élevé auquel appartient l’appareil ou l’utilisateur.  |
 |  *settings*                   |  Un dictionnaire de paires clé/valeur contenant le nom et la valeur des variables distantes que le développeur a configurées pour le groupe de versions d’évaluation.  |
 
@@ -117,7 +117,7 @@ Pour envoyer cette requête, fournissez les informations suivantes pour les para
 
 |  Paramètre  |  Description  |
 |----------------------|---------------|
-|  *requestKind*                   |  Spécifiez 7 pour ajouter le périphérique à un groupe de versions d’évaluation, ou indiquez 8 pour ajouter l’utilisateur actuellement connecté au WindowsStore à un groupe de versions d’évaluation.  |
+|  *requestKind*                   |  Spécifiez 7 pour ajouter le périphérique à un groupe de versions d’évaluation, ou indiquez 8 pour ajouter l’utilisateur actuellement connecté au Windows Store à un groupe de versions d’évaluation.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON contenant les données montrées dans l’exemple ci-dessous.  |
 
 L’exemple qui suit illustre le format des données JSON à transmettre à *parametersAsJson*. Le champ *type* doit être affecté à la chaîne *AddToFlightGroup*. Affectez le champ *flightGroupId* à l’ID du groupe de versions d’évaluation à auquel vous souhaitez ajouter l’appareil ou l’utilisateur.
@@ -140,7 +140,7 @@ Pour envoyer cette requête, fournissez les informations suivantes pour les para
 
 |  Paramètre  |  Description  |
 |----------------------|---------------|
-|  *requestKind*                   |  Spécifiez 7 pour retirer le périphérique d’un groupe de versions d’évaluation, ou indiquez 8 pour retirer l’utilisateur actuellement connecté au WindowsStore d’un groupe de versions d’évaluation.  |
+|  *requestKind*                   |  Spécifiez 7 pour retirer le périphérique d’un groupe de versions d’évaluation, ou indiquez 8 pour retirer l’utilisateur actuellement connecté au Windows Store d’un groupe de versions d’évaluation.  |
 |  *parametersAsJson*                   |  Transmettez une chaîne au format JSON contenant les données montrées dans l’exemple ci-dessous.  |
 
 L’exemple qui suit illustre le format des données JSON à transmettre à *parametersAsJson*. Le champ *type* doit être affecté à la chaîne *RemoveFromFlightGroup*. Affectez le champ *flightGroupId* à l’ID du groupe de versions d’évaluation duquel vous souhaitez retirer l’appareil ou l’utilisateur.
@@ -154,7 +154,7 @@ L’exemple qui suit illustre le format des données JSON à transmettre à *par
 
 En cas d’erreur lors de la requête, la valeur retournée par la propriété [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) de [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) contient le code de réponse.
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Afficher une boîte de dialogue d'évaluation et d'avis dans votre app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [Une classification des émissions et passez en revue la boîte de dialogue dans votre application](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

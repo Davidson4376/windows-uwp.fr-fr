@@ -1,27 +1,27 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
+Description: Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités.
 title: Recommandations en matière de cases d’option
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037231"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606134"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
-> **API importantes**: [classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **API importantes**: [Classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement activé](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 Les cases d’option permettent aux utilisateurs de sélectionner une option dans un ensemble. Chaque option est représentée par une seule case d’option et les utilisateurs peuvent activer une seule case d’option dans un groupe de cases d’option.
 
@@ -29,7 +29,7 @@ Les cases d’option permettent aux utilisateurs de sélectionner une option dan
 
 ![Cases d’option](images/controls/radio-button.png)
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez les cases d’option pour présenter à l’utilisateur au moins deux options qui s’excluent mutuellement.
 
@@ -66,20 +66,20 @@ Si les options disponibles dépendent du contexte actuel de l’application, ou 
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RadioButton">ouvrir l’application et voir l'objet RadioButton en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-Cases d’option dans les paramètres du navigateur MicrosoftEdge.
+Cases d’option dans les paramètres du navigateur Microsoft Edge.
 
-![Cases d’option dans les paramètres du navigateur MicrosoftEdge](images/control-examples/radio-buttons-edge.png)
+![Cases d’option dans les paramètres du navigateur Microsoft Edge](images/control-examples/radio-buttons-edge.png)
 
 ## <a name="create-a-radio-button"></a>Créer une case d’option
 
-Les cases d’option s’utilisent en groupes. Les 2méthodes permettant de grouper des contrôles de cases d’option sont les suivantes:
+Les cases d’option s’utilisent en groupes. Les 2 méthodes permettant de grouper des contrôles de cases d’option sont les suivantes :
 - Placez-les dans le même conteneur parent.
 - Définissez la propriété [GroupName](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton.GroupName) de chaque case d’option sur la même valeur.
 
@@ -169,14 +169,14 @@ La case d’option ressemble à ceci.
 
 ![Cases d’option en deux groupes](images/radio-button-groups.png)
 
-Une case d’option a deux états: *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**. Vous pouvez effectivement comparer la propriété **IsChecked** avec une valeur booléenne en obtenant la **Valeur** de la propriété **IsChecked**
+Une case d’option a deux états : *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**. Vous pouvez effectivement comparer la propriété **IsChecked** avec une valeur booléenne en obtenant la **Valeur** de la propriété **IsChecked**
 
 ## <a name="recommendations"></a>Recommandations
 
 -   Assurez-vous que le but et l’état actuel d’un ensemble de cases d’option sont clairs.
 -   Limitez le contenu du texte de la case d’option à une seule ligne.
--   Si le contenu du texte est dynamique, songez au redimensionnement du bouton et à ses conséquences sur les effets visuels environnants.
--   Utilisez la police par défaut à moins que vos instructions de personnalisation n’imposent d’en utiliser une autre.
+-   Si le contenu du texte est dynamique, songez au redimensionnement du bouton et à ses conséquences sur les effets visuels environnant.
+-   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
 -   Ne placez pas deux groupes de cases d’option côte à côte. Lorsque deux groupes de cases d’option sont adjacents, il est difficile de déterminer quelles cases appartiennent à quel groupe.
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
@@ -187,14 +187,14 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 
 ![recommandations d'espacement en matière de cases d’option](images/radiobutton-redlines.png)
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 **Pour les concepteurs**
 - [Boutons](buttons.md)
-- [Boutons bascule](toggles.md)
+- [Activer/désactiver commutateurs](toggles.md)
 - [Cases à cocher](checkbox.md)
-- [Listes et zones de liste modifiable](lists.md)
+- [Listes et des zones de liste déroulante](lists.md)
 - [Curseurs](slider.md)
 
 **Pour les développeurs (XAML)**
-- [Classe RadioButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
+- [Classe de case d’option](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)

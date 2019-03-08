@@ -4,14 +4,14 @@ title: Énumérer les appareils
 description: L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 538f7e953d430ce36ae8aa679865aa634ec49553
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047654"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601714"
 ---
 # <a name="enumerate-devices"></a>Énumérer les appareils
 
@@ -42,13 +42,13 @@ Ces API peuvent énumérer les appareils sur l’un des protocoles et bus suivan
 -   Bus connectés physiquement. Cela inclut les bus PCI et USB. Par exemple, tout ce que vous pouvez voir dans le **Gestionnaire de périphériques**.
 -   [UPnP](https://msdn.microsoft.com/library/windows/desktop/Aa382303)
 -   Digital Living Network Alliance (DLNA)
--   [**Discovery and Launch (DIAL)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
--   [**Détection de service DNS (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
+-   [**Découverte et lancement (accès à distance)**](https://msdn.microsoft.com/library/windows/apps/Dn946818)
+-   [**Détection du Service DNS (DNS-SD)**](https://msdn.microsoft.com/library/windows/apps/Dn895183)
 -   [Web Services on Devices (WSD)](https://msdn.microsoft.com/library/windows/desktop/Aa826001)
 -   [Bluetooth](https://msdn.microsoft.com/library/windows/desktop/Aa362932)
 -   [**Wi-Fi Direct**](https://msdn.microsoft.com/library/windows/apps/Dn297687)
 -   WiGig
--   [**Point de service**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [**Point de Service**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
 Dans de nombreux cas, vous ne devez pas vous soucier de l’utilisation des API d’énumération. En effet, de nombreuses API qui utilisent des appareils sélectionnent automatiquement l’appareil par défaut approprié ou fournissent une API d’énumération plus simplifiée. Par exemple, [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) utilise automatiquement le récepteur audio par défaut. Tant que votre application peut utiliser l’appareil par défaut, il est inutile d’utiliser les API d’énumération dans l’application. Les API d’énumération constituent une solution générale et souple pour détecter les appareils disponibles et s’y connecter. Cette rubrique fournit des informations sur l’énumération des appareils et décrit les quatre méthodes courantes pour énumérer les appareils.
 
@@ -73,7 +73,7 @@ Lorsque vous utilisez les API d’énumération, vous devez fréquemment utilise
 ## <a name="devicepicker-ui"></a>Interface utilisateur DevicePicker
 
 
-[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) est un contrôle fourni par Windows, qui crée une petite interface permettant à l’utilisateur de sélectionner un appareil dans une liste. Vous pouvez personnaliser la fenêtre **DevicePicker** de plusieurs façons.
+[  **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) est un contrôle fourni par Windows, qui crée une petite interface permettant à l’utilisateur de sélectionner un appareil dans une liste. Vous pouvez personnaliser la fenêtre **DevicePicker** de plusieurs façons.
 
 -   Vous pouvez contrôler les appareils répertoriés dans l’interface utilisateur en ajoutant une valeur [**SupportedDeviceSelectors**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors.aspx) ou [**SupportedDeviceClasses**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses.aspx), ou les deux à [**DevicePicker.Filter**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.filter). Dans la plupart des cas, vous devez ajouter uniquement un sélecteur ou une classe, mais s’il vous en faut davantage, vous pouvez en ajouter plusieurs. Si vous ajoutez plusieurs classes ou sélecteurs, ils sont unis à l’aide d’une fonction logique OR.
 -   Vous pouvez spécifier les propriétés que vous souhaitez récupérer pour les appareils. Pour ce faire, ajoutez des propriétés à [**DevicePicker.RequestedProperties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicepicker.requestedproperties).
@@ -82,7 +82,7 @@ Lorsque vous utilisez les API d’énumération, vous devez fréquemment utilise
 
 Quand [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) est affiché, le contenu de l’interface utilisateur est automatiquement mis à jour si des appareils sont ajoutés, supprimés ou mis à jour.
 
-**Remarque**vous ne pouvez pas spécifier la [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) à l’aide de la [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841). Si vous souhaitez disposer d’appareils avec un **DeviceInformationKind** spécifique, vous devez créer un [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) et fournir votre propre interface utilisateur.
+**Remarque**  vous ne pouvez pas spécifier le [ **DeviceInformationKind** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) à l’aide de la [ **DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841). Si vous souhaitez disposer d’appareils avec un **DeviceInformationKind** spécifique, vous devez créer un [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) et fournir votre propre interface utilisateur.
 
  
 
@@ -95,7 +95,7 @@ Dans certains scénarios, le [**DevicePicker**](https://msdn.microsoft.com/libra
 
 Pour énumérer une capture instantanée d’appareils, utilisez la méthode [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx). Cette méthode attend que le processus d’énumération soit terminé et renvoie tous les résultats sous la forme d’un seul objet [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx). Cette méthode est également surchargée pour vous offrir plusieurs options de filtrage des résultats et limiter ceux-ci aux appareils qui vous intéressent. Pour ce faire, fournissez une [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) ou transmettez un sélecteur d’appareil. Le sélecteur d’appareil est une chaîne AQS qui spécifie les appareils que vous voulez énumérer. Pour plus d’informations, voir [Créer un sélecteur d’appareil](build-a-device-selector.md).
 
-Vous trouverez ci-dessous l’exemple d’un instantané d’énumération d’appareil:
+Vous trouverez ci-dessous l’exemple d’un instantané d’énumération d’appareil :
 
 
 
@@ -123,7 +123,7 @@ Pour créer un [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/ap
 
 Observer des appareils en tant que tâche en arrière-plan est très similaire à la création d’un [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) comme décrit ci-dessus. En fait, vous devrez quand même en premier lieu créer un objet **DeviceWatcher** normal comme décrit dans la section précédente. Une fois la création effectuée, vous appelez [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) à la place de [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start). Lorsque vous appelez **GetBackgroundTrigger**, vous devez spécifier les notifications qui vous intéressent : ajout, suppression ou mise à jour. Vous ne pouvez pas demander la mise à jour ou la suppression sans demander l’ajout. Une fois que vous inscrivez le déclencheur, le **DeviceWatcher** commence immédiatement à s’exécuter en arrière-plan. À partir de là, chaque fois qu’il reçoit une nouvelle notification pour votre application qui correspond à vos critères, la tâche en arrière-plan se déclenche et vous recevez les dernières modifications apportées depuis le dernier déclenchement de votre application.
 
-**Important**la première fois qu’un [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) déclenche votre application survient lorsque l’observateur est atteint l’état **EnumerationCompleted** . Cela signifie qu’il contient tous les résultats initiaux. Les fois suivantes où il déclenche votre application, il ne contient que les notifications d’ajout, de mise à jour et de suppression qui ont eu lieu depuis le dernier déclencheur. C’est légèrement différent d’un objet [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) de premier plan car les résultats initiaux n’arrivent pas un à un et sont uniquement livrés de manière groupée une fois que l’état **EnumerationCompleted** est atteint.
+**Important**  la première fois qu’un [ **DeviceWatcherTrigger** ](https://msdn.microsoft.com/library/windows/apps/Dn913838) déclencheurs votre application sera lorsque l’Observateur atteint le **EnumerationCompleted**  état. Cela signifie qu’il contient tous les résultats initiaux. Les fois suivantes où il déclenche votre application, il ne contient que les notifications d’ajout, de mise à jour et de suppression qui ont eu lieu depuis le dernier déclencheur. C’est légèrement différent d’un objet [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) de premier plan car les résultats initiaux n’arrivent pas un à un et sont uniquement livrés de manière groupée une fois que l’état **EnumerationCompleted** est atteint.
 
  
 
@@ -131,7 +131,7 @@ Certains protocoles sans fil se comportent différemment selon qu’ils analysen
 
 | Comportement                                  | Impact                                                                                                                                  |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Même comportement en arrière-plan               | Aucun                                                                                                                                    |
+| Même comportement en arrière-plan               | Aucune                                                                                                                                    |
 | Seules les analyses passives sont possibles en arrière-plan | La détection d’appareils peut être plus longue pendant l’attente d’une analyse passive.                                                           |
 | Les analyses en arrière-plan ne sont pas prises en charge.            | Aucun appareil ne sera détecté par le [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838), et aucune mise à jour ne sera signalée. |
 
@@ -153,7 +153,7 @@ Lors de l’énumération d’objets **AssociationEndpoint**, **AssociationEndpo
 ## <a name="save-a-device-for-later-use"></a>Enregistrer un appareil en vue d’une utilisation ultérieure
 
 
-Tout objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) est identifié de façon unique par une combinaison de deux éléments d’information : [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Si vous conservez ces deux éléments d’information, vous pouvez recréer un objet **DeviceInformation** après sa perte en fournissant ces informations à [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). Dans ce cas, vous pouvez enregistrer les préférences utilisateur pour un appareil qui s’intègre à votre application.
+N’importe quel [ **élément DeviceInformation** ](https://msdn.microsoft.com/library/windows/apps/BR225393) objet est identifié de manière unique par une combinaison de deux informations : [**DeviceInformation.Id** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [ **DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Si vous conservez ces deux éléments d’information, vous pouvez recréer un objet **DeviceInformation** après sa perte en fournissant ces informations à [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). Dans ce cas, vous pouvez enregistrer les préférences utilisateur pour un appareil qui s’intègre à votre application.
 
 
  

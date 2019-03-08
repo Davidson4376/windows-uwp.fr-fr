@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+Description: Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour le pavé tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 title: Interactions du pavé tactile
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046705"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593904"
 ---
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
@@ -22,10 +22,10 @@ Concevez votre application afin que les utilisateurs puissent interagir avec ell
 
  
 
-![Pavé tactile](images/input-patterns/input-touchpad.jpg)
+![pavé tactile](images/input-patterns/input-touchpad.jpg)
 
 
-Les interactions de pavé tactile nécessitent trois éléments:
+Les interactions de pavé tactile nécessitent trois éléments :
 
 -   Un pavé tactile standard ou un pavé tactile de précision Windows.
 
@@ -55,11 +55,11 @@ Le pavé tactile de précision permet aux utilisateurs de définir bien plus de 
 
 ![paramètres du pavé tactile standard](images/mouse-touchpad-settings-standard.png)
 
-<sup>Paramètres\\ du pavé tactile\\ standard</sup>
+<sup>Standard\\ pavé tactile\\ paramètres</sup>
 
 ![paramètres du pavé tactile de précision Windows](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Paramètres\\ du pavé tactile\\ de précision\\ Windows</sup>
+<sup>Windows\\ précision\\ pavé tactile\\ paramètres</sup>
 
 Voici quelques exemples de mouvements optimisés pour le pavé tactile qui permettent d’effectuer des tâches courantes.
 
@@ -128,7 +128,7 @@ Pour plus d’informations concernant l’interrogation des fonctionnalités du 
 
 -   Quand des événements de déplacement ou de pointage permettent de détecter un curseur de pavé tactile, affichez une interface utilisateur spécifique à la souris pour indiquer la fonctionnalité exposée par l’élément. Si le curseur de pavé tactile ne bouge pas pendant un certain temps ou si l’utilisateur commence une interaction tactile, estompez progressivement l’interface utilisateur du pavé tactile. Cela maintient l’interface utilisateur propre et aérée.
 -   N’utilisez pas le curseur pour le retour de pointage, car le retour fourni par l’élément est suffisant (voir Curseurs, ci-dessous).
--   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (par exemple, du texte statique).
+-   N’affichez pas de retour visuel si un élément ne prend pas en charge l’interaction (tel que le texte statique).
 -   N’utilisez pas de rectangles de sélection avec les interactions de pavé tactile. Réservez ceux-ci aux interactions avec le clavier.
 -   Affichez un retour visuel simultanément pour tous les éléments qui représentent la même cible d’entrée.
 
@@ -141,7 +141,7 @@ Un ensemble de curseurs standard est disponible pour servir de pointeurs de pav�
 
 Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications UWP spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-Si vous avez besoin de personnaliser le curseur de la souris:
+Si vous avez besoin de personnaliser le curseur de la souris :
 
 -   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
 -   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
@@ -152,7 +152,7 @@ Si vous avez besoin de personnaliser le curseur de la souris:
 ## <a name="related-articles"></a>Articles connexes
 
 
-* [Gérer les entrées du pointeur](handle-pointer-input.md)
+* [Gestion des entrées du pointeur](handle-pointer-input.md)
 * [Identifier des périphériques d’entrée](identify-input-devices.md)
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -160,10 +160,10 @@ Si vous avez besoin de personnaliser le curseur de la souris:
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **Exemples d’archive**
-* [Entrée : exemple de fonctionnalités de périphériques](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : mouvements et manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : Mouvements et des manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 

@@ -1,37 +1,37 @@
 ---
-Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+Description: Ce didacticiel décrit comment créer une interface utilisateur de base d’application. Il explique et montre comment utiliser Grid et StackPanel, deux des éléments XAML les plus courants.
 title: Utilisez Grid et StackPanel pour créer une application météo simple.
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931248"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646534"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Didacticiel: Utilisez Grid et StackPanel pour créer une application météo simple
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Didacticiel : Permet de créer une application simple météo Grid et StackPanel
 
-Utilisez XAML pour créer la disposition d’une application météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows10. Ce didacticiel dure 10 à 20minutes.
+Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
 
-> **API importantes**: [catégorie de grille](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [catégorie StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **API importantes**: [Classe de grille](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel classe](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
-## <a name="prerequisites"></a>Prérequis
-- Windows 10 et Microsoft Visual Studio 2015 ou version ultérieure. (Plus récente de Visual Studio pour la sécurité et de développement en cours mises à jour recommandées) [Cliquez ici pour savoir comment se préparer avec Visual Studio](../../get-started/get-set-up.md).
-- Savoir créer une application «Hello World» de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application «Hello World»](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
+## <a name="prerequisites"></a>Conditions préalables
+- Windows 10 et Microsoft Visual Studio 2015 ou version ultérieure. (Plus récente de Visual Studio pour le développement en cours et de sécurité mises à jour recommandées) [Cliquez ici pour savoir comment configurer Visual Studio](../../get-started/get-set-up.md).
+- Savoir créer une application « Hello World » de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application « Hello World »](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="step-1-create-a-blank-app"></a>Étape1: Créer une application vide
-1. Dans VisualStudio, sélectionnez **Fichier** > **Nouveau projet**.
+## <a name="step-1-create-a-blank-app"></a>Étape 1 : Créer une application vide
+1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau projet**.
 2. Dans le volet gauche de la boîte de dialogue **Nouveau projet**, choisissez le nœud **Visual C#** > **Windows** > **Universel** ou **Visual C++** > **Windows** > **Universel**.
 3. Dans le volet central, sélectionnez **Application vide**.
 4. Dans la zone **Nom** entrez **WeatherPanel**, puis sélectionnez **OK**.
 5. Pour exécuter le programme, choisissez **Déboguer** > **Démarrer le débogage** dans le menu, ou appuyez sur F5.
 
-## <a name="step-2-define-a-grid"></a>Étape2: Définir une grille
+## <a name="step-2-define-a-grid"></a>Étape 2 : Définir une grille
 Dans le code XAML, une **grille** comprend une série de lignes et de colonnes. En spécifiant la ligne et la colonne d’un élément dans une **grille**, vous pouvez placer et espacer d’autres éléments dans une interface utilisateur. Les lignes et colonnes sont définies avec les éléments **RowDefinition** et **ColumnDefinition**.
 
 Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide de l’**Explorateur de solutions** et remplacez l’élément **Grid** généré automatiquement par ce code.
@@ -49,14 +49,14 @@ Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide d
 </Grid>
 ```
 
-Le nouvel élément **Grid** crée un ensemble de deuxlignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a une **largeur** de «3\*», tandis que la seconde a une largeur de «5\*», divisant l’espace horizontal entre les deuxcolonnes à un rapport de3:5. De la même manière, les deuxlignes ont une **hauteur** de «2\*» et «\*» respectivement, l’élément **Grid** allouant deuxfois plus d’espace à la première ligne qu’à la seconde («\*» est identique à «1\*»). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
+Le nouvel élément **Grid** crée un ensemble de deux lignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a un **largeur** de « 3\*», tandis que le deuxième « 5\*», division de l’espace horizontal entre les deux colonnes à un taux de 3 à 5. De la même façon, les deux lignes ont une **hauteur** de « 2\*« et »\*» respectivement, afin que la **grille** alloue deux fois plus d’espace pour la première ligne comme pour le second («\*» est identique à « 1\*»). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
 
 Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 
 Si vous exécutez l’application maintenant, vous ne verrez rien d’autre qu’une page vide, car aucune des zones de la **grille** ne contient d’informations. Pour afficher la **grille**, donnons-lui de la couleur.
 
-## <a name="step-3-color-the-grid"></a>Étape3: Colorier la grille
-Pour colorier la **grille**, nous ajoutons troiséléments **Border**, chacun avec une couleur d’arrière-plan différente. Chacun est également attribué à une ligne et une colonne dans la **grille** parente, à l’aide des attributs **Grid.Row** et **Grid.Column**. Comme ces attributs ont la valeur0 par défaut, vous n’avez pas besoin de les affecter au premier élément **Border**. Ajoutez le code suivant à l’élément **Grid** après les définitions de lignes et de colonnes.
+## <a name="step-3-color-the-grid"></a>Étape 3 : Couleur de la grille
+Pour colorier la **grille**, nous ajoutons trois éléments **Border**, chacun avec une couleur d’arrière-plan différente. Chacun est également attribué à une ligne et une colonne dans la **grille** parente, à l’aide des attributs **Grid.Row** et **Grid.Column**. Comme ces attributs ont la valeur 0 par défaut, vous n’avez pas besoin de les affecter au premier élément **Border**. Ajoutez le code suivant à l’élément **Grid** après les définitions de lignes et de colonnes.
 
 ```xml
 <Border Background="#2f5cb6"/>
@@ -64,16 +64,16 @@ Pour colorier la **grille**, nous ajoutons troiséléments **Border**, chacun av
 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
 ```
 
-Notez que pour le troisième élément **Border**, nous utilisons un attribut supplémentaire, **Grid.ColumnSpan**, qui étend cet élément **Border** sur deuxcolonnes sur la ligne inférieure. Vous pouvez utiliser **Grid.RowSpan** de la même façon. Ensemble, ces attributs vous permettent d’étendre un élément sur n’importe quel nombre de lignes et colonnes. L’angle supérieur gauche d’une extension de ce type est égal aux paramètres **Grid.Column** et **Grid.Row** spécifiés dans les attributs de l’élément.
+Notez que pour le troisième élément **Border**, nous utilisons un attribut supplémentaire, **Grid.ColumnSpan**, qui étend cet élément **Border** sur deux colonnes sur la ligne inférieure. Vous pouvez utiliser **Grid.RowSpan** de la même façon. Ensemble, ces attributs vous permettent d’étendre un élément sur n’importe quel nombre de lignes et colonnes. L’angle supérieur gauche d’une extension de ce type est égal aux paramètres **Grid.Column** et **Grid.Row** spécifiés dans les attributs de l’élément.
 
 Si vous exécutez l’application, elle se présente comme suit.
 
 ![Coloration de la grille](images/grid-weather-1.png)
 
-## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Étape 4: Organiser le contenu à l’aide d’éléments StackPanel
+## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Étape 4 : Organiser le contenu à l’aide des éléments de StackPanel
 **StackPanel** est le deuxième élément d’interface utilisateur que nous allons utiliser pour créer notre application Météo. L’élément **StackPanel** est une partie essentielle de nombreuses dispositions d’application de base, car il vous permet d’empiler des éléments verticalement ou horizontalement.
 
-Dans le code suivant, nous allons créer deuxéléments **StackPanel** et les remplir avec troiséléments **TextBlock**. Ajoutez ces éléments **StackPanel** à la **grille** sous les éléments **Border** de l’étape 3. Le rendu des éléments **TextBlock** apparaît au-dessus de la **grille** de couleur que nous avons créée auparavant.
+Dans le code suivant, nous allons créer deux éléments **StackPanel** et les remplir avec trois éléments **TextBlock**. Ajoutez ces éléments **StackPanel** à la **grille** sous les éléments **Border** de l’étape 3. Le rendu des éléments **TextBlock** apparaît au-dessus de la **grille** de couleur que nous avons créée auparavant.
 
 ```xml
 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
@@ -89,21 +89,21 @@ Dans le code suivant, nous allons créer deuxéléments **StackPanel** et les re
 </StackPanel>
 ```
 
-Dans le premier élément **Stackpanel**, chaque **TextBlock** s’empile verticalement sous le suivant. Comme il s’agit du comportement par défaut d’un élément StackPanel, il est inutile de définir l’attribut **Orientation**. Dans le second élément StackPanel, nous voulons que les éléments enfants s’empilent horizontalement de gauche à droite. Donc, nous définissons l’attribut **Orientation** sur «Horizontal». Nous devons également régler l’attribut **Grid.ColumnSpan** sur «2», afin de centrer le texte dans l’élément **Border** inférieur.
+Dans le premier élément **Stackpanel**, chaque **TextBlock** s’empile verticalement sous le suivant. Comme il s’agit du comportement par défaut d’un élément StackPanel, il est inutile de définir l’attribut **Orientation**. Dans le second élément StackPanel, nous voulons que les éléments enfants s’empilent horizontalement de gauche à droite. Donc, nous définissons l’attribut **Orientation** sur « Horizontal ». Nous devons également régler l’attribut **Grid.ColumnSpan** sur « 2 », afin de centrer le texte dans l’élément **Border** inférieur.
 
 Si vous exécutez l’application maintenant, elle se présente comme suit.
 
 ![Ajout d’éléments StackPanel](images/grid-weather-2.png)
 
-## <a name="step-5-add-an-image-icon"></a>Étape5: Ajouter une icône d’image
+## <a name="step-5-add-an-image-icon"></a>Étape 5 : Ajouter une icône d’image
 
-Enfin, nous allons remplir la section vide notre **grille** avec une image qui représente la météo du jour- une formulation du type «partiellement nuageux».
+Enfin, nous allons remplir la section vide notre **grille** avec une image qui représente la météo du jour - une formulation du type « partiellement nuageux ».
 
-Téléchargez l’image ci-dessous et enregistrez-la comme une imagePNG nommée «partiellement-nuageux».
+Téléchargez l’image ci-dessous et enregistrez-la comme une image PNG nommée « partiellement-nuageux ».
 
 ![Partiellement nuageux](images/partially-cloudy.PNG)
 
-Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le dossier **Assets** et sélectionnez **Ajouter** -> **Élément existant...** Recherchez le fichier partiellement-nuageux.png dans le navigateur qui s’affiche, sélectionnez-le, puis cliquez sur **Ajouter**.
+Dans le **l’Explorateur de solutions**, avec le bouton droit cliquez sur le **actifs** dossier, puis sélectionnez **ajouter** -> **élément existant...** Trouver partiellement cloudy.png dans le navigateur qui s’affiche, sélectionnez-le, puis cliquez sur **ajouter**.
 
 Ensuite, dans **MainPage.xaml**, ajoutez l’élément **Image** suivant sous les éléments StackPanel de l’étape 4.
 
@@ -111,9 +111,9 @@ Ensuite, dans **MainPage.xaml**, ajoutez l’élément **Image** suivant sous le
 <Image Margin="20" Source="Assets/partially-cloudy.png"/>
 ```
 
-Comme nous voulons inclure l’image dans la première ligne et la première colonne, il est inutile de définir ses attributs **Grid.Row** ou **Grid.Column** (ils gardent leur valeur par défaut «0»).
+Comme nous voulons inclure l’image dans la première ligne et la première colonne, il est inutile de définir ses attributs **Grid.Row** ou **Grid.Column** (ils gardent leur valeur par défaut « 0 »).
 
-C’est tout! Vous venez de créer la disposition d’une application Météo simple. Si vous exécutez l’application en appuyant sur **F5**, elle doit se présenter comme ceci:
+C’est tout ! Vous venez de créer la disposition d’une application Météo simple. Si vous exécutez l’application en appuyant sur **F5**, elle doit se présenter comme ceci :
 
 ![Exemple de volet météo](images/grid-weather-3.PNG)
 

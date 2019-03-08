@@ -1,18 +1,18 @@
 ---
-Description: How to use thumbnail images to help users preview files in UWP apps.
+Description: Comment utiliser des images miniatures pour aider les utilisateurs d’afficher un aperçu des fichiers dans les applications UWP.
 title: Recommandations en matière d'images miniatures dans les applications UWP
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980347"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642004"
 ---
 # <a name="thumbnail-images"></a>Images miniatures
 
@@ -22,11 +22,11 @@ Ces recommandations décrivent comment utiliser des images miniatures pour perme
 
 -   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
-## <a name="should-my-app-include-thumbnails"></a>Mon application doit-elle inclure des vignettes?
+## <a name="should-my-app-include-thumbnails"></a>Mon application doit-elle inclure des vignettes ?
 
 Si votre application permet aux utilisateurs de parcourir des fichiers, vous pouvez afficher des images miniatures pour les aider à prévisualiser rapidement ces fichiers. 
 
-Utilisez des vignettes dans les cas suivants: 
+Utilisez des vignettes dans les cas suivants : 
 - Affichage d'aperçus pour de nombreux éléments d'une collection de galerie (comme des fichiers ou des dossiers). Par exemple, une galerie de photos doit utiliser des vignettes pour fournir aux utilisateurs un affichage de petite taille pour chaque image lorsqu’ils parcourent leurs fichiers de photos.
 
     ![galerie de vidéos](images/thumbnail-gallery.png)
@@ -41,7 +41,7 @@ Utilisez des vignettes dans les cas suivants:
 
 - Affichez des images génériques d’espaces réservés à la place de vignettes lors du chargement de ces dernières. Le recours à des espaces réservés permet à votre application de sembler plus réactive, car les utilisateurs peuvent interagir avec les aperçus avant le chargement des vignettes. 
 
-    Les images d’espaces réservés doivent être:
+    Les images d’espaces réservés doivent être :
     * Dédiées au type d’élément qu'elles remplacent. Par exemple, les dossiers, les images et les vidéos doivent disposer de leurs propres espaces réservés dédiés. 
     * De la même taille et avoir les mêmes proportions que l’image miniature qu'elles remplacent. 
     * Affichées jusqu'au chargement de l’image miniature. 
@@ -55,7 +55,7 @@ Utilisez des vignettes dans les cas suivants:
 - N'affichez aucune information supplémentaire sur les fichiers pour les fichiers d'images et de vidéos. Dans la plupart des cas, une image miniature suffit pour les utilisateurs qui parcourent des images et des vidéos. 
 
 ## <a name="additional-usage-guidelines"></a>Recommandations d’utilisation supplémentaires
-[Modes d'affichage des vignettes](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) recommandés et leurs fonctionnalités:
+[Modes d'affichage des vignettes](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) recommandés et leurs fonctionnalités :
 
 <table>
 <tr>
@@ -66,16 +66,16 @@ Utilisez des vignettes dans les cas suivants:
 <tr>
 <td> Images<br /> Vidéos </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>Taille</b>: moyenne, de préférence au moins190 (si la taille de l’image est 190x130) <br />
-<b>Proportions</b>: uniformes, rapport d'aspect d’environ0,7 (190x130 si la taille est190) <br />
+<td> <b>Taille</b> : Support, de préférence au moins 190 (si la taille de l’image est 190 x 130) <br />
+<b>Rapport hauteur / largeur</b>: Uniforme et large rapport hauteur / largeur d’environ.7 (190 x 130 si la taille est 190) <br />
 Vignettes rognées pour les aperçus. <br /> 
 Mode idéal pour aligner des images dans une grille en raison des proportions uniformes.  </td>
 </tr>
 <tr>
 <td> Documents<br />Musique </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>Taille</b>: petite, de préférence au moins 40×40pixels <br />
-<b>Proportions</b>: uniformes, rapport d'aspect carré  <br />
+<td> <b>Taille</b> : Petit, de préférence au moins 40 x 40 pixels <br />
+<b>Rapport hauteur / largeur</b>:  Rapport hauteur / largeur uniforme et carré  <br />
 Mode idéal pour afficher un aperçu de pochette d’album en raison des proportions carrées. <br /> 
 Les documents s’affichent de la même manière que dans une fenêtre de sélecteur de fichiers (recours aux mêmes icônes). </td>
 </tr>
@@ -83,24 +83,24 @@ Les documents s’affichent de la même manière que dans une fenêtre de sélec
 <tr>
 <td> Tout élément unique (quel que soit le type de fichier) </td>
 <td> SingleItem </td>
-<td> <b>Taille</b>: petite, de préférence au moins 40×40pixels <br />
-<b>Proportions</b>: uniformes, rapport d'aspect carré  <br />
+<td> <b>Taille</b> : Petit, de préférence au moins 40 x 40 pixels <br />
+<b>Rapport hauteur / largeur</b>:  Rapport hauteur / largeur uniforme et carré  <br />
 Mode idéal pour afficher un aperçu de pochette d’album en raison des proportions carrées. <br /> 
 Les documents s’affichent de la même manière que dans une fenêtre de sélecteur de fichiers (recours aux mêmes icônes). </td>
 </tr>
 </table>
 
-Voici quelques exemples illustrant comment des images miniatures récupérées diffèrent selon le type de fichier et le mode d'affichage des vignettes:
+Voici quelques exemples illustrant comment des images miniatures récupérées diffèrent selon le type de fichier et le mode d'affichage des vignettes :
 <div class="mx-responsive-img">
 <table>
 <tr>
 <th>Type d'élément</th>
-<th>En cas de récupération à l'aide de: <ul><li>PicturesView <li>VideosView</ul></th>
-<th>En cas de récupération à l'aide de: <ul><li>DocumentsView <li>MusicView <li>ListView</ul></th>
-<th>En cas de récupération à l'aide de: <ul><li>SingleItem</ul></th>
+<th>En cas de récupération à l'aide de : <ul><li>PicturesView <li>VideosView</ul></th>
+<th>En cas de récupération à l'aide de : <ul><li>DocumentsView <li>MusicView <li>ListView</ul></th>
+<th>En cas de récupération à l'aide de : <ul><li>SingleItem</ul></th>
 <tr>
 <tr>
-<td>Image</td>
+<td>Picture</td>
 <td>L’image miniature utilise les proportions d’origine du fichier. <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
 <td>La vignette est rognée pour être dotée de proportions carrées. <br />
@@ -109,7 +109,7 @@ Voici quelques exemples illustrant comment des images miniatures récupérées d
 <img src="images/thumbnail-pic-single-mode.png" alt="Picture thumbnail in single mode"/> </td>
 </tr>
 <tr>
-<td>Vidéo</td>
+<td>Video</td>
 <td>La vignette est dotée d'une icône qui la différencie des images. <br />
 <img src="images/thumbnail-vid-picvid-modes.png" alt="Video thumbnail in picture or video mode"/></td>
 <td>La vignette est rognée pour être dotée de proportions carrées. <br />
@@ -162,9 +162,9 @@ Sinon, aucune vignette n’est récupérée.</td>
 </table>
 </div>
 
-## <a name="related-topics"></a>Rubriquesassociées
-- [Énumération ThumbnailMode](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
-- [Classe StorageItemThumbnail](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
-- [Classe StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
-- [Exemple de vignette de fichier et de dossier (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [Affichage Liste et affichage Grille](../design/controls-and-patterns/lists.md)
+## <a name="related-topics"></a>Rubriques connexes
+- [ThumbnailMode enum](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
+- [Classe de StorageItemThumbnail](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
+- [Classe de StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+- [Fichier et dossier exemple miniature (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
+- [Vue liste et de la grille](../design/controls-and-patterns/lists.md)

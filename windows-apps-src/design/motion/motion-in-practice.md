@@ -1,28 +1,28 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+Description: Découvrez comment Fluent mouvement notions de base sont réunies dans votre application.
 title: Mouvement en pratique - Animation dans les applications UWP
 label: Motion in practice
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058560"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599404"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
 Le minutage, l'accélération, la direction et la gravité fonctionnent ensemble pour former la base du mouvement Fluent. Chacun doit être pris en compte par rapport aux autres et correctement appliqué dans le contexte de votre application.
 
-Voici 3manières d’appliquer les principes de base du mouvement Fluent dans votre application.
+Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans votre application.
 
 :::row:::
     :::column:::
@@ -63,9 +63,9 @@ Voici 3manières d’appliquer les principes de base du mouvement Fluent dans vo
     :::column-end:::
 :::row-end:::
 
-**Exemple d'objet**
+**Exemple d’objet**
 
- ![Mouvement de 300ms](images/control.gif)
+ ![Mouvement de 300 ms](images/control.gif)
 
 :::row:::
     :::column:::
@@ -80,23 +80,23 @@ Voici 3manières d’appliquer les principes de base du mouvement Fluent dans vo
 
 ## <a name="implicit-animations"></a>Animations implicites
 
-> Animations implicites nécessitent Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou une version ultérieure.
+> Animations implicites requièrent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure.
 
 
-Animations implicites sont un moyen simple d’obtenir le mouvement Fluent par automatiquement et effectue une interpolation entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
+Animations implicites sont un moyen simple d’atteindre le mouvement Fluent par l’interpolation automatiquement entre les valeurs anciennes et nouvelles pendant un changement de paramètre.
 
-Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes:
+Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes :
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
   - **Rotation**
-  - **Échelle**
+  - **Mettre à l’échelle**
   - **Translation**
 
-- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau](/uwp/api/windows.ui.xaml.controls.panel)
+- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
   - **Arrière-plan**
 
-Chaque propriété qui peut avoir des modifications implicitement animées possède une propriété de _transition_ correspondant. Pour animer la propriété, vous affectez un type de transition à la propriété correspondante de la _transition_ . Ce tableau indique les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
+Chaque propriété qui peut avoir des modifications implicitement animées correspond un _transition_ propriété. Pour animer la propriété, vous affectez un type de transition correspondant _transition_ propriété. Le tableau suivant répertorie les _transition_ propriétés et le type de transition à utiliser pour chacun d'entre eux.
 
 | Propriété animée | Propriété de transition | Type de transition implicite |
 | -- | -- | -- |
@@ -108,7 +108,7 @@ Chaque propriété qui peut avoir des modifications implicitement animées poss�
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-Cet exemple montre comment utiliser la propriété Opacity et transition pour qu’un bouton apparition en fondu lorsque le contrôle est activé et la disparition en fondu lorsqu’il est désactivé.
+Cet exemple montre comment utiliser la propriété d’opacité et de transition pour créer un bouton apparaître lorsque le contrôle est activé et disparaître en fondu lorsqu’il est désactivé.
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -127,8 +127,8 @@ public double OpaqueIfEnabled(bool IsEnabled)
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Présentation du mouvement](index.md)
-- [Minutage et accélération](timing-and-easing.md)
-- [Direction et gravité](directionality-and-gravity.md)
+- [Présentation de Motion](index.md)
+- [Accélération et d’échéance](timing-and-easing.md)
+- [Une direction et la gravité](directionality-and-gravity.md)

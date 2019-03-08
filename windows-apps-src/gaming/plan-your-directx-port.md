@@ -1,17 +1,17 @@
 ---
 title: Planifier votre portage DirectX
-description: 'Planifiez le portage de votre jeu DirectX9 sur DirectX11 et la plateforme Windows universelle (UWP): mettez à niveau votre code graphique et préparez votre jeu pour l’environnement WindowsRuntime.'
+description: 'Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.'
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, directx , portage
+keywords: windows 10, uwp, directx , portage
 ms.localizationpriority: medium
 ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044380"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602124"
 ---
 # <a name="plan-your-directx-port"></a>Planifier votre portage DirectX
 
@@ -20,11 +20,11 @@ ms.locfileid: "9044380"
 **Résumé**
 
 -   Planifier votre portage DirectX
--   [Modifications importantes de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
--   [Mappage des fonctionnalités](feature-mapping.md)
+-   [Modifications importantes par rapport à partir de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Mappage de fonction](feature-mapping.md)
 
 
-Planifiez le portage de votre jeu DirectX9 sur DirectX11 et la plateforme Windows universelle (UWP): mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
+Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
 
 ## <a name="plan-to-port-graphics-code"></a>Planifier le portage du code graphique
 
@@ -35,11 +35,11 @@ La mise à niveau de Direct3D 9 vers Direct3D 11 ne se limite pas à une simple 
 
 Vous devez remplacer les bibliothèques d’applications auxiliaires D3DX et DXUT par vos propres bibliothèques d’applications auxiliaires ou par des outils de la communauté. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-> **Remarque**  vous pouvez utiliser le [Kit de ressources DirectX](https://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui étaient auparavant fournies par D3DX et DXUT.
+> **Remarque**    vous pouvez utiliser la [DirectX Tool Kit](https://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui ont été précédemment fournies par D3DX et DXUT.
 
  
 
-Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers HLSL avec le modèle de nuanceur4 niveau de fonctionnalité 9\_1 ou 9\_3. Les nuanceurs conçus pour la bibliothèque d’effets doivent être mis à jour avec une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
+Nuanceurs écrites en langage assembleur doivent être mis à niveau au langage HLSL à l’aide du niveau de modèle 4 nuanceur 9\_1 ou 9\_3 fonctionnalités et des nuanceurs écrites pour la bibliothèque d’effets doivent être mis à jour vers une version plus récente de la syntaxe du langage HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
 Familiarisez-vous avec les différents [niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876). Ces niveaux de fonctionnalité permettent de classer les divers matériels vidéo selon des ensembles définis de fonctionnalités prises en charge. Chaque ensemble correspond globalement à une version de Direct3D (versions 9.1 à 11.2). Tous les niveaux de fonctionnalité s’appliquent à l’API DirectX 11.
 
@@ -56,10 +56,10 @@ Les bibliothèques natives, telles que l’[API Interlocked](https://msdn.micros
 
 Nos modèles et exemples de code utilisent de nouvelles fonctionnalités C++ que vous ne connaissez peut-être pas encore. Citons, par exemple, les méthodes asynchrones que vous pouvez utiliser avec des [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) pour charger les ressources Direct3D sans bloquer le thread d’interface utilisateur.
 
-Les deux concepts suivants vous seront souvent utiles:
+Les deux concepts suivants vous seront souvent utiles :
 
--   Les références managées ([**l’opérateur ^**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) et les [**classes managées**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (classes de référence) sont des éléments fondamentaux de WindowsRuntime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants WindowsRuntime, tels qu’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (pour plus d’informations, voir la procédure pas à pas).
--   Si vous travaillez avec des interfacesCOM Direct3D11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) afin de faciliter l’utilisation des pointeurs COM.
+-   Les références managées ([**l’opérateur ^**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) et les [**classes managées**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (classes de référence) sont des éléments fondamentaux de Windows Runtime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants Windows Runtime, tels qu’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (pour plus d’informations, voir la procédure pas à pas).
+-   Si vous travaillez avec des interfaces COM Direct3D 11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) afin de faciliter l’utilisation des pointeurs COM.
 
  
 

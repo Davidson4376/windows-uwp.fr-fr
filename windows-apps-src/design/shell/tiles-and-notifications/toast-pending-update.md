@@ -1,18 +1,18 @@
 ---
-Description: Learn how to create multi-step interactions in your notifications.
+Description: Découvrez comment créer des interactions de plusieurs étapes dans vos notifications.
 title: Toast avec activation des mises à jour en attente
 label: Toast with pending update activation
 template: detail.hbs
 ms.date: 12/14/2017
 ms.topic: article
-keywords: windows10, uwp, toast, en attente de mise à jour, pendingupdate, interactivité à plusieurs étapes, interactions à plusieurs étapes
+keywords: windows 10, uwp, toast, en attente de mise à jour, pendingupdate, interactivité à plusieurs étapes, interactions à plusieurs étapes
 ms.localizationpriority: medium
 ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940734"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648554"
 ---
 # <a name="toast-with-pending-update-activation"></a>Toast avec activation des mises à jour en attente
 
@@ -21,15 +21,15 @@ Vous pouvez utiliser **PendingUpdate** pour créer des interactions à plusieurs
 ![Toast avec mise à jour en attente](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **Nécessite Desktop Fall Creators Update et la version2.0.0 de la bibliothèque Notifications**: vous devez exécuter la build16299 de Desktop ou une version ultérieure pour que la mise à jour en attente fonctionne. Vous devez utiliser la version2.0.0 ou une version ultérieure de la [bibliothèque NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) pour affecter **PendingUpdate** à vos boutons. **PendingUpdate** est uniquement pris en charge sur les appareils de bureau et sera ignoré sur les autres appareils.
+> **Requiert le bureau Fall Creators Update et 2.0.0 de bibliothèque de Notifications**: Vous devez exécuter Bureau build 16299 ou une version ultérieure pour afficher le travail de mise à jour en attente. Vous devez utiliser la version 2.0.0 ou une version ultérieure de la [bibliothèque NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) pour affecter **PendingUpdate** à vos boutons. **PendingUpdate** est uniquement pris en charge sur les appareils de bureau et sera ignoré sur les autres appareils.
 
 
-## <a name="prerequisites"></a>Éléments prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Cet article suppose une connaissance pratique de...
 
-- [Construction du contenu du toast](adaptive-interactive-toasts.md)
-- [Envoi d’un toast et gestion de l’activation en arrière-plan](send-local-toast.md)
+- [Créant du contenu de toast](adaptive-interactive-toasts.md)
+- [Envoyer un toast et gestion de l’activation en arrière-plan](send-local-toast.md)
 
 
 ## <a name="overview"></a>Vue d’ensemble
@@ -114,9 +114,9 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 - [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [Envoyer une notification toast locale et gérer l’activation](send-local-toast.md)
-- [Documentation sur le contenu des toasts](adaptive-interactive-toasts.md)
-- [Barre de progression du toast](toast-progress-bar.md)
+- [Envoyer une activation toast et handle locale](send-local-toast.md)
+- [Documentation de contenu de toast](adaptive-interactive-toasts.md)
+- [Barre de progression de toast](toast-progress-bar.md)

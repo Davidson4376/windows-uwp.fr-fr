@@ -6,18 +6,18 @@ label: Contextual commanding in collections
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925611"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658594"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Commandes contextuelles pour les regroupements et les listes
 
@@ -25,7 +25,7 @@ ms.locfileid: "8925611"
 
 De nombreuses applications contiennent des regroupements de contenu sous forme de listes, de grilles et d’arborescences que les utilisateurs peuvent manipuler. Les utilisateurs peuvent par exemple supprimer, renommer, marquer ou actualiser des éléments. Cet article vous montre comment utiliser des commandes contextuelles pour implémenter ces types d’actions d’une manière qui optimise l’expérience pour tous les types d’entrée.  
 
-> **API importantes**: [interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [propriété UIElement.ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [interface INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **API importantes**: [Interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout propriété](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [interface INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Utiliser différentes entrées pour exécuter la commande FavoriteCommand](images/ContextualCommand_AddFavorites.png)
 
@@ -38,14 +38,14 @@ Ce tableau présente certaines commandes et certains modes de regroupement stand
 | Commande          | Indépendamment de l’entrée | Accélérateur souris | Accélérateur clavier | Accélérateur tactile |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Supprimer l’élément      | Menu contextuel   | Pointage sur le bouton      | Touche Suppr              | Balayage pour supprimer   |
-| Marquer l’élément        | Menu contextuel   | Pointage sur le bouton      | Ctrl+Maj+G         | Balayage pour marquer     |
-| Actualiser les données     | Menu contextuel   | N/A               | Touche F5               | Tirer pour actualiser   |
-| Mettre un élément en favori | Menu contextuel   | Pointage sur le bouton      | F, Ctrl+S            | Balayage pour mettre en favori |
+| Marquer l’élément        | Menu contextuel   | Pointage sur le bouton      | Ctrl + Maj + G         | Balayage pour marquer     |
+| Actualiser les données     | Menu contextuel   | Non applicable               | Touche F5               | Tirer pour actualiser   |
+| Mettre un élément en favori | Menu contextuel   | Pointage sur le bouton      | F, Ctrl + S            | Balayage pour mettre en favori |
 
 
-* **En règle générale, vous devez rendre toutes les commandes d’un élément disponibles le [menu contextuel](menus.md) de cet élément.** Les menus contextuels sont accessibles aux utilisateurs, quel que soit le type d’entrée, et ils doivent contenir toutes les commandes contextuelles que l’utilisateur peut effectuer.
+* **En règle générale, vous devez vous toutes les commandes pour un élément disponible dans l’élément [menu contextuel](menus.md).** Les menus contextuels sont accessibles aux utilisateurs, quel que soit le type d’entrée, et ils doivent contenir toutes les commandes contextuelles que l’utilisateur peut effectuer.
 
-* **Pour les commandes fréquemment utilisées, envisagez d’utiliser des accélérateurs d’entrée.** Les accélérateurs d’entrée permettent à l’utilisateur d’effectuer des actions rapidement, selon leur périphérique d’entrée. Voici des exemples d’accélérateurs d’entrée:
+* **Pour les commandes fréquemment sollicitées, envisagez d’utiliser des accélérateurs d’entrée.** Les accélérateurs d’entrée permettent à l’utilisateur d’effectuer des actions rapidement, selon leur périphérique d’entrée. Voici des exemples d’accélérateurs d’entrée :
     - Balayer pour effectuer une action (accélérateur tactile)
     - Tirer pour actualiser les données (accélérateur tactile)
     - Raccourcis clavier (accélérateur clavier)
@@ -55,11 +55,11 @@ Ce tableau présente certaines commandes et certains modes de regroupement stand
 > [!NOTE]
 > Les utilisateurs doivent pouvoir accéder à toutes les commandes depuis n’importe quel type d’appareil. Par exemple, si les commandes de votre application sont uniquement exposées via des accélérateurs de type pointeur (en pointant sur les boutons), les utilisateurs tactiles ne pourront pas y accéder. Utilisez au moins un menu contextuel pour donner accès à toutes les commandes.  
 
-## <a name="example-the-podcastobject-data-model"></a>Exemple: le modèle de données PodcastObject
+## <a name="example-the-podcastobject-data-model"></a>Exemple : Le modèle de données PodcastObject
 
-Pour illustrer nos recommandations concernant les commandes, cet article crée une liste de podcasts pour une application de podcast. L’exemple de code montre comment permettre à l’utilisateur de «mettre en favori» un podcast particulier dans une liste.
+Pour illustrer nos recommandations concernant les commandes, cet article crée une liste de podcasts pour une application de podcast. L’exemple de code montre comment permettre à l’utilisateur de « mettre en favori » un podcast particulier dans une liste.
 
-Voici la définition de l’objet de podcast avec lequel nous allons travailler: 
+Voici la définition de l’objet de podcast avec lequel nous allons travailler : 
 
 ```csharp
 public class PodcastObject : INotifyPropertyChanged
@@ -98,9 +98,9 @@ Notez que le PodcastObject implémente [INotifyPropertyChanged](https://docs.mic
 
 ## <a name="defining-commands-with-the-icommand-interface"></a>Définition de commandes avec l’interface ICommand
 
-L’[interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) vous aide à définir une commande disponible pour plusieurs types d’entrée. Par exemple, au lieu d’écrire le même code pour une commande de suppression dans deux gestionnaires d’événements différents, un lorsque l’utilisateur appuie sur la touche Suppr et un lorsque l’utilisateur clique avec le bouton droit sur «Supprimer» dans un menu contextuel, vous pouvez implémenter votre logique de suppression une seule fois à l’aide d’une [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), puis la rendre disponible à différents types d’entrée.
+L’[interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) vous aide à définir une commande disponible pour plusieurs types d’entrée. Par exemple, au lieu d’écrire le même code pour une commande de suppression dans deux gestionnaires d’événements différents, un lorsque l’utilisateur appuie sur la touche Suppr et un lorsque l’utilisateur clique avec le bouton droit sur « Supprimer » dans un menu contextuel, vous pouvez implémenter votre logique de suppression une seule fois à l’aide d’une [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), puis la rendre disponible à différents types d’entrée.
 
-Nous devons définir l’ICommand qui représente l’action «Mettre en favori». Nous allons utiliser la méthode [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) de la commande pour mettre un podcast en favori. Ce podcast particulier sera fourni à la méthode d’exécution via le paramètre de la commande, qu’il est possible de lier à l’aide de la propriété CommandParameter.
+Nous devons définir l’ICommand qui représente l’action « Mettre en favori ». Nous allons utiliser la méthode [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) de la commande pour mettre un podcast en favori. Ce podcast particulier sera fourni à la méthode d’exécution via le paramètre de la commande, qu’il est possible de lier à l’aide de la propriété CommandParameter.
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -140,18 +140,18 @@ favoriteCommand.Execute(PodcastObject);
 
 Lorsque vous avez une liste d’éléments et que chacun de ces éléments doit répondre à plusieurs entrées, vous pouvez simplifier votre code en définissant un [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) pour l’élément et l’utiliser pour définir le menu et les gestionnaires d’événements de vos éléments. 
 
-Pour créer un UserControl dans VisualStudio:
+Pour créer un UserControl dans Visual Studio :
 1. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet. Un menu contextuel s’affiche.
-2. Sélectionnez **Ajouter> Nouvel élément…** <br />La boîte de dialogue **Ajouter un nouvel élément** s’affiche. 
-3. Sélectionnez UserControl dans la liste des éléments. Donnez-lui le nom que vous souhaitez, puis cliquez sur **Ajouter**. VisualStudio va générer un stub UserControl pour vous. 
+2. Sélectionnez **Ajouter > Nouvel élément…** <br />La boîte de dialogue **Ajouter un nouvel élément** s’affiche. 
+3. Sélectionnez UserControl dans la liste des éléments. Donnez-lui le nom que vous souhaitez, puis cliquez sur **Ajouter**. Visual Studio va générer un stub UserControl pour vous. 
 
-Dans notre exemple, chaque podcast s’affichera dans une liste, qui exposera les différentes manières de mettre un podcast en favori. L’utilisateur pourra effectuer les actions suivantes pour mettre le podcast en favori:
+Dans notre exemple, chaque podcast s’affichera dans une liste, qui exposera les différentes manières de mettre un podcast en favori. L’utilisateur pourra effectuer les actions suivantes pour mettre le podcast en favori :
 - Appeler un menu contextuel
 - Utiliser des raccourcis clavier
 - Afficher un bouton sensitif
 - Effectuer un mouvement de balayage
 
-Afin d’encapsuler ces comportements et utiliser la commande FavoriteCommand, nous allons créer un nouvel objet [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) nommé «PodcastUserControl» pour représenter un podcast dans la liste.
+Afin d’encapsuler ces comportements et utiliser la commande FavoriteCommand, nous allons créer un nouvel objet [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) nommé « PodcastUserControl » pour représenter un podcast dans la liste.
 
 Le PodcastUserControl affiche les champs du PodcastObject sous forme de TextBlocks et répond aux différentes interactions avec l’utilisateur. Nous mentionnerons le PodcastUserControl et le développerons tout au long de cet article.
 
@@ -232,21 +232,21 @@ Les menus contextuels affichent une liste de commandes ou d’options lorsque l�
 
 ![Afficher un menu contextuel sur l’élément](images/ContextualCommand_RightClick.png)
 
-L’utilisateur peut appeler des menus contextuels à l’aide de ces «actions contextuelles»:
+L’utilisateur peut appeler des menus contextuels à l’aide de ces « actions contextuelles » :
 
 | Entrée    | Action contextuelle                          |
 | -------- | --------------------------------------- |
 | Souris    | Clic droit                             |
-| Clavier | Maj+F10, touche Menu                  |
-| Interface tactile    | Appui long sur l’élément                      |
+| Clavier | Maj + F10, touche Menu                  |
+| Touch    | Appui long sur l’élément                      |
 | Stylet      | Appui sur le bouton du stylet, appui long sur l’élément |
-| Boîtier de commande  | Touche Menu                             |
+| Boîtier de commande  | Bouton Menu                             |
 
-**Dans la mesure où l’utilisateur peut ouvrir un menu contextuel indépendamment du type d’entrée, votre menu contextuel doit contenir toutes les commandes contextuelles disponibles pour l’élément de liste.**
+**Étant donné que l’utilisateur peut ouvrir un menu contextuel, quel que soit le type d’entrée, votre menu contextuel doit contenir toutes les commandes contextuelles disponibles pour l’élément de liste.**
 
 ### <a name="contextflyout"></a>ContextFlyout
 
-La [propriété ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), défini par la classe UIElement, facilite la création d’un menu contextuel qui fonctionne avec tous les types d’entrée. Vous fournissez un menu volant représentant votre menu contextuel à l’aide du contrôle MenuFlyout. Lorsque l’utilisateur effectuera une «action contextuelle», comme indiqué ci-dessus, le contrôle MenuFlyout correspondant à l’élément s’affichera.
+La [propriété ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), défini par la classe UIElement, facilite la création d’un menu contextuel qui fonctionne avec tous les types d’entrée. Vous fournissez un menu volant représentant votre menu contextuel à l’aide du contrôle MenuFlyout. Lorsque l’utilisateur effectuera une « action contextuelle », comme indiqué ci-dessus, le contrôle MenuFlyout correspondant à l’élément s’affichera.
 
 Nous allons ajouter un ContextFlyout au PodcastUserControl. Le MenuFlyout spécifié comme ContextFlyout contient un seul élément pour mettre un podcast en favori. Notez que ce MenuFlyoutItem utilise la commande favoriteCommand définie ci-dessus, avec le CommandParamter lié au PodcastObject.
 
@@ -271,19 +271,19 @@ Notez que vous pouvez également utiliser l’[événement ContextRequested](htt
 
 Bien que chaque élément de la collection doive disposer d’un menu contextuel contenant toutes les commandes contextuelles, vous souhaiterez peut-être permettre aux utilisateurs d’effectuer rapidement un ensemble plus réduit de commandes fréquemment exécutées. Par exemple, une application de messagerie peut présenter des commandes secondaires comme Répondre, Archiver, Déplacer vers un dossier, Définir un indicateur et Supprimer, qui s’affichent dans un menu contextuel, tandis que les commandes les plus courantes sont Supprimer et Définir un indicateur. Une fois que vous avez identifié les commandes les plus courantes, vous pouvez utiliser des accélérateurs d’entrée pour faciliter l’exécution de ces commandes par les utilisateurs.
 
-Dans l’application de podcast, la commande fréquemment exécutée est la commande «Mettre en favori».
+Dans l’application de podcast, la commande fréquemment exécutée est la commande « Mettre en favori ».
 
-### <a name="keyboard-accelerators"></a>Accélérateurs clavier
+### <a name="keyboard-accelerators"></a>Raccourcis clavier
 
 #### <a name="shortcuts-and-direct-key-handling"></a>Raccourcis et touches directes
 
 ![Appuyez sur Ctrl et F pour effectuer une action](images/ContextualCommand_Keyboard.png)
 
-Selon le type de contenu, vous pouvez identifier certaines combinaisons de touches qui doivent effectuer une action. Dans une application de messagerie, par exemple, il est possible d’utiliser la touche Suppr pour supprimer le message électronique sélectionné. Dans une application de podcast, les touches Ctrl+S ou F peuvent permettre de mettre un podcast en favori pour le retrouver ultérieurement. Bien que certaines commandes présentent des raccourcis clavier courants, bien connus, comme Suppr pour supprimer, d’autres commandes présentent des raccourcis propres à l’application ou au domaine. Si possible, utilisez des raccourcis bien connus. Sinon, pensez à fournir un texte de rappel dans une info-bulle pour former l’utilisateur à la commande de raccourci.
+Selon le type de contenu, vous pouvez identifier certaines combinaisons de touches qui doivent effectuer une action. Dans une application de messagerie, par exemple, il est possible d’utiliser la touche Suppr pour supprimer le message électronique sélectionné. Dans une application de podcast, les touches Ctrl + S ou F peuvent permettre de mettre un podcast en favori pour le retrouver ultérieurement. Bien que certaines commandes présentent des raccourcis clavier courants, bien connus, comme Suppr pour supprimer, d’autres commandes présentent des raccourcis propres à l’application ou au domaine. Si possible, utilisez des raccourcis bien connus. Sinon, pensez à fournir un texte de rappel dans une info-bulle pour former l’utilisateur à la commande de raccourci.
 
 Vous pouvez utiliser l’événement [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) pour permettre à votre application de répondre lorsque l’utilisateur appuie sur une touche. En général, les utilisateurs s’attendent à ce que l’application réponde lorsqu’ils appuient sur la touche, et non lorsqu’ils la relâchent.
 
-Cet exemple montre comment ajouter le gestionnaire KeyDown au PodcastUserControl pour mettre un podcast en favori lorsque l’utilisateur appuie sur Ctrl+S ou F. Il utilise la même commande qu’auparavant.
+Cet exemple montre comment ajouter le gestionnaire KeyDown au PodcastUserControl pour mettre un podcast en favori lorsque l’utilisateur appuie sur Ctrl + S ou F. Il utilise la même commande qu’auparavant.
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -366,17 +366,17 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 }
 ```
 
-Les boutons qui présentent un état de pointage ne seront accessibles qu’en utilisant un pointeur comme type d’entrée. Dans la mesure où ces boutons sont réservés à l’entrée de type pointeur, vous pouvez choisir de réduire ou de supprimer le remplissage qui entoure l’icône du bouton pour optimiser l’entrée via le pointeur. Si vous choisissez de faire cela, assurez-vous que la taille du bouton est au moins 20x20px pour qu’il reste utilisable avec stylet et une souris.
+Les boutons qui présentent un état de pointage ne seront accessibles qu’en utilisant un pointeur comme type d’entrée. Dans la mesure où ces boutons sont réservés à l’entrée de type pointeur, vous pouvez choisir de réduire ou de supprimer le remplissage qui entoure l’icône du bouton pour optimiser l’entrée via le pointeur. Si vous choisissez de faire cela, assurez-vous que la taille du bouton est au moins 20 x 20 px pour qu’il reste utilisable avec stylet et une souris.
 
 ### <a name="touch-accelerators"></a>Accélérateurs tactiles
 
-#### <a name="swipe"></a>Balayage
+#### <a name="swipe"></a>Balayer
 
 ![Balayer un élément pour afficher la commande](images/ContextualCommand_Swipe.png)
 
 La commande par balayage est un accélérateur tactile qui permet aux utilisateurs d’appareils tactiles d’utiliser des commandes tactiles pour réaliser des actions secondaires courantes. Le balayage tactile permet aux utilisateurs tactiles d’interagir rapidement et naturellement avec du contenu, à l’aide d’actions courantes telles que le balayage pour supprimer ou le balayage pour appeler. Consultez l’article dédié aux [commandes par balayage](swipe.md) pour en savoir plus.
 
-L’intégration du balayage à votre collection nécessite deux composants: SwipeItems qui héberge les commandes et SwipeControl qui encapsule l’élément et permet l’interaction par balayage.
+Pour intégrer le balayage dans votre collection, vous avez besoin de deux composants : SwipeItems, qui héberge les commandes ; et un SwipeControl, qui encapsule l’élément et permet une interaction de passage.
 
 SwipeItems peut être défini en tant que ressource dans le PodcastUserControl. Dans cet exemple, SwipeItems contient une commande permettant de mettre un élément en favori.
 
@@ -450,10 +450,10 @@ Afin d’optimiser votre application pour une entrée à l’aide d’un stylet,
 * Fournissez des accélérateurs d’entrée pour les commandes fréquemment utilisées. 
 * Utilisez l’[interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) pour implémenter des commandes. 
 
-## <a name="related-topics"></a>Articles connexes
+## <a name="related-topics"></a>Rubriques connexes
 * [Interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
-* [Menus et menus contextuels](menus.md)
-* [Balayer](swipe.md)
-* [Tirer pour actualiser](pull-to-refresh.md)
-* [Interactions avec le stylo et le stylet](../input/pen-and-stylus-interactions.md)
-* [Personnaliser votre application pour une utilisation avec un boîtier de commande et une Xbox](../devices/designing-for-tv.md)
+* [Menus et des Menus contextuels](menus.md)
+* [Swipe](swipe.md)
+* [Pour actualiser](pull-to-refresh.md)
+* [Interaction de stylet et du stylet](../input/pen-and-stylus-interactions.md)
+* [Adaptez votre application pour gamepad et Xbox](../devices/designing-for-tv.md)

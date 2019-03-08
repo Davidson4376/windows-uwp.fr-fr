@@ -3,7 +3,7 @@ title: Éclairage XAML
 description: Les objets Light sont utilisés en association avec SceneLightingEffect pour simuler l’éclairage dynamique et la réflectivité.
 ms.date: 06/28/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -11,30 +11,30 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929646"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654534"
 ---
 # <a name="xaml-lighting"></a>Éclairage XAML
 
-Les objets [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) sont utilisés en association avec [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) pour simuler l’éclairage dynamique et la réflectivité.
+[**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight) objets sont utilisés conjointement avec [ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) pour simuler l’éclairage dynamique et réflectivité.
 
 Vous pouvez appliquer des éclairages aux [**éléments visuels**](https://msdn.microsoft.com/library/windows/apps/Dn706858) et aux [**éléments UIElements**](/uwp/api/Windows.UI.Xaml.UIElement) XAML.
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Application d’éclairages aux éléments UIElements XAML
 
-Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent d’appliquer des classes [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML de manière dynamique. XamlLight offre des méthodes permettant de cibler des éléments UIElements ou pinceaux XAML, appliquer des éclairages aux arborescences d’éléments UIElements, et utilisent de ressources en fonction de qu’il s’agisse actuellement en faciliter la gestion de la durée de vie de CompositionLight.
+[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight) objets sont utilisés pour appliquer [ **CompositionLights** ](/uwp/api/Windows.UI.Composition.CompositionLight) mettre en lumière dynamiquement des éléments d’interface utilisateur XAML. XamlLight fournit des méthodes pour le ciblage des éléments d’interface utilisateur ou des pinceaux de XAML, appliquant des lumières en arborescences d’éléments d’interface utilisateur, et utilisent de ressources selon qu’ils se trouvent actuellement en aidant à gérer la durée de vie de CompositionLight.
 
 - Si vous ciblez un objet **Brush** avec une classe XamlLight, les parties des éléments UIElements qui utilisent cet objet Brush sont éclairées.
 - Si vous ciblez un élément **UIElement** avec une classe XamlLight, la totalité de l’élément UIElement et tous ses éléments UIElements enfants sont éclairés.
 
 ## <a name="creating-and-using-a-xamllight"></a>Création et utilisation d’une classe XamlLight
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) est une classe de base permettant de créer des éclairages personnalisés.
+[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight) est une classe de base qui peut être utilisée pour créer des lumières personnalisés.
 
-Cet exemple montre la définition de classe XamlLight personnalisée qui applique un projecteur multicolore à ciblées UIElements et pinceaux.
+Cet exemple illustre la définition pour un XamlLight personnalisé qui concernent un projecteur multicolore ciblé UIElements et pinceaux.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -457,10 +457,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-Vous pouvez ensuite appliquer ce lumière à n’importe quel élément UIElement XAML ou le pinceau pour les déclencher. Cet exemple montre différentes utilisations potentielles.
+Vous pouvez ensuite appliquer ce voyant à n’importe quel XAML UIElement ou le pinceau de mettre en lumière les. Cet exemple montre différentes utilisations potentielles.
 
 > [!Important]
-> Pour [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), supprimez les deux occurrences de `local:OrangeSpotLight.IsTarget="True"` à partir du balisage ci-dessous. Les propriétés jointes sont déjà définies dans le code-behind.
+> Pour [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), supprimez les deux occurrences de `local:OrangeSpotLight.IsTarget="True"` à partir du balisage ci-dessous. Les propriétés jointes sont déjà définies dans le code-behind.
 
 ```xaml
 <StackPanel Width="100">
@@ -489,13 +489,13 @@ Vous pouvez ensuite appliquer ce lumière à n’importe quel élément UIElemen
 </StackPanel>
 ```
 
-Les résultats de ce code XAML se présente comme suit.
+Les résultats de ce XAML ressemblent à ceci.
 
-![Exemples d’éléments éclairés par une lumière xaml](images/orange-spot-light.png)
+![Exemples d’éléments allumée par une lumière de xaml](images/orange-spot-light.png)
 
 > [!Important]
-> La définition de UIElement.Lights dans le balisage tel qu’indiqué dans l’exemple ci-dessus est uniquement prise en charge pour les applications ciblant au minimum la version Windows10 Creators Update ou une version ultérieure. Pour les applications ciblant des versions antérieures, les éclairages doivent être créés dans le code-behind.
+> La définition de UIElement.Lights dans le balisage tel qu’indiqué dans l’exemple ci-dessus est uniquement prise en charge pour les applications ciblant au minimum la version Windows 10 Creators Update ou une version ultérieure. Pour les applications ciblant des versions antérieures, les éclairages doivent être créés dans le code-behind.
 
-## <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources complémentaires
 
 * Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).

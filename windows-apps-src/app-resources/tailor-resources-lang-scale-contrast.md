@@ -1,19 +1,19 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+Description: Cette rubrique explique le concept général des qualificateurs, leur utilisation et le rôle de chacun des noms de qualificateur.
 title: Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117659"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608134"
 ---
-# <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Adaptez vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
+# <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
 Cette rubrique explique le concept général des qualificateurs de ressource, leur utilisation et le rôle de chacun des noms de qualificateur. Consultez [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) pour un tableau de référence de toutes les valeurs de qualificateur possibles.
 
@@ -29,7 +29,7 @@ Un nom de qualificateur est une clé qui correspond à un ensemble de valeurs de
 | :--------------- | :--------------- | :--------------- |
 | Paramètre de contraste élevé | contraste | standard, élevé, noir, blanc |
 
-Vous combinez un nom de qualificateur avec une valeur de qualificateur pour former un qualificateur. `<qualifier name>-<qualifier value>` est le format d’un qualificateur. `contrast-standard` est un exemple de qualificateur.
+Vous combinez un nom de qualificateur avec une valeur de qualificateur pour former un qualificateur. `<qualifier name>-<qualifier value>` est le format d’un qualificateur. `contrast-standard` est un exemple d’un qualificateur.
 
 Par conséquent, pour le contraste élevé, le jeu de qualificateurs est `contrast-standard`, `contrast-high`, `contrast-black` et `contrast-white`. Les noms de qualificateur et les valeurs de qualificateur ne tiennent pas compte de la casse. Par exemple, les qualificateurs `contrast-standard` et `Contrast-Standard` sont identiques.
 
@@ -88,7 +88,7 @@ Pour plus d’informations sur le fonctionnement de la correspondance de qualifi
 
 ## <a name="multiple-qualifiers"></a>Plusieurs qualificateurs
 
-Vous pouvez combiner des qualificateurs dans les noms de dossier et de fichier. Par exemple, vous souhaitez peut-être que votre application charge des ressources d’image lorsque le mode contraste élevé est activé *et* que le facteur d’échelle de l’affichage est de400. L’une des méthodes possibles consiste à utiliser des dossiers imbriqués.
+Vous pouvez combiner des qualificateurs dans les noms de dossier et de fichier. Par exemple, vous souhaitez peut-être que votre application charge des ressources d’image lorsque le mode contraste élevé est activé *et* que le facteur d’échelle de l’affichage est de 400. L’une des méthodes possibles consiste à utiliser des dossiers imbriqués.
 
 ```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
@@ -114,7 +114,7 @@ Selon les outils et le flux de travail utilisés pour la création de ressources
 
 ## <a name="alternateform"></a>AlternateForm
 
-Le qualificateur `alternateform` sert à fournir une ressource sous une autre forme à des fins spéciales. En général, cela sert uniquement aux développeurs d’applications japonais pour fournir une chaîne furigana à laquelle la valeur `msft-phonetic` est réservée (voir la section «Prenez en charge les furigana pour les chaînes japonaises qui peuvent être triées» dans [Comment se préparer à la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)).
+Le qualificateur `alternateform` sert à fournir une ressource sous une autre forme à des fins spéciales. En général, cela sert uniquement aux développeurs d’applications japonais pour fournir une chaîne furigana à laquelle la valeur `msft-phonetic` est réservée (voir la section « Prenez en charge les furigana pour les chaînes japonaises qui peuvent être triées » dans [Comment se préparer à la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)).
 
 Votre système cible ou votre application doit fournir une valeur à laquelle les qualificateurs `alternateform` correspondent. N’utilisez pas le préfixe `msft-` pour vos propres valeurs de qualificateur `alternateform` personnalisées.
 
@@ -124,7 +124,7 @@ Il est peu probable que vous ayez besoin du nom de qualificateur `configuration`
 
 Le qualificateur `configuration` permet de charger la ressource qui correspond le mieux à la valeur de la variable d’environnement `MS_CONFIGURATION_ATTRIBUTE_VALUE`. Vous pouvez donc définir la variable à la valeur de chaîne qui a été attribuée aux ressources pertinentes, par exemple `designer` ou `test`.
 
-## <a name="contrast"></a>Contraste
+## <a name="contrast"></a>Contraste :
 
 Le qualificateur `contrast` permet de fournir les ressources qui correspondent le mieux aux paramètres de contraste élevé.
 
@@ -191,9 +191,9 @@ Il est peu probable que vous ayez besoin du nom de qualificateur `dxfeaturelevel
 
 ## <a name="homeregion"></a>HomeRegion
 
-Le qualificateur `homeregion` correspond au paramètre de pays ou de région de l’utilisateur. Il représente le lieu de résidence de l’utilisateur. Les valeurs incluent toute [balise de région BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Autrement dit, tout code de région de deux lettres au format **ISO3166-1 alpha-2**, ainsi que le jeu de codes géographiques de trois chiffres **ISO3166-1 numériques** pour les régions composées (voir [Classification M49 des codes de région de la Division de statistique de l'ONU](https://go.microsoft.com/fwlink/p/?linkid=247929)). Les codes de «groupements sélectionnés économiques et autres» ne sont pas valides.
+Le qualificateur `homeregion` correspond au paramètre de pays ou de région de l’utilisateur. Il représente le lieu de résidence de l’utilisateur. Les valeurs incluent toute [balise de région BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Autrement dit, tout code de région de deux lettres au format **ISO 3166-1 alpha-2**, ainsi que le jeu de codes géographiques de trois chiffres **ISO 3166-1 numériques** pour les régions composées (voir [Classification M49 des codes de région de la Division de statistique de l'ONU](https://go.microsoft.com/fwlink/p/?linkid=247929)). Les codes de « groupements sélectionnés économiques et autres » ne sont pas valides.
 
-## <a name="language"></a>Language
+## <a name="language"></a>Langue
 
 Un qualificateur `language` correspond au paramètre de langue d’affichage. Les valeurs incluent toute [balise de langue BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) valide. Pour une liste des langues, voir le [registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303).
 
@@ -206,7 +206,7 @@ Vous utilisez généralement un qualificateur `language` pour nommer les dossier
 \Strings\language-ja\Resources.resw
 ```
 
-Vous pouvez omettre la partie `language-` d’un qualificateur `language` (autrement dit, le nom du qualificateur). Vous ne pouvez pas le faire avec les autres types de qualificateurs; et cela n'est possible que dans un nom de dossier.
+Vous pouvez omettre la partie `language-` d’un qualificateur `language` (autrement dit, le nom du qualificateur). Vous ne pouvez pas le faire avec les autres types de qualificateurs ; et cela n'est possible que dans un nom de dossier.
 
 ```console
 \Strings\en\Resources.resw
@@ -226,9 +226,9 @@ Voir [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-mani
 
 Un qualificateur `layoutdirection` correspond au paramètre de sens de la disposition de la langue d’affichage. Par exemple, une image a peut-être besoin d'être mise en miroir pour une langue qui s’écrit et se lit de droite à gauche, comme l’arabe ou l'hébreu. Les panneaux de disposition et les images de votre interface utilisateur répondront correctement au sens de la disposition si vous définissez leur propriété [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) (voir [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). Toutefois, le qualificateur `layoutdirection` est destiné aux cas où un simple retournement n’est pas suffisant. Il permet de répondre au sens d'un ordre de lecture et d'un alignement de texte spécifiques de manière plus générale.
 
-## <a name="scale"></a>Échelle
+## <a name="scale"></a>Scale
 
-Windows sélectionne automatiquement un facteur d’échelle pour chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Voir [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Vous devez créer vos images selon plusieurs tailles recommandées (au moins 100,200 et400) afin que Windows puisse choisir la taille idéale ou utiliser la taille le plus proche et la mettre à l’échelle. Pour que Windows soit en mesure d’identifier le fichier physique contenant la taille d’image appropriée pour le facteur d’échelle de l’affichage, vous utilisez un qualificateur `scale`. L’échelle d’une ressource correspond à la valeur de [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), ou à la ressource avec la plus grande échelle suivante.
+Windows sélectionne automatiquement un facteur d’échelle pour chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Voir [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Vous devez créer vos images selon plusieurs tailles recommandées (au moins 100, 200 et 400) afin que Windows puisse choisir la taille idéale ou utiliser la taille le plus proche et la mettre à l’échelle. Pour que Windows soit en mesure d’identifier le fichier physique contenant la taille d’image appropriée pour le facteur d’échelle de l’affichage, vous utilisez un qualificateur `scale`. L’échelle d’une ressource correspond à la valeur de [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), ou à la ressource avec la plus grande échelle suivante.
 
 Voici un exemple de définition du qualificateur au niveau du dossier.
 
@@ -256,7 +256,7 @@ Vous pouvez définir des ressources qui représentent plusieurs tailles de la va
 
 Pour plus d’informations sur la qualification d’une ressource pour `scale` et `targetsize`, voir [Appliquer le qualificateur targetsize à une ressource d’image](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize).
 
-## <a name="theme"></a>Theme
+## <a name="theme"></a>Thème
 
 Le qualificateur `theme` est utilisé pour fournir les ressources qui correspondent le mieux au paramètre de mode d’application par défaut, ou au remplacement de votre application à l’aide de [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
 
@@ -265,15 +265,15 @@ Le qualificateur `theme` est utilisé pour fournir les ressources qui correspond
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Pixels efficaces et le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Système de gestion des ressources](resource-management-system.md)
-* [Comment se préparer à la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
-* [Détection de la plateforme d’exécution de votre application](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Présentation des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-manifest.md)
+* [Comment préparer pour la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [Détection de la plateforme de votre application est en cours d’exécution](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [Vue d’ensemble des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Localiser les chaînes de votre interface utilisateur](localize-strings-ui-manifest.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Classification M49 des codes de région de la Division de statistique de l'ONU](https://go.microsoft.com/fwlink/p/?linkid=247929)
-* [Registre des sous-balises de langues IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)
+* [Composition des Nations unies statistique Division M49 des codes de région](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [Registre de sous-balises de langage IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

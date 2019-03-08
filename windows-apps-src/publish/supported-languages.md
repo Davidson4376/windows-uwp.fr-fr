@@ -1,31 +1,31 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
+Description: Vous pouvez proposer des applications dans le Microsoft Store dans plus de 100 langues.
 title: Langues prises en charge
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 02/20/2019
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657754"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
 
-Vous pouvez soumettre des applications dans le Microsoft Store dans plus de 100 langues.
+Vous pouvez proposer des applications dans le Microsoft Store dans plus de 100 langues.
 
-Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [comprendre les langues de profil utilisateur et application les langues du manifeste](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [langues de profil utilisateur de comprendre et d’application manifest langues](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
 ## <a name="supported-languages"></a>Langues prises en charge
 
 
-Il s’agit des langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins une de ces langues. 
+Ce sont les langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins une de ces langues. 
 
-Codes de langue qui ne sont pas inclus ici ne sont pas prises en charge par le Windows Store. Nous recommandons que vous n’incluez pas les packages ciblant des codes de langue autre que ceux indiqués ci-dessous. Ces packages ne seront pas distribuées aux clients et peuvent provoquer des retards ou des échecs de certification.
+Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par le Store. Nous recommandons que vous n’incluez pas les packages ciblant les codes de langue autre que ceux répertoriés ci-dessous ; Ces packages ne seront pas distribués aux clients et peuvent entraîner des retards ou échecs de certification.
 
 | Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -52,7 +52,7 @@ Codes de langue qui ne sont pas inclus ici ne sont pas prises en charge par le W
 | Hollandais                 | nl, nl-nl, nl-be                                                                                                                                                                                      |
 | Anglais               | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw, en-053, en-021, en-029, en-011, en-018, en-014 |
 | Estonien              | et, et-ee                                                                                                                                                                                             |
-| Filipino              | fil, fil-latn, fil-ph                                                                                                                                                                                 |
+| Philippin              | fil, fil-latn, fil-ph                                                                                                                                                                                 |
 | Finlandais               | fi, fi-fi                                                                                                                                                                                             |
 | Français                | fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-015, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn, fr-155, fr-029, fr-021, fr-011                                         |
 | Galicien              | gl, gl-es                                                                                                                                                                                             |
@@ -80,9 +80,9 @@ Codes de langue qui ne sont pas inclus ici ne sont pas prises en charge par le W
 | Kinyarwanda           | rw, rw-rw                                                                                                                                                                                             |
 | Kiswahili             | sw, sw-ke                                                                                                                                                                                             |
 | Konkani               | kok, kok-in                                                                                                                                                                                           |
-| Coréen                | ko, ko-kr                                                                                                                                                                                             |
+| Korean                | ko, ko-kr                                                                                                                                                                                             |
 | Kurde               | ku-arab, ku-arab-iq                                                                                                                                                                                   |
-| Kirgiz                | ky-kg, ky-cyrl                                                                                                                                                                                        |
+| Kirghiz                | ky-kg, ky-cyrl                                                                                                                                                                                        |
 | Lao                   | lo, lo-la                                                                                                                                                                                             |
 | Letton               | lv, lv-lv                                                                                                                                                                                             |
 | Lituanien            | lt, lt-lt                                                                                                                                                                                             |
@@ -108,7 +108,7 @@ Codes de langue qui ne sont pas inclus ici ne sont pas prises en charge par le W
 | Gaélique écossais       | gd-gb, gd-latn                                                                                                                                                                                        |
 | Serbe (latin)       | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs                                                                                                                                           |
 | Serbe (cyrillique)    | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs                                                                                                                                               |
-| Sesotho sa leboa      | nso, nso-za                                                                                                                                                                                           |
+| Sesotho sa leboa      | nso, nso-za                                                                                                                                                                                           |
 | Setswana              | tn, tn-bw, tn-za                                                                                                                                                                                      |
 | Sindhi                | sd-arab, sd-arab-pk, sd-deva                                                                                                                                                                          |
 | Sinhala               | si, si-lk                                                                                                                                                                                             |

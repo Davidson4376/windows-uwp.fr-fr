@@ -1,23 +1,23 @@
 ---
-title: Afficher les points d’intérêt sur une carte
-description: Ajoutez des points d’intérêt à une carte à l’aide des clics-infos, des images, des formes et des éléments d’interface utilisateur XAML.
+title: Afficher des centres d’intérêt sur une carte
+description: Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ms.date: 08/11/2017
 ms.topic: article
-keywords: windows10, uwp, carte, emplacement, clics-infos
+keywords: windows 10, uwp, carte, emplacement, clics-infos
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb307093889c5a40a452d2d406f02224ab5eab1
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659274"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
 Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML. Un point d’intérêt est un point spécifique sur la carte, qui représente un élément intéressant. Il peut s’agir, par exemple, de l’emplacement d’une entreprise, d’une localité ou d’un ami.
 
-Pour en savoir plus sur l’affichage des points d’intérêt dans votre app, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub: [exemple de carte UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
+Pour en savoir plus sur l’affichage POI sur votre application, téléchargez l’exemple suivant à partir de la [référentiel de Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub : [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 Affichez des punaises, des images et des formes sur la carte en ajoutant des objets [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) et [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) à une collection **MapElements** d'un objet [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ensuite, ajoutez cet objet de couche à la collection **Couches** d’un contrôle de carte.
 
@@ -75,7 +75,7 @@ Cet exemple affiche le point d’intérêt suivant sur la carte (l’image par d
 La ligne de code suivante affiche la classe [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) avec une image personnalisée enregistrée dans le dossier Assets du projet. La propriété [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) de la classe **MapIcon** attend une valeur de type [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). Ce type nécessite une instruction **using** pour l’espace de noms [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791).
 
 >[!NOTE]
->Si vous utilisez la même image pour plusieurs icônes de carte, déclarez l’élément  [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) au niveau de la page ou de l’app pour optimiser les performances.
+>Si vous utilisez la même image pour plusieurs icônes de carte, déclarez l’élément [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) au niveau de la page ou de l’application pour optimiser les performances.
 
 ```csharp
     MapIcon1.Image =
@@ -163,7 +163,7 @@ public void AddLandmarkPhoto()
 }
 ```
 
-Trois parties de ce code sont intéressantes à examiner d'un peu plus près: l’image, la caméra de référence et la propriété [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint).
+Il existe trois parties de ce code intéressant d’examiner plus attentivement : L’image, l’appareil photo de référence et le [ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) propriété.
 
 ### <a name="image"></a>Image
 
@@ -176,7 +176,7 @@ Cet exemple montre une image personnalisée enregistrée dans le dossier **Resso
 
  Comme une image [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) se met à l’échelle en fonction des changements de [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) de la carte, il est important de définir à quel niveau du [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) l’image s’affiche à l'échelle 1 x normale. Cette position est définie dans la caméra de référence de l'élément [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) et, pour la définir, vous devez passer un objet [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) dans le constructeur du [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard).
 
- Vous pouvez définir la position que vous voulez dans un [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint), puis utiliser ce [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) pour créer un objet [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera).  Toutefois, dans cet exemple, nous utilisons simplement l'objet [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) retourné par la propriété [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) du contrôle de carte. Il s’agit de la caméra interne de la carte. La position actuelle de cette caméra devient la position de caméra de référence: l’emplacement où l'image [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) s’affiche à l’échelle 1 x.
+ Vous pouvez définir la position que vous voulez dans un [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint), puis utiliser ce [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) pour créer un objet [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera).  Toutefois, dans cet exemple, nous utilisons simplement l'objet [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) retourné par la propriété [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) du contrôle de carte. Il s’agit de la caméra interne de la carte. La position actuelle de cette caméra devient la position de caméra de référence : l’emplacement où l'image [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) s’affiche à l’échelle 1 x.
 
  Si votre application permet aux utilisateurs d’effectuer un zoom arrière sur la carte, la taille de l’image diminue, car la caméra interne de la carte monte en altitude tandis que l’image à échelle 1 x reste fixée sur la position de la caméra de référence.
 
@@ -394,7 +394,7 @@ public sealed partial class Scenario1 : Page
 
 ## <a name="working-with-layers"></a>Utilisation des couches
 
-Les exemples de ce guide ajoutent des éléments à une collection [MapElementLayers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ils indiquent ensuite comment ajouter cette collection à la propriété **Couches** du contrôle de carte. Dans les versions précédentes, ce guide vous a montré comment ajouter des éléments de carte à la collection [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements), comme suit:
+Les exemples de ce guide ajoutent des éléments à une collection [MapElementLayers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ils indiquent ensuite comment ajouter cette collection à la propriété **Couches** du contrôle de carte. Dans les versions précédentes, ce guide vous a montré comment ajouter des éléments de carte à la collection [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements), comme suit :
 
 ```csharp
 var pikePlaceIcon = new MapIcon
@@ -471,13 +471,13 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
     MapServiceToken="Your token" Layers="{x:Bind ViewModel.LandmarkLayer}"/>
 ```
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
+* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)

@@ -3,14 +3,14 @@ description: Cet article explique comment utiliser la classe LowLightFusion pour
 title: Traiter des images bitmap avec l’API Low Light Fusion
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows10, uwp, low light fusion, bitmaps, traitement d’image
+keywords: Windows 10, uwp, low light fusion, bitmaps, traitement d’image
 ms.localizationpriority: medium
 ms.openlocfilehash: e0677d2e4ce5e412c158b8a00da3a6338bae6c46
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947731"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656214"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>Traiter des images bitmap avec l’API LowLightFusion
 
@@ -43,7 +43,7 @@ Maintenant que nous avons un nombre approprié de trames dans un format acceptab
 
 [!code-cs[SnippetFuseFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetFuseFrames)]
 
-Enfin, nous allons nettoyer le SoftwareBitmap obtenu en l'encodant et en l’enregistrant sous la forme d'une image «normale» et conviviale, semblable aux images d’entrée du départ.
+Enfin, nous allons nettoyer le SoftwareBitmap obtenu en l'encodant et en l’enregistrant sous la forme d'une image « normale » et conviviale, semblable aux images d’entrée du départ.
 
 [!code-cs[SnippetEncodeFrame](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetEncodeFrame)]
 
@@ -59,6 +59,6 @@ Voici un exemple d’image d’entrée et de l’image de sortie qui en résulte
 
 À partir de l’image d’entrée, vous pouvez voir que l’éclairage et la clarté des ombres autour de la bannière ont été améliorés.
 
-## <a name="related-topics"></a>Rubriquesassociées 
-[Classe LowLightFusion](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion)  
-[Classe LowLightFusionResult](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusionresult)
+## <a name="related-topics"></a>Rubriques connexes 
+[Classe de LowLightFusion](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion)  
+[Classe de LowLightFusionResult](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusionresult)

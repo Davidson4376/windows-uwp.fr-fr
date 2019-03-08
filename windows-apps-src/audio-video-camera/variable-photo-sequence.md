@@ -4,14 +4,14 @@ description: Cet article indique comment capturer une séquence de photos variab
 title: Séquence de photos variables
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945194"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644844"
 ---
 # <a name="variable-photo-sequence"></a>Séquence de photos variables
 
@@ -22,7 +22,7 @@ Cet article indique comment capturer une séquence de photos variables pour capt
 Si vous souhaitez capturer des images HDR, mais que vous ne voulez pas implémenter votre propre algorithme de traitement, vous pouvez utiliser l’API [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) pour utiliser les fonctionnalités HDR intégrées dans Windows. Pour plus d’informations, voir [Capture photo avec plage dynamique élevée (HDR)](high-dynamic-range-hdr-photo-capture.md).
 
 > [!NOTE] 
-> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article repose sur l’hypothèse que votre application possède déjà une instance de MediaCapture initialisée correctement.
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
 
 ## <a name="set-up-your-app-to-use-variable-photo-sequence-capture"></a>Configurer votre application pour utiliser une capture de séquence de photos variables
 
@@ -40,9 +40,9 @@ Une fois que vous avez initialisé votre [MediaCapture](capture-photos-and-video
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-Obtenez un objet [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) à partir du contrôleur de séquence de photos variables. Cet objet possède une propriété pour chaque paramètre pouvant être configuré par trame d’une séquence de photos. Ces propriétés sont les suivantes:
+Obtenez un objet [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) à partir du contrôleur de séquence de photos variables. Cet objet possède une propriété pour chaque paramètre pouvant être configuré par trame d’une séquence de photos. Par exemple :
 
--   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**Exposition**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
 -   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
 -   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
@@ -81,7 +81,7 @@ L’événement [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn
 
 ## <a name="update-frame-controllers"></a>Mettre à jour des contrôleurs de trame
 
-Si vous souhaitez effectuer une autre capture de séquence de photos variables avec différents paramètres de trame, vous n’avez pas besoin de réinitialiser complètement l’élément **VariablePhotoSequenceCapture**. Vous pouvez supprimer la collection [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) et ajouter de nouveaux contrôleurs de trame ou bien modifier les valeurs du contrôleur de trame existant. L’exemple suivant active l’objet [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) pour vérifier que l’appareil actuel prend en charge le flash et la puissance du flash pour les trames de séquences de photos variables. Si c’est le cas, chaque trame est mise à jour pour activer le flash à 100%. Les valeurs de compensation d’exposition précédemment définies pour chaque trame sont toujours actives.
+Si vous souhaitez effectuer une autre capture de séquence de photos variables avec différents paramètres de trame, vous n’avez pas besoin de réinitialiser complètement l’élément **VariablePhotoSequenceCapture**. Vous pouvez supprimer la collection [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) et ajouter de nouveaux contrôleurs de trame ou bien modifier les valeurs du contrôleur de trame existant. L’exemple suivant active l’objet [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) pour vérifier que l’appareil actuel prend en charge le flash et la puissance du flash pour les trames de séquences de photos variables. Si c’est le cas, chaque trame est mise à jour pour activer le flash à 100 %. Les valeurs de compensation d’exposition précédemment définies pour chaque trame sont toujours actives.
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
@@ -91,10 +91,10 @@ Lorsque vous avez terminé la capture de séquences de photos variables ou que v
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
