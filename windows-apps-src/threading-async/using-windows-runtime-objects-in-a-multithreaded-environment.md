@@ -1,24 +1,24 @@
 ---
 title: Utilisation des objets Windows Runtime dans un environnement multi-thread | Documentation Microsoft
-description: Cet article décrit la façon dont le .NETFramework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.
+description: Cet article décrit la façon dont le .NET Framework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
-keywords: windows10, uwp, minuteur, threads
+keywords: windows 10, uwp, minuteur, threads
 ms.localizationpriority: medium
 ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631214"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Utilisation des objets Windows Runtime dans un environnement multi-thread
-Cet article décrit la façon dont le .NETFramework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.
+Cet article décrit la façon dont le .NET Framework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.
 
-Dans le .NETFramework, vous pouvez accéder à n’importe quel objet à partir de plusieurs threads par défaut, sans un traitement particulier. Vous avez uniquement besoin d'une référence à l’objet. Dans l'environnement Windows Runtime, ces objets sont appelés *agiles*. La plupart des classes Windows Runtime sont agiles, mais certaines ne le sont pas, et même les classes agiles peuvent nécessiter un traitement particulier.
+Dans le .NET Framework, vous pouvez accéder à n’importe quel objet à partir de plusieurs threads par défaut, sans un traitement particulier. Vous avez uniquement besoin d'une référence à l’objet. Dans l'environnement Windows Runtime, ces objets sont appelés *agiles*. La plupart des classes Windows Runtime sont agiles, mais certaines ne le sont pas, et même les classes agiles peuvent nécessiter un traitement particulier.
 
-Dans la mesure du possible, le CLR traite les objets provenant d’autres sources, telles que l'environnement Windows Runtime, comme s'il s'agissait d'objets .NETFramework:
+Dans la mesure du possible, le CLR traite les objets provenant d’autres sources, telles que l'environnement Windows Runtime, comme s'il s'agissait d'objets .NET Framework :
 
 - Si l’objet implémente l'interface [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) ou détient l'attribut [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) avec [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023), le CLR traite l'objet comme étant agile.
 
@@ -32,12 +32,12 @@ Les sections suivantes décrivent les conséquences de ce comportement sur les o
 Tous les types dans le composant qui peuvent être activés sont agiles par défaut.
 
 > [!NOTE]
->  L'agilité n’implique pas la sécurité des threads. Dans les environnements Windows Runtime et .NETFramework, la plupart des classes ne sont pas thread-safe car la sécurité des threads implique une baisse des performances, et la plupart des objets ne sont jamais accessibles par plusieurs threads. Il est plus efficace de synchroniser l’accès à des objets individuels (ou d’utiliser des classes thread-safe) uniquement si cela est nécessaire.
+>  L'agilité n’implique pas la sécurité des threads. Dans les environnements Windows Runtime et .NET Framework, la plupart des classes ne sont pas thread-safe car la sécurité des threads implique une baisse des performances, et la plupart des objets ne sont jamais accessibles par plusieurs threads. Il est plus efficace de synchroniser l’accès à des objets individuels (ou d’utiliser des classes thread-safe) uniquement si cela est nécessaire.
 
 Lorsque vous créez un composant Windows Runtime, vous pouvez remplacer la valeur par défaut. Reportez-vous aux interfaces [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) et [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx).
 
 ## <a name="objects-from-the-windows-runtime"></a>Objets issus de l'environnement Windows Runtime
-La plupart des classes du Windows Runtime sont agiles, et le CLR les traite comme étant agiles. La documentation de ces classes répertorie «MarshalingBehaviorAttribute(Agile)» parmi les attributs de classe. Toutefois, les membres de certaines de ces classes agiles, tels que les contrôles XAML, lèvent des exceptions s’ils ne sont pas appelés sur le thread de l’interface utilisateur. Par exemple, le code suivant tente d’utiliser un thread d’arrière-plan pour définir une propriété du bouton sur lequel l’utilisateur a cliqué. La propriété du bouton [Contenu](https://go.microsoft.com/fwlink/p/?LinkId=256025) lève une exception.
+La plupart des classes du Windows Runtime sont agiles, et le CLR les traite comme étant agiles. La documentation de ces classes répertorie « MarshalingBehaviorAttribute(Agile) » parmi les attributs de classe. Toutefois, les membres de certaines de ces classes agiles, tels que les contrôles XAML, lèvent des exceptions s’ils ne sont pas appelés sur le thread de l’interface utilisateur. Par exemple, le code suivant tente d’utiliser un thread d’arrière-plan pour définir une propriété du bouton sur lequel l’utilisateur a cliqué. La propriété du bouton [Contenu](https://go.microsoft.com/fwlink/p/?LinkId=256025) lève une exception.
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -89,10 +89,10 @@ End Sub
 
 La durée de vie d’un objet Windows Runtime qui est créé sur le thread d’interface utilisateur est limitée par la durée de vie du thread. N’essayez pas d’accéder aux objets sur un thread d’interface utilisateur après la fermeture de la fenêtre.
 
-Si vous créez votre propre contrôle en héritant d’un contrôle XAML ou en composant un ensemble de contrôles XAML, votre contrôle est agile, car il s’agit d’un objet .NETFramework. Toutefois, s'il appelle les membres de sa classe de base ou des classes de composants, ou si vous appelez les membres hérités, ces membres lèveront des exceptions lorsqu’ils sont appelés à partir de n’importe quel thread à l’exception du thread d’interface utilisateur.
+Si vous créez votre propre contrôle en héritant d’un contrôle XAML ou en composant un ensemble de contrôles XAML, votre contrôle est agile, car il s’agit d’un objet .NET Framework. Toutefois, s'il appelle les membres de sa classe de base ou des classes de composants, ou si vous appelez les membres hérités, ces membres lèveront des exceptions lorsqu’ils sont appelés à partir de n’importe quel thread à l’exception du thread d’interface utilisateur.
 
 ### <a name="classes-that-cant-be-marshaled"></a>Classes qui ne peuvent pas être appelées
-Les classes Windows Runtime qui ne fournissent pas d’informations de rassemblement sont dotées de l'attribut [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) avec [MarshalingType.None](https://go.microsoft.com/fwlink/p/?LinkId=256023). La documentation pour une telle classe répertorie «MarshalingBehaviorAttribute(None)» parmi ses attributs.
+Les classes Windows Runtime qui ne fournissent pas d’informations de rassemblement sont dotées de l'attribut [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) avec [MarshalingType.None](https://go.microsoft.com/fwlink/p/?LinkId=256023). La documentation pour une telle classe répertorie « MarshalingBehaviorAttribute(None) » parmi ses attributs.
 
 Le code suivant crée un objet [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) sur le thread d’interface utilisateur, puis tente de définir une propriété de l’objet à partir d’un thread de pool de threads. Le CLR ne peut pas obtenir l’appel, donc il lève une exception [System.InvalidCastException](/dotnet/api/system.invalidcastexception), avec un message indiquant que l’objet peut être utilisé uniquement dans le contexte de thread où il a été créé.
 
@@ -122,7 +122,7 @@ Private Async Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-La documentation de [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) répertorie également «ThreadingAttribute(STA)» parmi les attributs de la classe, car il doit être créé dans un contexte de thread unique, tel que le thread d’interface utilisateur.
+La documentation de [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) répertorie également « ThreadingAttribute(STA) » parmi les attributs de la classe, car il doit être créé dans un contexte de thread unique, tel que le thread d’interface utilisateur.
 
 Si vous souhaitez accéder à l'objet [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) à partir d’un autre thread, vous pouvez mettre en cache l'objet [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) pour le thread d’interface utilisateur et l'utiliser ultérieurement pour envoyer l’appel sur ce thread. Ou bien, vous pouvez obtenir le répartiteur d’un objet XAML tel que la page, comme illustré dans le code suivant.
 
@@ -161,6 +161,6 @@ Par défaut, les classes dans le composant qui peut être activé sont agiles. T
 Concernant les objets qui s’exécutent sur l’interface utilisateur de thread et qui lèvent des exceptions lorsqu’ils sont appelés à partir d’un thread autre que le thread d’interface utilisateur, vous pouvez utiliser l'objet [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) du thread d’interface utilisateur pour distribuer l’appel.
 
 ## <a name="see-also"></a>Voir aussi
-[Guide sur C#](/dotnet/csharp/)
+[C#Guide](/dotnet/csharp/)
 
-[Guide de Visual Basic](/dotnet/visual-basic/)
+[Guide Visual Basic](/dotnet/visual-basic/)

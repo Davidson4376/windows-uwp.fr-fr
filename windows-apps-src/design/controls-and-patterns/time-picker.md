@@ -1,33 +1,33 @@
 ---
-Description: The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
+Description: Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier.
 title: Sélecteur d’heure
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
 ms.date: 05/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5187f3fe6f8ca14725f56b64f212e11f99dfc911
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037001"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637164"
 ---
 # <a name="time-picker"></a>Sélecteur d’heure
  
 
 Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélection d’une heure à l’aide d’une entrée tactile, de la souris ou du clavier. 
 
-> **API importantes**: [classe TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx), [propriété Time](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+> **API importantes**: [Classe de TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx), [propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 Utilisez un sélecteur d’heure pour permettre à un utilisateur de sélectionner une valeur d’heure unique.
 
 Pour plus d’informations sur le choix du contrôle approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
@@ -41,14 +41,14 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TimePicker">ouvrir l’application et voir le contrôle TimePicker en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-Le point d’entrée affiche l’heure choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur d’heure se superpose aux autres éléments de l’interface utilisateur; il ne les ferme pas.
+Le point d’entrée affiche l’heure choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur d’heure se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 
 ![Exemple de développement du sélecteur d’heure](images/controls_timepicker_expand.png)
 
@@ -65,7 +65,7 @@ TimePicker arrivalTimePicker = new TimePicker();
 arrivalTimePicker.Header = "Arrival time";
 ```
 
-Le sélecteur d’heure qui en résulte se présente comme suit:
+Le sélecteur d’heure qui en résulte se présente comme suit :
 
 ![Exemple de sélecteur d’heure](images/time-picker-closed.png)
 
@@ -76,9 +76,9 @@ Le sélecteur d’heure qui en résulte se présente comme suit:
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 - [Contrôles de date et d’heure](date-and-time.md)
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
-- [Affichage Calendrier](calendar-view.md)
+- [Affichage du calendrier](calendar-view.md)
 - [Sélecteur de dates](date-picker.md)

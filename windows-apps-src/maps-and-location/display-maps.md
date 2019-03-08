@@ -4,14 +4,14 @@ description: Vous pouvez afficher une carte dans une fenêtre pouvant faire l'ob
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 03/19/2018
 ms.topic: article
-keywords: Windows10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
+keywords: Windows 10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 41d44f75c80e10123c21fc310bff46371ede0fca
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116381"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641174"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
@@ -87,10 +87,10 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 Utilisez un contrôle de carte pour afficher les données de carte enrichies et personnalisables dans votre app. Un contrôle de carte peut afficher des cartes routières, des vues aériennes, des affichages 3D, des itinéraires, des résultats de recherche et des informations sur la circulation. Sur une carte, vous pouvez afficher l’emplacement, les itinéraires et les centres d’intérêt de l’utilisateur. Une carte peut également afficher des vues 3D aériennes, des vues Streetside, le trafic, les transports publics et les entreprises locales.
 
-Utilisez un contrôle de carte si vous souhaitez insérer dans votre application une carte permettant aux utilisateurs de visualiser des informations géographiques propres à l’application ou générales. Si votre application contient un contrôle de carte, les utilisateurs n’auront pas à sortir de votre application pour accéder à ces informations.
+Utilisez un contrôle de carte si vous souhaitez insérer une carte dans votre application, qui permette aux utilisateurs d’afficher des informations géographiques propres à l’application ou générales. Si votre application contient un contrôle de carte, les utilisateurs ne devront pas sortir de votre application pour accéder à ces informations.
 
 > [!NOTE]
->Si vous ne voyez pas d’inconvénient à ce que les utilisateurs sortent de votre application, envisagez d’utiliser l’application Cartes Windows pour fournir ces informations. Votre application peut lancer l’application Cartes Windows pour afficher des cartes, des itinéraires et des résultats de recherche spécifiques. Pour plus d’informations, voir [Lancer l’app CartesWindows](https://msdn.microsoft.com/library/windows/apps/mt228341).
+>Si vous ne voyez pas d’inconvénient à ce que les utilisateurs sortent de votre application, envisagez d’utiliser l’application Cartes Windows pour fournir ces informations. Votre application peut lancer l’application Cartes Windows pour afficher des cartes, des itinéraires et des résultats de recherche spécifiques. Pour plus d’informations, voir [Lancer l’application Cartes Windows](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
 ### <a name="add-a-map-control-to-your-app"></a>Ajoutez un contrôle de carte à votre app
 
@@ -137,14 +137,14 @@ pageGrid.Children.Add(MapControl2);
 
 ### <a name="get-and-set-a-maps-authentication-key"></a>Demander et définir une clé d’authentification de cartes
 
-Avant d’utiliser les services de carte et [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), vous devez spécifier la clé d’authentification de cartes en tant que valeur de la propriété [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036). Dans les exemples précédents, remplacez `EnterYourAuthenticationKeyHere` par la clé que vous recevez du [Centre de développement Bing Cartes](https://www.bingmapsportal.com/). Le texte **Avertissement : MapServiceToken non spécifié** continue d’apparaître sous le contrôle jusqu’à ce que vous spécifiiez la clé d’authentification de cartes. Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
+Avant d’utiliser les services de carte et [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), vous devez spécifier la clé d’authentification de cartes en tant que valeur de la propriété [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036). Dans les exemples précédents, remplacez `EnterYourAuthenticationKeyHere` par la clé que vous recevez du [Centre de développement Bing Cartes](https://www.bingmapsportal.com/). Le texte **Avertissement : Sauf indication contraire de MapServiceToken** continue d’apparaître sous le contrôle jusqu'à ce que vous spécifiez la clé d’authentification maps. Pour plus d’informations sur l’obtention et la définition d’une clé d’authentification de cartes, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
 ## <a name="set-the-location-of-a-map"></a>Définir l’emplacement d'une carte
 Pointer la carte vers l'emplacement de votre choix ou utilisez l'emplacement actuel de l'utilisateur.  
 
 ### <a name="set-a-starting-location-for-the-map"></a>Définir un emplacement de départ pour la carte
 
-Définissez l’emplacement à afficher sur la carte en spécifiant la propriété [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) dans votre code, ou en liant la propriété dans votre balisage XAML. L’exemple ci-après représente une carte centrée sur la ville de Seattle, aux États-Unis.
+Définissez l’emplacement à afficher sur la carte en spécifiant la propriété [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) dans votre code, ou en liant la propriété dans votre balisage XAML. L’exemple suivant représente une carte centrée sur la ville de Seattle, aux États-Unis.
 
 > [!NOTE]
 > Dans la mesure où une chaîne ne peut pas être convertie en valeur [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), vous ne pouvez pas spécifier de valeur pour la propriété [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) dans le balisage XAML, sauf si vous utilisez la fonction de liaison de données. (Cette limitation s’applique également à la propriété [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) jointe.)
@@ -222,7 +222,7 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 
 Vous pouvez également utiliser JSON pour définir des styles personnalisés, puis utiliser ce JSON pour créer un objet [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet).
 
-Feuille de style JSON peut être créé de manière interactive à l’aide de l’application de [l’Éditeur de feuilles de Style de carte](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
+Feuille de style JSON peut être créé à l’aide de manière interactive la [éditeur de feuilles de Style de carte](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
@@ -278,11 +278,11 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 ![Carte de style combiné](images/style-combined.png)
 
 >[!NOTE]
->Les styles que vous définissez dans la seconde feuille de style remplaceront les styles de la première.
+>Les styles que vous définissez dans la deuxième feuille de style remplaceront les styles de la première.
 
 ## <a name="set-orientation-and-perspective"></a>Définir l’orientation et la perspective
 
-Effectuez un zoom avant, un zoom arrière, et faites pivoter et inclinez la caméra de la carte pour définir l'angle qui vous permettra d'obtenir l'effet souhaité. Essayez ces propriétés.
+Effectuez un zoom avant, un zoom arrière, faites pivoter et inclinez la caméra de la carte pour obtenir l’angle adapté à l’effet que vous voulez obtenir. Essayez ces propriétés.
 
 -   Affectez au **centre** de la carte un point géographique en définissant la propriété [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005).
 -   Définissez le **niveau de zooml** de la carte en affectant à la propriété [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) une valeur comprise entre 1 et 20.
@@ -312,7 +312,7 @@ Une vue Streetside est une perspective au niveau rue d’un emplacement qui s’
 
 ![exemple de vue Streetside du contrôle de carte.](images/onlystreetside-730width.png)
 
-Considérez l’expérience «à l’intérieur» de la vue Streetside comme distincte de la carte affichée à l’origine dans le contrôle de carte. Par exemple, la modification de l’emplacement dans la vue Streetside ne change pas l’emplacement ou l’apparence de la carte « sous » la vue Streetside. Après avoir fermé la vue Streetside (en cliquant sur le **X** dans l’angle supérieur droit du contrôle), la carte d’origine reste inchangée.
+Considérez l’expérience « à l’intérieur » de la vue Streetside comme distincte de la carte affichée à l’origine dans le contrôle de carte. Par exemple, la modification de l’emplacement dans la vue Streetside ne change pas l’emplacement ou l’apparence de la carte « sous » la vue Streetside. Après avoir fermé la vue Streetside (en cliquant sur le **X** dans l’angle supérieur droit du contrôle), la carte d’origine reste inchangée.
 
 Pour afficher une vue Streetside
 
@@ -323,7 +323,7 @@ Pour afficher une vue Streetside
 
 Cet exemple montre comment afficher une vue Streetside similaire à l’image précédente.
 
-**Remarque**la carte de la vue d’ensemble n’apparaître pas si le contrôle de carte est trop petit.
+**Remarque**  la vue d’ensemble n’apparaîtra pas si le contrôle de carte est trop petite.
 
  
 
@@ -421,10 +421,10 @@ private async void display3DLocation()
 
 Obtenez des informations sur les emplacements sur la carte en appelant les méthodes suivantes du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   Méthode [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) - obtenir l’emplacement géographique qui correspond au point spécifié dans la fenêtre d’affichage du contrôle de carte.
--   Méthode [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) : permet d’obtenir le point dans la fenêtre d’affichage du contrôle de carte qui correspond à l’emplacement géographique indiqué.
--   Méthode [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) : permet de déterminer si l’emplacement géographique indiqué est actuellement visible dans la fenêtre d’affichage du contrôle de carte.
--   Méthode [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014): permet d’obtenir les éléments de la carte situés au niveau du point spécifié dans la fenêtre d’affichage du contrôle de carte.
+-   [**TryGetLocationFromOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637016) méthode - obtenir l’emplacement géographique qui correspond au point spécifié dans la fenêtre d’affichage du contrôle de carte.
+-   [**GetOffsetFromLocation** ](https://msdn.microsoft.com/library/windows/apps/dn637018) méthode - Get, le point dans la fenêtre d’affichage du contrôle de carte qui correspond à l’emplacement géographique spécifié.
+-   [**IsLocationInView** ](https://msdn.microsoft.com/library/windows/apps/dn637022) méthode - déterminer si l’emplacement géographique spécifié est actuellement visible dans la fenêtre d’affichage du contrôle de carte.
+-   [**FindMapElementsAtOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637014) méthode - Get, les éléments sur la carte se trouve au point spécifié dans la fenêtre d’affichage du contrôle de carte.
 
 ## <a name="handle-interaction-and-changes"></a>Gérer les interactions et les modifications
 
@@ -437,7 +437,7 @@ Gérez les mouvements d’entrée utilisateur sur la carte en traitant les évé
 
 Déterminez si la carte est en cours de chargement ou entièrement chargée en gérant l’événement [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) du contrôle.
 
-Gérez les modifications qui se produisent lorsque l’utilisateur ou l’application modifie les paramètres de la carte en gérant les événements suivants de l’élément [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Recommandations sur les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+Gérez les modifications qui se produisent lorsque l’utilisateur ou l’application modifie les paramètres de la carte en gérant les événements suivants de l’élément [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Instructions pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
 
 -   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
 -   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
@@ -448,17 +448,17 @@ Gérez les modifications qui se produisent lorsque l’utilisateur ou l’applic
 
 -   Utilisez un espace écran ample (ou l’écran entier) pour afficher la carte de façon à ce que les utilisateurs n’aient pas à faire défiler ou à zoomer excessivement pour afficher des informations géographiques.
 
--   Si la carte est utilisée uniquement pour présenter une vue statique et informative, l’utilisation d’une carte plus petite peut être plus appropriée. Si vous optez pour une carte statique plus petite, basez ses dimensions sur la facilité d’utilisation: elle doit être suffisamment petite pour préserver l’espace disponible à l’écran, mais suffisamment grande pour rester lisible.
+-   Si la carte est utilisée uniquement pour présenter une vue statique et informative, l’utilisation d’une carte plus petite peut être plus appropriée. Si vous optez pour une carte statique plus petite, basez ses dimensions sur la facilité d’utilisation : elle doit être suffisamment petite pour préserver l’espace disponible à l’écran, mais suffisamment grande pour rester lisible.
 
 -   Incorporez les centres d’intérêt dans la carte à l’aide de la propriété [**map elements**](https://msdn.microsoft.com/library/windows/apps/dn637034). Des informations supplémentaires éventuelles peuvent être présentées dans une interface utilisateur temporairement superposée à la carte.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
+* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Obtenir l’emplacement actuel](get-location.md)
-* [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Instructions de conception pour les applications de géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

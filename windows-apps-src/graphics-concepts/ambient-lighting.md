@@ -8,24 +8,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934438"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663644"
 ---
 # <a name="ambient-lighting"></a>Éclairage ambiant
 
 
-L’éclairage ambiant permet de donner à une scène un éclairage constant. Cette fonction permet d'éclairer tous les vertex d'objets de la même manière car elle ne dépend pas des autres facteurs d'éclairage, comme les normales de vertex, la direction de la lumière, la position de la lumière, la plage ou l'atténuation. L'éclairage ambiant est constant dans toutes les directions et colore tous les pixels d’un objet de la même façon. Il présente une grande rapidité de calcul, mais donne aux objets un aspect plat et irréaliste.
+L'éclairage ambiant permet de donner à une scène un éclairage constant. Cette fonction permet d'éclairer tous les vertex d'objets de la même manière car elle ne dépend pas des autres facteurs d'éclairage, comme les normales de vertex, la direction de la lumière, la position de la lumière, la plage ou l'atténuation. L'éclairage ambiant est constant dans toutes les directions et colore tous les pixels d’un objet de la même façon. Il présente une grande rapidité de calcul, mais donne aux objets un aspect plat et irréaliste.
 
 L'éclairage ambiant est le type d’éclairage le plus rapide, mais qui génère les résultats les moins réalistes. Direct3D contient une seule propriété d'éclairage ambiant global que vous pouvez utiliser sans avoir à créer la moindre lumière. Vous pouvez également définir n’importe quel objet clair pour apporter un éclairage ambiant.
 
 L’éclairage ambiant pour une scène est décrit par l’équation suivante.
 
-Éclairage ambiant = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]
+Éclairage ambiant = Cₐ\*\[Gₐ + sum (Atten<sub>je</sub>\*place<sub>je</sub>\*L<sub>ai</sub>)\]
 
-Où:
+Où :
 
 | Paramètre         | Valeur par défaut | Type          | Description                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
@@ -38,19 +38,19 @@ Où:
 
  
 
-Cₐ possède l'une des valeurs suivantes:
+Cₐ possède l'une des valeurs suivantes :
 
--   couleur1 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1, et si la première couleur du vertex est indiquée dans la déclaration du vertex.
--   couleur2 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2, et si la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
+-   vertex color1, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1 et la couleur du premier vertex est fourni dans la déclaration de vertex.
+-   vertex color2, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 et la couleur du deuxième vertex est fourni dans la déclaration de vertex.
 -   couleur ambiante du matériau.
 
-**Remarque**  si aucune des deux options AMBIENTMATERIALSOURCE sont utilisée, la couleur du vertex n’est pas fournie, puis la couleur ambiante du matériau est utilisée.
+**Remarque**    si l’option AMBIENTMATERIALSOURCE est utilisée et la couleur de vertex n’est pas fournie, la couleur du matériau ambiante est utilisée.
 
  
 
 Pour utiliser la couleur ambiante du matériau, utilisez SetMaterial comme indiqué dans l’exemple de code ci-dessous.
 
-Gₐ est la couleur ambiante globale. Ce paramètre est défini à l’aide de SetRenderState(D3DRS\_AMBIENT). Il existe une seule couleur ambiante globale dans une scène Direct3D. Ce paramètre n’est pas associé à un objet lumineux Direct3D.
+Gₐ est la couleur ambiante globale. Il est défini à l’aide de SetRenderState (D3DRS\_ambiant). Il existe une seule couleur ambiante globale dans une scène Direct3D. Ce paramètre n’est pas associé à un objet lumineux Direct3D.
 
 L<sub>ai</sub> est la couleur ambiante de la lumière ith dans la scène. Chaque lumière Direct3D possède un jeu de propriétés, parmi lesquelles figure la couleur ambiante. Le terme sum(L<sub>ai</sub>) correspond à la somme de toutes les couleurs ambiantes dans la scène.
 
@@ -83,7 +83,7 @@ Pour donner à des objets un aspect plus réaliste, appliquez un éclairage diff
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Formules mathématiques d’éclairage](mathematics-of-lighting.md)
+[Mathématiques d’éclairage](mathematics-of-lighting.md)
 
  
 

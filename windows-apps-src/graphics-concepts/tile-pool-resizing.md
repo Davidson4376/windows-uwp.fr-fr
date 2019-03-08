@@ -1,23 +1,23 @@
 ---
-title: Redimensionnement d’un pool de tuiles
-description: Redimensionnez un pool de tuiles pour l’augmenter si l’application nécessite plus de plages de travail pour les ressources de diffusion en continu mappées ou le réduire si moins d’espace est nécessaire.
+title: Redimensionnement d’un pool de vignettes
+description: Redimensionnez un pool de vignettes pour l’augmenter si l’application nécessite plus de plages de travail pour les ressources de diffusion en continu mappées ou le réduire si moins d’espace est nécessaire.
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
 keywords:
-- Redimensionnement d’un pool de tuiles
+- Redimensionnement d’un pool de vignettes
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e08447c575e99178e503e99eb651cd5e225a898
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921988"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607774"
 ---
-# <a name="tile-pool-resizing"></a>Redimensionnement d’un pool de tuiles
+# <a name="tile-pool-resizing"></a>Redimensionnement d’un pool de vignettes
 
 
-Redimensionnez un pool de tuiles pour l’augmenter si l’application nécessite plus de plages de travail pour les ressources de diffusion en continu mappées ou le réduire si moins d’espace est nécessaire. Les applications peuvent également allouer des pools de tuiles supplémentaires aux nouvelles ressources de diffusion en continu. Cependant, si une simple ressource de diffusion en continu nécessite plus d’espace disponible qu’auparavant dans son pool de tuiles, l’augmentation du pool de tuiles est une bonne option. Une ressource de diffusion en continu ne peut pas avoir de mappages dans plusieurs pools de tuiles en même temps.
+Redimensionnez un pool de vignettes pour l’augmenter si l’application nécessite plus de plages de travail pour les ressources de diffusion en continu mappées ou le réduire si moins d’espace est nécessaire. Les applications peuvent également allouer des pools de tuiles supplémentaires aux nouvelles ressources de diffusion en continu. Cependant, si une simple ressource de diffusion en continu nécessite plus d’espace disponible qu’auparavant dans son pool de tuiles, l’augmentation du pool de tuiles est une bonne option. Une ressource de diffusion en continu ne peut pas avoir de mappages dans plusieurs pools de tuiles en même temps.
 
 Lorsqu’un pool de tuiles est agrandi, des tuiles supplémentaires sont ajoutées à la fin par le pilote d’affichage via une ou plusieurs nouvelles allocations. Cette répartition en allocations n’est pas visible pour l’application. La mémoire existante dans ce pool de tuiles est conservée et les mappages de ressources de diffusion en continu existants dans la mémoire restent intactes.
 
@@ -27,10 +27,10 @@ Pour économiser de la mémoire, une application doit non seulement réduire un 
 
 L’opération de réduction (et la suppression des mappages) ne produit pas nécessairement des économies de mémoire immédiates. La libération d’espace dans la mémoire dépend du niveau de granularité des allocations sous-jacentes du pilote d’affichage pour le pool de tuiles. Lorsqu’une réduction est suffisante pour que des allocations de pilote d’affichage se retrouvent inutilisées, le pilote d’affichage peut libérer de l’espace. Si un pool de tuiles s’est agrandi, la réduction à la taille précédente (et la suppression/le remappage des mappages de tuiles associés) est conseillée pour engendrer des économies de mémoire, même si celles-ci ne sont pas garanties dans le cas où les tailles ne s’alignent pas exactement avec la taille des allocations sous-jacentes choisies par le pilote d’affichage.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Mappages dans un pool de vignettes](mappings-are-into-a-tile-pool.md)
+[Les mappages sont dans un pool de vignette](mappings-are-into-a-tile-pool.md)
 
  
 

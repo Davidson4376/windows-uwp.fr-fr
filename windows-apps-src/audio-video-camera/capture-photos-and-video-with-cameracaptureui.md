@@ -4,14 +4,14 @@ description: Cet article décrit comment utiliser la classe CameraCaptureUI pour
 title: Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18ea6af70d4c0be068ecd79b925bff69ff149a8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947456"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617854"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
@@ -22,7 +22,7 @@ Cet article décrit comment utiliser la classe CameraCaptureUI pour capturer des
 Si vous voulez fournir votre propre interface utilisateur d’appareil photo ou si votre scénario nécessite un contrôle de bas niveau plus robuste de l’opération de capture, utilisez l’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) et implémentez votre propre expérience de capture. Pour plus d’informations, voir [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
 > [!NOTE]
-> Vous ne devez pas spécifier les fonctionnalités **webcam** ou **microphone** dans le fichier manifeste de votre application si votre application utilise uniquement CameraCaptureUI. Sinon, votre application sera affichée dans les paramètres de confidentialité de l’appareil photo, mais même si l’utilisateur n’autorise pas l’appareil photo à accéder à votre application, CameraCaptureUI pourra capturer du contenu multimédia. Cela s’explique par le fait que l’application d’appareil photo intégrée de Windows est une application interne approuvée qui nécessite que l’utilisateur démarre la capture photo, vidéo ou audio en appuyant sur un bouton. Votre application risque de ne pas Kit de Certification des applications Windows lorsque soumises au Store si vous spécifiez les fonctionnalités webcam ou microphone lorsque vous utilisez CameraCaptureUI comme votre seul mécanisme de capture photo.
+> Vous ne devez pas spécifier le **webcam** ou **microphone** fonctionnalités dans votre application si votre application utilise uniquement CameraCaptureUI le fichier manifeste. Sinon, votre application sera affichée dans les paramètres de confidentialité de l’appareil photo, mais même si l’utilisateur n’autorise pas l’appareil photo à accéder à votre application, CameraCaptureUI pourra capturer du contenu multimédia. Cela s’explique par le fait que l’application d’appareil photo intégrée de Windows est une application interne approuvée qui nécessite que l’utilisateur démarre la capture photo, vidéo ou audio en appuyant sur un bouton. Votre application peut échouer la certification de Kit de Certification des applications Windows lorsque envoyé vers le Store si vous spécifiez les fonctionnalités de webcam et microphone lorsque vous utilisez CameraCaptureUI comme votre seul mécanisme de capture photo.
 > Spécifiez les fonctionnalités webcam ou microphone dans le fichier manifeste de votre application si vous utilisez MediaCapture pour effectuer des captures audio, photo ou vidéo par programmation.
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>Capturer une photo avec CameraCaptureUI
@@ -31,7 +31,7 @@ Pour utiliser l’interface utilisateur de capture d’appareil photo, incluez l
 
 [!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200x200pixels.
+Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200 x 200 pixels.
 
 > [!NOTE]
 > Le rognage d’images dans **CameraCaptureUI** n’est pas pris en charge pour les appareils de la famille d’appareils mobiles. La valeur de la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) est ignorée quand votre application est exécutée sur ces appareils.
@@ -58,11 +58,11 @@ Pour afficher l’image dans votre interface utilisateur, déclarez un contrôle
 
 [!code-xml[ImageControl](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Pour utiliser l’image bitmap logicielle dans votre page XAML, incluez l’espace de noms [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) dans votre projet.
+Pour utiliser l’image bitmap logicielle dans votre page XAML, incluez l’espace de noms using [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) dans votre projet.
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-Le contrôle **Image** nécessite que la source d’image soit au format BGRA8 avec alpha prémultiplié ou sans alpha. Appelez la méthode statique [**SoftwareBitmap.Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) pour créer une image bitmap logicielle au format souhaité. Ensuite, créez un objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) et appelez [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) pour affecter l’image bitmap logicielle à la source. Enfin, définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) du contrôle **Image** pour afficher la photo capturée dans l’interface utilisateur.
+Le contrôle **Image** nécessite que la source d’image soit au format BGRA8 avec alpha prémultiplié ou sans alpha. Appelez la méthode statique [**SoftwareBitmap.Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) pour créer une image bitmap logicielle au format souhaité. Ensuite, créez un objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) et appelez [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) pour affecter l’image bitmap logicielle à la source. Enfin, définissez le contrôle **Image** et sa propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) pour afficher la photo capturée dans l’interface utilisateur.
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
@@ -86,10 +86,10 @@ Une fois le fichier vidéo renvoyé depuis l’interface utilisateur de capture 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 

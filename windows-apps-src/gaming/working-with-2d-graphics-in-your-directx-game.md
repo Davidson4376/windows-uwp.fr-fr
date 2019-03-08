@@ -1,27 +1,27 @@
 ---
-title: Graphiques 2D pour jeux DirectX
-description: Nous allons découvrir comment utiliser les effets et les graphismes bitmap 2D, puis comment vous en servir dans votre jeu.
+title: Graphismes 2D pour jeux DirectX
+description: Nous allons découvrir comment utiliser les graphismes et les effets 2D, puis comment vous en servir dans votre jeu.
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, directx, 2d, graphismes
+keywords: Windows 10, uwp, jeux, directx, 2d, graphismes
 ms.localizationpriority: medium
 ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632654"
 ---
 # <a name="2d-graphics-for-directx-games"></a>Graphismes 2D pour jeux DirectX
 
 
 
-Nous allons découvrir comment utiliser les graphiques et les effets 2D, puis comment vous en servir dans votre jeu.
+Nous allons découvrir comment utiliser les graphismes et les effets 2D, puis comment vous en servir dans votre jeu.
 
 Les graphiques 2D sont un sous-ensemble des graphiques 3D qui gèrent des primitives ou des bitmaps 2D. Plus généralement, ils n’utilisent pas la coordonnée z comme le ferait un jeu en 3D, puisque l’action est limitée au plan x-y. Ils utilisent parfois des techniques graphiques 3D pour créer leurs composants visuels, et sont en général plus simples à développer. Si vous faites vos premiers pas dans le monde du jeu, un jeu en 2D constitue un excellent point de départ, et le développement de graphiques 2D peut vous permettre de bien vous familiariser avec DirectX.
 
-Vous pouvez développer des graphiques de jeu 2D dans DirectX avec Direct2D ou Direct3D, ou en combinaison. Nombre des classes les plus utiles pour le développement de jeux en2D se trouvent dans Direct3D, telles que la classe [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601). Direct2D est un ensemble d’API qui vise principalement les interfaces utilisateur et les applications nécessitant une prise en charge pour dessiner les primitives (telles que les cercles, les lignes et les formes polygonales plates). Il n’en fournit pas moins un jeu puissant et performant de classes et de méthodes pour créer des graphiques de jeu, notamment les superpositions, les interfaces et les affichages tête haute (HUD) -- ou pour créer une variété de jeux 2D, simples ou raisonnablement détaillés. Néanmoins, l’approche la plus efficace en matière de création de jeux 2D consiste à utiliser des éléments des deux bibliothèques, et c’est donc celle que nous allons utiliser pour le développement de graphiques 2D dans cette rubrique.
+Vous pouvez développer des graphiques de jeu 2D dans DirectX avec Direct2D ou Direct3D, ou en combinaison. Nombre des classes les plus utiles pour le développement de jeux en 2D se trouvent dans Direct3D, telles que la classe [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601). Direct2D est un ensemble d’API qui vise principalement les interfaces utilisateur et les applications nécessitant une prise en charge pour dessiner les primitives (telles que les cercles, les lignes et les formes polygonales plates). Il n’en fournit pas moins un jeu puissant et performant de classes et de méthodes pour créer des graphiques de jeu, notamment les superpositions, les interfaces et les affichages tête haute (HUD) -- ou pour créer une variété de jeux 2D, simples ou raisonnablement détaillés. Néanmoins, l’approche la plus efficace en matière de création de jeux 2D consiste à utiliser des éléments des deux bibliothèques, et c’est donc celle que nous allons utiliser pour le développement de graphiques 2D dans cette rubrique.
 
 ## <a name="concepts-at-a-glance"></a>Aperçu rapide des concepts
 
@@ -32,7 +32,7 @@ Dans DirectX, les graphiques 2D font partie du pipeline 3D. La variété de rés
 
 Voici quelques-uns des concepts de base avec lesquels vous devez vous familiariser lorsque vous commencez à développer des graphiques 2D.
 
--   Pixels et coordonnées de raster. Un pixel est un point unique sur un écran à balayage, qui possède sa propre paire de coordonnées (x, y) pour indiquer sa position sur l’écran. (Le terme «pixel» est souvent utilisé de manière interchangeable entre les pixels physiques qui composent l’écran et les éléments de mémoire adressables utilisés pour contenir les couleurs et les valeurs alpha des pixels avant qu’ils ne soient envoyés à l’écran.) Le raster est traité par les API comme une grille rectangulaire d’éléments de pixel, qui a souvent une correspondance 1:1 avec la grille de pixels physique d’un écran. Les systèmes de coordonnées de raster commencent dans le coin supérieur gauche de la grille, au pixel de coordonnées (0, 0).
+-   Pixels et coordonnées de raster. Un pixel est un point unique sur un écran à balayage, qui possède sa propre paire de coordonnées (x, y) pour indiquer sa position sur l’écran. (Le terme « pixel » est souvent utilisé indifféremment entre les pixels physiques qui composent l’affichage et les éléments de la mémoire adressable utilisés pour contenir les valeurs de couleur et alpha des pixels avant leur envoi à l’affichage.) La trame est traitée par les API comme une grille rectangulaire des éléments de pixel, ce qui a souvent une correspondance 1:1 avec la grille de pixels physiques d’un affichage. Les systèmes de coordonnées de raster commencent dans le coin supérieur gauche de la grille, au pixel de coordonnées (0, 0).
 -   Les graphiques bitmaps (parfois appelés graphiques raster) sont des éléments graphiques représentés sous la forme d’une grille rectangulaire de valeurs de pixels. Les sprites, tableaux de pixels calculés gérés indépendamment du raster, sont un type de graphique bitmap, souvent utilisés pour les personnages ou les objets animés et indépendants de l’arrière-plan dans un jeu. Les différentes trames d’animation d’un sprite sont représentées sous forme de collections de bitmaps appelés « feuilles » ou « lots ». Les arrière-plans sont des objets bitmap plus grands de résolution identique ou supérieure à celle du raster d’écran, et servent souvent de toile(s) de fond pour l’action du jeu.
 -   Les graphiques vectoriels sont des graphiques qui utilisent des primitives géométriques, comme des points, des lignes, des cercles des polygones pour définir les objets 2D. Ils sont représentés non sous forme de tableaux de pixels, mais comme les équations mathématiques qui les définissent dans un espace 2D. Ils n’ont pas nécessairement de correspondance 1:1 avec la grille de pixels de l’écran, et doivent être convertis du système de coordonnées dans lequel vous les avez rendus, dans le système de coordonnées raster de l’écran.
 -   La traduction est la procédure de calcul du nouvel emplacement d’un point ou d’un vertex dans le même système de coordonnées.
@@ -42,7 +42,7 @@ Voici quelques-uns des concepts de base avec lesquels vous devez vous familiaris
 -   Le découpage consiste à retirer des parties de bitmaps ou de géométries qui ne se trouvent pas dans la partie visible de l’écran, ou qui sont masquées par des objets de plus grande priorité visuelle.
 -   Le tampon de trame est une zone dans la mémoire, souvent dans la mémoire du matériel graphique lui-même, qui contient la carte de raster finale que vous dessinerez à l’écran. La chaîne d’échange est une collection de tampons, où vous dessinez dans une mémoire tampon d’arrière-plan que vous faites passer à l’avant pour l’afficher quand l’image est prête.
 
-## <a name="design-considerations"></a>Considérations de conception
+## <a name="design-considerations"></a>Considérations relatives à la conception
 
 
 Le développement de graphiques 2D est un excellent moyen de vous familiariser avec Direct3D. Il vous permet de passer plus de temps sur d’autres aspects très importants du développement de jeu : le son, les commandes et les mécanismes du jeu.
@@ -58,4 +58,4 @@ En ce qui concerne les visuels, un esthétisme soigné sera votre meilleur atout
 
 -   [Vue d’ensemble de Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Démarrage rapide de Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Vue d’ensemble de l’interopérabilité entre Direct2D et Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+-   [Vue d’ensemble de l’interopérabilité Direct2D et Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)

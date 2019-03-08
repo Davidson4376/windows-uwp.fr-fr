@@ -1,23 +1,23 @@
 ---
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
-description: Utilisez l’API des offres ciblées du MicrosoftStore pour récupérer les offres ciblées disponibles pour l'utilisateur actuel de votre app.
-title: Gérer les offres ciblées à l’aide des services du WindowsStore
+description: Utilisez l’API des offres ciblées du Microsoft Store pour récupérer les offres ciblées disponibles pour l'utilisateur actuel de votre app.
+title: Gérer les offres ciblées à l’aide des services du Windows Store
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows 10, uwp, services du MicrosoftStore, API des offres ciblées du MicrosoftStore, offres ciblées
+keywords: windows 10, uwp, services du Microsoft Store, API des offres ciblées du Microsoft Store, offres ciblées
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045022"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615684"
 ---
-# <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du WindowsStore
+# <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du Windows Store
 
-Si vous créez un *ciblées offre* dans la page **> impliquer des offres ciblées** pour votre application dans l’espace partenaires, utilisez l' *API des offres ciblées du Microsoft Store* dans le code de votre application pour récupérer les informations qui vous permet d’implémenter l’expérience dans l’application pour le offre ciblée. Pour plus d’informations concernant les offres ciblées et leur création dans le tableau de bord, consultez [Utiliser les offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+Si vous créez un *ciblé offre* dans le **engager > ciblés offres** page de votre application dans le centre de partenaires, utilisez le *Microsoft Store ciblé offre des API* dans le code de votre application pour récupération des informations qui vous permet d’implémenter l’expérience dans l’application pour l’offre ciblé. Pour plus d’informations concernant les offres ciblées et leur création dans le tableau de bord, consultez [Utiliser les offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
-L’API des offres ciblées est une API REST simple que vous pouvez utiliser afin d’obtenir les offres ciblées disponibles pour l’utilisateur actuel, basée sur le fait que l’utilisateur fasse partie ou non du segment de clientèle pour l’offre ciblée. Pour utiliser cette API dans le code de votre app, procédez ainsi:
+L’API des offres ciblées est une API REST simple que vous pouvez utiliser afin d’obtenir les offres ciblées disponibles pour l’utilisateur actuel, basée sur le fait que l’utilisateur fasse partie ou non du segment de clientèle pour l’offre ciblée. Pour utiliser cette API dans le code de votre app, procédez ainsi :
 
 1.  [Obtenez un jeton de compte Microsoft](#obtain-a-microsoft-account-token) pour l’utilisateur de votre application actuellement connecté.
 2.  [Obtenez les offres ciblées pour l’utilisateur actuellement connecté](#get-targeted-offers).
@@ -29,7 +29,7 @@ Pour obtenir un exemple de code complet qui montre toutes ces étapes, voir l'[e
 
 ## <a name="get-a-microsoft-account-token-for-the-current-user"></a>Obtenez un jeton de compte Microsoft pour l’utilisateur actuellement connecté
 
-Dans le code de votre app, obtenez un jeton de compte Microsoft (MSA) pour l’utilisateur actuellement connecté. Vous devez transmettre ce jeton dans l’en-tête de requête ```Authorization``` de l’API des offres ciblées du MicrosoftStore. Ce jeton est utilisé par le Store pour récupérer les offres ciblées disponibles pour l’utilisateur actuellement connecté.
+Dans le code de votre app, obtenez un jeton de compte Microsoft (MSA) pour l’utilisateur actuellement connecté. Vous devez transmettre ce jeton dans l’en-tête de requête ```Authorization``` de l’API des offres ciblées du Microsoft Store. Ce jeton est utilisé par le Store pour récupérer les offres ciblées disponibles pour l’utilisateur actuellement connecté.
 
 Pour obtenir le jeton du MAS, utilisez la classe [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) pour demander un jeton selon la règle ```devcenter_implicit.basic,wl.basic```. L’exemple suivant montre comment procéder. Cet exemple est un extrait de l'[exemple complet](#code-example) et nécessite des instructions **using** fournies dans l’exemple complet.
 
@@ -53,7 +53,7 @@ L’exemple suivant montre comment obtenir les offres ciblées pour l’utilisat
 
 ## <a name="complete-code-example"></a>Exemple de code complet
 
-L’exemple de code ci-dessous montre les tâches suivantes:
+L’exemple de code ci-dessous montre les tâches suivantes :
 
 * Obtenir un jeton de compte MSA pour l’utilisateur actuel.
 * Obtenir toutes les offres ciblées pour l’utilisateur actuel grâce à la méthode [Obtenir des offres ciblées](get-targeted-offers.md).
@@ -63,7 +63,7 @@ Cet exemple nécessite la bibliothèque [Json.NET](https://www.newtonsoft.com/js
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Utiliser des offres ciblées pour optimiser l’engagement et les conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
+* [Utiliser des offres ciblées pour optimiser l’engagement et conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
 * [Obtenir des offres ciblées](get-targeted-offers.md)

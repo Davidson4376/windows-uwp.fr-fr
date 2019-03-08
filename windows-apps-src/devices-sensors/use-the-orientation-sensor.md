@@ -4,14 +4,14 @@ title: Utiliser le capteur d’orientation
 description: Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114615"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624094"
 ---
 # <a name="use-the-orientation-sensor"></a>Utiliser le capteur d’orientation
 
@@ -29,11 +29,11 @@ ms.locfileid: "9114615"
 
 Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
 
-Deuxtypes d’API de capteur d’orientation sont inclus dans l’espace de noms [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408): [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) et [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
+Il existe deux types de capteur d’orientation API inclus dans le [ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408) espace de noms : [**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371) et [ **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
 
-L’API [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) est utilisée pour les applications3D pour obtenir un quaternion et une matrice de rotation. Un quaternion est simplement la rotation d’un point [x,y,z] autour d’un axe arbitraire (par opposition à une matrice de rotation qui représente des rotations autour de trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
+L’API [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) est utilisée pour les applications 3D pour obtenir un quaternion et une matrice de rotation. Un quaternion peut être plus facilement interprété comme une rotation d’un point de \[x, y, z\] autour d’un axe arbitraire (contrairement à une matrice de rotation, qui représente les rotations autour des trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
 
-L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de renvoyer des propriétés telles que «Portrait vers le haut» ou «Paysage à gauche», ce capteur renvoie une valeur de rotation: «Sans rotation», «Rotation90DegrésSensAntiHoraire», etc. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
+L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de retourner des propriétés telles que « portrait vers le haut » ou « paysage gauche », ce capteur retourne une valeur de rotation : « Pas pivoté », « Rotated90DegreesCounterclockwise » et ainsi de suite. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
 
 | Orientation     | Lecture du capteur correspondante      |
 |-----------------|-----------------------------------|
@@ -42,15 +42,15 @@ L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/
 | Portrait vers le bas   | Rotation180DegrésSensAntiHoraire |
 | Paysage à droite | Rotation270DegrésSensAntiHoraire |
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur d’orientation.
 
 ## <a name="create-an-orientationsensor-app"></a>Créer une application de capteur d’orientation
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application d’orientation. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application d’orientation. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  <a name="instructions"></a>Instructions
 
@@ -181,7 +181,7 @@ Vous devez remplacer la première partie du nom de la classe dans l’extrait de
 
 Une fois l’application en cours d’exécution, vous pouvez modifier l’orientation en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  <a name="explanation"></a>Explication
 
@@ -193,7 +193,7 @@ L’application établit une connexion avec le capteur d’orientation par défa
 _sensor = OrientationSensor.GetDefault();
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -208,11 +208,11 @@ _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor,
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le codeXAML du projet.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
 
 ## <a name="create-a-simpleorientation-app"></a>Créer une application d’orientation simple
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application d’orientation simple. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application d’orientation simple. La sous-section suivante décrit l’application que vous venez de créer.
 
 ### <a name="instructions"></a>Instructions
 
@@ -327,7 +327,7 @@ Vous devez remplacer la première partie du nom de la classe dans l’extrait de
 
 Une fois l’application en cours d’exécution, vous pouvez modifier l’orientation en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ### <a name="explanation"></a>Explication
 

@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, échantillonnage multiple, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924915"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610854"
 ---
-# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Échantillonnage multiple des applications de plateforme Windows universelle (UWP)
+# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> L’échantillonnage multiple dans Universal Windows Platform (UWP) des applications
 
 
 
@@ -28,11 +28,11 @@ Les applications UWP qui utilisent DirectX doivent utiliser des chaînes d’éc
 
 Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des possibilités minimales et spécifiques de dénombrement d’échantillons. En outre, ils garantissent que certains formats de mémoire tampon seront disponibles pour la prise en charge de l’échantillonnage multiple. Les périphériques graphiques prennent souvent en charge un éventail plus large de formats et de nombres d’échantillons que le minimum requis. La prise en charge de l’échantillonnage multiple peut être déterminée au moment de l’exécution en vérifiant la prise en charge des fonctionnalités d’échantillonnage multiple avec des formats DXGI spécifiques, puis en vérifiant les nombres d’échantillons utilisables avec chaque format pris en charge.
 
-1.  Appelez [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) pour connaître les formats DXGI utilisables avec l’échantillonnage multiple. Fournissez les formats de cibles de rendu utilisables par votre jeu. Comme la cible de rendu et la cible de résolution doivent utiliser le même format, vérifiez [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) et **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
+1.  Appelez [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) pour connaître les formats DXGI utilisables avec l’échantillonnage multiple. Fournissez les formats de cibles de rendu utilisables par votre jeu. La cible de rendu et la cible de résolution doit utiliser le même format, reportez-vous à la fois à [ **D3D11\_FORMAT\_prise en charge\_multi-échantillons\_RENDERTARGET** ](https://msdn.microsoft.com/library/windows/desktop/ff476134) et **D3D11\_FORMAT\_prise en charge\_multi-échantillons\_résoudre**.
 
-    **Niveau de fonctionnalité 9:** Bien que le niveau de fonctionnalité 9 appareils [garantissent la prise en charge des formats des cibles de rendu échantillonnée plusieurs fois](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), prise en charge n’est pas garantie pour les cibles de résolution. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
+    **Niveau de fonctionnalité 9 :  ** Bien que la fonctionnalité de niveau 9 appareils [garantit la prise en charge des formats de cible de rendu de textures](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), prise en charge n’est pas garanti pour les cibles de résolution d’échantillonnage multiple. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
 
-    Le code suivant vérifie la prise en charge de l’échantillonnage multiple pour l’ensemble des valeurs de DXGI\_FORMAT:
+    Le code suivant vérifie l’échantillonnage multiple prise en charge pour tous le DXGI\_les valeurs FORMAT :
 
     ```cpp
     // Determine the format support for multisampling.
@@ -57,7 +57,7 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
 
 2.  Pour chaque format pris en charge, déterminez quelle est la prise en charge du nombre d’échantillons en appelant [**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499).
 
-    Le code suivant vérifie la prise en charge de la taille des échantillons pour les formats DXGI pris en charge:
+    Le code suivant vérifie la prise en charge de la taille des échantillons pour les formats DXGI pris en charge :
 
     ```cpp
     // Find available sample sizes for each supported format.
@@ -82,11 +82,11 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
     }
     ```
 
-    > **Remarque**  utilisation [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) à la place si vous avez besoin vérifier la prise en charge à échantillonnage multiple pour sous forme de vignettes tampons de ressources.
+    > **Remarque**    utilisation [ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://msdn.microsoft.com/library/windows/desktop/dn280494) au lieu de cela si vous devez vérifier l’échantillonnage multiple prise en charge pour les mémoires tampons de ressources en mosaïque.
 
      
 
-3.  Créez un tampon et un affichage de la cible de rendu avec le nombre d’échantillons souhaité. Utilisez les mêmes valeurs de DXGI\_FORMAT, de largeur et de hauteur pour la chaîne d’échange, mais spécifiez un nombre d’échantillons supérieur à1 et utilisez une dimension de texture échantillonnée plusieurs fois (**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS** par exemple). Si nécessaire, vous pouvez recréer la chaîne d’échange avec de nouveaux paramètres optimaux pour l’échantillonnage multiple.
+3.  Créez un tampon et un affichage de la cible de rendu avec le nombre d’échantillons souhaité. Utiliser le même DXGI\_FORMAT, la largeur et hauteur que la chaîne de permutation, mais spécifiez le nombre d’échantillons est supérieur à 1 et utiliser une dimension de texture textures (**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS** par exemple). Si nécessaire, vous pouvez recréer la chaîne d’échange avec de nouveaux paramètres optimaux pour l’échantillonnage multiple.
 
     Le code suivant crée une cible de rendu échantillonnée plusieurs fois :
 

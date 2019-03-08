@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, visual studio, outils, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924643"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653474"
 ---
-# <a name="visual-studio-tools-for-game-programming"></a>Outils Visual Studio pour la programmation de jeux
+# <a name="visual-studio-tools-for-game-programming"></a>Visual Studio Tools pour la programmation de jeux
 
 
 
-**Récapitulatif**
+**Résumé**
 
 -   [Créer un projet de jeu DirectX à partir d’un modèle](user-interface.md)
 -   Visual Studio Tools pour la programmation de jeux DirectX
@@ -45,7 +45,7 @@ Créez des [fichiers de personnalisations de la build](#build-customizations-for
 
 Pour plus d’informations, voir [Utilisation de textures et d’images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-> **Remarque**l’éditeur d’images n’a pas vocation à remplacer une application d’édition d’images complète, mais il convient à de nombreux simple affichage et de modification des scénarios.
+> **Remarque**  l’éditeur d’images n’est pas censée être un remplacement pour une image complète des fonctionnalités de modification d’application, mais il est judicieux pour les nombreux simple affichage et modification des scénarios.
 
  
 
@@ -64,7 +64,7 @@ Voici la capture d’écran d’un modèle dans l’éditeur auquel un éclairag
 
 Pour plus d’informations, voir [Utilisation de modèles en 3D](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-> **Remarque**l’éditeur de modèles n’a pas vocation à remplacer une application d’édition de modèles complète, mais il convient à de nombreux simple affichage et de modification des scénarios.
+> **Remarque**  l’éditeur de modèle n’est pas destinée à être un remplacement pour un modèle complet de fonctionnalités de modification d’application, mais il est judicieux pour les nombreux simple affichage et modification des scénarios.
 
  
 
@@ -116,7 +116,7 @@ Pour plus d’informations, voir [Utilisation de nuanceurs](https://msdn.microso
 
 Vous pouvez ajouter des personnalisations de la build à votre projet afin que Visual Studio convertisse les ressources en formats utilisables. Après cela, vous pouvez charger les ressources dans votre application et les utiliser en créant et remplissant des ressources DirectX comme vous le feriez dans toute autre application DirectX.
 
-Pour ajouter une personnalisation de build, vous avec le bouton droit sur le projet dans l' **Explorateur de solutions** et sélectionnez des **Personnalisations de la Build …**. Vous pouvez ajouter les types suivants de personnalisations de la build à votre projet.
+Pour ajouter une personnalisation de la build, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions** et sélectionnez **Personnalisations de la build...**. Vous pouvez ajouter les types ci-après de personnalisations de la build à votre projet.
 
 -   Le pipeline de contenu d’image prend les fichiers image en tant qu’entrée et génère des fichiers DirectDraw Surface (.dds).
 -   Le pipeline de contenu de maillage prend les fichiers de maillage (notamment .fbx) et génère des fichiers de maillage .cmo.

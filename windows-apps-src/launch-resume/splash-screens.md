@@ -4,14 +4,14 @@ description: Cette section explique comment définir et configurer l’écran de
 ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936334"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630194"
 ---
 # <a name="splash-screens"></a>Écrans de démarrage
 
@@ -19,11 +19,11 @@ Toutes les applications UWP doivent disposer d’un écran de démarrage compren
 
 Votre écran de démarrage s’affiche dès que l’utilisateur lance votre application. Il fournit des informations pendant que les ressources d’applications sont initialisées. Dès que votre application autorise l’interaction, l’écran de démarrage disparaît.
 
-Un écran de démarrage bien conçu peut contribuer à rendre votre application plus attrayante. Voici un écran de démarrage simple et discret:
+Un écran de démarrage bien conçu peut contribuer à rendre votre application plus attrayante. Voici un écran de démarrage simple et discret :
 
-![écran de démarrage redimensionné à 75% de la taille de l’exemple.](images/regularsplashscreen.png)
+![écran de démarrage redimensionné à 75 % de la taille de l’exemple.](images/regularsplashscreen.png)
 
-Cet écran de démarrage est créé en combinant une couleur d’arrière-plan verte à une imagePNG à arrière-plan transparent.
+Cet écran de démarrage est créé en combinant une couleur d’arrière-plan verte à une image PNG à arrière-plan transparent.
 
 Une image simple avec une couleur d’arrière-plan s’affiche correctement, quel que soit l’appareil sur lequel votre application s’exécute. Seules les dimensions de l’arrière-plan sont modifiées pour prendre en charge différentes tailles d’écran. Votre image reste toujours intacte.
 
@@ -32,4 +32,4 @@ De plus, vous pouvez utiliser la classe [**SplashScreen**](https://msdn.microsof
 | Rubrique | Description |
 |-------|-------------|
 | [Ajouter un écran de démarrage](add-a-splash-screen.md) | Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application. |
-| [Afficher un écran de démarrage plus longtemps](create-a-customized-splash-screen.md) | Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée. Il peut être personnalisé. |
+| [Afficher un écran de démarrage pour plus de temps](create-a-customized-splash-screen.md) | Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée. Il peut être personnalisé. |

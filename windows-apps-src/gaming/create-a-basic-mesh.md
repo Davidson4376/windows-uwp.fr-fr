@@ -1,25 +1,25 @@
 ---
 title: Créer et afficher un maillage de base
-description: Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter les objets et les surfaces dans le jeu.
+description: Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter des objets et des surfaces dans le jeu.
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, maillage, directx
+keywords: Windows 10, uwp, jeux, maillage, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934624"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595644"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 
 
 
-Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter les objets et les surfaces dans le jeu. Les listes de vertex qui forment la structure de ces surfaces et objets polygonaux sont appelées maillages. Ici, nous créons un maillage de base pour un objet cube et le fournissons au pipeline nuanceur pour le rendu et l’affichage.
+Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des polygones pour représenter des objets et des surfaces dans le jeu. Les listes de vertex qui forment la structure de ces surfaces et objets polygonaux sont appelées maillages. Ici, nous créons un maillage de base pour un objet cube et le fournissons au pipeline nuanceur pour le rendu et l’affichage.
 
-> **Important**  l’exemple de code inclus ici utilise des types (DirectX::XMFLOAT3 et DirectX::XMFLOAT4X4) et des méthodes inline déclarées dans DirectXMath.h. Si vous coupez et collez ce code, ajoutez \#include &lt;DirectXMath.h&gt; dans votre projet.
+> **Important**    l’exemple de code inclus ici utilise des types (par exemple, DirectX::XMFLOAT3 et DirectX::XMFLOAT4X4) et des méthodes inline déclarées dans DirectXMath.h. Si vous coupez et collez ce code, \#incluent &lt;DirectXMath.h&gt; dans votre projet.
 
  
 
@@ -30,10 +30,10 @@ Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables
 
 -   Notions de base d’algèbre linéaire et de systèmes de coordonnées 3D
--   Un Visual Studio 2015 ou version ultérieure modèle Direct3D
+-   Un Visual Studio 2015 ou un modèle de Direct3D ultérieure
 
 ## <a name="instructions"></a>Instructions
 
@@ -46,7 +46,7 @@ Si vous préférez une explication vocale de ces concepts, regardez cette vidéo
 <iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
 
 
-### <a name="step-1-construct-the-mesh-for-the-model"></a>Étape1: Construire le maillage pour le modèle
+### <a name="step-1-construct-the-mesh-for-the-model"></a>Étape 1 : Construction de la maille pour le modèle
 
 Dans la plupart des jeux, le maillage d’un objet du jeu est chargé à partir d’un fichier qui contient les données de vertex spécifiques. L’organisation de ces vertex dépend de l’application, mais généralement ils sont sérialisés en bandes ou en éventails. Les données de vertex peuvent provenir de n’importe quelle source logicielle, ou être créées manuellement. C’est votre jeu qui interprète les données de manière compatible avec le traitement du nuanceur de vertex.
 
@@ -75,7 +75,7 @@ Dans chaque paire entre crochets, le deuxième groupe de valeurs DirectX::XMFLOA
 
 Par conséquent, vous avez 8 vertex, chacun avec une couleur spécifique. Chaque paire vertex/couleur représente les données complètes pour un vertex dans notre exemple. Lorsque vous spécifiez la mémoire tampon de vertex, vous devez garder ce schéma-là à l’esprit. Nous fournissons ce schéma d’entrée au nuanceur de vertex afin qu’il puisse interpréter les données de vertex.
 
-### <a name="step-2-set-up-the-input-layout"></a>Étape2: Configurer le schéma d’entrée
+### <a name="step-2-set-up-the-input-layout"></a>Étape 2 : Définissez la disposition d’entrée
 
 Les vertex figurent à présent dans la mémoire. Toutefois, votre périphérique graphique dispose de sa propre mémoire, et vous utilisez Direct3D pour y accéder. Pour entrer vos données vertex dans le périphérique graphique à des fins de traitement, vous devez ouvrir la voie, pour ainsi dire, en déclarant la façon dont les données vertex sont disposées pour que le périphérique graphique puisse les interpréter lorsqu’il les obtient à partir de votre jeu. Pour ce faire, vous devez utiliser [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
 
@@ -98,27 +98,27 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-Dans ce code, vous spécifiez un schéma pour les vertex, en particulier, les données que chaque élément de la liste de vertex contient. Ici, dans **basicVertexLayoutDesc**, vous spécifiez deuxcomposants de données:
+Dans ce code, vous spécifiez un schéma pour les vertex, en particulier, les données que chaque élément de la liste de vertex contient. Ici, dans **basicVertexLayoutDesc**, vous spécifiez deux composants de données :
 
--   **POSITION**: sémantique HLSL pour les données de position fournies à un nuanceur. Dans ce code, il s’agit d’un DirectX::XMFLOAT3, ou plus précisément, d’une structure avec 3valeurs à virgule flottante 32bits qui correspondent à des coordonnées 3D (x, y, z). Vous pouvez également utiliser un float4 si vous fournissez la coordonnée homogène (w), auquel cas vous spécifiez DXGI\_FORMAT\_R32G32B32A32\_FLOAT. Le fait que vous utilisiez un DirectX::XMFLOAT3 ou un float4 dépend des besoins spécifiques de votre jeu. Assurez-vous simplement que les données de vertex de votre maillage correspondent bien au format que vous utilisez !
+-   **POSITION**: Il s’agit d’une sémantique pour placer les données fournies à un nuanceur HLSL. Dans ce code, il s’agit d’un DirectX::XMFLOAT3, ou plus précisément, d’une structure avec 3 valeurs à virgule flottante 32 bits qui correspondent à des coordonnées 3D (x, y, z). Vous pouvez également utiliser un float4 si vous fournissez les coordonnées de « w » homogènes, et dans ce cas, vous spécifiez DXGI\_FORMAT\_R32G32B32A32\_FLOAT. Le fait que vous utilisiez un DirectX::XMFLOAT3 ou un float4 dépend des besoins spécifiques de votre jeu. Assurez-vous simplement que les données de vertex de votre maillage correspondent bien au format que vous utilisez !
 
     Chaque valeur de coordonnée est exprimée sous forme de valeur à virgule flottante comprise entre -1 et 1, dans l’espace de coordonnées de l’objet. Lorsque le nuanceur de vertex a terminé, le vertex transformé est dans l’espace de projection de vue homogène (perspective corrigée).
 
-    «Mais la valeur de l’énumération indique RVB, pas XYZ!», remarquez-vous intelligemment. Bien vu! Dans les deux cas, pour les données de couleur et les données de coordonnées, vous utilisez en général 3 ou 4 valeurs composantes, alors pourquoi ne pas utiliser le même format dans les deux cas ? La sémantique HLSL, pas le nom du format, indique comment le nuanceur traite les données.
+    « Mais la valeur de l’énumération indique RVB, pas XYZ ! », remarquez-vous intelligemment. Bien vu ! Dans les deux cas, pour les données de couleur et les données de coordonnées, vous utilisez en général 3 ou 4 valeurs composantes, alors pourquoi ne pas utiliser le même format dans les deux cas ? La sémantique HLSL, pas le nom du format, indique comment le nuanceur traite les données.
 
--   **COLOR**: sémantique HLSL pour les données de couleur. Comme **POSITION**, il s’agit de 3valeurs à virgule flottante 32bits (DirectX::XMFLOAT3). Chaque valeur contient une composante de couleur: rouge (r), bleu (b) ou vert (v), exprimée par un nombre flottant compris entre 0 et 1.
+-   **COULEUR**: Il s’agit d’une sémantique pour les données de couleur HLSL. Comme **POSITION**, il s’agit de 3 valeurs à virgule flottante 32 bits (DirectX::XMFLOAT3). Chaque valeur contient une composante de couleur : rouge (r), bleu (b) ou vert (v), exprimée par un nombre flottant compris entre 0 et 1.
 
-    Les valeurs **COLOR** sont généralement renvoyées comme valeur RVBA à 4composantes en sortie du pipeline nuanceur. Pour cet exemple, vous définirez la valeur alpha A sur 1,0 (opacité maximale) dans le pipeline nuanceur pour tous les pixels.
+    Les valeurs **COLOR** sont généralement renvoyées comme valeur RVBA à 4 composantes en sortie du pipeline nuanceur. Pour cet exemple, vous définirez la valeur alpha A sur 1,0 (opacité maximale) dans le pipeline nuanceur pour tous les pixels.
 
-Pour obtenir la liste complète des formats, voir [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). Pour consulter la liste complète des sémantiques HLSL, voir [Sémantique](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Pour obtenir une liste complète des formats, consultez [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). Pour consulter la liste complète des sémantiques HLSL, voir [Sémantique](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
-Appelez [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) et créez la disposition d’entrée sur le périphérique Direct3D. Maintenant, vous devez créer une mémoire tampon qui puisse réellement contenir les données!
+Appelez [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) et créez la disposition d’entrée sur le périphérique Direct3D. Maintenant, vous devez créer une mémoire tampon qui puisse réellement contenir les données !
 
-### <a name="step-3-populate-the-vertex-buffers"></a>Étape3: Remplir les mémoires tampon de vertex
+### <a name="step-3-populate-the-vertex-buffers"></a>Étape 3 : Remplir les mémoires tampons de vertex
 
 Les mémoires tampon de vertex contiennent la liste des vertex de chaque triangle du maillage. Chaque vertex doit être unique dans cette liste. Dans notre exemple, il y a 8 vertex pour le cube. Le nuanceur de vertex s’exécute sur le périphérique graphique et lit la mémoire tampon de vertex ; il interprète les données en fonction du schéma d’entrée spécifié à l’étape précédente.
 
-Dans l’exemple suivant, vous fournissez une description et une sous-ressource pour la mémoire tampon, qui donne à Direct3D un certain nombre d’indications sur le mappage physique des données de vertex et la façon de les traiter en mémoire sur le périphérique graphique. Cela est nécessaire, car vous utilisez un [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) générique, qui peut contenir n’importe quoi. Les structures [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) sont fournies afin de s’assurer que Direct3D comprend la configuration de la mémoire physique du tampon, notamment la taille de chaque élément vertex dans la mémoire tampon ainsi que la taille maximale de la liste de vertex. Vous pouvez également contrôler l’accès à la mémoire tampon ici et la façon de la parcourir, mais ce n’est pas vraiment l’objet de ce didacticiel.
+Dans l’exemple suivant, vous fournissez une description et une sous-ressource pour la mémoire tampon, qui donne à Direct3D un certain nombre d’indications sur le mappage physique des données de vertex et la façon de les traiter en mémoire sur le périphérique graphique. Cela est nécessaire, car vous utilisez un [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) générique, qui peut contenir n’importe quoi. Le [ **D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220)structures sont fournis pour vous assurer que Direct3D comprend la disposition de mémoire physique de la mémoire tampon, y compris la taille de chaque élément du vertex dans la mémoire tampon, ainsi que la taille maximale de la liste de vertex. Vous pouvez également contrôler l’accès à la mémoire tampon ici et la façon de la parcourir, mais ce n’est pas vraiment l’objet de ce didacticiel.
 
 Après avoir configuré la mémoire tampon, vous appelez [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) pour la créer effectivement. Évidemment, si vous avez plusieurs objets, créez des tampons pour chaque modèle unique.
 
@@ -145,24 +145,24 @@ m_d3dDevice->CreateBuffer(
                 &vertexBuffer);
 ```
 
-Vertex chargés. Quel est l’ordre de traitement de ces vertex? Cela est géré lorsque vous fournissez une liste d’index aux vertex; l’ordre de ces index est l’ordre dans lequel les traite le nuanceur de vertex.
+Vertex chargés. Quel est l’ordre de traitement de ces vertex ? Cela est géré lorsque vous fournissez une liste d’index aux vertex ; l’ordre de ces index est l’ordre dans lequel les traite le nuanceur de vertex.
 
-### <a name="step-4-populate-the-index-buffers"></a>Étape4: Remplir les mémoires tampon d’index
+### <a name="step-4-populate-the-index-buffers"></a>Étape 4 : Remplir les mémoires tampons d’index
 
 Maintenant, vous fournissez une liste d’index pour tous les vertex. Ces index correspondent à la position du vertex dans la mémoire tampon de vertex, en commençant à 0. Pour vous aider à visualiser cela, considérez qu’un numéro unique est attribué à chaque vertex de votre maillage, comme un ID. Cet ID est la position (nombre entier) du vertex dans la mémoire tampon.
 
 ![cube à 8 vertex numérotés](images/cube-mesh-1.png)
 
-Pour le cube de notre exemple, vous avez 8vertex, ce qui crée 6quadruplés pour les faces. Vous fractionnez les quadruplés en triangles, soit un total de 12 triangles qui utilisent nos 8 vertex. Avec 3vertex par triangle, cela fait 36entrées dans notre tampon d’index. Dans notre exemple, ce modèle d’index est appelé liste de triangles, et vous l’indiquez à Direct3D comme **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST** lorsque vous définissez la topologie primitive.
+Pour le cube de notre exemple, vous avez 8 vertex, ce qui crée 6 quadruplés pour les faces. Vous fractionnez les quadruplés en triangles, soit un total de 12 triangles qui utilisent nos 8 vertex. Avec 3 vertex par triangle, cela fait 36 entrées dans notre tampon d’index. Dans notre exemple, ce modèle d’index est appelé liste de triangle, et vous l’indiquer à Direct3D comme un **D3D11\_PRIMITIFS\_topologie\_TRIANGLELIST** lorsque vous définissez la topologie primitive.
 
 C’est probablement la façon la plus inefficace de lister des index, car il y a de nombreuses redondances lorsque les triangles partagent des points et des côtés. Par exemple, lorsqu’un triangle partage un côté dans une forme losange, vous répertoriez 6 index pour les 4 vertex, comme ceci :
 
 ![ordre des index lorsque vous construisez un losange](images/rhombus-surface-1.png)
 
--   Triangle 1: \[0, 1, 2\]
--   Triangle 2: \[0, 2, 3\]
+-   Triangle 1 : \[0, 1, 2\]
+-   Triangle 2 : \[0, 2, 3\]
 
-Dans une topologie de bande ou en éventail, vous ordonnez les vertex d’une manière qui élimine beaucoup de côtés redondants lors du parcours (par exemple, le côté de l’index 0 à l’index 2 dans l’image.) Pour les grands maillages, cela réduit considérablement le nombre d’exécutions du nuanceur de vertex et améliore beaucoup les performances. Cependant, pour simplifier les choses, nous nous en tenons à la liste de triangles.
+Dans une topologie de frange ou ventilateur vous commander les sommets d’une manière qui élimine le nombre de côtés redondant pendant le parcours (par exemple, le côté de l’index 0 à l’index 2 dans l’image.) Pour les grandes mailles, cela réduit considérablement le nombre de fois où le nuanceur de sommets est exécuté et améliore considérablement les performances. Cependant, pour simplifier les choses, nous nous en tenons à la liste de triangles.
 
 Déclarez les index pour le tampon de vertex comme une topologie simple de liste de triangles.
 
@@ -187,11 +187,11 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-La redondance est élevée avec 36éléments indexés dans le tampon pour 8vertex seulement! Si vous choisissez d’éliminer certaines redondances et d’utiliser un type différent de liste de vertex, comme une bande ou un éventail, vous devez spécifier ce type lorsque vous fournissez une valeur [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) spécifique à la méthode [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
+La redondance est élevée avec 36 éléments indexés dans le tampon pour 8 vertex seulement ! Si vous choisissez d’éliminer certains des redondances et utiliser un type de liste de vertex différents, comme une bande ou d’un ventilateur, vous devez spécifier ce type lorsque vous fournissez un spécifique [ **D3D11\_PRIMITIFS\_topologie** ](https://msdn.microsoft.com/library/windows/desktop/ff476189) valeur pour le [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) (méthode).
 
 Pour plus d’informations sur les différentes techniques de listage d’index, voir [Topologies primitives](https://msdn.microsoft.com/library/windows/desktop/bb205124).
 
-### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>Étape5: Créer un tampon constant pour vos matrices de transformation
+### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>Étape 5 : Créer une mémoire tampon constante pour votre matrices de transformation
 
 Avant de pouvoir commencer à traiter des vertex, vous devrez fournir les matrices de transformation qui seront appliquées (multipliées) à chaque vertex au moment de l’exécution. Pour la plupart des jeux 3D, il en existe trois :
 
@@ -203,9 +203,9 @@ Ces matrices sont passées au nuanceur dans une *mémoire tampon constante*. Un 
 
 Les tampons constants ne sont modifiés par le langage HLSL. Vous pouvez les modifier lorsque votre jeu met à jour des données spécifiques. Les développeurs de jeux créent souvent 4 classes de tampons constants : un type pour les mises à jour par image, un type pour les mises à jour par modèle/objet, un type pour les mises à jour par actualisation de l’état du jeu et un type pour les données qui ne changent jamais tout au long de la durée de vie du jeu.
 
-Dans cet exemple, nous n’avons qu’un type de données qui ne changent jamais: les données DirectX::XMFLOAT4X4 pour les trois matrices.
+Dans cet exemple, nous n’avons qu’un type de données qui ne changent jamais : les données DirectX::XMFLOAT4X4 pour les trois matrices.
 
-> **Remarque**  l’exemple de code présenté ici utilise des matrices column-major. Vous pouvez sinon utiliser des matrices ordonnées par lignes à l’aide du mot clé **row\_major** en HLSL pour vous assurer que vos données de la matrice source sont également ordonnées par lignes. DirectXMath utilise des matrices ordonnées par lignes et peut être utilisé directement avec des matrices HLSL définies avec le mot-clé **row\_major**.
+> **Remarque**    l’exemple de code présenté ici utilise des matrices colonne-major. Vous pouvez utiliser à la place des matrices row-major à l’aide de la **ligne\_majeure** mot-clé dans HLSL et l’assurance que votre source de données de matrice est également ligne-champ. DirectXMath utilise des matrices row-major et peut être utilisé directement avec des matrices HLSL définis avec la **ligne\_majeure** mot clé.
 
  
 
@@ -257,7 +257,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **Remarque**vous déclarez généralement la matrice de projection lorsque vous configurez les ressources propres au périphérique, dans la mesure où les résultats de la multiplication avec ce dernier doivent correspondre à des paramètres de taille de fenêtre d’affichage 2D actuels (qui correspondent souvent à la hauteur en pixels et la largeur de la affichage). Si ceux-ci changent, vous devez mettre à l’échelle les valeurs des coordonnées x et y en conséquence.
+> **Remarque**  vous généralement déclarer la matrice de projection lorsque vous configurez des ressources spécifiques d’appareil, car les résultats de la multiplication avec elle doivent correspondre les paramètres de taille de fenêtre d’affichage 2D actuel (qui correspondent souvent avec le pixel hauteur et largeur de l’affichage). Si ceux-ci changent, vous devez mettre à l’échelle les valeurs des coordonnées x et y en conséquence.
 
  
 
@@ -312,7 +312,7 @@ m_d3dDeviceContext->IASetIndexBuffer(
 
 Parfait ! L’assembly d’entrée est terminé. Tout est en place pour le rendu. Laissons le nuanceur de vertex se mettre au travail.
 
-### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>Étape6: Traiter le maillage avec le nuanceur de vertex
+### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>Étape 6 : Traiter la maille avec le nuanceur de sommets
 
 Maintenant que vous avez un tampon de vertex avec les vertex qui définissent votre maillage et un tampon d’index qui définit l’ordre dans lequel les vertex sont traités, vous les envoyez au nuanceur de vertex. Le code du nuanceur de vertex, exprimé dans un langage de haut niveau compilé, s’exécute une fois pour chaque vertex dans la mémoire tampon de vertex, vous permettant d’effectuer vos transformations par vertex. Le résultat final est en général une projection 2D.
 
@@ -377,13 +377,13 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-Notez ce **cbuffer** en haut: c’est l’élément HLSL analogue au tampon constant que nous avons déclaré précédemment dans notre code C++. Et le **VertexShaderInputstruct**: Cela ressemble au schéma d’entrée et à la déclaration des données de vertex! Il est important que le tampon constant et que les déclarations des données de vertex dans votre code C++ correspondent aux déclarations dans votre code HLSL, en incluant les types, les signes et l’alignement des données.
+Notez ce **cbuffer** en haut : c’est l’élément HLSL analogue au tampon constant que nous avons déclaré précédemment dans notre code C++. Et le **VertexShaderInputstruct** : Cela ressemble au schéma d’entrée et à la déclaration des données de vertex ! Il est important que le tampon constant et que les déclarations des données de vertex dans votre code C++ correspondent aux déclarations dans votre code HLSL, en incluant les types, les signes et l’alignement des données.
 
-**PixelShaderInput** spécifie la disposition des données qui sont retournées par la fonction principale du nuanceur de vertex. Lorsque vous terminez le traitement d’un vertex, vous retournez une position du vertex dans l’espace de projection 2D et une couleur utilisée pour l’éclairage par vertex. La carte graphique utilise la sortie de données du nuanceur pour calculer les «fragments» (pixels possibles) qui doivent être colorés lorsque le nuanceur de pixels est exécuté dans l’étape suivante du pipeline.
+**PixelShaderInput** spécifie la disposition des données qui sont retournées par la fonction principale du nuanceur de vertex. Lorsque vous terminez le traitement d’un vertex, vous retournez une position du vertex dans l’espace de projection 2D et une couleur utilisée pour l’éclairage par vertex. La carte graphique utilise la sortie de données du nuanceur pour calculer les « fragments » (pixels possibles) qui doivent être colorés lorsque le nuanceur de pixels est exécuté dans l’étape suivante du pipeline.
 
-### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>Étape7: Passage du maillage par le nuanceur de pixels
+### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>Étape 7 : En passant le maillage via le nuanceur de pixels
 
-En général, à ce stade dans le pipeline graphique, vous effectuez les opérations au niveau pixel sur les surfaces projetées visibles de vos objets. (Les gens aiment les textures.) Dans le cadre de cet exemple, cependant, cette étape se résume à un simple passage.
+En général, à ce stade dans le pipeline graphique, vous effectuez les opérations au niveau pixel sur les surfaces projetées visibles de vos objets. (Les personnes comme les textures). Dans le cadre de l’échantillon, cependant, vous passez simplement il via cette étape.
 
 Tout d’abord, nous allons créer une instance du nuanceur de pixels. Le nuanceur de pixels s’exécute pour chaque pixel de la projection 2D de votre scène, en attribuant une couleur à ce pixel. Dans ce cas, nous passons la couleur du pixel retourné par le nuanceur de vertex directement.
 
@@ -408,11 +408,11 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-Placez ce code dans un fichier HLSL distinct du code HLSL du nuanceur de vertex (tel que SimplePixelShader.hlsl). Ce code est exécuté une seule fois pour chaque pixel visible dans votre fenêtre d’affichage (une représentation en mémoire de la portion de l’écran dans laquelle vous dessinez) qui, dans ce cas, correspond à la totalité de l’écran. Maintenant, votre pipeline graphique est complètement défini!
+Placez ce code dans un fichier HLSL distinct du code HLSL du nuanceur de vertex (tel que SimplePixelShader.hlsl). Ce code est exécuté une seule fois pour chaque pixel visible dans votre fenêtre d’affichage (une représentation en mémoire de la portion de l’écran dans laquelle vous dessinez) qui, dans ce cas, correspond à la totalité de l’écran. Maintenant, votre pipeline graphique est complètement défini !
 
-### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>Étape8: Rastérisation et affichage du maillage
+### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>Étape 8 : Rastérisation et affichage de la maille
 
-Nous allons exécuter le pipeline. C’est simple: appelez [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
+Nous allons exécuter le pipeline. C’est simple : appelez [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
 
 Dessinez ce cube !
 
@@ -447,7 +447,7 @@ Cette rubrique couvre la création et l’affichage d’une géométrie simple q
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Comment charger les ressources dans votre jeu DirectX](load-a-game-asset.md)
+* [Comment charger des ressources dans votre jeu DirectX](load-a-game-asset.md)
 
  
 

@@ -1,19 +1,19 @@
 ---
 ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
 description: Cet article vous explique comment valoriser les fonctionnalités spécifiques d’interface utilisateur d’appareil photo présentes de manière exclusive sur les appareils mobiles.
-title: Fonctionnalités d’interface utilisateur de caméra pour les appareils mobiles
+title: Fonctionnalités d’interface utilisateur d’appareil photo pour les appareils mobiles
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bf27de9c9b1bce2b35918b2a9d1357d2f3ba20b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0c0da215cad867a498527b475422c4026cc65ce3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640694"
 ---
-#<a name="camera-ui-features-for-mobile-devices"></a>Fonctionnalités d’interface utilisateur de caméra pour les appareils mobiles
+# <a name="camera-ui-features-for-mobile-devices"></a>Fonctionnalités d’interface utilisateur d’appareil photo pour les appareils mobiles
 
 Cet article vous explique comment valoriser les fonctionnalités spécifiques d’interface utilisateur d’appareil photo présentes de manière exclusive sur les appareils mobiles. 
 
@@ -21,7 +21,7 @@ Cet article vous explique comment valoriser les fonctionnalités spécifiques d�
 
 Pour utiliser ces fonctionnalités, vous devez ajouter à votre projet une référence au kit de développement logiciel (SDK) Microsoft Mobile Extension pour la plateforme d’application universelle.
 
-**Pour ajouter une référence au kit de développement logiciel (SDK) de l’extension mobile pour la prise en charge du bouton de l’appareil photo, procédez comme suit:**
+**Pour ajouter une référence à l’extension mobile SDK pour la prise en charge du bouton matériel caméra**
 
 1.  Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
 
@@ -55,10 +55,10 @@ Lorsque votre application s’arrête ou que l’utilisateur quitte la page de c
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 
 
 

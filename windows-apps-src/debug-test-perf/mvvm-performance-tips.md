@@ -1,17 +1,17 @@
 ---
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: Conseils relatifs aux performances du langage de programmation et du modèleMVVM
+title: Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 description: Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9027362eccfb8130b181bee26a57f13ce1e1af66
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621764"
 ---
 # <a name="mvvm-and-language-performance-tips"></a>Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 
@@ -29,8 +29,8 @@ Le modèle MVVM est courant dans de nombreuses applications XAML. (Le modèle MV
 Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructures tierces qui permettent de l’implémenter. Cependant un strict respect d’une variation du modèle peut entraîner une surcharge bien supérieure à celle qui peut être justifiée dans les applications.
 
 -   La liaison de données XAML (extension de balisage {Binding}) a été conçue en partie pour activer des modèles d’affichage/de modèle. Néanmoins, {Binding} est accompagnée d’une plage de travail non triviale et d’une surcharge de processeur. La création d’une {Binding} entraîne une série d’allocations, et la mise à jour d’une cible de liaison peut provoquer boxing et réflexion. Ces problèmes sont traités avec l’extension de balisage {x:Bind}, qui compile les liaisons au moment de la génération. **Recommandation :** utilisez {x: Bind}.
--   Dans MVVM, il est courant de connecter Button.Click au modèle d’affichage à l’aide d'une ICommand, par exemple les applications auxiliaires DelegateCommand ou RelayCommand courantes. Ces commandes sont des allocations supplémentaires, qui incluent cependant le détecteur d’événements CanExecuteChanged, s’ajoutent à la plage de travail et au temps de démarrage/navigation de la page. **Recommandation :** comme alternative à l’utilisation de l’interface ICommand pratique, pensez à placer des gestionnaires d’événements dans votre code-behind, à les attacher aux événements d’affichage et à appeler une commande dans votre modèle d’affichage lorsque ces événements sont déclenchés. Vous devez également ajouter du code supplémentaire pour désactiver le bouton lorsque la commande n’est pas disponible.
--   Dans le modèle MVVM, il est courant de créer une Page avec toutes les configurations possibles de l’interface utilisateur, puis de réduire les parties de l’arborescence en liant la propriété Visibility aux propriétés de l’ordinateur virtuel. Cela s’ajoute inutilement au temps de démarrage et éventuellement à la plage de travail (car certaines parties de l’arborescence peuvent ne jamais devenir visibles). **Recommandations:** Utilisez la fonctionnalité [x:Load attribute](../xaml-platform/x-load-attribute.md) ou [x:DeferLoadStrategy attribute](../xaml-platform/x-deferloadstrategy-attribute.md) pour différer les parties superflues de l’arborescence hors du démarrage. Vous pouvez également créer des contrôles utilisateur pour les différents modes de la page et utiliser code-behind pour ne conserver que les contrôles nécessaires chargés.
+-   Dans MVVM, il est courant de connecter Button.Click au modèle d’affichage à l’aide d'une ICommand, par exemple les applications auxiliaires DelegateCommand ou RelayCommand courantes. Ces commandes sont des allocations supplémentaires, qui incluent cependant le détecteur d’événements CanExecuteChanged, s’ajoutent à la plage de travail et au temps de démarrage/navigation de la page. **Recommandation :** Comme alternative à l’aide de l’interface ICommand pratique, pensez à placer des gestionnaires d’événements dans votre code-behind et leur attachement pour les événements d’affichage et appeler une commande sur votre modèle de vue lorsque ces événements sont déclenchés. Vous devez également ajouter du code supplémentaire pour désactiver le bouton lorsque la commande n’est pas disponible.
+-   Dans le modèle MVVM, il est courant de créer une Page avec toutes les configurations possibles de l’interface utilisateur, puis de réduire les parties de l’arborescence en liant la propriété Visibility aux propriétés de l’ordinateur virtuel. Cela s’ajoute inutilement au temps de démarrage et éventuellement à la plage de travail (car certaines parties de l’arborescence peuvent ne jamais devenir visibles). **Recommandations :** Utilisez le [les attribut x : Load](../xaml-platform/x-load-attribute.md) ou [x : DeferLoadStrategy attribut](../xaml-platform/x-deferloadstrategy-attribute.md) fonctionnalité différer les parties inutiles de l’arborescence de démarrage. Vous pouvez également créer des contrôles utilisateur pour les différents modes de la page et utiliser code-behind pour ne conserver que les contrôles nécessaires chargés.
 
 ## <a name="ccx-recommendations"></a>Recommandations liées à C++/CX
 

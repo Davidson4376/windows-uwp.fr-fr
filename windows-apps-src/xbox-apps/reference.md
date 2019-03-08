@@ -1,19 +1,19 @@
 ---
-title: API REST pour Xbox Device Portal
-description: Informations de référence sur les API pour UWP sur XboxOne.
+title: API REST pour le portail d'appareil Xbox
+description: Informations de référence sur les API pour UWP sur Xbox One.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fdcf01d7d1f72624d73acf2d10ce28dfb75e04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945831"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656994"
 ---
-# <a name="xbox-device-portal-rest-api"></a>API REST pour Xbox Device Portal
+# <a name="xbox-device-portal-rest-api"></a>API REST pour le portail d'appareil Xbox
 
 Cette section contient des rubriques de référence pour l’API REST pour Xbox Device Portal, utilisée pour configurer et gérer votre console à distance.
 
@@ -29,13 +29,13 @@ Cette section contient des rubriques de référence pour l’API REST pour Xbox 
 |[/ext/remoteinput](uwp-remoteinput-api.md)| Envoyer à distance l'entrée du clavier, de la souris ou de la manette sur une Xbox. |
 |[/ext/remoteinput/controllers](uwp-remoteinput-controllers-api.md)| Obtenir le nombre de contrôleurs physiques connectés ou désactiver tous les contrôleurs physiques. |
 |[/ext/screenshot](wdp-media-capture-api.md)| Capture une représentation PNG de l’écran actuellement affiché sur la console. |
-|[/ext/settings](wdp-xboxsettings-api.md)| Accède aux paramètres du développeur XboxOne. |
+|[/ext/settings](wdp-xboxsettings-api.md)| Accède aux paramètres du développeur Xbox One. |
 |[/ext/smb/developerfolder](wdp-smb-api.md)| Accède au dossier de développement sur votre console via l’Explorateur de fichiers sur votre ordinateur de développement. |
-|[/ext/user](wdp-user-management.md)| Gère les utilisateurs sur la console XboxOne. |
+|[/ext/user](wdp-user-management.md)| Gère les utilisateurs sur la console Xbox One. |
 |[/ext/xbox/info](wdp-xboxinfo-api.md)| Donne des informations sur l’appareil Xbox One. |
-|[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Gère votre sandbox XboxLive. |
+|[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Gère votre sandbox Xbox Live. |
 
 ## <a name="see-also"></a>Voir également
 
-- [Plateforme UWP sur XboxOne](index.md)
-- [WindowsDevicePortal](../debug-test-perf/device-portal.md)
+- [UWP sur Xbox One](index.md)
+- [Windows Device Portal](../debug-test-perf/device-portal.md)

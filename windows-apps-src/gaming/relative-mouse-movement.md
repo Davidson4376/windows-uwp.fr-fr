@@ -3,15 +3,15 @@ title: Mouvements de souris relatifs
 description: Utilisez des contrôles de souris relatifs, qui n’utilisent pas le curseur système et ne retournent pas de coordonnées d’écran absolues, pour suivre le delta des pixels entre les mouvements de la souris dans les jeux.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, souris, entrée
+keywords: windows 10, uwp, jeux, souris, entrée
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
 ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639654"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Mouvements de souris relatifs et CoreWindow
 
@@ -98,5 +98,5 @@ Quand votre application est en mode de manipulation d’objet/de scène 3D (mode
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) 
+* [Présentation de déplacement des contrôles pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) 
 * [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md)

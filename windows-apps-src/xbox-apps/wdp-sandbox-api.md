@@ -3,43 +3,43 @@ title: Référence sur les API de sandbox Xbox Live Device Portal
 description: Découvrez comment accéder par programme au sandbox Xbox Live.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645694"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Informations de référence sur les API de sandbox Xbox Live   
 Vous pouvez obtenir et définir vos sandbox Xbox Live à l’aide de cette API REST.
 
 ## <a name="get-the-xbox-live-sandbox"></a>Obtenir le sandbox Xbox Live
 
-**Requête**
+**Demande**
 
-Vous pouvez lire la valeur actuelle du sandbox Xbox Live de l’appareil en utilisant la requête suivante:
+Vous pouvez lire la valeur actuelle du sandbox Xbox Live de l’appareil en utilisant la requête suivante :
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 GET | /ext/xboxlive/sandbox
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
-- Aucun
+- Aucune
 
 **Réponse**   
-Sandbox: (chaîne) le sandbox actuel dans lequel se trouve l’appareil.   
+Sandbox : (chaîne) le sandbox actuel dans lequel se trouve l’appareil.   
 
 **Code d’état**
 
@@ -54,28 +54,28 @@ Code d’état HTTP      | Description
 ## <a name="set-the-xbox-live-sandbox"></a>Définir le sandbox Xbox Live
 Vous pouvez modifier le sandbox Xbox Live pour l’appareil en utilisant la requête suivante. Veuillez noter que sur Xbox One, vous devez redémarrer l’appareil pour que le paramètre prenne effet.
 
-**Requête**
+**Demande**
 
-Vous pouvez définir la valeur actuelle du sandbox Xbox Live de l’appareil en utilisant la requête suivante:
+Vous pouvez définir la valeur actuelle du sandbox Xbox Live de l’appareil en utilisant la requête suivante :
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
-Le corps de la requête est un objet JSON contenant le champ suivant:   
-Sandbox: (chaîne) la nouvelle valeur sur laquelle le sandbox de l’appareil doit être défini.
+**Corps de la demande**   
+Le corps de la requête est un objet JSON contenant le champ suivant :   
+Sandbox : (chaîne) la nouvelle valeur sur laquelle le sandbox de l’appareil doit être défini.
 
 **Réponse**   
-Sandbox: (chaîne) le sandbox actuel dans lequel se trouve l’appareil.   
+Sandbox : (chaîne) le sandbox actuel dans lequel se trouve l’appareil.   
 
 **Code d’état**
 
@@ -88,7 +88,7 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox
 

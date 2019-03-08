@@ -1,34 +1,34 @@
 ---
-description: Découvrez comment utiliser l’API REST de métadonnées d’application pour accéder à certaines métadonnées de types pour les applications. Cette API est destinée à être utilisée par les réseaux publicitaires pour récupérer des informations sur les apps dans le MicrosoftStore, et ce, afin d’améliorer la façon dont ils vendent l’espace publicitaire aux annonceurs.
+description: Découvrez comment utiliser l’API REST de métadonnées d’application pour accéder à certaines métadonnées de types pour les applications. Cette API est destinée à être utilisée par les réseaux publicitaires pour récupérer des informations sur les apps dans le Microsoft Store, et ce, afin d’améliorer la façon dont ils vendent l’espace publicitaire aux annonceurs.
 title: API de métadonnées d’application pour les réseaux publicitaires
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, réseau publicitaire, métadonnées d’application
+keywords: Windows 10, uwp, réseau publicitaire, métadonnées d’application
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049426"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621134"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>API de métadonnées d’application pour les réseaux publicitaires
 
-Les réseaux publicitaires peuvent utiliser *l’API des métadonnées d’app* pour récupérer par programme des métadonnées sur les apps dans le MicrosoftStore, notamment des détails tels que la description et la catégorie pour les descriptions dans le MicrosoftStore de l’app, ainsi que des informations sur le fait que l’app cible ou non des enfants de moins de 13ans. L’accès à cette API est actuellement limité aux développeurs bénéficiant d’une autorisation sur l’API accordée par Microsoft.
+Les réseaux publicitaires peuvent utiliser *l’API des métadonnées d’app* pour récupérer par programme des métadonnées sur les apps dans le Microsoft Store, notamment des détails tels que la description et la catégorie pour les descriptions dans le Microsoft Store de l’app, ainsi que des informations sur le fait que l’app cible ou non des enfants de moins de 13 ans. L’accès à cette API est actuellement limité aux développeurs bénéficiant d’une autorisation sur l’API accordée par Microsoft.
 
 Cet article fournit des instructions sur la manière de demander l’accès à l’API à l’aide du [portail API de métadonnées d’application](https://admetadata.portal.azure-api.net/), d’obtenir votre clé d’abonnement pour accéder à l’API et d’appeler l’API.
 
 ## <a name="request-access"></a>Demander l’accès
 
-Les réseaux publicitaires peuvent demander l’accès à l’API de métadonnées d’application en suivant ces instructions:
+Les réseaux publicitaires peuvent demander l’accès à l’API de métadonnées d’application en suivant ces instructions :
 
 1. Accédez à la page [https://admetadata.portal.azure-api.net/signup](https://admetadata.portal.azure-api.net/signup) du portail API des métadonnées d’app.
 2. Entrez les informations requises, puis cliquez sur le bouton **S’inscrire**.
 3. Sur le même site, cliquez sur l’onglet **Produits**, puis cliquez sur **Détails de l’application pour la publicité**.
 4. Sur la page suivante, cliquez sur le bouton **S’abonner**. Cela envoie votre demande d’accès à l’API de métadonnées d’application à Microsoft.
 
-Une fois votre demande envoyée, vous recevez un message électronique dans un délai de 24heures environ qui vous indique si votre demande a été accordée ou refusée.
+Une fois votre demande envoyée, vous recevez un message électronique dans un délai de 24 heures environ qui vous indique si votre demande a été accordée ou refusée.
 
 <span id="get-key" />
 
@@ -46,7 +46,7 @@ Si vous êtes autorisé à accéder à l’API de métadonnées d’application,
 
 Une fois que vous avez votre clé d’abonnement, vous êtes prêt à appeler l’API à l’aide de la syntaxe HTTP REST à partir du langage de programmation de votre choix. Pour plus d’informations sur la syntaxe de l’API, voir la section [Syntaxe de l’API](#syntax) ci-dessous. Pour obtenir des exemples de code en C#, JavaScript, Python et plusieurs autres langages, cliquez sur l’onglet **API** du portail API des métadonnées d’application, cliquez sur **Détails de l’application**, puis consultez la section **Exemples de code** au bas de la page.
 
-Par ailleurs, vous pouvez appeler l’API à l’aide de l’interface utilisateur fournie par le portail API de métadonnées d’application:
+Par ailleurs, vous pouvez appeler l’API à l’aide de l’interface utilisateur fournie par le portail API de métadonnées d’application :
   1. Dans le portail, cliquez sur l’onglet **API**, puis cliquez sur **Détails de l’application**.
   2. Sur la page suivante, entrez la valeur [app_id](#request-parameters) de l’application pour laquelle vous souhaitez récupérer des métadonnées dans le champ **app_id**, puis entrez votre clé d’abonnement dans le champ **Ocp_Apim_Subscription-Key**.
   3. Cliquez sur **Envoyer**. La réponse s’affiche en bas de la page.
@@ -58,7 +58,7 @@ Par ailleurs, vous pouvez appeler l’API à l’aide de l’interface utilisate
 
 Cette méthode présente la syntaxe de requête suivante.
 
-| Méthode | URI de la requête                                                      |
+| Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://admetadata.azure-api.net/v1/app/{app_id}``` |
 
@@ -77,7 +77,7 @@ Cette méthode présente la syntaxe de requête suivante.
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------|
-| app_id | chaîne | Obligatoire. L’ID de l’application pour laquelle vous souhaitez récupérer des métadonnées. Les valeurs possibles sont les suivantes:<br/><br/><ul><li>L’ID Windows Store pour l’application. Exemple d’ID Windows Store: 9NBLGGH29DM8.</li><li>L’ID de produit (parfois appelé *ID de l’application*) pour une application créée à l’origine pour Windows8.x ou Windows Phone8.x. L’ID de produit est un GUID.</li></ul> |
+| app_id | chaîne | Obligatoire. L’ID de l’application pour laquelle vous souhaitez récupérer des métadonnées. Les valeurs possibles sont les suivantes :<br/><br/><ul><li>L’ID Windows Store pour l’application. Exemple d’ID Windows Store : 9NBLGGH29DM8.</li><li>L’ID de produit (parfois appelé *ID de l’application*) pour une application créée à l’origine pour Windows 8.x ou Windows Phone 8.x. L’ID de produit est un GUID.</li></ul> |
 
 <span/>
 
@@ -128,21 +128,21 @@ Pour plus d’informations sur les valeurs figurant dans le corps de réponse, v
 
 | Valeur      | Type   | Description    |
 |------------|--------|--------------------|
-| storeId           | chaîne  | ID Windows Store de l’application. Exemple d’ID Windows Store: 9NBLGGH29DM8.     |  
-| nom           | chaîne  | Nom de l’application.   |
+| storeId           | chaîne  | ID Windows Store de l’application. Exemple d’ID Windows Store : 9NBLGGH29DM8.     |  
+| name           | chaîne  | Nom de l’application.   |
 | description           | chaîne  | Description dans le Windows Store pour l’application.  |
-| phoneStoreGuid           | chaîne  | L’ID de produit (Windows Phone8.x) pour l’application. Il s’agit d’un GUID.  |
-| windowsStoreGuid           | chaîne  | L’ID de produit (Windows8.x) pour l’application. Il s’agit d’un GUID. |
+| phoneStoreGuid           | chaîne  | L’ID de produit (Windows Phone 8.x) pour l’application. Il s’agit d’un GUID.  |
+| windowsStoreGuid           | chaîne  | L’ID de produit (Windows 8.x) pour l’application. Il s’agit d’un GUID. |
 | storeCategory           | chaîne  | La catégorie pour l’application dans le Windows Store. Pour les valeurs prises en charge, voir [Tableau des catégories et sous-catégories](../publish/category-and-subcategory-table.md) pour les applications du Windows Store.  |
 | iabCategory           | chaîne  | La catégorie de contenu pour l’application, telle que définie par l’Interactive Advertising Bureau (IAB). Par exemple, **Actualités** ou **Sports**. Pour obtenir la liste des catégories de contenu, voir la page [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) (Taxonomie du contenu du laboratoire technique IAB) sur le site web IAB.   |
 | iabCategoryId           | chaîne  | L’ID de la catégorie de contenu pour l’application. Par exemple, **IAB12** est l’ID de la catégorie Actualités, et **IAB17** est l’ID de la catégorie Sports. Pour obtenir une liste des ID de catégorie de contenu, voir la section 5.1 du document [OpenRTB API Specification](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) (Spécification API OpenRTB). |
-| coppa           | Booléen  | True si l’application s’adresse à des enfants âgés de moins de 13ans et a donc des obligations en vertu du Children’s Online Privacy Protection Act (COPPA), sinon, false.  |
+| coppa           | Booléen  | True si l’application s’adresse à des enfants âgés de moins de 13 ans et a donc des obligations en vertu du Children’s Online Privacy Protection Act (COPPA), sinon, false.  |
 | downloadUrl           | chaîne  | Le lien vers la description de l’application dans le Windows Store. Ce lien est au format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
-| isLive           | Valeur booléenne  | Vrai, si l’application est actuellement disponible sur le Windows Store; sinon, faux.  |
+| isLive           | Booléen  | Vrai, si l’application est actuellement disponible sur le Windows Store ; sinon, faux.  |
 | iconUrls           | tableau  |  Un tableau d’une ou de plusieurs chaînes qui contiennent les chemins d’accès relatifs aux URL d’icônes associées à l’application. Pour récupérer les icônes, faites précéder les URL de *http* ou *https*.  |
-| type           | chaîne  | Une des chaînes suivantes: **Application** ou **Jeu**.  |
-| appareils           |  tableau  | Un tableau d’une ou de plusieurs des chaînes suivantes qui spécifient les types de périphériques pris en charge par l’application: **PC**, **Téléphone**, **Xbox**, **IoT**, **Serveur**, et **Holographique**.  |
-| platformVersions           | tableau  |  Un tableau d’une ou de plusieurs des chaînes suivantes qui spécifient les plates-formes prises en charge par l’application: **Windows.Universal**, **Windows.Windows8x**, et **Windows.WindowsPhone8x**.  |
+| type           | chaîne  | Une des chaînes suivantes : **Application** ou **jeu**.  |
+| appareils           |  tableau  | Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les types de périphérique qui prend en charge de l’application : **PC**, **téléphone**, **Xbox**, **IoT**, **Server**, et **HOLOGRAPHIQUE**.  |
+| platformVersions           | tableau  |  Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les plateformes qui prend en charge de l’application : **Windows.Universal**, **Windows.Windows8x**, and **Windows.WindowsPhone8x**.  |
 | screenshotUrls           | tableau  | Un tableau d’une ou plusieurs chaînes qui contiennent les chemins d’accès relatifs à l’URL de la capture d’écran pour cette application. Pour récupérer les captures d’écran, faites précéder les URL de *http* ou *https*.  |
 
 <span/>

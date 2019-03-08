@@ -4,29 +4,29 @@ description: Découvrez les problèmes connus de la version actuelle du SDK Micr
 title: Problèmes connus et résolution des problèmes des publicités dans les applications
 ms.date: 04/16/2018
 ms.topic: article
-keywords: windows10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
+keywords: windows 10, uwp, annonces, publicité, problèmes connus, résolution des problèmes
 ms.localizationpriority: medium
 ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641064"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Problèmes connus et résolution des problèmes des publicités dans les applications
 
 Cette rubrique répertorie les problèmes connus de la version actuelle du SDK Microsoft Advertising. Pour plus d'aide à la résolution des problèmes, consultez les rubriques suivantes.
 
-* [Guide de résolution des problèmes pour HTML et JavaScript](html-and-javascript-troubleshooting-guide.md)
-* [Guide de résolution des problèmes pour XAML et C#](xaml-and-c-troubleshooting-guide.md)
+* [HTML et JavaScript, guide de dépannage](html-and-javascript-troubleshooting-guide.md)
+* [XAML et C# guide de dépannage](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>Interface AdControl inconnue en XAML
 
-Le balisageXAML d’un contrôle [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) peut afficher incorrectement une ligne courbe bleue impliquant que l’interface est inconnue. Ce problème se produit uniquement lors d’un ciblagex86, et peut être ignoré.
+Le balisage XAML d’un contrôle [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) peut afficher incorrectement une ligne courbe bleue impliquant que l’interface est inconnue. Ce problème se produit uniquement lors d’un ciblage x86, et peut être ignoré.
 
 ## <a name="lasterror-from-previous-ad-request"></a>Élément lastError de la demande de publicité précédente
 
-S’il reste un élément **lastError** de la demande de publicité précédente, l’événement peut être déclenché deuxfois durant le prochain appel de publicité. Si la nouvelle demande de publicité est toujours effectuée et peut générer une publicité valide, ce comportement peut cependant prêter à confusion.
+S’il reste un élément **lastError** de la demande de publicité précédente, l’événement peut être déclenché deux fois durant le prochain appel de publicité. Si la nouvelle demande de publicité est toujours effectuée et peut générer une publicité valide, ce comportement peut cependant prêter à confusion.
 
 ## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>Spots publicitaires et boutons de navigation sur les téléphones
 
@@ -38,34 +38,34 @@ Si vous avez créé une publicité récemment (moins d’un jour), elle peut ne 
 
 ## <a name="no-ads-are-shown-in-your-app"></a>Aucune publicité n’est affichée dans votre application
 
-Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment des erreurs réseau. Autres raisons possibles:
+Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment des erreurs réseau. Autres raisons possibles :
 
-* Sélection d’une unité publicitaire dans l’espace partenaires dont la taille est supérieure ou inférieure à la taille de **AdControl** dans le code de votre application.
+* En sélectionnant une unité ad dans le centre de partenaires dont la taille est supérieure ou inférieure à la taille de la **classe AdControl** dans le code de votre application.
 
-* Les publicités ne s’affichent pas si vous utilisez une [valeur du mode test](set-up-ad-units-in-your-app.md#test-ad-units) pour votreID d’unité publicitaire lors de l’exécution d’une application dynamique.
+* Les publicités ne s’affichent pas si vous utilisez une [valeur du mode test](set-up-ad-units-in-your-app.md#test-ad-units) pour votre ID d’unité publicitaire lors de l’exécution d’une application dynamique.
 
 * Si vous avez créé un ID d’unité publicitaire dans la dernière demi-heure, la publicité risque de ne pas s’afficher tant que les serveurs n’ont pas propagé les nouvelles données dans le système. Les ID existants qui affichaient des publicités précédemment doivent en afficher immédiatement.
 
-Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/en-us/windows/support). Dans cette page, choisissez **Contactez-nous**.
+Si vous pouvez voir des publicités de test dans l’application, c’est que votre code fonctionne et qu’il peut afficher des publicités. Si vous rencontrez des problèmes, contactez le [support produit](https://developer.microsoft.com/en-us/windows/support). Dans cette page, choisissez **contactez-nous**.
 
 Vous pouvez également publier une question sur le [forum](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
-Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les cas suivants:
+Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les scénarios suivants :
 
-* Notre plateforme publicitaire ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10jours.
+* Notre plateforme publicitaire ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6 heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10 jours.
 
 * Les applications chargées indépendamment ou les applications qui sont exécutées dans l’émulateur n’affichent pas de publicités dynamiques.
 
-Si une unité publicitaire dynamique fournit des publicités de test, état de l’unité publicitaire affiche **des publicités de test actives et fournies** dans l’espace partenaires. Pour le moment, cela ne s’applique pas aux applications téléphoniques.
+Lorsqu’une unité d’annonce en ligne affiche des publicités de test, d’état de l’unité ad affiche **actif et les serveurs de test publicités** dans Partner Center. Pour le moment, cela ne s’applique pas aux applications téléphoniques.
 
 
 <span id="reference_errors"/>
 
-## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>Erreurs de référence provoquées par le ciblage de TouteUC dans votre projet
+## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet
 
-Lorsque vous utilisez le SDK Microsoft Advertising, vous ne pouvez pas cibler **TouteUC** dans votre projet. Si votre projet cible la plateforme **TouteUC**, un message d’avertissement peut s’afficher après que vous avez ajouté une référence semblable à ce qui suit.
+Lorsque vous utilisez le SDK Microsoft Advertising, vous ne pouvez pas cibler **Toute UC** dans votre projet. Si votre projet cible la plateforme **Toute UC**, un message d’avertissement peut s’afficher après que vous avez ajouté une référence semblable à ce qui suit.
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
@@ -73,7 +73,7 @@ Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une 
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
-Lorsque vous créez vos packages d’application pour les soumettre au WindowsStore (comme illustré dans les images suivantes), veillez à inclure les architectures que vous souhaitez cibler. Vous pouvez choisir d’ignorerx64 si vous prévoyez d’exécuter des buildsx86 sur le système d’exploitationx64.
+Lorsque vous créez vos packages d’application pour les soumettre au Windows Store (comme illustré dans les images suivantes), veillez à inclure les architectures que vous souhaitez cibler. Vous pouvez choisir d’ignorer x64 si vous prévoyez d’exécuter des builds x86 sur le système d’exploitation x64.
 
 ![projectstorecreateapppackages](images/13-a99b05a4-8917-4c53-822e-2548fadf828a.png)
 

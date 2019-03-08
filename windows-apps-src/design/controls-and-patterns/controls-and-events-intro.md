@@ -1,31 +1,31 @@
 ---
-Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
+Description: Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application.
 title: Présentation des contrôles et des modèles
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630794"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
 
-Dans le développement d’applications UWP, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des listes modifiables pour afficher les données et obtenir les entrées utilisateur.
+Dans le développement d’applications UWP, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur.
 
-> **API importantes**: [espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **API importantes**: [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [maître/détails](master-details.md) est un moyen que vous pouvez utiliser un contrôle [SplitView](split-view.md) pour la navigation dans l’application. De même, vous pouvez personnaliser le modèle d’un contrôle [NavigationView](navigationview.md) pour implémenter le modèle d’onglet.
+Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le [maître/détails](master-details.md) modèle est une façon que vous pouvez utiliser un [fractionnementaffichage des](split-view.md) contrôle pour la navigation de l’application. De même, vous pouvez personnaliser le modèle d’un [NavigationView](navigationview.md) contrôle pour implémenter le modèle de l’onglet.
 
 Dans de nombreux cas, vous pouvez utiliser un contrôle en l’état. Toutefois, les contrôles XAML distinguent la fonction de la structure et de l’apparence, vous pouvez donc apporter des modifications à différents niveaux pour les adapter à vos besoins. Dans la section [Style](../style/index.md), vous pouvez apprendre à utiliser des [styles XAML](xaml-styles.md) et des [modèles de contrôle](control-templates.md) pour modifier un contrôle.
 
-Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3étapes principales pour utiliser des contrôles dans votre application:
+Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3 étapes principales pour utiliser des contrôles dans votre application :
 
 - Ajoutez un contrôle à l’interface utilisateur de votre application.
 - Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan.
@@ -111,7 +111,7 @@ Pour créer un gestionnaire d’événements, sélectionnez le contrôle, puis c
 
 ![Liste des événements Visual Studio](images/add-controls-add-event-designer.png)
 
-Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
+Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2 paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
 
 Voici le code qui gère l’événement Click d’un objet Button nommé `Button1`. Lorsque vous cliquez sur le bouton, la propriété Foreground de l’objet Button sur lequel vous avez cliqué a la valeur blue. 
 
@@ -147,4 +147,4 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -   [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 -   [Disposition](../layout/index.md)
 -   [Style](../style/index.md)
--   [Usage](../usability/index.md)
+-   [Facilité d’utilisation](../usability/index.md)

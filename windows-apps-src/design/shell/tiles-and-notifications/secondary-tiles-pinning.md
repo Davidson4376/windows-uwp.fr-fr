@@ -1,20 +1,20 @@
 ---
-Description: Learn how to pin a secondary tile to Start from your UWP app.
-title: Épingler les vignettes secondaires au menu Démarrer
+Description: Découvrez comment épingler une vignette secondaire pour démarrer à partir de votre application UWP.
+title: Épingler des vignettes secondaires à démarrer
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows10, uwp, vignettes secondaires, épingler, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
+keywords: Windows 10, uwp, vignettes secondaires, épingler, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939665"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653154"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>Épingler les vignettes secondaires au menu Démarrer
+# <a name="pin-secondary-tiles-to-start"></a>Épingler des vignettes secondaires à démarrer
 
 
 Cette rubrique vous guide à travers les étapes de création d’une vignette secondaire pour votre application UWP et son épinglage au menu Démarrer.
@@ -37,10 +37,10 @@ using Windows.UI.StartScreen;
 
 Les vignettes secondaires sont composées de plusieurs composants clés...
 
-* **TileId**: un identificateur unique qui vous permet d’identifier la vignette parmi vos autres vignettes secondaires.
-* **DisplayName**: nom que vous voulez voir apparaître sur la vignette.
-* **Arguments**: arguments que vous voulez transmettre à votre application quand l’utilisateur clique sur votre vignette.
-* **Square150x150Logo**: logo requis, affiché sur la vignette de taille moyenne (et vignette redimensionnée en petite taille si aucun petit logo n’est fourni).
+* **Paramètre TileId**: Identificateur unique qui vous permet d’identifier la vignette parmi vos autres vignettes secondaires.
+* **DisplayName**: Le nom que vous voulez voir apparaître sur la vignette.
+* **Arguments**: Les arguments que vous souhaitez passé à votre application lorsque l’utilisateur clique sur votre vignette.
+* **Square150x150Logo**: Le logo requis, affiché sur la taille moyenne vignette (et si aucun petit logo fourni redimensionné à la vignette de petite taille).
 
 Vous **DEVEZ** fournir des valeurs initialisées pour toutes les propriétés mentionnées ci-dessus, faute de quoi vous obtiendrez une exception.
 
@@ -67,11 +67,11 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a>Facultatif: ajout de la prise en charge de vignettes de plus grande taille
+## <a name="optional-add-support-for-larger-tile-sizes"></a>Facultatif : Ajouter la prise en charge des tailles supérieures de vignette
 
 Si vous souhaitez afficher les notifications par vignette enrichies sur votre vignette secondaire, vous souhaiterez probablement permettre à l’utilisateur de redimensionner ses vignettes pour les élargir ou les agrandir, afin qu’ils puissent voir davantage de contenu.
 
-Pour permettre l’élargissement ou l’agrandissement des vignettes de grande taille, vous devez indiquer les éléments *Wide310x150Logo* et *Square310x310Logo *. En outre, vous devez indiquer si possible l’élément *Square71x71Logo* pour la petite taille de vignette (dans le cas contraire nous réduirons la taille de l’élément Square150x150Logo requis pour la petite vignette).
+Pour permettre l’élargissement ou l’agrandissement des vignettes de grande taille, vous devez indiquer les éléments *Wide310x150Logo* et *Square310x310Logo* . En outre, vous devez indiquer si possible l’élément *Square71x71Logo* pour la petite taille de vignette (dans le cas contraire nous réduirons la taille de l’élément Square150x150Logo requis pour la petite vignette).
 
 Vous pouvez également indiquer un élément *Square44x44Logo* unique, qui s’affiche si vous le souhaitez dans le coin inférieur droit en présence d’une notification. Si vous n’en n’indiquez pas, l’élément *Square44x44Logo* de votre vignette principale sera utilisé.
 
@@ -88,7 +88,7 @@ tile.VisualElements.Square44x44Logo = new Uri("ms-appx:///Assets/CityTiles/Squar
 ```
 
 
-## <a name="optional-enable-showing-the-display-name"></a>Facultatif: permettre l’affichage du nom d’affichage
+## <a name="optional-enable-showing-the-display-name"></a>Facultatif : Activer l’affichage du nom d’affichage
 
 Par défaut le nom d’affichage NE s’affiche PAS. Pour afficher le nom d’affichage en moyen, large ou grand, ajoutez le code suivant.
 
@@ -100,7 +100,7 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
-## <a name="optional-3d-secondary-tiles"></a>Facultatif: vignettes secondaires 3D
+## <a name="optional-3d-secondary-tiles"></a>Facultatif : Vignettes secondaires 3D
 Vous pouvez améliorer votre vignette secondaire pour Windows Mixed Reality en ajoutant des ressources 3D. Les utilisateurs peuvent placer des vignettes 3D directement dans leur page d’accueil Windows Mixed Reality au lieu du menu Démarrer lorsque votre application est utilisée dans un environnement Mixed Reality. Par exemple, vous pouvez créer des photosphères à 360° qui pointent directement dans une visionneuse de photos à 360°, ou laisser les utilisateurs placer un modèle 3D d’une chaise à partir d’un catalogue de meubles qui ouvre une page de détails sur les options de tarification et de couleur pour cet objet lorsqu’il est sélectionné. Pour commencer, reportez-vous à la [documentation pour développeurs Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
 
 
@@ -122,7 +122,7 @@ bool isPinned = await tile.RequestCreateAsync();
 
 ## <a name="check-if-a-secondary-tile-exists"></a>Vérifier l’existence d’une vignette secondaire
 
-Si l’utilisateur visite une page dans votre application qu’il a déjà épinglée au menu Démarrer, vous pouvez afficher à la place un bouton «Désépingler».
+Si l’utilisateur visite une page dans votre application qu’il a déjà épinglée au menu Démarrer, vous pouvez afficher à la place un bouton « Désépingler ».
 
 Par conséquent, lorsque vous choisissez le bouton à afficher, vous devez d’abord vérifier si la vignette secondaire est déjà épinglée.
 
@@ -149,7 +149,7 @@ await toBeDeleted.RequestDeleteAsync();
 
 ## <a name="updating-a-secondary-tile"></a>Mise à jour d’une vignette secondaire
 
-Si vous avez besoin de mettre à jour les logos, le nom d’affichage ou tout autre élément de la vignette secondaire, vous pouvez utiliser *RequestUpdateAsync *.
+Si vous avez besoin de mettre à jour les logos, le nom d’affichage ou tout autre élément de la vignette secondaire, vous pouvez utiliser *RequestUpdateAsync* .
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want to update
@@ -177,10 +177,10 @@ var tiles = await SecondaryTile.FindAllAsync();
 Pour savoir comment afficher le contenu enrichi sur votre vignette via les notifications par vignette, consultez [Envoyer une notification par vignette locale ](sending-a-local-tile-notification.md).
 
 
-## <a name="related"></a>Similaire
+## <a name="related"></a>Liens apparentés
 
 * [Vue d’ensemble des vignettes secondaires](secondary-tiles.md)
-* [Instructions relatives aux vignettes secondaires](secondary-tiles-guidance.md)
-* [Ressources de vignette](app-assets.md)
-* [Documentation sur le contenu des vignettes](create-adaptive-tiles.md)
-* [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md)
+* [Conseils de vignettes secondaires](secondary-tiles-guidance.md)
+* [Ressources de la vignette](app-assets.md)
+* [Documentation de contenu de vignette](create-adaptive-tiles.md)
+* [Envoyer une notification de vignette local](sending-a-local-tile-notification.md)

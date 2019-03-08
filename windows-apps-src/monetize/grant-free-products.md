@@ -1,39 +1,39 @@
 ---
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: Utilisez cette méthode dans l’API d’achat du MicrosoftStore pour octroyer une app ou extension gratuite à un utilisateur donné.
-title: Attribuer des produits gratuits
+description: Utilisez cette méthode dans l’API d’achat du Microsoft Store pour octroyer une app ou extension gratuite à un utilisateur donné.
+title: Octroyer des produits gratuits
 ms.date: 03/19/2018
 ms.topic: article
-keywords: windows10, uwp, API d’achat du MicrosoftStore, octroyer des produits
+keywords: windows 10, uwp, API d’achat du Microsoft Store, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 957958891b1052be4ac9ae65d90f97ff8a44ef36
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116361"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613194"
 ---
-# <a name="grant-free-products"></a>Attribuer des produits gratuits
+# <a name="grant-free-products"></a>Octroyer des produits gratuits
 
-Utilisez cette méthode dans l’API d’achat du MicrosoftStore pour octroyer une app ou extension gratuite (également connue sous le nom de produit in-app ou PIA) à un utilisateur donné.
+Utilisez cette méthode dans l’API d’achat du Microsoft Store pour octroyer une app ou extension gratuite (également connue sous le nom de produit in-app ou PIA) à un utilisateur donné.
 
 Actuellement, vous ne pouvez octroyer que des produits gratuits. Si votre service tente d’utiliser cette méthode pour octroyer un produit qui n’est pas gratuit, cette méthode retourne une erreur.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants:
+Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
-* Un jeton d’accès AzureAD créé avec la valeur d’URI d’audience `https://onestore.microsoft.com`.
-* une clé d’ID du MicrosoftStore représentant l’identité de l’utilisateur auquel vous souhaitez octroyer un produit gratuit.
+* Un jeton d’accès Azure AD créé avec la valeur d’URI d’audience `https://onestore.microsoft.com`.
+* une clé d’ID du Microsoft Store représentant l’identité de l’utilisateur auquel vous souhaitez octroyer un produit gratuit.
 
-Pour plus d’informations, consultez l’article [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
+Pour plus d’informations, consultez [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
 ## <a name="request"></a>Requête
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête                                            |
+| Méthode | URI de requête                                            |
 |--------|--------------------------------------------------------|
 | POST   | ```https://purchase.mp.microsoft.com/v6.0/purchases/grant``` |
 
@@ -42,7 +42,7 @@ Pour plus d’informations, consultez l’article [Gérer les droits sur les pro
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Autorisation  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;.                           |
+| Authorization  | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;.                           |
 | Host           | chaîne | Doit être défini sur la valeur **purchase.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
@@ -52,15 +52,15 @@ Pour plus d’informations, consultez l’article [Gérer les droits sur les pro
 
 | Paramètre      | Type   | Description        | Obligatoire |
 |----------------|--------|---------------------|----------|
-| availabilityId | chaîne | ID de disponibilité du produit à octroyer dans le catalogue du MicrosoftStore.         | Oui      |
-| b2bKey         | chaîne | [Clé d’ID du MicrosoftStore](view-and-grant-products-from-a-service.md#step-4) représentant l’identité de l’utilisateur auquel vous souhaitez octroyer un produit.    | Oui      |
+| availabilityId | chaîne | ID de disponibilité du produit à octroyer dans le catalogue du Microsoft Store.         | Oui      |
+| b2bKey         | chaîne | [Clé d’ID du Microsoft Store](view-and-grant-products-from-a-service.md#step-4) représentant l’identité de l’utilisateur auquel vous souhaitez octroyer un produit.    | Oui      |
 | devOfferId     | chaîne | ID d’offre spécifié par le développeur qui s’affiche dans l’élément de collection après l’achat.        |
 | language       | chaîne | Langue de l’utilisateur.  | Oui      |
 | market         | chaîne | Marché de l’utilisateur.       | Oui      |
 | orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.    | Oui      |
-| productId      | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du MicrosoftStore. Exemple d’ID Store pour un produit: 9NBLGGH42CFD. | Oui      |
+| productId      | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du Microsoft Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD. | Oui      |
 | quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.   | Non       |
-| skuId          | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du MicrosoftStore. Exemple d’ID Store pour une référence: 0010.     | Oui      |
+| skuId          | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du Microsoft Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.     | Oui      |
 
 
 ### <a name="request-example"></a>Exemple de requête
@@ -89,10 +89,10 @@ Content-Type: application/json
 
 | Paramètre                 | Type                        | Description             | Obligatoire |
 |---------------------------|-----------------------------|-----------------------|----------|
-| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton AzureAD.    | Oui      |
+| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton Azure AD.    | Oui      |
 | createdtime               | datetimeoffset              | Heure de création de la commande.         | Oui      |
 | currencyCode              | chaîne                      | Code devise pour *totalAmount* et *totalTaxAmount*. Non applicable pour les articles gratuits.     | Oui      |
-| friendlyName              | chaîne                      | Nom convivial de la commande. Non applicable pour les commandes passées à l’aide de l’API d’achat du MicrosoftStore. | Oui      |
+| friendlyName              | chaîne                      | Nom convivial de la commande. Non applicable pour les commandes passées à l’aide de l’API d’achat du Microsoft Store. | Oui      |
 | isPIRequired              | booléen                     | Indique si un instrument de paiement (PI) est nécessaire dans le cadre de la commande d’achat.  | Oui      |
 | language                  | chaîne                      | ID de langue de la commande (par exemple, « fr »).       | Oui      |
 | market                    | chaîne                      | ID de marché de la commande (par exemple, « FR »).  | Oui      |
@@ -120,7 +120,7 @@ L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 | Paramètre               | Type           | Description                                                                                                  | Obligatoire |
 |-------------------------|----------------|--------------------------------------------------------------------------------------------------------------|----------|
 | agent                   | IdentityV6     | Dernier agent à avoir modifié l’article. Pour plus d’informations sur cet objet, voir le tableau ci-dessous.       | Non       |
-| availabilityId          | chaîne         | ID de disponibilité du produit à acheter dans le catalogue du MicrosoftStore.                           | Oui      |
+| availabilityId          | chaîne         | ID de disponibilité du produit à acheter dans le catalogue du Microsoft Store.                           | Oui      |
 | beneficiary             | IdentityV6     | Identité du bénéficiaire de la commande.                                                                | Non       |
 | billingState            | chaîne         | État de facturation de la commande. Défini sur **Charged** lorsque la commande est terminée.                                   | Non       |
 | campaignId              | chaîne         | ID campagne de cette commande.                                                                              | Non       |
@@ -134,15 +134,15 @@ L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 | legacyBillingOrderId    | chaîne         | ID de facturation hérité.                                                                                       | Non       |
 | lineItemId              | chaîne         | ID de l’article de cette commande.                                                                 | Oui      |
 | listPrice               | décimal        | Prix catalogue de l’article de cette commande.                                                                    | Oui      |
-| productId               | chaîne         | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) qui représente l’article dans le catalogue du MicrosoftStore. Exemple d’ID Store pour un produit: 9NBLGGH42CFD.   | Oui      |
+| productId               | chaîne         | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) qui représente l’article dans le catalogue du Microsoft Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD.   | Oui      |
 | productType             | chaîne         | Type du produit. Les valeurs prises en charge sont **Durable**, **Application** et **UnmanagedConsumable**. | Oui      |
 | quantity                | entier            | Quantité de l’article commandé.                                                                            | Oui      |
 | retailPrice             | décimal        | Prix de vente au détail de l’article commandé.                                                                        | Oui      |
 | revenueRecognitionState | chaîne         | État de prise en compte de revenu.                                                                               | Oui      |
-| skuId                   | chaîne         | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) de l’article dans le catalogue du MicrosoftStore. Exemple d’ID Store pour une référence: 0010.                                                                   | Oui      |
+| skuId                   | chaîne         | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) de l’article dans le catalogue du Microsoft Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.                                                                   | Oui      |
 | taxAmount               | décimal        | Montant des taxes de l’article.                                                                            | Oui      |
 | taxType                 | chaîne         | Type de taxe pour les taxes applicables.                                                                       | Oui      |
-| Title                   | chaîne         | Titre localisé de l’article.                                                                        | Oui      |
+| Titre                   | chaîne         | Titre localisé de l’article.                                                                        | Oui      |
 | totalAmount             | décimal        | Montant total TTC d’achat de l’article.                                                    | Oui      |
 
 
@@ -151,7 +151,7 @@ L’objet IdentityV6 contient les paramètres ci-dessous.
 | Paramètre     | Type   | Description                                                                        | Obligatoire |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
-| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du MicrosoftStore. | Oui      |
+| identityValue | chaîne | La Valeur de chaîne du paramètre *publisherUserId* dans la clé d’ID du Microsoft Store. | Oui      |
 
 
 ### <a name="response-example"></a>Exemple de réponse
@@ -222,14 +222,14 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 |------|--------------|----------------------------|----------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.   |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du MicrosoftStore du corps de la requête et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.       |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Microsoft Store du corps de la requête et la revendication *applicationId* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.       |
 | 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.           |
 
 <span/> 
 
-## <a name="related-topics"></a>Articles connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md)
-* [Demander des produits](query-for-products.md)
-* [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
-* [Renouveler une clé d’ID du MicrosoftStore](renew-a-windows-store-id-key.md)
+* [Rechercher des produits](query-for-products.md)
+* [Déclaration de produits consommables remplies](report-consumable-products-as-fulfilled.md)
+* [Renouveler une clé d’ID de Microsoft Store](renew-a-windows-store-id-key.md)

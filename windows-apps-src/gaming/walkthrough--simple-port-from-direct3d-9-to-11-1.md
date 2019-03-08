@@ -1,23 +1,23 @@
 ---
-title: 'Procédure pas à pas: Portage Direct3D 9vers DirectX 11 et UWP'
-description: Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D9 à Direct3D11 et à la plateforme Windows universelle (UWP).
+title: 'Procédure pas à pas : Portage Direct3D 9 vers DirectX 11 et UWP'
+description: Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D 9 à Direct3D 11 et à la plateforme Windows universelle (UWP).
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, directx, port, direct3d9, direct3d11
+keywords: Windows 10, uwp, jeux, directx, port, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634224"
 ---
-# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Procédure pas à pas: Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Démonstration : Migrer une application Direct3D 9 simple pour DirectX 11 et Universal Windows Platform (UWP)
 
 
 
-Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D9 à Direct3D11 et à la plateforme Windows universelle (UWP).
+Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D 9 à Direct3D 11 et à la plateforme Windows universelle (UWP).
 ## 
 <table>
 <colgroup>
@@ -32,15 +32,15 @@ Cet exercice de portage indique comment faire passer une infrastructure de rendu
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md">Initialiser Direct3D11</a></p></td>
-<td align="left"><p>Montre comment convertir du code d’initialisation Direct3D9 en Direct3D11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange.</p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md">Initialiser Direct3D 11</a></p></td>
+<td align="left"><p>Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11, notamment comment obtenir des handles vers le périphérique Direct3D et le contexte de périphérique, et comment utiliser DXGI pour configurer une chaîne d’échange.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-2--rendering.md">Convertir l’infrastructure de rendu</a></p></td>
-<td align="left"><p>Montre comment convertir une infrastructure de rendu simple de Direct3D9 à Direct3D11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D11.</p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-2--rendering.md">Convertir le framework de rendu</a></p></td>
+<td align="left"><p>Montre comment convertir une infrastructure de rendu simple de Direct3D 9 à Direct3D 11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D 11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Porter la boucle de jeu</a></p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">La boucle du jeu de port</a></p></td>
 <td align="left"><p>Montre comment implémenter une fenêtre pour un jeu UWP et comment récupérer la boucle de jeu, notamment comment créer une interface <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> pour contrôler une classe <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a> en plein écran.</p></td>
 </tr>
 </tbody>
@@ -48,7 +48,7 @@ Cet exercice de portage indique comment faire passer une infrastructure de rendu
 
  
 
-Cette rubrique examine progressivement deux chemins de code qui effectuent la même tâche graphique de base: afficher un cube en forme de vertex qui tourne. Dans les deux cas, le code couvre le processus suivant :
+Cette rubrique examine progressivement deux chemins de code qui effectuent la même tâche graphique de base : afficher un cube en forme de vertex qui tourne. Dans les deux cas, le code couvre le processus suivant :
 
 1.  Création d’un périphérique Direct3D et d’une chaîne d’échange.
 2.  Création d’une mémoire tampon de vertex et d’un tampon d’index pour représenter un maillage de cube en couleur.
@@ -68,19 +68,19 @@ Notez que cette procédure pas à pas utilise [**CoreWindow**](https://msdn.micr
 ## <a name="prerequisites"></a>Conditions préalables
 
 
-Vous devez [Préparer votre environnement pour le développement de jeux UWP DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas besoin un modèle encore, mais vous devez Studio2015 Visual Microsoft pour charger les exemples de code pour cette procédure pas à pas.
+Vous devez [Préparer votre environnement pour le développement de jeux UWP DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas encore un modèle, mais vous aurez besoin de Microsoft Visual Studio 2015 pour charger les exemples de code pour cette procédure pas à pas.
 
-Pour vous familiariser avec les concepts de programmation pour DirectX11 et UWP présentés dans cette procédure pas à pas, voir les [concepts et considérations en matière de portage](porting-considerations.md).
+Pour vous familiariser avec les concepts de programmation pour DirectX 11 et UWP présentés dans cette procédure pas à pas, voir les [concepts et considérations en matière de portage](porting-considerations.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 **Direct3D**
 
-* [Écriture de nuanceurs HLSL dans Direct3D9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 * [Modèles de projet de jeu DirectX](user-interface.md)
 
-**MicrosoftStore**
+**Boutique Microsoft**
 
 * [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
-* [**Handle sur l’opérateur Object (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
+* [**Handle de l’opérateur Object (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 

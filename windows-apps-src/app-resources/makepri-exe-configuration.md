@@ -1,24 +1,24 @@
 ---
-Description: This topic describes the schema of the MakePri.exe XML configuration file.
+Description: Cette rubrique décrit le schéma du fichier de configuration XML de MakePri.exe.
 title: Fichier de configuration de MakePri.exe
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: ef0e8834310e77084c0bb4a8aad22786a89fb312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927124"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607794"
 ---
 # <a name="makepriexe-configuration-file"></a>Fichier de configuration de MakePri.exe
 
 Cette rubrique décrit le schéma du fichier de configuration XML de [MakePri.exe](compile-resources-manually-with-makepri.md), également appelé fichier de configuration PRI. L’outil MakePri.exe inclut une [commande createconfig](makepri-exe-command-options.md#createconfig-command) qui vous permet de créer un nouveau fichier de configuration PRI initialisé.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez l’option **Du SDK Windows pour les applications UWP managées** lors de l’installation du Kit de développement logiciel Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 Le ficher de configuration PRI détermine les ressources qui sont indexées et la façon dont l’indexation est effectuée. Le fichier de configuration XML doit être conforme au schéma suivant.
 
@@ -103,7 +103,7 @@ Le ficher de configuration PRI détermine les ressources qui sont indexées et l
 
 - L’élément `default` spécifie le contexte (langue, échelle, contraste, etc.) qui doit être utilisé pour résoudre les ressources lorsque le contexte d’exécution ne correspond à aucune ressource potentielle. Dans la mesure où ce contexte est spécifié au moment de la génération et ne change pas, les ressources sont résolues en ce contexte lorsque les qualificateurs sont créés. Le score correspondant est enregistré lors de la génération. Chaque qualificateur doit avoir une valeur spécifiée. Voir [ResourceContext](resource-management-system.md#resourcecontext) pour plus d’informations sur la façon dont les ressources sont choisies.
 - L’élément `index` définit les passes d’indexation discrètes qui sont effectuées sur les ressources. Chaque passe d’indexation détermine les [indexeurs spécifiques au format](makepri-exe-format-specific-indexers.md) à utiliser et les ressources à indexer.
-- L’élément `qualifiers` définit les qualificateurs initiaux pour le premier fichier ou dossier dont héritent d’autres ressources. Chaque élément «qualifier» doit avoir un nom et une valeur valides (voir [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)).
+- L’élément `qualifiers` définit les qualificateurs initiaux pour le premier fichier ou dossier dont héritent d’autres ressources. Chaque élément « qualifier » doit avoir un nom et une valeur valides (voir [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)).
 - L’attribut `root` est la racine du chemin d’accès du fichier physique pour la passe d’index. Il peut être absolu ou relatif. S’il est relatif, il est ajouté à la racine du projet que vous fournissez dans la ligne de commande. S’il est absolu, il est utilisé directement en tant que racine de passe d’index. Les barres obliques ou barres obliques inversées sont acceptées. Les barres obliques finales sont tronquées. La racine de la passe d’index détermine le dossier dans lequel toutes les ressources sont considérées comme relatives.
 - L’attribut `startIndexAt` est le fichier ou dossier seed initial utilisé pour l’indexation. Il est relatif à la racine de passe d’index. Une valeur vide suppose qu’il s’agit du dossier racine de passe d’index.
 
@@ -204,9 +204,9 @@ Cet attribut définit un indicateur dans le fichier PRI qui entraîne les action
 - Fusion de déploiement pour identifier que ce fichier PRI peut fusionner.
 - GetFullyQualifiedReference renvoie une erreur si cet indicateur est défini et que le gestionnaire de ressources a été initialisé avec un fichier.
 
-La valeur par défaut de cet attribut est `true`. MakePri.exe définit l’indicateur dans PRI uniquement si vous ciblez Windows10.
+La valeur par défaut de cet attribut est `true`. MakePri.exe définit l’indicateur dans PRI uniquement si vous ciblez Windows 10.
 
-Nous vous conseillons d’omettre `isDeploymentMergeable` (ou de définir cet attribut de manière explicite sur `true`) pour la création d’un pack de ressources si vous ciblez Windows10.
+Nous vous conseillons d’omettre `isDeploymentMergeable` (ou de définir cet attribut de manière explicite sur `true`) pour la création d’un pack de ressources si vous ciblez Windows 10.
 
 MakePri.exe ajoute la valeur de `isDeploymentMergeable` dans le fichier de vidage si `makepri dump` est exécuté avec l’option `/dt detailed`.
 
@@ -224,9 +224,9 @@ MakePri.exe ajoute la valeur de `isDeploymentMergeable` dans le fichier de vidag
 
 ## <a name="resourcesmajorversion-attribute"></a>Attribut resources@majorVersion
 
-La valeur par défaut de cet attribut est1. Si vous fournissez une valeur explicite, et que vous utilisez également l’option de ligne de commande `/VersionMajor(vma)` qui est déconseillée pour l’outil MakePri.exe, la valeur figurant dans le fichier de configuration est prioritaire.
+La valeur par défaut de cet attribut est 1. Si vous fournissez une valeur explicite, et que vous utilisez également l’option de ligne de commande `/VersionMajor(vma)` qui est déconseillée pour l’outil MakePri.exe, la valeur figurant dans le fichier de configuration est prioritaire.
 
-Voici un exemple.
+Voici un exemple :
 
 ```xml
 <resources majorVersion="2">
@@ -243,11 +243,11 @@ Indique la version cible du système d’exploitation. Le tableau ci-dessous ind
 
 | Valeur | Signification |
 | ----- | ------- |
-| 10.0.0 | Windows10 |
-| 6.3.0 (par défaut) | Windows8.1 |
-| 6.2.1 | Windows8 |
+| 10.0.0 | Windows 10 |
+| 6.3.0 (par défaut) | Windows 8.1 |
+| 6.2.1 | Windows 8 |
 
-Voici un exemple.
+Voici un exemple :
 
 ```xml
 <resources targetOsVersion="10.0.0">
@@ -258,7 +258,7 @@ Voici un exemple.
 </resources>
 ```
 
-**Remarque:** Windows offre une compatibilité descendante pour les fichiers PRI, mais n’est pas toujours compatible avec la version installée.
+**Remarque :** Windows offre une compatibilité descendante pour les fichiers PRI, mais n’est pas toujours compatible avec la version installée.
 
 MakePri.exe ajoute la valeur de `targetOsVersion` dans le fichier de vidage si `makepri dump` est exécuté avec l’option `/dt detailed`.
 
@@ -278,23 +278,23 @@ MakePri.exe ajoute la valeur de `targetOsVersion` dans le fichier de vidage si `
 
 Voici quelques exemples de condition d’erreur et le message d’erreur correspondant.
 
-| Condition | Gravité | Message |
+| Condition | Sévérité | Message |
 | --------- | -------- | ------- |
-| Une valeur targetOsVersion autre que celles prises en charge est spécifiée. | Erreur | Configuration non valide: valeur targetOsVersion non valide spécifiée. |
-| Une valeur «6.2.1» est spécifiée pour targetOsVersion et un élément `packaging` est présent. | Erreur | Configuration non valide: le nœud «Packaging» n’est pas pris en charge avec cette valeur targetOsVersion. |
-| Plusieurs modes ont été trouvés dans la configuration. Par exemple, Manual et AutoResourcePackage sont spécifiés. | Erreur | Configuration non valide: le nœud «packaging» ne peut pas avoir plus d’un mode de fonctionnement. |
-| Un qualificateur par défaut est répertorié sous le package de ressources. | Erreur | Configuration non valide: <Qualifiername>=<QualifierValue> est un qualificateur par défaut et ses candidats ne peuvent pas être ajoutés à un package de ressources. |
-| Le qualificateur AutoResourcePackage contient plusieurs qualificateurs. Par exemple, language_scale. | Erreur | Configuration non valide: AutoResourcePackage avec plusieurs qualificateurs n’est pas pris en charge. |
-| ResourcePackage QualifierSet contient plusieurs qualificateurs. Par exemple, language-en-us_scale-100 | Erreur | Configuration non valide: QualifierSet avec plusieurs qualificateurs n’est pas pris en charge. |
-| Nom de pack de ressources en double trouvé. | Erreur | Configuration non valide: nom de pack de ressources <rpname> dupliqué. |
-| Le même qualificateur a été défini dans deux packages de ressources. | Erreur | Configuration non valide: plusieurs instances de QualifierSet «<qualifier tags>» trouvées. |
-| Aucune candidat n’a été trouvé pour le QualifierSet répertorié pour le nœud «ResourcePackage». | Avertissement | Configuration non valide: aucun candidat trouvé pour <Resource Package Name>. |
-| Aucun candidat n’a été trouvé pour le qualificateur répertorié sous le nœud «AutoResourcePackage». | Avertissement | Configuration non valide: aucun candidat trouvé pour le qualificateur <qualifier name>. Package de ressources non généré. |
-| Aucun mode trouvé. Autrement dit, nœud «packaging» vide. | Avertissement | Configuration non valide: aucun mode de mise en package spécifié. |
+| Une valeur targetOsVersion autre que celles prises en charge est spécifiée. | Erreur | Configuration non valide : TargetOsVersion non valide spécifiée. |
+| Une valeur « 6.2.1 » est spécifiée pour targetOsVersion et un élément `packaging` est présent. | Erreur | Configuration non valide : Nœud de « Packaging » n’est pas pris en charge avec cette targetOsVersion. |
+| Plusieurs modes ont été trouvés dans la configuration. Par exemple, Manual et AutoResourcePackage sont spécifiés. | Erreur | Configuration non valide : le nœud « packaging » ne peut pas avoir plus d’un mode de fonctionnement. |
+| Un qualificateur par défaut est répertorié sous le package de ressources. | Erreur | Configuration non valide : <Qualifiername>=<QualifierValue> est un qualificateur par défaut et ses candidats ne peuvent pas être ajoutés à un package de ressources. |
+| Le qualificateur AutoResourcePackage contient plusieurs qualificateurs. Par exemple, language_scale. | Erreur | Configuration non valide : AutoResourcePackage avec plusieurs qualificateurs n’est pas pris en charge. |
+| ResourcePackage QualifierSet contient plusieurs qualificateurs. Par exemple, language-en-us_scale-100 | Erreur | Configuration non valide : QualifierSet avec plusieurs qualificateurs n’est pas pris en charge. |
+| Nom de pack de ressources en double trouvé. | Erreur | Configuration non valide : Nom de pack de ressources en double <rpname>. |
+| Le même qualificateur a été défini dans deux packages de ressources. | Erreur | Configuration non valide : Plusieurs instances de QualifierSet «<qualifier tags>» trouvé. |
+| Aucune candidat n’a été trouvé pour le QualifierSet répertorié pour le nœud « ResourcePackage ». | Avertissement | Configuration non valide : Aucun candidat ne trouvée pour <Resource Package Name>. |
+| Aucun candidat n’a été trouvé pour le qualificateur répertorié sous le nœud « AutoResourcePackage ». | Avertissement | Configuration non valide : Aucun candidat ne trouvé pour le qualificateur <qualifier name>. Package de ressources non généré. |
+| Aucun mode trouvé. Autrement dit, nœud « packaging » vide. | Avertissement | Configuration non valide : Aucun mode de mise en package spécifié. |
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Options de ligne de commande de MakePri.exe - commande createconfig](makepri-exe-command-options.md#createconfig-command)
-* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
-* [Système de gestion des ressources - ResourceContext](resource-management-system.md#resourcecontext)
+* [Options de ligne de commande MakePri.exe&mdash;createconfig commande](makepri-exe-command-options.md#createconfig-command)
+* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Système de gestion des ressources&mdash;ResourceContext](resource-management-system.md#resourcecontext)

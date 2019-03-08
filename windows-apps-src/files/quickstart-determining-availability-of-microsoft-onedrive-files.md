@@ -1,36 +1,36 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: Détermination de la disponibilité des fichiers MicrosoftOneDrive
-description: Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable.
+title: Détermination de la disponibilité des fichiers Microsoft OneDrive
+description: Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044992"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608934"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Détermination de la disponibilité des fichiers Microsoft OneDrive
 
 
 **API importantes**
 
--   [**Classe FileIO**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
--   [**Classe StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**Propriété StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**FileIO classe**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
+-   [**Classe de StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
+-   [**Propriété de StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
+Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
--   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
--   **Déclarations des fonctionnalités d’application**
+-   **Déclarations Betacam d’application**
 
     Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
@@ -38,12 +38,12 @@ Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la pro
 
 Les utilisateurs peuvent marquer les fichiers OneDrive comme étant disponibles hors connexion (par défaut) ou en ligne uniquement. Cette fonctionnalité permet aux utilisateurs de déplacer des fichiers volumineux (tels que des images et des vidéos) vers leur emplacement OneDrive, de les marquer comme étant en ligne uniquement et d’économiser de l’espace disque (le seul élément conservé localement est un fichier de métadonnées).
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) permet de déterminer si un fichier est actuellement disponible. Le tableau suivant indique la valeur de la propriété **StorageFile.IsAvailable** dans différents scénarios.
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx), est utilisée pour déterminer si un fichier est actuellement disponible. Le tableau suivant indique la valeur de la propriété **StorageFile.IsAvailable** dans différents scénarios.
 
-| Type de fichier                              | En ligne | Connexion réseau limitée        | Hors connexion |
+| Type de fichier                              | La licence | Connexion réseau limitée        | Hors connexion |
 |-------------------------------------------|--------|------------------------|---------|
-| Fichier local                                | Vrai   | Vrai                   | Vrai    |
-| Fichier OneDrive marqué comme étant disponible hors connexion | Vrai   | Vrai                   | Vrai    |
+| Fichier local                                | True   | True                   | True    |
+| Fichier OneDrive marqué comme étant disponible hors connexion | True   | True                   | True    |
 | Fichier OneDrive marqué comme étant en ligne uniquement       | True   | Dépend des paramètres utilisateur | False   |
 | Fichier réseau                              | True   | Dépend des paramètres utilisateur | False   |
 

@@ -1,23 +1,23 @@
 ---
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo.
-title: Lampe torche indépendante de la caméra
+title: Lampe torche indépendante de l’appareil photo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd69900995a51af806c99b25aae43149d6e30a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919850"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622604"
 ---
-# <a name="camera-independent-flashlight"></a>Lampe torche indépendante de la caméra
+# <a name="camera-independent-flashlight"></a>Lampe torche indépendante de l’appareil photo
 
 
 
-Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo de l’appareil. Outre des informations de références sur la lampe et le réglage de ses paramètres, cet article vous montre comment libérer la ressource de la lampe quand elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe quand elle est utilisée par une autre application.
+Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo. Outre des informations de références sur la lampe et le réglage de ses paramètres, cet article vous montre comment libérer la ressource de la lampe quand elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe quand elle est utilisée par une autre application.
 
 ## <a name="get-the-devices-default-lamp"></a>Accéder à la lampe par défaut de l’appareil
 
@@ -69,11 +69,11 @@ Dans le gestionnaire de l’événement, vérifiez la propriété [**LampAvailab
 
 ## <a name="properly-dispose-of-the-lamp-resource-when-not-in-use"></a>Libérer correctement la ressource de lampe quand elle n’est pas en cours d’utilisation
 
-Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisezC#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
+Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisez C#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques connexes
 - [Lecture de contenu multimédia](media-playback.md)
 
  

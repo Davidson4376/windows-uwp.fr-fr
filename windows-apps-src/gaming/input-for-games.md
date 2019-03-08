@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941257"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631664"
 ---
 # <a name="input-for-games"></a>Entrées pour les jeux
 
-Cette section décrit les différents types de périphériques d’entrée qui peuvent être utilisés dans les jeux UWP sur Windows10 et XboxOne. Elle illustre également leur utilisation de base, et recommande les modèles et techniques à appliquer pour obtenir une programmation des entrées efficace dans les jeux.
+Cette section décrit les différents types de périphériques d’entrée qui peuvent être utilisés dans les jeux UWP sur Windows 10 et Xbox One. Elle illustre également leur utilisation de base, et recommande les modèles et techniques à appliquer pour obtenir une programmation des entrées efficace dans les jeux.
 
 > **Remarque**    D’autres types de périphériques d’entrée existent et peuvent être utilisés dans les jeux UWP, par exemple des périphériques d’entrée personnalisés qui peuvent être propres à un genre ou à un jeu. Cette section ne couvre pas ces périphériques ni leur programmation. Pour plus d’informations sur les interfaces utilisées pour faciliter les périphériques d’entrée personnalisés, voir l’espace de noms [Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom).
 
 ## <a name="gaming-input-devices"></a>Périphériques d’entrée de jeu
 
-Les périphériques d’entrée de jeu sont pris en charge dans les jeux et applications UWP pour Windows10 et XboxOne, via l’espace de noms [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input).
+Les périphériques d’entrée de jeu sont pris en charge dans les jeux et applications UWP pour Windows 10 et Xbox One, via l’espace de noms [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input).
 
 ### <a name="gamepads"></a>Boîtiers de commande
 
-Les boîtiers de commande représentent le périphérique d’entrée standard sur XboxOne et ils sont couramment choisis par les joueurs Windows s’ils ne préfèrent pas utiliser un clavier et une souris. Ils fournissent de nombreux contrôles numériques et analogiques qui conviennent à pratiquement tous les types de jeu, ainsi que des retours tactiles via des moteurs de vibration incorporés.
+Les boîtiers de commande représentent le périphérique d’entrée standard sur Xbox One et ils sont couramment choisis par les joueurs Windows s’ils ne préfèrent pas utiliser un clavier et une souris. Ils fournissent de nombreux contrôles numériques et analogiques qui conviennent à pratiquement tous les types de jeu, ainsi que des retours tactiles via des moteurs de vibration incorporés.
 
 Pour plus d’informations sur l’utilisation des boîtiers de commande dans votre jeu UWP, consultez [Boîtier de commande et vibrations](gamepad-and-vibration.md).
 
@@ -37,21 +37,21 @@ Pour plus d’informations sur l’utilisation des sticks arcade dans votre jeu 
 
 ### <a name="racing-wheels"></a>Volants de course
 
-Les volants de course sont des périphériques d’entrée dont l’utilisation rappelle celle du volant d’une voiture de course réelle. Ils sont idéaux pour les jeux de course qui mettent en scène des voitures ou des camions. De nombreux volants de course sont équipés d’un retour de force réel; ils peuvent appliquer des forces réelles sur un axe de contrôle, comme le volant, et non une simple vibration.
+Les volants de course sont des périphériques d’entrée dont l’utilisation rappelle celle du volant d’une voiture de course réelle. Ils sont idéaux pour les jeux de course qui mettent en scène des voitures ou des camions. De nombreux volants de course sont équipés d’un retour de force réel ; ils peuvent appliquer des forces réelles sur un axe de contrôle, comme le volant, et non une simple vibration.
 
 Pour plus d’informations sur l’utilisation des volants de course dans votre jeu UWP, consultez [Volant de course et retour de force](racing-wheel-and-force-feedback.md).
 
-### <a name="flight-sticks"></a>Les manches à balai
+### <a name="flight-sticks"></a>Manches à balai
 
-Les manches à balai sont des périphériques d’entrée de jeu qui reproduire la sensation des manches à balai qui se trouve dans un avion ou spatial d’un vaisseau. Ces manches à balai constituent le périphérique d’entrée idéal pour un contrôle de pilotage rapide et précis.
+Les manches à balai sont des périphériques d’entrée de jeu qui reproduisent la sensation des manches à balai utilisés dans le poste de pilotage d’un avion ou d’un vaisseau spatial. Ces manches à balai constituent le périphérique d’entrée idéal pour un contrôle de pilotage rapide et précis.
 
-Pour plus d’informations sur l’utilisation des manches à balai dans votre jeu UWP, voir le [manche à balai](flight-stick.md).
+Pour plus d’informations sur l’utilisation des manches à balai dans votre jeu UWP, consultez [Manche à balai](flight-stick.md).
 
 ### <a name="raw-game-controllers"></a>Contrôleurs de jeu bruts
 
 Un contrôleur de jeu brut est une représentation générique d’un contrôleur de jeu dont les entrées existent sur différentes sortes de contrôleurs de jeu courants. Ces entrées sont affichées sous forme de simples tableaux de boutons, commutateurs et axes sans nom. En utilisant un contrôleur de jeu brut, vous pouvez permettre aux clients de créer des mappages d’entrée personnalisés, quel que soit le type de contrôleur qu’ils utilisent.
 
-Pour plus d’informations sur l’utilisation des contrôleurs de jeu bruts dans votre jeu UWP, voir le [contrôleur de jeu brut](raw-game-controller.md).
+Pour plus d’informations sur l’utilisation des contrôleurs de jeu bruts dans votre jeu UWP, consultez [Contrôleur de jeu brut](raw-game-controller.md).
 
 ### <a name="ui-navigation-controllers"></a>Contrôleurs de navigation d’interface utilisateur
 
@@ -73,6 +73,6 @@ Pour en savoir plus sur la gestion des utilisateurs et de leurs périphériques 
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Pratiques de saisie pour les jeux](input-practices-for-games.md)
+* [Pratiques d’entrée pour les jeux](input-practices-for-games.md)
 * [Espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Espace de noms Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)

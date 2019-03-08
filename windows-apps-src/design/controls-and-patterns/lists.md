@@ -1,27 +1,27 @@
 ---
-Description: Lists display and enable interaction with collection-based content.
+Description: Les listes affichent et activent l’interaction avec du contenu basé sur des collections.
 title: Listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004585"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636364"
 ---
 # <a name="lists"></a>Listes
 
-Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
+Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants :
 
 -   Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
 -   Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
@@ -30,20 +30,20 @@ Les listes affichent et activent l’interaction avec du contenu basé sur des c
 
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
-> **API importantes**: [classe ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [classe ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **API importantes**: [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox (classe)](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">
-> <strong>Windows10 Fall Creators Update - Changement de comportement</strong>
+> <strong>Windows 10 Fall Creators Update - changement de comportement</strong>
 > </div>
 > Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler/parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
-> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence d’API de la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">Classe ScrollViewer</a>.
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence des API pour le <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer classe</a>.
 
-## <a name="list-views"></a>Affichages Liste
+## <a name="list-views"></a>Affichages de liste
 
 Les affichages Liste permettent de classer des éléments et d’affecter des en-têtes de groupe, de glisser-déplacer des éléments, de traiter du contenu et de réorganiser des éléments.
 
-### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un affichage Liste pour :
 
@@ -76,27 +76,27 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Affichage Liste et affichage Grille</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Vue liste et l’affichage de grille</a></p></td>
 <td align="left"><p>Découvrez les principaux éléments de l’utilisation d’un affichage Liste ou Grille dans votre application.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">Modèles et conteneurs d’éléments</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">Modèles et des conteneurs d’éléments</a></p></td>
 <td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-listview.md">Modèles d’éléments d'affichage Liste</a></p></td>
+<td align="left"><p><a href="item-templates-listview.md">Modèles d’élément pour l’affichage de liste</a></p></td>
 <td align="left"><p>Utilisez ces exemples de modèles d'éléments de ListView pour obtenir l’apparence des types d’applications courants.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="inverted-lists.md">Listes inversées</a></p></td>
+<td align="left"><p><a href="inverted-lists.md">Listes inversés</a></p></td>
 <td align="left"><p>Les listes inversées placent les nouveaux éléments ajoutés en bas, comme dans une application de chat. Suivez ces conseils pour utiliser une liste inversée dans votre application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Tirer pour actualiser</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Extraire pour actualiser</a></p></td>
 <td align="left"><p>Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile pour récupérer plus de données. Utilisez ces instructions pour implémenter le modèle tirer pour actualiser dans votre affichage Liste.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriquée</a></p></td>
+<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriqué</a></p></td>
 <td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
 </tr>
 </tbody>
@@ -106,7 +106,7 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 
 Les affichages Grille conviennent pour l’organisation et l’exploration des collections de contenus à base d’images. Une disposition de liste Grille défile verticalement et s’étend horizontalement. Les éléments sont disposés dans un ordre de lecture de gauche à droite, puis de haut en bas.
 
-### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un affichage Liste pour :
 
@@ -143,19 +143,19 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Affichage Liste et affichage Grille</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Vue liste et l’affichage de grille</a></p></td>
 <td align="left"><p>Découvrez les principaux éléments de l’utilisation d’un affichage Liste ou Grille dans votre application.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">Modèles et conteneurs d’éléments</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">Modèles et des conteneurs d’éléments</a></p></td>
 <td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-gridview.md">Modèles d’éléments d'affichage Grille</a></p></td>
+<td align="left"><p><a href="item-templates-gridview.md">Modèles d’élément pour l’affichage de grille</a></p></td>
 <td align="left"><p>Utilisez ces exemples de modèles d'éléments de GridView pour obtenir l’apparence des types d’applications courants.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriquée</a></p></td>
+<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriqué</a></p></td>
 <td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
 </tr>
 </tbody>
@@ -165,7 +165,7 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 
 Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur la zone de liste déroulante pour la développer.
 
-### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 -   Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
 -   Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
@@ -190,18 +190,18 @@ Si la collection figurant dans une zone de liste déroulante est suffisamment lo
 
 -   Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
 -   Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
--   Pour créer une liste déroulante avec mise à jour dynamique pendant que l’utilisateur utilise les touches de direction (comme une liste déroulante de sélection de police), définissez SelectionChangedTrigger sur «Toujours».  
+-   Pour créer une liste déroulante avec mise à jour dynamique pendant que l’utilisateur utilise les touches de direction (comme une liste déroulante de sélection de police), définissez SelectionChangedTrigger sur « Toujours ».  
 
 ### <a name="text-search"></a>Recherche en texte
 
-Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide.
+Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche « W » affiche « Washington » pour une sélection rapide.
 
 
 ## <a name="list-boxes"></a>Zones de liste
 
 Une zone de liste permet à l’utilisateur de choisir un ou plusieurs éléments d’une collection. Les zones de liste sont similaires aux listes déroulantes, sauf qu’elles sont toujours ouvertes, c’est-à-dire qu’elles n’ont pas d’état compact (non développé). Les éléments de la liste peuvent défiler si l’espace est insuffisant pour les afficher tous.
 
-### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 -   Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
 -   Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
@@ -229,9 +229,9 @@ Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter 
 
 Il existe trois modes de sélection :
 
--   Unique : l’utilisateur ne peut sélectionner qu’un élément à la fois.
--   Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
--   Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
+-   Unique : L’utilisateur peut sélectionner un seul élément à la fois.
+-   Plusieurs : L’utilisateur peut sélectionner plusieurs éléments sans utiliser un modificateur.
+-   Étendue : L’utilisateur peut sélectionner plusieurs éléments avec un modificateur, telles que maintenir la touche MAJ enfoncée.
 
 L’appui sur un emplacement quelconque d’un élément entraîne la sélection de celui-ci. L’appui sur une action de la barre de commandes affecte tous les éléments sélectionnés. Si aucun élément n’est sélectionné, toutes les actions de la barre de commandes doivent être inactives, à l’exception de l’action Sélectionner tout.
 
@@ -265,11 +265,11 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [Maître/détails](master-details.md)
 - [Volet de navigation](navigationview.md)
 - [Zoom sémantique](semantic-zoom.md)
-- [Glisser-déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Glisser -déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Images miniatures](../../files/thumbnails.md)
 
-**Pour les développeurs**
-- [Classe ListView](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [Classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [Classe ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [Classe ListBox](https://msdn.microsoft.com/library/windows/apps/br242868)
+**pour les développeurs**
+- [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Classe de GridView](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [ComboBox (classe)](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [Classe de zone de liste](https://msdn.microsoft.com/library/windows/apps/br242868)

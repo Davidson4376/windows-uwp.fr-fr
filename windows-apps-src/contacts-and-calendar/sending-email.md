@@ -1,26 +1,26 @@
 ---
 description: Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
-title: Envoyer un e-mail
+title: Envoyer un courrier électronique
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, e-mail, envoi
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626484"
 ---
 # <a name="send-email"></a>Envoyer un courrier électronique
 
-Montre comment lancer la boîte de dialogue de rédaction d’un courrier électronique pour permettre à l’utilisateur d’envoyer un courrier électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. The message will not be sent until the user taps the send button.
+Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi.
 
-**In this article**
+**Dans cet article**
 
--   [Lancer la boîte de dialogue de rédaction d’un message électronique](#launch-the-compose-email-dialog)
--   [Récapitulatif et étapes suivantes](#summary-and-next-steps)
+-   [Lancer la boîte de dialogue Nouveau message électronique](#launch-the-compose-email-dialog)
+-   [Résumé et étapes suivantes](#summary-and-next-steps)
 -   [Rubriques connexes](#related-topics)
 
 ## <a name="launch-the-compose-email-dialog"></a>Lancer la boîte de dialogue de rédaction d’un message électronique
@@ -47,7 +47,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Pièces jointes que vous ajoutez à un message électronique à l’aide de la classe [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) seront affichent uniquement dans l’application de messagerie. Si les utilisateurs disposent de tout autre programme de messagerie configuré en tant que leur programme de messagerie par défaut, la fenêtre de rédaction d’un message s’affiche sans la pièce jointe. Il s’agit d’un problème connu.
+> Les pièces jointes que vous ajoutez à un message électronique à l’aide de la [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) classe s’affiche uniquement dans l’application de messagerie. Si les utilisateurs disposent de tout autre programme de messagerie configuré en tant que leur programme de messagerie par défaut, la fenêtre Nouveau message s’affiche sans la pièce jointe. Il s'agit d'un problème connu.
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
@@ -55,8 +55,8 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Sélection de contacts](selecting-contacts.md)
-* [How to continue your Windows Phone app after calling a file picker](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Sélection des contacts](selecting-contacts.md)
+* [Comment continuer à votre application Windows Phone après l’appel d’un sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

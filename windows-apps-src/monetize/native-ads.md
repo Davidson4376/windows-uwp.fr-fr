@@ -3,14 +3,14 @@ description: Découvrez comment ajouter des publicités natives à votre applica
 title: Publicités natives
 ms.date: 05/11/2018
 ms.topic: article
-keywords: Windows10, uwp, pub, publicité, contrôle de publicités, publicité native
+keywords: Windows 10, uwp, pub, publicité, contrôle de publicités, publicité native
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045242"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628064"
 ---
 # <a name="native-ads"></a>Publicités natives
 
@@ -19,11 +19,11 @@ Une publicité native est un format de publicité basée sur un composant où ch
 Pour les annonceurs, les publicités natives offrent des emplacements de hautes performances, car l’expérience de publicité est étroitement intégrée à l’application, par conséquent, les utilisateurs ont tendance à interagir davantage avec ces types de publicités.
 
 > [!NOTE]
-> Les publicités natives ne sont actuellement prises en charge que pour les applications UWP basées sur XAML pour Windows10. La prise en charge pour les applications UWP écrites en HTML et JavaScript est prévue pour une future version du SDK MicrosoftAdvertising.
+> Les publicités natives ne sont actuellement prises en charge que pour les applications UWP basées sur XAML pour Windows 10. La prise en charge pour les applications UWP écrites en HTML et JavaScript est prévue pour une future version du SDK Microsoft Advertising.
 
-## <a name="prerequisites"></a>Éléments prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-* Installer le [SDK MicrosoftAdvertising](https://aka.ms/ads-sdk-uwp) avec VisualStudio2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
+* Installer le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-a-native-ad-into-your-app"></a>Intégrer une publicité native dans votre application
 
@@ -33,12 +33,12 @@ Suivez ces instructions pour intégrer une publicité native dans votre applicat
     > [!NOTE]
     > Si vous utilisez un projet existant, ouvrez le fichier Package.appxmanifest dans votre projet et assurez-vous que la fonctionnalité **Internet (Client)** est sélectionnée. Votre application a besoin de cette fonctionnalité pour recevoir des publicités tests et des publicités dynamiques.
 
-2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, consultez [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
-3. Ajoutez une référence au SDK Microsoft Advertising de votre projet:
+3. Ajoutez une référence au SDK Microsoft Advertising de votre projet :
 
-    1. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence...**
-    2.  Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **SDK Microsoft Advertising pour XAML** (version10.0).
+    1. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
+    2.  Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version 10.0).
     3.  Dans **Gestionnaire de références**, cliquez sur OK.
 
 4. Dans le fichier de code approprié de votre application (par exemple, dans MainPage.xaml.cs ou un fichier de code d’une autre page), ajoutez les références d’espace de noms suivantes.
@@ -47,7 +47,7 @@ Suivez ces instructions pour intégrer une publicité native dans votre applicat
 
 5.  À un emplacement approprié de votre application (par exemple, dans ```MainPage``` ou dans une autre page), déclarez un objet [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) et plusieurs champs de chaîne représentant l’ID d'application et l’ID d’unité publicitaire de votre publicité native. L’exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des publicités natives.
     > [!NOTE]
-    > Chaque **NativeAdsManagerV2** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle de publicités natives, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application au Windows Store, vous devez [remplacer ces valeurs par des valeurs dynamiques de test](#release) à partir de l’espace partenaires.
+    > Chaque **NativeAdsManagerV2** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle de publicités natives, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
@@ -109,27 +109,27 @@ Après avoir vérifié que votre implémentation de publicité native affiche co
 
 1.  Assurez-vous que votre implémentation de publicité native suit nos [directives concernant les publicités natives](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
-2.  Dans l’espace partenaires, accédez à la page [publicités In-app](../publish/in-app-ads.md) et [créer une unité publicitaire](set-up-ad-units-in-your-app.md#live-ad-units). Comme type d’unité publicitaire, spécifiez **Native**. Prenez note de l’ID d’unité publicitaire et de l’ID d’application.
+2.  Dans le centre de partenaires, accédez à la [les publicités dans l’application](../publish/in-app-ads.md) page et [créer une unité ad](set-up-ad-units-in-your-app.md#live-ad-units). Comme type d’unité publicitaire, spécifiez **Native**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
     > [!NOTE]
-    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité de publicité dynamique UWP dans l’espace partenaires, la valeur de ID d’application pour l’unité publicitaire correspond toujours à l’ID Windows Store pour votre application (une valeur d’ID Windows Store exemple ressemble à 9NBLGGH4R315).
+    > Les valeurs d'ID d’application pour les unités publicitaires de test et les unités publicitaires dynamiques UWP ont des formats différents. Les valeurs d’ID d'application tests sont des GUID. Lorsque vous créez une unité d’ad UWP en direct dans l’espace partenaires, la valeur d’ID application pour l’unité ad correspond toujours à l’ID de Store pour votre application (un exemple de valeur d’ID de Store ressemble à 9NBLGGH4R315).
 
 3. Vous pouvez éventuellement activer la médiation publicitaire pour la publicité native en configurant les paramètres de la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) sur la page [Publicités in-app](../publish/in-app-ads.md). La médiation publicitaire vous permet d'optimiser vos revenus publicitaires et vos capacités de promotion d'app en affichant des publicités issues de plusieurs réseaux publicitaires.
 
-4.  Dans votre code, remplacez les mêmes valeurs (autrement dit, les paramètres *applicationId* et *adUnitId* du constructeur [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) ) avec les valeurs dynamiques que vous avez générées dans l’espace partenaires.
+4.  Dans votre code, remplacez les valeurs d’unit test ad (autrement dit, le *applicationId* et *adUnitId* paramètres de le [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) constructeur) avec la dynamique de valeurs que vous généré dans le centre de partenaires.
 
-5.  [Soumettre votre application](../publish/app-submissions.md) au Store à l’aide de l’espace partenaires.
+5.  [Soumettre votre application](../publish/app-submissions.md) vers le Store à l’aide de partenaires.
 
-6.  Passez en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans l’espace partenaires.
+6.  Examinez votre [rapports de performances de publicité](../publish/advertising-performance-report.md) dans Partner Center.
 
 ## <a name="manage-ad-units-for-multiple-native-ads-in-your-app"></a>Gérer des unités publicitaires pour plusieurs publicités natives dans votre application
 
-Vous pouvez utiliser plusieurs placements de publicité native dans une seule application. Dans ce scénario, nous vous recommandons d’attribuer une unité publicitaire différente à chaque placement de publicité native. L’utilisation de différentes unités publicitaires pour chaque publicité native vous permet de [configurer les paramètres de médiation](../publish/in-app-ads.md#mediation) séparément et d'obtenir des [données de rapport](../publish/advertising-performance-report.md) discrètes pour chaque contrôle. Cela permet également à nos services de mieux optimiser les publicités que nous servons à votre application.
+Vous pouvez utiliser plusieurs placements de publicité native dans une seule application. Dans ce scénario, nous vous recommandons d’attribuer une unité publicitaire différente à chaque placement de publicité native. L’utilisation de différentes unités publicitaires pour chaque publicité native vous permet de [configurer les paramètres de médiation](../publish/in-app-ads.md#mediation) séparément et d'obtenir des [données de rapport](../publish/advertising-performance-report.md) discrètes pour chaque contrôle. Cela permet également à nos services de mieux optimiser les publicités que nous proposons à votre application.
 
 > [!IMPORTANT]
 > Vous pouvez utiliser chaque unité publicitaire dans une seule application. Si vous utilisez une unité publicitaire dans plusieurs applications, les publicités ne seront pas servies à cette unité publicitaire.
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Recommandations concernant les publicités natives](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
-* [Publicités dans l’app](../publish/in-app-ads.md)
-* [Configurer des unités publicitaires pour votre app](set-up-ad-units-in-your-app.md)
+* [Instructions pour les annonces natifs](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
+* [Publicités dans l’application](../publish/in-app-ads.md)
+* [Configurer des unités d’ad pour votre application](set-up-ad-units-in-your-app.md)

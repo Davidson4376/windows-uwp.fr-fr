@@ -1,5 +1,5 @@
 ---
-Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+Description: Vous pouvez enregistrer des événements personnalisés à partir de votre application UWP et passez en revue ces événements dans le rapport d’utilisation de partenaires.
 title: Consigner des événements personnalisés pour l’Espace partenaires
 ms.date: 06/01/2018
 ms.topic: article
@@ -7,30 +7,30 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936311"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604234"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’Espace partenaires
 
-Le [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans l’espace partenaires vous permet d’obtenir des informations sur les événements personnalisés que vous avez définis dans votre application de plateforme Windows universelle (UWP). Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
+Le [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans permet de partenaires vous obtenez des informations sur les événements personnalisés que vous avez définies dans votre application de plateforme universelle Windows (UWP). Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
 
-Pour consigner un événement à partir de votre application, passez la chaîne d’événement à la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) fournie par le Microsoft Store Services SDK. Vous pouvez passer en revue le total d’occurrences de vos événements personnalisés dans la section **événements personnalisés** du [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans l’espace partenaires.
+Pour consigner un événement à partir de votre application, passez la chaîne d’événement à la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) fournie par le Microsoft Store Services SDK. Vous pouvez consulter le nombre total d’occurrences pour vos événements personnalisés dans le **événements personnalisés** section de la [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans Partner Center.
 
 > [!NOTE]
-> Les événements personnalisés que vous vous connectez à l’espace partenaires ne sont pas liés aux [événements Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), et elles n’apparaissent pas dans **L’Observateur d’événements**.
+> Événements personnalisés que vous vous connectez à des partenaires ne sont pas liées à [les événements Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), et ils n’apparaissent pas dans **Observateur d’événements**.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Avant que vous pouvez passer en revue les événements de journalisation personnalisés dans le **rapport d’utilisation** pour votre application dans l’espace partenaires, votre application doit être publiée dans le Windows Store.
+Avant de pouvoir examiner les événements de journalisation personnalisée dans le **rapport d’utilisation** pour votre application dans le centre de partenaires, votre application doit être publiée dans le Store.
 
 ## <a name="how-to-log-custom-events"></a>Comment consigner des événements personnalisés
 
-1. Si vous ne l’avez pas encore fait, [installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) sur votre ordinateur de développement.
+1. Si vous ne l’avez pas encore fait, [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) sur votre ordinateur de développement.
 
-2. Ouvrez votre projet dans Visual Studio.
+2. Ouvrez votre projet dans Visual Studio.
 
 3. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le nœud **Références**, puis sélectionnez **Ajouter une référence**.
 
@@ -47,8 +47,8 @@ Avant que vous pouvez passer en revue les événements de journalisation personn
     > [!NOTE]
     > Le [Rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) peut prendre un certain temps pour se charger si votre application enregistre un grand nombre d’événements personnalisés avec des noms longs. Nous vous recommandons d’utiliser des noms brefs pour vos événements personnalisés. 
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Rapport sur l’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
-* [Méthode log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
+* [Rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [Méthode de journalisation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

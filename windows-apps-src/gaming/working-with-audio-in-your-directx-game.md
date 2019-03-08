@@ -4,14 +4,14 @@ description: Apprenez à développer et à incorporer de la musique et des sons 
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, audio, directx
+keywords: Windows 10, uwp, jeux, audio, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: fd106e07e6359e9289074cb62cec6bf7458ac5bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634574"
 ---
 # <a name="audio-for-games"></a>Audio pour les jeux
 
@@ -36,7 +36,7 @@ Voici quelques concepts de programmation audio que nous utilisons dans cette sec
 -   Émetteurs sonores (ou sources). Dans XAudio2, les émetteurs sonores sont des sources qui émettent un son, qu’il s’agisse d’un parasite de bruit de fond ou d’un morceau de rock joué par un jukebox dans une scène de votre jeu. Vous spécifiez les émetteurs à l’aide de coordonnées universelles.
 -   Écouteurs de son. L’écouteur de son est souvent le joueur, voire une entité IA dans un jeu plus avancé, qui traite les sons reçus en provenance d’un écouteur. Vous pouvez sous-mixer ce son dans le flux audio pour le faire entendre au joueur, ou l’utiliser pour accompagner une action spécifique en cours de jeu, comme réveiller un garde IA marqué comme écouteur.
 
-## <a name="design-considerations"></a>Considérations de conception
+## <a name="design-considerations"></a>Considérations relatives à la conception
 
 
 Le son est un élément extrêmement important de la conception et du développement du jeu. De nombreux joueurs sont capables de se souvenir d’un jeu médiocre élevé au rang de légende pour sa bande son, un superbe travail sur les voix ou le mixage du son, ou simplement une production audio exceptionnelle. La musique et le son définissent la personnalité d’un jeu, et établissent le motif principal qui identifie le jeu et le distingue de ses concurrents. L’effort que vous consacrez à concevoir et à développer le profil audio de votre jeu sera bien employé.
@@ -67,31 +67,31 @@ XAudio2 est la bibliothèque de mixage audio pour DirectX, principalement destin
 <td align="left"><p>Cette rubrique fournit la liste des fonctions de programmation audio prises en charge par XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415762">Prise en main de XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415762">Prise en main XAudio2</a></p></td>
 <td align="left"><p>Cette rubrique fournit des informations sur les concepts clés de XAudio2, les versions XAudio2 et le format audio RIFF.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415692">Concepts courants de programmation audio</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415692">Concepts de programmation courants Audio</a></p></td>
 <td align="left"><p>Cette rubrique fournit une vue d’ensemble des concepts audio courants qu’un développeur audio doit connaître.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415825">Voix XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415825">XAudio2 voix</a></p></td>
 <td align="left"><p>Cette rubrique donne une vue d’ensemble des voix XAudio2 qui sont utilisées pour le prémixage, le traitement et le matriçage des données audio.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415745">Rappels XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415745">Rappels de XAudio2</a></p></td>
 <td align="left"><p>Cette rubrique couvre les rappels XAudio 2 qui sont utilisés pour empêcher les ruptures dans la lecture audio.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415739">Graphiques audio XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415739">Graphiques Audio XAudio2</a></p></td>
 <td align="left"><p>Cette rubrique couvre les graphiques de traitement audio XAudio2 qui prennent en entrée une série de flux de données audio provenant du client, les traitent et délivrent le résultat final sur un périphérique audio.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415756">Effets audio XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415756">Effets Audio XAudio2</a></p></td>
 <td align="left"><p>Cette rubrique traite des effets audio XAudio2, qui prennent des données audio entrantes et effectuent une opération sur celles-ci (par exemple un effet de réverbération) avant de les transmettre.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415821">Diffusion de données audio en continu avec XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415821">Diffusion en continu des données Audio avec XAudio2</a></p></td>
 <td align="left"><p>Cette rubrique couvre la diffusion audio en continu avec XAudio2.</p></td>
 </tr>
 <tr class="odd">
@@ -122,71 +122,71 @@ XAudio2 est la bibliothèque de mixage audio pour DirectX, principalement destin
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">Procédure: initialiser XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415779">Procédure : Initialiser XAudio2</a></p></td>
 <td align="left"><p>Découvrez comment initialiser XAudio2 pour la lecture audio en créant une instance du moteur XAudio2 et en créant une voix mastérisée.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415781">Procédure: charger des fichiers de données audio dans XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415781">Procédure : Charger des fichiers de données Audio dans XAudio2</a></p></td>
 <td align="left"><p>Apprenez comment remplir les structures nécessaires pour lire les données audio dans XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415787">Procédure: lire un son avec XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415787">Procédure : Émettre un signal sonore avec XAudio2</a></p></td>
 <td align="left"><p>Apprenez à lire des données audio précédemment chargées dans XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415794">Procédure: utiliser des voix prémixées</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415794">Procédure : Utilisez la voix de mixage secondaire</a></p></td>
 <td align="left"><p>Apprenez à définir des groupes de voix pour créer en sortie une seule voix prémixée.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415769">Procédure: utiliser des rappels de voix source</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415769">Procédure : Utiliser des rappels de voix Source</a></p></td>
 <td align="left"><p>Apprenez à utiliser les rappels de voix source XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415774">Procédure: utiliser des rappels de moteur</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415774">Procédure : Utiliser des rappels de moteur</a></p></td>
 <td align="left"><p>Apprenez à utiliser les rappels de moteur XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415767">Procédure: créer un graphique de traitement audio de base</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415767">Procédure : Générer un graphique de base de traitement Audio</a></p></td>
 <td align="left"><p>Apprenez à créer un graphique de traitement audio, construit à partir d’une seule voix mastérisée et d’une seule voix source.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415772">Procédure: Ajouter ou supprimer dynamiquement des voix d’un graphique audio</a></p></td>
-<td align="left"><p>Apprenez à ajouter ou supprimer des voix prémixées dans un graphique qui a été créé en suivant les étapes décrites dans <a href="https://msdn.microsoft.com/library/windows/desktop/ee415767">Procédure: Créer un graphique de traitement audio de base</a>.</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415772">Procédure : Dynamiquement ajouter ou supprimer des contacts à partir d’un graphique d’Audio</a></p></td>
+<td align="left"><p>Découvrez comment ajouter ou supprimer les voix de mixage secondaire dans un graphique qui a été créé suivant les étapes de <a href="https://msdn.microsoft.com/library/windows/desktop/ee415767">Comment : Générer un graphique de base de traitement Audio</a>.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415789">Procédure: Créer une chaîne d’effets</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415789">Procédure : Créer une chaîne d’effet</a></p></td>
 <td align="left"><p>Apprenez à appliquer une chaîne d’effets à une voix pour le traitement personnalisé des données audio de cette voix.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415730">Procédure: Créer un XAPO</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415730">Procédure : Créer un XAPO</a></p></td>
 <td align="left"><p>Découvrez comment implémenter <a href="https://msdn.microsoft.com/library/windows/desktop/ee415893"><strong>IXAPO</strong></a> pour créer un objet de traitement audio XAudio2 (XAPO).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415728">Procédure: Ajouter la prise en charge de paramètre d’exécution à un XAPO</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415728">Procédure : Ajouter la prise en charge du paramètre d’exécution à un XAPO</a></p></td>
 <td align="left"><p>Apprenez à ajouter la prise en charge de paramètre d’exécution à un XAPO en implémentant l’interface <a href="https://msdn.microsoft.com/library/windows/desktop/ee415896"><strong>IXAPOParameters</strong></a>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415733">Procédure: Utiliser un XAPO dans XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415733">Procédure : Utiliser un XAPO dans XAudio2</a></p></td>
 <td align="left"><p>Apprenez à utiliser l’effet implémenté en tant que XAPO dans une chaîne d’effets XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415723">Procédure: utiliser un XAPOFX dans XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415723">Procédure : Utiliser XAPOFX dans XAudio2</a></p></td>
 <td align="left"><p>Apprenez à utiliser les effets inclus dans XAPOFX dans une chaîne d’effets XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415791">Procédure: diffuser un son en continu à partir du disque</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415791">Procédure : Stream un son à partir du disque</a></p></td>
 <td align="left"><p>Apprenez à diffuser des données audio dans XAudio2 en créant un thread séparé pour lire un tampon audio et en utilisant des rappels pour contrôler ce thread.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415798">Procédure: intégrer X3DAudio avec XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415798">Procédure : Intégrer X3DAudio à XAudio2</a></p></td>
 <td align="left"><p>Apprenez à utiliser X3DAudio pour fournir les valeurs de volume et de tonalité aux voix XAudio2 ainsi que les paramètres de l’effet de réverbération intégré XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415783">Procédure: regrouper des méthodes audio comme un ensemble d’opérations</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415783">Procédure : Groupe de méthodes Audio comme un jeu d’opération</a></p></td>
 <td align="left"><p>Apprenez à utiliser les ensembles d’opérations XAudio2 pour appliquer un groupe d’appels de méthode en même temps.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415765">Débogage des problèmes audio dans XAudio2</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee415765">Débogage des problèmes Audio dans XAudio2</a></p></td>
 <td align="left"><p>Apprenez à définir le niveau de journalisation de débogage pour XAudio2.</p></td>
 </tr>
 </tbody>
@@ -215,11 +215,11 @@ Media Foundation (MF) est une plate-forme de médias pour la diffusion audio et 
 <td align="left"><p>Cette section contient des informations générales sur les API Media Foundation et les outils disponibles pour leur prise en charge.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee663601">Media Foundation: notions essentielles</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ee663601">Media Foundation : Concepts essentiels</a></p></td>
 <td align="left"><p>Cette rubrique présente certains concepts que vous devez comprendre avant d’écrire une application Media Foundation.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms696219">Architecture Media Foundation</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms696219">Architecture de Media Foundation</a></p></td>
 <td align="left"><p>Cette section décrit la conception générale de Microsoft Media Foundation, ainsi que les primitives et le pipeline de traitement multimédia qu’il utilise.</p></td>
 </tr>
 <tr class="even">
@@ -231,11 +231,11 @@ Media Foundation (MF) est une plate-forme de médias pour la diffusion audio et 
 <td align="left"><p>Cette rubrique décrit comment implémenter la lecture audio/vidéo dans votre application.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd757927">Formats multimédias pris en charge dans Media Foundation</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd757927">Prise en charge des Formats multimédias dans Media Foundation</a></p></td>
 <td align="left"><p>Cette rubrique répertorie les formats multimédias que Microsoft Media Foundation prend en charge en mode natif. (Des tiers peuvent prendre en charge des formats supplémentaires en écrivant des plug-in personnalisés.)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd318778">Codage et création de fichier</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dd318778">Encodage et création de fichiers</a></p></td>
 <td align="left"><p>Cette rubrique explique comment utiliser Microsoft Media Foundation pour effectuer le codage audio et vidéo et créer des fichiers multimédias.</p></td>
 </tr>
 <tr class="even">
@@ -243,11 +243,11 @@ Media Foundation (MF) est une plate-forme de médias pour la diffusion audio et 
 <td align="left"><p>Cette rubrique décrit comment utiliser les fonctionnalités des codecs audio et vidéo Windows Media pour produire et consommer des flux de données compressées.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms704847">Référence de programmation Media Foundation</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ms704847">Référence de programmation de Media Foundation</a></p></td>
 <td align="left"><p>Cette section contient des informations de référence sur les API Media Foundation.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa371827">Exemples du kit de développement logiciel Media Foundation</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/aa371827">Exemples de kit de développement logiciel Media Foundation</a></p></td>
 <td align="left"><p>Cette section répertorie les exemples d’applications qui montrent comment utiliser Media Foundation.</p></td>
 </tr>
 </tbody>
@@ -257,7 +257,7 @@ Media Foundation (MF) est une plate-forme de médias pour la diffusion audio et 
 
 ### <a name="windows-runtime-xaml-media-types"></a>Types multimédias XAML de Windows Runtime
 
-Si vous utilisez la technologie [interop XAML-DirectX](https://msdn.microsoft.com/library/windows/apps/hh825871), vous pouvez incorporer les API multimédias XAML WindowsRuntime dans vos applications UWP en C++ avec DirectX pour des scénarios de jeu plus simples.
+Si vous utilisez la technologie [interop XAML-DirectX](https://msdn.microsoft.com/library/windows/apps/hh825871), vous pouvez incorporer les API multimédias XAML Windows Runtime dans vos applications UWP en C++ avec DirectX pour des scénarios de jeu plus simples.
 
 <table>
 <colgroup>
@@ -266,7 +266,7 @@ Si vous utilisez la technologie [interop XAML-DirectX](https://msdn.microsoft.co
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Sujet</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -288,7 +288,7 @@ Si vous utilisez la technologie [interop XAML-DirectX](https://msdn.microsoft.co
 <td align="left"><p>Découvrez comment diffuser un fichier multimédia avec une faible latence dans votre application pour UWP.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/mt282143">Diffusion multimédia</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/mt282143">Conversion de média</a></p></td>
 <td align="left"><p>Découvrez comment utiliser le Contrat Lire sur pour diffuser du contenu multimédia sur un autre appareil à partir de votre application pour UWP.</p></td>
 </tr>
 </tbody>
@@ -299,13 +299,13 @@ Si vous utilisez la technologie [interop XAML-DirectX](https://msdn.microsoft.co
 ## <a name="reference"></a>Référence
 
 
--   [Présentation de XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813)
+-   [XAudio2 Introduction](https://msdn.microsoft.com/library/windows/desktop/ee415813)
 -   [Guide de programmation XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 -   [Vue d’ensemble de Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
  
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 
 -   [Guide de programmation XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737)

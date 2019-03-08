@@ -3,17 +3,17 @@ title: Fonctionnalité d'appareil PointOfService
 description: La fonctionnalité PointOfService est requise pour l'utilisation de l’espace de noms Windows.Devices.PointOfService.
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows10, uwp, point de vente, pdv
+keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115753"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634684"
 ---
 # <a name="pointofservice-device-capability"></a>Fonctionnalité d'appareil PointOfService
-Vous demandez l’accès aux API PointOfService en déclarant la fonctionnalité dans votre manifeste de package d’application. Vous pouvez déclarer la plupart des fonctionnalités à l’aide du concepteur de manifeste, dans MicrosoftVisual Studio, ou vous pouvez les ajouter manuellement.  
+Vous demandez l’accès aux API PointOfService en déclarant la fonctionnalité dans votre manifeste de package d’application. Vous pouvez déclarer la plupart des fonctionnalités à l’aide du concepteur de manifeste, dans Microsoft Visual Studio, ou vous pouvez les ajouter manuellement.  
 
 > [!Important]
 > Vous recevez l’erreur **System.UnauthorizedAccessException** si vous essayez d’utiliser une API dans l’espace de noms Windows.Devices.PointOfService sans avoir déclaré la fonctionnalité **pointOfService** dans votre manifeste d'application. 
@@ -22,7 +22,7 @@ Vous demandez l’accès aux API PointOfService en déclarant la fonctionnalité
 
 1. Dans l’**Explorateur de solutions**, développez le nœud de projet de votre application UWP.
 2. Double-cliquez sur le fichier **Package.appxmanifest**.  
-*Si le fichier manifeste est déjà ouvert dans le mode code XML, Visual Studio vous invite à fermer le fichier.*
+*Si le fichier manifeste est déjà ouvert dans la vue de code XML, Visual Studio vous invite à fermer le fichier.*
 3. Cliquez sur l’onglet **Fonctionnalités**.
 4. Cliquez sur la case à cocher en regard de **Point de service** dans la liste des fonctionnalités pour activer la fonctionnalité d'appareil de point de service
 

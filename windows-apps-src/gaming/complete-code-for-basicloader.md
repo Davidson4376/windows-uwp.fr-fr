@@ -4,14 +4,14 @@ description: Code complet pour une classe et des méthodes qui convertissent et 
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, basicloader
+keywords: Windows 10, uwp, jeux, basicloader
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcec2550455df8afe5870f9b760e1f7225f847c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930219"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637254"
 ---
 # <a name="complete-code-for-basicloader"></a>Code complet de BasicLoader
 
@@ -19,7 +19,7 @@ ms.locfileid: "8930219"
 
 Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 
-Cette rubrique contient les sections suivantes:
+Cette rubrique contient les sections suivantes :
 
 -   [Technologies](#technologies)
 -   [Configuration requise](#requirements)
@@ -34,13 +34,13 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## <a name="technologies"></a>Technologies
 
-**Langages de programmation**: C++  
-**Modèles de programmation**: Windows Runtime
+**Langages de programmation** : C++  
+**Modèles de programmation** : Windows Runtime
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Configuration requise
 
-**Client minimal pris en charge**: Windows10                              
-**Serveur minimal pris en charge**: Windows Server2016 Technical Preview 
+**Client minimal pris en charge** : Windows 10                              
+**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview 
 
 
 ## <a name="view-the-code-c"></a>Afficher le code (C++)

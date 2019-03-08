@@ -6,42 +6,42 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923116"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639984"
 ---
 # <a name="create-data-bindings"></a>Créer des liaisons de données
 
-Supposons que vous avez conçu et implémenté une interface utilisateur à l'aspect élégant, remplie d'images d'espace réservé, de texte modèle «lorem ipsum» et de contrôles qui ne font rien pour le moment. Vous voulez ensuite la connecter à des données réelles et transformer ce prototype de conception en application vivante. 
+Supposons que vous avez conçu et implémenté une interface utilisateur à l'aspect élégant, remplie d'images d'espace réservé, de texte modèle « lorem ipsum » et de contrôles qui ne font rien pour le moment. Vous voulez ensuite la connecter à des données réelles et transformer ce prototype de conception en application vivante. 
 
-Dans ce didacticiel, vous allez apprendre à remplacer votre texte modèle à l'aide de liaisons de données et à créer d'autres liens directs entre votre interface utilisateur et vos données. Vous apprendrez également à mettre en forme ou convertir vos données pour l’affichage et à synchroniser votre interface utilisateur avec vos données. Une fois que vous aurez terminé ce didacticiel, vous pourrez améliorer la simplicité et l’organisation du code XAML et C# et le rendrez ainsi plus facile à gérer et à développer.
+Dans ce didacticiel, vous allez apprendre à remplacer votre texte modèle à l'aide de liaisons de données et à créer d'autres liens directs entre votre interface utilisateur et vos données. Vous allez également apprendre à mettre en forme ou de convertir vos données pour l’affichage et de synchroniser vos données et l’interface utilisateur. Lorsque vous terminez ce didacticiel, vous serez en mesure d’améliorer la simplicité et l’organisation de le XAML et C# code, rendant ainsi plus facile à maintenir et à étendre.
 
 Vous allez commencer avec une version simplifiée de l’exemple PhotoLab. Cette version de démarrage comprend la couche de données complète, ainsi que des dispositions de pages XAML de base et exclut de nombreuses fonctionnalités afin que le code soit plus facile à parcourir. Ce didacticiel ne génère pas l’application complète, donc veillez à examiner la version définitive pour voir des fonctionnalités telles que les animations personnalisées et le support téléphonique. Vous pouvez trouver la version finale dans le dossier racine du référentiel [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). 
 
-## <a name="prerequisites"></a>Éléments prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-* [VisualStudio2017 et la dernière version du SDK Windows10](https://developer.microsoft.com/windows/downloads).
+* [Visual Studio 2017 et la dernière version du SDK Windows 10](https://developer.microsoft.com/windows/downloads).
 
-## <a name="part-0-get-the-code"></a>Partie0: obtenir le code
-Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Après avoir cloné ou téléchargé le référentiel, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio2017.
+## <a name="part-0-get-the-code"></a>Notamment le tome 0 Obtenir le code
+Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Après avoir cloné ou téléchargé le référentiel, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio 2017.
 
-L’application PhotoLab comporte deux pages principales:
+L’application PhotoLab comporte deux pages principales :
 
-**MainPage.xaml:** présente un affichage de galerie de photos, ainsi que des informations sur chaque fichier d’image.
+**MainPage.xaml :** présente un affichage de galerie de photos, ainsi que des informations sur chaque fichier d’image.
 ![MainPage](../design/basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d'édition volant permet de modifier la photo, de la renommer et de l'enregistrer.
+**DetailPage.xaml :** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d'édition volant permet de modifier la photo, de la renommer et de l'enregistrer.
 ![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-replace-the-placeholders"></a>Partie1: remplacer les espaces réservés
+## <a name="part-1-replace-the-placeholders"></a>Partie 1 : Remplacez les espaces réservés
 
 Vous allez créer des liaisons à usage unique dans le modèle de données XAML pour afficher les images réelles et les métadonnées d’image à la place du contenu de l’espace réservé. 
 
 Les liaisons uniques sont des données immuables en lecture seule. Elles sont donc très performantes et faciles à créer, ce qui vous permet d’afficher de grands ensembles de données dans des contrôles **GridView** et **ListView**. 
 
-**Remplacer les espaces réservés par des liaisons à usage unique**
+**Remplacez les espaces réservés par les liaisons à usage unique**
 
 1. Ouvrez le dossier xaml-basics-starting-points\data-binding et lancez le fichier PhotoLab.sln. 
 
@@ -51,7 +51,7 @@ Les liaisons uniques sont des données immuables en lecture seule. Elles sont do
 
 3. Ouvrez MainPage.xaml et recherchez un **DataTemplate** nommé **ImageGridView_DefaultItemTemplate**. Vous devez mettre à jour ce modèle pour utiliser des liaisons de données. 
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate">
     ```
@@ -60,26 +60,26 @@ Les liaisons uniques sont des données immuables en lecture seule. Elles sont do
 
 4. Ajoutez une valeur **x:DataType** au modèle. 
 
-    **Après:**
+    **Après :**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
     ```
 
-    **x:DataType** indique le type auquel correspond le modèle. Dans ce cas, il s’agit d’un modèle pour la classe **ImageFileInfo** (où «local:» indique l’espace de noms local, comme défini dans une déclaration xmlns dans la partie supérieure du fichier).
+    **x:DataType** indique le type auquel correspond le modèle. Dans ce cas, il s’agit d’un modèle pour la classe **ImageFileInfo** (où « local: » indique l’espace de noms local, comme défini dans une déclaration xmlns dans la partie supérieure du fichier).
     
     **x:DataType** est nécessaire lorsque vous utilisez des expressions **x:Bind** dans un modèle de données, comme expliqué ci-après. 
 
 5. Dans le **DataTemplate**, recherchez l'élément **Image** nommé **ItemImage** et remplacez sa valeur **Source** comme indiqué. 
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <Image x:Name="ItemImage" 
            Source="/Assets/StoreLogo.png" 
            Stretch="Uniform" />
     ```
     
-    **Après:**
+    **Après :**
     ```xaml
     <Image x:Name="ItemImage" 
            Source="{x:Bind ImageSource}" 
@@ -91,11 +91,11 @@ Les liaisons uniques sont des données immuables en lecture seule. Elles sont do
     Les expressions **x:Bind** fournissent une valeur à une propriété de l’interface utilisateur en obtenant la valeur à partir d’une propriété **data-object**. Dans les modèles, la propriété indiquée est une propriété de toute valeur définie pour **x:DataType**. Dans ce cas, la source de données est la propriété **ImageFileInfo.ImageSource**. 
     
     > [!NOTE] 
-    > La valeur **x:Bind** permet également à l’éditeur de connaître le type de données, vous pouvez donc utiliser IntelliSense au lieu de taper le nom de propriété dans une expression **x:Bind**. Effectuez des tests dans le code que vous venez de coller: placez le curseur juste après **x:Bind** et appuyez sur la barre d’espace pour afficher la liste des propriétés avec lesquelles vous pouvez établir une liaison.
+    > La valeur **x:Bind** permet également à l’éditeur de connaître le type de données, vous pouvez donc utiliser IntelliSense au lieu de taper le nom de propriété dans une expression **x:Bind**. Effectuez des tests dans le code que vous venez de coller : placez le curseur juste après **x:Bind** et appuyez sur la barre d’espace pour afficher la liste des propriétés avec lesquelles vous pouvez établir une liaison.
 
-6. Remplacez les valeurs des autres contrôles d’interface utilisateur de la même façon. (Essayez de le faire avec IntelliSense au lieu de copier/coller!)
+6. Remplacez les valeurs des autres contrôles d’interface utilisateur de la même façon. (Essayez de le faire avec IntelliSense au lieu de copier/coller !)
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <TextBlock Text="Placeholder" ... />
     <StackPanel ... >
@@ -105,7 +105,7 @@ Les liaisons uniques sont des données immuables en lecture seule. Elles sont do
     <telerikInput:RadRating Value="3" ... />
     ```
     
-    **Après:**
+    **Après :**
     ```xaml
     <TextBlock Text="{x:Bind ImageTitle}" ... />
     <StackPanel ... >
@@ -115,33 +115,33 @@ Les liaisons uniques sont des données immuables en lecture seule. Elles sont do
     <telerikInput:RadRating Value="{x:Bind ImageRating}" ... />
     ```
 
-Exécutez l’application pour voir à quoi elle ressemble pour le moment. Il n'y a plus aucun espace réservé! Nous sommes bien partis. 
+Exécutez l’application pour voir à quoi elle ressemble pour le moment. Il n'y a plus aucun espace réservé ! Nous sommes bien partis. 
 
 ![Application en cours d’exécution avec des images réelles et du texte à la place des espaces réservés](../design/basics/images/xaml-basics/gallery-with-populated-templates.png)
 
 > [!Note]
 > Si vous souhaitez aller plus loin, essayez d’ajouter un nouveau TextBlock au modèle de données et utilisez le conseil x:Bind IntelliSense pour trouver une propriété à afficher. 
 
-## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>Partie2: utiliser une liaison pour connecter l’interface utilisateur de galerie aux images
+## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>Partie 2 : Utilisez la liaison pour connecter l’interface utilisateur de la galerie pour les images
 
 Ici, vous allez créer des liaisons à usage unique dans la page XAML pour connecter l’affichage de la galerie à la collection d’images, en remplaçant le code procédural existant qui effectue cette opération dans le code-behind. Vous allez également créer un bouton **Supprimer** pour voir comment l’affichage de galerie change lorsque les images sont supprimées de la collection. En même temps, vous allez apprendre à lier des événements aux gestionnaires d’événements pour bénéficier de davantage de souplesse que celle fournie par les gestionnaires d’événements classiques. 
 
-Toutes les liaisons traitées jusqu’à présent se trouvent à l’intérieur de modèles de données et font référence aux propriétés de la classe indiquée par la valeur **x:DataType**. Qu’en est-il du reste du code XAML dans votre page? 
+Toutes les liaisons traitées jusqu’à présent se trouvent à l’intérieur de modèles de données et font référence aux propriétés de la classe indiquée par la valeur **x:DataType**. Qu’en est-il du reste du code XAML dans votre page ? 
 
 Les expressions **x:Bind** en dehors des modèles de données sont toujours liées à la page elle-même. Cela signifie que vous pouvez référencer tout ce que vous placez dans le code-behind ou déclarez en XAML, y compris les propriétés personnalisées et les propriétés d’autres contrôles d’interface utilisateur sur la page (dans la mesure où ils ont une valeur **x:Name**). 
 
 Dans l’exemple PhotoLab, une utilisation possible d'une telle liaison consiste à connecter le contrôle principal **GridView** directement à la collection d’images, au lieu de le faire dans le code-behind. Vous verrez ensuite d’autres exemples. 
 
-**Lier le contrôle GridView principal à la collection Images**
+**Lier le contrôle GridView principal à la collection d’Images**
 
 1. Dans MainPage.xaml.cs, recherchez la méthode **OnNavigatedTo** et supprimez le code qui définit **ItemsSource**.
 
-    **Avant:**
+    **Avant :**
     ```c#
     ImageGridView.ItemsSource = Images;
     ```
 
-    **Après:**
+    **Après :**
     ```c#
     // Replaced with XAML binding:
     // ImageGridView.ItemsSource = Images;
@@ -149,18 +149,18 @@ Dans l’exemple PhotoLab, une utilisation possible d'une telle liaison consiste
 
 2. Dans MainPage.xaml, recherchez le **GridView** nommé **ImageGridView** et ajoutez un attribut **ItemsSource**. Pour la valeur, utilisez une expression **x:Bind** qui fait référence à la propriété **Images** implémentée dans le code-behind. 
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <GridView x:Name="ImageGridView" 
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <GridView x:Name="ImageGridView" 
               ItemsSource="{x:Bind Images}" 
     ```
 
-    La propriété **Images** est de type **ObservableCollection\<ImageFileInfo\>**, donc chaque élément affiché dans le **GridView** est de type **ImageFileInfo**. Cela correspond à la valeur **x:DataType** décrite dans la partie1. 
+    Le **Images** propriété est de type **ObservableCollection\<ImageFileInfo\>**, de sorte que les éléments affichent dans le **GridView** sont de type **ImageFileInfo**. Cela correspond à la valeur **x:DataType** décrite dans la partie 1. 
 
 Toutes les liaisons que nous avons examinées jusqu'à présent sont des liaisons à usage unique en lecture seule, ce qui est le comportement par défaut des expressions brutes **x:Bind**. Les données sont chargées uniquement lors de l’initialisation, ce qui donne des liaisons à hautes performances, idéales pour prendre en charge plusieurs vues complexes de jeux de données volumineux. 
 
@@ -171,11 +171,11 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-La valeur de propriété **Images** ne change jamais, mais étant donné que la propriété est de type **ObservableCollection\<T\>**, le *contenu* de la collection peut changer, auquel cas la liaison remarque automatiquement les modifications et met à jour l’interface utilisateur. 
+Le **Images** valeur de propriété ne change jamais, mais étant donné que la propriété est de type **ObservableCollection\<T\>**, le *contenu* de la collection peut être modifiée, et la liaison sera automatiquement remarquer les modifications et mettre à jour l’interface utilisateur. 
 
-Pour tester cela, nous allons ajouter temporairement un bouton qui supprime l’image actuellement sélectionnée. Ce bouton ne se trouve pas dans la version définitive, car la sélection d’une image vous redirige vers une page de détails. Toutefois, le comportement de **ObservableCollection\<T\>** reste important dans l’exemple PhotoLab final, car le code XAML est initialisé dans le constructeur de page (par le biais de l’appel de méthode **InitializeComponent**), mais la collection **Images** est remplie ultérieurement dans la méthode **OnNavigatedTo**. 
+Pour tester cela, nous allons ajouter temporairement un bouton qui supprime l’image actuellement sélectionnée. Ce bouton ne se trouve pas dans la version définitive, car la sélection d’une image vous redirige vers une page de détails. Toutefois, le comportement de **ObservableCollection\<T\>**  est toujours important dans l’exemple PhotoLab finale, car le XAML est initialisé dans le constructeur de page (via le  **InitializeComponent** appel de méthode), mais la **Images** collection est remplie plus tard dans le **OnNavigatedTo** (méthode). 
 
-**Ajouter un bouton de suppression**
+**Ajouter un bouton Supprimer**
 
 1. Dans MainPage.xaml, recherchez la **CommandBar** nommée **MainCommandBar** et ajoutez un nouveau bouton avant le bouton de zoom. (Les contrôles de zoom ne fonctionnent pas encore. Vous allez les associer dans la partie suivante de ce didacticiel.)
 
@@ -198,16 +198,16 @@ Pour tester cela, nous allons ajouter temporairement un bouton qui supprime l’
 
     Cette méthode supprime simplement l’image sélectionnée à partir de la collection **Images**. 
 
-Maintenant, exécutez l’application et utilisez le bouton pour supprimer quelques images. Comme vous pouvez le constater, l’interface utilisateur est mise à jour automatiquement, grâce à la liaison de données et au type **ObservableCollection\<T\>**. 
+Maintenant, exécutez l’application et utilisez le bouton pour supprimer quelques images. Comme vous pouvez le voir, l’interface utilisateur est mis à jour automatiquement, grâce à la liaison de données et la **ObservableCollection\<T\>**  type. 
 
 > [!Note]
 > Par défi, essayez d’ajouter deux boutons qui déplacent l’image sélectionnée vers le haut ou vers le bas dans la liste, puis établissez une liaison x:Bind entre leurs événements Click et deux nouvelles méthodes similaires à DeleteSelectedImage.
  
-## <a name="part-3-set-up-the-zoom-slider"></a>Partie3: configurer le curseur de zoom 
+## <a name="part-3-set-up-the-zoom-slider"></a>Partie 3 : Configurer le curseur de zoom 
 
 Dans cette partie, vous allez créer des liaisons à sens unique entre un contrôle dans le modèle de données et le curseur de zoom, qui se trouve en dehors du modèle. Vous apprendrez également que vous pouvez utiliser une liaison de données avec de nombreuses propriétés de contrôle, pas seulement celles les plus évidentes comme **TextBlock.Text** et **Image.Source**. 
 
-**Lier le modèle de données d’image au curseur de zoom**
+**Lier le modèle de données d’image pour le curseur de zoom**
 
 * Recherchez le **DataTemplate** nommé **ImageGridView_DefaultItemTemplate** et remplacez les valeurs **Hauteur** et **Largeur** du contrôle **Grid** en haut du modèle.
 
@@ -220,7 +220,7 @@ Dans cette partie, vous allez créer des liaisons à sens unique entre un contr�
               Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Après**
+    **Après avoir**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -231,7 +231,7 @@ Dans cette partie, vous allez créer des liaisons à sens unique entre un contr�
     
     <!-- TODO talk about dependency properties --> 
     
-    Avez-vous remarqué qu’il s’agit d'expressions **Binding** et non d'expressions **x:Bind**? Il s’agit de l’ancienne méthode pour effectuer des liaisons de données et elle est en grande partie obsolète. **x:Bind** fait presque tout ce que **Binding** fait et bien plus encore. Toutefois, lorsque vous utilisez **x:Bind** dans un modèle de données, celui-ci se lie au type déclaré dans la valeur **x:DataType**. Comment lier un élément du modèle à un élément de la page XAML ou du code-behind? Vous devez utiliser une ancienne expression **Binding**. 
+    Avez-vous remarqué qu’il s’agit d'expressions **Binding** et non d'expressions **x:Bind** ? Il s’agit de l’ancienne méthode pour effectuer des liaisons de données et elle est en grande partie obsolète. **x:Bind** fait presque tout ce que **Binding** fait et bien plus encore. Toutefois, lorsque vous utilisez **x:Bind** dans un modèle de données, celui-ci se lie au type déclaré dans la valeur **x:DataType**. Comment lier un élément du modèle à un élément de la page XAML ou du code-behind ? Vous devez utiliser une ancienne expression **Binding**. 
     
     Les expressions **Binding** ne reconnaissent pas la valeur **x:DataType**, mais ces expressions **Binding** ont des valeurs **ElementName** qui fonctionnent de la même manière. Elles indiquent au moteur de liaison que **Binding Value** est une liaison avec la propriété **Value** de l’élément spécifié sur la page (autrement dit, l’élément avec cette valeur **x:Name**). Si vous souhaitez établir une liaison avec une propriété du code-behind, cela doit ressembler à ```{Binding MyCodeBehindProperty, ElementName=page}``` où **page** fait référence à la valeur **x:Name** définie dans l'élément **Page** en XAML. 
     
@@ -249,22 +249,22 @@ Exécutez l’application et utilisez le curseur pour modifier les dimensions du
 > [!NOTE]
 > Par défi, essayez de lier d’autres propriétés de l’interface utilisateur à la propriété **Value** du curseur de zoom, ou à d’autres curseurs que vous ajoutez après le curseur de zoom. Par exemple, vous pouvez lier la propriété **FontSize** du **TitleTextBlock** à un nouveau curseur avec la valeur par défaut **24**. Veillez à définir des valeurs minimales et maximales raisonnables.
 
-## <a name="part-4-improve-the-zoom-experience"></a>Partie4: améliorer l’expérience de zoom 
+## <a name="part-4-improve-the-zoom-experience"></a>Partie 4 : Améliorer l’expérience de zoom 
 
 Dans cette partie, vous allez ajouter une propriété **ItemSize** personnalisée au code-behind et créer des liaisons à sens unique à partir du modèle d'image vers la nouvelle propriété. La valeur **ItemSize** sera mise à jour par le curseur de zoom, ainsi que par d’autres facteurs tels que le bouton bascule **Ajuster à l’écran** et la taille de fenêtre, pour permettre une plus grande précision. 
 
 Contrairement aux propriétés de contrôle intégrées, vos propriétés personnalisées ne mettent pas automatiquement à jour l’interface utilisateur, même dans le cas de liaisons à sens unique et bidirectionnelles. Elles fonctionnent correctement avec des liaisons à **usage** unique, mais si vous souhaitez que vos modifications de propriété apparaissent réellement dans votre interface utilisateur, vous devez effectuer certaines opérations. 
 
-**Créer la propriété ItemSize afin qu’elle mette à jour l’interface utilisateur**
+**Créer la propriété ItemSize afin qu’il met à jour l’interface utilisateur**
 
 1. Dans MainPage.xaml.cs, modifiez la signature de la classe **MainPage** afin qu’elle implémente l'interface **INotifyPropertyChanged**.
 
-    **Avant:**
+    **Avant :**
     ```c#
     public sealed partial class MainPage : Page
     ```
 
-    **Après:**
+    **Après :**
     ```c#
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     ```
@@ -301,7 +301,7 @@ Contrairement aux propriétés de contrôle intégrées, vos propriétés person
 
     L’événement lui-même est déclenché par la méthode **Invoke**. Le point d’interrogation vérifie si l'événement **PropertyChanged** est null, c'est-à-dire, si des gestionnaires d’événements ont déjà été ajoutés. Chaque liaison à sens unique ou bidirectionnelle ajoute un gestionnaire d’événements en arrière-plan, mais si rien n'est détecté, il ne se produit rien de plus. Si toutefois **PropertyChanged** n’est pas null, la méthode **Invoke** est appelée avec une référence à la source d’événement (la page elle-même, représentée par le mot clé **this**) et un objet **event-args** qui indique le nom de la propriété. Grâce à ces informations, toutes les liaisons à sens unique ou bidirectionnelles avec la propriété **ItemSize** sont informées des modifications pour pouvoir mettre à jour l’interface utilisateur liée. 
 
-4. Dans MainPage.xaml, recherchez le **DataTemplate** nommé **ImageGridView_DefaultItemTemplate** et remplacez les valeurs **Hauteur** et **Largeur** du contrôle **Grid** en haut du modèle. (Si vous avez effectué la liaison de contrôle à contrôle dans la partie précédente de ce didacticiel, les seules modifications à apporter consistent à remplacer **Value** par **ItemSize** et **ZoomSlider** par **page**. Veillez à faire cette opération à la fois pour Hauteur et Largeur!)
+4. Dans MainPage.xaml, recherchez le **DataTemplate** nommé **ImageGridView_DefaultItemTemplate** et remplacez les valeurs **Hauteur** et **Largeur** du contrôle **Grid** en haut du modèle. (Si vous avez effectué la liaison de contrôle à contrôle dans la partie précédente de ce didacticiel, les seules modifications à apporter consistent à remplacer **Value** par **ItemSize** et **ZoomSlider** par **page**. Veillez à faire cette opération à la fois pour Hauteur et Largeur !)
 
     **Avant**
     ```xaml
@@ -312,7 +312,7 @@ Contrairement aux propriétés de contrôle intégrées, vos propriétés person
             Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Après**
+    **Après avoir**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -323,7 +323,7 @@ Contrairement aux propriétés de contrôle intégrées, vos propriétés person
 
 Maintenant que l’interface utilisateur peut répondre aux modifications de **ItemSize**, vous devez effectuer quelques modifications. Comme indiqué précédemment, la valeur **ItemSize** est calculée à partir de l’état actuel de plusieurs contrôles d’interface utilisateur, mais le calcul doit être effectué à chaque fois que ces contrôles modifient l’état. Pour ce faire, vous allez utiliser une liaison d’événement pour que certaines modifications de l’interface utilisateur appellent une méthode d’assistance qui mette à jour **ItemSize**. 
 
-**Mettre à jour la valeur de la propriété ItemSize**
+**Mise à jour la valeur de propriété ItemSize**
 
 1. Ajoutez la méthode **DetermineItemSize** à MainPage.xaml.cs.
 
@@ -370,12 +370,12 @@ Maintenant que l’interface utilisateur peut répondre aux modifications de **I
 
 2. Dans MainPage.xaml, naviguez vers le haut du fichier et ajoutez une liaison d’événement **SizeChanged** à l'élément **Page**.
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <Page x:Name="page"  
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <Page x:Name="page" 
           SizeChanged="{x:Bind DetermineItemSize}"
@@ -383,12 +383,12 @@ Maintenant que l’interface utilisateur peut répondre aux modifications de **I
 
 3. Recherchez le **Slider** nommé **ZoomSlider** et ajoutez une liaison d’événement **ValueChanged**.
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <Slider x:Name="ZoomSlider"
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <Slider x:Name="ZoomSlider"
             ValueChanged="{x:Bind DetermineItemSize}"
@@ -396,12 +396,12 @@ Maintenant que l’interface utilisateur peut répondre aux modifications de **I
 
 4. Recherchez le **ToggleSwitch** nommé **FitScreenToggle** et ajoutez une liaison d’événement **Toggled**.
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <ToggleSwitch x:Name="FitScreenToggle"
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <ToggleSwitch x:Name="FitScreenToggle"
                   Toggled="{x:Bind DetermineItemSize}"
@@ -415,7 +415,7 @@ Exécutez l’application et utilisez le curseur de zoom et le bouton bascule **
 > Par défi, essayez d’ajouter un **TextBlock** après le **ZoomSlider** et de lier la propriété **Text** à la propriété **ItemSize**. Dans la mesure où il ne se trouve pas dans un modèle de données, vous pouvez utiliser **x:Bind** au lieu de **Binding** comme dans les liaisons **ItemSize** précédentes.  
 }
 
-## <a name="part-5-enable-user-edits"></a>Partie5: autoriser les modifications par l’utilisateur
+## <a name="part-5-enable-user-edits"></a>Partie 5 : Activer la modification de l’utilisateur
 
 Ici, vous allez créer des liaisons bidirectionnelles pour permettre aux utilisateurs de mettre à jour les valeurs, notamment le titre de l’image, l'évaluation et divers effets visuels. 
 
@@ -423,19 +423,19 @@ Pour ce faire, vous devez mettre à jour la **DetailPage** existante, qui fourni
 
 Toutefois, vous devez d’abord associer la **DetailPage** pour que l’application accède à celle-ci lorsque l’utilisateur clique sur une image dans l'affichage de la galerie.
 
-**Associer la DetailPage**
+**Attacher le DetailPage**
 
 1. Dans MainPage.xaml, recherchez le **GridView** nommé **ImageGridView** et ajoutez une valeur **ItemClick**. 
 
     > [!TIP] 
-    > Si vous tapez dans la modification ci-dessous au lieu de copier/coller, vous verrez s'afficher une fenêtre contextuelle IntelliSense indiquant «\<New Event Handler\>». Si vous appuyez sur la touche Tab, la valeur sera renseignée par un nom de gestionnaire de méthode par défaut et la méthode présentée dans l’étape suivante sera automatiquement remplacée. Vous pouvez ensuite appuyer sur F12 pour accéder à la méthode dans le code-behind. 
+    > Si vous tapez dans la modification ci-dessous au lieu de copier/coller, vous verrez une fenêtre contextuelle IntelliSense qui dit «\<nouveau gestionnaire d’événements\>». Si vous appuyez sur la touche Tab, la valeur sera renseignée par un nom de gestionnaire de méthode par défaut et la méthode présentée dans l’étape suivante sera automatiquement remplacée. Vous pouvez ensuite appuyer sur F12 pour accéder à la méthode dans le code-behind. 
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <GridView x:Name="ImageGridView"
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <GridView x:Name="ImageGridView"
               ItemClick="ImageGridView_ItemClick"
@@ -461,13 +461,13 @@ Maintenant que vous avez connecté les deux pages, exécutez l’application et 
 
 Comme vous pouvez le constater, la zone de texte du titre affiche le titre et vous permet d’entrer des modifications. Vous devez déplacer le focus sur un autre contrôle pour valider les modifications, mais le titre dans le coin supérieur gauche de l’écran ne se met pas encore à jour. 
 
-Tous les contrôles sont déjà liés à l’aide des expressions brutes **x:Bind** que nous avons présentées dans la partie1. Si vous vous rappelez, cela signifie que ce sont toutes des liaisons à usage unique, ce qui explique pourquoi les modifications apportées aux valeurs ne sont pas enregistrées. Pour résoudre ce problème, il suffit de les transformer en liaisons bidirectionnelles. 
+Tous les contrôles sont déjà liés à l’aide des expressions brutes **x:Bind** que nous avons présentées dans la partie 1. Si vous vous rappelez, cela signifie que ce sont toutes des liaisons à usage unique, ce qui explique pourquoi les modifications apportées aux valeurs ne sont pas enregistrées. Pour résoudre ce problème, il suffit de les transformer en liaisons bidirectionnelles. 
 
-**Rendre les contrôles d’édition interactifs**
+**Rendre les contrôles d’édition interactive**
 
 1. Dans DetailPage.xaml, recherchez le **TextBlock** nommé **TitleTextBlock** et le contrôle **RadRating** qui se trouve après et mettez à jour leurs expressions **x:Bind** pour inclure **Mode=TwoWay**.
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
                Text="{x:Bind item.ImageTitle}"
@@ -476,7 +476,7 @@ Tous les contrôles sont déjà liés à l’aide des expressions brutes **x:Bin
                             ... >
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <TextBlock x:Name="TitleTextBlock" 
                Text="{x:Bind item.ImageTitle, Mode=TwoWay}" 
@@ -502,7 +502,7 @@ Comme les liaisons à sens unique abordées précédemment, ces liaisons bidirec
 
 Exécutez l’application et essayez les contrôles d’édition. Comme vous pouvez le constater, lorsque vous apportez une modification, cela affecte désormais les valeurs de l’image, et ces modifications sont conservées lorsque vous revenez à la page principale. 
 
-## <a name="part-6-format-values-through-function-binding"></a>Partie6: mettre en forme les valeurs par le biais d'une liaison de fonction
+## <a name="part-6-format-values-through-function-binding"></a>Partie 6 : Valeurs de format via la liaison de fonction
 
 Il reste un dernier problème à résoudre. Lorsque vous déplacez les curseurs d'effet, les étiquettes en regard de ces curseurs ne changent toujours pas. 
 
@@ -510,17 +510,17 @@ Il reste un dernier problème à résoudre. Lorsque vous déplacez les curseurs 
 
 La dernière partie de ce didacticiel consiste à ajouter des liaisons qui mettent en forme les valeurs de curseur pour l’affichage.
 
-**Lier les étiquettes de curseur d’effet et mettre en forme les valeurs d'affichage**
+**Lier les étiquettes de curseur de l’effet et mettre en forme les valeurs pour l’affichage**
 
-1. Recherchez le **TextBlock** après le curseur **Exposure** et remplacez la valeur **Text** par l’expression de liaison indiquée ici.
+1. Rechercher la **TextBlock** après le **exposition** slider et remplacez le **texte** valeur avec l’expression de liaison indiquée ici.
 
-    **Avant:**
+    **Avant :**
     ```xaml
     <Slider Header="Exposure" ... />
     <TextBlock ... Text="0.00" />
     ```
 
-    **Après:**
+    **Après :**
     ```xaml
     <Slider Header="Exposure" ... />
     <TextBlock ... Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />
@@ -554,18 +554,18 @@ Désormais, lorsque vous exécutez l’application, tout fonctionne, y compris l
 ![Curseurs d'effet avec des étiquettes qui fonctionnent](../design/basics/images/xaml-basics/effect-sliders-after-label-fix.png)
 
 > [!NOTE]
-> Essayez d’utiliser la liaison de fonction avec le **TextBlock** à partir du dernier point de lecture et liez-le à une nouvelle méthode qui retourne une chaîne au format «000 x 000» lorsque vous lui transmettez la valeur **ItemSize**.
+> Essayez d’utiliser la liaison de fonction avec le **TextBlock** à partir du dernier point de lecture et liez-le à une nouvelle méthode qui retourne une chaîne au format « 000 x 000 » lorsque vous lui transmettez la valeur **ItemSize**.
 
 
 ## <a name="conclusion"></a>Conclusion
 
-Ce didacticiel vous a donné un aperçu de la liaison de données et vous a montré quelques-unes des fonctionnalités disponibles. Un mot d’avertissement avant de conclure: toutes les liaisons ne sont pas possibles et parfois les valeurs que vous essayez de connecter sont incompatibles avec les propriétés que vous essayez de lier. La liaison offre une grande souplesse, mais elle ne fonctionnera pas dans tous les cas.
+Ce didacticiel vous a donné un aperçu de la liaison de données et vous a montré quelques-unes des fonctionnalités disponibles. Un mot d’avertissement avant de conclure : toutes les liaisons ne sont pas possibles et parfois les valeurs que vous essayez de connecter sont incompatibles avec les propriétés que vous essayez de lier. La liaison offre une grande souplesse, mais elle ne fonctionnera pas dans tous les cas.
 
-Un exemple de problème non résolu par une liaison est le cas où un contrôle ne possède aucune propriété appropriée pour la liaison, comme avec la fonctionnalité de zoom de la page de détails. Ce curseur de zoom doit interagir avec le **ScrollViewer** qui affiche l’image, mais **ScrollViewer** ne peut être mis à jour que par le biais de sa méthode **ChangeView**. Dans ce cas, nous utilisons les gestionnaires d’événements classiques pour assurer la synchronisation du **ScrollViewer** et du curseur de zoom. Voir les méthodes **DetailPage**, **ZoomSlider_ValueChanged** et **MainImageScroll_ViewChanged** pour plus d’informations.
+Un exemple de problème non résolu par une liaison est le cas où un contrôle ne possède aucune propriété appropriée pour la liaison, comme avec la fonctionnalité de zoom de la page de détails. Ce curseur de zoom doit interagir avec le **ScrollViewer** qui affiche l’image, mais **ScrollViewer** ne peut être mis à jour que par le biais de sa méthode **ChangeView**. Dans ce cas, nous utilisons des gestionnaires d’événements classiques pour conserver le **ScrollViewer** et le curseur de zoom dans synchroniser ; consultez la **DetailPage** **ZoomSlider_ValueChanged** et **MainImageScroll_ViewChanged** méthodes pour plus d’informations.
 
 Néanmoins, la liaison est un moyen puissant et souple de simplifier votre code et d'établir une distinction entre la logique de votre interface utilisateur et votre logique de données. Cela facilite grandement les réglages de part et d'autre de cette division, tout en limitant les risques d’introduire des bogues de l’autre côté. 
 
-Un exemple de séparation des données et de l’interface utilisateur est l'utilisation de la propriété **ImageFileInfo.ImageTitle**. Cette propriété (et la propriété **ImageRating**) est légèrement différente de la propriété **ItemSize** que vous avez créée dans la partie4, car la valeur est stockée dans les métadonnées du fichier (exposées par le biais du type **ImageProperties**) plutôt que dans un champ. En outre, **ImageTitle** retourne la valeur **ImageName** (définie sur le nom de fichier) s’il n’existe aucun titre dans les métadonnées du fichier. 
+Un exemple de séparation des données et de l’interface utilisateur est l'utilisation de la propriété **ImageFileInfo.ImageTitle**. Cette propriété (et la propriété **ImageRating**) est légèrement différente de la propriété **ItemSize** que vous avez créée dans la partie 4, car la valeur est stockée dans les métadonnées du fichier (exposées par le biais du type **ImageProperties**) plutôt que dans un champ. En outre, **ImageTitle** retourne la valeur **ImageName** (définie sur le nom de fichier) s’il n’existe aucun titre dans les métadonnées du fichier. 
 
 ```c#
 public string ImageTitle
@@ -591,9 +591,9 @@ Comme vous pouvez le constater, la méthode setter met à jour la propriété **
 
 Maintenant que vous avez terminé ce laboratoire, vous avez suffisamment de connaissances en liaison pour résoudre les problèmes par vous-même.
 
-Comme vous l'avez peut-être remarqué, si vous modifiez le niveau de zoom sur la page de détails, il se réinitialise automatiquement lorsque vous naviguez vers l’arrière, puis sélectionnez de nouveau la même image. Pouvez-vous trouver comment conserver et restaurer le niveau de zoom de chaque image individuellement? Bonne chance!
+Comme vous l'avez peut-être remarqué, si vous modifiez le niveau de zoom sur la page de détails, il se réinitialise automatiquement lorsque vous naviguez vers l’arrière, puis sélectionnez de nouveau la même image. Pouvez-vous trouver comment conserver et restaurer le niveau de zoom de chaque image individuellement ? Bonne chance !
     
-Vous disposez normalement de toutes les informations nécessaires dans ce didacticiel, mais si vous avez besoin de plus de conseils, il suffit d'un clic pour accéder à la documentation sur la liaison de données. Commencez ici:
+Vous disposez normalement de toutes les informations nécessaires dans ce didacticiel, mais si vous avez besoin de plus de conseils, il suffit d'un clic pour accéder à la documentation sur la liaison de données. Commencez ici :
 
-+ [Extension de balisage {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
++ [Liaison de données en profondeur](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

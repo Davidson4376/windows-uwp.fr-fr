@@ -1,19 +1,19 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Description: Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Vue d’ensemble de l’accessibilité
 label: Accessibility overview
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649734"
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité  
 
@@ -43,8 +43,8 @@ De plus, les fonctionnalités de liaison de données, de style et de modèle sim
 <span id="ui_automation"/>
 <span id="UI_AUTOMATION"/>
 
-## <a name="ui-automation"></a>UIAutomation  
-La prise en charge de l’accessibilité provient principalement de la prise en charge intégrée de l’infrastructure MicrosoftUIAutomation. Cette prise en charge est fournie via des classes de base et le comportement intégré de l’implémentation de classe pour les types de contrôle, ainsi que via une représentation d’interface de l’API du fournisseur UI Automation. Chaque classe de contrôle utilise les concepts UI Automation des homologues d’automation et des modèles d’automation pour signaler le rôle et le contenu des contrôles aux clients UI Automation. L’application est traitée en tant que fenêtre de niveau supérieur par UI Automation. Via l’infrastructure UI Automation, tout le contenu relatif à l’accessibilité présent dans cette fenêtre d’application est disponible pour un client UI Automation. Pour plus d’informations sur UI Automation, voir [Vue d’ensemble d’UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
+## <a name="ui-automation"></a>Automatisation de l’interface utilisateur  
+La prise en charge de l’accessibilité provient principalement de la prise en charge intégrée de l’infrastructure Microsoft UI Automation. Cette prise en charge est fournie via des classes de base et le comportement intégré de l’implémentation de classe pour les types de contrôle, ainsi que via une représentation d’interface de l’API du fournisseur UI Automation. Chaque classe de contrôle utilise les concepts UI Automation des homologues d’automation et des modèles d’automation pour signaler le rôle et le contenu des contrôles aux clients UI Automation. L’application est traitée en tant que fenêtre de niveau supérieur par UI Automation. Via l’infrastructure UI Automation, tout le contenu relatif à l’accessibilité présent dans cette fenêtre d’application est disponible pour un client UI Automation. Pour plus d’informations sur UI Automation, voir [Vue d’ensemble d’UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
@@ -76,7 +76,7 @@ Par exemple, certains lecteurs d’écran lisent la totalité de l’interface u
 
 L’information la plus importante dont un lecteur d’écran ou une autre technologie d’assistance a besoin pour aider les utilisateurs à comprendre une application ou à naviguer dans une application est un *nom accessible* pour les parties d’élément de l’application. Dans de nombreux cas, un contrôle ou élément possède déjà un nom accessible calculé à partir d’autres valeurs de propriété que vous avez fournies par un autre moyen. Le cas le plus courant dans lequel vous pouvez utiliser un nom déjà calculé concerne un élément qui prend en charge et affiche du texte interne. Pour les autres éléments, vous devez parfois prendre en compte d’autres manières de fournir un nom accessible en appliquant les meilleures pratiques en matière de structure d’élément. Parfois, vous devez fournir un nom spécifié de manière explicite comme nom accessible aux fins d’accessibilité de l’application. Pour obtenir une liste des valeurs calculées qui fonctionnent dans les éléments d’interface utilisateur courants et pour plus d’informations sur les noms accessibles en général, voir [Informations d’accessibilité de base](basic-accessibility-information.md).
 
-Plusieurs autres propriétés d’automation sont disponibles (notamment les propriétés de clavier décrites dans la section suivante). Toutefois, tous les lecteurs d’écran ne prennent pas en charge toutes les propriétés d’automation. Engénéral, vous devez définir toutes les propriétés d’automatisation appropriées et les tester pour fournir la prise en charge la plus large possible pour les lecteurs d’écran.
+Plusieurs autres propriétés d’automation sont disponibles (notamment les propriétés de clavier décrites dans la section suivante). Toutefois, tous les lecteurs d’écran ne prennent pas en charge toutes les propriétés d’automation. En général, vous devez définir toutes les propriétés d’automatisation appropriées et les tester pour fournir la prise en charge la plus large possible pour les lecteurs d’écran.
 
 <span id="Keyboard_support"/>
 <span id="keyboard_support"/>
@@ -138,7 +138,7 @@ XAML
 </StackPanel>
 ```
 
-VisualBasic
+Visual Basic
 ```vb
 Private Sub ShowAccessibleUICheckBox_Click(ByVal sender As Object,
     ByVal e As RoutedEventArgs)
@@ -174,14 +174,14 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 Pour plus d’informations sur les déclarations d’accessibilité et la publication de votre application, consultez la rubrique [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
 
 > [!NOTE]
-> Déclarer l’application comme accessible n’est pertinent que pour le MicrosoftStore.
+> Déclarer l’application comme accessible n’est pertinent que pour le Microsoft Store.
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"/>
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>Prise en charge de la technologie d’assistance dans des contrôles personnalisés  
-Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre en œuvre ou de développer également une ou plusieurs sous-classes [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) pour fournir une prise en charge de l’accessibilité. Dans certains cas, tant que vous utilisez la même classe homologue que celle utilisée par la classe de contrôle de base, la prise en charge de l’automation pour votre classe dérivée est adéquate à un niveau de base. Cependant, nous vous conseillons de tester cette configuration. L’implémentation d’un homologue est toujours recommandée comme meilleure pratique, l’homologue pouvant correctement signaler le nom de la classe de votre nouveau contrôle. Plusieurs étapes sont nécessaires pour implémenter un homologue d’automatisation personnalisé. Pour plus d’informations, voir [Homologues d’automatisation personnalisés](custom-automation-peers.md).
+Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre en œuvre ou de développer également une ou plusieurs sous-classes [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) pour fournir une prise en charge de l’accessibilité. Dans certains cas, tant que vous utilisez la même classe homologue que celle utilisée par la classe de contrôle de base, la prise en charge de l’automation pour votre classe dérivée est adéquate à un niveau de base. Cependant, nous vous conseillons de tester cette configuration. L’implémentation d’un homologue est toujours recommandée comme meilleure pratique, l’homologue pouvant correctement signaler le nom de la classe de votre nouveau contrôle. Plusieurs étapes sont nécessaires pour implémenter un homologue d’automatisation personnalisé. Pour plus d’informations, voir [Homologues d’automation personnalisés](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -192,7 +192,7 @@ Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisate
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Conception pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibilité](accessibility.md)
 * [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

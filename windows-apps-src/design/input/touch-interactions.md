@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
+Description: Créez des applications UWP offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais sont cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 title: Interactions tactiles
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048641"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649234"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
 
 Concevez votre application en partant du principe que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez des contrôles UWP, la prise en charge du pavé tactile, de la souris et du stylet ne nécessite pas de programmation supplémentaire, car les applications UWP proposent cette fonctionnalité gratuitement.
 
-Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées: tactile (y compris le pavé tactile), stylet, souris et clavier.
+Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
 
 > **API importantes**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 
@@ -63,7 +63,7 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 <tr><td rowspan="3">Anatomie humaine</td><td>Les mouvements effectués avec le bout du doigt sont imprécis, car le traçage d’une ligne droite avec un ou plusieurs doigts est difficile à réaliser. Cela s’explique par la courbure des articulations de la main et le nombre d’articulations impliquées dans le mouvement.</td><td>Il est plus facile de tracer un mouvement de ligne droite avec la souris ou le stylo/stylet, car la main qui les contrôle parcourt une distance plus courte que le curseur sur l’écran.</td><td>Comme la souris.</td></tr>
 <tr><td>Certaines zones situées sur la surface tactile d’un périphérique d’affichage peuvent être difficiles à atteindre en raison de la posture des doigts et de la prise en main du périphérique par l’utilisateur.</td><td>La souris et le stylo/stylet peuvent accéder à toutes les parties de l’écran, et n’importe quel contrôle est accessible par le clavier via l’ordre des onglets. </td><td>La posture des doigts et la prise en main peuvent poser problème.</td></tr>
 <tr><td>Le bout des doigts ou la main de l’utilisateur peuvent masquer des objets. C’est ce que l’on appelle l’« occlusion ».</td><td>Les périphériques d’entrée indirects ne provoquent pas d’occlusion.</td><td>Comme la souris.</td></tr>
-<tr><td>État de l’objet</td><td>L’interaction tactile utilise un modèle à deux états: la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.</td><td>
+<tr><td>État de l’objet</td><td>L’interaction tactile utilise un modèle à deux états : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.</td><td>
 <p>Une souris, un stylo/stylet et un clavier exposent tous un modèle à trois états : soulevé (activé), appuyé (activé) et pointé (focus).</p>
 <p>Le pointage permet à l’utilisateur d’explorer et de découvrir les éléments à l’aide d’info-bulles associées aux éléments de l’interface utilisateur. Les effets de pointage et de focus peuvent transmettre les objets qui sont interactifs et aident également au ciblage. 
 </p>
@@ -74,13 +74,13 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 
 
 
-**Remarque**  entrée indirecte a bénéficié de plus de 25 ans d’amélioration. Les fonctions comme les info-bulles déclenchées par le pointage ont été conçues pour résoudre les problèmes d’exploration de l’interface utilisateur spécifiques aux entrées à l’aide du pavé tactile, de la souris, du stylo/stylet et du clavier. Les fonctionnalités d’interface utilisateur de ce genre ont été repensées pour enrichir l’expérience de la saisie tactile, sans compromettre l’expérience utilisateur sur les autres appareils.
+**Remarque**    entrée Indirect a l’avantage de plus de 25 ans d’affinement. Les fonctions comme les info-bulles déclenchées par le pointage ont été conçues pour résoudre les problèmes d’exploration de l’interface utilisateur spécifiques aux entrées à l’aide du pavé tactile, de la souris, du stylo/stylet et du clavier. Les fonctionnalités d’interface utilisateur de ce genre ont été repensées pour enrichir l’expérience de la saisie tactile, sans compromettre l’expérience utilisateur sur les autres appareils.
 
  
 
 ## <a name="use-touch-feedback"></a>Utiliser le retour tactile
 
-Les retours visuels appropriés au cours des interactions avec votre application permet aux utilisateurs de reconnaître, à apprendre et à s’adapter à l’interprétation de leurs interactions par l’application et le Windowsplatform. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
+Une rétroaction visuelle appropriée lors des interactions avec votre application permet aux utilisateurs reconnaissent, en savoir plus et s’adaptent à la façon dont leurs interactions sont interprétées par l’application et la plateforme Windows. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
 Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, quels que soient l’emplacement et le moment de la détection de l’entrée tactile, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
@@ -110,7 +110,7 @@ Le ciblage est optimisé par les éléments suivants :
 Pour les interactions imprécises, utilisez :
 
 -   des points d’ancrage qui permettent à l’utilisateur de s’arrêter plus facilement aux emplacements souhaités quand il interagit avec le contenu ;
--   des «rails» directionnels qui peuvent aider à un mouvement panoramique vertical ou horizontal, même lorsque la main se déplace dans un léger mouvement d’arc. Pour plus d’informations, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
+-   des « rails » d’orientation qui permettent d’aider l’utilisateur à effectuer un mouvement panoramique vertical ou horizontal, même si la main se déplace avec un léger mouvement d’arc. Pour plus d’informations, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
 
 ## <a name="occlusion"></a>Occlusion
 
@@ -130,9 +130,9 @@ Pour éviter l’occlusion du doigt et de la main, respectez les recommandations
 
 -   Poignées de précision
 
-    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications WindowsRuntime)](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
 
-## <a name="timing"></a>Chronométrage
+## <a name="timing"></a>Synchronisation
 
 Évitez les modifications en mode chronométré au profit de la manipulation directe. Celle-ci simule le maniement direct et en temps réel d’un objet. L’objet réagit directement au mouvement du doigt.
 
@@ -151,7 +151,7 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Remarque**une exception à cette règle est où vous utilisez des interactions chronométrées pour aider à l’apprentissage et à l’exploration (par exemple, appuyer et maintenir).
+    **Remarque**  une exception à cela est où vous utilisez des interactions chronométrées spécifiques pour aider à la formation et votre exploration (par exemple, appuyer et maintenir).
 
      
 
@@ -195,7 +195,7 @@ Voici l’ensemble de mouvements tactiles de base pris en charge par la platefor
 | Nom           | Type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Appuyer            | Action statique       | Brève pression de l’écran avec un doigt.                                            |
-| Appuyer longuement | Action statique       | Pression prolongée de l’écran avec un doigt.                                      |
+| Appuyer de manière prolongée | Action statique       | Pression prolongée de l’écran avec un doigt.                                      |
 | Faire glisser          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement dans une même direction.                   |
 | Balayer          | Action de manipulation | Pression de l’écran avec un ou plusieurs doigts et déplacement sur une courte distance dans une même direction.  |
 | Tourner           | Action de manipulation | Pression de l’écran avec deux doigts ou plus et mouvement en arc de cercle de haut en bas ou de bas en haut. |
@@ -419,7 +419,7 @@ Voici une liste des événements de manipulation et de leur argument d’événe
 | Événement ou classe                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**Événement ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Se produit lorsque le processeur de manipulation est créé.                                                                                  |
-| [**Événement ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Se produit lorsqu’un périphérique d’entrée entame une manipulation sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
+| [**Événement de ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Se produit lorsqu’un périphérique d’entrée entame une manipulation sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
 | [**Événement ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Se produit lorsque le périphérique d’entrée change de position au cours d’une manipulation.                                                                      |
 | [**Événement ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Se produit lorsque le périphérique d’entrée perd le contact avec l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) durant une manipulation et que cela entraîne un début d’inertie. |
 | [**Événement ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Se produit lorsque les opérations de manipulation et d’inertie sont terminées sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                          |
@@ -436,7 +436,7 @@ Un mouvement se compose d’une série d’événements de manipulation. Chaque 
 
 Puis, un ou plusieurs événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) sont déclenchés. Par exemple, si vous appuyez sur l’écran et faites glisser votre doigt sur celui-ci. Enfin, un événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) est déclenché lorsque l’interaction prend fin.
 
-**Remarque**si vous n’avez un écran tactile, vous pouvez tester votre code d’événements de manipulation dans le simulateur à l’aide d’une souris et une interface de roulette de souris.
+**Remarque**  si vous n’avez pas une analyse de l’écran tactile, vous pouvez tester votre code d’événement de manipulation dans le simulateur à l’aide d’une souris et l’interface de roulette de la souris.
 
  
 
@@ -586,22 +586,22 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Gérer les entrées du pointeur](handle-pointer-input.md)
-* [Identifier des périphériques d’entrée](identify-input-devices.md)
+* [Gestion des entrées du pointeur](handle-pointer-input.md)
+* [Identification des périphériques d’entrée](identify-input-devices.md)
 
 **Exemples**
 
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
 
-* [Entrée : exemple de fonctionnalités de périphériques](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : mouvements et manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : Mouvements et des manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  

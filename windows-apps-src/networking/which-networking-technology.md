@@ -1,28 +1,28 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
-title: Quelle technologie de réseau?
+description: Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.
+title: Quelle technologie de réseau ?
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b64ddadd0e543930fa72d0c44a6cacf0a873df89
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050682"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656304"
 ---
-# <a name="which-networking-technology"></a>Quelle technologie de réseau?
+# <a name="which-networking-technology"></a>Quelle technologie de réseau ?
 
 
-Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
+Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application.
 
 ## <a name="sockets"></a>Sockets
 
 Utilisez des [sockets](sockets.md) quand vous communiquez avec un autre appareil et souhaitez utiliser votre propre protocole.
 
-Deux implémentations de sockets sont à la disposition des développeurs pour la plateforme Windows universelle (UWP) : [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) et [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). Si vous écrivez un nouveau code, Windows.Networking.Sockets présente l’avantage d’être une API moderne, conçue à l’usage des développeurs UWP. Si vous utilisez des bibliothèques réseau inter-plateforme ou un autre code Winsock existant, ou préférez l’API Winsock, utilisez-la.
+Deux implémentations de sockets sont disponibles pour les développeurs de plateforme universelle Windows (UWP) : [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), et [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). Si vous écrivez un nouveau code, Windows.Networking.Sockets présente l’avantage d’être une API moderne, conçue à l’usage des développeurs UWP. Si vous utilisez des bibliothèques réseau inter-plateforme ou un autre code Winsock existant, ou préférez l’API Winsock, utilisez-la.
 
 ### <a name="when-to-use-sockets"></a>Quand utiliser des sockets
 
@@ -69,7 +69,7 @@ Utilisez [HttpClient](httpclient.md) (et le reste de l’API d’espace de noms 
 
 Utilisez l’[API de transfert en arrière-plan](background-transfers.md) lorsque vous voulez transférer de manière fiable des fichiers sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. Ces fonctionnalités sont essentielles lorsque votre application s’exécute sur des appareils mobiles ou alimentés par batterie. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
 
-Une nouvelle fonctionnalité de transfert en arrière-plan dans Windows 10 est la possibilité de déclencher un post-traitement un transfert de fichiers, afin que vous pouvez mettre à jour des catalogues locaux, activer d’autres applications ou avertir l’utilisateur quand un téléchargement est terminé.
+Une nouvelle fonctionnalité de transfert en arrière-plan dans Windows 10 est la possibilité de déclencher des post-traitement lorsqu’un transfert de fichiers est terminée, afin que vous pouvez mettre à jour des catalogues locales, activer d’autres applications ou notifier l’utilisateur lorsqu’un téléchargement est terminé.
 
 ### <a name="when-to-use-background-transfers"></a>Quand utiliser des transferts en arrière-plan
 
@@ -127,7 +127,7 @@ L’API [**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/lib
 
 ### <a name="mobile-operators"></a>Opérateurs mobiles
 
-Windows 10 expose à un public large développeur certaines API qui ont précédemment été exposé uniquement aux fabricants d’appareils et les opérateurs mobiles. Notez que bien, si ces API sont exposées maintenant, elles sont également contrôlées par des fonctionnalités d’application spécifiques qui doivent être approuvées par Microsoft avant qu’une application puisse être publiée. L’utilisation réelle de ces API reste limitée principalement aux fabricants d’appareils et aux opérateurs mobiles.
+Windows 10 expose à un public large développeur certaines API qui ont précédemment été exposé uniquement aux fabricants de périphériques et les opérateurs de téléphonie mobile. Notez que bien, si ces API sont exposées maintenant, elles sont également contrôlées par des fonctionnalités d’application spécifiques qui doivent être approuvées par Microsoft avant qu’une application puisse être publiée. L’utilisation réelle de ces API reste limitée principalement aux fabricants d’appareils et aux opérateurs mobiles.
 
 ### <a name="network-operations"></a>Opérations réseau
 

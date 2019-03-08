@@ -4,19 +4,19 @@ description: La classe SystemMediaTransportControls permet à votre application 
 title: Contrôle manuel des contrôles de transport de média système
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6be1680d1ce843c1fbe7105dc2027e764095495a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933305"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635654"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>Contrôle manuel des contrôles de transport de média système
 
 
-À partir de Windows10, version1607, les applications UWP utilisant la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour lire du contenu multimédia sont automatiquement intégrés avec les contrôles de transport de média système par défaut. Il s’agit de la méthode recommandée d’interaction avec les contrôles de transport de média système, pour la plupart des scénarios. Pour plus d’informations sur la personnalisation de l’intégration par défaut des contrôles de transport de média système avec **MediaPlayer**, consultez la section [Intégration avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md).
+À partir de Windows 10, version 1607, les applications UWP utilisant la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour lire du contenu multimédia sont automatiquement intégrés avec les contrôles de transport de média système par défaut. Il s’agit de la méthode recommandée d’interaction avec les contrôles de transport de média système, pour la plupart des scénarios. Pour plus d’informations sur la personnalisation de l’intégration par défaut des contrôles de transport de média système avec **MediaPlayer**, consultez la section [Intégration avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md).
 
 Certains scénarios peuvent nécessiter l’implémentation d’un contrôle manuel des contrôles de transport de média système. Cela vaut par exemple si vous utilisez une classe [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) afin de contrôler la lecture d’un ou de plusieurs lecteurs multimédias. Cette implémentation est également nécessaire si vous utilisez plusieurs lecteurs multimédias et souhaitez obtenir une seule instance des contrôles de transport de média système pour votre application. Vous devez contrôler manuellement les contrôles de transport de média système si vous utilisez [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) pour lire du contenu multimédia.
 
@@ -24,7 +24,7 @@ Certains scénarios peuvent nécessiter l’implémentation d’un contrôle man
 Si vous utilisez **MediaPlayer** pour lire du contenu multimédia, vous pouvez obtenir une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) en accédant à la propriété [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls). SI vous envisagez de contrôler manuellement les contrôles de transport de média système, vous devez désactiver l’intégration automatique fournie par **MediaPlayer** en définissant la propriété [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur False.
 
 > [!NOTE] 
-> Si vous désactivez l’élément [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) de l’instance [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) en définissant [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur false, le lien entre **MediaPlayer** et [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) fourni par **MediaPlayerElement** est rompu; autrement dit, les contrôles de transport intégrés ne contrôleront plus automatiquement la lecture du lecteur. Vous devrez donc implémenter vos propres contrôles pour pouvoir contrôler le **MediaPlayer**.
+> Si vous désactivez l’élément [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) de l’instance [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) en définissant [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur false, le lien entre **MediaPlayer** et [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) fourni par **MediaPlayerElement** est rompu ; autrement dit, les contrôles de transport intégrés ne contrôleront plus automatiquement la lecture du lecteur. Vous devrez donc implémenter vos propres contrôles pour pouvoir contrôler le **MediaPlayer**.
 
 [!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
@@ -32,7 +32,7 @@ Vous pouvez également récupérer une instance de la classe [**SystemMediaTrans
 
 [!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
 
-Activez les boutons utilisés par votre application en définissant la propriété «is enabled» correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) et [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
+Activez les boutons utilisés par votre application en définissant la propriété « is enabled » correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) et [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
 
 [!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
 
@@ -74,7 +74,7 @@ Les contrôles de transport système affichent des informations sur la chronolog
 
 -   Vous devez indiquer une valeur pour les propriétés [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751), [**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) et [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) pour que les contrôles système affichent une chronologie relative à l’élément en cours de lecture.
 
--   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) et [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) vous permettent de spécifier la plage de la chronologie dans laquelle l’utilisateur peut effectuer une recherche. Le scénario classique dans ce cas consiste à permettre aux fournisseurs de contenus d’inclure des pauses publicitaires dans leur contenu multimédia.
+-   [**MinSeekTime** ](https://msdn.microsoft.com/library/windows/apps/mt218749) et [ **MaxSeekTime** ](https://msdn.microsoft.com/library/windows/apps/mt218748) vous permettent de spécifier la plage dans la chronologie de l’utilisateur peut effectuer des recherches. Le scénario classique dans ce cas consiste à permettre aux fournisseurs de contenus d’inclure des pauses publicitaires dans leur contenu multimédia.
 
     Vous devez définir [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) et [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) afin de déclencher l’événement [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755).
 
@@ -105,14 +105,14 @@ Dans le gestionnaire de cet événement, commencez par vérifier que la valeur d
 
 Si vous n’utilisez pas l’intégration automatique des contrôles de transport de média système fournie par **MediaPlayer**, vous devez procéder à une intégration manuelle pour activer le son en arrière-plan. Au minimum, votre application doit activer les boutons de lecture et de pause. Pour ce faire, les éléments [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) et [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) sont définis sur true. L’application doit également gérer l’événement [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706). Si votre application ne satisfait pas ces exigences, la lecture audio s’arrête quand votre application est déplacée vers l’arrière-plan.
 
-Les applications utilisant le nouveau modèle à processus unique pour l’audio d’arrière-plan doivent récupérer une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), en appelant [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708). Les applications utilisant le modèle à deuxprocessus existants pour l’audio d’arrière-plan doivent utiliser la classe [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) pour obtenir un accès aux contrôles de transport de média système à partir de leur processus d’arrière-plan.
+Les applications utilisant le nouveau modèle à processus unique pour l’audio d’arrière-plan doivent récupérer une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), en appelant [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708). Les applications utilisant le modèle à deux processus existants pour l’audio d’arrière-plan doivent utiliser la classe [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) pour obtenir un accès aux contrôles de transport de média système à partir de leur processus d’arrière-plan.
 
 Pour plus d’informations sur la lecture de l’audio dans l’arrière-plan, consultez la section [Contenu audio en arrière-plan](background-audio.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
-* [Intégration avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md) 
-* [Exemple de transport de média système](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [Intégrer avec le support du système de contrôles de Transport](integrate-with-systemmediatransportcontrols.md) 
+* [Exemple de transport de supports de système](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 

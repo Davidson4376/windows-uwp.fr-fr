@@ -1,27 +1,27 @@
 ---
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+Description: Répondez à l’entrée de souris dans vos applications en gérant les mêmes événements de pointeur de base que ceux utilisés pour l’entrée tactile et du stylo.
 title: Interactions avec la souris
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999912"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622354"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
 Optimisez la conception de votre application de plateforme Windows universelle (UWP) pour l’entrée tactile, et définissez la prise en charge de la souris de base par défaut. 
 
-![Souris](images/input-patterns/input-mouse.jpg)
+![souris](images/input-patterns/input-mouse.jpg)
 
-Les entrées de la souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
+Les entrées de souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
 
 Les entrées tactiles et de la souris divergent en raison de la capacité de l’entrée tactile à émuler plus fidèlement la manipulation directe d’éléments d’interface utilisateur par le biais de mouvements physiques effectués directement sur ces objets (comme le balayage, le glissement, la rotation, etc.). Les manipulations avec une souris nécessitent généralement une autre affordance d’interface utilisateur, telle l’utilisation de poignées pour redimensionner ou faire pivoter un objet.
 
@@ -59,7 +59,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 <td align="left"><p>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
 <td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
-<strong>Remarque</strong>avec le bouton droit pour afficher un menu contextuel si les commandes de barre de sélection ou de l’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
+<strong>Remarque</strong>  avec le bouton droit pour afficher un menu contextuel si l’application ou la sélection de la barre de commandes n’est pas des comportements de l’interface utilisateur appropriées. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
 <div>
  
@@ -86,7 +86,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 
 ## <a name="mouse-input-events"></a>Événements d’entrée de souris
 
-La plupart des entrées de la souris peuvent être gérées par le biais des courantes d’entrée des événements routés pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Ces situations sont les suivantes :
+La plupart des souris d’entrée peuvent être gérés via les événements routés d’entrée communs pris en charge par tous les [ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) objets. Par exemple :
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -101,7 +101,7 @@ La plupart des entrées de la souris peuvent être gérées par le biais des cou
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Maintenant**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -120,15 +120,15 @@ La plupart des entrées de la souris peuvent être gérées par le biais des cou
 - [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
 - [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**Événements PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**L’appui sur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque appareil (par exemple, les événements de roulette de souris) à l’aide du pointeur, de mouvement et événements de manipulation dans [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
+Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque appareil (par exemple, les événements de roulette de souris) en utilisant les événements de pointeur, de mouvement et de manipulation dans [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
-**Exemples:** Consultez notre [exemple BasicInput](https://go.microsoft.com/fwlink/p/?LinkID=620302), pour.
+**Exemples :** Consultez notre [BasicInput exemple](https://go.microsoft.com/fwlink/p/?LinkID=620302), pour.
 
 ## <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -147,7 +147,7 @@ Un ensemble de curseurs standard est disponible pour servir de pointeurs de sour
 
 Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Spécifiez une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-Si vous avez besoin de personnaliser le curseur de la souris:
+Si vous avez besoin de personnaliser le curseur de la souris :
 
 - Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
 - Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
@@ -157,13 +157,13 @@ Si vous avez besoin de personnaliser le curseur de la souris:
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Gérer les entrées du pointeur](handle-pointer-input.md)
-- [Identifier des périphériques d’entrée](identify-input-devices.md)
-- [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [Gestion des entrées du pointeur](handle-pointer-input.md)
+- [Identification des périphériques d’entrée](identify-input-devices.md)
+- [Événements et vue d’ensemble des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 ### <a name="samples"></a>Exemples
 
 - [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 - [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)

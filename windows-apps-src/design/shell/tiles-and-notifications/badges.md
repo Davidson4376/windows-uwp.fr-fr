@@ -1,19 +1,19 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+Description: Découvrez comment utiliser les vignettes, badges, toasts et notifications pour fournir des points d’entrée dans votre application et maintenir les utilisateurs informés.
 title: Notifications de badge pour les applications UWP
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920284"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649084"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Notifications de badge pour les applications UWP
 
@@ -22,7 +22,7 @@ ms.locfileid: "8920284"
 <div style="float:left; font-size:80%; text-align:left; margin: 0px 15px 15px 0px;">
 <img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>Une vignette avec un badge numérique affichant<br/> le nombre 63 pour indiquer 63 e-mails non lus.</div>
 
-Un badge de notification transmet des informations récapitulatives ou d’état propres à votre application. Ces informations peuvent être numériques (1 à 99) ou correspondre à l’un des ensembles de glyphes fournis par le système. Voici quelques exemples des informations les mieux transmises par l’intermédiaire d’un badge: état de la connexion réseau dans un jeu en ligne, statut de l’utilisateur dans une application de messagerie, nombre de messages non lus dans une application de courrier électronique et nombre de nouveaux billets dans une application de médias sociaux. 
+Un badge de notification transmet des informations récapitulatives ou d’état propres à votre application. Ces informations peuvent être numériques (1 à 99) ou correspondre à l’un des ensembles de glyphes fournis par le système. Voici quelques exemples des informations les mieux transmises par l’intermédiaire d’un badge : état de la connexion réseau dans un jeu en ligne, statut de l’utilisateur dans une application de messagerie, nombre de messages non lus dans une application de courrier électronique et nombre de nouveaux billets dans une application de médias sociaux. 
 
 Les badges de notification apparaissent sur l’icône de la barre des tâches de votre application et dans le coin inférieur droit de sa vignette d’accueil, que l’application soit en cours d’exécution ou non. Il est possible d’afficher les badges sur des vignettes de toute taille.  
 
@@ -39,7 +39,7 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
         <th>XML</th>
     </tr>
     <tr>
-        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe «aucune» et efface le badge.</td>
+        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge.</td>
         <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
         <td>`<badge value="1"/>`</td>
     </tr>
@@ -196,10 +196,10 @@ private void clearBadge()
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-* [Exemples de notification](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
+* [Exemple de notifications](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
 
 ## <a name="related-articles"></a>Articles connexes
 
 * [Notifications toast adaptatives et interactives](adaptive-interactive-toasts.md)
 * [Créer des vignettes](creating-tiles.md)
-* [Créer des vignettes adaptatives](create-adaptive-tiles.md)
+* [Créer des vignettes ADAPTATIF](create-adaptive-tiles.md)

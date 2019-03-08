@@ -1,17 +1,17 @@
 ---
-title: Automatisation du lancement des applications UWP Windows10
+title: Automatisation du lancement des applications UWP Windows 10
 description: Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés.
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937198"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618304"
 ---
-# <a name="automate-launching-windows-10-uwp-apps"></a>Automatisation du lancement des applications UWP Windows10
+# <a name="automate-launching-windows-10-uwp-apps"></a>Automatisation du lancement des applications UWP Windows 10
 
 ## <a name="introduction"></a>Introduction
 
@@ -25,7 +25,7 @@ Pour chaque méthode d’activation, vous avez la possibilité d’utiliser la l
 
 ## <a name="protocol-activation"></a>Activation de protocole
 
-Suivez ces étapes pour configurer l’activation de protocole pour les applications: 
+Suivez ces étapes pour configurer l’activation de protocole pour les applications : 
 
 1. Ouvrez le fichier **Package.appxmanifest** dans Visual Studio.
 2. Sélectionnez l’onglet **Déclarations**.
@@ -42,7 +42,7 @@ Maintenant que l’activation de protocole est configurée, vous avez deux optio
 
 ### <a name="command-line"></a>Ligne de commande
 
-L’application peut être activée par protocole à l’aide de la ligne de commande incluant la commande start, suivie du nom de protocole défini précédemment, du signe deux-points («:») et des paramètres. Les paramètres peuvent être n’importe quelle chaîne arbitraire; toutefois, pour tirer parti des fonctionnalités d’URI (Uniform Resource Identifier), il est conseillé de respecter le format URI standard: 
+L’application peut être activée par protocole à l’aide de la ligne de commande incluant la commande start, suivie du nom de protocole défini précédemment, du signe deux-points (« : ») et des paramètres. Les paramètres peuvent être n’importe quelle chaîne arbitraire ; toutefois, pour tirer parti des fonctionnalités d’URI (Uniform Resource Identifier), il est conseillé de respecter le format URI standard : 
 
   ```
   scheme://username:password@host:port/path.extension?query#fragment
@@ -50,7 +50,7 @@ L’application peut être activée par protocole à l’aide de la ligne de com
 
 L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
 
-Exemples:
+Exemples :
 
   ```
   >start bingnews:
@@ -58,7 +58,7 @@ Exemples:
   >start myapplication://single-player/level3?godmode=1&ammo=200
   ```
 
-L’activation de protocole par ligne de commande prend en charge les caractères Unicode jusqu'à un maximum de 2038caractères sur l’URI brut. 
+L’activation de protocole par ligne de commande prend en charge les caractères Unicode jusqu'à un maximum de 2 038 caractères sur l’URI brut. 
 
 ### <a name="launcher-application"></a>Application de lancement
 
@@ -101,15 +101,15 @@ Uri(URI));
        }
 }
 ```
-L’activation de protocole avec l’application de lancement présente les mêmes limites d’arguments que l’activation de protocole à l’aide de la ligne de commande. Les deux prennent en charge les caractères Unicode jusqu'à un maximum de 2038caractères sur l’URI brut. 
+L’activation de protocole avec l’application de lancement présente les mêmes limites d’arguments que l’activation de protocole à l’aide de la ligne de commande. Les deux prennent en charge les caractères Unicode jusqu'à un maximum de 2 038 caractères sur l’URI brut. 
 
 ## <a name="launch-activation"></a>Activation de lancement
 
 Vous pouvez également lancer l’application à l’aide de l’activation de lancement. Aucune configuration n’est requise, mais l’ID de modèle utilisateur de l’application UWP est nécessaire. L’ID de modèle utilisateur de l’application correspond au nom de la famille de packages suivi d’un point d’exclamation et de l’ID d’application. 
 
-Pour obtenir le nom de la famille de packages, la meilleure solution consiste à suivre les étapes suivantes:
+Pour obtenir le nom de la famille de packages, la meilleure solution consiste à suivre les étapes suivantes :
 
-1. Ouvrez le fichier**Package.appxmanifest**.
+1. Ouvrez le fichier **Package.appxmanifest**.
 2. Dans l’onglet **Packages**, entrez le **nom du package**.
 
     ![Activation de lancement](images/automate-uwp-apps-2.png)
@@ -120,13 +120,13 @@ L’ID d’application se trouve dans le fichier **Package.appxmanifest** (ouver
 
 ### <a name="command-line"></a>Ligne de commande
 
-Un outil permettant d’effectuer l’activation de lancement d’une application UWP est installé avec le Kit de développement logiciel Windows10. Il peut être exécuté à partir de la ligne de commande et utilise l’ID de modèle utilisateur de l’application comme argument pour le lancement.
+Un outil permettant d’effectuer l’activation de lancement d’une application UWP est installé avec le Kit de développement logiciel Windows 10. Il peut être exécuté à partir de la ligne de commande et utilise l’ID de modèle utilisateur de l’application comme argument pour le lancement.
 
 ```
 C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe <AUMID>
 ```
 
-Voici à quoi cela devrait ressembler:
+Voici à quoi cela devrait ressembler :
 
 ```
 "C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe" MyPackageName_ph1m9x8skttmg!AppId
@@ -211,5 +211,5 @@ void OnActivated(IActivatedEventArgs^ args)
 En résumé, vous pouvez utiliser différentes méthodes pour lancer l’application UWP. Selon la configuration requise et les cas d’usage, certaines méthodes peuvent être mieux adaptées que d’autres. 
 
 ## <a name="see-also"></a>Voir également
-- [UWP sur XboxOne](index.md)
+- [UWP sur Xbox One](index.md)
 

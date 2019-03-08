@@ -1,6 +1,6 @@
 ---
-Description: UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
-title: Stocker et récupérer les données de traits WindowsInk
+Description: Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
+title: Stocker et récupérer les données de traits Windows Ink
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
@@ -9,16 +9,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c12e5cb7012ba9ff9a4ed383427e37b79835983
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045345"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645844"
 ---
-# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits WindowsInk
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits Windows Ink
 
 
-Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichierISF est une imageGIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
+Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
 
 > [!NOTE]
 > ISF est la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire, tel qu’un fichier GIF, ou placer le fichier directement dans le Presse-papiers.
@@ -29,7 +29,7 @@ Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et d�
 
 Nous montrons ici comment enregistrer des traits d’encre dessinés sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-**Télécharger cet exemple à partir de [Enregistrer et charger des traits d’encre à partir d’un fichier ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**Télécharger cet exemple à partir de [enregistrer et charger des traits d’encre à partir d’un fichier de Format ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  Tout d’abord, nous configurons l’interface utilisateur.
 
@@ -161,7 +161,7 @@ public MainPage()
 
 Ici, nous montrons comment charger des traits d’encre à partir d’un fichier et les restituer sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-**Télécharger cet exemple à partir de [Enregistrer et charger des traits d’encre à partir d’un fichier ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**Télécharger cet exemple à partir de [enregistrer et charger des traits d’encre à partir d’un fichier de Format ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  Tout d’abord, nous configurons l’interface utilisateur.
 
@@ -275,9 +275,9 @@ Ici, nous montrons comment utiliser le Presse-papiers pour transférer des trait
 
 Pour la prise en charge des fonctionnalités du Presse-papiers, les commandes Couper-Coller intégrées à [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) requièrent la sélection d’un ou de plusieurs traits d’encre.
 
-Dans cet exemple, nous activons la sélection de traits lorsque l’entrée est modifiée avec un bouton de stylet (ou le bouton droit de la souris). Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md).
+Dans cet exemple, nous activons la sélection de traits lorsque l’entrée est modifiée avec un bouton de stylet (ou le bouton droit de la souris). Pour obtenir un exemple complet de sélection de traits d’encre, consultez Entrée directe pour traitement avancé dans [Interactions avec le stylo ou le stylet](pen-and-stylus-interactions.md).
 
-**Télécharger cet exemple à partir de [Enregistrer et charger des traits d’encre à partir du Presse-papiers](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
+**Télécharger cet exemple à partir de [enregistrer et charger des traits d’encre à partir du Presse-papiers](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
 1.  Tout d’abord, nous configurons l’interface utilisateur.
 
@@ -432,21 +432,21 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-* [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md)
+* [Interactions de stylet et du stylet](pen-and-stylus-interactions.md)
 
 **Exemples de la rubrique**
-* [Télécharger et charger des traits d’encre à partir d’un fichier ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Enregistrer et charger des traits d’encre à partir d’un fichier de Format ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
 * [Enregistrer et charger des traits d’encre à partir du Presse-papiers](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
 **Autres exemples**
 * [Exemple d’entrée manuscrite simple (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Exemple d’entrée manuscrite complexe (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Exemple d’entrée manuscrite (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Prise en main du didacticiel: prendre en charge l’entrée manuscrite dans votre application UWP](https://aka.ms/appsample-ink)
-* [Exemple de livre de coloriage](https://aka.ms/cpubsample-coloringbook)
-* [Exemple de notes de famille](https://aka.ms/cpubsample-familynotessample)
+* [Exemple de l’encre complexes (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Exemple de l’encre (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Prise en main didacticiel : Prise en charge de l’encre dans votre application UWP](https://aka.ms/appsample-ink)
+* [Coloration du carnet d’exemple](https://aka.ms/cpubsample-coloringbook)
+* [Exemple de la famille de notes](https://aka.ms/cpubsample-familynotessample)
 
 
 

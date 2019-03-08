@@ -4,20 +4,20 @@ description: Cet article répertorie la prise en charge des codecs et formats au
 title: Codecs pris en charge
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929231"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631354"
 ---
 # <a name="supported-codecs"></a>Codecs pris en charge
 
-Cet article répertorie les codecs audio, vidéo et d’image ainsi que la disponibilité par défaut des formats d’applications UWP, pour chaque famille d’appareils. Notez que ces tableaux répertorient les codecs inclus avec l’installation Windows10 pour la famille considérée d’appareils. Les utilisateurs et les applications peuvent installer les codecs supplémentaires mis à disposition, le cas échéant. Durant l’exécution, vous pouvez identifier le jeu de codecs disponible pour un appareil spécifique. Pour plus d’informations, voir [Rechercher les codecs installés sur un appareil](codec-query.md).
+Cet article répertorie les codecs audio, vidéo et d’image, ainsi que la disponibilité par défaut des formats d’applications UWP, pour chaque famille d’appareils. Notez que ces tableaux répertorient les codecs inclus avec l’installation Windows 10 pour la famille considérée d’appareils. Les utilisateurs et les applications peuvent installer les codecs supplémentaires mis à disposition, le cas échéant. Durant l’exécution, vous pouvez identifier le jeu de codecs disponible pour un appareil spécifique. Pour plus d’informations, voir [Rechercher les codecs installés sur un appareil](codec-query.md).
 
-Dans les tableaux ci-dessous, la lettre «D» indique la prise en charge de décodeurs et la lettre «E» la prise en charge d’encodeurs.
+Dans les tableaux ci-dessous, la lettre « D » indique la prise en charge de décodeurs et la lettre « E » la prise en charge d’encodeurs.
 
 ## <a name="audio-codec--format-support"></a>Prise en charge des codecs et formats audio
 
@@ -2697,7 +2697,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 <thead>
 <tr class="header">
 <th align="left">Codec</th>
-<th align="left">Ordinateur de bureau</th>
+<th align="left">Bureau</th>
 <th align="left">Autres familles d’appareils</th>
 </tr>
 </thead>

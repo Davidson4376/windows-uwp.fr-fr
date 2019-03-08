@@ -4,14 +4,14 @@ description: Cet article explique comment charger et enregistrer des fichiers im
 title: Créer, modifier et enregistrer des images bitmap
 ms.date: 03/22/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923618"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622934"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 
@@ -19,13 +19,13 @@ ms.locfileid: "8923618"
 
 Cet article explique comment charger et enregistrer des fichiers image à l’aide de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) et de [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), et comment utiliser l’objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) pour représenter des images bitmap.
 
-La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment:
+La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment :
 
--   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) qui vous permet d’obtenir des images capturées par l’appareil photo en tant que **SoftwareBitmap**.
+-   [**CapturedFrame** ](https://msdn.microsoft.com/library/windows/apps/dn278725) vous permet d’obtenir les frames capturés par la caméra en tant qu’un **SoftwareBitmap**.
 
--   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) qui vous permet d’obtenir une représentation **SoftwareBitmap** d’un élément **VideoFrame**.
+-   [**VideoFrame** ](https://msdn.microsoft.com/library/windows/apps/dn930917) vous permet d’obtenir un **SoftwareBitmap** représentation sous forme d’un **VideoFrame**.
 
--   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) qui vous permet de détecter les visages d’un élément **SoftwareBitmap**.
+-   [**FaceDetector** ](https://msdn.microsoft.com/library/windows/apps/dn974129) vous permet de détecter les visages dans une **SoftwareBitmap**.
 
 L’exemple de code dans cet article utilise les API des espaces de noms suivants.
 
@@ -55,7 +55,7 @@ Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br22621
 
 [!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
 
-Vous pouvez spécifier des options d’encodage supplémentaires lorsque vous créez l’élément **BitmapEncoder** en créant un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) et en le remplissant avec un ou plusieurs objets [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) représentant les paramètres d’encodeur. Pour obtenir la liste des options d’encodeur prises en charge, voir [Référence des options BitmapEncoder](bitmapencoder-options-reference.md).
+Vous pouvez spécifier des options d’encodage supplémentaires lorsque vous créez l’élément **BitmapEncoder** en créant un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) et en le remplissant avec un ou plusieurs objets [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) représentant les paramètres d’encodeur. Pour obtenir la liste des options d’encodeur prises en charge, voir [Références des options BitmapEncoder](bitmapencoder-options-reference.md).
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
@@ -117,11 +117,11 @@ La classe **SoftwareBitmap** fournit la méthode statique [**Convert**](https://
 
 ## <a name="transcode-an-image-file"></a>Transcoder un fichier image
 
-Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) vers [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Créez un [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) à partir du fichier à transcoder. Créez un **BitmapDecoder** à partir du flux d’entrée. Créez un [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) sur lequel l’encodeur pourra écrire et appelez [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) en transmettant le flux en mémoire et l’objet de décodeur. Les options d'encodage ne sont pas prises en charge lors du transcodage; vous devez plutôt utiliser [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createasync). Toutes les propriétés dans le fichier image d’entrée que vous ne définissez pas spécifiquement sur l’encodeur seront écrites dans le fichier de sortie inchangé. Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) pour forcer l’encodeur à encoder dans le flux en mémoire. Enfin, recherchez le début du flux de fichier et du flux en mémoire et appelez [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) pour écrire le flux en mémoire dans le flux de fichier.
+Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) vers [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Créez un [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) à partir du fichier à transcoder. Créez un **BitmapDecoder** à partir du flux d’entrée. Créez un [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) sur lequel l’encodeur pourra écrire et appelez [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) en transmettant le flux en mémoire et l’objet de décodeur. Les options d'encodage ne sont pas prises en charge lors du transcodage ; vous devez plutôt utiliser [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createasync). Toutes les propriétés dans le fichier image d’entrée que vous ne définissez pas spécifiquement sur l’encodeur seront écrites dans le fichier de sortie inchangé. Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) pour forcer l’encodeur à encoder dans le flux en mémoire. Enfin, recherchez le début du flux de fichier et du flux en mémoire et appelez [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) pour écrire le flux en mémoire dans le flux de fichier.
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Référence des options BitmapEncoder](bitmapencoder-options-reference.md)
 * [Métadonnées d’image](image-metadata.md)

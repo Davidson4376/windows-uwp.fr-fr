@@ -1,19 +1,19 @@
 ---
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
-title: Maître/Détails
+Description: Le modèle Maître/Détails affiche une liste principale et les détails de l’élément actuellement sélectionné. Ce modèle est souvent utilisé pour les listes de messages électroniques et de contacts ou les carnets d’adresses.
+title: Maître/détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940638"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601254"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940638"
 
 Le modèle Maître/Détails possède un volet principal (généralement avec un [affichage Liste](lists.md)) et un volet d’informations correspondant au contenu. Lorsqu’un élément de la liste principale est sélectionné, le volet d’informations est mis à jour. Ce modèle est souvent utilisé pour le courrier électronique et les carnets d’adresses.
 
-> **API importantes**: [classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **API importantes**: [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [fractionnementaffichage des classes](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
 
@@ -39,8 +39,8 @@ Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d�
 
 | Largeur de fenêtre disponible | Style recommandé |
 |------------------------|-------------------|
-| 320epx-640epx        | Mode Empilé           |
-| 641epx ou plus large       | Côte à côte      |
+| 320 epx-640 epx        | Mode Empilé           |
+| 641 epx ou plus large       | Côte à côte      |
 
  
 ## <a name="stacked-style"></a>Style empilé
@@ -53,7 +53,7 @@ L’utilisateur commence au niveau du volet principal et descend dans le volet d
 
 ### <a name="create-a-stacked-masterdetails-pattern"></a>Créer un modèle Maître/Détails empilé
 
-L’une des façons de créer le modèle Maître/Détails empilé consiste à utiliser des pages distinctes pour le volet Maître et pour le volet Détails. Placez l'affichage Maître sur une page et le volet Détails dans une autre page.
+L’une des façons de créer le modèle Maître/Détails empilé consiste à utiliser des pages distinctes pour le volet principal et pour le volet d’informations. Placez l'affichage Maître sur une page et le volet Détails dans une autre page.
 
 ![Parties du modèle Maître/Détails de style empilé](images/patterns-md-stacked-parts.png)
 
@@ -77,7 +77,7 @@ L’une des façons de créer un modèle Maître/Détails côte à côte consist
 
 ![Parties du mode Fractionné Maître/Détail](images/patterns_md_splitview_parts.png)
 
-Pour le volet Maître, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
+Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
 
 Pour le contenu des détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **Grille** pour organiser les éléments dans un formulaire.
 
@@ -92,17 +92,17 @@ Pour créer une disposition adaptative, définissez différents [**VisualStates*
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-Les exemples suivants implémentent le modèle Maître/Détails avec des dispositions adaptatives et illustrent la liaison de données avec des ressources statiques, de base de données et en ligne: 
-- [Exemple de Maître/Détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [Exemples de Maître/Détails et de Sélection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Exemple de Maître/Détails Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
-- [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
-- [Exemple de lecteurRSS](https://github.com/Microsoft/Windows-appsample-rssreader)
+Les exemples suivants implémentent le modèle Maître/Détails avec des dispositions adaptatives et illustrent la liaison de données avec des ressources statiques, de base de données et en ligne : 
+- [Exemple de représentation maître/détail](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [Exemple de sélection supplémentaire de maître/détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Exemple de Studio de modèle Windows maître/détail](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [Exemple de base de données de commandes client](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+- [Exemple de lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Listes](lists.md)
 - [Recherche](search.md)
-- [Barre de l’application et barre de commandes](app-bars.md)
-- [Classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [Barres d’application et de commande](app-bars.md)
+- [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [Classe de fractionnementaffichage des](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

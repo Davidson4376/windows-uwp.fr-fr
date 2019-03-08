@@ -1,25 +1,25 @@
 ---
-Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
+Description: Le Microsoft Store offre Mobile opérateur facturation comme mode de paiement pour les opérateurs de téléphonie mobile qui prennent en charge cette fonctionnalité.
 title: Facturation de l’opérateur mobile
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
+keywords: windows 10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045678"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591834"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
 
-Le MicrosoftStore propose la facturation de l’opérateur mobile comme mode de paiement pour les appareils exécutant Windows10, les téléphones exécutant Windows10Mobile et les consoles Xbox One. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats dans le Store à l’aide de son compte mobile.
+Le Microsoft Store propose la facturation de l’opérateur mobile comme mode de paiement pour les appareils exécutant Windows 10, les téléphones exécutant Windows 10 Mobile et les consoles Xbox One. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats dans le Store à l’aide de son compte mobile.
 
 > [!TIP]
->  Si l’opérateur mobile d’un client propose la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez ces [étapes](https://go.microsoft.com/fwlink/p/?LinkId=523993).
+>  Si l’opérateur mobile d’un client offre de facturation d’opérateur Mobile, mais le client ne peut pas trouver cette option sur leur appareil, passez en revue ces [étapes](https://go.microsoft.com/fwlink/p/?LinkId=523993).
 
 Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez suggérer un opérateur mobile dont le nom n’est pas répertorié ci-dessous, contactez cet opérateur mobile et demandez-lui d’ajouter ce mode de paiement.
 
@@ -47,11 +47,11 @@ La facturation de l'opérateur mobile est actuellement prise en charge par les o
 | Espagne           | Orange                           |
 | Suède          | Telenor, 3                       |
 | Suisse     | Swisscom, Sunrise                |
-| Taiwan          | FarEasTone                       |
+| Taïwan          | FarEasTone                       |
 | Turquie          | Turkcell                         |
 | Émirats arabes unis | Etisalat                    |
 | États-Unis   | Sprint, Verizon                  |
-| Royaume-Uni  | O2, 3UK, EE                     |
+| Royaume-Uni  | O2, 3 UK, EE                     |
 
  
 

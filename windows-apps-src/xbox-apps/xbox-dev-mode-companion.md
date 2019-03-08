@@ -3,15 +3,15 @@ title: Compagnon du mode de développement Xbox
 description: Fournit des informations sur l’application Compagnon du mode de développement Xbox.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.localizationpriority: medium
 ms.openlocfilehash: b04272c99d9062be2eaea27aa5b107e6078872f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940744"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616824"
 ---
 # <a name="xbox-dev-mode-companion"></a>Compagnon du mode de développement Xbox
 
@@ -21,15 +21,15 @@ L’application Compagnon du mode de développement Xbox vous permet de vous con
 Téléchargez le [Compagnon du mode de développement Xbox (préversion)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp).
 
 ## <a name="how-to-connect"></a>Comment se connecter   
-Pour vous connecter à votre console:
+Pour vous connecter à votre console :
 
 1. Lancez l’application.   
 2. Si votre console ne figure pas dans la boîte de dialogue de connexion, tapez l’adresse IP de la console dans la zone de texte en bas de la boîte de dialogue et sélectionnez **Se connecter**.
 
 ## <a name="streaming-controls"></a>Commandes de streaming
-Une fois connecté, vous pouvez accéder aux commandes de streaming en pointant sur la zone de streaming avec votre souris. Ces commandes vous permettent d’effectuer les actions suivantes:
+Une fois connecté, vous pouvez accéder aux commandes de streaming en pointant sur la zone de streaming avec votre souris. Ces commandes vous permettent d’effectuer les actions suivantes :
 * Basculer entre le mode plein écran et le mode fenêtré.
-* Lancer WindowsDevicePortal.
+* Lancer Windows Device Portal.
 * Allumer et éteindre la console.
 * Se déconnecter.
 
@@ -40,8 +40,8 @@ Vous pouvez également utiliser les touches de direction, d’entrée et d’éc
    
 Enfin, dans les zones de texte, vous pouvez taper du texte avec votre clavier pour l’envoyer à la console.   
 
-## <a name="help"></a>Aide
-Vous pouvez afficher la page d’aide en cliquant sur l’icône? dans la boîte de dialogue de connexion ou la barre de commandes.
+## <a name="help"></a>Help
+Vous pouvez afficher la page d’aide en cliquant sur l’icône ? dans la boîte de dialogue de connexion ou la barre de commandes.
 
 ## <a name="see-also"></a>Voir également
-- [UWP sur XboxOne](index.md)
+- [UWP sur Xbox One](index.md)

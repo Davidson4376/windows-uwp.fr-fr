@@ -4,14 +4,14 @@ title: Attribut x:Key
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ceeb4964e616bdbcacb14620ed1a488a0072b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924769"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618214"
 ---
 # <a name="xkey-attribute"></a>Attribut x:Key
 
@@ -38,12 +38,12 @@ Identifie de manière unique les éléments qui sont créés et référencés en
 
 | Terme | Description |
 |------|-------------|
-| object | Tout objet partageable. Voir [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
-| stringKeyValue | Chaîne vraie utilisée en tant que clé, qui doit être conforme à la grammaire _XamlName_&gt;. Voir «Grammaire XamlName» ci-dessous. | 
+| objet | Tout objet partageable. Voir [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
+| stringKeyValue | Chaîne vraie utilisée en tant que clé, qui doit être conforme à la grammaire _XamlName_&gt;. Voir « Grammaire XamlName » ci-dessous. | 
 
 ##  <a name="xamlname-grammar"></a>Grammaire XamlName
 
-Les points suivants représentent la grammaire normative qui régit une chaîne servant de clé dans l’implémentation XAML de plateforme Windows universelle (UWP):
+Les points suivants représentent la grammaire normative qui régit une chaîne servant de clé dans l’implémentation XAML de plateforme Windows universelle (UWP) :
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*
@@ -54,15 +54,15 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   Les caractères se limitent à la plage ASCII inférieure, plus précisément aux lettres majuscules et minuscules de l’alphabet romain, aux chiffres et au trait de soulignement (\_).
+-   Caractères sont limitées à la plage ASCII inférieure et plus spécifiquement à l’alphabet romain en majuscules et minuscules, des chiffres et le trait de soulignement (\_) caractères.
 -   La plage de caractères Unicode n’est pas prise en charge.
 -   Un nom ne peut pas commencer par un chiffre.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Les éléments enfants d’un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) incluent généralement un attribut **x:Key** qui spécifie une valeur de clé unique au sein de ce dictionnaire. L’unicité de la clé est appliquée au moment du chargement par le processeur XAML. Les valeurs **x:Key** non uniques engendrent des exceptions d’analyse XAML. Sur demande de l’[extension de balisage {StaticResource}](staticresource-markup-extension.md), toute clé non résolue engendre également des exceptions d’analyse XAML.
 
-**x:Key** et [x:Name](x-name-attribute.md) ne sont pas des concepts identiques. **x:Key** est exclusivement utilisé dans les dictionnaires de ressources. x:Name est utilisé pour toutes les zones de code XAML. Un appel [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) utilisant une valeur de clé ne permet pas de récupérer une ressource à clé. Les objets définis dans un dictionnaire de ressources peuvent avoir un **x: Key**, un **x: Name** ou les deux. La clé et le nom ne doivent pas nécessairement correspondre.
+**x:Key** et [x:Name](x-name-attribute.md) ne sont pas des concepts identiques. **x:Key** est exclusivement utilisé dans les dictionnaires de ressources. x:Name est utilisé pour toutes les zones de code XAML. Un appel [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) utilisant une valeur de clé ne permet pas de récupérer une ressource à clé. Les objets définis dans un dictionnaire de ressources peuvent avoir un **x : Key**, un **x : Name** ou les deux. La clé et le nom ne doivent pas nécessairement correspondre.
 
 Notez que dans la syntaxe implicite présentée, l’objet [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) est implicite dans la manière dont le processeur XAML produit un nouvel objet pour renseigner une collection [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740).
 

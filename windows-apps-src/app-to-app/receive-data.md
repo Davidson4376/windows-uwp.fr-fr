@@ -4,14 +4,14 @@ title: Recevoir des données
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943525"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617634"
 ---
 # <a name="receive-data"></a>Recevoir des données
 
@@ -33,17 +33,17 @@ Ensuite, déterminez les types de fichiers et les formats de données qui sont p
 
 Enregistrez uniquement les formats gérés par votre application. Seules les applications cibles qui prennent en charge les données partagées apparaissent quand l’utilisateur appelle l’option Partager.
 
-Pour définir les types de fichier:
+Pour définir les types de fichier :
 
-1.  Ouvrez le fichier manifeste. Il doit normalement avoir un nom similaire à **package.appxmanifest**.
+1.  Ouvrez le fichier manifeste. Il doit normalement porter un nom similaire à **package.appxmanifest**.
 2.  Dans la section **Types de fichiers pris en charge** de la page **Déclarations**, sélectionnez **Ajouter nouveau**.
-3.  Tapez l’extension de nom de fichier que vous voulez prendre en charge, par exemple, «.docx». Vous devez inclure le point. Pour prendre en charge tous les types de fichiers, cochez la case **SupportsAnyFileType**.
+3.  Tapez l’extension de nom de fichier que vous voulez prendre en charge, par exemple, « .docx ». Vous devez inclure le point. Pour prendre en charge tous les types de fichiers, cochez la case **SupportsAnyFileType**.
 
-Pour définir les formats de données:
+Pour définir les formats de données :
 
 1.  Ouvrez le fichier manifeste.
 2.  Ouvrez la section **Formats de données** de la page **Déclarations** et sélectionnez **Ajouter nouveau**.
-3.  Tapez le nom du format de données à prendre en charge, par exemple, «Texte».
+3.  Tapez le nom du format de données à prendre en charge, par exemple, « Texte ».
 
 ## <a name="handle-share-activation"></a>Gestion de l’activation du partage
 
@@ -105,7 +105,7 @@ Généralement, vous appelez ces méthodes selon l’ordre indiqué, une seule f
 
 Lorsqu’un utilisateur sélectionne votre application pour recevoir du contenu, nous vous recommandons de créer un [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink). Un objet **QuickLink** est une sorte de raccourci qui permet à l’utilisateur de partager plus facilement des informations avec votre application. Par exemple, vous pouvez créer un **QuickLink** qui ouvre un nouveau message électronique dans lequel l’adresse de messagerie du destinataire est déjà indiquée.
 
-Un **QuickLink** doit avoir un titre, une icône et un Id. Le titre (comme «message pour maman») et l’icône s’affichent lorsque l’utilisateur appuie sur l’icône partager. L’ID est utilisé par l’application pour accéder à des informations personnalisées, telles qu’une adresse de messagerie ou des informations d’identification. Quand votre application crée un **QuickLink**, elle renvoie ce **QuickLink** au système en appelant [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
+Un **QuickLink** doit comporter un titre, une icône et un ID. Le titre (par exemple, « Message pour maman ») et l’icône s’affichent lorsque l’utilisateur appuie sur l’icône Partager. L’ID est utilisé par l’application pour accéder à des informations personnalisées, telles qu’une adresse de messagerie ou des informations d’identification. Quand votre application crée un **QuickLink**, elle renvoie ce **QuickLink** au système en appelant [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
 
 Un **QuickLink** ne stocke pas de données. Cet objet contient à la place un identificateur qui, lorsqu’il est sélectionné, est envoyé à votre application. Votre application stocke l’ID de **QuickLink** ainsi que les données utilisateur correspondantes. Quand l’utilisateur appuie sur l’objet **QuickLink**, vous pouvez obtenir l’ID de ce dernier à l’aide de la propriété [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId).
 

@@ -3,31 +3,31 @@ title: Packages facultatifs avec code exécutable
 description: Découvrez comment utiliser Visual Studio pour créer un package facultatif avec du code exécutable.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: windows10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
+keywords: windows 10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e32438034cf09695f313d24055b6ed3c82df0b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115886"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637104"
 ---
 # <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
  
-Les packages facultatifs avec code exécutable sont utiles pour diviser une application complexe ou volumineuse, ou pour ajouter une extension à une application déjà publiée. Avec Visual Studio2017, version15.7 et .NET Native2.1, vous pouvez charger un code exécutable à partir des packages facultatifs C++ et C#.
+Les packages facultatifs avec code exécutable sont utiles pour diviser une application complexe ou volumineuse, ou pour ajouter une extension à une application déjà publiée. Avec Visual Studio 2017, version 15.7 et .NET Native 2.1, vous pouvez charger un code exécutable à partir des packages facultatifs C++ et C#.
 
-## <a name="prerequisites"></a>Éléments prérequis
-- Visual Studio2017, version15.7
-- Windows10, version1709
-- SDK Windows10, version1709
+## <a name="prerequisites"></a>Conditions préalables
+- Visual Studio 2017, version 15.7
+- Windows 10 version 1709
+- SDK Windows 10, version 1709
 
-Pour obtenir les outils de développement les plus récents, consultez [Téléchargements et outils pour Windows10](https://developer.microsoft.com/windows/downloads). 
-
-> [!NOTE]
-> Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Store, il vous faudra une autorisation. Packages facultatifs et ensembles connexes peuvent être utilisés pour les applications cœur de métier (LOB) ou d’entreprise sans autorisation de l’espace partenaires s’ils ne sont pas soumis au Windows Store. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
+Pour obtenir les outils de développement les plus récents, consultez [Téléchargements et outils pour Windows 10](https://developer.microsoft.com/windows/downloads). 
 
 > [!NOTE]
-> Packages facultatifs contenant le code exécutable doivent faire partie d’un [ensemble connexe](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets). Vous ne serez pas en mesure d’exécuter du code à partir d’un package facultatif, sauf si elle fait partie d’un ensemble connexe.
+> Pour soumettre une application qui utilise des packages facultatifs et/ou des ensembles connexes dans le Store, il vous faudra une autorisation. Packages facultatifs et les ensembles liés peuvent servir pour les applications métier (LOB) ou de l’entreprise sans autorisation de partenaires si elles ne sont pas envoyées au Store. Voir [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support) pour obtenir l’autorisation de soumettre une application qui utilise des packages facultatifs et ensembles connexes.
+
+> [!NOTE]
+> Les packages facultatifs contenant du code exécutable doivent faire partie d’un [liées ensemble](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets). Vous ne serez pas en mesure d’exécuter du code à partir d’un package facultatif, sauf si elle fait partie d’un ensemble.
 
 ## <a name="c-optional-packages-with-executable-code"></a>Packages facultatifs C++ avec code exécutable
 
@@ -35,9 +35,9 @@ Pour charger du code à partir d’un package facultatif C++, voir le référent
 
 ## <a name="c-optional-packages-with-executable-code"></a>Packages facultatifs C# avec code exécutable
 
-Pour commencer à créer un package de code facultatif en C#, suivez les étapes ci-dessous pour configurer votre solution:
+Pour commencer à créer un package de code facultatif en C#, suivez les étapes ci-dessous pour configurer votre solution :
 
-1. Créez une application UWP avec la version minimale définie sur le SDK Windows10 Fall Creators Update (Build16299) ou une version ultérieure.
+1. Créez une application UWP avec la version minimale définie sur le SDK Windows 10 Fall Creators Update (Build 16299) ou une version ultérieure.
 
 2. Ajoutez un nouveau projet **Package de code facultatif (Windows universel)** à la solution. Vérifiez que la **Version minimale** et la **Version cible** correspondent à celle de votre application principale.
 
@@ -59,9 +59,9 @@ Pour commencer à créer un package de code facultatif en C#, suivez les étapes
 
 6. Ajoutez un fichier `Bundle.mapping.txt` à l’application principale. Suivez les étapes de cette section [Ensembles connexes](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets) pour créer un ensemble contenant les deux applications. 
 
-7. Générez le projet de package facultatif, puis accédez au dossier de référence du package dans la sortie de la build située dans `..\[PathToOptionalPackageProject]\bin\[architecture]\[configuration]\Reference`. Notez que vous pouvez choisir n’importe quelle architecture dans le chemin d’accès au dossier de référence, car le fichier `.winmd` (étape8) est indépendant de l'architecture.
+7. Générez le projet de package facultatif, puis accédez au dossier de référence du package dans la sortie de la build située dans `..\[PathToOptionalPackageProject]\bin\[architecture]\[configuration]\Reference`. Notez que vous pouvez choisir n’importe quelle architecture dans le chemin d’accès au dossier de référence, car le fichier `.winmd` (étape 8) est indépendant de l'architecture.
 
-8. Ajoutez une référence du projet d'application principale au fichier `.winmd` qui se trouve dans ce dossier. Chaque fois que vous modifiez la surface d’exposition d’API dans le projet de package facultatif, ce fichier `.winmd` **doit** être mis à jour. Cette référence fournit le projet d’application principale avec les informations nécessaires pour compiler.
+8. Ajoutez une référence du projet d'application principale au fichier `.winmd` qui se trouve dans ce dossier. Chaque fois que vous modifiez la surface d’exposition d’API dans le projet de package facultatif, ce fichier `.winmd`**doit** être mis à jour. Cette référence fournit le projet d’application principale avec les informations nécessaires pour compiler.
 
 9. Dans le projet d’application principale, accédez aux propriétés de la génération de projet et sélectionnez **Compiler avec la chaîne d’outils .NET Native**. Seul le débogage dans.NET Native est actuellement pris en charge pour la création de package de code facultatif en C#. Accédez aux propriétés de débogage du projet et sélectionnez **Déployer des packages facultatifs**. Cela permet de garantir que les deux packages sont synchronisés chaque fois que vous déployez le projet d’application principale.
 

@@ -4,14 +4,14 @@ description: Échanger des messages avec un service d'application exécuté sur 
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome, tâche en arrière-plan, service d’application
+keywords: appareils Windows 10, uwp, connectés, systèmes distants, rome, project rome, tâche en arrière-plan, service d’application
 ms.localizationpriority: medium
 ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939457"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612934"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Communiquer avec un service d’application distant
 
@@ -20,7 +20,7 @@ En plus de lancer une application sur un appareil distant avec un URI, vous pouv
 ## <a name="set-up-the-app-service-on-the-host-device"></a>Configurer le service d’application sur l’appareil hôte
 Pour exécuter un service d’application sur un appareil distant, un fournisseur de ce service d’application doit être installé sur cet appareil. Ce guide utilise la version CSharp de l'[exemple du service d’application Générateur de nombres aléatoires](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices), qui est disponible dans le [référentiel d’exemples d’application Windows universelle](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices). Pour obtenir des instructions sur la rédaction du code de votre service d’application, consultez [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md).
 
-Que vous utilisiez un service d’application prêt à l’emploi ou créé par vos soins, vous devez lui apporter quelques modifications pour le rendre compatible avec les systèmes distants. Dans VisualStudio, accédez au projet du fournisseur du service d’application (appelé «AppServicesProvider») et sélectionnez son fichier _Package.appxmanifest_. Cliquez sur le bouton droit et sélectionnez **Afficher le code** pour afficher le contenu du fichier. Créez un élément **Extensions** à l’intérieur de l’élément principal de **l’Application** (ou le trouver s’il existe déjà). Ensuite, créez une **Extension** pour définir le projet comme un service d’application et de faire référence à son projet parent.
+Que vous utilisiez un service d’application prêt à l’emploi ou créé par vos soins, vous devez lui apporter quelques modifications pour le rendre compatible avec les systèmes distants. Dans Visual Studio, accédez au projet du fournisseur du service d’application (appelé « AppServicesProvider ») et sélectionnez son fichier _Package.appxmanifest_. Cliquez sur le bouton droit et sélectionnez **Afficher le code** pour afficher le contenu du fichier. Créer un **Extensions** élément à l’intérieur de la main **Application** élément (ou trouver si elle existe déjà). Créez ensuite un **Extension** pour définir le projet comme un service d’application et de faire référence à son projet parent.
 
 ``` xml
 ...
@@ -32,7 +32,7 @@ Que vous utilisiez un service d’application prêt à l’emploi ou créé par 
 ...
 ```
 
-En regard de l’élément **AppService** , ajoutez l’attribut **SupportsRemoteSystems** :
+À côté du **AppService** élément, ajouter le **SupportsRemoteSystems** attribut :
 
 ``` xml
 ...
@@ -40,7 +40,7 @@ En regard de l’élément **AppService** , ajoutez l’attribut **SupportsRemot
 ...
 ```
 
-Pour utiliser les éléments dans cet espace de noms **uap3** , vous devez ajouter la définition de l’espace de noms en haut du fichier manifeste si elle n’est pas déjà présent.
+Pour pouvoir utiliser des éléments dans ce **uap3** espace de noms, vous devez ajouter la définition de l’espace de noms en haut du fichier manifeste s’il n’est déjà fait.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -53,12 +53,12 @@ Pour utiliser les éléments dans cet espace de noms **uap3** , vous devez ajout
 </Package>
 ```
 
-Génération de votre projet de fournisseur de service application, puis déployer sur les périphériques de l’hôte.
+Puis générez votre projet de fournisseur de service application et déployez-la sur l’appareil (s) hôte.
 
 ## <a name="target-the-app-service-from-the-client-device"></a>Cibler le service d’application à partir de l’appareil client
-L’appareil à partir duquel le service d’application distant doit être appelé a besoin de l’application avec la fonctionnalité Systèmes distants. Vous pouvez l’ajouter dans l’application qui fournit le service d’application sur l’appareil hôte (auquel cas la même application doit être installée sur les deuxappareils) ou dans une autre application.
+L’appareil à partir duquel le service d’application distant doit être appelé a besoin de l’application avec la fonctionnalité Systèmes distants. Vous pouvez l’ajouter dans l’application qui fournit le service d’application sur l’appareil hôte (auquel cas la même application doit être installée sur les deux appareils) ou dans une autre application.
 
-Les instructions **using** suivantes sont nécessaires pour que le code de cette section s’exécute tel quel:
+Les instructions **using** suivantes sont nécessaires pour que le code de cette section s’exécute tel quel :
 
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
 
@@ -78,16 +78,16 @@ Ensuite, un objet [**RemoteSystemConnectionRequest**](https://msdn.microsoft.com
 
 ## <a name="exchange-service-specific-messages-over-the-remote-connection"></a>Échanger des messages avec le service sur la connexion à distance
 
-Maintenant, vous pouvez échanger des messages avec le service sous la forme d’objets [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset). Pour plus d’informations, consultez [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md). Le service Générateur de nombres aléatoires prend deuxentiers avec les clés `"minvalue"` et `"maxvalue"` comme entrées, sélectionne de manière aléatoire un entier entre ces deuxvaleurs et le renvoie au processus appelant avec la clé `"Result"`.
+Maintenant, vous pouvez échanger des messages avec le service sous la forme d’objets [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset). Pour plus d’informations, consultez [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md). Le service Générateur de nombres aléatoires prend deux entiers avec les clés `"minvalue"` et `"maxvalue"` comme entrées, sélectionne de manière aléatoire un entier entre ces deux valeurs et le renvoie au processus appelant avec la clé `"Result"`.
 
 [!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
 
 Maintenant que vous êtes connecté à un service d’application sur un appareil hôte ciblé, exécutez une opération sur cet appareil et recevez les données sur votre appareil client.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-[Aperçu des applications et appareils connectés (projet «Rome»)](connected-apps-and-devices.md)  
-[Lancer une application distante](launch-a-remote-app.md)  
-[Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md)  
-[Référence sur l’API Systèmes distants](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Vue d’ensemble des (Project Rome) applications et des appareils connecté](connected-apps-and-devices.md)  
+[Lancer une application à distance](launch-a-remote-app.md)  
+[Créer et consommer un service d’application](how-to-create-and-consume-an-app-service.md)  
+[Référence de l’API de systèmes à distance](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Exemple de systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

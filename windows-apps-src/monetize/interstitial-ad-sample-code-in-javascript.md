@@ -4,14 +4,14 @@ description: Découvrez comment lancer un spot publicitaire en JavaScript/HTML.
 title: Exemple de code pour spot publicitaire en JavaScript
 ms.date: 03/22/2018
 ms.topic: article
-keywords: windows10, uwp, pub, publicités, spots, javascript, exemple de code
+keywords: windows 10, uwp, pub, publicités, spots, javascript, exemple de code
 ms.localizationpriority: medium
 ms.openlocfilehash: 641a3bfc2c2869cab6f3bbf480aa599cadd955a2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047108"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618554"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Exemple de code pour spot publicitaire en JavaScript
 
@@ -19,11 +19,11 @@ Cette rubrique indique l’exemple de code complet pour une application de plate
 
 ## <a name="code-example"></a>Exemple de code
 
-Cette section affiche le contenu des fichiers HTML et JavaScript d’une application de base, qui comporte un spot publicitaire. Pour utiliser ces exemples, copiez ce code dans un projet JavaScript **Application WinJS (Windows universelle)** au sein de VisualStudio.
+Cette section affiche le contenu des fichiers HTML et JavaScript d’une application de base, qui comporte un spot publicitaire. Pour utiliser ces exemples, copiez ce code dans un projet JavaScript **Application WinJS (Windows universelle)** au sein de Visual Studio.
 
-Cet exemple d’application utilise deuxboutons pour demander, puis lancer un spot publicitaire. Les fichiers main.js et index.html générés par VisualStudio ont été modifiés et sont présentés ci-dessous. Le fichier script.js affiché ci-dessous contient la plupart du code contenu dans l’exemple, et vous devez ajouter ce fichier dans le dossier **js** de votre projet.
+Cet exemple d’application utilise deux boutons pour demander, puis lancer un spot publicitaire. Les fichiers main.js et index.html générés par Visual Studio ont été modifiés et sont présentés ci-dessous. Le fichier script.js affiché ci-dessous contient la plupart du code contenu dans l’exemple, et vous devez ajouter ce fichier dans le dossier **js** de votre projet.
 
-Remplacez les valeurs de la ```applicationId``` et ```adUnitId``` variables par des valeurs dynamiques à partir de l’espace partenaires avant de soumettre votre application au Windows Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre app](set-up-ad-units-in-your-app.md#live-ad-units).
+Remplacez les valeurs de la ```applicationId``` et ```adUnitId``` variables avec des valeurs dynamiques à partir de Partner Center avant de soumettre votre application vers le Store. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
 > Pour modifier cet exemple de sorte à afficher une bannière au lieu d’un spot vidéo, transmettez la valeur  **InterstitialAdType.display** au premier paramètre de la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) au lieu de **InterstitialAdType.video**. Pour plus d’informations, voir [Spots](interstitial-ads.md).
@@ -43,7 +43,7 @@ Remplacez les valeurs de la ```applicationId``` et ```adUnitId``` variables par 
 > [!div class="tabbedCodeSnippets"]
 [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/main.js#main)]
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemples de publicité sur GitHub](https://aka.ms/githubads)
 

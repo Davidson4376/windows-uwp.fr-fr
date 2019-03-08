@@ -1,19 +1,19 @@
 ---
 title: Comment activer une application (DirectX et C++)
-description: Cet article explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
+description: Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, directx, activation
+keywords: windows 10, uwp, jeux, directx, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648844"
 ---
-# <a name="how-to-activate-an-app-directx-and-c"></a>Activation d’une application (DirectX et C++)
+# <a name="how-to-activate-an-app-directx-and-c"></a>Comment activer une application (DirectX et C++)
 
 
 
@@ -82,11 +82,11 @@ void App::Run()
 }
 ```
 
-## <a name="related-topics"></a>Articles connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Comment suspendre une application (DirectX et C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [Comment relancer une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [Comment reprendre une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

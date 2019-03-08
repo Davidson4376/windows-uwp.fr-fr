@@ -1,27 +1,27 @@
 ---
-Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
+Description: Utilisez les animations en fondu pour faire apparaître ou disparaître des éléments. Les deux animations en fondu les plus courantes sont l’apparition en fondu et la disparition en fondu.
 title: Animations en fondu dans les applications UWP
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3fee78f3608466f588a79d2811f1464e27a0ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940138"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620414"
 ---
-# <a name="fade-animations"></a>Animations en fondu
+# <a name="fade-animations"></a>Afficher et masquer les animations en fondu
 
 
 
 Utilisez les animations en fondu pour faire apparaître ou disparaître des éléments. Les deux animations en fondu les plus courantes sont l’apparition en fondu et la disparition en fondu.
 
-> **API importantes**: [**classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298), [**classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **API importantes**: [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298), [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -35,10 +35,10 @@ Utilisez les animations en fondu pour faire apparaître ou disparaître des él�
 ## <a name="related-articles"></a>Articles connexes
 
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Démarrage rapide: Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**Classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
+* [Animation de fondu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)
+* [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
  
 

@@ -1,6 +1,6 @@
 ---
 title: Transformation de la projection
-description: Une transformation de projection permet de contrôler les éléments internes de la caméra, notamment le choix d’un objectif. Il s’agit du plus complexe des trois types de transformations.
+description: Une transformation de projection permet de contrôler les éléments internes de la caméra, notamment le choix d’un objectif. Il s'agit du plus complexe des trois types de transformations.
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
 keywords:
 - Transformation de la projection
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931215"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634544"
 ---
 # <a name="projection-transform"></a>Transformation de la projection
 
 
-Une *transformation de projection* permet de contrôler les éléments internes de la caméra tels que le choix d'un objectif. Il s’agit du plus complexe des trois types de transformations.
+Une *transformation de projection* permet de contrôler les éléments internes de la caméra tels que le choix d'un objectif. Il s'agit du plus complexe des trois types de transformations.
 
-La matrice de projection consiste principalement en une projection de l'échelle et de la perspective. La transformation de projection convertit le tronc de cône d’affichage en une forme cubique. L’extrémité proche du tronc de cône d’affichage étant plus petite que son extrémité éloignée, cela a pour effet de développer les objets situés à proximité de la caméra; c’est de cette manière que la perspective est appliquée à la scène.
+La matrice de projection consiste principalement en une projection de l'échelle et de la perspective. La transformation de projection convertit le tronc de cône d’affichage en une forme cubique. L’extrémité proche du tronc de cône d’affichage étant plus petite que son extrémité éloignée, cela a pour effet de développer les objets situés à proximité de la caméra ; c’est de cette manière que la perspective est appliquée à la scène.
 
 Dans [le tronc de cône d’affichage](viewports-and-clipping.md), la distance entre l’appareil photo et l’origine de l’espace de transformation de l’affichage est définie de façon arbitraire sur la valeur D. La matrice de projection ressemble donc à l’illustration suivante.
 
@@ -29,7 +29,7 @@ La matrice d’affichage translate la caméra vers l’origine en translatant da
 
 ![illustration de la matrice de translation](images/projmat2.png)
 
-En multipliant la matrice de translation par la matrice de projection (T\ * P), nous obtenons la matrice de projection composite, comme illustré ci-dessous.
+Multiplier la matrice de traduction par la matrice de projection (T\*P) donne la matrice de projection composite, comme indiqué dans l’illustration suivante.
 
 ![illustration de la matrice de projection composite](images/projmat3.png)
 
@@ -53,9 +53,9 @@ Pour votre application, il est plus pratique d’utiliser les dimensions horizon
 
 Dans ces formules, Zₙ représente la position du plan de coupe proche, et les variables V<sub>w</sub> et Vₕ représentent la largeur et la hauteur de la fenêtre d’affichage dans l’espace de la caméra.
 
-Quelle que soit la formule vous décidez d’utiliser, veillez à définir Zₙ sur la plus grande valeur possible, car les valeurs z très proches de la caméra ne varient pas beaucoup. Cela permet d’effectuer des comparaisons de profondeur à l’aide d’un z-buffer 16bits complexe.
+Quelle que soit la formule vous décidez d’utiliser, veillez à définir Zₙ sur la plus grande valeur possible, car les valeurs z très proches de la caméra ne varient pas beaucoup. Cela permet d’effectuer des comparaisons de profondeur à l’aide d’un z-buffer 16 bits complexe.
 
-## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Une matrice de projection compatible avec w
+## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Une matrice de projection de w conviviale
 
 
 Direct3D peut utiliser le composant w d’un sommet qui a été transformé par les matrices universelles, d’affichage et de projection pour effectuer des calculs basés sur la profondeur dans le tampon de profondeur ou réaliser des effets de brouillard. Pour effectuer des calculs de ce type, votre matrice de projection doit normaliser la variable w de façon à ce qu’elle soit équivalente à l'axe z de l’espace universel. En résumé, si votre matrice de projection inclut un coefficient (3,4) qui n’est pas 1, vous devez mettre à l’échelle tous les coefficients par l’inverse du coefficient (3,4) pour générer une matrice correcte. Si vous ne fournissez pas une matrice conforme, les effets de brouillard et mise en mémoire tampon de profondeur ne sont pas appliqués correctement.

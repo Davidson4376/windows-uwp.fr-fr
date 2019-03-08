@@ -4,14 +4,14 @@ description: Cet article décrit comment utiliser les classes SceneAnalysisEffec
 title: Effets d’analyse de cadres caméra
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635824"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>Effets d’analyse de cadres caméra
 
@@ -25,11 +25,11 @@ La classe [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/a
 
 Si l’effet recommande l’utilisation du traitement HDR, vous pouvez procéder comme suit :
 
--   Utilisez la classe [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) pour capturer des photos à l’aide de l’algorithme de traitement HDR intégré de Windows. Pour plus d’informations, voir [Capture de photos haute HDR (High Dynamic Range)](high-dynamic-range-hdr-photo-capture.md).
+-   Utilisez la classe [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) pour capturer des photos à l’aide de l’algorithme de traitement HDR intégré de Windows. Pour plus d’informations, voir [Capture photo avec plage dynamique élevée (HDR)](high-dynamic-range-hdr-photo-capture.md).
 
 -   Utilisez la classe [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) pour capturer une vidéo à l’aide de l’algorithme de traitement HDR intégré de Windows. Pour plus d’informations, voir [Contrôles de l’appareil de capture pour la vidéo](capture-device-controls-for-video-capture.md).
 
--   Utilisez la classe [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) pour capturer une séquence de trames que vous pouvez ensuite composer à l’aide d’une implémentation HDR personnalisée. Pour plus d’informations, voir [Séquence de photos variable](variable-photo-sequence.md).
+-   Utilisez la classe [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) pour capturer une séquence de trames que vous pouvez ensuite composer à l’aide d’une implémentation HDR personnalisée. Pour plus d’informations, voir [Séquence de photos variables](variable-photo-sequence.md).
 
 ### <a name="scene-analysis-namespaces"></a>Espaces de noms d’analyse de scène
 
@@ -79,7 +79,7 @@ Pour utiliser la détection des visages, votre application doit inclure les espa
 
 ### <a name="initialize-the-face-detection-effect-and-add-it-to-the-preview-stream"></a>Initialiser l’effet de détection des visages et l’ajouter au flux d’aperçu
 
-Les effets vidéo sont implémentés à l’aide de deux API, une dédiée à la définition d’effets, qui fournit les paramètres dont l’appareil de capture a besoin pour initialiser l’effet, et une dédiée à l’instance d’effet, qui peut être utilisée pour contrôler l’effet. Pour accéder à l’instance d’effet à partir de plusieurs emplacements au sein de votre code, vous devez généralement déclarer une variable de membre pour stocker l’objet.
+Les effets vidéo sont implémentés à l’aide de deux API, une dédiée à la définition d’effets, qui fournit les paramètres dont l’appareil de capture a besoin pour initialiser l’effet, et l’autre dédiée à l’instance d’effet, qui peut être utilisée pour contrôler l’effet. Pour accéder à l’instance d’effet à partir de plusieurs emplacements au sein de votre code, vous devez généralement déclarer une variable de membre pour stocker l’objet.
 
 [!code-cs[DeclareFaceDetectionEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareFaceDetectionEffect)]
 
@@ -113,10 +113,10 @@ Tous les appareils ne disposent pas d’un appareil de capture permettant d’aj
 
 [!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

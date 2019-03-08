@@ -1,17 +1,17 @@
 ---
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: Énumérer les appareils sur un réseau
-description: Outre la détection d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau.
+description: Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e80d16b3338291c756b543018812e9db1370a4ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944907"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630414"
 ---
 # <a name="enumerate-devices-over-a-network"></a>Énumérer les appareils sur un réseau
 

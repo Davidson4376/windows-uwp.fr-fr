@@ -1,25 +1,25 @@
 ---
-Description: If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
+Description: Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Accessibilité du clavier
 label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045518"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602064"
 ---
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
 
 
-Si votre application ne fournit pas un bon accès par le clavier, les utilisateurs aveugles ou ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
+Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
 
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
@@ -175,7 +175,7 @@ En règle générale, on met en œuvre la gestion des touches personnalisée pou
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Exemple d’un état visuel pour un indicateur de focus  
 Nous avons précédemment indiqué que tout contrôle personnalisé qui permet à l’utilisateur d’ajouter un focus doit être doté d’un indicateur de focus visuel. Généralement, cet indicateur de focus se matérialise simplement par le dessin d’une forme rectangulaire dans le proche contour du rectangle de délimitation normal du contrôle. L’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) du focus visuel est un élément homologue par rapport au reste de la composition du contrôle dans un modèle de contrôle, mais à l’origine, la valeur **Collapsed** est affectée à la propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) car le contrôle n’a pas encore le focus. Ensuite, lorsque le contrôle reçoit le focus, un état visuel est appelé. Ce dernier affecte **Visible** spécifiquement à la propriété **Visibility** de l’état visuel du focus. Une fois que le focus est déplacé ailleurs, un autre état visuel est appelé, et la propriété **Visibility** devient **Collapsed**.
 
-Les contrôles XAML par défaut affichent tous un indicateur de focus visuel approprié lorsqu’ils ont le focus (s’ils peuvent recevoir le focus). Ils peuvent aussi avoir des apparences différentes selon le thème sélectionné par l’utilisateur (en particulier si ce dernier utilise un mode de contraste élevé). Si vous utilisez les contrôles XAML dans votre interface utilisateur et que vous ne remplacez pas les modèles de contrôle, aucune opération supplémentaire n’est requise pour obtenir les indicateurs de focus visuels sur les contrôles qui se comportent et qui s’affichent correctement. Mais si vous avez l’intention de redéfinir le modèle d’un contrôle ou si vous souhaitez savoir comment les contrôles XAML fournissent leurs indicateurs de focus visuels, le reste de cette section examine ce qui se passe dans le code XAML et dans la logique des contrôles.
+Les contrôles XAML par défaut affichent tous un indicateur de focus visuel approprié lorsqu’ils ont le focus (s’ils peuvent recevoir le focus). Il existe également recherche potentiellement différents en fonction du thème sélectionné de l’utilisateur (en particulier si l’utilisateur utilise un mode de contraste élevé.) Si vous utilisez les contrôles XAML dans votre interface utilisateur et ne remplacent ne pas les modèles de contrôle, vous n’avez pas besoin de faire quelque chose supplémentaire pour obtenir les indicateurs de focus visuels sur les contrôles qui se comportent et s’affiche correctement. Mais si vous avez l’intention de redéfinir le modèle d’un contrôle ou si vous souhaitez savoir comment les contrôles XAML fournissent leurs indicateurs de focus visuels, le reste de cette section examine ce qui se passe dans le code XAML et dans la logique des contrôles.
 
 Voici un exemple XAML issu du modèle XAML par défaut pour un élément [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265).
 
@@ -247,7 +247,7 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
-* [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607)
+* [Interactions de clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [Exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 * [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

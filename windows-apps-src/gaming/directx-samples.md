@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeu, directx, échantillons, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d31c6e5b7307c7d93d7c06a0c4ae915ea788655
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932443"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618714"
 ---
 # <a name="directx-samples"></a>Échantillons DirectX
 
@@ -24,17 +24,17 @@ Voici quelques exemples d'échantillons de jeu développés avec DirectX.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Sujet</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--create-your-first-uwp-directx-game.md">Créer un jeu UWP simple avec DirectX</a></p></td>
+<td align="left"><p><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></p></td>
 <td align="left"><p>Créer un jeu de plateforme Windows universelle (UWP) basique avec DirectX et C++. Cet ensemble de didacticiels sont axés sur les techniques et les éléments clés à prendre en compte dans le cadre du développement de jeux UWP DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md">Développement de Marble Maze, un jeu pour la plateforme Windows universelle dans C++ et DirectX</a></p></td>
+<td align="left"><p><a href="developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md">Développement de Marble Maze, un jeu de plateforme Windows universelle en C++ et DirectX</a></p></td>
 <td align="left"><p>Créer un jeu 3D qui fonctionne sur différents types d’appareils tels que des tablettes, des PC de bureau et des ordinateurs portables.</p></td>
 </tr>
 </tbody>

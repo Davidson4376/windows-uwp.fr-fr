@@ -1,22 +1,22 @@
 ---
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
-title: Optimiser les animations, les éléments multimédias et les images
-description: Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
+title: Optimiser les animations, les éléments multimédia et les images
+description: Créez des applications UWP avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 14b26274dd005813fe5c8ced2d90f6380e4d7f21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946523"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640794"
 ---
-# <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédias et les images
+# <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédia et les images
 
 
-Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
+Créez des applications UWP avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
 
 ## <a name="make-animations-smooth"></a>Rendre les animations fluides
 
@@ -54,7 +54,7 @@ Le contenu Web d’un contrôle [**WebView**](https://msdn.microsoft.com/library
 
 L’animation d’un objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-> **Remarque**  les recommandations de cet article pour **MediaPlayerElement** s’appliquent également aux [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows10, version1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
+> **Remarque**    les recommandations contenues dans cet article pour **MediaPlayerElement** s’appliquent également aux [ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows 10, version 1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Utiliser avec parcimonie les animations infinies
 
@@ -66,7 +66,7 @@ L’ajout d’un gestionnaire pour l’événement [**CompositionTarget.Renderin
 
 L’espace de noms [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) comprend une bibliothèque d’animations fluides à hautes performances qui offrent une apparence cohérente avec les autres animations Windows. Les classes pertinentes ont un nom qui contient « Theme » et sont décrites dans [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/Mt187350). Cette bibliothèque prend en charge de nombreuses situations courantes d’animation, comme l’animation du premier affichage de l’application et la création de transitions d’état et de contenu. Nous vous recommandons d’utiliser cette bibliothèque d’animations le plus souvent possible pour améliorer les performances et garantir une cohérence maximale pour l’interface utilisateur UWP.
 
-> **Remarque**  la bibliothèque d’animations ne peut pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **Remarque**    la bibliothèque d’animations ne pouvez pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/Mt187354).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Animer indépendamment les propriétés CompositeTransform3D
@@ -87,7 +87,7 @@ Par exemple, si votre application utilise un objet [**RandomAccessStream**](/uwp
 
 Dans les applications UWP, utilisez toujours la propriété [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.isfullwindow.aspx) sur l’objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) pour activer et désactiver le rendu de fenêtre entière. L’utilisation des optimisations au niveau système est ainsi garantie pendant la lecture multimédia.
 
-L’infrastructure XAML permet d’optimiser l’affichage du contenu vidéo lorsque la vidéo est le seul élément rendu: l’expérience utilisateur fait alors appel à moins de puissance et offre un meilleur rendement en termes de fréquence d’images. Pour une lecture multimédia plus efficace, définissez la taille d’un objet **MediaPlayerElement** conformément à la largeur et la hauteur de l’écran et n’affichez aucun autre élément XAML.
+L’infrastructure XAML permet d’optimiser l’affichage du contenu vidéo lorsque la vidéo est le seul élément rendu : l’expérience utilisateur fait alors appel à moins de puissance et offre un meilleur rendement en termes de fréquence d’images. Pour une lecture multimédia plus efficace, définissez la taille d’un objet **MediaPlayerElement** conformément à la largeur et la hauteur de l’écran et n’affichez aucun autre élément XAML.
 
 Plusieurs raisons légitimes justifient la décision de superposer des éléments XAML sur un objet **MediaPlayerElement** qui occupe toute la largeur et la hauteur de l’écran, par exemple des sous-titres ou des contrôles de transport provisoires. Prenez soin de masquer ces éléments (définissez `Visibility="Collapsed"`) lorsqu’ils ne sont pas requis pour rétablir l’état le plus efficace de la lecture multimédia.
 
@@ -127,7 +127,7 @@ La définition de [**MediaPlayerElement.PosterSource**](https://msdn.microsoft.c
 
 Le nettoyage est une tâche délicate pour que les plateformes multimédias soient vraiment réactives. En général, les utilisateurs préfèrent s’acquitter de cette tâche en modifiant la valeur d’un curseur. Voici quelques conseils qui vous permettront de rendre le nettoyage aussi efficace que possible.
 
--   Mettez à jour la valeur de l’objet [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) en fonction d’un minuteur qui interroge la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) sur l’élément [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx). Veillez à utiliser une fréquence de mise à jour raisonnable pour votre minuteur. La propriété **Position** est seulement mise à jour toutes les 250millisecondes lors de la lecture.
+-   Mettez à jour la valeur de l’objet [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) en fonction d’un minuteur qui interroge la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) sur l’élément [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx). Veillez à utiliser une fréquence de mise à jour raisonnable pour votre minuteur. La propriété **Position** est seulement mise à jour toutes les 250 millisecondes lors de la lecture.
 -   La taille de la fréquence d’incrémentation du l’objet Slider doit s’adapter à la longueur de la vidéo.
 -   Abonnez-vous aux événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) sur l’objet Slider pour affecter à la propriété [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx) la valeur 0 lorsque l’utilisateur fait glisser le curseur.
 -   Dans le gestionnaire d’événements [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx), définissez manuellement la position du média sur la valeur de la position du curseur afin d’obtenir un alignement du curseur optimal lors du nettoyage.
@@ -149,7 +149,7 @@ Si vous souhaitez insérer des effets audio brefs à faible latence, par exemple
 
 ### <a name="scale-images-to-the-appropriate-size"></a>Définir les images à la bonne taille
 
-Les images sont capturées dans des résolutions très élevées, ce qui peut générer une consommation plus élevée du processeur de la part des applications lors du décodage des données image et une plus grosse consommation de mémoire après le chargement des images à partir du disque. Mais cela ne fait aucun sens de décoder et d’enregistrer une image en haute résolution en mémoire si elle doit être affichée uniquement dans une taille plus petite que sa taille d’origine. Créez plutôt une version de l’image à la taille correspondant à celle qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
+Les images sont capturées dans des résolutions très élevées, par conséquent, les applications peuvent être amenées à utiliser davantage de processeur pendant le décodage des données d’image et de mémoire après leur chargement à partir du disque. Mais cela ne fait aucun sens de décoder et d’enregistrer une image en haute résolution en mémoire si elle doit être affichée uniquement dans une taille plus petite que sa taille d’origine. Créez plutôt une version de l’image à la taille correspondant à celle qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
 
 À ne pas faire :
 
@@ -169,17 +169,17 @@ Les images sont capturées dans des résolutions très élevées, ce qui peut g�
 </Image>
 ```
 
-Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous souhaitez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affichera l’image. Avec le comportement par défaut consistant à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et vous devez prendre en considération les notifications de modification de mise à l’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
+Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous souhaitez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affichera l’image. Avec le comportement par défaut consistant à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et vous devez prendre en considération les notifications de modification de mise à l’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
 
-Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
+Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4 octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
 
 Si les paramètres DecodePixelWidth/DecodePixelHeight sont explicitement définis plus petits que la taille de l’image affichée à l’écran, elle sera agrandie et risque d’apparaître pixelisée.
 
 Dans certains cas, lorsqu’une taille de décodage appropriée ne peut pas être déterminée à l’avance, vous devez vous en remettre au décodage automatique à la taille adéquate qui tentera de décoder au mieux l’image à la taille appropriée si aucun paramètre DecodePixelWidth/DecodePixelHeight explicite n’est spécifié.
 
-Il est conseillé de définir une taille de décodage explicite si vous connaissez la taille du contenu image à l’avance. Il est également recommandé de définir conjointement [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend des tailles d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pourriez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques comme contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de parvenir éventuellement à économiser une grande capacité de mémoire.
+Vous devez définir une taille de décodage explicite si vous connaissez à l’avance la taille du contenu image. Vous devez également définir [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend de la taille d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pourriez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques comme contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de parvenir éventuellement à économiser une grande capacité de mémoire.
 
-Remarque : il convient de prendre en considération Image.Stretch lors de la détermination de la taille du contenu décodé.
+Remarque : Prenez en considération Image.Stretch quand vous déterminez la taille du contenu décodé.
 
 ### <a name="right-sized-decoding"></a>Décodage de taille adéquate
 
@@ -190,28 +190,28 @@ Dans le cas où vous ne définissez pas de taille de décodage explicite, XAML t
 -   L’image est masquée en définissant [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) sur 0 ou [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) sur **Collapsed** sur l’élément d’image hôte, le pinceau, ou tout autre élément parent.
 -   Le contrôle d’image ou le pinceau utilise un [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) de **None**.
 -   L’image est utilisée en tant que [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur tout élément parent.
+-   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur n’importe quel élément parent.
 -   Le pinceau image est non rectangulaire (comme lorsqu’il est appliqué à une forme ou à du texte).
 
 Dans les scénarios ci-dessus, la définition d’une taille de décodage explicite est la seule façon de réaliser des économies de mémoire.
 
-Vous devez toujours associer une [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) dans l’arborescence dynamique avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre «Exemples d’arborescences dynamiques». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun: vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
+Vous devez toujours associer un [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) à l’arborescence live avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre « Exemples d’arborescences dynamiques ». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun : vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
 
-**Exemples d’arborescences dynamiques**
+**Exemples d’arborescence Live**
 
-Exemple1 (correct): Uniform Resource Identifier (URI) spécifié dans le balisage.
+Exemple 1 (correct) : Uniform Resource Identifier (URI) spécifié dans le balisage.
 
 ```xaml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Exemple2 balisage: URI spécifié dans le code-behind.
+Exemple 2 balisage : URI spécifié dans le code-behind.
 
 ```xaml
 <Image x:Name="myImage"/>
 ```
 
-Exemple2 code-behind (correct): association de la BitmapImage à l’arborescence avant de définir son UriSource.
+Exemple 2 code-behind (correct) : association de la BitmapImage à l’arborescence avant de définir son UriSource.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple 2 code-behind (incorrect): définition associer de la BitmapImage avant de le connecter à l’arborescence.
+Exemple 2 code-behind (incorrect), définition UriSource de la BitmapImage avant de vous connecter à l’arborescence.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -243,14 +243,14 @@ Par conséquent, vous devez veiller à utiliser des volets virtualisés modernes
 
 ### <a name="software-rasterized-images"></a>Images rastérisées par logiciel
 
-Lorsqu’une image est utilisée pour un pinceau non rectangulaire ou pour une [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), elle utilise un chemin de rastérisation logicielle qui ne mettra pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et dans la mémoire matérielle. Par exemple, si une image est utilisée comme un pinceau pour une ellipse, l’image complète, potentiellement de grandes dimensions, sera stockée deux fois en interne. Lorsque vous utilisez **NineGrid** ou un pinceau non rectangulaire, alors votre application doit effectuer la mise à l’échelle préalable de ses images à leur taille de rendu approximativement.
+Lorsqu’une image est utilisée pour un pinceau non rectangulaire ou pour une [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), elle utilise un chemin de rastérisation logicielle qui ne mettra pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et matérielle. Par exemple, si une image est utilisée comme un pinceau pour une ellipse, l’image complète, potentiellement de grandes dimensions, sera stockée deux fois en interne. Lorsque vous utilisez **NineGrid** ou un pinceau non rectangulaire, alors votre application doit effectuer la mise à l’échelle préalable de ses images à leur taille de rendu approximativement.
 
 ### <a name="background-thread-image-loading"></a>Chargement d’images thread en arrière-plan
 
 XAML a une optimisation interne qui lui permet de décoder le contenu d’une image en mode asynchrone sur une surface dans la mémoire matérielle sans nécessiter de surface intermédiaire dans la mémoire logicielle. Cela réduit l’utilisation maximale de la mémoire et la latence de rendu. Cette fonctionnalité sera désactivée si l’une des conditions suivantes est remplie.
 
 -   L’image est utilisée en tant que [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur tout élément parent.
+-   `CacheMode="BitmapCache"` est défini sur l’élément image ou sur n’importe quel élément parent.
 -   Le pinceau image est non rectangulaire (comme lorsqu’il est appliqué à une forme ou à du texte).
 
 ### <a name="softwarebitmapsource"></a>SoftwareBitmapSource
@@ -263,7 +263,7 @@ Votre application doit utiliser [**SoftwareBitmap**](https://msdn.microsoft.com/
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>Utiliser GetThumbnailAsync pour les miniatures
 
-Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML, car l’image n’a pas besoin d’être ouverte ou décodée.
+Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync** ](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images qui ont déjà mis en cache du système de fichiers. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML, car l’image n’a pas besoin d’être ouverte ou décodée.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

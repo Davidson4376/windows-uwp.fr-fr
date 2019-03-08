@@ -5,39 +5,39 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645674"
 ---
 # <a name="http-monitor-api-reference"></a>Référence API du moniteur HTTP   
 Vous pouvez accéder au trafic HTTP en temps réel pour les applications focalisées à l'aide de cet API si le moniteur HTTP a été activé sur la console Xbox en cochant la case dans l'accueil du développeur.
 
 ## <a name="get-if-the-http-monitor-is-enabled"></a>Déterminer si le moniteur HTTP est activé
 
-**Requête**
+**Demande**
 
 Vous pouvez découvrir si le moniteur HTTP est activé dans l'accueil du développeur.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 GET | /ext/httpmonitor/sessions
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
-- Aucun
+- Aucune
 
 **Réponse**   
-Un objet JSON avec les champs suivants:
+Un objet JSON avec les champs suivants :
 
 * Activé - (Bool) Si le moniteur HTTP est activé sur la console Xbox en cochant la case dans l'accueil du développeur.
 
@@ -52,7 +52,7 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>Obtenir le trafic HTTP à partir de l'application focalisée
-**Requête**
+**Demande**
 
 Obtenez le trafic HTTP à partir de l'application focalisée tant qu'il ne s'agit pas d'une application système, en temps réel, si le moniteur HTTP a été activé depuis l'accueil du développeur.
 
@@ -62,18 +62,18 @@ Websocket | /ext/httpmonitor/sessions
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
-- Aucun
+- Aucune
 
 **Réponse**   
-Un objet JSON avec les champs suivants:
+Un objet JSON avec les champs suivants :
 
 * Sessions
     * RequestHeaders - (objet JSON) Les en-têtes de requête depuis la requête HTTP.
@@ -99,6 +99,6 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox

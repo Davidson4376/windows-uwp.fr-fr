@@ -1,19 +1,19 @@
 ---
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Jumeler des appareils
-description: Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge troisméthodes différentes de jumelage des appareils.
+description: Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge trois méthodes différentes de jumelage des appareils.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050432"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653384"
 ---
-# <a name="pair-devices"></a>Coupler des appareils
+# <a name="pair-devices"></a>Jumeler des appareils
 
 
 
@@ -21,13 +21,13 @@ ms.locfileid: "9050432"
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge troisméthodes différentes de jumelage des appareils.
+Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge trois méthodes différentes de jumelage des appareils.
 
 -   Jumelage automatique
 -   Jumelage de base
 -   Jumelage personnalisé
 
-**Conseil**certains appareils n’avez pas besoin d’être jumelés pour être utilisé. Ce sujet est abordé dans la section sur le jumelage automatique.
+**Conseil**  certains appareils n’êtes pas obligé d’être associés pour pouvoir être utilisé. Ce sujet est abordé dans la section sur le jumelage automatique.
 
  
 

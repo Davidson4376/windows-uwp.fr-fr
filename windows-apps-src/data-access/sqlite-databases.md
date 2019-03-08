@@ -1,43 +1,43 @@
 ---
-title: Utiliser une base de donnéesSQLite dans une applicationUWP
-description: Utilisez une base de donnéesSQLite dans une applicationUWP.
+title: Utiliser une base de données SQLite dans une application UWP
+description: Utilisez une base de données SQLite dans une application UWP.
 ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
 ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075142"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635664"
 ---
-# <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de donnéesSQLite dans une applicationUWP
+# <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de données SQLite dans une application UWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. Ce guide vous explique comment procéder.
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>Avantages liés à l’utilisation de SQLite pour le stockage local
 
-: heavy_check_mark: SQLite est léger et autonome. Il constitue une bibliothèque de codes indépendante. Tout est déjà configuré.
+:heavy_check_mark: SQLite est légère et autonome. Il constitue une bibliothèque de codes indépendante. Tout est déjà configuré.
 
-: heavy_check_mark: il n’existe aucun serveur de base de données. Le client et le serveur sont exécutés dans le même processus.
+:heavy_check_mark: Il n’existe aucun serveur de base de données. Le client et le serveur sont exécutés dans le même processus.
 
-: heavy_check_mark: SQLite étant dans le domaine public, son utilisation et sa distribution avec votre application sont libres.
+:heavy_check_mark: SQLite est dans le domaine public, vous pouvez donc librement utiliser et distribuer avec votre application.
 
-: heavy_check_mark: SQLite fonctionne sur différentes plateformes et architectures.
+:heavy_check_mark: SQLite fonctionne sur différentes plateformes et architectures.
 
 Vous trouverez davantage d’informations sur SQLite [ici](https://sqlite.org/about.html).
 
 ## <a name="choose-an-abstraction-layer"></a>Choisir une couche d’abstraction
 
-Nous vous recommandons d’utiliser EntityFrameworkCore ou la [bibliothèqueSQLite](https://github.com/aspnet/Microsoft.Data.Sqlite/) open source générée par Microsoft.
+Nous vous recommandons d’utiliser Entity Framework Core ou la [bibliothèque SQLite](https://github.com/aspnet/Microsoft.Data.Sqlite/) open source générée par Microsoft.
 
-### <a name="entity-framework-core"></a>EntityFrameworkCore
+### <a name="entity-framework-core"></a>Entity Framework Core
 
-Entity Framework (EF) est un mappeur objet relationnel qui vous permet de travailler avec les données relationnelles en utilisant des objets propres au domaine. Si vous avez déjà utilisé cette infrastructure pour travailler avec des données dans d’autres applications.NET, vous pouvez migrer ce code vers une applicationUWP. Il fonctionnera avec les changements appropriés apportés à la chaîne de connexion.
+Entity Framework (EF) est un mappeur objet relationnel qui vous permet de travailler avec les données relationnelles en utilisant des objets propres au domaine. Si vous avez déjà utilisé cette infrastructure pour travailler avec des données dans d’autres applications .NET, vous pouvez migrer ce code vers une application UWP. Il fonctionnera avec les changements appropriés apportés à la chaîne de connexion.
 
-Pour essayer, voir [Prise en main de EFCore sur la plateforme Windows universelle (UWP) avec une nouvelle base de données](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started).
+Pour essayer, voir [Prise en main de EF Core sur la plateforme Windows universelle (UWP) avec une nouvelle base de données](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started).
 
-### <a name="sqlite-library"></a>BibliothèqueSQLite
+### <a name="sqlite-library"></a>Bibliothèque SQLite
 
 La bibliothèque [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) implémente les interfaces dans l’espace de noms [System.Data.Common](https://msdn.microsoft.com/library/system.data.common.aspx). Microsoft gère activement ces implémentations, qui fournissent un wrapper intuitif autour de l’API de SQLite natif de bas niveau.
 
@@ -47,15 +47,15 @@ Le reste de ce guide vous aide à utiliser cette bibliothèque.
 
 Nous allons commencer par un projet UWP de base, ajouter une bibliothèque de classes, puis installer les packages Nuget appropriés.
 
-Le type de bibliothèque de classes que vous ajoutez à votre solution et les packages que vous installez dépendent de la version minimum du SDKWindows ciblée par votre application. Vous pouvez trouver ces informations dans la page de propriétés de votre projetUWP.
+Le type de bibliothèque de classes que vous ajoutez à votre solution et les packages que vous installez dépendent de la version minimum du SDK Windows ciblée par votre application. Vous pouvez trouver ces informations dans la page de propriétés de votre projet UWP.
 
-![Version minimum du SDKWindows](images/min-version.png)
+![Version minimum du SDK Windows](images/min-version.png)
 
-Utilisez l’une des sections suivantes en fonction de la version minimum du SDKWindows ciblée par votre projetUWP.
+Utilisez l’une des sections suivantes en fonction de la version minimum du SDK Windows ciblée par votre projet UWP.
 
-### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>La version minimum de votre projet ne cible pas FallCreatorsUpdate
+### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>La version minimum de votre projet ne cible pas Fall Creators Update
 
-Si vous utilisez VisualStudio2015, cliquez sur **Aide**->**À propos de MicrosoftVisualStudio**. Dans la liste des programmes installés, assurez-vous que vous disposez du gestionnaire de packages NuGet version**3.5** ou version ultérieure. Si le numéro de version est inférieur à celui-ci, installez une version ultérieure de NuGet [ici](https://www.nuget.org/downloads). Sur cette page, vous trouverez toutes les versions de Nuget répertoriés sous le titre **VisualStudio2015**.
+Si vous utilisez Visual Studio 2015, cliquez sur **Aide**->**À propos de Microsoft Visual Studio**. Dans la liste des programmes installés, assurez-vous que vous disposez du gestionnaire de packages NuGet version **3.5** ou version ultérieure. Si le numéro de version est inférieur à celui-ci, installez une version ultérieure de NuGet [ici](https://www.nuget.org/downloads). Sur cette page, vous trouverez toutes les versions de Nuget répertoriés sous le titre **Visual Studio 2015**.
 
 Ensuite, ajoutez une bibliothèque de classes à votre solution. Vous n’êtes pas obligé d’utiliser une bibliothèque de classes pour stocker votre code d’accès aux données, mais nous allons en utiliser une dans notre exemple. Nous allons nommer la bibliothèque **DataAccessLibrary** et nommer la classe de la bibliothèque **DataAccess**.
 
@@ -65,9 +65,9 @@ Cliquez avec le bouton droit sur la solution, puis cliquez sur **Gérer les pack
 
 ![Gérer des packages NuGet](images/manage-nuget.png)
 
-Si vous utilisez VisualStudio2015, choisissez l’onglet **Installé** et assurez-vous que le package **Microsoft.NETCore.UniversalWindowsPlatform** est bien de version**5.2.2** ou de version ultérieure.
+Si vous utilisez Visual Studio 2015, choisissez l’onglet **Installé** et assurez-vous que le package **Microsoft.NETCore.UniversalWindowsPlatform** est bien de version **5.2.2** ou de version ultérieure.
 
-![Versionde .NETCore](images/package-version.png)
+![Version de .NETCore](images/package-version.png)
 
 Si ce n’est pas le cas, installez une version plus récente du package.
 
@@ -77,21 +77,21 @@ Choisissez l’onglet **Parcourir** et recherchez le package **Microsoft.Data.SQ
 
 Accédez à la section [Ajouter et récupérer des données dans une base de données SQLite](#use-data) de ce guide.
 
-### <a name="the-minimum-version-of-your-project-targets-the-fall-creators-update"></a>La version minimum de votre projet cible FallCreatorsUpdate
+### <a name="the-minimum-version-of-your-project-targets-the-fall-creators-update"></a>La version minimum de votre projet cible Fall Creators Update
 
-La mise à jour de la version minimale de votre projet UWP vers FallCreatorsUpdate présente plusieurs avantages.
+La mise à jour de la version minimale de votre projet UWP vers Fall Creators Update présente plusieurs avantages.
 
-Tout d’abord, vous pouvez utiliser des bibliothèques.NET Standard2.0 au lieu de bibliothèques de classes régulières. Cela signifie que vous pouvez partager votre code d’accès aux données avec n’importe quelle autre application.NET, par exemple, une application WPF, Windows Forms, Android, iOS ou ASP.NET.
+Tout d’abord, vous pouvez utiliser des bibliothèques .NET Standard 2.0 au lieu de bibliothèques de classes régulières. Cela signifie que vous pouvez partager votre code d’accès aux données avec n’importe quelle autre application .NET, par exemple, une application WPF, Windows Forms, Android, iOS ou ASP.NET.
 
-Deuxièmement, votre application n’a pas de bibliothèques SQLite de package. Au lieu de cela, votre application peut utiliser la version de SQLite est installée avec Windows. Cette solution est particulièrement intéressante.
+Deuxièmement, votre application n’a pas pour créer un package de bibliothèques de SQLite. Au lieu de cela, votre application peut utiliser la version de SQLite est installée avec Windows. Cette solution est particulièrement intéressante.
 
-: heavy_check_mark: réduit la taille de votre application, car vous n’êtes pas obligé de télécharger le fichier binaireSQLite puis de l’empaqueter dans votre application.
+:heavy_check_mark: Réduit la taille de votre application, car vous n’êtes pas obligé de télécharger le binaire de SQLite et puis empaqueter en tant que partie de votre application.
 
-: heavy_check_mark: vous évite d’avoir à activer une nouvelle version de votre application pour les utilisateurs dans le cas où SQLite publie des correctifs critiques de bogues et de failles de sécurité dans SQLite. La version Windows de SQLite est gérée par Microsoft en coordination avec SQLite.org.
+:heavy_check_mark: Vous empêche d’avoir à transmettre une nouvelle version de votre application aux utilisateurs dans le cas où SQLite publie les correctifs critiques pour les bogues et les vulnérabilités de sécurité de SQLite. La version Windows de SQLite est gérée par Microsoft en coordination avec SQLite.org.
 
-: heavy_check_mark: le temps de chargement des applications est potentiellement plus rapide, car le plus souvent, la version du SDK de SQLite est déjà chargée en mémoire.
+:heavy_check_mark: Temps de chargement d’application a susceptibles d’être plus rapidement, car il est très probablement, la version SDK de SQLite est déjà chargée en mémoire.
 
-Commençons par ajouter une bibliothèque de classes.NET 2.0 Standard à votre solution. Vous n’êtes pas obligé d’utiliser une bibliothèque de classes pour stocker votre code d’accès aux données, mais nous allons en utiliser une dans notre exemple. Nous allons nommer la bibliothèque **DataAccessLibrary** et nommer la classe de la bibliothèque **DataAccess**.
+Commençons par ajouter une bibliothèque de classes .NET 2.0 Standard à votre solution. Vous n’êtes pas obligé d’utiliser une bibliothèque de classes pour stocker votre code d’accès aux données, mais nous allons en utiliser une dans notre exemple. Nous allons nommer la bibliothèque **DataAccessLibrary** et nommer la classe de la bibliothèque **DataAccess**.
 
 ![Bibliothèque de classes](images/dot-net-standard.png)
 
@@ -107,9 +107,9 @@ Commençons par étudier l’utilisation de la version de SQLite fournie avec Wi
 
 Choisissez l’onglet **Parcourir**, recherchez le package **Microsoft.Data.SQLite.core**, puis installez-le.
 
-![Package SQLiteCore](images/sqlite-core-package.png)
+![Package SQLite Core](images/sqlite-core-package.png)
 
-Recherchez le package **SQLitePCLRaw.bundle_winsqlite3**, puis installez-le uniquement dans le projetUWP de votre solution.
+Recherchez le package **SQLitePCLRaw.bundle_winsqlite3**, puis installez-le uniquement dans le projet UWP de votre solution.
 
 ![Package SQLite PCL Raw](images/sqlite-raw-package.png)
 
@@ -123,25 +123,25 @@ Aucune intervention de votre part n’est nécessaire. Toutefois, si vous avez b
 
 ## <a name="add-and-retrieve-data-in-a-sqlite-database"></a>Ajouter et récupérer des données dans une base de données SQLite
 
-Nous allons effectuer les opérations suivantes:
+Nous allons effectuer les opérations suivantes :
 
-: un: préparer la classe d’accès aux données.
+: un : Préparation de la classe d’accès aux données.
 
-: deux: initialiser la base de donnéesSQLite.
+: deux : Initialiser la base de données SQLite.
 
-: trois: insérer des données dans la base de données SQLite.
+: trois : Insérer des données dans la base de données SQLite.
 
-: quatre: récupérer des données dans la base de données SQLite.
+: quatre : Récupérer des données à partir de la base de données SQLite.
 
-: cinq: ajouter une interface utilisateur de base.
+: cinq : Ajouter une interface utilisateur de base.
 
 ### <a name="prepare-the-data-access-class"></a>Préparer la classe d’accès aux données
 
-Dans votre projetUWP, ajoutez une référence au projet **DataAccessLibrary** dans votre solution.
+Dans votre projet UWP, ajoutez une référence au projet **DataAccessLibrary** dans votre solution.
 
 ![Bibliothèque de classes d’accès aux données](images/ref-class-library.png)
 
-Dans votre projetUWP, ajoutez l’instruction ``using`` suivante aux fichiers **App.xaml.cs** et **MainPage.xaml.cs**.
+Dans votre projet UWP, ajoutez l’instruction ``using`` suivante aux fichiers **App.xaml.cs** et **MainPage.xaml.cs**.
 
 ```csharp
 using DataAccessLibrary;
@@ -163,7 +163,7 @@ namespace DataAccessLibrary
 
 ```
 
-Ajoutez le code suivant à l’aide des instructions au début de ce fichier.
+Ajoutez le code suivant à l’aide d’instructions au début de ce fichier.
 
 ```csharp
 using Microsoft.Data.Sqlite;
@@ -172,7 +172,7 @@ using System.Collections.Generic;
 
 <a id="initialize" />
 
-### <a name="initialize-the-sqlite-database"></a>Initialiser la base de donnéesSQLite
+### <a name="initialize-the-sqlite-database"></a>Initialiser la base de données SQLite
 
 Ajoutez une méthode à la classe **DataAccess** qui initialise la base de données SQLite.
 
@@ -199,7 +199,7 @@ Ce code crée la base de données SQLite et la stocke dans le magasin de donnée
 
 Dans cet exemple, nous appelons la base de données ``sqlliteSample.db``, mais vous pouvez choisir le nom que vous souhaitez tant que vous l’utilisez dans tous les objets [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) que vous instanciez.
 
-Dans le constructeur du fichier **App.xaml.cs** de votre projetUWP, appelez la méthode ``InitializeDatabase`` de la classe **DataAccess**.
+Dans le constructeur du fichier **App.xaml.cs** de votre projet UWP, appelez la méthode ``InitializeDatabase`` de la classe **DataAccess**.
 
 ```csharp
 public App()
@@ -216,7 +216,7 @@ public App()
 
 ### <a name="insert-data-into-the-sqlite-database"></a>Insérez des données dans la base de données SQLite
 
-Ajoutez une méthode à la classe **DataAccess** qui insère des données dans la base de données SQLite. Ce code utilise les paramètres de la requête afin d’empêcher les attaques par injectionSQL.
+Ajoutez une méthode à la classe **DataAccess** qui insère des données dans la base de données SQLite. Ce code utilise les paramètres de la requête afin d’empêcher les attaques par injection SQL.
 
 ```csharp
 public static void AddData(string inputText)
@@ -282,7 +282,7 @@ Le paramètre ordinal n’est pas aussi important dans cet exemple, car nous all
 
 ## <a name="add-a-basic-user-interface"></a>Ajouter une interface utilisateur de base
 
-Dans le fichier **MainPage.xaml** du projetUWP, ajoutez le codeXAML suivant.
+Dans le fichier **MainPage.xaml** du projet UWP, ajoutez le code XAML suivant.
 
 ```xml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -300,9 +300,9 @@ Dans le fichier **MainPage.xaml** du projetUWP, ajoutez le codeXAML suivant.
 </Grid>
 ```
 
-Cette interface utilisateur de base fournit à l’utilisateur un objet ``TextBox`` qu’il peut utiliser pour saisir une chaîne que nous ajouterons à la base de donnéesSQLite. Nous allons connecter l’objet ``Button`` de cette interface utilisateur à un gestionnaire d’événements qui va récupérer des données dans la base de données SQLite, puis les afficher dans le ``ListView``.
+Cette interface utilisateur de base fournit à l’utilisateur un objet ``TextBox`` qu’il peut utiliser pour saisir une chaîne que nous ajouterons à la base de données SQLite. Nous allons connecter l’objet ``Button`` de cette interface utilisateur à un gestionnaire d’événements qui va récupérer des données dans la base de données SQLite, puis les afficher dans le ``ListView``.
 
-Dans le fichier **MainPage.xaml.cs**, ajoutez le gestionnaire suivant: Il s’agit de la méthode que nous avons associée à l’événement ``Click`` de l’objet ``Button`` dans l’interface utilisateur.
+Dans le fichier **MainPage.xaml.cs**, ajoutez le gestionnaire suivant : Il s’agit de la méthode que nous avons associée à l’événement ``Click`` de l’objet ``Button`` dans l’interface utilisateur.
 
 ```csharp
 private void AddData(object sender, RoutedEventArgs e)
@@ -313,18 +313,18 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-C’est terminé. Explorez [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) pour découvrir ce que vous pouvez faire d’autre avec votre base de données SQLite. Consultez les liens ci-dessous pour en savoir plus sur les autres façons d’utiliser des données dans votre applicationUWP.
+C’est terminé. Explorez [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) pour découvrir ce que vous pouvez faire d’autre avec votre base de données SQLite. Consultez les liens ci-dessous pour en savoir plus sur les autres façons d’utiliser des données dans votre application UWP.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-**Connecter votre application directement à une base de données SQLServer**
+**Connecter votre application directement à une base de données SQL Server**
 
-Voir [Utiliser une base de données SQLServer dans une applicationUWP](sql-server-databases.md).
+Voir [Utiliser une base de données SQL Server dans une application UWP](sql-server-databases.md).
 
 **Partager du code entre différentes applications sur différentes plateformes**
 
-Voir [Partager du code entre une application de bureau et une applicationUWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+Voir [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
 
-**Ajouter des pages maître/détail avec les back ends Azure SQL**
+**Ajouter des pages maître/détail avec des serveurs principaux SQL Azure**
 
 Voir [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database).

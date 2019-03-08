@@ -4,18 +4,18 @@ description: Découvrez comment créer une tâche en arrière-plan qui répond a
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ms.date: 07/06/2018
 ms.topic: article
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: de8d585d7178a277d1df248858f69a5a5705fb1d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044533"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634854"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>Répondre aux événements système avec des tâches en arrière-plan
 
@@ -35,7 +35,7 @@ Dans le code de votre application, créez un objet [**SystemTrigger**](https://m
 
 Le deuxième paramètre, *OneShot*, indique si la tâche en arrière-plan sera exécutée une seule fois la prochaine fois que l’événement système survient ou bien chaque fois que l’événement système survient jusqu’à ce que la tâche soit désinscrite.
 
-Le code suivant spécifie que la tâche en arrière-plan s’exécute chaque fois qu’Internet devient accessible:
+Le code suivant spécifie que la tâche en arrière-plan s’exécute chaque fois qu’Internet devient accessible :
 
 ```csharp
 SystemTrigger internetTrigger = new SystemTrigger(SystemTriggerType.InternetAvailable, false);
@@ -54,7 +54,7 @@ SystemTrigger ^ internetTrigger = ref new SystemTrigger(SystemTriggerType::Inter
 
 Inscrivez la tâche en arrière-plan en appelant la fonction qui vous permet de le faire. Pour plus d’informations sur l’inscription des tâches en arrière-plan, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
-Le code suivant inscrit la tâche en arrière-plan pour un processus en arrière-plan qui s’exécute hors processus. Si vous appeliez une tâche en arrière-plan qui s’exécute dans le même processus que l’application hôte, vous ne définiriez pas `entrypoint`:
+Le code suivant inscrit la tâche en arrière-plan pour un processus en arrière-plan qui s’exécute hors processus. Si vous appeliez une tâche en arrière-plan qui s’exécute dans le même processus que l’application hôte, vous ne définiriez pas `entrypoint` :
 
 ```csharp
 string entryPoint = "Tasks.ExampleBackgroundTaskClass"; // Namespace name, '.', and the name of the class containing the background task
@@ -79,14 +79,14 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 ```
 
 > [!NOTE]
-> Les applications de plateforme Windows universelle doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire un des types de déclencheur en arrière-plan.
+> Les applications universelles Windows Platform doivent appeler [ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire les types de déclencheur en arrière-plan.
 
 Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
 > [!NOTE]
-> Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
+> Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
  
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Pour voir une inscription de tâche en arrière-plan en action, téléchargez l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
@@ -96,16 +96,16 @@ Les applications peuvent inscrire des tâches en arrière-plan qui répondent au
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
-* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Créer et inscrire une tâche en arrière-plan out-of-process](create-and-register-a-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan en cours](create-and-register-an-inproc-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste d’application](declare-background-tasks-in-the-application-manifest.md)
+* [Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)
+* [Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Mettre à jour d’une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
-* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
-* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Exécuter une tâche en arrière-plan sur un minuteur](run-a-background-task-on-a-timer-.md)
+* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)

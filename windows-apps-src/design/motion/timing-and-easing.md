@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+Description: Découvrez comment Fluent utilise de mouvement de temporisation et de fonctions d’accélération.
 title: Minutage et accélération - animation dans les applications UWP
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945490"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645264"
 ---
 # <a name="timing-and-easing"></a>Minutage et accélération
 
@@ -32,11 +32,11 @@ Le minutage est un élément important pour que le mouvement des objets entrant,
 
 ## <a name="timing-in-fluent-motion"></a>Minutage en mouvement Fluent
 
-Le minutage du mouvement dans Fluent prend en principe 500ms (soit une demi-seconde), car c’est la durée maximale perçue par un utilisateur comme instantanée.
+Le minutage du mouvement dans Fluent prend en principe 500 ms (soit une demi-seconde), car c’est la durée maximale perçue par un utilisateur comme instantanée.
 
 ![image hero](images/time.gif)
 
-### <a name="150ms-exit"></a>**150ms** (sortie)
+### <a name="150ms-exit"></a>**150 ms** (sortie)
 
 :::row:::
     :::column:::
@@ -48,7 +48,7 @@ Le minutage du mouvement dans Fluent prend en principe 500ms (soit une demi-seco
     :::column-end:::
 :::row-end:::
 
-### <a name="300ms-enter"></a>**300ms** (Entrée)
+### <a name="300ms-enter"></a>**300 ms** (Entrée)
 
 :::row:::
     :::column:::
@@ -60,7 +60,7 @@ Le minutage du mouvement dans Fluent prend en principe 500ms (soit une demi-seco
     :::column-end:::
 :::row-end:::
 
-### <a name="500ms-move"></a>**≤500ms** (déplacement)
+### <a name="500ms-move"></a>**≤500 ms** (déplacement)
 
 :::row:::
     :::column:::
@@ -202,7 +202,7 @@ CubicBezierEasingFunction standard =
  _moveAnimation.Duration = TimeSpan.FromMilliseconds(500);
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Présentation du mouvement](index.md)
-- [Direction et gravité](directionality-and-gravity.md)
+- [Présentation de Motion](index.md)
+- [Une direction et la gravité](directionality-and-gravity.md)

@@ -4,14 +4,14 @@ title: Créer un élément de travail périodique
 description: Découvrez comment créer un élément de travail qui se reproduit régulièrement.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, élément de travail périodique, threads, minuteurs
+keywords: Windows 10, uwp, élément de travail périodique, threads, minuteurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981543"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636904"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
@@ -25,15 +25,15 @@ Découvrez comment créer un élément de travail qui se reproduit régulièreme
 
 ## <a name="create-the-periodic-work-item"></a>Créer l’élément de travail périodique
 
-Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
+Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée ; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Stockez cet objet au cas où le minuteur devrait être annulé.
+[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un [ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587) objet. Stockez cet objet au cas où le minuteur devrait être annulé.
 
-> **Remarque**Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
+> **Remarque**  éviter de spécifier une valeur égale à zéro (ou toute valeur inférieure à 1 milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Remarque** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) vous permet d’accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque**  vous pouvez utiliser [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes:
+L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes :
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -89,7 +89,7 @@ L’exemple suivant crée un élément de travail qui s’exécute une fois tout
 
 Si nécessaire, vous pouvez gérer l’annulation du minuteur périodique avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour fournir une expression lambda supplémentaire qui gère l’annulation de l’élément de travail périodique.
 
-L’exemple suivant crée un élément de travail périodique qui se reproduit toutes les 60secondes et fournit également un gestionnaire d’annulation:
+L’exemple suivant crée un élément de travail périodique qui se reproduit toutes les 60 secondes et fournit également un gestionnaire d’annulation :
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -202,7 +202,7 @@ Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
-* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
+* [Soumettre un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Meilleures pratiques pour utiliser le pool de threads](best-practices-for-using-the-thread-pool.md)
+* [Utiliser un minuteur pour soumettre un élément de travail](use-a-timer-to-submit-a-work-item.md)
  

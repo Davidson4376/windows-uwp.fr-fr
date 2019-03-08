@@ -4,14 +4,14 @@ description: Découvrez les modèles pour la création d’un jeu pour la platef
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, directx, modèles
+keywords: Windows 10, uwp, jeux, directx, modèles
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933367"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634244"
 ---
 # <a name="directx-game-project-templates"></a>Modèles de projet de jeu DirectX
 
@@ -19,17 +19,17 @@ ms.locfileid: "8933367"
 
 Les modèles DirectX et de plateforme Windows universelle (UWP) vous permettent de créer rapidement un projet en tant que point de départ pour votre jeu.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Pour créer le projet, procédez comme suit :
 
--   [Télécharger Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 comprend des outils de programmation, tels que des outils de débogage graphique. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
+-   [Téléchargez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 dispose d’outils pour la programmation, tels que des outils de débogage graphique. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
 
 ## <a name="choosing-a-template"></a>Choix d’un modèle
 
 
-Visual Studio2015 comprend trois modèles DirectX et UWP:
+Visual Studio 2015 comprend trois modèles de DirectX et UWP :
 
 -   Application DirectX 11 (Windows universel) : le modèle Application DirectX 11 (Windows universel) crée un projet UWP dont le rendu s’effectue directement dans une fenêtre d’application à l’aide de DirectX 11.
 -   Application DirectX 12 (Windows universel) : le modèle Application DirectX 12 (Windows universel) crée un projet UWP dont le rendu s’effectue directement dans une fenêtre d’application à l’aide de DirectX 12.
@@ -43,11 +43,11 @@ Le modèle que vous choisissez dépend des performances et des technologies que 
 Les modèles Windows universels DirectX contiennent les fichiers suivants :
 
 -   pch.h et pch.cpp : prise en charge de l’en-tête précompilé.
--   Package.appxmanifest: propriétés du package de déploiement de l’application.
--   \*.pfx: certificats de l’application.
--   Dépendances externes: liens vers des fichiers externes que le projet utilise.
--   \*Main.h et \*Main.cpp: méthodes pour la gestion des ressources d’application, la mise à jour d’état de l’application et le rendu de l’image.
--   App.h et App.cpp: point d’entrée principal de l’application. Connecte l’application avec l’interpréteur de commandes Windows et gère les événements de cycle de vie de l’application. Ces fichiers s’affichent uniquement dans les modèles d’application DirectX 11 (Windows universelle) et les modèles d’application DirectX 12 (Windows universelle).
+-   Package.appxmanifest : propriétés du package de déploiement de l’application.
+-   \*.pfx - certificats pour l’application.
+-   Dépendances externes : liens vers des fichiers externes que le projet utilise.
+-   \*Main.h et \*Main.cpp - méthodes pour la gestion des ressources de l’application, la mise à jour d’état de l’application et le frame de rendu.
+-   App.h et App.cpp : point d’entrée principal de l’application. Connecte l’application avec l’interpréteur de commandes Windows et gère les événements de cycle de vie de l’application. Ces fichiers s’affichent uniquement dans les modèles d’application DirectX 11 (Windows universelle) et les modèles d’application DirectX 12 (Windows universelle).
 -   App.xaml, App.xaml.cpp et App.xaml.h : point d’entrée principal pour l’application. Connecte l’application avec l’interpréteur de commandes Windows et gère les événements de cycle de vie de l’application. Ces fichiers s’affichent uniquement dans le modèle d’application Direct 11 et XAML (Windows universelle).
 -   DirectXPage.xaml, DirectXPage.xaml.cpp et DirectXPage.xaml.h : page qui héberge un SwapChainPanel DirectX. Ces fichiers s’affichent uniquement dans le modèle d’application Direct 11 et XAML (Windows universelle).
 -   Contenu
@@ -70,10 +70,10 @@ Vous disposez à présent d’un point de départ. Apportez-y vos connaissances 
 
 Si vous portez un jeu existant, voir les rubriques suivantes.
 
--   [Effectuer un portage d’OpenGL ES 2.0 vers Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Porter de DirectX 9 vers la plateforme Windows universelle (UWP)](porting-your-directx-9-game-to-windows-store.md)
+-   [Portage depuis OpenGL ES 2.0 vers Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [Port à partir de DirectX 9 à Universal Windows Platform](porting-your-directx-9-game-to-windows-store.md)
 
 Si vous créez un jeu DirectX, voir les rubriques suivantes.
 
--   [Créer un jeu UWP simple avec DirectX](tutorial--create-your-first-uwp-directx-game.md)
--   [Développement de Marble Maze, un jeu pour la plateforme Windows universelle en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Créez un jeu UWP simple avec DirectX](tutorial--create-your-first-uwp-directx-game.md)
+-   [Développement de Marble Maze, un jeu de plateforme Windows universelle en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

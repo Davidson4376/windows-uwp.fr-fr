@@ -1,5 +1,5 @@
 ---
-Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
+Description: Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets.
 Search.Refinement.TopicID: 184
 title: Recommandations en matière d’icônes Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -7,14 +7,14 @@ label: Segoe MDL2 icons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649054"
 ---
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
@@ -22,17 +22,17 @@ ms.locfileid: "8934814"
 
 Cet article répertorie les icônes fournies par la police Segoe MDL2 Assets. 
 
-> **API importantes**: [**énumération Symbol**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**classe FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **API importantes**: [**Symbole enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon classe**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>À propos de la police Segoe MDL2 Assets
 
-Depuis la publication de Windows10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (La police **Segoe UI Symbol** reste disponible comme ressource «héritée», mais nous vous recommandons de mettre à jour votre application de façon à utiliser la nouvelle police **Segoe MDL2 Assets**).
+Depuis la publication de Windows 10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI symbole** sera toujours disponible en tant que « héritée » ressource, mais nous recommandons la mise à jour de votre application pour utiliser la nouvelle **Segoe MDL2 actifs**.)
 
 La plupart des icônes et des contrôles d’interface utilisateur inclus dans la police **Segoe MDL2 Assets** sont mappés à la zone d’utilisation privée d’Unicode. La zone d’utilisation privée permet aux développeurs de polices d’affecter des valeurs Unicode privées à des glyphes qui ne correspondent pas à des points de code existants. Cette opération peut s’avérer utile lors de la création d’une police de symboles, mais elle génère un problème d’interopérabilité. Si la police n’est pas disponible, les glyphes n’apparaissent pas. Utilisez ces glyphes uniquement lorsque vous pouvez spécifier la police **Segoe MDL2 Assets**.
 
 Utilisez ces glyphes uniquement si vous pouvez spécifier explicitement la police **Segoe MDL2 Assets**. Si vous utilisez des vignettes, vous ne pouvez pas utiliser ces glyphes car vous ne pouvez pas spécifier la police des vignettes et les glyphes de la zone d’utilisation privée ne sont pas disponibles via font-fallback.
 
-À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes «astuces» comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
+À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes « astuces » comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
 
 ## <a name="layering-and-mirroring"></a>Superposition et mise en miroir
 
@@ -43,7 +43,7 @@ Tous les glyphes de la police **Segoe MDL2 Assets** ayant la même à largeur fi
 De nombreuses icônes offrent également des formes en miroir utilisables dans des langues qui s’écrivent de droite à gauche, comme l’arabe, l’hébreu et le persan.
 
 ## <a name="using-the-icons"></a>Utilisation des icônes
-Si vous développez une application en C# / VB/C++ et XAML, vous pouvez utiliser les glyphes spécifiés de la police Segoe MDL2 Assets avec l' [énumération Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Si vous développez une application dans C#/VB/C++ et XAML, vous pouvez utiliser des glyphes spécifiés à partir de Segoe MDL2 actifs avec la [symbole d’énumération](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
@@ -55,15 +55,15 @@ Si vous souhaitez utiliser un glyphe de la police **Segoe MDL2 Assets** qui n’
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 Assets**, au lieu de spécifier la police par nom:
+Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 actifs**, au lieu de spécifier la police par nom :
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
-## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police?
-* Sur Windows 10: Il n’avez rien à faire, la police est fourni avec Windows.
-* Sur un Mac, vous devez télécharger et installer la police: <a href="https://aka.ms/SegoeFonts">obtenir le Segoe UI et MDL2 polices d’icônes</a>
+## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police ?
+* Sur Windows 10 : Il n’a rien à faire, la police est fourni avec Windows.
+* Sur un Mac, vous devez télécharger et installer la police : <a href="https://aka.ms/SegoeFonts">Obtenir les polices icône Segoe UI et MDL2</a>
 
 ## <a name="icon-list"></a>Liste des icônes
 Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses autres icônes que nous pouvons afficher ici. La plupart des icônes sont destinées à un usage spécifique et ne sont généralement pas utilisées ailleurs.
@@ -90,7 +90,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E703.png" width="32" height="32" alt="Connect" /></td>
   <td>E703</td>
-  <td>Connect</td>
+  <td>Se connecter</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E704.png" width="32" height="32" alt="InternetSharing" /></td>
   <td>E704</td>
@@ -154,7 +154,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E713.png" width="32" height="32" alt="Settings" /></td>
   <td>E713</td>
-  <td>Settings</td>
+  <td>Paramètres</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E714.png" width="32" height="32" alt="Video" /></td>
   <td>E714</td>
@@ -166,11 +166,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E716.png" width="32" height="32" alt="People" /></td>
   <td>E716</td>
-  <td>People</td>
+  <td>Personnes</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E717.png" width="32" height="32" alt="Phone" /></td>
   <td>E717</td>
-  <td>Phone</td>
+  <td>Téléphone</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E718.png" width="32" height="32" alt="Pin" /></td>
   <td>E718</td>
@@ -182,11 +182,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E71A.png" width="32" height="32" alt="Stop" /></td>
   <td>E71A</td>
-  <td>Stop</td>
+  <td>Arrêter</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E71B.png" width="32" height="32" alt="Link" /></td>
   <td>E71B</td>
-  <td>Link</td>
+  <td>Lien</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E71C.png" width="32" height="32" alt="Filter" /></td>
   <td>E71C</td>
@@ -210,11 +210,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E721.png" width="32" height="32" alt="Search" /></td>
   <td>E721</td>
-  <td>Search</td>
+  <td>Recherche</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E722.png" width="32" height="32" alt="Camera" /></td>
   <td>E722</td>
-  <td>Camera</td>
+  <td>Appareil photo</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E723.png" width="32" height="32" alt="Attach" /></td>
   <td>E723</td>
@@ -222,7 +222,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E724.png" width="32" height="32" alt="Send" /></td>
   <td>E724</td>
-  <td>Send</td>
+  <td>Envoyer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E725.png" width="32" height="32" alt="SendFill" /></td>
   <td>E725</td>
@@ -250,7 +250,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E72B.png" width="32" height="32" alt="Back" /></td>
   <td>E72B</td>
-  <td>Back</td>
+  <td>Précédent</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E72C.png" width="32" height="32" alt="Refresh" /></td>
   <td>E72C</td>
@@ -270,7 +270,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E731.png" width="32" height="32" alt="EMI" /></td>
   <td>E731</td>
-  <td>IME</td>
+  <td>EMI</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>
@@ -282,15 +282,15 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E737.png" width="32" height="32" alt="Favicon" /></td>
   <td>E737</td>
-  <td>Favorite</td>
+  <td>Favicon</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E738.png" width="32" height="32" alt="Remove" /></td>
   <td>E738</td>
-  <td>Remove</td>
+  <td>Supprimer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E739.png" width="32" height="32" alt="Checkbox" /></td>
   <td>E739</td>
-  <td>Checkbox</td>
+  <td>Case à cocher</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E73A.png" width="32" height="32" alt="CheckboxComposite" /></td>
   <td>E73A</td>
@@ -358,11 +358,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E74A.png" width="32" height="32" alt="Up" /></td>
   <td>E74A</td>
-  <td>Up</td>
+  <td>Up (Haut)</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74B.png" width="32" height="32" alt="Down" /></td>
   <td>E74B</td>
-  <td>Down</td>
+  <td>Vers le bas</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74C.png" width="32" height="32" alt="OEM" /></td>
   <td>E74C</td>
@@ -374,7 +374,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E74E.png" width="32" height="32" alt="Save" /></td>
   <td>E74E</td>
-  <td>Save</td>
+  <td>Enregistrer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74F.png" width="32" height="32" alt="Mute" /></td>
   <td>E74F</td>
@@ -438,11 +438,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E760.png" width="32" height="32" alt="PageLeft" /></td>
   <td>E760</td>
-  <td>PageLeft</td>
+  <td>PageLeft (Page gauche)</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E761.png" width="32" height="32" alt="PageRight" /></td>
   <td>E761</td>
-  <td>PageRight</td>
+  <td>PageRight (Page droite)</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E762.png" width="32" height="32" alt="MultiSelect" /></td>
   <td>E762</td>
@@ -506,7 +506,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E772.png" width="32" height="32" alt="Devices" /></td>
   <td>E772</td>
-  <td>Devices</td>
+  <td>Appareils</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E773.png" width="32" height="32" alt="SearchAndApps" /></td>
   <td>E773</td>
@@ -550,7 +550,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E77F.png" width="32" height="32" alt="Paste" /></td>
   <td>E77F</td>
-  <td>Paste</td>
+  <td>Coller</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E780.png" width="32" height="32" alt="PhoneBook" /></td>
   <td>E780</td>
@@ -562,7 +562,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E783.png" width="32" height="32" alt="Error" /></td>
   <td>E783</td>
-  <td>Error</td>
+  <td>Erreur</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E784.png" width="32" height="32" alt="GripperBarVertical" /></td>
   <td>E784</td>
@@ -578,7 +578,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E787.png" width="32" height="32" alt="Calendar" /></td>
   <td>E787</td>
-  <td>Calendar</td>
+  <td>Calendrier</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E788.png" width="32" height="32" alt="GripperResize" /></td>
   <td>E788</td>
@@ -614,7 +614,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E793.png" width="32" height="32" alt="Light" /></td>
   <td>E793</td>
-  <td>Light</td>
+  <td>Maigre</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E799.png" width="32" height="32" alt="AspectRatio" /></td>
   <td>E799</td>
@@ -662,7 +662,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BA.png" width="32" height="32" alt="Warning" /></td>
   <td>E7BA</td>
-  <td>Warning</td>
+  <td>Avertissement</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BC.png" width="32" height="32" alt="ReadingList" /></td>
   <td>E7BC</td>
@@ -670,7 +670,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BE.png" width="32" height="32" alt="Education" /></td>
   <td>E7BE</td>
-  <td>Education</td>
+  <td>Éducation</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BF.png" width="32" height="32" alt="ShoppingCart" /></td>
   <td>E7BF</td>
@@ -682,7 +682,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C1.png" width="32" height="32" alt="Flag" /></td>
   <td>E7C1</td>
-  <td>Flag</td>
+  <td>Indicateur</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C3.png" width="32" height="32" alt="Page" /></td>
   <td>E7C3</td>
@@ -722,7 +722,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E6.png" width="32" height="32" alt="Highlight" /></td>
   <td>E7E6</td>
-  <td>Highlight</td>
+  <td>Surlignage</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E7.png" width="32" height="32" alt="ActionCenterNotification" /></td>
   <td>E7E7</td>
@@ -778,7 +778,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F5.png" width="32" height="32" alt="Speakers" /></td>
   <td>E7F5</td>
-  <td>Speakers</td>
+  <td>Haut-parleurs</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F6.png" width="32" height="32" alt="Headphone" /></td>
   <td>E7F6</td>
@@ -850,7 +850,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E80F.png" width="32" height="32" alt="Home" /></td>
   <td>E80F</td>
-  <td>Home</td>
+  <td>Accueil</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E811.png" width="32" height="32" alt="ParkingLocation" /></td>
   <td>E811</td>
@@ -890,11 +890,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E81C.png" width="32" height="32" alt="History" /></td>
   <td>E81C</td>
-  <td>History</td>
+  <td>Historique</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81D.png" width="32" height="32" alt="Location" /></td>
   <td>E81D</td>
-  <td>Location</td>
+  <td>Emplacement</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81E.png" width="32" height="32" alt="MapLayers" /></td>
   <td>E81E</td>
@@ -914,7 +914,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E823.png" width="32" height="32" alt="Recent" /></td>
   <td>E823</td>
-  <td>Recent</td>
+  <td>Récent</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E825.png" width="32" height="32" alt="Bank" /></td>
   <td>E825</td>
@@ -1318,7 +1318,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E890.png" width="32" height="32" alt="View" /></td>
   <td>E890</td>
-  <td>View</td>
+  <td>Affichage</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E891.png" width="32" height="32" alt="HighlightFill" /></td>
   <td>E891</td>
@@ -1326,11 +1326,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E892.png" width="32" height="32" alt="Previous" /></td>
   <td>E892</td>
-  <td>Previous</td>
+  <td>Précédent</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E893.png" width="32" height="32" alt="Next" /></td>
   <td>E893</td>
-  <td>Next</td>
+  <td>Suivant</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E894.png" width="32" height="32" alt="Clear" /></td>
   <td>E894</td>
@@ -1342,7 +1342,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E896.png" width="32" height="32" alt="Download" /></td>
   <td>E896</td>
-  <td>Download</td>
+  <td>Télécharger</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E897.png" width="32" height="32" alt="Help" /></td>
   <td>E897</td>
@@ -1442,7 +1442,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B0.png" width="32" height="32" alt="Click" /></td>
   <td>E8B0</td>
-  <td>Click</td>
+  <td>Cliquer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B1.png" width="32" height="32" alt="Shuffle" /></td>
   <td>E8B1</td>
@@ -1462,7 +1462,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B5.png" width="32" height="32" alt="Import" /></td>
   <td>E8B5</td>
-  <td>Import</td>
+  <td>Importer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B6.png" width="32" height="32" alt="ImportAll" /></td>
   <td>E8B6</td>
@@ -1470,7 +1470,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B7.png" width="32" height="32" alt="Folder" /></td>
   <td>E8B7</td>
-  <td>Folder</td>
+  <td>Dossier</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B8.png" width="32" height="32" alt="Webcam" /></td>
   <td>E8B8</td>
@@ -1538,7 +1538,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C8.png" width="32" height="32" alt="Copy" /></td>
   <td>E8C8</td>
-  <td>Copy</td>
+  <td>Copier</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C9.png" width="32" height="32" alt="Important" /></td>
   <td>E8C9</td>
@@ -1550,7 +1550,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CB.png" width="32" height="32" alt="Sort" /></td>
   <td>E8CB</td>
-  <td>Sort</td>
+  <td>Tri</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CC.png" width="32" height="32" alt="MobileTablet" /></td>
   <td>E8CC</td>
@@ -1578,7 +1578,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D2.png" width="32" height="32" alt="Font" /></td>
   <td>E8D2</td>
-  <td>Font</td>
+  <td>Police</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D3.png" width="32" height="32" alt="FontColor" /></td>
   <td>E8D3</td>
@@ -1622,7 +1622,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DD.png" width="32" height="32" alt="Bold" /></td>
   <td>E8DD</td>
-  <td>Bold</td>
+  <td>Gras</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DE.png" width="32" height="32" alt="MoveToFolder" /></td>
   <td>E8DE</td>
@@ -1694,7 +1694,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EF.png" width="32" height="32" alt="Calculator" /></td>
   <td>E8EF</td>
-  <td>Calculator</td>
+  <td>Calculatrice</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F0.png" width="32" height="32" alt="Directions" /></td>
   <td>E8F0</td>
@@ -1702,7 +1702,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F1.png" width="32" height="32" alt="Library" /></td>
   <td>E8F1</td>
-  <td>Library</td>
+  <td>Bibliothèque</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F2.png" width="32" height="32" alt="ChatBubbles" /></td>
   <td>E8F2</td>
@@ -1754,7 +1754,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FE.png" width="32" height="32" alt="Scan" /></td>
   <td>E8FE</td>
-  <td>Scan</td>
+  <td>Analyser</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FF.png" width="32" height="32" alt="Preview" /></td>
   <td>E8FF</td>
@@ -1762,7 +1762,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E902.png" width="32" height="32" alt="Group" /></td>
   <td>E902</td>
-  <td>Groupe</td>
+  <td>Group</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E904.png" width="32" height="32" alt="ZeroBars" /></td>
   <td>E904</td>
@@ -1790,7 +1790,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E90A.png" width="32" height="32" alt="Comment" /></td>
   <td>E90A</td>
-  <td>Comment</td>
+  <td>Commentaire</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E90B.png" width="32" height="32" alt="MusicInfo" /></td>
   <td>E90B</td>
@@ -1814,7 +1814,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E910.png" width="32" height="32" alt="Accounts" /></td>
   <td>E910</td>
-  <td>Accounts</td>
+  <td>Comptes</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E911.png" width="32" height="32" alt="DullSound" /></td>
   <td>E911</td>
@@ -1822,7 +1822,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E912.png" width="32" height="32" alt="Manage" /></td>
   <td>E912</td>
-  <td>Manage</td>
+  <td>Gérer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E913.png" width="32" height="32" alt="Street" /></td>
   <td>E913</td>
@@ -1878,7 +1878,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E927.png" width="32" height="32" alt="Swipe" /></td>
   <td>E927</td>
-  <td>Swipe</td>
+  <td>Balayer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E928.png" width="32" height="32" alt="Fingerprint" /></td>
   <td>E928</td>
@@ -1914,7 +1914,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E932.png" width="32" height="32" alt="Label" /></td>
   <td>E932</td>
-  <td>Label</td>
+  <td>Étiquette</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E933.png" width="32" height="32" alt="IBeam" /></td>
   <td>E933</td>
@@ -1950,7 +1950,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E93E.png" width="32" height="32" alt="Streaming" /></td>
   <td>E93E</td>
-  <td>Streaming</td>
+  <td>Diffusion</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E943.png" width="32" height="32" alt="Code" /></td>
   <td>E943</td>
@@ -2046,7 +2046,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E95B.png" width="32" height="32" alt="Headset" /></td>
   <td>E95B</td>
-  <td>Headset</td>
+  <td>Casque</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95D.png" width="32" height="32" alt="Projector" /></td>
   <td>E95D</td>
@@ -2062,11 +2062,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E961.png" width="32" height="32" alt="Input" /></td>
   <td>E961</td>
-  <td>Input</td>
+  <td>Entrée</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E962.png" width="32" height="32" alt="Mouse" /></td>
   <td>E962</td>
-  <td>Mouse</td>
+  <td>Souris</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E963.png" width="32" height="32" alt="Smartcard" /></td>
   <td>E963</td>
@@ -2090,7 +2090,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E968.png" width="32" height="32" alt="Network" /></td>
   <td>E968</td>
-  <td>Network</td>
+  <td>Network (Réseau)</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E969.png" width="32" height="32" alt="StorageNetworkWireless" /></td>
   <td>E969</td>
@@ -2154,7 +2154,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E97A.png" width="32" height="32" alt="Reply" /></td>
   <td>E97A</td>
-  <td>Reply</td>
+  <td>Répondre</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E97B.png" width="32" height="32" alt="SetTile" /></td>
   <td>E97B</td>
@@ -2166,7 +2166,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E97D.png" width="32" height="32" alt="Korean" /></td>
   <td>E97D</td>
-  <td>Coréen</td>
+  <td>Korean</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E97E.png" width="32" height="32" alt="HalfAlpha" /></td>
   <td>E97E</td>
@@ -2362,7 +2362,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>Liste de contrôle</td>
+  <td>Liste de vérification</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -2378,11 +2378,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F5.png" width="32" height="32" alt="Processing" /></td>
   <td>E9F5</td>
-  <td>Processing</td>
+  <td>Traitement de</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F9.png" width="32" height="32" alt="ReportDocument" /></td>
   <td>E9F9</td>
-  <td>Objet ReportDocument</td>
+  <td>ReportDocument</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA0C.png" width="32" height="32" alt="VideoSolid" /></td>
   <td>EA0C</td>
@@ -2562,7 +2562,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EA69.png" width="32" height="32" alt="Media" /></td>
   <td>EA69</td>
-  <td>Media</td>
+  <td>Support</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA6A.png" width="32" height="32" alt="SyncError" /></td>
   <td>EA6A</td>
@@ -2678,11 +2678,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EB3C.png" width="32" height="32" alt="Design" /></td>
   <td>EB3C</td>
-  <td>Conception</td>
+  <td>Concevoir</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB41.png" width="32" height="32" alt="Website" /></td>
   <td>EB41</td>
-  <td>Website</td>
+  <td>Site web</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB42.png" width="32" height="32" alt="Drop" /></td>
   <td>EB42</td>
@@ -2874,7 +2874,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EB95.png" width="32" height="32" alt="Certificate" /></td>
   <td>EB95</td>
-  <td>Certificate</td>
+  <td>Certificat</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB96.png" width="32" height="32" alt="BackSpaceQWERTYLg" /></td>
   <td>EB96</td>
@@ -3042,7 +3042,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EBC6.png" width="32" height="32" alt="Project" /></td>
   <td>EBC6</td>
-  <td>Project</td>
+  <td>Projet</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBD2.png" width="32" height="32" alt="AdjustHologram" /></td>
   <td>EBD2</td>
@@ -3426,7 +3426,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/ECA5.png" width="32" height="32" alt="Tiles" /></td>
   <td>ECA5</td>
-  <td>Tiles</td>
+  <td>Vignettes</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECA7.png" width="32" height="32" alt="PartyLeader" /></td>
   <td>ECA7</td>
@@ -3542,7 +3542,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/ED15.png" width="32" height="32" alt="Feedback" /></td>
   <td>ED15</td>
-  <td>Feedback</td>
+  <td>Commentaires</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ED1E.png" width="32" height="32" alt="Subtitles" /></td>
   <td>ED1E</td>
@@ -3918,7 +3918,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EE94.png" width="32" height="32" alt="Wheel" /></td>
   <td>EE94</td>
-  <td>Wheel</td>
+  <td>Roulette</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EECA.png" width="32" height="32" alt="ButtonView2" /></td>
   <td>EECA</td>
@@ -3974,7 +3974,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>Relecture</td>
+  <td>relecture</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
@@ -4010,7 +4010,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EFA9.png" width="32" height="32" alt="Speech" /></td>
   <td>EFA9</td>
-  <td>Voix</td>
+  <td>Fonctions vocales</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F000.png" width="32" height="32" alt="KnowledgeArticle" /></td>
   <td>F000</td>
@@ -4098,7 +4098,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B9.png" width="32" height="32" alt="Connected" /></td>
   <td>F0B9</td>
-  <td>Connected</td>
+  <td>Connecté</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0C6.png" width="32" height="32" alt="PencilFill" /></td>
   <td>F0C6</td>
@@ -4742,7 +4742,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/F540.png" width="32" height="32" alt="Safe" /></td>
   <td>F540</td>
-  <td>Sécurisé</td>
+  <td>Safe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F552.png" width="32" height="32" alt="LaptopSecure" /></td>
   <td>F552</td>
@@ -5014,7 +5014,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/F5ED.png" width="32" height="32" alt="Set" /></td>
   <td>F5ED</td>
-  <td>Ensemble</td>
+  <td>Set</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F5EE.png" width="32" height="32" alt="SetSolid" /></td>
   <td>F5EE</td>
@@ -5081,7 +5081,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
   <td>VerticalBatteryCharging2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F600.png" width="32" height="32" alt="VerticalBatteryCharging3" /></td>
-  <td>RUBRIQUES F600</td>
+  <td>F600</td>
   <td>VerticalBatteryCharging3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F601.png" width="32" height="32" alt="VerticalBatteryCharging4" /></td>
@@ -5164,10 +5164,10 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
 
 
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-* [Recommandations en matière d’icônes](../style/icons.md)
-* [Énumération Symbol](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
-* [Classe FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+* [Instructions pour les icônes](../style/icons.md)
+* [Énumération de symbole](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Classe de FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

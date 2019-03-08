@@ -1,6 +1,6 @@
 ---
-Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
-title: Identifier des périphériques d’entrée
+Description: Identifiez les périphériques de saisie connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
+title: Identifier des appareils d’entrée
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
@@ -9,25 +9,25 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048496"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638524"
 ---
-# <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
+# <a name="identify-input-devices"></a>Identifier des appareils d’entrée
 
 
-Identifiez les périphériques d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
+Identifiez les périphériques de saisie connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
 
-> **API importants**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **API importantes**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 ## <a name="retrieve-mouse-properties"></a>Récupérer les propriétés de la souris
 
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626), utilisée pour récupérer les propriétés exposées par une ou plusieurs souris connectées. Créez simplement un objet **MouseCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des souris détectées: propriétés booléennes retournent différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel autre souris.
+**Remarque**  les valeurs retournées par les propriétés abordées ici sont basées sur toutes les souris détectés : Propriétés booléennes retournent zéro si au moins une souris prend en charge une fonctionnalité spécifique et les propriétés numériques retournent la valeur maximale exposée par n’importe quel une souris.
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644), utilisée pour savoir si un numériseur tactile est connecté. Créez simplement un objet **TouchCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les numériseurs tactiles détectés: propriétés booléennes retournent différente de zéro si au moins un numériseur prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel numériseur.
+**Remarque**  les valeurs retournées par les propriétés abordées ici sont basés sur tous les digitaliseurs tactile détectés : Propriétés booléennes retournent zéro si au moins un digitaliseur prend en charge une fonctionnalité spécifique et les propriétés numériques retournent la valeur maximale exposée par n’importe quel un digitaliseur.
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), utilisée pour savoir si l’un des appareils détectés prend en charge l’entrée de pointeur (interaction tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**les valeurs retournées par les propriétés abordées ici sont basées sur tous les appareils de pointage détectés: propriétés booléennes retournent différente de zéro si au moins un appareil prend en charge une fonctionnalité spécifique, et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil un pointeur.
+**Remarque**  les valeurs retournées par les propriétés abordées ici sont basés sur tous les appareils de pointeur détectés : Propriétés booléennes retournent zéro si au moins un appareil prend en charge une fonctionnalité spécifique et les propriétés numériques retournent la valeur maximale exposée par n’importe quel appareil d’un pointeur.
 
 Le code suivant utilise un tableau permettant d’afficher les propriétés et valeurs de chaque périphérique de pointage.
 
@@ -183,7 +183,7 @@ private void GetPointerDevices()
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **Exemples d’archive**
-* [Entrée: exemple de fonctionnalités de périphériques](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

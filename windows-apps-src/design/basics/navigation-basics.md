@@ -1,29 +1,29 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-title: Informations de base relatives à la navigation pour les applicationsUWP
+Description: La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, et de fonctionnalités au niveau du système.
+title: Informations de base relatives à la navigation pour les applications UWP
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
 ms.date: 07/16/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116241"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636094"
 ---
-# <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
+# <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
 ![En-tête de base de navigation](images/nav/navigation-basics-header.jpg)
 
 Si l’on considère une application comme une collection de pages, le terme *navigation* décrit le fait de se déplacer d’une page à l’autre et au sein d’une même page. La navigation est le point de départ de l’expérience utilisateur, car elle permet aux utilisateurs de rechercher le contenu et les fonctionnalités qui les intéressent. C’est un élément très important, qui peut être difficile à réaliser correctement.
 
-Nous avons un nombre considérable de choix à faire pour la navigation. Par exemple:
+Nous avons un nombre considérable de choix à faire pour la navigation. Par exemple :
 
 :::row:::
     :::column:::
@@ -47,15 +47,15 @@ Il n’existe aucune conception de navigation unique qui fonctionne pour toutes 
 
 ## <a name="principles-of-good-navigation"></a>Principes d’une navigation réussie
 
-Commençons par les principes de base d’une navigation réussie:
+Commençons par les principes de base d’une navigation réussie :
 
-- **Cohérence:** répondre aux attentes des utilisateurs.
-- **Simplicité:** ne pas faire plus que nécessaire.
-- **Clarté:** fournir des chemins d’accès clair et des options.
+- **Cohérence :** Répondre aux attentes des utilisateurs.
+- **Simplicité :** Ne le faites pas plus que nécessaire.
+- **Plus de clarté :** Fournir des chemins d’accès clair et options.
 
-### <a name="consistency"></a>Cohérence
+### <a name="consistency"></a>Consistency
 
-La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont connaissant et suivant les conventions standard pour les icônes, emplacement et le style rendra navigation prévisible et intuitive pour les utilisateurs.
+La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont familiers avec et en suivantes les conventions standard pour les icônes, emplacement, et style rendra navigation prévisible et intuitive pour les utilisateurs.
 
 ![image des composants d'une page](images/nav/page-components.svg)
 
@@ -96,13 +96,13 @@ Maintenant nous allons utiliser nos principes de conception (cohérence, simplic
 
 1. Réfléchissez à vos utilisateurs. Définissez le parcours qu’ils sont susceptibles de suivre dans votre application et cherchez à savoir pourquoi les utilisateurs accèdent à une page et où ils souhaitent aller ensuite.
 
-2. Évitez les hiérarchies de navigation ciblé. Au-delà de trois niveaux de navigation, vous risquez d’égarer votre utilisateur dans une hiérarchie profonde qu’il aura des difficultés à quitter.
+2. Évitez les hiérarchies de navigation approfondie. Au-delà de trois niveaux de navigation, vous risquez d’égarer votre utilisateur dans une hiérarchie profonde qu’il aura des difficultés à quitter.
 
-3. Évitez l’effet «bâton sauteur». L’effet du bâton sauteur se produit lorsqu’il existe du contenu associé, mais que la navigation vers celui-ci oblige l’utilisateur à remonter d’un niveau puis à descendre à nouveau.
+3. Évitez l’effet « bâton sauteur ». L’effet du bâton sauteur se produit lorsqu’il existe du contenu associé, mais que la navigation vers celui-ci oblige l’utilisateur à remonter d’un niveau puis à descendre à nouveau.
 
 ## <a name="use-the-right-structure"></a>Utiliser la structure appropriée
 
-Maintenant que vous êtes familiarisé avec les principes de navigation générale, comment devez-vous structurer votre application? Il existe deux structures générales: plate et hiérarchique.
+Maintenant que vous êtes familiarisé avec les principes de navigation générale, comment devez-vous structurer votre application ? Il existe deux structures générales : plate et hiérarchique.
 
 :::row:::
     :::column:::
@@ -117,7 +117,7 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
         - Les pages peuvent être affichées dans n’importe quel ordre.
         - Les pages sont clairement distinctes les unes des autres et n’ont aucune relation parent/enfant évidente.
-        - Il existe moins de 8 pages du groupe. <br>
+        - Il existe moins de 8 pages dans le groupe. <br>
         (S’il y a plus de pages, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits.)
 
     :::column-end:::
@@ -138,7 +138,7 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
         
         - Les pages doivent être parcourues dans un ordre spécifique.
         - Il existe une relation parent-enfant claire entre les pages.
-        - Le groupe contient plus de 7pages.
+        - Le groupe contient plus de 7 pages.
         
     :::column-end:::
 :::row-end:::
@@ -154,14 +154,14 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
         If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
-        - Au niveau1, l’élément de navigation pair à pair doit donner accès aux pagesA, B, C etD.
-        - Au niveau2, les éléments de navigation pair à pair des pagesA2 doivent uniquement être liés aux autres pagesA2. Ils ne doivent pas renvoyer aux pages de niveau2 de la sous-arborescenceC.
+        - Au niveau 1, l’élément de navigation pair à pair doit donner accès aux pages A, B, C et D.
+        - Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau 2 de la sous-arborescence C.
     :::column-end:::
 :::row-end:::
 
 ## <a name="use-the-right-controls"></a>Utilisez les contrôles appropriés
 
-Une fois que vous avez choisi votre structure de page, vous devez déterminer comment les utilisateurs navigueront à travers ces pages. La plateformeUWP fournit une variété de contrôles de navigation pour garantir une expérience de navigation cohérente et fiable dans votre application.
+Une fois que vous avez choisi votre structure de page, vous devez déterminer comment les utilisateurs navigueront à travers ces pages. La plateforme UWP fournit une variété de contrôles de navigation pour garantir une expérience de navigation cohérente et fiable dans votre application.
 
 :::row:::
     :::column:::
@@ -184,14 +184,14 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
         
         Use top navigation when:
 
-        - Vous souhaitez afficher toutes les options de navigation à l’écran.
-        - Votre choix davantage d’espace pour le contenu de votre application.
-        - Les icônes ne peuvent pas décrivent clairement vos catégories de navigation.
+        - Vous souhaitez afficher toutes les options de navigation sur l’écran.
+        - Vous souhaitez davantage d’espace pour le contenu de votre application.
+        - Icônes ne peut pas décrire clairement vos catégories de navigation.
         
-        Utilisez les onglets lorsque:
+        Utilisez les onglets lorsque :
 
-        - Vous souhaitez conserver l’état de la page et l’historique de navigation.
-        - Vous pensez que les utilisateurs passeront fréquemment des onglets.
+        - Vous souhaitez conserver l’état de page et de l’historique de navigation.
+        - Vous vous attendre aux utilisateurs de basculer entre les onglets fréquemment.
 
 :::row-end:::
 
@@ -235,6 +235,6 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>Étape suivante: Ajouter du code de navigation à votre application
+## <a name="next-add-navigation-code-to-your-app"></a>prochain : Ajoutez le code de navigation à votre application
 
 L’article suivant [Implémenter la navigation de base](navigate-between-two-pages.md), indique le code nécessaire pour utiliser un contrôle de cadre afin d’activer la navigation de base entre deux pages de votre application.

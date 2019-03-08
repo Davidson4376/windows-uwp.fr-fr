@@ -4,14 +4,14 @@ title: Meilleures pratiques pour l’utilisation du pool de threads
 description: Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, thread, pool de threads
+keywords: Windows 10, uwp, thread, pool de threads
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935873"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628044"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>Meilleures pratiques pour l’utilisation du pool de threads
 
@@ -53,5 +53,5 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 
 
 * [Créer un élément de travail périodique](create-a-periodic-work-item.md)
-* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
+* [Soumettre un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Utiliser un minuteur pour soumettre un élément de travail](use-a-timer-to-submit-a-work-item.md)

@@ -4,14 +4,14 @@ description: Votre application Windows universelle doit être authentifiée pour
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, clé d’authentification de cartes, contrôle de cartes
+keywords: Windows 10, uwp, clé d’authentification de cartes, contrôle de cartes
 ms.localizationpriority: medium
 ms.openlocfilehash: 620566036dc5aa9357d10e60ec92067ba0faf130
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046159"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649554"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 
@@ -22,7 +22,7 @@ Votre [application Windows universelle](https://msdn.microsoft.com/library/windo
 
 **Conseil** Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub :
 
--   [Exemple de carte pour la plateforme Windows universelle (UWP, Universal Windows Platform)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="get-a-key"></a>Obtenir une clé
 
@@ -31,7 +31,7 @@ Le [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) perme
 
 Pour créer une clé
 
-1.  Dans votre navigateur, accédez au centre de développement Bing cartes ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  Dans votre navigateur, accédez au centre de développement Bing Maps ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
 
 2.  Si vous êtes invité à vous connecter, entrez votre compte Microsoft, puis cliquez sur **Se connecter**.
 
@@ -45,12 +45,12 @@ Pour créer une clé
 
 7.  Complétez le formulaire **Créer une clé**, puis cliquez sur **Créer**.
 
-    -   **Nom de l’application :** le nom de votre application.
-    -   **URL de l’application (facultatif) :** l’URL de votre application.
-    -   **Type de clé :** sélectionnez **De base** ou **Entreprise**.
-    -   **Type d’application :** sélectionnez **Application Windows universelle** pour utiliser la clé dans votre application Windows universelle.
+    -   **Nom de l’application :** Le nom de votre application.
+    -   **URL de l’application (facultatif) :** L’URL de votre application.
+    -   **Type de clé :** Sélectionnez **base** ou **Enterprise**.
+    -   **Type d’application :** Sélectionnez **application Windows universelle** pour une utilisation dans votre application Windows universelle.
 
-    Voici un exemple de formulaire:
+    Voici un exemple de formulaire :
 
     ![Exemple du formulaire Créer une clé.](images/createkeydialog.png)
 
@@ -89,8 +89,8 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
-* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
+* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)

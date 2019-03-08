@@ -1,23 +1,23 @@
 ---
-Description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
-title: API JavaScript d’Examen.
+Description: L’API JavaScript pour Microsoft Examen vous permet de sécuriser les évaluations. L’application Examen inclut un navigateur sécurisé qui empêche les étudiants d’utiliser un autre ordinateur ou des ressources Internet pendant l’examen.
+title: API JavaScript Examen.
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-keywords: Windows 10, uwp, éducation
+keywords: Windows 10, uwp, l’enseignement
 ms.localizationpriority: medium
 ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049366"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627594"
 ---
-# <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
+# <a name="take-a-test-javascript-api"></a>API JavaScript Examen
 
-[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui génère des évaluations en ligne verrouillé pour les tests stratégiques, ce qui permet aux enseignants de se concentrer sur l’évaluation de contenu au lieu de la façon de fournir un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
+[Effectuer un Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui restitue verrouillé des évaluations en ligne pour le test de l’important, ce qui permet aux enseignants pour vous concentrer sur l’évaluation contenu plutôt que de la façon de fournir une sécurité test environnement. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
 
-Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, consultez [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
+Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, voir [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
 
 ## <a name="reference-documentation"></a>Documentation de référence
 Les API Examen existent dans les espaces de noms suivants. Notez que toutes les API dépendent d’un objet `SecureBrowser` global.
@@ -28,7 +28,7 @@ Les API Examen existent dans les espaces de noms suivants. Notez que toutes les 
 
 ### <a name="security-namespace"></a>Espace de noms de sécurité
 
-L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérifier la liste des processus utilisateur et système, obtenir des adresses IP et MAC et effacer des ressources web mises en cache.
+L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérifiez la liste des processus du système et utilisateur, obtenir des adresses IP et MAC et effacer les ressources mises en cache web.
 
 | Méthode | Description   |
 |--------|---------------|
@@ -52,18 +52,18 @@ L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérif
 <span id="lockDown"/>
 
 ### <a name="lockdown"></a>lockDown
-Verrouille l’appareil. Également utilisé pour déverrouiller l’appareil. L’application web de test appelle cet appel avant d’autoriser les étudiants à démarrer le test. Le responsable de l’implémentation doit prendre les mesures nécessaires pour sécuriser l’environnement de test. Les étapes nécessaires pour sécuriser l’environnement sont spécifiques des périphériques et, par exemple, incluent des aspects tels que la désactivation des captures d’écran, la désactivation de la conversation en mode sécurisé, l’annulation du Presse-papiers du système, la saisie en mode plein écran, la désactivation des espaces dans des appareils OSX10.7+, etc. L’application de test active le verrouillage avant le début d’une évaluation et désactive le verrouillage lorsque l’étudiant a terminé l’évaluation et se trouve hors du test sécurisé.
+Verrouille l’appareil. Également utilisé pour déverrouiller l’appareil. L’application web de test appelle cet appel avant d’autoriser les étudiants à démarrer le test. Le responsable de l’implémentation doit prendre les mesures nécessaires pour sécuriser l’environnement de test. Les mesures prises pour sécuriser l’environnement sont des périphériques spécifiques et, par exemple, inclure des aspects tels que des captures d’écran de la désactivation, la désactivation de la conversation vocale en mode sécurisé, effacer le Presse-papiers du système, une en mode plein écran, la désactivation des espaces dans OS x 10.7 + appareils, etc. Tester l’application sera activer le verrouillage avant une évaluation commence et désactive le verrouillage lors de l’étudiant a terminé l’évaluation et qu’il manque le test sécurisé.
 
 **Syntaxe**  
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Paramètres**  
-* `enable` - **true** pour exécuter l’application Examen au-dessus de l’écran de verrouillage et appliquer les stratégies décrites dans ce [document](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** arrête l’exécution de l’application Examen au-dessus de l’écran de verrouillage et la ferme, sauf si l’application n’est pas verrouillée, auquel cas il est sans effet.  
-* `onSuccess` - [facultatif] Fonction à appeler après l’action ou la désactivation du verrouillage. Elle doit être au format `Function(Boolean currentlockdownstate)`.  
-* `onError` - [facultatif] Fonction à appeler si l’opération lockDown a échoué. Elle doit être au format `Function(Boolean currentlockdownstate)`.  
+* `enable` - **true** pour exécuter l’application Take a Test au-dessus de l’écran de verrouillage et appliquer les stratégies présentées dans cet [document](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** arrête l’exécution de l’application Examen au-dessus de l’écran de verrouillage et la ferme, sauf si l’application n’est pas verrouillée, auquel cas il est sans effet.  
+* `onSuccess` -[facultatif] la fonction à appeler une fois que le verrouillage a été activé ou désactivé. Elle doit être au format `Function(Boolean currentlockdownstate)`.  
+* `onError` -[facultatif] la fonction à appeler en cas d’échec de l’opération de verrouillage. Elle doit être au format `Function(Boolean currentlockdownstate)`.  
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -76,7 +76,7 @@ Détermine si le contexte de verrouillage est toujours appliqué à l’appareil
 `void SecureBrowser.security.isEnvironmentSecure(Function callback);`
 
 **Paramètres**  
-* `callback` Fonction à appeler lorsque cette fonction a terminé. Elle doit être au format `Function(String state)` où `state` est une chaîne JSON contenant deux champs. Le premier est le champ `secure`, qui affiche `true` uniquement si tous les verrous nécessaires ont été activés (ou les fonctionnalités désactivées) pour activer un environnement de test sécurisé et qu’aucun de ces éléments n’a été compromis depuis que l’application est entré en mode verrouillage. L’autre champ, `messageKey`, inclut d’autres détails ou informations spécifiques du fournisseur. Le but ici est de permettre aux fournisseurs de placer des informations supplémentaires qui augmentent le drapeau `secure` booléen:
+* `callback` -La fonction à appeler lorsque cette fonction est terminée. Elle doit être au format `Function(String state)` où `state` est une chaîne JSON contenant deux champs. Le premier est le champ `secure`, qui affiche `true` uniquement si tous les verrous nécessaires ont été activés (ou les fonctionnalités désactivées) pour activer un environnement de test sécurisé et qu’aucun de ces éléments n’a été compromis depuis que l’application est entré en mode verrouillage. L’autre champ, `messageKey`, inclut d’autres détails ou informations spécifiques du fournisseur. Le but ici est de permettre aux fournisseurs de placer des informations supplémentaires qui augmentent le drapeau `secure` booléen :
 
 ```JSON
 {
@@ -86,7 +86,7 @@ Détermine si le contexte de verrouillage est toujours appliqué à l’appareil
 ```
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -99,15 +99,15 @@ Obtient des informations sur la plateforme sur laquelle l’application de test 
 `void SecureBrowser.security.getDeviceInfo(Function callback);`
 
 **Paramètres**  
-* `callback` Fonction à appeler lorsque cette fonction a terminé. Elle doit être au format `Function(String infoObj)` où `infoObj` est une chaîne JSON contenant plusieurs champs. Les champs suivants doivent être pris en charge:
-    * `os` représente le type de système d’exploitation (par exemple: Windows, Mac OS, Linux, iOS, Android, etc.)
-    * `name` représente le nom de la version du système d’exploitation, le cas échéant (par exemple: Sierra, Ubuntu).
-    * `version` représente la version du système d’exploitation (par exemple: 10.1, 10Pro, etc.)
-    * `brand` représente la personnalisation du navigateur sécurisé (par exemple: OAKS, autorité de confiance, SmarterApp, etc.)
-    * `model` représente le modèle d’appareil pour les appareils mobiles uniquement; nul/non utilisé pour les navigateurs de bureau.
+* `callback` -La fonction à appeler lorsque cette fonction est terminée. Elle doit être au format `Function(String infoObj)` où `infoObj` est une chaîne JSON contenant plusieurs champs. Les champs suivants doivent être pris en charge :
+    * `os` représente le type de système d’exploitation (par exemple : Windows, macOS, Linux, iOS, Android, etc.)
+    * `name` représente le nom de la version du système d’exploitation, le cas échéant (par exemple : Sierra Ubuntu).
+    * `version` représente la version du système d’exploitation (par exemple : 10.1, 10 pro, etc..)
+    * `brand` représente la personnalisation du navigateur sécurisé (par exemple : OAKS, autorité de certification, SmarterApp, etc.)
+    * `model` représente le modèle d’appareil pour les appareils mobiles uniquement ; /non utilisé pour les navigateurs de bureau.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -120,13 +120,13 @@ Obtient la liste de tous les processus en cours d’exécution sur l’ordinateu
 `void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
 
 **Paramètres**  
-* `blacklistedProcessList` - Liste des processus que l’application de test a placés sur liste rouge.  
-`callback` - Fonction à appeler une fois que les processus actifs ont été trouvés. Elle doit être au format: `Function(String foundBlacklistedProcesses)` où `foundBlacklistedProcesses` est au format:`"['process1.exe','process2.exe','processEtc.exe']"`. Elle sera vide si aucun processus placé sur liste rouge n’a été trouvé. Si elle est nulle, cela indique qu’une erreur s’est produite dans l’appel de fonction d’origine.
+* `blacklistedProcessList` -Liste des processus que l’application de test a sur liste rouge.  
+`callback` -La fonction à appeler une fois que les processus actifs ont été trouvés. Elle doit être au format : `Function(String foundBlacklistedProcesses)` où `foundBlacklistedProcesses` est au format :`"['process1.exe','process2.exe','processEtc.exe']"`. Elle sera vide si aucun processus placé sur liste rouge n’a été trouvé. Si elle est nulle, cela indique qu’une erreur s’est produite dans l’appel de fonction d’origine.
 
-**Remarque** La liste n’inclut pas les processus système.
+**Remarques** La liste n’inclut pas les processus système.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -141,10 +141,10 @@ Ferme le navigateur et déverrouille l’appareil. L’application de test doit 
 **Paramètres**  
 * `restart` -Ce paramètre est ignoré, mais doit être fourni.
 
-**Remarque** Dans Windows10, version1607, l’appareil doit être verrouillé initialement. Dans les versions ultérieures, cette méthode ferme le navigateur, que l’appareil soit verrouillé ou non.
+**Remarque** Dans Windows 10, version 1607, l’appareil doit être verrouillé initialement. Dans les versions ultérieures, cette méthode ferme le navigateur, que l’appareil soit verrouillé ou non.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -157,10 +157,10 @@ L’application web de test doit appeler cette fonction pour déterminer si le m
 `void SecureBrowser.security.getPermissiveMode(Function callback)`
 
 **Paramètres**  
-* `callback` - Fonction à appeler lorsque cet appel est terminé. Elle doit être au format: `Function(Boolean permissiveMode)` où `permissiveMode` indique si le navigateur est actuellement en mode permissif. Si elle est nulle ou non définie, une erreur s’est produite dans l’opération get.
+* `callback` -La fonction à appeler lorsque cet appel est terminé. Elle doit être au format : `Function(Boolean permissiveMode)` où `permissiveMode` indique si le navigateur est actuellement en mode permissif. Si elle est nulle ou non définie, une erreur s’est produite dans l’opération get.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -173,11 +173,11 @@ L’application web de test doit appeler cette fonction pour activer et désacti
 `void SecureBrowser.security.setPermissiveMode(Boolean enable, Function callback)`
 
 **Paramètres**  
-* `enable` - Valeur booléenne indiquant l’état du mode permissif prévu.  
-* `callback` - Fonction à appeler lorsque cet appel est terminé. Elle doit être au format: `Function(Boolean permissiveMode)` où `permissiveMode` indique si le navigateur est actuellement en mode permissif. Si elle est nulle ou non définie, une erreur s’est produite dans l’opération set.
+* `enable` -La valeur booléenne indiquant l’état du mode permissif prévue.  
+* `callback` -La fonction à appeler lorsque cet appel est terminé. Elle doit être au format : `Function(Boolean permissiveMode)` où `permissiveMode` indique si le navigateur est actuellement en mode permissif. Si elle est nulle ou non définie, une erreur s’est produite dans l’opération set.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -190,7 +190,7 @@ Efface le contenu du presse-papiers du système. L’application de test doit ap
 `void SecureBrowser.security.emptyClipBoard();`
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -203,13 +203,13 @@ Obtient la liste des adresses MAC pour l’appareil. L’application de test doi
 `void SecureBrowser.security.getMACAddress(Function callback);`
 
 **Paramètres**  
-* `callback` - Fonction à appeler lorsque cet appel est terminé. Elle doit être au format: `Function(String addressArray)` où `addressArray` est au format:`"['00:11:22:33:44:55','etc']"`.
+* `callback` -La fonction à appeler lorsque cet appel est terminé. Elle doit être au format : `Function(String addressArray)` où `addressArray` est au format :`"['00:11:22:33:44:55','etc']"`.
 
 **Remarques**  
-Il est difficile de s’appuient sur les adressesIP sources pour faire la distinction entre les ordinateurs utilisateur final dans les serveurs de tests, car les pare-feu/NAT/proxys sont couramment utilisés dans les établissements scolaires. Les adresses MAC permettent à l’application de faire la distinction entre les ordinateurs clients finaux derrière un pare-feu commun à des fins de diagnostic.
+Il est difficile de s’appuient sur les adresses IP sources pour faire la distinction entre les ordinateurs utilisateur final dans les serveurs de tests, car les pare-feu/NAT/proxys sont couramment utilisés dans les établissements scolaires. Les adresses MAC permettent à l’application de faire la distinction entre les ordinateurs clients finaux derrière un pare-feu commun à des fins de diagnostic.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -221,11 +221,11 @@ Obtient l’heure à laquelle l’application de test a été démarrée.
 **Syntaxe**  
 `DateTime SecureBrowser.settings.getStartTime();`
 
-**Return**  
+**retour**  
 Objet DateTime indiquant l’heure de démarrage de l’application de test.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -238,12 +238,12 @@ Demande si une fonctionnalité est activée ou désactivée.
 `Object SecureBrowser.security.getCapability(String feature)`
 
 **Paramètres**  
-`feature` - Chaîne pour identifier la fonctionnalité à interroger. Les chaînes de fonctionnalités valides sont «screenMonitoring», «printing» et «textSuggestions» (casse non prise en compte).
+`feature` -La chaîne pour déterminer quelle fonctionnalité de requête. Les chaînes de fonctionnalités valides sont « screenMonitoring », « printing » et « textSuggestions » (casse non prise en compte).
 
-**Valeur renvoyée**  
-Cette fonction retourne un objet ou un littéral JavaScript au format:`{<feature>:true|false}`. **true** si la fonctionnalité interrogée est activée, **false** si la fonctionnalité n’est pas activée ou si la chaîne de fonctionnalité n’est pas valide.
+**Valeur de retour**  
+Cette fonction retourne un objet ou un littéral JavaScript au format :`{<feature>:true|false}`. **true** si la fonctionnalité interrogée est activée, **false** si la fonctionnalité n’est pas activée ou si la chaîne de fonctionnalité n’est pas valide.
 
-**Configuration requise** Windows10, version1703
+**Configuration requise** Windows 10, version 1703
 
 ---
 
@@ -256,15 +256,15 @@ Active ou désactive une fonctionnalité spécifique dans le navigateur.
 `void SecureBrowser.security.setCapability(String feature, String value, Function onSuccess, Function onError)`
 
 **Paramètres**  
-* `feature` - Chaîne pour identifier la fonctionnalité à définir. Les chaînes de fonctionnalités valides sont `"screenMonitoring"`, `"printing"` et `"textSuggestions"` (casse non prise en compte).  
-* `value` - Paramètre prévu pour la fonctionnalité. Doit être`"true"` ou `"false"`.  
-* `onSuccess` - [facultatif] Fonction à appeler une fois l’opération set terminée. Elle doit être au format: `Function(String jsonValue)` où *jsonValue* est au format: `{<feature>:true|false|undefined}`.  
-* `onError` - [facultatif] Fonction à appeler si l’opération set a échoué. Elle doit être au format: `Function(String jsonValue)` où *jsonValue* est au format: `{<feature>:true|false|undefined}`.
+* `feature` -La chaîne pour déterminer quelle fonctionnalité à définir. Les chaînes de fonctionnalités valides sont `"screenMonitoring"`, `"printing"` et `"textSuggestions"` (casse non prise en compte).  
+* `value` -Le paramètre souhaité pour la fonctionnalité. Doit être`"true"` ou `"false"`.  
+* `onSuccess` -[facultatif] la fonction à appeler une fois l’opération de définition a été terminée avec succès. Elle doit être au format : `Function(String jsonValue)` où *jsonValue* est au format : `{<feature>:true|false|undefined}`.  
+* `onError` -[facultatif] la fonction à appeler en cas d’échec de l’opération de définition. Elle doit être au format : `Function(String jsonValue)` où *jsonValue* est au format : `{<feature>:true|false|undefined}`.
 
-**Notes**  
+**Remarques**  
 Si la fonctionnalité ciblée est inconnue du navigateur, cette fonction transmet la valeur `undefined` à la fonction de rappel.
 
-**Configuration requise** Windows10, version1703
+**Configuration requise** Windows 10, version 1703
 
 ---
 
@@ -276,11 +276,11 @@ Vérifie si la session active est journalisée à distance.
 **Syntaxe**  
 `Boolean SecureBrowser.security.isRemoteSession();`
 
-**Valeur renvoyée**  
+**Valeur de retour**  
 **true** si la session active est distante, sinon **false**.
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---
 
@@ -292,13 +292,13 @@ Vérifie si la session active est en cours d’exécution au sein d’un ordinat
 **Syntaxe**  
 `Boolean SecureBrowser.security.isVMSession();`
 
-**Valeur renvoyée**  
+**Valeur de retour**  
 **true** si la session active est en cours d’exécution sur un ordinateur virtuel, sinon **false**.
 
-**Notes**  
+**Remarques**  
 Cette vérification API ne détecte que les sessions de machine virtuelle en cours d’exécution dans certains hyperviseurs qui implémentent les API appropriées
 
 **Configuration requise**  
-Windows10, version1709
+Windows 10 version 1709
 
 ---

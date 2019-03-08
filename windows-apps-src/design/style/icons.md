@@ -1,30 +1,30 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+Description: Des icônes efficaces s’harmonisent efficacement avec la typographie et avec le reste du langage de conception. Elles ne sont pas ambiguës, et communiquent un message sans superflu, aussi rapidement et simplement que possible.
 title: Icônes
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612444"
 ---
 # <a name="icons-for-uwp-apps"></a>Icônes pour les applications UWP
 
 ![image d'en-tête d'icônes](images/icons/header-icons.png)
 
-Les icônes fournissent un raccourci visuel pour une action, un concept ou un produit. En condensant une signification dans une image symbolique, les icônes peuvent franchir les barrières des langues et préserver une ressource extrêmement utile: l'espace à l’écran. 
+Les icônes fournissent un raccourci visuel pour une action, un concept ou un produit. En condensant une signification dans une image symbolique, les icônes peuvent franchir les barrières des langues et préserver une ressource extrêmement utile : l'espace à l’écran. 
 
-Les icônes peuvent apparaître dans les applications, ainsi qu'à l’extérieur: 
+Les icônes peuvent apparaître dans les applications, ainsi qu'à l’extérieur : 
 
 :::row:::
     :::column:::
@@ -45,7 +45,7 @@ Cet article décrit les icônes au sein de votre application. Pour en savoir plu
 
 ## <a name="when-to-use-icons"></a>Quand utiliser les icônes
 
-Les icônes permettent d'économiser de l’espace, mais quand faut-il les utiliser? 
+Les icônes permettent d'économiser de l’espace, mais quand faut-il les utiliser ? 
 
 :::row:::
     :::column:::
@@ -136,7 +136,7 @@ Il existe de nombreuses façons de créer une icône. Vous pouvez utiliser une p
 
 ## <a name="make-the-icon-do-something"></a>Faites faire une action à l’icône
 
-Une fois que vous avez une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à une commande ou une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône à un bouton ou une barre de commandes. 
+Une fois que vous avez une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à la commande ou une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône sur un bouton ou une barre de commandes. 
 
 ![Image d'une barre de commandes](images/icons/app-bar-desktop.svg)
 
@@ -144,7 +144,7 @@ Une fois que vous avez une icône, l’étape suivante consiste à lui faire fai
 
 Vous pouvez placer une icône dans un bouton standard. Dans la mesure où vous pouvez utiliser les boutons dans une plus grande variété de lieux, cela vous donne un peu plus de souplesse pour l'emplacement d'affichage de votre icône d’action. 
 
-Il existe plusieurs méthodes pour ajouter une icône à un bouton:
+Il existe plusieurs méthodes pour ajouter une icône à un bouton :
 
 :::row:::
     :::column span="2":::
@@ -193,7 +193,7 @@ Il existe plusieurs méthodes pour ajouter une icône à un bouton:
     :::column-end:::
 :::row-end:::
 
-Le moyen le plus simple consiste à utiliser la liste des icônes prédéfinies que nous fournissons: il suffit de spécifier le nom de l’icône, par exemple, «Précédent» ou «Arrêter», et le système la dessine: 
+Le moyen le plus simple consiste à utiliser la liste des icônes prédéfinies que nous fournissons : il suffit de spécifier le nom de l’icône, par exemple, « Précédent » ou « Arrêter », et le système la dessine : 
 
 ``` xaml
 <CommandBar>
@@ -209,16 +209,16 @@ Le moyen le plus simple consiste à utiliser la liste des icônes prédéfinies 
 ```
 Pour obtenir la liste complète des noms d’icônes, voir [Énumération Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
-Il existe d'autres façons de fournir des icônes pour un bouton dans une barre de commandes:
+Il existe d'autres façons de fournir des icônes pour un bouton dans une barre de commandes :
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon): l’icône est basée sur un glyphe à partir de la famille de polices spécifiée.
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon): l’icône est basée sur un fichier image bitmap avec l'**Uri** spécifié.
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon): l’icône est basée sur des données de [Path](/uwp/api/windows.ui.xaml.shapes.path).
++ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) : l’icône est basée sur un glyphe à partir de la famille de polices spécifiée.
++ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) : l’icône est basée sur un fichier image bitmap avec l'**Uri** spécifié.
++ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) : l’icône est basée sur des données de [Path](/uwp/api/windows.ui.xaml.shapes.path).
 
 Pour plus d’informations sur les barres de commandes, voir l'[article Barre de commandes](../controls-and-patterns/app-bars.md). 
 
 
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-* [Recommandations en matière de ressources de vignette et d’icône](../shell/tiles-and-notifications/app-assets.md)
+* [Instructions pour les ressources en mosaïque et icône](../shell/tiles-and-notifications/app-assets.md)

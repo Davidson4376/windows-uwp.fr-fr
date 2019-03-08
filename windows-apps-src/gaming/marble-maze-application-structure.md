@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, exemple, directx, structure
 ms.localizationpriority: medium
 ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049876"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653724"
 ---
 # <a name="marble-maze-application-structure"></a>Structure de l’application Marble Maze
 
@@ -25,7 +25,7 @@ La structure d’une application de plateforme Windows universelle (UWP) en Dire
 
  
 ## 
-Ce document aborde certains points importants relatifs à la structure de votre code de jeu:
+Ce document aborde certains points importants relatifs à la structure de votre code de jeu :
 
 -   Dans la phase d’initialisation, configurez les composants d’exécution et de bibliothèque utilisés par votre jeu et les ressources spécifiques au jeu.
 -   Les applications pour UWP doivent commencer à traiter les événements dans un délai de 5 secondes après le lancement. Ne chargez donc que les ressources nécessaires quand vous chargez votre application. Les jeux doivent charger une grande quantité de ressources en arrière-plan et afficher un écran de progression.
@@ -105,7 +105,7 @@ En outre, la classe **App** définit les gestionnaires d’événements pour les
 ## <a name="loading-game-assets-in-the-background"></a>Chargement des composants du jeu en arrière-plan
 
 
-Pour être sûr que votre jeu réponde aux événements fenêtre en moins de 5 secondes après son lancement, nous vous recommandons de charger les composants du jeu de façon asynchrone ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements de fenêtrage.
+Pour être sûr que votre jeu réponde aux événements fenêtre en moins de 5 secondes après son lancement, nous vous recommandons de charger les composants du jeu de façon asynchrone ou en arrière-plan. Quand les composants sont chargés en arrière-plan, votre jeu peut répondre aux événements fenêtre.
 
 > [!NOTE]
 > Vous pouvez également afficher le menu principal quand il est prêt et permettre aux autres composants de poursuivre leur chargement en arrière-plan. Si l’utilisateur sélectionne une option de menu avant que toutes les ressources soient chargées, vous pouvez indiquer le chargement en cours des ressources de scène en affichant, par exemple, une barre de progression.
@@ -123,12 +123,12 @@ Le chargement asynchrone des composants commence par la méthode **App::Load**. 
     });
 ```
 
-La classe **MarbleMazeMain** définit l’indicateur *m\_deferredResourcesReady* pour spécifier que le chargement asynchrone est terminé. La méthode **MarbleMazeMain::LoadDeferredResources** charge les ressources du jeu, puis définit cet indicateur. Les phases de mise à jour (**MarbleMazeMain::Update**) et de rendu (**MarbleMazeMain::Render**) de l’application vérifient cet indicateur. Quand cet indicateur est défini, le jeu continue à s’exécuter normalement. S’il n’est pas encore défini, le jeu affiche l’écran de chargement.
+Le **MarbleMazeMain** classe définit la *m\_deferredResourcesReady* indicateur pour indiquer que le chargement asynchrone est terminé. La méthode **MarbleMazeMain::LoadDeferredResources** charge les ressources du jeu, puis définit cet indicateur. Les phases de mise à jour (**MarbleMazeMain::Update**) et de rendu (**MarbleMazeMain::Render**) de l’application vérifient cet indicateur. Quand cet indicateur est défini, le jeu continue à s’exécuter normalement. S’il n’est pas encore défini, le jeu affiche l’écran de chargement.
 
 Pour plus d’informations sur la programmation asynchrone dans les applications UWP, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 > [!TIP]
-> Si vous écrivez le code de jeu qui fait partie d’une bibliothèque C++ WindowsRuntime (en d’autres termes, une DLL), prenez connaissance de la section [Création d’opérations asynchrones en C++ pour les applications UWP](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) pour découvrir comment créer des opérations asynchrones pouvant être consommées par des applications et d’autres bibliothèques.
+> Si vous écrivez le code de jeu qui fait partie d’une bibliothèque C++ Windows Runtime (en d’autres termes, une DLL), prenez connaissance de la section [Création d’opérations asynchrones en C++ pour les applications UWP](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) pour découvrir comment créer des opérations asynchrones pouvant être consommées par des applications et d’autres bibliothèques.
 
  
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-Par exemple, l’état **MainMenu** définit que le menu principal s’affiche et que le jeu n’est pas actif. Inversement, l’état **InGameActive** définit que le jeu est actif et que le menu ne s’affiche pas. La classe **MarbleMazeMain** définit la variable membre **m\_gameState** afin qu’elle contienne l’état de jeu actif.
+Par exemple, l’état **MainMenu** définit que le menu principal s’affiche et que le jeu n’est pas actif. Inversement, l’état **InGameActive** définit que le jeu est actif et que le menu ne s’affiche pas. Le **MarbleMazeMain** classe définit la **m\_gameState** variable membre pour conserver l’état du jeu actif.
 
 Les méthodes **MarbleMazeMain::Update** et **MarbleMazeMain::Render** utilisent les instructions switch pour exécuter la logique relative à l’état actuel. L’exemple suivant illustre une instruction switch dans le cas de la méthode **MarbleMazeMain::Update** (les détails sont supprimés pour représenter la structure).
 
@@ -423,9 +423,9 @@ Pour plus d’informations sur certaines pratiques importantes à garder à l’
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Ajout de contenu visuel à l’exemple Marble Maze](adding-visual-content-to-the-marble-maze-sample.md)
-* [Notions de base de l’exemple Marble Maze](marble-maze-sample-fundamentals.md)
-* [Développement de Marble Maze, jeu pour UW en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Ajout de contenu visuel à l’exemple de labyrinthe de billes](adding-visual-content-to-the-marble-maze-sample.md)
+* [Principes de base exemple de labyrinthe de billes](marble-maze-sample-fundamentals.md)
+* [Développement du labyrinthe de billes, un jeu UWP en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

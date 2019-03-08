@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
-title: RFCOMM Bluetooth
+title: Bluetooth RFCOMM
 description: Cet article fournit une vue d’ensemble de RFCOMM Bluetooth dans les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier.
 ms.date: 07/19/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 27adf5bb39a06e24b7d76e272ceb8dcf6348b57e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943837"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615624"
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
@@ -34,13 +34,13 @@ Les API RFCOMM utilisent le concept d’identificateurs de service. Bien qu’un
 
 L’application peut effectuer des opérations d’appareil en plusieurs étapes dans le cadre d’une tâche en arrière-plan, si bien qu’elle peut s’exécuter jusqu’au bout, même si elle est déplacée vers l’arrière-plan et suspendue. Cela permet d’effectuer des opérations de maintenance fiables pour les appareils telles que la modification de paramètres persistants ou de microprogrammes et la synchronisation du contenu, sans obliger l’utilisateur à observer une barre de progression pour patienter. Utilisez [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) pour la maintenance de l’appareil et [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) pour la synchronisation du contenu. Ces tâches en arrière-plan limitent la durée pendant laquelle l’application peut s’exécuter en arrière-plan et ne sont pas conçues pour autoriser une opération ou synchronisation illimitée.
 
-Pour un exemple de code complet détaillant l’opérationRFCOMM, voir l’[**exemple de conversation RFCOMM Bluetooth**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) sur Github.  
+Pour un exemple de code complet détaillant l’opération RFCOMM, voir l’[**exemple de conversation RFCOMM Bluetooth**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) sur Github.  
 
 ## <a name="send-a-file-as-a-client"></a>Envoyer un fichier en tant que client
 
-Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes:
+Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes :
 
--   Utilisez les fonctions **RfcommDeviceService.GetDeviceSelector\*** pour générer une requête AQS permettant d’énumérer les instances d’appareil couplé du service souhaité.
+-   Utilisez le **RfcommDeviceService.GetDeviceSelector\***  fonctions pour aider à générer une requête AQS qui peut être utilisée à énumérée associé à des instances de périphérique de service souhaité.
 -   Sélectionnez un appareil énuméré, créez un [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463), puis lisez les attributs SDP selon les besoins (en utilisant [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) pour analyser les données de l’attribut).
 -   Créez un socket et utilisez les propriétés [**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) et [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) pour établir une connexion [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) au service d’appareil distant avec les paramètres appropriés.
 -   Suivez les schémas de flux de données établis pour lire des blocs de données dans le fichier et les envoyer à l’appareil via le flux [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) du socket.

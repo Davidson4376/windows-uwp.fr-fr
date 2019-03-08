@@ -3,15 +3,15 @@ title: Enregistrer et charger des paramètres dans une application UWP
 description: Découvrez comment enregistrer et charger des paramètres d’application dans les applications de plateforme Windows universelle.
 ms.date: 05/07/2018
 ms.topic: article
-keywords: prise en main, uwp, Windows10, piste d'apprentissage, paramètres, enregistrer des paramètres, charger des paramètres
+keywords: prise en main, uwp, Windows 10, piste d'apprentissage, paramètres, enregistrer des paramètres, charger des paramètres
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931897"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614634"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Enregistrer et charger des paramètres dans une application UWP
 
@@ -25,9 +25,9 @@ Nous allons examiner le code pour enregistrer et charger les paramètres d’app
 
 Utilisez les paramètres d’application pour stocker les données de configuration telles que les préférences de l’utilisateur et l’état de l’application.  Les paramètres spécifiques à l’appareil sont stockés localement. Les paramètres qui s’appliquent à tous les appareils sur lesquels votre application est installée sont stockés dans le magasin de données itinérantes. Les paramètres sont itinérants entre les différents appareils auxquels l’utilisateur est connecté avec le même compte Microsoft et qui disposent de la même version de l’application.
 
-Les types de données suivants peuvent être utilisés avec des paramètres: entiers, doubles, flottants, caractères, chaînes, points, DateTime, etc. Vous pouvez également stocker des instances de la classe [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) qui est utile lorsque plusieurs paramètres doivent être traités en tant qu’unité. Par exemple, un nom de police et une taille de point pour afficher du texte dans le volet de lecture de votre application doivent être enregistrés/restaurés comme une seule unité. Cela empêche la désynchronisation d'une paramètre avec les autres à cause de retards lors de l'itinérance d'un paramètre avant l'autre.
+Les types de données suivants peuvent être utilisés avec des paramètres : entiers, doubles, flottants, caractères, chaînes, points, DateTime, etc. Vous pouvez également stocker des instances de la classe [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) qui est utile lorsque plusieurs paramètres doivent être traités en tant qu’unité. Par exemple, un nom de police et une taille de point pour afficher du texte dans le volet de lecture de votre application doivent être enregistrés/restaurés comme une seule unité. Cela empêche la désynchronisation d'une paramètre avec les autres à cause de retards lors de l'itinérance d'un paramètre avant l'autre.
 
-Voici les principales API que vous devez connaître pour enregistrer ou charger les paramètres d’application:
+Voici les principales API que vous devez connaître pour enregistrer ou charger les paramètres d’application :
 
 - [Windows.Storage.ApplicationData.Current.LocalSettings](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) obtient le conteneur de paramètres d’application dans le magasin de données d’application locales. Stockez ici des paramètres qu'il n'est pas approprié de déplacer d'un appareil à l'autre, car ils représentent un état spécifique à cet appareil, ou sont trop grands.
 - [Windows.Storage.ApplicationData.Current.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) obtient le conteneur de paramètres d’application dans le magasin de données d’application itinérantes. Ces données se déplace d'un appareil à l'autre.
@@ -36,7 +36,7 @@ Voici les principales API que vous devez connaître pour enregistrer ou charger 
 
 ## <a name="save-app-settings"></a>Enregistrer les paramètres d'application
 
-Pour cette présentation, nous allons nous concentrer sur deux scénarios simples: enregistrer et charger un paramètre d'application en local et déplacer un paramètre de police composite/taille de police entre des appareils.
+Pour cette présentation, nous allons nous concentrer sur deux scénarios simples : enregistrer et charger un paramètre d'application en local et déplacer un paramètre de police composite/taille de police entre des appareils.
 
  ```csharp
 // Save a setting locally on the device
@@ -89,17 +89,17 @@ Voici un résumé rapide des API et d'autres documents utiles pour vous aider à
 | [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Obtient le conteneur de paramètres d'application du magasin de données d'application locales. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Obtient le conteneur de paramètres d'application du magasin de données d'application itinérantes. |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Conteneur de paramètres d’application qui prend en charge la création, la suppression, l'énumération et le parcours de la hiérarchie du conteneur. |
-| [Espace de noms Windows.UI.ApplicationSettings](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Fournit des classes que vous utiliserez pour définir les paramètres d’application qui s’affichent dans le volet des paramètres de Windows Shell. |
+| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Fournit des classes que vous utiliserez pour définir les paramètres d’application qui s’affichent dans le volet des paramètres de Windows Shell. |
 
 ### <a name="useful-docs"></a>Documents utiles
 
-| Sujet | Description |
+| Rubrique | Description |
 |-------|----------------|
-| [Recommandations en matière de paramètres d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Décrit les bonnes pratiques pour créer et afficher des paramètres d’application. |
-| [Stocker et récupérer des paramètres et autres données d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Procédure d’enregistrement et de récupération de paramètres, notamment les paramètres itinérants. |
+| [Instructions pour les paramètres d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Décrit les bonnes pratiques pour créer et afficher des paramètres d’application. |
+| [Store et de récupérer les paramètres et autres données d’application](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Procédure d’enregistrement et de récupération de paramètres, notamment les paramètres itinérants. |
 
 ## <a name="useful-code-samples"></a>Exemples de code utiles
 
 | Exemple de code | Description |
 |-----------------|---------------|
-| [Exemple de données d'application](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | Focus sur les scénarios2 à 4 relatifs aux paramètres |
+| [Exemple de données d’application](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | Focus sur les scénarios 2 à 4 relatifs aux paramètres |

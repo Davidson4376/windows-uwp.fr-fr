@@ -1,17 +1,17 @@
 ---
-Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
+Description: La page Tarification et disponibilité du processus de soumission d’application vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients.
 title: Définir la tarification et la disponibilité d’une application
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
+keywords: windows 10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640164"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -21,7 +21,7 @@ La page **Tarification et disponibilité** du [processus de soumission d’appli
 
 ## <a name="markets"></a>Marchés
 
-Le Microsoft Store touche des clients dans plus de 200pays et régions dans le monde. Par défaut, nous allons proposer votre application sur tous les marchés possibles. Si vous préférez, vous pouvez choisir les marchés spécifiques sur lesquels vous souhaitez proposer votre application. 
+Le Microsoft Store touche des clients dans plus de 200 pays et régions dans le monde. Par défaut, nous allons proposer votre application sur tous les marchés possibles. Si vous préférez, vous pouvez choisir les marchés spécifiques sur lesquels vous souhaitez proposer votre application. 
 
 Pour plus d’informations, voir l’article [Définir la sélection du marché](define-pricing-and-market-selection.md).
 
@@ -42,22 +42,22 @@ Pour plus d’informations, voir [Configurer le calendrier de publication exact]
 
 ## <a name="pricing"></a>Tarification
 
-Vous devez sélectionner un prix de base pour votre application (sauf si vous avez sélectionné l’option **Empêcher l’acquisition** sous **Rendre votre application disponible mais non détectable dans le Store** dans la section [Visibilité](choose-visibility-options.md#discoverability)), en choisissant soit **Gratuit**, soit l’un des niveaux de prix disponibles. Vous pouvez également programmer des modifications de tarifs pour indiquer la date et l'heure à laquelle le prix de votre application doit changer. Vous pouvez aussi personnaliser ces changements pour des marchés spécifiques. 
+Vous devez sélectionner un prix de base pour votre application (sauf si vous avez sélectionné l’option **Empêcher l’acquisition** sous **Rendre votre application disponible mais non détectable dans le Store** dans la section [Visibilité](choose-visibility-options.md#discoverability)), en choisissant soit **Gratuit**, soit l’un des niveaux de prix disponibles. Vous pouvez également programmer des modifications de tarifs pour indiquer la date et l'heure à laquelle le prix de votre application doit changer. En outre, vous pouvez personnaliser ces changements pour des marchés spécifiques. 
 
-Pour plus d’informations, voir [Fixer et planifier le prix des applications](set-and-schedule-app-pricing.md).
+Pour plus d’informations, voir [Définir et planifier le prix de l’application](set-and-schedule-app-pricing.md).
 
 
-## <a name="free-trial"></a>Essai gratuit
+## <a name="free-trial"></a>Évaluation gratuite
 
-De nombreux développeurs offrent aux utilisateurs la possibilité d’essayer gratuitement leur application à l’aide de la fonctionnalité d’essai fournie par le Store. Par défaut, **Aucune version d’essai gratuit** est sélectionné. Il n’y aura alors aucune version d’essai de votre application. Si vous souhaitez en proposer une, vous pouvez sélectionner une valeur dans la liste déroulante **Version d’essai gratuite**.
+De nombreux développeurs offrent aux utilisateurs la possibilité d’essayer gratuitement leur application à l’aide de la fonctionnalité d’essai fournie par le Windows Store. Par défaut, **Aucune version d’essai gratuit** est sélectionné. Il n’y aura alors aucune version d’essai de votre application. Si vous souhaitez en proposer une, vous pouvez sélectionner une valeur dans la liste déroulante **Version d’essai gratuite**.
 
 Vous pouvez choisir parmi deux types de version d’essai et vous avez la possibilité de configurer la date et l’heure à laquelle cette version d’essai doit démarrer et arrêter d'être proposée.
 
 ### <a name="time-limited"></a>Durée limitée
 
-Choisissez **Durée limitée** pour permettre aux clients d’essayer votre application gratuitement pendant un certain nombre de jours: **1 jour**, **7jours**, **15jours** ou **30jours**. Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter des fonctionnalités de la version d’essai](../monetize/in-app-purchases-and-trials.md)ou vous pouvez donner accès à toutes les fonctionnalités pendant cette durée. 
+Choisissez **durée limitée** pour autoriser les clients de tester votre application gratuitement pendant un certain nombre de jours : **1 jour**, **7 jours**, **15 jours**, ou **30 jours**. Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter des fonctionnalités de la version d’essai](../monetize/in-app-purchases-and-trials.md)ou vous pouvez donner accès à toutes les fonctionnalités pendant cette durée. 
 > [!NOTE]
-> Les versions d’essai limitées dans le temps ne sont pas proposées aux clients sous Windows10 build10.0.10586 ou versions antérieures, ni aux clients sous WindowsPhone8.1 et versions antérieures.
+> Versions d’évaluation limitée dans le temps ne sont pas affichées pour les clients sur Windows 10 build 10.0.10586 ou antérieure, ou aux clients sur Windows Phone 8.1 et versions antérieures.
 
 ### <a name="unlimited"></a>Illimité
 
@@ -68,16 +68,16 @@ Choisissez **Illimité** pour permettre aux clients d’accéder à votre applic
 Par défaut, votre version d’essai sera disponible dès que votre application aura été publiée et elle sera proposée indéfiniment. Si vous le souhaitez, vous pouvez spécifier la date et l’heure à laquelle votre version d’évaluation doit commencer à être proposée et le moment où cette proposition doit s’arrêter. 
 
 >[!NOTE]
-> Ces dates ne s’appliquent qu’aux clients sous Windows10 (y compris Xbox). Si votre application est disponible pour les clients utilisant des versions antérieures du système d’exploitation, la version d'essai sera proposée à ces clients aussi longtemps que votre produit sera disponible. 
+> Ces dates ne s’appliquent qu’aux clients sous Windows 10 (y compris Xbox). Si votre application est disponible pour les clients utilisant des versions antérieures du système d’exploitation, la version d'essai sera proposée à ces clients aussi longtemps que votre produit sera disponible. 
 
-Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire est est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour un ou plusieurs marchés.
+Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows 10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, seul un fuseau horaire sur ce marché sera utilisé. Pour les États-Unis, le fuseau horaire utilisé est celui de l'Est.) Vous pouvez sélectionner **personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour n’importe quel en cause.
 
 
 ## <a name="sale-pricing"></a>Prix de vente
 
 Si vous souhaitez proposer votre application à un prix réduit pendant une durée limitée, vous pouvez créer et planifier une vente.
 
-Pour plus d’informations, voir [Vendre des applications et des extensions à prix réduit](put-apps-and-add-ons-on-sale.md).
+Pour plus d’informations, voir [Vendre des applications et des composants additionnels à prix réduit](put-apps-and-add-ons-on-sale.md).
 
 
 ## <a name="organizational-licensing"></a>Gestion des licences organisationnelles

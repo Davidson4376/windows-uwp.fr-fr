@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944675"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660024"
 ---
 # <a name="light-mapping-with-textures"></a>Mappage lumineux avec textures
 
@@ -29,7 +29,7 @@ La fusion de textures multiples permet à votre application d’effectuer le ren
 
 En s’appuyant sur les mappages lumineux, une application Direct3D peut mettre en œuvre divers effets d’éclairage durant le rendu des primitives. Elle peut non seulement mapper les lumières monochromes et polychromes d’une scène, mais ajouter des détails tels que des surbrillances spéculaires ou un éclairage diffus.
 
-Des détails sur l’utilisation de la fusion de texturesDirect3D pour exécuter le mappage lumineux sont présentés dans les rubriques suivantes.
+Des détails sur l’utilisation de la fusion de textures Direct3D pour exécuter le mappage lumineux sont présentés dans les rubriques suivantes.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -47,19 +47,19 @@ Des détails sur l’utilisation de la fusion de texturesDirect3D pour exécuter
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="monochrome-light-maps.md">Mappages lumineux monochromes</a></p></td>
-<td align="left"><p>Les mappages lumineux monochromes permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination.</p></td>
+<td align="left"><p><a href="monochrome-light-maps.md">Mappe une lumière monochrome</a></p></td>
+<td align="left"><p>Les mappages de lumière monochrome permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur 3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="color-light-maps.md">Mappages de lumière en couleur</a></p></td>
-<td align="left"><p>Un mappage de lumière en couleur utilise les données RVB dans le mappage lumineux pour ses informations d’éclairage. Une application qui utilise des mappages de lumière en couleur produit généralement des scènes 3D plus réalistes.</p></td>
+<td align="left"><p><a href="color-light-maps.md">Mappages de lumière de couleur</a></p></td>
+<td align="left"><p>Une carte de lumière en couleur utilise les données RVB dans la carte de lumière pour ses informations d’éclairage. Une application qui utilise des cartes de lumière en couleur produit généralement des scènes 3D plus réalistes.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-light-maps.md">Mappages de lumière spéculaire</a></p></td>
+<td align="left"><p><a href="specular-light-maps.md">Mappe une lumière spéculaire</a></p></td>
 <td align="left"><p>Lorsqu’ils sont éclairés par une source lumineuse, les objets brillants présentant des matériaux hautement réfléchissants reçoivent des surbrillances spéculaires. Parfois, il est possible d’obtenir des surbrillances plus précises en appliquant des mappages de lumière spéculaire sur les primitives, plutôt qu’en utilisant des surbrillances spéculaires produites par le module d’éclairage.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="diffuse-light-maps.md">Mappages de lumière diffuse</a></p></td>
+<td align="left"><p><a href="diffuse-light-maps.md">Diffuse la lumière maps</a></p></td>
 <td align="left"><p>Les surfaces mates présentent une réflexion lumineuse diffuse. La luminosité de la lumière diffuse dépend de la distance entre la source de lumière et l’angle formé par la normale de surface avec le vecteur de direction de la source de lumière. Les textures de luminosité peuvent simuler un éclairage diffus complexe.</p></td>
 </tr>
 </tbody>

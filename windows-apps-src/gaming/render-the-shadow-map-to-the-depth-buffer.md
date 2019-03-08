@@ -1,24 +1,24 @@
 ---
-title: Générer le rendu du mappage d’ombre dans le tampon de profondeur
+title: Restituer le plan d’ombres dans le tampon
 description: Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d
+keywords: windows 10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925568"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621334"
 ---
-# <a name="render-the-shadow-map-to-the-depth-buffer"></a>Générer le rendu du mappage d’ombre dans le tampon de profondeur
+# <a name="render-the-shadow-map-to-the-depth-buffer"></a>Restituer le plan d’ombres dans le tampon
 
 
 
 
-Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de [procédure pas à pas : Implémenter des volumes de clichés instantanés à l’aide des tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="clear-the-depth-buffer"></a>Effacer le tampon de profondeur
 
@@ -30,7 +30,7 @@ context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## <a name="render-the-shadow-map-to-the-depth-buffer"></a>Générer le rendu du mappage d’ombre dans le tampon de profondeur
+## <a name="render-the-shadow-map-to-the-depth-buffer"></a>Restituer le plan d’ombres dans le tampon
 
 
 Pour la passe de rendu d’ombre, spécifiez un tampon de profondeur mais ne spécifiez pas de cible de rendu.
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimisez le tronc de cône de l’affichage:** assurez-vous que votre implémentation calcule un tronc de cône de l’affichage étroit afin d’obtenir le niveau de précision le plus élevé possible de votre tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
+**Optimiser le frustum vue :**  Assurez-vous que votre implémentation calcule un frustum vue étroite afin que vous obtenez le plus précis en dehors de votre mémoire tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
 
 ## <a name="vertex-shader-for-shadow-pass"></a>Nuanceur de vertex pour la passe d’ombre
 

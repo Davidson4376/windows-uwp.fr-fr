@@ -1,17 +1,17 @@
 ---
-Description: Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.
+Description: Concevez votre application pour fournir la prise en charge du texte bidirectionnel (BiDi) afin que vous pouvez combiner le script à partir de gauche à droite (LTR) et de droite à gauche (DÀG) systèmes, qui contiennent généralement les différents types d’alphabets d’écriture.
 title: Conception de votre application pour le texte bidirectionnel
 template: detail.hbs
 ms.date: 11/10/2017
 ms.topic: article
-keywords: Windows10, uwp, globalisation, adaptabilité, localisation, DàG, GàD
+keywords: Windows 10, uwp, globalisation, adaptabilité, localisation, DàG, GàD
 ms.localizationpriority: medium
 ms.openlocfilehash: 66a158a96fcab5391030f4517b6420ba4585bf04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942022"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641124"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>Conception de votre application pour le texte bidirectionnel
 
@@ -19,9 +19,9 @@ Concevez votre application pour fournir la prise en charge du texte bidirectionn
 
 Les systèmes d’écriture de droite à gauche, tels que ceux utilisés au Moyen-Orient, en Asie Centrale et du Sud et en Afrique, comportent des exigences de conception uniques. Ces systèmes d’écriture nécessitent la prise en charge du texte bidirectionnel (Bidi). La prise en charge du BiDi implique la capacité de saisir et d'afficher une disposition de texte de droite à gauche (DàG) ou de gauche à droite (GàD).
 
-Un nombre total de neuflangues BiDi est inclus avec Windows.
-- Deuxlangues intégralement localisées. L'arabe et l'hébreu.
-- Septpacks linguistiques LIP pour les marchés émergeants. Le perse, l'ourdou, le dari, le kurde, le sindhi, le pendjabi et l'ouïghour.
+Un nombre total de neuf langues BiDi est inclus avec Windows.
+- Deux langues intégralement localisées. L'arabe et l'hébreu.
+- Sept packs linguistiques LIP pour les marchés émergeants. Le perse, l'ourdou, le dari, le kurde, le sindhi, le pendjabi et l'ouïghour.
 
 Cette rubrique présente la philosophie de conception BiDi de Windows, quelques cas d'études et les considérations de conception BiDi.
 
@@ -42,8 +42,8 @@ Windows prend en charge les quatre éléments de conception BiDi. Examinons quel
 
 Windows ajuste le sens de la grille typographique afin qu'elle soit disposée de droit à gauche. Ainsi, la première vignette de la grille est placée dans le coin supérieur droit et la dernière dans le coin inférieur gauche. Cela correspond au modèle de droite à gauche de publications imprimées telles que la documentation et magazines, où le modèle de lecture toujours démarre dans le coin supérieur droit et progresse vers la gauche.
 
-![Menu Démarrer BiDi](images/56283_BIDI_01_startscreen_resized.png)
-![Menu Démarrer BiDi avec des icônes](images/56283_BIDI_02_startscreen_charm_resized.png)
+![Menu Démarrer de BiDi](images/56283_BIDI_01_startscreen_resized.png)
+![BiDi le menu Démarrer avec les icônes](images/56283_BIDI_02_startscreen_charm_resized.png)
 
 Pour conserver un flux d'interface utilisateur cohérent, le contenu des vignettes garde une disposition de droite à gauche, ce qui signifie que le nom et le logo de l'application sont placés dans le coin inférieur droit de la vignette, quelle que soit la langue de l'interface utilisateur de l'application.
 
@@ -65,11 +65,11 @@ Les vignettes prennent en charge une combinaison de texte. La zone de notificati
 
 Chaque élément de l'interface utilisateur Windows s'adapte à l'orientation DàG. Les icônes et menus volants sont placés sur le bord gauche de l'écran afin d'éviter qu'ils ne chevauchent les résultats de recherche ou qu'ils ne dégradent l'optimisation tactile. Ils sont simplement accessibles avec le pouce.
 
-![Capture d’écran bidirectionnel](images/56286_BIDI_05_search_flyout_resized.png)
-![capture d’écran bidirectionnel](images/56286_BIDI_06_print_flyout_resized.png)
+![Capture d’écran BiDi](images/56286_BIDI_05_search_flyout_resized.png)
+![BiDi capture d’écran](images/56286_BIDI_06_print_flyout_resized.png)
 
-![Capture d’écran bidirectionnel](images/56286_BIDI_07_settings_flyout_resized.png)
-![capture d’écran bidirectionnel](images/56286_BIDI_08_app_bars_resized.png)
+![Capture d’écran BiDi](images/56286_BIDI_07_settings_flyout_resized.png)
+![BiDi capture d’écran](images/56286_BIDI_08_app_bars_resized.png)
 
 ### <a name="text-input-in-any-direction"></a>Saisie de texte dans n’importe quelle direction
 
@@ -99,12 +99,12 @@ Avec l'introduction de l'algorithme de parenthèse BiDi (BPA), les paires de par
 
 Windows utilise la police d'interface utilisateur Segoe dans toutes les langues BiDi. Cette police est mise en force et mise à l'échelle pour l'interface utilisateur Windows.
 
-![Police d'interface utilisateur Segoe pour les langues BiDi](images/56290_BIDI_13_start_screen_segoe.png)
-![Police d'interface utilisateur Segoe pour les langues BiDi](images/56290_BIDI_13_start_screen_segoe_arabic.png)
+![Police Segoe UI pour les langues BiDi](images/56290_BIDI_13_start_screen_segoe.png)
+![police Segoe UI pour les langues BiDi](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
-## <a name="case-study-1-a-bidi-music-app"></a>Cas d'étude n°1: Une application de musique BiDi
+## <a name="case-study-1-a-bidi-music-app"></a>Étude de cas #1 : Une application de musique BiDi
 
-### <a name="overview"></a>Présentation
+### <a name="overview"></a>Vue d’ensemble
 
 Les applications multimédia constituent un défi de conception très intéressant. En effet, on s'attend généralement à ce que les commandes média ait une disposition de gauche à droite, de manière similaire aux langues non BiDi.
 
@@ -131,13 +131,13 @@ La manipulation de l'alignement au sein de l'application peut paraître simple, 
 | | Chaîne en anglais (GàD) | Chaîne en hébreu (DàG) |
 | -------------- | ------------------- | ------------------- |
 | **Alignement à gauche** | Hello, World! | בוקר טוב! |
-| **Alignement à droite** | !Hello, World | !בוקר טוב |
+| **Alignement de la droite** | !Hello, World | !בוקר טוב |
 
 Pour assurer que les informations de l'artiste s'affichent correctement dans l'application de musique, l'équipe de développement a séparé l'alignement des propriétés de disposition du texte. Autrement dit, les informations de l'artiste peuvent être alignés à droite dans la plupart des cas, mais l'alignement de la disposition de la chaîne est définie selon un traitement d'arrière-plan personnalisé. Le traitement d'arrière-plan détermine le meilleur paramètre de disposition directionnelle selon le contenu de la chaîne.
 
 ![Page d'artiste d'une application de musique](images/56292_BIDI_18_app_layout_callouts_resized.png)
 
-Par exemple, sans traitement de disposition de chaîne personnalisé, le nom d'artiste «The Contoso Band.» deviendrait «.The Contoso Band».
+Par exemple, sans traitement de disposition de chaîne personnalisé, le nom d'artiste « The Contoso Band. » deviendrait « .The Contoso Band ».
 
 ### <a name="specialized-string-direction-preprocessing"></a>Prétraitement de sens de chaîne spécialisé
 
@@ -182,9 +182,9 @@ string NormalizeTextDirection(string data)
 
 Les caractères Unicode ajoutés n'ont aucune largeur. Ainsi, ils n'ont aucun impact sur l'espacement des chaînes. Ce code porte une potentielle pénalité de performance dans la mesure où l'orientation d'une chaîne nécessite d'être exécutée via la chaîne, jusqu'à ce qu'un caractère non neutre soit rencontré. Chaque caractère dont la neutralité est vérifiée est d'abord comparé à plusieurs gammes Unicode de la même manière. Cette vérification n'est donc pas sans importance.
 
-## <a name="case-study-2-a-bidi-mail-app"></a>Cas d'étude n°2: Une application de courrier BiDi
+## <a name="case-study-2-a-bidi-mail-app"></a>Étude de cas #2 : Une application de messagerie BiDi
 
-### <a name="overview"></a>Présentation
+### <a name="overview"></a>Vue d’ensemble
 
 En ce qui concerne les exigences de disposition de l'interface utilisateur, un client courrier est très simple à concevoir. Par défaut, l'application Courrier dans Windows est mise en miroir. Du point de vue du traitement du texte, l'application courrier doit disposer d'un affichage de texte et de capacités de composition plus robustes pour s'adapter aux scénarios de texte combiné.
 
@@ -202,7 +202,7 @@ Les articles supplémentaires ont été réorientés pour correspondre au flux d
 
 #### <a name="ui"></a>Interface utilisateur
 
-Le texte au sein de l'interface utilisateur est habituellement aligné à droite. Cela inclut le volet de dossier et le volet des articles. Le volet des articles se limite à deuxlignes de texte (Adresse et Titre). Cet élément est important pour conserver l'alignement de droite à gauche sans introduire de bloc de texte qui serait difficile à lire lorsque l'orientation du contenu et opposée au flux d'orientation de l'interface utilisateur.
+Le texte au sein de l'interface utilisateur est habituellement aligné à droite. Cela inclut le volet de dossier et le volet des articles. Le volet des articles se limite à deux lignes de texte (Adresse et Titre). Cet élément est important pour conserver l'alignement de droite à gauche sans introduire de bloc de texte qui serait difficile à lire lorsque l'orientation du contenu et opposée au flux d'orientation de l'interface utilisateur.
 
 #### <a name="text-editing"></a>Modification de texte
 

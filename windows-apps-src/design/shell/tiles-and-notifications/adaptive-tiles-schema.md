@@ -1,21 +1,21 @@
 ---
-Description: Here are the elements and attributes you use to create adaptive tiles.
+Description: Voici les éléments et attributs permettant de créer des vignettes adaptatives.
 title: Schéma et modèles de vignette adaptative
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942693"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611014"
 ---
-# <a name="adaptive-tile-templates-schema-and-guidance"></a>Modèles de vignette adaptative: schéma et conseils
+# <a name="adaptive-tile-templates-schema-and-guidance"></a>Modèles de vignette adaptative : schéma et conseils
 
  
 
@@ -108,7 +108,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 </text>
 ```
 
-Valeurs de textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
+Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
 
 ## <a name="group-element"></a>élément de groupe
 
@@ -141,7 +141,7 @@ Valeurs de textStyle: caption captionSubtle body bodySubtle base baseSubtle subt
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Créer des vignettes adaptatives](create-adaptive-tiles.md)
+* [Créer des vignettes ADAPTATIF](create-adaptive-tiles.md)
  
 
  

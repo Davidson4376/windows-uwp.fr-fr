@@ -1,35 +1,35 @@
 ---
-title: Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
-description: Attractive avec votre application prenant en charge les applications pour la fonctionnalité de sites Web.
+title: Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
+description: Rendez votre application plus attractive en prenant en charge la fonctionnalité Applications pour les sites web.
 keywords: Liaisons Windows ciblées
 ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641074"
 ---
-# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
+# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
 
-Applications pour les sites Web associe votre application à un site Web afin que lorsqu’un utilisateur ouvre un lien vers votre site Web, votre application est lancée au lieu d’ouvrir le navigateur. Si votre application n’est pas installée, votre site Web s’ouvre comme d’habitude dans le navigateur. Cette expérience est très fiable puisque seuls les propriétaires de contenus vérifiés peuvent s’inscrire pour créer ce type de lien. Les utilisateurs seront en mesure de vérifier toutes leurs liens web applications inscrits en accédant à Paramètres > applications > applications pour les sites Web.
+Applications pour les sites web associe votre application à un site web afin que, lorsqu’un utilisateur ouvre un lien vers votre site web, l'application soit lancée plutôt que d’ouvrir le navigateur. Si votre application n’est pas installée, votre site web s'ouvre dans le navigateur comme d'habitude. Cette expérience est très fiable puisque seuls les propriétaires de contenus vérifiés peuvent s’inscrire pour créer ce type de lien. Les utilisateurs peuvent vérifier toutes les liaisons application-site web enregistrées en accédant à Paramètres > Applications > Applications pour les sites web.
 
-Pour activer web-la liaison application-vous devez:
-- identifier les URI gérés par votre application dans le fichier manifeste;
-- Un fichier JSON qui définit l’association entre votre application et votre site Web. déclaration de manifeste avec le nom de famille de Package d’application à la même racine hôte que l’application.
+Pour activer la liaison application-site web, vous devez :
+- identifier les URI gérés par votre application dans le fichier manifeste ;
+- disposer d’un fichier JSON qui définit l’association entre votre application et votre site Web, comportant le nom de la famille de packages de votre application à la même racine hôte que la déclaration de manifeste de l’application ;
 - gérer l’activation dans l’application.
 
 > [!Note]
-> À partir de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge seront lance l’application concernée. Prise en charge des liens a cliqué dans d’autres navigateurs (par exemple, Internet Explorer, etc.), vous gardera dans l’expérience de navigation.
+> À compter de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge lancera l’application correspondante. S'il a été cliqué dans d’autres navigateurs sur les liens pris en charge (par exemple, Internet Explorer, etc.), vous resterez dans le navigateur.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>S’inscrire pour bénéficier du traitement des liens http et https dans le manifeste de l’application
 
 Votre application a besoin d’identifier les URI pour les sites web qu’elle gère. Pour ce faire, ajoutez l’inscription d’extension **Windows.appUriHandler** au fichier manifeste de votre application **Package.appxmanifest**.
 
-Par exemple, si l’adresse de votre site web est «msn.com», vous devez saisir le code suivant dans le fichier manifeste de votre application:
+Par exemple, si l’adresse de votre site web est « msn.com », vous devez saisir le code suivant dans le fichier manifeste de votre application :
 
 ```xml
 <Applications>
@@ -46,7 +46,7 @@ Par exemple, si l’adresse de votre site web est «msn.com», vous devez saisir
 </Applications>
 ```
 
-La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site web comporte plusieurs adresses (par exemple: m.example.com www.example.com et example.com), ajoutez une autre entrée `<uap3:Host Name=... />` dans `<uap3:AppUriHandler>` pour chaque adresse.
+La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site web comporte plusieurs adresses (par exemple : m.example.com www.example.com et example.com), ajoutez une autre entrée `<uap3:Host Name=... />` dans `<uap3:AppUriHandler>` pour chaque adresse.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Associer votre application et votre site web à un fichier JSON
 
@@ -55,7 +55,7 @@ Pour faire en sorte que seule votre application puisse ouvrir du contenu sur vot
 >[!Important]
 > Le fichier JSON ne doit pas contenir le suffixe de fichier .json.
 
-Créez un fichier JSON (sans l’extension de fichier .json) nommé **windows-app-web-link** et indiquez le nom de la famille de packages de votre application. Par exemple:
+Créez un fichier JSON (sans l’extension de fichier .json) nommé **windows-app-web-link** et indiquez le nom de la famille de packages de votre application. Exemple :
 
 ``` JSON
 [{
@@ -69,14 +69,14 @@ Windows utilisera une connexion https vers votre site web et recherchera le fich
 
 ### <a name="wildcards"></a>Caractères génériques
 
-L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères génériques. Les caractères génériques vous permettent de prendre en charge une grande diversité de liens, avec moins de lignes de code. La liaison application-site web prend en charge deux types de caractères génériques dans le fichier JSON:
+L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères génériques. Les caractères génériques vous permettent de prendre en charge une grande diversité de liens, avec moins de lignes de code. La liaison application-site web prend en charge deux types de caractères génériques dans le fichier JSON :
 
-| **Caractère générique** | **Description**               |
+| **Wildcard** | **Description**               |
 |--------------|-------------------------------|
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, pour `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par adresse de votre site Web (par exemple, msn.com), **sauf** ceux sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
+Par exemple, avec la ligne `"excludePaths" : [ "/news/*", "/blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
 
 ### <a name="multiple-apps"></a>Applications multiples
 
@@ -96,11 +96,11 @@ Si vous avez deux applications que vous voulez lier à votre site web, répertor
 
 Pour offrir à vos utilisateurs la meilleure expérience possible, utilisez les chemins d’accès des exclusions pour vous assurer que le contenu uniquement en ligne est exclu des chemins d’accès pris en charge dans votre fichier JSON.
 
-Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, «/news/\*» inclut toutes les pages qui se trouvent sous ce chemin d’accès, tandis que «/news\*» (sans barre oblique après «news») inclut les chemins d’accès sous «news\*», comme «newslocal/», «newsinternational/», etc.
+Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, ' /news/\*» inclut toutes les pages sous ce chemin d’accès lors de la ' / news\*» (aucune barre oblique ne pistes « Actualités ») inclut des chemins d’accès sous ' news\*' comme ' newslocal /', ' newsinternational /', et ainsi de suite.
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Gérer les liens à l’activation pour créer un lien vers le contenu
 
-Accédez au fichier **App.xaml.cs** dans la solution VisualStudio de votre application puis, dans **OnActivated()**, ajoutez la gestion des contenus liés. Dans l’exemple suivant, la page ouverte ouvert dans l’application dépend du chemin d’accès de l’URI:
+Accédez au fichier **App.xaml.cs** dans la solution Visual Studio de votre application puis, dans **OnActivated()**, ajoutez la gestion des contenus liés. Dans l’exemple suivant, la page ouverte ouvert dans l’application dépend du chemin d’accès de l’URI :
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -150,32 +150,32 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Important** Veillez à remplacer la dernière logique `if (rootFrame.Content == null)` par `rootFrame.Navigate(deepLinkPageType, e);`, comme indiqué dans l’exemple ci-dessus.
 
-## <a name="test-it-out-local-validation-tool"></a>Test: outil de validation locale
+## <a name="test-it-out-local-validation-tool"></a>Le tester : Outil de validation locale
 
-Vous pouvez tester la configuration de votre application et de votre site web en exécutant l’outil de vérification de l’inscription de l’hôte de l’application disponible dans:
+Vous pouvez tester la configuration de votre application et de votre site web en exécutant l’outil de vérification de l’inscription de l’hôte de l’application disponible dans :
 
 %windir%\\system32\\**AppHostRegistrationVerifier.exe**
 
-Testez la configuration de votre application et de votre site web en exécutant cet outil avec les paramètres suivants:
+Testez la configuration de votre application et de votre site web en exécutant cet outil avec les paramètres suivants :
 
-**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
+**AppHostRegistrationVerifier.exe** *filepath packagefamilyname de nom d’hôte*
 
--   Hostname: votre site web (par exemple, microsoft.com)
--   Package Family Name: le nom de la famille de packages (PFN) de votre application
--   File path: le fichier JSON utilisé pour la validation locale (par exemple, C:\\SomeFolder\\windows-app-web-link)
+-   Nom d’hôte : Votre site Web (par exemple, microsoft.com)
+-   Nom de famille de packages (NFP) : NFP de votre application
+-   Chemin d’accès du fichier : Le fichier JSON pour la validation locale (par exemple, C:\\SomeFolder\\windows-application-web-link)
 
-Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il fonctionnera pas.
+Si l’outil ne retourne rien, la validation fonctionnera sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il ne fonctionnera pas.
 
-Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de validation locale:
+Vous pouvez activer la clé de Registre suivante afin qu'elle force la correspondance du chemin d’accès pour les applications chargées dans le cadre de la validation locale :
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-Nom: `ForceValidation` valeur: `1`
+KeyName : `ForceValidation` Valeur : `1`
 
-## <a name="test-it-web-validation"></a>Test: validation sur le web
+## <a name="test-it-web-validation"></a>Testez-le : Validation de Web
 
-Fermez votre application pour vérifier que l’application est activée lorsque vous cliquez sur un lien. Copiez ensuite l’adresse de l’un des chemins d’accès pris en charge dans votre site web. Par exemple, si l’adresse de votre site web est «msn.com» et si l’un des chemins pris en charge est «path1», vous devez utiliser: `http://msn.com/path1`
+Fermez votre application pour vérifier que l’application est activée lorsque vous cliquez sur un lien. Copiez ensuite l’adresse de l’un des chemins d’accès pris en charge dans votre site web. Par exemple, si l’adresse de votre site Web est « msn.com » et qu’un des chemins d’accès des prise en charge est « chemin1 », vous utiliseriez `http://msn.com/path1`
 
 Vérifiez que votre application est fermée. Appuyez sur la **touche Windows + R** pour ouvrir la boîte de dialogue **Exécuter**, puis collez le lien dans la fenêtre. Votre application doit alors démarrer à la place du navigateur web.
 
@@ -183,19 +183,19 @@ Vous pouvez aussi tester votre application en la démarrant à partir d’une au
 
 Si vous souhaitez suivre la logique d’activation du protocole, définissez un point d’arrêt dans le gestionnaire d’événements **OnActivated**.
 
-## <a name="appurihandlers-tips"></a>Conseils concernant AppUriHandlers:
+## <a name="appurihandlers-tips"></a>Conseils concernant AppUriHandlers :
 
 - Veillez à spécifier uniquement les liens que votre application peut gérer.
 - Répertoriez tous les hôtes que vous allez prendre en charge.  Notez que www.example.com et example.com sont des hôtes différents.
 - Les utilisateurs peuvent utiliser le menu Paramètres pour choisir l’application qu’ils préfèrent pour la gestion des sites web.
 - Votre fichier JSON doit être téléchargé sur un serveur https.
-- Si vous devez modifier les chemins d’accès que vous souhaitez prendre en charge, vous pouvez republier votre fichier JSON sans avoir à republier votre application. Les utilisateurs verront ces modifications dans un délai de 1 à 8jours.
+- Si vous devez modifier les chemins d’accès que vous souhaitez prendre en charge, vous pouvez republier votre fichier JSON sans avoir à republier votre application. Les utilisateurs verront ces modifications dans un délai de 1 à 8 jours.
 - Toutes les applications chargées de manière indépendante avec AppUriHandlers auront des liens validés pour l’hôte au moment de l’installation. Il est inutile de charger un fichier JSON pour tester la fonctionnalité.
 - Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
 
 ## <a name="see-also"></a>Voir également
 
-[Web application-exemple de projet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[Gérer l’Activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[Lancement d’Association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().
+[Exemple de projet Application-site web](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[Inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
+[Gérer l’activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[L'exemple de lancement d'association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) explique comment utiliser l'API LaunchUriAsync().

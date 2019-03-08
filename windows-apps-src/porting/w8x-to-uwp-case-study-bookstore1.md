@@ -1,103 +1,103 @@
 ---
 title: 'Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1'
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle Windows 10 (UWP).
+description: Cette rubrique présente une étude de cas de portage d’une application très simple de 8.1 universelle à une application de plateforme Windows universelle (UWP) de Windows 10.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048116"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627934"
 ---
-# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime8.x vers UWP : Bookstore1
+# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows Runtime 8.x à UWP les étude de cas : Bookstore1
 
 
-Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle Windows10Universal (UWP). Une application 8.1 universelle est une application qui génère un package d’application pour Windows8.1 et une autre application pour Windows Phone 8.1. Avec Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Cette rubrique présente une étude de cas de portage d’une application très simple de 8.1 universelle à une application de plateforme Windows universelle (UWP) de Windows 10. Une application universelle 8.1 est celle qui génère un package d’application pour Windows 8.1 et un package d’application différent pour Windows Phone 8.1. Avec Windows 10, vous pouvez créer un package d’application unique vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
 L’application que nous porterons se compose d’une classe **ListBox** liée à un modèle d’affichage. Ce modèle comporte une liste de livres qui indique leur titre, leur auteur et leur couverture. Les images de couverture de livre possèdent l’attribut **Action de génération** défini sur **Contenu** et l’attribut **Copier dans le répertoire de sortie** défini sur **Ne pas copier**.
 
 Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
 
-**Remarque**  lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message «Visual Studio mise à jour requise», puis suivez les étapes décrites dans [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
+**Remarque**    lors de l’ouverture Bookstore1Universal\_10 dans Visual Studio, si vous voyez le message « Visual Studio mise à jour requise », puis suivez les étapes décrites dans [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
 
 ## <a name="downloads"></a>Téléchargements
 
-[Téléchargez l’application 8.1 universelle Bookstore1\_81](https://go.microsoft.com/fwlink/?linkid=532946).
+[Téléchargez le Bookstore1\_81 8.1 universelle application](https://go.microsoft.com/fwlink/?linkid=532946).
 
-[Téléchargez le Bookstore1Universal\_10 Windows 10 application](https://go.microsoft.com/fwlink/?linkid=532950).
+[Téléchargez le Bookstore1Universal\_application 10 Windows 10](https://go.microsoft.com/fwlink/?linkid=532950).
 
-## <a name="the-universal-81-app"></a>Application8.1 universelle
+## <a name="the-universal-81-app"></a>Application 8.1 universelle
 
-Voici à quoi ressemble Bookstore1\_81, l’application que nous allons porter. Il s’agit simplement d’une zone de liste à défilement vertical répertoriant des livres au-dessous de l’en-tête constitué du nom de l’application et du titre de la page.
+Voici les Bookstore1\_81, l’application que nous allons port — ressemble. Il s’agit simplement d’une zone de liste à défilement vertical répertoriant des livres au-dessous de l’en-tête constitué du nom de l’application et du titre de la page.
 
-![Apparence de l’application bookstore1\-81 sur Windows](images/w8x-to-uwp-case-studies/c01-01-win81-how-the-app-looks.png)
+![Comment bookstore1\-81 recherche sur windows](images/w8x-to-uwp-case-studies/c01-01-win81-how-the-app-looks.png)
 
 Bookstore1\_81 sur Windows
 
-![Apparence de l’application bookstore1\-81 sur WindowsPhone](images/w8x-to-uwp-case-studies/c01-02-wp81-how-the-app-looks.png)
+![Comment bookstore1\-81 recherche sur windows phone](images/w8x-to-uwp-case-studies/c01-02-wp81-how-the-app-looks.png)
 
-Bookstore1\_81 sur WindowsPhone
+Bookstore1\_81 sur Windows Phone
 
-##  <a name="porting-to-a-windows10-project"></a>Portage d’applications vers un projet Windows 10
+##  <a name="porting-to-a-windows10-project"></a>Portage vers un projet Windows 10
 
-La solution Bookstore1\_81 est un projet d’application universelle version 8.1. Elle contient les projets suivants:
+Le Bookstore1\_solution 81 est un projet d’application universelle 8.1, et il contient ces projets.
 
--   Bookstore1\_81.Windows. Il s’agit du projet qui crée le package d’application pour Windows8.1.
--   Bookstore1\_81.WindowsPhone. Il s’agit du projet qui crée le package d’application pour WindowsPhone8.1.
+-   Bookstore1\_81.Windows. Il s’agit du projet qui génère le package d’application pour Windows 8.1.
+-   Bookstore1\_81.WindowsPhone. Il s’agit du projet qui crée le package d’application pour Windows Phone 8.1.
 -   Bookstore1\_81.Shared. Il s’agit du projet qui contient le code source, les fichiers de balisage et d’autres actifs et ressources qui sont utilisés par les deux autres projets.
 
-Pour cette étude de cas, nous disposons des options habituelles décrites dans la section [Si vous disposez d’une application 8.1 universelle](w8x-to-uwp-root.md), relative aux appareils à prendre en charge. La décision ici est simple: cette application offre les mêmes fonctionnalités et par conséquent, principalement avec le même code, dans ses Windows8.1 et Windows Phone 8.1. Par conséquent, nous allons porter le contenu du projet partagé (et tout ce dont nous avons besoin dans les autres projets) vers un Windows 10 qui cible la famille d’appareils universels (application que vous pouvez installer sur le plus large éventail d’appareils).
+Pour cette étude de cas, nous disposons des options habituelles décrites dans la section [Si vous disposez d’une application 8.1 universelle](w8x-to-uwp-root.md), relative aux appareils à prendre en charge. La décision ici est simple : cette application a les mêmes fonctionnalités et fait donc principalement avec le même code, sous forme de son Windows 8.1 et Windows Phone 8.1. Par conséquent, nous allons porter le contenu du projet partagé (et tout autre élément que nous avons besoin à partir d’autres projets) vers Windows 10 qui cible la famille de périphériques Universal (celui qui vous pouvez installer sur la majorité des appareils).
 
-La procédure consistant à créer un projet dans VisualStudio, puis à copier des fichiers de Bookstore1\_81 dans ce nouveau projet, est très rapide. Commencez par créer un projet Application vide (universelle Windows). Nommez-le Bookstore1Universal\_10. Il s’agit des fichiers à copier de Bookstore1\_81 dans Bookstore1Universal\_10.
+C’est une tâche très rapide pour créer un nouveau projet dans Visual Studio, copier les fichiers sur elle à partir Bookstore1\_81 et inclure les fichiers copiés dans le nouveau projet. Commencez par créer un projet Application vide (universelle Windows). Nommez-le Bookstore1Universal\_10. Ce sont les fichiers à copier à partir de Bookstore1\_81 à Bookstore1Universal\_10.
 
-**Dans le projet partagé**
+**À partir du projet partagé**
 
--   Copiez le dossier contenant les fichiers PNG d’image de couverture de livre (dossier \\Assets\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par «insertion» de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, pour chaque copie, sélectionnez **Actualiser** dans **Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
--   Copiez le dossier contenant le fichier source de modèle d’affichage (dossier \\ViewModel).
+-   Copiez le dossier contenant les fichiers de carnet cover image PNG (le dossier est \\actifs\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par « insertion » de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, pour chaque copie, sélectionnez **Actualiser** dans **Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
+-   Copiez le dossier contenant le fichier de source de modèle de vue (le dossier est \\ViewModel).
 -   Copiez le fichier MainPage.xaml et remplacez le fichier dans la destination.
 
-**Dans le projet Windows**
+**À partir du projet Windows**
 
--   Copiez le fichier BookstoreStyles.xaml. Nous allons utiliser celle-ci comme un bon point de départ, car toutes les clés de ressources dans ce fichier seront résolu dans une application Windows 10; certains de ces éléments dans le fichier WindowsPhone équivalent ne seront pas le cas.
+-   Copiez le fichier BookstoreStyles.xaml. Nous allons utiliser celle-ci comme un bon point de départ, car toutes les clés de ressources dans ce fichier seront résolus dans une application Windows 10 ; certains d'entre eux dans le fichier WindowsPhone équivalent ne seront pas le cas.
 
-Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1\_81 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Aucune modification du code n’est nécessaire dans le modèle d’affichage, ni dans tout autre code impératif. Toutefois, pour simplifier l’identification de la version de l’application en cours d’exécution, modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** « BOOKSTORE1\_81 » en « BOOKSTORE1UNIVERSAL\_10 ».
+Modifier les fichiers de code et le balisage source que vous venez de copier et modifier toutes les références à la Bookstore1\_81 espace de noms Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Aucune modification du code n’est nécessaire dans le modèle d’affichage, ni dans tout autre code impératif. Mais, simplement pour le rendre plus facile de déterminer quelle version de l’application est en cours d’exécution, modifiez la valeur retournée par la **Bookstore1Universal\_10.BookstoreViewModel.AppName** propriété à partir de « BOOKSTORE1\_81 » à » BOOKSTORE1UNIVERSAL\_10 ».
 
-Vous pouvez maintenant générer l’application et l’exécuter. Voici comment notre nouvelle application UWP à ressemble aucun travail explicite encore pour le portage vers Windows 10.
+Vous pouvez maintenant générer l’application et l’exécuter. Voici comment notre nouvelle application UWP après n’avoir fait aucun travail explicite encore pour porter vers Windows 10.
 
-![Application Windows10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
+![Application Windows 10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
-L’application Windows 10 avec le code source initial modifié, exécutée sur un appareil de bureau
+L’application Windows 10 avec les modifications de code source initial en cours d’exécution sur un appareil de bureau
 
-![Application Windows10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
+![Application Windows 10 avec le code source initial modifié](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
-L’application Windows 10 avec le code source initial modifié, exécutée sur un appareil Mobile
+L’application Windows 10 avec les modifications de code source initial en cours d’exécution sur un appareil Mobile
 
 L’association de l’affichage et du modèle d’affichage fonctionne correctement, tout comme la classe **ListBox**. Nous devons simplement corriger le style. Sur un appareil mobile dans le thème à dominante claire, nous pouvons voir la bordure de la zone de liste, mais qui sera facile à masquer. La typographie est également trop grande. Nous modifierons donc les styles utilisés. En outre, l’application doit être de couleur claire lorsqu’elle est exécutée sur un ordinateur de bureau si nous voulons qu’elle ressemble à la valeur par défaut. Par conséquent, nous la modifierons.
 
 ## <a name="universal-styling"></a>Stylisation universelle
 
-L’application Bookstore1\_81 utilisait deux dictionnaires de ressources différents (BookstoreStyles.xaml) pour personnaliser ses styles pour les systèmes d’exploitation Windows8.1 et Windows Phone 8.1. Aucun de ces deux fichiers bookstorestyles.XAML ne contient exactement les styles que nous avons besoin pour notre application Windows 10. Or, la bonne nouvelle est que nous voulons un mécanisme beaucoup plus simple que l’un ou l’autre de ces fichiers. Par conséquent, les étapes suivantes impliquent principalement la suppression et la simplification de nos fichiers de projet et du balisage. Les étapes sont les suivantes. Et vous pouvez utiliser les liens en haut de cette rubrique pour télécharger les projets et afficher les résultats de toutes les modifications entre ce stade et la fin de l’étude de cas.
+Le Bookstore1\_81 application utilisée deux différents dictionnaires de ressources (BookstoreStyles.xaml) pour adapter ses styles pour les systèmes d’exploitation Windows 8.1 et Windows Phone 8.1. Aucune de ces deux fichiers BookstoreStyles.xaml contient exactement les styles que nous avons besoin pour notre application Windows 10. Or, la bonne nouvelle est que nous voulons un mécanisme beaucoup plus simple que l’un ou l’autre de ces fichiers. Par conséquent, les étapes suivantes impliquent principalement la suppression et la simplification de nos fichiers de projet et du balisage. Les étapes sont les suivantes. Et vous pouvez utiliser les liens en haut de cette rubrique pour télécharger les projets et afficher les résultats de toutes les modifications entre ce stade et la fin de l’étude de cas.
 
 -   Pour bien faire la différence entre les éléments, recherchez le modèle de données `BookTemplate` dans le fichier MainPage.xaml et supprimez la chaîne `Margin="0,0,0,8"` de l’élément **Grid** racine.
--   Également dans `BookTemplate`, il existe des références à `BookTemplateTitleTextBlockStyle` et `BookTemplateAuthorTextBlockStyle`. Bookstore1\_81 utilisait ces clés comme une indirection afin qu’une seule clé ait des implémentations différentes dans les deux applications. Nous n’avons plus besoin de cette indirection; nous pouvons référencer directement les styles du système. Par conséquent, remplacez ces références par `TitleTextBlockStyle` et `SubtitleTextBlockStyle`, respectivement.
+-   Également dans `BookTemplate`, il existe des références à `BookTemplateTitleTextBlockStyle` et `BookTemplateAuthorTextBlockStyle`. Bookstore1\_81 utilisé ces clés comme une indirection afin qu’une seule clé avait des implémentations différentes dans les deux applications. Nous n’avons plus besoin de cette indirection ; nous pouvons référencer directement les styles du système. Par conséquent, remplacez ces références par `TitleTextBlockStyle` et `SubtitleTextBlockStyle`, respectivement.
 -   À présent, nous devons définir l’arrière-plan de `LayoutRoot` sur la valeur par défaut appropriée afin que l’application se présente correctement lorsqu’elle est exécutée sur tous les appareils, quel que soit le thème. Remplacez sa valeur `"Transparent"` par la valeur `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
--   Dans l’élément `TitlePanel`, remplacez la référence à `TitleTextBlockStyle` (un peu trop importante, désormais) par une référence à `CaptionTextBlockStyle`. `PageTitleTextBlockStyle` est une autre indirection Bookstore1\_81 dont nous n’avons plus besoin. Modifiez-la pour faire référence à `HeaderTextBlockStyle` à la place.
+-   Dans l’élément `TitlePanel`, remplacez la référence à `TitleTextBlockStyle` (un peu trop importante, désormais) par une référence à `CaptionTextBlockStyle`. `PageTitleTextBlockStyle` est un autre Bookstore1\_81 indirection que nous n’avons plus besoin. Modifiez-la pour faire référence à `HeaderTextBlockStyle` à la place.
 -   Nous n’avons plus besoin de définir un arrière-plan, un style ni un ItemContainerStyle spécial dans l’élément **ListBox**, mais simplement de supprimer ces trois attributs et leurs valeurs du balisage. Toutefois, nous souhaitons masquer la bordure de l’élément **ListBox**. Donc, ajoutez `BorderBrush="{x:Null}"` à celui-ci.
 -   Nous n’allons plus faire référence à des ressources du fichier BookstoreStyles.xaml **ResourceDictionary**. Vous pouvez supprimer toutes ces ressources. Mais ne supprimez pas le fichier BookstoreStyles.xaml : nous devons encore l’utiliser, comme vous le verrez dans la section suivante.
 
 Une fois cette séquence d’opérations de stylisation effectuée, l’application ressemble à ceci.
 
-![Application Windows10 quasiment portée](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
+![Application Windows 10 quasiment portée](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
-L’application Windows 10 quasiment portée, exécutée sur un appareil de bureau
+L’application Windows 10 à presque ports en cours d’exécution sur un appareil de bureau
 
-![Application Windows10 quasiment portée](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
+![Application Windows 10 quasiment portée](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
-L’application Windows 10 quasiment portée, exécutée sur un appareil Mobile
+L’application Windows 10 à presque ports en cours d’exécution sur un appareil Mobile
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>Ajustement facultatif de la zone de liste pour les appareils mobiles
 
@@ -118,9 +118,9 @@ Modifiez une copie du modèle de contrôle de la zone de liste et stockez-la ave
 
 Pour finir, copiez l’élément `BookstoreListBoxStyle` dans BookstoreStyles.xaml et supprimez ses trois méthodes setter, ce qui le convertit en une balise vide. Nous effectuons cette opération pour que, sur les appareils autres que mobiles, notre référence à BookstoreStyles.xaml et à `BookstoreListBoxStyle` soit résolue, mais qu’elle n’ait aucun effet.
 
-![Application Windows10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
+![Application Windows 10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-L’application Windows 10 portée, exécutée sur un appareil Mobile
+L’application migrée de Windows 10 en cours d’exécution sur un appareil Mobile
 
 ## <a name="conclusion"></a>Conclusion
 

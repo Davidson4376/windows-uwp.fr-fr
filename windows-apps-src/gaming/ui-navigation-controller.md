@@ -4,20 +4,20 @@ description: Utilisez les API du contrôleur de navigation d’interface utilisa
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, interface utilisateur, navigation
+keywords: windows 10, uwp, jeux, interface utilisateur, navigation
 ms.localizationpriority: medium
 ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059710"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599924"
 ---
 # <a name="ui-navigation-controller"></a>Contrôleur de navigation d’interface utilisateur
 
 Cet article explique les notions de base de la programmation pour les périphériques de navigation d’interface avec l’API [Windows.Gaming.Input.UINavigationController][uinavigationcontroller] et les API associées pour la plateforme Windows universelle (UWP).
 
-Voici ce que vous allez apprendre à la lecture de cet article:
+Voici ce que vous allez apprendre à la lecture de cet article :
 * Obtenir une liste des périphériques de navigation d’interface utilisateur connectés et de leurs utilisateurs
 * Détecter l’ajout ou la suppression d’un périphérique de navigation
 * Lire les entrées provenant d’un ou de plusieurs périphériques de navigation d’interface utilisateur
@@ -35,24 +35,24 @@ Le nombre et la variété de contrôles pris en charge par chaque type de périp
 
 Les périphériques de navigation doivent prendre en charge toutes les commandes de navigation contenues dans l’_ensemble obligatoire_. Il s’agit des commandes directionnelles (haut, bas, gauche et droite), ainsi que des commandes d’affichage, de menu, d’acceptation et d’annulation.
 
-Les commandes directionnelles sont conçues pour une [navigation en mode focusXY](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) simple entre des éléments d’interface utilisateur. Les commandes d’affichage et de menu s’utilisent pour afficher des informations de jeu (souvent de manière temporaire, parfois sous forme modale) et pour basculer entre les contextes de jeu et de menu, respectivement. Les commandes d’acceptation et d’annulation sont conçues pour recevoir des réponses affirmatives (oui) et des réponses négatives (non), respectivement.
+Les commandes directionnelles sont conçues pour une [navigation en mode focus XY](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) simple entre des éléments d’interface utilisateur. Les commandes d’affichage et de menu s’utilisent pour afficher des informations de jeu (souvent de manière temporaire, parfois sous forme modale) et pour basculer entre les contextes de jeu et de menu, respectivement. Les commandes d’acceptation et d’annulation sont conçues pour recevoir des réponses affirmatives (oui) et des réponses négatives (non), respectivement.
 
 Le tableau suivant récapitule ces commandes et leurs usages prévus, illustrés par des exemples.
 | Commande | Usage prévu
 | -------:| ---------------
-|      Up (Haut) | Navigation vers le haut en mode focusXY
-|    Down (Bas) | Navigation vers le bas en mode focusXY
-|    Left (Gauche) | Navigation vers la gauche en mode focusXY
-|   Right (Droite) | Navigation vers la droite en mode focusXY
-|    View (Afficher) | Affichage des informations de jeu _(score, statistiques de jeu, objectifs, carte du monde ou d’une zone)_
-|    Menu | Menu principal/ Pause _(paramètres, état, équipement, inventaire, pause)_
-|  Accept (Accepter) | Réponse affirmative _(accepter, avancer, confirmer, démarrer, oui)_
-|  Cancel (Annuler) | Réponse négative _(rejeter, inverser, refuser, arrêter, non)_
+|      Up (Haut) | Navigation vers le haut en mode focus XY
+|    Vers le bas | Navigation vers le bas en mode focus XY
+|    Left (Gauche) | Navigation vers la gauche en mode focus XY
+|   Droit | Navigation vers la droite en mode focus XY
+|    Affichage | Affichage des informations de jeu _(score, statistiques de jeu, objectifs, carte du monde ou d’une zone)_
+|    Menu | Menu principal / Pause _(paramètres, état, équipement, inventaire, pause)_
+|  Accept | Réponse affirmative _(accepter, avancer, confirmer, démarrer, oui)_
+|  Cancel | Réponse négative _(rejeter, inverser, refuser, arrêter, non)_
 
 
 ### <a name="optional-set"></a>Ensemble facultatif
 
-Les périphériques de navigation peuvent aussi prendre en charge toutes les commandes ou certaines commandes de l’_ensemble facultatif_, ou n’en prendre en charge aucune. Il s’agit des commandes de pagination (haut, bas, gauche et droite), de défilement (haut, bas, gauche et droite) et contextuelles (contextes 1à4).
+Les périphériques de navigation peuvent aussi prendre en charge toutes les commandes ou certaines commandes de l’_ensemble facultatif_, ou n’en prendre en charge aucune. Il s’agit des commandes de pagination (haut, bas, gauche et droite), de défilement (haut, bas, gauche et droite) et contextuelles (contextes 1 à 4).
 
 Les commandes contextuelles sont conçues explicitement pour des raccourcis de navigation et des commandes propres à l’application. Les commandes de pagination et de défilement sont conçues pour permettre la navigation rapide entre des pages ou des groupes d’éléments d’interface utilisateur, et permettre une navigation précise au sein des éléments d’interface utilisateur, respectivement.
 
@@ -67,10 +67,10 @@ Le tableau suivant récapitule ces commandes et leurs usages prévus.
 |  ScrollDown (Faire défiler vers le bas) | Faire défiler vers le bas (au sein de l’élément d’interface utilisateur ou du groupe de défilement actif)
 |  ScrollLeft (Faire défiler vers la gauche) | Faire défiler vers la gauche (au sein de l’élément d’interface utilisateur ou du groupe de défilement actif)
 | ScrollRight (Faire défiler vers la droite) | Faire défiler vers la droite (au sein de l’élément d’interface utilisateur ou du groupe de défilement actif)
-|    Context1 (Contexte1) | Action du contexte principal
-|    Context2 (Contexte2) | Action du deuxième contexte
-|    Context3 (Contexte3) | Action du troisième contexte
-|    Context4 (Contexte4) | Action du quatrième contexte
+|    Context1 (Contexte 1) | Action du contexte principal
+|    Context2 (Contexte 2) | Action du deuxième contexte
+|    Context3 (Contexte 3) | Action du troisième contexte
+|    Context4 (Contexte 4) | Action du quatrième contexte
 
 > **Remarque** Un jeu est libre de répondre à une commande avec une autre fonction réelle que celle qui était prévue, mais il est recommandé d’éviter les comportements inattendus. En particulier, ne modifiez pas la fonction réelle d’une commande si vous en avez besoin pour l’usage prévu. Essayez d’affecter les nouvelles fonctions à la commande la plus appropriée et affectez des fonctions homologues à des commandes homologues (comme PageUp/PageDown). Enfin, examinez quelles commandes sont prises en charge par chaque type de périphérique d’entrée et à quels contrôles elles sont mappées pour vous assurer que toutes les commandes essentielles sont accessibles à partir de tous les périphériques d’entrée.
 
@@ -82,31 +82,31 @@ Le tableau suivant récapitule les mappages entre les commandes de navigation de
 
 | Commande de navigation | Entrée boîtier de commande                       | Entrée stick arcade | Entrée volant de course |
 | ------------------:| ----------------------------------- | ------------------ | ------------------ |
-|                 Up (Haut) | Stick analogique gauche vers le haut/ bouton multidirectionnel vers le haut       | Stick vers le haut           | Bouton multidirectionnel vers le haut           |
-|               Down (Bas) | Stick analogique gauche vers le bas/ bouton multidirectionnel vers le bas   | Stick vers le bas         | Bouton multidirectionnel vers le bas         |
-|               Left (Gauche) | Stick analogique gauche vers la gauche/ bouton multidirectionnel vers la gauche   | Stick vers la gauche         | Bouton multidirectionnel vers la gauche         |
-|              Right (Droite) | Stick analogique gauche vers la droite/ bouton multidirectionnel vers la droite | Stick vers la droite        | Bouton multidirectionnel vers la droite        |
-|               View (Afficher) | Bouton Afficher                         | Bouton Afficher        | Bouton Afficher        |
+|                 Up (Haut) | Stick analogique gauche vers le haut / bouton multidirectionnel vers le haut       | Stick vers le haut           | Bouton multidirectionnel vers le haut           |
+|               Vers le bas | Stick analogique gauche vers le bas / bouton multidirectionnel vers le bas   | Stick vers le bas         | Bouton multidirectionnel vers le bas         |
+|               Left (Gauche) | Stick analogique gauche vers la gauche / bouton multidirectionnel vers la gauche   | Stick vers la gauche         | Bouton multidirectionnel vers la gauche         |
+|              Droit | Stick analogique gauche vers la droite / bouton multidirectionnel vers la droite | Stick vers la droite        | Bouton multidirectionnel vers la droite        |
+|               Affichage | Bouton Afficher                         | Bouton Afficher        | Bouton Afficher        |
 |               Menu | Bouton Menu                         | Bouton Menu        | Bouton Menu        |
-|             Accept (Accepter) | BoutonA                            | Bouton Action1    | BoutonA           |
-|             Annuler | BoutonB                            | Bouton Action2    | BoutonB           |
+|             Accept | Bouton A                            | Bouton Action 1    | Bouton A           |
+|             Cancel | Bouton B                            | Bouton Action 2    | Bouton B           |
 
 Le tableau suivant récapitule les mappages entre les commandes de navigation de l’_ensemble facultatif_ et les différents périphériques d’entrée.
 
 | Commande de navigation | Entrée boîtier de commande          | Entrée stick arcade | Entrée volant de course    |
 | ------------------:| ---------------------- | ------------------ | --------------------- |
-|             PageUp (Pg. préc) | Gâchette gauche           | _non pris en charge_    | _dépendant du jeu_              |
-|           PageDown (Pg. suiv) | Gâchette droite          | _non pris en charge_    | _dépendant du jeu_              |
-|           PageLeft (Page gauche) | Gâchette haute gauche            | _non pris en charge_    | _dépendant du jeu_              |
-|          PageRight (Page droite) | Gâchette haute droite           | _non pris en charge_    | _dépendant du jeu_              |
-|           ScrollUp (Faire défiler vers le haut) | Stick analogique droit vers le haut    | _non pris en charge_    | _dépendant du jeu_              |
-|         ScrollDown (Faire défiler vers le bas) | Stick analogique droit vers le bas  | _non pris en charge_    | _dépendant du jeu_              |
-|         ScrollLeft (Faire défiler vers la gauche) | Stick analogique droit vers la gauche  | _non pris en charge_    | _dépendant du jeu_              |
-|        ScrollRight (Faire défiler vers la droite) | Stick analogique droit vers la droite | _non pris en charge_    | _dépendant du jeu_              |
-|           Context1 (Contexte1) | BoutonX               | _non pris en charge_    | BoutonX (_en général_) |
-|           Context2 (Contexte2) | BoutonY               | _non pris en charge_    | BoutonY (_en général_) |
-|           Context3 (Contexte3) | Appui sur stick analogique gauche  | _non pris en charge_    | _dépendant du jeu_              |
-|           Context4 (Contexte4) | Appui sur stick analogique droit | _non pris en charge_    | _dépendant du jeu_              |
+|             PageUp (Pg. préc) | Gâchette gauche           | _Non pris en charge_    | _Varie_              |
+|           PageDown (Pg. suiv) | Gâchette droite          | _Non pris en charge_    | _Varie_              |
+|           PageLeft (Page gauche) | Gâchette haute gauche            | _Non pris en charge_    | _Varie_              |
+|          PageRight (Page droite) | Gâchette haute droite           | _Non pris en charge_    | _Varie_              |
+|           ScrollUp (Faire défiler vers le haut) | Stick analogique droit vers le haut    | _Non pris en charge_    | _Varie_              |
+|         ScrollDown (Faire défiler vers le bas) | Stick analogique droit vers le bas  | _Non pris en charge_    | _Varie_              |
+|         ScrollLeft (Faire défiler vers la gauche) | Stick analogique droit vers la gauche  | _Non pris en charge_    | _Varie_              |
+|        ScrollRight (Faire défiler vers la droite) | Stick analogique droit vers la droite | _Non pris en charge_    | _Varie_              |
+|           Context1 (Contexte 1) | Bouton X               | _Non pris en charge_    | Bouton X (_en général_) |
+|           Context2 (Contexte 2) | Bouton Y               | _Non pris en charge_    | Bouton Y (_en général_) |
+|           Context3 (Contexte 3) | Appui sur stick analogique gauche  | _Non pris en charge_    | _Varie_              |
+|           Context4 (Contexte 4) | Appui sur stick analogique droit | _Non pris en charge_    | _Varie_              |
 
 
 ## <a name="detect-and-track-ui-navigation-controllers"></a>Détecter et suivre les contrôleurs de navigation d’interface utilisateur
@@ -156,11 +156,11 @@ UINavigationController::UINavigationControllerRemoved += ref new EventHandler<UI
 
 ### <a name="users-and-headsets"></a>Utilisateurs et casques
 
-Chaque périphérique de navigation peut être associé à un compte d’utilisateur pour lier l’identité de l’utilisateur à ses entrées, et peut être branché à un casque pour utiliser plus facilement les fonctionnalités de guidage et de chat vocal. Pour en savoir plus sur le suivi des utilisateurs et l’utilisation de casques, consultez [Suivi des utilisateurs et de leurs périphériques](input-practices-for-games.md#tracking-users-and-their-devices) et [Casques](headset.md).
+Chaque périphérique de navigation peut être associé à un compte d’utilisateur pour lier l’identité de l’utilisateur à ses entrées, et peut être branché à un casque pour utiliser plus facilement les fonctionnalités de guidage et de chat vocal. Pour en savoir plus sur le suivi des utilisateurs et l’utilisation de casques, voir [Suivi des utilisateurs et de leurs périphériques](input-practices-for-games.md#tracking-users-and-their-devices) et [Casques](headset.md).
 
 ## <a name="reading-the-ui-navigation-controller"></a>Lecture des entrées du contrôleur de navigation d’interface utilisateur
 
-Une fois que vous avez identifié le périphérique de navigation d’interface utilisateur qui vous intéresse, vous pouvez commencer à collecter les entrées de ce périphérique. Toutefois, contrairement à d’autres sortes d’entrées que vous connaissez peut-être, les périphériques de navigation ne communiquent pas les changements d’état en déclenchant des événements. À la place, vous devez _interroger_ ces périphériques pour connaître leur état actuel.
+Une fois que vous avez identifié le périphérique de navigation d’interface utilisateur qui vous intéresse, vous pouvez commencer à collecter les entrées de ce périphérique. Toutefois, contrairement à d’autres sortes d’entrées que vous connaissez peut-être, les périphériques de navigation ne communiquent pas les changements d’état en déclenchant des événements. À la place, vous devez _interroger_ régulièrement ces boîtiers de commande pour connaître leur état actuel.
 
 ### <a name="polling-the-ui-navigation-controller"></a>Interroger le contrôleur de navigation d’interface utilisateur
 
@@ -178,7 +178,7 @@ UINavigationReading reading = navigationController->GetCurrentReading();
 
 Chaque bouton de navigation d’interface utilisateur fournit une entrée booléenne qui indique si le bouton est à l’état appuyé (position basse) ou à l’état relâché (position haute). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes. Elles sont toutes regroupées dans un des deux champs de bits représentés par les énumérations [RequiredUINavigationButtons][] et [OptionalUINavigationButtons][].
 
-Les boutons appartenant à l’_ensemble obligatoire_ sont lus à partir de la propriété `RequiredButtons` de la structure [UINavigationReading][]. Ceux de l’_ensemble facultatif_ sont lus à partir de la propriété `OptionalButtons`. Comme ces propriétés sont des champs de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état appuyé (position basse) quand le bit correspondant est défini; sinon, il est à l’état relâché (position haute).
+Les boutons appartenant à l’_ensemble obligatoire_ sont lus à partir de la propriété `RequiredButtons` de la structure [UINavigationReading][]. Ceux de l’_ensemble facultatif_ sont lus à partir de la propriété `OptionalButtons`. Comme ces propriétés sont des champs de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état appuyé (position basse) quand le bit correspondant est défini ; sinon, il est à l’état relâché (position haute).
 
 L’exemple suivant détermine si le bouton Accept de l’_ensemble obligatoire_ est à l’état appuyé.
 ```cpp

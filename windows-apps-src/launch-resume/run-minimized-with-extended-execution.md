@@ -3,15 +3,15 @@ description: Découvrir comment utiliser l’exécution étendue pour que votre 
 title: Reporter la suspension d’une application avec l’exécution étendue
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, exécution étendue, mode réduit, ExtendedExecutionSession, tâche en arrière-plan, cycle de vie de l’application, écran de verrouillage
+keywords: windows 10, uwp, exécution étendue, mode réduit, ExtendedExecutionSession, tâche en arrière-plan, cycle de vie de l’application, écran de verrouillage
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc67a7593a340ada8f807fc0fb0c1b846c6f05b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944021"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641304"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Reporter la suspension d’une application avec l’exécution étendue
 
@@ -23,11 +23,11 @@ Il peut arriver que l’application doive continuer de s’exécuter lorsque l�
 
 Si tel est le cas, le système d’exploitation peut s’assurer lui-même que l’application continue de s’exécuter, ou peut lui demander de continuer à s’exécuter. Ainsi, lorsqu’un morceau s’exécute en arrière-plan, le système d’exploitation peut assurer l’exécution de l’application pendant une plus longue période si vous suivez la procédure de la section [Lecture multimédia en arrière-plan](../audio-video-camera/background-audio.md). Dans le cas contraire, vous devez demander manuellement l’allongement de cette période. La durée d’une exécution en arrière-plan peut être de plusieurs minutes, mais vous devez être prêt à gérer la session en cours de révocation à tout moment. Ces contraintes de temps de cycle de vie des applications sont désactivées pendant que l’application s’exécute sous un débogueur. Pour cette raison, il est important de tester l’Exécution étendue et d’autres outils pour reporter la suspension de l'application lorsque celle-ci ne s’exécute pas sous un débogueur ou en utilisant les événements de cycle de vie disponibles dans Visual Studio. 
  
-Créez une session [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) afin de demander davantage de temps pour exécuter une opération en arrière-plan. Le type de session **ExtendedExecutionSession** que vous créez est déterminé par la valeur [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) que vous indiquez lorsque vous la générez. Il existe trois valeurs d’énumération **ExtendedExecutionReason**: **Unspecified, LocationTracking** et **SavingData**. Une seule **ExtendedExecutionSession** peut être demandée à tout moment. Si vous tentez de créer une autre session alors qu’une autre est actuellement active, le constructeur **ExtendedExecutionSession** lève une exception0x8007139F indiquant que le groupe ou la ressource n’est pas dans l'état correct pour effectuer l'opération demandée. N’utilisez pas les valeurs [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) ni [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx), car elles nécessitent des fonctionnalités restreintes et ne peuvent pas être utilisées dans les applications du Store.
+Créez une session [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) afin de demander davantage de temps pour exécuter une opération en arrière-plan. Le type de session **ExtendedExecutionSession** que vous créez est déterminé par la valeur [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) que vous indiquez lorsque vous la générez. Il existe trois **ExtendedExecutionReason** valeurs enum : **N’est pas spécifié, LocationTracking** et **SavingData**. Une seule **ExtendedExecutionSession** peut être demandée à tout moment. Si vous tentez de créer une autre session alors qu’une autre est actuellement active, le constructeur **ExtendedExecutionSession** lève une exception 0x8007139F indiquant que le groupe ou la ressource n’est pas dans l'état correct pour effectuer l'opération demandée. N’utilisez pas les valeurs [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) ni [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx), car elles nécessitent des fonctionnalités restreintes et ne peuvent pas être utilisées dans les applications du Store.
 
-## <a name="run-while-minimized"></a>Exécuter en mode réduit
+## <a name="run-while-minimized"></a>Exécution en mode réduit
 
-Il existe deux cas où l’exécution étendue peut être utilisée:
+Il existe deux cas où l’exécution étendue peut être utilisée :
 - À tout moment pendant l’exécution régulière de premier plan, tandis que l’application est en cours d’exécution.
 - Une fois que l’application a reçu un événement de suspension (le système d’exploitation est sur le point de passer l’application en état suspendu) dans le gestionnaire d’événements de suspension de l’application.
 
@@ -47,21 +47,21 @@ Sur l’ensemble des éditions de système d’exploitation, ce type de session 
 
 Lorsque vous créez une session **ExtendedExecutionSession**, indiquez le paramètre **ExtendedExecutionReason.LocationTracking** si votre application doit régulièrement consigner l’emplacement de l’utilisateur depuis [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx). Les applications effectuant la navigation et le suivi d’activité physique, afin de surveiller régulièrement l’emplacement de l’utilisateur, doivent utiliser ce motif.
 
-Une session d’exécution étendue associée au suivi de l’emplacement peut s’exécuter aussi longtemps que nécessaire., y compris lorsque l’écran est verrouillé sur un appareil mobile. Cependant, une seule session de ce type peut s’exécuter pour chaque appareil. Vous pouvez uniquement demander l’exécution de cette catégorie de session au premier plan; l’application doit présenter l’état **Exécution en cours**. Cela permet de s’assurer que l’utilisateur est conscient de l’initiation d’une session de suivi d’emplacement étendue par l’application. Vous pouvez toujours utiliser la fonctionGeolocator lorsque l’application est exécutée à l’arrière-plan. Pour cela, utilisez une tâche en arrière-plan ou un service d’application sans demander de session d’exécution étendue de suivi de l’emplacement.
+Une session d’exécution étendue associée au suivi de l’emplacement peut s’exécuter aussi longtemps que nécessaire., y compris lorsque l’écran est verrouillé sur un appareil mobile. Cependant, une seule session de ce type peut s’exécuter pour chaque appareil. Vous pouvez uniquement demander l’exécution de cette catégorie de session au premier plan ; l’application doit présenter l’état **Exécution en cours**. Cela permet de s’assurer que l’utilisateur est conscient de l’initiation d’une session de suivi d’emplacement étendue par l’application. Vous pouvez toujours utiliser la fonction Geolocator lorsque l’application est exécutée à l’arrière-plan. Pour cela, utilisez une tâche en arrière-plan ou un service d’application sans demander de session d’exécution étendue de suivi de l’emplacement.
 
 ## <a name="save-critical-data-locally"></a>Enregistrement en local des données critiques
 
 Il arrive que le fait de ne pas enregistrer des données avant l’arrêt de l’application entraîne une perte de données ou une expérience utilisateur peu satisfaisante. Dans ce cas, spécifiez le paramètre **ExtendedExecutionReason.SavingData** lorsque vous créez une session **ExtendedExecutionSession** afin d’enregistrer les données utilisateur.
 
-N’utilisez pas ce type de session pour étendre la durée de vie d’une application afin de charger ou de télécharger des données. Pour charger des données, demandez un [transfert en arrière-plan](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) ou enregistrez un élément **MaintenanceTrigger** afin de gérer le transfert lorsque l’alimentationsecteur est disponible. Vous pouvez demander une session d’exécution étendue **ExtendedExecutionReason.SavingData** lorsque l’application est au premier plan et présente l’état **Exécution en cours**, ou à l’arrière-plan, à l’état **Interruption en cours**.
+N’utilisez pas ce type de session pour étendre la durée de vie d’une application afin de charger ou de télécharger des données. Pour charger des données, demandez un [transfert en arrière-plan](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) ou enregistrez un élément **MaintenanceTrigger** afin de gérer le transfert lorsque l’alimentation secteur est disponible. Vous pouvez demander une session d’exécution étendue **ExtendedExecutionReason.SavingData** lorsque l’application est au premier plan et présente l’état **Exécution en cours**, ou à l’arrière-plan, à l’état **Interruption en cours**.
 
 L’état **Interruption en cours** correspond à la dernière occasion dont dispose l’application pour effectuer des tâches avant son arrêt. **ExtendedExecutionReason.SavingData** est le seul type de **ExtendedExecutionSession** pouvant être demandé dans l’état **Interruption en cours**. Le fait de demander une session d’exécution étendue **ExtendedExecutionReason.SavingData** alors que l’application présente l’état **Interruption en cours** crée un problème éventuel dont vous devez être informé. Si une session de ce type est demandée alors que l’état est **Interruption en cours**, et si l’utilisateur demande un nouveau lancement de l’application, cette dernière peut prendre un certain temps à démarrer. En effet, la session d’exécution étendue doit être terminée pour qu’il soit possible de fermer l’ancienne instance de l’application et d’en démarrer une nouvelle. Le délai de performances du lancement est sacrifié de manière à garantir la conservation de l’état utilisateur.
 
 ## <a name="request-disposal-and-revocation"></a>Demande, cession et révocation
 
-Il existe trois interactions fondamentales avec une session d’exécution étendue: demande, suppression et révocation.  La création de la demande est indiquée dans l’extrait de code suivant.
+Il existe trois interactions fondamentales avec une session d’exécution étendue : demande, suppression et révocation.  La création de la demande est indiquée dans l’extrait de code suivant.
 
-### <a name="request"></a>Demande
+### <a name="request"></a>Requête
 
 ```csharp
 var newSession = new ExtendedExecutionSession();
@@ -81,7 +81,7 @@ switch (result)
         break;
 }
 ```
-[Consulter l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
 L’appel de l’élément **RequestExtensionAsync** permet de vérifier auprès du système d’exploitation si l’utilisateur est associé à une activité en arrière-plan approuvée pour l’application, et si le système inclut des ressources disponibles pour permettre l’exécution en arrière-plan. Une seule session est approuvée pour une application à tout moment, par conséquent, tout appel supplémentaire à **RequestExtensionAsync** entraîne le refus de la session.
 
@@ -97,7 +97,7 @@ Si l’événement **Revoked** est déclenché dans le cas d’une session d’e
 
 Une révocation peut survenir pour diverses raisons (un quota énergétique en arrière-plan ou l’échéance d’exécution d’une application ont été atteints, ou la mémoire doit être récupérée pour permettre à l’utilisateur d’ouvrir une nouvelle application au premier plan, par exemple).
 
-Voici un exemple de gestionnaire d’événementsRevoked:
+Voici un exemple de gestionnaire d’événements Revoked :
 
 ```cs
 private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventArgs args)
@@ -119,15 +119,15 @@ private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventAr
     });
 }
 ```
-[Consulter l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
 
-### <a name="dispose"></a>Suppression
+### <a name="dispose"></a>Supprimer
 
 La suppression de la session d’exécution étendue constitue l’étape finale. En effet, il est souhaitable de supprimer la session et toutes les autres ressources utilisant une grande quantité de mémoire, car l’énergie utilisée par l’application pendant qu’elle attend la fermeture de la session est comptabilisée dans la valeur de quota énergétique de cette application. Pour préserver autant que possible le quota énergétique de l’application, vous devez supprimer la session lorsque vous avez terminé votre travail au sein de cette dernière, afin que l’application puisse plus rapidement atteindre l’état **Interrompu**.
 
 En supprimant vous-même la session, plutôt que d’attendre l’événement de révocation, vous réduisez le pourcentage du quota énergétique utilisé par l’application. Cela signifie que votre application sera autorisée à s’exécuter en arrière-plan pendant plus longtemps lors des sessions à venir, car le quota énergétique disponible pour permettre cette exécution sera plus important. Vous devez conserver une référence à l’objet **ExtendedExecutionSession** jusqu’à la fin de l’opération, afin de pouvoir appeler la méthode **Dispose** correspondante.
 
-Voici un extrait de code représentant la suppression d’une session d’exécution étendue:
+Voici un extrait de code représentant la suppression d’une session d’exécution étendue :
 
 ```cs
 void ClearExtendedExecution(ExtendedExecutionSession session)
@@ -140,11 +140,11 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
     }
 }
 ```
-[Consulter l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
 
-Une application ne peut avoir qu’une seule session **ExtendedExecutionSession** active à la fois. De nombreuses applications utilisent des tâches asynchrones pour effectuer des opérations complexes, qui nécessitent un accès aux ressources de type stockage, réseau ou services réseau. Si l’exécution d’une opération nécessite plusieurs tâches asynchrones, l’état de chaque de ces tâches doit être pris en compte avant la suppression de la session **ExtendedExecutionSession** et l’interruption de l’application. Cela nécessite un décompte de références concernant le nombre de tâches encore en cours; la session ne peut être supprimée que lorsque cette valeur atteint zéro.
+Une application ne peut avoir qu’une seule session **ExtendedExecutionSession** active à la fois. De nombreuses applications utilisent des tâches asynchrones pour effectuer des opérations complexes, qui nécessitent un accès aux ressources de type stockage, réseau ou services réseau. Si l’exécution d’une opération nécessite plusieurs tâches asynchrones, l’état de chaque de ces tâches doit être pris en compte avant la suppression de la session **ExtendedExecutionSession** et l’interruption de l’application. Cela nécessite un décompte de références concernant le nombre de tâches encore en cours ; la session ne peut être supprimée que lorsque cette valeur atteint zéro.
 
-Voici un exemple de code permettant de gérer plusieurs tâches pendant une session d’exécution étendue. Pour plus d’informations sur son utilisation dans votre application, consultez l’exemple de code dont le lien figure ci-dessous:
+Voici un exemple de code permettant de gérer plusieurs tâches pendant une session d’exécution étendue. Pour plus d’informations sur son utilisation dans votre application, consultez l’exemple de code dont le lien figure ci-dessous :
 
 ```cs
 static class ExtendedExecutionHelper
@@ -247,21 +247,21 @@ static class ExtendedExecutionHelper
     }
 }
 ```
-[Consulter l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+[Consultez l’exemple de code](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>Vérifier l’utilisation adéquate des ressources par l’application
 
 Il est crucial d’ajuster le taux d’utilisation de l’énergie et de la mémoire par votre application, afin de vérifier que le système d’exploitation va autoriser votre application à poursuivre son exécution lorsqu’elle n’est plus au premier plan. Utilisez les [API de gestion de la mémoire](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) pour déterminer la quantité de mémoire utilisée par votre application. Plus votre application utilise de mémoire, plus le système d’exploitation a des difficultés à assurer l’exécution de cette application lorsqu’une autre application se trouve au premier plan. L’utilisateur dispose d’un contrôle étroit sur l’ensemble des activités en arrière-plan que votre application peut exécuter, et bénéficie d’une visibilité étendue sur l’impact de cette dernière sur le taux d’utilisation de la batterie.
 
-Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) pour déterminer si l’utilisateur a opté pour une activité limitée de votre application en arrière-plan. Tenez compte du taux d’utilisation de la batterie; exécutez l’application en arrière-plan uniquement lorsqu’elle est nécessaire dans le cadre d’une action souhaitée par l’utilisateur.
+Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) pour déterminer si l’utilisateur a opté pour une activité limitée de votre application en arrière-plan. Tenez compte du taux d’utilisation de la batterie ; exécutez l’application en arrière-plan uniquement lorsqu’elle est nécessaire dans le cadre d’une action souhaitée par l’utilisateur.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
-[Exemple d’exécution étendue](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[Exemple de l’exécution étendue](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [Cycle de vie des applications](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
 [Cycle de vie de l’application - Conserver les applications actives avec des tâches en arrière-plan et l'Exécution étendue](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
 [Gestion de la mémoire en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
 [Transferts en arrière-plan](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
-[Reconnaissance de la batterie et activité en arrière-plan](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[ClasseMemoryManager](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
-[Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[Activité en arrière-plan et sensibilisation à la batterie](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[Classe de MemoryManager](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
+[Lire des médias dans l’arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

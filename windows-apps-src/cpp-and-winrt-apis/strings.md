@@ -3,23 +3,23 @@ description: Avec C++/WinRT, vous pouvez appeler des API Windows Runtime à l’
 title: Gestion des chaînes en C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article
-keywords: windows10, uwp, standard, c++, cpp, winrt, projection, chaîne
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
 ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934614"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649634"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
 
-Avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler APIs Windows Runtime à l’aide de types de chaînes étendues de bibliothèque C++ Standard comme **std::wstring** (Remarque: pas avec les types de chaîne étroite comme **std::string**). C++/WinRT possède un type de chaîne personnalisée appelé [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (défini dans la bibliothèque de base C++/WinRT, à savoir `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). Et c’est en fait le type de chaîne que les constructeurs, fonctions et propriétés Windows Runtime prennent et renvoient. Mais, dans de nombreux cas &mdash;grâce aux constructeurs de conversion et aux opérateurs de conversion de **hstring**&mdash; vous pouvez choisir de tenir compte ou non de **hstring** dans votre code client. Si vous *créez* des API, vous devrez probablement connaître **hstring**.
+Avec [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler Windows APIs Runtime à l’aide des types de chaîne large de bibliothèque C++ Standard tel que **std::wstring** (Remarque : pas avec étroits types de chaînes comme **std::string**). C++/WinRT possède un type de chaîne personnalisée appelé [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (défini dans la bibliothèque de base C++/WinRT, à savoir `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). Et c’est en fait le type de chaîne que les constructeurs, fonctions et propriétés Windows Runtime prennent et renvoient. Mais, dans de nombreux cas &mdash; grâce aux constructeurs de conversion et aux opérateurs de conversion de **hstring** &mdash; vous pouvez choisir de tenir compte ou non de **hstring** dans votre code client. Si vous *créez* des API, vous devrez probablement connaître **hstring**.
 
-Il existe de nombreux types de chaîne en C++. Des variantes existent dans de nombreuses bibliothèques en plus de **std::basic_string** de la bibliothèque C++ standard. C++17 possède des utilitaires de conversion de chaînes et **std::basic_string_view** pour combler les écarts entre tous les types de chaîne.  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) fournit une convertibilité avec **std::wstring_view** afin de garantir l’interopérabilité pour laquelle **std::basic_string_view** a été conçu.
+Il existe de nombreux types de chaîne en C++. Des variantes existent dans de nombreuses bibliothèques en plus de **std::basic_string** de la bibliothèque C++ standard. C++17 possède des utilitaires de conversion de chaînes et **std::basic_string_view** pour combler les écarts entre tous les types de chaîne.  [**WinRT::hstring** ](/uwp/cpp-ref-for-winrt/hstring) fournit la convertibilité de variance avec **std::wstring_view** pour assurer l’interopérabilité qui **std::basic_string_view** a été conçu pour.
 
-## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>Utilisation de **std::wstring** (et éventuellement **winrt::hstring**) avec **Uri**
-[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) est construit à partir d’un [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
+## <a name="using-stdwstring-and-optionally-winrthstring-with-uri"></a>À l’aide de **std::wstring** (et éventuellement **winrt::hstring**) avec **Uri**
+[**Windows::Foundation::URI** ](/uwp/api/windows.foundation.uri) est construit à partir d’un [ **winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ```cppwinrt
 public:
@@ -172,6 +172,6 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [fonction WinRT::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
-* [fonction WinRT::to_string](/uwp/cpp-ref-for-winrt/to-string)
+* [WinRT::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::to_hstring function](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_string function](/uwp/cpp-ref-for-winrt/to-string)

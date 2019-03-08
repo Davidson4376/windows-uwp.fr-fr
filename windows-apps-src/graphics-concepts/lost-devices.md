@@ -1,33 +1,33 @@
 ---
-title: Périphériques perdus
+title: Appareils perdus
 description: Un périphérique Direct3D peut présenter l’état opérationnel ou perdu.
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
 keywords:
-- Périphériques perdus
+- Appareils perdus
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922079"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617314"
 ---
-# <a name="lost-devices"></a>Périphériques perdus
+# <a name="lost-devices"></a>Appareils perdus
 
 
 Un périphérique Direct3D peut présenter l’état opérationnel ou perdu. L’état *opérationnel* correspond à l’état normal du périphérique, dans lequel ce dernier s’exécute correctement et présente la totalité du rendu attendu. Le périphérique passe à l’état *perdu* lorsqu’un événement, tel que la perte du focus clavier dans une application en plein écran, empêche le rendu. L’état de perte se manifeste par la défaillance silencieuse de l’ensemble des opérations de rendu. Concrètement, les méthodes de rendu peuvent renvoyer des codes de réussites même si les opérations de rendu échouent.
 
-Par conception, l’ensemble complet de scénarios pouvant entraîner la perte d’un périphérique n’est pas spécifié. Parmi les configurations possibles, citons tout de même la perte de focus, quand l’utilisateur active la combinaisonALT+TAB ou lors de l’initialisation d’une boîte de dialogue système. Les périphériques peuvent également être perdus suite à un événement de gestion de l’alimentation, ou lorsqu’une autre application fonctionne en plein écran. Par ailleurs, toute défaillance intervenant après la réinitialisation d’un périphérique définit ce dernier sur l’état de perte.
+Par conception, l’ensemble complet de scénarios pouvant entraîner la perte d’un périphérique n’est pas spécifié. Parmi les configurations possibles, citons tout de même la perte de focus, quand l’utilisateur active la combinaison ALT+TAB ou lors de l’initialisation d’une boîte de dialogue système. Les périphériques peuvent également être perdus suite à un événement de gestion de l’alimentation, ou lorsqu’une autre application fonctionne en plein écran. Par ailleurs, toute défaillance intervenant après la réinitialisation d’un périphérique définit ce dernier sur l’état de perte.
 
-Toutes les méthodes dérivant de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) fonctionnent obligatoirement après la perte d’un périphérique. Après la perte d’un périphérique, chaque fonction présente généralement les 3options suivantes:
+Toutes les méthodes dérivant de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) fonctionnent obligatoirement après la perte d’un périphérique. Après la perte d’un périphérique, chaque fonction présente généralement les 3 options suivantes :
 
--   Défaillance après une erreur de «périphérique perdu» - L’application doit reconnaître que le périphérique a été perdu, afin qu’elle enregistre un événement inattendu.
--   Défaillance silencieuse, renvoyant S\_OK ou tout autre code - Si une fonction échoue en silence, l’application ne peut généralement pas faire la distinction entre le résultat de réussite et la défaillance silencieuse.
+-   Défaillance après une erreur de « périphérique perdu » - L’application doit reconnaître que le périphérique a été perdu, afin qu’elle enregistre un événement inattendu.
+-   Échouer en mode silencieux, en retournant S\_OK ou tout autre code de retour - si une fonction échoue en mode silencieux, l’application générale ne peut pas faire la distinction entre le résultat de « success » et « échec en mode silencieux ».
 -   Renvoi d’un code de retour.
 
-## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>Répondre à un périphérique perdu
+## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>Répondre à un appareil perdu
 
 
 Un périphérique perdu doit recréer les ressources (notamment les ressources de mémoire vidéo) après sa réinitialisation. Si un périphérique est perdu, l’application interroge ce dernier afin de déterminer si son état opérationnel peut être restauré. Si ce n’est pas possible, l’application attend qu’une fenêtre de restauration s’ouvre.

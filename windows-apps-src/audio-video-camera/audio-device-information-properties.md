@@ -4,14 +4,14 @@ description: Cet article répertorie les propriétés DeviceInformation liées a
 title: Propriétés d’informations des appareils audio
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 443bcc3c0280aca85de31d8c9f3704302432cb76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925876"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627174"
 ---
 # <a name="audio-device-information-properties"></a>Propriétés d’informations des appareils audio
 
@@ -21,7 +21,7 @@ Cet article répertorie les propriétés d’informations liées aux appareils a
 |Nom|Type|Description|
 |------------------------------------------------------------|------------|------------------------------------------------------|
 |**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Spécifie la sensibilité du microphone en décibels par rapport aux décibels pleine échelle (dBFS).|
-|**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Spécifie le ratio entre le signal du microphone et le bruit mesuré en décibels (dB).|
+|**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Spécifie le ratio entre le signal du microphone  et le bruit mesuré en décibels (dB).|
 |**System.Devices.AudioDevice.SpeechProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement de la parole.|
 |**System.Devices.AudioDevice.RawProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement des fichiers bruts.|
 |**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Données géométriques pour un réseau de microphones.|
@@ -29,8 +29,8 @@ Cet article répertorie les propriétés d’informations liées aux appareils a
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Énumérer les appareils](../devices-sensors/enumerate-devices.md)
-* [Propriétés d’informations de périphérique](../devices-sensors/device-information-properties.md)
-* [Créer un sélecteur d’appareil](../devices-sensors/build-a-device-selector.md)
+* [Propriétés des informations de périphérique](../devices-sensors/device-information-properties.md)
+* [Créer un sélecteur d’appareils](../devices-sensors/build-a-device-selector.md)
 * [Lecture de contenu multimédia](media-playback.md)
 
 

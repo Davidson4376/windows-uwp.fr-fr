@@ -4,14 +4,14 @@ title: Vue d’ensemble des propriétés de dépendance
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 52ab0dfba6261a5e278a42f38ea13c632df400f9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050772"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637384"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -21,7 +21,7 @@ Cette rubrique décrit le système de propriétés de dépendance disponible qua
 
 Une propriété de dépendance est un type spécialisé de propriété Plus précisément, il s’agit d’une propriété dont la valeur est suivie et influencée par un système de propriétés dédié qui fait partie de Windows Runtime.
 
-Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). Bon nombre des types que vous utilisez pour définir l’interface utilisateur pour une application UWP avec XAML seront une sous-classe **DependencyObject** et prennent en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas «XAML» ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
+Afin de prendre en charge une propriété de dépendance, l’objet qui définit la propriété doit être un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (en d’autres termes, une classe ayant une classe de base **DependencyObject** quelque part dans son héritage). Nombre des types que vous utilisez pour vos définitions d’interface utilisateur pour une application UWP avec XAML sera un **DependencyObject** sous-classe et prend en charge les propriétés de dépendance. Toutefois, un type provenant d’un espace de noms Windows Runtime dont le nom ne comporte pas « XAML » ne prendra pas en charge les propriétés de dépendance. Ce sont des propriétés de type ordinaire qui ne présentent pas le comportement de dépendance du système de propriétés.
 
 Le but des propriétés de dépendance est de fournir un moyen systémique pour calculer la valeur d’une propriété en fonction d’autres entrées (d’autres propriétés, événements et états qui interviennent dans une application en cours d’exécution). Il peut s’agir des entrées suivantes :
 
@@ -30,22 +30,22 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour définir une application Windows Runtime avec XAML pour les extensions de composant de l’interface utilisateur et c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) pour le code. Ces fonctionnalités incluent :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime avec XAML pour l’interface utilisateur et C#, extensions du composant Microsoft Visual Basic ou Visual C++ (C++ / c++ / CX) pour le code. Ces fonctionnalités comprennent :
 
 - Liaison de données
 - Styles
 - Animations dans une table de montage séquentiel
-- Comportement de «PropertyChanged» (il est possible d’implémenter une propriété de dépendance afin de fournir des rappels capables de propager des modifications à d’autres propriétés de dépendance)
+- Comportement de « PropertyChanged » (il est possible d’implémenter une propriété de dépendance afin de fournir des rappels capables de propager des modifications à d’autres propriétés de dépendance)
 - Utilisation d’une valeur par défaut provenant de métadonnées de propriété
 - Utilitaire système de propriétés générales tel que [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) et recherche de métadonnées
 
 ## <a name="dependency-properties-and-windows-runtime-properties"></a>Propriétés de dépendance et propriétés Windows Runtime
 
-Les propriétés de dépendance étendent les fonctionnalités des propriétés Windows Runtime de base en fournissant une banque de propriétés interne globale contenant toutes les propriétés de dépendance d’une application au moment de l’exécution. Il s’agit d’une solution différente du modèle standard de stockage d’une propriété avec un champ privé, qui est privé dans la classe de définition de la propriété. Vous pouvez considérer cette banque de propriétés interne comme un ensemble d’identificateurs de propriétés et de valeurs qui existent pour tout objet particulier (à condition qu’il s’agisse d’une classe [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)). Au lieu d’être identifiée par son nom, chaque propriété de la banque est identifiée par une instance de [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Cependant, le système de propriétés masque en grande partie ce détail d’implémentation: vous pouvez généralement accéder aux propriétés de dépendance en utilisant un nom simple (nom de propriété par programmation dans le langage du code que vous utilisez, ou un nom d’attribut quand vous écrivez du code XAML).
+Les propriétés de dépendance étendent les fonctionnalités des propriétés Windows Runtime de base en fournissant une banque de propriétés interne globale contenant toutes les propriétés de dépendance d’une application au moment de l’exécution. Il s’agit d’une solution différente du modèle standard de stockage d’une propriété avec un champ privé, qui est privé dans la classe de définition de la propriété. Vous pouvez considérer cette banque de propriétés interne comme un ensemble d’identificateurs de propriétés et de valeurs qui existent pour tout objet particulier (à condition qu’il s’agisse d’une classe [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)). Au lieu d’être identifiée par son nom, chaque propriété de la banque est identifiée par une instance de [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Cependant, le système de propriétés masque en grande partie ce détail d’implémentation : vous pouvez généralement accéder aux propriétés de dépendance en utilisant un nom simple (nom de propriété par programmation dans le langage du code que vous utilisez, ou un nom d’attribut quand vous écrivez du code XAML).
 
 Le type de base qui fournit les fondations du système de propriétés de dépendance est [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). **DependencyObject** définit des méthodes qui peuvent accéder à la propriété de dépendance, et les instances d’une classe dérivée de **DependencyObject** prennent en charge en interne le concept de banque de propriétés mentionné plus haut.
 
-Voici un résumé de la terminologie que nous employons dans la présente documentation concernant les propriétés de dépendance:
+Voici un résumé de la terminologie que nous employons dans la présente documentation concernant les propriétés de dépendance :
 
 | Terme | Description |
 |------|-------------|
@@ -55,7 +55,7 @@ Voici un résumé de la terminologie que nous employons dans la présente docume
 
 Le wrapper de propriété n’est pas seulement pratique pour les appelants, il expose également la propriété de dépendance à tout processus, tout outil ou toute projection qui utilise des définitions Windows Runtime pour les propriétés.
 
-L’exemple suivant définit une propriété de dépendance «IsSpinning» personnalisée telle qu’elle est définie pour C#, puis montre la relation entre l’identificateur de propriété de dépendance et le wrapper de propriété.
+L’exemple suivant définit une propriété de dépendance « IsSpinning » personnalisée telle qu’elle est définie pour C#, puis montre la relation entre l’identificateur de propriété de dépendance et le wrapper de propriété.
 
 ```csharp
 // IsSpinningProperty is the dependency property identifier
@@ -74,7 +74,7 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> L’exemple précédent n’est pas destiné exemple pour savoir comment créer une propriété de dépendance personnalisée. Il vise à illustrer les concepts de propriété de dépendance pour toute personne qui assimile mieux des concepts d’apprentissage par le biais du code. Pour obtenir un exemple plus complet, voir [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
+> L’exemple précédent n’est pas conçu comme l’exemple complet pour la création d’une propriété de dépendance personnalisée. Il vise à illustrer les concepts de propriété de dépendance pour toute personne qui assimile mieux des concepts d’apprentissage par le biais du code. Pour obtenir un exemple plus complet, voir [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
 ## <a name="dependency-property-value-precedence"></a>Priorité de la valeur de la propriété de dépendance
 
@@ -86,11 +86,11 @@ Par exemple, les styles et modèles ont vocation à constituer un point de dépa
 
 La liste suivante indique l’ordre définitif utilisé par le système de propriétés pour assigner les valeurs d’exécution d’une propriété de dépendance. La priorité la plus élevée est répertoriée en premier. Vous trouverez des explications détaillées au bas de cette liste.
 
-1. **Valeurs animées :** animations actives, animations de l’état visuel ou animations avec un comportement [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306). Pour avoir un effet pratique, l’animation d’une propriété doit être prioritaire par rapport à la valeur de base (inanimée), même si cette valeur a été définie localement.
-1. **Valeur locale :** elle peut être affectée à partir du wrapper de propriété, ce qui est comparable à la définition d’un attribut ou d’un élément de propriété en XAML ou par un appel de la méthode [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) à l’aide d’une propriété d’une instance spécifique. Si vous définissez une valeur locale à l’aide d’une liaison ou d’une ressource statique, celle-ci fonctionne dans la priorité comme si une valeur locale avait été définie, et les liaisons ou références de ressources sont effacées si une nouvelle valeur locale est définie.
-1. **Propriétés basées sur un modèle :** un élément en comporte s’il a été créé dans le cadre d’un modèle (à partir d’une classe [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
-1. **Méthodes setter de style :** valeurs provenant d’une classe [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) au sein de styles à partir de ressources d’application ou de page.
-1. **Valeur par défaut :** une propriété de dépendance peut avoir une valeur par défaut définie dans le cadre de ses métadonnées.
+1. **Valeurs animées :** Animations actives, visual état animations ou animations avec un [ **HoldEnd** ](https://msdn.microsoft.com/library/windows/apps/br210306) comportement. Pour avoir un effet pratique, l’animation d’une propriété doit être prioritaire par rapport à la valeur de base (inanimée), même si cette valeur a été définie localement.
+1. **Valeur locale :** Une valeur locale peut être définie par l’intermédiaire du wrapper de propriété, ce qui équivaut également à paramètre comme un élément d’attribut ou une propriété dans XAML, ou par un appel à la [ **SetValue** ](https://msdn.microsoft.com/library/windows/apps/br242361) à l’aide d’une propriété de (méthode) une instance spécifique. Si vous définissez une valeur locale à l’aide d’une liaison ou d’une ressource statique, celle-ci fonctionne dans la priorité comme si une valeur locale avait été définie, et les liaisons ou références de ressources sont effacées si une nouvelle valeur locale est définie.
+1. **Propriétés basé sur un modèle :** Un élément a ces s’il a été créé en tant que partie d’un modèle (à partir d’un [ **ControlTemplate** ](https://msdn.microsoft.com/library/windows/apps/br209391) ou [ **DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
+1. **Accesseurs Set de style :** Valeurs à partir d’un [ **Setter** ](https://msdn.microsoft.com/library/windows/apps/br208817) dans les styles de page ou une application de ressources.
+1. **Valeur par défaut :** Une propriété de dépendance peut avoir une valeur par défaut dans le cadre de ses métadonnées.
 
 ### <a name="templated-properties"></a>Propriétés basées sur un modèle
 
@@ -123,7 +123,7 @@ Pour plus d’informations, voir [Animations dans une table de montage séquenti
 
 L’établissement de la valeur par défaut pour une propriété de dépendance dont la valeur est [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) est expliqué plus en détail dans la rubrique [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
-Les propriétés de dépendance ont encore des valeurs par défaut même si celles-ci n’ont pas été explicitement définies dans les métadonnées d’une propriété donnée. Tant qu’elles ne sont pas modifiées par les métadonnées, les valeurs par défaut des propriétés de dépendance Windows Runtime comportent généralement l’un des éléments suivants:
+Les propriétés de dépendance ont encore des valeurs par défaut même si celles-ci n’ont pas été explicitement définies dans les métadonnées d’une propriété donnée. Tant qu’elles ne sont pas modifiées par les métadonnées, les valeurs par défaut des propriétés de dépendance Windows Runtime comportent généralement l’un des éléments suivants :
 
 - Une propriété qui utilise un objet au moment de l’exécution ou le type **Object** (un *type de référence*) a une valeur par défaut égale à **null**. Par exemple, la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) a la valeur **null** jusqu’à ce qu’elle soit volontairement définie ou héritée.
 - Une propriété qui utilise une valeur de base telle que des chiffres ou une valeur booléenne (un *type de valeur*) utilise une valeur par défaut attendue. À titre d’exemple, 0 pour les nombres entiers et à virgule flottante, **false** pour une valeur booléenne.
@@ -149,11 +149,11 @@ L’exemple suivant définit la valeur [**Text**](https://msdn.microsoft.com/lib
 Vous pouvez également établir des liaisons à l’aide de code plutôt qu’en XAML. Voir [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257).
 
 > [!NOTE]
-> Liaisons comme celle-ci sont traitées qu’une valeur locale à des fins de priorité de valeur de propriété de dépendance. Si vous affectez une autre valeur locale à une propriété qui contenait à l’origine une valeur [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), vous remplacez entièrement la liaison, pas seulement la valeur de la liaison au moment de l’exécution. Les liaisons {x: Bind} sont implémentées à l’aide du code généré qui définit une valeur locale pour la propriété. Si vous définissez une valeur locale pour une propriété qui utilise {x: Bind}, cette valeur est alors remplacée à la prochaine évaluation de la liaison, par exemple lorsqu’elle observe une modification de la propriété sur son objet source.
+> Ainsi, les liaisons sont traitées comme une valeur locale à des fins de priorité de valeur de propriété de dépendance. Si vous affectez une autre valeur locale à une propriété qui contenait à l’origine une valeur [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), vous remplacez entièrement la liaison, pas seulement la valeur de la liaison au moment de l’exécution. Les liaisons {x : Bind} sont implémentées à l’aide du code généré qui définit une valeur locale pour la propriété. Si vous définissez une valeur locale pour une propriété qui utilise {x : Bind}, cette valeur est alors remplacée à la prochaine évaluation de la liaison, par exemple lorsqu’elle observe une modification de la propriété sur son objet source.
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>Sources de liaison, cibles de liaison, le rôle de FrameworkElement
 
-Pour constituer la source d’une liaison, une propriété n’a pas besoin d’être une propriété de dépendance. Vous pouvez généralement utiliser n’importe quelle propriété en tant que source de liaison, bien que cela dépende de votre langage de programmation et que chacune comporte certains cas extrêmes. Toutefois, pour être la cible d’une [extension de balisage {Binding} ](binding-markup-extension.md) ou [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), cette propriété doit être une propriété de dépendance. Ce n’est pas le cas pour l’extension de balisage {x: Bind} car elle utilise le code généré pour appliquer ses valeurs de liaison.
+Pour constituer la source d’une liaison, une propriété n’a pas besoin d’être une propriété de dépendance. Vous pouvez généralement utiliser n’importe quelle propriété en tant que source de liaison, bien que cela dépende de votre langage de programmation et que chacune comporte certains cas extrêmes. Toutefois, pour être la cible d’une [extension de balisage {Binding} ](binding-markup-extension.md) ou [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), cette propriété doit être une propriété de dépendance. Ce n’est pas le cas pour l’extension de balisage {x : Bind} car elle utilise le code généré pour appliquer ses valeurs de liaison.
 
 Si vous créez une liaison dans le code, notez que l’API [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) est uniquement définie pour [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). Toutefois, vous pouvez créer plutôt une définition de liaison à l’aide de la classe [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823), et ainsi référencer toute propriété [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356).
 
@@ -162,7 +162,7 @@ Qu’il s’agisse de code ou de XAML, n’oubliez pas que la propriété [**Dat
 Connecter la liaison n’est pas la seule chose nécessaire dans la plupart des scénarios de liaison de données. Pour qu’une liaison unidirectionnelle ou bidirectionnelle soit efficace, la propriété source doit prendre en charge les notifications de modifications qui se propagent au système de liaison et par conséquent à la cible. Pour les sources de liaison personnalisées, cela signifie que la propriété doit être une propriété de dépendance ou que l’objet doit prendre en charge [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Les collections doivent prendre en charge [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Certaines classes prennent en charge ces interfaces dans leurs implémentations afin d’être utiles en tant que classes de base pour les scénarios de liaison de données. La classe [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) en est un exemple. Pour plus d’informations sur la liaison de données et sa relation avec le système de propriétés, voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 > [!NOTE]
-> Les sources de données Microsoft .NET de types répertoriés ici prennent en charge. Les sources de données C++/CX utilisent différentes interfaces pour la notification des modifications ou le comportement susceptible d’être observé. Voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+> Les sources de données Microsoft .NET de types répertoriés prise en charge ici. Les sources de données C++/CX utilisent différentes interfaces pour la notification des modifications ou le comportement susceptible d’être observé. Voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="styles-and-templates"></a>Styles et modèles
 
@@ -184,11 +184,11 @@ Le principe de machine à états est incarné par l’utilisation d’animations
 
 Le comportement modifié par une propriété est l’origine du côté « dépendance » de la terminologie liée aux propriétés de dépendance. Le maintien de valeurs valides pour une propriété quand une autre propriété peut influencer la valeur de la première propriété constitue un problème de développement difficile dans de nombreuses infrastructures. Dans le système de propriétés Windows Runtime, chaque propriété de dépendance peut spécifier un rappel qui est invoqué dès lors que sa valeur change. Ce rappel peut servir à notifier ou modifier des valeurs de propriété associées, d’une manière généralement synchrone. De nombreuses propriétés de dépendance ont un comportement modifié par une propriété. Vous pouvez également ajouter un comportement de rappel similaire à des propriétés de dépendance personnalisées, puis implémenter vos propres rappels modifiés par une propriété. Pour obtenir un exemple, voir [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
-Windows10 introduit la méthode [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx). Cette méthode permet au code d’application de s’inscrire aux notifications de modification lorsque la propriété de dépendance spécifiée est modifiée sur une instance de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx).
+Windows 10 introduit la méthode [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx). Cette méthode permet au code d’application de s’inscrire aux notifications de modification lorsque la propriété de dépendance spécifiée est modifiée sur une instance de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx).
 
 ### <a name="default-value-and-clearvalue"></a>Valeur par défaut et **ClearValue**
 
-Une propriété de dépendance peut avoir une valeur par défaut définie dans le cadre de ses métadonnées. Dans le cas d’une propriété de dépendance, sa valeur par défaut ne perd pas de sa pertinence après la définition de la valeur pour la première fois. La valeur par défaut peut s’appliquer à nouveau au moment de l’exécution dès lors qu’un autre déterminant de la priorité de la valeur disparaît. (La priorité de la valeur de la propriété de dépendance est expliquée dans la section suivante.) Par exemple, vous pouvez volontairement supprimer une valeur de style ou une animation qui s’applique à une propriété, tout en souhaitant que la valeur soit une valeur par défaut raisonnable par la suite. La valeur par défaut de la propriété de dépendance peut fournir cette valeur, sans qu’il soit nécessaire de définir spécifiquement la valeur de chaque propriété dans le cadre d’une étape supplémentaire.
+Une propriété de dépendance peut avoir une valeur par défaut définie dans le cadre de ses métadonnées. Dans le cas d’une propriété de dépendance, sa valeur par défaut ne perd pas de sa pertinence après la définition de la valeur pour la première fois. La valeur par défaut peut s’appliquer à nouveau au moment de l’exécution dès lors qu’un autre déterminant de la priorité de la valeur disparaît. (Priorité de valeur de propriété de dépendance est abordée dans la section suivante). Par exemple, vous pouvez supprimer délibérément une valeur de style ou une animation qui s’applique à une propriété, mais vous souhaitez que la valeur par défaut raisonnable après cela. La valeur par défaut de la propriété de dépendance peut fournir cette valeur, sans qu’il soit nécessaire de définir spécifiquement la valeur de chaque propriété dans le cadre d’une étape supplémentaire.
 
 Vous pouvez délibérément affecter à la propriété la valeur par défaut même si vous lui avez déjà affecté une valeur locale. Pour réinitialiser une valeur en valeur par défaut, mais aussi pour activer d’autres participants en priorité qui seraient susceptibles de remplacer la valeur par défaut mais pas une valeur locale, appelez la méthode [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) (référencez la propriété à effacer en tant que paramètre de méthode). Il n’est pas toujours souhaitable que la propriété utilise littéralement la valeur par défaut, mais la suppression de la valeur locale et le rétablissement de la valeur par défaut peuvent activer un autre élément en priorité, comme la valeur provenant d’un Style Setter dans un modèle de contrôle.
 
@@ -204,12 +204,12 @@ Les aspects relatifs aux threads de [**DependencyObject**](https://msdn.microsof
 
 - [Propriétés de dépendance personnalisées](custom-dependency-properties.md)
 - [Vue d’ensemble des propriétés jointes](attached-properties-overview.md)
-- [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)
-- [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354)
+- [Liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [Animations de storyboard](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-- [Exemple de contrôles personnalisés et utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [Utilisateur XAML et des exemples de contrôles personnalisés](https://go.microsoft.com/fwlink/p/?linkid=238581)
 
-## <a name="apis-related-to-dependency-properties"></a>API associées aux propriétés de dépendance
+## <a name="apis-related-to-dependency-properties"></a>API liées aux propriétés de dépendance
 
 - [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 - [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)

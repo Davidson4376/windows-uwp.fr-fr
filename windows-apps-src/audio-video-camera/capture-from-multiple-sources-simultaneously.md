@@ -4,14 +4,14 @@ description: Cet article vous montre comment capturer une vidéo à partir de pl
 title: Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
 ms.date: 09/12/2017
 ms.topic: article
-keywords: Windows10, uwp, capture vidéo
+keywords: Windows 10, uwp, capture vidéo
 ms.localizationpriority: medium
 ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636614"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
 
@@ -41,14 +41,14 @@ Pour plus d’informations sur les autres opérations possibles avec **MediaCapt
 La classe **[MediaEncodingProfile](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile)** indique au pipeline de capture multimédia comment encoder le contenu audio et vidéo capturé pour l'écriture dans un fichier. Pour les scénarios de capture et de transcodage standard, cette classe fournit un ensemble de méthodes statiques pour la création de profils communs, tels que **[CreateAvi](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi)** et **[CreateMp3](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3)**. Pour cet exemple, un profil d’encodage est créé manuellement en utilisant un conteneur Mpeg4 et l'encodage vidéo H264. Les paramètres d’encodage vidéo sont spécifiés à l'aide d'un objet **[VideoEncodingProperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.videoencodingproperties)**. Pour chaque caméra couleur utilisée dans ce scénario, un objet **VideoStreamDescriptor** est configuré. Le descripteur est construit avec l'objet **VideoEncodingProperties** spécifiant l’encodage. La propriété **[Label](https://docs.microsoft.com/uwp/api/windows.media.core.videostreamdescriptor.Label)** du **VideoStreamDescriptor** doit être définie sur l’ID de la source d’images multimédias qui sera capturée dans le flux. Voici comment le pipeline de capture connaît le descripteur de flux et les propriétés d’encodage à utiliser pour chaque caméra. L’ID de la source d’images est exposé par les objets **[MediaFrameSourceInfo](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo)** qui ont été trouvés dans la section précédente, lorsqu’un **MediaFrameSourceGroup** a été sélectionné.
 
 
-À partir de Windows10, version1709, vous pouvez définir plusieurs propriétés d’encodage sur un objet **MediaEncodingProfile** en appelant **[SetVideoTracks](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.setvideotracks)**. Vous pouvez récupérer la liste des descripteurs de flux vidéo en appelant **[GetVideoTracks](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.GetVideoTracks)**. Notez que si vous définissez la propriété **[Video](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.Video)**, qui stocke un seul descripteur de flux, la liste de descripteurs que vous définissez en appelant **SetVideoTracks** sera remplacée par une liste qui contient le descripteur unique que vous avez spécifié.
+À partir de Windows 10, version 1709, vous pouvez définir plusieurs propriétés d’encodage sur un objet **MediaEncodingProfile** en appelant **[SetVideoTracks](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.setvideotracks)**. Vous pouvez récupérer la liste des descripteurs de flux vidéo en appelant **[GetVideoTracks](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.GetVideoTracks)**. Notez que si vous définissez la propriété **[Video](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.Video)**, qui stocke un seul descripteur de flux, la liste de descripteurs que vous définissez en appelant **SetVideoTracks** sera remplacée par une liste qui contient le descripteur unique que vous avez spécifié.
 
 
 [!code-cs[MultiRecordMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordMediaEncodingProfile)]
 
 ### <a name="encode-timed-metadata-in-media-files"></a>Encoder des métadonnées synchronisées dans des fichiers multimédias
 
-À compter de Windows10, version1803, en plus des données audio et vidéo, vous pouvez encoder des métadonnées synchronisées dans un fichier multimédia pour lequel le format des données est pris en charge. Par exemple, les métadonnées GoPro (gpmd) peuvent être stockées dans des fichiers MP4 pour transmettre l’emplacement géographique en corrélation avec un flux vidéo. 
+À compter de Windows 10, version 1803, en plus des données audio et vidéo, vous pouvez encoder des métadonnées synchronisées dans un fichier multimédia pour lequel le format des données est pris en charge. Par exemple, les métadonnées GoPro (gpmd) peuvent être stockées dans des fichiers MP4 pour transmettre l’emplacement géographique en corrélation avec un flux vidéo. 
 
 L’encodage des métadonnées utilise un modèle qui est parallèle à l’encodage audio ou vidéo. La classe [**TimedMetadataEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties) décrit le type, le sous-type et les propriétés d’encodage des métadonnées, tout comme la classe **VideoEncodingProperties** pour la vidéo. L’objet [**TimedMetadataStreamDescriptor**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) identifie un flux de métadonnées, tout comme l’objet **VideoStreamDescriptor** pour les flux vidéo.  
 
@@ -56,7 +56,7 @@ L’exemple suivant montre comment initialiser un objet **TimedMetadataStreamDes
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Appelez [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) pour ajouter le descripteur de flux de métadonnées dans le profil d’encodage. L’exemple suivant illustre une méthode d’assistance qui accepte deux descripteurs de flux vidéo, un descripteur de flux audio et un descripteur de flux de métadonnées synchronisées, et renvoie un objet **MediaEncodingProfile** qui peut être utilisé pour encoder les flux.
+Appelez [ **MediaEncodingProfile.SetTimedMetadataTracks** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) pour ajouter le descripteur de flux de métadonnées pour le profil d’encodage. L’exemple suivant illustre une méthode d’assistance qui accepte deux descripteurs de flux vidéo, un descripteur de flux audio et un descripteur de flux de métadonnées synchronisées, et renvoie un objet **MediaEncodingProfile** qui peut être utilisé pour encoder les flux.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 
@@ -67,12 +67,12 @@ L’étape finale de cet exemple consiste à lancer la capture vidéo en appelan
 
 Une fois l’opération terminée, un fichier vidéo a été créé contenant la vidéo capturée à partir de chaque caméra encodée en tant que flux distinct dans le fichier. Pour plus d’informations sur la lecture de fichiers multimédias contenant plusieurs pistes vidéo, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
-* [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Blocs de processus multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Assure le suivi, les sélections et les éléments multimédias](media-playback-with-mediasource.md)
 
 
  

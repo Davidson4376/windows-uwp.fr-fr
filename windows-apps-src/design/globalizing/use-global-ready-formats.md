@@ -1,18 +1,18 @@
 ---
-Description: Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.
+Description: Concevez votre application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Plus tard, vous serez en mesure d’adapter votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
 title: Globaliser vos formats de date/heure/chiffres
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
-keywords: windows10, uwp, globalisation, adaptabilité, localisation
+keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048606"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634134"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>Globaliser vos formats de date/heure/chiffres
 
@@ -22,17 +22,17 @@ Concevez votre application dans une perspective de globalisation en mettant corr
 
 Lors de la création de votre application, si vous adoptez une pensée plus large qu'une unique langue et culture, vous obtiendrez moins (ou pas) de problèmes inattendues lorsque votre application s'étendra à de nouveaux marchés. Par exemple, les dates, les heures, les nombres, les calendriers, les devises, les numéros de téléphone, les unités de mesure et les formats du papier sont des éléments susceptibles de s’afficher différemment selon la culture ou la langue.
 
-Les régions et cultures différentes emploient des formats de date et d'heure différents. Ces formats incluent les conventions en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs («mercredi28mars2012») ou formats courts («28/03/12»), ce qui est déterminé par la culture. Enfin, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
+Les régions et cultures différentes emploient des formats de date et d'heure différents. Ces formats incluent les conventions en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs (« mercredi 28 mars 2012 ») ou formats courts (« 28/03/12 »), ce qui est déterminé par la culture. Enfin, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
 
 Vous pouvez prévisualiser les formats utilisés pour différentes langues. Accédez à **Paramètres** > **Heure et langue** > **Région et langue**, puis cliquez sur **Paramètres de date, d'heure et régionaux supplémentaires** > **Modifier les formats de date, d’heure ou de nombre**. Dans l'onglet **Formats**, sélectionnez une langue dans le menu déroulant **Format** et prévisualisez les formats dans **Exemples**.
 
-Cette rubrique utilise les termes «liste de langues de profil utilisateur», «liste de langues de manifeste d'application» et «liste de langues d'exécution de l'application». Pour plus d'informations sur la définition exacte de ces termes et comment accéder à leurs valeurs, consultez [Comprendre les langues de profil utilisateur et les langues du manifeste d'application](manage-language-and-region.md).
+Cette rubrique utilise les termes « liste de langues de profil utilisateur », « liste de langues de manifeste d'application » et « liste de langues d'exécution de l'application ». Pour plus d'informations sur la définition exacte de ces termes et comment accéder à leurs valeurs, consultez [Comprendre les langues de profil utilisateur et les langues du manifeste d'application](manage-language-and-region.md).
 
 ## <a name="format-dates-and-times-for-the-app-runtime-language-list"></a>Formater les dates et heures pour la liste de langue d'exécution de l'application
 
 Pour permettre aux utilisateurs de sélectionner une date ou une heure, utilisez les contrôles standard de type [contrôles du calendrier, de la date et de l'heure](../controls-and-patterns/date-and-time.md). Ces contrôles utilisent le meilleur format de date et d'heure pour la liste de langue d'exécution de l'application.
 
-Si vous avez besoin d'afficher les dates et heures vous-mêmes, vous pouvez utiliser la classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live). Par défaut, la classe **DateTimeFormatter** utilise automatiquement le meilleur format de date et d'heure pour la liste de langue d'exécution de l'application. Par conséquent, le code ci-dessous formate un paramètre **DateTime** de la meilleure façon pour cette liste. Par exemple, supposez que la liste de langue du manifeste de votre application comprend l'anglais (États-Unis) qui est également la langue par défaut, et l'allemand (Allemagne). Si la date actuelle est le 6novembre2017 et que la liste de langue du profil utilisateur contient d'abord l'allemand (Allemagne), alors le formateur donne la date sous le format «06.11.2017» Si la liste de langue du profil utilisateur contient l'anglais (États-Unis) en premier lieu (ou si elle ne contient ni l'anglais, ni l'allemand), alors le formateur donne la date sous le format «11/6/2017» (puisque la langue «en-US» correspond ou est utilisée par défaut).
+Si vous avez besoin d'afficher les dates et heures vous-mêmes, vous pouvez utiliser la classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live). Par défaut, la classe **DateTimeFormatter** utilise automatiquement le meilleur format de date et d'heure pour la liste de langue d'exécution de l'application. Par conséquent, le code ci-dessous formate un paramètre **DateTime** de la meilleure façon pour cette liste. Par exemple, supposez que la liste de langue du manifeste de votre application comprend l'anglais (États-Unis) qui est également la langue par défaut, et l'allemand (Allemagne). Si la date actuelle est le 6 novembre 2017 et que la liste de langue du profil utilisateur contient d'abord l'allemand (Allemagne), alors le formateur donne la date sous le format « 06.11.2017 » Si la liste de langue du profil utilisateur contient l'anglais (États-Unis) en premier lieu (ou si elle ne contient ni l'anglais, ni l'allemand), alors le formateur donne la date sous le format « 11/6/2017 » (puisque la langue « en-US » correspond ou est utilisée par défaut).
 
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
@@ -51,14 +51,14 @@ Si vous avez besoin d'afficher les dates et heures vous-mêmes, vous pouvez util
 
 C'est ainsi que vous pouvez tester le code ci-dessous sur votre propre PC.
 
-- Veillez à disposer des fichiers de ressources dans votre projet, qualifiés à la fois pour la langue «en-US» et pour la langue «de-DE» (consultez [Adapter vos ressources pour la langue, l'échelle, le contraste élevé et d'autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)).
+- Veillez à disposer des fichiers de ressources dans votre projet, qualifiés à la fois pour la langue « en-US » et pour la langue « de-DE » (consultez [Adapter vos ressources pour la langue, l'échelle, le contraste élevé et d'autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)).
 - Modifiez votre liste de langue de profil utilisateur dans **Paramètres** > **Heure et langue** > **Région et langue** > **Langues**. Ajoutez l'allemand (Allemagne), définissez-la par défaut et exécutez le code à nouveau.
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>Formater les dates et heures pour la liste de langue de profil utilisateur
 
-N’oubliez pas que, par défaut, **DateTimeFormatter** correspond à la liste de langue d'exécution de l'application. Ainsi, si vous affichez des chaînes telles que «La date est &lt;date&gt;», la langue correspondra au format de date.
+N’oubliez pas que, par défaut, **DateTimeFormatter** correspond à la liste de langue d'exécution de l'application. Ainsi, si vous affichez des chaînes telles que « La date est &lt;date&gt; », la langue correspondra au format de date.
 
-Si, pour une quelconque raison, vous souhaitez formater les dates et/ou heures uniquement en fonction de la liste de langue de profil utilisateur, alors vous pouvez y procéder en utilisant un code semblable à l'exemple ci-dessous. Mais si vous y procédez, vous devez comprendre que l'utilisateur peut choisir une langue pour laquelle l'application ne dispose pas de chaînes traduites. Par exemple, si votre application n'est pas localisée en allemand (Allemagne), mais que l'utilisateur choisit cette langue en tant que langue favorite, alors l'affichage engendrera sans doute des chaînes d'apparence étrange, comme «La date est 06.11.2017».
+Si, pour une quelconque raison, vous souhaitez formater les dates et/ou heures uniquement en fonction de la liste de langue de profil utilisateur, alors vous pouvez y procéder en utilisant un code semblable à l'exemple ci-dessous. Mais si vous y procédez, vous devez comprendre que l'utilisateur peut choisir une langue pour laquelle l'application ne dispose pas de chaînes traduites. Par exemple, si votre application n'est pas localisée en allemand (Allemagne), mais que l'utilisateur choisit cette langue en tant que langue favorite, alors l'affichage engendrera sans doute des chaînes d'apparence étrange, comme « La date est 06.11.2017 ».
 
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
@@ -114,11 +114,11 @@ Pour garantir l'utilisation du format de calendrier favori, vous pouvez utiliser
 
 ## <a name="format-phone-numbers-appropriately"></a>Mettre correctement en forme les numéros de téléphone
 
-Les numéros de téléphone affichent une mise en forme différente selon les régions. Le nombre de chiffres, la façon dont ils sont regroupés et la signification de certaines parties du numéro de téléphone varient selon le pays. À compter de Windows10, version1607, vous pouvez utiliser les classes de l'espace de noms [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) pour adapter le format des numéros de téléphone à la région active.
+Les numéros de téléphone affichent une mise en forme différente selon les régions. Le nombre de chiffres, la façon dont ils sont regroupés et la signification de certaines parties du numéro de téléphone varient selon le pays. À compter de Windows 10, version 1607, vous pouvez utiliser les classes de l'espace de noms [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) pour adapter le format des numéros de téléphone à la région active.
 
-[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) permet d’analyser une chaîne de chiffres pour déterminer si elle forme un numéro de téléphone valide dans la région active et de comparer deux nombres pour déterminer s’ils sont égaux. Par ailleurs, il permet d’extraire les différentes parties fonctionnelles du numéro de téléphone, telles que l’indicatif du pays ou l’indicatif régional.
+[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) analyse une chaîne de chiffres, et vous permet de : déterminer si les chiffres sont un numéro de téléphone valide dans la région actuelle ; comparer deux nombres sont égaux ; et pour extraire les différentes parties fonctionnelles du téléphone nombre, tels que le code de pays ou de code de la zone géographique.
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) permet de mettre en forme une chaîne de chiffres ou un élément **PhoneNumberInfo** en vue de l’afficher, même quand ladite chaîne de chiffres représente un numéro de téléphone partiel. Vous pouvez utiliser cette mise en forme de numéro partiel pour mettre en forme un numéro à mesure que l’utilisateur le saisit.
+[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formats de chaîne de chiffres ou **PhoneNumberInfo** pour l’affichage, même lorsque la chaîne de chiffres représente un numéro de téléphone partielle. Vous pouvez utiliser cette mise en forme de numéro partiel pour mettre en forme un numéro à mesure que l’utilisateur le saisit.
 
 L'exemple ci-dessous montre comment utiliser **PhoneNumberFormatter** pour mettre en forme un numéro de téléphone à mesure qu’il est saisi. Chaque fois que le texte est modifié dans un **TextBox** nommé phoneNumberInputTextBox, le contenu de la zone de texte est mis en forme en fonction de la région par défaut active et s’affiche dans un **TextBlock** nommé phoneNumberOutputTextBlock. À titre de démonstration, la chaîne est également mise en forme pour la région Nouvelle-Zélande et s’affiche dans un TextBlock nommé phoneNumberOutputTextBlockNZ.
   
@@ -165,15 +165,15 @@ Pour les scénarios dans lesquels les fonctionnalités offertes varient seulemen
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Contrôles de calendrier, de date et d’heure](../controls-and-patterns/date-and-time.md)
-* [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](manage-language-and-region.md)
-* [Adaptez vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Contrôles de temps, de date et calendrier](../controls-and-patterns/date-and-time.md)
+* [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](manage-language-and-region.md)
+* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Exemples
 
-* [Exemple de détails et d’opérations mathématiques dans un calendrier](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Exemple de mise en forme des dates et heures](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [Détails du calendrier et des exemples de mathématiques](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [Date et heure de mise en forme d’exemple](https://go.microsoft.com/fwlink/p/?linkid=231618)
 * [Exemple de préférences de globalisation](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Exemple de mise en forme et d’analyse des nombres](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Numéro de mise en forme et l’analyse des exemples](https://go.microsoft.com/fwlink/p/?linkid=231620)

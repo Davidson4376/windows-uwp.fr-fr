@@ -4,14 +4,14 @@ title: Partager des données
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c1c9b75599efe4566bc1783f68ff9752510d1d99
-ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "9031375"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640564"
 ---
 # <a name="share-data"></a>Partager des données
 

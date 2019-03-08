@@ -1,33 +1,33 @@
 ---
-Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+Description: MakePri.exe est un outil de ligne de commande que vous pouvez utiliser pour créer et vider des fichiers PRI. Il est intégré en tant qu’élément de MSBuild dans Microsoft Visual Studio, mais il peut aussi être utilisé pour la création de packages manuellement ou à l’aide d’un système de génération personnalisé.
 title: Compiler des ressources manuellement avec MakePri.exe
 template: detail.hbs
 ms.date: 10/23/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645764"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Compiler des ressources manuellement avec MakePri.exe
 
-MakePri.exe est un outil de ligne de commande que vous pouvez utiliser pour créer et vider des fichiers PRI. Il est intégré en tant qu’élément de MSBuild dans MicrosoftVisualStudio, mais il peut aussi être utilisé pour la création de packages manuellement ou à l’aide d’un système de génération personnalisé.
+MakePri.exe est un outil de ligne de commande que vous pouvez utiliser pour créer et vider des fichiers PRI. Il est intégré en tant qu’élément de MSBuild dans Microsoft Visual Studio, mais il peut aussi être utilisé pour la création de packages manuellement ou à l’aide d’un système de génération personnalisé.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez l’option **Du SDK Windows pour les applications UWP managées** lors de l’installation du Kit de développement logiciel Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-La limite de taille d’un fichier PRI est 64kilo-octets.
+La limite de taille d’un fichier PRI est 64 kilo-octets.
 
 ## <a name="in-this-section"></a>Dans cette section
 |Rubrique|Description|
 |-|-|
-| [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md) | MakePri.exe inclut le jeu de commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes. |
-| [Fichier de configuration de MakePri.exe](makepri-exe-configuration.md) | Cette rubrique décrit le schéma du fichier de configurationXML de MakePri.exe. |
-| [Indexeurs spécifiques au format de MakePri.exe](makepri-exe-format-specific-indexers.md) | Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil MakePri.exe pour générer son index de ressources. |
+| [Options de ligne de commande MakePri.exe](makepri-exe-command-options.md) | MakePri.exe inclut le jeu de commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes. |
+| [Fichier de configuration MakePri.exe](makepri-exe-configuration.md) | Cette rubrique décrit le schéma du fichier de configuration XML de MakePri.exe. |
+| [Indexeurs de spécifiques au format MakePri.exe](makepri-exe-format-specific-indexers.md) | Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil MakePri.exe pour générer son index de ressources. |
 
 ## <a name="makepriexe-command-line-options"></a>Options de ligne de commande de MakePri.exe
 
@@ -39,7 +39,7 @@ Le ficher de configuration XML PRI détermine les ressources qui sont indexées 
 
 ## <a name="format-specific-indexers"></a>Indexeurs spécifiques au format
 
-MakePri.exe est généralement utilisé avec les options `new`, `versioned` et `resourcepack`. Dans ces scénarios, il indexe les fichiers sources pour générer un index des ressources. MakePri.exe utilise plusieurs indexeurs individuels pour lire les fichiers de ressources sources ou les conteneurs pour les ressources. L’indexeur de base est l’indexeur de dossier. Il indexe le contenu d’un dossier pour des ressources telles que des images `.jpg` ou `.png`. Pour plus d’informations, voir [Indexeurs spécifiques au format de MakePri.exe](makepri-exe-format-specific-indexers.md).
+MakePri.exe est généralement utilisé avec les options `new`, `versioned` et `resourcepack`. Dans ces cas, il indexe les fichiers sources pour générer un index des ressources. MakePri.exe utilise plusieurs indexeurs individuels pour lire les fichiers de ressources sources ou les conteneurs pour les ressources. L’indexeur de base est l’indexeur de dossier. Il indexe le contenu d’un dossier pour des ressources telles que des images `.jpg` ou `.png`. Pour plus d’informations, voir [Indexeurs spécifiques au format de MakePri.exe](makepri-exe-format-specific-indexers.md).
 
 ## <a name="makepriexe-warnings-and-error-messages"></a>Avertissements et messages d’erreur de MakePri.exe
 
@@ -47,7 +47,7 @@ MakePri.exe est généralement utilisé avec les options `new`, `versioned` et `
 Resources found for language(s) '<language(s)>' but no resources found for default language(s): '<language(s)>'. Change the default language or qualify resources with the default language.
 ```
 
-L’avertissement ci-dessus s’affiche lorsque MakePri.exe ou MSBuild détecte des fichiers ou des ressources de chaîne pour une ressource nommée spécifique qui semblent être marqués à l’aide de qualificateurs de langue, alors qu’aucun candidat n’est trouvé pour la langue par défaut. La méthode d’utilisation des qualificateurs dans les noms de fichiers et de dossiers est décrite dans [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md). Un fichier ou un dossier peut contenir un nom de langue, mais aucune ressource qualifiée pour la langue par défaut exacte n’est détectée. Par exemple, si un projet utilise «en-US» comme langue par défaut et qu’il inclut un fichier nommé «de/logo.png», mais aucun fichier marqué avec la langue par défaut «en-US», cet avertissement s’affiche. Pour supprimer cet avertissement, les fichiers ou les ressources de chaîne doivent être qualifiés avec la langue par défaut, ou la langue par défaut doit être modifiée. Pour modifier la langue par défaut, dans votre solution ouverte dans VisualStudio, ouvrez `Package.appxmanifest`. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, «en» ou «en-US»).
+L’avertissement ci-dessus s’affiche lorsque MakePri.exe ou MSBuild détecte des fichiers ou des ressources de chaîne pour une ressource nommée spécifique qui semblent être marqués à l’aide de qualificateurs de langue, alors qu’aucun candidat n’est trouvé pour la langue par défaut. La méthode d’utilisation des qualificateurs dans les noms de fichiers et de dossiers est décrite dans [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md). Un fichier ou un dossier peut contenir un nom de langue, mais aucune ressource qualifiée pour la langue par défaut exacte n’est détectée. Par exemple, si un projet utilise « en-US » comme langue par défaut et qu’il inclut un fichier nommé « de/logo.png », mais aucun fichier marqué avec la langue par défaut « en-US », cet avertissement s’affiche. Pour supprimer cet avertissement, les fichiers ou les ressources de chaîne doivent être qualifiés avec la langue par défaut, ou la langue par défaut doit être modifiée. Pour modifier la langue par défaut, dans votre solution ouverte dans Visual Studio, ouvrez `Package.appxmanifest`. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, « en » ou « en-US »).
 
 ```
 No default or neutral resource given for '<resource identifier>'. The application may throw an exception for certain user configurations when retrieving the resources.
@@ -65,8 +65,8 @@ En outre, les systèmes de génération peuvent utiliser l’indexeur spécifiqu
 
 Lorsque les fichiers PRI sont générés pour d’autres composants, bibliothèques de classes, assemblys, DLL et kits de développement logiciel (SDK), la configuration **initialPath** doit être utilisée pour s’assurer que les ressources du composant ont leurs propres sous-mappages de ressources et que ces derniers ne sont pas en conflit avec l’application dans laquelle elles sont incluses.
 
-## <a name="related-topics"></a>Rubriques associées
-* [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md)
+## <a name="related-topics"></a>Rubriques connexes
+* [Options de ligne de commande MakePri.exe](makepri-exe-command-options.md)
 * [Configuration de MakePri.exe](makepri-exe-configuration.md)
-* [Indexeurs spécifiques au format de MakePri.exe](makepri-exe-format-specific-indexers.md)
-* [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Indexeurs de spécifiques au format MakePri.exe](makepri-exe-format-specific-indexers.md)
+* [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](tailor-resources-lang-scale-contrast.md)

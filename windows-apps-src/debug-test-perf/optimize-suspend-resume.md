@@ -1,24 +1,24 @@
 ---
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: Optimiser l’interruption/la reprise
-description: Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
+description: Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947427"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653654"
 ---
 # <a name="optimize-suspendresume"></a>Optimiser l’interruption/la reprise
 
 
-Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
+Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 
-## <a name="launch"></a>Lancer
+## <a name="launch"></a>Lancement
 
 Si vous réactivez une application après l’avoir suspendue/arrêtée, vérifiez si une longue durée s’est écoulée. Si tel est le cas, pensez à revenir dans la page de destination principale de l’application au lieu d’afficher les données utilisateur obsolètes. Cela entraînera également un démarrage plus rapide.
 
@@ -34,7 +34,7 @@ Toutefois, vous devez trouver un bon équilibre entre l’enregistrement incrém
 
 N’utilisez pas les événements Activated ou VisibilityChanged de la fenêtre pour choisir le moment auquel enregistrer l’état. Lorsque l’utilisateur quitte votre application, la fenêtre est désactivée, mais le système attend un court moment (environ 10 secondes) avant de suspendre l’application. Il s’agit de fournir une meilleure réactivité si jamais l’utilisateur rebascule rapidement vers votre application. Attendez l’événement de suspension avant d'exécuter la logique correspondante.
 
-## <a name="suspend"></a>Suspendre
+## <a name="suspend"></a>Interrompre
 
 Lors de la suspension, réduisez l’encombrement de votre application. Si votre application utilise moins de mémoire alors qu’elle est suspendue, l’ensemble du système sera plus réactif et un plus petit nombre d’applications suspendues (y compris les vôtres) seront arrêtées. Toutefois, équilibrez ce point avec la nécessité d’effectuer des reprises réactives : ne réduisez pas trop l’encombrement, car la reprise est considérablement ralentie lorsque votre application recharge de nombreuses données en mémoire.
 
@@ -64,7 +64,7 @@ Pour la sérialisation des applications .NET, vous avez le choix entre les class
 
 Pour obtenir des performances optimales, utilisez la classe [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx). Avec **XmlSerializer**, la sérialisation et la désérialisation sont rapides, et l’encombrement mémoire reste faible. La classe **XmlSerializer** est peu dépendante de .NET Framework. Par conséquent, contrairement aux autres méthodes de sérialisation, **XmlSerializer** peut être utilisée en chargeant un nombre réduit de modules.
 
-[**DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) simplifie la sérialisation des classes personnalisées, bien que son impact sur les performances soit supérieur à celui de **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
+[**DataContractSerializer** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) facilite sérialiser des classes personnalisées, bien qu’il ait un plus grand impact sur les performances que **XmlSerializer**. Si vous voulez obtenir de meilleures performances, il est préférable de changer. En général, il vaut mieux ne pas charger plus d’un sérialiseur et **XmlSerializer** est préférable, à moins que vous n’ayez besoin des fonctionnalités d’un autre sérialiseur.
 
 ### <a name="reduce-memory-footprint"></a>Réduire l’encombrement mémoire
 
@@ -85,7 +85,7 @@ La plupart des applications n’ont pas besoin de gérer l’événement [**Resu
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [Instructions pour l’application interrompre et reprendre](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  

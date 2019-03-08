@@ -5,31 +5,31 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922779"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638004"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Nécessite des informations de déploiement pour un ou plusieurs packages installés.
 
-**Requête**
+**Demande**
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :------
 POST | /ext/app/deployinfo
 <br />
 **Paramètres d’URI**
 
- - Aucun
+ - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de requête**
+**Corps de la demande**
 
-Tableau JSON au format suivant:
+Tableau JSON au format suivant :
 
 * DeployInfo
   * PackageFullName - nom du package à propos duquel nous demandons des informations.
@@ -37,9 +37,9 @@ Tableau JSON au format suivant:
 
 ###<a name="response"></a>Réponse
 
-**Corps de réponse**
+**Corps de la réponse**
 
-Un tableau JSON au format suivant (certains champs sont facultatifs):
+Un tableau JSON au format suivant (certains champs sont facultatifs) :
 
 * DeployInfo
   * PackageFullName - nom du package à propos duquel nous recevons des informations.
@@ -60,6 +60,6 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 <br />
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox

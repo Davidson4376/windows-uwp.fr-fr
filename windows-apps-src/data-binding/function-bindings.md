@@ -1,31 +1,31 @@
 ---
-description: L’extension de balisage permet aux fonctions à utiliser dans le balisage.
+description: L’extension de balisage xBind autorise les fonctions à utiliser dans le balisage.
 title: Fonctions dans x:Bind
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060033"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626214"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
 > [!NOTE]
-> Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), voir la [liaison de données en profondeur](data-binding-in-depth.md).
+> Pour des informations générales sur l’utilisation de la liaison de données dans votre application avec **{x : Bind}** (et pour une comparaison global entre **{x : Bind}** et **{Binding}**), consultez [données liaison en profondeur](data-binding-in-depth.md).
 
-À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de:
+À compter de Windows 10, version 1607, **{x : Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de :
 
 - Facilite la conversion de valeur
 - Permet aux liaisons de dépendre de plus d’un paramètre
 
 > [!NOTE]
-> Pour utiliser des fonctions avec **{x:Bind}**, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Pour utiliser des fonctions avec **{x:Bind}**, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-Dans l’exemple suivant, l’arrière-plan et le premier plan de l’élément sont liés à des fonctions de conversion reposant sur le paramètre de couleur:
+Dans l’exemple suivant, l’arrière-plan et le premier plan de l’élément sont liés à des fonctions de conversion reposant sur le paramètre de couleur :
 
 ```xaml
 <DataTemplate x:DataType="local:ColorEntry">
@@ -63,7 +63,7 @@ class ColorEntry
 
 Le chemin de la fonction est spécifié comme tout autre chemin de propriété et peut inclure des points (.), des indexeurs ou des casts pour localiser la fonction.
 
-Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utilisez le ci-dessous syntaxe pour la liaison à des fonctions statiques dans le code-behind.
+Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utiliser le ci-dessous la syntaxe pour la liaison à des fonctions statiques dans le code-behind.
 
 ```xaml
 <Page 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir des scénarios simples, comme la date de mise en forme, la mise en forme de texte, concaténations de texte, etc., par exemple:
+Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir les scénarios simples comme la mise en forme de date, la mise en forme de texte, des concaténations de texte, etc., par exemple :
 
 ```xaml
 <Page 
@@ -101,14 +101,14 @@ Vous pouvez également utiliser les fonctions système directement dans le balis
 
 Si le mode est OneWay/TwoWay, la détection de modification est réalisée sur le chemin de la fonction et la liaison est réévaluée si des modifications sont apportées à ces objets.
 
-La fonction en cours de liaison doit:
+La fonction en cours de liaison doit :
 
 - Être accessible par le code et les métadonnées (donc travail interne/privée dans C#), mais C++/CX aura besoin de méthodes qui soient des méthodes WinRT publiques.
-- La surcharge repose sur le nombre d’arguments, pas sur le type; la fonction essaiera de trouver une correspondance avec la première surcharge présentant ces nombreux arguments.
+- La surcharge repose sur le nombre d’arguments, pas sur le type ; la fonction essaiera de trouver une correspondance avec la première surcharge présentant ces nombreux arguments.
 - Les types d’arguments doivent correspondre aux données transmises. Nous ne faisons pas de conversions restrictives.
 - Le type de retour de la fonction doit correspondre au type de la propriété qui utilise la liaison.
 
-Le moteur de liaison réagit à la modification de propriété déclenchement avec le nom de la fonction de notifications et réévaluer les liaisons si nécessaire. Exemple :
+Le moteur de liaison réagit à la modification de propriété notifications déclenchement par le nom de fonction et réévaluer les liaisons en fonction des besoins. Exemple :
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> Vous pouvez utiliser des fonctions dans x: Bind afin d’obtenir les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
+> Vous pouvez utiliser des fonctions dans x : Bind pour atteindre les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
 
 ## <a name="function-arguments"></a>Arguments de la fonction
 
@@ -174,11 +174,11 @@ Plusieurs arguments peuvent être spécifiés dans la fonction. Ils sont sépar�
   - Si le mode est OneWay/TwoWay, la détection de modification sera réalisée et la liaison réévaluée lors des modifications de l’objet.
 - Chaîne de constante entourée de guillemets (les guillemets sont nécessaires pour la désigner comme chaîne). L’accent circonflexe (^) peut être utilisé comme caractère d’échappement des guillemets dans les chaînes.
 - Numéro de constante. Par exemple, 123.456
-- Valeur booléenne. Sous la forme «x: True» ou «x: False»
+- Valeur booléenne. Sous la forme « x : True » ou « x : False »
 
 ### <a name="two-way-function-bindings"></a>Liaisons de fonctions bidirectionnelles
 
-Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être spécifiée pour la direction inverse de la liaison. Cette opération est effectuée à l’aide de la propriété de liaison **BindBack** . Dans l’exemple indiqué ci-dessous, la fonction doit prendre un argument qui est la valeur qui doit être transmises en retour au modèle.
+Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être spécifiée pour la direction inverse de la liaison. Cette opération est effectuée à l’aide de la **liaison retour** liaison de propriété. Dans l’exemple ci-dessous, la fonction doit accepter un argument qui est la valeur devant être déplacées vers le modèle.
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

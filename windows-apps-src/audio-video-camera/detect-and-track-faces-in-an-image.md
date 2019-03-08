@@ -4,22 +4,22 @@ description: Cette rubrique montre comment utiliser FaceDetector pour détecter 
 title: Détecter les visages dans des images ou des vidéos
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045930"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640834"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Détecter les visages dans des images ou des vidéos
 
 
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
+\[Certaines informations sont relatives à la version préliminaire du produit qui peut être substantiellement modifié avant sa commercialisation. Microsoft exclut toute garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Cette rubrique montre comment utiliser [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) pour détecter des visages dans une image. [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
+Cette rubrique montre comment utiliser [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) pour détecter des visages dans une image. [  **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
 
 Pour une autre méthode de suivi des visages à l’aide de [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), voir [Analyse de scène pour la capture multimédia](scene-analysis-for-media-capture.md).
 
@@ -95,11 +95,11 @@ Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/a
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## <a name="related-topics"></a>Rubriquesconnexes
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Analyse de scène de capture multimédia](scene-analysis-for-media-capture.md)
-* [Exemple de détection des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Exemple de suivi des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [Camera](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Analyse de la scène pour la capture de média](scene-analysis-for-media-capture.md)
+* [Exemple de détection de visage de base](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Exemple de suivi de visage de base](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Lecture de contenu multimédia](media-playback.md)

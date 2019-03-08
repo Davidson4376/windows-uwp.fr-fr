@@ -1,19 +1,19 @@
 ---
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: Fournit une liste de vérification pour vous aider à garantir que votre application UWP est accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Liste de vérification de l’accessibilité
 label: Accessibility checklist
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990482"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602444"
 ---
 # <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
@@ -39,14 +39,14 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
     Pour plus d’informations, voir [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607).
 
-3. Vérifier le texte est une taille lisible
+3. Vérifiez le texte est une taille accessible en lecture
 
-    * Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti des et ajuster à leurs propres besoins et préférences pour la lecture de texte. Ces situations sont les suivantes :
-        * La Loupe, ce qui vous permet d’agrandir une zone sélectionnée de l’interface utilisateur. Vous devez vous assurer de que la disposition du texte dans votre application ne rendre difficiles à utiliser la loupe pour la lecture.
-        * Paramètres globaux de mise à l’échelle et la résolution dans **Paramètres -> système -> Affichage -> mise à l’échelle et disposition**. Exactement les options de dimensionnement disponibles varient comme cela varie selon les fonctionnalités du périphérique d’affichage.
-        * Paramètres de taille de texte dans **Paramètres-& gt; Options d’ergonomie-& gt; affichage**. Réglez le paramètre de **rendre le texte plus grand** pour ne spécifier que la taille du texte prise en charge des contrôles sur toutes les applications et tous les écrans (tous les contrôles de texte UWP prennent en charge le texte expérience sans aucune personnalisation ou la création de modèles de mise à l’échelle).
+    * Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti et ajuster à leurs propres besoins et les préférences pour la lecture de texte. Par exemple :
+        * L’outil Loupe, qui agrandit une zone sélectionnée de l’interface utilisateur. Vous devez vous assurer de que la disposition du texte dans votre application ne soit pas difficile à utiliser la loupe pour la lecture.
+        * Paramètres globaux de mise à l’échelle et la résolution dans **Paramètres -> système -> Affichage -> mise à l’échelle et la disposition**. Exactement quelles options de dimensionnement sont disponibles peuvent varier car cela dépend des capacités du périphérique d’affichage.
+        * Paramètres de taille de texte dans **Paramètres -> Options d’ergonomie -> affichage**. Ajuster la **agrandir le texte** paramètre pour spécifier uniquement la taille du texte dans la prise en charge des contrôles dans l’ensemble des applications et des écrans (tous les contrôles de texte UWP prend en charge le texte de l’expérience sans toute personnalisation ou la création de modèles de mise à l’échelle).
         > [!NOTE]
-        > Le paramètre **Vérifier tout plus large** permet à un utilisateur de spécifier leur taille par défaut pour le texte et les applications en général sur leur écran principal uniquement.
+        > Le **vérifier tout plus volumineuses** paramètre permet à un utilisateur de spécifier leur taille par défaut pour le texte et les applications en général sur leur écran principal uniquement.
 
 4. Vérifiez visuellement votre interface utilisateur pour vous assurer que le contraste du texte est suffisant, que le rendu des éléments est correct dans les thèmes à contraste élevé et que les couleurs sont utilisées correctement.
 
@@ -64,9 +64,9 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 6. Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
 
-7. Déclarez votre application comme accessible dans le MicrosoftStore.
+7. Déclarez votre application comme accessible dans le Microsoft Store.
 
-    Si vous avez implémenté la prise en charge de l’accessibilité de base, le fait de marquer votre application comme accessible dans le MicrosoftStore peut vous permettre d’atteindre davantage de clients et d’obtenir davantage de bonnes évaluations.
+    Si vous avez implémenté la prise en charge de l’accessibilité de base, le fait de marquer votre application comme accessible dans le Microsoft Store peut vous permettre d’atteindre davantage de clients et d’obtenir davantage de bonnes évaluations.
 
     Pour plus d’informations, voir [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
 
@@ -75,5 +75,5 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 * [Exigences de texte accessible](accessible-text-requirements.md)
 * [Mise à l’échelle du texte](../input/text-scaling.md)
 * [Accessibilité](accessibility.md)
-* [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Conception pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Pratiques à éviter](practices-to-avoid.md)

@@ -8,22 +8,22 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941475"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631444"
 ---
 # <a name="streaming-resources-features-tiers"></a>Niveaux de fonctionnalité des ressources de diffusion en continu
 
 
 Direct3D prend en charge les ressources de diffusion en continu sur trois niveaux de fonctionnalités.
 
-Le niveau1 fournit des fonctionnalités de base pour les ressources de diffusion en continu.
+Le niveau 1 fournit des fonctionnalités de base pour les ressources de diffusion en continu.
 
-La niveau2 ajoute des fonctionnalités par rapport au niveau1, telles que la garantie d'un mipmap de texture non compressé lorsque la taille est au minimum de forme de tuile standard, les instructions de nuanceur pour le niveau de détail Clamp et pour obtenir l'état de l’opération du nuanceur et la lecture à partir de vignettes mappées NULL qui ont échantillonné une valeur de zéro.
+La niveau 2 ajoute des fonctionnalités par rapport au niveau 1, telles que la garantie d'un mipmap de texture non compressé lorsque la taille est au minimum de forme de tuile standard, les instructions de nuanceur pour le niveau de détail Clamp et pour obtenir l'état de l’opération du nuanceur et la lecture à partir de vignettes mappées NULL qui ont échantillonné une valeur de zéro.
 
-Le niveau3 ajoute des fonctionnalités Texture3D, au-delà du niveau2.
+Le niveau 3 ajoute des fonctionnalités Texture3D, au-delà du niveau 2.
 
 Les fonctions de requête sont disponibles dans les versions de Direct3D, pour valider la prise en charge du matériel et des pilotes pour les ressources de diffusion en continu selon le niveau.
 
@@ -43,16 +43,16 @@ Les fonctions de requête sont disponibles dans les versions de Direct3D, pour v
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tier-1.md">Niveau1</a></p></td>
-<td align="left"><p>Cette section décrit la prise en charge du niveau1.</p></td>
+<td align="left"><p><a href="tier-1.md">Niveau 1</a></p></td>
+<td align="left"><p>Cette section décrit la prise en charge du niveau 1.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tier-2.md">Niveau2</a></p></td>
-<td align="left"><p>La prise en charge du niveau2 pour les ressources de diffusion en continu ajoute des fonctionnalités par rapport au niveau1, telles que la garantie d'un mipmap de texture non compressé lorsque la taille est au minimum de forme de tuile standard, les instructions de nuanceur pour le niveau de détail Clamp et pour obtenir l'état de l’opération du nuanceur et la lecture à partir de vignettes mappées NULL qui ont échantillonné une valeur de zéro.</p></td>
+<td align="left"><p><a href="tier-2.md">Niveau 2</a></p></td>
+<td align="left"><p>La prise en charge du niveau 2 pour les ressources de diffusion en continu ajoute des fonctionnalités par rapport au niveau 1, telles que la garantie d'un mipmap de texture non compressé lorsque la taille est au minimum de forme de tuile standard, les instructions de nuanceur pour le niveau de détail Clamp et pour obtenir l'état de l’opération du nuanceur et la lecture à partir de vignettes mappées NULL qui ont échantillonné une valeur de zéro.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tier-3.md">Niveau3</a></p></td>
-<td align="left"><p>Le niveau3 comprend la prise en charge de Texture3D pour les ressources de diffusion en continu, en plus des capacités de <a href="tier-2.md">niveau2</a> .</p></td>
+<td align="left"><p><a href="tier-3.md">Niveau 3</a></p></td>
+<td align="left"><p>Le niveau 3 comprend la prise en charge de Texture3D pour les ressources de diffusion en continu, en plus des capacités de <a href="tier-2.md">niveau 2</a> .</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +62,7 @@ Les fonctions de requête sont disponibles dans les versions de Direct3D, pour v
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Ressources de diffusion en continu](streaming-resources.md)
+[Diffusion en continu de ressources](streaming-resources.md)
 
  
 

@@ -1,23 +1,23 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+Description: Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative.
 title: Envoyer une notification par vignette locale
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946314"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636104"
 ---
 # <a name="send-a-local-tile-notification"></a>Envoyer une notification par vignette locale
  
 
-Vignettes d’application principale de Windows 10 sont définies dans le manifeste de votre application, tandis que les vignettes secondaires sont par programme créés et définis par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
+Vignettes d’application principal dans Windows 10 sont définies dans votre manifeste d’application, tandis que les vignettes secondaires sont créés et définies par votre code d’application par programme. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
 
 ![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 
@@ -46,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>Créer le contenu d’une notification
 
 
-Dans Windows 10, les charges utiles de vignettes sont définies à l’aide de modèles de vignette adaptative qui vous permettent de créer des dispositions visuelles personnalisées pour vos notifications. (Pour savoir ce qu’il est possible de réaliser avec les vignettes adaptatives, voir [Créer des vignettes adaptatives](create-adaptive-tiles.md).)
+Dans Windows 10, les charges utiles de vignette sont définies à l’aide de modèles de vignette adaptive, ce qui vous permet de créer des dispositions personnalisées visual pour vos notifications. (Pour savoir ce qu’il est possible de réaliser avec les vignettes adaptatives, voir [Créer des vignettes adaptatives](create-adaptive-tiles.md).)
 
 Cet exemple de code crée le contenu de vignette adaptative pour les vignettes moyennes et larges.
 
@@ -118,7 +118,7 @@ TileContent content = new TileContent()
 };
 ```
 
-Le contenu de la notification se présente comme suit pour une vignette moyenne:
+Le contenu de la notification se présente comme suit pour une vignette moyenne :
 
 ![Contenu de la notification sur une vignette moyenne](images/sending-local-tile-02.png)
 
@@ -139,7 +139,7 @@ var notification = new TileNotification(content.GetXml());
 
 Par défaut, les notifications locales par vignette et de badge n’expirent pas, alors que les notifications Push, périodiques et planifiées expirent après trois jours. Étant donné que le contenu de la vignette ne doit pas être conservé plus longtemps que nécessaire, il est recommandé de définir un délai d’expiration approprié pour votre application, en particulier sur les notifications locales par vignette et de badge.
 
-Cet exemple de code crée une notification qui arrive à expiration et est supprimée de la vignette au bout de 10minutes.
+Cet exemple de code crée une notification qui arrive à expiration et est supprimée de la vignette au bout de 10 minutes.
 
 ```csharp
 tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
@@ -150,9 +150,9 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 
 Bien que l’envoi local d’une notification par vignette soit simple, l’envoi de la notification à une vignette principale ou secondaire est légèrement différent.
 
-**Vignette principale**
+**Vignette principal**
 
-Pour envoyer une notification à une vignette principale, utilisez le [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) pour créer une mise à jour de vignette pour la vignette principale et envoyez la notification en appelant la méthode «Update». Qu’elle soit visible ou non, la vignette principale de votre application existe toujours ; vous pouvez donc lui envoyer des notifications même si elle n’est pas épinglée. Si l’utilisateur épingle votre vignette principale ultérieurement, les notifications que vous avez envoyées seront alors affichées.
+Pour envoyer une notification à une vignette principale, utilisez le [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) pour créer une mise à jour de vignette pour la vignette principale et envoyez la notification en appelant la méthode « Update ». Qu’elle soit visible ou non, la vignette principale de votre application existe toujours ; vous pouvez donc lui envoyer des notifications même si elle n’est pas épinglée. Si l’utilisateur épingle votre vignette principale ultérieurement, les notifications que vous avez envoyées seront alors affichées.
 
 Cet exemple de code envoie une notification à une vignette principale.
 
@@ -202,11 +202,11 @@ Les notifications périodiques ou Push peuvent uniquement ajouter de nouvelles n
 ## <a name="next-steps"></a>Étapes suivantes
 
 
-**Utilisation de la file d’attente de notifications**
+**À l’aide de la file d’attente de notification**
 
 Maintenant que vous avez réalisé votre première mise à jour de vignette, vous pouvez développer les fonctionnalités de la vignette en activant une [file d’attente de notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
 
-**Autres modes de remise des notifications**
+**Autres méthodes de remise de notification**
 
 Cet article vous montre comment envoyer la mise à jour de vignette sous forme de notification. Pour découvrir d’autres modes de remise de notification, y compris les notifications planifiées, périodiques et Push, voir [Remise de notifications](choosing-a-notification-delivery-method.md).
 
@@ -231,7 +231,7 @@ public string XmlEncode(string text)
 ## <a name="code-examples-without-notifications-library"></a>Exemples de code sans la bibliothèque Notifications
 
 
-Si vous préférez utiliser du code XML brut à la place du package NuGet de la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), utilisez ces autres exemples de code pour les troispremiers exemples fournis dans cet article. Les exemples de code restants peuvent être utilisés avec la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ou du codeXML brut.
+Si vous préférez utiliser du code XML brut à la place du package NuGet de la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), utilisez ces autres exemples de code pour les trois premiers exemples fournis dans cet article. Les exemples de code restants peuvent être utilisés avec la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ou du code XML brut.
 
 Ajouter des déclarations d’espace de noms
 
@@ -286,12 +286,12 @@ var notification = new TileNotification(doc);
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer des vignettes adaptatives](create-adaptive-tiles.md)
-* [Schéma du contenu de la vignette](../tiles-and-notifications/tile-schema.md)
-* [Bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [Créer des vignettes ADAPTATIF](create-adaptive-tiles.md)
+* [Schéma de contenu de vignette](../tiles-and-notifications/tile-schema.md)
+* [Bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Espace de noms Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [Comment utiliser la file d’attente de notifications (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [L’utilisation de la file d’attente de notification (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [Remise de notifications](choosing-a-notification-delivery-method.md)
  
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: Optimiser votre disposition XAML
-description: La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
+description: Mise en page peut être une partie coûteuse d’une application XAML &\#8212 ; les deux dans l’utilisation et la mémoire surcharge de processeur. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c00b406f77758266c68a16b078192517caaa14bf
-ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "8990215"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608564"
 ---
 # <a name="optimize-your-xaml-layout"></a>Optimiser votre disposition XAML
 
@@ -42,7 +42,7 @@ Examinez l’interface utilisateur suivante :
 
 Ces exemples montrent 3 méthodes d’implémentation de la même interface utilisateur. Chaque implémentation choisie produit un nombre quasiment identique de pixels à l’écran. Les différences se jouent dans les détails.
 
-Option 1 : Éléments [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) imbriqués
+Option 1 : Imbriqué [ **StackPanel** ](https://msdn.microsoft.com/library/windows/apps/BR209635) éléments
 
 Bien que ce modèle soit le plus simple, il utilise 5 éléments panneau et entraîne une surcharge importante.
 
@@ -70,7 +70,7 @@ Bien que ce modèle soit le plus simple, il utilise 5 éléments panneau et entr
 </StackPanel>
 ```
 
-Option 2 : Un seul élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+Option 2 : Un seul [ **grille**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
 L’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) ajoute une certaine complexité, mais utilise un seul élément panneau.
 
@@ -103,7 +103,7 @@ L’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR24270
 </Grid>
 ```
 
-Option 3 : Un seul élément [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) :
+Option 3 : Un seul [ **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
 
 Ce panneau unique est également un peu plus complexe que l’utilisation de panneaux imbriqués, mais peut être plus facile à comprendre et à gérer qu’un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
 
@@ -134,7 +134,7 @@ Comme ces exemples le montrent, il existe de nombreuses façons d’obtenir la m
 
 Il est courant qu’une interface utilisateur ait une disposition dans laquelle les éléments se chevauchent. Généralement, pour positionner les éléments de cette manière, on utilise le remplissage, les marges, les alignements et les transformations. Le contrôle [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) XAML est optimisé pour améliorer les performances de la disposition des éléments qui se chevauchent.
 
-**Important**pour voir l’amélioration, utilisez une seule cellule [**grille**](https://msdn.microsoft.com/library/windows/apps/BR242704). Ne définissez pas [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) ou [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Important**  pour afficher l’amélioration, utilisez une seule cellule [ **grille**](https://msdn.microsoft.com/library/windows/apps/BR242704). Ne définissez pas [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) ou [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Exemples
 
@@ -160,7 +160,7 @@ Il est courant qu’une interface utilisateur ait une disposition dans laquelle 
 
 ## <a name="use-a-panels-built-in-border-properties"></a>Utiliser les propriétés intégrées de bordure du panneau
 
-Les contrôles [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) et [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) ont des propriétés de bordure intégrée qui vous permettent de dessiner une bordure autour d’eux sans ajouter un élément [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) supplémentaire à votre XAML. Les nouvelles propriétés qui prennent en charge la bordure intégrée sont : **BorderBrush**, **BorderThickness**, **CornerRadius** et **Padding**. Chacune d’elles est une [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). Vous pouvez donc les utiliser avec les liaisons et les animations. Elles sont conçues pour remplacer intégralement un élément **Border** séparé.
+[**Grille**](https://msdn.microsoft.com/library/windows/apps/BR242704), [ **StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [ **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), et [  **ContentPresenter** ](https://msdn.microsoft.com/library/windows/apps/BR209378) contrôles ont des propriétés de bordure intégrés qui vous permettent de dessiner une bordure autour d’eux sans ajouter une autre [ **bordure** ](https://msdn.microsoft.com/library/windows/apps/BR209250) élément à votre XAML. Les nouvelles propriétés qui prennent en charge de la bordure intégrée sont : **BorderBrush**, **BorderThickness**, **CornerRadius**, et **remplissage**. Chacune d’elles est une [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). Vous pouvez donc les utiliser avec les liaisons et les animations. Elles sont conçues pour remplacer intégralement un élément **Border** séparé.
 
 Si votre interface utilisateur comporte des éléments [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) autour de ces panneaux, utilisez la bordure intégrée à la place, qui enregistre un élément supplémentaire dans la structure de la disposition de votre application. Comme mentionné précédemment, cela peut représenter une économie importante, notamment dans le cas d’une interface utilisateur répétée.
 
@@ -175,11 +175,11 @@ Si votre interface utilisateur comporte des éléments [**Border**](https://msdn
 
 ## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>Utilisez des événements **SizeChanged** pour réagir à des modifications de disposition.
 
-La classe [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) expose deux événements similaires pour réagir aux modifications de disposition : [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) et [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). Vous utilisez peut-être l’un de ces événements pour recevoir une notification lorsqu’un élément est redimensionné pendant la disposition. La sémantique des deux événements est différente, et le choix de l’un ou l’autre influe considérablement sur les performances.
+Le [ **FrameworkElement** ](https://msdn.microsoft.com/library/windows/apps/BR208706) classe expose deux événements similaires pour répondre aux changements de disposition : [**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) et [ **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). Vous utilisez peut-être l’un de ces événements pour recevoir une notification lorsqu’un élément est redimensionné pendant la disposition. La sémantique des deux événements est différente, et le choix de l’un ou l’autre influe considérablement sur les performances.
 
 Pour des performances optimales, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) est presque toujours le bon choix. **SizeChanged** a une sémantique intuitive. Il est déclenché pendant la disposition lorsque la taille de [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) a été mise à jour.
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) est également déclenché pendant la disposition, mais il a une sémantique globale : il est déclenché sur chaque élément chaque fois qu’un élément est mis à jour. Il est courant de faire uniquement un traitement local dans le gestionnaire d’événement, auquel cas le code est exécuté plus souvent que nécessaire. Utilisez **LayoutUpdated** seulement si vous avez besoin de savoir quand un élément est repositionné sans modification de taille (ce qui est rare).
+[**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) est également déclenché pendant la disposition, mais il a une sémantique globale, il est déclenché sur chaque élément chaque fois que n’importe quel élément est mis à jour. Il est courant de faire uniquement un traitement local dans le gestionnaire d’événement, auquel cas le code est exécuté plus souvent que nécessaire. Utilisez **LayoutUpdated** seulement si vous avez besoin de savoir quand un élément est repositionné sans modification de taille (ce qui est rare).
 
 ## <a name="choosing-between-panels"></a>Choix entre des panneaux
 

@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
+Description: Cette rubrique décrit la nouvelle interface utilisateur de Windows pour la sélection et manipulation de texte, des images et des contrôles et fournit des recommandations pour l’expérience utilisateur doivent être prises en compte lors de l’utilisation de ces mécanismes de manipulation et un nouvelle sélection dans votre application UWP.
 title: Sélection de texte et d’images
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612504"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
@@ -45,22 +45,22 @@ Cet article décrit la sélection et la manipulation de texte, d’images et de 
 
 La sélection et la manipulation de texte représentent des difficultés particulières pour l’utilisateur en termes d’interactions tactiles. Les entrées effectuées par le biais de la souris, du stylo/stylet et du clavier sont des opérations extrêmement granulaires : un clic de souris ou un contact du stylo/stylet est généralement associé à un pixel unique, et une touche est appuyée ou non. Une entrée tactile n’est pas granulaire ; il est difficile d’associer la totalité de la surface de la pointe du doigt à un emplacement x-y spécifique sur l’écran pour placer avec précision un curseur de texte.
 
-**Remarques et recommandations**
+**Considérations et recommandations**
 
-Utilisez les contrôles intégrés exposés par le biais des infrastructures de langage dans les applications de build Windowsto qui fournissent l’expérience d’interaction utilisateur plateforme intégrale, y compris les comportements de sélection et la manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applicationsUWP.
+Utilisez les contrôles intégrés, exposées via les infrastructures de langage dans Windows pour créer des applications qui fournissent l’expérience d’interaction de l’utilisateur une plateforme complète, y compris les comportements de sélection et la manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applications UWP.
 
 Lorsque vous utilisez des contrôles de texte UWP standard, vous ne pouvez pas personnaliser les comportements et les éléments visuels de sélection décrits dans cette rubrique.
 
 **Sélection de texte**
 
-Si votre application nécessite une interface utilisateur personnalisée qui prend en charge la sélection de texte, nous vous recommandons de suivre les comportements Windowsselection décrits ici.
+Si votre application nécessite une interface utilisateur personnalisée qui prend en charge la sélection de texte, nous vous recommandons de suivre les comportements de sélection de Windows décrits ici.
 
-**Contenu modifiable et contenu non modifiable**
+**Contenu modifiable et non modifiables**
 
 
-Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). À l’instar des autres interactions Windowstouch, les interactions chronométrées sont limitées à un appui sur le maintenez le mouvement pour afficher une interface utilisateur informative. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). Comme avec d’autres Windows les interactions tactiles, chronométrées interactions sont limitées à la presse et maintenez le mouvement à afficher l’interface utilisateur d’information. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
-Possible Windowsrecognizes deux États pour les interactions de sélection, modifiables et non modifiable et ajuste l’interface utilisateur de sélection, retour et la fonctionnalité en conséquence.
+Windows reconnaît deux états possibles pour les interactions de sélection, modifiables et non modifiables et ajuste la sélection de l’interface utilisateur, les commentaires et les fonctionnalités en conséquence.
 
 **Contenu modifiable**
 
@@ -78,11 +78,11 @@ Les images suivantes montrent comment appeler le menu contextuel en appuyant dan
 
 ![Appuyez (ou effectuez un appui prolongé) dans la sélection ou sur un symbole de sélection/redimensionnement pour appeler le menu contextuel.](images/textselection-show-context.png)
 
-**Remarque**ces interactions varient légèrement dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
+**Remarque**  ces interactions diffèrent légèrement dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
 
  
 
-**Contenu non modifiable**
+**Contenu non modifiables**
 
 L’image suivante montre comment sélectionner un mot en appuyant au sein de celui-ci (aucun espace n’est inclus dans la sélection initiale).
 
@@ -90,7 +90,7 @@ L’image suivante montre comment sélectionner un mot en appuyant au sein de ce
 
 Suivez les mêmes procédures que pour le texte modifiable pour ajuster la sélection et afficher le menu contextuel.
 
-**Manipulation d’objet**
+**Manipulation des objets**
 
 Chaque fois que cela est possible, utilisez les mêmes ressources de symbole de redimensionnement (ou des ressources similaires) que la sélection de texte lors de l’implémentation d’une manipulation d’objet personnalisée dans une application UWP. Cela permet d’offrir une expérience d’interaction cohérente sur toute la plateforme.
 
@@ -98,34 +98,34 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 ![lecteur multimédia avec barre de progression](images/gripper-mediaplayer.png)
 
-*Lecteur multimédia avec barre de progression réglable*
+*Lecteur multimédia avec barre de progression réglable.*
 
 ![image avec poignées de rognage](images/gripper-imagemanip.png)
 
-*Éditeur d’images avec poignées de rognage*
+*Éditeur d’images avec les barres de défilement de rognage.*
 
 ## <a name="related-articles"></a>Articles connexes
 
 
 
-**Pour les développeurs**
-* [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**pour les développeurs**
+* [Interactions de l’utilisateur personnalisé](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée: exemple d’événements d’entrée utilisateurXAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : exemple de fonctionnalités d’appareils](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple de test de positionnement tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : exemple de mouvements Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : exemple de manipulations et de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

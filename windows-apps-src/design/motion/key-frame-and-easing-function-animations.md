@@ -4,14 +4,14 @@ ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: Les animations par clés linéaires, les animations par clés avec KeySpline ou les animations de fonctions d’accélération sont utilisées avec le même scénario.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 696a3f0f065c209bec28f774224da6e4c8d93275
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635544"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>Animations par images clés et animations de fonctions d’accélération
 
@@ -19,7 +19,7 @@ ms.locfileid: "9046322"
 
 Les animations par images clés linéaires, les animations par images clés avec une valeur **KeySpline** ou les animations de fonctions d’accélération constituent trois techniques différentes pour pratiquement le même scénario : créer une animation de table de montage séquentiel qui est un peu plus complexe et dont le comportement est non linéaire d’un état de départ à un état de fin.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Lisez au préalable la rubrique [Animations de table de montage séquentiel](storyboarded-animations.md). Cette rubrique s’appuie sur les concepts d’animation expliqués dans la rubrique [Animations de table de montage séquentiel](storyboarded-animations.md) mais n’y reviendra pas. Par exemple, la rubrique [Animations de table de montage séquentiel](storyboarded-animations.md) décrit comment cibler les animations, les tables de montage en tant que ressources, les valeurs de la propriété [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) telles que [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior), etc.
 
@@ -33,16 +33,16 @@ Au début de l’animation, si aucune image clé avec un **KeyTime** dont la val
 
 La durée d’une animation par images clés est implicitement la durée égale à la valeur **KeyTime** la plus élevée définie dans une de ses images clés. Vous pouvez définir un élément [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) explicite si vous voulez, mais veillez à ce que sa valeur ne soit pas inférieure à celle d’un élément **KeyTime** dans vos images clés ou vous risquez de couper une partie de l’animation.
 
-En plus de l’élément [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), vous pouvez définir toutes les propriétés [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) sur une animation par images clés, comme vous le feriez avec une animation **From**/**To**/**By**, car les classes de l’animation par images clés dérivent également de **Timeline**. Ces classes sont les suivantes:
+En plus de l’élément [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), vous pouvez définir toutes les propriétés [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) sur une animation par images clés, comme vous le feriez avec une animation **From**/**To**/**By**, car les classes de l’animation par images clés dérivent également de **Timeline**. Ces options sont les suivantes :
 
--   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse) : une fois que la dernière image clé est atteinte, les images sont répétées dans l’ordre inverse à partir de la fin. Cela double la durée apparente de l’animation.
--   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime) : retarde le démarrage de l’animation. La chronologie des valeurs **KeyTime** dans les images ne commence à compter que lorsque le **BeginTime** est atteint, il n’y a donc aucun risque de couper des images.
--   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) : détermine ce qui se produit lorsque la dernière image clé est atteinte. **FillBehavior** n’a aucun effet sur les images clés intermédiaires.
--   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty) :
+-   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): une fois que la dernière image clé est atteinte, les images sont répétées dans l’ordre inverse à partir de la fin. Cela double la durée apparente de l’animation.
+-   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): retarde le démarrage de l’animation. La chronologie des valeurs **KeyTime** dans les images ne commence à compter que lorsque le **BeginTime** est atteint, il n’y a donc aucun risque de couper des images.
+-   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): contrôle ce qui se passe lorsque la dernière image clé est atteinte. **FillBehavior** n’a aucun effet sur les images clés intermédiaires.
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
     -   Si définie sur **Forever**, les images clés et leur chronologie se répètent indéfiniment.
     -   Si définie sur un nombre d’itérations, la chronologie se répète autant de fois que ce nombre d’itérations.
     -   Si définie sur un [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377), la chronologie se répète jusqu’à ce que cette durée soit atteinte. Cela risque de tronquer l’animation au cours de la séquence d’images clés, s’il ne s’agit pas d’un facteur entier de la durée implicite de la chronologie.
--   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (peu utilisée)
+-   [**SpeedRatio** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (généralement pas utilisé)
 
 ### <a name="linear-key-frames"></a>Images clés linéaires
 
@@ -68,7 +68,7 @@ Voici comment utiliser une animation par images clés pour modifier la hauteur d
 
 ### <a name="discrete-key-frames"></a>Images clés discrètes
 
-Les images clés discrètes n’utilisent aucune interpolation. Lorsqu’un **KeyTime** est atteint, la nouvelle **Value** est appliquée. En fonction de la propriété d’interface utilisateur qui est animée, cela produit souvent une animation qui semble «sauter». Il s’agit du comportement esthétique voulu. Vous pouvez réduire les sauts apparents en augmentant le nombre d’images clés que vous déclarez, mais si vous recherchez une animation fluide, utilisez de préférence des images clés linéaires ou Spline.
+Les images clés discrètes n’utilisent aucune interpolation. Lorsqu’un **KeyTime** est atteint, la nouvelle **Value** est appliquée. En fonction de la propriété d’interface utilisateur qui est animée, cela produit souvent une animation qui semble « sauter ». Il s’agit du comportement esthétique voulu. Vous pouvez réduire les sauts apparents en augmentant le nombre d’images clés que vous déclarez, mais si vous recherchez une animation fluide, utilisez de préférence des images clés linéaires ou Spline.
 
 > [!NOTE]
 > Les images clés discrètes sont le seul moyen d’animer une valeur qui n’est pas de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) et [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec une classe [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132). Nous reviendrons sur ce point plus loin dans cette rubrique.
@@ -146,25 +146,25 @@ Il s’agit juste d’un exemple de fonction d’accélération. Nous allons abo
 
 Les fonctions d’accélération vous permettent d’appliquer des formules mathématiques personnalisées à vos animations. Les opérations mathématiques sont souvent plus utiles pour produire des animations qui simulent la physique réelle dans un système de coordonnées 2-D. Par exemple, vous voudrez peut-être qu’un objet rebondisse de façon réaliste ou se comporte comme s’il était monté sur ressorts. Vous pouvez utiliser des animations par images clés ou encore des animations **From**/**To**/**By** pour vous approcher de ces effets, mais cela supposerait un travail important et l’animation s’avérerait moins exacte qu’avec une formule mathématique.
 
-Les fonctions d’accélération peuvent être appliquées aux animations de trois manières:
+Les fonctions d’accélération peuvent être appliquées aux animations de trois manières :
 
 -   En utilisant une image clé d’accélération dans une animation par images clés, comme il est expliqué dans la section précédente. Utilisez [**EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267), [**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx) ou [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279).
 -   En définissant la propriété **EasingFunction** sur l’un des types d’animation **From**/**To**/**By**. Utilisez [**ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075), [**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) ou [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354).
 -   En définissant [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) comme faisant partie d’un élément [**VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034). Cela est spécifique à la définition des états visuels pour les contrôles. Pour plus d’informations, voir [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) ou [Tables de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
-Voici la liste des fonctions d’accélération:
+Voici la liste des fonctions d’accélération :
 
--   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) : réduit légèrement l’amplitude de l’animation avant qu’elle ne commence sur sa trajectoire prévue.
--   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) : crée un effet de rebond.
--   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) : génère une animation qui accélère ou décélère d’après une fonction circulaire.
--   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) : génère une animation qui accélère ou décélère d’après la formule f(t) = t3.
--   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282) : génère une animation qui évoque un ressort oscillant jusqu’à son arrêt complet.
--   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294) : génère une animation qui accélère ou décélère d’après une formule exponentielle.
--   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) : génère une animation qui accélère ou décélère d’après la formule f(t) = tp, où p est égal à la propriété [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power).
--   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) : génère une animation qui accélère ou décélère d’après la formule f(t) = t2.
--   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405) : génère une animation qui accélère ou décélère d’après la formule f(t) = t4.
--   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407) : génère une animation qui accélère ou décélère d’après la formule f(t) = t5.
--   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439) : génère une animation qui accélère ou décélère d’après une formule s’appuyant sur une fonction sinus.
+-   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): Rétracte légèrement le mouvement d’une animation avant qu’elle ne commence dans le chemin d’accès indiqué.
+-   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): Crée un effet rebondissant.
+-   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): Crée une animation qui accélère ou ralentit à l’aide d’une fonction circulaire.
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): Crée une animation qui accélère ou ralentit en utilisant le f (t) la formule = t3.
+-   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): Crée une animation qui ressemble à un ressort OSCILLANT jusqu'à ce qu’il s’agit de rest.
+-   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): Crée une animation qui accélère ou ralentit en utilisant une formule exponentielle.
+-   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): Crée une animation qui accélère ou ralentit en utilisant le f (t) la formule = tp où p est égal à la [ **Power** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) propriété.
+-   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): Crée une animation qui accélère ou ralentit en utilisant le f (t) la formule = t2.
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): Crée une animation qui accélère ou ralentit en utilisant le f (t) la formule = t4.
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): Créer une animation qui accélère ou ralentit en utilisant le f (t) la formule = t5.
+-   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): Crée une animation qui accélère ou ralentit à l’aide d’une formule de sinus.
 
 Certaines des fonctions d’accélération ont des propriétés qui leur sont propres. Par exemple, [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) a deux propriétés [**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) et [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) qui modifient le comportement de la fonction dans le temps de cette fonction **BounceEase**. D’autres fonctions d’accélération telles que [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) n’ont pas d’autres propriétés que la propriété [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) propre à toutes les fonctions d’accélération et produisent toujours le même comportement de fonction dans le temps.
 
@@ -194,9 +194,9 @@ Dans un exemple précédent, nous vous avons montré comment déclarer une fonct
 
 Lorsqu’une fonction d’accélération est appliquée à une animation **From**/**To**/**By**, elle change les caractéristiques de la fonction dans le temps concernant la manière dont la valeur est interpolée entre les valeurs de **From** et de **To** sur l’élément [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) de l’animation. Sans fonction d’accélération, l’interpolation serait linéaire.
 
-## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>Animations avec valeurs d’objets discrètes
+## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>Animations de valeur d’objet discrète
 
-Un type d’animation mérite une attention particulière, car elle constitue le seul moyen d’appliquer une valeur animée à des propriétés qui ne sont pas de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) ou [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Il s’agit de l’animation par images clés [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Créer une animation à l’aide de valeurs [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) est différent, car il n’y a aucune possibilité d’interpoler les valeurs entre les images. Lorsque le [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) de l’image est atteint, la valeur animée est immédiatement définie avec la valeur spécifiée dans la propriété **Value** de l’image clé. Étant donné qu’aucune interpolation n’est possible, vous ne pouvez utiliser qu’une seule image clé dans la collection d’images clés **ObjectAnimationUsingKeyFrames** : [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132).
+Un type d’animation mérite une attention particulière, car elle constitue le seul moyen d’appliquer une valeur animée à des propriétés qui ne sont pas de type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) ou [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Il s’agit de l’animation par images clés [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320). Créer une animation à l’aide de valeurs [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) est différent, car il n’y a aucune possibilité d’interpoler les valeurs entre les images. Lorsque le [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) de l’image est atteint, la valeur animée est immédiatement définie avec la valeur spécifiée dans la propriété **Value** de l’image clé. Il n’existe aucune interpolation, étant donné qu’une seule image clé, vous utilisez dans le **ObjectAnimationUsingKeyFrames** collection d’images clés : [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132).
 
 La [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) d’un élément [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) est souvent définie à l’aide de la syntaxe de l’élément de propriété, car la valeur de l’objet que vous essayez de définir n’est souvent pas exprimable en tant que chaîne pour remplir **Value** dans la syntaxe d’attribut. Vous pouvez cependant utiliser la syntaxe d’attribut si vous utilisez une référence telle que [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588).
 
@@ -237,7 +237,7 @@ Vous verrez une image clé [**ObjectAnimationUsingKeyFrames**](https://msdn.micr
 </Style>
 ```
 
-Vous pouvez également utiliser [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) pour animer des propriétés qui utilisent une valeur d’énumération. Voici un autre exemple de style nommé tiré des modèles Windows Runtime par défaut. Notez la façon dont il définit la propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) qui prend une constante d’énumération [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR209006). Dans ce cas, vous pouvez définir la valeur à l’aide de la syntaxe d’attribut. Vous avez uniquement besoin du nom non qualifié de la constante d’une énumération pour définir une propriété avec une valeur d’énumération, par exemple «Collapsed».
+Vous pouvez également utiliser [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) pour animer des propriétés qui utilisent une valeur d’énumération. Voici un autre exemple de style nommé tiré des modèles Windows Runtime par défaut. Notez la façon dont il définit la propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) qui prend une constante d’énumération [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR209006). Dans ce cas, vous pouvez définir la valeur à l’aide de la syntaxe d’attribut. Vous avez uniquement besoin du nom non qualifié de la constante d’une énumération pour définir une propriété avec une valeur d’énumération, par exemple « Collapsed ».
 
 ```xml
 <Style x:Key="BackButtonStyle" TargetType="Button">
@@ -269,7 +269,7 @@ Vous pouvez utiliser plusieurs éléments [**DiscreteObjectKeyFrame**](https://m
 
  ## <a name="related-topics"></a>Rubriques connexes
 
-* [Syntaxe de Property-path](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [Syntaxe de chemin de propriété](https://msdn.microsoft.com/library/windows/apps/Mt185586)
 * [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**table de montage séquentiel**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)

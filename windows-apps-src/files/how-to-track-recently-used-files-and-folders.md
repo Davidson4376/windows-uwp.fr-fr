@@ -1,17 +1,17 @@
 ---
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: Suivre les fichiers et dossiers récemment utilisés
-description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des fichiers utilisés récemment de votre application.
+description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c0eb2b6e668baec9f5ad1ef859b7213f20748beb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049576"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601624"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
 
@@ -20,16 +20,16 @@ ms.locfileid: "9049576"
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
 
-Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application. La plateforme gère les éléments récents pour vous, en les triant selon le critère du dernier accès, et en supprimant l’élément le plus ancien quand la limite de 25 éléments est atteinte. Toutes les applications ont leurs propres éléments récents.
+Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application. La plateforme gère les éléments récents pour vous, en les triant selon le critère du dernier accès, et en supprimant l’élément le plus ancien quand la limite de 25 éléments est atteinte. Toutes les applications ont leurs propres éléments utilisés récemment.
 
 Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), ce qui signifie que des objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (qui représentent des fichiers) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
 
 > [!NOTE]
-> Pour connaître les exemples complètes, consultez l' [exemple d’accès aux fichiers](https://go.microsoft.com/fwlink/p/?linkid=619995)et l' [exemple de sélecteur de fichiers](https://go.microsoft.com/fwlink/p/?linkid=619994) .
+> Pour obtenir des exemples complets, consultez le [exemple de sélecteur de fichier](https://go.microsoft.com/fwlink/p/?linkid=619994) et [exemple d’accès de fichier](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
--   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
@@ -37,7 +37,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 
     Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
--   [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md)
+-   [Ouvrir des fichiers et dossiers avec un sélecteur](quickstart-using-file-and-folder-pickers.md)
 
     Les fichiers sélectionnés sont souvent ceux auxquels les utilisateurs reviennent inlassablement.
 
@@ -52,7 +52,7 @@ Les éléments récents de votre application sont représentés par la classe [*
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, «image du profil». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
+    [**StorageItemMostRecentlyUsedList.Add** ](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, « image du profil ». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
 
 > [!TIP]
 > Le jeton étant nécessaire pour récupérer un élément de la liste des fichiers utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
@@ -95,5 +95,5 @@ Comme pour les éléments récents, votre application dispose d’une liste d'ac
 
 Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à votre liste d'accès futurs ainsi qu’aux éléments récents.
 
--   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1000éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
--   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1000éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
+-   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1 000 éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
+-   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1 000 éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).

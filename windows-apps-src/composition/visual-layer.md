@@ -4,20 +4,20 @@ title: Couche visuelle
 description: L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927600"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626404"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
-La couche visuelle fournit une performance élevée, une API en mode retenu pour les graphiques, les effets et les animations. Elle constitue la base de l’ensemble de l’interface utilisateur sur les appareils Windows.Vous définissez votre interface utilisateur de façon déclarative, et la couche visuelle s’appuie sur l’accélération matérielle graphique pour assurer le rendu de vos contenus, effets et animations de manière fluide et sans défauts, indépendamment du thread d’interface utilisateur de l’application.
+La couche visuelle fournit une performance élevée, une API en mode retenu pour les graphiques, les effets et les animations. Elle constitue la base de l’ensemble de l’interface utilisateur sur les appareils Windows. Vous définissez votre interface utilisateur de façon déclarative, et la couche visuelle s’appuie sur l’accélération matérielle graphique pour assurer le rendu de vos contenus, effets et animations de manière fluide et sans défauts, indépendamment du thread d’interface utilisateur de l’application.
 
-Éléments essentiels:
+Éléments essentiels :
 
 * API WinRT familières
 * Conçue pour des interactions et une interface utilisateur plus dynamiques
@@ -26,19 +26,19 @@ La couche visuelle fournit une performance élevée, une API en mode retenu pour
 
 Vos applications UWP Windows utilisent déjà la couche visuelle via l’une des infrastructures d’interface utilisateur. Vous pouvez également tirer parti directement de la couche visuelle pour personnaliser très simplement vos rendus, effets et animations.
 
-![Couche d’infrastructure d’interface utilisateur: la couche d’infrastructure (Windows.UI.XAML) s’appuie sur la couche visuelle (Windows.UI.Composition) qui repose sur la couche graphique (DirectX).](images/layers-win-ui-composition.png)
+![Couche d’infrastructure d’interface utilisateur : la couche d’infrastructure (Windows.UI.XAML) s’appuie sur la couche visuelle (Windows.UI.Composition) qui repose sur la couche graphique (DirectX).](images/layers-win-ui-composition.png)
 
 ## <a name="whats-in-the-visual-layer"></a>Nouveautés de la couche visuelle
 
-Principales fonctions de la couche visuelle:
+Principales fonctions de la couche visuelle :
 
-1. **Contenu**: composition légère de contenu dessiné personnalisé
-1. **Effets**: système d’effets d’interface utilisateur en temps réel dont les effets peuvent être animés, chaînés et personnalisés
-1. **Animations**: animations expressives, indépendantes de l’infrastructure en cours d’exécution, indépendamment du thread d’interface utilisateur
+1. **Contenu** : COMPOSITION léger de contenu dessiné personnalisé
+1. **Effets**: L’interface utilisateur en temps réel des effets système dont les effets peuvent être animées, chaînées et personnalisées
+1. **Animations**: Animations expressives, indépendant du framework en cours d’exécution indépendamment du thread d’interface utilisateur
 
 ### <a name="content"></a>Contenu
 
-Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. De Visual inclure [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) contenant contenu et peut être peint avec des couleurs unies, personnalisés dessinés contenus ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
+Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Incluent les sous-classes de visuel  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants créer des arborescences d’éléments visuels et [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) qui contient le contenu et peut être peint avec deux couleurs unies, dessinés contenus ou élément visuel des effets personnalisés. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
 
 Pour plus d’informations, consultez la vue d’ensemble [Éléments visuels de composition](composition-visual-tree.md).
 
@@ -52,7 +52,7 @@ Pour plus d’informations, consultez la vue d’ensemble [Effets de composition
 
 ### <a name="animations"></a>Animations
 
-Le système d’animations de la couche visuelle vous permet de déplacer des éléments visuels, d’animer des effets, et d’actionner des transformations, des clips et d’autres propriétés.Ce système indépendant de l’infrastructure a été entièrement conçu en ayant les performances à l’esprit.Il s’exécute indépendamment du thread d’interface utilisateur pour garantir fluidité et évolutivité.Si ce système vous permet d’utiliser des animations par images clés familières pour animer des modifications de propriétés au fil du temps, il vous permet aussi de définir des relations mathématiques entre les différentes propriétés, notamment les entrées utilisateur, ce qui vous permet de concevoir directement des expériences chorégraphiées harmonieuses.
+Le système d’animations de la couche visuelle vous permet de déplacer des éléments visuels, d’animer des effets, et d’actionner des transformations, des clips et d’autres propriétés.  Ce système indépendant de l’infrastructure a été entièrement conçu en ayant les performances à l’esprit.  Il s’exécute indépendamment du thread d’interface utilisateur pour garantir fluidité et évolutivité.  Si ce système vous permet d’utiliser des animations par images clés familières pour animer des modifications de propriétés au fil du temps, il vous permet aussi de définir des relations mathématiques entre les différentes propriétés, notamment les entrées utilisateur, ce qui vous permet de concevoir directement des expériences chorégraphiées harmonieuses.
 
 Pour plus d’informations, consultez la vue d’ensemble [Animations de composition](composition-animation.md).
 
@@ -65,7 +65,7 @@ Pour plus d’informations, consultez la vue d’ensemble [Utilisation de la cou
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-* Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs)
+* Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
 * [Galerie d’exemples Windows.UI.Composition](https://aka.ms/winuiapp)
 * [@windowsui Flux Twitter ](https://twitter.com/windowsui)
-* Lisez l’article MSDN de Kenny Kerr sur cette API: [Graphismes et animation: l’API Composition Windows passe à Windows10](https://msdn.microsoft.com/magazine/mt590968)
+* Lisez l’Article MSDN de Kenny Kerr sur cette API : [Graphisme et Animation - API de Composition Windows 10](https://msdn.microsoft.com/magazine/mt590968)

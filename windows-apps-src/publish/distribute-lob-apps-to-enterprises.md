@@ -1,5 +1,5 @@
 ---
-Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
+Description: Vous pouvez publier des applications métiers directement à l’attention des entreprises pour une acquisition en volume par le biais de Microsoft Store pour Entreprises ou de Microsoft Store pour Éducation, sans mettre vos applications à la disposition générale dans le Windows Store.
 title: Distribuer des applications métier aux entreprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.date: 10/31/2018
@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: c6e1eafbce5eca1570161da1656c0242228ff7de
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044586"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653014"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
 
-Vous pouvez publier des applications métiers directement à l’attention des entreprises pour une acquisition en volume par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation, sans mettre vos applications à la disposition générale dans le WindowsStore.
+Vous pouvez publier des applications métiers directement à l’attention des entreprises pour une acquisition en volume par le biais de Microsoft Store pour Entreprises ou de Microsoft Store pour Éducation, sans mettre vos applications à la disposition générale dans le Windows Store.
 
 > [!NOTE]
-> Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
+> Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de Microsoft Store pour Entreprises ou de Microsoft Store pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
 
 > [!IMPORTANT]
-> Vous ne pouvez pas utiliser l'[API de soumission au MicrosoftStore](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions d’applications cœur de métier doivent être publiées par le biais de l’espace partenaires.
+> Vous ne pouvez pas utiliser l'[API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions pour les applications métier doivent être publiées via des partenaires.
 
 
 ## <a name="set-up-the-enterprise-association"></a>Configurer l’association d’entreprise
@@ -63,22 +63,22 @@ Pour plus d’informations, voir [Options de gestion des licences organisationne
 
 ### <a name="age-ratings"></a>Classification par âge
 
-Pour les applications métier, la [classification par âge](age-ratings.md) du processus de soumission fonctionne comme pour les applications commerciales. Toutefois, une option supplémentaire vous permet d’indiquer manuellement la classification par âge de votre application dans le Windows Store au lieu de remplir le questionnaire ou d’importer un identificateur de classification IARC existant. Cette évaluation manuelle n’est utilisable qu’avec la distribution métier; par conséquent, si vous redéfinissez le paramètre **Visibilité** de l’application sur **Vente au détail**, vous devrez répondre au questionnaire d’évaluation de l’âge avant de pouvoir publier la soumission.
+Pour les applications métier, la [classification par âge](age-ratings.md) du processus de soumission fonctionne comme pour les applications commerciales. Toutefois, une option supplémentaire vous permet d’indiquer manuellement la classification par âge de votre application dans le Windows Store au lieu de remplir le questionnaire ou d’importer un identificateur de classification IARC existant. Cette évaluation manuelle n’est utilisable qu’avec la distribution métier ; par conséquent, si vous redéfinissez le paramètre **Visibilité** de l’application sur **Vente au détail**, vous devrez répondre au questionnaire d’évaluation de l’âge avant de pouvoir publier la soumission.
 
 
 ## <a name="enterprise-deployment-of-lob-apps"></a>Déploiement d’applications métier dans les entreprises
 
-Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l’issue de ce processus, un administrateur de l’entreprise doit ajouter l’application à son magasin privé dans le portail MicrosoftStore pour Entreprises ou MicrosoftStore pour Éducation. L’entreprise peut alors déployer l’application à l’attention de ses utilisateurs.
+Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l’issue de ce processus, un administrateur de l’entreprise doit ajouter l’application à son magasin privé dans le portail Microsoft Store pour Entreprises ou Microsoft Store pour Éducation. L'entreprise peut alors déployer l'application à l'attention de ses utilisateurs.
 
 > [!NOTE]
 > Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir [exclu ce marché](define-pricing-and-market-selection.md) lorsque vous avez soumis l’application. 
 
-Pour plus d’informations, consultez les articles [Utilisation des applications cœur de métier](https://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l’aide de votre magasin privé](https://go.microsoft.com/fwlink/p/?LinkId=698847).
+Pour plus d'informations, voir [Utilisation des applications métier](https://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l'aide de votre magasin privé](https://go.microsoft.com/fwlink/p/?LinkId=698847).
 
 
 ## <a name="update-lob-apps"></a>Mettre à jour des applications métiers
 
-Pour publier les mises à jour d’une application que vous avez déjà publiée en tant qu’application métier, il vous suffit de créer une autre soumission. Vous pouvez charger de nouveaux packages ou apporter des modifications, puis cliquer sur **Envoyer au Store** pour mettre à disposition la version mise à jour. Veillez à ce que les sélections d’entreprises dans **Visibilité** restent les mêmes, sauf si vous souhaitez leur apporter des modifications, par exemple en sélectionnant une autre entreprise pouvant acquérir l’application ou en supprimant l’une des entreprises auxquelles vous l’avez déjà distribuée.
+Pour publier les mises à jour d'une application que vous avez déjà publiée en tant qu'application métier, il vous suffit de créer une soumission. Vous pouvez transférer de nouveaux packages ou apporter des modifications, puis cliquer sur **Envoyer au Store** pour mettre à disposition la version mise à jour. Veillez à ce que les sélections d’entreprises dans **Visibilité** restent les mêmes, sauf si vous souhaitez leur apporter des modifications, par exemple en sélectionnant une autre entreprise pouvant acquérir l’application ou en supprimant l’une des entreprises auxquelles vous l’avez déjà distribuée.
 
 Si vous souhaitez ne plus offrir une application que vous avez déjà publiée en tant qu’application métier et que vous souhaitez empêcher toute nouvelle acquisition, vous devez créer une soumission. En premier lieu, vous devez modifier votre sélection sous **Visibilité** en choisissant **Vente au détail** au lieu de **Distribution d’applications métier**. Puis, dans la section [Détectabilité](choose-visibility-options.md#discoverability), choisissez **Rendre ce produit disponible mais non détectable dans le Store** avec l’option **Empêcher l’acquisition**.
 
@@ -90,11 +90,11 @@ Une fois le processus de certification appliqué à la soumission, l’applicati
 
 ## <a name="distribute-lob-apps-through-sideloading"></a>Distribuer des applications métiers par chargement indépendant
 
-En mettant vos applications à la disposition d’une entreprise par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation, vous offrez l’assurance que ces applications ont été signées par le WindowsStore et qu’elles sont conformes aux politiques standard du WindowsStore.
+En mettant vos applications à la disposition d’une entreprise par le biais de Microsoft Store pour Entreprises ou de Microsoft Store pour Éducation, vous offrez l’assurance que ces applications ont été signées par le Windows Store et qu’elles sont conformes aux politiques standard du Windows Store.
 
-Dans certains cas, les entreprises ne souhaitent pas leurs applications cœur de métier par le biais de l’espace partenaires (par exemple, pour des raisons de conformité ou lorsque les applications qui requièrent des fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser MicrosoftStore pour Entreprises ni MicrosoftStore pour Éducation.
+Dans certains cas, les entreprises ne souhaitent pas leurs applications métier devant être soumis via des partenaires (par exemple, que pour des raisons de conformité ou pour les applications qui ont besoin de fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser Microsoft Store pour Entreprises ni Microsoft Store pour Éducation.
 
-Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
+Pour plus d'informations, voir [Charger la version test d'applications métier dans Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
 
  
 

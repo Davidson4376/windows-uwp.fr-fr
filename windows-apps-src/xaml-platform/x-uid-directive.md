@@ -4,14 +4,14 @@ title: Directive xUid
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 03cf647fdb243fd18212ca894f7682e913378907
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943180"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609634"
 ---
 # <a name="xuid-directive"></a>Directive x:Uid
 
@@ -30,15 +30,15 @@ Fournit un identificateur unique à des éléments de balisage. Pour le code XAM
 |------|-------------|
 | stringID | Chaîne qui identifie de manière unique un élément XAML dans une application et qui fait partie du chemin d’accès aux ressources dans un fichier de ressources. Voir Notes.| 
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
-Utilisez **x:Uid** pour identifier un élément objet dans votre code XAML. Cet élément objet est généralement une instance d’une classe de contrôle ou d’un autre élément affiché dans une interface utilisateur. La relation entre la chaîne utilisée dans **x:Uid** et les chaînes utilisées dans un fichier de ressources est que les chaînes du fichier de ressources sont la directive **x:Uid** suivie d’un point (.),puis du nom d’une propriété spécifique de l’élément en cours de localisation. Examinez cet exemple:
+Utilisez **x:Uid** pour identifier un élément objet dans votre code XAML. Cet élément objet est généralement une instance d’une classe de contrôle ou d’un autre élément affiché dans une interface utilisateur. La relation entre la chaîne utilisée dans **x:Uid** et les chaînes utilisées dans un fichier de ressources est que les chaînes du fichier de ressources sont la directive **x:Uid** suivie d’un point (.),puis du nom d’une propriété spécifique de l’élément en cours de localisation. Examinez cet exemple :
 
 ``` syntax
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-Pour spécifier le contenu devant remplacer le texte d’affichage **Go**, vous devez spécifier une nouvelle ressource provenant d’un fichier de ressources. Votre fichier de ressources doit contenir une entrée pour la ressource nommée «GoButton.Content». Dans le cas présent, [**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) est une propriété spécifique héritée par la classe [**Button**](/uwp/api/windows.ui.xaml.controls.button). Vous pouvez également fournir des valeurs localisées pour d’autres propriétés de ce bouton; par exemple, vous pouvez fournir une valeur basée sur les ressources pour «GoButton.FlowDirection». Pour plus d’informations sur l'utilisation simultanée de **x:Uid** et de fichiers de ressources, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../app-resources/localize-strings-ui-manifest.md).
+Pour spécifier le contenu devant remplacer le texte d’affichage **Go**, vous devez spécifier une nouvelle ressource provenant d’un fichier de ressources. Votre fichier de ressources doit contenir une entrée pour la ressource nommée « GoButton.Content ». [**Contenu** ](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) dans ce cas est une propriété spécifique qui est héritée par le [ **bouton** ](/uwp/api/windows.ui.xaml.controls.button) classe. Vous pouvez également fournir des valeurs localisées pour d’autres propriétés de ce bouton ; par exemple, vous pouvez fournir une valeur basée sur les ressources pour « GoButton.FlowDirection ». Pour plus d’informations sur l'utilisation simultanée de **x:Uid** et de fichiers de ressources, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../app-resources/localize-strings-ui-manifest.md).
 
 La validité des chaînes pouvant servir de valeur **x:Uid** est contrôlée dans un sens pratique par les chaînes légitimes en tant qu’identificateur dans un fichier de ressources et un chemin d’accès aux ressources.
 

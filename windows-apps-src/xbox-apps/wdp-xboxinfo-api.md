@@ -1,53 +1,53 @@
 ---
-title: Informations sur l’appareil Xbox portail référence d’API
-description: Découvrez comment accéder aux informations sur l’appareil Xbox.
+title: Informations de référence sur les API Device Portal Xbox
+description: Découvrez comment accéder aux informations de référence Xbox.
 ms.date: 11/072017
 ms.topic: article
-keywords: Windows 10, uwp, xbox, le portail d’appareil
+keywords: Windows 10, uwp, xbox, du portail de l’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115979"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617494"
 ---
-# <a name="xbox-info-api-reference"></a>Référence de l’API d’informations Xbox   
-Vous pouvez accéder à Xbox One informations sur l’appareil à l’aide de cette API.
+# <a name="xbox-info-api-reference"></a>Informations de référence sur les API Xbox   
+Cette API vous permet d’accéder aux informations des périphériques Xbox One.
 
-## <a name="get-xbox-one-device-information"></a>Obtenir des informations sur l’appareil Xbox One
+## <a name="get-xbox-one-device-information"></a>Obtenir les informations des périphériques Xbox One
 
-**Requête**
+**Demande**
 
-Vous pouvez obtenir des informations sur l’appareil sur votre console Xbox One.
+Vous pouvez obtenir des informations relatives à votre périphérique Xbox One.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 GET | /ext/xbox/info
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun(e)
+- Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
-- Aucun
+- Aucune
 
 **Réponse**   
-Un objet JSON avec les champs suivants:
+Un objet JSON avec les champs suivants :
 
-* OsVersion - (chaîne) la version du système d’exploitation.
-* OsEdition - (chaîne) l’édition du système d’exploitation, par exemple, «Mars 2017» ou «mars 2017 correctif 1».
-* ConsoleId - ID. de (chaîne) la console
-* ID d’appareil - Xbox Live Device de (chaîne) la console ID.
-* Numéro de série - numéro de série de (chaîne) la console.
-* DevMode - Active le mode développeur de (chaîne) la console, par exemple, «None» ou «Commercial».
-* ConsoleType - type de (chaîne) la console, par exemple, «Xbox One» ou «Xbox One S».
-* DevkitCertificateExpirationTime - (nombre) de l’heure UTC en secondes, la date d’expiration certificat de kit de développement de la console.
+* OsVersion - (chaîne) version du système d’exploitation.
+* OsEdition - (chaîne) édition du système d’exploitation, telle que « mars 2017 » ou « mars 2017 QFE 1 ».
+* ConsoleId - (chaîne) ID de la console.
+* DeviceId - (chaîne) ID de périphérique Xbox Live de la console.
+* Numéro de série - (chaîne) numéro de série de la console.
+* DevMode - (chaîne) mode développeur actuel de la console, tels que « None » ou « Commercial ».
+* ConsoleType - (chaîne) type de la console, tel que « Xbox One » ou « Xbox One S ».
+* DevkitCertificateExpirationTime - (nombre) heure UTC, en secondes, de la date d’expiration du certificat du kit de développement de la console.
 
 **Code d’état**
 
@@ -60,6 +60,6 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox

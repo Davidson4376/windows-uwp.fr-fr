@@ -1,33 +1,33 @@
 ---
-description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir la trace de pile concernant une erreur dans votre application de bureau.
+description: Utilisez cette méthode dans l’API d’analyse du Microsoft Store pour obtenir la trace de pile concernant une erreur dans votre application de bureau.
 title: Obtenir la trace de pile concernant une erreur dans votre application de bureau
 ms.date: 06/05/2018
 ms.topic: article
-keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur, application de bureau
+keywords: windows 10, uwp, services du Store, API d’analyse du Microsoft Store, trace de pile, erreur, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937780"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659894"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Obtenir la trace de pile concernant une erreur dans votre application de bureau
 
-Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir la trace de pile d'une erreur dans une application de bureau que vous avez ajoutée au [Programme pour applications de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Cette méthode ne peut télécharger que la trace de pile concernant une erreur survenue dans les 30derniers jours. Les traces de pile sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans l’espace partenaires.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir la trace de pile d'une erreur dans une application de bureau que vous avez ajoutée au [Programme pour applications de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Cette méthode ne peut télécharger que la trace de pile concernant une erreur survenue dans les 30 derniers jours. Traces de pile sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans l’espace partenaires.
 
-Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer le hachage d'ID du fichierCAB associé à l’erreur dont vous voulez récupérer la trace de pile.
+Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer le hachage d'ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
-* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du MicrosoftStore.
-* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Obtenez le hachage d’ID du fichierCAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cette valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Microsoft Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Obtenez le hachage d’ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse.
 
-## <a name="request"></a>Demande
+## <a name="request"></a>Requête
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
@@ -41,15 +41,15 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
  
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Paramètre        | Type   |  Description      |  Requis  |
+| Paramètre        | Type   |  Description      |  Obligatoire  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L'ID produit de l’application de bureau dont vous souhaitez obtenir une trace de pile. Pour obtenir l’ID de produit d’une application de bureau, ouvrez n’importe quel [rapport analytique pour votre application de bureau dans l’espace partenaires](https://msdn.microsoft.com/library/windows/desktop/mt826504) (par exemple, le **rapport d’intégrité**) et récupérez l’ID produit à partir de l’URL. |  Oui  |
-| cabIdHash | chaîne | Le hachage d'ID unique du fichierCAB associé à l’erreur dont vous souhaitez récupérer la trace de pile. Pour obtenir cette valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse. |  Oui  |
+| applicationId | chaîne | L'ID produit de l’application de bureau dont vous souhaitez obtenir une trace de pile. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [analytique de rapports pour votre application de bureau partenaires](https://msdn.microsoft.com/library/windows/desktop/mt826504) (telles que la **rapport d’intégrité**) et récupérer l’ID de produit dans l’URL. |  Oui  |
+| cabIdHash | chaîne | Le hachage d'ID unique du fichier CAB associé à l’erreur dont vous souhaitez récupérer la trace de pile. Pour obtenir cette valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse. |  Oui  |
 
  
 ### <a name="request-example"></a>Exemple de requête
@@ -68,14 +68,14 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type    | Description                  |
 |------------|---------|--------------------------------|
-| Valeur      | array   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
-| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10, mais que plus de 10lignes d’erreur sont associées à la requête. |
-| TotalCount | entier | Nombre total de lignes dans les résultats de données de la requête.          |
+| Valeur      | tableau   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10, mais que plus de 10 lignes d’erreur sont associées à la requête. |
+| TotalCount | Entier | Nombre total de lignes dans les résultats de la requête.          |
 
 
 ### <a name="stack-trace-values"></a>Valeurs de la trace de pile
 
-Les éléments du tableau *Value* ont les valeurs suivantes:
+Les éléments du tableau *Value* comportent les valeurs suivantes :
 
 | Valeur           | Type    | Description      |
 |-----------------|---------|----------------|
@@ -120,7 +120,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Rapport d’intégrité](../publish/health-report.md)
-* [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)
-* [Obtenir les données de signalement d’erreurs pour votre application de bureau](get-desktop-application-error-reporting-data.md)
-* [Obtenir les informations sur une erreur de votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)
-* [Télécharger le fichier CAB concernant une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)
+* [Accéder aux données d’analytique à l’aide des services de Microsoft Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir des données pour votre application de bureau de signalement d’erreurs](get-desktop-application-error-reporting-data.md)
+* [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)
+* [Télécharger le fichier CAB pour une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)

@@ -4,21 +4,21 @@ description: En savoir plus sur les recommandations en matière d’expérience 
 title: Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 ms.date: 05/11/2018
 ms.topic: article
-keywords: windows10, uwp, annonce, publicité, directives, meilleures pratiques
+keywords: windows 10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930750"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639144"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 
 Cet article fournit des recommandations pour concevoir des expériences exceptionnelles avec des bannières publicitaires, des spots et des publicités natives dans vos applications. Pour obtenir des conseils généraux sur la conception de l’apparence et du style des applications, consultez [Conception et interface utilisateur](https://developer.microsoft.com/windows/apps/design).
 
 > [!IMPORTANT]
-> Toute utilisation de publicité dans votre app doit se conformer aux Politiques du Microsoft Store, y compris et sans s’y limiter, à la [politique10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (Conduite en matière de publicité et contenu publicitaire). En particulier, l’implémentation de bannières ou spots publicitaires dans votre app doit respecter les règles stipulées dans la [politique10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du MicrosoftStore. Cet article fournit des exemples d’implémentations qui ne respectent pas cette politique. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect des Politiques du Microsoft Store qui ne sont pas répertoriés dans le présent article.
+> Toute utilisation de publicité dans votre app doit se conformer aux Politiques du Microsoft Store, y compris et sans s’y limiter, à la [politique 10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (Conduite en matière de publicité et contenu publicitaire). En particulier, l’implémentation de bannières ou spots publicitaires dans votre app doit respecter les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store. Cet article fournit des exemples d’implémentations qui ne respectent pas cette politique. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect des Politiques du Microsoft Store qui ne sont pas répertoriés dans le présent article.
 
 ## <a name="general-best-practices"></a>Meilleures pratiques générales
 
@@ -33,11 +33,11 @@ Avant d’examiner nos recommandations s'agissant des différents types de publi
 
 ## <a name="guidelines-for-banner-ads"></a>Recommandations pour les bannières publicitaires
 
-Les sections suivantes fournissent des recommandations sur la façon d’implémenter des [bannières publicitaires](banner-ads.md) dans votre app à l’aide d’objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du MicrosoftStore.
+Les sections suivantes fournissent des recommandations sur la façon d’implémenter des [bannières publicitaires](banner-ads.md) dans votre app à l’aide d’objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store.
 
-### <a name="best-practices"></a>Bonnes pratiques
+### <a name="best-practices"></a>Meilleures pratiques
 
-Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des bannières publicitaires dans votre application:
+Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des bannières publicitaires dans votre application :
 
 * [Utilisez des tailles de l'Interactive Advertising Bureau](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes) adaptées à la disposition sur l’appareil utilisé.
 
@@ -53,7 +53,7 @@ Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez de
 
 ### <a name="practices-to-avoid"></a>Pratiques à éviter
 
-Nous vous recommandons d’éviter ces pratiques quand vous implémentez des bannières publicitaires dans votre application:
+Nous vous recommandons d’éviter ces pratiques quand vous implémentez des bannières publicitaires dans votre application :
 
 * Ne bloquez pas les publicités dans les espaces ouverts. L’espace publicitaire ne doit pas être placé dans le premier espace libre que vous trouvez. Au lieu de cela, il doit être incorporé dans la conception globale de votre application.
 
@@ -63,7 +63,7 @@ Nous vous recommandons d’éviter ces pratiques quand vous implémentez des ban
 
 ### <a name="examples-of-policy-violations"></a>Exemples de non-respect de la politique
 
-Cette section donne des exemples d’implémentation de bannières publicitaires qui ne respectent pas les règles stipulées dans la [politique10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du MicrosoftStore. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique10.10.1 qui ne sont pas répertoriés ici.
+Cette section donne des exemples d’implémentation de bannières publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
 
 * Empêcher d’une façon ou d’une autre l’utilisateur d’afficher la bannière publicitaire, comme modifier l’opacité de l’objet [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) ou placer un autre contrôle sur **AdControl** (sans appeler au préalable [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)).
 
@@ -71,7 +71,7 @@ Cette section donne des exemples d’implémentation de bannières publicitaires
 
 * Contourner le minuteur d’actualisation intégré minimum pour les bannières publicitaires par quelque moyen que ce soit, y compris, mais sans s’y limiter, en remplaçant des objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) ou en actualisant automatiquement une page sans aucune interaction utilisateur.
 
-* À l’aide des unités publicitaires dynamiques (autrement dit, les unités publicitaires que vous obtenez à partir de l’espace partenaires) au cours de développement et de test, ou dans un émulateur.
+* À l’aide d’annonce en ligne unités (autrement dit, ad que vous obtenez auprès des partenaires) pendant le développement et de test, ou dans un émulateur.
 
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
@@ -83,15 +83,15 @@ Cette section donne des exemples d’implémentation de bannières publicitaires
 
 Quand ils sont utilisés de façon élégante, les [spots publicitaires](interstitial-ads.md) peuvent augmenter considérablement vos revenus issus de l’application, sans impact négatif sur la satisfaction des utilisateurs. En cas d’utilisation incorrecte, ils peuvent produire l’effet inverse exact.
 
-Les sections suivantes fournissent des recommandations sur la façon d’implémenter des annonces vidéo et des bannières spots publicitaires dans votre app à l’aide d’objets [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du MicrosoftStore. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
+Les sections suivantes fournissent des recommandations sur la façon d’implémenter des annonces vidéo et des bannières spots publicitaires dans votre app à l’aide d’objets [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
 
-### <a name="best-practices"></a>Bonnes pratiques
+### <a name="best-practices"></a>Meilleures pratiques
 
-Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des spots publicitaires dans votre application:
+Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des spots publicitaires dans votre application :
 
 * Intégrez des spots publicitaires dans le flux naturel de l’application, par exemple entre les niveaux de jeu.
 
-* Associez des annonces avec des avantages concrets, tels que:
+* Associez des annonces avec des avantages concrets, tels que :
 
     * Conseils concernant l’achèvement de niveau.
 
@@ -101,11 +101,11 @@ Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez de
 
 * Si votre application requiert le visionnage complet d’un spot vidéo, mentionnez cette règle d’emblée afin que les utilisateurs ne soient pas surpris par un message d’erreur en appuyant sur le bouton Fermer.
 
-* Récupérez d’abord la publicité (en appelant la méthode [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)), dans l’idéal, 30 à 60secondes avant que vous ayez besoin de l’afficher.
+* Récupérez d’abord la publicité (en appelant la méthode [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)), dans l’idéal, 30 à 60 secondes avant que vous ayez besoin de l’afficher.
 
 * Abonnez-vous aux quatre événements exposés dans la classe [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) (**Canceled**, **Completed**, **AdReady** et **ErrorOccurred**) et utilisez-les pour prendre les bonnes décisions pour votre application.
 
-* Bénéficiez d’une expérience intégrée au lieu d’annonces proposées par le serveur. Vous trouverez cela utile dans certains scénarios:
+* Bénéficiez d’une expérience intégrée au lieu d’annonces proposées par le serveur. Vous trouverez cela utile dans certains scénarios :
 
     * En mode hors connexion, lorsque les serveurs publicitaires sont injoignables.
 
@@ -113,7 +113,7 @@ Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez de
 
     * Si vous choisissez d’économiser la bande passante de l’utilisateur en fonction de [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile), il existe des API dans la classe **ConnectionProfile** qui peuvent vous aider.
 
-* Utilisez le délai d’expiration par défaut (30secondes), sauf si vous avez une raison valable de faire autrement, auquel cas n’allez pas en dessous de 10secondes. Les spots sont beaucoup plus longues à télécharger que les bannières standard, en particulier dans les marchés ne disposant pas de connexions haut débit.
+* Utilisez le délai d’expiration par défaut (30 secondes), sauf si vous avez une raison valable de faire autrement, auquel cas n’allez pas en dessous de 10 secondes. Les spots sont beaucoup plus longues à télécharger que les bannières standard, en particulier dans les marchés ne disposant pas de connexions haut débit.
 
 * Gardez à l’esprit les forfaits de données des utilisateurs. Par exemple, n’affichez pas de spot vidéo, ou avertissez l’utilisateur avant de le faire sur un appareil mobile approchant de ou ayant dépassé sa limite de données. Il existe des API dans la classe [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) qui peuvent vous aider.
 
@@ -121,9 +121,9 @@ Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez de
 
 ### <a name="practices-to-avoid"></a>Pratiques à éviter
 
-Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spots publicitaires dans votre application:
+Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spots publicitaires dans votre application :
 
-* N’intégrez pas de spots publicitaires de manière excessive dans votre application. N’envoyez pas de publicités à une fréquence supérieure à toutes les 5minutes environ, à moins que l’utilisateur ne bénéficie d’un avantage concret en option, au-delà du jeu.
+* N’intégrez pas de spots publicitaires de manière excessive dans votre application. N’envoyez pas de publicités à une fréquence supérieure à toutes les 5 minutes environ, à moins que l’utilisateur ne bénéficie d’un avantage concret en option, au-delà du jeu.
 
 * N’affichez pas de spots au lancement de l’application, car les utilisateurs pourraient penser qu’ils ont cliqué sur la mauvaise vignette.
 
@@ -131,19 +131,19 @@ Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spo
 
 * N’affichez pas plusieurs spots publicitaires d’affilée. Les utilisateurs seront contrariés de voir la barre de progression de l’annonce revenir au point de départ. Beaucoup penseront qu’il s’agit d’un bogue de codage ou d’affichage de publicité.
 
-* Ne récupérez pas un spot vidéo plus de 5minutes avant d’appeler [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show). Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
+* Ne récupérez pas un spot vidéo plus de 5 minutes avant d’appeler [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show). Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
 
-* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type «Regarder une publicité pour obtenir *xxx*», vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options sont à envisager:
+* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options à envisager :
 
     * N’incluez pas l’option, sauf si l’événement [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) a été déclenché.
 
     * Proposez une application incluant une expérience intégrée qui procure les mêmes avantages qu’une annonce réelle.
 
-* N’utilisez pas de spots publicitaires permettant à un utilisateur de gagner un avantage compétitif dans un jeu multijoueur. Par exemple, n’affichez pas de spot publicitaire incitant l’utilisateur à se servir d’une meilleure arme dans un jeu de tir. Une chemise personnalisée sur l’avatar du joueur pourrait faire l’affaire, tant qu’elle ne sert pas de camouflage!
+* N’utilisez pas de spots publicitaires permettant à un utilisateur de gagner un avantage compétitif dans un jeu multijoueur. Par exemple, n’affichez pas de spot publicitaire incitant l’utilisateur à se servir d’une meilleure arme dans un jeu de tir. Une chemise personnalisée sur l’avatar du joueur pourrait faire l’affaire, tant qu’elle ne sert pas de camouflage !
 
 ### <a name="examples-of-policy-violations"></a>Exemples de non-respect de la politique
 
-Cette section donne des exemples d’implémentations de spots publicitaires qui ne respectent pas les règles stipulées dans la [politique10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du MicrosoftStore. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique10.10.1 qui ne sont pas répertoriés ici.
+Cette section donne des exemples d’implémentations de spots publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
 
 * Placer un élément d’interface utilisateur sur le conteneur de spot publicitaire.
 
@@ -155,7 +155,7 @@ Cette section donne des exemples d’implémentations de spots publicitaires qui
 
 * Demander un spot publicitaire simplement pour avoir une publicité de secours à une cascade de publicités. Si vous demandez un spot publicitaire et que vous recevez l’événement [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready), le spot publicitaire suivant affiché dans votre application doit être celui qui est prêt à être affiché par la méthode [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
-* À l’aide des unités publicitaires dynamiques (autrement dit, les unités publicitaires que vous obtenez à partir de l’espace partenaires) au cours de développement et de test, ou dans un émulateur.
+* À l’aide d’annonce en ligne unités (autrement dit, ad que vous obtenez auprès des partenaires) pendant le développement et de test, ou dans un émulateur.
 
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
@@ -169,7 +169,7 @@ Les [publicités natives](native-ads.md) vous donnent beaucoup de contrôle sur 
 
 Dans votre code, vous devez appeler la méthode [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) de l'objet [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) pour enregistrer l’élément d’interface utilisateur agissant comme conteneur de la publicité native, ainsi que tous les contrôles spécifiques éventuels que vous souhaitez inscrire comme cibles interactives pour la publicité. C'est indispensable pour suivre correctement les expositions publicitaires et les clics.
 
-Il existe deux surcharges pour la méthode **RegisterAdContainer** que vous pouvez utiliser:
+Il existe deux surcharges pour la méthode **RegisterAdContainer** que vous pouvez utiliser :
 
 * Si vous voulez que tout le conteneur de l'ensemble des éléments individuels de publicité native soit interactif, appelez la méthode **RegisterAdContainer(FrameworkElement)** et transmettez-lui le contrôle du conteneur. Par exemple, si vous affichez tous les éléments de publicité native dans des contrôles distincts tous hébergés dans un **StackPanel** et que vous voulez que tout le **StackPanel** soit interactif, transmettez le **StackPanel** à cette méthode.
 
@@ -179,23 +179,23 @@ Il existe deux surcharges pour la méthode **RegisterAdContainer** que vous pouv
 
 Au minimum, vous devez toujours montrer à l’utilisateur les éléments de publicité native suivants fournis par les propriétés de l'objet [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) dans votre conception de publicité native. Si vous ne parvenez pas à inclure ces éléments, vous obtiendrez peut-être de mauvaises performances et de faibles revenus de votre unité publicitaire.
 
-1. Affichez toujours le titre de la publicité native (disponible dans la propriété **Title**). Fournissez suffisamment d’espace pour afficher au moins 25caractères. Si le titre est plus long, remplacez le texte supplémentaire par des points de suspension.
-2. Affichez toujours au moins l'un des éléments suivants pour différencier la publicité native du reste de votre application et indiquer clairement que le contenu est fourni par un annonceur:
+1. Affichez toujours le titre de la publicité native (disponible dans la propriété **Title**). Fournissez suffisamment d’espace pour afficher au moins 25 caractères. Si le titre est plus long, remplacez le texte supplémentaire par des points de suspension.
+2. Affichez toujours au moins l'un des éléments suivants pour différencier la publicité native du reste de votre application et indiquer clairement que le contenu est fourni par un annonceur :
     * L’icône identifiable *publicité* (disponible dans la propriété **AdIcon**). Cette icône est fournie par Microsoft.
     * Le texte *parrainé par* (disponible dans la propriété **SponsoredBy**). Ce texte est fourni par l'annonceur.
-    * À la place du texte *parrainé par*, vous pouvez choisir d’afficher un autre texte qui permet de différencier la publicité native du reste de votre application, par exemple «Contenu sponsorisé», «Contenu promotionnel», «Contenu recommandé», etc.
+    * À la place du texte *parrainé par*, vous pouvez choisir d’afficher un autre texte qui permet de différencier la publicité native du reste de votre application, par exemple « Contenu sponsorisé », « Contenu promotionnel », « Contenu recommandé », etc.
 
-### <a name="user-experience"></a>Expérience utilisateur
+### <a name="user-experience"></a>Expérience de l'utilisateur
 
 Votre publicité native doit être délimitée clairement du reste de votre application et être entourée d’espace pour éviter les clics accidentels. Utilisez des bordures, des arrière-plans différents ou une autre interface utilisateur pour séparer le contenu de la publicité du reste de votre application. N’oubliez pas que les clics accidentels ne sont pas utiles pour votre chiffre d’affaires publicitaire ni pour l'expérience de votre utilisateur final à long terme.
 
 ### <a name="description"></a>Description
 
-Si vous choisissez d’afficher la description de la publicité (disponible dans la propriété **Description** de l'objet **NativeAdV2**), fournissez suffisamment d’espace pour afficher au moins 75caractères. Nous vous recommandons d’utiliser une animation pour afficher l’intégralité du contenu de description de la publicité.
+Si vous choisissez d’afficher la description de la publicité (disponible dans la propriété **Description** de l'objet **NativeAdV2**), fournissez suffisamment d’espace pour afficher au moins 75 caractères. Nous vous recommandons d’utiliser une animation pour afficher l’intégralité du contenu de description de la publicité.
 
 ### <a name="call-to-action"></a>Appel à l’action
 
-Le texte *appel à l’action* (disponible dans la propriété **CallToAction** de l'objet **NativeAdV2**) est un composant essentiel de la publicité. Si vous choisissez d’afficher ce texte, suivez ces instructions:
+Le texte *appel à l’action* (disponible dans la propriété **CallToAction** de l'objet **NativeAdV2**) est un composant essentiel de la publicité. Si vous choisissez d’afficher ce texte, suivez ces instructions :
 
 * Montrez toujours le texte *appel à l’action* à l’utilisateur sur un contrôle interactif tel qu’un bouton ou un lien hypertexte.
 * Affichez toujours le texte *appel à l’action* dans son intégralité.

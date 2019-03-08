@@ -1,23 +1,23 @@
 ---
 description: Cette rubrique montre comment porter du code WRL vers son équivalent en C++/WinRT.
-title: Passer de WRL à C++/WinRT
+title: Transférer vers C++/WinRT à partir de WRL
 ms.date: 05/30/2018
 ms.topic: article
-keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, WRL
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058810"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630744"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Transférer vers C++/WinRT à partir de WRL
-Cette rubrique montre comment porter du code de [Bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) vers son équivalent en [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Cette rubrique montre comment porter [bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code en son équivalent dans [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
-La première étape de portage vers C++ / WinRT consiste à ajouter manuellement C++ / WinRT prise en charge à votre projet (voir [prise en charge de Visual Studio pour C++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Pour ce faire, installez le [package Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) dans votre projet. Ouvrez le projet dans Visual Studio, cliquez sur **le projet** \> **Gérer les Packages NuGet …**  \>  **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de recherche, puis cliquez sur **installer** pour installer le package de ce projet. Un effet de cette modification est qui prennent en charge pour [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) sont désactivées dans le projet. Si vous utilisez C++/CX dans le projet, vous pouvez laisser la prise en charge désactivée et mettre également à jour votre code C++/CX en C++/WinRT (voir [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)). Sinon, vous pouvez réactiver la prise en charge (dans les propriétés du projet, **C/C++** \> **Général** \> **Consommer l'extension Windows Runtime** \> **Oui (/ZW)**), et vous concentrer d’abord sur le portage de votre code WRL. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et de composants Windows Runtime (voir [transférer vers C++ / WinRT à partir de C++ / CX](move-to-winrt-from-cx.md)).
+La première étape lors du portage vers C + c++ / WinRT consiste à ajouter manuellement C + c++ / prise en charge de WinRT à votre projet (consultez [prise en charge de Visual Studio pour C / c++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Pour ce faire, vous devez installer le [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) dans votre projet. Ouvrez le projet dans Visual Studio, cliquez sur **projet** \> **gérer les Packages NuGet...** \> **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de recherche, puis cliquez sur **installer** pour installer le package pour ce projet. Un effet de cette modification est qui prennent en charge pour [C++ / c++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) est désactivée dans le projet. Si vous utilisez C++/CX dans le projet, vous pouvez laisser la prise en charge désactivée et mettre également à jour votre code C++/CX en C++/WinRT (voir [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)). Ou vous pouvez activer la prise en charge sur (propriétés du projet, **C/C++** \> **général** \> **consommer l’Extension Windows Runtime** \> **Oui (/ZW)**) et concentrer tout d’abord sur le portage de votre code WRL. C++ / c++ / CX et c++ / WinRT code peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et de composants Windows Runtime (consultez [déplacer vers C + c++ / WinRT à partir de C++ / c++ / CX](move-to-winrt-from-cx.md)).
 
-Définissez la propriété du projet **Général** \> **Version de la plateforme cible** sur 10.0.17134.0 (Windows10, version1803) ou une version supérieure.
+Définir la propriété de projet **général** \> **Version de la plateforme cible** à 10.0.17134.0 (Windows 10, version 1803) ou supérieur.
 
 Dans votre fichier d’en-tête précompilé (généralement `pch.h`), incluez `winrt/base.h`.
 
@@ -28,7 +28,7 @@ Dans votre fichier d’en-tête précompilé (généralement `pch.h`), incluez `
 Si vous incluez des en-têtes d'API Windows projetées en C++/WinRT (par exemple, `winrt/Windows.Foundation.h`), vous n’avez pas besoin d’inclure `winrt/base.h` explicitement ainsi, car il sera automatiquement inclus pour vous.
 
 ## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>Portage des pointeurs intelligents COM WRL ([Microsoft::WRL::ComPtr](/cpp/windows/comptr-class))
-Portez tout code utilisant **Microsoft::WRL::ComPtr\<T\>** pour utiliser [**winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Voici un exemple de code avant et après. Dans la version *après*, la fonction membre [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) récupère le pointeur brut sous-jacent afin qu’il puisse être défini.
+Tout code qui utilise le port **Microsoft::wrl :: comptr\<T\>**  à utiliser [ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Voici un exemple de code avant et après. Dans la version *après*, la fonction membre [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) récupère le pointeur brut sous-jacent afin qu’il puisse être défini.
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -41,7 +41,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> Si vous disposez d’un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous souhaitez remettre en place qu’elle pointe vers un autre objet, vous devez tout d’abord affecter `nullptr` lui&mdash;comme illustré dans l’exemple de code ci-dessous. Si vous n’est pas le cas, puis un déjà assis **com_ptr** dessinent le problème à votre attention (lorsque vous appelez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
+> Si vous avez un [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous souhaitez remettre en place qu’il pointe vers un autre objet, vous devez tout d’abord affecter `nullptr` à ce dernier&mdash;comme indiqué dans l’exemple de code ci-dessous. Si vous n’est pas, puis un déjà-assis **com_ptr** Dessine le problème à votre attention (lorsque vous appelez [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [ **com_ptr :: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-Lorsque vous souhaitez passer le pointeur brut sous-jacent à une fonction qui attend un pointeur vers **IUnknown**, utilisez la fonction gratuite [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) , comme illustré dans l’exemple suivant.
+Lorsque vous souhaitez passer le pointeur brut sous-jacent à une fonction qui attend un pointeur vers **IUnknown**, utilisez le [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) gratuit (fonction), comme indiqué dans cette prochaine exemple.
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -116,7 +116,7 @@ winrt::check_hresult(
 );
 ```
 
-## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>Portage d’un module WRL (Microsoft::WRL::Module)
+## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>Portage d’un module WRL (Microsoft::wrl :: module)
 Vous pouvez ajouter progressivement du code C++/WinRT à un projet existant qui utilise WRL pour implémenter un composant, et vos classes WRL continueront à être prises en charge. Cette section montre comment.
 
 Si vous créez un type de projet **Composant Windows Runtime (C++/WinRT)** dans Visual Studio et lancez la génération, le fichier de projet `Generated Files\module.g.cpp` est généré pour vous. Ce fichier contient les définitions des deux fonctions C++/WinRT utiles (indiquées ci-dessous), que vous pouvez copier et ajouter à votre projet. Ces fonctions sont **WINRT_CanUnloadNow** et **WINRT_GetActivationFactory** et, comme vous pouvez le constater, elles appellent WRL de manière conditionnelle pour vous assister, quelle que soit la phase de portage où vous vous trouvez.
@@ -210,10 +210,10 @@ HRESULT __stdcall DllCanUnloadNow(void)
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [Modèle de structure winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [Structure winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [WinRT::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
-## <a name="related-topics"></a>Rubriquesconnexes
-* [Présentation de C++/WinRT](intro-to-using-cpp-with-winrt.md)
-* [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)
-* [Bibliothèque de modèles C++ Windows Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+## <a name="related-topics"></a>Rubriques connexes
+* [Présentation de C++ / c++ / WinRT](intro-to-using-cpp-with-winrt.md)
+* [Déplacer vers C + c++ / WinRT à partir de C++ / c++ / CX](move-to-winrt-from-cx.md)
+* [Windows Runtime bibliothèque de modèles C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

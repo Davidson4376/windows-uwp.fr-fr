@@ -4,14 +4,14 @@ description: Cet article vous montre comment utiliser MediaProcessingTrigger et 
 title: Traiter des fichiers multimédias en arrière-plan
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934714"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611904"
 ---
 # <a name="process-media-files-in-the-background"></a>Traiter des fichiers multimédias en arrière-plan
 
@@ -23,9 +23,9 @@ L’exemple d’application décrit dans cet article permet à l’utilisateur d
 
 Pour obtenir des informations plus détaillées sur les différentes fonctionnalités des applications Windows universelles utilisées dans cet exemple, voir :
 
--   [Transcoder des fichiers multimédias](transcode-media-files.md)
--   [Lancement de tâches de reprise et en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt227652)
--   [Vignettes, badges et notifications](https://msdn.microsoft.com/library/windows/apps/mt185606)
+-   [Transcodez les fichiers multimédias](transcode-media-files.md)
+-   [Lancement de tâches en arrière-plan et de la reprise](https://msdn.microsoft.com/library/windows/apps/mt227652)
+-   [Notifications et les badges de vignettes](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
 ## <a name="create-a-media-processing-background-task"></a>Créer une tâche de traitement multimédia en arrière-plan
 
@@ -36,7 +36,7 @@ Pour ajouter une tâche en arrière-plan à votre solution existante dans Micros
 3.  Entrez un nom pour votre nouveau projet de composant. Cet exemple utilise le nom de projet **MediaProcessingBackgroundTask**.
 4.  Cliquez sur OK.
 
-Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône du fichier « Class1.cs » qui est créé par défaut et sélectionnez **Renommer**. Renommez le fichier «MediaProcessingTask.cs». Lorsque Visual Studio vous demande si vous souhaitez renommer toutes les références à cette classe, cliquez sur **Oui**.
+Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône du fichier « Class1.cs » qui est créé par défaut et sélectionnez **Renommer**. Renommez le fichier « MediaProcessingTask.cs ». Lorsque Visual Studio vous demande si vous souhaitez renommer toutes les références à cette classe, cliquez sur **Oui**.
 
 Dans le fichier de classe renommé, ajoutez les directives **using** suivantes pour inclure ces espaces de noms dans votre projet.
                                   
@@ -46,7 +46,7 @@ Mettez à jour votre déclaration de classe pour faire en sorte que votre classe
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
-Ajoutez les variables membres suivantes à votre classe:
+Ajoutez les variables membres suivantes à votre classe :
 
 -   Un objet [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797) qui sera utilisé pour mettre à jour l’application au premier plan avec la progression de la tâche en arrière-plan.
 -   Un objet [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) qui empêche le système d’arrêter votre tâche en arrière-plan pendant que le transcodage multimédia est exécuté en mode asynchrone.
@@ -93,7 +93,7 @@ Avant de pouvoir lancer la tâche en arrière-plan à partir de votre applicatio
 2.  Sélectionnez l’onglet **Déclarations**.
 3.  Dans **Déclarations disponibles**, sélectionnez **Tâches en arrière-plan**, puis cliquez sur **Ajouter**.
 4.  Sous **Déclarations prises en charge**, vérifiez que l’élément **Tâches en arrière-plan** est sélectionné. Sous **Propriétés**, cochez la case **Traitement multimédia**.
-5.  Dans la zone de texte **Point d’entrée**, spécifiez l’espace de noms et le nom de classe de votre test en arrière-plan, séparés par un point. Pour cet exemple, l’entrée est:
+5.  Dans la zone de texte **Point d’entrée**, spécifiez l’espace de noms et le nom de classe de votre test en arrière-plan, séparés par un point. Pour cet exemple, l’entrée est :
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
@@ -124,13 +124,13 @@ Enregistrez la tâche en arrière-plan en appelant [**Register**](https://msdn.m
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-Une application standard s’inscrire leur tâche en arrière-plan lorsque l’application est lancée initialement, comme dans l’événement **OnNavigatedTo** .
+Une application classique inscrira leur tâche en arrière-plan lorsque l’application est initialement lancé, comme dans le **OnNavigatedTo** événement.
 
 Lancez la tâche en arrière-plan en appelant la méthode [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) de l’objet **MediaProcessingTrigger**. L’objet [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) renvoyé par cette méthode vous permet de savoir si la tâche en arrière-plan a été démarrée. Si ce n’est pas le cas, il vous permet de savoir pourquoi la tâche en arrière-plan n’a pas été lancée. 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-Une application standard lancera la tâche en arrière-plan en réponse à une interaction utilisateur, comme dans l’événement **Click** d’un contrôle de l’interface utilisateur.
+Une application classique lance la tâche en arrière-plan en réponse à une interaction utilisateur, comme dans le **cliquez sur** événement d’un contrôle d’interface utilisateur.
 
 Le gestionnaire d’événements **OnProgress** est appelé lorsque la tâche en arrière-plan met à jour la progression de l’opération. Vous pouvez utiliser cette opportunité pour mettre à jour votre interface utilisateur avec les informations de progression.
 

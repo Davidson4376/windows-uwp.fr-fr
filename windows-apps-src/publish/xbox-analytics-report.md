@@ -1,40 +1,40 @@
 ---
-Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: Le rapport d’analytique de Xbox dans Partner Center vous indique les statistiques sur la façon dont vos clients sont impliqués grâce aux fonctionnalités Xbox dans votre produit.
 title: Rapport d’analyse Xbox
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp, analyse xbox, analyse xbox live, statistiques xbox
+keywords: windows 10, uwp, analyse xbox, analyse xbox live, statistiques xbox
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922390"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607444"
 ---
 # <a name="xbox-analytics-report"></a>Rapport d’analyse Xbox
 
-Le rapport **analytique Xbox** dans [L’espace partenaires](https://partner.microsoft.com/dashboard) vous présente des statistiques sur la façon dont vos clients interagissent avec les fonctionnalités Xbox dans votre jeu. Il fournit également des informations sur l’intégrité du service pour vous aider à corriger les erreurs de client.
+Le **Xbox analytique** signaler dans [partenaires](https://partner.microsoft.com/dashboard) vous affiche les statistiques sur la façon dont vos clients sont attrayantes avec les fonctionnalités de Xbox dans votre jeu. Il fournit également des informations sur l’intégrité du service pour vous aider à corriger les erreurs de client.
 
 > [!IMPORTANT]
-> Vous ne verrez ce rapport que si vous publiez un jeu pour Xbox ou un jeu qui utilise les services XboxLive. Pour ce faire, vous devez passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiées par [les partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [ ID@Xbox programme](../xbox-live/developer-program-overview.md#id). Les jeux publiées via le [Programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ne sont pas actuellement visibles dans ce rapport.
+> Vous ne verrez ce rapport que si vous publiez un jeu pour Xbox ou un jeu qui utilise les services Xbox Live. Pour ce faire, vous devez passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et des jeux soumises via le [ ID@Xbox programme](../xbox-live/developer-program-overview.md#id). Jeux publiés via le [programme Xbox Live Creators](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ne sont pas actuellement visible dans ce rapport.
 
-Vous pouvez afficher le rapport **analytique Xbox** à partir du menu de navigation de gauche pour votre jeu en développant **analyser** et en sélectionnant **analytique Xbox**.  Vous pouvez afficher ces données dans l’espace partenaires, ou [Télécharger le rapport](download-analytic-reports.md) à consulter hors connexion.
+Vous pouvez afficher le **Xbox analytique** rapport dans le menu de navigation de gauche pour votre jeu en développant **analyser** et en sélectionnant **Xbox analytique**.  Vous pouvez afficher ces données dans le centre de partenaires, ou [télécharger le rapport](download-analytic-reports.md) à afficher en mode hors connexion.
 
 
 ## <a name="overview-tab"></a>Onglet Vue d'ensemble
 
-Les sections sur l'onglet **Vue d’ensemble** présentent des informations sur vos lecteurs et comment ils interagissent avec les fonctionnalités XboxLive.
+Les sections sur l'onglet **Vue d’ensemble** présentent des informations sur vos lecteurs et comment ils interagissent avec les fonctionnalités Xbox Live.
 
 Pour la plupart de ces statistiques, nous affichons également la **moyenne Xbox** afin que vous puissiez facilement voir comment vos clients interagissent avec la Xbox comparés au client Xbox moyen.
 
 > [!NOTE]
-> Ces statistiques sont générées à partir des clients qui sont connectés à XboxLive, et non pas à partir de tous les clients Xbox.
+> Ces statistiques sont générées à partir des clients qui sont connectés à Xbox Live, et non pas à partir de tous les clients Xbox.
 
 
 ### <a name="concurrent-usage"></a>Concurrent usage
 
-Cette section montre les données d’utilisation quasiment en temps réel (avec une latence de 5 à 15minutes) sur le nombre moyen de clients qui jouent à votre jeu chaque minute ou chaque heure. Vous pouvez choisir l’intervalle de temps (à partir de la **dernière heure** jusqu'aux **7derniers jours**) en sélectionnant l’icône de filtre dans le coin supérieur droit de cette section.
+Cette section montre les données d’utilisation quasiment en temps réel (avec une latence de 5 à 15 minutes) sur le nombre moyen de clients qui jouent à votre jeu chaque minute ou chaque heure. Vous pouvez choisir l’intervalle de temps (à partir de la **dernière heure** jusqu'aux **7 derniers jours**) en sélectionnant l’icône de filtre dans le coin supérieur droit de cette section.
 
 
 ### <a name="gamerscore-distribution"></a>Gamerscore distribution
@@ -84,14 +84,14 @@ Les sections de l’**onglet Xbox Live service health** vous aident à comprendr
 > Lors de l’examen de ces informations et de la résolution des problèmes, nous vous recommandons de classer par ordre de priorité les limitations du débit, du fait que ces erreurs ont généralement le plus grand impact sur les clients.
 
 
-### <a name="apply-filters"></a>Appliquer des filtres
+### <a name="apply-filters"></a>Appliquer les filtres
 
-Dans la zone supérieure de l’onglet, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur une période de **7D** (7jours) ou une plage de dates personnalisée que vous spécifiez (de moins de 30jours). Pour une plage de dates personnalisée, notez que tous les graphiques réduiront la plage du graphique au premier et au dernier jour de données fournies dans la plage de dates spécifiée.
+Dans la zone supérieure de l’onglet, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est **30D** (30 jours), mais vous pouvez choisir d’afficher les données portant sur une période de **7D** (7 jours) ou une plage de dates personnalisée que vous spécifiez (de moins de 30 jours). Pour une plage de dates personnalisée, notez que tous les graphiques réduiront la plage du graphique au premier et au dernier jour de données fournies dans la plage de dates spécifiée.
 
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par version de package, type d'appareil et/ou bac à sable.
-- **Version du package**: le filtre par défaut est **Toutes les versions**, mais vous pouvez limiter les données d'intégrité du service à une version spécifique de package.
-- **Type d’appareil**: le paramétrage par défaut est **All devices**, mais vous pouvez limiter les données d'intégrité du service à un type d’appareil spécifique.
-- **Bac à sable**: le paramètre par défaut est **RETAIL**, mais vous pouvez limiter les données d’intégrité du service à un bac à sable spécifique.
+- **Version du package**: Le filtre par défaut est **toutes les versions**, mais vous pouvez limiter les données de contrôle d’intégrité de service vers une version de package spécifique.
+- **Type d’appareil**: Le paramètre par défaut est **tous les appareils**, mais vous pouvez limiter les données d’intégrité du service à un type de périphérique spécifique.
+- **Bac à sable**: Le paramètre par défaut est **RETAIL**, mais vous pouvez limiter les données de contrôle d’intégrité de service à un bac à sable spécifique.
 
 Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la plage de dates et à tous les filtres que vous avez sélectionnés. Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
@@ -105,7 +105,7 @@ Vous pouvez également afficher uniquement les erreurs liées à la limitation d
 > [!NOTE]
 > Un code d’état 429E a été en fait retourné avec succès comme un code d'état 200, mais le débit aurait été limité si le service avait été confronté à un volume élevé à ce moment-là, c’est pourquoi nous vous recommandons de le traiter exactement comme s’il était appliqué (429).
 
-Par défaut, ce graphique affiche les six principaux services par nombre d’erreurs. Vous pouvez sélectionner l’icône de filtre dans le coin supérieur droit de cette section pour choisir d’autres services. Vous pouvez afficher les erreurs pour un maximum de sixservices à la fois.
+Par défaut, ce graphique affiche les six principaux services par nombre d’erreurs. Vous pouvez sélectionner l’icône de filtre dans le coin supérieur droit de cette section pour choisir d’autres services. Vous pouvez afficher les erreurs pour un maximum de six services à la fois.
 
 > [!NOTE]
 > La légende affiche uniquement le préfixe distinctif pour chaque service (par exemple, **presence** au lieu de **presence.xboxlive.com**). Vous pouvez trouver l’adresse complète du service dans le tableau **Client errors by endpoint** situé plus bas dans l'onglet **Xbox Live service health**.
@@ -113,9 +113,9 @@ Par défaut, ce graphique affiche les six principaux services par nombre d’err
 
 ### <a name="service-availability"></a>Service availability
 
-Le graphique **Service availability** indique la disponibilité quotidienne sur chaque service Xbox Live, sur la période sélectionnée. Cette valeur est calculée comme suit: *1-(erreurs serveur totales (5xx)/réponses totales)* et est spécifique à votre produit et non pas à Xbox Live dans l’ensemble.
+Le graphique **Service availability** indique la disponibilité quotidienne sur chaque service Xbox Live, sur la période sélectionnée. Cette valeur est calculée comme suit : *1-(erreurs serveur totales (5xx) / réponses totales)* et est spécifique à votre produit et non pas à Xbox Live dans l’ensemble.
 
-Par défaut, ce graphique affiche les sixservices qui ont enregistré la disponibilité la plus basse. Vous pouvez sélectionner l’icône de filtre dans le coin supérieur droit de cette section pour choisir d’autres services. Vous pouvez afficher la disponibilité pour un maximum de sixservices à la fois.
+Par défaut, ce graphique affiche les six services qui ont enregistré la disponibilité la plus basse. Vous pouvez sélectionner l’icône de filtre dans le coin supérieur droit de cette section pour choisir d’autres services. Vous pouvez afficher la disponibilité pour un maximum de six services à la fois.
 
 > [!NOTE]
 > La légende affiche uniquement le préfixe distinctif pour chaque service (par exemple, **presence** au lieu de **presence.xboxlive.com**). Vous pouvez trouver l’adresse complète du service dans le tableau **Client errors by endpoint** situé plus bas dans l'onglet **Xbox Live service health**.

@@ -1,30 +1,30 @@
 ---
-Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
+Description: Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil MakePri.exe pour générer son index de ressources.
 title: Indexeurs spécifiques au format de MakePri.exe
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044626"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645874"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Indexeurs spécifiques au format de MakePri.exe
 
 Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil [MakePri.exe](compile-resources-manually-with-makepri.md) pour générer son index de ressources.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez l’option **Du SDK Windows pour les applications UWP managées** lors de l’installation du Kit de développement logiciel Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe est généralement utilisé avec les commandes `new`, `versioned` ou `resourcepack`. Voir [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md). Dans ces cas, il indexe les fichiers sources pour générer un index des ressources. MakePri.exe utilise plusieurs indexeurs individuels pour lire les fichiers de ressources sources ou les conteneurs pour les ressources. L’indexeur de base est l’indexeur de dossier. Il indexe le contenu d’un dossier, par exemple des images `.jpg` ou `.png`.
 
 Vous identifiez des indexeurs spécifiques au format en spécifiant les éléments `<indexer-config>` dans un élément `<index>` du [fichier de configuration de MakePri.exe](makepri-exe-configuration.md). L’attribut `type` identifie l’indexeur spécifique au format qui est utilisé.
 
-En général, le contenu des conteneurs de ressources trouvés lors de l’indexation est indexé, au lieu d’être lui-même ajouté à l’index. Par exemple, les fichiers `.resjson` détectés par l’indexeur de dossier peuvent être eux-mêmes indexés par un indexeur `.resjson`, auquel cas le fichier `.resjson` n’apparaît pas dans l’index. **Remarque:** un élément `<indexer-config>` pour l’indexeur associé à ce conteneur doit être inclus dans le fichier de configuration pour que cela se produise.
+En général, le contenu des conteneurs de ressources trouvés lors de l’indexation est indexé, au lieu d’être lui-même ajouté à l’index. Par exemple, les fichiers `.resjson` détectés par l’indexeur de dossier peuvent être eux-mêmes indexés par un indexeur `.resjson`, auquel cas le fichier `.resjson` n’apparaît pas dans l’index. **Remarque :** un élément `<indexer-config>` pour l’indexeur associé à ce conteneur doit être inclus dans le fichier de configuration pour que cela se produise.
 
 En règle générale, les qualificateurs trouvés dans une entité contenante, par exemple un dossier ou un fichier`.resw`, sont appliqués à toutes les ressources figurant dans celle-ci, par exemple les fichiers du dossier ou les chaînes du fichier `.resw`.
 
@@ -67,7 +67,7 @@ L’indexeur de dossier est identifié par un attribut `type` FOLDER. Il indexe 
 </xs:schema>
 ```
 
-L’attribut `qualifierDelimiter` spécifie le caractère après lequel les qualificateurs sont spécifiés dans un nom de fichier, en ignorant l’extension. La valeur par défaut est «.».
+L’attribut `qualifierDelimiter` spécifie le caractère après lequel les qualificateurs sont spécifiés dans un nom de fichier, en ignorant l’extension. La valeur par défaut est « . ».
 
 ## <a name="pri"></a>PRI
 
@@ -111,7 +111,7 @@ L’indexeur PriInfo est identifié par un attribut `type` PRIINFO. Il indexe le
 </xs:schema>
 ```
 
-Cet élément de configuration permet d’utiliser des attributs facultatifs pour configurer le comportement de l’indexeur PriInfo. La valeur par défaut est `emitStrings` et la valeur de `emitPaths` est `true`. Si la valeur de `emitStrings` est `true`, les ressources potentielles dont l’attribut `type` est défini sur «String» doivent être incluses dans l’index, sinon elles sont exclues. Si la valeur de «emitPaths» est `true`, les ressources potentielles dont l’attribut `type` est défini sur «Path» doivent être incluses dans l’index, sinon elles sont exclues.
+Cet élément de configuration permet d’utiliser des attributs facultatifs pour configurer le comportement de l’indexeur PriInfo. La valeur par défaut est `emitStrings` et la valeur de `emitPaths` est `true`. Si la valeur de `emitStrings` est `true`, les ressources potentielles dont l’attribut `type` est défini sur « String » doivent être incluses dans l’index, sinon elles sont exclues. Si la valeur de « emitPaths » est `true`, les ressources potentielles dont l’attribut `type` est défini sur « Path » doivent être incluses dans l’index, sinon elles sont exclues.
 
 Voici un exemple de configuration qui inclut les types de ressources String, mais ignore les types de ressources Path.
 
@@ -213,7 +213,7 @@ Pour être indexé, un fichier de vidage doit se terminer par l’extension `.pr
 </xs:schema>
 ```
 
-MakePri.exe prend en charge les types de vidage «Basic», «Detailed», «Schema» et «Summary». Pour configurer MakePri.exe afin qu’il utilise un type de vidage que l’indexeur PriInfo est en mesure de lire, incluez «/DumpType Detailed» lorsque vous utilisez la commande `dump`.
+MakePri.exe prend en charge les types de vidage « Basic », « Detailed », « Schema » et « Summary ». Pour configurer MakePri.exe afin qu’il utilise un type de vidage que l’indexeur PriInfo est en mesure de lire, incluez « /DumpType Detailed » lorsque vous utilisez la commande `dump`.
 
 Plusieurs éléments du fichier `.pri.xml` sont ignorés par MakePri.exe. Ces éléments sont calculés lors de l’indexation, ou spécifiés dans le fichier de configuration de MakePri.exe. Les noms de ressources, les qualificateurs et les valeurs contenus dans le fichier de vidage sont gérés directement dans le nouveau fichier PRI. Toutefois, le mappage de ressources de niveau supérieur n’est pas géré dans le fichier PRI final. Les mappages de ressources sont fusionnés dans le cadre de l’indexation.
 
@@ -282,7 +282,7 @@ L’indexeur ResFiles est identifié par un attribut `type` RESFILES. Il indexe 
 </xs:schema>\
 ```
 
-Un fichier `.resfiles` est un fichier texte contenant une liste plate de chemins d’accès de fichiers. Un fichier `.resfiles` peut contenir des commentaires «//». Voici un exemple.
+Un fichier `.resfiles` est un fichier texte contenant une liste plate de chemins d’accès de fichiers. Un fichier `.resfiles` peut contenir des commentaires « // ». Voici un exemple :
 
 ```
 Strings\component1\fr\elements.resjson
@@ -313,9 +313,9 @@ L’indexeur ResJSON est identifié par un attribut `type` RESJSON. Il indexe le
 
 Un fichier `.resjson` contient du texte JSON (voir [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). Le fichier doit contenir un objet JSON unique avec des propriétés hiérarchiques. Chaque propriété doit être un autre objet JSON ou une valeur de chaîne.
 
-Les propriétés JSON dont les noms commencent par un trait de soulignement («_») ne sont pas compilées dans le fichier PRI final, mais sont gérées dans le fichier journal.
+Les propriétés JSON dont les noms commencent par un trait de soulignement (« _ ») ne sont pas compilées dans le fichier PRI final, mais sont gérées dans le fichier journal.
 
-Le fichier peut également contenir des commentaires «//» qui sont ignorés lors de l’analyse.
+Le fichier peut également contenir des commentaires « // » qui sont ignorés lors de l’analyse.
 
 L’attribut `initialPath` place toutes les ressources sous ce chemin d’accès initial en l’ajoutant au début du nom de la ressource. En général, vous l’utilisez lors de l’indexation de ressources de bibliothèques de classes. La valeur par défaut est vide.
 
@@ -391,13 +391,13 @@ Un fichier `.resw` est un fichier XML qui se conforme au schéma suivant.
   </xsd:schema>
 ```
 
-L’attribut `convertDotsToSlashes` convertit tous les points («.») trouvés dans les noms de ressources (attributs de nom d’élément de données) en barre oblique «/», sauf lorsque les points se trouvent entre les caractères «[» et «]».
+L’attribut `convertDotsToSlashes` convertit tous les points (« . ») trouvés dans les noms de ressources (attributs de nom d’élément de données) en barre oblique « / », sauf lorsque les points se trouvent entre les caractères « [ » et « ] ».
 
 L’attribut `initialPath` place toutes les ressources sous ce chemin d’accès initial en l’ajoutant au début du nom de la ressource. En général, vous l’utilisez lors de l’indexation de ressources de bibliothèques de classes. La valeur par défaut est vide.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md)
-* [Fichier de configuration de MakePri.exe](makepri-exe-configuration.md)
-* [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
+* [Options de ligne de commande MakePri.exe](makepri-exe-command-options.md)
+* [Fichier de configuration MakePri.exe](makepri-exe-configuration.md)
+* [Type de média application/json pour JavaScript Objet Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

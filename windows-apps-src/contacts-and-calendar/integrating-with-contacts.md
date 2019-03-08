@@ -4,15 +4,15 @@ MSHAttr: PreferredLib:/library/windows/apps
 title: Connecter votre application à des actions sur une carte de visite
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, contacts, carte de visite, annotation
+keywords: windows 10, uwp, contacts, carte de visite, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920397"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616434"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 
@@ -78,7 +78,7 @@ await contactList.SaveContactAsync(contact);
 
 ## <a name="tag-each-contact-with-an-annotation"></a>Identifier chaque contact avec une annotation
 
-Identifiez chaque contact avec une liste des actions (opérations) que votre application peut effectuer (par exemple: appels vidéo et messagerie).
+Identifiez chaque contact avec une liste des actions (opérations) que votre application peut effectuer (par exemple : appels vidéo et messagerie).
 
 Ensuite, associez l’identifiant d’un contact à un identifiant que votre application utilise en interne pour identifier cet utilisateur.
 
@@ -185,7 +185,7 @@ Remplacez la méthode [Application.OnActivated](https://msdn.microsoft.com/libra
 
 Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
 
-Pour démarrer une vidéo ou un appel audio, consultez cet exemple: [exemple VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Pour démarrer un appel audio ou vidéo, consultez l’exemple : [Exemple de VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
 Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
 

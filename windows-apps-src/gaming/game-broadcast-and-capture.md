@@ -7,24 +7,24 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b3c48fedcc99d2d667712bfdd51ad1d75f7fbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918924"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613854"
 ---
 # <a name="game-broadcast-and-capture"></a>Diffusion et capture de jeu
 
 Cette section fournit des informations sur l’ajout de fonctionnalités de capture et de diffusion de jeu à une application UWP.
 
 ## <a name="game-broadcasting"></a>Diffusion de jeu
-Actuellement, les utilisateurs doivent lancer la diffusion de jeu à l’aide de l’interface utilisateur système qui est intégrée à Windows. Toutefois, à partir de Windows10, version1709, les applications peuvent lancer l’interface utilisateur de diffusion système et recevoir des notifications lorsque la diffusion démarre et s’arrête. Pour plus d’informations, voir [Gérer la diffusion de jeu](manage-game-broadcasting.md).
+Actuellement, les utilisateurs doivent lancer la diffusion de jeu à l’aide de l’interface utilisateur système qui est intégrée à Windows. Toutefois, à partir de Windows 10, version 1709, les applications peuvent lancer l’interface utilisateur de diffusion système et recevoir des notifications lorsque la diffusion démarre et s’arrête. Pour plus d’informations, voir [Gérer la diffusion de jeu](manage-game-broadcasting.md).
 
 ## <a name="game-capture"></a>Capture de jeu
-À compter de Windows10, version1709, les applications UWP peuvent enregistrer des captures audio et vidéo de jeu, effectuer des captures d’écran et soumettre les métadonnées de jeu en vue de leur incorporation dans des flux vidéo de diffusion et capturés. Ainsi, les applications et notamment la vôtre, sont en mesure de créer des expériences dynamiques qui sont synchronisées avec les événements de jeu. Pour plus d’informations, voir [Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu](capture-game-audio-video-screenshots-and-metadata.md).
+À compter de Windows 10, version 1709, les applications UWP peuvent enregistrer des captures audio et vidéo de jeu, effectuer des captures d’écran et soumettre les métadonnées de jeu en vue de leur incorporation dans des flux vidéo de diffusion et capturés. Ainsi, les applications et notamment la vôtre, sont en mesure de créer des expériences dynamiques qui sont synchronisées avec les événements de jeu. Pour plus d’informations, voir [Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu](capture-game-audio-video-screenshots-and-metadata.md).
 
 
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 * [Jeux](index.md)

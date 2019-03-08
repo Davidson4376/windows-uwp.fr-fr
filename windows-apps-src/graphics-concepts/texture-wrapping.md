@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6618b7573be7cd39f703299b9418d1575297120e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928400"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622624"
 ---
 # <a name="texture-wrapping"></a>Habillage de texture
 
@@ -21,13 +21,13 @@ L’habillage de texture modifie la méthode de base avec laquelle Direct3D rast
 
 ![diagramme d’une ligne d’interpolation entre deux points](images/interp1.png)
 
-Notez que la plus courte distance entre A et B dans l’illustration suivante passe à peu près par le milieu de la texture. L’activation de l’habillage des coordonnées de texture u ou v modifie la façon dont Direct3D perçoit la distance la plus courte entre les coordonnées de texture dans les direction u et v. Par définition, l’habillage de texture pousse le rastériseur à suivre la distance la plus courte entre les ensembles de coordonnées de texture, en supposant que 0.0 et 1.0 coïncident. Le dernier bit induit une difficulté. L’activation de l’habillage de texture dans une direction pousse le système à traiter la texture comme si elle était dotée d’un habillage autour d’un cylindre. Prenons, parexemple, le diagramme suivant.
+Notez que la plus courte distance entre A et B dans l’illustration suivante passe à peu près par le milieu de la texture. L’activation de l’habillage des coordonnées de texture u ou v modifie la façon dont Direct3D perçoit la distance la plus courte entre les coordonnées de texture dans les direction u et v. Par définition, l’habillage de texture pousse le rastériseur à suivre la distance la plus courte entre les ensembles de coordonnées de texture, en supposant que 0.0 et 1.0 coïncident. Le dernier bit est la partie la plus difficile : Vous pouvez l’imaginer que l’activation de texture encapsulant dans une seule direction, le système à traiter une texture comme s’il a été encapsulé autour d’un cylindre. Prenons, par exemple, le diagramme suivant.
 
 ![diagramme d’une texture et de deux points dotés d’un habillage autour d’un cylindre](images/interp2.png)
 
 L’illustration ci-dessus montre comment l’habillage dans la direction u affecte l’interpolation des coordonnées de texture par le système. En utilisant les mêmes points que dans l’exemple pour les textures normales ou non dotées d’un habillage, vous pouvez voir que la distance la plus courte entre les points A et B n’est plus le milieu de la texture, mais la bordure où 0,0 et 1,0 coexistent. L’habillage dans la direction v est similaire, sauf qu’il recouvre la texture autour d’un cylindre situé sur le côté. L’habillage dans les directions u et v est plus complexe. Dans ce cas, vous pouvez envisager la texture sous forme d’une bague ou d’un anneau.
 
-L’application la plus pratique pour l’habillage de texture consiste à effectuer un mappage de l’environnement. En règle générale, un objet avec une texture et un mappage d’environnement apparaît de façon très réfléchissante, en montrant une image en miroir de l’environnement de l’objet dans la scène. Pour illustrer cet exemple, dessinez une salle avec quatre murs, chacun d’entre eux contenant une des lettres R, G, B, Y peintes dans les couleurs correspondantes: rouge, vert, bleu et jaune. Le mappage d’environnement pour cet espace simple peut ressembler à l’illustration suivante.
+L’application la plus pratique pour l’habillage de texture consiste à effectuer un mappage de l’environnement. En règle générale, un objet avec une texture et un mappage d’environnement apparaît de façon très réfléchissante, en montrant une image en miroir de l’environnement de l’objet dans la scène. Pour illustrer cet exemple, dessinez une salle avec quatre murs, chacun d’entre eux contenant une des lettres R, G, B, Y peintes dans les couleurs correspondantes : rouge, vert, bleu et jaune. Le mappage d’environnement pour cet espace simple peut ressembler à l’illustration suivante.
 
 ![illustration de bandes verticales en rouge, vert, bleu et jaune](images/envmap.png)
 
@@ -41,14 +41,14 @@ Lorsque l’habillage est activé dans la direction u, le pilier avec texture af
 
 Si l’habillage de texture n’est pas activé, le rastériseur n’effectue pas l’interpolation dans la direction nécessaire pour générer une image reflétée crédible. Au lieu de cela, la zone à l’avant du pilier contient une version compressée horizontalement des texels entre les coordonnées u 0.175 et 0.875, lorsqu’ils passent par le centre de la texture. L’effet d’habillage est effacé.
 
-Ne confondez pas l’habillage de texture avec les modes d’adressage de texture portant les mêmes noms. L’habillage de texture est exécuté avant l’adressage de texture. Assurez-vous que l’habillage texture ne contient pas de coordonnées de texture en dehors de la plage de \[0.0, 1.0], car cela produirait des résultats inattendus. Pour plus d’informations sur l’adressage de texture, voir les [Modes d’adressage de texture](texture-addressing-modes.md).
+Ne confondez pas l’habillage de texture avec les modes d’adressage de texture portant les mêmes noms. L’habillage de texture est exécuté avant l’adressage de texture. Vérifiez que la texture encapsulant les données ne contient pas les coordonnées de texture en dehors de la plage de \[0.0, 1.0\] , car cela génère des résultats indéfinis. Pour plus d’informations sur l’adressage de texture, voir les [Modes d’adressage de texture](texture-addressing-modes.md).
 
-## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>Habillage de mappage de déplacement
+## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>Mappage de déplacement d’habillage
 
 
 Les mappages de déplacement sont interpolés par le moteur de pavage. Le mode d’habillage ne pouvant être spécifié pour le moteur de pavage, l’habillage de texture ne peut pas être effectué avec les mappages de déplacement. Une application peut utiliser un ensemble de sommets qui force l’interpolation pour effectuer un habillage dans n’importe quelle direction. L’application peut également spécifier l’exécution d’une interpolation en tant qu’interpolation linéaire simple.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Textures](textures.md)

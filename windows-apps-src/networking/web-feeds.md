@@ -4,14 +4,14 @@ title: Flux RSS/Atom
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921324"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660304"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
 
@@ -44,7 +44,7 @@ L’isolement réseau permet à un développeur de définir pour chaque applicat
 
 L’isolement réseau affecte tous les éléments de classe des espaces de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) et [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) qui essaient d’accéder au réseau. Windows applique activement l’isolement réseau. Un appel à un élément de classe de l’espace de noms **Windows.Web.Syndication** ou **Windows.Web.AtomPub** qui conduit à un accès réseau peut échouer en raison de l’isolement réseau si la fonctionnalité réseau appropriée n’a pas été activée.
 
-Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Fonctionnalités réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
+Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Fonctionnalités de réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio 2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
 
 Pour plus d’informations sur l’isolement réseau et les fonctionnalités de réseau, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
 
@@ -52,11 +52,11 @@ Pour plus d’informations sur l’isolement réseau et les fonctionnalités de 
 
 Cette section montre comment récupérer et afficher un flux web à l’aide des classes de l’espace de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) dans votre application pour UWP écrite en C# ou Javascript.
 
-**Prérequis**
+**Conditions préalables**
 
 Pour vous assurer que votre application UWP est prête à être utilisée en réseau, vous devez définir les fonctionnalités réseau nécessaires dans le fichier **Package.appxmanifest** du projet. Si votre application doit se connecter en qualité de client à des services distants sur Internet, la fonctionnalité **internetClient** est nécessaire. Pour plus d’informations, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
 
-**Récupération d’un contenu syndiqué dans un flux web**
+**Récupération de contenu syndiqué à partir d’un flux web**
 
 Nous allons maintenant examiner du code qui illustre comment extraire un flux puis afficher chaque élément qu’il contient. Avant de pouvoir configurer et envoyer la requête, nous allons définir quelques variables que nous utiliserons durant l’opération et initialiser une instance de [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456), qui définit les méthodes et propriétés que nous utiliserons pour extraire et afficher le flux.
 
