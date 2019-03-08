@@ -4,14 +4,14 @@ description: Cet article vous montre comment utiliser les contrôles des apparei
 title: Contrôles d’appareil photo manuel pour la capture photo et vidéo
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 303cbd5e87db773324cd98447df6d99dc6de5a0c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943502"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613364"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 
@@ -24,15 +24,15 @@ Les contrôles mentionnés dans cet article sont tous ajoutés à votre applicat
 Le code figurant dans cet article a été adapté à partir de l’exemple [Kit de développement logiciel (SDK) de contrôles manuels d’appareil photo](https://go.microsoft.com/fwlink/?linkid=845228). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 > [!NOTE]
-> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article suppose que votre application possède déjà une instance de MediaCapture correctement lancée.
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
 
 Toutes les API de contrôle des appareils mentionnées dans cet article sont membres de l’espace de noms [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902).
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## <a name="exposure"></a>Exposition
+## <a name="exposure"></a>Exposition :
 
-[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) vous permet de définir la vitesse d’obturation utilisée pendant la capture photo ou vidéo.
+[  **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) vous permet de définir la vitesse d’obturation utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster la valeur d’exposition actuelle et une case à cocher pour activer/désactiver le réglage d’exposition automatique.
 
@@ -59,7 +59,7 @@ Dans le gestionnaire d’événements **CheckedChanged** de la case à cocher d�
 
 ## <a name="exposure-compensation"></a>Compensation de l’exposition
 
-[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) vous permet de définir la compensation d’exposition utilisée pendant la capture photo ou vidéo.
+[  **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) vous permet de définir la compensation d’exposition utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster la valeur de compensation d’exposition actuelle.
 
@@ -79,7 +79,7 @@ Dans le gestionnaire d’événements **ValueChanged**, obtenez la valeur actuel
 
 ## <a name="flash"></a>Flash
 
-[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) vous permet d’activer ou de désactiver le flash ou d’activer le flash automatique, auquel cas le système détermine de manière dynamique l’utilisation ou non du flash. Ce contrôle vous permet également d’activer la réduction automatique des yeux rouges sur les appareils la prenant en charge. Ces paramètres s’appliquent tous à la capture de photos. [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) est un autre contrôle d’activation ou de désactivation de la torche pour la capture vidéo.
+[  **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) vous permet d’activer ou de désactiver le flash ou d’activer le flash automatique, auquel cas le système détermine de manière dynamique l’utilisation ou non du flash. Ce contrôle vous permet également d’activer la réduction automatique des yeux rouges sur les appareils la prenant en charge. Ces paramètres s’appliquent tous à la capture de photos. [  **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) est un autre contrôle d’activation ou de désactivation de la torche pour la capture vidéo.
 
 Cet exemple utilise un ensemble de cases d’option permettant à l’utilisateur de basculer entre les paramètres d’activation, de désactivation et de flash automatique. Une case à cocher permet en outre d’activer/de désactiver la réduction des yeux rouges et la torche vidéo.
 
@@ -149,13 +149,13 @@ Cet exemple met au point sur une région lorsque l’utilisateur appuie sur l’
 
 L’étape suivante consiste à écouter l’événement quand l’utilisateur appuie sur l’écran en gérant l’événement [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) de [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) qui affiche le flux d’aperçu actuel de capture. Si l’appareil photo n’est pas en cours d’aperçu ou si le mode appuyer pour mettre au point est désactivé, quittez le gestionnaire sans rien faire.
 
-Si la variable de suivi *\_isFocused* est définie sur false et si l’appareil photo n’est pas en cours de mise au point (déterminé par la propriété [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) de **FocusControl**), commencez le processus appuyer pour mettre au point. Obtenez la position sur laquelle l’utilisateur a appuyé dans les arguments d’événement transmis au gestionnaire. Cet exemple illustre également la possibilité de sélectionner la taille de la région qui sera mise au point. Dans ce cas, la taille correspond à 1/4 de la plus petite dimension de l’élément de capture. Indiquez la position d’appui et la taille de la région dans la méthode d’assistance **TapToFocus** définie dans la section suivante.
+Si la variable de suivi  *\_isFocused* est activé ou désactivé sur false, et si l’appareil photo n’est pas actuellement en train de focus (déterminé par le [ **FocusState** ](https://msdn.microsoft.com/library/windows/apps/dn608074) propriété de la **FocusControl**), commencer le processus de drainage de focus. Obtenez la position sur laquelle l’utilisateur a appuyé dans les arguments d’événement transmis au gestionnaire. Cet exemple illustre également la possibilité de sélectionner la taille de la région qui sera mise au point. Dans ce cas, la taille correspond à 1/4 de la plus petite dimension de l’élément de capture. Indiquez la position d’appui et la taille de la région dans la méthode d’assistance **TapToFocus** définie dans la section suivante.
 
-Si le bouton bascule *_isFocused* est défini sur true, l’appui de l’utilisateur doit supprimer la mise au point de la région précédente. Cette opération est effectuée dans la méthode d’assistance **TapUnfocus** illustrée ci-dessous.
+Si le  *\_isFocused* bouton bascule est défini sur true, l’utilisateur tap doit effacer le focus à partir de la région précédente. Cette opération est effectuée dans la méthode d’assistance **TapUnfocus** illustrée ci-dessous.
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-Dans la méthode d’assistance **TapToFocus**, définissez tout d’abord le bouton à bascule *\_isFocused* sur true pour que l’appui sur l’écran suivant déverrouille la mise au point de la région activée.
+Dans le **TapToFocus** méthode d’assistance, définissez d’abord le  *\_isFocused* bascule sur true afin que la pression d’écran suivante libère le focus à partir de la région drainée.
 
 La tâche suivante de cette méthode d’assistance consiste à déterminer le rectangle dans le flux d’aperçu auquel le contrôle de mise au point sera affecté. Cela nécessite deux étapes. La première étape consiste à déterminer le rectangle du flux d’aperçu pris dans le contrôle [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278). Il dépend des dimensions du flux d’aperçu et de l’orientation de l’appareil. La méthode d’assistance **GetPreviewStreamRectInControl**, comme illustrée à la fin de cette section, exécute cette tâche et retourne le rectangle contenant le flux d’aperçu.
 
@@ -170,7 +170,7 @@ Obtenez ensuite le [**RegionsOfInterestControl**](https://msdn.microsoft.com/lib
 Enfin, appelez [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) sur **FocusControl** pour démarrer la mise au point.
 
 > [!IMPORTANT]
-> Quand vous implémentez la technique appuyer pour mettre au point, l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant:
+> Quand vous implémentez la technique appuyer pour mettre au point, l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant :
 >
 > 1. [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
 > 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
@@ -228,7 +228,7 @@ Dans le gestionnaire d’événements **CheckedChanged**, obtenez l’objet [**F
 
 ## <a name="iso-speed"></a>Sensibilité ISO
 
-[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) vous permet de définir la sensibilité ISO utilisée pendant la capture photo ou vidéo.
+[  **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) vous permet de définir la sensibilité ISO utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster la valeur de compensation d’exposition actuelle et une case à cocher pour activer/désactiver le réglage de sensibilité ISO.
 
@@ -265,13 +265,13 @@ Activez ou désactivez la fonctionnalité OIS en définissant le [**OpticalImage
 ## <a name="powerline-frequency"></a>Fréquence du courant
 Certains appareils photo prennent en charge le traitement anti scintillement qui implique de connaître la fréquence du courant alternatif (CA) dans l’environnement actuel. Certains appareils prennent en charge la détermination automatique de la fréquence du courant, tandis que d’autres nécessitent que la fréquence soit définie manuellement. L’exemple de code suivant montre comment déterminer la prise en charge de la fréquence du courant sur l’appareil et, si nécessaire, comment définir la fréquence manuellement. 
 
-Tout d’abord, appelez la méthode [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) de **VideoDeviceController**, en transmettant un paramètre de sortie de type [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Si cet appel échoue, le contrôle de la fréquence du courant n’est pas pris en charge sur l’appareil actuel. Si la fonctionnalité est prise en charge, vous pouvez déterminer si le mode automatique est disponible sur l’appareil en essayant de définir ce mode. Cela en appelant [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) et en transmettant la valeur **automatique**. Si l’appel aboutit, cela signifie que votre fréquence de courant automatique est prise en charge. Si le contrôleur de fréquence du courant est pris en charge sur l’appareil, mais que la détection de fréquence automatique ne l’est pas, vous pouvez définir manuellement la fréquence à l’aide de **TrySetPowerlineFrequency**. Dans cet exemple, **MyCustomFrequencyLookup** est une méthode personnalisée que vous implémentez pour déterminer la fréquence appropriée pour l’emplacement actuel de l’appareil. 
+Tout d’abord, appelez la méthode [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) de **VideoDeviceController**, en transmettant un paramètre de sortie de type [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Si cet appel échoue, le contrôle de la fréquence du courant n’est pas pris en charge sur l’appareil actuel. Si la fonctionnalité est prise en charge, vous pouvez déterminer si le mode automatique est disponible sur l’appareil en essayant de définir ce mode. Pour ce faire, appelez [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) et transmettez la valeur **Auto**. Si l’appel aboutit, votre fréquence de courant automatique est prise en charge. Si le contrôleur de fréquence du courant est pris en charge sur l’appareil, mais que la détection de fréquence automatique ne l’est pas, vous pouvez définir manuellement la fréquence à l’aide de **TrySetPowerlineFrequency**. Dans cet exemple, **MyCustomFrequencyLookup** est une méthode personnalisée que vous implémentez pour déterminer la fréquence appropriée pour l’emplacement actuel de l’appareil. 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
 ## <a name="white-balance"></a>Balance des blancs
 
-[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) vous permet de définir la balance des blancs utilisée pendant la capture photo ou vidéo.
+[  **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) vous permet de définir la balance des blancs utilisée pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) pour sélectionner parmi les températures de couleurs prédéfinies intégrées et un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour le réglage manuel de la balance des blancs.
 
@@ -301,7 +301,7 @@ Dans le gestionnaire d’événements **ValueChanged**, obtenez la valeur actuel
 
 ## <a name="zoom"></a>Zoom
 
-[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) vous permet de définir le niveau de zoom utilisé pendant la capture photo ou vidéo.
+[  **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) vous permet de définir le niveau de zoom utilisé pendant la capture photo ou vidéo.
 
 Cet exemple utilise un contrôle [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) pour ajuster le niveau de zoom actuel. La section suivante montre comment régler le zoom par un geste de pincement à l’écran.
 
@@ -335,13 +335,13 @@ Sur un appareil tactile multipoint, un scénario courant consiste à ajuster le 
 
 Dans le gestionnaire pour l’événement **ManipulationDelta**, mettez à jour le facteur de zoom basé sur la modification du mouvement de pincement de l’utilisateur. La valeur [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) représente la modification de l’échelle de pincement (une faible augmentation de la taille du pincement correspondra à un nombre légèrement supérieur à 1 et une faible réduction de la taille du pincement correspondra à un nombre légèrement inférieur à 1). Dans cet exemple, la valeur actuelle du contrôle de zoom est multipliée par le delta de mise à l’échelle.
 
-Avant de définir le facteur de zoom, vous devez vous assurer que la valeur n’est pas inférieure à la valeur minimale prise en charge par l’appareil, comme indiqué par la propriété [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). En outre, assurez-vous que la valeur est inférieure ou égale à la valeur [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Enfin, il se peut que vous devez vous assurer que le facteur de zoom est un multiple de la taille d’étape de zoom prise en charge par l’appareil, comme indiqué par la propriété [**étape**](https://msdn.microsoft.com/library/windows/apps/dn633818) . Si le facteur de zoom ne répond pas à ces critères, une exception sera levée lorsque vous tenterez de définir le niveau de zoom sur l’appareil de capture.
+Avant de définir le facteur de zoom, vous devez vous assurer que la valeur n’est pas inférieure à la valeur minimale prise en charge par l’appareil, comme indiqué par la propriété [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). En outre, assurez-vous que la valeur est inférieure ou égale à la valeur [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Enfin, vous devez vous assurer que le facteur de zoom est un multiple de la taille d’étape zoom pris en charge par l’appareil comme indiqué par le [ **étape** ](https://msdn.microsoft.com/library/windows/apps/dn633818) propriété. Si le facteur de zoom ne répond pas à ces critères, une exception sera levée lorsque vous tenterez de définir le niveau de zoom sur l’appareil de capture.
 
 Définissez le niveau de zoom sur l’appareil de capture en créant un objet [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722). Définissez la propriété [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) sur [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726), puis définissez la propriété [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) sur votre facteur de zoom souhaité. Enfin, appelez [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) pour définir la nouvelle valeur de zoom sur l’appareil. L’appareil fera une transition harmonieuse vers la nouvelle valeur de zoom.
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Caméra](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Appareil photo](camera.md)
+* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047251"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605724"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
 Chaque transaction du Microsoft Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit et le coût monétaire pour le client.
 
-L’accès à ces informations permet à votre app de vérifier qu’un utilisateur a acheté votre app ou des modules complémentaires (également appelés produits in-app ou PIA) dans le MicrosoftStore. Par exemple, imaginez un jeu qui propose du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder.
+L’accès à ces informations permet à votre app de vérifier qu’un utilisateur a acheté votre app ou des modules complémentaires (également appelés produits in-app ou PIA) dans le Microsoft Store. Par exemple, imaginez un jeu qui propose du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder.
 
 > [!IMPORTANT]
-> Cet article montre comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) pour obtenir et valider un reçu pour un achat in-app. Si vous utilisez l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) pour les achats in-app (introduits dans Windows10, version1607 et disponibles pour les projets ciblant **l’édition anniversaire Windows10 (version10.0; build 14393)** ou une version ultérieure dans Visual Studio), celui-ci ne fournit pas d’API permettant d'obtenir des reçus pour les achats in-app. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection du MicrosoftStore pour obtenir les données d’une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
+> Cet article montre comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) pour obtenir et valider un reçu pour un achat in-app. Si vous utilisez l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) pour les achats in-app (introduits dans Windows 10, version 1607 et disponibles pour les projets ciblant **l’édition anniversaire Windows 10 (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio), celui-ci ne fournit pas d’API permettant d'obtenir des reçus pour les achats in-app. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection du Microsoft Store pour obtenir les données d’une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
 
 ## <a name="requesting-a-receipt"></a>Demande d’un reçu
 
 
-L’espace de noms **Windows.ApplicationModel.Store** prend en charge plusieurs modes pour obtenir un reçu:
+L’espace de noms **Windows.ApplicationModel.Store** prend en charge plusieurs modes pour obtenir un reçu :
 
 * Lorsque vous effectuez un achat à l’aide de [CurrentApp.RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) ou [CurrentApp.RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) (ou l’une des autres surcharges de cette méthode), la valeur de retour contient le reçu.
 * Vous pouvez appeler la méthode [CurrentApp.GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) pour récupérer les informations du reçu de votre application et des modules complémentaires de votre application.
@@ -102,15 +102,15 @@ Cette section décrit les éléments et attributs d’un reçu.
 
 ### <a name="receipt-element"></a>Élément d’un reçu
 
-L’élément racine de ce fichier est l’élément **Receipt**, qui contient des informations sur l’application et les achats in-app. Cet élément contient les éléments enfants suivants:
+L’élément racine de ce fichier est l’élément **Receipt**, qui contient des informations sur l’application et les achats in-app. Cet élément contient les éléments enfants suivants :
 
-|  Élément  |  Requis  |  Quantité  |  Description   |
+|  Élément  |  Obligatoire  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    Non        |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
 |  [ProductReceipt](#productreceipt)  |     Non       |  0 ou davantage    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
 |  Signature  |      Oui      |  1   |   Cet élément est une construction [XML-DSIG](https://go.microsoft.com/fwlink/p/?linkid=251093) standard. Il contient un élément **SignatureValue** qui contient la signature que vous pouvez utiliser pour valider le reçu, un élément **SignedInfo**.      |
 
-L’élément **Receipt** a les attributs suivants:
+L’élément **Receipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
@@ -125,7 +125,7 @@ L’élément **Receipt** a les attributs suivants:
 
 Cet élément contient des informations sur l’achat pour l’application actuelle.
 
-L’élément **AppReceipt** a les attributs suivants:
+L’élément **AppReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
@@ -140,7 +140,7 @@ L’élément **AppReceipt** a les attributs suivants:
 
 Cet élément contient des informations sur un achat in-app pour l’application actuelle.
 
-L’élément **ProductReceipt** a les attributs suivants:
+L’élément **ProductReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|

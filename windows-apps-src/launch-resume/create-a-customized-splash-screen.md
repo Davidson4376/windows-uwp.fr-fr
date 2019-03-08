@@ -4,31 +4,31 @@ description: Affichez un écran de démarrage plus longtemps en créant et en af
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ms.date: 02/19/2019
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bed81def33eedb79619b49ff698a3f45f31bdb62
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116331"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615894"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>Afficher un écran de démarrage plus longtemps
 
 **API importantes**
 
--   [Classe SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)
--   [Événement Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055)
--   [Méthode Application.OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [Classe de l’écran de démarrage](https://msdn.microsoft.com/library/windows/apps/br224763)
+-   [Événement de Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055)
+-   [Application.OnLaunched (méthode)](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-Affichez un écran de démarrage plus longtemps en créant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable. Que vous vouliez afficher des informations de chargement en temps réel ou simplement donner à votre application un délai supplémentaire pour préparer son interface utilisateur initiale, un écran de démarrage étendu vous permet de définir l’expérience de lancement.
+Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable. Que vous vouliez afficher des informations de chargement en temps réel ou simplement donner à votre application un délai supplémentaire pour préparer son interface utilisateur initiale, un écran de démarrage étendu vous permet de définir l’expérience de lancement.
 
 > [!NOTE]
-> L’expression «écran de démarrage étendu» dans cette rubrique fait référence à un écran de démarrage qui reste à l’écran pendant une période prolongée. Elle ne désigne pas une sous-classe qui dérive de la classe [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763).
+> L’expression « étendue écran de démarrage » dans cette rubrique fait référence à un écran de démarrage qui reste sur l’écran pendant une période prolongée. Elle ne désigne pas une sous-classe qui dérive de la classe [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763).
 
-Assurez-vous que votre écran de démarrage étendu imite avec précision l’écran de démarrage par défaut, en suivant ces recommandations:
+Assurez-vous que votre écran de démarrage étendu imite avec précision l’écran de démarrage par défaut, en suivant ces recommandations :
 
--   La page de votre écran de démarrage étendu doit utiliser une image de 620x300 pixels cohérente avec l’image spécifiée pour l’écran de démarrage dans le manifeste de votre application (image de l’écran de démarrage de votre application). Dans Microsoft Studio2015 visuelle, les paramètres d’écran de démarrage sont stockés dans la section de **l’Écran de démarrage** de l’onglet **Ressources visuelles** dans votre manifeste d’application (fichier Package.appxmanifest).
+-   La page de votre écran de démarrage étendu doit utiliser une image de 620 x 300 pixels cohérente avec l’image spécifiée pour l’écran de démarrage dans le manifeste de votre application (image de l’écran de démarrage de votre application). Dans Microsoft Visual Studio 2015, les paramètres d’écran de démarrage sont stockés dans le **écran de démarrage** section de la **ressources visuelles** onglet dans votre manifeste d’application (fichier Package.appxmanifest).
 -   Votre écran de démarrage étendu doit utiliser une couleur d’arrière-plan identique à celle spécifiée pour l’écran de démarrage dans votre manifeste de l’application (arrière-plan de l’écran de démarrage de votre application).
 -   Votre code doit utiliser la classe [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) pour positionner l’image de l’écran de démarrage de votre application aux mêmes coordonnées d’écran que l’écran de démarrage par défaut.
 -   Votre code doit répondre aux événements de redimensionnement de fenêtre (par exemple, quand l’écran pivote ou que votre application est déplacée à côté d’une autre application à l’écran) via la classe [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763), pour permettre le repositionnement des éléments sur votre écran de démarrage étendu.
@@ -42,7 +42,7 @@ Cette rubrique suppose que vous voulez ajouter un écran de démarrage étendu �
 
 -   Ouvrez votre application dans Visual Studio.
 -   Appuyez sur ou ouvrez **Projet** à partir de la barre de menus, puis cliquez sur **Ajouter un nouvel élément**. Une boîte de dialogue **Ajouter un nouvel élément** s’affiche.
--   À partir de cette boîte de dialogue, ajoutez un nouvel élément **Page vierge** à votre application. Dans cette rubrique, «ExtendedSplash» est le nom de la page de l’écran de démarrage étendu.
+-   À partir de cette boîte de dialogue, ajoutez un nouvel élément **Page vierge** à votre application. Dans cette rubrique, « ExtendedSplash » est le nom de la page de l’écran de démarrage étendu.
 
 L’ajout d’un élément **Page vierge** génère deux fichiers, l’un pour le balisage (ExtendedSplash.xaml) et l’autre pour le code (ExtendedSplash.xaml.cs).
 
@@ -51,14 +51,14 @@ L’ajout d’un élément **Page vierge** génère deux fichiers, l’un pour l
 
 Suivez ces étapes pour ajouter une image et un contrôle de progression à votre écran de démarrage étendu.
 
-Dans votre fichier ExtendedSplash.xaml:
+Dans votre fichier ExtendedSplash.xaml :
 
--   Modifiez la propriété [Background](https://msdn.microsoft.com/library/windows/apps/br209396) de l’élément [Grid](https://msdn.microsoft.com/library/windows/apps/br242704) par défaut pour correspondre à la couleur d’arrière-plan que vous avez définie pour l’écran de démarrage de votre application dans votre manifeste de l’application (dans la section **Composants visuels** de votre fichier Package.appxmanifest). La couleur par défaut de l’écran de démarrage est de type gris clair (valeur hexadécimale \#464646). Notez que cet élément **Grid** est fourni par défaut quand vous créez une **Page vierge**. Vous n’avez pas à utiliser **Grid**. Il s’agit juste d’une base de départ pour la création d’un écran de démarrage étendu.
+-   Modifier le [arrière-plan](https://msdn.microsoft.com/library/windows/apps/br209396) propriété de la valeur par défaut [grille](https://msdn.microsoft.com/library/windows/apps/br242704) élément pour faire correspondre la couleur d’arrière-plan que vous définissez pour l’écran de démarrage de votre application dans votre manifeste d’application (dans le **ressources visuelles**section de votre fichier Package.appxmanifest). La couleur d’écran de démarrage par défaut est un gris clair (valeur hexadécimale \#464646). Notez que cet élément **Grid** est fourni par défaut quand vous créez une **Page vierge**. Vous n’avez pas à utiliser **Grid**. Il s’agit juste d’une base de départ pour la création d’un écran de démarrage étendu.
 -   Ajoutez un élément [Canvas](https://msdn.microsoft.com/library/windows/apps/br209267) à [Grid](https://msdn.microsoft.com/library/windows/apps/br242704). Vous utiliserez **Canvas** pour positionner votre image de l’écran de démarrage étendu.
 -   Ajoutez un élément [Image](https://msdn.microsoft.com/library/windows/apps/br242752) à [Canvas](https://msdn.microsoft.com/library/windows/apps/br209267). Utilisez la même image de 600 x 320 pixels pour votre écran de démarrage étendu que pour l’écran de démarrage par défaut.
 -   (Facultatif) Ajoutez un contrôle de progression pour indiquer aux utilisateurs que votre application est en cours de chargement. Dans cette rubrique, [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) est ajouté à la place d’un [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) déterminé ou indéterminé.
 
-L’exemple suivant montre une [grille](https://msdn.microsoft.com/library/windows/apps/br242704) avec ces ajouts et des modifications.
+L’exemple suivant montre un [grille](https://msdn.microsoft.com/library/windows/apps/br242704) avec ces modifications et ajouts.
 
 ```xaml
     <Grid Background="#464646">
@@ -70,7 +70,7 @@ L’exemple suivant montre une [grille](https://msdn.microsoft.com/library/windo
 ```
 
 > [!NOTE]
-> Cet exemple définit la largeur de la [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) à 20 pixels. Vous pouvez définir manuellement sa largeur en fonction d’une valeur qui convient pour votre application. Toutefois, le contrôle ne s’affiche pas pour les largeurs de moins de 20pixels.
+> Cet exemple définit la largeur de la [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) à 20 pixels. Vous pouvez définir manuellement sa largeur en fonction d’une valeur qui convient pour votre application. Toutefois, le contrôle ne s’affiche pas pour les largeurs de moins de 20 pixels.
 
 ## <a name="essential-code-for-an-extended-splash-screen-class"></a>Code de base pour une classe d’écran de démarrage étendu
 
@@ -79,9 +79,9 @@ Votre écran de démarrage étendu doit répondre chaque fois que la taille (Win
 
 Utilisez la procédure ci-dessous pour définir des méthodes permettant d’afficher correctement votre écran de démarrage étendu.
 
-1.  **Ajouter les espaces de noms nécessaires**
+1.  **Ajouter des espaces de noms requis**
 
-    Vous devez ajouter les espaces de noms suivants à **ExtendedSplash.xaml.cs** pour accéder à la classe [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) , la structure [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) et les événements [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) .
+    Vous devez ajouter des espaces de noms suivants à **ExtendedSplash.xaml.cs** pour accéder à la [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) (classe), le [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) struct et le [ Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) événements.
 
     ```cs
     using Windows.ApplicationModel.Activation;
@@ -89,7 +89,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
     using Windows.UI.Core;
     ```
 
-2.  **Créez une classe partielle et déclarer des variables de classe.**
+2.  **Créer une classe partielle et déclarer des variables de classe**
 
     Incluez le code suivant dans ExtendedSplash.xaml.cs pour créer une classe partielle et représenter un écran de démarrage étendu.
 
@@ -141,7 +141,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
 
     Veillez à inscrire votre gestionnaire [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) (`ExtendedSplash_OnResize` dans l’exemple) dans le constructeur de votre classe pour permettre à votre application de positionner correctement l’image dans votre écran de démarrage étendu.
 
-4.  **Définissez une méthode de classe pour positionner l’image dans l’écran de démarrage étendu.**
+4.  **Définissez une méthode de classe pour positionner l’image dans votre écran de démarrage étendue**
 
     Ce code indique comment positionner l’image sur la page de l’écran de démarrage étendu avec la variable de classe `splashImageRect`.
 
@@ -155,7 +155,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
     }
     ```
 
-5.  **(Facultatif) Définir une méthode de classe pour positionner un contrôle de progression dans votre écran de démarrage étendu**
+5.  **(Facultatif) Définissez une méthode de classe pour positionner un contrôle de progression dans votre écran de démarrage étendue**
 
     Si vous avez choisi d’ajouter [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) à votre écran de démarrage étendu, positionnez-le par rapport à l’image de l’écran de démarrage. Ajoutez le code suivant à ExtendedSplash.xaml.cs pour centrer **ProgressRing** 32 pixels en dessous de l’image.
 
@@ -167,7 +167,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
     }
     ```
 
-6.  **À l’intérieur de la classe, définissez un gestionnaire pour l’événement Dismissed.**
+6.  **À l’intérieur de la classe, définissez un gestionnaire pour l’événement ignoré**
 
     Dans ExtendedSplash.xaml.cs, affectez la valeur true à la variable de classe `dismissed` en réponse à l’événement [SplashScreen.Dismissed](https://msdn.microsoft.com/library/windows/apps/br224764). Si votre application comporte des opérations d’installation, ajoutez-les à ce gestionnaire d’événements.
 
@@ -193,7 +193,7 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
       }
       ```
 
-7.  **À l’intérieur de la classe, définissez un gestionnaire pour l’événement Window.SizeChanged.**
+7.  **À l’intérieur de la classe, définissez un gestionnaire d’événements de Window.SizeChanged**
 
     Préparez votre écran de démarrage étendu à repositionner ses éléments si un utilisateur redimensionne la fenêtre. Ce code répond à un événement [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) en capturant les nouvelles coordonnées et en repositionnant l’image. Si vous avez ajouté un contrôle de progression à votre écran de démarrage étendu, repositionnez-le également dans ce gestionnaire d’événements.
 
@@ -214,13 +214,13 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
     ```
 
     > [!NOTE]
-    > Avant d’essayer d’obtenir l’emplacement de l’image Assurez-vous que la variable de classe (`splash`) contient un objet [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) valide, tel qu’illustré dans l’exemple.
+    > Avant d’essayer d’obtenir l’emplacement d’image Assurez-vous que la variable de classe (`splash`) contient un valide [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) objet, comme illustré dans l’exemple.
 
      
 
-8.  **(Facultatif) Ajouter une méthode de classe pour restaurer un état de session enregistré**
+8.  **(Facultatif) Ajoutez une méthode de classe pour restaurer un état de session enregistrée**
 
-    Le code que vous avez ajouté à la méthode [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335), à l’étape 4 : [Modifier le gestionnaire d’activation de lancement](#modify-the-launch-activation-handler), indique à votre application d’afficher un écran de démarrage étendu durant son lancement. Pour consolider toutes les méthodes liées au lancement de l’application dans votre classe d’écran de démarrage étendu, vous pouvez envisager l’ajout d’une méthode à votre fichier ExtendedSplash.xaml.cs pour restaurer l’état de l’application.
+    Le code que vous avez ajouté à la [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) (méthode) à l’étape 4 : [Modifiez le Gestionnaire d’activation de lancement](#modify-the-launch-activation-handler) incite votre application afficher un écran de démarrage étendue lors du lancement. Pour consolider toutes les méthodes liées au lancement de l’application dans votre classe d’écran de démarrage étendus, vous pouvez envisager l’ajout d’une méthode à votre fichier ExtendedSplash.xaml.cs pour restaurer l’état de l’application.
 
     ```cs
     void RestoreState(bool loadState)
@@ -232,14 +232,14 @@ Utilisez la procédure ci-dessous pour définir des méthodes permettant d’aff
     }
     ```
 
-    Quand vous modifiez le gestionnaire d’activation de lancement dans App.xaml.cs, vous affectez également la valeur true à `loadstate`, si le [ApplicationExecutionState](https://msdn.microsoft.com/library/windows/apps/br224694) précédent de votre application est **Terminated**. Dans ce cas, la méthode `RestoreState` restaure l’application dans son état antérieur. Pour une vue d’ensemble du lancement, de la suspension et de l’arrêt de l’application, voir [Cycle de vie de l’application](app-lifecycle.md).
+    Lorsque vous modifiez le Gestionnaire d’activation de lancement dans App.xaml.cs, vous devez également définir `loadstate` true si le précédent [ApplicationExecutionState](https://msdn.microsoft.com/library/windows/apps/br224694) de votre application a été **Terminated**. Dans ce cas, la méthode `RestoreState` restaure l’application dans son état antérieur. Pour une vue d’ensemble du lancement, de la suspension et de l’arrêt de l’application, voir [Cycle de vie de l’application](app-lifecycle.md).
 
 ## <a name="modify-the-launch-activation-handler"></a>Modifier le gestionnaire d’activation de lancement
 
 
 Lors du lancement de votre application, le système transmet les informations de l’écran de démarrage au gestionnaire d’événements d’activation de lancement de l’application. Vous pouvez utiliser ces informations pour positionner correctement l’image sur la page de votre écran de démarrage étendu. Vous pouvez obtenir ces informations d’écran de démarrage à partir des arguments d’événements d’activation transmis au gestionnaire [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) de votre application (voir la variable `args` dans le code suivant).
 
-Si vous n’avez pas encore remplacé le gestionnaire [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) de votre application, voir [Cycle de vie de l’application](app-lifecycle.md) pour apprendre à gérer les événements d’activation.
+Si vous n’avez pas déjà remplacé le [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) gestionnaire pour votre application, consultez [cycle de vie](app-lifecycle.md) pour apprendre à gérer les événements d’activation.
 
 Dans App.xaml.cs, ajoutez le code suivant pour créer et afficher un écran de démarrage étendu.
 
@@ -259,13 +259,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="complete-code"></a>Code complet
 
-Le code suivant diffère légèrement des extraits présentés dans les étapes précédentes.
+Le code suivant diffère légèrement les extraits de code indiqués dans les étapes précédentes.
 -   ExtendedSplash.xaml comprend un bouton `DismissSplash`. Quand l’utilisateur clique sur ce bouton, le gestionnaire d’événements `DismissSplashButton_Click` appelle la méthode `DismissExtendedSplash`. Dans votre application, appelez `DismissExtendedSplash` quand votre application a terminé de charger les ressources ou d’initialiser son interface utilisateur.
 -   Cette application utilise également un modèle de projet d’application UWP, qui utilise la navigation [Frame](https://msdn.microsoft.com/library/windows/apps/br242682). Ainsi, dans App.xaml.cs, le gestionnaire d’activation de lancement ([OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335)) définit `rootFrame` et l’utilise pour définir le contenu de la fenêtre de l’application.
 
 ### <a name="extendedsplashxaml"></a>ExtendedSplash.xaml
 
-Cet exemple inclut un `DismissSplash` de bouton, car il n’a pas pour charger les ressources d’application. Dans votre application, masquez l’écran de démarrage étendu automatiquement une fois que l’application a terminé le chargement des ressources ou la préparation de son interface utilisateur initiale.
+Cet exemple inclut un `DismissSplash` de bouton, car il n’a pas les ressources d’application à charger. Dans votre application, masquez l’écran de démarrage étendu automatiquement une fois que l’application a terminé le chargement des ressources ou la préparation de son interface utilisateur initiale.
 
 ```xml
 <Page
@@ -291,7 +291,7 @@ Cet exemple inclut un `DismissSplash` de bouton, car il n’a pas pour charger l
 
 ### <a name="extendedsplashxamlcs"></a>ExtendedSplash.xaml.cs
 
-Notez que la `DismissExtendedSplash` méthode est appelée à partir du Gestionnaire d’événements click pour le `DismissSplash` bouton. Dans votre application, vous n’avez pas besoin d’un bouton `DismissSplash`. À la place, appelez `DismissExtendedSplash` une fois que votre application a terminé le chargement des ressources et que vous voulez accéder à sa page principale.
+Notez que le `DismissExtendedSplash` méthode est appelée depuis le Gestionnaire d’événements click pour le `DismissSplash` bouton. Dans votre application, vous n’avez pas besoin d’un bouton `DismissSplash`. À la place, appelez `DismissExtendedSplash` une fois que votre application a terminé le chargement des ressources et que vous voulez accéder à sa page principale.
 
 ```cs
 using System;
@@ -417,11 +417,11 @@ namespace SplashScreenExample
 }
 ```
 
-### <a name="appxamlcs"></a>App.Xaml.cs
+### <a name="appxamlcs"></a>App.xaml.cs
 
-Ce projet a été créé à l’aide du modèle de projet UWP application **Application vide (XAML)** dans Visual Studio. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
+Ce projet a été créé à l’aide de l’application UWP **application vide (XAML)** modèle de projet dans Visual Studio. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
 
-Si vous n’avez pas utilisé de modèle de projet pour votre application, voir l’étape 4 : [Modifier le gestionnaire d’activation de lancement](#modify-the-launch-activation-handler) pour obtenir un exemple de `OnLaunched` modifié qui n’utilise pas la navigation [Frame](https://msdn.microsoft.com/library/windows/apps/br242682).
+Si vous n’utilisez pas un modèle de projet pour votre application, voir l’étape 4 : [Modifiez le Gestionnaire d’activation de lancement](#modify-the-launch-activation-handler) pour obtenir un exemple d’une modification `OnLaunched` qui n’utilise pas [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) navigation.
 
 ```cs
 using System;
@@ -541,14 +541,14 @@ namespace SplashScreenExample
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Cycle de vie de l’application](app-lifecycle.md)
+* [Cycle de vie](app-lifecycle.md)
 
 **Référence**
 
 * [Espace de noms Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [Classe Windows.ApplicationModel.Activation.SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)
-* [Propriété Windows.ApplicationModel.Activation.SplashScreen.ImageLocation](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [Événement Windows.ApplicationModel.Core.CoreApplicationView.Activated](https://msdn.microsoft.com/library/windows/apps/br225018)
+* [Classe de Windows.ApplicationModel.Activation.SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [Propriété de Windows.ApplicationModel.Activation.SplashScreen.ImageLocation](https://msdn.microsoft.com/library/windows/apps/br224765)
+* [Événement de Windows.ApplicationModel.Core.CoreApplicationView.Activated](https://msdn.microsoft.com/library/windows/apps/br225018)
 
  
 

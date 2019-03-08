@@ -4,14 +4,14 @@ description: Les API de l’espace de noms Windows.Media.Editing permettent de d
 title: Compositions multimédias et modification
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926048"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618104"
 ---
 # <a name="media-compositions-and-editing"></a>Compositions multimédias et modification
 
@@ -74,7 +74,7 @@ Appelez la méthode [**GeneratePreviewMediaStreamSource**](https://msdn.microsof
 
 -   L’élément **MediaComposition** doit contenir au moins un clip multimédia avant d’appeler [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), sans quoi l’objet renvoyé sera null.
 
--   La chronologie de **MediaElement** n’est pas automatiquement mise à jour de manière à refléter les changements relatifs à la composition. Il est recommandé à la fois d’appeler **GeneratePreviewMediaStreamSource** et de définir la propriété **Source** de **MediaPlayerElement** chaque fois que vous apportez des modifications à la composition et que vous voulez mettre à jour l’interface utilisateur.
+-   La chronologie de **MediaElement** n’est pas automatiquement mise à jour de manière à refléter les changements relatifs à la composition. Il est recommandé d’appeler à la fois **GeneratePreviewMediaStreamSource** et définir le **MediaPlayerElement** **Source** propriété chaque fois que vous apportez à un ensemble de modifications à la composition et que vous souhaitez mettre à jour l’interface utilisateur.
 
 Il est recommandé de définir l’objet **MediaStreamSource** et la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) de **MediaPlayerElement** sur null lorsque l’utilisateur quitte la page afin de libérer les ressources associées.
 
@@ -109,7 +109,7 @@ Pour ajouter une piste audio en arrière-plan à une composition, chargez un fic
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   Un élément **MediaComposition** prend en charge les pistes audio en arrière-plan aux formats suivants: MP3, WAV, FLAC.
+-   Un **MediaComposition** prend en charge en arrière-plan des pistes audio dans les formats suivants : MP3, WAV, FLAC
 
 -   Une piste audio en arrière-plan
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599224"
 ---
 # <a name="smart-cards"></a>Cartes à puce
 
@@ -119,7 +119,7 @@ Maintenant que nous avons défini la logique pour les demandes d’authentificat
 
 2.  Passez ensuite la valeur de demande de la carte et la clé d’administration fournie par le service ou l’outil de gestion à **ChallengeResponseAlgorithm** (défini dans l’exemple précédent).
 
-3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) retourne **true** si l’authentification réussit.
+3.  [**VerifyResponseAsync** ](https://msdn.microsoft.com/library/windows/apps/dn297627) retournera **true** si l’authentification réussit.
 
 ```cs
 bool verifyResult = false;
@@ -154,10 +154,10 @@ SmartCardProvisioning provisioning =
 bool result = await provisioning.RequestPinChangeAsync();
 ```
 
-Pour demander une réinitialisation du code PIN:
+Pour demander une réinitialisation du code PIN :
 
 1.  Appelez [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) pour initier l’opération. Cet appel comprend une méthode [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) qui représente la carte à puce et la demande de réinitialisation du code PIN.
-2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) fournit des informations utilisées par **ChallengeResponseAlgorithm**, encapsulé dans un appel [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693), pour comparer la valeur de demande de la carte et la clé d’administration fournie par le service ou l’outil de gestion pour authentifier la demande.
+2.  [**SmartCardPinResetHandler** ](https://msdn.microsoft.com/library/windows/apps/dn297701) fournit des informations qui notre **ChallengeResponseAlgorithm**, encapsulé dans un [ **SmartCardPinResetDeferral** ](https://msdn.microsoft.com/library/windows/apps/dn297693) appeler, utilise pour comparer la valeur de stimulation de la carte et la clé d’administration fournie par l’outil de gestion ou de service pour authentifier la demande.
 
 3.  Si la demande réussit, l’appel à [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) est terminé, et la valeur **true** est retournée si le code PIN est correctement réinitialisé.
 

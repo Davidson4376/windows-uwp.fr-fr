@@ -4,46 +4,46 @@ description: En savoir plus sur les données qu’il est possible d’ajouter au
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.date: 06/25/2018
 ms.topic: article
-keywords: Windows10, uwp, jeux, entrée, registre, personnalisé
+keywords: Windows 10, uwp, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936974"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633604"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 
 > [!NOTE]
-> Cette rubrique est destinée aux fabricants de contrôleurs de jeu Windows10compatibles et ne s’applique pas à la majorité des développeurs.
+> Cette rubrique est destinée aux fabricants de contrôleurs de jeu Windows 10 compatibles et ne s’applique pas à la majorité des développeurs.
 
 L’[espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) permet aux fabricants de matériel d’ajouter des données dans le Registre de l’ordinateur pour que leurs appareils s’affichent en tant que [boîtiers de commande](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick), et [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) selon les besoins. Tous les fabricants de matériel doivent ajouter ces données pour leurs contrôleurs compatibles. Ce faisant, tous les jeux UWP (et les jeux de bureau utilisant l’API WinRT) seront en mesure de prendre en charge votre manette de jeu.
 
 ## <a name="mapping-scheme"></a>Schéma de mappage
 
-Les mappages relatifs à un appareil avec les ID de fournisseur (VID) **VVVV**, l’ID de produit (PID) **PPPP**, la page d’utilisation **UUUU**et l’ID d’utilisation **XXXX**, seront lus à partir de cet emplacement dans le Registre:
+Les mappages relatifs à un appareil avec les ID de fournisseur (VID) **VVVV**, l’ID de produit (PID) **PPPP**, la page d’utilisation **UUUU**et l’ID d’utilisation **XXXX**, seront lus à partir de cet emplacement dans le Registre :
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\VVVVPPPPUUUUXXXX`
 
-Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine de l’appareil:
+Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine de l’appareil :
 
 <table>
     <tr>
         <th>Nom</th>
         <th>Type</th>
-        <th>Obligatoire?</th>
-        <th>Infos</th>
+        <th>Obligatoire ?</th>
+        <th>Info</th>
     </tr>
     <tr>
-        <td>Désactivé</td>
+        <td>Désactivée</td>
         <td>DWORD</td>
         <td>Non</td>
         <td>
-            <p>Indique que cet appareil en particulier doit être désactivé.</p>
+            <p>Indique que ce périphérique doit être désactivé.</p>
             <ul>
-                <li><b>0</b>: l’appareil n’est pas désactivé.</li>
-                <li><b>1</b>: l’appareil est désactivé.</li>
+                <li><b>0</b>: Appareil n’est pas désactivé.</li>
+                <li><b>1</b>: Appareil est désactivé.</li>
             </ul>
         </td>
     </tr>
@@ -60,13 +60,13 @@ Les sous-clés situées sous l’emplacement racine de l’appareil sont détail
 
 ### <a name="gamepad"></a>Boîtier de commande
 
-Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **Gamepad**:
+Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **Gamepad** :
 
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Obligatoire?</th>
-        <th>Infos</th>
+        <th>Obligatoire ?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Menu</td>
@@ -74,7 +74,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td rowspan="18" style="vertical-align: middle;">Voir <a href="#button-mapping">Mappage de bouton</a></td>
     </tr>
     <tr>
-        <td>Afficher</td>
+        <td>Affichage</td>
         <td>Oui</td>
     </tr>
     <tr>
@@ -173,13 +173,13 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 
 ### <a name="racingwheel"></a>RacingWheel
 
-Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **RacingWheel**:
+Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **RacingWheel** :
 
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Obligatoire?</th>
-        <th>Infos</th>
+        <th>Obligatoire ?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>PreviousGear</td>
@@ -303,7 +303,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td>Non</td>
     </tr>
     <tr>
-        <td>Wheel</td>
+        <td>Roulette</td>
         <td>Oui</td>
         <td rowspan="5" style="vertical-align: middle;">Voir <a href="#axis-mapping">Mappage des axes</a></td>
     </tr>
@@ -332,21 +332,21 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 
 ### <a name="arcadestick"></a>ArcadeStick
 
-Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **ArcadeStick**:
+Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **ArcadeStick** :
 
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Obligatoire?</th>
-        <th>Infos</th>
+        <th>Obligatoire ?</th>
+        <th>Info</th>
     </tr>
     <tr>
-        <td>Action1</td>
+        <td>Action 1</td>
         <td>Oui</td>
         <td rowspan="12" style="vertical-align: middle;">Voir <a href="#button-mapping">Mappage de bouton</a></td>
     </tr>
     <tr>
-        <td>Action2</td>
+        <td>Action 2</td>
         <td>Oui</td>
     </tr>
     <tr>
@@ -393,13 +393,13 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 
 ### <a name="flightstick"></a>FlightStick
 
-Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **ArcadeStick**:
+Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **ArcadeStick** :
 
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Obligatoire?</th>
-        <th>Infos</th>
+        <th>Obligatoire ?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>FirePrimary</td>
@@ -436,13 +436,13 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 
 ### <a name="uinavigation"></a>UINavigation
 
-Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **UINavigation**:
+Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives sous la sous-clé **UINavigation** :
 
 <table>
     <tr>
         <th>Sous-clé</th>
-        <th>Obligatoire?</th>
-        <th>Infos</th>
+        <th>Obligatoire ?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Menu</td>
@@ -450,15 +450,15 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td rowspan="24" style="vertical-align: middle;">Voir <a href="#button-mapping">Mappage de bouton</a></td>
     </tr>
     <tr>
-        <td>Afficher</td>
+        <td>Affichage</td>
         <td>Oui</td>
     </tr>
     <tr>
-        <td>Accepter</td>
+        <td>Accept</td>
         <td>Oui</td>
     </tr>
     <tr>
-        <td>Annuler</td>
+        <td>Cancel</td>
         <td>Oui</td>
     </tr>
     <tr>
@@ -478,51 +478,51 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
         <td>Oui</td>
     </tr>
     <tr>
-        <td>Context1</td>
+        <td>Context1 (Contexte 1)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>Context2</td>
+        <td>Context2 (Contexte 2)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>Context3</td>
+        <td>Context3 (Contexte 3)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>Context4</td>
+        <td>Context4 (Contexte 4)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>PageUp</td>
+        <td>PageUp (Pg. préc)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>PageDown</td>
+        <td>PageDown (Pg. suiv)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>PageLeft</td>
+        <td>PageLeft (Page gauche)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>PageRight</td>
+        <td>PageRight (Page droite)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>ScrollUp</td>
+        <td>ScrollUp (Faire défiler vers le haut)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>ScrollDown</td>
+        <td>ScrollDown (Faire défiler vers le bas)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>ScrollLeft</td>
+        <td>ScrollLeft (Faire défiler vers la gauche)</td>
         <td>Non</td>
     </tr>
     <tr>
-        <td>ScrollRight</td>
+        <td>ScrollRight (Faire défiler vers la droite)</td>
         <td>Non</td>
     </tr>
     <tr>
@@ -556,13 +556,13 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
 <table>
     <tr>
         <th>Source</th>
-        <th>Nom de la valeur</th>
+        <th>Nom de valeur</th>
         <th>Type de valeur</th>
-        <th>Obligatoire?</th>
+        <th>Obligatoire ?</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td>Bouton</td>
+        <td>Button</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -576,7 +576,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <td>Index du tableau des axes du <b>RawGameController</b>.</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>Inverser :</td>
         <td>DWORD</td>
         <td>Non</td>
         <td>Indique que la valeur de l’axe doit être inversée avant l’application des facteurs <b>ThresholdPercent</b> et <b>DebouncePercent</b>.</td>
@@ -585,19 +585,19 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <td>ThresholdPercent</td>
         <td>DWORD</td>
         <td>Oui</td>
-        <td>Indique la position de l’axe à laquelle la valeur du bouton mappé passe de l’état «enfoncé» à «relâché». La valeur doit être comprise entre 0et100. Le bouton est considéré comme enfoncé si la valeur de l’axe est supérieure ou égale à cette valeur.</td>
+        <td>Indique la position de l’axe à laquelle la valeur du bouton mappé passe de l’état « enfoncé » à « relâché ». La valeur doit être comprise entre 0 et 100. Le bouton est considéré comme enfoncé si la valeur de l’axe est supérieure ou égale à cette valeur.</td>
     </tr>
     <tr>
         <td>DebouncePercent</td>
         <td>DWORD</td>
         <td>Oui</td>
         <td>
-            <p>Définit la taille de la fenêtre autour de la valeur <b>ThresholdPercent</b> utilisée pour afficher l’état du bouton signalé. La valeur doit être comprise entre 0et100. Des transitions d’état de bouton peuvent se produire uniquement lorsque la valeur de l’axe dépasse les limites supérieures ou inférieures de la fenêtre de réponse. Par exemple, un <b>ThresholdPercent</b> de 50 et un <b>DebouncePercent</b> de 10donnent des limites de réponse à 45% et 55% des valeurs d’axe de plage complètes. Le bouton ne peut pas passer à l’état «enfoncé» tant que la valeur d’axe n’a pas atteint 55% ou plus et ne peut pas revenir à l’état «relâché» tant que cette valeur n’est pas égale à 45% ou moins.</p>
-            <p>Les limites de la fenêtre de réponse calculées sont comprises entre 0 et 100%. Par exemple, un seuil de 5% et une fenêtre de réponse de 20% entraînerait la réduction des limites de la fenêtre de réponse à 0 et 15%. L’état du bouton relatif aux valeurs d’axe comprises entre 0 et 100% correspond respectivement à «relâché» ou «enfoncé», quelles que soient les valeurs de seuil et de réponse.</p>
+            <p>Définit la taille de la fenêtre autour de la valeur <b>ThresholdPercent</b> utilisée pour afficher l’état du bouton signalé. La valeur doit être comprise entre 0 et 100. Des transitions d’état de bouton peuvent se produire uniquement lorsque la valeur de l’axe dépasse les limites supérieures ou inférieures de la fenêtre de réponse. Par exemple, un <b>ThresholdPercent</b> de 50 et un <b>DebouncePercent</b> de 10 donnent des limites de réponse à 45 % et 55 % des valeurs d’axe de plage complètes. Le bouton ne peut pas passer à l’état « enfoncé » tant que la valeur d’axe n’a pas atteint 55 % ou plus et ne peut pas revenir à l’état « relâché » tant que cette valeur n’est pas égale à 45 % ou moins.</p>
+            <p>Les limites de la fenêtre de réponse calculées sont comprises entre 0 et 100 %. Par exemple, un seuil de 5 % et une fenêtre de réponse de 20 % entraînerait la réduction des limites de la fenêtre de réponse à 0 et 15 %. L’état du bouton relatif aux valeurs d’axe comprises entre 0 et 100 % correspond respectivement à « relâché » ou « enfoncé », quelles que soient les valeurs de seuil et de réponse.</p>
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Commutateur</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -608,15 +608,15 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <td>REG_SZ</td>
         <td>Oui</td>
         <td>
-            <p>Indique la position de commutateur qui entraîne le signalement par le bouton mappé de son état «enfoncé». Les valeurs de position peuvent être une des chaînes suivantes:</p>
+            <p>Indique la position de commutateur qui entraîne le signalement par le bouton mappé de son état « enfoncé ». Les valeurs de position peuvent être une des chaînes suivantes :</p>
             <ul>
-                <li>Up</li> 
+                <li>Up (Haut)</li> 
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>Droit</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>Vers le bas</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>Left (Gauche)</li>
                 <li>UpLeft</li>
             </ul>
         </td>
@@ -625,24 +625,24 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
         <td>Non</td>
-        <td>Indique que les positions de commutateur adjacentes entraînent également le signalement par le bouton mappé de son état «enfoncé».</td>
+        <td>Indique que les positions de commutateur adjacentes entraînent également le signalement par le bouton mappé de son état « enfoncé ».</td>
     </tr>
 </table>
 
 ### <a name="axis-mapping"></a>Mappage des axes
 
-Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe:
+Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe :
 
 <table>
     <tr>
         <th>Source</th>
-        <th>Nom de la valeur</th>
+        <th>Nom de valeur</th>
         <th>Type de valeur</th>
-        <th>Obligatoire?</th>
+        <th>Obligatoire ?</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Bouton</td>
+        <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -659,7 +659,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
                 </tr>
                 <tr>
                     <td>TRUE</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
             </table>
         </td>
@@ -684,7 +684,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
                 <tr>
                     <td>FALSE</td>
                     <td>TRUE</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
@@ -707,13 +707,13 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
         <td>Index du tableau des axes du <b>RawGameController</b>.</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>Inverser :</td>
         <td>DWORD</td>
         <td>Non</td>
         <td>Indique que la valeur de l’axe mappé doit être inversée avant d’être renvoyée.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Commutateur</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -724,33 +724,33 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
         <td>REG_SZ</td>
         <td>Oui</td>
         <td>
-            <p>Une des chaînes suivantes:</p>
+            <p>Une des chaînes suivantes :</p>
             <ul>
-                <li>Up</li>
+                <li>Up (Haut)</li>
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>Droit</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>Vers le bas</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>Left (Gauche)</li>
                 <li>UpLeft</li>
             </ul>
-            <p>Elle indique la position du commutateur entraînant le signalement de la valeur de l’axe mappé comme correspondant à 1,0. La direction opposée de <b>MaxValueSwitchPosition</b> est traitée comme correspondant à 0,0. Par exemple, si <b>MaxValueSwitchPosition</b> est <b>Up</b>, la conversion de la valeur de l’axe est indiquée ci-dessous:</p>
+            <p>Elle indique la position du commutateur entraînant le signalement de la valeur de l’axe mappé comme correspondant à 1,0. La direction opposée de <b>MaxValueSwitchPosition</b> est traitée comme correspondant à 0,0. Par exemple, si <b>MaxValueSwitchPosition</b> est <b>Up</b>, la conversion de la valeur de l’axe est indiquée ci-dessous :</p>
             <table>
                 <tr>
                     <th>Position du commutateur</th>
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
-                    <td>1,0</td>
+                    <td>Up (Haut)</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>Center</td>
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Vers le bas</td>
                     <td>0,0</td>
                 </tr>
             </table>
@@ -761,30 +761,30 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
         <td>DWORD</td>
         <td>Non</td>
         <td>
-            <p>Indique que les positions de commutateur adjacentes entraînent également le signalement de 1,0 par l’axe mappé. Dans l’exemple ci-dessus, si <b>IncludeAdjacent</b> est définie, la conversion de l’axe s’effectue comme suit:</p>
+            <p>Indique que les positions de commutateur adjacentes entraînent également le signalement de 1,0 par l’axe mappé. Dans l’exemple ci-dessus, si <b>IncludeAdjacent</b> est définie, la conversion de l’axe s’effectue comme suit :</p>
             <table>
                 <tr>
                     <th>Position du commutateur</th>
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
-                    <td>1,0</td>
+                    <td>Up (Haut)</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>UpRight</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>UpLeft</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>Center</td>
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Vers le bas</td>
                     <td>0,0</td>
                 </tr>
                 <tr>
@@ -807,12 +807,12 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
 <table>
     <tr>
         <th>Source</th>
-        <th>Nom de la valeur</th>
+        <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Bouton</td>
+        <td rowspan="10" style="vertical-align: middle;">Button</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4 ou 8</td>
@@ -820,7 +820,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b> ou <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b>, ou <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,13 +898,13 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Commutateur</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Index du tableau des commutateurs du <b>RawGameController</b>.
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>Inverser :</td>
         <td>DWORD</td>
         <td>Indique que le commutateur signale ses positions dans l’ordre inverse des aiguilles d’une montre, plutôt que dans le sens par défaut (sens des aiguilles d’une montre).</td>
     </tr>
@@ -913,7 +913,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
         <td>DWORD</td>
         <td>
             <p>Décale le point de départ de la manière dont les positions sont indiquées selon le montant spécifié. <b>PositionBias</b> est toujours comptabilisé dans le sens des aiguilles d’une montre à partir du point de départ d’origine et est appliqué avant l’inversement de l’ordre des valeurs.</p>
-            <p>Par exemple, un commutateur qui indique des positions commençant à partir de <b>DownRight</b> dans le sens inverse des aiguilles d’une montre peut être normalisé en définissant l’indicateur <b>Invert</b> et en spécifiant <b>PositionBias</b> sur 5:</p>
+            <p>Par exemple, un commutateur qui indique des positions commençant à partir de <b>DownRight</b> dans le sens inverse des aiguilles d’une montre peut être normalisé en définissant l’indicateur <b>Invert</b> et en spécifiant <b>PositionBias</b> sur 5 :</p>
             <table>
                 <tr>
                     <th>Position</th>
@@ -926,7 +926,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Right</td>
+                    <td>Droit</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -936,7 +936,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>Up (Haut)</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
@@ -946,7 +946,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                     <td>7</td>
                 </tr>
                 <tr>
-                    <td>Left</td>
+                    <td>Left (Gauche)</td>
                     <td>5</td>
                     <td>6</td>
                 </tr>
@@ -956,7 +956,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Vers le bas</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -966,7 +966,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
 
 #### <a name="buttonindex-values"></a>* Valeurs de ButtonIndex
 
-\*Index des valeurs ButtonIndex du tableau des boutons du **RawGameController**:
+\*Index des valeurs de ButtonIndex dans le **RawGameController**du tableau de bouton :
 
 <table>
     <tr>
@@ -992,7 +992,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                 <li>UpButtonIndex</li>
                 <li>DownButtonIndex</li>
                 <li>LeftButtonIndex</li>
-                <li>RightButtonIndex</li>
+                <li>LeftButtonIndex</li>
             </ul>
         </td>
     </tr>
@@ -1004,7 +1004,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                 <li>UpButtonIndex</li>
                 <li>DownButtonIndex</li>
                 <li>LeftButtonIndex</li>
-                <li>RightButtonIndex</li>
+                <li>LeftButtonIndex</li>
             </ul>
         </td>
     </tr>
@@ -1016,7 +1016,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
                 <li>UpButtonIndex</li>
                 <li>DownButtonIndex</li>
                 <li>LeftButtonIndex</li>
-                <li>RightButtonIndex</li>
+                <li>LeftButtonIndex</li>
                 <li>UpRightButtonIndex</li>
                 <li>DownRightButtonIndex</li>
                 <li>DownLeftButtonIndex</li>
@@ -1033,7 +1033,7 @@ Il s’agit de valeurs de mappages statiques pour différents types de mappages.
 <table>
     <tr>
         <th>Mappage</th>
-        <th>Nom de la valeur</th>
+        <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Informations sur la valeur</th>
     </tr>
@@ -1041,17 +1041,17 @@ Il s’agit de valeurs de mappages statiques pour différents types de mappages.
         <td>RacingWheel</td>
         <td>MaxWheelAngle</td>
         <td>DWORD</td>
-        <td>Indique l’angle de molette physique maximal pris en charge par la molette dans un seul sens. Par exemple, une molette avec une rotation possible de -90degrés à 90degrés indiquerait 90.</td>
+        <td>Indique l’angle de molette physique maximal pris en charge par la molette dans un seul sens. Par exemple, une molette avec une rotation possible de -90 degrés à 90 degrés indiquerait 90.</td>
     </tr>
 </table>
 
-## <a name="labels"></a>Libellés
+## <a name="labels"></a>Étiquettes
 
-Les libellés doivent être présents sous la clé **Labels** située sous la racine de l’appareil. **Libellés** peut avoir 3sous-clés: **Buttons**, **Axes**, et **Switches**.
+Les libellés doivent être présents sous la clé **Labels** située sous la racine de l’appareil. **Étiquettes** peut avoir des 3 sous-clés : **Boutons**, **Axes**, et **commutateurs**.
 
 ### <a name="button-labels"></a>Libellé des boutons
 
-La clé **Boutons** mappe chacune des positions du bouton du tableau des boutons du **RawGameController** avec une chaîne. Chaque chaîne est mappée en interne avec la valeur d’énumération [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) correspondante. Par exemple, si un boîtier de commande comporte dix boutons et si l’ordre dans lequel le **RawGameController** analyse les boutons et les affiche dans le rapport sur les boutons ressemble à ce qui suit:
+La clé **Boutons** mappe chacune des positions du bouton du tableau des boutons du **RawGameController** avec une chaîne. Chaque chaîne est mappée en interne avec la valeur d’énumération [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) correspondante. Par exemple, si un boîtier de commande comporte dix boutons et si l’ordre dans lequel le **RawGameController** analyse les boutons et les affiche dans le rapport sur les boutons ressemble à ce qui suit :
 
 ```cpp
 Menu,               // Index 0
@@ -1066,12 +1066,12 @@ LeftBumper,         // Index 8
 RightBumper         // Index 9
 ```
 
-Les libellés doivent apparaître dans cet ordre sous la clé **Buttons**:
+Les libellés doivent apparaître dans cet ordre sous la clé **Buttons** :
 
 <table>
     <tr>
         <th>Nom</th>
-        <th>Valeur (type: REG_SZ)</th>
+        <th>Valeur (type : REG_SZ)</th>
     </tr>
     <tr>
         <td>Button0</td>
@@ -1079,7 +1079,7 @@ Les libellés doivent apparaître dans cet ordre sous la clé **Buttons**:
     </tr>
     <tr>
         <td>Button1</td>
-        <td>View</td>
+        <td>Affichage</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1121,7 +1121,7 @@ La clé **Axes** mappe chacune des positions de l’axe du tableau des axes de *
 
 ### <a name="switch-labels"></a>Libellés de commutateurs
 
-La clé **Switches** mappe les positions de commutateur avec les libellés. Les valeurs suivent cette convention d’affectation de noms: pour libeller la position d’un commutateur, dont l’index est *x* dans le tableau des commutateurs du **RawGameController**, ajoutez ces valeurs sous la sous-clé **Switches**: 
+La clé **Switches** mappe les positions de commutateur avec les libellés. Les valeurs suivent cette convention d’affectation de noms : pour libeller la position d’un commutateur, dont l’index est *x* dans le tableau des commutateurs du **RawGameController**, ajoutez ces valeurs sous la sous-clé **Switches** : 
 
 * SwitchxUp 
 * SwitchxUpRight 
@@ -1132,12 +1132,12 @@ La clé **Switches** mappe les positions de commutateur avec les libellés. Les 
 * SwitchxUpLeft
 * SwitchxLeft
 
-Le tableau suivant présente un exemple d’ensemble de libellés pour les postes de commutateur d’un commutateur à 4voies qui s’affiche à l’index 0dans le **RawGameController**: 
+Le tableau suivant présente un exemple d’ensemble de libellés pour les postes de commutateur d’un commutateur à 4 voies qui s’affiche à l’index 0 dans le **RawGameController** : 
 
 <table>
     <tr>
         <th>Nom</th>
-        <th>Valeur (type: REG_SZ)</th>
+        <th>Valeur (type : REG_SZ)</th>
     </tr>
     <tr>
         <td>Switch0Up</td>
@@ -1230,7 +1230,7 @@ Le tableau suivant présente un exemple d’ensemble de libellés pour les poste
 
 ## <a name="example-registry-file"></a>Exemple de fichier de Registre
 
-Pour afficher la manière dont l’ensemble de ces mappages et valeurs s’associent, voici un exemple de fichier de Registre pour un **RacingWheel** spécifique:
+Pour afficher la manière dont l’ensemble de ces mappages et valeurs s’associent, voici un exemple de fichier de Registre pour un **RacingWheel** spécifique :
 
 ```
 Windows Registry Editor Version 5.00
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir également
 
-* [Espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Espace de noms Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [Fichiers INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

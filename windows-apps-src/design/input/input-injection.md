@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: Simulez et automatiser l’entrée à partir d’appareils tels que le clavier, souris, tactile, pen et gamepad dans vos applications UWP.
 title: Simuler une entrée utilisateur par une injection d’entrée
 label: Input injection
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933973"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602324"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée utilisateur par une injection d’entrée
 
@@ -20,7 +20,7 @@ Simulez et automatisez une entrée utilisateur à partir d’appareils tels qu'u
 
 > **API importantes**: [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d’ensemble
 
 L'injection d’entrée permet à votre application UWP de simuler une entrée à partir de divers appareils d’entrée et de diriger cette entrée n’importe où, y compris en dehors de la zone cliente de votre application (même vers des applications qui s’exécutent avec des privilèges d’administrateur, telles que l'Éditeur du Registre).
 
@@ -28,24 +28,24 @@ L'injection d’entrée est utile pour les applications et outils UWP qui doiven
 
 ## <a name="setup"></a>Configurer
 
-Pour utiliser l’API d’injection d’entrée dans votre application UWP, vous devez ajouter les éléments suivants au manifeste de l’application:
+Pour utiliser l’API d’injection d’entrée dans votre application UWP, vous devez ajouter les éléments suivants au manifeste de l’application :
 
 1. Cliquez avec le bouton droit sur le fichier **Package.appxmanifest** et sélectionnez **Afficher le code**.
-1. Insérez le code suivant dans le nœud `Package`:
+1. Insérez le code suivant dans le nœud `Package` :
     - `xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"`
     - `IgnorableNamespaces="rescap"`
-1. Insérez le code suivant dans le nœud `Capabilities`:
+1. Insérez le code suivant dans le nœud `Capabilities` :
     - `<rescap:Capability Name="inputInjectionBrokered" />`
 
 ## <a name="duplicate-user-input"></a>Entrée utilisateur en double
 
 | ![Exemple d'injection d'entrée tactile](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *Exemple d'injection d'entrée tactile* |
+| *Exemple d’injection d’entrée tactile* |
 
 Dans cet exemple, nous montrons comment utiliser les API d’injection d’entrée ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) pour écouter les événements d’entrée de souris dans une région d’une application et simuler les événements d’entrée tactile correspondants dans une autre région.
 
-**Téléchargez cet exemple depuis [Exemple d’injection d’entrée (souris vers tactile)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
+**Télécharger cet exemple à partir de [exemple d’injection d’entrée (souris à toucher)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. Tout d’abord, nous configurons l’interface utilisateur (MainPage.xaml).
 
@@ -360,8 +360,8 @@ Dans cet exemple, nous montrons comment utiliser les API d’injection d’entr�
 
 4. Enfin, nous gérons n’importe quels événements routés de [Clic](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) de bouton dans la zone d’injection d’entrée et mettons à jour l’interface utilisateur avec le nom du bouton cliqué.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir également
 
 ### <a name="topic-samples"></a>Exemples de la rubrique
 
-- [Exemple d'injection d'entrée (souris vers tactile)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [Exemple d’injection d’entrée (souris à toucher)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

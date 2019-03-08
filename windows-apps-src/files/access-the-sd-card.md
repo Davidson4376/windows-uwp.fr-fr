@@ -4,14 +4,14 @@ title: Accéder à la carte SD
 description: Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
 ms.date: 03/08/2017
 ms.topic: article
-keywords: windows10, uwp, cartesd, stockage
+keywords: windows 10, uwp, carte sd, stockage
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931612"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625514"
 ---
 # <a name="access-the-sd-card"></a>Accéder à la carte SD
 
@@ -21,7 +21,7 @@ Vous pouvez stocker des données non essentielles et y accéder sur une carte mi
 
 Dans la plupart des cas, vous devez spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour que votre application puisse stocker des fichiers sur la carte SD et y accéder. En général, vous devez également inscrire les types de fichier stockés et accessibles que votre application peut gérer.
 
-Utilisez les moyens suivants pour stocker des fichiers sur la carteSD en option et y accéder:
+Utilisez les moyens suivants pour stocker des fichiers sur la carte SD en option et y accéder :
 - Sélecteurs de fichiers.
 - API [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
 
@@ -64,7 +64,7 @@ Pour accéder aux fichiers multimédias stockés dans les bibliothèques multim�
 
 Le dossier [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) correspond à la classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) de la racine logique de l’ensemble des appareils amovibles actuellement connectés à l’appareil. Si une carte SD est présente, la première (et unique) classe **StorageFolder** sous le dossier **KnownFolders.RemovableDevices** représente la carte SD.
 
-Utilisez du code semblable au suivant pour déterminer si une carte SD est présente et obtenir une référence à celle-ci en tant que classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
+Utilisez du code comme le suivant pour déterminer si une carte SD est présente et obtenir une référence à cette carte sous forme de classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
 
 ```csharp
 using Windows.Storage;

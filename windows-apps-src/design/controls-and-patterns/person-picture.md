@@ -5,38 +5,38 @@ template: detail.hbs
 label: Parallax View
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044646"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638934"
 ---
 # <a name="person-picture-control"></a>Contrôle de la photo de la personne
 
 Le contrôle de photo de la personne affiche l’image d’avatar d’une personne, si celle-ci est disponible. Dans le cas contraire, il affiche les initiales de la personne ou un glyphe générique. Vous pouvez utiliser ce contrôle pour afficher un [objet Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), un objet qui gère les coordonnées d’une personne, ou vous pouvez fournir manuellement des coordonnées, par exemple un nom d’affichage et une photo de profil.  
 
-> **API importantes**: [classe PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [classe Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [classe ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **API importantes**: [Classe de PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [contacter classe](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager classe](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 Cette illustration montre deux contrôles d’image de personnes associées à deux éléments [bloc de texte](text-block.md) qui affichent les noms des utilisateurs. 
-![Contrôle de la photo de la personne](images/person-picture/person-picture_hero.png)
+![Le contrôle d’image de personne](images/person-picture/person-picture_hero.png)
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Utiliser la photo de la personne lorsque vous souhaitez représenter une personne et ses coordonnées. Voici quelques exemples de cas dans lesquels vous pourrez utiliser ce contrôle:
+Utiliser la photo de la personne lorsque vous souhaitez représenter une personne et ses coordonnées. Voici quelques exemples de cas dans lesquels vous pourrez utiliser ce contrôle :
 * Pour afficher l’utilisateur actuel
 * Pour afficher les contacts d’un carnet d’adresses
 * Pour afficher l’expéditeur d’un message 
 * Pour afficher un contact de média social
 
-L’illustration montre le contrôle de photo de la personne dans une liste de contacts: ![Contrôle de photo de la personne](images/person-picture/person-picture-control.png)
+L’illustration montre personne contrôle d’image dans une liste de contacts : ![Le contrôle d’image de personne](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>Exemples
 
@@ -47,7 +47,7 @@ L’illustration montre le contrôle de photo de la personne dans une liste de c
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/PersonPicture">ouvrir l’application et voir l'objet PersonPicture en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -56,7 +56,7 @@ L’illustration montre le contrôle de photo de la personne dans une liste de c
 
 ## <a name="how-to-use-the-person-picture-control"></a>Comment utiliser le contrôle de photo de la personne
 
-La classe PersonPicture vous permet de créer une photo de la personne. Cet exemple crée un contrôle PersonPicture et fournit manuellement le nom d’affichage de la personne, sa photo de profil et ses initiales:
+La classe PersonPicture vous permet de créer une photo de la personne. Cet exemple crée un contrôle PersonPicture et fournit manuellement le nom d’affichage de la personne, sa photo de profil et ses initiales :
 
 ```xaml
 <Page
@@ -79,7 +79,7 @@ La classe PersonPicture vous permet de créer une photo de la personne. Cet exem
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>Utilisation du contrôle de photo de la personne pour afficher un objet Contact
 
-Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un objet [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact): 
+Vous pouvez utiliser le contrôle de sélecteur de personnes pour afficher un objet [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact) : 
 
 ```xaml
 <Page
@@ -173,7 +173,7 @@ namespace SampleApp
 
 Lorsque vous fournissez un objet [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), le contrôle de photo de la personne l’évalue afin de déterminer les informations qu’il peut afficher. 
 
-Si une photo est disponible, le contrôle affiche la première image qu’il trouve, dans cet ordre:
+Si une photo est disponible, le contrôle affiche la première image qu’il trouve, dans cet ordre :
 
 1. LargeDisplayPicture
 1. SmallDisplayPicture
@@ -190,4 +190,4 @@ En l’absence d’image, le contrôle affiche le nom du contact ou ses initiale
 ## <a name="related-articles"></a>Articles connexes
 
 * [Contacts et calendriers](../../contacts-and-calendar/index.md)
-* [Exemples de cartes de visite](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Exemple de cartes de contact](https://go.microsoft.com/fwlink/p/?LinkId=624040)

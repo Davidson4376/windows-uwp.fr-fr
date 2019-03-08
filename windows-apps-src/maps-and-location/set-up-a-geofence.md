@@ -1,28 +1,28 @@
 ---
-title: Configurer une clôture virtuelle
-description: Configurez une clôture virtuelle dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
+title: Configurer une limite géographique
+description: Configurez une Geofence dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, carte, localisation, clôture virtuelle, notifications
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00a3db8890183f50efad6caa31bd573707c6a6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045688"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606124"
 ---
-# <a name="set-up-a-geofence"></a>Configurer une clôture virtuelle
+# <a name="set-up-a-geofence"></a>Configurer une limite géographique
 
 
 
 
-Configurez une [**limite géographique**](https://msdn.microsoft.com/library/windows/apps/dn263587) dans votre app et découvrez comment gérer les notifications au premier plan et en arrière-plan.
+Configurez une [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
 
 **Conseil** Pour en savoir plus sur l’accès à l’emplacement dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
--   [Exemple de carte pour la plateforme Windows universelle (UWP, Universal Windows Platform)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Activer la fonctionnalité de localisation
 
@@ -40,7 +40,7 @@ Configurez une [**limite géographique**](https://msdn.microsoft.com/library/win
 ## <a name="set-up-a-geofence"></a>Configurer une limite géographique
 
 
-### <a name="step-1-request-access-to-the-users-location"></a>Étape 1 : demander l’accès à l’emplacement de l’utilisateur
+### <a name="step-1-request-access-to-the-users-location"></a>Étape 1 : Demander l’accès à l’emplacement de l’utilisateur
 
 **Important** Vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) avant d’essayer d’y accéder. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application sera en mesure d’accéder aux informations d’emplacement de l’utilisateur une fois que l’utilisateur aura accordé l’autorisation à votre application.
 
@@ -52,7 +52,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
-### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Étape2: Inscrire les modifications d’autorisations d’emplacement et d’état de limite géographique
+### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Étape 2 : Enregistrement des changements dans la clôture virtuelle seulement avoir les autorisations état et l’emplacement
 
 Dans cet exemple, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si l’accès à l’emplacement de l’utilisateur est autorisé, le code accède aux limites géographiques actuelles et s’inscrit aux modifications de l’état des limites géographiques, ainsi qu’aux modifications des autorisations d’emplacement.
 
@@ -95,7 +95,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-### <a name="step-3-create-the-geofence"></a>Étape 3 : créer la limite géographique
+### <a name="step-3-create-the-geofence"></a>Étape 3 : Créer la clôture virtuelle seulement avoir
 
 Vous voici prêt à définir et configurer un objet [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587). Vous pouvez choisir parmi différentes surcharges de constructeur, selon vos besoins. Dans le constructeur de clôture virtuelle de base, spécifiez uniquement les éléments [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) et [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718), comme illustré ici.
 
@@ -120,11 +120,11 @@ Geofence geofence = new Geofence(fenceId, geocircle);
 
 Vous pouvez ajuster davantage votre clôture virtuelle en utilisant l’un des autres constructeurs. Dans l’exemple suivant, le constructeur de limite géographique indique les paramètres supplémentaires ci-après :
 
--   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) : indique les événements de limite géographique pour lesquels vous souhaitez recevoir des notifications lors d’une entrée ou d’une sortie de la région définie ou bien lors de la suppression de la limite géographique.
--   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) : supprime la limite géographique après que les états qu’elle surveille ont été respectés.
--   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) : indique le temps pendant lequel l’utilisateur doit rester à l’intérieur ou en dehors de la zone définie avant le déclenchement des événements d’entrée/de sortie.
--   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) : indique à quel moment débuter la surveillance de la limite géographique.
--   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697): indique la période pendant laquelle surveiller la limite géographique.
+-   [**MonitoredStates** ](https://msdn.microsoft.com/library/windows/apps/dn263728) -indique quels événements clôture virtuelle seulement avoir que vous souhaitez recevoir des notifications pour l’entrée de la région définie, en laissant la région définie, ou la suppression de la clôture virtuelle seulement avoir.
+-   [**SingleUse** ](https://msdn.microsoft.com/library/windows/apps/dn263732) -supprime la clôture virtuelle seulement avoir une fois que tous les États en cours d’analyse pour la clôture virtuelle seulement avoir ont été remplies.
+-   [**DwellTime** ](https://msdn.microsoft.com/library/windows/apps/dn263703) -indique la durée pendant laquelle l’utilisateur doit être dans ou hors de la zone définie avant le déclenchement d’événements d’entrée/sortie.
+-   [**StartTime** ](https://msdn.microsoft.com/library/windows/apps/dn263735) -indiquant à quel moment démarrer la surveillance de la clôture virtuelle seulement avoir.
+-   [**Durée** ](https://msdn.microsoft.com/library/windows/apps/dn263697) -indique la période pour laquelle surveiller la clôture virtuelle seulement avoir.
 
 ```csharp
 // Set the fence ID.
@@ -173,7 +173,7 @@ try {
 }
 ```
 
-### <a name="step-4-handle-changes-in-location-permissions"></a>Étape 4: gérer les modifications apportées aux autorisations d’emplacement
+### <a name="step-4-handle-changes-in-location-permissions"></a>Étape 4 : Gérer les changements dans les autorisations de localisation
 
 L’objet [**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) déclenche l’événement [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) afin d’indiquer que les paramètres d’emplacement de l’utilisateur ont changé. Cet événement transmet l’état correspondant par le biais de la propriété **sender.Status** de l’argument (de type [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Notez que cette méthode n’est pas appelée à partir du thread d’interface utilisateur et que l’objet [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) invoque les modifications de l’interface utilisateur.
 
@@ -236,7 +236,7 @@ Après avoir créé vos limites géographiques, vous devez ajouter la logique po
 
 Vous pouvez écouter des événements directement à partir de votre application en cours d’exécution, ou bien vous inscrire à une tâche en arrière-plan afin de recevoir une notification en arrière-plan dès qu’un événement survient.
 
-### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : inscrire les événements de changement d’état de limite géographique
+### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : S’inscrire aux événements de changement d’état clôture virtuelle seulement avoir
 
 Pour que votre application reçoive une notification au premier plan d’un changement d’état de limite géographique, vous devez inscrire un gestionnaire d’événements. Cela est généralement configuré lors de la création de la limite géographique.
 
@@ -250,7 +250,7 @@ private void Initialize()
 
 ```
 
-### <a name="step-2-implement-the-geofence-event-handler"></a>Étape 2 : implémenter le gestionnaire d’événements de limite géographique
+### <a name="step-2-implement-the-geofence-event-handler"></a>Étape 2 : Implémentez le Gestionnaire d’événements de clôture virtuelle seulement avoir
 
 L’étape suivante consiste à implémenter les gestionnaires d’événements. L’action à entreprendre ici dépend de la raison pour laquelle votre application utilise la limite géographique.
 
@@ -311,7 +311,7 @@ Pour écouter un événement de limite géographique en arrière-plan
 -   Inscrivez la tâche en arrière-plan dans votre application. Si votre application nécessite un accès à Internet (par exemple, pour accéder à un service cloud), vous pouvez définir un indicateur à cet effet lorsque l’événement est déclenché. Vous pouvez aussi définir un indicateur pour vous assurer que l’utilisateur est présent au déclenchement de l’événement et être certain que l’utilisateur en est informé.
 -   Tandis que votre application est exécutée au premier plan, invitez l’utilisateur à lui accorder des autorisations d’emplacement.
 
-### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : s’inscrire aux événements de changement d’état de limite géographique
+### <a name="step-1-register-for-geofence-state-change-events"></a>Étape 1 : S’inscrire aux événements de changement d’état clôture virtuelle seulement avoir
 
 Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajoutez une déclaration pour une tâche en arrière-plan d’emplacement. Pour ce faire :
 
@@ -319,9 +319,9 @@ Dans le manifeste de votre application, dans l’onglet **Déclarations**, ajout
 -   Définissez une tâche de propriété de type **Emplacement**.
 -   Dans votre application, définissez un point d’entrée à entrer au moment où l’événement est déclenché.
 
-### <a name="step-2-register-the-background-task"></a>Étape 2 : inscrire la tâche en arrière-plan
+### <a name="step-2-register-the-background-task"></a>Étape 2 : Inscrire la tâche en arrière-plan
 
-Le code utilisé dans cette étape inscrit la tâche de clôture virtuelle en arrière-plan. Rappelez-vous : au moment de créer la clôture virtuelle, nous avons vérifié les autorisations d’emplacement.
+Le code utilisé dans cette étape inscrit la tâche de limite géographique en arrière-plan. Rappelez-vous : au moment de créer la clôture virtuelle, nous avons vérifié les autorisations d’emplacement.
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -371,7 +371,7 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### <a name="step-3-handling-the-background-notification"></a>Étape 3 : gérer la notification en arrière-plan
+### <a name="step-3-handling-the-background-notification"></a>Étape 3 : Gestion de la notification d’arrière-plan
 
 Les actions que vous entreprenez pour notifier l’utilisateur dépendent de ce qu’accomplit votre application, mais vous pouvez afficher une notification toast, diffuser un son ou mettre à jour une vignette dynamique. Le code utilisé dans cette étape gère la notification.
 
@@ -444,7 +444,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Il est parfois difficile de procéder au test et au débogage d’applications de limite géographique, car ces dernières dépendent de l’emplacement d’un appareil. Nous présentons ici plusieurs méthodes qui permettent de tester les limites géographiques au premier plan et en arrière-plan.
 
-**Pour déboguer une application de limite géographique, vous pouvez :**
+**Pour déboguer une application gardiennage virtuel**
 
 1.  Déplacer physiquement l’appareil
 2.  tester l’entrée dans une zone de clôture virtuelle en créant une zone qui inclut votre emplacement physique actuel, afin que vous soyez déjà dans la zone de clôture virtuelle et que l’événement d’« entrée dans la zone de clôture virtuelle » se déclenche immédiatement ;
@@ -452,7 +452,7 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-foreground"></a>Tester et déboguer une application de limite géographique s’exécutant au premier plan
 
-**Pour tester votre application de limite géographique s’exécutant au premier plan**
+**Pour tester votre application gardiennage virtuel qui est en cours d’exécution au premier plan**
 
 1.  Générez votre application dans Visual Studio.
 2.  Lancez votre application dans l’émulateur Visual Studio.
@@ -461,7 +461,7 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-background"></a>Tester et déboguer une application de limite géographique en arrière-plan
 
-**Pour tester votre application de limite géographique s’exécutant en arrière-plan**
+**Pour tester votre application gardiennage virtuel qui est en cours d’exécution l’arrière-plan**
 
 1.  Générez votre application dans Visual Studio. Notez que votre application doit définir le type de tâche en arrière-plan appelé **Emplacement**.
 2.  Déployez d’abord l’application en local.
@@ -475,12 +475,12 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 
 Pour que votre application puisse accéder à l’emplacement, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité relatifs à la géolocalisation** suivants sont bien activés :
 
--   **Emplacement de cet appareil …** est **activé (non applicable dans Windows 10 Mobile)**
+-   **Emplacement pour cet appareil...**  est activé **sur** (non applicable dans Windows 10 Mobile)
 -   Le paramètre des services de localisation **Emplacement** est **activé**.
 -   Sous **Choisir les applications qui peuvent utiliser votre emplacement**, votre application est **activée**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple de géolocalisation UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Recommandations en matière de conception pour le géorepérage](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Instructions de conception pour gardiennage virtuel](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [Instructions de conception pour les applications de géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)

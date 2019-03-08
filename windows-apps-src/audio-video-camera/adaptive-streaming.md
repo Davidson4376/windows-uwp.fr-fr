@@ -1,29 +1,29 @@
 ---
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: Cet article décrit comment ajouter la lecture de contenu multimédia en streaming adaptatif à une application de plateforme Windows universelle (UWP). Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en streaming HTTP (HLS) et de contenu en streaming dynamique sur HTTP (DASH).
-title: Streaming adaptatif
+title: Diffusion en continu adaptative
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617874"
 ---
-# <a name="adaptive-streaming"></a>Streaming adaptatif
+# <a name="adaptive-streaming"></a>Diffusion en continu adaptative
 
 
-Cet article décrit comment ajouter la lecture de contenu multimédia en streaming adaptatif à une application de plateforme Windows universelle (UWP). Cette fonctionnalité prend en charge la lecture de contenu vidéo en flux continu HTTP (HLS) et de contenu à diffusion en continu dynamique sur HTTP (DASH). À partir de Windows10, version1803, le Smooth Streaming est pris en charge par **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**.
+Cet article décrit comment ajouter la lecture de contenu multimédia en streaming adaptatif à une application de plateforme Windows universelle (UWP). Cette fonctionnalité prend en charge la lecture de contenu vidéo en flux continu HTTP (HLS) et de contenu à diffusion en continu dynamique sur HTTP (DASH). À partir de Windows 10, version 1803, le Smooth Streaming est pris en charge par **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**.
 
-Pour obtenir la liste des balises du protocole HLS prises en charge, consultez l’article [Prise en charge des balises HLS](hls-tag-support.md). 
+Pour obtenir la liste des balises de protocole HLS prises en charge, voir [Prise en charge des balises HLS](hls-tag-support.md). 
 
 Pour obtenir la liste des profils DASH pris en charge, consultez l’article [Prise en charge du profil DASH](dash-profile-support.md). 
 
 > [!NOTE] 
-> Le code de cet article a été adapté à partir de l’[exemple de diffusion en continu adaptative](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming) UWP.
+> Le code de cet article a été adapté à partir de l’[exemple de streaming adaptatif](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming) UWP.
 
 ## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>Streaming adaptatif avec MediaPlayer et MediaPlayerElement
 
@@ -33,28 +33,28 @@ Pour lire du contenu multimédia en streaming adaptatif dans une application UWP
 
 [!code-cs[ManifestSourceNoUI](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSourceNoUI)]
 
-L’exemple ci-dessus lit l’audio du contenu multimédia, mais n’affiche pas automatiquement le contenu dans votre interface utilisateur. La plupart des applications qui lisent du contenu vidéo veulent restituer le contenu dans une page XAML.  Pour ce faire, ajoutez un contrôle [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) à votre page XAML.
+L’exemple ci-dessus lit l’audio du contenu multimédia, mais n’affiche pas automatiquement le contenu dans votre interface Utilisateur. La plupart des applications qui lisent du contenu vidéo veulent restituer le contenu dans une page XAML.  Pour ce faire, ajoutez un contrôle [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) à votre page XAML.
 
 [!code-xml[MediaPlayerElementXAML](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-Appelez [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) pour créer un objet **MediaSource** à partir de l’URI d’un fichier manifeste HLS ou DASH. Ensuite, définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) de **MediaPlayerElement**. **MediaPlayerElement** crée automatiquement un objet **MediaPlayer** pour le contenu. Vous pouvez appeler **Play** sur **MediaPlayer** pour démarrer la lecture du contenu.
+Appelez [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) pour créer un **MediaSource** à partir de l’URI d’un fichier manifeste HLS ou DASH. Ensuite, définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) de **MediaPlayerElement**. **MediaPlayerElement** crée automatiquement un objet **MediaPlayer** pour le contenu. Vous pouvez appeler **Play** sur **MediaPlayer** pour démarrer la lecture du contenu.
 
 [!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
 > [!NOTE] 
-> À compter de Windows10, version1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
+> À compter de Windows 10, version 1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
 ## <a name="adaptive-streaming-with-adaptivemediasource"></a>Streaming adaptatif avec AdaptiveMediaSource
 
 Si votre application requiert des fonctionnalités de streaming adaptatif plus avancées, telles que la fourniture d’en-têtes HTTP personnalisés, la surveillance des débits de téléchargement et de lecture en cours ou l’ajustement des ratios qui déterminent le moment où le système change les débits du flux adaptatif, utilisez l’objet **[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)**.
 
-Les API de diffusion en continu adaptative figurent dans l’espace de noms [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279). Les exemples de cet article utilisent les API des espaces de noms ci-après.
+Les API de streaming adaptatif figurent dans l’espace de noms [**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279). Les exemples de cet article utilisent les API des espaces de noms ci-après.
 
 [!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
 ## <a name="initialize-an-adaptivemediasource-from-a-uri"></a>Initialiser un élément AdaptiveMediaSource à partir d’un URI
 
-Initialisez l’élément **AdaptiveMediaSource** avec l’URI d’un fichier manifeste de diffusion en continu adaptative en appelant la méthode [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261). La valeur [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) renvoyée par cette méthode vous permet de savoir si la source du contenu multimédia a été correctement créée. Si tel est le cas, vous pouvez définir l’objet en tant que source de flux pour votre **MediaPlayer** en créant un objet **MediaSource** en appelant [**MediaSource.CreateFromAdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource), puis en l’affectant à la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source) du lecteur multimédia. Dans cet exemple, la propriété [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) est interrogée pour déterminer le débit maximal pris en charge pour ce flux, puis cette valeur est définie en tant que débit initial. Cet exemple inscrit également les gestionnaires des différents événements **AdaptiveMediaSource** qui sont décrits plus loin dans cet article.
+Initialisez l’élément **AdaptiveMediaSource** avec l’URI d’un fichier manifeste de streaming adaptatif en appelant la méthode [**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261). La valeur [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) renvoyée par cette méthode vous permet de savoir si la source du contenu multimédia a été correctement créée. Si tel est le cas, vous pouvez définir l’objet en tant que source de flux pour votre **MediaPlayer** en créant un objet **MediaSource** en appelant [**MediaSource.CreateFromAdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource), puis en l’affectant à la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Source) du lecteur multimédia. Dans cet exemple, la propriété [**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) est interrogée pour déterminer le débit maximal pris en charge pour ce flux, puis cette valeur est définie en tant que débit initial. Cet exemple inscrit également les gestionnaires des différents événements **AdaptiveMediaSource** qui sont décrits plus loin dans cet article.
 
 [!code-cs[InitializeAMS](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
@@ -64,7 +64,7 @@ Si vous avez besoin de définir des en-têtes HTTP personnalisés pour l’obten
 
 [!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
 
-L’événement [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) est déclenché lorsque le système est sur le point de récupérer une ressource à partir du serveur. La classe [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) transmise dans le gestionnaire d’événements expose les propriétés qui fournissent des informations sur la ressource demandée, telles que le type et l’URI de la ressource.
+L’événement [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) se déclenche lorsque le système est sur le point de récupérer une ressource à partir du serveur. La classe [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) transmise dans le gestionnaire d’événements expose les propriétés qui fournissent des informations sur la ressource demandée, telles que le type et l’URI de la ressource.
 
 ## <a name="modify-resource-request-properties-using-the-downloadrequested-event"></a>Modifier les propriétés de demande de ressource à l’aide de l’événement DownloadRequested
 
@@ -76,7 +76,7 @@ Vous pouvez remplacer le contenu de la ressource demandée en définissant les p
 
 ## <a name="use-bitrate-events-to-manage-and-respond-to-bitrate-changes"></a>Utiliser les événements de vitesse de transmission pour gérer les changements de vitesse de transmission et y répondre
 
-L’objet **AdaptiveMediaSource** fournit des événements qui vous permettent de réagir lorsque les vitesses de transmission de téléchargement ou de lecture changent. Dans cet exemple, les débits actuels sont simplement mis à jour dans l’interface utilisateur. Notez que vous pouvez modifier les ratios qui déterminent le moment où le système change les débits du flux adaptatif. Pour plus d’informations, voir la propriété [**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697).
+L’objet **AdaptiveMediaSource** fournit des événements qui vous permettent de réagir lorsque les débits de téléchargement ou de lecture changent. Dans cet exemple, les débits actuels sont simplement mis à jour dans l’interface utilisateur. Notez que vous pouvez modifier les ratios qui déterminent le moment où le système change les débits du flux adaptatif. Pour plus d’informations, voir la propriété [**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697).
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
@@ -100,7 +100,7 @@ L’élément **AdaptiveMediaSource** expose une propriété [**Diagnostics**](h
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 
 ## <a name="defer-binding-of-adaptive-streaming-content-for-items-in-a-playback-list-by-using-mediabinder"></a>Différer la liaison de contenu de diffusion en continu adaptative pour les éléments d’une liste de lecture à l’aide de MediaBinder
-La classe [**MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) vous permet de différer la liaison de contenu multimédia dans un objet [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955). À partir de Windows10, version1703, vous pouvez fournir un élément [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) en guise de contenu lié. Le processus de liaison différée d’une source multimédia adaptative est en grande partie identique à la liaison d’autres types d’éléments multimédias, qui est décrite dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md). 
+La classe [**MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) vous permet de différer la liaison de contenu multimédia dans un objet [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955). À partir de Windows 10, version 1703, vous pouvez fournir un élément [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) en guise de contenu lié. Le processus de liaison différée d’une source multimédia adaptative est en grande partie identique à la liaison d’autres types d’éléments multimédias, qui est décrite dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md). 
 
 Créez une instance **MediaBinder**, définissez une chaîne [**Token**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Token) déterminée par l’application pour identifier le contenu à lier, puis inscrivez-vous à l’événement [**Binding**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Binding). Créez un élément **MediaSource** à partir de l’objet **Binder** en appelant la méthode [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediabinder). Ensuite, créez un élément **MediaPlaybackItem** à partir de l’objet **MediaSource** et ajoutez-le à la liste de lecture.
 
@@ -110,16 +110,16 @@ Dans le gestionnaire d’événements **Binding**, utilisez la chaîne de jeton 
 
 [!code-cs[BinderBindingAMS](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetBinderBindingAMS)]
 
-Si vous voulez enregistrer les gestionnaires d’événements pour la source multimédia adaptative liée, vous pouvez effectuer cette opération dans le gestionnaire de l’événement [**CurrentItemChanged**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.CurrentItemChanged) de l’élément **MediaPlaybackList**. La propriété [**CurrentMediaPlaybackItemChangedEventArgs.NewItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.NewItem) contient le nouvel élément **MediaPlaybackItem** en cours de lecture dans la liste. Obtenez une instance de l’objet **AdaptiveMediaSource** représentant le nouvel élément en accédant à la propriété [**Source**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem.Source) de l’objet **MediaPlaybackItem**, puis à la propriété [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.AdaptiveMediaSource) de la source multimédia. Cette propriété présentera la valeur Null si le nouvel élément de lecture n’est pas un objet **AdaptiveMediaSource**; vous devez donc vous assurer que la définition de la valeur Null est détectée avant d’essayer d’inscrire des gestionnaires pour l’un des événements de l’objet.
+Si vous voulez enregistrer les gestionnaires d’événements pour la source multimédia adaptative liée, vous pouvez effectuer cette opération dans le gestionnaire de l’événement [**CurrentItemChanged**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.CurrentItemChanged) de l’élément **MediaPlaybackList**. La propriété [**CurrentMediaPlaybackItemChangedEventArgs.NewItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.NewItem) contient le nouvel élément **MediaPlaybackItem** en cours de lecture dans la liste. Obtenez une instance de l’objet **AdaptiveMediaSource** représentant le nouvel élément en accédant à la propriété [**Source**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem.Source) de l’objet **MediaPlaybackItem**, puis à la propriété [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.AdaptiveMediaSource) de la source multimédia. Cette propriété présentera la valeur Null si le nouvel élément de lecture n’est pas un objet **AdaptiveMediaSource** ; vous devez donc vous assurer que la définition de la valeur Null est détectée avant d’essayer d’inscrire des gestionnaires pour l’un des événements de l’objet.
 
 [!code-cs[AMSBindingCurrentItemChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAMSBindingCurrentItemChanged)]
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
-* [Prise en charge des balises HLS](hls-tag-support.md) 
-* [Prise en charge du profil DASH](dash-profile-support.md) 
-* [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Lire du contenu multimédia en arrière-plan](background-audio.md) 
+* [Prise en charge de la balise HLS](hls-tag-support.md) 
+* [Prise en charge du profil de tiret](dash-profile-support.md) 
+* [Lecture audio et vidéo MediaPlayer.](play-audio-and-video-with-mediaplayer.md)
+* [Lire des médias dans l’arrière-plan](background-audio.md) 
 
 
 

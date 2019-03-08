@@ -2,28 +2,28 @@
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Créer un compte de développeur
 description: Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Microsoft Store et de participer à d’autres programmes Microsoft.
-ms.date: 4/04/2018
+ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp, s'inscrire, compte de développeur
 ms.localizationpriority: medium
-ms.openlocfilehash: 434e803106ef48652ddc9808ed7d47e712facfa0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 75dc0bfdc1ae70ebb59743a54cc2b4ae0522f683
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050066"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596044"
 ---
 # <a name="create-a-developer-account"></a>Créer un compte de développeur
 
 Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Microsoft Store et de participer à d’autres programmes Microsoft.
 
-[Inscrivez-vous maintenant !](https://go.microsoft.com/fwlink/p/?LinkId=615100)
+[Inscrivez-vous dès maintenant !](https://go.microsoft.com/fwlink/p/?LinkId=615100)
 
 ## <a name="opening-your-developer-account"></a>Ouverture de votre compte de développeur
 
 Nous offrons des [comptes aussi bien aux particuliers qu’aux entreprises à travers le monde](../publish/account-types-locations-and-fees.md). Consultez notre [présentation du processus d’inscription](../publish/opening-a-developer-account.md) pour savoir comment procéder.
 
-## <a name="have-a-name-for-your-app"></a>Besoin d’un nom pour votre application?
+## <a name="have-a-name-for-your-app"></a>Besoin d’un nom pour votre application ?
 
 Dès que vous ouvrez votre compte de développeur, vous pouvez [créer votre application en réservant un nom](https://msdn.microsoft.com/library/windows/apps/JJ657967).
 

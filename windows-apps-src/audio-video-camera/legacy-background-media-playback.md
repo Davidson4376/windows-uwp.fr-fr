@@ -4,22 +4,22 @@ description: Cet article fournit une assistance relative aux applications recour
 title: Lecture multimédia en arrière-plan héritée
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927643"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616614"
 ---
 # <a name="legacy-background-media-playback"></a>Lecture multimédia en arrière-plan héritée
 
 
-Cet article décrit le modèle hérité à deuxprocessus d’ajout de la prise en charge de l’audio d’arrière-plan à votre application UWP. À partir de Windows 10, version 1607, un modèle à processus unique pour l’audio d’arrière-plan qui est bien plus facile à implémenter. Pour plus d’informations sur les recommandations actuelles en matière d’audio d’arrière-plan, consultez la section [Lire du contenu multimédia en arrière-plan](background-audio.md). Cet article vise à fournir un support pour les applications déjà développées à l’aide du modèle hérité à deuxprocessus.
+Cet article décrit le modèle hérité à deux processus d’ajout de la prise en charge de l’audio d’arrière-plan à votre application UWP. À partir de Windows 10, version 1607, un modèle à processus unique pour l’audio d’arrière-plan qui est bien plus facile à implémenter. Pour plus d’informations sur les recommandations actuelles en matière d’audio d’arrière-plan, consultez la section [Lire du contenu multimédia en arrière-plan](background-audio.md). Cet article vise à fournir un support pour les applications déjà développées à l’aide du modèle hérité à deux processus.
 
 > [!NOTE]
-> À partir de Windows, version 1703, **BackgroundMediaPlayer** est déconseillée et ne peuvent pas être disponibles dans les futures versions de Windows.
+> En commençant par Windows, version 1703, **BackgroundMediaPlayer** est déconseillée et n’est peut-être pas disponible dans les versions futures de Windows.
 
 ## <a name="background-audio-architecture"></a>Architecture de la lecture audio en arrière-plan
 
@@ -27,7 +27,7 @@ Une application exécutant la lecture en arrière-plan comprend deux processus. 
 
 Le diagramme suivant est une vue d’ensemble de la conception du système.
 
-![Architecture de la lecture audio en arrière-plan Windows10](images/backround-audio-architecture-win10.png)
+![Architecture de la lecture audio en arrière-plan Windows 10](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>MediaPlayer
 
 L’espace de noms [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) contient les API utilisées pour la lecture audio en arrière-plan. Il existe une seule instance de [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) par application par le biais de laquelle la lecture s’effectue. Votre application de lecture audio en arrière-plan appelle des méthodes et configure des propriétés sur la classe **MediaPlayer** pour définir la piste actuelle, démarrer la lecture, mettre en pause, avancer, reculer, etc. L’instance d’objet de lecteur multimédia est toujours accessible via la propriété [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528).
@@ -70,7 +70,7 @@ Pour garder active une tâche en arrière-plan, votre application devra demander
 
 Votre tâche en arrière-plan obtient l’événement **Completed** lorsque la méthode **Run** est terminée et qu’aucun report n’est demandé. Dans certains cas, lorsque votre application obtient l’événement **Canceled**, il peut également être suivi de l’événement **Completed**. Votre tâche peut recevoir un événement **Canceled** pendant que **Run** est en cours d’exécution, veillez donc à gérer cette simultanéité potentielle.
 
-Une tâche en arrière-plan peut être annulée dans les situations suivantes:
+Une tâche en arrière-plan peut être annulée dans les situations suivantes :
 
 -   Une nouvelle application avec des fonctions de lecture audio démarre sur les systèmes qui appliquent la sous-stratégie d’exclusivité. Voir la section [Stratégies système pour la durée de vie de tâche audio en arrière-plan](#system-policies-for-background-audio-task-lifetime) ci-dessous.
 
@@ -114,11 +114,11 @@ Toutefois, cela ne signifie pas que le premier plan dépend de l’arrière-plan
 
 Le tableau suivant répertorie les stratégies sont appliqués selon les types d’appareils.
 
-| Sous-stratégie             | Bureau  | Appareils mobiles   | Autre    |
+| Sous-stratégie             | Bureau  | Mobile   | Autre    |
 |------------------------|----------|----------|----------|
-| **Exclusivité**        | Désactivée | Activée  | Activée  |
-| **Délai d’inactivité** | Désactivée | Activée  | Désactivée |
-| **Durée de vie partagée**    | Activée  | Désactivée | Désactivée |
+| **Exclusivité**        | Désactivée | Activé  | Activé  |
+| **Délai d’inactivité** | Désactivée | Activé  | Désactivée |
+| **Durée de vie partagée**    | Activé  | Désactivée | Désactivée |
 
 
  

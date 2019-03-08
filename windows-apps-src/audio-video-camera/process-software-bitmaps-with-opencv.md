@@ -1,17 +1,17 @@
 ---
 ms.assetid: ''
 description: Cet article explique comment utiliser la classe SoftwareBitmap avec la bibliothèque Open Source Computer Vision Library (OpenCV).
-title: Traiter les images bitmap avec OpenCV
+title: Traiter les images bitmaps avec OpenCV
 ms.date: 03/19/2018
 ms.topic: article
-keywords: windows10, uwp, opencv, softwarebitmap
+keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114595"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616964"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Traiter les images bitmaps avec OpenCV
 
@@ -29,20 +29,20 @@ Les exemples de cet article vous expliquent comment créer un composant Windows 
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>Créer un composant d’assistance Windows Runtime pour l’interopérabilité OpenCV
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Ajoutez un nouveau projet composant Windows Runtime en code natif à votre solution
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Ajouter un nouveau projet de composant de Windows Runtime en code natif à votre solution
 
 1. Ajoutez un nouveau projet à votre solution dans Visual Studio en cliquant sur votre solution dans l’Explorateur de solutions et en sélectionnant **Ajouter-> Nouveau projet**. 
-2. Dans la catégorie **Visual C++**, sélectionnez **Composant Windows Runtime (Windows universel)**. Pour cet exemple, nommez le projet «OpenCVBridge» et cliquez sur **OK**. 
+2. Dans la catégorie **Visual C++**, sélectionnez **Composant Windows Runtime (Windows universel)**. Pour cet exemple, nommez le projet « OpenCVBridge » et cliquez sur **OK**. 
 3. Dans la boîte de dialogue **Nouveau projet Windows universel**, sélectionnez la cible et la version minimale du système d’exploitation pour votre application et cliquez sur **OK**.
 4. Cliquez avec le bouton droit sur le fichier autogénéré Class1.cpp dans l’Explorateur de solutions, puis sélectionnez **Supprimer**. Lorsque la boîte de dialogue de confirmation s’affiche, choisissez **Supprimer**. Supprimez ensuite le fichier d’en-tête Class1.h.
-5. Cliquez avec le bouton droit sur l’icône de projet OpenCVBridge et sélectionnez **Ajouter ->Classe...**. Dans la boîte de dialogue **Ajouter une classe**, saisissez «OpenCVHelper» dans le champ **Nom de la classe**, puis cliquez sur **OK**. Le code sera ajouté aux fichiers de la classe créée dans une étape ultérieure.
+5. Cliquez sur l’icône de projet OpenCVBridge et sélectionnez **Ajouter -> classe...** . Dans le **ajouter une classe** boîte de dialogue, d’entrée « OpenCVHelper » dans le **nom de la classe** champ, puis cliquez sur **OK**. Le code sera ajouté aux fichiers de la classe créée dans une étape ultérieure.
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Ajoutez les packages OpenCV NuGet à votre projet de composant
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Ajoutez les packages NuGet de OpenCV à votre projet de composant
 
 1. Cliquez avec le bouton droit sur le projet OpenCVBridge dans l’Explorateur de solutions et sélectionnez **Gérer les packages NuGet...**
-2. Lorsque la boîte de dialogue Gestionnaire de package NuGet s’ouvre, sélectionnez l’onglet **Parcourir** et tapez «OpenCV.Win» dans la zone de recherche.
-3. Sélectionnez «OpenCV.Win.Core» et cliquez sur **Installer**. Dans la boîte de dialogue **Aperçu**, cliquez sur **OK**.
-4. Utilisez la même procédure pour installer le package «OpenCV.Win.ImgProc».
+2. Lorsque la boîte de dialogue Gestionnaire de package NuGet s’ouvre, sélectionnez l’onglet **Parcourir** et tapez « OpenCV.Win » dans la zone de recherche.
+3. Sélectionnez « OpenCV.Win.Core » et cliquez sur **Installer**. Dans la boîte de dialogue **Aperçu**, cliquez sur **OK**.
+4. Utilisez la même procédure pour installer le package « OpenCV.Win.ImgProc ».
 
 > [!NOTE]
 > Les packages OpenCV.Win.Core et OpenCV.Win.ImgProc ne sont pas régulièrement mis à jour, mais sont toujours recommandés pour créer un OpenCVHelper, comme décrit dans cette page.
@@ -63,7 +63,7 @@ Après les directives include, ajoutez les directives **using** suivantes.
 
 Ensuite, ajoutez la méthode **GetPointerToPixelData** à OpenCVHelper.cpp. Cette méthode prend un **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** et, à travers une série de conversions, obtient une représentation d’interface COM des données de pixels à travers laquelle nous pouvons obtenir un pointeur vers le tampon de données sous-jacent sous forme de tableau **char**. 
 
-Tout d'abord, un **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** contenant les données de pixel est obtenu en appelant **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, demandant un tampon en lecture/écriture afin que la bibliothèque OpenCV puisse modifier ces données de pixel.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** est appelé pour obtenir un objet **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)**. L'interface **IMemoryBufferByteAccess** est ensuite convertie en **IInspectable**, l’interface de base de toutes les classes Windows Runtime, et **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** est appelé pour obtenir une interface COM **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** qui va nous permettre d’obtenir le tampon de données de pixel sous forme de tableau **char**. Enfin, remplissez le tableau **char** en appelant **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. Si l'une des étapes de conversion de cette méthode échoue, la méthode retourne **false**, indiquant que le traitement ne peut pas se poursuivre.
+Tout d'abord, un **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** contenant les données de pixel est obtenu en appelant **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, demandant un tampon en lecture/écriture afin que la bibliothèque OpenCV puisse modifier ces données de pixel.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)**  est appelée pour obtenir un **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** objet. L'interface **IMemoryBufferByteAccess** est ensuite convertie en **IInspectable**, l’interface de base de toutes les classes Windows Runtime, et **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** est appelé pour obtenir une interface COM **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** qui va nous permettre d’obtenir le tampon de données de pixel sous forme de tableau **char**. Enfin, remplissez le tableau **char** en appelant **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. Si l'une des étapes de conversion de cette méthode échoue, la méthode retourne **false**, indiquant que le traitement ne peut pas se poursuivre.
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -82,7 +82,7 @@ Enfin, cet exemple de classe d’assistance implémente une méthode de traiteme
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>Un exemple simple de SoftwareBitmap OpenCV utilisant le composant d’assistance
-Maintenant que le composant OpenCVBridge a été créé, nous pouvons créer une application simple en C# qui utilise la méthode **flou** d'OpenCV pour modifier un **SoftwareBitmap**. Pour accéder au composant Windows Runtime à partir de votre application UWP, vous devez d’abord ajouter une référence au composant. Dans l’Explorateur de solutions, cliquez sur le nœud **Références** sous votre projet d’application UWP, puis sélectionnez **Ajouter une référence...**. Dans la boîte de dialogue Gestionnaire de références, sélectionnez **Projets -> Solution**. Cochez la case en regard de votre projet OpenCVBridge, puis cliquez sur **OK**.
+Maintenant que le composant OpenCVBridge a été créé, nous pouvons créer une application simple en C# qui utilise la méthode **flou** d'OpenCV pour modifier un **SoftwareBitmap**. Pour accéder au composant Windows Runtime à partir de votre application UWP, vous devez d’abord ajouter une référence au composant. Dans l’Explorateur de solutions, cliquez sur le **références** nœud sous votre projet d’application UWP, puis sélectionnez **ajouter une référence...** . Dans la boîte de dialogue Gestionnaire de références, sélectionnez **projets -> la Solution**. Cochez la case en regard de votre projet OpenCVBridge, puis cliquez sur **OK**.
 
 L’exemple de code ci-dessous permet à l’utilisateur de sélectionner un fichier image, puis utilise **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** pour créer une représentation **SoftwareBitmap** de l’image. Pour plus d’informations sur l’utilisation de la méthode **SoftwareBitmap**, consultez la section [Créer, modifier et enregistrer des images bitmap](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
 
@@ -95,7 +95,7 @@ Une nouvelle instance de **OpenCVHelper** est créée et la méthode **Blur** es
 
 [!code-cs[OpenCVBlur](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVBlur)]
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Référence des options BitmapEncoder](bitmapencoder-options-reference.md)
 * [Métadonnées d’image](image-metadata.md)

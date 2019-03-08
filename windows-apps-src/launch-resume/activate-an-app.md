@@ -4,7 +4,7 @@ description: Découvrez comment gérer l’activation d’une application en rem
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,19 +12,19 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929350"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626594"
 ---
 # <a name="handle-app-activation"></a>Gérer l’activation d’une application
 
-Découvrez comment gérer l’activation d’application en remplaçant la méthode [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) .
+Découvrez comment gérer l’activation d’application en substituant le [ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched) (méthode).
 
 ## <a name="override-the-launch-handler"></a>Remplacer le gestionnaire de lancement
 
-Lorsqu’une application est activée, pour une raison quelconque, le système envoie l’événement [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) . Pour obtenir la liste des types d’activation, voir l’énumération [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
+Quand une application est activée, pour une raison quelconque, le système envoie le [ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) événement. Pour obtenir la liste des types d’activation, voir l’énumération [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
 La classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) définit des méthodes que vous pouvez remplacer pour traiter les différents types d’activation. Plusieurs types d’activation ont une méthode spécifique que vous pouvez remplacer. Pour les autres types d’activation, remplacez la méthode [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330).
 
@@ -40,7 +40,7 @@ Définissez la classe pour votre application.
 Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) contient l’état précédent de votre application et les arguments d’activation.
 
 > [!NOTE]
-> Sur Windows, le lancement d’une application suspendue à partir de l’écran de démarrage par vignette ou application de la liste n’a pas d’appeler cette méthode.
+> Sur Windows, lancement d’une application suspendue à partir de la liste de vignette ou l’application de démarrage n’appelle pas cette méthode.
 
 ```csharp
 using System;
@@ -264,14 +264,14 @@ Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/
 ## <a name="remarks"></a>Notes
 
 > [!NOTE]
-> Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de ces informations, décidez si vous devez présenter une nouvelle ou reprendre l’expérience de l’application.
+> Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier le [ **LaunchActivatedEventArgs.TileId** ](https://msdn.microsoft.com/library/windows/apps/br224736) propriété pour déterminer si l’application a été lancée à partir d’un réplica principal ou une vignette secondaire et, en fonction de ces informations, décidez si vous devez : présenter une nouvelle ou reprendre l’expérience de l’application.
 
 ## <a name="important-apis"></a>API importantes
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Gérer la suspension d’une application](suspend-an-app.md)
-* [Gérer la reprise d’une application](resume-an-app.md)
-* [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Cycle de vie de l’application](app-lifecycle.md)
+* [Interruption des applications de handle](suspend-an-app.md)
+* [Gérer la reprise de l’application](resume-an-app.md)
+* [Instructions pour l’application interrompre et reprendre](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Cycle de vie](app-lifecycle.md)

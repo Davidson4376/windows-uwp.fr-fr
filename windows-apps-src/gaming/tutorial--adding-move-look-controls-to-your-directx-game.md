@@ -4,20 +4,20 @@ description: Découvrez comment ajouter des contrôles de déplacement/vue de so
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, déplacement/vue, contrôles
+keywords: windows 10, uwp, jeux, déplacement/vue, contrôles
 ms.localizationpriority: medium
 ms.openlocfilehash: 222f46bbda165442003aecea0bbd138bcb844a3b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943276"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604374"
 ---
-# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Contrôles de déplacement/vue pour les jeux
+# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Présentation de déplacement des contrôles pour les jeux
 
 
 
-Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX.
+Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (aussi appelés contrôles de vue à la souris) à votre jeu DirectX.
 
 Nous allons également aborder la prise en charge du déplacement et de la vue pour les appareils tactiles, avec le contrôleur de déplacement défini en tant que section inférieure gauche de l’écran qui se comporte comme une entrée directionnelle, et le contrôleur de vue défini pour le reste de l’écran, avec la caméra centrée sur le dernier endroit que le joueur a touché dans cette zone.
 
@@ -40,7 +40,7 @@ Notre écran se présente ainsi.
 
 ![Disposition du contrôleur de déplacement/vue](images/movelook-touch.png)
 
-Lorsque vous déplacez le pointeur tactile (pas la souris!) dans la partie inférieure gauche de l’écran, tout mouvement vers le haut déplace la caméra vers l’avant. Tout mouvement vers le bas déplace la caméra vers l’arrière. Cela s’applique également aux mouvements vers la gauche et la droite à l’intérieur de l’espace de pointeur du contrôleur de déplacement. Hors de cet espace, et cela devient un contrôleur de vue, il vous suffit de toucher ou de faire glisser la caméra dans la direction dans laquelle vous souhaitez l’orienter.
+Lorsque vous déplacez le pointeur tactile (pas la souris !) dans la partie inférieure gauche de l’écran, tout mouvement vers le haut déplace la caméra vers l’avant. Tout mouvement vers le bas déplace la caméra vers l’arrière. Cela s’applique également aux mouvements vers la gauche et la droite à l’intérieur de l’espace de pointeur du contrôleur de déplacement. Hors de cet espace, et cela devient un contrôleur de vue, il vous suffit de toucher ou de faire glisser la caméra dans la direction dans laquelle vous souhaitez l’orienter.
 
 ## <a name="set-up-the-basic-input-event-infrastructure"></a>Configurer l’infrastructure des événements d’entrée de base
 
@@ -145,30 +145,30 @@ Notre code contient 4 groupes de champs privés. Passons en revue le rôle de ch
 
 Définissons d’abord quelques champs utiles qui contiennent nos informations mises à jour sur notre vue caméra.
 
--   **m\_position** représente la position de la caméra (et, par conséquent, le plan de vue) dans la scène3D, avec les coordonnées de scène.
--   **m\_pitch** représente le tangage de la caméra, ou sa rotation de haut en bas autour de l’axe X du plan de vue, en radians.
--   **m\_yaw** représente le lacet de la caméra, ou sa rotation de gauche à droite autour de l’axe Y du plan de vue, en radians.
+-   **m\_position** correspond à la position de l’appareil photo (et par conséquent le viewplane) dans la scène 3D, à l’aide des coordonnées de la scène.
+-   **m\_pitch** est la hauteur de l’appareil photo ou sa rotation haut-bas autour axe x de la viewplane, en radians.
+-   **m\_lacet** est le lacet de l’appareil photo ou sa rotation gauche-droite autour axe y de la viewplane, en radians.
 
 Définissons maintenant les champs à utiliser pour stocker des informations sur l’état et la position de nos contrôleurs. Définissons d’abord les champs dont nous avons besoin pour notre contrôleur de déplacement tactile. (Rien de spécial n’est requis pour l’implémentation clavier du contrôleur de déplacement. Nous devons juste lire les événements de clavier avec des gestionnaires spécifiques.)
 
 -   **m\_moveInUse** indique si le contrôleur de déplacement est en cours d’utilisation.
--   **m\_movePointerID** représente l’ID unique pour le pointeur de déplacement actuel. Nous l’utilisons pour différencier le pointeur de vue du pointeur de déplacement lors de la vérification de la valeur de l’ID de pointeur.
--   **m\_moveFirstDown** est le point de l’écran où le joueur a touché pour la première fois la zone du pointeur du contrôleur de déplacement. Nous utiliserons cette valeur plus tard pour définir une zone morte afin d’empêcher les mini-mouvements de déstabiliser la vue.
--   **m\_movePointerPosition** est le point de l’écran où le joueur a actuellement placé le pointeur. Nous l’utilisons pour déterminer la direction dans laquelle l’utilisateur souhaite se déplacer en l’examinant par rapport à **m\_moveFirstDown**.
--   **m\_moveCommand** est la dernière commande calculée pour le contrôleur de déplacement: haut (avant), bas (arrière), gauche ou droite.
+-   **m\_movePointerID** est l’ID unique pour le pointeur de déplacement actuelle. Nous l’utilisons pour différencier le pointeur de vue du pointeur de déplacement lors de la vérification de la valeur de l’ID de pointeur.
+-   **m\_moveFirstDown** est le point sur l’écran dans lequel le joueur touchées tout d’abord la zone de pointeur de contrôleur de déplacement. Nous utiliserons cette valeur plus tard pour définir une zone morte afin d’empêcher les mini-mouvements de déstabiliser la vue.
+-   **m\_movePointerPosition** est le point sur l’écran le joueur a déplacé actuellement le pointeur vers. Nous l’utilisons pour déterminer la direction de l’acteur souhaitait migrer en examinant relatif à **m\_moveFirstDown**.
+-   **m\_moveCommand** est la commande finale calculée pour le contrôleur de déplacement : incrément (avant), (précédent), vers la gauche ou droite.
 
 Définissons maintenant les champs à utiliser pour notre contrôleur de vue, les implémentations de souris et tactile.
 
--   **m\_lookInUse** indique si le contrôle de vue est en cours d’utilisation.
--   **m\_lookPointerID** représente l’ID unique pour le pointeur de vue actuel. Nous l’utilisons pour différencier le pointeur de vue du pointeur de déplacement lors de la vérification de la valeur de l’ID de pointeur.
--   **m\_lookLastPoint** est le dernier point, en coordonnées de scène, qui a été capturé dans la trame précédente.
--   **m\_lookLastDelta** est la différence calculée entre les éléments **m\_position** et **m\_lookLastPoint** actuels.
+-   **m\_lookInUse** indique si le contrôle d’aperçu est en cours d’utilisation.
+-   **m\_lookPointerID** est l’ID unique pour le pointeur d’apparence actuelle. Nous l’utilisons pour différencier le pointeur de vue du pointeur de déplacement lors de la vérification de la valeur de l’ID de pointeur.
+-   **m\_lookLastPoint** est le dernier point, en coordonnées de la scène, qui a été capturé dans l’image précédente.
+-   **m\_lookLastDelta** est la différence calculée entre actuel **m\_position** et **m\_lookLastPoint**.
 
-Enfin, définissons 6valeurs booléennes pour les 6degrés de mouvement, qui permettent d’indiquer l’état actuel de chaque action de déplacement directionnel (activé ou désactivé):
+Enfin, définissons 6 valeurs booléennes pour les 6 degrés de mouvement, qui permettent d’indiquer l’état actuel de chaque action de déplacement directionnel (activé ou désactivé) :
 
--   **m\_forward**, **m\_back**, **m\_left**, **m\_right**, **m\_up** et **m\_down**.
+-   **m\_transférer**, **m\_retour**, **m\_gauche**, **m\_droit**, **m\_des** et **m\_vers le bas**.
 
-Nous utilisons les 6gestionnaires d’événements pour capturer les données d’entrée utilisées pour mettre à jour l’état de nos contrôleurs:
+Nous utilisons les 6 gestionnaires d’événements pour capturer les données d’entrée utilisées pour mettre à jour l’état de nos contrôleurs :
 
 -   **OnPointerPressed**. Le joueur a appuyé sur le bouton gauche de la souris avec le pointeur dans l’écran du jeu, ou a touché l’écran.
 -   **OnPointerMoved**. Le joueur a déplacé la souris avec le pointeur dans l’écran du jeu, ou a fait glisser le pointeur tactile sur l’écran.
@@ -190,7 +190,7 @@ Vous disposez à présent ici de tous les composants nécessaires pour implémen
 ## <a name="create-the-basic-input-events"></a>Créer les événements d’entrée de base
 
 
-Le répartiteur d’événements WindowsRuntime fournit 5événements qui doivent être gérés par les instances de la classe **MoveLookController**:
+Le répartiteur d’événements Windows Runtime fournit 5 événements qui doivent être gérés par les instances de la classe **MoveLookController** :
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
@@ -251,9 +251,9 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-Ce gestionnaire d’événements vérifie que le pointeur n’est pas la souris (dans le cadre de cet exemple, qui prend en charge à la fois les opérations tactiles et avec la souris) et qu’il se trouve dans la zone du contrôleur de déplacement. Si les deux critères sont respectés, il vérifie si une simple pression a été effectuée sur le pointeur, en particulier si ce clic n’est pas lié à une précédente action de vue ou de déplacement, en testant si **m\_moveInUse** présente la valeur false. Si tel est le cas, le gestionnaire capture le point dans la zone du contrôleur de déplacement là où le joueur a appuyé sur le pointeur et affecte la valeur true à **m\_moveInUse** de façon à ce qu’il ne remplace pas la position de départ de l’interaction de l’entrée du contrôleur de déplacement la prochaine fois qu’il est appelé. Il met également à jour l’ID de pointeur du contrôleur de déplacement avec l’ID du pointeur actuel.
+Ce gestionnaire d’événements vérifie que le pointeur n’est pas la souris (dans le cadre de cet exemple, qui prend en charge à la fois les opérations tactiles et avec la souris) et qu’il se trouve dans la zone du contrôleur de déplacement. Si les deux critères sont remplies, il vérifie si le pointeur a été simplement enfoncé, en particulier, si ce clic n’est pas liée à une précédente déplacer ou rechercher d’entrée, en testant si **m\_moveInUse** a la valeur false. Si, par conséquent, le gestionnaire capture le point dans la zone de contrôleur déplacer où la presse s’est produite et définit **m\_moveInUse** sur true, afin que lorsque ce gestionnaire est appelé à nouveau, il ne remplace pas la position de départ du déplacement interaction d’entrée du contrôleur. Il met également à jour l’ID de pointeur du contrôleur de déplacement avec l’ID du pointeur actuel.
 
-Si le pointeur est la souris ou que le pointeur tactile ne se trouve pas dans la zone du contrôleur de déplacement, il doit figurer dans la zone du contrôleur de vue. Il affecte à **m\_lookLastPoint** la position actuelle où l’utilisateur a appuyé sur le bouton de la souris, ou touché et appuyé, réinitialise le delta, et met à jour l’ID de pointeur du contrôleur de vue avec l’ID du pointeur actuel. Il définit également le contrôleur de vue sur l’état actif.
+Si le pointeur est la souris ou que le pointeur tactile ne se trouve pas dans la zone du contrôleur de déplacement, il doit figurer dans la zone du contrôleur de vue. Il définit **m\_lookLastPoint** à la position actuelle où l’utilisateur a appuyé sur le bouton de la souris ou couvertes et enfoncé, réinitialise le delta et met à jour les ID de pointeur du contrôleur coup de œil à l’ID de pointeur actuel. Il définit également le contrôleur de vue sur l’état actif.
 
 **OnPointerMoved**
 
@@ -303,7 +303,7 @@ S’il s’agit du contrôleur de déplacement, il nous suffit de mettre à jour
 
 S’il s’agit du contrôleur de vue, les choses sont un peu plus compliquées. Comme nous devons calculer un nouveau point de mire et centrer la caméra dessus, nous calculons le delta entre le dernier point de mire et la position à l’écran, puis le multiplions par le facteur d’échelle que nous pouvons modifier pour augmenter ou réduire les mouvements de vue par rapport à la distance du mouvement d’écran. Cette valeur nous permet de calculer les tangage et lacet.
 
-Enfin, nous devons désactiver les comportements du contrôleur de déplacement ou de vue lorsque le joueur cesse de déplacer la souris ou de toucher l’écran. Nous utilisons **OnPointerReleased**, que nous appelons lorsque [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché, pour affecter à **m\_moveInUse** ou **m\_lookInUse** la valeur FALSE et désactiver le mouvement panoramique de la caméra, ainsi que pour mettre à zéro l’ID de pointeur.
+Enfin, nous devons désactiver les comportements du contrôleur de déplacement ou de vue lorsque le joueur cesse de déplacer la souris ou de toucher l’écran. Nous utilisons **OnPointerReleased**, que nous appelons lorsque [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché pour définir **m\_moveInUse** ou **m\_lookInUse** FALSE et désactivez l’option le mouvement panoramique de caméra et à zéro l’ID de pointeur.
 
 **OnPointerReleased**
 
@@ -377,7 +377,7 @@ void MoveLookController::OnKeyUp(
 }
 ```
 
-Lorsque la touche est relâchée, ce gestionnaire d’événements lui réaffecte la valeur false. Lorsque nous appelons **Update**, ces états de déplacement directionnel sont vérifiés et la caméra est déplacée en conséquence. Cela est un peu plus simple que l’implémentation des contrôles tactiles!
+Lorsque la touche est relâchée, ce gestionnaire d’événements lui réaffecte la valeur false. Lorsque nous appelons **Update**, ces états de déplacement directionnel sont vérifiés et la caméra est déplacée en conséquence. Cela est un peu plus simple que l’implémentation des contrôles tactiles !
 
 ## <a name="initialize-the-touch-controls-and-the-controller-state"></a>Initialiser les contrôles tactiles et l’état du contrôleur
 
@@ -470,7 +470,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 ## <a name="updating-the-controller-state-info"></a>Mise à jour des informations sur l’état du contrôleur
 
 
-Effectuons maintenant nos calculs pour convertir les informations de coordonnées du pointeur suivies dans **m\_movePointerPosition** en nouvelles informations de coordonnées respectives de notre système de coordonnées universelles. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. C’est donc ici que nous calculons les nouvelles informations de position du point de mire à transmettre à l’application pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
+Maintenant, nous effectuons nos calculs qui convertissent les informations de coordonnées du pointeur suivies dans **m\_movePointerPosition** dans les nouvelles coordonnées respectifs de notre système de coordonnées universelles. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. C’est donc ici que nous calculons les nouvelles informations de position du point de mire à transmettre à l’application pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -555,9 +555,9 @@ void MoveLookController::Update(CoreWindow ^window)
 
 Étant donné que nous ne voulons pas de sautillements lorsque le joueur utilise le contrôleur de déplacement tactile, nous définissons une zone morte virtuelle autour du pointeur avec un diamètre de 32 pixels. Nous ajoutons également la vitesse, qui est la valeur de commande plus un rendement de mouvement. (Vous pouvez ajuster ce comportement selon votre goût, pour ralentir ou accélérer la vitesse de mouvement en fonction de la distance de déplacement du pointeur dans la zone du contrôleur de déplacement.)
 
-Lorsque nous calculons la vitesse, nous traduisons également les coordonnées reçues des contrôleurs de déplacement et de vue en mouvement du point de mire réel que nous envoyons à la méthode qui calcule notre matrice globale pour la scène. Nous commençons par inverser la coordonnée x car, si nous effectuons un clic/déplacement ou un glisser vers la gauche ou la droite avec le contrôleur de vue, le point de mire pivote dans la direction opposée dans la scène, car une caméra peut osciller autour de son axe central. Nous échangeons ensuite les axes Y et Z, car une touche haut/bas enfoncée ou un mouvement de glisser tactile (interprété comme un comportement d’axe Y) sur le contrôleur de déplacement doit être traduit en une action de caméra qui déplace le point de mire à l’intérieur et à l’extérieur de l’écran (l’axeZ).
+Lorsque nous calculons la vitesse, nous traduisons également les coordonnées reçues des contrôleurs de déplacement et de vue en mouvement du point de mire réel que nous envoyons à la méthode qui calcule notre matrice globale pour la scène. Nous commençons par inverser la coordonnée x car, si nous effectuons un clic/déplacement ou un glisser vers la gauche ou la droite avec le contrôleur de vue, le point de mire pivote dans la direction opposée dans la scène, car une caméra peut osciller autour de son axe central. Nous échangeons ensuite les axes Y et Z, car une touche haut/bas enfoncée ou un mouvement de glisser tactile (interprété comme un comportement d’axe Y) sur le contrôleur de déplacement doit être traduit en une action de caméra qui déplace le point de mire à l’intérieur et à l’extérieur de l’écran (l’axe Z).
 
-La position finale du point de mire pour le joueur est la dernière position plus la vitesse calculée, et c’est ce qui est lu par le convertisseur lorsqu’il appelle la méthode **get\_Position** (probablement pendant l’installation de chaque trame). Après cela, la commande de déplacement est redéfinie sur zéro.
+La dernière position du point d’apparence pour le joueur est la dernière position ainsi que la vitesse calculée, et c’est ce qui est lu par le convertisseur lorsqu’il appelle le **obtenir\_Position** (très probablement lors de l’installation pour chaque (méthode) frame). Après cela, la commande de déplacement est redéfinie sur zéro.
 
 ## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>Mise à jour de la matrice globale avec la nouvelle position de la caméra
 
@@ -575,7 +575,7 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-Félicitations ! Vous avez implémenté des contrôles de déplacement/vue de base à la fois pour les écrans tactiles et les contrôles d’entrée par souris/clavier dans votre jeu!
+Félicitations ! Vous avez implémenté des contrôles de déplacement/vue de base à la fois pour les écrans tactiles et les contrôles d’entrée par souris/clavier dans votre jeu !
 
 
 

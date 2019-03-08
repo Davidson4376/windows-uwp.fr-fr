@@ -1,19 +1,19 @@
 ---
-Description: The following article describes all of the properties and elements within the toast content XML payload.
+Description: L’article suivant décrit toutes les propriétés et tous les éléments au sein de la charge utile XML du contenu de notification toast.
 title: Schéma XML du contenu du toast
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934388"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612774"
 ---
 # <a name="toast-content-xml-schema"></a>Schéma XML du contenu du toast
 
@@ -21,7 +21,7 @@ ms.locfileid: "8934388"
 
 L’article suivant décrit toutes les propriétés et tous les éléments au sein de la charge utile XML du contenu du toast.
 
-Dans les schémasXML suivants, le suffixe «?» signifie qu’un attribut est facultatif.
+Dans les schémas XML suivants, le suffixe « ? » signifie qu’un attribut est facultatif.
 
 ## <a name="ltvisualgt-and-ltaudiogt"></a>&lt;visual&gt; et &lt;audio&gt;
 
@@ -89,11 +89,11 @@ addImageQuery?
 
 -   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
-**Attributs dans &lt;binding&gt;**
+**Attributs dans &lt;liaison&gt;**
 
 template?
 
--   \[Important\] template? = "ToastGeneric"
+-   \[Important\] modèle ? = "ToastGeneric"
 -   Si vous avez recours à l’une des nouvelles fonctionnalités des notifications adaptatives et interactives, vérifiez que vous commencez par utiliser le modèle « ToastGeneric » plutôt que le modèle hérité.
 -   Même si l’utilisation des modèles hérités avec les nouvelles actions fonctionne encore, il ne s’agit pas du cas d’utilisation prévu, et nous ne pouvons pas garantir que cette approche continuera de fonctionner à l’avenir.
 
@@ -109,7 +109,7 @@ addImageQuery?
 
 -   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
-**Attributs dans &lt;text&gt;**
+**Attributs dans &lt;texte&gt;**
 
 lang?
 
@@ -158,10 +158,10 @@ silent?
 
 -   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
 
-## <a name="schemas-ltactiongt"></a>Schémas: &lt;action&gt;
+## <a name="schemas-ltactiongt"></a>Schémas : &lt;action&gt;
 
 
-Dans les schémasXML suivants, le suffixe «?» signifie qu’un attribut est facultatif.
+Dans les schémas XML suivants, le suffixe « ? » signifie qu’un attribut est facultatif.
 
 ```
 <toast>
@@ -177,7 +177,7 @@ Dans les schémasXML suivants, le suffixe «?» signifie qu’un attribut est fa
 </toast>
 ```
 
-**Attributs dans &lt;input&gt;**
+**Attributs dans &lt;d’entrée&gt;**
 
 id
 
@@ -208,9 +208,9 @@ defaultInput?
 -   defaultInput? = chaîne
 -   L’attribut « defaultInput » est facultatif et permet de fournir une valeur d’entrée par défaut.
 -   Si l’entrée présente le type « text », cette valeur sera traitée comme une entrée de chaîne.
--   Si l’entrée présente le type «selection», cette valeur doit correspondre à l’identificateur de l’une des sélections disponibles dans les éléments de cette entrée.
+-   Si l’entrée présente le type « selection », cette valeur doit correspondre à l’identificateur de l’une des sélections disponibles dans les éléments de cette entrée.
 
-**Attributs dans &lt;selection&gt;**
+**Attributs dans &lt;sélection&gt;**
 
 id
 
@@ -255,7 +255,7 @@ hint-inputId
 
 Le système peut gérer les actions de répétition et de masquage des notifications si vous ne voulez pas que votre application traite la répétition/replanification des notifications sous la forme d’une tâche en arrière-plan. Les actions gérées par le système peuvent être combinées (ou spécifiées individuellement), mais nous vous déconseillons d’implémenter une action de répétition sans une action de masquage.
 
-Combinaison de commandes système : SnoozeAndDismiss
+Liste déroulante de commandes système : SnoozeAndDismiss
 
 ```
 <toast>
@@ -289,14 +289,14 @@ Pour construire des actions de répétition et de masquage individuelles, procé
 
 -   Spécifiez : activationType = "system".
 -   Spécifiez : arguments = "snooze" | "dismiss".
--   Spécifiez le contenu:
-    -   Si vous souhaitez afficher les chaînes localisées de «snooze» et de «dismiss» sur les actions, spécifiez le contenu comme étant une chaîne vide: &lt;action content = ""/&gt;
-    -   Si vous voulez définir une chaîne personnalisée, fournissez simplement sa valeur: &lt;action content="Me le rappeler ultérieurement" /&gt;
--   Spécifiez l’entrée:
+-   Spécifiez le contenu :
+    -   Si vous souhaitez afficher les chaînes localisées de « snooze » et de « dismiss » sur les actions, spécifiez le contenu comme étant une chaîne vide : &lt;action content = ""/&gt;
+    -   Si vous voulez définir une chaîne personnalisée, fournissez simplement sa valeur : &lt;action content="Me le rappeler ultérieurement" /&gt;
+-   Spécifiez l’entrée :
     -   Si vous ne voulez pas que l’utilisateur sélectionne un intervalle de répétition, mais souhaitez simplement que votre notification se répète une seule fois pendant un intervalle de temps défini par le système (et cohérent dans l’ensemble du système d’exploitation), ne construisez aucun élément &lt;input&gt;.
-    -   Si vous voulez fournir des sélections d’intervalle de répétition:
-        -   Spécifiez l’attribut «hint-inputId» dans l’action de répétition.
-        -   Faites correspondre l’identificateur de l’entrée avec la valeur de l’attribut «hint-inputId» de l’action de répétition: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   Spécifiez l’identificateur de sélection comme étant un entier non négatif (nonNegativeInteger) qui représente l’intervalle de répétition en minutes: &lt;selection id="240" /&gt; signifie une répétition pendant 4heures.
+    -   Si vous voulez fournir des sélections d’intervalle de répétition :
+        -   Spécifiez l’attribut « hint-inputId » dans l’action de répétition.
+        -   Faites correspondre l’identificateur de l’entrée avec la valeur de l’attribut « hint-inputId » de l’action de répétition : &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   Spécifiez l’identificateur de sélection comme étant un entier non négatif (nonNegativeInteger) qui représente l’intervalle de répétition en minutes : &lt;selection id="240" /&gt; signifie une répétition pendant 4 heures.
         -   Assurez-vous que la valeur de l’attribut « defaultInput » dans &lt;input&gt; correspond à l’un des identificateurs des éléments enfants &lt;selection&gt;.
-        -   Fournissez jusqu’à 5valeurs &lt;selection&gt;.
+        -   Fournissez jusqu’à 5 valeurs &lt;selection&gt;.

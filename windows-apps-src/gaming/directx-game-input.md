@@ -4,14 +4,14 @@ description: Entrée de jeu pour votre jeu DirectX.
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeu, directx, entrée, souris, tactile, contrôle
+keywords: windows 10, uwp, jeu, directx, entrée, souris, tactile, contrôle
 ms.localizationpriority: medium
 ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936162"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599454"
 ---
 # <a name="game-input-for-directx-games"></a>Entrée de jeu pour jeux DirectX
 
@@ -30,17 +30,17 @@ La rubrique Contrôles tactiles pour les jeux explique comment ajouter des contr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Sujet</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Contrôles de déplacement/vue pour les jeux</a></p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Présentation de déplacement des contrôles pour les jeux</a></p></td>
 <td align="left"><p>Ajouter des contrôles de déplacement/vue.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="relative-mouse-movement.md">Mouvements de souris relatifs</a></p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">Mouvement de souris relatif</a></p></td>
 <td align="left"><p>Gestion des mouvements de souris relatifs.</p></td>
 </tr>
 <tr class="odd">

@@ -1,27 +1,27 @@
 ---
-Description: Discover the different options desktop Win32 apps have for sending toast notifications
+Description: Découvrir les différentes options qui ont des applications de bureau Win32 pour envoyer des notifications de toast
 title: Notifications toast à partir d'applications de bureau
 label: Toast notifications from desktop apps
 template: detail.hbs
 ms.date: 05/01/2018
 ms.topic: article
-keywords: windows10, uwp, win32, bureau, notifications toast, pont du bureau, options pour l’envoi de notifications toast, serveur com, activateur com, com, com faux, aucune com, sans com, envoyer toast
+keywords: windows 10, uwp, win32, bureau, notifications toast, pont du bureau, options pour l’envoi de notifications toast, serveur com, activateur com, com, com faux, aucune com, sans com, envoyer toast
 ms.localizationpriority: medium
 ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933880"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636084"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Notifications toast à partir d'applications de bureau
 
 Les applications de bureau (Pont du bureau et Win32 classique) peuvent envoyer des notifications toast interactives, tout comme les applications de plateforme Windows universelle (UWP). Toutefois, il existe quelques options différentes pour les applications de bureau en raison des différences des schémas d’activation.
 
-Dans cet article, nous répertorions les options à votre disposition pour envoyer une notification toast sous Windows10. Chaque option prend entièrement en charge...
+Dans cet article, nous répertorions les options à votre disposition pour envoyer une notification toast sous Windows 10. Chaque option prend entièrement en charge...
 
-* la persistance dans le centre de notifications;
-* la possibilité d'être activable depuis le menu contextuel et l’intérieur du centre de maintenance;
+* la persistance dans le centre de notifications ;
+* la possibilité d'être activable depuis le menu contextuel et l’intérieur du centre de maintenance ;
 * la possibilité d'être activable pendant que votre fichier EXE n’est pas en cours d’exécution.
 
 ## <a name="all-options"></a>Toutes les options
@@ -30,13 +30,13 @@ Le tableau ci-dessous illustre les options de prise en charge des toasts au sein
 
 | Option | Éléments visuels | Actions | Entrées | S'active dans le processus |
 | -- | -- | -- | -- | -- |
-| [Activateur COM](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [Pas de COM/Stub CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [Activateur de COM](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
+| [Aucun COM / Stub CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>Option par défaut - activateur de COM
 
-Il s’agit de l’option par défaut qui fonctionne pour le Pont du bureau et Win32 classique et qui prend en charge toutes les fonctionnalités de notification. N’ayez pas peur de «l'activateur COM». Nous avons une bibliothèque [pour les applications C#](send-local-toast-desktop.md) et [C++](send-local-toast-desktop-cpp-wrl.md) qui rend cela très simple, même si vous n’avez jamais écrit de serveur COM.<br/><br/>
+Il s’agit de l’option par défaut qui fonctionne pour le Pont du bureau et Win32 classique et qui prend en charge toutes les fonctionnalités de notification. N’ayez pas peur de « l'activateur COM ». Nous avons une bibliothèque [pour les applications C#](send-local-toast-desktop.md) et [C++](send-local-toast-desktop-cpp-wrl.md) qui rend cela très simple, même si vous n’avez jamais écrit de serveur COM.<br/><br/>
 
 | Éléments visuels | Actions | Entrées | S'active dans le processus |
 | -- | -- | -- | -- |
@@ -44,7 +44,7 @@ Il s’agit de l’option par défaut qui fonctionne pour le Pont du bureau et W
 
 Avec l’option d'activateur COM, vous pouvez utiliser les modèles de notification et les types d’activation suivants dans votre application.<br/><br/>
 
-| Type de modèle et d’activation | Pont du bureau | Win32classique |
+| Type de modèle et d’activation | Pont du bureau | Win32 classique |
 | -- | -- | -- |
 | ToastGeneric au premier plan | ✔️ | ✔️ |
 | ToastGeneric à l'arrière-plan | ✔️ | ✔️ |
@@ -67,7 +67,7 @@ Il s’agit d’une autre option si vous ne pouvez pas mettre en place d'activat
 
 Avec cette option, si vous prenez en charge Win32 classique, vous êtes beaucoup plus limité dans les modèles de notification et les types d’activation que vous pouvez utiliser, comme illustré ci-dessous.<br/><br/>
 
-| Type de modèle et d’activation | Pont du bureau | Win32classique |
+| Type de modèle et d’activation | Pont du bureau | Win32 classique |
 | -- | -- | -- |
 | ToastGeneric au premier plan | ✔️ | ❌ |
 | ToastGeneric à l'arrière-plan | ✔️ | ❌ |
@@ -76,11 +76,11 @@ Avec cette option, si vous prenez en charge Win32 classique, vous êtes beaucoup
 
 Nous publierons à l’avenir des documents montrant comment utiliser cette option. Essentiellement, pour les applications de Pont du bureau, il suffit d'envoyer les notifications toast comme le ferait une application UWP. Lorsque l’utilisateur clique sur votre notification toast, votre application est lancée par ligne de commande avec les arguments de lancement que vous avez spécifié dans la notification toast.
 
-Pour les applications Win32classique, configurez l’AUMID afin de pouvoir envoyer des toasts et spécifiez également un CLSID sur votre raccourci. Il peut s’agir de n’importe quel GUID. N’ajoutez pas le serveur/l'activateur COM. Vous ajoutez un «stub» COM CLSID, ce qui obligera le centre de notifications à conserver la notification. Notez que vous ne pouvez utiliser que des toasts d’activation de protocole, puisque le stub CLSID bloque l’activation de toutes les autres activations toast. Par conséquent, vous devez mettre à jour votre application afin qu'elle prenne en charge l’activation de protocole et que le protocole de toasts active votre propre application.
+Pour les applications Win32 classique, configurez l’AUMID afin de pouvoir envoyer des toasts et spécifiez également un CLSID sur votre raccourci. Il peut s’agir de n’importe quel GUID. N’ajoutez pas le serveur/l'activateur COM. Vous ajoutez un « stub » COM CLSID, ce qui obligera le centre de notifications à conserver la notification. Notez que vous ne pouvez utiliser que des toasts d’activation de protocole, puisque le stub CLSID bloque l’activation de toutes les autres activations toast. Par conséquent, vous devez mettre à jour votre application afin qu'elle prenne en charge l’activation de protocole et que le protocole de toasts active votre propre application.
 
 
 ## <a name="resources"></a>Ressources
 
-* [Envoyer une notification toast locale depuis des applications de bureau en C#](send-local-toast-desktop.md)
-* [Envoyer une notification toast locale depuis des applications de bureau en C++ WRL](send-local-toast-desktop-cpp-wrl.md)
-* [Documentation sur le contenu des toasts](adaptive-interactive-toasts.md)
+* [Envoyer une notification toast local à partir du bureau C# applications](send-local-toast-desktop.md)
+* [Envoyer une notification toast local à partir de bureau C++ WRL applications](send-local-toast-desktop-cpp-wrl.md)
+* [Documentation de contenu de toast](adaptive-interactive-toasts.md)

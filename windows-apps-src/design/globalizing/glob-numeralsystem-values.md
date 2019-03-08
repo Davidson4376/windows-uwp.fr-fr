@@ -1,17 +1,17 @@
 ---
-Description: This topic lists the values available to the NumeralSystem property of various classes in the Windows.Globalization namespace.
+Description: Cette rubrique répertorie les valeurs disponibles pour la propriété NumeralSystem des différentes classes de l’espace de noms Windows.Globalization.
 title: Valeurs de NumeralSystem
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
-keywords: windows10, uwp, globalisation, localisation
+keywords: windows 10, uwp, globalisation, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b7e914684d2e4d3d9c4c1f0cdc7e88d7b5b8fe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924001"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610044"
 ---
 # <a name="numeralsystem-values"></a>Valeurs de NumeralSystem
 
@@ -25,7 +25,7 @@ Cette rubrique répertorie les valeurs disponibles pour la propriété **Numeral
 - [**Windows.Globalization.NumberFormatting.PermilleFormatter**](/uwp/api/windows.globalization.numberformatting.permilleformatter?branch=live)
 - [**Windows.Globalization.NumberFormatting.INumberFormatterOptions**](/uwp/api/windows.globalization.numberformatting.inumberformatteroptions?branch=live)
 
-La propriété **NumeralSystem** indique le système de numération utilisé par la classe. La propriété est une chaîne comme «Latn» pour le système de numération latin (0123456789) ou «Arab» pour le système de numération arabo-indien (٠١٢٣٤٥٦٧٨٩).
+La propriété **NumeralSystem** indique le système de numération utilisé par la classe. La propriété est une chaîne comme « Latn » pour le système de numération latin (0123456789) ou « Arab » pour le système de numération arabo-indien (٠١٢٣٤٥٦٧٨٩).
 
 Voici les valeurs de **NumeralSystem** qui sont prises en charge dans Windows.
 
@@ -38,7 +38,7 @@ Voici les valeurs de **NumeralSystem** qui sont prises en charge dans Windows.
 | Cham | Cham | U+AA50, U+AA51, U+AA52, U+AA53, U+AA54, U+AA55, U+AA56, U+AA57, U+AA58, U+AA59 |
 | Deva | Dévanâgarî | U+0966, U+0967, U+0968, U+0969, U+096A, U+096B, U+096C, U+096D, U+096E, U+096F |
 | FullWide | Pleine largeur | U+FF10, U+FF11, U+FF12, U+FF13, U+FF14, U+FF15, U+FF16, U+FF17, U+FF18, U+FF19 |
-| Gujr | Goudjrati | U+0AE6, U+0AE7, U+0AE8, U+0AE9, U+0AEA, U+0AEB, U+0AEC, U+0AED, U+0AEE, U+0AEF |
+| Gujr | Goudjarati | U+0AE6, U+0AE7, U+0AE8, U+0AE9, U+0AEA, U+0AEB, U+0AEC, U+0AED, U+0AEE, U+0AEF |
 | Guru | Gurmukhi | U+0A66, U+0A67, U+0A68, U+0A69, U+0A6A, U+0A6B, U+0A6C, U+0A6D, U+0A6E, U+0A6F |
 | Java | Javanais | U+A9D0, U+A9D1, U+A9D2, U+A9D3, U+A9D4, U+A9D5, U+A9D6, U+A9D7, U+A9D8, U+A9D9 |
 | Kali | Kayah Li | U+A900, U+A901, U+A902, U+A903, U+A904, U+A905, U+A906, U+A907, U+A908, U+A909 |
@@ -62,7 +62,7 @@ Voici les valeurs de **NumeralSystem** qui sont prises en charge dans Windows.
 | Sund | Sundanais | U+1BB0, U+1BB1, U+1BB2, U+1BB3, U+1BB4, U+1BB5, U+1BB6, U+1BB7, U+1BB8, U+1BB9 |
 | Talu | Nouveau taï-lue | U+19D0, U+19D1, U+19D2, U+19D3, U+19D4, U+19D5, U+19D6, U+19D7, U+19D8, U+19D9 |
 | TamlDec | Tamoul | U+0BE6, U+0BE7, U+0BE8, U+0BE9, U+0BEA, U+0BEB, U+0BEC, U+0BED, U+0BEE, U+0BEF |
-| Telu | Télougou | U+0C66, U+0C67, U+0C68, U+0C69, U+0C6A, U+0C6B, U+0C6C, U+0C6D, U+0C6E, U+0C6F |
-| Thai | Thaï | U+0E50, U+0E51, U+0E52, U+0E53, U+0E54, U+0E55, U+0E56, U+0E57, U+0E58, U+0E59 |
+| Telu | Telugu | U+0C66, U+0C67, U+0C68, U+0C69, U+0C6A, U+0C6B, U+0C6C, U+0C6D, U+0C6E, U+0C6F |
+| Thaï | Thaï | U+0E50, U+0E51, U+0E52, U+0E53, U+0E54, U+0E55, U+0E56, U+0E57, U+0E58, U+0E59 |
 | Tibt | Tibétain | U+0F20, U+0F21, U+0F22, U+0F23, U+0F24, U+0F25, U+0F26, U+0F27, U+0F28, U+0F29 |
 | Vaii | Vaï | U+A620, U+A621, U+A622, U+A623, U+A624, U+A625, U+A626, U+A627, U+A628, U+A629 |

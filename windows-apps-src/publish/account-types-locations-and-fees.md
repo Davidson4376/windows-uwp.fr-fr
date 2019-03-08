@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fda6fc33ab82283047e4bdf4b78d21f78a577c9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601634"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
-Les fenêtres du programme dans [L’espace partenaires](https://partner.microsoft.com/dashboard) propose deux individu et comptes société dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Deux types de compte vous donne qu'accès à publier des applications dans le Windows Store et à participer à d’autres programmes Microsoft.
+Les Windows programmer dans [partenaires](https://partner.microsoft.com/dashboard) offre individuel et de comptes dans de nombreux société [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous donne qu'accès à publier des applications sur le Store et à participer à des programmes Microsoft supplémentaires.
 
 > [!NOTE]
-> Lorsque vous ouvrez votre compte de développeur, veillez à se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) avec le compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
+> Lorsque vous ouvrez votre compte de développeur, veillez à vous connecter à [partenaires](https://partner.microsoft.com/dashboard) avec le compte Microsoft que vous souhaitez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
 
-Au [début du processus d’inscription](https://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deuxtypes de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
+Au [début du processus d’inscription](https://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deux types de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 
 Les comptes d’entreprise s’adressent quant à eux aux organismes et aux entreprises. Pour les comptes d’entreprise, nous mettons en place une [vérification](#account-verification) renforcée afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Les comptes individuels sont généralement adaptés aux développeurs indépendants, même si vous avez la possibilité d’ajouter d’autres utilisateurs de compte aux deux types de comptes.
 
@@ -31,13 +31,13 @@ Voici les principales différences entre les deux types de compte.
 
 | Compte individuel | Compte d’entreprise |
 |--------------------|-----------------|
-| <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99USD (frais d’inscription ponctuels; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type))</li></ul> |
+| <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type))</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par les [Stratégies du Windows Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), les applications avec certaines fonctionnalités, telles que celles qui accèdent aux compte financier informations ou qui exigent d’authentification pour accéder aux fonctionnalités principales (sans utiliser un fournisseur d’authentification sécurisé dédié un tiers), peut uniquement être publiées par les comptes d’entreprise.
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par la [Store stratégies](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), des applications avec certaines fonctionnalités, telles que celles qui accèdent aux financiers des informations de compte ou nécessitant une authentification pour accéder aux fonctionnalités principales (sans utiliser un tiers sécurisé dédié fournisseur d’authentification), peuvent uniquement être publiés par les comptes de société.
 
 ## <a name="account-verification"></a>Vérification de compte
 
-Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre entreprise n’utilise déjà votre nom complet d’éditeur. Pour les comptes d’entreprise, notre partenaire de vérification Dun&Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre des applications à partir d’un compte d’entreprise jusqu'à ce qu’il est été vérifié, mais en attendant, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et à tester les applications et fonctionnent sur la préparation de vos soumissions.
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, notre partenaire de vérification Dun & Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre des applications à partir d’un compte d’entreprise jusqu'à ce qu’il est été vérifié, mais en attendant, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer de création et test des applications et travailler sur la préparation de vos envois.
 
 Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
 
@@ -51,7 +51,7 @@ Dans le tableau suivant, les **frais d’inscription** correspondent au coût ac
 > [!NOTE]
 > Nous ajoutons les taxes et frais applicables aux frais d’inscription au moment où vous vous inscrivez. Au moment de vous régler les sommes dues, votre banque est en outre susceptible de vous facturer des frais pour pouvoir recevoir le paiement.
 
-La colonne **Revenu** décrit ici le mode de [versement](getting-paid-apps.md) que nous utilisons pour vous transférer l’argent que vous gagnez grâce à vos applications. Vous pouvez choisir le [compte de paiement](setting-up-your-payout-account-and-tax-forms.md) sur lequel nous virons cet argent.
+La colonne **Revenu** décrit ici le mode de [versement](getting-paid-apps.md) que nous utilisons pour vous transférer l’argent que vous gagnez grâce à vos applications. Vous pouvez choisir le [compte de revenu](setting-up-your-payout-account-and-tax-forms.md) sur lequel nous virons cet argent.
 
 > [!NOTE]
 > Certains marchés ne prennent pas en charge les applications payantes (**revenu**). Sur ces marchés, seules les applications gratuites peuvent être soumises.
@@ -65,13 +65,13 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 | Algérie | 1535 DZD | 7000 DZD | USD payé à la banque | Non | 
 |  Andorre | 14 EUR | 75 EUR | Aucun revenu | Non | 
 |  Angola | 19 USD | 99 USD | USD payé à la banque | Non | 
-|  Antigua et Barbuda | 19 USD | 99 USD | XCD payé à la banque | Non | 
+|  Antigua-et-Barbuda | 19 USD | 99 USD | XCD payé à la banque | Non | 
 |  Argentine | 106 ARS | 420 ARS | USD payé à la banque | Non | 
 |  Arménie | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Australie | 21 AUD | 110 AUD | AUD payé à la banque | Oui | 
 |  Autriche | 14 EUR | 75 EUR | EUR payé à la banque | Oui | 
 |  Azerbaïdjan | 19 USD | 99 USD | AZN payé à la banque | Non | 
-|  Les Bahamas | 19 USD | 99 USD | Aucun revenu | Non | 
+|  Bahamas | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Bahreïn | 7 BHD | 38 BHD | BHD payé à la banque | Non | 
 |  Bangladesh | 1468 BDT | 7600 BDT | BDT payé à la banque | Non | 
 |  Barbade (La) | 19 USD | 99 USD | Aucun revenu | Non | 
@@ -109,7 +109,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Djibouti | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Dominique | 19 USD | 99 USD | XCD payé à la banque | Non | 
 |  République dominicaine | 19 USD | 99 USD | DOP payé à la banque | Non | 
-|  Équateur (République de l’) | 19 USD | 99 USD | USD payé à la banque | Non | 
+|  Équateur (République de) | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Égypte | 133 EGP | 600 EGP | EGP payé à la banque | Non | 
 |  Salvador | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Guinée équatoriale | 19 USD | 99 USD | Aucun revenu | Non | 
@@ -171,7 +171,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Malte | 14 EUR | 75 EUR | EUR payé à la banque | Oui | 
 |  Marshall (îles) | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Mauritanie | 5681 MRO | 30046 MRO | Aucun revenu | Non | 
-|  Maurice (île) | 19 USD | 99 USD | MUR payé à la banque | Non | 
+|  Maurice | 19 USD | 99 USD | MUR payé à la banque | Non | 
 |  Mexique | 247 MXN | 1140 MXN | MXN payé à la banque | Oui | 
 |  Micronésie | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Monaco | 14 EUR | 75 EUR | EUR payé à la banque | Non | 
@@ -252,5 +252,5 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Zambie | 19 USD | 99 USD | ZMK payé à la banque | Non | 
 |  Zimbabwe | 19 USD | 99 USD | USD payé à la banque | Non |
 
-\ * PayPal peut être utilisé comme une méthode de paiement pour les comptes de revenu sur ce marché, mais ne peut pas l’être pour payer les frais d’inscription de compte développeur.
+\* PayPal peut être utilisé comme mode de paiement pour les comptes de paiement dans ce marché, mais ne peut pas être utilisée pour payer les frais d’inscription de compte développeur.
 

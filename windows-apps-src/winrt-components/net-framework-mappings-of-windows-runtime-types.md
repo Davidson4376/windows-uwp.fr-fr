@@ -4,14 +4,14 @@ description: Le tableau suivant répertorie les mappages que .NET Framework effe
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602614"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Mappages .NET Framework des types Windows Runtime
 
@@ -24,7 +24,7 @@ Le tableau suivant répertorie les mappages que .NET Framework effectue entre le
 
 La plupart des types qui présentent le même nom d’espace de noms et le même nom de type dans UWP et .NET Framework sont des structures (ou des types associés à des structures, tels que les énumérations). Dans UWP, les structures ont pour seuls membres des champs et requièrent des types d’assistance, masqués par .NET Framework. Les versions de .NET Framework de ces structures présentent des propriétés et des méthodes qui fournissent les fonctionnalités des types d’assistance masqués.
 
-Tableau 1: Types UWP correspondants aux types .NET Framework avec un nom ou un espace de noms différent.
+Tableau 1 : UWP types qui correspondent aux types .NET Framework avec un autre nom et/ou l’espace de noms.
 
 | Type/espace de noms UWP                                            | Type/espace de noms .NET Framework                                          | Assembly .NET Framework                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
@@ -57,7 +57,7 @@ Tableau 1: Types UWP correspondants aux types .NET Framework avec un nom ou un e
 
  
 
-Tableau 2 : types UWP correspondants aux types .NET Framework avec un nom et un espace de noms identiques.
+Tableau 2 : UWP types qui correspondent aux types .NET Framework avec les mêmes nom et espace de noms.
 
 | Espace de noms                           | Type               | Assembly .NET Framework                   |
 |-------------------------------------|--------------------|-------------------------------------------|
@@ -67,7 +67,7 @@ Tableau 2 : types UWP correspondants aux types .NET Framework avec un nom et un 
 | Windows.Foundation                  | Size               | System.Runtime.WindowsRuntime.dll         |
 | Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
 | Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | Durée           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | DurationType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridLength         | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | GridUnitType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
@@ -83,4 +83,4 @@ Tableau 2 : types UWP correspondants aux types .NET Framework avec un nom et un 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Création de composants Windows Runtime en c# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

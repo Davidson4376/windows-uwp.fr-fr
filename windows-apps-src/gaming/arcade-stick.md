@@ -4,56 +4,56 @@ description: Utilisez les API de stick arcade Windows.Gaming.Input pour détecte
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, stick arcade, entrée
+keywords: Windows 10, uwp, jeux, stick arcade, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593144"
 ---
 # <a name="arcade-stick"></a>Stick arcade
 
-Cet article explique les notions de base de la programmation pour les sticks arcade XboxOne avec l’API [Windows.Gaming.Input.ArcadeStick][arcadestick] et les API associées pour la plateforme Windows universelle (UWP).
+Cet article explique les notions de base de la programmation pour les sticks arcade Xbox One avec l’API [Windows.Gaming.Input.ArcadeStick][arcadestick] et les API associées pour la plateforme Windows universelle (UWP).
 
-Voici ce que vous allez apprendre à la lecture de cet article:
+Voici ce que vous allez apprendre à la lecture de cet article :
 
 * Obtenir une liste des sticks arcade connectés et de leurs utilisateurs
 * Détecter l’ajout ou la suppression d’un stick arcade
 * Lire les entrées provenant d’un ou de plusieurs sticks arcade
-* comporte des sticks arcade en tant que périphériques de navigation d’interface utilisateur
+* Comment arcade clés se comportent comme des périphériques de navigation de l’interface utilisateur
 
 ## <a name="arcade-stick-overview"></a>Vue d’ensemble des sticks arcade
 
-Les sticks arcade sont des périphériques d’entrée appréciés pour leur capacité à reproduire la sensation des machines d’arcade autonomes et pour leurs contrôles numériques de haute précision. Les sticks arcade constituent le périphérique d’entrée parfait pour les combats tête à tête ou d’autres jeux de type arcade. Ils conviennent à tous les jeux qui fonctionnent bien avec des contrôles entièrement numériques. Les sticks arcade sont pris en charge dans les applications UWP Windows10 et XboxOne par l’espace de noms [Windows.Gaming.Input][].
+Les sticks arcade sont des périphériques d’entrée appréciés pour leur capacité à reproduire la sensation des machines d’arcade autonomes et pour leurs contrôles numériques de haute précision. Les sticks arcade constituent le périphérique d’entrée parfait pour les combats tête à tête ou d’autres jeux de type arcade. Ils conviennent à tous les jeux qui fonctionnent bien avec des contrôles entièrement numériques. Les sticks arcade sont pris en charge dans les applications UWP Windows 10 et Xbox One par l’espace de noms [Windows.Gaming.Input][].
 
-Sticks arcade Xbox One sont dotés d’une manette de jeu numérique 8 voies, six boutons **d’Action** (représentées en tant que A1-A6 dans l’image ci-dessous) et deux boutons **spéciaux** (représentées en tant que S1 et S2); elles sont des périphériques d’entrée entièrement numériques qui ne prennent en charge les contrôles analogiques ni la vibration. Sticks arcade Xbox One sont également dotés de boutons **d’affichage** et de **Menu** prennent en charge la navigation d’interface utilisateur, mais ils ne sont pas conçus pour prendre en charge les commandes de jeu et ne peut pas être utilisables en tant que les boutons de manette de jeu.
+Xbox One arcade clés sont équipés d’un joystick numérique 8 voies, six **Action** boutons (représentée en tant que A1-A6 dans l’image ci-dessous) et deux **spéciale** boutons (représentée en tant que S1 et S2) ; ils sont numériques de tous les périphériques d’entrée qui ne prennent en charge les contrôles analogiques ou vibration. Xbox One arcade clés sont dotées de **vue** et **Menu** boutons utilisés pour prendre en charge la navigation de l’interface utilisateur, mais ils ne sont pas conçus pour prendre en charge les commandes de jeu et ne sont pas accessibles facilement sous forme de boutons de la manette de jeu .
 
-![Stick avec 4 directionnelle de manette de jeu, arcade 6 boutons d’action (A1-A6) et les boutons spéciaux 2 (S1 et S2)](images/arcade-stick-1.png)
+![TIGE avec 4 bidirectionnelle manette de jeu, d’arcade 6 boutons d’action (A1-A6) et 2 boutons spéciaux (S1 et S2)](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>Navigation d’interface utilisateur
 
-Pour faciliter la prise en charge de nombreux périphériques d’entrée différents pour la navigation dans l’interface utilisateur, et améliorer la cohérence entre les jeux et les périphériques, la plupart des périphériques d’entrée _physiques_ jouent simultanément le rôle de périphérique d’entrée _logique_ distinct, appelé [contrôleur de navigation d’interface utilisateur](ui-navigation-controller.md). Le contrôleur de navigation d’interface utilisateur fournit un vocabulaire commun pour les commandes de navigation d’interface utilisateur utilisées sur les différents périphériques d’entrée.
+Pour faciliter la prise en charge de nombreux périphériques d’entrée différents pour la navigation dans l’interface utilisateur, et améliorer la cohérence entre les jeux et les périphériques, la plupart des périphériques d’entrée _physiques_ jouent simultanément le rôle de périphérique d’entrée _logique_ distinct, appelé [contrôleur de navigation d’interface utilisateur](ui-navigation-controller.md). Le contrôleur de navigation d’interface utilisateur fournit un vocabulaire commun pour les commandes de navigation dans l’interface utilisateur, sur plusieurs périphériques d’entrée.
 
-En tant qu’un contrôleur de navigation d’interface utilisateur, les sticks arcade mappent l' [ensemble](ui-navigation-controller.md#required-set) des commandes de navigation pour la manette de jeu et les boutons **d’affichage**, **Menu**, **Action 1**et **2 de l’Action** .
+En tant que contrôleur de navigation de l’interface utilisateur, arcade bâtons carte le [ensemble obligatoire](ui-navigation-controller.md#required-set) des commandes de navigation pour la manette de jeu et **vue**, **Menu**, **1 Action**, et **Action 2** boutons.
 
 | Commande de navigation | Entrée stick arcade  |
 | ------------------:| ------------------- |
 |                 Up (Haut) | Stick vers le haut            |
-|               Down (Bas) | Stick vers le bas          |
+|               Vers le bas | Stick vers le bas          |
 |               Left (Gauche) | Stick vers la gauche          |
-|              Right (Droite) | Stick vers la droite         |
-|               View (Afficher) | Bouton Afficher         |
+|              Droit | Stick vers la droite         |
+|               Affichage | Bouton Afficher         |
 |               Menu | Bouton Menu         |
-|             Accept (Accepter) | Bouton Action1     |
-|             Cancel (Annuler) | Bouton Action2     |
+|             Accept | Bouton Action 1     |
+|             Cancel | Bouton Action 2     |
 
 Les sticks arcade ne mappent aucun [ensemble facultatif](ui-navigation-controller.md#optional-set) de commandes de navigation.
 
 ## <a name="detect-and-track-arcade-sticks"></a>Détecter et suivre des sticks arcade
 
-Détecter et de suivi sticks arcade fonctionne exactement de la même manière que pour les boîtiers de commande, sauf avec la classe [ArcadeStick][] au lieu de la classe de [boîtier de commande](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) . Pour en savoir plus, consultez la rubrique [Boîtier de commande et vibration](gamepad-and-vibration.md).
+Détecter et de suivre les clés d’arcade fonctionnent de la même façon que pour les boîtiers de commande, à l’exception avec le [ArcadeStick][] classe au lieu du [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) classe. Pour en savoir plus, consultez la rubrique [Boîtier de commande et vibration](gamepad-and-vibration.md).
 
 <!-- Arcade sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected arcades sticks and events to notify you when an arcade stick is added or removed.
 
@@ -121,7 +121,7 @@ Each arcade stick can be associated with a user account to link their identity t
 
 ## <a name="reading-the-arcade-stick"></a>Lecture des entrées du stick arcade
 
-Une fois que vous avez identifié le stick arcade qui vous intéresse, vous pouvez commencer à collecter les entrées de ce stick. Toutefois, contrairement à d’autres sortes d’entrées que vous connaissez peut-être, les sticks arcade ne communiquent pas les changements d’état en déclenchant des événements. À la place, vous devez _interroger_ régulièrement ces sticks arcade pour connaître leur état actuel.
+Une fois que vous avez identifié le stick arcade qui vous intéresse, vous pouvez commencer à collecter les entrées de ce stick. Toutefois, contrairement à d’autres sortes d’entrées que vous connaissez peut-être, les sticks arcade ne communiquent pas les changements d’état en déclenchant des événements. À la place, vous devez _interroger_ régulièrement ces boîtiers de commande pour connaître leur état actuel.
 
 ### <a name="polling-the-arcade-stick"></a>Interroger le stick arcade
 
@@ -139,16 +139,16 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 En plus de l’état du stick arcade, chaque valeur comprend un horodatage qui indique précisément le moment d’extraction de cet état. Cet horodatage est utile pour faire le lien avec le minutage des valeurs précédentes ou de la simulation de jeu.
 
-### <a name="reading-the-buttons"></a>Lecture des entrées des boutons
+### <a name="reading-the-buttons"></a>Lecture des boutons
 
-Chacun des boutons de stick arcade&mdash;quatre directions de la manette de jeu, six boutons **d’Action** et deux boutons **spéciaux** &mdash;fournit une lecture numérique qui indique si elle est enfoncé (bas) ou relâché (haut). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes; au lieu de cela, elles sont toutes regroupées dans un seul champ de bits représenté par l’énumération [ArcadeStickButtons][] .
+Chacun des boutons stick arcade&mdash;quatre directions de la manette de jeu, six **Action** boutons et les deux **spéciale** boutons&mdash;fournit une lecture numérique qui indique si Il a appuyé (bas) ou relâché (haut). Pour plus d’efficacité, les relevés de bouton ne sont pas représentées comme des valeurs booléennes individuelles ; ces derniers sont tous à la place, rassemblés dans un seul champ de bits qui est représenté par le [ArcadeStickButtons][] énumération.
 
 > [!NOTE]
-> Les sticks arcade sont dotés de boutons supplémentaires, utilisés pour la navigation dans l’interface utilisateur tels que les boutons **d’affichage** et de **Menu** . Ces boutons ne figurent pas dans l’énumération `ArcadeStickButtons`. Leurs entrées sont lues uniquement quand le stick arcade est utilisé comme périphérique de navigation d’interface utilisateur. Pour plus d’informations, consultez [Périphérique de navigation d’interface utilisateur](ui-navigation-controller.md).
+> Arcade clés sont équipés de boutons supplémentaires utilisés pour la navigation de l’interface utilisateur, telles que la **vue** et **Menu** boutons. Ces boutons ne figurent pas dans l’énumération `ArcadeStickButtons`. Leurs entrées sont lues uniquement quand le stick arcade est utilisé comme périphérique de navigation d’interface utilisateur. Pour plus d’informations, consultez [Périphérique de navigation d’interface utilisateur](ui-navigation-controller.md).
 
-Les valeurs des boutons sont lues à partir de la propriété `Buttons` de la structure [ArcadeStickReading][]. Comme cette propriété est un champ de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état enfoncé (position basse) lorsque le bit correspondant est défini; dans le cas contraire, il se trouve à l’état relâché (position haute).
+Les valeurs des boutons sont lues à partir de la propriété `Buttons` de la structure [ArcadeStickReading][]. Comme cette propriété est un champ de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état enfoncé (position basse) lorsque le bit correspondant est défini ; dans le cas contraire, il se trouve à l’état relâché (position haute).
 
-L’exemple suivant détermine si le bouton **Action1** est enfoncé.
+L’exemple suivant détermine si le **Action 1** bouton est enfoncé.
 
 ```cpp
 if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action1))
@@ -157,7 +157,7 @@ if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action
 }
 ```
 
-L’exemple suivant détermine si le bouton **Action1** est l’état relâché.
+L’exemple suivant détermine si le **Action 1** bouton est relâché.
 
 ```cpp
 if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
@@ -172,11 +172,11 @@ Vous pouvez avoir besoin de savoir quand un bouton passe de l’état enfoncé �
 
 L’[exemple InputInterfacingUWP _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) montre comment utiliser les sticks arcade en tandem avec différents types de périphériques d’entrée. Il illustre aussi le comportement de ces périphériques d’entrée utilisés comme contrôleurs de navigation d’interface utilisateur.
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 * [Windows.Gaming.Input.UINavigationController][]
 * [Windows.Gaming.Input.IGameController][]
-* [Pratiques de saisie pour les jeux](input-practices-for-games.md)
+* [Pratiques d’entrée pour les jeux](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx

@@ -1,23 +1,23 @@
 ---
-title: Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
+title: Porter un convertisseur OpenGL ES 2.0 simple vers Direct3D 11
 description: 'Le premier exercice de portage nous permettra de mettre en pratique une notion de base : porter un convertisseur simple d’OpenGL ES 2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX 11 (Windows universelle) fourni dans Visual Studio 2015.'
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, opengl, direct3d11 , portage
+keywords: windows 10, uwp, jeux, opengl, direct3d 11 , portage
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047677"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594214"
 ---
-# <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
+# <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGL ES 2.0 simple vers Direct3D 11
 
 
 
-Cet exercice de portage permet de mettre en pratique une notion de base: porter un convertisseur simple d’OpenGLES2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX11 (Windows universelle) fourni dans VisualStudio2015. À mesure que nous avancerons dans le processus de portage, nous découvrirons comment effectuer les différentes tâches suivantes :
+Cet exercice de portage permet de mettre en pratique une notion de base : porter un convertisseur simple d’OpenGL ES 2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX 11 (Windows universelle) fourni dans Visual Studio 2015. À mesure que nous avancerons dans le processus de portage, nous découvrirons comment effectuer les différentes tâches suivantes :
 
 -   Porter un ensemble simple de mémoires tampons de vertex vers des mémoires tampons d’entrée Direct3D
 -   Porter des variables uniform et attribute vers des mémoires tampons constantes
@@ -38,7 +38,7 @@ Cette rubrique examine deux chemins de code qui effectuent la même tâche graph
 
 ![Cube OpenGL simple](images/simple-opengl-cube.png)
 
-Au terme de cette procédure pas à pas, vous aurez normalement passé en revue les principales différences entre Open GL ES2.0 et Direct3D11:
+Au terme de cette procédure pas à pas, vous aurez normalement passé en revue les principales différences entre Open GL ES 2.0 et Direct3D 11 :
 
 -   Représentation des mémoires tampons et données de vertex
 -   Processus de création et de configuration des nuanceurs
@@ -78,9 +78,9 @@ typedef struct
 } Renderer;
 ```
 
-Cette structure n’a qu’une seule instance; elle contient tous les éléments requis pour effectuer le rendu d’un maillage très simple d’un nuanceur de vertex.
+Cette structure n’a qu’une seule instance ; elle contient tous les éléments requis pour effectuer le rendu d’un maillage très simple d’un nuanceur de vertex.
 
-> **Remarque**OpenGL ES 2.0 tout code de cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group et utilise la syntaxe de programmation Windows C.
+> **Remarque**  code Any OpenGL ES 2.0 dans cette rubrique est basé sur l’implémentation de l’API de Windows fournie par le groupe Khronos et utilise C Windows syntaxe de programmation.
 
  
 
@@ -90,9 +90,9 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 ### <a name="technologies"></a>Technologies
 
 -   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
--   OpenGL ES2.0
+-   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Conditions préalables
 
 -   Facultatif. Consultez la rubrique [Comparer le code EGL avec DXGI et Direct3D](moving-from-egl-to-dxgi.md). Cette rubrique vous explique plus en détail le fonctionnement de l’interface graphique fournie par DirectX.
 
@@ -112,16 +112,16 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="port-the-shader-config.md">Porter les objets nuanceurs</a></p></td>
+<td align="left"><p><a href="port-the-shader-config.md">Les objets de nuanceur de port</a></p></td>
 <td align="left"><p>Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D 11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">Porter les mémoires tampons et données de vertex</a></p></td>
+<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">Les mémoires tampons de vertex et les données de port</a></p></td>
 <td align="left"><p>Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-the-glsl.md">Porter le langage GLSL</a></p></td>
-<td align="left"><p>Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGLES2.0 vers le langage HLSL (High-level Shader Language) de Direct3D11.</p></td>
+<td align="left"><p><a href="port-the-glsl.md">Port du GLSL</a></p></td>
+<td align="left"><p>Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos objets nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGL ES 2.0 vers le langage HLSL (High-level Shader Language) de Direct3D 11.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="draw-to-the-screen.md">Dessiner à l’écran</a></p></td>
@@ -135,9 +135,9 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>Ressources supplémentaires
 
 
--   [Préparer votre environnement pour le développement de jeux UWP DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [Créer un projet DirectX 11 pour UWP](user-interface.md)
--   [Mapper les concepts et l’infrastructure OpenGL ES 2.0 à Direct3D 11](map-concepts-and-infrastructure.md)
+-   [Préparer votre environnement de développement pour le développement de jeux DirectX de UWP](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [Créer un nouveau projet de DirectX 11 pour UWP](user-interface.md)
+-   [Mapper des infrastructure et les concepts d’OpenGL ES 2.0 vers Direct3D 11](map-concepts-and-infrastructure.md)
 
  
 

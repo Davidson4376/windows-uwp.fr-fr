@@ -1,26 +1,26 @@
 ---
 title: Code complet de DDSTextureLoader
-description: Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
+description: Code complet pour une classe et la méthode permettant de charger une texture DDS à partir de la mémoire.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, jeux, ddstextureloader
+keywords: Windows 10, uwp, jeux, ddstextureloader
 ms.localizationpriority: medium
 ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941652"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662444"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>Code complet de DDSTextureLoader
 
 
 
-Code complet pour une classe et une méthode qui charge une texture DDS à partir de la mémoire.
+Code complet pour une classe et la méthode permettant de charger une texture DDS à partir de la mémoire.
 Voir [Charger des ressources dans votre jeu DirectX](load-a-game-asset.md) pour plus d’informations sur les textures et l'utilisation de cet exemple.
 
-Cette rubrique contient les sections suivantes:
+Cette rubrique contient les sections suivantes :
 
 -   [Technologies](#technologies)
 -   [Configuration requise](#requirements)
@@ -34,13 +34,13 @@ Cet exemple n’est pas disponible en téléchargement.
 
 ## <a name="technologies"></a>Technologies
 
-**Langages de programmation**: C++    
-**Modèles de programmation**: Windows Runtime
+**Langages de programmation** : C++    
+**Modèles de programmation** : Windows Runtime
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Configuration requise
 
-**Client minimal pris en charge**: Windows10                               
-**Serveur minimal pris en charge**: Windows Server2016 Technical Preview
+**Client minimal pris en charge** : Windows 10                               
+**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview
 
 
 

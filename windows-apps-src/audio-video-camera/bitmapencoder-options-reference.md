@@ -4,14 +4,14 @@ description: Cet article répertorie les options de codage qui peuvent être uti
 title: Référence des options BitmapEncoder
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f5c6ef180cb4abe90a705e73be8d99ecbd2ca7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947082"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603184"
 ---
 # <a name="bitmapencoder-options-reference"></a>Référence des options BitmapEncoder
 
@@ -20,17 +20,17 @@ Cet article répertorie les options de codage qui peuvent être utilisées avec 
 
 | Nom                    | Type de propriété | Notes d’utilisation                                                                                        | Formats valides |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
-| ImageQuality            | unique       | Valeurs valides de0 à1.0. Des valeurs plus élevées indiquent une meilleure qualité                                 | JPEG, JPEG-XR |
-| CompressionQuality      | unique       | Valeurs valides de0 à1.0. Des valeurs plus élevées indiquent un schéma de compression plus efficace et plus lent. | TIFF          |
-| Lossless                | valeur booléenne      | Si cette propriété a la valeur true, l’option ImageQuality est ignorée                                        | JPEG-XR       |
-| InterlaceOption         | valeur booléenne      | Indique s’il faut ou non entrelacer l’image.                                                                    | PNG           |
+| ImageQuality            | unique       | Valeurs valides de 0 à 1.0. Des valeurs plus élevées indiquent une meilleure qualité                                 | JPEG, JPEG-XR |
+| CompressionQuality      | unique       | Valeurs valides de 0 à 1.0. Des valeurs plus élevées indiquent un schéma de compression plus efficace et plus lent. | TIFF          |
+| Lossless                | booléen      | Si cette propriété a la valeur true, l’option ImageQuality est ignorée                                        | JPEG-XR       |
+| InterlaceOption         | booléen      | Indique s’il faut ou non entrelacer l’image.                                                                    | PNG           |
 | FilterOption            | uint8        | Utiliser l’énumération [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389)                                | PNG           |
 | TiffCompressionMethod   | uint8        | Utiliser l’énumération [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399)                    | TIFF          |
-| Luminance               | uint32Array  | Tableau de 64éléments comprenant des constantes de quantification de la luminance                               | JPEG          |
-| Chrominance             | uint32Array  | Tableau de 64éléments comprenant des constantes de quantification de la chrominance                             | JPEG          |
+| Luminance               | uint32Array  | Tableau de 64 éléments comprenant des constantes de quantification de la luminance                               | JPEG          |
+| Chrominance             | uint32Array  | Tableau de 64 éléments comprenant des constantes de quantification de la chrominance                             | JPEG          |
 | JpegYCrCbSubsampling    | uint8        | Utiliser l’énumération [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386)                    | JPEG          |
-| SuppressApp0            | valeur booléenne      | Indique s’il faut ou non supprimer la création d’un bloc de métadonnées App0.                                        | JPEG          |
-| EnableV5Header32bppBGRA | valeur booléenne      | Indique s’il faut ou non coder dans une version 5BMP avec prise en charge alpha.                                         | BMP           |
+| SuppressApp0            | booléen      | Indique s’il faut ou non supprimer la création d’un bloc de métadonnées App0.                                        | JPEG          |
+| EnableV5Header32bppBGRA | booléen      | Indique s’il faut ou non coder dans une version 5 BMP avec prise en charge alpha.                                         | BMP           |
 
  
 

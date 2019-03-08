@@ -4,14 +4,14 @@ title: ID de classe de service AEP
 description: Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598214"
 ---
 # <a name="aep-service-class-ids"></a>ID de classe de service AEP
 
@@ -27,10 +27,10 @@ Un développeur d’application doit utiliser des filtres de syntaxe de recherch
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Services Bluetooth et Bluetooth LE
 
-Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants:
+Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants :
 
--   ID de protocole Bluetooth: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
--   ID de protocole Bluetooth LE: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
+-   ID de protocole Bluetooth : {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
+-   ID de protocole Bluetooth LE : {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 Le protocole Bluetooth prend en charge plusieurs services présentant tous le même format de base. Les quatre premiers chiffres du GUID varient en fonction du service, mais tous les GUID Bluetooth se terminent par **0000-0000-1000-8000-00805F9B34FB**. Par exemple, le service RFCOMM a le précurseur 0x0003. L’ID complet est donc **00030000-0000-1000-8000-00805F9B34FB**. Le tableau suivant répertorie certains services Bluetooth courants.
 
@@ -82,13 +82,13 @@ Les profils personnalisés sont définis avec leurs propres GUID. Ce GUID person
 
 ## <a name="upnp-services"></a>Services UPnP
 
-Les services UPnP utilisent l’identificateur de protocole suivant: {0e261de4-12f0-46e6-91ba-428607ccef64}
+Les services UPnP utilisent l’identificateur de protocole suivant : {0e261de4-12f0-46e6-91ba-428607ccef64}
 
 En règle générale, tous les services UPnP ont leur nom haché dans un GUID à l’aide de l’algorithme défini dans RFC 4122. Le tableau suivant répertorie certains services UPnP communs définis dans Windows.
 
 | Nom du service                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Gestionnaire des connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| Gestionnaire de connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | Transport AV                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | Contrôle de rendu                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Transfert de couche 3                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
@@ -105,7 +105,7 @@ En règle générale, tous les services UPnP ont leur nom haché dans un GUID à
 
 ## <a name="wsd-services"></a>Services WSD
 
-Les services WSD utilisent l’identificateur de protocole suivant: {782232aa-a2f9-4993-971b-aedc551346b0}
+Les services WSD utilisent l’identificateur de protocole suivant : {782232aa-a2f9-4993-971b-aedc551346b0}
 
 En règle générale, tous les services WSD ont leur nom haché dans un GUID à l’aide de l’algorithme défini dans RFC 4122. Le tableau suivant répertorie certains services WSD communs définis dans Windows.
 

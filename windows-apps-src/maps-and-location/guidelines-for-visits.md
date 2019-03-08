@@ -1,17 +1,17 @@
 ---
-Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
+Description: Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour améliorer le suivi de l’emplacement.
 title: Instructions pour l'utilisation du suivi des visites
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
 ms.topic: article
-keywords: windows10, uwp, carte, emplacement, geovisit
+keywords: windows 10, uwp, carte, emplacement, geovisit
 ms.localizationpriority: medium
 ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640774"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>Instructions pour l'utilisation du suivi des visites
 
@@ -268,7 +268,7 @@ Cela établit qu’une classe de tâche en arrière-plan appelée `VisitBackgrou
 
 Votre application doit maintenant être capable d’inscrire la tâche en arrière-plan de gestion des visites, et cette tâche doit être activée chaque fois que l’appareil consigne un changement d’état lié à la visite. Vous devrez renseigner la logique dans votre classe de tâche en arrière-plan afin de déterminer ce qu'il faut faire avec ces informations de changement d’état.
 
-## <a name="related-topics"></a>Rubriques associées
-* [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+## <a name="related-topics"></a>Rubriques connexes
+* [Créer et inscrire une tâche en arrière-plan out-of-process](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [Obtenir l’emplacement de l’utilisateur](get-location.md)
 * [Espace de noms Windows.Devices.Geolocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

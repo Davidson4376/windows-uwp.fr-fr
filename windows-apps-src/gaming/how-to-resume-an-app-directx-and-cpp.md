@@ -1,25 +1,25 @@
 ---
 title: Comment relancer une application (DirectX et C++)
-description: Cet article indique comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle (UWP).
+description: Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme UWP.
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, reprise, directx
+keywords: windows 10, uwp, reprise, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947340"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601604"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>Comment relancer une application (DirectX et C++)
 
 
 
-Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
+Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme UWP.
 
-## <a name="register-the-resuming-event-handler"></a>Enregistrer le gestionnaire d’événements de reprise
+## <a name="register-the-resuming-event-handler"></a>Enregistrer le gestionnaire d’événement de reprise
 
 
 Enregistrez-vous pour traiter l’événement [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859), qui indique que l’utilisateur revient vers votre application après s’en être éloigné.
@@ -83,7 +83,7 @@ void App::Run()
 }
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 
 Le système suspend votre application chaque fois que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan. Cependant, il se peut que l’application ait été suspendue pendant une durée significative. Elle doit dans ce cas actualiser le contenu affiché susceptible d’avoir changé pendant l’inactivité et redémarrer les threads de traitement audio ou de rendu. Si vous avez enregistré des données d’état de jeu durant un événement de suspension précédent, restaurez-les maintenant.

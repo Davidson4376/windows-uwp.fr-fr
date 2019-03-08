@@ -1,19 +1,19 @@
 ---
-Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
+Description: Utilisez les notifications par vignette pouvant être suivies pour savoir ce que votre application a affiché sur sa Vignette dynamique lorsque l’utilisateur a cliqué dessus.
 title: Notifications par vignette pouvant être suivies
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
 template: detail.hbs
 ms.date: 06/13/2017
 ms.topic: article
-keywords: windows10, uwp, vignettes pouvant être suivies, vignettes dynamiques, notifications par vignette pouvant être suivies
+keywords: windows 10, uwp, vignettes pouvant être suivies, vignettes dynamiques, notifications par vignette pouvant être suivies
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937999"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592644"
 ---
 # <a name="chaseable-tile-notifications"></a>Notifications par vignette pouvant être suivies
 
@@ -21,13 +21,13 @@ Les notifications par vignette pouvant être suivies vous permettent de détermi
 Par exemple, une application d’actualités peut utiliser cette fonctionnalité pour déterminer l'article que sa Vignette dynamique affichait lorsque l’utilisateur l'a lancée. Elle peut ainsi garantir que l’article sera affiché de façon visible pour que l’utilisateur puisse le trouver. 
 
 > [!IMPORTANT]
-> **Nécessite la mise à jour anniversaire**: pour utiliser les notifications de vignette pouvant être suivies avec les applications UWP en C#, C++ ou VB, vous devez cibler le Kit de développement logiciel (SDK)14393 et exécuter la Build14393 ou une version supérieure. Pour les applications UWP en JavaScript, vous devez cibler le Kit de développement logiciel (SDK)17134 et exécuter la Build17134 ou une version supérieure. 
+> **Requiert la mise à jour anniversaire**: Utiliser les notifications de vignette chaseable avec C#, C++ ou UWP en VB, les applications doivent cibler le Kit de développement logiciel 14393 et d’être en cours d’exécution build 14393 ou une version ultérieure. Pour les applications UWP en JavaScript, vous devez cibler le Kit de développement logiciel (SDK) 17134 et exécuter la Build 17134 ou une version supérieure. 
 
 
-> **API importantes**: [propriété LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [classe TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **API importantes**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
-## <a name="how-it-works"></a>Principe de fonctionnement
+## <a name="how-it-works"></a>Fonctionnement
 
 Pour activer les notifications par vignette pouvant être suivies, vous utilisez la propriété **Arguments** sur la charge utile de notification par vignette (semblable à la propriété de lancement de la charge utile de notification toast) pour incorporer des informations sur le contenu dans la notification par vignette.
 
@@ -36,13 +36,13 @@ Lorsque votre application est lancée via la Vignette dynamique, le système ret
 
 ## <a name="when-to-use-chaseable-tile-notifications"></a>Quand utiliser les notifications par vignette pouvant être suivies
 
-Les notifications par vignette pouvant être suivies s'utilisent généralement lorsque vous utilisez la file d’attente de notification sur votre Vignette dynamique (ce qui signifie que vous parcourez jusqu'à 5notifications différentes par cycle). Elles sont également utiles lorsque le contenu de votre Vignette dynamique est potentiellement désynchronisé avec le dernier contenu de l’application. Par exemple, l’application Actualités actualise sa Vignette dynamique toutes les 30minutes, mais lorsque l’application est lancée, elle charge les toutes dernières informations (qui risquent de ne pas inclure un élément présent sur la vignette depuis le dernier intervalle d’interrogation). Si cela se produit, l’utilisateur peut se sentir frustré de ne pas retrouver l’article repéré sur la Vignette dynamique. C'est là que les notifications par vignette pouvant être suivies sont utiles, en vous permettant de garantir que l’utilisateur retrouve facilement ce qu'il voit sur sa vignette.
+Les notifications par vignette pouvant être suivies s'utilisent généralement lorsque vous utilisez la file d’attente de notification sur votre Vignette dynamique (ce qui signifie que vous parcourez jusqu'à 5 notifications différentes par cycle). Elles sont également utiles lorsque le contenu de votre Vignette dynamique est potentiellement désynchronisé avec le dernier contenu de l’application. Par exemple, l’application Actualités actualise sa Vignette dynamique toutes les 30 minutes, mais lorsque l’application est lancée, elle charge les toutes dernières informations (qui risquent de ne pas inclure un élément présent sur la vignette depuis le dernier intervalle d’interrogation). Si cela se produit, l’utilisateur peut se sentir frustré de ne pas retrouver l’article repéré sur la Vignette dynamique. C'est là que les notifications par vignette pouvant être suivies sont utiles, en vous permettant de garantir que l’utilisateur retrouve facilement ce qu'il voit sur sa vignette.
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>Que faire avec des notifications par vignette pouvant être suivies
 
-Le plus important à noter est que, dans la plupart des scénarios, **vous ne devez PAS accéder directement à la notification spécifique** qui était présente sur la Vignette lorsque l’utilisateur a cliqué dessus. Votre Vignette dynamique est utilisée comme point d’entrée de votre application. Deux scénarios sont possibles lorsqu’un utilisateur clique sur votre Vignette dynamique: (1) il veut lancer votre application normalement, ou (2) il veut voir plus d’informations sur une notification spécifique présente dans la Vignette dynamique. Dans la mesure où il n’existe aucun moyen pour l’utilisateur d'indiquer explicitement le comportement qu’il souhaite, l’expérience idéale consiste à **lancer votre application normalement, tout en garantissant que la notification repérée par l’utilisateur soit facilement accessible**.
+Le plus important à noter est que, dans la plupart des scénarios, **vous ne devez PAS accéder directement à la notification spécifique** qui était présente sur la Vignette lorsque l’utilisateur a cliqué dessus. Votre Vignette dynamique est utilisée comme point d’entrée de votre application. Il peut y avoir deux scénarios quand un utilisateur clique sur votre vignette dynamique : (1) il souhaite lancer votre application normalement ou (2) il souhaite voir plus d’informations sur une notification spécifique qui était sur la vignette dynamique. Dans la mesure où il n’existe aucun moyen pour l’utilisateur d'indiquer explicitement le comportement qu’il souhaite, l’expérience idéale consiste à **lancer votre application normalement, tout en garantissant que la notification repérée par l’utilisateur soit facilement accessible**.
 
-Par exemple, lorsque vous cliquez sur la Vignette dynamique de l’application MSN Actualité, l’application se lance normalement: elle affiche la page d’accueil ou un article que l’utilisateur a été précédemment lu. Toutefois, sur la page d’accueil, l’application garantit que l’article présent sur la Vignette dynamique est facilement repérable. De cette façon, les deux scénarios sont pris en charge: le scénario dans lequel vous souhaitez simplement lancer/reprendre l’application et le scénario dans lequel vous souhaitez afficher l’article spécifique.
+Par exemple, lorsque vous cliquez sur la Vignette dynamique de l’application MSN Actualité, l’application se lance normalement : elle affiche la page d’accueil ou un article que l’utilisateur a été précédemment lu. Toutefois, sur la page d’accueil, l’application garantit que l’article présent sur la Vignette dynamique est facilement repérable. De cette façon, les deux scénarios sont pris en charge : le scénario dans lequel vous souhaitez simplement lancer/reprendre l’application et le scénario dans lequel vous souhaitez afficher l’article spécifique.
 
 
 ## <a name="how-to-include-the-arguments-property-in-your-tile-notification-payload"></a>Comment inclure la propriété Arguments dans votre charge utile de notification par vignette
@@ -107,11 +107,11 @@ TileContent content = new TileContent()
 
 La plupart des applications disposent d’un fichier App.xaml.cs qui contient un remplacement de la méthode [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_). Comme son nom l’indique, votre application appelle cette méthode lors de son lancement. Elle prend un seul argument, un objet [LaunchActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs).
 
-L’objet LaunchActivatedEventArgs a une propriété qui active les notifications pouvant être suivies: la [propriété TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), qui fournit l’accès à un [objet TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo). Lorsque l’utilisateur lance votre application à partir de sa vignette (au lieu de la liste des applications, de la recherche ou de n’importe quel autre point d’entrée), votre application initialise cette propriété.
+L’objet LaunchActivatedEventArgs a une propriété qui active les notifications pouvant être suivies : la [propriété TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), qui fournit l’accès à un [objet TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo). Lorsque l’utilisateur lance votre application à partir de sa vignette (au lieu de la liste des applications, de la recherche ou de n’importe quel autre point d’entrée), votre application initialise cette propriété.
 
-L'[objet TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) contient une propriété appelée [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), qui contient une liste de notifications qui ont été affichées sur la vignette au cours des 15dernières minutes. Le premier élément de la liste représente la notification actuellement présente sur la vignette et les éléments suivants représentent les notifications que l’utilisateur a vues précédemment. Si votre vignette a été désactivée, cette liste est vide.
+L'[objet TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) contient une propriété appelée [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), qui contient une liste de notifications qui ont été affichées sur la vignette au cours des 15 dernières minutes. Le premier élément de la liste représente la notification actuellement présente sur la vignette et les éléments suivants représentent les notifications que l’utilisateur a vues précédemment. Si votre vignette a été désactivée, cette liste est vide.
 
-Chaque ShownTileNotificationhas une Argumentsproperty. La Argumentsproperty sera initialisée avec l’argumentsstring à partir de votre charge utile de notification par vignette ou null si votre charge utile n’inclut pas l’argumentsstring.
+Chaque ShownTileNotification possède une propriété d’Arguments. La propriété Arguments sera initialisée avec la chaîne d’arguments à partir de votre charge utile de notification de vignette, ou null si votre charge utile n’incluait pas la chaîne d’arguments.
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -176,7 +176,7 @@ Si vous utilisez du code XML brut au lieu de la bibliothèque Notifications, voi
 
 
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Propriété LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
-- [Classe TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [Classe de TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

@@ -4,7 +4,7 @@ description: Apprenez à actualiser le contenu à l’écran lorsque le système
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,17 +12,17 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: f424a274d3e96b58f32875620f3165ccfac82ba6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939357"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612464"
 ---
 # <a name="handle-app-resume"></a>Gérer la reprise d’une application
 
 **API importantes**
 
-- [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
+- [**La reprise**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
 Découvrez à quel endroit vous devez actualiser votre interface utilisateur lorsque le système reprend l’exécution de votre application. L’exemple présenté dans cette rubrique enregistre un gestionnaire d’événements pour l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339).
 
@@ -116,9 +116,9 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> Dans la mesure où l’événement de [**reprise**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché à partir du thread d’interface utilisateur, un répartiteur dans votre gestionnaire pour transférer les appels vers votre interface utilisateur.
+> Étant donné que le [ **reprise** ](https://msdn.microsoft.com/library/windows/apps/br242339) événement n’est pas déclenché à partir du thread d’interface utilisateur, un répartiteur doit être utilisé dans votre gestionnaire d’expédition de tous les appels à votre interface utilisateur.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Une application jointe au débogueur Visual Studio ne sera pas suspendue. Toutefois, vous pouvez la suspendre à partir du débogueur et lui envoyer un événement **Resume** afin de déboguer votre code. Assurez-vous que la **barre d’outils Emplacement de débogage** est visible et cliquez sur la liste déroulante à côté de l’icône **Suspendre**. Ensuite, sélectionnez **Reprendre**.
 
@@ -126,6 +126,6 @@ Dans les applications du Windows Phone Store, l’événement [**Resuming**](htt
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Cycle de vie de l’application](app-lifecycle.md)
-* [Gérer l’activation d’une application](activate-an-app.md)
-* [Gérer la suspension d’une application](suspend-an-app.md)
+* [Cycle de vie](app-lifecycle.md)
+* [Gérer l’activation d’application](activate-an-app.md)
+* [Interruption des applications de handle](suspend-an-app.md)

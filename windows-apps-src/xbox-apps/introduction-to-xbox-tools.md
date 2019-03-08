@@ -1,17 +1,17 @@
 ---
-title: Présentation des outils XboxOne
-description: Outil Accueil du développeur propre à XboxOne, utilisant Windows Device Portal.
+title: Présentation des outils Xbox One
+description: Outil Accueil du développeur propre à Xbox One, utilisant Windows Device Portal.
 ms.date: 10/04/2017
 ms.topic: article
-keywords: windows10, uwp, xboxone, outils
+keywords: windows 10, uwp, xbox one, outils
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945891"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609324"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Présentation des outils Xbox One
 
@@ -23,12 +23,12 @@ Accueil du développeur permet d’expérimenter des outils dans le Kit de déve
 
 Accueil du développeur est l'application par défaut qui est ouverte lorsque votre console démarre en mode Développeur. Vous pouvez également ouvrir Accueil du développeur en sélectionnant la vignette **Accueil du développeur** sur l’écran d’accueil. Si cette vignette est absente, la console n’est pas en mode développeur.
 
-Pour plus d’informations concernant Dev Home, consultez [Accueil du développeur sur la Console (DevHome)](dev-home.md).
+Pour plus d’informations concernant Dev Home, consultez [Accueil du développeur sur la Console (Dev Home)](dev-home.md).
 
 ## <a name="xbox-device-portal"></a>Portail d'appareil Xbox
-Le portail d'appareil Xbox est un outil de gestion des périphériques sur navigateur. Il vous permet d'ajouter des jeux et applications, d'ajouter des comptes test XboxLive, de modifier des bacs à sable, etc.
+Le portail d'appareil Xbox est un outil de gestion des périphériques sur navigateur. Il vous permet d'ajouter des jeux et applications, d'ajouter des comptes test Xbox Live, de modifier des bacs à sable, etc.
 
-Pour activer le portail d'appareil Xbox sur votre console XboxOne:
+Pour activer le portail d'appareil Xbox sur votre console Xbox One :
 
 1. Sélectionnez la vignette **Accueil du développeur** sur l’écran d’accueil.
 
@@ -46,7 +46,7 @@ Pour activer le portail d'appareil Xbox sur votre console XboxOne:
 
 6. Sélectionnez **Fermer**, puis sur l'onglet **Accueil**, prenez note de l'URL répertoriée dans l'outil **Accès à distance**.
 
-7. Saisissez l'URL dans votre navigateur. Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous. En effet, le certificat de sécurité signé par votre console XboxOne n’est pas considéré comme un éditeur approuvé bien connu. Sur Edge, cliquez sur **Détails**, puis sur **Accéder à la page Web** pour accéder au portail d’appareilXbox.
+7. Saisissez l'URL dans votre navigateur. Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous. En effet, le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. Sur Edge, cliquez sur **Détails**, puis sur **Accéder à la page Web** pour accéder au portail d’appareil Xbox.
 
     ![Avertissement concernant le certificat de sécurité](images/introduction-to-xbox-one-tools-3.png)
 
@@ -56,6 +56,6 @@ Pour activer le portail d'appareil Xbox sur votre console XboxOne:
 Le Compagnon du mode de développement Xbox est un outil qui vous permet de travailler sur votre console sans quitter votre PC. L’application vous permet d’afficher l’écran de la console et d’y envoyer des données. Pour plus d’informations, voir [Compagnon du mode de développement Xbox](xbox-dev-mode-companion.md).
 
 ## <a name="see-also"></a>Voir également
-- [Utilisation de Fiddler avec XboxOne lors du développement pour UWP](uwp-fiddler.md)
+- [Comment utiliser Fiddler avec Xbox One lors du développement pour UWP](uwp-fiddler.md)
 - [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md)
-- [UWP sur XboxOne](index.md)
+- [UWP sur Xbox One](index.md)

@@ -1,19 +1,19 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
+Description: Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran.
 title: Animations latérales de l’interface utilisateur dans les applications UWP
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934844"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610204"
 ---
 # <a name="edge-based-ui-animations"></a>Animations latérales de l’interface utilisateur
 
@@ -23,7 +23,7 @@ ms.locfileid: "8934844"
 
 Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran. L’utilisateur ou l’application peut initier les actions d’affichage ou de masquage. L’interface utilisateur peut se superposer à l’application ou intégrer sa surface principale. Si l’élément d’interface utilisateur fait partie de la surface principale, un redimensionnement du reste de l’application peut être nécessaire pour l’accueillir.
 
-> **API importantes**: [**classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **API importantes**: [**Classe de EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -44,14 +44,14 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 ## <a name="related-articles"></a>Articles connexes
 
 
-**Pour les développeurs**
+**pour les développeurs**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animation latérale de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Démarrage rapide: Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**Classe PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Animation de repositionnements](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [Animation de l’interface utilisateur basée sur le bord](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**Classe de EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+* [**Classe de PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
+* [Animation de fondu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Animer repositionne](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 

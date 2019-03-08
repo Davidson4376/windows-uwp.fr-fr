@@ -5,16 +5,16 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 882e84c5126e4f67e246dd479008133c979c06b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939957"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595954"
 ---
 # <a name="remote-input-api-reference"></a>Référence API de l'Entrée distante   
 Vous pouvez envoyer l’entrée du contrôleur, du clavier et de la souris en temps réel et à distance par le biais de cette API.
 
-**Requête**
+**Demande**
 
 Méthode      | URI de requête
 :------     | :-----
@@ -22,17 +22,17 @@ Websocket | /ext/remoteinput
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun(e)
+- Aucune
 
-**Requête**
+**Demande**
 
 L’objet websocket une série de messages de tableau d’octets. Pour chaque message le format est le suivant.
 
-Le premier octet indique le type d’entrée. Les type d’entrée pris en charge sont les suivants:
+Le premier octet indique le type d’entrée. Les type d’entrée pris en charge sont les suivants :
 
 | Type d'entrée        | Valeur d’octet |
 |------------|-------------|
@@ -43,11 +43,11 @@ Effacer tout | 0x04
 
 Pour les KeyboardKeyCodes et KeyboardScanCodes, le deuxième octet est la valeur du code de touche ou de scan et le troisième octet est 0x01 pour une touche enfoncée et 0x00 pour une touche relâchée.
 
-Pour un message de souris, la valeur suivante est un UINT16 dans l’ordre du réseau (2octets) qui indique le type d’événement de souris:
+Pour un message de souris, la valeur suivante est un UINT16 dans l’ordre du réseau (2 octets) qui indique le type d’événement de souris :
 
 | Type d'action        | Valeur UINT16 |
 |------------|-------------|
-Déplacement | 0x0001
+Move | 0x0001
 LeftDown | 0x0002
 LeftUp | 0x0004
 RightDown | 0x0008
@@ -61,11 +61,11 @@ X2Up | 0x0400
 VerticalWheelMoved | 0x0800
 HorizontalWheelMoved | 0x1000
 
-Cet octet est suivi de deux valeurs UINT32 dans l’ordre du réseau et d'un troisième UINT32 facultatif pour les actions de la molette. Les deux premières valeurs sont les coordonnées X et Y et le troisième est le delta de la roulette. Les coordonnées X et Y sont censées être une valeur comprise entre 0et 65535 indiquant la position relative de la souris dans le plan horizontal et vertical.
+Cet octet est suivi de deux valeurs UINT32 dans l’ordre du réseau et d'un troisième UINT32 facultatif pour les actions de la molette. Les deux premières valeurs sont les coordonnées X et Y et le troisième est le delta de la roulette. Les coordonnées X et Y sont censées être une valeur comprise entre 0 et 65 535 indiquant la position relative de la souris dans le plan horizontal et vertical.
 
 ClearAll indique que les touches actuellement enfoncées doivent être relâchées. Aucun autre octet n'est attendu.
 
-Pour envoyer des entrées de boîtier de commande, les valeurs de code de touche qui représentent les pressions sur les boutons du boîtier peuvent être utilisées avec KeyboardKeyCodes. Ces valeurs sont les suivantes:
+Pour envoyer des entrées de boîtier de commande, les valeurs de code de touche qui représentent les pressions sur les boutons du boîtier peuvent être utilisées avec KeyboardKeyCodes. Ces valeurs sont les suivantes :
 
 | Type de boîtier de commande        | Valeur d’octet |
 |------------|-------------|
@@ -97,7 +97,7 @@ VK_GAMEPAD_RIGHT_THUMBSTICK_LEFT   |  0xDA
 
 **Réponse**   
 
-- Aucun
+- Aucune
 
 **Code d’état**
 
@@ -110,6 +110,6 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox

@@ -4,14 +4,14 @@ description: Créez des expériences partagées sur plusieurs appareils en les r
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
 ms.date: 06/28/2017
 ms.topic: article
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
+keywords: appareils Windows 10, uwp, connectés, les systèmes distants, rome, project rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932625"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633414"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Connecter des appareils par le biais de sessions à distance
 
@@ -32,7 +32,7 @@ Pour que votre application puisse lancer une application sur un appareil distant
 ```
 
 ### <a name="enable-cross-user-discovering-on-the-device"></a>Activer la détection entre utilisateurs sur l’appareil
-La fonctionnalité Sessions à distance est destinée à connecter plusieurs utilisateurs différents, c’est pourquoi le partage entre utilisateurs doit être activé sur les appareils concernés. Il s’agit d’un paramètre système qu’il est possible d’interroger avec une méthode statique dans la classe **RemoteSystem**:
+La fonctionnalité Sessions à distance est destinée à connecter plusieurs utilisateurs différents, c’est pourquoi le partage entre utilisateurs doit être activé sur les appareils concernés. Il s’agit d’un paramètre système qu’il est possible d’interroger avec une méthode statique dans la classe **RemoteSystem** :
 
 ```csharp
 if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anonymous)) {
@@ -44,7 +44,7 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 
 Pour modifier ce paramètre, l’utilisateur doit ouvrir l’application **paramètres**. Dans le menu **Système** > **Expériences partagées** > **Partager avec d’autres appareils**, une liste déroulante permet à l’utilisateur d’indiquer les appareils avec lesquels leur système peut partager des contenus.
 
-![Page de paramètres Expériences partagées](images/shared-experiences-settings.png)
+![page de paramètres Expériences partagées](images/shared-experiences-settings.png)
 
 ### <a name="include-the-necessary-namespaces"></a>Inclure les espaces de noms nécessaires
 Pour utiliser tous les extraits de code dans ce guide, vous aurez besoin des déclarations `using` suivantes dans votre ou vos fichiers de classe.
@@ -320,6 +320,6 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 }
 ```
 
-## <a name="related-topics"></a>Rubriques associées
-* [Applications et appareils connectés (projet «Rome»)](connected-apps-and-devices.md)
-* [Référence sur l’API Systèmes distants](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+## <a name="related-topics"></a>Rubriques connexes
+* [Applications connectées et les appareils (Project Rome)](connected-apps-and-devices.md)
+* [Référence de l’API de systèmes à distance](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)

@@ -4,14 +4,14 @@ description: Cet article vous décrit la procédure d’importation de fichiers 
 title: Importer des fichiers multimédias
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925704"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603464"
 ---
 # <a name="import-media-from-a-device"></a>Importer des fichiers multimédias à partir d’un appareil
 
@@ -21,7 +21,7 @@ Cet article vous décrit la procédure d’importation de fichiers multimédias 
 > Le code figurant dans cet article a été adapté de l’[**exemple d’application MediaImport UWP**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). Vous pouvez dupliquer ou télécharger cet exemple à partir du [**référentiel Git d’exemples d’applications Windows universelles**](https://github.com/Microsoft/Windows-universal-samples) afin d’afficher le code en contexte ou de l’utiliser en tant que point de départ pour votre propre application.
 
 ## <a name="create-a-simple-media-import-ui"></a>Créer une interface simple d’importation de médias
-L’exemple de cet article utilise une interface utilisateur épurée prenant en charge les scénarios principaux d’importation de médias. Pour savoir comment créer une interface utilisateur plus robuste adaptée à une application d’importation de médias, consultez l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). Le code XAML suivant crée un panneau d’empilement avec les contrôles suivants:
+L’exemple de cet article utilise une interface utilisateur épurée prenant en charge les scénarios principaux d’importation de médias. Pour savoir comment créer une interface utilisateur plus robuste adaptée à une application d’importation de médias, consultez l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). Le code XAML suivant crée un panneau d’empilement avec les contrôles suivants :
 * Un objet [**Button**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Button) permettant de lancer la recherche des sources à partir desquelles les médias peuvent être importés.
 * Un objet [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox) permettant de répertorier et d’effectuer des sélections à partir des sources d’importation de fichiers multimédias identifiées.
 * Un objet [**ListView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListView) permettant d’afficher et de sélectionner les éléments multimédias à partir de la source d’importation sélectionnée.
@@ -48,13 +48,13 @@ Implémentez un gestionnaire pour le bouton d’annulation. L’exemple figurant
 
 ## <a name="data-binding-helper-classes"></a>Classes d’assistance de liaison de données
 
-Dans un scénario d’importation standard d’éléments multimédias, vous présentez à l’utilisateur une liste des éléments multimédias disponibles à l’importation. Le nombre de fichiers pouvant s’avérer conséquent, vous pouvez avoir intérêt à présenter une miniature de chaque élément multimédia. Pour cette raison, cet exemple utilise troisclasses d’assistance permettant de charger de manière incrémentielle des entrées dans le contrôle ListView, à mesure que l’utilisateur fait défiler la liste.
+Dans un scénario d’importation standard d’éléments multimédias, vous présentez à l’utilisateur une liste des éléments multimédias disponibles à l’importation. Le nombre de fichiers pouvant s’avérer conséquent, vous pouvez avoir intérêt à présenter une miniature de chaque élément multimédia. Pour cette raison, cet exemple utilise trois classes d’assistance permettant de charger de manière incrémentielle des entrées dans le contrôle ListView, à mesure que l’utilisateur fait défiler la liste.
 
-* Classe **IncrementalLoadingBase**: implémente les objets [**IList**](https://msdn.microsoft.com/library/system.collections.ilist), [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) afin de communiquer le comportement de base de chargement incrémentiel.
-* Classe **GeneratorIncrementalLoadingClass**: fournit une implémentation de la classe de base de chargement incrémentiel.
-* Classe **ImportableItemWrapper**: un wrapper fin autour de la classe [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) afin d’ajouter une propriété [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.BitmapImage) pouvant être liée pour chacune des images miniatures associées aux éléments importés.
+* Classe **IncrementalLoadingBase** : implémente les objets [**IList**](https://msdn.microsoft.com/library/system.collections.ilist), [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) afin de communiquer le comportement de base de chargement incrémentiel.
+* Classe **GeneratorIncrementalLoadingClass** : fournit une implémentation de la classe de base de chargement incrémentiel.
+* Classe **ImportableItemWrapper** : un wrapper fin autour de la classe [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) afin d’ajouter une propriété [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.BitmapImage) pouvant être liée pour chacune des images miniatures associées aux éléments importés.
 
-Ces classes sont fournies dans l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport); ils peuvent être ajoutées à votre projet sans modifications. Une fois les classes d’assistance ajoutées à votre projet, déclarez une variable de membre de classe de type **GeneratorIncrementalLoadingClass**, qui sera utilisé plus loin dans cet exemple.
+Ces classes sont fournies dans l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) ; ils peuvent être ajoutées à votre projet sans modifications. Une fois les classes d’assistance ajoutées à votre projet, déclarez une variable de membre de classe de type **GeneratorIncrementalLoadingClass**, qui sera utilisé plus loin dans cet exemple.
 
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 

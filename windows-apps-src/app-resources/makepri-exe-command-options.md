@@ -1,28 +1,28 @@
 ---
-Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+Description: MakePri.exe inclut les commandes createconfig, dump, new, resourcepack et versioned. Cette rubrique décrit leur utilisation.
 title: Options de ligne de commande de MakePri.exe
 template: detail.hbs
 ms.date: 04/10/2018
 ms.topic: article
-keywords: windows10, uwp, ressources, image, MRT, qualificateur
+keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943413"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603394"
 ---
 # <a name="makepriexe-command-line-options"></a>Options de ligne de commande de MakePri.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) inclut les commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez l’option **Du SDK Windows pour les applications UWP managées** lors de l’installation du Kit de développement logiciel Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-## <a name="getting-help-from-the-command-line"></a>Obtention d’aide à partir de la ligne de commande
+## <a name="getting-help-from-the-command-line"></a>Obtention d’aide en ligne de commande
 
-Vous pouvez exécuter `MakePri.exe help` ou `MakePri.exe /?` pour afficher les commandes que vous pouvez utiliser avec MakePri.exe. Vous pouvez également exécuter `MakePri.exe <command> /?` pour afficher des détails sur une commande et, dans de très rares cas, même `MakePri.exe <command> <option>` pour afficher plus d’informations sur une option.
+Vous pouvez exécuter `MakePri.exe help` ou `MakePri.exe /?` pour voir les commandes que vous pouvez utiliser avec MakePri.exe. Vous pouvez également émettre `MakePri.exe <command> /?` pour afficher des détails sur une commande et, dans de très rares cas, même `MakePri.exe <command> <option>` pour voir plus de détails sur une option.
 
 ## <a name="makepri-commands"></a>Commandes MakePri
 
@@ -112,10 +112,10 @@ Help:
 
 ## <a name="dump-command"></a>Commande dump
 
-La commande `dump` génère un fichierxml vidé contenant la liste de toutes les ressources d’un fichier PRI spécifié. Exécutez `MakePri.exe dump /?` pour afficher l’aide détaillée de cette commande.
+La commande `dump` génère un fichier xml vidé contenant la liste de toutes les ressources d’un fichier PRI spécifié. Exécutez `MakePri.exe dump /?` pour afficher l’aide détaillée de cette commande.
 
 > [!NOTE]
-> Un pack de ressources sans schéma a été créé avec le commutateur *omitSchemaFromResourcePacks* dans le fichier de configuration IRP. Pour vider un pack de ressources sans schéma, utilisez le commutateur `/es <main_package_PRI_file>`. Si vous ne spécifiez pas le fichier principal, vous voyez le message d’erreur «*Le fichier resources.pri dans le package a été endommagée et le chiffrement a échoué (erreur PRI222: 0xdef0000f - Une erreur non spécifiée s’est produite)*».
+> Un pack de ressources sans schéma a été créé avec le commutateur *omitSchemaFromResourcePacks* dans le fichier de configuration IRP. Pour vider un pack de ressources sans schéma, utilisez le commutateur `/es <main_package_PRI_file>`. Si vous ne spécifiez pas le fichier principal, vous verrez le message d’erreur «*le resources.pri dans le package a été endommagée afin de chiffrement a échoué (erreur PRI222 : 0xdef0000f - erreur non spécifiée s’est produite)*».
 
 ```console
 C:\>makepri dump /?
@@ -416,15 +416,15 @@ Pour `resourcepack` et `versioned`, au lieu de fournir un fichier PRI en tant qu
 
 **FILEPATH** est un jeton qui spécifie l’emplacement du fichier PRI d’entrée ou du fichier de schéma PRI.
 
-## <a name="47indexoptionsio-option"></a>& option #47;IndexOptions(io)
+## <a name="47indexoptionsio-option"></a>&#47;Option de IndexOptions(io)
 
-Vous utilisez l’option options d’index (/ e/s) avec `new`, `resourcepack`, et `versioned` pour spécifier les options qui fournissent un contrôle précis sur le comportement des indexeurs de ressource. Options d’index sont désactivées par défaut.
+Vous utilisez l’option options d’index (/ e/s) avec `new`, `resourcepack`, et `versioned` pour spécifier des options qui permettent de contrôler le comportement des indexeurs de la ressource. Options d’index sont désactivées par défaut.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**OPTIONS** est une liste séparée par des virgules composée des options suivantes.
+**OPTIONS** est une liste séparée par des virgules constituée des options suivantes.
 
 - +/-HiddenFiles(hf). Index (+) ou ignorer (-) les fichiers et dossiers cachés.
 - +/-LinkedFiles(lf). Index (+) ou ignorer (-) lié des fichiers et dossiers.
@@ -458,7 +458,7 @@ Ceci est un exemple de contenu du fichier de mappage d’un pack de ressources.
 
 ## <a name="output-summary"></a>Résumé de sortie
 
-Lorsque des packs de ressources sont créés, le résumé de sortie de MakePri.exe est plus détaillé. Voici un exemple.
+Lorsque des packs de ressources sont créés, le résumé de sortie de MakePri.exe est plus détaillé. Voici un exemple :
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -501,7 +501,7 @@ Voici un exemple de condition d’erreur et le message d’erreur correspondant.
 
 | Condition d’erreur | Message d’erreur |
 | --------------- | ------------- |
-| Le nom du fichier de sortie est identique à un des noms de pack de ressources dans la configuration. | Configuration non valide: le nom de pack de ressources <resource pack name> ne peut pas être identique à celui du fichier de sortie <nomfichiersortie.pri>. |
+| Le nom du fichier de sortie est identique à un des noms de pack de ressources dans la configuration. | Configuration non valide : Nom de Pack de ressources <resource pack name> ne peut pas être le même que le fichier de sortie < outputfilename.pri >. |
 
 ## <a name="reversemaprm-option"></a>Options /ReverseMap(rm)
 
@@ -549,6 +549,6 @@ L’option de version principale (/vma) (pour la commande `new`) est déconseill
 
 Pour fournir le numéro de version principale, utilisez l’attribut [resources@majorVersion](makepri-exe-configuration.md) dans votre fichier de configuration.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [MakePri.exe](compile-resources-manually-with-makepri.md)

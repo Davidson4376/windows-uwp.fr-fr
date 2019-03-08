@@ -1,16 +1,16 @@
 ---
-Description: XAML gives you a flexible layout system to create a responsive UI.
+Description: XAML fournit un système de disposition souple pour créer une interface utilisateur réactive.
 title: Dispositions dynamiques avec XAML
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049396"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591524"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -20,7 +20,7 @@ Le système de disposition XAML fournit le dimensionnement automatique, des pann
 
 Une disposition dynamique repose principalement sur l’utilisation appropriée de propriétés XAML et de panneaux de disposition pour repositionner, redimensionner et ajuster dynamiquement le contenu d’une manière fluide. 
 
-Le système de disposition XAML prend en charge à la fois les dispositions statiques et fluides. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et de tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil. 
+Le système de disposition XAML prend en charge à la fois les dispositions statique et fluide. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil. 
 
 Dans la pratique, vous utilisez une combinaison d’éléments statiques et fluides pour créer votre interface utilisateur. Vous utilisez toujours des valeurs et des éléments statiques à certains endroits, mais assurez-vous que l’interface utilisateur globale s’adapte à différentes résolutions, tailles d’écran et vues.
 
@@ -31,7 +31,7 @@ Les propriétés de disposition contrôlent la taille et la position d’un él�
 
 Voici certaines propriétés de disposition courantes et comment les utiliser pour créer des dispositions fluides.
 
-**Height et Width**
+**Hauteur et la largeur**
 
 Les propriétés [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) et [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) spécifient la taille d’un élément. Vous pouvez utiliser des valeurs fixes mesurées en pixels effectifs, ou vous pouvez utiliser le dimensionnement automatique ou proportionnel. 
 
@@ -40,9 +40,9 @@ Le dimensionnement automatique redimensionne les éléments d’interface utilis
 > [!NOTE]
 > Le redimensionnement d’un élément à son contenu ou à son conteneur dépend de la façon dont le conteneur parent gère le dimensionnement de ses enfants. Pour plus d’informations, voir [Panneaux de disposition](#layout-panels) plus loin dans cet article.
 
-Le *dimensionnement proportionnel* répartit l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs proportionnelles sont exprimées par \* (ou *n*\* pour le dimensionnement proportionnel pondéré). À titre d’exemple, dans une disposition à deux colonnes, pour spécifier qu’une colonne est cinq fois plus large que l’autre colonne, utilisez « 5\* » et « \* » pour les propriétés [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) des éléments [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx).
+Le *dimensionnement proportionnel* répartit l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. Dans XAML, les valeurs étoiles sont exprimées en tant que \* (ou *n* \* pour le dimensionnement en étoile pondérée). Par exemple, pour spécifier qu’une colonne est 5 fois plus large que la deuxième colonne dans une disposition à 2 colonnes, utilisez « 5\*« et »\*» pour le [ **largeur** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) propriétés dans le [ **ColumnDefinition** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) éléments.
 
-Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) avec 4colonnes.
+Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) avec 4 colonnes.
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
@@ -51,7 +51,7 @@ Colonne_2 | * | Une fois les colonnes Auto calculées, la colonne conserve une p
 Colonne_3 | **44** | La colonne aura une largeur de 44 pixels.
 Colonne_4 | **2**\* | Une fois les colonnes Auto calculées, la colonne conserve une partie de la largeur restante. Colonne_4 sera deux fois plus large que Colonne_2.
 
-La largeur par défaut de la colonne est «*», de sorte que vous n’avez pas besoin de définir explicitement cette valeur pour la deuxième colonne.
+La largeur par défaut de la colonne est « * », de sorte que vous n’avez pas besoin de définir explicitement cette valeur pour la deuxième colonne.
 
 ```xaml
 <Grid>
@@ -67,7 +67,7 @@ La largeur par défaut de la colonne est «*», de sorte que vous n’avez pas b
 
 Dans le concepteur XAML de Visual Studio, le résultat se présente comme suit.
 
-![Grille de 4colonnes dans le concepteur Visual Studio](images/xaml-layout-grid-in-designer.png)
+![Grille de 4 colonnes dans le concepteur Visual Studio](images/xaml-layout-grid-in-designer.png)
 
 Pour obtenir la taille d’un élément à l’exécution, utilisez les propriétés en lecture seule [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.actualheight.aspx) et [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.actualwidth.aspx) à la place de Height et Width.
 
@@ -90,12 +90,12 @@ Pour plus d’informations, voir l’article [Alignement, marge et remplissage](
 
 **Visibilité**
 
-Vous pouvez afficher ou masquer un élément en définissant sa propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx) sur l’une des valeurs [d’énumération **Visibility**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx) : **Visible** ou **Collapsed**. Lorsqu’un élément a la valeur Collapsed, il ne prend aucun espace dans la disposition de l’interface utilisateur.
+Vous pouvez afficher ou masquer un élément en définissant son [ **visibilité** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx) propriété de la [ **visibilité** énumération](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx) valeurs : **Visible** ou **réduit**. Lorsqu’un élément a la valeur Collapsed, il ne prend aucun espace dans la disposition de l’interface utilisateur.
 
 Vous pouvez modifier la propriété Visibility d’un élément dans le code ou dans un état visuel. Lorsque la valeur Visibility d’un élément est modifiée, tous ses éléments enfants sont également modifiés. Vous pouvez remplacer des sections de votre interface utilisateur en révélant un panneau et en en réduisant un autre.
 
 > [!Tip]
-> Lorsque vous disposez d’éléments dans votre interface utilisateur qui sont **Collapsed** par défaut, les objets sont toujours créés au démarrage, même si elles ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
+> Lorsque vous disposez des éléments dans votre interface utilisateur qui sont **Collapsed** par défaut, les objets sont toujours créés au démarrage, même si elles ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
 
 ### <a name="style-resources"></a>Ressources de style
 
@@ -126,13 +126,13 @@ Utilisez les états visuels pour apporter des changements significatifs à votre
 
 Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié. 
 
-Un [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) offre un moyen facile de définir le seuil (également appelé «point d’arrêt») au niveau duquel un état est appliqué. Un [**VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) définit les valeurs de propriété qui sont appliquées à un élément lorsqu’il est dans un état particulier. Vous regroupez les états visuels dans un [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) qui applique le VisualState approprié lorsque les conditions spécifiées sont remplies.
+Un [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) offre un moyen facile de définir le seuil (également appelé « point d’arrêt ») au niveau duquel un état est appliqué. Un [**VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) définit les valeurs de propriété qui sont appliquées à un élément lorsqu’il est dans un état particulier. Vous regroupez les états visuels dans un [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) qui applique le VisualState approprié lorsque les conditions spécifiées sont remplies.
 
 ### <a name="set-visual-states-in-code"></a>Définir les états visuels dans le code
 
 Pour appliquer un état visuel à partir du code, vous appelez la méthode [**VisualStateManager.GoToState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.gotostate.aspx). Par exemple, pour appliquer un état lorsque la fenêtre de l’application a une taille donnée, gérez l’événement [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.window.sizechanged.aspx) et appelez **GoToState** pour appliquer l’état approprié.
 
-Ici, un [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) contient deuxdéfinitions de VisualState. Le premier, `DefaultState`, est vide. Lorsqu’il est appliqué, les valeurs définies dans la page XAML sont appliquées. Le second, `WideState`, change la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) de [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) en **Inline** et ouvre le volet. Cet état est appliqué dans le gestionnaire d’événements SizeChanged si la largeur de la fenêtre est supérieure à 640pixels effectifs.
+Ici, un [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) contient deux définitions de VisualState. Le premier, `DefaultState`, est vide. Lorsqu’il est appliqué, les valeurs définies dans la page XAML sont appliquées. Le second, `WideState`, change la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) de [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) en **Inline** et ouvre le volet. Cet état est appliqué dans le gestionnaire d’événements SizeChanged si la largeur de la fenêtre est supérieure à 640 pixels effectifs.
 
 > [!NOTE]
 > Windows ne permet pas à votre application de détecter l’appareil spécifique sur lequel elle s’exécute. Le système peut vous indiquer la famille d’appareils (mobile, ordinateur, etc.) sur laquelle l’application s’exécute, la résolution réelle et la quantité d’espace à l’écran disponible pour l’application (la taille de la fenêtre de l’application). Nous vous recommandons de définir des états visuels pour les [tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md).
@@ -232,7 +232,7 @@ Cet exemple produit le même résultat que le précédent, mais utilise la synta
 ```
 
 > [!Important]
-> Dans l’exemple précédent, la propriété jointe VisualStateManager.VisualStateGroups est définie sur l’élément **Grid** . Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. (Ici, **Grid** est le premier enfant de l’élément racine **Page**.)
+> Dans l’exemple précédent, la propriété attachée VisualStateManager.VisualStateGroups est définie sur le **grille** élément. Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. (Ici, **Grid** est le premier enfant de l’élément racine **Page**.)
 
 ### <a name="attached-property-syntax"></a>Syntaxe de la propriété jointe
 
@@ -342,7 +342,7 @@ Utilisez les vues XAML pour créer différentes définitions d’interface utili
 4. Entrez le nom de la vue. La vue doit être nommée correctement. Pour plus d’informations sur l’attribution de noms, consultez le reste de cette section.
 5. Cliquez sur Ajouter. Le fichier est ajouté au projet.
 
-Les étapes précédentes créent uniquement un fichier XAML, mais pas un fichier code-behind associé. Au lieu de cela, la vue XAML est associée à un fichier code-behind existant en utilisant un qualificateur DeviceName qui fait partie du nom du fichier ou du dossier. Ce nom de qualificateur peut être mappé sur une valeur de chaîne qui représente la famille d’appareils de l’appareil sur lequel votre application est en cours d’exécution, par exemple, «Bureau», «Tablette» et les noms des autres familles d’appareils (voir [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues.aspx)).
+Les étapes précédentes créent uniquement un fichier XAML, mais pas un fichier code-behind associé. Au lieu de cela, la vue XAML est associée à un fichier code-behind existant en utilisant un qualificateur DeviceName qui fait partie du nom du fichier ou du dossier. Ce nom de qualificateur peut être mappé sur une valeur de chaîne qui représente la famille d’appareils de l’appareil sur lequel votre application est en cours d’exécution, par exemple, « Bureau », « Tablette » et les noms des autres familles d’appareils (voir [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues.aspx)).
 
 Vous pouvez ajouter le qualificateur au nom de fichier, ou ajouter le fichier à un dossier portant le nom du qualificateur.
 
@@ -350,15 +350,15 @@ Vous pouvez ajouter le qualificateur au nom de fichier, ou ajouter le fichier à
 
 Pour utiliser le nom du qualificateur avec le fichier, utilisez ce format : *[pageName]*.DeviceFamily-*[qualifierString]*.xaml.
 
-Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, nommez la vue XAML MainPage.DeviceFamily-Tablet.xaml. Pour créer une vue pour les PC, nommez la vue MainPage.DeviceFamily-Desktop.xaml. Voici à quoi ressemble la solution dans Microsoft Visual Studio.
+Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, nommez la vue XAML MainPage.DeviceFamily-Tablet.xaml. Pour créer une vue pour les appareils PC, nommez la vue MainPage.DeviceFamily-Desktop.xaml. Voici à quoi ressemble la solution dans Microsoft Visual Studio.
 
 ![Vues XAML avec des noms de fichier qualifiés](images/xaml-layout-view-ex-1.png)
 
 **Utiliser le nom de dossier**
 
-Pour organiser les vues dans votre projet Visual Studio à l’aide de dossiers, vous pouvez utiliser le nom de qualificateur avec le dossier. Pour ce faire, nommez votre dossier comme suit : DeviceFamily-*[qualifierString]*. Dans ce cas, chaque fichier de la vue XAML a le même nom. N’incluez pas le qualificateur dans le nom de fichier.
+Pour organiser les vues dans votre projet Visual Studio à l’aide de dossiers, vous pouvez utiliser le nom de qualificateur avec le dossier. Pour ce faire, nommez votre dossier comme suit : DeviceFamily -*[qualifierString]*. Dans ce cas, chaque fichier de la vue XAML a le même nom. N’incluez pas le qualificateur dans le nom de fichier.
 
-Voici un exemple, pour un fichier nommé là encore MainPage.xaml. Pour créer une vue pour les tablettes, créez un dossier nommé DeviceFamily-Tablet et placez dedans une vue XAML nommée MainPage.xaml. Pour créer une vue pour les PC, créez un dossier nommé DeviceFamily-Desktop, et placez dedans une autre vue XAML nommée MainPage.xaml. Voici à quoi ressemble la solution dans Visual Studio.
+Voici un exemple, pour un fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, créez un dossier nommé DeviceFamily-Tablet et placez dedans une vue XAML nommée MainPage.xaml. Pour créer une vue pour les PC, créez un dossier nommé DeviceFamily-Desktop, et placez dedans une autre vue XAML nommée MainPage.xaml. Voici à quoi ressemble la solution dans Visual Studio.
 
 ![Vues XAML dans des dossiers](images/xaml-layout-view-ex-2.png)
 
@@ -391,8 +391,8 @@ else
 
 Vous pouvez également utiliser des critères différents pour déterminer à quelle page accéder. Pour plus d’exemples, consultez l’exemple de [Vues multiples personnalisées](https://go.microsoft.com/fwlink/p/?LinkId=620636), qui utilise la fonction [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) pour vérifier la taille physique d’un affichage intégré.
 
-## <a name="related-topics"></a>Rubriquesassociées
-- [Didacticiel: Créer des dispositions adaptatives](../basics/xaml-basics-adaptive-layout.md)
-- [Exemple de techniques réactives (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
-- [Exemple de déclencheurs d’état (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
-- [Exemple de vues multiples personnalisées (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)
+## <a name="related-topics"></a>Rubriques connexes
+- [Didacticiel : Créer des dispositions ADAPTATIF](../basics/xaml-basics-adaptive-layout.md)
+- [Exemples de techniques de réactivité (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
+- [Exemples de déclencheurs d’état (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
+- [Adaptées plusieurs vues, exemple (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)

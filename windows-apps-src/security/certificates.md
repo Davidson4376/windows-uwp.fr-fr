@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937414"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624354"
 ---
 # <a name="intro-to-certificates"></a>Présentation de certificats
 
@@ -22,7 +22,7 @@ Cet article traite de l’utilisation de certificats dans les applications de pl
 
 ### <a name="shared-certificate-stores"></a>Magasins de certificats partagés
 
-Applications UWP utilisent le nouveau modèle d’application «isolationniste» introduit dans le package Windows8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
+Les applications UWP utilisent le nouveau modèle d’application de groupuscules introduit dans Windows 8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
 
 ### <a name="certificate-storage-per-app-container"></a>Stockage de certificats par conteneur d’application
 
@@ -64,7 +64,7 @@ Certains de ces champs et extensions peuvent être spécifiés directement lorsq
 | Algorithme de signature | Contient un identificateur d’objet (OID) qui indique l’algorithme utilisé par l’autorité de certification pour signer le certificat. Par exemple, 1.2.840.113549.1.1.5 indique un algorithme de hachage SHA-1 associé à l’algorithme de chiffrement RSA de RSA Laboratories. |
 | Émetteur | Contient le nom unique X.500 de l’autorité de certification qui a créé et signé le certificat. |
 | Validité | Indique l’intervalle de temps pendant lequel le certificat est valable. Les dates jusqu’à fin 2049 utilisent le format UTC (temps universel coordonné) (Heure de Greenwich) (yymmddhhmmssz). Les dates à partir du 1er janvier 2050 utilisent le format de temps généralisé (yyyymmddhhmmssz). |
-| Sujet | Contient le nom unique X.500 de l’entité associée à la clé publique incluse dans le certificat. |
+| Objet | Contient le nom unique X.500 de l’entité associée à la clé publique incluse dans le certificat. |
 | Clé publique | Contient la clé publique et des informations sur l’algorithme associé. |
 
 ### <a name="version-2-fields"></a>Champs version 2
@@ -95,5 +95,5 @@ Un certificat X.509 version 3 contient les champs définis dans les versions 1 e
 | Durée de l’utilisation de la clé privée | Indique une durée de validité pour la clé privée qui est différente de celle du certificat auquel la clé privée est associée. |
 | Autre nom de l’objet | Indique une ou plusieurs autres formes de noms pour le sujet de la demande de certificat. Parmi les autres formes, citons : adresses de messagerie, noms DNS, adresses IP et URI. |
 | Attributs d’annuaire du sujet | Véhicule des attributs d’identification tels que la nationalité du sujet du certificat. La valeur de l’extension est une séquence de paires OID-valeur. |
-| Identificateur de clé du sujet | Fait la distinction entre plusieurs clés publiques détenues par le sujet du certificat. La valeur de l’extension est généralement un hachage SHA-1 de la clé. |
+| Identificateur de la clé du sujet | Fait la distinction entre plusieurs clés publiques détenues par le sujet du certificat. La valeur de l’extension est généralement un hachage SHA-1 de la clé. |
 

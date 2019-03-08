@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f52a032b7fe61df67aaf35c57b2ca64ac8eef6a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933331"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591384"
 ---
 # <a name="texture-resources"></a>Ressources de texture
 
@@ -26,7 +26,7 @@ Direct3D prend en charge plusieurs fusions de textures via le concept des étape
 
 Votre application peut également définir la perspective de la texture et les états de filtrage de la texture. Voir [Filtrage de textures](texture-filtering.md).
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Textures](textures.md)

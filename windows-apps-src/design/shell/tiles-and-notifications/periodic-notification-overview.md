@@ -1,18 +1,18 @@
 ---
-Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+Description: Les notifications périodiques, également appelées notifications interrogées, mettent à jour les vignettes et les badges à intervalle fixe en téléchargeant du contenu à partir d’un service cloud.
 title: Vue d’ensemble des notifications périodiques
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050512"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624854"
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
  
@@ -25,7 +25,7 @@ Les notifications périodiques, également appelées notifications interrogées,
 
 Les notifications périodiques permettent à votre application d’obtenir des mises à jour de vignettes dynamiques avec un minimum d’intervention du service cloud et d’investissement client. Les notifications périodiques sont une bonne méthode de distribution du même contenu à un large public.
 
-**Remarque**  en savoir plus, le téléchargement de l' [exemple Push et les notifications périodiques](https://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows8.1 et réutilisez son code source dans votre application Windows 10.
+**Remarque**    plus d’informations en téléchargeant le [Push et exemple de notifications périodiques](https://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows 8.1 et de nouveau à l’aide de son code source dans votre application Windows 10.
 
  
 
@@ -48,15 +48,15 @@ La réponse du serveur cloud comprend le contenu téléchargé. Le contenu renvo
 
 Appelez l’une de ces méthodes pour lancer l’interrogation :
 
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (vignette)
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (badge)
--   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (vignette)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Tile)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Badge)
+-   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Tile)
 
 Quand vous appelez l’une de ces méthodes, l’URI est immédiatement interrogé et la vignette ou le badge est mis à jour à l’aide du contenu reçu. Après cette interrogation initiale, Windows continue de fournir des mises à jour en fonction de l’intervalle demandé. L’interrogation se poursuit jusqu’à ce que vous l’arrêtiez explicitement (avec [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)), jusqu’à ce que votre application soit désinstallée, ou, dans le cas d’une vignette secondaire, jusqu’à ce que la vignette soit supprimée. Dans le cas contraire, Windows continue à rechercher des mises à jour pour votre vignette ou votre badge, même si votre application n’est jamais relancée.
 
 ### <a name="the-recurrence-interval"></a>Intervalle de récurrence
 
-Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15minutes au maximum en fonction de Windows.
+Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15 minutes au maximum en fonction de Windows.
 
 ### <a name="the-start-time"></a>Heure de début
 
@@ -103,7 +103,7 @@ Vous devez fournir un URI unique pour chaque notification que Windows doit tél�
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Recommandations en matière de notifications périodiques](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [Comment configurer des notifications périodiques pour les badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [Comment configurer des notifications périodiques pour des vignettes](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [Instructions pour les notifications périodiques](https://msdn.microsoft.com/library/windows/apps/hh761461)
+* [Comment configurer des notifications périodiques pour badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [Comment configurer des notifications périodiques pour les vignettes](https://msdn.microsoft.com/library/windows/apps/hh761476)
  

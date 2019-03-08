@@ -4,14 +4,14 @@ description: Notions de base de la programmation DirectX.
 ms.assetid: 05a1bc59-f32e-44a0-8902-94cf1e099b1b
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, jeu, directx, charge, rastériser, maillage, bitmap, 2D, 3D
+keywords: windows 10, uwp, jeu, directx, charge, rastériser, maillage, bitmap, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925150"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613744"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Notions fondamentales sur la programmation DirectX
 
@@ -21,7 +21,7 @@ La rubrique Graphismes 2D pour jeux DirectX décrit l’utilisation des graphism
 
 La rubrique Guide d’apprentissage des graphiques Direct3D fournit une vue d'ensemble des concepts utilisés par Direct3D.
 
-La rubrique Graphismes3D de base pour jeux DirectX explique les concepts fondamentaux des graphismes 3D à l’aide d’un didacticiel en cinq parties qui introduit le concept de Direct3D et l’API. Ce didacticiel vous montre comment initialiser les interfaces de Direct3D à l’aide de Windows Runtime, appliquer les opérations de nuanceur de vertex, configurer la géométrie, rastériser la scène et éliminer les surfaces masquées.
+La rubrique Graphismes 3D de base pour jeux DirectX explique les concepts fondamentaux des graphismes 3D à l’aide d’un didacticiel en cinq parties qui introduit le concept de Direct3D et l’API. Ce didacticiel vous montre comment initialiser les interfaces de Direct3D à l’aide de Windows Runtime, appliquer les opérations de nuanceur de vertex, configurer la géométrie, rastériser la scène et éliminer les surfaces masquées.
 
 La rubrique Charger des ressources dans votre jeu DirectX vous guide à travers les étapes de base relatives au chargement des maillages (modèles), des textures (bitmaps) et des objets nuanceurs compilés depuis un stockage local ou d’autres flux de données en vue d'une utilisation dans votre jeu UWP.
 
@@ -32,21 +32,21 @@ La rubrique Charger des ressources dans votre jeu DirectX vous guide à travers 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Sujet</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="working-with-2d-graphics-in-your-directx-game.md">Graphismes 2D pour jeux DirectX</a></p></td>
+<td align="left"><p><a href="working-with-2d-graphics-in-your-directx-game.md">Graphiques 2D de jeux DirectX</a></p></td>
 <td align="left"><p>Créer des graphiques 2D à l’aide de DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Guide d’apprentissage des graphiques Direct3D</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Guide d’apprentissage de graphique de Direct3D</a></p></td>
 <td align="left"><p>Comprendre les concepts de graphiques Direct3D.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">Graphismes3D de base pour jeux DirectX</a></p></td>
+<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">Graphiques 3D de base pour les jeux DirectX</a></p></td>
 <td align="left"><p>Créer des graphismes DirectX 3D de base.</p></td>
 </tr>
 <tr class="even">

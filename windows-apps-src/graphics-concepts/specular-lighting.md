@@ -8,33 +8,33 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597974"
 ---
 # <a name="specular-lighting"></a>Éclairage spéculaire
 
 
-L'*éclairage spéculaire* identifie les points spéculaires lumineux qui apparaissent lorsque la lumière atteint la surface de l’objet et la reflète vers l’appareil photo. L’éclairage spéculaire est plus intense que la lumière diffuse et tombe plus rapidement sur la surface de l’objet. Le calcul de l’éclairage spéculaire prend plus de temps que celui de l'éclairage diffus. Toutefois, le fait de l'utiliser permet de préciser des informations importantes sur une surface.
+L'*éclairage spéculaire* identifie les points spéculaires lumineux qui apparaissent lorsque la lumière atteint la surface de l’objet et la reflète vers l’appareil photo. L’éclairage spéculaire est plus intense que la lumière diffuse et tombe plus rapidement sur la surface de l’objet. Le calcul de l’éclairage spéculaire prend plus de temps que celui de l’éclairage diffus. Toutefois, le fait de l’utiliser permet d’ajouter des informations importantes sur une surface.
 
 La modélisation de la réflexion spéculaire nécessite que le système connaisse la direction dans laquelle la lumière se déplace et la direction vers les yeux de l’observateur. Le système utilise une version simplifiée du modèle de réflexion spéculaire Phong, qui utilise un vecteur à mi-chemin pour estimer l’intensité de réflexion spéculaire.
 
 L’état d’éclairage par défaut ne calcule pas les reflets spéculaires.
 
-## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>Équation de l'éclairage spéculaire
+## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>Équation de l’éclairage spéculaire
 
 
-Il est possible de calculer l'éclairage spéculaire en utilisant l’équation suivante:
+Il est possible de calculer l'éclairage spéculaire en utilisant l’équation suivante :
 
 |                                                                             |
 |-----------------------------------------------------------------------------|
-| Éclairage spéculaire = Cₛ \ * sum\ [Lₛ \ * (N · H)<sup>P</sup> \ * Attén \ * Pt Lum\] |
+| Éclairage spéculaire = Cₛ \* somme\[Lₛ \* (N mise en (H)<sup>P</sup> \* Atten \* place\] |
 
  
 
-Les variables, leurs types et leurs plages sont les suivantes:
+Les variables, leurs types et leurs plages sont les suivantes :
 
 | Paramètre    | Valeur par défaut | Type                                                             | Description                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -44,18 +44,18 @@ Les variables, leurs types et leurs plages sont les suivantes:
 | H            | Non applicable           | Vecteur 3D (valeurs à virgule flottante x, y et z)                    | Vecteur à mi-chemin. Consultez la section sur le vecteur à mi-chemin.                                                |
 | <sup>P</sup> | 0,0           | Virgule flottante                                                   | Puissance de réflexion spéculaire. Est comprise entre 0 et + l'infini                                                     |
 | Lₛ           | (0,0,0,0)     | Rouge, vert, bleu et transparence alpha (valeurs à virgule flottante) | Couleur de la lumière spéculaire.                                                                                  |
-| Attén        | Non applicable           | Virgule flottante                                                   | Valeur d'atténuation de la lumière. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md). |
-| Pt lum         | Non applicable           | Virgule flottante                                                   | Facteur de point lumineux. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md).        |
+| Atten        | Non applicable           | Virgule flottante                                                   | Valeur d'atténuation de la lumière. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md). |
+| Spot         | Non applicable           | Virgule flottante                                                   | Facteur de point lumineux. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md).        |
 
  
 
-La valeur pour Cₛ possède l'une des valeurs suivantes:
+La valeur pour Cₛ possède l'une des valeurs suivantes :
 
--   couleur1 du vertex, si la source du matériau spéculaire est la couleur du vertex diffus et que la première couleur du vertex est indiquée dans la déclaration du vertex.
--   couleur2 du vertex, si la source du matériau spéculaire est la couleur du vertex spéculaire, et que la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
+-   couleur 1 du vertex, si la source du matériau spéculaire est la couleur du vertex diffus et que la première couleur du vertex est indiquée dans la déclaration du vertex.
+-   couleur 2 du vertex, si la source du matériau spéculaire est la couleur du vertex spéculaire, et que la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur spéculaire du matériau
 
-**Remarque**  si l’option de source du matériau spéculaire est utilisée et la couleur du vertex n’est pas fournie, la couleur spéculaire du matériau est utilisée.
+**Remarque**    si l’option de source de matériau spéculaire est utilisée et la couleur de vertex n’est pas fournie, la couleur du matériau spéculaire est utilisée.
 
  
 
@@ -64,7 +64,7 @@ Les composants spéculaires sont restreints pour être compris entre 0 et 255. E
 ## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>Le vecteur à mi-chemin
 
 
-Le vecteur à mi-chemin (H) se situe à mi-chemin entre deux vecteurs: le vecteur qui relie un vertex d’objet à la source de lumière et le vecteur qui relie un vertex d’objet à la position de l'appareil photo. Direct3D propose deux méthodes de calcul du vecteur à mi-chemin. Lorsque les reflets liés à l'appareil photo sont activés (plutôt que les reflets spéculaires orthogonaux), le système calcule le vecteur à mi-chemin à l'aide de la position de l'appareil photo et de la position du vertex, ainsi que le vecteur de direction de la lumière. La formule suivante permet d'illustrer cela:
+Le vecteur à mi-chemin (H) se situe à mi-chemin entre deux vecteurs : le vecteur qui relie un vertex d’objet à la source de lumière et le vecteur qui relie un vertex d’objet à la position de l'appareil photo. Direct3D propose deux méthodes de calcul du vecteur à mi-chemin. Lorsque les reflets liés à l'appareil photo sont activés (plutôt que les reflets spéculaires orthogonaux), le système calcule le vecteur à mi-chemin à l'aide de la position de l'appareil photo et de la position du vertex, ainsi que le vecteur de direction de la lumière. La formule suivante permet d'illustrer cela :
 
 |                                           |
 |-------------------------------------------|
@@ -99,7 +99,7 @@ Selon l’équation, la couleur obtenue pour les vertex d’objet combine la cou
 
 Les deux illustrations suivantes présentent la couleur du matériau spéculaire, qui est grise, et la couleur de la lumière spéculaire, qui est blanche.
 
-![illustration d’une sphère grise](images/amb1.jpg)![illustration d’une sphère blanche](images/lightwhite.jpg)
+![Illustration d’une sphère grise](images/amb1.jpg)![illustration d’une sphère blanche](images/lightwhite.jpg)
 
 Le reflet spéculaire qui en résulte est présenté sur l’illustration suivante.
 
@@ -114,7 +114,7 @@ L'éclairage spéculaire est plus difficile à calculer que l'éclairage diffus.
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Formules mathématiques d’éclairage](mathematics-of-lighting.md)
+[Mathématiques d’éclairage](mathematics-of-lighting.md)
 
  
 

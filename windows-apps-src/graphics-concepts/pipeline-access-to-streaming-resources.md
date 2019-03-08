@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d95ffc14e9ae6d4ea59a4b3bdc33fd215cb61be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925906"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616374"
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>Accès du pipeline aux ressources de diffusion en continu
 
@@ -33,34 +33,34 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">Comportement de la SRV avec les vignettes non mappées</a></p></td>
-<td align="left"><p>Le comportement des lectures d’une vue de ressource du nuanceur (SRV) impliquant des vignettes non mappées varie selon le niveau de prise en charge matérielle.</p></td>
+<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">Comportement SRV avec des vignettes non mappés</a></p></td>
+<td align="left"><p>Le comportement des lectures d'une vue de ressource du nuanceur (SRV) impliquant des vignettes non mappées varie selon le niveau de prise en charge matérielle.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">Comportement de l’UAV avec les vignettes non mappées</a></p></td>
-<td align="left"><p>Le comportement des lectures et écritures d’un accès sans ordre (UAV) varie selon le niveau de prise en charge du matériel.</p></td>
+<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">Comportement UAV avec des vignettes non mappés</a></p></td>
+<td align="left"><p>Le comportement des lectures et écritures d'un accès sans ordre (UAV) varie selon le niveau de prise en charge du matériel.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Comportement du rastériseur avec les vignettes non mappées</a></p></td>
+<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Comportement du rastériseur avec des vignettes non mappés</a></p></td>
 <td align="left"><p>Cette section décrit le comportement du rastériseur avec les vignettes non mappées.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Restrictions d’accès aux vignettes avec des mappages en double</a></p></td>
-<td align="left"><p>Il existe des restrictions d’accès aux vignettes avec des mappages en double, par exemple en cas de copie de ressources de diffusion en continu avec une source et une destination se superposant, ou lors du rendu de tuiles partagées dans la zone de rendu.</p></td>
+<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Limitations d’accès de vignette avec les mappages en double</a></p></td>
+<td align="left"><p>Il existe des restrictions d’accès aux tuiles avec des mappages en double, par exemple en cas de copie de ressources de diffusion en continu avec une source et une destination se superposant, ou lors du rendu de tuiles partagées dans la zone de rendu.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu</a></p></td>
-<td align="left"><p>Les fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu incluent l’obtention des commentaires sur l’état du nuanceur concernant les zones mappées, la possibilité de vérifier que toutes les données auxquelles vous accédez ont été mappées dans la ressource, l’utilisation du déplacement de couleur pour aider les nuanceurs à éviter les zones mipmappées dans les ressources de diffusion en continu connues pour ne pas être mappées, et la détection du niveau de détail minimal mappé entièrement pour un encombrement de filtre de texture entier.</p></td>
+<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Les fonctionnalités d’échantillonnage de texture de diffusion en continu de ressources</a></p></td>
+<td align="left"><p>Les fonctionnalités d'échantillonnage de texture des ressources de diffusion en continu incluent l'obtention des commentaires sur l'état du nuanceur concernant les zones mappées, la possibilité de vérifier que toutes les données auxquelles vous accédez ont été mappées dans la ressource, l'utilisation du déplacement de couleur pour aider les nuanceurs à éviter les zones mipmappées dans les ressources de diffusion en continu connues pour ne pas être mappées, et la détection de la LOD minimale mappée entièrement pour un encombrement de filtre de texture entier.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">Exposition des ressources de diffusion en continu HLSL</a></p></td>
-<td align="left"><p>La prise en charge des ressources de diffusion en continu dans <a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">Shader Model5</a> requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.</p></td>
+<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">Exposition de ressources de diffusion en continu HLSL</a></p></td>
+<td align="left"><p>La prise en charge des ressources de diffusion en continu dans <a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">Shader Model 5</a> requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Ressources de diffusion en continu](streaming-resources.md)
+[Diffusion en continu de ressources](streaming-resources.md)
 
  
 

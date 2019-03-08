@@ -1,10 +1,10 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: Les boîtes de dialogue et les menus volants affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation.
 title: Contrôles de menu volant
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037131"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625014"
 ---
 # <a name="flyouts"></a>Menus volants
 
@@ -24,13 +24,13 @@ Un menu volant est un conteneur d’abandon interactif capable d’afficher l’
 
 ![Menu contextuel imbriqué dans un menu volant](../images/flyout-nested.png)
 
-> **API importantes**: [classe Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **API importantes**: [Classe de menu volant](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 * N’utilisez pas de menu volant à la place d’une [info-bulle](../tooltips.md) ou d’un [menu contextuel](../menus.md). Utilisez une info-bulle pour afficher une brève description qui disparaît après une durée spécifiée. Utilisez un menu contextuel pour les actions contextuelles liées à un élément de l’interface utilisateur, comme copier et coller.
 
-Pour obtenir des recommandations sur le moment d’utiliser un menu volant et quand utiliser une boîte de dialogue (un contrôle similaire), voir les [boîtes de dialogue et menus volants](index.md). 
+Pour obtenir des recommandations sur quand utiliser un menu volant et quand utiliser une boîte de dialogue (contrôle similaire), consultez [boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 
@@ -41,7 +41,7 @@ Pour obtenir des recommandations sur le moment d’utiliser un menu volant et qu
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -51,7 +51,7 @@ Pour obtenir des recommandations sur le moment d’utiliser un menu volant et qu
 ##  <a name="how-to-create-a-flyout"></a>Comment créer un menu volant
 
 
-Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la propriété [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) pour spécifier l’emplacement où s’affiche le menu volant: Haut, Gauche, Bas, Droite ou Plein. Si vous sélectionnez le [mode de placement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).
+Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) propriété pour spécifier l’emplacement d’un menu volant : Haut, gauche, bas, à droite ou intégral. Si vous sélectionnez le [mode de placement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).
 
 Cet exemple crée un menu volant simple qui affiche du texte quand l’utilisateur appuie sur le bouton.
 ````xaml
@@ -145,9 +145,9 @@ Pour appliquer un style à un menu volant, modifiez sa propriété [FlyoutPresen
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>Application de styles aux menus volants pour des expériences «10-foot»
+## <a name="styling-flyouts-for-10-foot-experiences"></a>Lanceurs de style pour les expériences de pied de 10
 
-Les contrôles d’abandon interactif comme les menus volants interrompent le focus des claviers et des boîtiers de commande à l’intérieur de leur interface utilisateur temporaire, jusqu’à leur fermeture. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode). Par défaut, les menus volants dessinent la superposition permettant de faire disparaître la luminosité sur laXbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin d’être toujours **activées** ou **désactivées**.
+Les contrôles d’abandon interactif comme les menus volants interrompent le focus des claviers et des boîtiers de commande à l’intérieur de leur interface utilisateur temporaire, jusqu’à leur fermeture. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode). Par défaut, les menus volants dessinent la superposition permettant de faire disparaître la luminosité sur la Xbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin d’être toujours **activées** ou **désactivées**.
 
 ![Menu volant avec superposition estompant l’affichage](../images/flyout-smoke.png)
 
@@ -160,7 +160,7 @@ Il est possible de fermer les menus volants à l’aide d’une action d’aband
 -   Appui en dehors du menu volant
 -   Appui sur la touche Échap du clavier
 -   Appui sur le bouton Précédent du système matériel ou logiciel
--   Appui sur le boutonB du boîtier de commande
+-   Appui sur le bouton B du boîtier de commande
 
 Lorsque l’une fermeture à l’aide d’un appui, ce mouvement est généralement absorbé et non transmis à l’interface utilisateur en dessous. Par exemple, si un bouton est visible derrière un menu volant ouvert, le premier appui de l’utilisateur ferme le menu volant mais n’active pas ce bouton. L’appui sur le bouton nécessite un second appui.
 
@@ -214,6 +214,6 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>Articles connexes
 - [Info-bulles](../tooltips.md)
-- [Menus et menus contextuels](../menus.md)
-- [Classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-- [Classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+- [Menus et le menu contextuel](../menus.md)
+- [Classe de menu volant](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Classe de ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

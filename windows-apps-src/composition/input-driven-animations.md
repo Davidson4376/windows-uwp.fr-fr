@@ -3,24 +3,24 @@ title: Animations pilotées par une entrée
 description: Découvrez comment utiliser des animations d’entrée dans l’interface utilisateur de votre application.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: windows10, uwp, animation
+keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926325"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597754"
 ---
 # <a name="input-driven-animations"></a>Animations pilotées par une entrée
 
 Cet article constitue une présentation de l’API InputAnimation et recommande l’utilisation de ces types d’animations dans votre interface utilisateur.
 
-## <a name="prerequisites"></a>Éléments prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants:
+À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
-- [Animations basées sur une relation](relation-animations.md)
+- [Animations en fonction de relation](relation-animations.md)
 
 ## <a name="smooth-motion-driven-from-user-interactions"></a>Mouvement fluide piloté par des interactions utilisateur
 
@@ -36,11 +36,11 @@ Bien que l’interaction tactile soit l'une des interfaces les plus couramment u
 
 L’espace InputAnimation fournit plusieurs expériences différentes qui vous permettent de créer un mouvement réagissant de manière dynamique. Comme le reste du système d’animation de l’interface utilisateur de Windows, ces animations pilotées par l’entrée fonctionnent sur un thread indépendant, ce qui contribue à l’expérience de mouvement dynamique. Toutefois, dans certains cas où l’expérience tire parti de contrôles et de composants XAML existants, des parties de ces expériences restent liées au thread d’interface utilisateur.
 
-Trois expériences principales sont possibles lorsque vous créez des animations de mouvement dynamiques pilotées par l’entrée:
+Trois expériences principales sont possibles lorsque vous créez des animations de mouvement dynamiques pilotées par l’entrée :
 
-1. Amélioration des expériences ScrollView existantes: activez la position d’un élément ScrollViewer XAML pour piloter des expériences d’animation dynamiques.
-1. Expériences basées sur la position du pointeur: utilisez la position d’un curseur sur un UIElement qui a subi un test de positionnement pour piloter des expériences d’animation dynamiques.
-1. Expériences personnalisées de manipulation avec InteractionTracker: créer des expériences de manipulation hors thread entièrement personnalisées avec InteractionTracker (par exemple, un canevas de défilement/zoom).
+1. Amélioration des expériences ScrollView existantes : activez la position d’un élément ScrollViewer XAML pour piloter des expériences d’animation dynamiques.
+1. Expériences basées sur la position du pointeur : utilisez la position d’un curseur sur un UIElement qui a subi un test de positionnement pour piloter des expériences d’animation dynamiques.
+1. Expériences personnalisées de manipulation avec InteractionTracker : créer des expériences de manipulation hors thread entièrement personnalisées avec InteractionTracker (par exemple, un canevas de défilement/zoom).
 
 ## <a name="enhancing-existing-scrollviewer-experiences"></a>Amélioration des expériences ScrollViewer existantes
 
@@ -50,7 +50,7 @@ Une des méthodes courantes pour créer des expériences plus dynamiques consist
 
 ![En-tête discret](images/animation/shy-header.gif)
 
-Lorsque vous créez ces types d’expériences, il faut respecter une formule générale:
+Lorsque vous créez ces types d’expériences, il faut respecter une formule générale :
 
 1. Accédez au ScrollManipulationPropertySet sur le XAML ScrollViewer pour lequel vous souhaitez piloter une animation.
     - Effectué via l’API ElementCompositionPreview.GetScrollViewerManipulationPropertySet(UIElement element)
@@ -68,7 +68,7 @@ Une autre expérience dynamique courante impliquant l’entrée consiste à pilo
 
 ![Exemple de rotation de pointeur](images/animation/pointer-rotate.gif)
 
-Lorsque vous créez ces types d’expériences, il existe une formule générale à suivre:
+Lorsque vous créez ces types d’expériences, il faut respecter une formule générale :
 
 1. Accédez au PointerPositionPropertySet sur un élément UIElement XAML dont vous souhaitez connaître la position du curseur lors du test de positionnement.
     - Effectué via l’API ElementCompositionPreview.GetPointerPositionPropertySet(UIElement element)
@@ -84,7 +84,7 @@ L'une des difficultés liées à l’utilisation d'un XAML ScrollViewer est qu�
 
 ![Exemple tirer pour animer](images/animation/pull-to-animate.gif)
 
-Lorsque vous créez des expériences avec InteractionTracker, il existe une formule générale à suivre:
+Lorsque vous créez des expériences avec InteractionTracker, il existe une formule générale à suivre :
 
 1. Créez votre objet InteractionTracker et définissez ses propriétés.
 1. Créez des VisualInteractionSources pour tout objet CompositionVisual qui doit capturer une entrée à utiliser par InteractionTracker.

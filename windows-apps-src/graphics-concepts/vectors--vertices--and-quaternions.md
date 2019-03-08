@@ -8,24 +8,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8942e53b7372e2e8b3cf4ed05f89b4187bdfc4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926408"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599864"
 ---
 # <a name="vectors-vertices-and-quaternions"></a>Vecteurs, sommets et quaternions
 
 
 Dans Direct3D, les sommets décrivent la position et l’orientation. Chaque vertex dans une primitive est décrite par un vecteur qui donne sa position, sa couleur, ses coordonnées de texture et par un vecteur normal qui donne son orientation.
 
-Les quaternions ajoutent un quatrième élément aux valeurs \[x, y, z] qui définissent un vecteur à trois composants. Les quaternions peuvent remplacer les méthodes de matrice qui sont généralement utilisées pour les rotations3D. Un quaternion représente un axe dans l’espace 3D et une rotation autour de cet axe. Par exemple, un quaternion peut représenter un axe (1,1,2) et une rotation de 1radian. Les quaternions transmettent des informations précieuses, mais leur puissance réelle vient des deux opérations que vous pouvez effectuer sur eux: composition et interpolation.
+Les quaternions ajoutent un quatrième élément à la \[x, y, z\] valeurs qui définissent un vecteur de composant de trois. Les quaternions peuvent remplacer les méthodes de matrice qui sont généralement utilisées pour les rotations 3D. Un quaternion représente un axe dans l’espace 3D et une rotation autour de cet axe. Par exemple, un quaternion peut représenter un axe (1,1,2) et une rotation de 1 radian. Les quaternions transmettent des informations précieuses, mais leur puissance réelle vient des deux opérations que vous pouvez effectuer sur eux : composition et interpolation.
 
 L'exécution d'une composition sur des quaternions ressemble leur combinaison. La composition de deux quaternions est notée comme dans l’illustration suivante.
 
 ![Illustration d'une notation de quaternion](images/quateq.png)
 
-La composition de deux quaternions appliquée à une géométrie signifie «faire pivoter la géométrie autour de l'axe₂ par la rotation₂, puis la faire pivoter autour de l'axe₁ par la rotation₁». Dans ce cas, Q représente une rotation autour d’un axe unique qui est le résultat de l’application de q₂, puis de q₁ à la géométrie.
+La composition de deux quaternions appliquée à une géométrie signifie « faire pivoter la géométrie autour de l'axe₂ par la rotation₂, puis la faire pivoter autour de l'axe₁ par la rotation₁ ». Dans ce cas, Q représente une rotation autour d’un axe unique qui est le résultat de l’application de q₂, puis de q₁ à la géométrie.
 
 À l’aide d’une interpolation de quaternion, une application peut calculer un chemin souple et raisonnable pour passer d'un axe et d'une orientation à d'autres. Par conséquent, l’interpolation entre q₁ et q₂ permet de réaliser facilement une animation en basculant d'une orientation à une autre.
 
@@ -34,7 +34,7 @@ Lorsque vous utilisez la composition et l'interpolation ensemble, cela permet de
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
 
  
 

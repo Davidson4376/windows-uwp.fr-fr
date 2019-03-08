@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses directionality and gravity.
+Description: Découvrez comment Fluent motion, utilise une direction et la gravité.
 title: Direction et gravité - animation dans les applications UWP
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4bb6f0ba60e89720a6daa37604cbe93696fb2bb7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922650"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603074"
 ---
 # <a name="directionality-and-gravity"></a>Direction et gravité
 
@@ -51,13 +51,13 @@ Ici, ces principes sont appliqués lorsque l’élément sélectionné reste à 
 
 Lorsque la navigation entraîne le remplacement des éléments à l’écran, il est important de montrer où la scène existante est passée et d'où vient la nouvelle scène.
 
-Cela présente plusieurs avantages:
+Cela présente plusieurs avantages :
 
 - Cela renforce le modèle mental de l’utilisateur de l’espace.
 - La durée de la scène existante donne plus de temps pour préparer le contenu à animer dans la scène à venir.
 - Cela améliore la perception que l’utilisateur a des performances de l'application.
 
-4directions discrètes de navigation sont à prendre en compte.
+4 directions discrètes de navigation sont à prendre en compte.
 
 :::row:::
     :::column:::
@@ -110,7 +110,7 @@ Ici, un élément dans la rangée supérieure de la grille est affecté par la g
 
 ![Direction vers l’arrière dans](images/continuity-photos.gif)
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Présentation du mouvement](index.md)
-- [Minutage et accélération](timing-and-easing.md)
+- [Présentation de Motion](index.md)
+- [Accélération et d’échéance](timing-and-easing.md)

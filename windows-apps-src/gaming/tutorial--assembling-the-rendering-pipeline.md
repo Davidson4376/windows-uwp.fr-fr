@@ -4,18 +4,18 @@ description: Découvrez comment assembler le pipeline de rendu pour afficher les
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ms.date: 10/24/2017
 ms.topic: article
-keywords: windows10, uwp, jeux, rendu
+keywords: windows 10, uwp, jeux, rendu
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117779"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604854"
 ---
-# <a name="rendering-framework-i-intro-to-rendering"></a>Infrastructure de renduI: présentation du rendu
+# <a name="rendering-framework-i-intro-to-rendering"></a>Framework de rendu i : Présentation du rendu
 
-Dans les rubriques précédentes, vous avez vu comment structurer un jeu de plateforme Windows universelle (UWP) à utiliser avec Windows Runtime et comment définir une machine à états pour gérer le flux du jeu. Vous allez maintenant découvrir comment assembler l'infrastructure du rendu. Examinons comment l’exemple de jeu restitue la scène du jeu à l’aide de Direct3D11 (communément appelé DirectX 11).
+Dans les rubriques précédentes, vous avez vu comment structurer un jeu de plateforme Windows universelle (UWP) à utiliser avec Windows Runtime et comment définir une machine à états pour gérer le flux du jeu. Vous allez maintenant découvrir comment assembler l'infrastructure du rendu. Examinons comment l’exemple de jeu affiche la scène de jeu à l’aide de 11 Direct3D (communément appelé DirectX 11).
 
 >[!Note]
 >Si vous n’avez pas encore téléchargé le dernier code de jeu pour cet exemple, accédez à [Exemple de jeu Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Cet exemple fait partie d’une vaste collection d’exemples de fonctionnalités UWP. Pour obtenir des instructions sur le téléchargement de l’exemple, consultez [Obtenir des exemples de la plateforme Windows universelle (UWP) à partir de GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
@@ -34,15 +34,15 @@ Pour configurer une infrastructure de rendu de base afin d'afficher la sortie gr
  2. Créer les ressources nécessaires pour dessiner les graphiques
  3. Afficher les graphiques avec le rendu de l’image
 
-Cet article explique comment les graphiques sont restitués et couvre les étapes1 et 3.
+Cet article explique comment les graphiques sont restitués et couvre les étapes 1 et 3.
 
-[Infrastructure de rendu II: rendu de jeu](tutorial-game-rendering.md) couvre l’étape2; comment configurer l’infrastructure de rendu et comment les données sont préparées pour obtenir le rendu.
+[Framework de rendu II : Rendu de jeux](tutorial-game-rendering.md) couvre l’étape 2 de la configuration de l’infrastructure de rendu et comment les données sont préparées avant le rendu peut se produire.
 
 ## <a name="get-started"></a>Prise en main
 
 Avant de commencer, vous devez vous familiariser avec les concepts de rendu graphique de base. Si vous débutez avec Direct3D et les fonctionnalités de rendu, consultez [Termes et concepts](#terms-and-concepts) pour lire une brève description des graphiques et des termes utilisés dans cet article pour décrire le rendu.
 
-Pour ce jeu, l'objet de classe __GameRenderer__ représente le convertisseur pour cet exemple de jeu.  Le convertisseur se charge de la création et de la gestion de tous les objetsDirect3D 11 et Direct2D utilisés pour générer les effets visuels du jeu.  Il conserve également une référence à l'objet __Simple3DGame__ utilisé pour récupérer la liste des objets pour le rendu, ainsi que l’état du jeu pour l'affichage à tête haute (HUD). 
+Pour ce jeu, l'objet de classe __GameRenderer__ représente le convertisseur pour cet exemple de jeu.  Le convertisseur se charge de la création et de la gestion de tous les objets Direct3D 11 et Direct2D utilisés pour générer les effets visuels du jeu.  Il conserve également une référence à l'objet __Simple3DGame__ utilisé pour récupérer la liste des objets pour le rendu, ainsi que l’état du jeu pour l'affichage à tête haute (HUD). 
 
 Dans cette partie du didacticiel, nous allons nous concentrer sur le rendu d’objets 3D dans le jeu.
 
@@ -50,9 +50,9 @@ Dans cette partie du didacticiel, nous allons nous concentrer sur le rendu d’o
 
 Pour accéder au matériel dédié au rendu, consultez l’article sur l'infrastructure UWP sous [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method).
 
-La __fonction make\_shared__ illustrée [ci-dessous](#appinitialize-method), est utilisée pour créer un __shared\_ptr__ sur [__DX::DeviceResources__](#dxdeviceresources), ce qui permet également d’accéder à l’appareil. 
+Le __rendre\_fonction partagée__, comme illustré [ci-dessous](#appinitialize-method), est utilisé pour créer un __partagé\_ptr__ à [ __DX::D eviceResources__](#dxdeviceresources), ce qui permet également d’accéder à l’appareil. 
 
-Dans Direct3D11, un [appareil](#device) est utilisé pour allouer et détruire les objets, restituer des primitives et communiquer avec la carte graphique via le pilote graphique.
+Dans Direct3D 11, un [appareil](#device) est utilisé pour allouer et détruire les objets, restituer des primitives et communiquer avec la carte graphique via le pilote graphique.
 
 ### <a name="appinitialize-method"></a>Méthode App::Initialize
 
@@ -73,10 +73,10 @@ void App::Initialize(
 
 La scène du jeu doit restituer le rendu lorsque le jeu est lancé. Les instructions pour restituer le rendu démarrent dans la méthode [__GameMain::Run__](#gamemainrun-method), comme illustré ci-dessous.
 
-Le flux simple est le suivant:
-1. __Mettre à jour__
-2. __Afficher__
-3. __Présent__
+Le flux simple est le suivant :
+1. __Mise à jour__
+2. __Render__
+3. __Heure actuelle__
 
 ### <a name="gamemainrun-method"></a>Méthode GameMain::Run
 
@@ -122,7 +122,7 @@ void GameMain::Run()
 }
 ```
 
-### <a name="update"></a>Mise à jour
+### <a name="update"></a>Mettre à jour/Mise à jour
 
 Consultez l'article [Gestion du flux de jeux](tutorial-game-flow-management.md) pour plus d’informations sur la façon dont les états du jeu sont mis à jour dans la méthode [__App::Update__ et __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method).
 
@@ -130,7 +130,7 @@ Consultez l'article [Gestion du flux de jeux](tutorial-game-flow-management.md) 
 
 Le rendu est implémenté en appelant la méthode [__GameRenderer::Render__](#gamerendererrender-method) dans __GameMain::Run__.
 
-Si le [rendu stéréo](#stereo-rendering) est activé, il y a deux passes de rendu: une pour le œil droit et une pour le œil gauche. Dans chaque passe de rendu, nous lions la cible du rendu et la vue de profondeur-gabarit à l'appareil. Nous effaçons également la vue de profondeur-gabarit par la suite.
+Si le [rendu stéréo](#stereo-rendering) est activé, il y a deux passes de rendu : une pour le œil droit et une pour le œil gauche. Dans chaque passe de rendu, nous lions la cible de rendu et la vue du stencil de profondeur à l’appareil. Nous effaçons également la vue de profondeur-gabarit par la suite.
 
 > [!Note]
 > Le rendu stéréo peut être obtenu à l’aide d’autres méthodes telles que la passe stéréo unique à l’aide de l’instanciation de vertex ou des nuanceurs de géométrie. La méthode avec deux passes de rendu est plus lente, mais elle est plus pratique pour obtenir un rendu stéréo.
@@ -146,10 +146,10 @@ Dans cet exemple de jeu, le convertisseur est conçu pour utiliser un schéma de
 
 Définissez le contexte Direct3D pour utiliser un schéma de vertex d'entrée. Les objets du schéma d’entrée décrivent comment diffuser les données de la mémoire tampon du vertex dans le [pipeline de rendu](#rendering-pipeline). 
 
-Ensuite, nous avons paramétré le contexte Direct3D pour qu'il utilise les mémoires tampons constantes définies plus tôt, qui sont utilisées par le stade de pipeline du [nuanceur de vertex](#vertex-shaders-and-pixel-shaders) et le stade de pipeline du [nuanceur de pixels](#vertex-shaders-and-pixel-shaders). 
+Ensuite, nous définissons le contexte de Direct3D à utiliser les mémoires tampons de constantes définis précédemment, qui sont utilisés par le [nuanceur de sommets](#vertex-shaders-and-pixel-shaders) l’étape de canalisation et [nuanceur de pixels](#vertex-shaders-and-pixel-shaders) l’étape de canalisation. 
 
 > [!Note]
-> Consultez [Infrastructure de rendu II: rendu de jeu](tutorial-game-rendering.md) pour plus d’informations sur la définition des mémoires tampons constantes.
+> Consultez [rendu framework II : Rendu de jeux](tutorial-game-rendering.md) pour plus d’informations sur la définition des mémoires tampons constantes.
 
 Dans la mesure où le même schéma d’entrée et le même jeu de mémoires tampons constantes sont utilisés pour tous les nuanceurs qui se trouvent dans le pipeline, ils sont définis une fois par trame.
 
@@ -334,15 +334,15 @@ void GameRenderer::Render()
 
 Lors du rendu de la scène, vous parcourez tous les objets qui doivent être rendus. Les étapes ci-dessous sont répétées pour chaque objet (primitive).
 
-* Mettez à jour la mémoire tampon constante (__m\_constantBufferChangesEveryPrim__) avec la [matrice de transformation universelle](#world-transform-matrix) et les informations sur le matériel du modèle.
+* Mettre à jour de la mémoire tampon constante (__m\_constantBufferChangesEveryPrim__) avec le modèle [matrice de transformation world](#world-transform-matrix) et informations sur le matérielles.
 * Le __m\_constantBufferChangesEveryPrim__ contient des paramètres pour chaque objet.  Il inclut l’objet de la matrice de transformation universelle ainsi que les propriétés du matériel telles que la couleur et l'exposant spéculaire pour les calculs d’éclairage.
 * Définir le contexte Direct3D pour utiliser le schéma de vertex d’entrée afin que les données de l’objet de maillage soient transmises à l’étape d’assembleur d’entrée (IA) du [pipeline de rendu](#rendering-pipeline)
-* Définissez le contexte Direct3D pour utiliser un [tampon d’index](#index-buffer) dans l’étape IA. Fournissez les informations des primitives: type, ordre des données.
-* Soumettez un appel de dessin pour dessiner la primitive indexée, non instanciée. La méthode __GameObject::Render__ met à jour la mémoire [tampon constante](#constant-buffer-or-shader-constant-buffer) de la primitive avec les données propres à une primitive donnée. Cela aboutit à un appel __DrawIndexed__ sur le contexte pour dessiner la géométrie de chaque primitive. Plus spécifiquement, cet appel de dessin met en file d’attente des commandes et des données pour le processeur graphique virtuel (GPU), comme paramétré par les données de la mémoire tampon constante. Chaque appel de dessin exécute le nuanceur de vertex une fois par vertex, puis le [nuanceur de pixels](#vertex-shaders-and-pixel-shaders) une fois pour chaque pixel de chaque triangle dans la primitive. Les textures font partie de l’état utilisé par le nuanceur de pixels pour effectuer le rendu.
+* Définissez le contexte Direct3D pour utiliser un [tampon d’index](#index-buffer) dans l’étape IA. Fournissez les informations des primitives : type, ordre des données.
+* Soumettez un appel de dessin pour dessiner la primitive indexée, non instanciée. La méthode __GameObject::Render__ met à jour la mémoire [tampon constante](#constant-buffer-or-shader-constant-buffer) de la primitive avec les données propres à une primitive donnée. Cela aboutit à un appel __DrawIndexed__ sur le contexte pour dessiner la géométrie de chaque primitive. Plus spécifiquement, cet appel de dessin met en file d’attente des commandes et des données pour le processeur graphique virtuel (GPU), comme paramétré par les données de la mémoire tampon constante. Chaque appel de dessin exécute le nuanceur de sommets une seule fois par sommet, puis la [nuanceur de pixels](#vertex-shaders-and-pixel-shaders) une seule fois pour chaque pixel de chaque triangle dans la primitive. Les textures font partie de l’état utilisé par le nuanceur de pixels pour effectuer le rendu.
 
-Les mémoires tampons constantes ont plusieurs fonctions:
-    * Le jeu utilise plusieurs mémoires tampons constantes, mais n’a besoin de les mettre à jour qu’une seule fois par primitive. Comme indiqué plus haut, les mémoires tampons constantes servent de données pour les nuanceurs qui sont exécutés pour chaque primitive. Certaines données sont statiques (__m_constantBufferNeverChanges__), certaines données sont constantes sur la trame (__m\_constantBufferChangesEveryFrame__), comme la position de la caméra, et certaines données sont propres à la primitive, comme ses couleurs et textures (__m\_constantBufferChangesEveryPrim__)
-    * Le convertisseur de jeu répartit ces données entrantes entre différentes mémoires tampons constantes pour optimiser la bande passante de mémoire utilisée par l’UC et le GPU. Cette approche permet également de réduire la quantité de données dont le GPU doit assurer le suivi. Le GPU a une longue file d’attente de commandes et que, chaque fois que le jeu appelle __Draw__, cette commande est mise en file d’attente avec les données qui lui sont associées. Lorsque le jeu met à jour la mémoire tampon constante de primitives et émet la commande __Draw__ suivante, le pilote graphique ajoute cette commande suivante et les données associées à la file d’attente. Si le jeu dessine 100primitives, la file d’attente peut contenir 100copies des données de la mémoire tampon constante. Pour réduire la quantité de données envoyées par le jeu au GPU, le jeu utilise une mémoire tampon constante de primitives distincte qui contient uniquement les mises à jour pour chaque primitive.
+Les mémoires tampons constantes ont plusieurs fonctions :
+    * Le jeu utilise plusieurs mémoires tampons constantes, mais n’a besoin de les mettre à jour qu’une seule fois par primitive. Comme indiqué plus haut, les mémoires tampons constantes servent de données pour les nuanceurs qui sont exécutés pour chaque primitive. Certaines données sont statiques (__m\_constantBufferNeverChanges__) ; certaines données reste constantes au fil de la trame (__m\_constantBufferChangesEveryFrame__), telles que la position de l’appareil photo ; et certaines données sont spécifiques à la primitive, telles que sa couleur et les textures (__m\_constantBufferChangesEveryPrim__)
+    * Le convertisseur de jeu répartit ces données entrantes entre différentes mémoires tampons constantes pour optimiser la bande passante de mémoire utilisée par l’UC et le GPU. Cette approche permet également de réduire la quantité de données dont le GPU doit assurer le suivi. Le GPU a une longue file d’attente de commandes et que, chaque fois que le jeu appelle __Draw__, cette commande est mise en file d’attente avec les données qui lui sont associées. Lorsque le jeu met à jour la mémoire tampon constante de primitives et émet la commande __Draw__ suivante, le pilote graphique ajoute cette commande suivante et les données associées à la file d’attente. Si le jeu dessine 100 primitives, la file d’attente peut contenir 100 copies des données de la mémoire tampon constante. Pour réduire la quantité de données envoyées par le jeu au GPU, le jeu utilise une mémoire tampon constante de primitives distincte qui contient uniquement les mises à jour pour chaque primitive.
 
 #### <a name="gameobjectrender-method"></a>Méthode GameObject::Render
 
@@ -429,12 +429,12 @@ void MeshObject::Render(\_In\_ ID3D11DeviceContext *context)
 
 Nous appelons la méthode __DX::DeviceResources::Present__ permettant d'insérer le contenu que nous avons placé dans les mémoires tampons et de l’afficher.
 
-Nous utilisons le terme «chaîne d’échange» pour désigner une collection de mémoires tampons utilisées pour la présentation des images à l’utilisateur. Chaque fois qu’une application présente une nouvelle image à afficher, la première mémoire tampon de la chaîne d’échange prend la place de la mémoire tampon affichée. Ce processus est désigné sous le terme d’échange ou d’inversion. Pour plus d’informations, voir l’article [Chaînes d’échange](../graphics-concepts/swap-chains.md).
+Nous utilisons le terme « chaîne d’échange » pour désigner une collection de mémoires tampons utilisées pour la présentation des images à l’utilisateur. Chaque fois qu’une application présente une nouvelle image à afficher, la première mémoire tampon de la chaîne d’échange prend la place de la mémoire tampon affichée. Ce processus est désigné sous le terme d’échange ou d’inversion. Pour plus d’informations, voir l’article [Chaînes d’échange](../graphics-concepts/swap-chains.md).
 
 * La méthode __Present__ de l’interface __IDXGISwapChain1__ demande le blocage de [DXGI](#dxgi) jusqu'à la synchronisation verticale (VSync), plaçant l’application en veille jusqu'à la prochaine synchronisation verticale. Cela garantit que vous ne perdez pas les cycles de rendu d’images qui ne seront jamais affichés à l’écran.
 * La méthode __DiscardView__ de l'interface __ID3D11DeviceContext3__ ignore le contenu de la [cible de rendu](#render-target). Il s’agit d’une opération valide uniquement lorsque le contenu existant est entièrement remplacé. Si des redirections incorrectes ou de défilement sont utilisées, cet appel doit être supprimé.
 * À l’aide de la même méthode __DiscardView__, ignorez le contenu de la [profondeur-gabarit](#depth-stencil).
-* La méthode __HandleDeviceLost__ est utilisée pour gérer le scénario si l'[appareil](#device) est supprimé. Si l'appareil a été supprimé par une déconnexion ou une mise à niveau du pilote, vous devez recréer toutes les ressources de l'appareil. Pour plus d’informations, voir [Gérer des scénarios de suppression d'appareil dans Direct3D11](handling-device-lost-scenarios.md).
+* La méthode __HandleDeviceLost__ est utilisée pour gérer le scénario si l'[appareil](#device) est supprimé. Si l'appareil a été supprimé par une déconnexion ou une mise à niveau du pilote, vous devez recréer toutes les ressources de l'appareil. Pour plus d’informations, voir [Gérer des scénarios de suppression d'appareil dans Direct3D 11](handling-device-lost-scenarios.md).
 
 > [!Tip]
 > Pour obtenir une fréquence d’images fluide, vous devez vous assurer que le volume de travail pour afficher une image est adapté à l'intervalle VSync.
@@ -473,7 +473,7 @@ void DX::DeviceResources::Present()
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Cet article explique comment un graphique est affiché à l'écran et fournit une brève description de certains termes de rendu utilisés. Pour en savoir plus sur le rendu, consultez l'article [Infrastructure de renduII: rendu de jeu](tutorial-game-rendering.md) et découvrez comment préparer les données requises avant le rendu.
+Cet article explique comment un graphique est affiché à l'écran et fournit une brève description de certains termes de rendu utilisés. En savoir plus sur le rendu sous la [framework rendu II : Rendu de jeux](tutorial-game-rendering.md) article et découvrez comment préparer les données nécessaires avant le rendu.
 
 ## <a name="terms-and-concepts"></a>Termes et concepts
 
@@ -489,12 +489,12 @@ Les informations de scène et d’objet sont utilisées par l’infrastructure d
 
 Le pipeline de rendu est le processus par lequel les informations de la scène 3D sont convertie en une image affichée à l’écran. Dans Direct3D 11, ce pipeline est programmable. Vous pouvez adapter les étapes pour prendre en charge vos besoins de rendu. Les étapes qui utilisent des noyaux de nuanceur communs sont programmables au moyen du langage de programmation HLSL. On l'appelle également le rendu des graphiques de pipeline ou simplement le pipeline.
 
-Pour créer ce pipeline, vous devez connaître:
+Pour créer ce pipeline, vous devez connaître :
 * [HLSL](#HLSL). Nous recommandons l’utilisation de HLSL Shader Model 5.1 et les versions supérieures pour les jeux UWP DirectX.
 * [Nuanceurs](#Shaders)
-* [Nuanceurs de vertex et de pixels](#vertext-shaders-pixel-shaders)
+* [Nuanceurs de sommets et des nuanceurs de pixels](#vertext-shaders-pixel-shaders)
 * [Étapes du nuanceur](#shader-stages)
-* [Différents formats de fichier de nuanceur](#various-shader-file-formats)
+* [Divers formats de fichier de nuanceur](#various-shader-file-formats)
 
 Pour plus d’informations, voir [Comprendre le pipeline de rendu Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx) et [Pipeline graphique](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).
 
@@ -504,9 +504,9 @@ HLSL est le langage HLSL pour DirectX. À l’aide du langage HLSL, vous pouvez 
 
 #### <a name="shaders"></a>Nuanceurs
 
-Les nuanceurs peuvent être considérés comme un ensemble d’instructions qui déterminent la façon dont la surface d’un objet s’affiche lors du rendu. Ceux programmés à l’aide du langage HLSL sont appelés des nuanceurs HLSL. Les fichiers de code source pour les nuanceurs [HLSL])(#hlsl) portent l’extension de fichier .hlsl. Ces nuanceurs peuvent être compilés au moment de la création ou lors de l’exécution et définis lors de l’exécution dans l’étape du pipeline appropriée; un objet nuanceur compilé a une extension de fichier .cso.
+Les nuanceurs peuvent être considérés comme un ensemble d’instructions qui déterminent la façon dont la surface d’un objet s’affiche lors du rendu. Ceux programmés à l’aide du langage HLSL sont appelés des nuanceurs HLSL. Les fichiers de code source pour les nuanceurs [HLSL])(#hlsl) portent l’extension de fichier .hlsl. Ces nuanceurs peuvent être compilés au moment de la création ou lors de l’exécution et définis lors de l’exécution dans l’étape du pipeline appropriée ; un objet nuanceur compilé a une extension de fichier .cso.
 
-Les nuanceurs Direct3D 9 peuvent être conçus à l’aide du modèle de nuanceur1, du modèle de nuanceur2 et du modèle de nuanceur 3; les nuanceurs Direct3D 10 peuvent uniquement être conçus à l'aide du modèle de nuanceur4. Les nuanceurs Direct3D 11 peuvent être conçu sur le modèle de nuanceur 5. Direct3D 11.3 et Direct3D 12 peuvent être conçus sur le modèle de nuanceur 5.1 et Direct3D 12 peut également être conçu sur le modèle de nuanceur 6.
+Les nuanceurs Direct3D 9 peuvent être conçus à l’aide du modèle de nuanceur 1, du modèle de nuanceur 2 et du modèle de nuanceur 3 ; les nuanceurs Direct3D 10 peuvent uniquement être conçus à l'aide du modèle de nuanceur 4. Les nuanceurs Direct3D 11 peuvent être conçu sur le modèle de nuanceur 5. Direct3D 11.3 et Direct3D 12 peuvent être conçus sur le modèle de nuanceur 5.1 et Direct3D 12 peut également être conçu sur le modèle de nuanceur 6.
 
 #### <a name="vertex-shaders-and-pixel-shaders"></a>Nuanceurs de vertex et de pixels
 
@@ -520,7 +520,7 @@ Une séquence de ces différents nuanceurs définis pour traiter ce flux de prim
 
 #### <a name="various-shader-file-formats"></a>Différents formats de fichier de nuanceur
 
-Extensions de fichier de code de nuanceur:
+Extensions de fichier de code de nuanceur :
     * Un fichier avec l’extension .hlsl contient le code source [HLSL])(#hlsl).
     * Un fichier avec l’extension .cso contient un objet nuanceur compilé.
     * Un fichier avec l’extension .h est un fichier d’en-tête, mais dans un contexte de code de nuanceur, ce fichier d’en-tête définit un tableau d’octets qui contient les données du nuanceur.
@@ -531,25 +531,25 @@ Extensions de fichier de code de nuanceur:
 
 ### <a name="deeper-understanding-of-directx"></a>Mieux comprendre DirectX
 
-Direct3D 11 est un ensemble d’API qui peuvent créer des graphiques pour les applications qui demandent d’importantes ressources graphiques comme les jeux, où une carte graphique de qualité est nécessaire pour traiter des calculs complexes. Cette section explique brièvement les concepts de la programmation graphique Direct3D 11: la ressource, la sous-ressource, l'appareil et le contexte de l'appareil.
+Direct3D 11 est un ensemble d’API qui peuvent créer des graphiques pour les applications qui demandent d’importantes ressources graphiques comme les jeux, où une carte graphique de qualité est nécessaire pour traiter des calculs complexes. Cette section explique brièvement les concepts de la programmation graphique Direct3D 11 : la ressource, la sous-ressource, l'appareil et le contexte de l'appareil.
 
-#### <a name="resource"></a>Ressource
+#### <a name="resource"></a>Resource
 
 Si vous débutez, vous pouvez considérer les ressources (également appelées ressources de l'appareil) comme des informations permettant de rendre un objet comme une texture, une position ou une couleur. Les ressources fournissent des données au pipeline et définissent ce qui est rendu au cours de votre scène. Les ressources peuvent être chargées à partir de vos jeux ou créées dynamiquement au moment de l’exécution.
 
-Une ressource est en fait une zone de la mémoire accessible par le [pipeline](#rendering-pipeline) Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe 2types de ressources à partir desquelles l’ensemble des ressources Direct3D dérivent: une mémoire tampon et une texture. Jusqu’à 128ressources peuvent être actives à chaque étape du pipeline. Pour plus d'informations, voir [Resources](../graphics-concepts/resources.md).
+Une ressource est en fait une zone de la mémoire accessible par le [pipeline](#rendering-pipeline) Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe 2 types de ressources à partir desquelles l’ensemble des ressources Direct3D dérivent : une mémoire tampon et une texture. Jusqu’à 128 ressources peuvent être actives à chaque étape du pipeline. Pour plus d'informations, voir [Resources](../graphics-concepts/resources.md).
 
 #### <a name="subresource"></a>Sous-ressource
 
-Le terme «sous-ressource» fait référence à un sous-ensemble d’une ressource. Direct3D peut référencer une ressource entière ou des sous-ensembles d’une ressource. Pour plus d'informations, voir [Sous-resource](../graphics-concepts/resource-types.md#subresources).
+Le terme « sous-ressource » fait référence à un sous-ensemble d’une ressource. Direct3D peut référencer une ressource entière ou des sous-ensembles d’une ressource. Pour plus d'informations, voir [Sous-resource](../graphics-concepts/resource-types.md#subresources).
 
 #### <a name="depth-stencil"></a>Gabarit-profondeur
 
 Une ressource de gabarit-profondeur contient le format et la mémoire tampon permettant de contenir les informations de profondeur et de gabarit. Elle est créée à l’aide d’une ressource de texture. Pour plus d’informations sur la création d’une ressource de gabarit-profondeur, voir [Configuration de la fonctionnalité de profondeur-gabarit](https://msdn.microsoft.com/library/windows/desktop/bb205074.aspx). Nous pouvons accéder à la ressource de profondeur-gabarit par le biais de la vue de profondeur-gabarit implémentée à l’aide de l'interface [ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377.aspx).
 
-Les informations de profondeur nous indiquent les zones de polygones à afficher, plutôt que celles à masquer. Les informations de gabarit indiquent quels pixels sont masqués. Elle peut être utilisée pour produire des effets spéciaux dans la mesure où elle détermine si un pixel est dessiné ou non; définit le bit 1 ou le bit 0. 
+Les informations de profondeur nous indiquent les zones de polygones à afficher, plutôt que celles à masquer. Les informations de gabarit indiquent quels pixels sont masqués. Elle peut être utilisée pour produire des effets spéciaux dans la mesure où elle détermine si un pixel est dessiné ou non ; définit le bit 1 ou le bit 0. 
 
-Pour plus d’informations, voir: [Affichage du gabarit de profondeur](../graphics-concepts/depth-stencil-view--dsv-.md), [tampon de profondeur](../graphics-concepts/depth-buffers.md), et [Mémoire tampon de gabarit](../graphics-concepts/stencil-buffers.md).
+Pour plus d’informations, consultez : [Vue du stencil de profondeur](../graphics-concepts/depth-stencil-view--dsv-.md), [tampon de profondeur](../graphics-concepts/depth-buffers.md), et [tampon stencil buffer](../graphics-concepts/stencil-buffers.md).
 
 #### <a name="render-target"></a>Cible de rendu
 
@@ -559,7 +559,7 @@ Chaque cible de rendu doit également avoir une vue de profondeur-gabarit corres
 
 #### <a name="device"></a>Appareil
 
-Pour ceux qui débutent avec Direct3D11, vous pouvez considérer un appareil comme le moyen utilisé pour allouer et détruire les objets, restituer des primitives et communiquer avec la carte graphique via le pilote graphique. 
+Pour ceux qui débutent avec Direct3D 11, vous pouvez considérer un appareil comme le moyen utilisé pour allouer et détruire les objets, restituer des primitives et communiquer avec la carte graphique via le pilote graphique. 
 
 Plus précisément, un appareil Direct3D est le composant de rendu de Direct3D. Un appareil encapsule et stocke l’état de rendu, exécute des transformations et des opérations d’éclairage, et rastérise une image sur une surface. Pour plus d’informations, voir [Appareils](../graphics-concepts/devices.md).
 
@@ -567,7 +567,7 @@ Un appareil est représenté par l'interface [ID3D11Device](https://msdn.microso
 
 Notez qu’il existe différentes versions de ID3D11Device, [ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx) est la version la plus récente et ajoute de nouvelles méthodes à celles de ID3D11Device4. Pour plus d’informations sur la façon dont Direct3D communique avec le matériel sous-jacent, voir [Architecture du modèle de pilote de périphérique Windows (WDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).
 
-Chaque application doit avoir au moins un appareil, la plupart des applications créent uniquement un appareil. Créez un appareil pour un des pilotes de matériel installés sur votre ordinateur en appelant __D3D11CreateDevice__ ou __D3D11CreateDeviceAndSwapChain__ et en spécifiant le type de pilote avec l’indicateur D3D\_DRIVER\_TYPE. Chaque appareil peut utiliser un ou plusieurs contextes d'appareil, en fonction de la fonctionnalité souhaitée. Pour plus d’information, voir [Fonction D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx).
+Chaque application doit avoir au moins un appareil, la plupart des applications créent uniquement un appareil. Créer un appareil pour un des pilotes de matériel installés sur votre ordinateur en appelant __D3D11CreateDevice__ ou __D3D11CreateDeviceAndSwapChain__ et en spécifiant le type de pilote avec la D3D\_ PILOTE\_indicateur TYPE. Chaque appareil peut utiliser un ou plusieurs contextes d'appareil, en fonction de la fonctionnalité souhaitée. Pour plus d’information, voir [Fonction D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx).
 
 #### <a name="device-context"></a>Contexte d'appareil
 
@@ -575,19 +575,19 @@ Un contexte d'appareil sert à définir l’état du [pipeline](#rendering-pipel
 
 Direct3D 11 implémente deux types de contextes d'appareil, un pour le rendu immédiat et l’autre pour le rendu différé. Les deux contextes sont représentés par une interface [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476385.aspx).  
 
-Les interfaces __ID3D11DeviceContext__ ont des versions différentes; __ID3D11DeviceContext4__ ajoute de nouvelles méthodes à celles de __ID3D11DeviceContext3__.
+Les interfaces __ID3D11DeviceContext__ ont des versions différentes ; __ID3D11DeviceContext4__ ajoute de nouvelles méthodes à celles de __ID3D11DeviceContext3__.
 
-Remarque: __ID3D11DeviceContext4__ est introduite dans Windows10Creators Update et est la dernière version de l'interface __ID3D11DeviceContext__. Les applications ciblant Windows10Creators Update doivent utiliser cette interface au lieu des versions antérieures. Pour plus d’informations, voir [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx).
+Remarque: __ID3D11DeviceContext4__ est introduite dans Windows 10 Creators Update et est la dernière version de la __ID3D11DeviceContext__ interface. Les applications ciblant Windows 10 Creators Update doivent utiliser cette interface au lieu des versions antérieures. Pour plus d’informations, voir [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx).
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
-La classe __DX::DeviceResources__ se trouve dans les fichiers __DeviceResources.cpp__/__.h__ et gère l’ensemble des ressources de l'appareil DirectX. Dans l’exemple de projet de jeu et le projet de modèle d'application DirectX11, ces fichiers se trouvent dans le dossier __Commons__. Vous pouvez obtenir la dernière version de ces fichiers lorsque vous créez un nouveau projet de modèle application DirectX11 dans Visual Studio2015 ou les versions ultérieures.
+La classe __DX::DeviceResources__ se trouve dans les fichiers __DeviceResources.cpp__/__.h__ et gère l’ensemble des ressources de l'appareil DirectX. Dans l’exemple de projet de jeu et le projet de modèle d'application DirectX 11, ces fichiers se trouvent dans le dossier __Commons__. Vous pouvez obtenir la dernière version de ces fichiers lorsque vous créez un nouveau projet de modèle application DirectX 11 dans Visual Studio 2015 ou les versions ultérieures.
 
 ### <a name="buffer"></a>Mémoire tampon
 
-Une ressource de mémoire tampon est un ensemble de données dont le type a été intégralement spécifié, regroupées en éléments. Vous pouvez utiliser les mémoires tampons pour stocker une grande variété de données, telles que les vecteurs de position, les vecteurs normaux, les coordonnées de texture dans une mémoire tampon de vertex, les index dans une mémoire tampon d’index ou l’état de l’appareil. Les éléments de mémoire tampon peuvent comporter des valeurs de données compressées (comme des valeurs de surface R8G8B8A8), des entiers8bits uniques ou quatre valeurs à virgule flottante de 32bits.
+Une ressource de mémoire tampon est un ensemble de données dont le type a été intégralement spécifié, regroupées en éléments. Vous pouvez utiliser les mémoires tampons pour stocker une grande variété de données, telles que les vecteurs de position, les vecteurs normaux, les coordonnées de texture dans une mémoire tampon de vertex, les index dans une mémoire tampon d’index ou l’état de l’appareil. Les éléments de mémoire tampon peuvent comporter des valeurs de données compressées (comme des valeurs de surface R8G8B8A8), des entiers 8 bits uniques ou quatre valeurs à virgule flottante de 32 bits.
 
-Il existe trois types de mémoires tampons: la mémoire tampon de vertex, la mémoire tampon d’index et la mémoire tampon constante.
+Il existe trois types de mémoires tampons disponibles : Mémoire tampon de vertex, mémoire tampon d’index et de mémoire tampon constante.
 
 #### <a name="vertex-buffer"></a>Mémoire tampon de vertex
 
@@ -595,7 +595,7 @@ Contient les données de vertex utilisées pour définir votre géométrie. Les 
 
 #### <a name="index-buffer"></a>Mémoire tampon d’index
 
-Contient des décalages d’entier dans les tampons de vertex; elles ont vocation à accroître l’efficacité du rendu des primitives. Un tampon d’index contient un ensemble séquentiel d’index de 16 ou 32bits; chaque index est utilisé pour identifier un sommet dans un tampon de sommet.
+Contient des décalages d’entier dans les tampons de vertex ; elles ont vocation à accroître l’efficacité du rendu des primitives. Un tampon d’index contient un ensemble séquentiel d’index de 16 ou 32 bits ; chaque index est utilisé pour identifier un sommet dans un tampon de sommet.
 
 #### <a name="constant-buffer-or-shader-constant-buffer"></a>Mémoire tampon constante ou mémoire tampon constante de nuanceur
 
@@ -605,28 +605,28 @@ Vous permet de fournir efficacement des données de nuanceur au pipeline. Vous p
 
 Vous pouvez concevoir des mémoires tampons en fonction du type de données, par exemple, comme dans notre exemple de jeu, une mémoire tampon est créée pour les données statiques, une autre pour les données qui sont constantes sur la trame et une autre pour les données spécifiques à une primitive.
 
-Tous les types de mémoires tampons sont encapsulés par l'interface __ID3D11Buffer__ et vous pouvez créer une ressource de mémoire tampon en appelant __ID3D11Device::CreateBuffer__. Toutefois, une mémoire tampon doit être liée au pipeline avant d’être accessible. Les mémoires tampons peuvent être liées à plusieurs étapes du pipeline simultanément pour la lecture. Une mémoire tampon peut également être liée à une étape du pipeline unique pour l’écriture; toutefois, la même mémoire tampon ne peut pas être liée pour lire et écrire simultanément.
+Tous les types de mémoires tampons sont encapsulés par l'interface __ID3D11Buffer__ et vous pouvez créer une ressource de mémoire tampon en appelant __ID3D11Device::CreateBuffer__. Toutefois, une mémoire tampon doit être liée au pipeline avant d’être accessible. Les mémoires tampons peuvent être liées à plusieurs étapes du pipeline simultanément pour la lecture. Une mémoire tampon peut également être liée à une étape du pipeline unique pour l’écriture ; toutefois, la même mémoire tampon ne peut pas être liée pour lire et écrire simultanément.
 
-Liez les mémoires tampons pour:
+Liez les mémoires tampons pour :
     * L'étape de l’assembleur d’entrée en appelant les méthodes __ID3D11DeviceContext__ comme __ID3D11DeviceContext::IASetVertexBuffers__ et __ID3D11DeviceContext::IASetIndexBuffer__
     * L'étape de la sortie du flux en appelant __ID3D11DeviceContext::SOSetTargets__
     * L'étape du nuanceur en appelant les méthodes de nuanceur, comme __ID3D11DeviceContext::VSSetConstantBuffers__
 
-Pour plus d’informations, voir [Présentation des mémoires tampons dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx).
+Pour plus d’informations, voir [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx).
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) est un nouveau sous-système introduit avec Windows Vista qui encapsule les tâches de bas niveau requises par Direct3D 10, 10.1, 11 et 11.1. Il convient de faire attention lorsque vous utilisez DXGI dans une application multithread, afin d’éviter les blocages. Pour plus d’informations, voir [Infrastructure DXGI (DirectX Graphics): meilleures pratiques - Multithreading](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX Graphics Infrastructure (DXGI) est un nouveau sous-système qui a été introduit avec Windows Vista qui encapsule certains des tâches de bas niveau qui sont requises par Direct3D 10, 10.1, 11 et 11.1. Il convient de faire attention lorsque vous utilisez DXGI dans une application multithread, afin d’éviter les blocages. Pour plus d’informations, consultez [DirectX Graphics Infrastructure (DXGI) : Meilleures pratiques-le Multithreading](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>Niveau de fonctionnalité
 
 Le niveau de fonctionnalité est un concept introduit dans Direct3D 11 pour gérer la diversité des cartes vidéo dans les ordinateurs virtuels nouveaux et existants. Un niveau de fonctionnalité est un ensemble de fonctionnalités de processeur graphique (GPU) définies. 
 
-Chaque carte vidéo implémente un certain niveau de fonctionnalité DirectX en fonction des GPU installés. Dans les versions antérieures de MicrosoftDirect3D, vous pouviez avoir la version de Direct3D, la carte vidéo implémentée et ensuite votre application en conséquence. 
+Chaque carte vidéo implémente un certain niveau de fonctionnalité DirectX en fonction des GPU installés. Dans les versions antérieures de Microsoft Direct3D, vous pouviez avoir la version de Direct3D, la carte vidéo implémentée et ensuite votre application en conséquence. 
 
-Avec le niveau de fonctionnalité, lorsque vous créez un appareil, vous pouvez tenter de créer un appareil pour le niveau de fonctionnalité que vous souhaitez demander. Si la création d'appareil fonctionne, ce niveau de fonctionnalité existe, si ce n’est pas, le matériel ne prend pas en charge ce niveau de fonctionnalité. Vous pouvez essayer de recréer un appareil avec un niveau de fonctionnalité inférieur ou vous pouvez choisir de quitter l’application. Par exemple, le niveau de fonctionnalité 12\_0 nécessite Direct3D 11.3 ou Direct3D 12 et le modèle de nuanceur 5.1. Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D: vue d’ensemble pour chaque niveau de fonctionnalité](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).
+Avec le niveau de fonctionnalité, lorsque vous créez un appareil, vous pouvez tenter de créer un appareil pour le niveau de fonctionnalité que vous souhaitez demander. Si la création d'appareil fonctionne, ce niveau de fonctionnalité existe, si ce n’est pas, le matériel ne prend pas en charge ce niveau de fonctionnalité. Vous pouvez essayer de recréer un appareil avec un niveau de fonctionnalité inférieur ou vous pouvez choisir de quitter l’application. Par exemple, le 12\_nécessite de niveau de fonctionnalité 0 Direct3D 11.3 ou Direct3D 12 et le modèle de nuanceur 5.1. Pour plus d’informations, consultez [niveaux de fonctionnalité Direct3D : Vue d’ensemble pour chaque niveau de fonctionnalité](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).
 
-À l’aide des niveaux de fonctionnalité, vous pouvez développer une application Direct3D9, Microsoft Direct3D10 ou Direct3D11 et exécutez-le sur 9, 10 ou 11 matériel (avec quelques exceptions). Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
+À l’aide des niveaux de fonctionnalité, vous pouvez développer une application Direct3D 9, Microsoft Direct3D 10 ou Direct3D 11 et puis l’exécuter sur 9, 10 ou 11 matériel (avec quelques exceptions près). Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
 
 ### <a name="stereo-rendering"></a>Rendu stéréo
 
@@ -634,7 +634,7 @@ Le rendu stéréo est utilisé pour améliorer l’illusion de profondeur. Il ut
 
 D'un point de vue mathématique, nous appliquons une matrice de projection stéréo, qui a un léger décalage horizontal à droite et à gauche de la matrice de projection mono régulière afin d'effectuer cette opération.
 
-Nous avons fait deux passes de rendu pour obtenir un rendu stéréo dans cet exemple de jeu:
+Nous avons fait deux passes de rendu pour obtenir un rendu stéréo dans cet exemple de jeu :
 * Liez à la cible de rendu de droite, appliquez une projection droite, puis dessinez l’objet de primitive.
 * Liez à la cible de rendu de gauche, appliquez une projection gauche, puis dessinez l’objet de primitive.
 
@@ -642,18 +642,18 @@ Nous avons fait deux passes de rendu pour obtenir un rendu stéréo dans cet exe
 
 Le jeu a le code en place pour mettre à jour le monde dans son propre système de coordonnées (parfois appelé espace du monde ou espace de scène). Tous les objets, y compris la caméra, sont positionnés et orientés dans cet espace. Pour plus d'informations, voir [Systèmes de coordonnées](../graphics-concepts/coordinate-systems.md).
 
-Un nuanceur de vertex effectue la lourde tâche de convertir les coordonnées du modèle en coordonnées de périphérique avec l’algorithme suivant (oùV est un vecteur etM est une matrice).
+Un nuanceur de vertex effectue la lourde tâche de convertir les coordonnées du modèle en coordonnées de périphérique avec l’algorithme suivant (où V est un vecteur et M est une matrice).
 
 V(appareil) = V(modèle) x M(modèle à universel) x M(universel à vue) x M(vue à appareil).
 
-où: 
+où : 
 * M(modèle à universel) est une matrice de transformation des coordonnées du modèle en coordonnées universelles, également connue sous le nom de [matrice de transformation universelle](#world-transform-matrix). Elle est fournie par la primitive.
 * M(universel à vue) est une matrice de transformation des coordonnées universelles en coordonnées de vue, également connue sous le nom de [matrice de transformation de vue](#view-transform-matrix).
     * Elle est fournie par la matrice globale de la caméra. Elle est définie par la position de la caméra et les vecteurs de vue (le vecteur « de visualisation » qui pointe directement sur la scène depuis la caméra et le vecteur « de recherche » qui pointe vers le haut, à la perpendiculaire).
-    * Dans l’exemple de jeu, __m_viewmatrix__ est la matrice de transformation calculé à l’aide de __Camera::SetViewParams__ 
+    * Dans l’exemple de jeu, __m\_viewMatrix__ est la matrice de transformation d’affichage et est calculée à l’aide de __Camera::SetViewParams__ 
 * M(vue à appareil) est une matrice de transformation des coordonnées de vue en coordonnées d'appareil, également connue sous le nom de [matrice de transformation de projection](#projection-transform-matrix).
     * Elle est fournie par la projection de la caméra. Elle indique combien de cet espace est vraiment visible dans la scène finale. Le champ de vision, les proportions et les plans de découpage définissent la matrice de transformation de projection.
-    * Dans l’exemple de jeu, __m\_projectionMatrix__ définit les coordonnées de projection, calculées à l’aide de la transformation __Camera::SetProjParams__ (pour la projection stéréo, vous utilisez deux matrices de projection: une pour l’affichage de chaque œil.) 
+    * Dans l’exemple de jeu, __m\_projectionMatrix__ définit la transformation pour les coordonnées de projection, calculées à l’aide __Camera::SetProjParams__ (pour la projection stéréo, vous devez utiliser deux les matrices de projection : un pour chaque vue de.) 
 
 Le code du nuanceur dans VertexShader.hlsl est chargé avec ces vecteurs et matrices à partir des mémoires tampons constantes et effectue cette transformation pour chaque vertex.
 
@@ -671,9 +671,9 @@ La transformation de vue localise l'observateur dans l’espace universel, trans
 
 ####  <a name="projection-transform-matrix"></a>Matrice de transformation de projection
 
-La transformation de projection convertit le tronc de cône d’affichage en une forme cubique. Un tronc de cône d'affichage est un volume3D dans une scène positionnée par rapport à la fenêtre d’affichage de la caméra. Une fenêtre d’affichage est un rectangle 2D dans lequel une scène3D est projetée. Pour plus d’informations, voir [Fenêtres d’affichage et découpage](../graphics-concepts/viewports-and-clipping.md).
+La transformation de projection convertit le tronc de cône d’affichage en une forme cubique. Un tronc de cône d'affichage est un volume 3D dans une scène positionnée par rapport à la fenêtre d’affichage de la caméra. Une fenêtre d’affichage est un rectangle 2D dans lequel une scène 3D est projetée. Pour plus d’informations, voir [Fenêtres d’affichage et découpage](../graphics-concepts/viewports-and-clipping.md).
 
-L’extrémité proche du tronc de cône d’affichage étant plus petite que son extrémité éloignée, cela a pour effet de développer les objets situés à proximité de la caméra; c’est de cette manière que la perspective est appliquée à la scène. Ainsi, les objets qui sont plus proches du joueur apparaissent plus gros et les objets qui sont éloignés apparaissent plus petits.
+L’extrémité proche du tronc de cône d’affichage étant plus petite que son extrémité éloignée, cela a pour effet de développer les objets situés à proximité de la caméra ; c’est de cette manière que la perspective est appliquée à la scène. Ainsi, les objets qui sont plus proches du joueur apparaissent plus gros et les objets qui sont éloignés apparaissent plus petits.
 
 Mathématiquement, la transformation de projection est une matrice qui est généralement une projection avec une mise à l'échelle et une perspective. Elle fonctionne comme l’objectif d’un appareil photo. Pour plus d’informations, voir [Transformation de projection](../graphics-concepts/projection-transform.md).
 

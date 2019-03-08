@@ -1,24 +1,24 @@
 ---
-title: Installer des applicationsUWP à partir d’une page web
+title: Installer des applications UWP à partir d’une page web
 description: Dans cette section, nous allons examiner les étapes à suivre pour permettre aux utilisateurs d’installer vos applications directement à partir de la page web.
 ms.date: 11/16/2017
 ms.topic: article
-keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
+keywords: windows 10, uwp, programme d’installation d’application, AppInstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927071"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623554"
 ---
-# <a name="installing-uwp-apps-from-a-web-page"></a>Installer des applicationsUWP à partir d’une page web
+# <a name="installing-uwp-apps-from-a-web-page"></a>Installer des applications UWP à partir d’une page web
 
 En règle générale, une application doit être disponible localement sur un appareil avant de pouvoir être installée avec le Programme d’installation d’application. Pour le scénario web, cela signifie que l’utilisateur doit télécharger le package de l’application à partir du serveur web, après quoi elle peut être installée avec le Programme d’installation d’application. Dans la mesure où cette option est inefficace et gaspille l’espace disque, le Programme d’installation d’application intègre désormais des fonctionnalités intégrées pour simplifier le processus.
 
 Le Programme d’installation d’application permet d’installer une application directement à partir d’un serveur web. Lorsque l’utilisateur clique sur un lien web hébergé d’un package de l’application, le Programme d’installation d’application est automatiquement appelé. L’utilisateur est ensuite dirigé vers l’affichage d’informations sur l’application dans le Programme d’installation d’application. Il est alors à un clic d’interagir directement avec l’application. 
 
-L’installation d’application directe est uniquement disponible dans Windows10FallCreatorsUpdate et versions ultérieures. Les versions précédentes de Windows (en revenant à la Mise à jour anniversaire Windows10) seront prises en charge par l’[expérience d’installation web sur les versions antérieures de Windows10](#web-install-experience). Cette expérience n’est pas aussi fluide que l’installation d’application directe, mais elle fournit des améliorations significatives par rapport à la procédure d’installation d’application existante.
+L’installation d’application directe est uniquement disponible dans Windows 10 Fall Creators Update et versions ultérieures. Les versions précédentes de Windows (en revenant à la Mise à jour anniversaire Windows 10) seront prises en charge par l’[expérience d’installation web sur les versions antérieures de Windows 10](#web-install-experience). Cette expérience n’est pas aussi fluide que l’installation d’application directe, mais elle fournit des améliorations significatives par rapport à la procédure d’installation d’application existante.
   
 > [!NOTE]
 > La version du Programme d’installation d’application doit être supérieure à la version 1.0.12271.0 pour prendre en charge cette fonctionnalité.
@@ -28,13 +28,13 @@ Dans ce mécanisme, le Programme d’installation d’application inscrit un sch
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>Conditions requises pour le schéma d’activation de protocole
 
-1. Les serveurs Web doivent avoir la prise en charge pour les requêtes de plages d’octets (HTTP/1.1)
-    - Les serveurs qui prennent en charge le protocole HTTP/1.1 doivent avoir la prise en charge pour les requêtes de plages d’octets 
-2. Serveurs Web devez connaître sur les types contenus du package d’application Windows 10
-    - Voici comment déclarer les nouveaux types de contenu en tant que partie du [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+1. Serveurs Web doivent avoir la prise en charge des demandes de plage d’octets (HTTP/1.1)
+    - Les serveurs qui prennent en charge le protocole HTTP/1.1 doivent avoir prise en charge des demandes de plage d’octets 
+2. Les serveurs Web doivent savoir sur les types de contenu des packages application Windows 10
+    - Voici comment déclarer des nouveaux types de contenu dans le cadre de [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Comment activer ce mécanisme sur une page web 
-Les développeurs d’application qui souhaitent héberger des packages de l’application sur leurs sites Web doivent suivre cette étape:
+Les développeurs d’application qui souhaitent héberger des packages de l’application sur leurs sites Web doivent suivre cette étape :
 
 Préfixer les URI du package de l’application avec le schéma d’activation `'ms-appinstaller:?source='` pour lequel le Programme d’installation d’application est inscrit lors de leur référencement sur votre leur web. Consultez l’exemple pour **MyApp Web Page** pour plus d’informations. 
 ``` html
@@ -53,15 +53,15 @@ Afin que les utilisateurs soient en mesure d'installer votre application, vous d
 
 Si vous déployez une application aux employés d'une entreprise, vous pouvez utiliser un certificat émis par une entreprise pour signer l'application. Il est important de noter que le certificat d'entreprise doit être développé vers tous les appareils sur lesquels l'application sera installée. Pour plus d’informations sur le déploiement d’applications d’entreprise, consultez [Gestion d'applications d'entreprise](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
 
-## Expérience d'installation web sur les versions précédentes de Windows10<a name="web-install-experience"></a>
+## Expérience d'installation web sur les versions précédentes de Windows 10<a name="web-install-experience"></a>
 
-L’appel du Programme d’installation d’application à partir du navigateur est pris en charge sur toutes les versions de Windows10 sur lesquelles le Programme d’installation d’application est disponible (à partir de la Mise à jour anniversaire). Toutefois, la fonctionnalité pour installer directement à partir du web sans avoir besoin de télécharger d'abord le package est uniquement disponible sur Windows10FallCreatorsUpdate.  
+L’appel du Programme d’installation d’application à partir du navigateur est pris en charge sur toutes les versions de Windows 10 sur lesquelles le Programme d’installation d’application est disponible (à partir de la Mise à jour anniversaire). Toutefois, la fonctionnalité pour installer directement à partir du web sans avoir besoin de télécharger d'abord le package est uniquement disponible sur Windows 10 Fall Creators Update.  
 
-Les utilisateurs des versions précédentes de Windows10 (avec le Programme d’installation d’application disponible) peuvent également tirer parti de l’installation web des applicationsUWP via le Programme d’installation d’application, mais bénéficieront d’une expérience utilisateur différente. Lorsque ces utilisateurs cliqueront sur le lien web, le Programme d’installation d’application les invitera à **télécharger** le package au lieu de l'**installer**. Après le téléchargement, le Programme d’installation d’application lancera automatiquement le package téléchargé. Étant donné que le package de l’application est téléchargé à partir du web, ces fichiers passeront par le biais de MicrosoftSmartScreen pour une vérification de sécurité. Une fois que l’utilisateur donne l’autorisation de continuer, puis clique de nouveau sur **Installer**, l’application est prête à être utilisée!
+Les utilisateurs des versions précédentes de Windows 10 (avec le Programme d’installation d’application disponible) peuvent également tirer parti de l’installation web des applications UWP via le Programme d’installation d’application, mais bénéficieront d’une expérience utilisateur différente. Lorsque ces utilisateurs cliqueront sur le lien web, le Programme d’installation d’application les invitera à **télécharger** le package au lieu de l'**installer**. Après le téléchargement, le Programme d’installation d’application lancera automatiquement le package téléchargé. Étant donné que le package de l’application est téléchargé à partir du web, ces fichiers passeront par le biais de Microsoft SmartScreen pour une vérification de sécurité. Une fois que l’utilisateur donne l’autorisation de continuer, puis clique de nouveau sur **Installer**, l’application est prête à être utilisée !
 
-Bien que ce flux ne soit pas aussi fluide que l’installation directe sur Windows10FallCreatorsUpdate, les utilisateurs peuvent toujours rapidement interagir avec l’application. En outre, avec ce flux, l’utilisateur n’a pas à se soucier du fait que les fichiers du package de l’application occupent inutilement de l’espace sur les lecteurs. Le Programme d’installation d’application gère efficacement l’espace en téléchargeant le package vers son dossier de données d’application et en supprimant les packages lorsqu’ils ne sont plus nécessaires. 
+Bien que ce flux ne soit pas aussi fluide que l’installation directe sur Windows 10 Fall Creators Update, les utilisateurs peuvent toujours rapidement interagir avec l’application. En outre, avec ce flux, l’utilisateur n’a pas à se soucier du fait que les fichiers du package de l’application occupent inutilement de l’espace sur les lecteurs. Le Programme d’installation d’application gère efficacement l’espace en téléchargeant le package vers son dossier de données d’application et en supprimant les packages lorsqu’ils ne sont plus nécessaires. 
 
-Voici une comparaison rapide de la version Windows10FallCreatorsUpdate et de la version précédente du Programme d’installation d’application:
+Voici une comparaison rapide de la version Windows 10 Fall Creators Update et de la version précédente du Programme d’installation d’application :
 
 | Programme d’installation d’application, dernière version | Programme d’installation d’application, version précédente |
 |------------------------------|----------------------------------|
@@ -70,10 +70,10 @@ Voici une comparaison rapide de la version Windows10FallCreatorsUpdate et de la 
 | Après le téléchargement du package, le Programme d’installation d’application lance automatiquement le package de l’application | L'utilisateur doit cliquer sur **Installer** et lancer manuellement le package de l’application |
 | Le Programme d’installation d’application s’occupe de la suppression des packages téléchargés | L'utilisateur doit supprimer manuellement les fichiers téléchargés |
 
-## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>Expérience d’installation web sur des versions antérieures de Windows10
-Sur les versions antérieures à Windows10FallCreatorsUpdate, le Programme d’installation d’application ne peut pas installer directement une application à partir du web. Sur ces versions, le Programme d’installation d’application ne peut installer que les packages de l’application qui sont disponibles localement. Au lieu de cela, le Programme d’installation d’application téléchargera le package et exigera de l’utilisateur qu'il double-clique sur le package téléchargé pour l’installer.
+## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>Expérience d’installation web sur des versions antérieures de Windows 10
+Sur les versions antérieures à Windows 10 Fall Creators Update, le Programme d’installation d’application ne peut pas installer directement une application à partir du web. Sur ces versions, le Programme d’installation d’application ne peut installer que les packages de l’application qui sont disponibles localement. Au lieu de cela, le Programme d’installation d’application téléchargera le package et exigera de l’utilisateur qu'il double-clique sur le package téléchargé pour l’installer.
 
 
-## <a name="microsoft-smartscreen-integration"></a>Intégration de MicrosoftSmartScreen
+## <a name="microsoft-smartscreen-integration"></a>Intégration de Microsoft SmartScreen
 
-MicrosoftSmartScreen a toujours fait partie du processus d’installation des applications via le Programme d’installation d’application. SmartScreen garantit que les utilisateurs sont à l'abri de tout mécontentement sur leurs appareils. Avec la dernière mise à jour du Programme d’installation d’application, l’intégration de SmartScreen est plus transparente et fiable, et des avertissements sont générés lorsque des applications inconnues sont installées, afin de protéger les appareils contre tout dommage. 
+Microsoft SmartScreen a toujours fait partie du processus d’installation des applications via le Programme d’installation d’application. SmartScreen garantit que les utilisateurs sont à l'abri de tout mécontentement sur leurs appareils. Avec la dernière mise à jour du Programme d’installation d’application, l’intégration de SmartScreen est plus transparente et fiable, et des avertissements sont générés lorsque des applications inconnues sont installées, afin de protéger les appareils contre tout dommage. 

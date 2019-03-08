@@ -3,44 +3,44 @@ title: Informations de référence sur les API Fiddler Device Portal
 description: Apprenez à activer/désactiver le suivi de Fiddler par programmation.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937810"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603334"
 ---
 # <a name="fiddler-settings-api-reference"></a>Informations de référence sur les API des paramètres Fiddler   
 Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Déterminer si le suivi de Fiddler est activé
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Déterminez si le suivi de Fiddler est activé
 
-**Requête**
+**Demande**
 
-Vous pouvez vérifier si le suivi de Fiddler est activé sur l’appareil à l’aide de la requête suivante.
+La requête suivante vous permet de vérifier si le suivi de Fiddler est activé sur l’appareil.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 GET | /ext/fiddler
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
-- Aucun
+- Aucune
 
 **Réponse**   
 
-- Propriété de valeur booléenne JSON IsProxyEnabled les spécificateurs indique si le serveur proxy est activé ou non.
+- La propriété booléenne JSON IsProxyEnabled spécifie si le proxy est activé ou non.
 
 **Code d’état**
 
@@ -54,36 +54,36 @@ Code d’état HTTP      | Description
 
 ## <a name="enable-fiddler-tracing"></a>Activer le suivi de Fiddler
 
-**Requête**
+**Demande**
 
 Vous pouvez activer le suivi de Fiddler pour le kit de développement à l’aide de la demande suivante.  Notez que l’appareil doit être redémarré avant que cela ne prenne effet.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 POST | /ext/fiddler
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
 | proxyAddress       | L’adresse IP ou le nom d’hôte de l’appareil exécutant Fiddler |
-| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut: 8888 |
+| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut : 8888 |
 | updateCert (facultatif)| Une valeur booléenne indiquant si le certificat Fiddler racine est fourni. Cette valeur doit être true si Fiddler n’a jamais été configuré sur ce kit de développement ou a été configuré pour un autre hôte.  |
 <br>
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucun si updateCert est false ou n’est pas fourni. Corps HTTP à parties multiples conforme contenant le fichier FiddlerRoot.cer dans le cas contraire.
 
 **Réponse**   
 
-- Aucun  
+- Aucune  
 
 **Code d’état**
 
@@ -97,29 +97,29 @@ Code d’état HTTP      | Description
 
 ## <a name="disable-fiddler-tracing-on-the-devkit"></a>Désactiver le suivi de Fiddler sur le kit de développement
 
-**Requête**
+**Demande**
 
 Vous pouvez désactiver le suivi de Fiddler sur l’appareil à l’aide de la demande suivante. Notez que l’appareil doit être redémarré avant que cela ne prenne effet.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /ext/fiddler
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
-- Aucun
+- Aucune
 
 **Réponse**   
 
-- Aucun 
+- Aucune 
 
 **Code d’état**
 
@@ -132,7 +132,7 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox
 

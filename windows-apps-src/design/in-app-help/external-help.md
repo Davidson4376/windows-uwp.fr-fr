@@ -1,19 +1,19 @@
 ---
-Description: Design external help pages for detailed instructions and advice about your app.
+Description: Concevez des pages d’aide externe pour obtenir des instructions détaillées et des conseils sur votre application.
 title: Recommandations en matière de conception de pages d’aide externe
 label: External help
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
 ms.localizationpriority: medium
 ms.openlocfilehash: eaca2af3a497de75beaffe5d3af4a261b24d8ba4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938176"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617174"
 ---
 # <a name="external-help-pages"></a>Pages d’aide externe
 
@@ -29,7 +29,7 @@ Si votre contenu d’aide est bref ou suffisamment spécifique pour être affich
 
 ## <a name="navigating-external-help-pages"></a>Navigation dans les pages d’aide externe
 
-Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deuxscénarios s’offrent à lui:
+Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deux scénarios s’offrent à lui :
 -   Les utilisateurs sont dirigés directement vers la page correspondant au problème connu. Il s’agit d’une aide contextuelle, qui doit être utilisée dans la mesure du possible.
 -   Ils sont dirigés vers une page d’aide générale affichant clairement les catégories et sous-catégories à choisir.
 
@@ -44,4 +44,4 @@ Les pages d’aide externe sont l’endroit idéal pour proposer des didacticiel
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
+* [Instructions de l’aide de l’application](guidelines-for-app-help.md)

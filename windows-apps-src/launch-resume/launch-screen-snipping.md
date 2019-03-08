@@ -1,48 +1,48 @@
 ---
 title: Lancer la capture d’écran
-description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application de croquis & capture ou d’en ouvrir une nouvelle capture.
+description: Cette rubrique décrit les schémas d’URI ms-screenclip et ms-screensketch. Votre application peut utiliser ces schémas d’URI pour lancer l’application capture & ébauche de projet ou pour ouvrir une nouvelle capture.
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, uwp, uri, capture, esquisse
+keywords: Windows 10, uwp, uri, la capture, ébauche de projet
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 06e988387f574b74d511b14a2ebca24b0a149158
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116171"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595384"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
-La **ms-screenclip:** et **ms-screensketch:** schémas d’URI vous permet de lancer la capture d’écran ou modifiez des captures d’écran.
+Le **ms-screenclip :** et **ms-screensketch :** Schémas d’URI permet d’initier la capture d’écran ou la modification des captures d’écran.
 
-## <a name="open-a-new-snip-from-your-app"></a>Ouvrir une nouvelle capture à partir de votre application
+## <a name="open-a-new-snip-from-your-app"></a>Ouvrez une nouvelle capture à partir de votre application
 
-La **ms-screenclip:** URI permet à votre application ouvrir et démarrer une nouvelle capture automatiquement. La capture qui en résulte est copiée dans le Presse-papiers de l’utilisateur, mais n’est pas automatiquement transmise à l’application d’ouverture.
+Le **ms-screenclip :** URI permet à votre application ouvrir et démarrer une nouvelle capture automatiquement. La capture qui en résulte est copiée dans le Presse-papiers de l’utilisateur, mais n’est pas automatiquement passée à l’application d’ouverture.
 
-**ms-screenclip:** accepte les paramètres suivants:
+**MS-screenclip :** accepte les paramètres suivants :
 
-| Paramètre | Type | Requis | Description |
+| Paramètre | Type | Obligatoire | Description |
 | --- | --- | --- | --- |
-| source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes complètes, entre l’appel de l’URI et quand commence la capture d’écran. |
+| Source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
+| delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes, entre l’appel de l’URI et lorsque la capture d’écran commence. |
 | callbackformat | chaîne | non | Ce paramètre n’est pas disponible. |
 
-## <a name="launching-the-snip--sketch-app"></a>Lancement de l’application de croquis & capture
+## <a name="launching-the-snip--sketch-app"></a>Lancement de la capture & application de l’ébauche de projet
 
-La **ms-screensketch:** URI vous permet par programmation lancer l’application de croquis & capture et ouvrez une image spécifique dans cette application pour annotation.
+Le **ms-screensketch :** URI permet de lancer l’application capture & ébauche de projet par programmation et ouvrir une image spécifique dans cette application pour l’annotation.
 
-**ms-screensketch:** accepte les paramètres suivants:
+**MS-screensketch :** accepte les paramètres suivants :
 
-| Paramètre | Type | Requis | Description |
+| Paramètre | Type | Obligatoire | Description |
 | --- | --- | --- | --- |
-| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application de croquis & capture. Récupérée à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans un fichier ouvert. |
-| secondarySharedAccessToken | chaîne | non | Une chaîne qui identifie un fichier JSON avec les métadonnées relatives à la capture. Les métadonnées peuvent inclure un champ **clipPoints** avec un tableau de coordonnées x et y et/ou un [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
-| source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| isTemporary | bool | non | Si définie sur True, écran Esquisse essaie de supprimer le fichier après l’avoir ouvert. |
+| sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application capture & ébauche de projet. Récupéré à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans avoir ouvert un fichier. |
+| secondarySharedAccessToken | chaîne | non | Chaîne identifiant un fichier JSON avec métadonnées relatives à la capture. Les métadonnées peuvent inclure un **clipPoints** champ avec un tableau de coordonnées x, y, et/ou un [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
+| Source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
+| isTemporary | bool | non | Si la valeur est True, écran croquis va tenter de supprimer le fichier après son ouverture. |
 
-L’exemple suivant appelle la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) pour envoyer une image à la capture & esquisse à partir de l’application de l’utilisateur.
+L’exemple suivant appelle la [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) méthode pour envoyer une image de capture & ébauche de projet à partir de l’application de l’utilisateur.
 
 ```csharp
 
@@ -50,7 +50,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-L’exemple suivant illustre ce que peut contenir un fichier spécifié par le paramètre **secondarySharedAccessToken** de **ms-screensketch** :
+L’exemple suivant illustre l’un fichier spécifié par le **secondarySharedAccessToken** paramètre de **ms-screensketch** peut contenir :
 
 ```json
 {

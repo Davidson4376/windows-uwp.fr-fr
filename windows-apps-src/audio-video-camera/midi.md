@@ -4,20 +4,20 @@ description: Cet article montre comment énumérer des périphériques MIDI et e
 title: MIDI
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612744"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-Cet article vous montre comment énumérer des périphériques MIDI (Musical Instrument Digital Interface) et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle. Windows 10 prend en charge MIDI via USB (classe conforme et plus propriétaires de pilotes) MIDI via Bluetooth LE (Édition anniversaire Windows 10 et versions ultérieures) et par le biais de disponibles gratuitement des produits tiers, MIDI via une connexion Ethernet et routé MIDI.
+Cet article montre comment énumérer des périphériques MIDI et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle. Windows 10 prend en charge MIDI via USB (pilotes compatibles à la classe et plus propriétaires), MIDI via Bluetooth LE (Windows 10 Édition anniversaire et versions ultérieures) et par le biais disponible gratuitement les produits tiers, MIDI over Ethernet et routé MIDI.
 
 ## <a name="enumerate-midi-devices"></a>Énumérer des périphériques MIDI
 
@@ -66,12 +66,12 @@ Enregistrez des gestionnaires pour les gestionnaires d’événements de l’obs
 
 [!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
 
-L’élément **DeviceWatcher** présente les événements suivants:
+L’élément **DeviceWatcher** présente les événements suivants :
 
--   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - Déclenché lorsqu’un nouveau périphérique est ajouté au système.
--   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - Déclenché lorsqu’un périphérique est supprimé du système.
--   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - Déclenché lorsque les informations associées à un périphérique existant sont mises à jour.
--   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - Déclenché lorsque l’observateur a terminé son énumération du type de périphérique demandé.
+-   [**Ajouté** ](https://msdn.microsoft.com/library/windows/apps/br225450) -déclenché lorsqu’un nouveau périphérique est ajouté au système.
+-   [**Supprimé** ](https://msdn.microsoft.com/library/windows/apps/br225453) -déclenché lorsqu’un appareil est supprimé à partir du système.
+-   [**Mise à jour** ](https://msdn.microsoft.com/library/windows/apps/br225458) -déclenché lorsque les informations associées à un périphérique existant sont mis à jour.
+-   [**EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451) -déclenché lorsque l’Observateur a terminé son énumération du type de périphérique demandé.
 
 Dans le gestionnaire d’événements, pour chacun de ces événements, une méthode d’assistance **UpdateDevices** est appelée pour mettre à jour l’élément **ListBox** en tenant compte de la liste actuelle des périphériques. Dans la mesure où **UpdateDevices** met à jour les éléments d’interface utilisateur et que ces gestionnaires d’événements ne sont pas appelés sur le thread d’interface utilisateur, chaque appel doit être encapsulé dans un appel à [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), ce qui entraîne l’exécution du code sur le thread d’interface utilisateur.
 
@@ -129,9 +129,9 @@ Lorsque votre application est désactivée, veillez à nettoyer les ressources d
 
 ## <a name="using-the-built-in-windows-general-midi-synth"></a>Utilisation du synthétiseur General MIDI Windows intégré
 
-Lors de l’énumération des périphériques de sortie MIDI à l’aide de la technique décrite ci-dessus, votre application détecte un périphérique MIDI appelé «Synthé. de table de sons Microsoft GS». Il s’agit d’un synthétiseur General MIDI intégré que vous pouvez utiliser à partir de votre application. Toutefois, toute tentative de création d’un port de sortie MIDI pour ce périphérique échouera, sauf si vous avez inclus l’extension du Kit de développement logiciel (SDK) pour le synthétiseur intégré dans votre projet.
+Lors de l’énumération des périphériques de sortie MIDI à l’aide de la technique décrite ci-dessus, votre application détecte un périphérique MIDI appelé « Synthé. de table de sons Microsoft GS ». Il s’agit d’un synthétiseur General MIDI intégré que vous pouvez utiliser à partir de votre application. Toutefois, toute tentative de création d’un port de sortie MIDI pour ce périphérique échouera, sauf si vous avez inclus l’extension du Kit de développement logiciel (SDK) pour le synthétiseur intégré dans votre projet.
 
-**Pour inclure l’extension du Kit de développement logiciel (SDK) pour le synthétiseur General MIDI dans votre projet d’application**
+**Pour inclure l’extension de SDK de synthétiseur MIDI général dans votre projet d’application**
 
 1.  Dans l’**Explorateur de solutions**, sous votre projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence…**.
 2.  Développez le nœud **Windows universel**.

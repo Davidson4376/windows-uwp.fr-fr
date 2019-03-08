@@ -4,14 +4,14 @@ title: Utiliser l’inclinomètre
 description: Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932658"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623804"
 ---
 # <a name="use-the-inclinometer"></a>Utiliser l’inclinomètre
 
@@ -19,7 +19,7 @@ ms.locfileid: "8932658"
 **API importantes**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**Inclinomètre**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
 **Exemple**
 
@@ -27,17 +27,17 @@ ms.locfileid: "8932658"
 
 Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 
-Certaines jeux3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les troisaxes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
+Certaines jeux 3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les trois axes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
 
- ## <a name="prerequisites"></a>Prérequis
+ ## <a name="prerequisites"></a>Conditions préalables
 
-Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinomètre.
 
  ## <a name="create-a-simple-inclinometer-app"></a>Créer une application simple d’inclinomètre
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  <a name="instructions"></a>Instructions
 
@@ -140,7 +140,7 @@ Vous devez remplacer la première partie du nom de la classe dans l’extrait de
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’inclinomètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  <a name="explanation"></a>Explication
 
@@ -152,7 +152,7 @@ L’application établit une connexion avec l’inclinomètre par défaut dans l
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -167,7 +167,7 @@ _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le codeXAML du projet.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>

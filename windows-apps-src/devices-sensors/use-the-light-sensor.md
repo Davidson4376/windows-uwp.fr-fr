@@ -4,14 +4,14 @@ title: Utiliser le capteur de luminosité
 description: Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114535"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623614"
 ---
 # <a name="use-the-light-sensor"></a>Utiliser le capteur de luminosité
 
@@ -29,15 +29,15 @@ Découvrez comment utiliser le capteur de luminosité ambiante pour détecter le
 
 Un capteur de lumière ambiante est l’un des types de capteur d’environnement qui permettent à des applications de répondre aux modifications de l’environnement de l’utilisateur.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
+Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur de luminosité ambiante.
 
 ## <a name="create-a-simple-light-sensor-app"></a>Créer une application simple de capteur de luminosité
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de capteur de luminosité. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de capteur de luminosité. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  <a name="instructions"></a>Instructions
 
@@ -139,7 +139,7 @@ Vous devez remplacer la première partie du nom de la classe dans l’extrait de
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du capteur de luminosité en modifiant la lumière disponible pour le capteur ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
 ###  <a name="explanation"></a>Explication
 
@@ -151,7 +151,7 @@ L’application établit une connexion avec le capteur par défaut dans la méth
 _lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **BlankPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **BlankPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _lightsensor.MinimumReportInterval;

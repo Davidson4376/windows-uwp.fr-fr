@@ -4,20 +4,20 @@ title: Lier des données hiérarchiques et créer un affichage maître/détails
 description: Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049094"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602074"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Lier des données hiérarchiques et créer un affichage maître/détails
 
 
 
-> **Remarque**consultez également l' [exemple maître/détails](https://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Remarque**  également voir le [exemple du maître/détail](https://go.microsoft.com/fwlink/p/?linkid=619991).
 
 Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) lorsque cela est possible et l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante), si nécessaire.
 
@@ -27,13 +27,13 @@ Nous allons créer un affichage d’une hiérarchie d’équipes sportives organ
 
 ![Affichage maître/détails d’une hiérarchie sportive](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Connaissances requises
+## <a name="prerequisites"></a>Conditions préalables
 
 Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
 
 ## <a name="create-the-project"></a>Créer le projet
 
-Commencez par créer un projet **Application vide (Windows universel)**. Nommez-le «MasterDetailsBinding».
+Commencez par créer un projet **Application vide (universelle Windows)**. Nommez-le « MasterDetailsBinding ».
 
 ## <a name="create-the-data-model"></a>Créer le modèle de données
 

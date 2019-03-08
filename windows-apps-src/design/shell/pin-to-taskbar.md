@@ -1,17 +1,17 @@
 ---
-Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
+Description: Vous pouvez épingler par programme votre application à la barre des tâches et vérifier si elle est actuellement épinglée.
 title: Épingler votre application à la barre des tâches
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, uwp, la barre des tâches, gestionnaire de la barre des tâches, épingler à la barre des tâches, vignette principale
+keywords: Windows 10, uwp, la barre des tâches, gestionnaire de la barre des tâches, épingler à la barre des tâches, vignette principale
 ms.localizationpriority: medium
 ms.openlocfilehash: 640dc637a1c50718210d87af87cb8b8e706a5ab7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604094"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Épingler votre application à la barre des tâches
 
@@ -20,16 +20,16 @@ Vous pouvez épingler par programme votre propre application à la barre des tâ
 ![Barre des tâches](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **Nécessite Fall Creators Update**: vous devez cibler le Kit de développement logiciel (SDK)16299 et exécuter la Build16299 ou une version plus récente pour utiliser les API de la barre des tâches.
+> **Nécessite Fall Creators Update**: Vous devez cibler le Kit de développement logiciel 16299 et être en cours d’exécution build 16299 ou ultérieure pour utiliser l’API de la barre des tâches.
 
-> **API importantes**: [classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **API importantes**: [Classe de TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
-## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Quand demander à l’utilisateur d’épingler votre application à la barre des tâches? 
+## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Quand demander à l’utilisateur d’épingler votre application à la barre des tâches ? 
 
-La [classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) permet de demander à l’utilisateur d’épingler votre application à la barre des tâches. L’utilisateur doit approuver la demande. Vous vous êtes efforcé de créer une application exceptionnelle, et maintenant, vous avez la possibilité de demander à l’utilisateur de l’épingler à la barre des tâches. Néanmoins, avant de nous pencher sur le code, voici quelques éléments à garder à l’esprit lorsque vous concevez votre expérience:
+La [classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) permet de demander à l’utilisateur d’épingler votre application à la barre des tâches. L’utilisateur doit approuver la demande. Vous vous êtes efforcé de créer une application exceptionnelle, et maintenant, vous avez la possibilité de demander à l’utilisateur de l’épingler à la barre des tâches. Néanmoins, avant de nous pencher sur le code, voici quelques éléments à garder à l’esprit lorsque vous concevez votre expérience :
 
-* **Concevez** une expérience utilisateur non perturbatrice et facilement révocable dans votre application avec un appel à l’action «Épingler à la barre des tâches» clair. Évitez d’utiliser des boîtes de dialogue et des menus volants à cet effet. 
+* **Concevez** une expérience utilisateur non perturbatrice et facilement révocable dans votre application avec un appel à l’action « Épingler à la barre des tâches » clair. Évitez d’utiliser des boîtes de dialogue et des menus volants à cet effet. 
 * **Expliquez** clairement la valeur de votre application avant de demander à l’utilisateur de l’épingler.
 * **Ne demandez pas** à un utilisateur d’épingler votre application si la vignette est déjà épinglée ou si l’appareil ne la prend pas en charge. (Cet article explique comment déterminer si l’épinglage est pris en charge.)
 * **Ne demandez pas** plusieurs fois à l’utilisateur d’épingler votre application (cela risque de l’agacer).
@@ -38,7 +38,7 @@ La [classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.t
 
 ## <a name="1-check-whether-the-required-apis-exist"></a>1. Vérifiez si les API nécessaires existent
 
-Si votre application prend en charge des versions antérieures de Windows10, vous devez vérifier si la classe TaskbarManager est disponible. Vous pouvez utiliser la [méthode ApiInformation.IsTypePresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) pour effectuer cette vérification. Si la classe TaskbarManager n’est pas disponible, évitez d’exécuter des appels vers les API.
+Si votre application prend en charge des versions antérieures de Windows 10, vous devez vérifier si la classe TaskbarManager est disponible. Vous pouvez utiliser la [méthode ApiInformation.IsTypePresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) pour effectuer cette vérification. Si la classe TaskbarManager n’est pas disponible, évitez d’exécuter des appels vers les API.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Shell.TaskbarManager"))
@@ -53,7 +53,7 @@ else
 ```
 
 
-## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Vérifiez si la barre des tâches est présente et permet l’épinglage
+## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Vérifiez si la barre des tâches est présent et permet l’épinglage
 
 Les applications UWP peuvent s’exécuter sur un large éventail d’appareils, qui ne prennent pas tous en charge la barre des tâches. Actuellement, seuls les appareils de bureau prennent en charge la barre des tâches. 
 
@@ -87,7 +87,7 @@ else
 ```
 
 
-##  <a name="4-pin-your-app"></a>4. Épinglez votre application
+##  <a name="4-pin-your-app"></a>4. Épingler votre application
 
 Si la barre des tâches est présente, l’épinglage autorisé et si votre application n’est pas actuellement épinglée, vous souhaiterez peut-être afficher une info-bulle pour informer les utilisateurs qu’ils peuvent épingler votre application. Par exemple, vous pouvez afficher une icône représentant une épingle dans votre interface utilisateur sur laquelle l’utilisateur peut cliquer. 
 
@@ -103,11 +103,11 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 
 ![Boîte de dialogue d’épinglage](images/taskbar/pin-dialog.png)
 
-Cette méthode renvoie une valeur booléenne qui indique si votre application est désormais épinglée à la barre des tâches. Si votre application a déjà été épinglée, la méthode retourne immédiatement la valeur true sans afficher la boîte de dialogue à l’utilisateur. Si l’utilisateur clique sur «non» dans la boîte de dialogue ou si l’épinglage à la barre des tâches n’est pas autorisé, la méthode retourne la valeur false. Dans le cas contraire, l’utilisateur clique sur oui et l’application est épinglée, et l’API retourne la valeur true.
+Cette méthode renvoie une valeur booléenne qui indique si votre application est désormais épinglée à la barre des tâches. Si votre application a déjà été épinglée, la méthode retourne immédiatement la valeur true sans afficher la boîte de dialogue à l’utilisateur. Si l’utilisateur clique sur « non » dans la boîte de dialogue ou si l’épinglage à la barre des tâches n’est pas autorisé, la méthode retourne la valeur false. Dans le cas contraire, l’utilisateur clique sur oui et l’application est épinglée, et l’API retourne la valeur true.
 
 
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
-* [Classe TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Épingler une application au menu Démarrer](tiles-and-notifications/primary-tile-apis.md)
+* [Classe de TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [Épingler une application dans le menu Démarrer](tiles-and-notifications/primary-tile-apis.md)

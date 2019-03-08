@@ -1,36 +1,36 @@
 ---
-Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
+Description: Montre comment créer manuellement un package d'application de bureau Windows (Win32, WPF ou Windows Forms) pour Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: Créer un package une application manuellement (pont du bureau)
+title: Empaqueter une application manuellement (pont du bureau)
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1dd159b7cd04a7641bf3f89605e054a00a0bad58
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051112"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651174"
 ---
-# <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
+# <a name="package-a-desktop-application-manually"></a>Empaqueter une application de bureau manuellement
 
-Cette rubrique vous montre comment créer un package de votre application sans l’aide d’outils tels que Visual Studio ou Desktop App Converter (DAC).
+Cette rubrique vous montre comment empaqueter votre application sans utiliser des outils tels que Visual Studio ou le Desktop App Converter (DAC).
 
 Pour créer manuellement un package de votre application, créez un fichier manifeste de package, puis exécutez un outil en ligne de commande pour générer un package d’application Windows.
 
-Envisagez d’empaquetage manuel si vous installez votre application à l’aide de la commande xcopy ou si vous êtes familiarisé avec les modifications apportées au système par programme d’installation de votre application et souhaitez un contrôle plus précis sur le processus.
+Envisagez d’empaquetage manuel si vous installez votre application à l’aide de la commande xcopy, ou vous êtes familiarisé avec les modifications apportées au système par programme d’installation de votre application et souhaitez un contrôle plus précis sur le processus.
 
 Si vous n’êtes pas certain des modifications apportées au système par votre programme d’installation, ou si vous préférez utiliser des outils automatisés pour générer votre manifeste de package, envisager l’une de [ces](desktop-to-uwp-root.md#convert) options.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (également appelé le pont du bureau) a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (également appelé le pont du bureau) a été introduite dans Windows 10, version 1607, et il peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (10.0 ; Build 14393) ou une version ultérieure dans Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
-Consultez ce guide avant de commencer la création d’un package pour votre application: [préparer pour empaqueter une application de bureau](desktop-to-uwp-prepare.md).
+Consultez ce guide avant de commencer la création d’un package pour votre application : [Préparer empaqueter une application de bureau](desktop-to-uwp-prepare.md).
 
 ## <a name="create-a-package-manifest"></a>Créer un manifeste de package
 
@@ -84,11 +84,11 @@ Voici un exemple d’élément **identité** intégrant un emplacement réservé
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Si vous avez réservé votre nom de l’application dans le Microsoft Store, vous pouvez obtenir le nom et l’éditeur à l’aide de [L’espace partenaires](https://partner.microsoft.com/dashboard). Si vous prévoyez de charger votre application sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom de l’éditeur que vous choisissez correspond au nom sur le certificat que vous utilisez pour signer votre application.
+> Si vous avez réservé le nom de votre application dans le Microsoft Store, vous pouvez obtenir le nom et le serveur de publication à l’aide de [partenaires](https://partner.microsoft.com/dashboard). Si vous envisagez de charger votre application sur d’autres systèmes, vous pouvez fournir vos propres noms pour ces tant que le nom de serveur de publication que vous choisissez correspond au nom sur le certificat à utiliser pour signer votre application.
 
 ### <a name="properties"></a>Propriétés
 
-L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows Store, pour les applications qui sont chargées sur le Store.
+L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3 éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. Le **DisplayName** est le nom de votre application que vous réservez dans le Store, pour les applications qui sont chargés sur le Store.
 
 ```XML
 <Properties>
@@ -109,7 +109,7 @@ Voici un exemple de nœud [Ressources](https://docs.microsoft.com/uwp/schemas/ap
 ```
 ### <a name="dependencies"></a>Dépendances
 
-Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` attribut ``Windows.Desktop``.
+Pour les applications de bureau que vous créez un package pour, toujours défini le ``Name`` attribut ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -118,7 +118,7 @@ Pour les applications de bureau que vous créez un package pour, définissez tou
 ```
 
 ### <a name="capabilities"></a>Fonctionnalités
-Pour les applications de bureau que vous créez un package pour, vous devez ajouter la ``runFullTrust`` fonctionnalité.
+Pour les applications de bureau que vous créez un package pour, vous devrez ajouter la ``runFullTrust`` fonctionnalité.
 
 ```XML
 <Capabilities>
@@ -159,9 +159,9 @@ Voici un exemple de nœud [VisualElements](https://docs.microsoft.com/uwp/schema
 
 Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous trouverez davantage de détails [ici](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
 
-1. Obtenez les images 44x44 correctes, puis copiez-les dans le dossier qui contient vos images (c’est-à-dire Assets).
+1. Obtenez les images 44 x 44 correctes, puis copiez-les dans le dossier qui contient vos images (c’est-à-dire Assets).
 
-2. Pour chaque image 44x44, créez une copie dans le même dossier et ajoutez **.targetsize-44_altform-unplated** à la fin du nom de fichier. Vous devez avoir deuxcopies de chaque icône, chacune ayant un nom propre. Par exemple, à la fin du processus, votre dossier Assets peut contenir **MYAPP_44x44.png** et **myapp_44x44.targetSize-44_altform-unplated.png**.
+2. Pour chaque image 44 x 44, créez une copie dans le même dossier et ajoutez **.targetsize-44_altform-unplated** à la fin du nom de fichier. Vous devez avoir deux copies de chaque icône, chacune ayant un nom propre. Par exemple, à la fin du processus, votre dossier Assets peut contenir **MYAPP_44x44.png** et **myapp_44x44.targetSize-44_altform-unplated.png**.
 
    > [!NOTE]
    > Dans cet exemple, l’icône nommée **MYAPP_44x44.png** est celle que vous devez référencer dans l’attribut logo ``Square44x44Logo`` de votre package d’application Windows.
@@ -174,9 +174,9 @@ Les ressources basées sur la cible sont destinées aux icônes et vignettes qui
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>Générer un fichier d’Index de ressource de package (IRP)
 
-Si vous créez des ressources basées sur une cible comme décrit dans la section ci-dessus ou si vous modifiez les éléments visuels de votre application une fois que vous avez créé le package, vous devez générer un nouveau fichier PRI.
+Si vous créez des ressources sur la cible comme décrit dans la section précédente, ou vous les modifier les ressources visuelles de votre application une fois que vous avez créé le package, vous devrez générer un nouveau fichier PRI.
 
-1.  Ouvrez une **invite de commandes de développeur Visual Studio2017**.
+1.  Ouvrez une **invite de commandes de développeur Visual Studio 2017**.
 
     ![invite de commandes de développeur](images/desktop-to-uwp/developer-command-prompt.png)
 
@@ -184,7 +184,7 @@ Si vous créez des ressources basées sur une cible comme décrit dans la sectio
 
 5.  Créez les fichiers resources.pri à l’aide de la commande ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Par exemple, la commande de votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+    Par exemple, la commande de votre application peut ressembler à ceci : ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
 6.  Créez un package d’application Windows en suivant les instructions de l’étape suivante.
 
@@ -192,35 +192,35 @@ Si vous créez des ressources basées sur une cible comme décrit dans la sectio
 
 ## <a name="generate-a-windows-app-package"></a>Générer un package d’application Windows
 
-Utilisez l’outil **MakeAppx.exe** pour générer un package d’application Windows pour votre projet. Il est inclus avec le SDK Windows10 et, si vous avez installé Visual Studio, il peut être facilement accessible par le biais de l’invite de commandes de développeur de votre version de Visual Studio.
+Utilisez l’outil **MakeAppx.exe** pour générer un package d’application Windows pour votre projet. Il est inclus avec le SDK Windows 10 et, si vous avez installé Visual Studio, il peut être facilement accessible par le biais de l’invite de commandes de développeur de votre version de Visual Studio.
 
 Voir [Créer un package d’application avec l’outil MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
 
 ## <a name="run-the-packaged-app"></a>Exécuter l’application empaquetée
 
-Vous pouvez exécuter votre application de la tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
+Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et signer. Exécutez simplement l’applet de commande PowerShell :
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez les fichiers existants dans votre package par les nouveaux, augmentez le nombre de versions dans AppxManifest.xml, puis exécutez à nouveau la commande ci-dessus.
 
 > [!NOTE]
-> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et que vous installez votre application empaquetée à n’importe quel lecteur doit être formaté au format NTFS.
+> Une application empaquetée toujours s’exécute comme un utilisateur interactif, et n’importe quel lecteur que vous installez votre application empaquetée à doit être formaté au format NTFS.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 **Trouvez des réponses à vos questions**
 
-Des questions? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Des questions ? Contactez-nous sur Stack Overflow. Notre équipe supervise ces [balises](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Vous pouvez également nous poser vos questions [ici](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Transmettre des commentaires ou suggérer des fonctionnalités**
+**Donner votre avis ou faire des suggestions de fonctionnalité**
 
 Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Parcourir le code/détecter et résoudre les problèmes**
+**Parcourir le code / rechercher et résoudre les problèmes**
 
-Voir [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
+Consultez [exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
 
-**Signer votre application, puis la distribuer**
+**Signer votre application, puis le distribuer**
 
-Voir [distribuer une application de bureau empaquetée](desktop-to-uwp-distribute.md)
+Consultez [distribuer une application de bureau empaquetée](desktop-to-uwp-distribute.md)

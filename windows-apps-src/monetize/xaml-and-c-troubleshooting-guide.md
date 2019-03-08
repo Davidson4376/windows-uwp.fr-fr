@@ -4,28 +4,28 @@ description: Découvrez les solutions aux problèmes de développement courants 
 title: Guide de résolution des problèmes pour XAML et C#
 ms.date: 08/23/2017
 ms.topic: article
-keywords: windows10, uwp, publicités, publicité, AdControl, résolution des problèmes, XAML, c#
+keywords: windows 10, uwp, publicités, publicité, AdControl, résolution des problèmes, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941386"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615914"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Guide de résolution des problèmes pour XAML et C#
 
 Cette rubrique contient les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 
 * [XAML](#xaml)
-  * [AdControl invisible](#xaml-notappearing)
-  * [Une boîte noire clignote et disparaît](#xaml-blackboxblinksdisappears)
-  * [Non-actualisation des publicités](#xaml-adsnotrefreshing)
+  * [Classe AdControl n’apparaissent ne pas](#xaml-notappearing)
+  * [Fait clignoter et disparaît de la boîte noire](#xaml-blackboxblinksdisappears)
+  * [Annonces pas l’actualisation](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl invisible](#csharp-adcontrolnotappearing)
-  * [Une boîte noire clignote et disparaît](#csharp-blackboxblinksdisappears)
-  * [Non-actualisation des publicités](#csharp-adsnotrefreshing)
+  * [Classe AdControl n’apparaissent ne pas](#csharp-adcontrolnotappearing)
+  * [Fait clignoter et disparaît de la boîte noire](#csharp-blackboxblinksdisappears)
+  * [Annonces pas l’actualisation](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -37,7 +37,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doive correspondre à l’ID d’application et l’ID d’unité publicitaire que vous avez obtenu dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -111,7 +111,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     }
     ```
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) se comporte normalement.
 
@@ -131,7 +131,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
                   IsAutoRefreshEnabled="True" />
     ```
 
-2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Les extraits de code suivants illustrent comment utiliser la méthode **Refresh**. Le premier extrait est le balisage d’interface utilisateur XAML.
 
@@ -173,7 +173,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doive correspondre à l’ID d’application et l’ID d’unité publicitaire que vous avez obtenu dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -183,7 +183,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     adControl.Width = 728;
     ```
 
-4.  Vérifiez les paramètres **Height** et **Width**. Ils doivent être définis sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
+4.  Vérifiez les paramètres **Height** et **Width**. Elles doivent être définies sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -238,7 +238,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
@@ -248,7 +248,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 1.  Vérifiez si la propriété [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) de votre **AdControl** est définie sur false. Par défaut, cette propriété facultative est définie sur **true**. Si elle est définie sur **false**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
 
-2.  Vérifiez les appels à la méthode [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
 
     L’exemple suivant montre comment appeler la méthode **Refresh**.
 

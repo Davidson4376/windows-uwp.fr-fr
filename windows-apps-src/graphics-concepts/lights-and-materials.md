@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935210"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646324"
 ---
 # <a name="lighting"></a>Éclairage
 
 
 Les lumières sont utilisées pour illuminer les objets d’une scène. La couleur de chaque vertex d’objet est basée sur la carte de texture, les couleurs de vertex et les sources de lumière actuelles.
 
-**Remarque**  cette section concerne uniquement le pipeline à fonction fixe. Les nuanceurs programmables prennent explicitement en charge toutes les fonctions d’éclairage.
+**Remarque**    cette section concerne uniquement le pipeline à fonction fixe. Les nuanceurs programmables prennent explicitement en charge toutes les fonctions d’éclairage.
 
  
 
@@ -40,18 +40,18 @@ Les lumières sont utilisées pour illuminer les objets d’une scène. La coule
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="lighting-overview.md">Vue d’ensemble de l’éclairage</a></p></td>
-<td align="left"><p>Lorsque vous recourez à l’éclairageDirect3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage.</p></td>
+<td align="left"><p>Lorsque vous recourez à l’éclairage Direct3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="light-types.md">Types de lumière</a></p></td>
-<td align="left"><p>La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3types de lumières: les lumières à points, les projecteurs et les lumières directionnelles.</p></td>
+<td align="left"><p>La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3 types de lumières : les lumières à points, les projecteurs et les lumières directionnelles.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="light-properties.md">Propriétés de lumière</a></p></td>
+<td align="left"><p><a href="light-properties.md">Propriétés d’une lumière</a></p></td>
 <td align="left"><p>Les propriétés de lumière décrivent le type de source lumineuse (à points, directionnelle, projecteur), l’atténuation, la couleur, la direction, la position et l’étendue.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="mathematics-of-lighting.md">Formules mathématiques d’éclairage</a></p></td>
+<td align="left"><p><a href="mathematics-of-lighting.md">Mathématiques d’éclairage</a></p></td>
 <td align="left"><p>Le modèle d’éclairage Direct3D prend en charge les éclairages ambiant, diffus, spéculaire et émissif. La souplesse de la configuration permet de résoudre de nombreuses situations d’éclairage. Dans une scène, la quantité globale d’éclairage s’appelle l’<em>illumination globale</em>.</p></td>
 </tr>
 </tbody>
@@ -62,7 +62,7 @@ Les lumières sont utilisées pour illuminer les objets d’une scène. La coule
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Guide d’apprentissage des graphismes Direct3D](index.md)
+[Guide d’apprentissage graphiques Direct3D](index.md)
 
  
 

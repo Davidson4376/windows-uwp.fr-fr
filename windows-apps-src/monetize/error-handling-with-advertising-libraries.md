@@ -4,14 +4,14 @@ description: Découvrez comment gérer les erreurs générées par la classe AdC
 title: Gérer des erreurs dans les publicités
 ms.date: 05/11/2018
 ms.topic: article
-keywords: windows10, uwp, annonces, publicités, gestion des erreurs, javascript, XAML, c#
+keywords: windows 10, uwp, annonces, publicités, gestion des erreurs, javascript, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050662"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617754"
 ---
 # <a name="handle-ad-errors"></a>Gérer des erreurs dans les publicités
 
@@ -21,11 +21,11 @@ Les classes [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising
 
 ## <a name="xaml-apps"></a>Applications XAML
 
-Pour gérer les erreurs liées aux publicités dans une application XAML:
+Pour gérer les erreurs liées aux publicités dans une application XAML :
 
 1. Affectez l'événement **ErrorOccurred** de votre objet **AdControl**, **InterstitialAd** ou **NativeAdsManagerV2** au nom d’un délégué de gestionnaire d’événements.
 
-2. Codez le délégué de gestion des événements d’erreur afin qu’il prenne deuxparamètres: un **Object** pour l’expéditeur et un objet [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs).
+2. Codez le délégué de gestion des événements d’erreur afin qu’il prenne deux paramètres : un **Object** pour l’expéditeur et un objet [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs).
 
 Voici un exemple qui affecte un délégué nommé **OnAdError** à l'événement **ErrorOccurred** d’un objet **AdControl** nommé *myBannerAdControl*.
 
@@ -34,7 +34,7 @@ Voici un exemple qui affecte un délégué nommé **OnAdError** à l'événement
 myBannerAdControl.ErrorOccurred = OnAdError;
 ```
 
-Voici un exemple de définition du délégué **OnAdError** qui écrit des informations d’erreur dans la fenêtre Sortie de VisualStudio.
+Voici un exemple de définition du délégué **OnAdError** qui écrit des informations d’erreur dans la fenêtre Sortie de Visual Studio.
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -51,7 +51,7 @@ Voir [Gestion des erreurs dans la procédure pas à pas pour XAML/C#](error-hand
 
 ## <a name="javascripthtml-apps"></a>Applications JavaScript/HTML
 
-Pour gérer les erreurs **ErrorOccur** dans une application JavaScript:
+Pour gérer les erreurs **ErrorOccur** dans une application JavaScript :
 
 1.  Affectez l’événement **onErrorOccurred** à un gestionnaire d’événements.
 
@@ -69,7 +69,7 @@ Voici un exemple qui affecte un gestionnaire d'événement nommé **errorLogger*
 
 La fonction de gestion des erreurs est déclarative et doit être incorporée à la fonction [markSupportedForProcessing](https://msdn.microsoft.com/library/windows/apps/Hh967819.aspx).
 
-Le gestionnaire d’erreurs intercepte l’objet erreur JavaScript quand une erreur se produit. Cet objet fournit deuxarguments au gestionnaire d’erreurs. Pour plus d’informations, voir [Propriétés d’erreur particulières des méthodes Windows Runtime asynchrones](https://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
+Le gestionnaire d’erreurs intercepte l’objet erreur JavaScript quand une erreur se produit. Cet objet fournit deux arguments au gestionnaire d’erreurs. Pour plus d’informations, voir [Propriétés d’erreur particulières des méthodes Windows Runtime asynchrones](https://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
 
 Voici un exemple de fonction de gestion des erreurs nommé **errorLogger** qui gère l’événement **onErrorOccurred**.
 

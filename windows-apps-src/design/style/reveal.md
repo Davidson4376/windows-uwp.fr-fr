@@ -1,32 +1,32 @@
 ---
 description: Révéler est un effet visuel qui permet d'ajouter de la profondeur et une meilleure mise au point des éléments interactifs de votre application.
-title: Principales fonctionnalités de révéler
+title: Révéler la mise en surbrillance
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116401"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628664"
 ---
-# <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
+# <a name="reveal-highlight"></a>Révéler la mise en surbrillance
 
 ![image hero](images/header-reveal-highlight.svg)
 
-Révéler qu'est un effet visuel qui met en évidence les éléments interactifs, tels que les barres de commandes, lorsque l’utilisateur déplace le pointeur à proximité. 
+Révéler la que mise en surbrillance est un effet d’éclairage qui met en évidence des éléments interactifs, tels que des barres de commande, lorsque l’utilisateur déplace le pointeur près d’eux. 
 
-> **API importantes**: [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **API importantes**: [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState classe](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
-## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet révéler attire l’attention sur les éléments interactifs en révélant conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
+## <a name="how-it-works"></a>Fonctionnement
+Révéler l’attention d’appels de mise en surbrillance pour les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme le montre l’illustration suivante :
 
 ![Visuel de l’effet Révéler](images/Nav_Reveal_Animation.gif)
 
@@ -41,7 +41,7 @@ L'outil Révéler expose les bordures masquées qui se trouvent autour des objet
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Reveal">ouvrez l’application et voir Révéler en action </a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -54,7 +54,7 @@ L'outil Révéler expose les bordures masquées qui se trouvent autour des objet
 
 ## <a name="how-to-use-it"></a>Mode d’utilisation
 
-Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres contrôles, vous pouvez activer révéler en attribuant un style spécial au contrôle, comme décrit dans les sections [Activer révéler sur d’autres contrôles](#enabling-reveal-on-other-controls) et [Activer révéler sur les contrôles personnalisés](#enabling-reveal-on-custom-controls) de cet article.
+Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres contrôles, vous pouvez activer révèlent en assignant un style spécial pour le contrôle, comme décrit dans la [permettant de faire apparaître sur d’autres contrôles](#enabling-reveal-on-other-controls) et [permettant de faire apparaître sur les contrôles personnalisés](#enabling-reveal-on-custom-controls) sections de ce article.
 
 ## <a name="controls-that-automatically-use-reveal"></a>Contrôles utilisant automatiquement Révéler
 
@@ -65,7 +65,7 @@ Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres c
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-Ces illustrations montrent révéler mettre en surbrillance sur plusieurs contrôles différents:
+Ces illustrations montrent révéler la mettre en surbrillance sur plusieurs contrôles différents :
 
 ![Exemples de Révéler](images/RevealExamples_Collage.png)
 
@@ -74,18 +74,18 @@ Ces illustrations montrent révéler mettre en surbrillance sur plusieurs contr�
 
 Si vous avez besoin d'appliquer Révéler pour votre scénario (ces contrôles se trouvent dans le contenu principal et/ou sont utilisés dans des contrôles de liste ou de collecte), nous mettons à votre disposition des styles de ressource qui vous permettent d'activer Révéler dans ces situations.
 
-Ces contrôles n’utilisent pas Révéler par défaut car il s'agit de contrôles mineurs, en général des contrôles annexes aux éléments essentiels de votre application; toutefois, chaque application est différente et si ces contrôles sont ceux qui sont le plus utilisés dans votre application, nous proposons certains styles qui vous seront utiles pour ce faire:
+Ces contrôles n’utilisent pas Révéler par défaut car il s'agit de contrôles mineurs, en général des contrôles annexes aux éléments essentiels de votre application ; toutefois, chaque application est différente et si ces contrôles sont ceux qui sont le plus utilisés dans votre application, nous proposons certains styles qui vous seront utiles pour ce faire :
 
-| Nom du contrôle   | Nom de la ressource |
+| Nom du contrôle   | Nom de ressource |
 |----------|:-------------:|
-| Bouton |  ButtonRevealStyle |
+| Button |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
 | AppBarToggleButton | AppBarToggleButtonRevealStyle |
 | GridViewItem (Révéler le premier plan du contenu) | GridViewItemRevealBackgroundShowsAboveContentStyle |
 
-Pour appliquer ces styles, définissez simplement la propriété [Style](/uwp/api/Windows.UI.Xaml.Style) du contrôle:
+Pour appliquer ces styles, définissez simplement la propriété [Style](/uwp/api/Windows.UI.Xaml.Style) du contrôle :
 
 ```xaml
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
@@ -97,7 +97,7 @@ Révéler change légèrement en fonction du thème demandé pour le contrôle, 
 
 ![Révéler dans les thèmes clair et sombre](images/Dark_vs_LightReveal.png)
 
-Pour activer les bordures blanches dans le thème clair, définissez simplement le thème demandé sur le contrôle sur «Dark».
+Pour activer les bordures blanches dans le thème clair, définissez simplement le thème demandé sur le contrôle sur « Dark ».
 
 ```xaml
 <Grid RequestedTheme="Dark">
@@ -105,7 +105,7 @@ Pour activer les bordures blanches dans le thème clair, définissez simplement 
 </Grid>
 ```
 
-Ou remplacez TargetTheme pour RevealBorderBrush par «Dark». Rappel: si TargetTheme est défini sur «Dark», alors l’effet Révéler sera blanc, tandis que s’il est défini sur «Light», les bordures avec Révéler seront grises.
+Ou remplacez TargetTheme pour RevealBorderBrush par « Dark ». Rappel : si TargetTheme est défini sur « Dark », alors l’effet Révéler sera blanc, tandis que s’il est défini sur « Light », les bordures avec Révéler seront grises.
 
 ```xaml
  <RevealBorderBrush x:Key="MyLightBorderBrush" TargetTheme="Dark" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}" />
@@ -113,7 +113,7 @@ Ou remplacez TargetTheme pour RevealBorderBrush par «Dark». Rappel: si TargetT
 
 ## <a name="enabling-reveal-on-custom-controls"></a>Activer Révéler sur les contrôles personnalisés
 
-Vous pouvez ajouter l’effet Révéler sur des contrôles personnalisés. Avant de procéder, il est utile de connaître un peu plus sur le fonctionne de l’effet révéler. Révéler est constitué de deux effets distincts: **Révéler la bordure** et **Révéler l'élément sélectionné**.
+Vous pouvez ajouter l’effet Révéler sur des contrôles personnalisés. Avant de procéder, il est utile de connaître un peu plus sur le fonctionne de l’effet de divulgation. Divulgation se compose de deux effets distincts : **Faire apparaître la bordure** et **révéler pointage**.
 
 - **Révéler la bordure** affiche les bordures des éléments interactifs lorsqu’un pointeur se trouve à proximité. Cet effet vous indique que vous pouvez réaliser des actions avec les objets à proximité, similaires à celles de l'élément sélectionné.
 - **Révéler l’élément sélectionné** applique un halo léger autour de l’élément pointé ou en focus, et lit une animation par pression lancée d’un clic. 
@@ -129,9 +129,9 @@ Vous pouvez ajouter l’effet Révéler sur des contrôles personnalisés. Avant
 - The background (background of control) -->
 
 
-Ces effets sont définis par deux pinceaux: 
-* Révéler la bordure est défini par **RevealBorderBrush**
-* Révéler est défini par **RevealBackgroundBrush**
+Ces effets sont définis par deux pinceaux : 
+* Bordure révéler est défini par **RevealBorderBrush**
+* Divulgation de pointage est définie par **RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -149,7 +149,7 @@ Par exemple, vous ne devez pas utiliser Révéler sur un bouton seul, mais vous 
 <!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
 
 ### <a name="using-the-control-template-to-add-reveal"></a>Utiliser le modèle de contrôle pour ajouter Révéler 
-Pour activer Révéler sur des contrôles personnalisés ou des contrôles remodélisés, vous devez modifier le modèle de contrôle du contrôle. La plupart des modèles de contrôle ont une grille à la racine; mettez à jour le [VisualState](/uwp/api/windows.ui.xaml.visualstate) de cette grille racine pour utiliser Révéler:
+Pour activer Révéler sur des contrôles personnalisés ou des contrôles remodélisés, vous devez modifier le modèle de contrôle du contrôle. La plupart des modèles de contrôle ont une grille à la racine ; mettez à jour le [VisualState](/uwp/api/windows.ui.xaml.visualstate) de cette grille racine pour utiliser Révéler :
 
 ```xaml
 <VisualState x:Name="PointerOver">
@@ -170,7 +170,7 @@ Nous avons créé un ensemble de pinceaux Révéler système que vous pouvez uti
 
 ### <a name="full-template-example"></a>Exemple de modèle complet
 
-Voici un modèle complet illustrant l'aspect d'un bouton Révéler:
+Voici un modèle complet illustrant l'aspect d'un bouton Révéler :
 
 ```xaml
 <Style TargetType="Button" x:Key="ButtonStyle1">
@@ -255,24 +255,24 @@ Voici un modèle complet illustrant l'aspect d'un bouton Révéler:
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Optimisation de l’effet Révéler sur un contrôle personnalisé 
 
-Lorsque vous activez révéler sur un contrôle personnalisé ou remodélisé ou une surface de commandes personnalisées, les conseils suivants peuvent vous aider à optimiser l’effet:
+Lorsque vous activez révèlent sur un contrôle personnalisé ou re-basé sur un modèle ou d’une surface de commande personnalisée, ces conseils peuvent vous aider à optimiser l’effet :
  
-* Pour les éléments adjacents avec des tailles qui ne sont pas alignées en hauteur ni en largeur (en particulier dans les listes): supprimez le comportement d’approche de bordure et laissez les bordures apparaître par pointage uniquement.
-* Pour les éléments de commandes qui entrent et sortent fréquemment de l’état désactivé: placez le pinceau d’approche de bordure sur les plaques de fond des éléments ainsi que sur leurs bordures afin de mettre en avant leur état.
-* Pour les éléments de commandes adjacents qui sont si proches qu’ils se touchent: ajoutez une marge de 1pixel entre les deuxéléments. 
+* Sur les éléments adjacents avec des tailles qui ne correspondent pas dans hauteur ou largeur (en particulier dans les listes) : Supprimez le comportement d’approche de bordure et conserver les bordures indiqués au pointage uniquement.
+* Pour les éléments de l’exécution de commandes qui fréquemment accéder et l’extraction de l’état désactivé : Placez le pinceau d’approche de bordure sur backplates d’éléments, ainsi que leurs bordures à mettre l’accent sur leur état.
+* Pour des éléments de leur exécution adjacents sont donc fermer ils touchent : Ajouter une marge 1px entre les deux éléments. 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
-### <a name="do"></a>faire:
+### <a name="do"></a>Procédez comme :
 - Utilisez Révéler sur des éléments sur lesquels l'utilisateur peut agir (barres de commandes, menus de navigation)
 - Utilisez Révéler dans les regroupements d’éléments interactifs qui n’ont pas de séparateurs visuels par défaut (listes, rubans)
 - Utilisez Révéler dans les zones à densité élevée d'éléments interactifs (scénarios de commandes)
-- Ajoutez une marge de 1pixel entre les éléments Révéler
+- Ajoutez une marge de 1 pixel entre les éléments Révéler
 
 ### <a name="dont"></a>Pratiques déconseillées
 - N’utilisez pas Révéler sur le contenu statique (arrière-plans, texte)
 - N’utilisez pas Révéler sur les fenêtres contextuelles, les menus volants ou les listes déroulantes
 - N’utilisez pas Révéler dans des situations d'isolement ou d'unicité
-- N’utilisez pas Révéler sur les éléments de très grande taille (plus de 500epx)
+- N’utilisez pas Révéler sur les éléments de très grande taille (plus de 500 epx)
 - N’utilisez pas Révéler pour des décisions de sécurité, car cela pourrait distraire l'utilisateur tandis que vous souhaitez lui communiquer un message important
 
 
@@ -282,13 +282,13 @@ Lorsque vous activez révéler sur un contrôle personnalisé ou remodélisé ou
 
 ## <a name="reveal-and-the-fluent-design-system"></a>Révéler et Fluent Design System
 
- Fluent Design System vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Révéler est un composant de Fluent Design System qui ajoute de la lumière à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](../fluent-design-system/index.md).
+ Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Révéler est un composant de Fluent Design System qui ajoute de la lumière à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](../fluent-design-system/index.md).
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [Acrylique](acrylic.md)
+- [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
+- [Acrylic](acrylic.md)
 - [Effets de composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [Fluent Design pour UWP](../fluent-design-system/index.md)
-- [De la science dans le système: Fluent Design et la Profondeur](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [De la science dans le système: Fluent Design et la Lumière](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [Conception Fluent pour UWP](../fluent-design-system/index.md)
+- [Science dans le système : Profondeur et conception Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [Science dans le système : Clair et conception Fluent](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

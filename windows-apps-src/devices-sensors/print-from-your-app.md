@@ -4,14 +4,14 @@ title: Imprimer à partir de votre application
 description: Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques.
 ms.date: 01/29/2018
 ms.topic: article
-keywords: Windows 10, uwp, l’impression
+keywords: Windows 10, uwp, impression
 ms.localizationpriority: medium
 ms.openlocfilehash: aecb09b4fbaa7614c1d31c9dc0bb8095925175e7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045332"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620694"
 ---
 # <a name="print-from-your-app"></a>Imprimer à partir de votre application
 
@@ -26,14 +26,14 @@ ms.locfileid: "9045332"
 Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques. Pour plus d’informations sur les modifications avancées de l’interface utilisateur d’aperçu avant impression, consultez [Personnaliser l’interface utilisateur d’aperçu avant impression](customize-the-print-preview-ui.md).
 
 > [!TIP]
-> La plupart des exemples de cette rubrique sont basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+> La plupart des exemples de cette rubrique sont basées sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
 ## <a name="register-for-printing"></a>S’inscrire pour l’impression
 
 Pour ajouter la fonctionnalité d’impression à votre application, vous devez commencer par vous inscrire au contrat d’impression. Vous devez répéter cette opération sur chaque écran à partir duquel vous souhaitez que votre utilisateur soit en mesure d’imprimer. Seul l’écran qui est affiché à l’utilisateur peut être inscrit à des fins d’impression. Si un écran de votre application est inscrit à des fins d’impression, son inscription doit être annulée au moment de sa fermeture. S’il est remplacé par un autre écran, l’écran suivant doit s’inscrire à un nouveau contrat d’impression lorsqu’il s’ouvre.
 
 > [!TIP]
-> Si vous souhaitez prendre en charge l’impression à partir de plusieurs pages dans votre application, vous pouvez inclure ce code d’impression dans une classe d’assistance commune afin que les pages de votre application le réutilisent. Pour obtenir un exemple de procédure à suivre, voir la classe `PrintHelper` dans l’[exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984).
+> Si vous avez besoin prendre en charge l’impression à partir de plusieurs pages dans votre application, vous pouvez placer ce code d’impression dans une classe d’assistance courantes et ont les pages de votre application à réutiliser. Pour obtenir un exemple de procédure à suivre, voir la classe `PrintHelper` dans l’[exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984).
 
 Pour commencer, déclarez les classes [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) et [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314). Le type **PrintManager** se trouve dans l’espace de noms [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) avec des types prenant en charge d’autres fonctionnalités d’impression Windows. Le type **PrintDocument** se trouve dans l’espace de noms [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) avec d’autres types autorisant la préparation du contenu XAML à des fins d’impression. Vous pouvez faciliter l’écriture de votre code d’impression en ajoutant les instructions **using** ou **Imports** suivantes dans votre page.
 
@@ -168,7 +168,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 Une fois la tâche d’impression créée, la classe [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) demande une collection de pages d’impression à afficher dans l’interface utilisateur d’aperçu avant impression en déclenchant l’événement [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate). Cela correspond à la méthode **Paginate** de l’interface **IPrintPreviewPageCollection**. Le gestionnaire d’événements que vous avez créé lors de l’inscription est appelé à ce moment.
 
 > [!IMPORTANT]
-> Si l’utilisateur modifie les paramètres d’impression, le gestionnaire d’événements de pagination est appelé à nouveau pour vous permettre de redisposer le contenu. Pour une expérience utilisateur optimale, nous vous recommandons de vérifier les paramètres avant de redisposer le contenu et d’éviter de réinitialiser le contenu paginé si ce n’est pas nécessaire.
+> Si l’utilisateur change les paramètres d’impression, le Gestionnaire d’événements paginate s’appellera à nouveau afin que vous puissiez redistribuer le contenu. Pour une expérience utilisateur optimale, nous vous recommandons de vérifier les paramètres avant de redisposer le contenu et d’éviter de réinitialiser le contenu paginé si ce n’est pas nécessaire.
 
 Dans le gestionnaire d’événements [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) (la méthode `CreatePrintPreviewPages` dans l’[exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)), créez les pages à afficher dans l’interface utilisateur d’aperçu avant impression et à envoyer à l’imprimante. Le code dont vous vous servez pour préparer le contenu de votre application à imprimer est propre à votre application et au contenu que vous imprimez. Reportez-vous au code source de l’[exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) pour voir comment il met en forme le contenu à des fins d’impression.
 
@@ -254,9 +254,9 @@ Cette étape crée une nouvelle option d’impression, définit une liste de val
 
 | Nom de l’option          | Action |
 |----------------------|--------|
-| **Print all (Imprimer tout)**        | Imprime toutes les pages du document.|
-| **Print Selection (Imprimer la sélection)**  | Imprime uniquement le contenu sélectionné par l’utilisateur.|
-| **Print Range (Étendue)**      | Affiche un contrôle d’édition dans lequel l’utilisateur peut entrer les pages à imprimer.|
+| **Imprimer toutes les**        | Imprime toutes les pages du document.|
+| **Imprimer la sélection**  | Imprime uniquement le contenu sélectionné par l’utilisateur.|
+| **Plage d’impression**      | Affiche un contrôle d’édition dans lequel l’utilisateur peut entrer les pages à imprimer.|
 
 Premièrement, modifiez le gestionnaire d’événements [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) pour ajouter le code afin d’obtenir un objet [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256).
 
@@ -267,7 +267,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 Effacez la liste des options affichées dans l’interface utilisateur d’aperçu avant impression, puis ajoutez les options que vous voulez afficher quand l’utilisateur souhaite imprimer à partir de l’application.
 
 > [!NOTE]
-> Les options apparaissent dans l’interface utilisateur d’aperçu avant impression dans l’ordre dans lequel elles sont ajoutées, la première option figurant en haut de la fenêtre.
+> Les options apparaissent dans l’interface utilisateur d’aperçu avant impression dans le même ordre qu’ils sont ajoutés, avec la première option affichée en haut de la fenêtre.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -384,7 +384,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> Consultez la méthode `GetPagesInRange` dans l'[exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) pour obtenir des détails sur la façon d’analyser l’étendue de pages que l’utilisateur entre dans la zone de texte Range (Étendue).
+> Consultez le `GetPagesInRange` méthode dans le [exemple impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984) pour plus d’informations sur la façon d’analyser la page plage de l’utilisateur entre dans la zone de texte de plage.
 
 ## <a name="preview-selected-pages"></a>Afficher un aperçu des pages sélectionnées
 
@@ -398,6 +398,6 @@ Si vous imprimez un sous-ensemble de pages, plusieurs options s’offrent à vou
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions de conception concernant l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Vidéo de la build 2015 : développement d’applications qui impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Instructions de conception pour l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Build 2015 vidéo : Développement d’applications qui s’impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Exemple d’impression UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)

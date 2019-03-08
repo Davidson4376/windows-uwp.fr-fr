@@ -4,37 +4,37 @@ title: Dessiner des formes
 description: Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
 ms.date: 11/16/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a576add7a080874fb0f042748bef7472e04ac817
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920113"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610674"
 ---
 # <a name="draw-shapes"></a>Dessiner des formes
 
 Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
 
-> **API importantes**: [classe Path](/uwp/api/Windows.UI.Xaml.Shapes.Path), [espace de noms Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [espace de noms Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
+> **API importantes**: [Classe de chemin d’accès](/uwp/api/Windows.UI.Xaml.Shapes.Path), [espace de noms Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [espace de noms Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
 
 
-Deuxjeux de classes définissent une région d’espace dans l’interface utilisateur XAML: les classes [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) et les classes [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry). Leur principale différence réside dans le fait qu’un pinceau est associé à la classe **Shape** et que son rendu peut s’effectuer à l’écran. La classe **Geometry**, quant à elle, définit simplement une région d’espace sans rendu, sauf si elle concourt à donner des informations sur une autre propriété de l’interface utilisateur. Imaginez le jeu **Shape** comme un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) dont la limite est définie par un jeu **Geometry**. Cette rubrique traite principalement des classes **Shape**.
+Deux ensembles de classes définissent une région d’espace dans XAML UI : [**Forme** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) classes et [ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry) classes. Leur principale différence réside dans le fait qu’un pinceau est associé à la classe **Shape** et que son rendu peut s’effectuer à l’écran. La classe **Geometry**, quant à elle, définit simplement une région d’espace sans rendu, sauf si elle concourt à donner des informations sur une autre propriété de l’interface utilisateur. Imaginez le jeu **Shape** comme un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) dont la limite est définie par un jeu **Geometry**. Cette rubrique traite principalement des classes **Shape**.
 
-Les classes [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) sont les suivantes: [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) et [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path). La classe **Path** est intéressante, car elle peut définir une géométrie arbitraire, et la classe [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) est impliquée ici, car elle constitue un moyen de définir les parties d’une classe **Path**.
+Les classes [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) sont les suivantes : [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) et [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path). La classe **Path** est intéressante, car elle peut définir une géométrie arbitraire, et la classe [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) est impliquée ici, car elle constitue un moyen de définir les parties d’une classe **Path**.
 
 ## <a name="fill-and-stroke-for-shapes"></a>Remplissage et trait pour les formes
 
 Pour qu’un objet [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) soit restitué dans la zone de dessin de l’application, vous devez lui associer un objet [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Définissez la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) de la classe **Shape** sur l’élément **Brush** souhaité. Pour plus d’informations sur les pinceaux, voir [Utilisation des pinceaux](../style/brushes.md).
 
-Un objet [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) peut également posséder une propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), qui représente une ligne tracée autour du périmètre de la forme. En outre, une propriété **Stroke** requiert un objet [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) qui définit son apparence, et doit posséder une valeur différente de zéro pour [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness). **StrokeThickness** est une propriété qui définit l’épaisseur du périmètre autour du bord de la forme. Si vous n’indiquez aucune valeur **Brush** pour la propriété **Stroke** ou que vous définissez **StrokeThickness** sur0, la bordure autour de la forme n’est pas dessinée.
+Un objet [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) peut également posséder une propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), qui représente une ligne tracée autour du périmètre de la forme. En outre, une propriété **Stroke** requiert un objet [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) qui définit son apparence, et doit posséder une valeur différente de zéro pour [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness). **StrokeThickness** est une propriété qui définit l’épaisseur du périmètre autour du bord de la forme. Si vous n’indiquez aucune valeur **Brush** pour la propriété **Stroke** ou que vous définissez **StrokeThickness** sur 0, la bordure autour de la forme n’est pas dessinée.
 
 ## <a name="ellipse"></a>Ellipse
 
 La classe [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) désigne une forme au périmètre courbe. Pour créer une forme **Ellipse** basique, spécifiez un élément [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), ainsi qu’un élément [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) pour la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
-L’exemple suivant permet de créer une forme [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) de largeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) égale à200 et de hauteur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) égale à200, avec une couleur [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) de pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) comme propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+L’exemple suivant permet de créer une forme [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) de largeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) égale à 200 et de hauteur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) égale à 200, avec une couleur [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) de pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) comme propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
 ```xaml
 <Ellipse Fill="SteelBlue" Height="200" Width="200" />
@@ -53,23 +53,23 @@ ellipse1.Height = 200;
 layoutRoot.Children.Add(ellipse1);
 ```
 
-Rendu de la forme [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse):
+Rendu de la forme [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) :
 
 ![Rendu de l’ellipse](images/shapes-ellipse.jpg)
 
-Dans ce cas, la forme [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) s’apparente à ce que la plupart d’entre nous appelons un cercle. Il s’agit là, en effet, de la façon dont vous déclarez une forme circulaire en langage XAML: en utilisant une classe **Ellipse** avec des valeurs [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) égales.
+Dans ce cas, la forme [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) s’apparente à ce que la plupart d’entre nous appelons un cercle. Il s’agit là, en effet, de la façon dont vous déclarez une forme circulaire en langage XAML : en utilisant une classe **Ellipse** avec des valeurs [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) égales.
 
-Lorsqu’un objet [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) est positionné dans une disposition de l’interface utilisateur, sa taille est supposée similaire à celle d’un rectangle avec ces valeurs [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height); la zone à l’extérieur du périmètre n’est pas restituée, mais participe néanmoins à la taille de son emplacement dans la disposition.
+Lorsqu’un objet [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) est positionné dans une disposition de l’interface utilisateur, sa taille est supposée similaire à celle d’un rectangle avec ces valeurs [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) ; la zone à l’extérieur du périmètre n’est pas restituée, mais participe néanmoins à la taille de son emplacement dans la disposition.
 
-Un ensemble de 6éléments [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) font partie du modèle du contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538), et 2éléments **Ellipse** concentriques font partie d’une classe [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544).
+Un ensemble de 6 éléments [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) font partie du modèle du contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538), et 2 éléments **Ellipse** concentriques font partie d’une classe [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544).
 
 ## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
 
-Une forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) a quatrecôtés dont les côtés opposés sont de mesure égale. Pour créer une forme **Rectangle** basique, spécifiez une largeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), une hauteur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et un remplissage [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+Une forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) a quatre côtés dont les côtés opposés sont de mesure égale. Pour créer une forme **Rectangle** basique, spécifiez une largeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), une hauteur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et un remplissage [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
 Vous pouvez arrondir les angles d’une forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Pour ce faire, indiquez une valeur pour les propriétés [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) et [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy). Ces propriétés spécifient les axes x et y d’une ellipse définissant la courbe des angles. La valeur maximale de **RadiusX** correspond à la valeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) divisée par deux, et la valeur maximale de **RadiusY** à celle de [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) divisée par deux.
 
-L’exemple suivant permet de créer une forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) de largeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) égale à200 et de hauteur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) égale à100. La valeur [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) est utilisée pour le pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) comme propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), et la valeur [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) est utilisée pour le pinceau **SolidColorBrush** comme propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke). Nous avons défini la propriété [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) sur3. Nous avons défini la propriété [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) sur50 et la propriété [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) sur10 afin d’obtenir une forme **Rectangle** aux angles arrondis.
+L’exemple suivant permet de créer une forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) de largeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) égale à 200 et de hauteur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) égale à 100. La valeur [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) est utilisée pour le pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) comme propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), et la valeur [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) est utilisée pour le pinceau **SolidColorBrush** comme propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke). Nous avons défini la propriété [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) sur 3. Nous avons défini la propriété [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) sur 50 et la propriété [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) sur 10 afin d’obtenir une forme **Rectangle** aux angles arrondis.
 
 ```xaml
 <Rectangle Fill="Blue"
@@ -98,13 +98,13 @@ rectangle1.RadiusY = 10;
 layoutRoot.Children.Add(rectangle1);
 ```
 
-Rendu de la forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle):
+Rendu de la forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) :
 
 ![Rendu du rectangle](images/shapes-rectangle.jpg)
 
-**Conseil**il existe certains scénarios de définitions d’interface utilisateur où au lieu d’utiliser un [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), une [**bordure**](https://msdn.microsoft.com/library/windows/apps/BR209250) peut être plus appropriée. Si vous envisagez de créer une forme rectangulaire autour d’un autre contenu, il peut être préférable d’utiliser l’objet **Border**, car il peut posséder du contenu enfant et sa taille s’adaptera automatiquement autour de ce contenu, plutôt que d’utiliser les dimensions fixes pour la hauteur et la largeur, à l’image de l’objet **Rectangle**. En outre, un objet **Border** peut posséder des coins arrondis si vous définissez la propriété [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius).
+**Conseil**  il existe certains scénarios pour les définitions d’interface utilisateur où, au lieu d’utiliser un [ **Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), un [ **bordure** ](https://msdn.microsoft.com/library/windows/apps/BR209250) peuvent être plus appropriés. Si vous envisagez de créer une forme rectangulaire autour d’un autre contenu, il peut être préférable d’utiliser l’objet **Border**, car il peut posséder du contenu enfant et sa taille s’adaptera automatiquement autour de ce contenu, plutôt que d’utiliser les dimensions fixes pour la hauteur et la largeur, à l’image de l’objet **Rectangle**. En outre, un objet **Border** peut posséder des coins arrondis si vous définissez la propriété [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius).
 
-D’un autre côté, une classe [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) s’avère probablement un meilleur choix pour une composition de contrôle. Une forme **Rectangle** est présente dans de nombreux modèles de contrôle car elle est utilisée en tant que partie «FocusVisual» pour les contrôles pouvant être actifs. Dès lors que le contrôle est dans un état visuel «Actif», ce rectangle est rendu visible; dans les autres états, il est masqué.
+D’un autre côté, une classe [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) s’avère probablement un meilleur choix pour une composition de contrôle. Une forme **Rectangle** est présente dans de nombreux modèles de contrôle car elle est utilisée en tant que partie « FocusVisual » pour les contrôles pouvant être actifs. Dès lors que le contrôle est dans un état visuel « Actif », ce rectangle est rendu visible ; dans les autres états, il est masqué.
 
 ## <a name="polygon"></a>Polygone
 
@@ -112,7 +112,7 @@ La classe [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) correspond à u
 
 Vous n’avez pas besoin de déclarer les points explicitement de telle sorte que le point de départ et le point final soient spécifiés par la même valeur [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870). La logique du rendu d’un objet [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) suppose que vous définissez une forme fermée et que vous reliez implicitement le point final au point de départ.
 
-L’exemple suivant crée une forme [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à 4points définis sur `(10,200)`, `(60,140)`, `(130,140)` et `(180,200)`. Il utilise une valeur [**LightBlue**](https://msdn.microsoft.com/library/windows/apps/Hh747960) égale à [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) pour la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), et ne possède aucune valeur pour la propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), ce qui se traduit par l’absence de contour de périmètre.
+L’exemple suivant crée une forme [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à 4 points définis sur `(10,200)`, `(60,140)`, `(130,140)` et `(180,200)`. Il utilise une valeur [**LightBlue**](https://msdn.microsoft.com/library/windows/apps/Hh747960) égale à [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) pour la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), et ne possède aucune valeur pour la propriété [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), ce qui se traduit par l’absence de contour de périmètre.
 
 ```xaml
 <Polygon Fill="LightBlue"
@@ -137,17 +137,17 @@ polygon1.Points = points;
 layoutRoot.Children.Add(polygon1);
 ```
 
-Rendu de la forme [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon):
+Rendu de la forme [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) :
 
 ![Rendu du polygone](images/shapes-polygon.jpg)
 
-**Conseil**une valeur de [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) est souvent utilisée en tant que type en XAML pour les situations autres que la déclaration des sommets des formes. Par exemple, un objet **Point** fait partie des données d’événement pour les événements tactiles, si bien que vous pouvez déterminer exactement l’endroit auquel s’est produit une action tactile dans un espace de coordonnées. Pour plus d’informations sur **Point** et sur la façon de l’utiliser en XAML ou dans du code, voir la rubrique de référence d’API pour [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
+**Conseil**  A [ **Point** ](https://msdn.microsoft.com/library/windows/apps/BR225870) valeur est souvent utilisée en tant que type dans XAML pour les scénarios autres que de déclarer les sommets des formes. Par exemple, un objet **Point** fait partie des données d’événement pour les événements tactiles, si bien que vous pouvez déterminer exactement l’endroit auquel s’est produit une action tactile dans un espace de coordonnées. Pour plus d’informations sur **Point** et sur la façon de l’utiliser en XAML ou dans du code, voir la rubrique de référence d’API pour [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
 ## <a name="line"></a>Ligne
 
-Un objet [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) représente simplement une ligne tracée entre deuxpoints dans un espace de coordonnées. Un objet **Line** ignore toute valeur fournie pour [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), car il est dépourvu d’espace intérieur. Dans le cas d’un objet **Line**, veillez à spécifier des valeurs pour les propriétés [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) et [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness), sinon l’objet **Line** ne sera pas restitué.
+Un objet [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) représente simplement une ligne tracée entre deux points dans un espace de coordonnées. Un objet **Line** ignore toute valeur fournie pour [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), car il est dépourvu d’espace intérieur. Dans le cas d’un objet **Line**, veillez à spécifier des valeurs pour les propriétés [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) et [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness), sinon l’objet **Line** ne sera pas restitué.
 
-Vous n’utilisez pas de valeurs [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) pour spécifier une forme [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line); à la place, vous utilisez des valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) discrète pour [**X1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx), [**Y1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx), [**X2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) et [**Y2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx). Cela permet un balisage minimal pour les lignes horizontales ou verticales. Par exemple, `<Line Stroke="Red" X2="400"/>` définit une ligne horizontale de 400pixels de long. Les autres propriétés X,Y étant par défaut définies sur 0, ce code XAML trace une ligne entre les points `(0,0)` et `(400,0)`. Vous pouvez ensuite utiliser une classe [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) pour déplacer toute la classe **Line**, si vous voulez qu’elle commence à un point autre que (0,0).
+Vous n’utilisez pas de valeurs [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) pour spécifier une forme [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) ; à la place, vous utilisez des valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) discrète pour [**X1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx), [**Y1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx), [**X2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) et [**Y2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx). Cela permet un balisage minimal pour les lignes horizontales ou verticales. Par exemple, `<Line Stroke="Red" X2="400"/>` définit une ligne horizontale de 400 pixels de long. Les autres propriétés X,Y étant par défaut définies sur 0, ce code XAML trace une ligne entre les points `(0,0)` et `(400,0)`. Vous pouvez ensuite utiliser une classe [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) pour déplacer toute la classe **Line**, si vous voulez qu’elle commence à un point autre que (0,0).
 
 ```xaml
 <Line Stroke="Red" X2="400"/>
@@ -165,11 +165,11 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyligne
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 Les formes [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) sont semblables aux formes [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) en ce que leur limite est définie par un ensemble de points, à la différence que le dernier point d’une forme **Polyline** n’est pas relié au premier.
 
-**Remarque**  vous pourriez avoir explicitement un point de départ identiques et point de terminaison dans les [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définie pour la [**polyligne**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), mais dans ce cas vous probablement aurait pouvez utiliser un [**Polygone**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à la place.
+**Remarque**    vous pourriez avoir explicitement un point de départ identique et le point de terminaison dans le [ **Points** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définie pour le [ **polyligne** ](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), mais dans ce cas vous avez probablement pu avoir utilisé un [ **polygone** ](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à la place.
 
 Si vous spécifiez une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) d’un objet [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), la propriété **Fill** peint l’espace intérieur de la forme, même si les points de départ et de fin de la propriété [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définie pour l’objet **Polyline** ne se recoupent pas. Si vous ne spécifiez pas de propriété **Fill**, l’objet **Polyline** est similaire à celui qui serait restitué si vous indiquiez plusieurs éléments [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) avec intersection des points de départ et de fin de lignes consécutives.
 
@@ -206,20 +206,20 @@ Voici le rendu de la forme [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyli
 
 ![Rendu de la polyligne](images/shapes-polyline.jpg)
 
-## <a name="path"></a>Tracé
+## <a name="path"></a>Path
 
 La forme [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) est la classe [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) la plus souple, car vous pouvez l’utiliser pour définir une géométrie arbitraire. Cette souplesse est toutefois synonyme de complexité. Observons comment créer une forme **Path** basique en langage XAML.
 
-Pour spécifier la géométrie d’un tracé, utilisez la propriété [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). Deux techniques permettent de définir la propriété **Data**:
+Pour spécifier la géométrie d’un tracé, utilisez la propriété [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). Deux techniques permettent de définir la propriété **Data** :
 
 - Vous pouvez définir une valeur de chaîne pour [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) en XAML. Ainsi, la valeur **Path.Data** utilise un format de sérialisation pour les graphismes. En règle générale, vous ne modifiez pas le texte de cette valeur sous la forme d’une chaîne une fois qu’elle a été établie. À la place, vous utilisez des outils de conception qui vous permettent de travailler dans une métaphore de conception ou de dessin sur une surface. Ensuite, vous enregistrez ou exportez la sortie, ce qui vous permet d’obtenir un fichier XAML ou un fragment de chaîne XAML comportant les informations de la propriété **Path.Data**.
 - Vous pouvez définir la propriété [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) sur un objet [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) unique. Cette opération peut être réalisée dans du code ou en XAML. Cet objet **Geometry** unique est généralement un objet [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup), qui fait office de conteneur pouvant, à partir de plusieurs définitions de géométrie, composer un objet destiné au modèle objet. Cette approche permet notamment de définir une ou plusieurs des courbes et des formes complexes en tant que valeurs [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) d’un objet [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143), par exemple [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068).
 
-L’exemple ci-dessous montre un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) qui aurait pu être obtenu en utilisant Blend pour VisualStudio pour produire une série limitée de formes vectorielles, puis en enregistrant le résultat au format XAML. L’objet **Path** global se compose d’une courbe de Bézier et d’une ligne. L’exemple vise essentiellement à illustrer une partie des éléments du format de sérialisation [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) et de ce que les nombres représentent.
+L’exemple ci-dessous montre un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) qui aurait pu être obtenu en utilisant Blend pour Visual Studio pour produire une série limitée de formes vectorielles, puis en enregistrant le résultat au format XAML. L’objet **Path** global se compose d’une courbe de Bézier et d’une ligne. L’exemple vise essentiellement à illustrer une partie des éléments du format de sérialisation [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) et de ce que les nombres représentent.
 
-Cette propriété [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) commence avec une commande de mouvement, indiquée par la mention «M», qui établit un point de départ absolu du tracé.
+Cette propriété [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) commence avec une commande de mouvement, indiquée par la mention « M », qui établit un point de départ absolu du tracé.
 
-Le premier segment est une courbe de Bézier cubique commençant à `(100,200)` et se terminant à `(400,175)`. Elle est dessinée à l’aide des deux points de contrôle `(100,25)` et `(400,350)`. Ce segment est indiqué par la commande «C» dans la chaîne de l’attribut [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data).
+Le premier segment est une courbe de Bézier cubique commençant à `(100,200)` et se terminant à `(400,175)`. Elle est dessinée à l’aide des deux points de contrôle `(100,25)` et `(400,350)`. Ce segment est indiqué par la commande « C » dans la chaîne de l’attribut [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data).
 
 Le deuxième segment commence par une commande de ligne horizontale absolue « H », indiquant le dessin d’une ligne à partir du point final du sous-tracé précédent `(400,175)` jusqu’au nouveau point final `(280,175)`. Comme il s’agit d’une commande de ligne horizontale, la valeur spécifiée correspond à une coordonnée x.
 
@@ -233,7 +233,7 @@ Rendu de la forme [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) :
 
 ![Rendu du tracé](images/shapes-path.jpg)
 
-L’exemple suivant montre l’utilisation de l’autre technique mentionnée : une classe [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) avec une classe [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). Cet exemple utilise certains des types de géométrie contributeurs qui peuvent être utilisés dans le cadre d’une classe **PathGeometry**: la classe [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) et les divers éléments pouvant être un segment dans la propriété [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
+L’exemple suivant montre l’utilisation de l’autre technique mentionnée : une classe [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) avec une classe [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). Cet exemple utilise certains des types geometry contributeur qui peuvent être utilisées en tant que partie d’un **PathGeometry**: [**PathFigure** ](https://msdn.microsoft.com/library/windows/apps/BR210143) et les différents éléments qui peuvent être un segment dans [ **PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
@@ -314,8 +314,8 @@ path1.Data = geometryGroup1;
 layoutRoot.Children.Add(path1);
 ```
 
-Rendu de la forme [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path):
+Rendu de la forme [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) :
 
 ![Rendu du tracé](images/shapes-path-2.png)
 
-L’utilisation de [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) peut être plus lisible que le remplissage d’une chaîne [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). En revanche, [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) utilise une syntaxe compatible avec les définitions de chemin d’accès d’une image Scalable Vector Graphics (SVG); il peut donc être utile pour le portage des graphiques à partir de SVG, ou en tant que sortie à partir d’un outil comme Blend.
+L’utilisation de [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) peut être plus lisible que le remplissage d’une chaîne [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). En revanche, [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) utilise une syntaxe compatible avec les définitions de chemin d’accès d’une image Scalable Vector Graphics (SVG) ; il peut donc être utile pour le portage des graphiques à partir de SVG, ou en tant que sortie à partir d’un outil comme Blend.

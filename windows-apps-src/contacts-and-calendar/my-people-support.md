@@ -3,16 +3,16 @@ title: Ajout de la prise en charge de Mes Contacts à une application
 description: Explique comment ajouter la prise en charge de mes contacts à une application et comment épingler et désépingler des contacts
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044443"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611534"
 ---
-# <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge mes contacts à une application
+# <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
 
 La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contacts d’une application directement à la barre des tâches, ce qui crée un nouvel objet contact avec lequel ils peuvent interagir de plusieurs façons. Cet article explique comment ajouter la prise en charge de cette fonctionnalité permettant aux utilisateurs d’épingler des contacts directement à partir de votre application. Lorsque les contacts sont épinglés, de nouveaux types d’interaction utilisateur deviennent disponibles, comme [le partage](my-people-sharing.md) et [les notifications de mes contacts](my-people-notifications.md).
 
@@ -20,22 +20,22 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 
 ## <a name="requirements"></a>Configuration requise
 
-+ Windows10 et Microsoft Visual Studio2017. Pour en savoir plus sur l’installation, voir [Prendre en main VisualStudio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application «Hello, world»](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 et Microsoft Visual Studio 2017. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts:
+Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts :
 
-1. [Déclarer la prise en charge du contrat d’activation shareTarget dans votre manifeste d’application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+1. [Déclarer la prise en charge pour le contrat d’activation shareTarget dans votre manifeste d’application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [Annoter les contacts que les utilisateurs peuvent partager à l’aide de votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.  Prendre en charge plusieurs instances de votre application en cours d’exécution en même temps. Les utilisateurs doivent pouvoir interagir avec une version complète de votre application lors de son utilisation dans un volet de contact.  Ils peuvent même l’utiliser dans plusieurs volets de contact à la fois.  Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [«afficher plusieurs vues d’une application»](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
+3.  Prendre en charge plusieurs instances de votre application en cours d’exécution en même temps. Les utilisateurs doivent pouvoir interagir avec une version complète de votre application lors de son utilisation dans un volet de contact.  Ils peuvent même l’utiliser dans plusieurs volets de contact à la fois.  Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
 
 Lorsque vous avez terminé, votre application s’affiche dans le volet de contact pour les contacts annotés.
 
 ## <a name="declaring-support-for-the-contract"></a>Déclaration de prise en charge pour le contrat
 
-Pour déclarer la prise en charge du contrat de mes contacts, ouvrez votre application dans Visual Studio. À partir de l’**Explorateur de solutions**, cliquez avec le bouton droit sur **Package.appxmanifest** et sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **Éditeur (de texte) XML)** et cliquez sur **OK**. Apportez les modifications suivantes au manifeste:
+Pour déclarer la prise en charge du contrat de mes contacts, ouvrez votre application dans Visual Studio. À partir de l’**Explorateur de solutions**, cliquez avec le bouton droit sur **Package.appxmanifest** et sélectionnez **Ouvrir avec**. Dans le menu, sélectionnez **Éditeur (de texte) XML)** et cliquez sur **OK**. Apportez les modifications suivantes au manifeste :
 
 **Avant**
 
@@ -53,7 +53,7 @@ Pour déclarer la prise en charge du contrat de mes contacts, ouvrez votre appli
 
 ```
 
-**Après**
+**Après avoir**
 
 ```xml
 <Package
@@ -81,7 +81,7 @@ Pour permettre l’affichage des contacts de votre application dans la barre des
 
 Votre application doit également écrire une annotation sur chaque contact. Les annotations sont des données issues de votre application qui sont associées à un contact. L’annotation doit contenir la classe activable correspondant à la vue de votre choix dans son membre **ProviderProperties** et déclarer prendre en charge l’opération **ContactProfile**.
 
-Vous pouvez annoter les contacts à tout moment lorsque votre application est en cours d’exécution, mais généralement vous devez les annoter dès qu’ils sont ajoutés au magasin de contact Windows.
+Vous pouvez annoter les contacts à tout moment lorsque votre application est en cours d’exécution, mais généralement vous devez les annoter dès qu’ils sont ajoutés au magasin de contacts Windows.
 
 ```Csharp
 if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5))
@@ -101,11 +101,11 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour rechercher votre Nom de la famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet «Packages». Ici, «Application» est la classe activable correspondant à l’affichage de démarrage de l'application.
+« appId » est le nom de la famille de packages, suivi de « ! » et l’ID de la classe activable. Pour rechercher le nom de la famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet « Création de packages ». Ici, « App » est la classe activable correspondant à la vue de démarrage de l’application.
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>Autoriser des contacts à inviter de nouveaux utilisateurs potentiels
 
-Par défaut, votre application s’affiche uniquement dans le volet de contact pour les contacts que vous avez spécifiquement annotés.  Il s’agit d’éviter toute confusion avec les contacts avec lesquels il est impossible d’interagir par le biais de votre application.  Si vous souhaitez que votre application s’affiche pour les contacts inconnus de votre application (pour inviter les utilisateurs à ajouter ce contact à leur compte, par exemple), vous pouvez ajouter les éléments suivants à votre manifeste:
+Par défaut, votre application s’affiche uniquement dans le volet de contact pour les contacts que vous avez spécifiquement annotés.  Il s’agit d’éviter toute confusion avec les contacts avec lesquels il est impossible d’interagir par le biais de votre application.  Si vous souhaitez que votre application s’affiche pour les contacts inconnus de votre application (pour inviter les utilisateurs à ajouter ce contact à leur compte, par exemple), vous pouvez ajouter les éléments suivants à votre manifeste :
 
 **Avant**
 
@@ -121,7 +121,7 @@ Par défaut, votre application s’affiche uniquement dans le volet de contact p
 </Applications>
 ```
 
-**Après**
+**Après avoir**
 
 ```Csharp
 <Applications>
@@ -143,7 +143,7 @@ Par cette modification, votre application s’affiche comme une option disponibl
 
 ## <a name="support-for-email-apps"></a>Prise en charge des applications de messagerie
 
-Si vous écrivez une application de messagerie, vous n’avez pas besoin d’annoter chaque contact manuellement.  Si vous déclarez la prise en charge du volet de contact et du protocole mailto:, votre application s’affiche automatiquement pour les utilisateurs avec une adresse de messagerie.
+Si vous écrivez une application de messagerie, vous n’avez pas besoin d’annoter chaque contact manuellement.  Si vous déclarez la prise en charge du volet de contact et du protocole mailto :, votre application s’affiche automatiquement pour les utilisateurs avec une adresse de messagerie.
 
 ## <a name="running-in-the-contact-panel"></a>Exécution dans le volet de contact
 
@@ -171,7 +171,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 
 Une fois votre application activée avec ce contrat, elle reçoit un [objet ContactPanelActivatedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Celui-ci contient l’ID du contact avec lequel votre application tente d’interagir lors du lancement, et un objet [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel). Vous devez conserver une référence à cet objet ContactPanel, ce qui vous permettra d’interagir avec le volet.
 
-L’objet ContactPanel comporte deux événements que votre application doit écouter:
+L’objet ContactPanel comporte deux événements que votre application doit écouter :
 + L’événement **LaunchFullAppRequested** est envoyé dès que l’utilisateur appelle l’élément d’interface utilisateur qui demande que votre application complète soit lancée dans sa propre fenêtre.  Votre application est chargée de se lancer elle-même, en transmettant tout le contexte nécessaire.  Vous êtes libre de le faire comme bon vous semble (par exemple, via le lancement du protocole).
 + L’**événement de fermeture** est envoyé lorsque votre application est sur le point d’être fermée, ce qui vous permet d’enregistrer le contexte.
 
@@ -183,15 +183,15 @@ Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent
 
 ![Badge de notification de contacts](images/my-people-badging.png)
 
-Pour qu'un badge soit appliqué à une contact, le nœud toast de niveau supérieur doit inclure le paramètre hint-people pour indiquer le contact expéditeur ou associé. Ce paramètre peut prendre l'une des valeurs suivantes:
-+ **Adresse électronique** 
-    + Par exemple, mailto:johndoe@mydomain.com
+Pour qu'un badge soit appliqué à une contact, le nœud toast de niveau supérieur doit inclure le paramètre hint-people pour indiquer le contact expéditeur ou associé. Ce paramètre peut prendre l'une des valeurs suivantes :
++ **Adresse de messagerie** 
+    + Exemple mailto:johndoe@mydomain.com
 + **Numéro de téléphone** 
-    + Par exemple, tél: 888-888-8888
+    + Exemple tél : 888-888-8888
 + **ID distant** 
-    + Par exemple, remoteid:1234
+    + Exemple remoteid:1234
 
-Voici un exemple de procédure pour voir si une notification toast est liée à une personne spécifique:
+Voici un exemple de procédure pour voir si une notification toast est liée à une personne spécifique :
 ```XML
 <toast hint-people="mailto:johndoe@mydomain.com">
     <visual lang="en-US">
@@ -210,7 +210,7 @@ Voici un exemple de procédure pour voir si une notification toast est liée à 
 
 [PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) est utilisée pour gérer les contacts épinglés à la barre des tâches. Cette classe vous permet d’épingler et de désépingler des contacts, de déterminer si un contact est épinglé et si l’épinglage sur une surface spécifique est pris en charge par le système sur lequel votre application s’exécute.
 
-Vous pouvez récupérer l’objet PinnedContactManager à l’aide de la méthode **GetDefault**:
+Vous pouvez récupérer l’objet PinnedContactManager à l’aide de la méthode **GetDefault** :
 
 ```Csharp
 PinnedContactManager pinnedContactManager = PinnedContactManager.GetDefault();
@@ -233,7 +233,7 @@ async void UnpinContact (Contact contact)
 }
 ```
 
-Vous pouvez également épingler plusieurs contacts en même temps:
+Vous pouvez également épingler plusieurs contacts en même temps :
 
 ```Csharp
 async Task PinMultipleContacts(Contact[] contacts)
@@ -246,13 +246,13 @@ async Task PinMultipleContacts(Contact[] contacts)
 > [!Note]
 > Il n’existe actuellement aucune opération permettant de désépingler des contacts.
 
-**Remarque:** 
+**Remarque :** 
 
-## <a name="see-also"></a>Articles associés
-+ [Partage de mes contacts](my-people-sharing.md)
-+ [Notifications de mes contacts](my-people-notifications.md)
-+ [Vidéo Channel9 sur l’ajout de la prise en charge de mes contacts à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Exemple d’intégration de mes contacts](https://aka.ms/mypeoplebuild2017)
-+ [Exemples de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Documentation sur la classe PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
+## <a name="see-also"></a>Voir également
++ [Mon partage de personnes](my-people-sharing.md)
++ [Mes notifications de personnes](my-people-notifications.md)
++ [Vidéo Channel 9 sur l’ajout de personnes de mon prennent en charge à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [Mon exemple d’intégration de personnes](https://aka.ms/mypeoplebuild2017)
++ [Exemple de carte de contact](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [Documentation de la classe PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Connecter votre application à des actions sur une carte de visite](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

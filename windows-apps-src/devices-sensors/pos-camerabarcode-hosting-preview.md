@@ -3,33 +3,33 @@ title: Héberger l'aperçu du scanneur de codes-barres à caméra
 description: Découvrez comment héberger un aperçu de scanneur de codes-barres à caméra dans votre application
 ms.date: 05/02/2018
 ms.topic: article
-keywords: windows10, uwp, point de vente, pdv
+keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 49d531ea2e699afaf7cfb6872fe0287c6d6a8f85
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116118"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610294"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a>Héberger un aperçu de scanneur de codes-barres à caméra dans votre application
-## <a name="step-1-setup-your-camera-preview"></a>Étape1: Installer l'aperçu de votre caméra
+## <a name="step-1-setup-your-camera-preview"></a>Étape 1 : Le programme d’installation de la version préliminaire d’appareil photo
 Vous pouvez accomplir la première étape de l’ajout d’un aperçu à votre application de scanneur de codes-barres à caméra en suivant les instructions fournies dans la rubrique [Afficher l’aperçu de la caméra](../audio-video-camera/simple-camera-preview-access.md).  Une fois que vous avez terminé cette étape, revenez à cette rubrique pour voir les modifications spécifiques du scanneur de code-barres à caméra.
 
-## <a name="step-2-update-capability-declarations"></a>Étape2: Mettre à jour les déclarations de fonctionnalités
+## <a name="step-2-update-capability-declarations"></a>Étape 2 : Déclarations des fonctionnalités de mise à jour
 Pour empêcher vos utilisateurs de recevoir l'invite de consentement du microphone, vous pouvez l'exclure des fonctionnalités répertoriées dans le manifeste de votre application.
 
 1. Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
 2. Sélectionnez l’onglet **Fonctionnalités**.
 3. Désélectionnez la case à cocher **Microphone**.
 
- ## <a name="step-3-add-additional-using-directive-for-media-capture"></a>Étape3: Ajouter des directives d'utilisation supplémentaires pour la capture multimédia
+ ## <a name="step-3-add-additional-using-directive-for-media-capture"></a>Étape 3 : Ajouter supplémentaires à l’aide de la directive pour la capture de média
 
 ```Csharp
 using Windows.Media.Capture;
 ```
 
-## <a name="step-4-set-up-your-mediacapture-initialization-settings"></a>Étape4: Configurer vos paramètres d’initialisation de MediaCapture
+## <a name="step-4-set-up-your-mediacapture-initialization-settings"></a>Étape 4 : Configurer vos paramètres de l’initialisation de MediaCapture
 L’exemple suivant initialise les paramètres [**MediaCaptureInitializationSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings). 
 
 ```Csharp
@@ -41,8 +41,8 @@ L’exemple suivant initialise les paramètres [**MediaCaptureInitializationSett
     _captureInitSettings.PhotoCaptureSource = PhotoCaptureSource.VideoPreview;
 }
 ```
-## <a name="step-5-associate-your-mediacapture-object-with-the-camera-barcode-scanner"></a>Étape5: Associer votre objet MediaCapture avec le scanneur de codes-barres à caméra
-Remplacez le mediaCapture.InitializeAsync() existant dans *StartPreviewAsync()* par ce qui suit:
+## <a name="step-5-associate-your-mediacapture-object-with-the-camera-barcode-scanner"></a>Étape 5 : Associer votre objet MediaCapture le scanneur de codes-barres de caméra
+Remplacez le mediaCapture.InitializeAsync() existant dans *StartPreviewAsync()* par ce qui suit :
 
 ```Csharp
 try

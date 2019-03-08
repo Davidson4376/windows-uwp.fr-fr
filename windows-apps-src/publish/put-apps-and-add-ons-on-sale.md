@@ -1,31 +1,31 @@
 ---
-Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
-title: Commercialiser des applications et des extensions
+Description: Vous pouvez promouvoir votre application ou votre extension dans le Microsoft Store en les mettant en vente à prix réduit pendant une période limitée.
+title: Commercialiser des applications et composants additionnels
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c844c37bab8a135468d74558e8dc053b18d48cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934338"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625314"
 ---
-# <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et des extensions
+# <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et composants additionnels
 
-Vous pouvez promouvoir votre application ou votre extension dans le MicrosoftStore en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage. Et vous pouvez choisir si vous souhaitez proposer la vente à tout le monde, ou en faire une offre exclusive pour les clients qui possèdent l’une de vos autres produits.
+Vous pouvez promouvoir votre application ou votre extension dans le Microsoft Store en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage. Et vous pouvez choisir proposer la vente à tout le monde, ou une offre exclusive pour les clients qui possèdent un de vos autres produits.
 
 > [!NOTE]
-> Prix de vente n’est pas pris en charge pour les extensions d’abonnement.
+> Prix de vente n’est pas pris en charge pour les modules complémentaires d’abonnement.
 
-Lorsque vous utilisez la section **Prix de vente** de la page **Tarification et disponibilité** d’une soumission pour réduire temporairement le prix de votre application ou de votre extension, les clients qui consultent votre description dans le WindowsStore voient apparaître un prix barré indiquant que le prix a baissé (contrairement à une [modification du prix planifiée](set-and-schedule-app-pricing.md#schedule-price-changes), qui peut diminuer ou augmenter le prix sans le signaler en tant que modification dans le WindowsStore). 
+Lorsque vous utilisez la section **Prix de vente** de la page **Tarification et disponibilité** d’une soumission pour réduire temporairement le prix de votre application ou de votre extension, les clients qui consultent votre description dans le Windows Store voient apparaître un prix barré indiquant que le prix a baissé (contrairement à une [modification du prix planifiée](set-and-schedule-app-pricing.md#schedule-price-changes), qui peut diminuer ou augmenter le prix sans le signaler en tant que modification dans le Windows Store). 
 
-Pendant la période de commercialisation de votre produit, les clients peuvent acheter ce dernier au prix inférieur au cours de la période que vous avez sélectionnée. Si vous définissez le prix sur **Gratuit**, les clients peuvent télécharger le produit sans rien payer pendant la période de vente.
+Pendant la période de commercialisation de votre produit, les clients peuvent acheter ce dernier au prix inférieur au cours de la période que vous avez sélectionnée. Si vous définissez le prix sur **Gratuit**, les clients peuvent télécharger l’application sans rien payer pendant la période de vente.
 
 > [!IMPORTANT]
-> Prix de vente s’affiche uniquement pour vos clients sur les appareils Windows 10, y compris Xbox One. Ventes que vous proposez uniquement aux possesseurs de l’un de vos autres produits sont affichent uniquement pour les clients sur Windows 10, version 1607 ou ultérieure.
+> Prix de vente est uniquement visibles par vos clients sur les appareils Windows 10, y compris Xbox One. Ventes qui vous offrez uniquement aux propriétaires d’un de vos autres produits sont affichés uniquement aux clients sur Windows 10, version 1607 ou ultérieure.
 > 
 > Sur les autres systèmes d’exploitation, les clients voient le prix normal de votre application ou de votre extension et ne seront pas en mesure d’acheter ces dernières au prix de vente. Vous pouvez toujours modifier un prix en choisissant un autre niveau de prix dans une nouvelle soumission, mais il ne sera pas affiché en tant que vente à prix réduit limitée dans le temps.
 
@@ -42,21 +42,21 @@ Les ventes à prix réduit sont planifiées dans le cadre de la soumission d’u
 
    > [!NOTE]
    > Les sélections de marché que vous effectuez dans la section Prix de vente n’affectent pas les marchés dans lesquels l’application est proposée. Ces sélections déterminent uniquement si un prix de vente est proposé et dans quels marchés. Si vous définissez un prix de vente pour un marché dans lequel votre application n’est pas disponible, cela n’a pas pour effet de la rendre disponible sur ce marché.
-4. Choisissez l’une des options suivantes pour spécifier le type de remise:
-   - **Prix**: utilisez cette option pour sélectionner un niveau de prix inférieur, auquel votre application sera proposée. Vous pouvez modifier la devise dans la liste déroulante pour sélectionner le prix dans la devise que vous préférez. (Le prix sera converti au niveau correspondant pour chaque devise. Pour plus d’informations, voir [Tarification](set-app-pricing-and-availability.md).)
-   - **Pourcentage**: utilisez cette option pour sélectionner le pourcentage d’une remise qui sera appliquée à votre application. Le même pourcentage de remise est utilisé pour toutes les devises.
-5. Sur la ligne **Proposé à**, choisissez l’une des options disponibles suivantes:
-   - **Tout le monde**: la vente sera proposée à tous les clients.
-   - **Propriétaires de**: la vente sera proposée aux clients qui possèdent déjà l’une de vos applications. Vous pouvez sélectionner des applications publiées dans la liste déroulante qui s’affiche. Pour que cette option soit disponible, vous devez disposer d’une ou de plusieurs applications publiées.
+4. Choisissez l’une des options suivantes pour spécifier le type de remise :
+   - **Prix**: Utilisez cette option pour sélectionner un niveau de prix inférieur à laquelle votre application sera proposée. Vous pouvez modifier la devise dans la liste déroulante pour sélectionner le prix dans la devise que vous préférez. (Le prix sera converti au niveau correspondant pour chaque devise. Pour plus d’informations, voir [Tarification](set-app-pricing-and-availability.md).)
+   - **Pourcentage**: Utilisez cette option pour sélectionner le pourcentage d’une remise sera appliquée à votre application. Le même pourcentage de remise est utilisé pour toutes les devises.
+5. Sur la ligne **Proposé à**, choisissez l’une des options disponibles suivantes :
+   - **Tout le monde**: La vente sera offert à tous les clients.
+   - **Propriétaires de**: La vente sera offert aux clients qui possèdent déjà une de vos applications. Vous pouvez sélectionner des applications publiées dans la liste déroulante qui s’affiche. Pour que cette option soit disponible, vous devez disposer d’une ou de plusieurs applications publiées.
 
   > [!IMPORTANT]
-  > Si vous sélectionnez **Propriétaires de**, la vente sera uniquement visible par les clients qui utilisent Windows10, version1607 ou ultérieure.
+  > Si vous sélectionnez **Propriétaires de**, la vente sera uniquement visible par les clients qui utilisent Windows 10, version 1607 ou ultérieure.
 
-   - **Known user group**: la vente sera proposée aux membres du [groupe d’utilisateurs connus](create-known-user-groups.md) que vous sélectionnez. Pour que cette option soit disponible, vous devez avoir déjà créé le groupe d’utilisateurs connus.
-   - **Segment**: la vente sera proposée aux personnes présentes dans le segment de clients que vous sélectionnez. Vous pouvez utiliser un [segment que vous avez déjà créé](create-customer-segments.md) ici. Vous pouvez également choisir **Payeur pour la première fois** pour proposer la vente uniquement aux clients qui n'ont jamais rien acheté dans le Windows Store. Nous proposons ici ce segment, car nous avons constaté qu’une fois qu'un client a effectué un premier achat dans le Windows Store, il en fait souvent d'autres. Cela vaut donc la peine d'attirer ce groupe avec un prix de vente.
-6. Définissez les dates et heures de début et de fin de la période de vente à prix réduit. Choisissez l'une des options de fuseau horaire:
-   - **UTC**: l'heure sélectionnée correspondra à l'heure universelle coordonnée (UTC), afin que la vente soit proposée partout en même temps.
-   - **Local**: l'heure sélectionnée sera utilisée dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, seul un fuseau horaire sur ce marché sera utilisé. Pour les États-Unis, le fuseau horaire Côte Est est utilisé.)
+   - **Groupe d’utilisateurs connus**: La vente sera offert aux personnes du [groupe d’utilisateurs connus](create-known-user-groups.md) vous sélectionnez. Pour que cette option soit disponible, vous devez avoir déjà créé le groupe d’utilisateurs connus.
+   - **Segment**: La vente sera offert aux personnes dans le segment de client que vous sélectionnez. Vous pouvez utiliser un [segment que vous avez déjà créé](create-customer-segments.md) ici. Vous pouvez également choisir **Payeur pour la première fois** pour proposer la vente uniquement aux clients qui n'ont jamais rien acheté dans le Windows Store. Nous proposons ici ce segment, car nous avons constaté qu’une fois qu'un client a effectué un premier achat dans le Windows Store, il en fait souvent d'autres. Cela vaut donc la peine d'attirer ce groupe avec un prix de vente.
+6. Définissez les dates et heures de début et de fin de la période de vente à prix réduit. Choisissez l'une des options de fuseau horaire :
+   - **UTC** : Du moment où que vous sélectionnez sera temps de temps universel coordonné (UTC), afin que la vente se produit en même temps partout.
+   - **Local**: Du moment où que vous sélectionnez sera utilisé dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, seul un fuseau horaire sur ce marché sera utilisé. Pour les États-Unis, le fuseau horaire utilisé est celui de l'Est.)
 7. Pour planifier une vente supplémentaire, sélectionnez **Nouvelle vente**. Autrement, cliquez sur **Enregistrer** en bas de la **page Tarification et disponibilité**, puis sélectionnez **Envoyer au Windows Store** dans l’aperçu de la soumission.
 
 > [!NOTE]
@@ -72,7 +72,7 @@ Pour réviser ou annuler une vente à prix réduit que vous avez précédemment 
 
 1.  Sur la page **Tarification et disponibilité** d’une soumission d’application ou de module complémentaire en cours, accédez à la section **Prix de vente**.
 2.  Recherchez la vente que vous souhaitez mettre à jour, puis apportez vos modifications.
-3.  Cliquez sur **Enregistrer** en bas de la page **Tarification et disponibilité**, puis cliquez sur **Envoyer au Windows Store** dans l’aperçu de la soumission.
+3.  Cliquez sur **Enregistrer** en bas de la page **Tarification et disponibilité**, puis cliquez sur **Envoyer au Store** dans l’aperçu de la soumission.
 
 Une fois votre soumission certifiée, les modifications prennent effet.
 
@@ -83,7 +83,7 @@ Une fois votre soumission certifiée, les modifications prennent effet.
 
 1.  Sur la page **Tarification et disponibilité** d’une soumission d’application ou de module complémentaire en cours, accédez à la section **Prix de vente**.
 2.  Recherchez la vente à annuler, puis cliquez sur **Supprimer**.
-3.  Cliquez sur **Enregistrer** en bas de la page **Tarification et disponibilité**, puis cliquez sur **Envoyer au Windows Store** dans l’aperçu de la soumission. Si la vente n’a pas démarré à la fin du processus de certification de la nouvelle soumission, la vente supprimée n’est pas exécutée du tout.
+3.  Cliquez sur **Enregistrer** en bas de la page **Tarification et disponibilité**, puis cliquez sur **Envoyer au Store** dans l’aperçu de la soumission. Si la vente n’a pas démarré à la fin du processus de certification de la nouvelle soumission, la vente supprimée n’est pas exécutée du tout.
 
 
 

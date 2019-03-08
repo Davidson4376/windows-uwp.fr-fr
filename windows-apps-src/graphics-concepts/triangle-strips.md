@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945901"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599284"
 ---
 # <a name="triangle-strips"></a>Bandes de triangles
 
@@ -24,7 +24,7 @@ Une bande de triangles est une série de triangles connectés. Les triangles ét
 
 ![Illustration d’une bande de triangles à sept vertex](images/tristrip.png)
 
-Le système utilise les vertex v1 v2 et v3 pour tracer le premier triangle; v2, v4 et v3 pour tracer le deuxième triangle; v3 et v4 v5 pour dessiner le troisième; v4 et v6 v5 pour dessiner le quatrième; et ainsi de suite. Notez que les vertex des deuxième et quatrième triangles sont hors service; cela est nécessaire pour que tous les triangles soient tracés dans le sens des aiguilles d'une montre.
+Le système utilise les vertex v1 v2 et v3 pour tracer le premier triangle ; v2, v4 et v3 pour tracer le deuxième triangle ; v3 et v4 v5 pour dessiner le troisième ; v4 et v6 v5 pour dessiner le quatrième ; et ainsi de suite. Notez que les vertex des deuxième et quatrième triangles sont hors service ; cela est nécessaire pour que tous les triangles soient tracés dans le sens des aiguilles d'une montre.
 
 La plupart des objets d'une scène 3D sont composées de triangles. En effet, les bandes de triangles peuvent être utilisées pour spécifier des objets complexes de manière à utilise efficacement la mémoire et le temps de traitement.
 
@@ -61,10 +61,10 @@ L’exemple de code ci-dessous montre comment rendre cette bande de triangles da
 d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
 ```
 
-## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygones
+## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygons
 
 
-Souvent, des triangles sont utilisés pour générer des polygones. Un polygone est une figure3D fermée délimitée par au moins trois sommets. Le polygone le plus simple est un triangle. MicrosoftDirect3D utilise les triangles pour composer la plupart de ses polygones, car les trois sommets d'un triangle sont systématiquement coplanaires. Le rendu de sommets non planaires n’est pas efficace. Vous pouvez combiner des triangles pour former des maillages et des polygones larges et complexes.
+Souvent, des triangles sont utilisés pour générer des polygones. Un polygone est une figure 3D fermée délimitée par au moins trois sommets. Le polygone le plus simple est un triangle. Microsoft Direct3D utilise les triangles pour composer la plupart de ses polygones, car les trois sommets d'un triangle sont systématiquement coplanaires. Le rendu de sommets non planaires n’est pas efficace. Vous pouvez combiner des triangles pour former des maillages et des polygones larges et complexes.
 
 L’illustration suivante montre un cube. Chaque face du cube est formée de deux triangles. L’ensemble des triangles constitue une primitive cubique. Vous pouvez appliquer des textures aux surfaces de primitives pour qu'elles apparaissent comme une forme unique pleine. Pour plus d’informations, voir [Textures](textures.md).
 

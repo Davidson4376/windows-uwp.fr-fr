@@ -6,28 +6,28 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 89ffa2f3480664131af6664988bd9fb31687fe32
-ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "8990205"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600304"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 
 Cette rubrique décrit comment créer une application de plateforme Windows universelle (UWP) à instances multiples.
 
-À partir de Windows 10, version 1803 (version 10.0; Build 17134), votre application UWP peut participer à prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
+À partir de Windows 10, version 1803 (10.0 ; Build 17134), votre application UWP peut adhérer à prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
 
 > [!IMPORTANT]
-> L’instanciation multiple est prise en charge pour les applications JavaScript, mais n’est pas la redirection de l’instanciation multiple. Dans la mesure où la redirection de l’instanciation multiple n’est pas pris en charge pour les applications JavaScript, la classe [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) n’est pas utile pour des applications.
+> Instanciation multiple est pris en charge pour les applications JavaScript, mais la redirection de l’instanciation multiple n’est pas. Étant donné que la redirection de l’instanciation multiple n’est pas pris en charge pour les applications JavaScript, le [ **AppInstance** ](/uwp/api/windows.applicationmodel.appinstance) classe n’est pas utile pour de telles applications.
 
-## <a name="opt-in-to-multi-instance-behavior"></a>Participer au comportement à instances multiples
+## <a name="opt-in-to-multi-instance-behavior"></a>S’abonner à un comportement d’instances multiples
 
 Si vous créez une nouvelle application à instances multiples, vous pouvez installer les **modèles .VSIX de projets d’applications à instances multiples**, disponibles dans le [Visual Studio Marketplace](https://aka.ms/E2nzbv). Une fois que vous avez installé les modèles, ils sont disponibles dans la boîte de dialogue **Nouveau projet** sous **Visual C# > Windows universel** (ou **Autres langages > Visual C++ > Windows universel**).
 
-Deux modèles sont installés: **Application UWP à instances multiples**, qui fournit le modèle pour la création d’une application à instances multiples, et **Application UWP de redirection à instances multiples**, qui fournit une logique supplémentaire sur laquelle vous pouvez vous appuyer pour lancer une nouvelle instance ou activer de manière sélective une instance qui a déjà été lancée. Par exemple, peut-être vous souhaitez uniquement une seule instance à la fois modifient le même document, afin de mettre l’instance où ce fichier ouvrir au premier plan, plutôt que de lancer une nouvelle instance.
+Deux modèles sont installés : **Application UWP de multi-instance**, qui fournit le modèle pour la création d’une application à instances multiples, et **application UWP de Redirection multi-instance**, qui fournit une logique supplémentaire que vous pouvez générer sur pour lancer soit une nouvelle instance ou activer sélectivement une instance qui a déjà été lancée. Par exemple, vous souhaitez uniquement une seule instance à la fois modifier le document même peut-être, afin de mettre l’instance qui contient ce fichier ouvrir au premier plan au lieu de lancer une nouvelle instance.
 
-Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanifest` fichier. Notez les préfixes d’espace de noms `desktop4` et `iot2`: seuls les projets qui ciblent le bureau, ou les projets Internet des objets (IoT), prend en charge l’instanciation multiple.
+Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanifest` fichier. Notez le préfixe d’espace de noms `desktop4` et `iot2`: seuls les projets qui ciblent le bureau ou les projets de l’Internet des objets (IoT), prennent en charge instanciation multiple.
 
 ```xml
 <Package
@@ -52,13 +52,13 @@ Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanife
 
  La prise en charge de l'instanciation multiple pour les applications UWP permet non seulement de lancer plusieurs instances de l’application, mais offre aussi des options de personnalisation si vous souhaitez décider de lancer ou non une nouvelle instance de votre application ou d'activer ou non une instance déjà en cours d’exécution. Par exemple, si l’application est lancée pour modifier un fichier qui est déjà en cours de modification dans une autre instance, vous pouvez rediriger l’activation vers cette instance au lieu d’ouvrir une autre instance qui est déjà en train de modifier le fichier.
 
-Pour voir tout cela en action, regardez cette vidéo sur la création d’applications UWP instances multiples.
+Pour voir en action, regardez cette vidéo sur la création d’applications UWP à instances multiples.
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-Le modèle d'**application UWP de redirection à instances multiples** ajoute `SupportsMultipleInstances` au fichier package.appxmanifest comme indiqué ci-dessus, et ajoute également un objet **Program.cs** (ou **Program.cpp**, si vous utilisez la version C++ du modèle) à votre projet qui contient une fonction `Main()`. La logique de redirection de l’activation est intégrée à la fonction `Main`. Le modèle de **Program.cs** est illustré ci-dessous.
+Le modèle d'**application UWP de redirection à instances multiples** ajoute `SupportsMultipleInstances` au fichier package.appxmanifest comme indiqué ci-dessus, et ajoute également un objet **Program.cs** (ou **Program.cpp**, si vous utilisez la version C++ du modèle) à votre projet qui contient une fonction `Main()`. La logique de redirection de l’activation est intégrée à la fonction `Main`. Le modèle pour **Program.cs** est indiqué ci-dessous.
 
-La propriété [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) représente l’instance par défaut fournie par l’interpréteur de commandes pour cette demande d’activation, s’il existe (ou `null` si il n’existe pas). Si l’interpréteur de commandes fournit une préférence, puis vous pouvez rediriger l’activation vers cette instance, ou vous pouvez l’ignorer si vous choisissez.
+Le [ **AppInstance.RecommendedInstance** ](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) propriété représente l’instance par défaut fournie par l’interpréteur de commandes pour cette demande d’activation, le cas échéant (ou `null` s’il n’existe pas). Si l’interpréteur de commandes fournit une préférence, puis vous pouvez rediriger l’activation à cette instance, ou vous pouvez l’ignorer si vous choisissez.
 
 ``` csharp
 public static class Program
@@ -108,9 +108,9 @@ public static class Program
 }
 ```
 
-`Main()` est le premier élément qui s’exécute. Il s’exécute avant [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) et [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Cela vous permet de décider d'activer ou non cette instance ou une autre avant l'exécution de tout autre code d’initialisation dans votre application.
+`Main()` est la première chose qui s’exécute. Il s’exécute avant [ **OnLaunched** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) et [ **OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Cela vous permet de décider d'activer ou non cette instance ou une autre avant l'exécution de tout autre code d’initialisation dans votre application.
 
-Le code ci-dessus détermine si une instance existante ou nouvelle de votre application est activée. Une clé est utilisée pour déterminer s’il existe une instance existante que vous souhaitez activer. Par exemple, si votre application peut être lancée pour [gérer l’activation des fichiers](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), vous pouvez utiliser le nom de fichier en tant que clé. Ensuite, vous pouvez vérifier si une instance de votre application est déjà enregistrée avec cette clé et l’activer au lieu d’ouvrir une nouvelle instance. Il s’agit de l’idée sous-jacente au code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+Le code ci-dessus détermine si une instance existante ou nouvelle de votre application est activée. Une clé est utilisée pour déterminer s’il existe une instance existante que vous souhaitez activer. Par exemple, si votre application peut être lancée pour [gérer l’activation des fichiers](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), vous pouvez utiliser le nom de fichier en tant que clé. Ensuite, vous pouvez vérifier si une instance de votre application est déjà enregistrée avec cette clé et l’activer au lieu d’ouvrir une nouvelle instance. Il s’agit de l’idée derrière le code : `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 Si une instance enregistrée avec la clé est identifiée, cette instance est activée. Si la clé est introuvable, l’instance actuelle (l’instance qui s'exécute actuellement `Main`) crée son objet d'application et commence à s’exécuter.
 
@@ -122,19 +122,19 @@ Si une instance enregistrée avec la clé est identifiée, cette instance est ac
 - Lorsqu’une application enregistre une tâche en arrière-plan, elle commence généralement par vérifier si cette tâche est déjà enregistrée avant soit de la supprimer ou de la réenregistrer, soit de ne rien faire afin de conserver l’enregistrement existant. Il s’agit également du comportement par défaut avec les applications à instances multiples. Cependant, une application à instances multiples peut choisir d’enregistrer un nom de tâche en arrière-plan différent en fonction de l'instance concernée. Cela entraîne plusieurs enregistrements pour le même déclencheur, et l'activation de plusieurs instances de tâche en arrière-plan lorsque le déclencheur se déclenche.
 - Les services d’application lancent une nouvelle instance de la tâche en arrière-plan du service d’application pour chaque connexion. Cela reste inchangé pour les applications à instances multiples, à savoir que chaque instance d’une application à instances multiples est associée à sa propre instance de la tâche en arrière-plan du service d’application. 
 
-## <a name="additional-considerations"></a>Autres éléments à prendre en considération
+## <a name="additional-considerations"></a>Considérations supplémentaires
 
 - L'instanciation multiple est prise en charge par les applications UWP qui ciblent le bureau et les projets IoT.
-- Pour éviter des conditions de concurrence et des problèmes de contention, les applications à instances multiples doivent prendre des mesures pour partitionner/synchroniser l’accès aux paramètres, au stockage local des applications et à toute autre ressource (par exemple, des fichiers utilisateur ou un magasin de données) qui peut être partagée entre plusieurs instances. Par exemple, les mutex, sémaphores, événements et ainsi de suite, les mécanismes de synchronisation standard sont disponibles.
+- Pour éviter des conditions de concurrence et des problèmes de contention, les applications à instances multiples doivent prendre des mesures pour partitionner/synchroniser l’accès aux paramètres, au stockage local des applications et à toute autre ressource (par exemple, des fichiers utilisateur ou un magasin de données) qui peut être partagée entre plusieurs instances. Les mécanismes de synchronisation standard tels que les mutex, les sémaphores, les événements, etc., sont disponibles.
 - Si l’application dispose de `SupportsMultipleInstances` dans son fichier Package.appxmanifest, ses extensions n’ont pas besoin de déclarer `SupportsMultipleInstances`. 
 - Si vous ajoutez `SupportsMultipleInstances` à toute autre extension, hormis les tâches d'arrière-plan tâches ou les services d’application, et que l’application qui héberge l’extension ne déclare pas également `SupportsMultipleInstances` dans son fichier Package.appxmanifest, une erreur de schéma est générée.
-- Applications peuvent utiliser la déclaration [**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) dans leur manifeste pour regrouper plusieurs tâches en arrière-plan dans le même hôte. Cela est en conflit avec l’instanciation multiple, où chaque activation est intégrée à un hôte distinct. Par conséquent, une application ne peut pas déclarer à la fois `SupportsMultipleInstances` et `ResourceGroup` dans son manifeste.
+- Les applications peuvent utiliser le [ **ResourceGroup** ](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) déclaration dans leur manifeste pour regrouper plusieurs tâches en arrière-plan dans le même hôte. Cela est en conflit avec l’instanciation multiple, où chaque activation est intégrée à un hôte distinct. Par conséquent, une application ne peut pas déclarer à la fois `SupportsMultipleInstances` et `ResourceGroup` dans son manifeste.
 
 ## <a name="sample"></a>Exemple
 
-Consultez l' [exemple d’instances multiples](https://aka.ms/Kcrqst) pour obtenir un exemple de redirection de l’activation des instances multiples.
+Consultez [exemples d’instances multiples](https://aka.ms/Kcrqst) pour obtenir un exemple de la redirection de l’activation de plusieurs instances.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir également
 
 [AppInstance.FindOrRegisterInstanceForKey](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
 [AppInstance.GetActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)

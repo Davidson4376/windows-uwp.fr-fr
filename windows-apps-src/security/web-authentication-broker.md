@@ -1,24 +1,24 @@
 ---
 title: Service Broker d’authentification web
-description: Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
+description: Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606744"
 ---
 # <a name="web-authentication-broker"></a>Service Broker d’authentification web
 
 
 
 
-Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.). La méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient en retour un jeton d’accès qui décrit les ressources du fournisseur auxquelles l’application a accès.
+Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.). La méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient en retour un jeton d’accès qui décrit les ressources du fournisseur auxquelles l’application a accès.
 
 >[!NOTE]
 >Pour obtenir un exemple de code utilisable complet, clonez le [référentiel WebAuthenticationBroker sur GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
@@ -87,14 +87,14 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Il est conçu pour les applications ciblant uniquement Windows Phone 8.1 et avec Windows 10 est désapprouvé.
+>En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Il est conçu pour les applications ciblant Windows Phone 8.1 uniquement et est déconseillée à compter de Windows 10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Connexion par authentification unique (SSO).
 
 
-Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*. Ceci permettra aux cookies persistants d’être stockés par le service Broker d’authentification web, de sorte que les futurs appels d’authentification par la même application ne nécessiteront pas une connexion répétée de la part de l’utilisateur (l’utilisateur est effectivement «connecté» jusqu’à ce que le jeton d’accès expire).
+Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*. Ceci permettra aux cookies persistants d’être stockés par le service Broker d’authentification web, de sorte que les futurs appels d’authentification par la même application ne nécessiteront pas une connexion répétée de la part de l’utilisateur (l’utilisateur est effectivement « connecté » jusqu’à ce que le jeton d’accès expire).
 
-Pour prendre en charge l’authentification unique, le fournisseur en ligne doit vous permettre d’inscrire un URI de redirection sous la forme `ms-app://<appSID>`, où `<appSID>` correspond au SID de votre application. Vous pouvez obtenir le SID de votre application à partir de la page du développeur correspondant à votre application ou en appelant la méthode [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
+Pour prendre en charge l’authentification unique, le fournisseur en ligne doit vous permettre d’inscrire un URI de redirection sous la forme `ms-app://<appSID>`, où `<appSID>` correspond au SID de votre application. Vous pouvez obtenir le SID de votre application depuis la page du développeur correspondant à votre application ou en appelant la méthode [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
 
 ```cs
 string result;
@@ -136,30 +136,30 @@ Il existe plusieurs façons de résoudre les problèmes liés aux API du service
 
 ### <a name="operational-logs"></a>Journaux des opérations
 
-Il est souvent possible de déterminer ce qui ne fonctionne pas à l’aide des journaux des opérations. Il existe un canal dédié du journal des événements, Microsoft-Windows-WebAuth\Operational, qui permet aux développeurs de sites web de comprendre comment leurs pages web sont traitées par le service Broker d’authentification web. Pour l’activer, lancez eventvwr.exe et activez le journal Opérationnel sous Journaux des applications et des services\Microsoft\Windows\WebAuth. Le service Broker d’authentification web ajoute également une chaîne unique à la chaîne de l’agent utilisateur pour s’identifier sur le serveur web. Cette chaîne est «MSAuthHost/1.0». Notez que le numéro de version est susceptible de changer dans le futur. Vous ne devez donc pas nécessairement utiliser ce numéro de version dans votre code. Voici un exemple de chaîne d’agent utilisateur complète, suivi par des étapes de débogage complètes.
+Il est souvent possible de déterminer ce qui ne fonctionne pas à l’aide des journaux des opérations. Il existe un canal dédié journal des événements Microsoft-Windows-WebAuth\\opérationnel qui permet aux développeurs de site Web comprendre comment leurs pages web sont traités par le service broker d’authentification Web. Pour l’activer, lancement eventvwr.exe et activer Operational ouvrir une session sous l’Application et les Services\\Microsoft\\Windows\\WebAuth. Le service Broker d’authentification web ajoute également une chaîne unique à la chaîne de l’agent utilisateur pour s’identifier sur le serveur web. Cette chaîne est « MSAuthHost/1.0 ». Notez que le numéro de version est susceptible de changer dans le futur. Vous ne devez donc pas nécessairement utiliser ce numéro de version dans votre code. Voici un exemple de chaîne d’agent utilisateur complète, suivi par des étapes de débogage complètes.
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
 1.  Activez les journaux opérationnels.
 2.  Exécutez l’application sociale Contoso. ![Observateur d’événements affichant les journaux opérationnels WebAuth](images/wab-event-viewer-1.png)
 3.  Les entrées des journaux générés peuvent être utilisées pour comprendre le comportement du service Broker d’authentification web plus en détail. Dans ce cas, ces entrées peuvent être les suivantes :
-    -   Début de la navigation: consigne le moment où AuthHost démarre, et contient des informations sur les URL de démarrage et de terminaison.
+    -   Début de la navigation : Enregistre le AuthHost est démarré et qu’il contient des informations sur les URL de démarrage et arrêt.
     -   ![Illustration des détails de la section Début de la navigation](images/wab-event-viewer-2.png)
-    -   Achèvement de la navigation: consigne l’achèvement du chargement d’une page web.
-    -   Balise META : consigne le moment où une balise META est rencontrée, y compris les détails.
-    -   Arrêt de la navigation : navigation arrêtée par l’utilisateur.
-    -   Erreur de navigation : AuthHost rencontre une erreur de navigation au niveau d’une URL incluant HttpStatusCode.
-    -   Fin de la navigation : une URL de terminaison est rencontrée.
+    -   Navigation terminée : Consigne la réalisation de chargement d’une page web.
+    -   Balise meta : Enregistre une balise meta est rencontrée, y compris les détails.
+    -   Arrêt de la navigation : Navigation terminée par l’utilisateur.
+    -   Erreur de navigation : AuthHost rencontre une erreur de navigation à une URL, y compris HttpStatusCode.
+    -   Fin de la navigation : URL de fin d’exécution s’est produite.
 
 ### <a name="fiddler"></a>Fiddler
 
 Le débogueur web Fiddler peut être utilisé avec des applications.
 
-1.  Étant donné qu’AuthHost s’exécute dans son propre conteneur d’application, pour lui donner la fonctionnalité réseau privé, vous devez définir une clé de Registre: Windows Registry Editor Version 5.00
+1.  Dans la mesure où le AuthHost s’exécute dans son propre conteneur d’application, pour lui donner la fonctionnalité de réseau privé, vous devez définir une clé de Registre : Éditeur du Registre Windows Version 5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**WindowsNT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **Clé HKEY\_LOCAL\_MACHINE**\\**logiciel**\\**Microsoft**\\**Windows NT** \\ **CurrentVersion**\\**Image File Execution Options**\\**authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
-    Si vous ne disposez pas de cette clé de Registre, vous pouvez la créer dans une invite de commandes avec des privilèges d’administrateur.
+    Si vous n’avez pas cette clé de Registre, vous pouvez le créer dans une invite de commandes avec des privilèges d’administrateur.
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dec176206aacb946bfd65341c483d8ba61558ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938736"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629744"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>Suivi des risques ou ressources d’un pool de vignettes
 
@@ -25,10 +25,10 @@ Le suivi de la façon dont les ressources sont liées peut se révéler trop co�
 
 Lorsqu’une application a soumis une opération d’écriture ou de lecture à une ressource de diffusion en continu référençant une mémoire de pool de vignettes qui sera également référencée par d’autres ressources de diffusion en continu dans de futures opérations de lecture ou d’écriture, cette application doit informer le pilote d’affichage qu’elle attend la fin du traitement de la première opération avant que les opérations suivantes puissent démarrer.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Articles connexes
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Mappages dans un pool de vignettes](mappings-are-into-a-tile-pool.md)
+[Les mappages sont dans un pool de vignette](mappings-are-into-a-tile-pool.md)
 
  
 
