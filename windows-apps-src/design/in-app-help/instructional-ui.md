@@ -1,19 +1,19 @@
 ---
-Description: Design an instructional user interface (UI) that teaches users how to work with your UWP app.
+Description: Concevoir une interface de démonstration utilisateur (IU) qui explique aux utilisateurs comment travailler avec votre application UWP.
 title: Recommandations en matière de conception d’une interface utilisateur d’instructions
 label: Instructional UI
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
 ms.openlocfilehash: b39507fb1333fdb642601c6b4828c3d160c6ceb5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940408"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656434"
 ---
 # <a name="instructional-ui-guidelines"></a>Recommandations en matière d’interface utilisateur d’instructions
 
@@ -31,37 +31,37 @@ L’interface utilisateur d’instructions doit permettre à l’utilisateur de 
 
 ## <a name="principles-of-writing-instructional-ui"></a>Principes de création d’une interface utilisateur d’instructions
 
-Une interface utilisateur d’instructions allie pertinence et pédagogie, et améliore l’expérience utilisateur. Elle doit présenter les caractéristiques suivantes:
+Une interface utilisateur d’instructions allie pertinence et pédagogie, et améliore l’expérience utilisateur. Elle doit présenter les caractéristiques suivantes :
 
--   **Simplicité:** les utilisateurs ne veulent pas que leur expérience soit interrompue par des informations complexes.
--   **Facilité de mémorisation:** les utilisateurs ne veulent pas voir s’afficher les mêmes instructions chaque fois qu’ils tentent d’exécuter une tâche spécifique. Les instructions doivent donc se révéler faciles à mémoriser.
--   **Pertinence immédiate:** si l’interface utilisateur d’instructions ne présente pas une procédure directement liée à la tâche que l’utilisateur souhaite exécuter, celui-ci n’aura pas de raison d’y prêter attention.
+-   **Simple :** Les utilisateurs ne veulent leur expérience d’être interrompue avec des informations complexes
+-   **Facile à retenir :** Les utilisateurs ne veulent pas voir les mêmes instructions que chaque fois qu’ils tentent une tâche, des instructions doivent donc être quelque chose qu’ils en souvenir.
+-   **Immédiatement pertinents :** Si l’interface utilisateur pédagogique n’animer un utilisateur sur quelque chose qu’ils souhaitent immédiatement effectuer, qu’elles n’auront une raison prêter attention à ce dernier.
 
-N’abusez pas de l’interface utilisateur d’instructions et prenez soin de choisir les rubriques adéquates. N’abordez pas les éléments suivants:
+N’abusez pas de l’interface utilisateur d’instructions et prenez soin de choisir les rubriques adéquates. N’abordez pas les éléments suivants :
 
--   **Fonctionnalités fondamentales:** si les utilisateurs ont besoin de disposer d’instructions d’utilisation concernant votre application, envisagez de retravailler la conception de votre application pour la rendre plus intuitive.
--   **Fonctionnalités évidentes:** si un utilisateur peut comprendre le rôle d’une fonctionnalité sans aucune instruction, l’interface utilisateur d’instructions ne fera que le gêner.
--   **Fonctionnalités complexes:** l’interface utilisateur d’instructions doit rester concise, et les utilisateurs intéressés par des fonctionnalités complexes sont généralement disposés à rechercher les instructions correspondantes sans avoir besoin qu’on les leur présente spontanément.
+-   **Fonctionnalités fondamentales :** Si un utilisateur a besoin d’instructions pour utiliser votre application, envisagez la conception d’application plus intuitive.
+-   **Fonctionnalités évident :** Si un utilisateur peut déterminer une fonctionnalité sur leurs propres sans l’instruction, l’interface utilisateur pédagogique obtiendra simplement de la façon.
+-   **Fonctionnalités complexes :** Instruction interface utilisateur doit être concis, et les utilisateurs intéressés par des fonctionnalités complexes sont généralement disposés à rechercher des instructions et n’avez pas besoin de les recevoir.
 
-Évitez de déranger l’utilisateur avec votre interface utilisateur d’instructions. Pratiques déconseillées:
+Évitez de déranger l’utilisateur avec votre interface utilisateur d’instructions. Pratiques déconseillées :
 
--   **Masquer des informations importantes:** l’interface utilisateur d’instructions ne doit jamais occulter d’autres fonctionnalités de votre application.
--   **Exiger la participation des utilisateurs:** les utilisateurs doivent avoir la possibilité d’ignorer l’interface utilisateur d’instructions et de continuer à parcourir l’application.
--   **Afficher des informations répétées:** votre interface utilisateur d’instructions ne doit pas harceler l’utilisateur, même si ce dernier l’a ignorée la première fois. L’ajout d’un paramètre permettant de réafficher l’interface utilisateur d’instructions constitue une solution plus judicieuse.
+-   **Informations importantes obscures :** Autres fonctionnalités de votre application doit jamais interférer avec l’interface utilisateur pédagogique.
+-   **Forcer les utilisateurs de participer :** Les utilisateurs doivent pouvoir ignorer l’interface utilisateur pédagogique et toujours la progression via l’application.
+-   **Affichage des informations sur la fréquence :** Ne pas de harceler l’utilisateur avec l’interface utilisateur pédagogique, même si elles l’ignorer la première fois. L’ajout d’un paramètre permettant de réafficher l’interface utilisateur d’instructions constitue une solution plus judicieuse.
 
 ## <a name="examples-of-instructional-ui"></a>Exemples d’interfaces utilisateur d’instructions
 
-Voici quelques exemples dans lesquels une interface utilisateur d’instructions peut se révéler utile pour vos utilisateurs:
+Voici quelques exemples dans lesquels une interface utilisateur d’instructions peut se révéler utile pour vos utilisateurs :
 
--   **Aidez les utilisateurs à découvrir les interactions tactiles.** L’écran suivant illustre une interface utilisateur d’instruction qui apprend à un joueur à utiliser les interactions tactiles dans le jeu, Cut the Rope.
+-   **Aider les utilisateurs à découvrir les interactions tactiles.** L’écran suivant illustre une interface utilisateur d’instruction qui apprend à un joueur à utiliser les interactions tactiles dans le jeu, Cut the Rope.
 
-    ![capture d’écran d’un jeu montrant un message d’interface utilisateur d’instruction, «Effectuer un balayage transversal pour couper la corde»](images/in-game-controls-3.png)
+    ![capture d’écran d’un jeu montrant un message d’interface utilisateur d’instruction, « Effectuer un balayage transversal pour couper la corde »](images/in-game-controls-3.png)
 
--   **Faites une première impression favorable.** Quand l’application Instants vidéos est lancée pour la première fois, l’interface utilisateur d’instructions invite l’utilisateur à créer des films sans gêner son utilisation.
+-   **Effectue une bonne première impression.** Quand l’application Instants vidéos est lancée pour la première fois, l’interface utilisateur d’instructions invite l’utilisateur à créer des films sans gêner son utilisation.
 
     ![Écran de démarrage de l’application Instants vidéos](images/instructional-ui-movie.png)
 
--   **Guidez les utilisateurs pour effectuer une tâche compliquée.** Dans l’application Courrier Windows, un texte en bas de la Boîte de réception les invite à utiliser les **Paramètres** pour accéder à des messages plus anciens.
+-   **Guider les utilisateurs à effectuer l’étape suivante dans une tâche compliquée.** Dans l’application Courrier Windows, un texte en bas de la Boîte de réception les invite à utiliser les **Paramètres** pour accéder à des messages plus anciens.
 
     ![partie d’une capture d’écran de l’application Courrier Windows qui montre un message d’interface utilisateur d’instruction](images/instructional-ui-mail-inbox.png)
 
@@ -73,4 +73,4 @@ Voici quelques exemples dans lesquels une interface utilisateur d’instructions
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
+* [Instructions de l’aide de l’application](guidelines-for-app-help.md)

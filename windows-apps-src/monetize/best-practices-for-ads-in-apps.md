@@ -4,14 +4,14 @@ description: En savoir plus sur les meilleures pratiques pour les publicités da
 title: Meilleures pratiques pour les publicités dans les applications
 ms.date: 05/07/2018
 ms.topic: article
-keywords: windows10, uwp, annonces, publicités, procédures pas à pas
+keywords: windows 10, uwp, annonces, publicités, procédures pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: 3084c72d32967d691054b452f5f5f2e903bedd5b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931917"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657594"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>Meilleures pratiques pour les publicités dans les applications
 
@@ -19,11 +19,11 @@ Les articles de cette section fournissent des recommandations d’expérience ut
 
 ## <a name="in-this-section"></a>Dans cette section
 
-|  Article    | Description |               
+|  Rubrique    | Description |               
 |----------|-------|
-| [Recommandations en matière d’expérience utilisateur et d’interface utilisateur](ui-and-user-experience-guidelines.md) | Fournit des recommandations pour concevoir des expériences utilisateur exceptionnelles avec les bannières et spots publicitaires affichés dans vos applications. |
-| [Optimiser la visibilité de vos unités publicitaires](optimize-ad-unit-viewability.md) | Fournit des instructions permettant d’optimiser la visibilité des impressions de vos unités publicitaires. |
-| [Gérer des erreurs dans les publicités](error-handling-with-advertising-libraries.md)     |  Découvrez comment gérer les erreurs des bannières publicitaires, des spots et des publicités natives dans vos applications.          |
+| [L’interface utilisateur et une expérience utilisateur recommandations](ui-and-user-experience-guidelines.md) | Fournit des recommandations pour concevoir des expériences utilisateur exceptionnelles avec les bannières et spots publicitaires affichés dans vos applications. |
+| [Optimiser la plupart des ordinateurs de vos unités d’ad](optimize-ad-unit-viewability.md) | Fournit des instructions permettant d’optimiser la visibilité des impressions de vos unités publicitaires. |
+| [Gérer les erreurs d’ad](error-handling-with-advertising-libraries.md)     |  Découvrez comment gérer les erreurs des bannières publicitaires, des spots et des publicités natives dans vos applications.          |
 
 
 

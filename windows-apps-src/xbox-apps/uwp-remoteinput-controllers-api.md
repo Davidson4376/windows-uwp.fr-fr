@@ -3,39 +3,39 @@ title: Informations de référence sur les API de contrôleurs de Device Portal
 description: Découvrez comment obtenir le nombre de contrôleurs physiques attachés et les désactiver par programmation.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929834"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657004"
 ---
 # <a name="controller-api-reference"></a>Référence API du contrôleur   
 Vous pouvez obtenir le nombre de contrôleurs physiques attachés et les désactiver à l'aide de cette API REST.
 
 ## <a name="determine-the-number-of-attached-physical-controllers"></a>Déterminer le nombre de contrôleurs physiques attachés
 
-**Requête**
+**Demande**
 
 Vous pouvez vérifier le nombre de contrôleurs physiques attachés à l’appareil à l’aide de la requête suivante.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 GET | /ext/remoteinput/controllers
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
-- Aucun
+- Aucune
 
 **Réponse**   
 
@@ -53,29 +53,29 @@ Code d’état HTTP      | Description
 
 ## <a name="disconnect-all-physical-controllers-on-the-devkit"></a>Déconnectez tous les contrôleurs physiques sur le Kit de développement
 
-**Requête**
+**Demande**
 
 Vous pouvez déconnecter tous les contrôleurs physiques sur l’appareil à l’aide de la demande suivante.
 
-Méthode      | URI de la requête
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /ext/remoteinput/controllers
 <br />
 **Paramètres d’URI**
 
-- Aucun
+- Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
-- Aucun
+- Aucune
 
-**Corps de la requête**   
+**Corps de la demande**   
 
-- Aucun
+- Aucune
 
 **Réponse**   
 
-- Aucun 
+- Aucune 
 
 **Code d’état**
 
@@ -88,6 +88,6 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 <br />
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox

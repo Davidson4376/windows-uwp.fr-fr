@@ -6,24 +6,24 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941704"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660114"
 ---
-# <a name="extend-the-game-sample"></a>Étendre l’exemple de jeu
+# <a name="extend-the-game-sample"></a>Développer l’exemple de jeu
 
-À ce stade, nous avons décrit les principaux composants d’un jeu de plateforme Windows universelle (UWP) DirectX 3D de base. Vous pouvez configurer l’infrastructure d’un jeu, notamment le fournisseur d’affichage et le pipeline de rendu, et implémenter une boucle de jeu de base. Vous pouvez également créer une superposition de l’interface utilisateur de base, incorporer des sons et implémenter des contrôles. Vous êtes sur le point de créer votre propre jeu, mais consultez les ressources suivantes si vous avez besoin d’aide et d’informations supplémentaires.
+À ce stade, nous avons décrit les principaux composants d’un jeu de plateforme Windows universelle (UWP) DirectX 3D de base. Vous pouvez configurer l’infrastructure d’un jeu, y compris le fournisseur de vues et le pipeline de rendu, et implémenter une boucle de jeu de base. Vous pouvez également créer une superposition de l’interface utilisateur de base, incorporer des sons et implémenter des contrôles. Vous êtes sur le point de créer votre propre jeu, mais consultez les ressources suivantes si vous avez besoin d’aide et d’informations supplémentaires.
 
--   [Jeux et graphiques DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Vue d’ensemble de Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Référence de Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [Jeux et graphismes DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)
+-   [Direct3D 11 vue d’ensemble](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+-   [Direct3D 11 référence](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
 ## <a name="using-xaml-for-the-overlay"></a>Utilisation de XAML pour la superposition
 
 
-Une autre possibilité que nous n’avons pas détaillée est l’utilisation de XAML à la place de [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) pour la superposition. XAML présente de nombreux avantages par rapport à Direct2D pour le dessin des éléments de l’interface utilisateur. L’avantage le plus important est qu’il facilite l’incorporation de l’apparence Windows 10 dans votre jeu DirectX. Un grand nombre des éléments, styles et comportements communs qui définissent une application du Windows Store sont étroitement intégrés au modèle XAML, ce qui réduit les tâches d’implémentation d’un développeur de jeux. Si la conception de votre propre jeu a une interface utilisateur complexe, envisagez d’utiliser XAML à la place de Direct2D.
+Une autre possibilité que nous n’avons pas détaillée est l’utilisation de XAML à la place de [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) pour la superposition. XAML présente de nombreux avantages par rapport à Direct2D pour le dessin des éléments de l’interface utilisateur. L’avantage le plus important est qu’elle rend l’intégration de l’apparence Windows 10 dans votre jeu DirectX plus pratique. Un grand nombre des éléments, styles et comportements communs qui définissent une application du Windows Store sont étroitement intégrés au modèle XAML, ce qui réduit les tâches d’implémentation d’un développeur de jeux. Si la conception de votre propre jeu a une interface utilisateur complexe, envisagez d’utiliser XAML à la place de Direct2D.
 
 Avec XAML, nous pouvons implémenter une interface de jeu qui ressemble à l’interface Direct2D utilisée précédemment.
 
@@ -80,7 +80,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 
 Pour attacher la chaîne d’échange configurée à l’instance [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) définie par votre code XAML, vous devez obtenir un pointeur vers l’implémentation de l’interface [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143) native sous-jacente et appeler [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) dessus, en lui transmettant votre chaîne d’échange configurée. 
 
-L’extrait de code suivant provenant de [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) le décrit en détail pour l’interopérabilité DirectX/XAML:
+L’extrait de code suivant provenant de [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) le décrit en détail pour l’interopérabilité DirectX/XAML :
 
 ```cpp
         ComPtr<IDXGIDevice3> dxgiDevice;
@@ -130,7 +130,7 @@ L’extrait de code suivant provenant de [**DX::DeviceResources::CreateWindowSiz
     }
 ```
 
-Pour plus d’informations sur ce processus, consultez [Interopérabilité entre DirectX et XAML](directx-and-xaml-interop.md).
+Pour plus d’informations sur ce processus, voir [Technologie interop DirectX et XAML](directx-and-xaml-interop.md).
 
 ## <a name="sample"></a>Exemple
 

@@ -1,11 +1,11 @@
 ---
-Description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
+Description: Utilisez les contrôles ListView et GridView pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble de messages électroniques.
 title: Affichage Liste et affichage Grille
 label: List view and grid view
 template: detail.hbs
 ms.date: 05/20/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 pm-contact: predavid
 design-contact: kimsea
@@ -13,21 +13,21 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653574"
 ---
 # <a name="list-view-and-grid-view"></a>Affichage Liste et affichage Grille
 
 La plupart des applications manipulent et affichent des jeux de données, par exemple, une galerie d’image ou un ensemble d’e-mails. L’infrastructure IU XAML fournit les contrôles ListView et GridView qui facilitent l’affichage et la manipulation des données dans votre application.  
 
-> **API importantes**: [classe ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [propriété ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [propriété Items](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **API importantes**: [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [propriété ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [propriété des éléments](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
-Les contrôles ListView et GridView proviennent de la classe ListViewBase; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe «List» peut être remplacé par «Grid» pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
+Les contrôles ListView et GridView proviennent de la classe ListViewBase ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe « List » peut être remplacé par « Grid » pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Le contrôle ListView affiche les données en les empilant dans une seule colonne. Il est souvent utilisé pour afficher une liste ordonnée d’éléments, telle qu’une liste d’e-mails ou de résultats de recherche. 
 
@@ -48,7 +48,7 @@ Pour une comparaison et des recommandations plus détaillées sur le contrôle �
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ListView">ListView</a> ou <a href="xamlcontrolsgallery:/item/GridView">GridView</a> en action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -288,15 +288,15 @@ Vous pouvez choisir différentes façons de permettre à un utilisateur d’inte
 
 Le tableau suivant montre les moyens dont un utilisateur dispose pour interagir avec un affichage Liste, et comment vous pouvez répondre à l’interaction.
 
-Pour activer cette interaction: | Utilisez ces paramètres: | Gérez cet événement: | Utilisez cette propriété pour obtenir l’élément sélectionné:
+Pour activer cette interaction : | Utilisez ces paramètres : | Gérez cet événement : | Utilisez cette propriété pour obtenir l’élément sélectionné :
 ----------------------------|---------------------|--------------------|--------------------------------------------
 Aucune interaction | [SelectionMode ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **Aucun**, [IsItemClickEnabledFalse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Non applicable | Non applicable 
 Sélection unique | SelectionMode = **Simple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
 Sélection multiple | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 Sélection étendue | SelectionMode = **Étendu**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Clic | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Non applicable 
+Cliquer | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Non applicable 
 
-> **Remarque**&nbsp;&nbsp;À compter de Windows10, vous pouvez activer IsItemClickEnabled pour déclencher un événement ItemClick pendant que SelectionMode est également défini sur Simple, Multiple ou Étendu. De cette façon, l’événement ItemClick est déclenché en premier suivi de l’événement SelectionChanged. Dans certains cas, par exemple, si vous accédez à une autre page dans le gestionnaire d’événements ItemClick, l’événement SelectionChanged n’est pas déclenché et l’élément n’est pas sélectionné.
+> **Remarque**&nbsp;&nbsp;À compter de Windows 10, vous pouvez activer IsItemClickEnabled pour déclencher un événement ItemClick pendant que SelectionMode est également défini sur Simple, Multiple ou Étendu. De cette façon, l’événement ItemClick est déclenché en premier suivi de l’événement SelectionChanged. Dans certains cas, par exemple, si vous accédez à une autre page dans le gestionnaire d’événements ItemClick, l’événement SelectionChanged n’est pas déclenché et l’élément n’est pas sélectionné.
 
 Vous pouvez définir ces propriétés dans XAML ou dans le code, comme illustré ici.
 
@@ -315,9 +315,9 @@ myGridView.SelectionMode = ListViewSelectionMode.None;
 myGridView.IsItemClickEnabled = true;
 ```
 
-### <a name="read-only"></a>Lecture seule
+### <a name="read-only"></a>en lecture seule
 
-Vous pouvez définir la propriété SelectionMode sur **ListViewSelectionMode.None** pour désactiver la sélection d’éléments. Cela place le contrôle en mode lecture seule: vous pouvez l’utiliser pour afficher des données, mais pas pour interagir avec celles-ci. Le contrôle lui-même n’est pas désactivé, seule la sélection d’éléments est désactivée.
+Vous pouvez définir la propriété SelectionMode sur **ListViewSelectionMode.None** pour désactiver la sélection d’éléments. Cela place le contrôle en mode lecture seule : vous pouvez l’utiliser pour afficher des données, mais pas pour interagir avec celles-ci. Le contrôle lui-même n’est pas désactivé, seule la sélection d’éléments est désactivée.
 
 ### <a name="single-selection"></a>Sélection unique
 
@@ -325,7 +325,7 @@ Le tableau suivant décrit le clavier, la souris et les interactions tactiles, l
 
 Touche de modification | Interaction
 -------------|------------
-Aucun | <li>Un utilisateur peut sélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li>
+Aucune | <li>Un utilisateur peut sélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li>
 Ctrl | <li>Un utilisateur peut désélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
 
 Lorsque SelectionMode est défini sur **Simple**, vous pouvez obtenir l’élément de données sélectionné à partir de la propriété [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx). Vous pouvez obtenir l’index dans la collection de l’élément sélectionné en utilisant la propriété [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx). Si aucun élément n’est sélectionné, SelectedItem est défini sur **null**, et SelectedIndex est -1. 
@@ -338,7 +338,7 @@ Le tableau suivant décrit le clavier, la souris et les interactions tactiles, l
 
 Touche de modification | Interaction
 -------------|------------
-Aucun | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
+Aucune | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
 Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li>
 
 ### <a name="extended-selection"></a>Sélection étendue
@@ -347,19 +347,19 @@ Le tableau suivant décrit le clavier, la souris et les interactions tactiles, l
 
 Touche de modification | Interaction
 -------------|------------
-Aucun | <li>Le comportement est identique à celui de la sélection **Simple**.</li>
+Aucune | <li>Le comportement est identique à celui de la sélection **Simple**.</li>
 Ctrl | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
 Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li>
 
 Lorsque SelectionMode est défini sur **Multiple** ou **Étendu**, vous pouvez obtenir les éléments de données sélectionnés à partir de la propriété [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx). 
 
-Les propriétés **SelectedIndex**, **SelectedItem** et **SelectedItems** sont synchronisées. Par exemple, si vous définissez SelectedIndex sur -1, SelectedItem est défini sur **null** et SelectedItems est vide; si vous définissez SelectedItem sur **null**, SelectedIndex est défini sur -1 et SelectedItems est vide.
+Les propriétés **SelectedIndex**, **SelectedItem** et **SelectedItems** sont synchronisées. Par exemple, si vous définissez SelectedIndex sur -1, SelectedItem est défini sur **null** et SelectedItems est vide ; si vous définissez SelectedItem sur **null**, SelectedIndex est défini sur -1 et SelectedItems est vide.
 
 En mode de sélection multiple, **SelectedItem** contient l’élément qui a été sélectionné en premier, et **Selectedindex** contient l’index de l’élément qui a été sélectionné en premier. 
 
 ### <a name="respond-to-selection-changes"></a>Répondre aux modifications de sélection
 
-En réaction aux modifications de sélection dans un affichage Liste, gérez l’événement [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx). Dans le code du gestionnaire d’événements, vous pouvez obtenir la liste des éléments sélectionnés auprès de la propriété [SelectionChangedEventArgs.AddedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx). Vous pouvez obtenir tous les éléments qui ont été désélectionnés à partir de la propriété [SelectionChangedEventArgs.RemovedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx). Les collections AddedItems et RemovedItems contiennent au maximum 1élément, sauf si l’utilisateur sélectionne une plage d’éléments en maintenant la touche MAJ enfoncée.
+En réaction aux modifications de sélection dans un affichage Liste, gérez l’événement [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx). Dans le code du gestionnaire d’événements, vous pouvez obtenir la liste des éléments sélectionnés auprès de la propriété [SelectionChangedEventArgs.AddedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx). Vous pouvez obtenir tous les éléments qui ont été désélectionnés à partir de la propriété [SelectionChangedEventArgs.RemovedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx). Les collections AddedItems et RemovedItems contiennent au maximum 1 élément, sauf si l’utilisateur sélectionne une plage d’éléments en maintenant la touche MAJ enfoncée.
 
 Cet exemple montre comment gérer l’événement **SelectionChanged** et accéder à des collections d’éléments différents.
 
@@ -409,7 +409,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 
 ### <a name="click-mode"></a>Mode clic
 
-Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. Pour activer ce comportement:
+Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. Pour activer ce comportement :
 - Définissez **SelectionMode** sur **Aucun**.
 - Définissez **IsItemClickEnabled** sur **true**.
 - Gérez l’événement **ItemClick** pour effectuer une action lorsque l’utilisateur clique sur un élément.
@@ -526,5 +526,5 @@ Les contrôles ListView et GridView prennent en charge le glisser-déplacer des 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Listes](lists.md)
-- [Modèles et conteneurs d’éléments](item-containers-templates.md)
-- [Glisser-déposer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Modèles et des conteneurs d’éléments](item-containers-templates.md)
+- [Glisser -déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

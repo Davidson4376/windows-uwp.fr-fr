@@ -1,22 +1,22 @@
 ---
 ms.assetid: 67a46812-881c-404b-9f3b-c6786f39e72b
-title: Personnaliser le flux de travail d'impression
+title: Personnaliser le flux de travail d’impression
 description: Créez des expériences de flux de travail d’impression personnalisées pour répondre aux besoins de votre organisation.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: Windows 10, uwp, l’impression
+keywords: Windows 10, uwp, impression
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927174"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653234"
 ---
-# <a name="customize-the-print-workflow"></a>Personnaliser le flux de travail d'impression
+# <a name="customize-the-print-workflow"></a>Personnaliser le flux de travail d’impression
 
-## <a name="overview"></a>Vue d'ensemble
-Les développeurs peuvent personnaliser l’expérience de flux de travail d’impression à l’aide d’une application de flux de travail d’impression. Les applications de flux de travail d’impression sont des applications UWP qui développent les fonctionnalités des [applications de périphériques MicrosoftStore (WSDA)](https://docs.microsoft.com/windows-hardware/drivers/devapps/). Il est donc utile d’être familiarisé avec les WSDA avant de poursuivre. 
+## <a name="overview"></a>Vue d’ensemble
+Les développeurs peuvent personnaliser l’expérience de flux de travail d’impression à l’aide d’une application de flux de travail d’impression. Les applications de flux de travail d’impression sont des applications UWP qui développent les fonctionnalités des [applications de périphériques Microsoft Store (WSDA)](https://docs.microsoft.com/windows-hardware/drivers/devapps/). Il est donc utile d’être familiarisé avec les WSDA avant de poursuivre. 
 
 Comme dans le cas des WSDA, lorsque l’utilisateur d’une application source choisit d'imprimer quelque chose et navigue dans la boîte de dialogue d’impression, le système vérifie si une application de flux de travail est associée à cette imprimante. Si c'est le cas, l’application de flux de travail d’impression se lance (principalement en tant que tâche en arrière-plan. Plus de détails sur ce point ci-dessous). Une application de flux de travail peut modifier à la fois le ticket d’impression (le document XML qui configure les paramètres du périphérique d’impression pour la tâche d’impression en cours) et le contenu XPS réel à imprimer. Elle peut éventuellement exposer cette fonctionnalité à l’utilisateur en lançant une interface utilisateur au milieu du processus. Après avoir effectué son travail, elle transmet le contenu d’impression et le ticket d’impression au pilote d’impression.
 
@@ -113,7 +113,7 @@ Si la méthode **[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.grap
 
 Ensuite, le système d’impression appelle la méthode **OnActivated** pour le point d’entrée de l'application donnée. Dans la méthode **OnActivated** de son fichier _App.xaml.cs_, l’application de flux de travail doit vérifier le type d’activation pour vérifier qu’il s’agit de l’activation d’un flux de travail. Si c'est le cas, l’application de flux de travail peut effectuer une conversion de type (transtypage) des arguments d’activation pour un objet **[PrintWorkflowUIActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)**, qui expose un objet **[PrintWorkflowForegroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** en tant que propriété. Cet objet, comme son équivalent en arrière-plan dans la section précédente, contient les événements qui sont déclenchés par le système d’impression, et vous pouvez leur assigner des gestionnaires. Dans ce cas, la fonctionnalité de gestion des événements sera implémentée dans une classe séparée appelée `WorkflowPage`.
 
-D'abord, ouvrez le fichier _App.xaml.cs_:
+D'abord, ouvrez le fichier _App.xaml.cs_ :
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args){
@@ -151,7 +151,7 @@ protected override void OnActivated(IActivatedEventArgs args){
 }
 ```
 
-Une fois que l’interface utilisateur a joint des gestionnaires d’événements et que la méthode **OnActivated** s’est arrêtée, le système d’impression déclenche l'événement **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** à gérer par l’interface utilisateur. Cet événement fournit les mêmes données que l'événement fourni de configuration de la tâche en arrière-plan, notamment les informations sur le travail d’impression et le document de ticket d’impression, mais sans la possibilité de demander le lancement d'une interface utilisateur supplémentaire. Dans le fichier _WorkflowPage.xaml.cs_:
+Une fois que l’interface utilisateur a joint des gestionnaires d’événements et que la méthode **OnActivated** s’est arrêtée, le système d’impression déclenche l'événement **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** à gérer par l’interface utilisateur. Cet événement fournit les mêmes données que l'événement fourni de configuration de la tâche en arrière-plan, notamment les informations sur le travail d’impression et le document de ticket d’impression, mais sans la possibilité de demander le lancement d'une interface utilisateur supplémentaire. Dans le fichier _WorkflowPage.xaml.cs_ :
 
 ```csharp
 internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, PrintWorkflowForegroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -240,9 +240,9 @@ La différence est qu'alors que les WSDA sont automatiquement activés pour l’
 
 ### <a name="set-the-workflow-apps-policy"></a>Définir la stratégie de l’application de flux de travail
 La stratégie d’application de flux de travail est définie par des commandes Powershell sur l’appareil qui doit exécuter l’application de flux de travail. Les commandes Set-Printer, Add-Printer (port existant) et Add-Printer (nouveau port WSD) seront modifiées pour pouvoir définir les règles du flux de travail. 
-* `Disabled`: les applications de flux de travail ne seront pas activées.
-* `Uninitialized`: les applications de flux de travail seront activées si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression continue. 
-* `Enabled`: le contrat de flux de travail sera activé si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression échoue. 
+* `Disabled` : Les applications de flux de travail ne doit pas être activées.
+* `Uninitialized` : Les applications de flux de travail seront activées si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression continue. 
+* `Enabled` : Contrat de flux de travail sera activé si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression échoue. 
 
 La commande suivante rend l’application de flux de travail nécessaire sur l’imprimante spécifiée.
 ```Powershell
@@ -251,7 +251,7 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
 
 Un utilisateur local peut exécuter cette stratégie sur une imprimante locale, ou dans le cas d'une implémentation en entreprise, l’administrateur de l’imprimante peut exécuter cette stratégie sur le serveur d’impression. La stratégie sera alors synchronisée sur toutes les connexions clientes. L’administrateur de l’imprimante peut utiliser cette stratégie chaque fois qu’une nouvelle imprimante est ajoutée.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir également
 
 [Exemple d’application de flux de travail](https://github.com/Microsoft/print-oem-samples)
 

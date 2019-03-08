@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+Description: Découvrez comment gérer par programmation la navigation du focus clavier, gamepad et outils d’accessibilité dans une application UWP.
 title: Navigation en mode focus programmé avec un clavier, un boîtier de commande, et des outils d’accessibilité
 label: Programmatic focus navigation
 keywords: clavier, contrôleur de jeu, télécommande, navigation, stratégie de navigation, entrée, interaction utilisateur, accessibilité, facilité d’utilisation
@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075132"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662714"
 ---
 # <a name="programmatic-focus-navigation"></a>Navigation en mode focus programmé
 
@@ -123,27 +123,27 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-Utilisez [FindNextElementOptions](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.findnextelementoptions) pour personnaliser davantage la façon dont les candidats au focus sont identifiés. Cet objet fournit les propriétés suivantes:
+Utilisez [FindNextElementOptions](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.findnextelementoptions) pour personnaliser davantage la façon dont les candidats au focus sont identifiés. Cet objet fournit les propriétés suivantes :
 
-- [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot)-Étend la recherche des candidats de la navigation en mode focus aux enfants de ce DependencyObject. La valeur null indique de lancer la recherche à partir de la racine de l’arborescence visuelle.
+- [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - Étend la recherche des candidats de la navigation en mode focus aux enfants de ce DependencyObject. La valeur null indique de lancer la recherche à partir de la racine de l’arborescence visuelle.
 
 > [!Important] 
 > Si une ou plusieurs transformations sont appliquées aux descendants du **SearchRoot** qui les placent en dehors de la zone directionnelle, ces éléments sont toujours considérés comme candidats.
 
-- [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect)-Les candidats à la navigation en mode focus sont identifiés à l’aide d’un rectangle englobant «fictif», où tous les objets qui se chevauchent sont exclus du focus de navigation. Ce rectangle est utilisé uniquement pour les calculs et n’est jamais ajouté à l’arborescence visuelle.
-- [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect)-Les candidats à la navigation en mode focus sont identifiés à l’aide d’un rectangle englobant «fictif» qui identifie les éléments les plus susceptibles de recevoir le focus. Ce rectangle est utilisé uniquement pour les calculs et n’est jamais ajouté à l’arborescence visuelle.
-- [XYFocusNavigationStrategyOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_XYFocusNavigationStrategyOverride)-Stratégie de navigation en mode focus utilisée pour identifier le meilleur élément candidat pour recevoir le focus.
+- [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) - Les candidats à la navigation en mode focus sont identifiés à l’aide d’un rectangle englobant « fictif », où tous les objets qui se chevauchent sont exclus du focus de navigation. Ce rectangle est utilisé uniquement pour les calculs et n’est jamais ajouté à l’arborescence visuelle.
+- [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) - Les candidats à la navigation en mode focus sont identifiés à l’aide d’un rectangle englobant « fictif » qui identifie les éléments les plus susceptibles de recevoir le focus. Ce rectangle est utilisé uniquement pour les calculs et n’est jamais ajouté à l’arborescence visuelle.
+- [XYFocusNavigationStrategyOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_XYFocusNavigationStrategyOverride) - Stratégie de navigation en mode focus utilisée pour identifier le meilleur élément candidat pour recevoir le focus.
 
 L’image suivante illustre certains de ces concepts. 
 
-Lorsque l’élément B a le focus, FindNextElement identifie I comme le candidat au focus lors de la navigation vers la droite. Cela pour les raisons suivantes:
+Lorsque l’élément B a le focus, FindNextElement identifie I comme le candidat au focus lors de la navigation vers la droite. Cela pour les raisons suivantes :
 - Comme le [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) est sur A, la référence de départ est A, et non B
 - C n’est pas un candidat car MyPanel a été spécifié comme le [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot)
 - F n’est pas un candidat car [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) le chevauche
 
 ![Comportement de navigation en mode focus personnalisé à l’aide des astuces de navigation](images/keyboard/navigation-hints.png)
 
-*Comportement de navigation en mode focus personnalisé à l’aide des astuces de navigation*
+*Comportement de navigation du focus personnalisé à l’aide des indicateurs de navigation*
 
 ## <a name="navigation-focus-events"></a>Événements de focus de navigation
 
@@ -200,7 +200,7 @@ Pour éviter les problèmes de réentrance, une exception est générée si vous
 
 Ces événements sont déclenchés quelle que soit la raison du déplacement du focus (y compris la navigation par tabulation, la navigation directionnelle et la navigation programmée).
 
-Voici l’ordre d’exécution des événements de focus:
+Voici l’ordre d’exécution des événements de focus :
 
 1.  [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) Si le focus est réinitialisé sur l’élément perdant le focus ou [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) a réussi, aucun événement supplémentaire n’est déclenché.
 2.  [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) Si le focus est réinitialisé sur l’élément perdant le focus ou [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) a réussi, aucun événement supplémentaire n’est déclenché.
@@ -211,7 +211,7 @@ L’image suivante montre comment, lors du déplacement vers la droite à partir
 
 ![Modification de la cible de navigation en mode focus sur l’événement GettingFocus](images/keyboard/focus-events.png)
 
-*Modification de la cible de navigation en mode focus sur l’événement GettingFocus*
+*Modification de la cible de navigation le focus sur l’événement de GettingFocus*
 
 Voici comment gérer l’événement [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) et rediriger le focus.
 
@@ -325,8 +325,8 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Navigation en mode focus pour clavier, boîtier de commande, télécommande et outils d’accessibilité](focus-navigation.md)
-- [Interactions avec le clavier](keyboard-interactions.md)
+- [Navigation du focus clavier, gamepad, contrôle à distance, et les outils d’accessibilité](focus-navigation.md)
+- [Interactions de clavier](keyboard-interactions.md)
 - [Accessibilité du clavier](../accessibility/keyboard-accessibility.md)
