@@ -1,23 +1,23 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: Télécharger et installer des mises à jour de package sur le Store
-description: Apprenez à marquer des packages comme obligatoires dans l’espace partenaires et écrire du code dans votre application pour télécharger et installer les mises à jour de package.
+description: Découvrez comment marquer des packages comme étant obligatoires dans les partenaires et d’écrire du code dans votre application pour télécharger et installer les mises à jour du package.
 ms.date: 04/04/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934564"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604444"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Télécharger et installer des mises à jour de package sur le Store
 
-À compter de la version 1607 de Windows10, vous pouvez utiliser les méthodes de la classe [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) pour vérifier par programmation les mises à jour pour l'application actuelle à partir du MicrosoftStore, puis télécharger et installer les packages mis à jour. Vous pouvez également rechercher les packages que vous avez marqués comme obligatoires dans l’espace partenaires et désactivez les fonctionnalités dans votre application jusqu'à ce que la mise à jour obligatoire est installée.
+À compter de la version 1607 de Windows 10, vous pouvez utiliser les méthodes de la classe [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) pour vérifier par programmation les mises à jour pour l'application actuelle à partir du Microsoft Store, puis télécharger et installer les packages mis à jour. Vous pouvez également rechercher des packages que vous avez marqués comme obligatoires dans Centre partenaires et désactivez des fonctionnalités dans votre application jusqu'à ce que la mise à jour obligatoire est installé.
 
-D'autres méthodes [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) introduites dans la version 1803 de Windows10 vous permettent de télécharger et d'installer les mises à jour de package silencieusement (sans afficher de notification à l'utilisateur dans l'interface utilisateur), de désinstaller un [package facultatif](optional-packages.md) et d'obtenir les informations relatives aux packages dans la file d'attente de téléchargement et d'installation de votre application.
+D'autres méthodes [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) introduites dans la version 1803 de Windows 10 vous permettent de télécharger et d'installer les mises à jour de package silencieusement (sans afficher de notification à l'utilisateur dans l'interface utilisateur), de désinstaller un [package facultatif](optional-packages.md) et d'obtenir les informations relatives aux packages dans la file d'attente de téléchargement et d'installation de votre application.
 
 Ces fonctionnalités vous permettent de maintenir à jour votre base d’utilisateurs avec la dernière version de votre application, des packages facultatifs et des services associés dans le Store.
 
@@ -28,7 +28,7 @@ Cet exemple de code démontre comment utiliser la méthode [GetAppAndOptionalSto
 > [!NOTE]
 > Ces méthodes prennent en charge les [packages facultatifs](optional-packages.md) et requis pour votre application. Les packages facultatives sont utiles aux modules complémentaires de contenu téléchargeable (DLC), à la division de votre vaste application pour des contraintes de taille, et à la livraison de contenu supplémentaire distinct à partir de votre application principale. Pour obtenir l'autorisation de soumettre une application utilisant des packages facultatifs (notamment les modules complémentaires DLC) sur le Store, consultez [Assistance développeur Windows](https://developer.microsoft.com/windows/support).
 
-Cet exemple de code suppose que:
+Cet exemple de code suppose que :
 
 * Le code s’exécute dans le contexte d’une [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
 * La **Page** contient un élément [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) nommé ```downloadProgressBar``` pour fournir l’état de l’opération de téléchargement.
@@ -89,15 +89,15 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 
 Lorsque vous appelez la méthode [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) ou [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync), vous pouvez affecter un gestionnaire [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) qui est appelé à chaque étape du téléchargement (ou du processus de téléchargement et d’installation) pour chacun des packages de cette demande. Le gestionnaire reçoit un objet [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) qui fournit des informations sur le package de mise à jour qui a déclenché la notification de progression. L'exemple précédent utilise le champ **PackageDownloadProgress** de l’objet **StorePackageUpdateStatus** pour afficher la progression du processus de téléchargement et d’installation.
 
-Notez que lorsque vous appelez **RequestDownloadAndInstallStorePackageUpdatesAsync** pour télécharger et installer les mises à jour de package dans une opération unique, la valeur du champ **PackageDownloadProgress** passe de 0,0 à 0,8 durant le processus de téléchargement d’un package, puis de 0,8 à 1,0 durant l’installation. Par conséquent, si vous mappez le pourcentage affiché dans votre interface de progression personnalisée directement sur la valeur du champ **PackageDownloadProgress**, votre interface affichera une progression de 80% à l’issue du téléchargement, tandis que le système d’exploitation affiche la boîte de dialogue d’installation. Si vous souhaitez que votre interface de progression personnalisée affiche une valeur de 100% quand le package est téléchargé et prêt à être installé, vous pouvez modifier votre code afin d’affecter la valeur de 100% à votre interface quand le champ **PackageDownloadProgress** atteint la valeur de 0,8.
+Notez que lorsque vous appelez **RequestDownloadAndInstallStorePackageUpdatesAsync** pour télécharger et installer les mises à jour de package dans une opération unique, la valeur du champ **PackageDownloadProgress** passe de 0,0 à 0,8 durant le processus de téléchargement d’un package, puis de 0,8 à 1,0 durant l’installation. Par conséquent, si vous mappez le pourcentage affiché dans votre interface de progression personnalisée directement sur la valeur du champ **PackageDownloadProgress**, votre interface affichera une progression de 80 % à l’issue du téléchargement, tandis que le système d’exploitation affiche la boîte de dialogue d’installation. Si vous souhaitez que votre interface de progression personnalisée affiche une valeur de 100 % quand le package est téléchargé et prêt à être installé, vous pouvez modifier votre code afin d’affecter la valeur de 100 % à votre interface quand le champ **PackageDownloadProgress** atteint la valeur de 0,8.
 
 ## <a name="download-and-install-package-updates-silently"></a>Télécharger et installer les mises à jour de package silencieusement
 
-À partir de la version 1803 de Windows10, vous pouvez utiliser les méthodes [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) et [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) pour télécharger et installer les mises à jour de package silencieusement sans afficher de notification d'interface utilisateur. Cette opération fonctionnera uniquement si l'utilisateur a activé le paramètre **Mettre à jour les applications automatiquement** dans le Store et que l'utilisateur n'utilise pas une connexion réseau limitée. Avant d'appeler ces méthodes, vous devez d'abord vérifier la propriété [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) pour déterminer si ces conditions sont actuellement réunies.
+À partir de la version 1803 de Windows 10, vous pouvez utiliser les méthodes [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) et [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) pour télécharger et installer les mises à jour de package silencieusement sans afficher de notification d'interface utilisateur. Cette opération fonctionnera uniquement si l'utilisateur a activé le paramètre **Mettre à jour les applications automatiquement** dans le Store et que l'utilisateur n'utilise pas une connexion réseau limitée. Avant d'appeler ces méthodes, vous devez d'abord vérifier la propriété [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) pour déterminer si ces conditions sont actuellement réunies.
 
 Cet exemple de code démontre comment utiliser la méthode [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) pour découvrir toutes les mises à jour de package disponibles, puis appeler les méthodes [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) et [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) pour télécharger et installer les mises à jour silencieusement.
 
-Cet exemple de code suppose que:
+Cet exemple de code suppose que :
 * Le fichier de code présente une instruction **using** pour les espaces de noms **Windows.Services.Store** et **System.Threading.Tasks**.
 * Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour une [application multi-utilisateur](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), utilisez la méthode [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) plutôt que la méthode [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) pour obtenir un objet **StoreContext**.
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>Mises à jour de packages obligatoires
 
-Lorsque vous créez une soumission de package dans l’espace partenaires pour une application qui cible Windows 10, version 1607 ou ultérieure, vous pouvez [Marquer le package comme obligatoire](../publish/upload-app-packages.md#mandatory-update) et la date et l’heure auxquelles il devenue obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
+Lorsque vous créez une soumission de package dans l’espace partenaires pour une application qui cible Windows 10, version 1607 ou ultérieure, vous pouvez [marquer le package comme étant obligatoires](../publish/upload-app-packages.md#mandatory-update) et la date et l’heure à laquelle il devenue obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
 
 > [!NOTE]
 > L’état obligatoire d’une mise à jour de package n’est pas appliqué par Microsoft et le système d’exploitation ne fournit pas d’interface utilisateur pour indiquer aux utilisateurs qu’une mise à jour d’application obligatoire doit être installée. Les développeurs doivent utiliser le paramètre obligatoire pour appliquer des mises à jour d’application obligatoires dans leur propre code.  
 
-Pour marquer une soumission de package comme obligatoire:
+Pour marquer une soumission de package comme obligatoire :
 
-1. Se connecter à [L’espace partenaires](https://partner.microsoft.com/dashboard) et accédez à la page de présentation de votre application.
+1. Connectez-vous à [partenaires](https://partner.microsoft.com/dashboard) et accédez à la page Vue d’ensemble de votre application.
 2. Cliquez sur le nom de la soumission contenant la mise à jour de package que vous voulez rendre obligatoire.
 3. Accédez à la page **Packages** de la soumission. Au bas de cette page, sélectionnez **Rendre obligatoire cette mise à jour**, puis choisissez le jour et l’heure auxquels la mise à jour du package devient obligatoire. Cette option s’applique à tous les packages UWP de la soumission.
 
@@ -326,9 +326,9 @@ private void HandleMandatoryPackageError()
 
 ## <a name="uninstall-optional-packages"></a>Désinstaller des packages obligatoires
 
-À compter de la version 1803 de Windows10, vous pouvez utiliser la méthode [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) ou [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) pour désinstaller un [package facultatif](optional-packages.md) (notamment un package DLC) de l'application actuelle. Par exemple, si votre application dispose de contenu installé via des packages facultatifs, vous pourriez souhaiter fournir une interface utilisateur qui permette aux utilisateurs de désinstaller les packages facultatifs et ainsi libérer de l'espace disque.
+À compter de la version 1803 de Windows 10, vous pouvez utiliser la méthode [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) ou [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) pour désinstaller un [package facultatif](optional-packages.md) (notamment un package DLC) de l'application actuelle. Par exemple, si votre application dispose de contenu installé via des packages facultatifs, vous pourriez souhaiter fournir une interface utilisateur qui permette aux utilisateurs de désinstaller les packages facultatifs et ainsi libérer de l'espace disque.
 
-L’exemple de code suivant montre comment appeler la méthode [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). Cet exemple suppose que:
+L’exemple de code suivant montre comment appeler la méthode [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). Cet exemple suppose que :
 * Le fichier de code présente une instruction **using** pour les espaces de noms **Windows.Services.Store** et **System.Threading.Tasks**.
 * Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour une [application multi-utilisateur](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), utilisez la méthode [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) plutôt que la méthode [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) pour obtenir un objet **StoreContext**.
 
@@ -369,9 +369,9 @@ public async Task UninstallPackage(Windows.ApplicationModel.Package package)
 
 ## <a name="get-download-queue-info"></a>Obtenir les informations de file d'attente de téléchargement
 
-À compter de la version 1803 de Windows10, vous pouvez utiliser les méthodes [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) et [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) pour obtenir des informations concernant les packages se trouvant dans la file d'attente de téléchargement et d'installation actuelle depuis le Store. Ces méthodes sont utiles si votre application ou jeu prend en charge de vastes packages facultatifs (notamment des DLC) dont le téléchargement et l'installation peuvent prendre des heures ou des jours. Vous souhaitez traiter naturellement ce cas lorsqu'un client ferme l'application ou jeu avant la fin du processus de téléchargement et d'installation. Lorsque le client redémarre votre application ou jeu, votre code peut utiliser ces méthodes pour obtenir des informations à propos de l'état des packages qui se trouvent toujours dans la file d'attente de téléchargement et d'installation. Ainsi, vous pouvez afficher l'état de chaque package au client.
+À compter de la version 1803 de Windows 10, vous pouvez utiliser les méthodes [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) et [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) pour obtenir des informations concernant les packages se trouvant dans la file d'attente de téléchargement et d'installation actuelle depuis le Store. Ces méthodes sont utiles si votre application ou jeu prend en charge de vastes packages facultatifs (notamment des DLC) dont le téléchargement et l'installation peuvent prendre des heures ou des jours. Vous souhaitez traiter naturellement ce cas lorsqu'un client ferme l'application ou jeu avant la fin du processus de téléchargement et d'installation. Lorsque le client redémarre votre application ou jeu, votre code peut utiliser ces méthodes pour obtenir des informations à propos de l'état des packages qui se trouvent toujours dans la file d'attente de téléchargement et d'installation. Ainsi, vous pouvez afficher l'état de chaque package au client.
 
-L'exemple de code suivant démontre comment appeler [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) pour obtenir la liste des mises à jour du package en cours de l’application actuelle et récupérer les informations d’état pour chaque package. Cet exemple suppose que:
+L'exemple de code suivant démontre comment appeler [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) pour obtenir la liste des mises à jour du package en cours de l’application actuelle et récupérer les informations d’état pour chaque package. Cet exemple suppose que :
 * Le fichier de code présente une instruction **using** pour les espaces de noms **Windows.Services.Store** et **System.Threading.Tasks**.
 * Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour une [application multi-utilisateur](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), utilisez la méthode [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) plutôt que la méthode [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) pour obtenir un objet **StoreContext**.
 
@@ -461,6 +461,6 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 }
 ```
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Packages facultatifs et création d’ensembles connexes](optional-packages.md)
+* [Création de jeu associé et de packages facultatifs](optional-packages.md)

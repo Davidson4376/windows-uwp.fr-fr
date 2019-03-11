@@ -1,16 +1,16 @@
 ---
-Description: View multiple parts of your app in separate windows.
+Description: Permet d’afficher plusieurs parties de votre application dans des fenêtres distinctes.
 title: Afficher plusieurs vues d’une application
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed69dc912e916f7964c125550621c22dfcd9555
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049061"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607624"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Afficher plusieurs vues d’une application
 
@@ -20,8 +20,8 @@ Aidez les utilisateurs à accroître leur productivité en leur permettant d’a
 
 > **API importantes**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
-## <a name="when-should-an-app-use-multiple-views"></a>Quand une application doit-elle utiliser plusieurs vues?
-Il existe de nombreux scénarios qui peuvent bénéficier de plusieurs vues. Voici quelques exemples:
+## <a name="when-should-an-app-use-multiple-views"></a>Quand une application doit-elle utiliser plusieurs vues ?
+Il existe de nombreux scénarios qui peuvent bénéficier de plusieurs vues. Voici quelques exemples :
  - Une application de messagerie qui permet aux utilisateurs d’afficher une liste des messages reçus tout en rédigeant un e-mail
  - Une application de carnet d’adresses qui permet aux utilisateurs de comparer les informations de contact de plusieurs personnes côte à côte
  - Une application de lecteur de musique qui permet aux utilisateurs de voir ce qui est en cours de lecture tout en naviguant dans une liste d’autres morceaux disponibles
@@ -30,21 +30,21 @@ Il existe de nombreux scénarios qui peuvent bénéficier de plusieurs vues. Voi
 
 Pour créer des instances distinctes de votre application, voir [Créer une application UWP à instances multiples](../../launch-resume/multi-instance-uwp.md).
 
-## <a name="what-is-a-view"></a>Qu’est-ce qu’une vue?
+## <a name="what-is-a-view"></a>Qu’est-ce qu’une vue ?
 
 Une vue d’application est l’association de type 1:1 d’un thread et d’une fenêtre que l’application utilise pour afficher le contenu. Elle est représentée par un objet [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
 
-Les vues sont gérées par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Vous devez appeler [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) pour créer un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). L’objet **CoreApplicationView** réunit [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) et [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stockés dans les propriétés [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) et [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise WindowsRuntime pour interagir avec le système Windows principal.
+Les vues sont gérées par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Vous devez appeler [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) pour créer un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). L’objet **CoreApplicationView** réunit [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) et [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stockés dans les propriétés [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) et [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise Windows Runtime pour interagir avec le système Windows principal.
 
-En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). À la place, WindowsRuntime fournit la classe [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/hh701658) dans l’espace de noms [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/br242295). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView**, appelez la méthode statique [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
+En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). À la place, Windows Runtime fournit la classe [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/hh701658) dans l’espace de noms [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/br242295). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView**, appelez la méthode statique [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
 
 De même, l’infrastructure XAML enveloppe l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) dans un objet [**Windows.UI.XAML.Window**](https://msdn.microsoft.com/library/windows/apps/br209041). Dans une application XAML, vous interagissez généralement avec l’objet **Window** au lieu de travailler directement avec la **CoreWindow**.
 
 ## <a name="show-a-new-view"></a>Afficher une nouvelle vue
 
-Chaque disposition d'application est unique, mais nous vous recommandons d'inclure un bouton «nouvelle fenêtre» dans un emplacement prévisible, comme le coin supérieur droit du contenu, qui pourra être ouvert dans une nouvelle fenêtre. Envisagez également d’inclure une option de menu contextuel pour «Ouvrir dans une nouvelle fenêtre».
+Chaque disposition d'application est unique, mais nous vous recommandons d'inclure un bouton « nouvelle fenêtre » dans un emplacement prévisible, comme le coin supérieur droit du contenu, qui pourra être ouvert dans une nouvelle fenêtre. Envisagez également d’inclure une option de menu contextuel pour « Ouvrir dans une nouvelle fenêtre ».
 
-Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée suite à un clic sur un bouton.
+Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée en réponse à un clic sur un bouton.
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -85,11 +85,11 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     Vous devez utiliser la méthode [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) pour planifier le travail sur le thread d’interface utilisateur de la nouvelle vue. Vous utilisez une [expression lambda](https://go.microsoft.com/fwlink/p/?LinkId=389615) pour transmettre une fonction en tant qu’argument à la méthode **RunAsync**. Le travail que vous effectuez dans la fonction lambda se répercute sur le thread de la nouvelle vue.
 
-    En XAML, vous ajoutez généralement un élément [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) à la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/br209041) de [**Window**](https://msdn.microsoft.com/library/windows/apps/br209051), puis parcourez **Frame** vers une [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) XAML dans laquelle vous avez défini le contenu de votre application. Pour en savoir plus, voir [Navigation pair à pair entre deux pages](../basics/navigate-between-two-pages.md).
+    En XAML, vous ajoutez généralement [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) à la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) de [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), puis parcourez **Frame** vers une [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) XAML où vous avez défini le contenu de votre application. Pour en savoir plus, voir [Navigation pair à pair entre deux pages](../basics/navigate-between-two-pages.md).
 
-    Une fois le nouvel élément [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) rempli, vous devez appeler la méthode **[Activate](https://msdn.microsoft.com/library/windows/apps/br209046)** de **Window** pour afficher l’élément **Window** ultérieurement. Cela se produit sur le thread de la nouvelle vue; ainsi la nouvelle **Window** est activée.
+    Une fois le nouvel élément [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) rempli, vous devez appeler la méthode **[Activate](https://msdn.microsoft.com/library/windows/apps/br209046)** de **Window** pour afficher l’élément **Window** ultérieurement. Cela se produit sur le thread de la nouvelle vue ; ainsi la nouvelle **Window** est activée.
 
-    Enfin, récupérez l’élément [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) de la nouvelle vue que vous utilisez pour afficher la vue plus tard. Une fois encore, cela se produit sur le thread de la nouvelle vue; ainsi [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) obtient l’élément **Id** de la nouvelle vue.
+    Enfin, récupérez l’élément [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) de la nouvelle vue que vous utilisez pour afficher la vue plus tard. Une fois encore, cela se produit sur le thread de la nouvelle vue ; ainsi [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) obtient l’élément **Id** de la nouvelle vue.
 
     ```csharp
     await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
@@ -117,7 +117,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 La première vue créée lors du démarrage de votre application s’appelle la *vue principale*. Cette vue est stockée dans la propriété [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) et sa propriété [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) a la valeur true. Vous ne créez pas cette vue. Elle est créée par l’application. Le thread de la vue principale agit en tant que gestionnaire de l’application, et tous les évènements d’activation de l’application sont fournis sur ce thread.
 
-Si des vues secondaires sont ouvertes, la fenêtre de la vue principale peut être masquée (par exemple, en cliquant sur le bouton de fermeture (x) dans la barre de titre de la fenêtre), mais son thread reste actif. Appeler [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) sur la [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) de la vue principale entraîne une **InvalidOperationException**. (Utilisez [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327) pour fermer votre application.) Si le thread de la vue principale se termine, l’application se ferme.
+Si des vues secondaires sont ouvertes, la fenêtre de la vue principale peut être masquée (par exemple, en cliquant sur le bouton de fermeture (x) dans la barre de titre de la fenêtre), mais son thread reste actif. Appeler [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) sur la [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) de la vue principale entraîne une **InvalidOperationException**. (Utilisez [ **Application.Exit** ](https://msdn.microsoft.com/library/windows/apps/br242327) pour fermer votre application.) Si le thread de la vue principale est terminé, l’application se ferme.
 
 ## <a name="secondary-views"></a>Vues secondaires
 
@@ -139,12 +139,12 @@ Lorsque vous utilisez [**SwitchAsync**](https://msdn.microsoft.com/library/windo
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
-* Fournissez un point d’entrée clair à la vue secondaire en utilisant le glyphe «ouvrir une nouvelle fenêtre».
+* Fournissez un point d’entrée clair à la vue secondaire en utilisant le glyphe « ouvrir une nouvelle fenêtre ».
 * Communiquez l’objectif de la vue secondaire aux utilisateurs.
 * Assurez-vous que votre application est totalement opérationnelle dans une vue unique et que les utilisateurs ouvriront une vue secondaire uniquement pour des raisons pratiques.
 * N’utilisez pas la vue secondaire pour fournir des notifications ou d'autres éléments visuels temporaires.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
 * [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)

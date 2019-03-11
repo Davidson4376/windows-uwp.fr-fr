@@ -3,34 +3,34 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Swipe commanding is a touch accelerator for context menus.
-title: Balayage
+Description: Commandes de balayage sont un accélérateur touch pour les menus contextuels.
+title: Balayer
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037321"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626654"
 ---
-# <a name="swipe"></a>Balayage
+# <a name="swipe"></a>Balayer
 
 Les commandes de balayage sont des accélérateurs de menus contextuels qui permettent aux utilisateurs d'accéder facilement aux actions courantes des menus sans avoir à modifier les états au sein de l’application.
 
-> **API importantes**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [classe ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **API importantes**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [classe de ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Exécuter et afficher le thème de luminosité](images/LightThemeSwipe.png)
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Les commandes de balayage économisent de l’espace. C'est utile dans les situations où l’utilisateur peut répéter la même opération sur plusieurs éléments en succession rapide. Fournit des «actions rapides» sur les éléments qui ne nécessitent pas un changement complet d'état ou de fenêtre contextuelle sur la page.
+Les commandes de balayage économisent de l’espace. C'est utile dans les situations où l’utilisateur peut répéter la même opération sur plusieurs éléments en succession rapide. Fournit des « actions rapides » sur les éléments qui ne nécessitent pas un changement complet d'état ou de fenêtre contextuelle sur la page.
 
-Vous devez utiliser les commandes de balayage lorsque vous disposez d’un groupe d’éléments potentiellement élevé et que chacun d'eux a entre 1et 3actions qu'un utilisateur peut vouloir effectuer plusieurs fois. Ces actions peuvent comprendre les éléments suivants:
+Vous devez utiliser les commandes de balayage lorsque vous disposez d’un groupe d’éléments potentiellement élevé et que chacun d'eux a entre 1 et 3 actions qu'un utilisateur peut vouloir effectuer plusieurs fois. Ces actions peuvent comprendre les éléments suivants :
 
 - Suppression
 - Marquage ou archivage
@@ -46,7 +46,7 @@ Vous devez utiliser les commandes de balayage lorsque vous disposez d’un group
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SwipeControl">ouvrir l’application et voir l'objet SwipeControl en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -57,9 +57,9 @@ Vous devez utiliser les commandes de balayage lorsque vous disposez d’un group
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev015/player]
 
-## <a name="how-does-swipe-work"></a>Comment le balayage fonctionne-t-il?
+## <a name="how-does-swipe-work"></a>Comment le balayage fonctionne-t-il ?
 
-Les commandes de balayage UWP possèdent deux modes: [Révéler](/uwp/api/windows.ui.xaml.controls.swipemode) et [Exécuter](/uwp/api/windows.ui.xaml.controls.swipemode). Elles prennent également en charge quatre directions de balayage différentes: haut, bas, gauche et droite.
+Commandes de balayage UWP comporte deux modes : [Révéler](/uwp/api/windows.ui.xaml.controls.swipemode) et [exécuter](/uwp/api/windows.ui.xaml.controls.swipemode). Elles prennent également en charge quatre directions de balayage différentes : haut, bas, gauche et droite.
 
 ### <a name="reveal-mode"></a>Mode Révéler
 
@@ -87,16 +87,16 @@ Elles peuvent également être utilisées pour des actions plus destructrices, t
 
 ### <a name="swipe-directions"></a>Directions de balayage
 
-Le balayage fonctionne dans toutes les directions cardinales: haut, bas, gauche et droite. Chaque direction de balayage peut détenir ses propres éléments de balayage ou son contenu, mais une seule instance d’une direction peut être définie à la fois sur un même élément compatible avec le balayage.
+Le balayage fonctionne dans toutes les directions cardinales : haut, bas, gauche et droite. Chaque direction de balayage peut détenir ses propres éléments de balayage ou son contenu, mais une seule instance d’une direction peut être définie à la fois sur un même élément compatible avec le balayage.
 
 Par exemple, vous ne pouvez pas avoir deux définitions de [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems) pour le même SwipeControl.
 
 ## <a name="how-to-create-a-swipe-command"></a>Procédure de création d’une commande de balayage
 
-Les commandes de balayage ont deux composants que vous devez définir:
+Les commandes de balayage ont deux composants que vous devez définir :
 
 - Le [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), qui s'enroule autour de votre contenu. Dans une collection, par exemple, un contrôle ListView, il se trouve au sein de votre DataTemplate.
-- Les éléments du menu balayage, qui consistent en un ou plusieurs objets [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) placés dans les conteneurs directionnels du contrôle balayage: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems) ou [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- Les éléments de menu balayez, qui est un ou plusieurs [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) objets placés dans des conteneurs directionnel du contrôle de balayage : [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems), ou [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
 Le contenu de balayage peut être placé en ligne ou défini dans la section Ressources de votre application ou page.
 
@@ -182,7 +182,7 @@ Voici un contrôle ListView avec le SwipeControl appliqué dans son DataTemplate
 
 ## <a name="handle-an-invoked-swipe-command"></a>Gérer une commande de balayage appelée
 
-Pour agir sur une commande de balayage, vous gérez son événement [Appelé](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked). (Pour plus d’informations sur la façon dont un utilisateur peut appeler une commande, consultez la section _Comment le balayage fonctionne-t-il?_ plus haut dans cet article.) En règle générale, la commande de balayage est placée dans un contrôle ListView ou un scénario de liste. Dans ce cas, lorsqu’une commande est appelée, vous devrez effectuer une action sur cet élément balayé.
+Pour agir sur une commande de balayage, vous gérez son événement [Appelé](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked). (Pour plus d’informations sur la façon dont un utilisateur peut appeler une commande, passez en revue la _balayez fonctionnement ?_ section plus haut dans cet article.) En règle générale, une commande de balayage est dans un ListView ou un scénario de type liste. Dans ce cas, lorsqu’une commande est appelée, vous devrez effectuer une action sur cet élément balayé.
 
 Voici comment gérer l’événement Appelé sur l'élément balayage _supprimer_ que vous avez créé précédemment.
 
@@ -207,7 +207,7 @@ L’élément de données est le DataContext du SwipeControl. Dans votre code, v
 
 Dans cette instance particulière, vous avez supprimé l’élément de la liste, donc l’état visuel final de l’élément balayé n’est pas important. Toutefois, dans les situations où vous souhaitez simplement exécuter une action, puis réduire à nouveau le balayage, vous pouvez régler la propriété [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) sur une des valeurs de l'enum [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked).
 
-- **Automatique**
+- **Auto**
   - Dans le mode Exécuter, l’élément de balayage ouvert reste ouvert lorsqu’il est appelé.
   - Dans le mode Révéler, l’élément de balayage ouvert est réduit lorsqu’il est appelé.
 - **Fermer**
@@ -237,8 +237,8 @@ Ici, un élément de balayage _réponse_ est configuré pour se fermer une fois 
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-- [Affichage Liste et affichage Grille](listview-and-gridview.md)
-- [Modèles et conteneurs d’éléments](item-containers-templates.md)
-- [Tirer pour actualiser](pull-to-refresh.md)
+- [Vue liste et l’affichage de grille](listview-and-gridview.md)
+- [Modèles et des conteneurs d’éléments](item-containers-templates.md)
+- [Pour actualiser](pull-to-refresh.md)
