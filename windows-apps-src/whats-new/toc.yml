@@ -1,61 +1,61 @@
 items:
-- name: Nouveautés pour les développeurs dans Windows10, build17763
+- name: Nouveautés de Windows 10 pour les développeurs, build 17763
   href: ../whats-new/windows-10-build-17763.md
   items:
-  - name: Ajouts d’API dans Windows10, build17763
+  - name: Ajouts d’API dans Windows 10, build 17763
     href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: Nouveautés des documents Windows, janvier2019
+- name: Nouveautés de la documentation Windows, janvier 2019
   href: ../whats-new/windows-docs-january-2019.md
   items:
-  - name: Nouveautés des documents Windows, septembre2018
+  - name: Nouveautés de la documentation Windows, septembre 2018
     href: ../whats-new/windows-docs-september-2018.md
-  - name: Nouveautés des documents Windows, août2018
+  - name: Nouveautés de la documentation Windows, août 2018
     href: ../whats-new/windows-docs-august-2018.md
-  - name: Nouveautés des documents Windows, juillet2018
+  - name: Nouveautés de la documentation Windows, juillet 2018
     href: ../whats-new/windows-docs-july-2018.md
-  - name: Nouveautés des documents Windows, mai2018
+  - name: Nouveautés de la documentation Windows, mai 2018
     href: ../whats-new/windows-docs-may-2018.md
-  - name: Nouveautés des documents Windows, février2018
+  - name: Nouveautés de la documentation Windows, février 2018
     href: ../whats-new/windows-docs-february-2018.md
-  - name: Nouveautés des documents Windows, décembre2017
+  - name: Nouveautés de la documentation Windows, décembre 2017
     href: ../whats-new/windows-docs-december-2017.md
-  - name: Nouveautés des documents Windows, septembre2017
+  - name: Nouveautés de la documentation Windows, septembre 2017
     href: ../whats-new/windows-docs-september-2017.md
-  - name: Nouveautés des documents Windows, août2017
+  - name: Nouveautés de la documentation Windows, août 2017
     href: ../whats-new/windows-docs-august-2017.md
-  - name: Nouveautés des documents Windows, juillet2017
+  - name: Nouveautés de la documentation Windows, juillet 2017
     href: ../whats-new/windows-docs-july-2017.md
-- name: Versions précédentes de Windows10
+- name: Versions antérieures de Windows 10
   items:
-  - name: Nouveautés pour les développeurs dans Windows10, build17134
+  - name: Nouveautés de Windows 10 pour les développeurs, build 17134
     href: ../whats-new/windows-10-build-17134.md
     items:
-    - name: Ajouts d’API dans Windows10, build17134
+    - name: Ajouts d’API dans Windows 10, build 17134
       href: ../whats-new/windows-10-build-17134-api-diff.md
-  - name: Nouveautés pour les développeurs dans Windows10, build16299
+  - name: Nouveautés de Windows 10 pour les développeurs, build 16299
     href: ../whats-new/windows-10-build-16299.md
     items:
-    - name: Ajouts d’API dans Windows10, build16299
+    - name: Ajouts d’API dans Windows 10, build 16299
       href: ../whats-new/windows-10-build-16299-api-diff.md
-  - name: Nouveautés de Windows10, build15063
+  - name: Nouveautés de Windows 10, build 15063
     href: ../whats-new/windows-10-build-15063.md
     items:
-    - name: Ajouts d’API dans Windows10, build15063
+    - name: Ajouts d’API dans Windows 10, build 15063
       href: ../whats-new/windows-10-build-15063-api-diff.md
-  - name: Nouveautés de Windows10, build14393
+  - name: Nouveautés de Windows 10, build 14393
     href: ../whats-new/windows-10-build-14393.md
     items:
-    - name: Ajouts d’API dans Windows10, build14393
+    - name: Ajouts d’API dans Windows 10, build 14393
       href: ../whats-new/windows-10-build-14393-api-diff.md
-  - name: Nouveautés de Windows10, build10586
+  - name: Nouveautés de Windows 10, build 10586
     href: ../whats-new/windows-10-build-10586.md
-  - name: Nouveautés de Windows10, build10240
+  - name: Nouveautés de Windows 10, build 10240
     href: ../whats-new/windows-10-build-10240.md
 - name: API expérimentales
   href: ../whats-new/experimental-apis.md
 ms.openlocfilehash: 136c6bd34dd3358d3f089aa06a664029a446b368
-ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9013938"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582476"

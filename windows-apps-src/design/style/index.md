@@ -1,24 +1,18 @@
 ---
-description: Découvrez comment utiliser la couleur, la typographie et des icônes pour définir la personnalité de votre application UWP avec le guide de style UWP.
-keywords: guide de style uwp, guide de conception, typographie, mouvement, son, développement d’applications
+description: 'Découvrez comment utiliser la couleur, la typographie et des icônes pour définir la personnalité de votre application UWP avec le guide de style UWP.'
+keywords: 'guide de style uwp, guide de conception,  typographie, mouvement, son, développement d’applications'
 title: Style des applications UWP
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946618"
 ---
 # <a name="style-for-uwp-apps"></a>Style des applications UWP
 
-![image hero](images/header-style.svg)
+![Image Hero](images/header-style.svg)
 
-Le style permet à votre application de se démarquer. Les instructions de style fournies dans cette section vous permettent de créer une conception Fluent Design à l'aide de couleurs, de la typographie et de nouvelles fonctionnalités telles que Matière acrylique et l'effet Révéler.
+Le style est ce qui permet à votre application de se distinguer des autres. Les instructions de style fournies dans cette section vous permettent de créer une conception Fluent Design à l’aide de couleurs, de la typographie et de nouvelles fonctionnalités telles que l’acrylique et l’effet Révéler.
 
 :::row:::
     :::column:::
@@ -29,7 +23,7 @@ Le style permet à votre application de se démarquer. Les instructions de style
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes vous concentrer sur l’utilisation de typographie pour aider les utilisateurs à comprendre facilement le contenu. 
+       En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes expliquent comment utiliser la typographie pour aider les utilisateurs à mieux comprendre le contenu. 
     :::column-end:::
 :::row-end:::
 

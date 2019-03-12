@@ -1,22 +1,16 @@
 ---
 layout: LandingPage
-Description: See how to publish your Windows apps to the Microsoft Store.
+Description: Découvrez comment publier vos applications Windows sur le Microsoft Store.
 title: Publier des applications Windows
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows10, uwp, publication, publier, vente, vendre, distribuer, distribution, store, tableau de bord
+keywords: "windows\_10, uwp, publication, publier, vente, vendre, distribuer, distribution, store, tableau de bord"
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980307"
 ---
 # <a name="publish-windows-apps-and-games"></a>Publier des applications et jeux Windows  
  
-Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dashboard) pour publier vos applications et jeux dans le Microsoft Store. <a href="//developer.microsoft.com/store/register">Inscrivez-vous maintenant!</a>
+Vous pouvez utiliser l’[Espace partenaires](https://partner.microsoft.com/dashboard) pour publier des applications et des jeux sur le Microsoft Store. <a href="//developer.microsoft.com/store/register">Inscrivez-vous maintenant !</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -29,12 +23,12 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Soumissions d’applications</h3>
+                        <h3>Soumissions d’application</h3>
                         <p>Découvrez les conditions requises pour la création d’une soumission et la certification de votre application.</p>
                         <ul>
-                        <li><a href="app-submissions.md">Liste de vérifications relatives à la soumission d’une application</a></li>
+                        <li><a href="app-submissions.md">Liste de vérification relative à la soumission d’une application</a></li>
                         <li><a href="the-app-certification-process.md">Le processus de certification</a></li>                      
-                        <li><a href="//docs.microsoft.com/legal/windows/agreements/store-policies">Politiques du MicrosoftStore</a></li>   
+                        <li><a href="//docs.microsoft.com/legal/windows/agreements/store-policies">Politiques du Microsoft Store</a></li>   
                     </ul>
                     </div>
                 </div>
@@ -55,8 +49,8 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                     <p>Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché et d’une planification, d’options de visibilité, de prix de vente et plus encore.</p>
                     <ul>
                         <li><a href="define-pricing-and-market-selection.md">Choisir vos marchés</a></li>
-                        <li><a href="set-and-schedule-app-pricing.md">Définition et planification du prix </a></li>
-                        <li><a href="configure-precise-release-scheduling.md">Configurer les dates précises de la publication</a></li>
+                        <li><a href="set-and-schedule-app-pricing.md">Définir et planifier les tarifs</a></li>
+                        <li><a href="configure-precise-release-scheduling.md">Configurer des dates de sortie précises</a></li>
                         <li><a href="set-app-pricing-and-availability.md">Voir toutes les options de disponibilité</a></li>
                     </ul>
                   </div>
@@ -74,12 +68,12 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Options des descriptions dans le MicrosoftStore</h3>
+                        <h3>Options des descriptions dans le Microsoft Store</h3>
                         <p>Fournissez du texte et des éléments visuels qui donnent envie aux clients d’essayer votre application.</p>
                         <ul>
-                            <li><a href="create-app-store-listings.md">Présentation des options des descriptions dans le MicrosoftStore</a></li>
+                            <li><a href="create-app-store-listings.md">Présentation des options des descriptions dans le Microsoft Store</a></li>
                             <li><a href="app-screenshots-and-images.md">Captures d’écran, images et bandes-annonces</a></li>
-                              <li><a href="import-and-export-store-listings.md">Gérer les descriptions en bloc </a></li>
+                              <li><a href="import-and-export-store-listings.md">Gérer des descriptions en bloc</a></li>
                         </ul>
                     </div>
                 </div>
@@ -119,7 +113,7 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                 </div>
                 <div class="cardText">
                     <h3>Promouvoir vos applications</h3>   
-                    <p><a href="create-an-ad-campaign-for-your-app.md">Création de campagnes de publicité</a></p>
+                    <p><a href="create-an-ad-campaign-for-your-app.md">Créer des campagnes de publicité</a></p>
                     <p><a href="generate-promotional-codes.md">Générer des codes promotionnels</a></p>
                     <p><a href="put-apps-and-add-ons-on-sale.md">Proposer des prix de vente</a></p>
                 </div>
@@ -161,7 +155,7 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                 </div>
                 <div class="cardText">
                     <h3>Gestion des utilisateurs de compte</h3>                    
-                    <p><a href="associate-azure-ad-with-dev-center.md">Configurer AzureAD</a></p>
+                    <p><a href="associate-azure-ad-with-dev-center.md">Configurer Azure AD</a></p>
                     <p><a href="add-users-groups-and-azure-ad-applications.md">Ajouter des utilisateurs de compte</a></p>
                     <p><a href="set-custom-permissions-for-account-users.md">Rôles et autorisations</a></p>                   
                 </div>
@@ -199,9 +193,9 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                 <div class="cardText">
                     <h3>Stratégies de test</h3>
                     <p><a href="beta-testing-and-targeted-distribution.md">Tests bêta et distribution ciblée</a></p>
-                    <p><a href="choose-visibility-options.md#audience">Public privé</a></p>
-                    <p><a href="package-flights.md">Versions d’évaluation des packages</a></p>
-                     <p><a href="gradual-package-rollout.md">Déploiement progressif</a></p>
+                    <p><a href="choose-visibility-options.md#audience">Audience privée</a></p>
+                    <p><a href="package-flights.md">Versions d’évaluation du package</a></p>
+                     <p><a href="gradual-package-rollout.md">Lancement progressif</a></p>
                 </div>
             </div>
         </div>
@@ -241,7 +235,7 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Distribution du cœur de métier</h3>
+                                <h3>Distribution métier</h3>
                             </div>
                         </div>
                     </div>
@@ -259,7 +253,7 @@ Vous pouvez utiliser [L’espace partenaires](https://partner.microsoft.com/dash
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Contrat du développeur d’application</h3>
+                                <h3>Contrat du développeur d'application</h3>
                             </div>
                         </div>
                     </div>

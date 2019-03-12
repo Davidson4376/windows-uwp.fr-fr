@@ -1,17 +1,11 @@
 ---
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: Technologies d’accès aux réseaux et aux services web.
-title: Réseaux et services web
+title: Réseau et services web
 ms.date: 11/26/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: "windows\_10, uwp"
 ms.localizationpriority: medium
-ms.openlocfilehash: 26324637fdf54b48fa441d28065bf437fbf74b26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939523"
 ---
 # <a name="networking-and-web-services"></a>Réseau et services web
 
@@ -19,11 +13,11 @@ Les technologies de réseau et services web suivantes sont disponibles pour les 
 
 | Rubrique | Description |
 | - | - |
-| [Notions de base en matière de réseau](networking-basics.md) | Ce que vous devez faire pour toute application réseau. |
-| [Quelle technologie de réseau?](which-networking-technology.md) | Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
-| [Communications réseau en arrière-plan](network-communications-in-the-background.md) | Afin de poursuivre la communication réseau en dehors de l'arrière-plan, une application doit utiliser les tâches d'arrière-plan et le broker de socket ou les déclencheurs de chaîne de contrôle. |
-| [Sockets](sockets.md) | Les sockets constituent une technologie de transfert de données de faible niveau en priorité du nombre de protocoles de réseau implémentés. UWP offre les classes TCP et socket UDP pour les applications de serveur client ou pair à paire, que les connexions soient de longue durée ou qu'une connexion établie ne soit pas requise. |
-| [WebSockets](websockets.md) | Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S) et en prenant en charge à la fois les messages UTF-8 et les messages binaires. |
+| [Notions de base relatives aux réseaux](networking-basics.md) | Ce que vous devez faire pour toute application réseau. |
+| [Quelle technologie réseau ?](which-networking-technology.md) | Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application. |
+| [Communications réseau en arrière-plan](network-communications-in-the-background.md) | Pour qu’une application puisse poursuivre la communication quand elle n’est pas en arrière-plan, elle doit utiliser des tâches en arrière-plan et un répartiteur de socket ou des déclencheurs de chaîne de contrôle. |
+| [Sockets](sockets.md) | Les sockets constituent une technologie de transfert de données de bas niveau sur laquelle repose l’implémentation d’un grand nombre de protocoles réseau. UWP propose des classes de socket TCP et UDP pour les applications client/serveur ou (P2P) pair à pair, qu’il s’agisse de connexions longue durée ou non établies. |
+| [WebSockets](websockets.md) | Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web, à l’aide du protocole HTTP(S) et avec une prise en charge des messages UTF-8 et binaires. |
 | [HttpClient](httpclient.md) | Utilisez l’API d’espace de noms [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1. |
 | [Flux RSS/Atom](web-feeds.md) | Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632). |
 | [Transferts en arrière-plan](background-transfers.md) | Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. |

@@ -1,7 +1,7 @@
 ---
-description: Optimisez votre application pour un stylet, Surface Dial et d'autres types d’entrée.
+description: 'Optimisez votre application pour un stylet, Surface Dial et d’autres types d’entrées.'
 title: Entrée et interactions
-keywords: entrées d’application, personnaliser une application UWP
+keywords: 'entrées d’application, personnaliser une application UWP'
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,12 +9,6 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918977"
 ---
 # <a name="input-and-interactions"></a>Entrée et interactions
 
@@ -25,7 +19,7 @@ ms.locfileid: "8918977"
 
 Les applications UWP gèrent automatiquement un grand nombre d’entrées et fonctionnent sur différents appareils. Aucune action supplémentaire de votre part n’est nécessaire pour activer l’entrée tactile, par exemple. Mais il peut arriver que vous souhaitiez optimiser votre application pour certains types de saisies ou d’appareils. Par exemple, si vous créez une application de peinture, vous voudrez peut-être personnaliser la gestion des saisies au stylet.
 
-Grâce aux instructions de conception et de codage fournies dans cette section, vous pourrez personnaliser votre application UWP pour certains types de saisies.
+Avec les instructions de conception et de codage fournies dans cette section, vous pourrez personnaliser votre application UWP pour certains types de saisies.
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -59,8 +53,8 @@ Grâce aux instructions de conception et de codage fournies dans cette section, 
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="gaze-interactions.md">NOUVEAU! Entrée avec le pointage du regard</a></h3>
-                        <p>Effectuez le suivi du regard de l'utilisateur en fonction de l’emplacement et du mouvement de ses yeux et de sa tête.</p>
+                        <h3><a href="gaze-interactions.md">NOUVEAU ! Entrée avec le pointage du regard</a></h3>
+                        <p>Effectuez le suivi du regard de l’utilisateur en fonction de l’emplacement et du mouvement de ses yeux et de sa tête.</p>
                     </div>
                 </div>
             </div>
@@ -81,15 +75,15 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Entrée</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Identifier les périphériques d’entrée</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Identification des périphériques d’entrée</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Pointeur</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Stylet et WindowsInk</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Commandes tactiles</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Stylet et Windows Ink</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Interface tactile</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">Souris</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">Clavier</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Boîtier de commande et télécommande</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad et commande à distance</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Pavé tactile</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">SurfaceDial</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Entrées multiples</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Injection d’entrée</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Saisie de texte personnalisé</a></p>                        
@@ -104,8 +98,8 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Interactions</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Glisser-déposer</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Mouvement panoramique</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Glisser-déplacer</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Panoramique</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Rotation</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">Sélection de texte et d’images</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">Ciblage</a></p>
@@ -121,7 +115,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Voix et IA</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Voix</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Fonctions vocales</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Cortana</a></p>  
                     </div>
                 </div>

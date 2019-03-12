@@ -1,22 +1,16 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: Les boîtes de dialogue et les menus volants affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation.
 title: Boîtes de dialogue et menus volants
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: "windows\_10, uwp"
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036861"
 ---
 # <a name="dialogs-and-flyouts"></a>Boîtes de dialogue et menus volants
 
@@ -24,7 +18,7 @@ ms.locfileid: "9036861"
 
 Les boîtes de dialogue et les menus volants sont des éléments temporaires d’interface utilisateur qui s’affichent quand un événement se produit qui nécessite une notification, une approbation ou d’autres informations de l’utilisateur.
 
-> **API importantes**: [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **API importantes** : [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 
 :::row:::
@@ -47,7 +41,7 @@ Les boîtes de dialogue et les menus volants sont des éléments temporaires d�
 :::row-end:::
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Les boîtes de dialogue et les menus volants permettent aux utilisateurs de prendre connaissance d’informations importantes, mais elles perturbent également l’expérience utilisateur. Les boîtes de dialogue étant modales (bloquantes), elles interrompent les utilisateurs et les empêchent de faire autre chose tant qu’ils n’interagissent pas avec la boîte de dialogue. Les menus volants sont moins dérangeants, mais si vous en affichez trop, vous perturbez également l’utilisateur.
 
@@ -59,7 +53,7 @@ Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialog
     :::column:::
    <p><b>Utilisez une boîte de dialogue pour...</b> <br/>
 <ul>
-<li>Afficher des informations importantes que l’utilisateur <b>doit</b> lire et accepter avant de poursuivre. Par exemple:
+<li>Afficher des informations importantes que l’utilisateur <b>doit</b> lire et accepter avant de poursuivre. Par exemple :
 <ul>
   <li>Utilisez ce type de contrôle pour indiquer à l’utilisateur toute situation d’atteinte possible à la sécurité.</li>
   <li>Utilisez ce type de contrôle pour signaler à l’utilisateur qu’il s’apprête à modifier de manière irrémédiable un élément utile.</li>
@@ -84,19 +78,19 @@ Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialog
 :::row-end:::
 
 
-## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>Méthodes pour éviter d’utiliser des boîtes de dialogue et menus volants
+## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>Moyens d’éviter d’utiliser les boîtes de dialogue et menus volants
 
-Mesurez l’importance des informations à partager: sont-elles suffisamment importantes pour interrompre l’utilisateur? Évaluez également la fréquence à laquelle les informations doivent être affichées. Si vous affichez une boîte de dialogue ou une notification toutes les 5minutes, vous pouvez peut-être plutôt leur allouer un emplacement dans l’interface utilisateur principale. Par exemple, dans un client de chat, au lieu d’afficher un menu volant chaque fois qu’un ami se connecte, vous pouvez afficher la liste des amis en ligne sur le moment et mettre en évidence les amis quand ils se connectent.
+Mesurez l’importance des informations à partager : sont-elles suffisamment importantes pour interrompre l’utilisateur ? Évaluez également la fréquence à laquelle les informations doivent être affichées. Si vous affichez une boîte de dialogue ou une notification toutes les 5 minutes, vous pouvez peut-être plutôt leur allouer un emplacement dans l’interface utilisateur principale. Par exemple, dans un client de chat, au lieu d’afficher un menu volant chaque fois qu’un ami se connecte, vous pouvez afficher la liste des amis en ligne sur le moment et mettre en évidence les amis quand ils se connectent.
 
 Les boîtes de dialogue sont fréquemment utilisées pour confirmer une action (par exemple, la suppression d’un fichier) avant de l’exécuter. Si vous voulez que l’utilisateur effectue souvent une action particulière, fournissez un moyen d’annuler l’action quand il fait une erreur plutôt que de forcer l’utilisateur à confirmer l’action chaque fois.
 
-## <a name="how-to-create-a-dialog"></a>Comment créer une boîte de dialogue
+## <a name="how-to-create-a-dialog"></a>Procédure pour créer une boîte de dialogue
 
-Consultez l' [article de boîtes de dialogue](dialogs.md). 
+Consultez l’[article sur les boîtes de dialogue](dialogs.md). 
 
-## <a name="how-to-create-a-flyout"></a>Comment créer un menu volant
+## <a name="how-to-create-a-flyout"></a>Procédure pour créer un menu volant
 
-Consultez l' [article de menu volant](flyouts.md). 
+Consultez l’[article sur les menus volants](flyouts.md). 
 
 ## <a name="examples"></a>Exemples
 
@@ -105,7 +99,7 @@ Consultez l' [article de menu volant](flyouts.md).
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l’objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>

@@ -1,27 +1,21 @@
 ---
-Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
-title: Mouvements et animations dans les applications UWP
+Description: 'Avec des mouvements utiles et bien faits, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.'
+title: Animations dans les applications UWP
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: 'windows 10, uwp'
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936908"
 ---
-# <a name="motion-for-uwp-apps"></a>Mouvements et animations pour les applications UWP
+# <a name="motion-for-uwp-apps"></a>Animations pour les applications UWP
 
-![image hero](images/header-motion2.svg)
+![Image Hero](images/header-motion2.svg)
 
 Le mouvement Fluent a une fonction spécifique dans votre application. Il fournit des commentaires intelligents basés sur le comportement de l’utilisateur, garde l’interface utilisateur active et guide la navigation de l’utilisateur dans votre application. Le mouvement Fluent suscite un lien émotionnel entre un utilisateur et son expérience numérique. Nous nous appuyons sur les principes du mouvement naturel que l’utilisateur connaît déjà dans le monde physique et nous avons étendu notre système à partir de là.
 
@@ -29,10 +23,10 @@ Le mouvement Fluent a une fonction spécifique dans votre application. Il fourni
 
 ### <a name="physical"></a>Physique
 
-Les objets en mouvement présentent les comportements des objets du monde réel. Un mouvement fluide et réactif fait paraître l'expérience naturelle, crée des liens émotionnels et donne de la personnalité.
+Les objets en mouvement présentent les comportements des objets du monde réel. Un mouvement fluide et réactif fait paraître l’expérience naturelle, crée des liens émotionnels et donne de la personnalité.
 
 ![Exemple d’interface utilisateur de mouvement physique](images/Physical.gif)
-> Lorsque vous interagissez avec l’interface utilisateur via l’interaction tactile, le mouvement de l’interface utilisateur est directement lié à la vitesse de l’interaction. Et parce que l'interaction tactile est une manipulation directe, l’objet avec lequel vous interagissez a une incidence sur les objets qui l’entourent.
+> Lorsque vous interagissez avec l’interface utilisateur via l’interaction tactile, le mouvement de l’interface utilisateur est directement lié à la vitesse de l’interaction. Et parce que l’interaction tactile est une manipulation directe, l’objet avec lequel vous interagissez a une incidence sur les objets qui l’entourent.
 
 ### <a name="functional"></a>Fonctionnel
 
@@ -43,17 +37,17 @@ Le mouvement joue un rôle et est incitatif. Il guide l’utilisateur à travers
 
 ### <a name="continuous"></a>Continu
 
-Un mouvement fluide d'un point à un autre attire naturellement l'œil et guide l’utilisateur. Il fait la liaison de manière élégante avec une tâche de l'utilisateur et la fait paraître plus consommable et conviviale.
+Un mouvement fluide d’un point à un autre attire naturellement l’œil et guide l’utilisateur. Il fait la liaison de manière élégante avec une tâche de l’utilisateur et la fait paraître plus consommable et conviviale.
 
 ![Exemple d’interface utilisateur de mouvement en continu](images/continuous3.gif)
 > Les objets peuvent voyager d’une scène à l’autre ou se transformer dans une scène pour établir une continuité et aider l’utilisateur à préserver le contexte.
 
 ### <a name="contextual"></a>Contextuel
 
-Un mouvement intelligent fournit des commentaires à l’utilisateur en relation avec la façon dont il a manipulé l’interface utilisateur. L'interaction est centrée sur l’utilisateur. Le mouvement semble appropriée au facteur de forme et conçu en fonction du scénario. Il doit être confortable pour chaque utilisateur.
+Un mouvement intelligent fournit des commentaires à l’utilisateur en relation avec la façon dont il a manipulé l’interface utilisateur. L’interaction est centrée sur l’utilisateur. Le mouvement semble approprié au facteur de forme et conçu en fonction du scénario. Il doit être confortable pour chaque utilisateur.
 
 ![Exemple d’interface utilisateur de mouvement contextuel](images/Contextual.gif)
-> L'animation doit être relié à l’interaction utilisateur. Un menu contextuel est déployé à partir du point où l’utilisateur l'a activé. 
+> L’animation doit être reliée à l’interaction utilisateur. Un menu contextuel est déployé là où l’utilisateur l’a activé. 
 
 ## <a name="motion-articles"></a>Articles sur le mouvement
 

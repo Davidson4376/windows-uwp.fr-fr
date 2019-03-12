@@ -1,17 +1,11 @@
 ---
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
-title: Appareils, capteurs et alimentation
-description: Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être amené à intégrer des appareils ou capteurs externes dans votre application.
+title: 'Appareils, capteurs et alimentation'
+description: 'Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être amené à intégrer des appareils ou capteurs externes dans votre application.'
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: 'windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 06dd8355cd0afd3889c0db2c337c93b5fbedf0fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923234"
 ---
 # <a name="devices-sensors-and-power"></a>Appareils, capteurs et alimentation
 
@@ -24,15 +18,15 @@ Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être ame
 
 | Rubrique | Description |
 |-------|-------------|
-| [Activer les fonctionnalités d’un appareil](enable-device-capabilities.md) | Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des appareils photo, des microphones, des capteurs d’emplacement et d’autres appareils. | 
-| [Activer l’accès en mode utilisateur sur WindowsIoT](enable-usermode-access.md) | Ce didacticiel décrit comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows10IoTStandard. |
+| [Activer les fonctionnalités d’un appareil](enable-device-capabilities.md) | Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des caméras, des microphones, des capteurs de localisation et d’autres appareils. | 
+| [Activer l’accès en mode utilisateur sur Windows IoT](enable-usermode-access.md) | Ce didacticiel décrit comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows 10 IoT Standard. |
 | [Énumérer les appareils](enumerate-devices.md) | L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. |
-| [Jumeler des appareils](pair-devices.md) | Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge troisméthodes différentes de jumelage des appareils. |
-| [Point de service](point-of-service.md) | Cette section décrit comment interagir avec le point de périphériques de service, tels que des scanneurs de code-barres, les imprimantes de reçus, les caisses enregistreuses, etc.. | 
-| [Capteurs](sensors.md) | Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil. |
+| [Appairer des appareils](pair-devices.md) | Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge trois méthodes différentes de jumelage des appareils. |
+| [Point de service](point-of-service.md) | Cette section explique comment interagir avec les appareils de point de service, tels que les scanneurs de codes-barres, les imprimantes de reçus, les caisses enregistreuses, etc. | 
+| [Détecteurs](sensors.md) | Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil. |
 | [Bluetooth](bluetooth.md) | Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE). | 
 | [Impression et numérisation](printing-and-scanning.md) | Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle. | 
-| [Impression3D](3d-printing.md) | Cette section explique comment utiliser la fonctionnalité d’impression 3D dans votre application Windows universelle. |
-| [Créer une application de carte à puce NFC](host-card-emulation.md) | Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte appelée, émulation de carte hôte (HCE). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de l’émulation de carte hôte (HCE) sur les appareils Windows 10 Mobile et comment vous pouvez développer une application HCE afin que vos clients peuvent accéder à vos services par le biais de leur téléphone, plutôt que d’une carte physique sans aucune collaboration avec un opérateur de réseau mobile. |
+| [Impression 3D](3d-printing.md) | Cette section explique comment utiliser la fonctionnalité d’impression 3D dans votre application Windows universelle. |
+| [Créer une application de carte à puce NFC](host-card-emulation.md) | Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte, appelée HCE (Host Card Emulation, émulation de carte hôte). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de la technologie HCE sur les appareils Windows 10 Mobile et vous explique comment développer une application HCE permettant à vos clients d’accéder à vos services sur leur téléphone, plutôt que via une carte physique, sans aucune collaboration avec un opérateur de réseau mobile. |
 | [Obtenir des informations sur la batterie](get-battery-info.md) | Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API de l’espace de noms [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017). |
 

@@ -1,5 +1,5 @@
 items:
-- name: Présentation
+- name: Vue d’ensemble
   href: ../publish/index.md
 - name: Ouverture d’un compte de développeur
   href: ../publish/opening-a-developer-account.md
@@ -13,9 +13,9 @@ items:
 - name: Gérer des utilisateurs de compte
   href: ../publish/manage-account-users.md
   items:
-  - name: Associer Azure AD à votre compte Espace partenaires
+  - name: Associer Azure AD à votre compte Espace partenaires
     href: ../publish/associate-azure-ad-with-partner-center.md
-  - name: Ajouter des utilisateurs, des groupes et des applications Azure AD
+  - name: Ajouter des utilisateurs, des groupes et des applications Azure AD
     href: ../publish/add-users-groups-and-azure-ad-applications.md
   - name: Définir des rôles et des autorisations personnalisées
     href: ../publish/set-custom-permissions-for-account-users.md
@@ -24,7 +24,7 @@ items:
 - name: Soumissions d’application
   href: ../publish/app-submissions.md
   items:
-  - name: Définition du prix et de la disponibilité de l’application
+  - name: Définir les prix et la disponibilité d’une application
     href: ../publish/set-app-pricing-and-availability.md
     items:
     - name: Définir la sélection du marché
@@ -33,7 +33,7 @@ items:
       href: ../publish/choose-visibility-options.md
     - name: Configurer une planification précise de la publication
       href: ../publish/configure-precise-release-scheduling.md
-    - name: Définir et planifier la tarification d’une application
+    - name: Définir et planifier les prix d’une application
       href: ../publish/set-and-schedule-app-pricing.md
     - name: Options de gestion des licences organisationnelles
       href: ../publish/organizational-licensing.md
@@ -51,7 +51,7 @@ items:
     items:
     - name: Disponibilité de la famille d’appareils
       href: ../publish/device-family-availability.md
-    - name: Exigences relatives au package de l’application
+    - name: Exigences relatives aux packages d’application
       href: ../publish/app-package-requirements.md
     - name: Numérotation des versions de packages
       href: ../publish/package-version-numbering.md
@@ -59,21 +59,21 @@ items:
       href: ../publish/supported-languages.md
     - name: Aide sur la gestion des packages d’application
       href: ../publish/guidance-for-app-package-management.md
-  - name: Créer des descriptions d’application dans le Store
+  - name: Créer des annonces d’application dans le Windows Store
     href: ../publish/create-app-store-listings.md
     items:
-    - name: Rédiger une description convaincante de l’application
+    - name: Rédaction d’une description convaincante de l’application
       href: ../publish/write-a-great-app-description.md
     - name: Captures d’écran, images et bandes-annonces de l’application
       href: ../publish/app-screenshots-and-images.md
     - name: Importer et exporter des descriptions dans le Store
       href: ../publish/import-and-export-store-listings.md
-    - name: Créer des descriptions dans le Store spécifiques à la plateforme
+    - name: Création d’annonces Windows Store spécifiques à la plateforme
       href: ../publish/create-platform-specific-store-listings.md
   - name: Gérer les options de soumission
     href: ../publish/manage-submission-options.md
     items:
-    - name: Remarques pour la certification
+    - name: Notes de certification
       href: ../publish/notes-for-certification.md
   - name: Processus de certification des applications
     href: ../publish/the-app-certification-process.md
@@ -95,18 +95,18 @@ items:
   items:
   - name: Définir le type et l’ID de produit d’un module complémentaire
     href: ../publish/set-your-add-on-product-id.md
-  - name: Saisir les propriétés d’une extension
+  - name: Définir les propriétés d’un module complémentaire
     href: ../publish/enter-add-on-properties.md
   - name: Définir le prix et la disponibilité d’un module complémentaire
     href: ../publish/set-add-on-pricing-and-availability.md
-  - name: Créer des descriptions d'extension dans le Store
+  - name: Créer des descriptions de module complémentaire dans le Windows Store
     href: ../publish/create-add-on-store-listings.md
 - name: Publicités dans l’application
   href: ../publish/in-app-ads.md
 - name: Gestion des applications et services
   href: ../publish/app-management-and-services.md
   items:
-  - name: Visualiser les informations d’identité des applications
+  - name: Affichage des détails d’identité de l’application
     href: ../publish/view-app-identity-details.md
   - name: Gestion des noms d’application
     href: ../publish/manage-app-names.md
@@ -117,7 +117,7 @@ items:
   items:
   - name: Générer des codes promotionnels
     href: ../publish/generate-promotional-codes.md
-  - name: Créer une campagne de publicité pour votre application
+  - name: Création d’une campagne de publicité pour votre application
     href: ../publish/create-an-ad-campaign-for-your-app.md
     items:
     - name: Gérer votre campagne de publicité
@@ -130,7 +130,7 @@ items:
       href: ../publish/common-questions.md
   - name: Créer une campagne personnalisée de promotion d’applications
     href: ../publish/create-a-custom-app-promotion-campaign.md
-  - name: Commercialiser des applications et des extensions
+  - name: Commercialiser des applications et composants additionnels
     href: ../publish/put-apps-and-add-ons-on-sale.md
   - name: Recommandations pour le marketing adapté aux applications
     href: ../publish/app-marketing-guidelines.md
@@ -156,14 +156,14 @@ items:
     href: ../publish/send-push-notifications-to-your-apps-customers.md
   - name: Utiliser des offres ciblées
     href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
-- name: Analyser les performances de l’application
+- name: Analyser le niveau de performance de l’application
   href: ../publish/analytics.md
   items:
-  - name: Rapport Acquisitions
+  - name: Rapport sur les acquisitions
     href: ../publish/acquisitions-report.md
-  - name: Rapport sur les acquisitions d’extensions
+  - name: Rapport sur les acquisitions des extensions
     href: ../publish/add-on-acquisitions-report.md
-  - name: Rapport d’utilisation
+  - name: Rapport sur l'utilisation
     href: ../publish/usage-report.md
   - name: Rapport sur l’intégrité
     href: ../publish/health-report.md
@@ -173,26 +173,26 @@ items:
     href: ../publish/reviews-report.md
   - name: Rapport sur les commentaires
     href: ../publish/feedback-report.md
-  - name: Rapport d’analyse Xbox
+  - name: Rapport d’analytique Xbox
     href: ../publish/xbox-analytics-report.md
-  - name: Rapport de perspectives
+  - name: Rapport d’insights
     href: ../publish/insights-report.md
   - name: Rapport sur les performances publicitaires
     href: ../publish/advertising-performance-report.md
-  - name: Rapport de campagne publicitaire
+  - name: Rapport de campagne de publicité
     href: ../publish/ad-campaign-report.md
   - name: Télécharger des rapports d’analyse
     href: ../publish/download-analytic-reports.md
 - name: Rémunération
   href: ../publish/getting-paid-apps.md
   items:
-  - name: Configuration de votre compte de revenu et déclarations fiscales.
+  - name: Configurer votre compte de revenu et vos déclarations fiscales
     href: ../publish/setting-up-your-payout-account-and-tax-forms.md
   - name: Délais, méthodes et seuils de paiement
     href: ../publish/payment-thresholds-methods-and-timeframes.md
   - name: Résumé du paiement
     href: ../publish/payout-summary.md
-  - name: Informations fiscales
+  - name: Détails des taxes
     href: ../publish/tax-details-for-paid-apps.md
   - name: Présentation des déclarations fiscales de l’IRS
     href: ../publish/understand-irs-tax-forms.md
@@ -203,7 +203,7 @@ items:
 - name: Politiques et code de conduite du Store
   href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
   items:
-  - name: Politiques du MicrosoftStore
+  - name: Politiques du Microsoft Store
     href: https://docs.microsoft.com/legal/windows/agreements/store-policies
     items:
     - name: Historique des modifications
@@ -213,8 +213,8 @@ items:
   - name: Code de conduite des développeurs
     href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
 ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042469"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582470"

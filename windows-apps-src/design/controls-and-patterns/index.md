@@ -1,26 +1,20 @@
 ---
-description: Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45contrôles puissants utilisables avec votre application.
+description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45\_contrôles puissants utilisables avec votre application."
 title: Contrôles et modèles UWP - Développement d’applications Windows
-keywords: contrôles uwp, interface utilisateur, contrôles d’application
+keywords: 'contrôles uwp, interface utilisateur, contrôles d’application'
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044280"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  
 
 Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
 
-Nous vous proposons plus de 45contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille.  Ces contrôles font partie du système de conception Fluent et peuvent vous aider à créer une interface utilisateur évolutive et audacieuse qui s’adapte à tous les appareils et toutes les tailles d’écran. 
+Nous vous proposons plus de 45 contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille.  Ces contrôles font partie du système Fluent Design et peuvent vous aider à créer une interface utilisateur scalable et audacieuse qui s’adapte à tous les appareils et toutes les tailles d’écran. 
 
 Les articles de cette section donnent des recommandations en matière de conception et des instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. 
 
@@ -30,8 +24,8 @@ Instructions générales et exemples de code d’ajout et de stylisation de cont
 
 :::row:::
     :::column:::
-      <p><b><a href="controls-and-events-intro.md">Ajouter des contrôles et gérer des événements</a></b> <br/>
-L’ajout de contrôles à votre application se fait en trois étapes: l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</p>
+      <p><b><a href="controls-and-events-intro.md">Ajouter des contrôles et gérer les événements</a></b> <br/>
+L’ajout de contrôles à votre application se fait en trois étapes : l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">Application de styles aux contrôles</a></b> <br/>
@@ -40,7 +34,7 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>Obtenir la bibliothèque d’interface utilisateur Windows
-Certains contrôles sont uniquement disponibles dans la bibliothèque de l’interface utilisateur Windows. Pour la faire, consultez les [instructions d’installation et de vue d’ensemble de la bibliothèque de l’interface utilisateur Windows](/uwp/toolkits/winui/).
+Certains contrôles sont uniquement disponibles dans la bibliothèque d’interface utilisateur Windows. Pour l’obtenir, consultez [Vue d’ensemble et instructions d’installation de la bibliothèque d’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 ## <a name="alphabetical-index"></a>Index alphabétique 
 
@@ -96,9 +90,9 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 <li style="list-style-type: none;"><a href="rating.md">Contrôle d’évaluation</a></li>
 
-<li style="list-style-type: none;"><a href="scroll-controls.md">Contrôles de défilement et de mouvement panoramique</a></li>
+<li style="list-style-type: none;"><a href="scroll-controls.md">Contrôles de défilement et de panoramique</a></li>
 
-<li style="list-style-type: none;"><a href="search.md">Rechercher</a></li>
+<li style="list-style-type: none;"><a href="search.md">Recherche</a></li>
 
 <li style="list-style-type: none;"><a href="semantic-zoom.md">Zoom sémantique</a></li>
 
@@ -116,13 +110,13 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 <li style="list-style-type: none;"><a href="tree-view.md">Arborescence</a></li>
 
-<li style="list-style-type: none;"><a href="web-view.md">Affichage web</a></li>
+<li style="list-style-type: none;"><a href="web-view.md">Affichage Web</a></li>
 </ul>
 </div>
 
 ## <a name="xaml-controls-gallery"></a>Galerie de contrôles XAML
 
-Obtenez l'application _Galerie de contrôles XAML_ à partir du MicrosoftStore pour voir ces contrôles et le système Fluent Design en action. L’application est un compagnon interactif de ce site Web. Une fois installée, vous pouvez utiliser des liens sur des pages de contrôle individuelles pour lancer l’application et voir le contrôle en action.
+Obtenez l’application _Galerie de contrôles XAML_ à partir du Microsoft Store pour voir ces contrôles et le système Fluent Design en action. L’application est un compagnon interactif de ce site web. Une fois installée, vous pouvez utiliser des liens dans des pages de contrôle individuelles pour lancer l’application et voir le contrôle en action.
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a>
 
@@ -132,6 +126,6 @@ Obtenez l'application _Galerie de contrôles XAML_ à partir du MicrosoftStore p
 
 ## <a name="additional-controls"></a>Contrôles supplémentaires
 
-Les contrôles supplémentaires pour le développementUWP sont disponibles auprès de sociétés comme <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> et <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.  
+Les contrôles supplémentaires pour le développement UWP sont disponibles auprès de sociétés comme <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> et <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.  
 
-Si vous souhaitez en savoir plus sur ces contrôles, consultez l’exemple de <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">base de données de commande clients</a> sur GitHub. Cet exemple utilise le contrôle de grille de données et la validation de saisie des données de Telerik, qui font partie intégrante de leur interface utilisateur de la suiteUWP. L’interface utilisateur de la suiteUWP est une collection de plus de 20commandes, disponible sous la forme de projetOpenSource via .NET Foundation.
+Si vous souhaitez en savoir plus sur ces contrôles, consultez l’exemple de <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">base de données de commandes de clients</a> sur GitHub. Cet exemple utilise le contrôle de grille de données et la validation de saisie des données de Telerik, qui font partie intégrante de leur interface utilisateur de la suite UWP. L’interface utilisateur de la suite UWP est une collection de plus de 20 commandes, disponible sous la forme de projet Open Source via .NET Foundation.

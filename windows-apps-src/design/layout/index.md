@@ -1,21 +1,15 @@
 ---
 description: Découvrez comment concevoir et coder une application UWP intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
 title: Présentation de la disposition des applications UWP
-keywords: disposition d’application uwp, plateforme windows universelle, conception d’application, interface
-ms.date: 3/7/2018
+keywords: 'disposition d’application uwp, plateforme windows universelle, conception d’application, interface'
+ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 826fb141fd636ae899fff9696108965d94187f8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920990"
 ---
 # <a name="layout"></a>Disposition
 
-![image hero](images/header-layout2.jpg)
+![Image Hero](images/header-layout2.jpg)
 
 Grâce à ces articles, vous pourrez créer une interface utilisateur flexible, qui s’adapte à différentes tailles d’écran et de fenêtre, résolutions et orientations.
 

@@ -1,25 +1,19 @@
 ---
-description: Windows Template Studio est une extension de Visual Studio pour créer rapidement des applications UWP.
-title: WindowsTemplateStudio
+description: "Windows Template Studio est une extension de Visual Studio qui permet de créer rapidement des applications\_UWP."
+title: "Windows\_Template\_Studio"
 template: detail.hbs
 ms.date: 05/10/2018
 ms.topic: article
-keywords: windows10, uwp
+keywords: 'windows 10, uwp'
 pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919338"
 ---
-# <a name="windows-template-studio"></a>WindowsTemplateStudio
+# <a name="windows-template-studio"></a>Windows Template Studio
 
-![image hero](images/wts1.png)
+![Image Hero](images/wts1.png)
 
-Windows Studio Windows (Terminal modèle Server) est une Extension Visual Studio 2017 qui accélère la création de nouvelles applications de plateforme Windows universelle (UWP) à l’aide d’une expérience de type Assistant. Le projet UWP qui en résulte est correct, lisible car le code qui incorpore les dernières fonctionnalités de Windows 10 lors de la mise en œuvre des meilleures pratiques et modèles éprouvés. Rédaction tout au long du code généré nous avons liens documents, débordement de pile et des blogs pour fournir des informations utiles. Windows Terminal Server prend en charge la création d’applications en c# ou Visual Basic.
+Windows Studio Windows (WTS) est une extension de Visual Studio 2017 qui accélère la création d’applications UWP à l’aide d’un Assistant. Le projet UWP obtenu est constitué de code lisible et bien formé qui comprend les dernières fonctionnalités de Windows 10 et qui implémente les bonnes pratiques et modèles établis. Dans le code généré se trouvent des liens vers Microsoft Docs, vers Stack Overflow et vers des blogs qui fournissent des explications utiles. WTS prend en charge la création d’applications en C# et en Visual Basic.
 
-Pour plus d’informations, visitez le [référentiel de projet sur GitHub](https://github.com/microsoft/windowsTemplateStudio).
+Pour plus d’informations, consultez le [dépôt du projet sur GitHub](https://github.com/microsoft/windowsTemplateStudio).
 

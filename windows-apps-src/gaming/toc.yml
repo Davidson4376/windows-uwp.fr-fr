@@ -1,7 +1,7 @@
 items:
 - name: Prise en main
   href: ../gaming/getting-started.md
-- name: Guide de développement de jeux Windows10
+- name: Guide de développement de jeux Windows 10
   href: ../gaming/e2e.md
 - name: Programmation de jeux
   href: ../gaming/index.md
@@ -26,12 +26,12 @@ items:
     items:
     - name: Audio pour les jeux
       href: ../gaming/working-with-audio-in-your-directx-game.md
-    - name: Diffusion et capture de jeu
+    - name: Diffusion et capture d’un jeu
       href: ../gaming/game-broadcast-and-capture.md
       items:
-      - name: Gérer la diffusion de jeu
+      - name: Gérer la diffusion d’un jeu
         href: ../gaming/manage-game-broadcasting.md
-      - name: Capturer l’audio, la vidéo, les captures d’écran et les métadonnées de jeu
+      - name: Capturer l’audio, la vidéo, les captures d’écran et les métadonnées d’un jeu
         href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
     - name: Entrées pour les jeux
       href: ../gaming/input-for-games.md
@@ -50,7 +50,7 @@ items:
         href: ../gaming/headset.md
       - name: Contrôleur de navigation d’interface utilisateur
         href: ../gaming/ui-navigation-controller.md
-      - name: Pratiques de saisie pour les jeux
+      - name: Pratiques d’entrée pour les jeux
         href: ../gaming/input-practices-for-games.md
       - name: Données de Registre pour les contrôleurs de jeu
         href: ../gaming/registry-data-for-game-controllers.md
@@ -66,14 +66,14 @@ items:
   - name: Prise en main
     href: ../gaming/directx-getting-started.md
     items:
-    - name: Objet application
+    - name: Objet d’application
       href: ../gaming/about-the-uwp-user-interface-and-directx.md
     - name: Modèles de projet et outils
       href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
       items:
       - name: Modèles de projet de jeu
         href: ../gaming/user-interface.md
-      - name: Outils Visual Studio
+      - name: Visual Studio Tools
         href: ../gaming/set-up-visual-studio-for-game-development.md
       - name: Outils Graphics Diagnostics
         href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
@@ -82,9 +82,9 @@ items:
       items:
       - name: Activer une application
         href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
-      - name: Suspendre une application
+      - name: Interrompre une application
         href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
-      - name: Relancer une application
+      - name: Reprendre une application
         href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
   - name: Exemples
     href: ../gaming/directx-samples.md
@@ -92,17 +92,17 @@ items:
     - name: Jeu UWP simple
       href: ../gaming/tutorial--create-your-first-uwp-directx-game.md
       items:
-      - name: Configurer le projet
+      - name: Configurer un projet
         href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-      - name: InfrastructureUWP
+      - name: Framework UWP
         href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
-      - name: Gestion du flux de jeu
+      - name: Gestion de flux de jeu
         href: ../gaming/tutorial-game-flow-management.md
       - name: Objet de jeu principal
         href: ../gaming/tutorial--defining-the-main-game-loop.md
-      - name: Infrastructure de rendu I
+      - name: Framework de rendu I
         href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
-      - name: Infrastructure de rendu II
+      - name: Framework de rendu II
         href: ../gaming/tutorial-game-rendering.md
       - name: Ajouter une IU
         href: ../gaming/tutorial--adding-a-user-interface.md
@@ -110,7 +110,7 @@ items:
         href: ../gaming/tutorial--adding-controls.md
       - name: Ajouter du son
         href: ../gaming/tutorial--adding-sound.md
-      - name: Étendre le jeu
+      - name: Étendre un jeu
         href: ../gaming/tutorial-resources.md
     - name: Marble Maze
       href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
@@ -121,11 +121,11 @@ items:
         href: ../gaming/marble-maze-application-structure.md
       - name: Ajouter du contenu visuel
         href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
-      - name: Ajouter des entrées et interactivité
+      - name: Ajouter une entrée et de l’interactivité
         href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
-      - name: Ajouter des éléments audio
+      - name: Ajouter de l’audio
         href: ../gaming/adding-audio-to-the-marble-maze-sample.md
-  - name: Concepts graphiques Direct3D
+  - name: Concepts relatifs au graphisme Direct3D
     href: ../graphics-concepts/index.md
     items:
     - name: Systèmes de coordonnées et géométrie
@@ -263,7 +263,7 @@ items:
       - name: Ressources de texture compressées
         href: ../graphics-concepts/compressed-texture-resources.md
         items:
-        - name: Textures opaques et alpha 1bit
+        - name: Textures opaques et alpha 1 bit
           href: ../graphics-concepts/opaque-and-1-bit-alpha-textures.md
         - name: Textures avec canaux alpha
           href: ../graphics-concepts/textures-with-alpha-channels.md
@@ -304,7 +304,7 @@ items:
           href: ../graphics-concepts/configuring-depth-stencil-functionality.md
       - name: Objets d’état
         href: ../graphics-concepts/state-objects.md
-    - name: Affichages
+    - name: Vues
       href: ../graphics-concepts/views.md
       items:
       - name: Affichage des mémoires tampons de constantes (CBV)
@@ -401,11 +401,11 @@ items:
       - name: Niveaux de fonctionnalité des ressources de diffusion en continu
         href: ../graphics-concepts/streaming-resources-features-tiers.md
         items:
-        - name: Niveau1
+        - name: Niveau 1
           href: ../graphics-concepts/tier-1.md
-        - name: Niveau2
+        - name: Niveau 2
           href: ../graphics-concepts/tier-2.md
-        - name: Niveau3
+        - name: Niveau 3
           href: ../graphics-concepts/tier-3.md
     - name: Annexes
       href: ../graphics-concepts/appendix.md
@@ -426,22 +426,22 @@ items:
   - name: Principes de base
     href: ../gaming/directx-fundamentals.md
     items:
-    - name: Graphismes 2D
+    - name: Graphisme 2D
       href: ../gaming/working-with-2d-graphics-in-your-directx-game.md
-    - name: Graphismes 3D de base
+    - name: Graphisme 3D de base
       href: ../gaming/an-introduction-to-3d-graphics-with-directx.md
       items:
       - name: Configurer les ressources
         href: ../gaming/setting-up-directx-resources.md
       - name: Tracer des primitives
         href: ../gaming/creating-shaders-and-drawing-primitives.md
-      - name: Utilisez la profondeur et des effets
+      - name: Utiliser la profondeur et les effets
         href: ../gaming/using-depth-and-effects-on-primitives.md
       - name: Appliquer des textures
         href: ../gaming/applying-textures-to-primitives.md
-      - name: Créer le maillage de base
+      - name: Créer un maillage de base
         href: ../gaming/create-a-basic-mesh.md
-    - name: Charger les ressources
+    - name: Charger des ressources
       href: ../gaming/load-a-game-asset.md
       items:
       - name: BasicLoader
@@ -453,7 +453,7 @@ items:
   - name: Ajouter des fonctionnalités
     href: ../gaming/directx-add-features.md
     items:
-    - name: Technologie d'interopérabilité DirectX et XAML
+    - name: Technologie interop DirectX et XAML
       href: ../gaming/directx-and-xaml-interop.md
     - name: Entrée de jeu
       href: ../gaming/directx-game-input.md
@@ -466,12 +466,12 @@ items:
         href: ../gaming/tutorial--adding-touch-controls-to-your-directx-game.md
     - name: Prise en charge de l’orientation de l’écran
       href: ../gaming/supporting-screen-rotation-directx-and-cpp.md
-  - name: Optimisation et sujets avancés
+  - name: Optimisation et rubriques avancées
     href: ../gaming/directx-optimization-and-advanced-topics.md
     items:
     - name: Programmation asynchrone
       href: ../gaming/asynchronous-programming-directx-and-cpp.md
-    - name: Scénarios de suppression de périphérique
+    - name: Scénarios de suppression d’appareils
       href: ../gaming/handling-device-lost-scenarios.md
     - name: Échantillonnage multiple
       href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
@@ -481,80 +481,80 @@ items:
       href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
     - name: Mise à l’échelle et superpositions de chaînes d’échange
       href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
-  - name: Portage de DirectX 9 vers UWP
+  - name: Porter DirectX 9 sur UWP
     href: ../gaming/porting-your-directx-9-game-to-windows-store.md
     items:
-    - name: DirectX 9vers DirectX 11.1
+    - name: DirectX 9 vers DirectX 11.1
       href: ../gaming/porting-considerations.md
       items:
-      - name: Planifier votre projet de portage
+      - name: Planifier votre portage
         href: ../gaming/plan-your-directx-port.md
       - name: Différences clés
         href: ../gaming/understand-direct3d-11-1-concepts.md
-      - name: Fonctionnalités du plan
+      - name: Mapper des fonctionnalités
         href: ../gaming/feature-mapping.md
     - name: Procédure pas à pas simple
       href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
       items:
-      - name: Initialiser Direct3D 11
+      - name: Initialiser Direct3D 11
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
-      - name: Convertir l’infrastructure de rendu
+      - name: Convertir le framework de rendu
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
-      - name: Porter la boucle de jeu
+      - name: Porter une boucle de jeu
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md
     - name: Implémenter des volumes d’ombre
       href: ../gaming/implementing-depth-buffers-for-shadow-mapping.md
       items:
       - name: Créer un tampon de profondeur
         href: ../gaming/create-depth-buffer-resource--view--and-sampler-state.md
-      - name: Générer le rendu du mappage d’ombre dans le tampon de profondeur
+      - name: Afficher un mappage d’ombre dans le tampon de profondeur
         href: ../gaming/render-the-shadow-map-to-the-depth-buffer.md
-      - name: Générer le rendu de la scène avec un test de profondeur
+      - name: Afficher une scène avec un test de profondeur
         href: ../gaming/render-the-scene-with-depth-testing.md
-      - name: Prise en charge des divers équipements
+      - name: Prendre en charge divers matériels
         href: ../gaming/target-a-range-of-hardware.md
-    - name: FAQ
+    - name: Forum Aux Questions
       href: ../gaming/directx-porting-faq.md
-  - name: Port OpenGL vers Direct3D
+  - name: Porter OpenGL sur Direct3D
     href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
     items:
-    - name: Map OpenGL vers Direct3D
+    - name: Mapper OpenGL à Direct3D
       href: ../gaming/map-concepts-and-infrastructure.md
       items:
-      - name: Planifier votre projet de portage
+      - name: Planifier votre portage
         href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
       - name: EGL et DXGI
         href: ../gaming/moving-from-egl-to-dxgi.md
-      - name: Mémoires tampons, uniformes, sommets
+      - name: Tampons, uniformes, vertex
         href: ../gaming/porting-uniforms-and-attributes.md
       - name: Pipeline de nuanceurs
         href: ../gaming/change-your-shader-loading-code.md
-    - name: Convertisseur Port OpenGL vers Direct3D
+    - name: Porter un renderer OpenGL sur Direct3D
       href: ../gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md
       items:
       - name: Objets de nuanceur
         href: ../gaming/port-the-shader-config.md
-      - name: Mémoires tampons et données de sommets
+      - name: Tampons vertex et données vertex
         href: ../gaming/port-the-vertex-buffers-and-data-config.md
       - name: GLSL
         href: ../gaming/port-the-glsl.md
-      - name: Dessiner sur l’écran
+      - name: Dessiner à l’écran
         href: ../gaming/draw-to-the-screen.md
     - name: Référence OpenGL vers Direct3D
       href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
       items:
       - name: GLSL vers HLSL
         href: ../gaming/glsl-to-hlsl-reference.md
-- name: Plateforme UWP sur XboxOne
+- name: UWP sur Xbox One
   href: ../xbox-apps/index.md
   items:
-  - name: Mise en route
+  - name: Prise en main
     href: ../xbox-apps/getting-started.md
   - name: Nouveautés
     href: ../xbox-apps/whats-new.md
-  - name: Activation du mode Développeur XboxOne
+  - name: Activation du Mode développeur Xbox One
     href: ../xbox-apps/devkit-activation.md
-  - name: Désactivation du Mode développeur sur XboxOne
+  - name: Désactivation du Mode développeur sur Xbox One
     href: ../xbox-apps/devkit-deactivation.md
   - name: Configuration de l’environnement de développement
     href: ../xbox-apps/development-environment-setup.md
@@ -562,7 +562,7 @@ items:
     href: ../xbox-apps/samples.md
   - name: Problèmes connus
     href: ../xbox-apps/known-issues.md
-  - name: FAQ
+  - name: Forum Aux Questions
     href: ../xbox-apps/frequently-asked-questions.md
   - name: Outils
     href: ../xbox-apps/introduction-to-xbox-tools.md
@@ -572,21 +572,21 @@ items:
       items:
       - name: Page d’accueil
         href: ../xbox-apps/devhome-home.md
-      - name: Page de Xbox Live
+      - name: Page Xbox Live
         href: ../xbox-apps/devhome-live.md
       - name: Page de paramètres
         href: ../xbox-apps/devhome-settings.md
-      - name: Page de capture multimédia
+      - name: Page de capture d’élément multimédia
         href: ../xbox-apps/devhome-capture.md
-      - name: Page de mise en réseau
+      - name: Page relative au réseau
         href: ../xbox-apps/devhome-networking.md
-      - name: Page des performances
+      - name: Page du niveau de performance
         href: ../xbox-apps/devhome-performance.md
     - name: Compagnon du mode de développement Xbox
       href: ../xbox-apps/xbox-dev-mode-companion.md
     - name: Fiddler
       href: ../xbox-apps/uwp-fiddler.md
-  - name: Meilleures pratiques pour Xbox
+  - name: Bonnes pratiques pour Xbox
     href: ../xbox-apps/tailoring-for-xbox.md
     items:
     - name: Comment désactiver le mode souris
@@ -599,16 +599,16 @@ items:
     href: ../xbox-apps/system-resource-allocation.md
   - name: Présentation des applications multi-utilisateurs
     href: ../xbox-apps/multi-user-applications.md
-  - name: Intégration de jeux existants dans Xbox
+  - name: Intégration de jeux existants dans Xbox
     href: ../xbox-apps/development-lanes-landing.md
     items:
-    - name: CustomC++
+    - name: Custom C++
       href: ../xbox-apps/development-lanes-custom-cpp.md
     - name: Unity
       href: ../xbox-apps/development-lanes-unity.md
-    - name: HTML/JS
+    - name: HTML / JS
       href: ../xbox-apps/development-lanes-html.md
-  - name: API REST pour le portail d'appareil Xbox
+  - name: API REST du portail d’appareils Xbox
     href: ../xbox-apps/reference.md
     items:
     - name: /api/app/packagemanager/register
@@ -641,11 +641,11 @@ items:
       href: ../xbox-apps/wdp-xboxinfo-api.md
     - name: /ext/xboxlive/sandbox
       href: ../xbox-apps/wdp-sandbox-api.md
-- name: XboxLive
+- name: Xbox Live
   href: ../xbox-live/TOC.md
 ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962581"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582874"

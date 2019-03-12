@@ -1,22 +1,22 @@
 ---
 description: Découvrez comment concevoir et coder une application UWP intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
-title: Informations de base relatives à la conception
+title: Notions de base de la conception
 keywords: 'disposition d’application uwp, plateforme windows universelle, conception d’application, interface'
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# <a name="design-basics-for-uwp-apps"></a>Informations de base relatives à la conception pour les applicationsUWP
+# <a name="design-basics-for-uwp-apps"></a>Informations de base relatives à la conception pour les applications UWP
 
-![image hero](images/header-design-basics.svg)
+![Image Hero](images/header-design-basics.svg)
 
-Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir des applications belles et élégantes. Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre système FluentDesign ainsi qu’aux besoins de notre communauté de développement d’applications. 
+Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir et générer de belles applications abouties. Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre système Fluent Design ainsi qu’aux besoins de notre communauté de développement d’applications. 
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d’ensemble
 
-[**Présentation de la conception des applicationsUWP**](design-and-ui-intro.md)
+[**Présentation de la conception des applications UWP**](design-and-ui-intro.md)
 
-Présentation des fonctionnalités UWP combinées avec les meilleures pratiques pour créer des applications qui se mettent à l'échelle parfaitement sur tous les types d’appareils fonctionnant sous Windows.
+Présentation des fonctionnalités UWP combinées à de bonnes pratiques pour créer des applications qui se mettent à l’échelle parfaitement sur tous les types d’appareils exécutant Windows.
 
 [**Système Fluent Design**](../fluent-design-system/index.md)
 
@@ -34,7 +34,7 @@ Les éléments de commande sont les éléments d’interface utilisateur interac
 
 [**Notions de base sur le contenu**](content-basics.md)
 
-Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Cet article fournit des recommandations de conception de contenu pour les troisscénarios de contenu: consommation, création et interaction.
+Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Cet article fournit des recommandations de conception de contenu pour les trois scénarios de contenu : consommation, création et interaction.
 
 ## <a name="tutorials"></a>Didacticiels
 
@@ -51,4 +51,4 @@ Attribuez une disposition adaptative à l’application de retouche photo.
 
 [**3. Créer des styles personnalisés**](xaml-basics-style.md)
 
-Créez des styles personnalisés pour donner à nos contrôlesUWP l’apparence que vous souhaitez.
+Créez des styles personnalisés pour donner à nos contrôles UWP l’apparence que vous souhaitez.

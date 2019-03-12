@@ -1,19 +1,19 @@
 items:
-- name: Notions de base sur la conception
+- name: Notions de base de la conception
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: basics/index.md
-  - name: Présentation de la conception d'application
+  - name: Présentation de la conception d’application
     href: basics/design-and-ui-intro.md
-  - name: Système Fluent Design
+  - name: Système de conception Fluent
     href: fluent-design-system/index.md
   - name: Notions de base sur la navigation
     items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: basics/navigation-basics.md
     - name: Implémenter la navigation de base
       href: basics/navigate-between-two-pages.md
-    - name: Historique de navigation et navigation vers l’arrière
+    - name: Navigation dans l’historique et navigation vers l’arrière
       href: basics/navigation-history-and-backwards-navigation.md
   - name: Notions de base sur les commandes
     href: basics/commanding-basics.md
@@ -29,7 +29,7 @@ items:
       href: basics/xaml-basics-style.md
 - name: Disposition
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: layout/index.md
   - name: Mise en page
     href: layout/page-layout.md
@@ -45,29 +45,29 @@ items:
     href: layout/alignment-margin-padding.md
   - name: Panneaux de disposition
     items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: layout/layout-panels.md
-    - name: 'Didacticiel: Utiliser des panneaux de disposition'
+    - name: 'Tutoriel : Utiliser des panneaux de disposition'
       href: layout/grid-tutorial.md
     - name: Mode Fractionné
       href: controls-and-patterns/split-view.md
     - name: Panneaux personnalisés
       href: layout/custom-panels-overview.md
-    - name: 'Exemple de panneau personnalisé: BoxPanel'
+    - name: 'Exemple de panneau personnalisé : BoxPanel'
       href: layout/boxpanel-example-custom-panel.md
   - name: Transformations
     items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: layout/transforms.md
     - name: Effets de perspective 3D
       href: layout/3-d-perspective-effects.md
 - name: Contrôles
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: controls-and-patterns/index.md
   - name: Présentation des contrôles et des événements
     href: controls-and-patterns/controls-and-events-intro.md
-  - name: Présentation des commandes
+  - name: Introduction à l’exécution des commandes
     href: controls-and-patterns/commanding.md
   - name: Index des contrôles par fonction
     href: controls-and-patterns/controls-by-function.md
@@ -75,13 +75,13 @@ items:
     items:
     - name: Boutons
       href: controls-and-patterns/buttons.md
-    - name: Case à cocher
+    - name: Check box
       href: controls-and-patterns/checkbox.md
-    - name: Zone de liste modifiable
+    - name: Combo box
       href: controls-and-patterns/combo-box.md
     - name: Liens hypertexte
       href: controls-and-patterns/hyperlinks.md
-    - name: Case d’option
+    - name: Radio button
       href: controls-and-patterns/radio-button.md
     - name: Contrôle d’évaluation
       href: controls-and-patterns/rating.md
@@ -91,18 +91,18 @@ items:
       href: controls-and-patterns/toggles.md
   - name: Collections
     items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: controls-and-patterns/lists.md
     - name: Vue symétrique
       href: controls-and-patterns/flipview.md
-    - name: Mode Liste et affichage Grille
+    - name: Affichage Liste et affichage Grille
       href: controls-and-patterns/listview-and-gridview.md
       items:
-      - name: Modèles et conteneurs d’éléments
+      - name: Modèles et des conteneurs d’éléments
         href: controls-and-patterns/item-containers-templates.md
-      - name: Modèles d’éléments d'affichage Liste
+      - name: Modèles d’éléments d’affichage Liste
         href: controls-and-patterns/item-templates-listview.md
-      - name: Modèles d’éléments d'affichage Grille
+      - name: Modèles d’éléments d’affichage Grille
         href: controls-and-patterns/item-templates-gridview.md
     - name: Listes inversées
       href: controls-and-patterns/inverted-lists.md
@@ -112,13 +112,13 @@ items:
       href: controls-and-patterns/nested-ui.md
     - name: Commandes de collection
       href: controls-and-patterns/collection-commanding.md
-    - name: Balayage
+    - name: Balayer
       href: controls-and-patterns/swipe.md
     - name: Arborescence
       href: controls-and-patterns/tree-view.md
   - name: Boîtes de dialogue et menus volants
     items:
-    - name: Vue d'ensemble
+    - name: Vue d’ensemble
       href: controls-and-patterns/dialogs-and-flyouts/index.md
     - name: Boîtes de dialogue
       href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
@@ -126,7 +126,7 @@ items:
       href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
   - name: Formulaires
     href: controls-and-patterns/forms.md
-  - name: Support, graphiques et formes
+  - name: Support, graphisme et formes
     items:
     - name: Images et pinceaux image
       href: controls-and-patterns/images-imagebrushes.md
@@ -150,13 +150,13 @@ items:
       href: controls-and-patterns/menus.md
   - name: Navigation
     items:
-    - name: Master/Détails
+    - name: Maître/détails
       href: controls-and-patterns/master-details.md
     - name: Affichage de navigation
       href: controls-and-patterns/navigationview.md
     - name: Pivot
       href: controls-and-patterns/pivot.md
-  - name: Contacts
+  - name: Personnes
     items:
     - name: Carte de visite
       href: controls-and-patterns/contact-card.md
@@ -178,7 +178,7 @@ items:
       href: controls-and-patterns/time-picker.md
   - name: Défilement
     items:
-    - name: Contrôles de défilement et de mouvement panoramique
+    - name: Contrôles de défilement et de panoramique
       href: controls-and-patterns/scroll-controls.md
     - name: Zoom sémantique
       href: controls-and-patterns/semantic-zoom.md
@@ -186,13 +186,13 @@ items:
     href: controls-and-patterns/search.md
   - name: Statut et informations
     items:
-    - name: Progression
+    - name: Progress
       href: controls-and-patterns/progress-controls.md
     - name: Info-bulle
       href: controls-and-patterns/tooltips.md
-  - name: Texte
+  - name: Text
     items:
-    - name: Présentation
+    - name: Vue d’ensemble
       href: controls-and-patterns/text-controls.md
     - name: Zone de suggestion automatique
       href: controls-and-patterns/auto-suggest-box.md
@@ -214,15 +214,15 @@ items:
       href: controls-and-patterns/text-handwriting-view.md
 - name: Style
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: style/index.md
-  - name: Couleur
+  - name: Color
     href: style/color.md
   - name: Typographie
     href: style/typography.md
   - name: Icônes
     items:
-    - name: Présentation
+    - name: Vue d’ensemble
       href: style/icons.md
     - name: Icônes et logos d’application
       href: style/app-icons-and-logos.md
@@ -251,7 +251,7 @@ items:
       href: controls-and-patterns/xaml-theme-resources.md
 - name: Mouvement
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: motion/index.md
   - name: Minutage et accélération
     href: motion/timing-and-easing.md
@@ -270,7 +270,7 @@ items:
     items:
     - name: Animations de propriétés
       href: motion/xaml-property-animations.md
-    - name: Animations dans une table de montage
+    - name: Animations dans une table de montage séquentiel
       href: motion/storyboarded-animations.md
     - name: Animations par images clés et animations de fonctions d’accélération
       href: motion/key-frame-and-easing-function-animations.md
@@ -282,9 +282,9 @@ items:
     - name: Vignettes secondaires
       href: shell/tiles-and-notifications/secondary-tiles.md
       items:
-      - name: Indications
+      - name: Instructions
         href: shell/tiles-and-notifications/secondary-tiles-guidance.md
-      - name: Épingler à l’écran de démarrage
+      - name: Épingler à l’écran d’accueil
         href: shell/tiles-and-notifications/secondary-tiles-pinning.md
       - name: Épingler à la barre des tâches
         href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
@@ -302,7 +302,7 @@ items:
       href: shell/tiles-and-notifications/chaseable-tile-notifications.md
     - name: API de vignette principale
       href: shell/tiles-and-notifications/primary-tile-apis.md
-    - name: Vignette, prise en charge des notifications toast pour la langue, l'échelle et le contraste
+    - name: Vignette, prise en charge des notifications toast pour la langue, l’échelle et le contraste
       href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
   - name: Épingler votre application à la barre des tâches
     href: shell/pin-to-taskbar.md
@@ -312,7 +312,7 @@ items:
     items:
     - name: Notifications toast
       items:
-      - name: Recommandations en matière d’expérience utilisateur
+      - name: Recommandations relatives à l’expérience utilisateur
         href: shell/tiles-and-notifications/toast-ux-guidance.md
       - name: Contenu des toasts
         href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
@@ -370,7 +370,7 @@ items:
       href: shell/tiles-and-notifications/raw-notification-overview.md
 - name: Entrée et interactions
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: input/index.md
   - name: Notions fondamentales sur la saisie
     href: input/input-primer.md
@@ -378,10 +378,10 @@ items:
     href: input/handle-pointer-input.md
   - name: Pointage du regard
     href: input/gaze-interactions.md
-  - name: Stylet et WindowsInk
+  - name: Stylet et Windows Ink
     href: input/pen-and-stylus-interactions.md
     items:
-    - name: 'Didacticiel: Ajouter la prise en charge de l’entrée manuscrite à votre application'
+    - name: 'Tutoriel : Ajouter la prise en charge de l’entrée manuscrite à votre application'
       href: input/ink-walkthrough.md
     - name: Reconnaître les traits d’encre
       href: input/convert-ink-to-text.md
@@ -389,7 +389,7 @@ items:
       href: input/save-and-load-ink.md
     - name: Ajouter un contrôle InkToolbar
       href: input/ink-toolbar.md
-  - name: Commandes tactiles
+  - name: Touch
     href: input/touch-interactions.md
   - name: Souris
     href: input/mouse-interactions.md
@@ -414,10 +414,10 @@ items:
     href: input/gamepad-and-remote-interactions.md
   - name: Pavé tactile
     href: input/touchpad-interactions.md
-  - name: SurfaceDial
+  - name: Surface Dial
     href: input/windows-wheel-interactions.md
     items:
-    - name: 'Didacticiel: Ajouter la prise en charge de Surface Dial à votre application'
+    - name: 'Tutoriel : Ajouter la prise en charge de Surface Dial à votre application'
       href: input/radialcontroller-walkthrough.md
   - name: Interactions vocales
     href: input/speech-interactions.md
@@ -455,13 +455,13 @@ items:
     href: input/multiple-input-design-guidelines.md
   - name: Injection d’entrée
     href: input/input-injection.md
-  - name: Identifier les périphériques d’entrée
+  - name: Identifier des appareils d’entrée
     href: input/identify-input-devices.md
   - name: Saisie de texte personnalisé
     href: input/custom-text-input.md
   - name: Mise à l’échelle du texte
     href: input/text-scaling.md
-  - name: Glisser-déposer
+  - name: Glisser-déplacer
     href: input/drag-and-drop.md
   - name: Zoom optique et redimensionnement
     href: input/guidelines-for-optical-zoom.md
@@ -477,15 +477,15 @@ items:
     href: input/guidelines-for-visualfeedback.md
 - name: Appareils
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: devices/index.md
-  - name: Conception pour Xbox et la télévision
+  - name: Conception pour Xbox et télévision
     href: devices/designing-for-tv.md
   - name: Réalité mixte
     href: devices/designing-for-MR.md
 - name: Facilité d'utilisation
   items:
-  - name: Vue d'ensemble
+  - name: Vue d’ensemble
     href: usability/index.md
   - name: Accessibilité
     href: accessibility/accessibility.md
@@ -498,7 +498,7 @@ items:
       href: accessibility/developing-inclusive-windows-apps.md
     - name: Test de l’accessibilité
       href: accessibility/accessibility-testing.md
-    - name: Accessibilité dans le WindowsStore
+    - name: Accessibilité dans le Windows Store
       href: accessibility/accessibility-in-the-store.md
     - name: Liste de vérification de l’accessibilité
       href: accessibility/accessibility-checklist.md
@@ -529,15 +529,15 @@ items:
   - name: Globalisation et localisation
     href: globalizing/globalizing-portal.md
     items:
-    - name: Recommandations en matière de globalisation
+    - name: Directives relatives à la globalisation
       href: globalizing/guidelines-and-checklist-for-globalizing-your-app.md
-    - name: Comprendre les langues du manifeste de l'application et du profil utilisateur
+    - name: Comprendre les langues du manifeste de l’application et du profil utilisateur
       href: globalizing/manage-language-and-region.md
     - name: Globaliser vos formats de date/heure/chiffres
       href: globalizing/use-global-ready-formats.md
     - name: Utiliser des modèles de format des dates et heures
       href: globalizing/use-patterns-to-format-dates-and-times.md
-    - name: Ajuster la disposition et les polices, et prendre en charge l'écriture DàG
+    - name: Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG
       href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
     - name: Valeurs de NumeralSystem
       href: globalizing/glob-numeralsystem-values.md
@@ -545,11 +545,11 @@ items:
       href: globalizing/prepare-your-app-for-localization.md
     - name: Polices internationales
       href: globalizing/loc-international-fonts.md
-    - name: Conception de votre application pour le texte bidirectionnel
+    - name: Concevoir votre application pour le texte bidirectionnel
       href: globalizing/design-for-bidi-text.md
-    - name: Utiliser le Kit de ressources Multilingual App Toolkit4.0
+    - name: Utiliser le Kit de ressources Multilingual App Toolkit 4.0
       href: globalizing/use-mat.md
-    - name: FAQ et résolution des problèmes du kit de ressources MultilingualAppToolkit4.0
+    - name: FAQ et résolution des problèmes liés au kit de ressources Multilingual App Toolkit 4.0
       href: globalizing/mat-faq-troubleshooting.md
     - name: Préparer votre application pour le changement d’ère du Japon
       href: globalizing/japanese-era-change.md
@@ -562,11 +562,11 @@ items:
       href: in-app-help/in-app-help.md
     - name: Aide externe
       href: in-app-help/external-help.md
-- name: Kits de ressources de conception
+- name: Outils de conception
   href: downloads/index.md
 ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582851"
