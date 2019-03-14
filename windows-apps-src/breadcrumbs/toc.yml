@@ -1,5 +1,5 @@
 items:
-- name: Documentation
+- name: Docs
   tocHref: /
   topicHref: /
   items:
@@ -21,13 +21,13 @@ items:
         tocHref: /windows/uwp/design/
         topicHref: /windows/uwp/design/basics/index
         items:
-        - name: Notions de base sur la conception
+        - name: Notions de base de la conception
           tocHref: /windows/uwp/design/basics/
           topicHref: /windows/uwp/design/basics/index
-        - name: Notions de base sur la conception
+        - name: Notions de base de la conception
           tocHref: /windows/uwp/design/fluent-design-system/
           topicHref: /windows/uwp/design/basics/index
-        - name: Mise en page
+        - name: Disposition
           tocHref: /windows/uwp/design/layout/
           topicHref: /windows/uwp/design/layout/index
         - name: Style
@@ -42,7 +42,7 @@ items:
         - name: Entrée et interactions
           tocHref: /windows/uwp/design/input/
           topicHref: /windows/uwp/design/input/index
-        - name: Périphériques
+        - name: Appareils
           tocHref: /windows/uwp/design/devices/
           topicHref: /windows/uwp/design/devices/index
         - name: Facilité d'utilisation
@@ -55,16 +55,16 @@ items:
           - name: Paramètres et données d’application
             tocHref: /windows/uwp/design/app-settings/
             topicHref: /windows/uwp/design/app-settings/app-settings-and-data
-          - name: Internationalisation et localisation
+          - name: Globalisation et localisation
             tocHref: /windows/uwp/design/globalizing/
             topicHref: /windows/uwp/design/globalizing/globalizing-portal
           - name: Recommandations en matière d’aide de l’application
             tocHref: /windows/uwp/design/guidelines-for-app-help/
             topicHref: /windows/uwp/design/guidelines-for-app-help/index
-        - name: Kits d'outils de conception
+        - name: Outils de conception
           tocHref: /windows/uwp/design/downloads/
           topicHref: /windows/uwp/design/downloads/index
-      - name: Développement
+      - name: Développer
         tocHref: /windows/uwp/develop/
         topicHref: /windows/uwp/develop/index
         items:
@@ -101,7 +101,7 @@ items:
         - name: Fichiers, dossiers et bibliothèques
           tocHref: /windows/uwp/files/
           topicHref: /windows/uwp/files/index
-        - name: Graphiques
+        - name: Graphismes
           tocHref: /windows/uwp/graphics/
           topicHref: /windows/uwp/graphics/index
         - name: Applications web hébergées
@@ -110,22 +110,22 @@ items:
         - name: Lancement, reprise et tâches en arrière-plan
           tocHref: /windows/uwp/launch-resume/
           topicHref: /windows/uwp/launch-resume/index
-        - name: Apprentissage machine
+        - name: Machine Learning
           tocHref: /windows/uwp/machine-learning/
           topicHref: /windows/uwp/machine-learning/index
         - name: Cartes et emplacement
           tocHref: /windows/uwp/maps-and-location/
           topicHref: /windows/uwp/maps-and-location/index
-        - name: Monétisation, implication et services du Store
+        - name: Monétisation, engagement et services du Store
           tocHref: /windows/uwp/monetize/
           topicHref: /windows/uwp/monetize/index
-        - name: Réseaux et services web
+        - name: Réseau et services web
           tocHref: /windows/uwp/networking/
           topicHref: /windows/uwp/networking/index
-        - name: Création de packages d’applications
+        - name: Empaquetage d’applications
           tocHref: /windows/uwp/packaging/
           topicHref: /windows/uwp/packaging/index
-        - name: Portage d’applications sur Windows10
+        - name: Portage d’applications vers Windows 10
           tocHref: /windows/uwp/porting/
           topicHref: /windows/uwp/porting/index
         - name: Sécurité
@@ -143,7 +143,7 @@ items:
         - name: Plateforme XAML
           tocHref: /windows/uwp/xaml-platform/
           topicHref: /windows/uwp/xaml-platform/index
-        - name: Référence API
+        - name: Informations de référence sur les API
           tocHref: /windows/uwp/api/
           topicHref: https://docs.microsoft.com/en-us/uwp/
         - name: Windows as a service
@@ -159,7 +159,7 @@ items:
         tocHref: /windows/uwp/gaming/
         topicHref: /windows/uwp/gaming/e2e
         items:
-        - name: UWP sur XboxOne
+        - name: UWP sur Xbox One
           tocHref: /windows/uwp/xbox-apps/
           topicHref: /windows/uwp/xbox-apps/index
         - name: Programmation de jeux
@@ -168,18 +168,18 @@ items:
         - name: Programmation DirectX
           tocHref: /windows/uwp/directx-programming/
           topicHref: /windows/uwp/directx-programming/index
-        - name: Guide d’apprentissage des graphiques Direct3D
+        - name: Guide d’apprentissage du graphisme Direct3D
           tocHref: /windows/uwp/graphics-concepts/
           topicHref: /windows/uwp/graphics-concepts/index
-        - name: XboxLive
+        - name: Xbox Live
           tocHref: /windows/uwp/xbox-live/
           topicHref: /windows/uwp/xbox-live/index
       - name: Publier
         tocHref: /windows/uwp/publish/
         topicHref: /windows/uwp/publish/index
 ms.openlocfilehash: 1d79038daa4f2a50dd287da879fa8153ca3fb118
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582579"

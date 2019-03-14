@@ -1,26 +1,26 @@
 ---
-Description: This topic describes performance guidelines for apps that require access to a user's location.
-title: Recommandations pour les applications prenant en charge l’emplacement
+Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
+title: Recommandations pour les applications avec la géolocalisation
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows10, uwp, emplacement, carte, géolocalisation
+keywords: windows 10, uwp, emplacement, carte, géolocalisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 723b1b12a6bbfb572c9aaacf66c97541bf70f72d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114525"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624474"
 ---
-# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
+# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications avec la géolocalisation
 
 
 
 
 **API importantes**
 
--   [**Géolocalisation**](https://msdn.microsoft.com/library/windows/apps/br225603)
+-   [**GÉOLOCALISATION**](https://msdn.microsoft.com/library/windows/apps/br225603)
 -   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
 Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
@@ -45,9 +45,9 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
 -   Supprimez les données de géolocalisation mises en cache et libérez l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) lorsque l’utilisateur désactive l’accès aux informations de géolocalisation.
 
-    Libérez l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) si l’utilisateur désactive l’accès aux informations de géolocalisation via les Paramètres. L’application recevra des résultats **ACCESS\_DENIED** lors de tous les appels d’API de géolocalisation. Si votre application enregistre ou met en cache les données de géolocalisation, effacez toutes les données mises à en cache lorsque l’utilisateur révoque l’accès aux informations de géolocalisation. Proposez un autre moyen de saisir manuellement un emplacement lorsque les informations de géolocalisation ne sont pas disponibles via les services de localisation.
+    Libérez l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) si l’utilisateur désactive l’accès aux informations de géolocalisation via les Paramètres. L’application recevra ensuite **accès\_refusé** résultats pour tous les appels de localisation. Si votre application enregistre ou met en cache les données de géolocalisation, effacez toutes les données mises à en cache lorsque l’utilisateur révoque l’accès aux informations de géolocalisation. Proposez un autre moyen de saisir manuellement un emplacement lorsque les informations de géolocalisation ne sont pas disponibles via les services de localisation.
 
--   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournir un bouton d’actualisation qui réinstancie l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) , puis essaie d’obtenir des informations de géolocalisation à nouveau.
+-   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournir un bouton d’actualisation réinstancie la [ **Geolocator** ](https://msdn.microsoft.com/library/windows/apps/br225534) objet et tente d’obtenir des informations d’emplacement à nouveau.
 
     Votre application doit proposer une interface utilisateur pour la réactivation des services de géolocalisation.
 
@@ -75,7 +75,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
         Les appareils qui fournissent des données de géolocalisation peuvent suivre l’intervalle de rapport demandé par différentes applications et fournir des rapports de données au plus petit intervalle demandé. L’application qui a le plus besoin de précision reçoit ainsi les données dont elle a besoin. Par conséquent, il est possible que le service de géolocalisation génère des mises à jour à une fréquence plus élevée que celle demandée par votre application, si une autre application a demandé des mises à jour plus fréquentes.
 
-        **Remarque**il n’est pas garanti que la source de localisation honore la demande pour l’intervalle de rapport. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
+        **Remarque**  il n’est pas garanti que la source d’emplacement respecte la demande pour l’intervalle de rapport donné. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
 
     -   Dans un souci d’économie d’énergie, définissez la propriété [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) pour indiquer à la plateforme de géolocalisation si votre application a besoin ou non de données de grande précision. Si aucune application n’a besoin de données de grande précision, le système peut économiser de l’énergie en n’activant pas les services GPS.
 
@@ -84,10 +84,10 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
         Si votre application a des besoins spécifiques en matière de précision, vous pouvez utiliser la propriété [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) au lieu de [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535). Ceci est particulièrement utile sur Windows Phone, où la position peut généralement être obtenue grâce aux satellites ou aux points d’accès cellulaires ou Wi-Fi. La sélection d’une valeur de précision plus spécifique aide le système à identifier les technologies adéquates à utiliser avec le moindre coût énergétique lors de la fourniture de la position.
 
-        Par exemple :
+        Exemple :
 
         -   Si votre application obtient l’emplacement pour l’optimisation publicitaire, la météo, les actualités, et ainsi de suite, une précision de 5000 mètres suffit généralement.
-        -   Si votre application s’affiche dans le voisinage procure, une précision de 300 mètres est en général de bons résultats.
+        -   Si votre application s’affiche à proximité de contrats dans le voisinage, une précision de 300 compteur est généralement judicieux de fournir des résultats.
         -   Si l’utilisateur souhaite obtenir des recommandations pour choisir un restaurant dans les environs, une précision de 100 mètres suffit.
         -   Si l’utilisateur essaie de partager sa position, l’application doit demander une précision d’environ 10 mètres.
     -   Utilisez la propriété [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) si votre application a des exigences de précision spécifiques. Par exemple, les applications de navigation doivent utiliser la propriété **Geocoordinate.accuracy** pour déterminer si les données de géolocalisation disponibles répondent à leurs exigences.
@@ -101,10 +101,10 @@ Cette rubrique décrit les recommandations en matière de performance des applic
     -   Les capteurs bruts comprennent l’accéléromètre, le gyromètre et le magnétomètre.
     -   Les capteurs de fusion comprennent l’orientation, l’inclinomètre et la boussole. Les capteurs de fusion obtiennent les données d’un ensemble de capteurs bruts.
 
-    Le RuntimeAPIs Windows peuvent accéder à tous ces capteurs à l’exception du magnétomètre. Les capteurs de fusion sont plus précis et stables que les capteurs bruts, mais ils consomment plus. Utilisez le capteur adapté à vos besoins. Pour plus d’informations, voir [Capteurs](https://msdn.microsoft.com/library/windows/apps/mt187358).
+    Les Windows Runtime APIs peut accéder à tous ces capteurs à l’exception du magnétomètre. Les capteurs de fusion sont plus précis et stables que les capteurs bruts, mais ils consomment plus. Utilisez le capteur adapté à vos besoins. Pour plus d’informations, voir [Capteurs](https://msdn.microsoft.com/library/windows/apps/mt187358).
 
 **Veille connectée**
-- Quand le PC est à l’état de veille connectée, les objets [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) expireront au bout de 7secondes, les détecteurs d’événements [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) seront appelés une fois avec l’état **NoData**.
+- Quand le PC est à l’état de veille connectée, les objets [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) expireront au bout de 7 secondes, les détecteurs d’événements [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) seront appelés une fois avec l’état **NoData**.
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
@@ -115,8 +115,8 @@ L’utilisateur peut désactiver la fonctionnalité de géolocalisation en défi
 
 -   Pour détecter à quel moment l’utilisateur désactive ou réactive les services de localisation :
     -   Gérez l’événement [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542). La propriété [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) de l’argument de l’événement **StatusChanged** a la valeur **Disabled** si l’utilisateur désactive les services de localisation.
-    -   Vérifiez les codes d’erreur retournés par [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). Si l’utilisateur a désactivé les services de localisation, les appels à **GetGeopositionAsync** se soldent par un échec avec une erreur **ACCESS\_DENIED** et la propriété [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) a la valeur **Disabled**.
--   Si vous disposez d’une application pour laquelle des données de géolocalisation sont primordiales, par exemple une application de cartographie, veillez à effectuer les tâches suivantes:
+    -   Vérifiez les codes d’erreur retournés par [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). Si l’utilisateur a désactivé les services de localisation, les appels aux **GetGeopositionAsync** échouent avec une **accès\_refusé** erreur et le [ **LocationStatus** ](https://msdn.microsoft.com/library/windows/apps/br225538) propriété a la valeur **désactivé**.
+-   Si vous disposez d’une application pour laquelle des données de géolocalisation sont primordiales, par exemple une application de cartographie, veillez à effectuer les tâches suivantes :
     -   Gérez l’événement [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) pour obtenir des mises à jour si l’emplacement de l’utilisateur change.
     -   Gérez l’événement [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) tel que décrit ci-avant afin de détecter les modifications apportées aux paramètres de géolocalisation.
 
@@ -124,17 +124,17 @@ Notez que le service de localisation renvoie les données à mesure de leur disp
 
 ### <a name="graphical-representations-of-location"></a>Représentations graphiques de localisation
 
-Faites en sorte que votre application utilise [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) pour indiquer précisément l’emplacement actuel de l’utilisateur sur la carte. Il existe trois principales bandes de précision: un rayon d’erreur d’environ 10 mètres, un rayon d’erreur d’environ 100 mètres et un rayon d’erreur de plus d’un kilomètre. En utilisant les informations de précision, vous pouvez vous assurer que votre application affiche l’emplacement de façon exacte dans le contexte des données disponibles. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
+Faites en sorte que votre application utilise [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) pour indiquer précisément l’emplacement actuel de l’utilisateur sur la carte. Il existe trois principales bandes de précision : un rayon d’erreur d’environ 10 mètres, un rayon d’erreur d’environ 100 mètres et un rayon d’erreur de plus d’un kilomètre. En utilisant les informations de précision, vous pouvez vous assurer que votre application affiche l’emplacement de façon exacte dans le contexte des données disponibles. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
 
 -   Pour une précision égale à peu près à 10 mètres (résolution GPS), l’emplacement peut être indiqué par un point ou une épingle sur la carte. Avec cette précision, les coordonnées de latitude et de longitude ainsi que l’adresse peuvent également être affichées.
 
     ![exemple de carte affichée avec une précision de GPS d’environ 10 mètres.](images/10metererrorradius.png)
 
--   Pour une précision entre 10 et 500mètres (environ 100mètres), la localisation est généralement reçue via une résolution Wi-Fi. La localisation obtenue à partir du signal cellulaire offre une précision d’environ 300 mètres. Dans ce cas, il est conseillé que votre application affiche un rayon d’erreur. Pour les applications qui affichent des directions où un point de centrage est requis, un tel point peut être affiché avec un rayon d’erreur qui l’entoure.
+-   Pour une précision entre 10 et 500 mètres (environ 100 mètres), la localisation est généralement reçue via une résolution Wi-Fi. La localisation obtenue à partir du signal cellulaire offre une précision d’environ 300 mètres. Dans ce cas, il est conseillé que votre application affiche un rayon d’erreur. Pour les applications qui affichent des directions où un point de centrage est requis, un tel point peut être affiché avec un rayon d’erreur qui l’entoure.
 
     ![exemple de carte affichée avec une précision Wi-Fi d’environ 100 mètres.](images/100metererrorradius.png)
 
--   Si la précision retournée est supérieure à 1kilomètre, vous recevez probablement les informations de géolocalisation avec une résolution de niveau IP. Ce niveau de précision est souvent trop faible pour localiser avec exactitude un endroit spécifique sur une carte. Votre application doit zoomer au niveau ville sur la carte, ou sur la zone appropriée en fonction du rayon d’erreur (par exemple, le niveau région).
+-   Si la précision retournée est supérieure à 1 kilomètre, vous recevez probablement les informations de géolocalisation avec une résolution de niveau IP. Ce niveau de précision est souvent trop faible pour localiser avec exactitude un endroit spécifique sur une carte. Votre application doit zoomer au niveau ville sur la carte, ou sur la zone appropriée en fonction du rayon d’erreur (par exemple, le niveau région).
 
     ![exemple de carte affichée avec une précision Wi-Fi d’environ 1 kilomètre.](images/1000metererrorradius.png)
 
@@ -161,11 +161,11 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Configurer une clôture virtuelle](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [Configurer une clôture virtuelle seulement avoir](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [Afficher des cartes avec des vues 2D, 3D et Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695)
+* [Afficher des cartes avec 2D, 3D et les vues Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [Exemple de géolocalisation UWP (géolocalisation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Exemple d’emplacement UWP (géolocalisation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
