@@ -1,11 +1,17 @@
 ---
 title: Programmation de jeux
-description: 'La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant.'
+description: La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant.
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.date: 06/13/2017
 ms.topic: article
-keywords: "windows\_10, uwp, jeux, directx"
+keywords: windows 10, uwp, jeux, directx
 ms.localizationpriority: medium
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582705"
 ---
 # <a name="game-programming"></a>Programmation de jeux
 

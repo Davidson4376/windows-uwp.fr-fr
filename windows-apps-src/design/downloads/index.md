@@ -1,12 +1,18 @@
 ---
 description: Obtenez les derniers téléchargements et outils pour concevoir la disposition et les contrôles d’interface utilisateur des applications UWP.
-keywords: 'disposition des applications uwp, interface utilisateur, conceptions d’interface utilisateur, téléchargements, outils uwp'
+keywords: disposition des applications uwp, interface utilisateur, conceptions d’interface utilisateur, téléchargements, outils uwp
 title: Kits de ressources et exemples de conception pour les applications UWP
 ms.date: 10/11/2018
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582862"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  

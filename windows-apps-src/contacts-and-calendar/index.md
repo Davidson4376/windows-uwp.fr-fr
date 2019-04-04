@@ -4,8 +4,14 @@ title: Contacts et calendriers
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.date: 05/18/2018
 ms.topic: article
-keywords: "windows\_10, uwp, contacts, calendrier, rendez-vous, e-mails"
+keywords: windows 10, uwp, contacts, calendrier, rendez-vous, e-mails
 ms.localizationpriority: medium
+ms.openlocfilehash: 239dbaa7799d9991a63223d1cd8706d34445a16b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582681"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Contacts, Mes Contacts et Calendrier
 

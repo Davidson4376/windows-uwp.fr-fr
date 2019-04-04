@@ -1,11 +1,17 @@
 ---
 title: Vue d’ensemble des cartes et de l’emplacement
-description: "Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes\_Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique."
+description: Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "windows\_10, uwp, carte, emplacement, services de carte"
+keywords: windows 10, uwp, carte, emplacement, services de carte
 ms.localizationpriority: medium
+ms.openlocfilehash: 3482370719a658f303964204661f1fb5d69ae5b4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582657"
 ---
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et de l’emplacement
 

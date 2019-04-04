@@ -1,10 +1,16 @@
 ---
 description: Découvrez comment concevoir et coder une application UWP intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
 title: Notions de base de la conception
-keywords: 'disposition d’application uwp, plateforme windows universelle, conception d’application, interface'
+keywords: disposition d’application uwp, plateforme windows universelle, conception d’application, interface
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582591"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Informations de base relatives à la conception pour les applications UWP
 

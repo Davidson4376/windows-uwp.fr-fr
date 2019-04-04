@@ -4,13 +4,19 @@ title: Boîtes de dialogue et menus volants
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: "windows\_10, uwp"
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
+ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582717"
 ---
 # <a name="dialogs-and-flyouts"></a>Boîtes de dialogue et menus volants
 

@@ -4,8 +4,14 @@ title: Accès aux données
 description: Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications UWP.
 ms.date: 11/13/2017
 ms.topic: article
-keywords: "windows\_10, uwp, données, base de données, relationnelle, tables, sqlite"
+keywords: windows 10, uwp, données, base de données, relationnelle, tables, sqlite
 ms.localizationpriority: medium
+ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582711"
 ---
 # <a name="data-access"></a>Accès aux données
 

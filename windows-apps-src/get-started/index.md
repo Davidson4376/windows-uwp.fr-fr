@@ -1,11 +1,17 @@
 ---
 layout: LandingPage
-description: "Bien démarrer avec UWP (plateforme Windows universelle) et le développement d’applications pour Windows\_10."
+description: Bien démarrer avec UWP (plateforme Windows universelle) et le développement d’applications pour Windows 10.
 title: Bien démarrer avec la plateforme UWP (plateforme Windows universelle)
 ms.date: 03/23/2018
 ms.topic: article
-keywords: "bien démarrer, windows\_10, uwp, xaml, c#"
+keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
+ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582953"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10 
  

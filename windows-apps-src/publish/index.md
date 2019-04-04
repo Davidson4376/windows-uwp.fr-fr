@@ -4,9 +4,15 @@ Description: Découvrez comment publier vos applications Windows sur le Microsof
 title: Publier des applications Windows
 ms.date: 10/31/2018
 ms.topic: article
-keywords: "windows\_10, uwp, publication, publier, vente, vendre, distribuer, distribution, store, tableau de bord"
+keywords: windows 10, uwp, publication, publier, vente, vendre, distribuer, distribution, store, tableau de bord
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
+ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582567"
 ---
 # <a name="publish-windows-apps-and-games"></a>Publier des applications et jeux Windows  
  

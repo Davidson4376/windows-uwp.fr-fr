@@ -3,9 +3,15 @@ layout: HubPage
 hide_bc: true
 ms.prod: windows
 title: Documentation Windows
-description: 'Trouvez les documents dédiés aux développeurs, au matériel et aux professionnels de l’informatique qui vous aideront à créer et gérer votre solution Windows.'
+description: Trouvez les documents dédiés aux développeurs, au matériel et aux professionnels de l’informatique qui vous aideront à créer et gérer votre solution Windows.
 ms.technology: hub
 localizationpriority: medium
+ms.openlocfilehash: 1926f38d4b7772488e086395d4e28545b1f85a81
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582809"
 ---
 <div id="main" class="v2">
   <div class="container">

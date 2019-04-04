@@ -3,10 +3,16 @@ title: Glossaire relatif au graphisme Direct3D
 description: Définit les termes relatifs au graphisme utilisé par Microsoft Direct3D.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-  - Glossaire relatif au graphisme Direct3D
+- Glossaire relatif au graphisme Direct3D
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582698"
 ---
 # <a name="direct3d-graphics-glossary"></a>Glossaire relatif au graphisme Direct3D
 

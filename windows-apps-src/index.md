@@ -1,14 +1,20 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: 'La plateforme Windows universelle (UWP) vous permet de créer des applications pour n’importe quel appareil Windows (téléphones, console Xbox One, casque HoloLens, etc.) et de les publier dans le Windows Store.'
+description: La plateforme Windows universelle (UWP) vous permet de créer des applications pour n’importe quel appareil Windows (téléphones, console Xbox One, casque HoloLens, etc.) et de les publier dans le Windows Store.
 title: Documentation UWP - Développeur d’applications UWP | Microsoft Docs
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-keywords: 'windows uwp, plateforme Windows universelle, Windows Runtime, API, api windows, informations de référence de l’api windows, api winrt, informations de référence de l’api windows, api uwp, informations de référence de l’api uwp, développer une application uwp, concevoir une application uwp, publier une application uwp'
+keywords: windows uwp, plateforme Windows universelle, Windows Runtime, API, api windows, informations de référence de l’api windows, api winrt, informations de référence de l’api windows, api uwp, informations de référence de l’api uwp, développer une application uwp, concevoir une application uwp, publier une application uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
+ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582923"
 ---
 # <a name="universal-windows-platform-documentation"></a>Documentation sur la plateforme Windows universelle
 UWP (plateforme Windows universelle) vous permet de générer des applications pour n’importe quel appareil Windows (ordinateurs, téléphones, console Xbox One, casque HoloLens, etc.) et de les publier sur le Microsoft Store.

@@ -1,11 +1,17 @@
 ---
 title: Développez des applications éducatives.
-description: "Cette section décrit les ressources des applications Windows universelles à votre disposition pour l’écriture d’applications éducatives pour la plateforme Windows\_10."
+description: Cette section décrit les ressources des applications Windows universelles à votre disposition pour l’écriture d’applications éducatives pour la plateforme Windows 10.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "windows\_10, uwp, éducation"
+keywords: windows 10, uwp, éducation
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
+ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582784"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Développement d’applications Universal Windows pour l’éducation
 ![capture d’écran d’application Examen](images/take-a-test-screen-small.png)

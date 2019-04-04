@@ -1,11 +1,17 @@
 ---
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: "Cette section explique comment effectuer le portage de votre application sur la plateforme UWP (plateforme Windows universelle), qui permet de créer un seul package d’application Windows\_10 que vos clients peuvent installer sur tous les types d’appareil. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales."
-title: "Portage d’applications sur Windows\_10"
+description: Cette section explique comment effectuer le portage de votre application sur la plateforme UWP (plateforme Windows universelle), qui permet de créer un seul package d’application Windows 10 que vos clients peuvent installer sur tous les types d’appareil. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
+title: Portage d’applications sur Windows 10
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "windows\_10, uwp"
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: eefebbd7087070f85ead09e562f154f43ed49e37
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582780"
 ---
 # <a name="porting-apps-to-windows10"></a>Portage d’applications sur Windows 10
 
