@@ -23,7 +23,7 @@ Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et 
 > [!NOTE]
 > ISF est la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire, tel qu’un fichier GIF, ou placer le fichier directement dans le Presse-papiers.
 
-> **API importantes**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **API importantes** : [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Enregistrer des traits d’encre dans un fichier
 

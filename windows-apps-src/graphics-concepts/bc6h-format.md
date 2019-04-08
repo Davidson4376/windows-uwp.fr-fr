@@ -143,18 +143,18 @@ Les noms de champs dans le tableau ci-dessus sont définis comme suit :
 |-------|-------------------|
 | m     | mode              |
 | d     | index de forme       |
-| rw    | endpt\[0\].A\[0\] |
-| rx    | endpt\[0\].B\[0\] |
-| ry    | endpt\[1\].A\[0\] |
-| rz    | endpt\[1\].B\[0\] |
-| gw    | endpt\[0\].A\[1\] |
-| gx    | endpt\[0\].B\[1\] |
-| gy    | endpt\[1\].A\[1\] |
-| gz    | endpt\[1\].B\[1\] |
-| bw    | endpt\[0\].A\[2\] |
-| bx    | endpt\[0\].B\[2\] |
-| par    | endpt\[1\].A\[2\] |
-| bz    | endpt\[1\].B\[2\] |
+| rw    | Endpt\[0\]. Un\[0\] |
+| rx    | Endpt\[0\]. B\[0\] |
+| ry    | Endpt\[1\]. Un\[0\] |
+| rz    | Endpt\[1\]. B\[0\] |
+| gw    | Endpt\[0\]. Un\[1\] |
+| gx    | Endpt\[0\]. B\[1\] |
+| gy    | Endpt\[1\]. Un\[1\] |
+| gz    | Endpt\[1\]. B\[1\] |
+| bw    | Endpt\[0\]. Un\[2\] |
+| bx    | Endpt\[0\]. B\[2\] |
+| par    | Endpt\[1\]. Un\[2\] |
+| bz    | Endpt\[1\]. B\[2\] |
 
  
 

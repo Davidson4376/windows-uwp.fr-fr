@@ -40,7 +40,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 ### <a name="pricing-and-availability-page"></a>Page Tarification et disponibilité
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Markets**                   | Default : Tous les marchés possible  | [Définir la sélection de tarification et de marché](define-pricing-and-market-selection.md)         |
+| **Marchés**                   | Default : Tous les marchés possible  | [Définir la sélection de tarification et de marché](define-pricing-and-market-selection.md)         |
 | **Audience**                | Default : Public non privé | [Audience](choose-visibility-options.md#audience) |
 | **Détectabilité**                | Default : Rendre cette application disponible et détectable dans le Store | [Détectabilité](choose-visibility-options.md#discoverability) |
 | **Planification**                  | Default : Version dès que possible        | [Configurer la planification de la version précise](configure-precise-release-scheduling.md) |
@@ -97,9 +97,9 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Logos de Store**               | Recommandé ; obligatoire pour certaines versions du système d’exploitation | [Logos de Store](app-screenshots-and-images.md#store-logos)             |
 | **Codes de fin**                  | Facultatif                                    | [Codes de fin](app-screenshots-and-images.md#trailers)                | 
 | **Image de Windows 10 et Xbox (art de Super héros de 16:9)**     | Recommandé        | [Windows 10 et Xbox image (art de Super héros de 16:9)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Images de Xbox**     | Requis pour l’affichage correct si vous publiez sur Xbox        | [Images Xbox
-](app-screenshots-and-images.md#xbox-images) |
+] (app-captures d’écran-et-images.MD #xbox-images) |
 | **Champs supplémentaires**  | Facultatif                                    | [Champs supplémentaires](create-app-store-listings.md#supplemental-fields) 
 | **Termes de recherche**              | Facultatif                                    | [Termes de recherche](create-app-store-listings.md#search-terms)         |
 | **Informations de copyright et de marque** | Facultatif                                 | [Informations de copyright et de marque](create-app-store-listings.md#copyright-and-trademark-info) |

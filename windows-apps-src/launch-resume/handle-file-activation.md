@@ -144,8 +144,8 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 ### <a name="tasks"></a>Tâches
 
-* [Lancez l’application par défaut pour un fichier](launch-the-default-app-for-a-file.md)
-* [Gérer l’activation d’URI](handle-uri-activation.md)
+* [Lancer l’application par défaut pour un fichier](launch-the-default-app-for-a-file.md)
+* [Gérer l’activation d’un URI](handle-uri-activation.md)
 
 ### <a name="guidelines"></a>Recommandations
 

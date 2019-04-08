@@ -374,7 +374,7 @@ using namespace Windows::Web::Http;
 * [Connexion à une ressource de réseau avec un socket de flux de données](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
 * [Connexion aux services réseau](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
 * [Connexion aux services web](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
-* [Principes de base de mise en réseau](https://msdn.microsoft.com/library/windows/apps/mt280233)
+* [Notions de base relatives aux réseaux](https://msdn.microsoft.com/library/windows/apps/mt280233)
 * [Comment configurer les fonctionnalités d’isolation du réseau](https://msdn.microsoft.com/library/windows/apps/hh770532)
 * [Comment activer le bouclage et déboguer l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh780593)
 
@@ -383,7 +383,7 @@ using namespace Windows::Web::Http;
 * [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)
 * [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
 * [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
-* [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
+* [**Windows::Web::http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 * [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
 **Exemples**

@@ -86,7 +86,7 @@ Passons en revue chaque tâche.
 
 ### <a name="create-the-package-layout-folder"></a>Créer le dossier de disposition de package
 
-Si vous avez déjà un fichier .msix (ou .appx), vous pouvez décompresser son contenu dans un dossier de disposition qui servira à la zone de transit pour votre package. Vous pouvez le faire à partir d’une invite de commandes à l’aide de l’outil de MakeAppx, selon votre chemin d’installation du Kit de développement, voici où vous trouverez l’outil makeappx.exe sur votre PC Windows 10 : x86 : C:\Program fichiers (x86) \Windows Kits\10\bin\x86\makeappx.exe x64 : C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
+Si vous avez déjà un fichier .msix (ou .appx), vous pouvez décompresser son contenu dans un dossier de disposition qui servira à la zone de transit pour votre package. Vous pouvez le faire à partir d’une invite de commandes à l’aide de l’outil de MakeAppx, selon votre chemin d’installation du Kit de développement, voici où vous trouverez l’outil makeappx.exe sur votre PC Windows 10 : x86 : C:\Program fichiers (x86) \Windows Kits\10\bin\x86\makeappx.exe x64 : C:\Program fichiers (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -190,9 +190,9 @@ Voici un guide pour le schéma config.json :
 |-------|-----------|-------|
 | applications | id |  Utilisez la valeur de la `Id` attribut de la `Application` élément dans le manifeste du package. |
 | applications | exécutable | Le chemin d’accès relatif du package à l’exécutable que vous souhaitez démarrer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste du package avant de le modifier. C’est la valeur de la `Executable` attribut de la `Application` élément. |
-| applications | workingDirectory | (Facultatif) Un chemin d’accès relatif du package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
+| applications | WorkingDirectory | (Facultatif) Un chemin d’accès relatif du package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
 | Processus | exécutable | Dans la plupart des cas, il s’agit du nom de la `executable` configuré ci-dessus avec l’extension de chemin d’accès et fichier supprimée. |
-| corrections | dll | Relatifs à un package de chemin d’accès à la correction,.msix/.appx à charger. |
+| corrections | DLL | Relatifs à un package de chemin d’accès à la correction,.msix/.appx à charger. |
 | corrections | config | (Facultatif) Contrôle le comportement de la liste de distribution de correction. Le format exact de cette valeur varie sur une base de correction par correction comme chaque correction peut interpréter ce « blob » qu’il le souhaite. |
 
 Le `applications`, `processes`, et `fixups` clés sont des tableaux. Cela signifie que vous pouvez utiliser le fichier config.json spécifier plus d’une application, processus et correction DLL.
@@ -403,9 +403,9 @@ Fournissez une valeur pour chaque clé. Utilisez ce tableau comme guide.
 |-------|-----------|-------|
 | applications | id |  Utilisez la valeur de la `Id` attribut de la `Application` élément dans le manifeste du package. |
 | applications | exécutable | Le chemin d’accès relatif du package à l’exécutable que vous souhaitez démarrer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste du package avant de le modifier. C’est la valeur de la `Executable` attribut de la `Application` élément. |
-| applications | workingDirectory | (Facultatif) Un chemin d’accès relatif du package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
+| applications | WorkingDirectory | (Facultatif) Un chemin d’accès relatif du package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
 | Processus | exécutable | Dans la plupart des cas, il s’agit du nom de la `executable` configuré ci-dessus avec l’extension de chemin d’accès et fichier supprimée. |
-| corrections | dll | Chemin d’accès de package relatif aux corrections de la DLL à charger. |
+| corrections | DLL | Chemin d’accès de package relatif aux corrections de la DLL à charger. |
 | corrections | config | (Facultatif) Contrôle le comportement de la DLL de correction. Le format exact de cette valeur varie sur une base de correction par correction comme chaque correction peut interpréter ce « blob » qu’il le souhaite. |
 
 Lorsque vous avez terminé, votre ``config.json`` fichier ressemblera à ceci.

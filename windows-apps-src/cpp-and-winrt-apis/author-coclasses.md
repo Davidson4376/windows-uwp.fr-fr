@@ -1,5 +1,5 @@
 ---
-description: C++ / c++ / WinRT peut vous aider à créer des composants COM classiques, comme il vous aide à créer des classes de Windows Runtime.
+description: C++/WinRT peut vous aider à créer des composants COM classiques, comme il vous aide à créer des classes Windows Runtime.
 title: Créer des composants COM avec C++/WinRT
 ms.date: 09/06/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616564"
@@ -530,6 +530,6 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 * [modèle de struct WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Créer des API avec C / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [Consommer des composants COM avec C / c++ / WinRT](consume-com.md)
-* [Envoyer une notification toast local](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Utiliser des composants COM avec C++/WinRT](consume-com.md)
+* [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

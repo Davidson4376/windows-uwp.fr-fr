@@ -28,7 +28,7 @@ Le menu volant barre de commande vous permet de fournir aux utilisateurs un acc�
 > CommandBarFlyout nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 > - **API de plateforme**: [Classe de CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout classe](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton classe](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton classe](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [ Classe de AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **API de bibliothèque de l’interface utilisateur de Windows**: [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>- **API de bibliothèque de l’interface utilisateur de Windows**: [Classe de CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout classe](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
 Comme [CommandBar](app-bars.md), CommandBarFlyout a **PrimaryCommands** et **SecondaryCommands** propriétés que vous pouvez utiliser pour ajouter des commandes. Vous pouvez placer des commandes dans la collection, ou les deux. Quand et comment les commandes principales et secondaires sont affichés varient selon le mode d’affichage.
 
@@ -60,7 +60,7 @@ Pour afficher les commandes dans un menu contextuel, vous pouvez utiliser Comman
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/CommandBarFlyout">ouvrez l’application et consultez le CommandBarFlyout en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

@@ -161,7 +161,7 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Configurer une clôture virtuelle seulement avoir](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [Configurer une limite géographique](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [Afficher des cartes avec 2D, 3D et les vues Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->

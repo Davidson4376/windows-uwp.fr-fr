@@ -12,7 +12,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57640814"
 ---
-# <a name="tutorial-create-a-user-interface"></a>Didacticiel : Créer une interface utilisateur
+# <a name="tutorial-create-a-user-interface"></a>Tutoriel : Créer une interface utilisateur
 
 Dans ce didacticiel, vous allez apprendre à créer une interface utilisateur de base pour un programme de retouche d’images. Pour ce faire, vous allez effectuer plusieurs opérations : 
 

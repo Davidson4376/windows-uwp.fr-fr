@@ -35,7 +35,7 @@ La définition de CUSTOMVERTEX serait transmise au pilote graphique lors de la c
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

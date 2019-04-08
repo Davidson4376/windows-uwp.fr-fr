@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57640144"
@@ -100,7 +100,7 @@ L’équation suivante met à l'échelle le point (x, y, z) à l'aide de valeurs
 
 ![équation d’une matrice de mise à l'échelle pour un nouveau point](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>faire pivoter
 
 
 Les transformations décrites ici conviennent à des systèmes de coordonnées pour gaucher et peuvent donc différer des matrices de transformation que vous avez vues ailleurs.

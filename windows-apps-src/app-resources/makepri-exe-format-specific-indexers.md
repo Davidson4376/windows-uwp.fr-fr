@@ -8,7 +8,7 @@ keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645874"

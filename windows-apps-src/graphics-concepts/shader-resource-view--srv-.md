@@ -26,7 +26,7 @@ Les affichages des accès sans ordre (UAV) sont légèrement plus coûteux en te
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

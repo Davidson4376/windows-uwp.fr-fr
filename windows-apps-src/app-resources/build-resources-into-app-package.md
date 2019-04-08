@@ -97,6 +97,6 @@ Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous av
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Empaqueter une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Créer un package d’application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md)
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Spécifier les ressources par défaut qui utilise votre application](specify-default-resources-installed.md)
+* [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md)

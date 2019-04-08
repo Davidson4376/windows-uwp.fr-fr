@@ -71,7 +71,7 @@ Windows utilisera une connexion https vers votre site web et recherchera le fich
 
 L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères génériques. Les caractères génériques vous permettent de prendre en charge une grande diversité de liens, avec moins de lignes de code. La liaison application-site web prend en charge deux types de caractères génériques dans le fichier JSON :
 
-| **Wildcard** | **Description**               |
+| **Caractère générique** | **Description**               |
 |--------------|-------------------------------|
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |

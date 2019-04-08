@@ -26,7 +26,7 @@ ms.locfileid: "57620344"
 Un *panneau* est un objet qui fournit un comportement de disposition pour les éléments enfants qu’il contient, lorsque le système de disposition XAML (Extensible Application Markup Language) est exécuté et que l’interface utilisateur de votre application est affichée. 
 
 
-> **API importantes**: [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+> **API importantes** : [**Panneau**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
 Vous pouvez définir des panneaux personnalisés pour la disposition XAML en dérivant une classe personnalisée à partir de la classe [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Vous fournissez le comportement pour votre panneau en substituant les méthodes [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) et [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) et en fournissant la logique qui mesure et organise les éléments enfants.
 
@@ -86,7 +86,7 @@ Le bon fonctionnement du système de disposition est dû en grande partie au fai
 -   [**DesiredSize** ](https://msdn.microsoft.com/library/windows/apps/br208921) (en fait une [ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/br208911) propriété)
 -   [**ActualHeight** ](https://msdn.microsoft.com/library/windows/apps/br208707) et [ **ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)
 -   [**Hauteur** ](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et [ **la largeur**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)
--   [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+-   [**Marge**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   [**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/br208722) événement
 -   [**HorizontalAlignment** ](https://msdn.microsoft.com/library/windows/apps/br208720) et [ **VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 -   [**ArrangeOverride** ](https://msdn.microsoft.com/library/windows/apps/br208711) et [ **MeasureOverride** ](https://msdn.microsoft.com/library/windows/apps/br208730) méthodes
@@ -195,7 +195,7 @@ D’autres API font partie du système de disposition mais ne sont pas déclaré
 **Référence**
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**Panneau de configuration**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **Concepts**
 * [L’alignement, marges et remplissage](alignment-margin-padding.md)

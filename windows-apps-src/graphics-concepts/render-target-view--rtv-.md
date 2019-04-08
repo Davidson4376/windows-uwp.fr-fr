@@ -22,7 +22,7 @@ Les cibles de rendu permettent d'afficher une scène dans une mémoire tampon in
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

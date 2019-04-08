@@ -299,7 +299,7 @@ Si vous utilisez la technologie [interop XAML-DirectX](https://msdn.microsoft.co
 ## <a name="reference"></a>Référence
 
 
--   [XAudio2 Introduction](https://msdn.microsoft.com/library/windows/desktop/ee415813)
+-   [Présentation de XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813)
 -   [Guide de programmation XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 -   [Vue d’ensemble de Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 

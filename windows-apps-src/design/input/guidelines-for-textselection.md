@@ -20,7 +20,7 @@ ms.locfileid: "57612504"
 
 Cet article décrit la sélection et la manipulation de texte, d’images et de contrôles, et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ces mécanismes dans vos applications.
 
-> **API importantes**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **API importantes** : [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
  
 
 

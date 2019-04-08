@@ -20,7 +20,7 @@ ms.locfileid: "57648814"
 
 Lorsque votre application s’exécute dans une fenêtre de bureau, vous pouvez personnaliser les barres de titre pour correspondre à la personnalité de votre application. Les API de personnalisation de barre de titre vous permettent de spécifier les couleurs des éléments de barre de titre ou d’étendre le contenu de votre application dans la zone de barre de titre et d’en prendre le contrôle total.
 
-> **API importantes**: [Propriété de ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [ApplicationViewTitleBar classe](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar classe](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **API importantes** : [Propriété de ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [ApplicationViewTitleBar classe](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar classe](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Degrés de personnalisation de la barre de titre
 
@@ -381,5 +381,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Acrylic](../style/acrylic.md)
-- [Color](../style/color.md)
+- [ACRYLIQUE](../style/acrylic.md)
+- [Couleur](../style/color.md)

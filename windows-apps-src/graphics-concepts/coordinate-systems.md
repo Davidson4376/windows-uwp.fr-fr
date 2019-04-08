@@ -50,7 +50,7 @@ Si vous portez une application reposant sur un système de coordonnées droitier
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
  
 

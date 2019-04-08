@@ -18,7 +18,7 @@ ms.locfileid: "57648224"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 
-Windows est utilisé dans le monde entier par des publics de diverses cultures, régions et langues. Vos utilisateurs parlent différentes langues dans divers pays et régions. Certains utilisateurs parlent plusieurs langues. Ainsi, votre application s’exécute sur des configurations qui impliquent de nombreuses permutations des paramètres de langue, de région et de culture du système. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
+Windows est utilisé dans le monde entier par des personnes de diverses cultures, régions et langues. Vos utilisateurs parlent différentes langues dans divers pays et régions. Certains utilisateurs parlent plusieurs langues. Ainsi, votre application s’exécute sur des configurations qui impliquent de nombreuses permutations des paramètres de langue, de région et de culture du système. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
 
 Cette vidéo fournit une brève introduction sur la préparation de votre application pour le monde entier : [Introduction à la globalisation et localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 

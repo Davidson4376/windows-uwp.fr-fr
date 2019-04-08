@@ -21,7 +21,7 @@ ms.locfileid: "57647724"
 
 Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
 
-> **API importantes**: [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421), [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **API importantes** : [**Classe de RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition classe**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 

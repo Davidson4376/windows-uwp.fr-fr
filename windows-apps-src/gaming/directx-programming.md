@@ -30,7 +30,7 @@ Cette section fournit des informations sur le développement de jeux UWP avec Di
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="directx-getting-started.md">Mise en route</a></p></td>
+<td align="left"><p><a href="directx-getting-started.md">Bien démarrer</a></p></td>
 <td align="left"><p>Introduction à la programmation DirectX.</p></td>
 </tr>
 <tr class="even">
@@ -38,7 +38,7 @@ Cette section fournit des informations sur le développement de jeux UWP avec Di
 <td align="left"><p>Découvrez DirectX à travers des exemples de jeux.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-fundamentals.md">Fundamentals</a></p></td>
+<td align="left"><p><a href="directx-fundamentals.md">Principes de base</a></p></td>
 <td align="left"><p>Explique les concepts de programmation de base DirectX.</p></td>
 </tr>
 <tr class="even">

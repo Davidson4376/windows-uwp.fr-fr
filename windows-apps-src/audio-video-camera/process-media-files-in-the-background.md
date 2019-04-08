@@ -23,7 +23,7 @@ L’exemple d’application décrit dans cet article permet à l’utilisateur d
 
 Pour obtenir des informations plus détaillées sur les différentes fonctionnalités des applications Windows universelles utilisées dans cet exemple, voir :
 
--   [Transcodez les fichiers multimédias](transcode-media-files.md)
+-   [Transcoder des fichiers multimédias](transcode-media-files.md)
 -   [Lancement de tâches en arrière-plan et de la reprise](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [Notifications et les badges de vignettes](https://msdn.microsoft.com/library/windows/apps/mt185606)
 

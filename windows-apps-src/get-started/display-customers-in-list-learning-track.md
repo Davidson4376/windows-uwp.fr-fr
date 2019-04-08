@@ -166,10 +166,10 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 | API | Description |
 |------|---------------|
 | [Modèle de données](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | Décrit la structure visuelle d’un objet de données, pour permettre l’affichage d'éléments spécifiques dans l’interface utilisateur. |
-| [x:Bind](../xaml-platform/x-bind-markup-extension.md) | Documentation sur l’extension de balisage x:Bind recommandée. |
+| [x : Bind](../xaml-platform/x-bind-markup-extension.md) | Documentation sur l’extension de balisage x:Bind recommandée. |
 | [Liaison](../xaml-platform/binding-markup-extension.md) | Documentation sur l’ancienne extension de balisage Binding. |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Contrôle d'interface utilisateur qui affiche des éléments de données dans une pile verticale. |
-| [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Contrôle de texte de base pour l’affichage de données de texte modifiables dans l’interface utilisateur. |
+| [Zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Contrôle de texte de base pour l’affichage de données de texte modifiables dans l’interface utilisateur. |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | Interface pour rendre les données observables, en fournissant une liaison de données. |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | La propriété **ItemsSource** de cette classe permet à un contrôle ListView d'établir une liaison avec une source de données. |
 
@@ -177,7 +177,7 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 
 | Rubrique | Description |
 |-------|----------------|
-| [Liaison de données en profondeur](../data-binding/data-binding-in-depth.md) | Vue d’ensemble des principes de liaison de données |
+| [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md) | Vue d’ensemble des principes de liaison de données |
 | [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md) | Informations conceptuelles détaillées sur la liaison de données. |
 | [Affichage de liste](../design/controls-and-patterns/listview-and-gridview.md) | Informations sur la création et la configuration d’un contrôle ListView, y compris l’implémentation d’un **DataTemplate** |
 

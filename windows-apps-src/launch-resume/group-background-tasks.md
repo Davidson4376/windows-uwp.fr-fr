@@ -15,7 +15,7 @@ ms.locfileid: "57623854"
 
 **API importantes**
 
-[BackgroundTaskRegistrationGroup class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup)
+[Classe de BackgroundTaskRegistrationGroup](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup)
 
 Les tâches en arrière-plan peuvent désormais être inscrites dans un groupe, que vous pouvez considérer comme un espace de noms logique. Cette isolation contribue à garantir que les différents composants d’une application, ou les différentes bibliothèques, n’interfèrent pas avec les inscriptions de tâche en arrière-plan des autres.
 

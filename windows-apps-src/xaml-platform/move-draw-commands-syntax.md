@@ -51,7 +51,7 @@ Les règles générales de cette syntaxe sont les suivantes :
 -   Chaque commande, sauf la commande de fermeture, est généralement suivie d’un ou plusieurs nombres.
 -   Si vous avez plusieurs nombres par commande, séparez-les par une virgule ou un espace.
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[**_fillRule_ **\]** _moveCommand_ _drawCommand_ **\[**  _drawCommand_ **\* \]** **\[** _closeCommand_**\]**
 
 De nombreuses commandes de dessin utilisent des points qui nécessitent la définition d’une valeur _x,y_. Chaque fois que vous voyez un \* _points_ espace réservé que vous pouvez supposer que vous êtes en train de deux valeurs décimales pour le _x, y_ valeur d’un point.
 
@@ -71,11 +71,11 @@ Spécifie le point de départ d’une nouvelle figure.
 
 | Syntaxe |
 |--------|
-| `M ` _startPoint_ <br/>- ou -<br/>`m` _startPoint_|
+| `M ` _point de départ_ <br/>- ou -<br/>`m` _point de départ_|
 
 | Terme | Description |
 |------|-------------|
-| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Point de départ d’une nouvelle figure.|
+| _point de départ_ | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Point de départ d’une nouvelle figure.|
 
 Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
 
@@ -95,11 +95,11 @@ Crée une ligne droite entre le point actuel et le point de terminaison spécifi
 
 | Syntaxe |
 |--------|
-| `L` _endPoint_ <br/>- ou -<br/>`l` _endPoint_ |
+| `L` _point de terminaison_ <br/>- ou -<br/>`l` _point de terminaison_ |
 
 | Terme | Description |
 |------|-------------|
-| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Point de terminaison de la ligne.|
+| endPoint | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Point de terminaison de la ligne.|
 
 **Commande horizontal line**
 
@@ -107,7 +107,7 @@ Crée une ligne horizontale entre le point actuel et la coordonnée x spécifi�
 
 | Syntaxe |
 |--------|
-| `H ` _x_ <br/> - ou - <br/>`h ` _x_ |
+| `H ` _X_ <br/> - ou - <br/>`h ` _X_ |
 
 | Terme | Description |
 |------|-------------|
@@ -119,11 +119,11 @@ Crée une ligne verticale entre le point actuel et la coordonnée y spécifiée
 
 | Syntaxe |
 |--------|
-| `V ` _y_ <br/> - ou - <br/> `v ` _y_ |
+| `V ` _Y_ <br/> - ou - <br/> `v ` _Y_ |
 
 | Terme | Description |
 |------|-------------|
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée y du point final de la ligne. |
+| *Y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée y du point final de la ligne. |
 
 **Commande de courbe de Bézier cubique**
 
@@ -131,13 +131,13 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - ou - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *point de terminaison* <br/> - ou - <br/> `c ` *controlPoint1* *controlPoint2* *point de terminaison* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Premier point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Second point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
+| *controlPoint1* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Premier point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
+| *controlPoint2* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Second point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
+| *point de terminaison* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
 
 **Commande de courbe de Bézier quadratique**
 
@@ -149,8 +149,8 @@ Crée une courbe de Bézier quadratique entre le point actuel et le point de ter
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine les tangentes de début et de fin de la courbe. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
+| *controlPoint* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine les tangentes de début et de fin de la courbe. |
+| *point de terminaison* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
 **Commande de courbe de Bézier cubique lissée**
 
@@ -158,12 +158,12 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - ou - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *point de terminaison* <br/> - ou - <br/>`s` *point de terminaison controlPoint2* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
+| *controlPoint2* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
+| *point de terminaison* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
 **Commande de courbe de Bézier quadratique lissée**
 
@@ -171,12 +171,12 @@ Crée une courbe de Bézier quadratique entre le point actuel et le point de ter
 
 | Syntaxe |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - ou - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *point de terminaison* <br/> - ou - <br/> `t` *controlPoint* *point de terminaison* |
 
 | Terme | Description |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
+| *controlPoint* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
+| *point de terminaison* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Point vers lequel la courbe est tracée. |
 
 **Commande Elliptical arc**
 
@@ -184,15 +184,15 @@ Crée un arc elliptique entre le point actuel et le point de terminaison spécif
 
 | Syntaxe |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - ou - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *taille* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *point de terminaison* <br/> - ou - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | Terme | Description |
 |------|-------------|
-| *size* | [**Taille**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
+| *Taille* | [**Taille**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
 | *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Rotation de l’ellipse, en degrés. |
 | *isLargeArcFlag* | Affectez la valeur 1 si l’angle de l’arc doit être de 180 degrés ou plus ; sinon, affectez la valeur 0. |
 | *sweepDirectionFlag* | Affectez la valeur 1 si l’arc est dessiné dans la direction de l’angle positif ; sinon, affectez la valeur 0. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
+| *point de terminaison* | [**point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
  
 **Commande Close**
 
@@ -213,7 +213,7 @@ Décrit la coordonnée x et la coordonnée y d’un point. Voir aussi [**Point**
 | Terme | Description |
 |------|-------------|
 | *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée x du point. |
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée y du point. |
+| *Y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Coordonnée y du point. |
 
 **Remarques supplémentaires**
 

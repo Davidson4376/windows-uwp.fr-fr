@@ -31,7 +31,7 @@ Cette rubrique décrit les schémas d’URI suivants qui sont intégrés dans Wi
 | Schéma d’URI | Lancement |
 | ----------:|----------|
 |[bingmaps :, ms-lecteur-to : et ms-parcours-to : ](#maps-app-uri-schemes) | Application Cartes |
-|[http:](#http-uri-scheme) | Navigateur web par défaut |
+|[http :](#http-uri-scheme) | Navigateur web par défaut |
 |[mailto :](#email-uri-scheme) | Application de courrier électronique par défaut |
 |[MS-appel :](#call-app-uri-scheme) |  Application d’appel |
 |[MS-conversation :](#messaging-app-uri-scheme) | Application de messagerie |
@@ -217,7 +217,7 @@ Ou pour modifier une vidéo : `ms-photos:videoedit?InputToken=123abc&Action=Tri
 |------------|--------|
 | ms-photos:viewer?fileName={filename} | Lance l’application Photos pour afficher l’image spécifiée où {filename} est un nom de chemin d'accès complet. Par exemple : `c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | Lance l’application Photos en mode retouche vidéo pour le fichier représenté par le jeton de fichier. **InputToken** est requis. Utilisez le jeton de partage de fichier [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) pour obtenir un jeton pour un fichier. |
-| ms-photos:videoedit?Action={action} | Un paramètre optionnel qui ouvre l’application de Photos dans le mode d’édition vidéo spécifié où {action} est une des : **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. Si rien n'est spécifié, le choix par défaut est **View**. |
+| ms-photos:videoedit?Action={action} | Un paramètre optionnel qui ouvre l’application de Photos dans le mode d’édition vidéo spécifié où {action} est une des : **SlowMotion**, **FrameExtraction**, **Trim**, **vue**, **l’encre**. Si rien n'est spécifié, le choix par défaut est **View**. |
 | ms-photos:videoedit?StartTime={timespan} | Un paramètre facultatif qui spécifie l’endroit où démarrer la lecture de la vidéo. `{timespan}` doit être au format `"hh:mm:ss.ffff"`. Si non spécifié, par défaut `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>Schéma d’URI pour l’application Paramètres
@@ -244,4 +244,4 @@ Utilisez la **msnweather :** Schéma d’URI pour lancer l’application Mété
 
 | Schéma d’URI | Résultats |
 |------------|---------|
-| msnweather://forecast?la=\[latitude\]&lo=\[longitude\] | Lance l’application Météo dans la page de prévision basée sur un coordonnées de l’emplacement géographique.<br>`latitude` fait référence à la latitude de l’emplacement.<br> `longitude` fait référence à la longitude de l’emplacement.<br> |
+| msnweather://Forecast?la=\[latitude\]& lo =\[longitude\] | Lance l’application Météo dans la page de prévision basée sur un coordonnées de l’emplacement géographique.<br>`latitude` fait référence à la latitude de l’emplacement.<br> `longitude` fait référence à la longitude de l’emplacement.<br> |

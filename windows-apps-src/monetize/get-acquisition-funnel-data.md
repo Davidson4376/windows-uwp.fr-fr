@@ -61,8 +61,8 @@ Les champs de filtre pris en charge sont les suivants. Les valeurs de chaîne do
 |---------------|-----------------|
 | campaignId | La chaîne d’ID d'une [campagne de promotion d'application personnalisée](../publish/create-a-custom-app-promotion-campaign.md) qui est associée à l’acquisition. |
 | market | Chaîne contenant le code pays ISO 3166 du marché de l’acquisition. |
-| deviceType | Une des chaînes suivantes spécifiant le type d’appareil sur lequel l’acquisition s’est produite :<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>HOLOGRAPHIQUE</strong></li><li><strong>Inconnu</strong></li></ul> |
-| ageGroup | L'une des chaînes suivantes qui spécifie le groupe d'âge de l'utilisateur ayant effectué l’acquisition :<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 ou supérieure</strong></li><li><strong>Inconnu</strong></li></ul> |
+| deviceType | Une des chaînes suivantes spécifiant le type d’appareil sur lequel l’acquisition s’est produite :<ul><li><strong>PC</strong></li><li><strong>Téléphone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>HOLOGRAPHIQUE</strong></li><li><strong>Inconnu</strong></li></ul> |
+| ageGroup | L'une des chaînes suivantes qui spécifie le groupe d'âge de l'utilisateur ayant effectué l’acquisition :<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 : 34</strong></li><li><strong>35 : 49</strong></li><li><strong>50 ou supérieure</strong></li><li><strong>Inconnu</strong></li></ul> |
 | gender | L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition :<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>Inconnu</strong></li></ul> |
 
 
@@ -95,7 +95,7 @@ Les objets du tableau *Valeur* contiennent les valeurs suivantes :
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| MetricType                | chaîne | Une des chaînes suivantes qui spécifie le [type de données de l’entonnoir](../publish/acquisitions-report.md#acquisition-funnel) inclus dans cet objet :<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Installer</strong></li><li><strong>Utilisation</strong></li></ul> |
+| MetricType                | chaîne | Une des chaînes suivantes qui spécifie le [type de données de l’entonnoir](../publish/acquisitions-report.md#acquisition-funnel) inclus dans cet objet :<ul><li><strong>Page d’affichage</strong></li><li><strong>Acquisition</strong></li><li><strong>Installer</strong></li><li><strong>Utilisation</strong></li></ul> |
 | UserCount       | chaîne | Nombre d’utilisateurs ayant effectué l’étape de l’entonnoir spécifié par la valeur *MetricType*.             |
 
 

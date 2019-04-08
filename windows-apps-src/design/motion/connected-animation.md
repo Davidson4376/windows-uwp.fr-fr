@@ -22,7 +22,7 @@ Les animations connectées vous permettent de créer une expérience de navigati
 
 Une animation connectée, un élément apparaît « continuer » entre deux vues lors d’une modification dans l’interface utilisateur contenu, battant sur l’écran à partir de son emplacement dans la vue de source vers sa destination dans la nouvelle vue. Cela met l’accent sur le contenu commun entre les vues et crée un effet de belle et dynamique dans le cadre d’une transition.
 
-> **API importantes**:  [Classe de ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService classe](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **API importantes** :  [Classe de ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService classe](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 ## <a name="see-it-in-action"></a>Regardez-le en pleine action
 

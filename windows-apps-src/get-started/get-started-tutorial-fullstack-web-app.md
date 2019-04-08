@@ -626,7 +626,7 @@ Félicitations ! Vous avez terminé de créer l’application Web ! Testons-la
 
     Vous pouvez également comparer votre code à celui fourni dans le dossier Final.
 
-4. Pour arrêter le jeu, dans l’invite de commandes, tapez : **Ctrl + C**, **Y**. 
+4. Pour arrêter le jeu, dans l’invite de commandes, tapez : **CTRL + C**, **Y**. 
 
 ### <a name="going-further"></a>Aller plus loin
 

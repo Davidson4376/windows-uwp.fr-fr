@@ -21,7 +21,7 @@ ms.locfileid: "57638704"
 
 Les API Core Text de l’espace de noms [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) activent une application sur la plateforme Windows universelle (UWP) pour recevoir une entrée de texte à partir de n’importe quel service de texte pris en charge sur les appareils Windows. Ces API sont similaires aux API [Structure des services de texte](https://msdn.microsoft.com/library/windows/desktop/ms629032), dans la mesure où l’application n’a pas besoin de connaissances détaillées des services de texte. Cela permet à l’application de recevoir du texte dans n’importe quelle langue et à partir de n’importe quel type d’entrée, comme la saisie sur clavier, la saisie vocale ou la saisie à l’aide d’un stylet.
 
-> **API importantes**: [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **API importantes** : [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [ **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>Pourquoi utiliser les API Core Text ?
 
@@ -56,8 +56,8 @@ Les plages de texte et les sélections sont représentées par la structure [**C
 
 | Champ                  | Type de données                                                                 | Description                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Nombre** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | La position de départ d’une plage correspond à l’ACP située juste avant le premier caractère. |
-| **EndCaretPosition**   | **Nombre** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | La position de fin d’une plage correspond à l’ACP située juste après le dernier caractère.     |
+| **StartCaretPosition** | **Nombre** \[JavaScript\] | **System.Int32** \[.NET\] | **Int32** \[C++\] | La position de départ d’une plage correspond à l’ACP située juste avant le premier caractère. |
+| **EndCaretPosition**   | **Nombre** \[JavaScript\] | **System.Int32** \[.NET\] | **Int32** \[C++\] | La position de fin d’une plage correspond à l’ACP située juste après le dernier caractère.     |
 
  
 
@@ -99,7 +99,7 @@ Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisa
 ![exemple de diagramme de flux de données texte](images/coretext/stream-3.png) lorsque l’utilisateur tape « d », un [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176) événement est déclenché par le code suivant [ **CoreTextTextUpdatingEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn958229) données :
 
 -   [**Plage**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**Texte** ](https://msdn.microsoft.com/library/windows/apps/dn958236) = « d »
 -   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 Dans votre système de contrôle d’édition, appliquez les modifications indiquées et définissez [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) sur **Succeeded**. Voici l’état du contrôle une fois que les modifications sont appliquées.

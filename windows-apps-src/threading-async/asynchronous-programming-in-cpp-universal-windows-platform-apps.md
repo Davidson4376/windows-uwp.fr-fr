@@ -292,7 +292,7 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 * [Référence du langage Visual C++](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Programmation asynchrone][AsyncProgramming]
 * [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism]
-* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
+* [Concurrency::Task](/cpp/parallel/concrt/reference/task-class)
 
 <!-- LINKS -->
 [AsyncProgramming]: <https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps> "AsyncProgramming"

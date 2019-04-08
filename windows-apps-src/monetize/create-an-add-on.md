@@ -8,7 +8,7 @@ keywords: windows 10, uwp, API de soumission au Microsoft Store, créer une ext
 ms.localizationpriority: medium
 ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57651034"

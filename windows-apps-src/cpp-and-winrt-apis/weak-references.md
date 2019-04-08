@@ -1,5 +1,5 @@
 ---
-description: Le Runtime de Windows est un système contenant des références ; et dans un tel système, il est important de savoir sur la signification d’et la distinction entre, références fortes et faibles.
+description: L’environnement Windows Runtime est un système avec décompte des références ; dans un tel système, il est important de connaître la signification des références fortes et faibles, et de faire la distinction entre elles.
 title: Références faibles en C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630814"

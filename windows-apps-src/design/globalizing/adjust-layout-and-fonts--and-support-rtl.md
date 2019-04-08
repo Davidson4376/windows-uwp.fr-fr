@@ -124,6 +124,6 @@ Au lieu d’une seule ligne de code pour toutes les langues, le code dépend du 
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](../../app-resources/localize-strings-ui-manifest.md)
+* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
 * [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](manage-language-and-region.md)

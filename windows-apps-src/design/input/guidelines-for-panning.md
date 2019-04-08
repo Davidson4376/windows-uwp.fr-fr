@@ -20,7 +20,7 @@ ms.locfileid: "57625114"
 
 Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au sein d’une vue unique pour afficher le contenu de la vue qui ne tient pas entièrement dans la fenêtre d’affichage. Parmi les exemples de vues figurent la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
 
-> **API importantes**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **API importantes** : [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées

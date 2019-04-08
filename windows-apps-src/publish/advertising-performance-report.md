@@ -65,7 +65,7 @@ Le **Rapport sur les performances publicitaires** comprend des données correspo
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Publicités dans l’application](in-app-ads.md)
-* [Afficher des publicités dans votre application avec Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md)
+* [Afficher des publicités dans votre application avec le kit SDK Microsoft Advertising](../monetize/display-ads-in-your-app.md)
 * [Optimiser la plupart des ordinateurs de vos unités d’ad](../monetize/optimize-ad-unit-viewability.md)
 
 

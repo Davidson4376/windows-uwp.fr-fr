@@ -20,7 +20,7 @@ ms.locfileid: "57644904"
 
 Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.
 
-> **API importantes**: [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **API importantes** : [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## <a name="assess-audio-input-quality"></a>Évaluer la qualité de l’entrée audio

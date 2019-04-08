@@ -4,7 +4,7 @@ description: Cet article traite de l’utilisation de certificats dans les appli
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

@@ -69,7 +69,7 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 |----------------------|--------|-------------------|----------|
 | identityType         | chaîne | Spécifiez la valeur chaîne **b2b**.    | Oui      |
 | identityValue        | chaîne | La [clé d’ID du Microsoft Store](view-and-grant-products-from-a-service.md#step-4) qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.      | Oui      |
-| localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la *userId*[revendication](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) dans la clé d’ID de Microsoft Store.   | Oui      |
+| localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la *userId*[revendication](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) dans la clé d’ID de Microsoft Store. | Oui      |
 
 
 ### <a name="request-examples"></a>Exemples de demande

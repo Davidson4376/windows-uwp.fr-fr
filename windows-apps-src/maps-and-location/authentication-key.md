@@ -22,7 +22,7 @@ Votre [application Windows universelle](https://msdn.microsoft.com/library/windo
 
 **Conseil** Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub :
 
--   [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Exemple de carte pour UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="get-a-key"></a>Obtenir une clé
 
@@ -89,8 +89,8 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
-* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Recommandations de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéo de la build 2015 : Utilisation de cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)

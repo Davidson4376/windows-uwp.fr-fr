@@ -146,7 +146,7 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 | API | Description |
 |------|---------------|
 | [Contrôles utiles pour les formulaires](../design/controls-and-patterns/forms.md#input-controls) | Liste de contrôles de saisie utiles pour la création de formulaires et conseils de base sur les endroits où les utiliser. |
-| [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Panneau permettant d’organiser des éléments dans des dispositions constituées de plusieurs lignes et colonnes. |
+| [Grille](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Panneau permettant d’organiser des éléments dans des dispositions constituées de plusieurs lignes et colonnes. |
 | [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Panneau pour organiser des éléments en relation avec d'autres éléments et jusqu'aux limites du panneau. |
 | [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | Panneau pour organiser des éléments dans une seule ligne horizontale ou verticale. |
 | [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | Vous permet de définir l’apparence des éléments d’interface utilisateur lorsqu'ils se trouvent dans des états particuliers. |
@@ -171,6 +171,6 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 | Exemple de code | Description |
 |-----------------|---------------|
 | [Didacticiel de mise en page ADAPTATIF](../design/basics/xaml-basics-adaptive-layout.md) | Expérience interactive pas à pas sur les dispositions adaptatives et la conception réactive. | 
-| [Base de données des commandes client](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Observez la disposition et les formulaires en action sur un exemple professionnel de plusieurs pages. |
+| [Base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Observez la disposition et les formulaires en action sur un exemple professionnel de plusieurs pages. |
 | [Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) | Découvrez une sélection de contrôles XAML et la manière dont ils sont implémentés. |
 | [Exemples de code supplémentaires](https://developer.microsoft.com//windows/samples) | Choisissez **Contrôles, disposition et texte** dans la liste déroulante des catégories pour voir des exemples de code connexes. |

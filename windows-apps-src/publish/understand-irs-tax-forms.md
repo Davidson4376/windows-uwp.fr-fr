@@ -80,7 +80,7 @@ J’ai reçu au moins 600 dollars de Microsoft, en paiement d’activités autr
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>au moins 600 dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
-    <td valign="top"><b>1099-MISC</b> :<br>Payeur : Microsoft Online Inc<br>EIN : *** 0505<br><br><b>Important</b> : Certaines entités métier ne recevra pas de formulaires 1099-MISC, quel que soit les montants de paiement reçus de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.</td>
+    <td valign="top"><b>1099-MISC</b> :<br>Payeur : Inc en ligne Microsoft<br>EIN : *** 0505<br><br><b>Important</b> : Certaines entités métier ne recevra pas de formulaires 1099-MISC, quel que soit les montants de paiement reçus de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.</td>
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>moins de 600 dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>

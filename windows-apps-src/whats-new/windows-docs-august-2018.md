@@ -34,7 +34,7 @@ Les fonctionnalités suivantes ont été ajoutées à la Windows builds Insider 
 
 * TreeView a été amélioré pour prendre en charge [liaison de données, modèles d’élément, puis faites-la glisser.](../design/controls-and-patterns/tree-view.md)
 
-### <a name="package-support-framework"></a>Infrastructure de prise en charge de package
+### <a name="package-support-framework"></a>Framework de prise en charge de package
 
 L’infrastructure de prise en charge de package est un kit open source qui vous permet d’appliquer des correctifs à votre application win32 lorsque vous n’avez pas accès au code source, afin qu’il peut s’exécuter dans un conteneur MSIX.
 

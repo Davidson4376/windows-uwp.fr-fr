@@ -10,7 +10,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646054"
@@ -20,7 +20,7 @@ ms.locfileid: "57646054"
 
 Le ciblage tactile dans Windows utilise la zone de contact entière de chaque doigt détecté par un numériseur tactile. Le jeu de données d’entrée plus grand et plus complexe généré par le numériseur est utilisé pour accroître la précision lors de la détermination de la cible souhaitée (ou la plus probable) de l’utilisateur.
 
-> **API importantes**: [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **API importantes** : [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications UWP.
 

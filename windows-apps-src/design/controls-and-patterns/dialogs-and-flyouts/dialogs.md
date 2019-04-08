@@ -26,7 +26,7 @@ Les contrôles de boîte de dialogue sont des superpositions de l’interface ut
 ![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **API importantes**: [Classe de ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **API importantes** : [Classe de ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -41,9 +41,9 @@ Pour obtenir des recommandations sur quand utiliser une boîte de dialogue et qu
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l’objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -70,7 +70,7 @@ Pour obtenir des recommandations sur quand utiliser une boîte de dialogue et qu
 -   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 - Utilisez la [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) pour créer votre expérience de boîte de dialogue. N’utilisez pas l’API MessageDialog déconseillée.
 
-## <a name="how-to-create-a-dialog"></a>Comment créer une boîte de dialogue
+## <a name="how-to-create-a-dialog"></a>Procédure pour créer une boîte de dialogue
 Pour créer une boîte de dialogue, vous utilisez la [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). Vous pouvez créer une boîte de dialogue dans le code ou dans le balisage. Bien qu’il soit généralement plus facile de définir des éléments d’interface utilisateur en XAML, dans le cas d’une boîte de dialogue simple, il est plus facile d’utiliser du code normal. Cet exemple crée une boîte de dialogue pour informer l’utilisateur qu’il n’y a pas de connexion Wi-Fi, puis utilise la méthode [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) pour l’afficher.
 
 ```csharp

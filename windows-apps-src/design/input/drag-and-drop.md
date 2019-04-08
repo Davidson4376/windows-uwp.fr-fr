@@ -17,7 +17,7 @@ ms.locfileid: "57634394"
 
 L’opération glisser-déplacer constitue un moyen intuitif pour transférer des données dans une application ou entre des applications sur le bureau Windows. Glisser-déplacer permet à l’utilisateur de transférer des données entre des applications ou au sein d’une application à l’aide d’un mouvement standard (appui prolongé et mouvement panoramique avec le doigt ou appui et mouvement panoramique avec une souris ou un stylet).
 
-> **API importantes**: [Propriété de CanDrag](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), [propriété AllowDrop](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **API importantes** : [Propriété de CanDrag](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), [propriété AllowDrop](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 La source de l’opération glisser, qui est l’application ou la zone où le mouvement de glissement est déclenché, fournit les données qui doivent être transférées en remplissant un objet package de données pouvant contenir des formats de données standard, y compris les formats texte, RTF, HTML, bitmaps, éléments de stockage ou données personnalisées. La source indique également le type d’opérations pris en charge : copier, déplacer ou lier. Lorsque le pointeur est relâché, l’élément est déposé. La cible du dépôt, qui est l’application ou la zone située sous le pointeur, traite le package de données et retourne le type d’opération effectué.
 
@@ -118,5 +118,5 @@ La classe [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uieleme
 * [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
 * [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
 * [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
-* [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
+* [DROP](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 * [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)

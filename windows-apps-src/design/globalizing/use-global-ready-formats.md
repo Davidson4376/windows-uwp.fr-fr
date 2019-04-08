@@ -169,7 +169,7 @@ Pour les scénarios dans lesquels les fonctionnalités offertes varient seulemen
 
 * [Contrôles de temps, de date et calendrier](../controls-and-patterns/date-and-time.md)
 * [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](manage-language-and-region.md)
-* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Exemples
 

@@ -372,7 +372,7 @@ Cet élément contient les données de la liste de l’application. **ListingInf
 
 |  Élément  |  Obligatoire  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-listinginformation)  |    Oui   |  1   |    Fournit des données sur l’application.         |
+|  [Application](#app-child-of-listinginformation)  |    Oui   |  1   |    Fournit des données sur l’application.         |
 |  [Produit](#product-child-of-listinginformation)  |    Non  |  0 ou davantage   |      Décrit un module complémentaire de l’application.     |     |
 
 <span id="app-child-of-listinginformation"/>
@@ -385,7 +385,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 
 |  Élément  |  Obligatoire  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows Store. Cela peut être le GUID utilisé pour le test.        |
+|  **ID d’application**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows Store. Cela peut être le GUID utilisé pour le test.        |
 |  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windows store. Cela peut être n’importe quel URL valide pour le test.         |
 |  **CurrentMarket**  |    Oui  |  1   |    Pays/région du client.         |
 |  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans partenaires lorsque vous soumettez l’application. Les valeurs utilisées par le Store sont : 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
@@ -405,13 +405,13 @@ Cet élément fournit des informations sur l’application pour un pays/une rég
 |  **Description**  |    Oui  |  1   |      Description de l’application dans ce pays/cette région.       |
 |  **Prix**  |    Oui  |  1   |     Prix de l’application dans ce pays/cette région.        |
 |  **CurrencySymbol**  |    Oui  |  1   |     Symbole de devise utilisé dans ce pays/cette région.        |
-|  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  |
+|  **currencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  |
 
 **MarketData** a les attributs suivants.
 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
+|  **XML : lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -425,7 +425,7 @@ Cet élément décrit un module complémentaire de l’application. **Product** 
 |-------------|------------|----------------|
 |  **ProductId**  |    Oui        |    Contient la chaîne utilisée par l’application pour identifier le module complémentaire.           |
 |  **LicenseDuration**  |    Non        |    Indique le nombre de jours pendant lesquels la licence reste valide, une fois l’élément acheté. La date d’expiration de la nouvelle licence créée par un achat de produit correspond à la date d’achat avec la durée de la licence. Cet attribut n’est utilisé que si l’attribut **ProductType** a pour valeur **Durable**. Il est ignoré pour les modules complémentaires consommables.           |
-|  **ProductType**  |    Non        |    Contient une valeur permettant d’identifier la persistance du produit in-app. Les valeurs prises en charge sont **Durable** (valeur par défaut) et **Consumable**. Pour les types durables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-licenseinformation) sous [LicenseInformation](#licenseinformation). Pour les types consommables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-consumableinformation) sous [ConsumableInformation](#consumableinformation).           |  |
+|  **productType**  |    Non        |    Contient une valeur permettant d’identifier la persistance du produit in-app. Les valeurs prises en charge sont **Durable** (valeur par défaut) et **Consumable**. Pour les types durables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-licenseinformation) sous [LicenseInformation](#licenseinformation). Pour les types consommables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-consumableinformation) sous [ConsumableInformation](#consumableinformation).           |  |
 
 <span id="marketdata-child-of-product"/>
 
@@ -440,17 +440,17 @@ Cet élément fournit des informations sur le module complémentaire pour un pay
 |  **Nom**  |    Oui   |  1   |   Nom du module complémentaire dans ce pays/cette région.        |
 |  **Prix**  |    Oui  |  1   |     Prix du module complémentaire dans ce pays/cette région.        |
 |  **CurrencySymbol**  |    Oui  |  1   |     Symbole de devise utilisé dans ce pays/cette région.        |
-|  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  
+|  **currencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  
 |  **Description**  |    Non  |   0 ou 1   |      Description du module complémentaire pour ce pays/cette région.       |
-|  **Tag**  |    Non  |   0 ou 1   |      [Données personnalisées du développeur](../publish/enter-add-on-properties.md#custom-developer-data) (également appelées balise) du module complémentaire.       |
-|  **Keywords**  |    Non  |   0 ou 1   |      Contient jusqu’à 10 éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
-|  **ImageUri**  |    Non  |   0 ou 1   |      [URI de l’image](../publish/create-add-on-store-listings.md#icon) dans la liste du module complémentaire.           |  |
+|  **Balise**  |    Non  |   0 ou 1   |      [Données personnalisées du développeur](../publish/enter-add-on-properties.md#custom-developer-data) (également appelées balise) du module complémentaire.       |
+|  **Mots clés**  |    Non  |   0 ou 1   |      Contient jusqu’à 10 éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
+|  **imageUri**  |    Non  |   0 ou 1   |      [URI de l’image](../publish/create-add-on-store-listings.md#icon) dans la liste du module complémentaire.           |  |
 
 **MarketData** a les attributs suivants.
 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
+|  **XML : lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
 <span id="licenseinformation"/>
 
@@ -462,7 +462,7 @@ Cet élément décrit les licences disponibles pour cette application et ses pro
 
 |  Élément  |  Obligatoire  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-licenseinformation)  |    Oui   |  1   |    Décrit la licence de l’application.         |
+|  [Application](#app-child-of-licenseinformation)  |    Oui   |  1   |    Décrit la licence de l’application.         |
 |  [Produit](#product-child-of-licenseinformation)  |    Non  |  0 ou davantage   |      Décrit l’état de la licence d’un module complémentaire durable dans l’application.         |   |
 
 Le tableau suivant montre comment simuler certaines conditions courantes en combinant les valeurs des éléments **App** et **Product**.
@@ -485,7 +485,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 |  Élément  |  Obligatoire  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Oui   |  1   |    Décrit l’état actuel de la licence de cette application. La valeur **true** indique que la licence est valide. La valeur **false** indique une licence non valide. Normalement, cette valeur est **true**, que l’application ait un mode d’évaluation ou non.  Réglez cette valeur sur **false** pour tester le comportement de votre application quand sa licence n’est pas valide.           |
-|  **IsTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
+|  **isTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
 |  **ExpirationDate**  |    Non  |  0 ou 1       |     Date à laquelle la période d’évaluation de cette application expire, en temps universel coordonné (UTC). La date doit se présenter comme suit : aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19 janvier 2015 à 05:00 correspond à 2015-01-19T05:00:00.00Z. Cet élément est requis lorsque **IsTrial** est **true**. Sinon, il est facultatif.          |  |
 
 <span id="product-child-of-licenseinformation"/>
@@ -530,7 +530,7 @@ Cet élément décrit le code d’erreur par défaut renvoyé par une méthode *
 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
-|  **MethodName**  |    Oui        |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **StoreMethodName** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente une méthode **CurrentAppSimulator** pour laquelle vous voulez simuler la valeur de retour du code d’erreur dans votre application au cours du test. Par exemple, la valeur **RequestAppPurchaseAsync_GetResult** indique que vous voulez simuler la valeur de retour du code d’erreur de la méthode [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync).            |
+|  **methodName**  |    Oui        |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **StoreMethodName** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente une méthode **CurrentAppSimulator** pour laquelle vous voulez simuler la valeur de retour du code d’erreur dans votre application au cours du test. Par exemple, la valeur **RequestAppPurchaseAsync_GetResult** indique que vous voulez simuler la valeur de retour du code d’erreur de la méthode [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync).            |
 |  **HResult**  |     Oui       |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **ResponseCodes** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente le code d’erreur que vous voulez renvoyer pour la méthode affectée à l’attribut **MethodName** de cet élément **DefaultResponse**.           |
 
 <span id="consumableinformation"/>
@@ -550,6 +550,6 @@ Cet élément décrit un module complémentaire consommable. **Product** est un 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
 |  **ProductId**  |    Oui        |   Contient la chaîne utilisée par l’application pour identifier le module complémentaire consommable.            |
-|  **TransactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |
+|  **transactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |
 |  **Statut**  |      Oui      |  Contient la chaîne utilisée par l’application pour indiquer l’état d’acquisition d’un consommable. La valeur peut être **Active**, **PurchaseReverted**, **PurchasePending** ou **ServerError**.             |
 |  **OfferId**  |     Non       |    Contient la chaîne utilisée par l’application pour identifier la catégorie à laquelle appartient le consommable. Il permet de prendre en charge des catalogues volumineux, comme indiqué dans [Gérer un vaste catalogue de produits intégrés à l'application](manage-a-large-catalog-of-in-app-products.md).           |

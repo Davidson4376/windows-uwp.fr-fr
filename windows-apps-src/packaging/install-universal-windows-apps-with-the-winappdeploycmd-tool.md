@@ -60,7 +60,7 @@ Vous pouvez installer ou désinstaller une application sur l’appareil cible, o
 Le tableau suivant décrit les commandes pour **WinAppDeployCmd.exe**.
 
 
-| **Command**  | **Description**                                                     |
+| **Commande**  | **Description**                                                     |
 |--------------|---------------------------------------------------------------------|
 | appareils      | Affiche la liste des périphériques réseau disponibles.                         |
 | installer      | Installe un package d’application UWP sur l’appareil cible.                     |
@@ -77,7 +77,7 @@ Le tableau suivant décrit les commandes pour **WinAppDeployCmd.exe**.
 Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 
-| **Command**  | **Description**  |
+| **Commande**  | **Description**  |
 |--------------|------------------|
 | -h (-help)       | Affiche les commandes, les options et les arguments. |
 | -ip              | Adresse IP de l’appareil cible. |
@@ -96,7 +96,7 @@ Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
-| **Argument**           | **Description**                                                              |
+| **argument**           | **Description**                                                              |
 |------------------------|------------------------------------------------------------------------------|
 | &lt;x&gt;              | Délai d’expiration en secondes. (La valeur par défaut est 10)                                          |
 | &lt;adresse&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |

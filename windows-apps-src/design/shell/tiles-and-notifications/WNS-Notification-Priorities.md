@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, API WinRT, WNS
 localizationpriority: medium
 ms.openlocfilehash: 2c297a04786c6fbf1eb0600e63a04a6d88585864
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57648704"
@@ -70,6 +70,6 @@ Notez que les notifications de basse priorité sont remises par défaut pour l�
 Pour exclure une application dans économiseur de batterie, les utilisateurs Accédez à « Batterie utilisation par App » dans les paramètres et sélectionnez « Autoriser l’application pour exécuter des tâches en arrière-plan ». Cette sélection utilisateur exempte de l’application à partir de l’économiseur de batterie pour la haute, moyenne et les notifications de basse priorité. Vous pouvez également appeler [BackgroundExecutionManager API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) à demander par programmation l’autorisation de l’utilisateur.  
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Vue d’ensemble des Services de Notification Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
+- [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
 - [Demander une autorisation d’exécuter en arrière-plan](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
 - 

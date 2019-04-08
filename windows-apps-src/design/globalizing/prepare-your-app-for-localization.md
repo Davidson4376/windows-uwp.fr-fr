@@ -183,8 +183,8 @@ Le classement suit le format de l’application **Région** du Panneau de config
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Instructions pour la globalisation](guidelines-and-checklist-for-globalizing-your-app.md)
-- [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](../../app-resources/localize-strings-ui-manifest.md)
-- [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
+- [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md)
 - [Événements de modification de la mise à jour des images en réponse à la valeur de qualificateur](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 

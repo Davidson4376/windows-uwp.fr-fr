@@ -77,7 +77,7 @@ Vous avez besoin d’actualiser vos compétences web ?
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Commencez à coder](create-uwp-apps.md)
+* [Commencer le codage](create-uwp-apps.md)
 * [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
 * [Se préparer](get-set-up.md)
 * [S’inscrire pour le compte de Windows](sign-up.md)

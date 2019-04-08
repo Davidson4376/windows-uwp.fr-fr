@@ -17,7 +17,7 @@ ms.locfileid: "57615764"
 # <a name="toast-notification-ux-guidance"></a>Recommandations relatives à l’expérience utilisateur Notification toast
 Les notifications sont une partie nécessaire de vie moderne ; elles aident les utilisateurs à être plus productif et engagés avec les applications et sites Web, mais aussi être informé avec les mises à jour. Toutefois, les notifications peuvent activer rapidement à partir d’utile d’overbearing et intrusive si elles ne sont pas conçues de façon orientée utilisateur. Vos notifications sont un clic droit en dehors de l’arrêt et il est peu probable une fois qu’ils sont désactivés, ils sont activées à nouveau.  Par conséquent, assurez-vous que vos notifications sont respectueux de l’espace d’écran de l’utilisateur et l’heure, afin que ce canal engagement ouvert.
 
-> **API importantes**: [Package nuget de Notifications de kit de ressources de communauté de Windows](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **API importantes** : [Package nuget de Notifications de kit de ressources de communauté de Windows](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 Nous avons analysé nos données de télémétrie Windows, ainsi qu’autres premier tiers études de cas et, pour arriver à quatre règles autour de ce qui rend un récit notification excellent.  Nous sommes convaincus que ces règles sont universellement applicables, quelle que soit la plateforme et aideront vos notifications à avoir un impact positif sur vos utilisateurs.
 

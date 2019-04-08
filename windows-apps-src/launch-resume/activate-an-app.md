@@ -271,7 +271,7 @@ Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Interruption des applications de handle](suspend-an-app.md)
-* [Gérer la reprise de l’application](resume-an-app.md)
+* [Gérer l’interruption d’une application](suspend-an-app.md)
+* [Gérer la reprise d’une application](resume-an-app.md)
 * [Instructions pour l’application interrompre et reprendre](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Cycle de vie](app-lifecycle.md)
+* [Cycle de vie de l’application](app-lifecycle.md)

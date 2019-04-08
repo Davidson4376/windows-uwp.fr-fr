@@ -15,7 +15,7 @@ ms.locfileid: "57627954"
 ---
 # <a name="headset"></a>Casque
 
-Cette page décrit les concepts de base de la programmation pour les casques à l’aide des API [Windows.Gaming.Input.Headset][headset] et des API associées pour la plateforme Windows universelle (UWP).
+Cette page décrit les concepts de base de la programmation pour les casques à l’aide des API [Windows.Gaming.Input.Headset][casque] et des API associées pour la plateforme Windows universelle (UWP).
 
 Voici ce que vous allez apprendre à la lecture de cet article :
 * Accéder à un casque connecté à un périphérique d’entrée ou de navigation
@@ -63,7 +63,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 ## <a name="using-the-headset"></a>Utilisation du casque
 
-La classe [Headset][] est constituée de deux chaînes qui représentent les ID du point de terminaison XAudio : l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
+La classe [Casque][] est constituée de deux chaînes qui représentent les ID du point de terminaison XAudio : l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
 
 Les détails de l’utilisation du point de terminaison XAudio ne sont pas couverts ici. Pour en savoir plus, voir le [Guide de programmation XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) et les [informations de référence sur l’API XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
 
@@ -73,4 +73,4 @@ Les détails de l’utilisation du point de terminaison XAudio ne sont pas couve
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[Casque]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx

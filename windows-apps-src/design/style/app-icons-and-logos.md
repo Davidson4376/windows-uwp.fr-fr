@@ -208,11 +208,11 @@ Voici la liste des composants de la taille de la cible :
 
 | Taille de la ressource | Exemple de nom de fichier                  |
 |------------|------------------------------------|
-| 16x16\*    | Square44x44Logo.targetsize-16.png  |
-| 24x24\*    | Square44x44Logo.targetsize-24.png  |
-| 32x32\*    | Square44x44Logo.targetsize-32.png  |
-| 48x48\*    | Square44x44Logo.targetsize-48.png  |
-| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
+| 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
 | 20 x 20      | Square44x44Logo.targetsize-20.png  |
 | 30 x 30      | Square44x44Logo.targetsize-30.png  |
 | 36 x 36      | Square44x44Logo.targetsize-36.png  |

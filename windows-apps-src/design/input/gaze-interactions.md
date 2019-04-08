@@ -27,7 +27,7 @@ Fournissez la prise en charge du suivi du pointage du regard, de l'attention et 
 > [!NOTE]
 > Pour l’entrée par pointage du regard dans [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/), voir [Pointer du regard](https://docs.microsoft.com/windows/mixed-reality/gaze).
 
-**API importantes**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**API importantes** : [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Vue d’ensemble
 

@@ -18,7 +18,7 @@ ms.locfileid: "57608564"
 
 **API importantes**
 
--   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**Panneau de configuration**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
 La disposition est le processus de définition de la structure visuelle de l’interface utilisateur. Les panneaux sont le mécanisme principal utilisé pour décrire la disposition en XAML. Ce sont des objets conteneurs permettant de positionner et d’organiser les éléments d’interface qu’ils contiennent. La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
 

@@ -146,7 +146,7 @@ L’extrait de code suivant illustre l’ajout de l’effet audio personnalisé 
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Accès à la préversion simple pour caméra](simple-camera-preview-access.md)
-* [Compositions de média et la modification](media-compositions-and-editing.md)
+* [Compositions multimédias et modification](media-compositions-and-editing.md)
 * [Documentation de Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Lecture de contenu multimédia](media-playback.md)
 

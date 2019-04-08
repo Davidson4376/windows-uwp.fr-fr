@@ -207,7 +207,7 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 **Ce qui doit le flux de l’impression ?** Une fois les étapes de l’utilisateur définies, vous pouvez transformer ce flux en objectifs de performances. Pour plus d’informations, voir [Planifier les performances](../debug-test-perf/planning-and-measuring-performance.md).
 
-**Comment organiser les commandes ?**   Votre présentation des étapes de flux permet d’identifier des commandes potentielles dont vous avez besoin pour concevoir de. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
+**Comment organiser les commandes ?**    Votre présentation des étapes de flux permet d’identifier des commandes potentielles dont vous avez besoin pour concevoir de. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
 
 -   **Toujours essayer d’utiliser le contenu.**   Autant que possible, permettre aux utilisateurs manipuler directement le contenu sur le canevas de l’application, plutôt qu’Ajout de commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
 -   **Si vous ne pouvez pas utiliser le contenu.** Placez les commandes sur l’une des surfaces suivantes de l’interface utilisateur :

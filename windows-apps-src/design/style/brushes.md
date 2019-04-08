@@ -17,7 +17,7 @@ ms.locfileid: "57634864"
 
 Utilisez les objets [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) pour peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles XAML, afin que l’objet peint soit visible dans une interface utilisateur. Examinons les pinceaux proposés et leur utilisation.
 
-> **API importantes**:  [Classe de pinceau](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **API importantes** :  [Classe de pinceau](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>Vue d’ensemble des pinceaux
 

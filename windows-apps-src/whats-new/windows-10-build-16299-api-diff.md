@@ -20,7 +20,7 @@ Pour des informations sur les API ajoutées dans la version publique précédent
 
 ## <a name="windowsapplicationmodel"></a>windows.applicationmodel
 
-### <a name="windowsapplicationmodelactivationhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelactivation"></a>[windows.applicationmodel.activation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation)
+### <a name="windowsapplicationmodelactivationhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelactivation"></a>[Windows.ApplicationModel.Activation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation)
 
 #### <a name="commandlineactivatedeventargshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelactivationcommandlineactivatedeventargs"></a>[commandlineactivatedeventargs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.commandlineactivatedeventargs)
 
@@ -42,7 +42,7 @@ istartuptaskactivatedeventargs <br> istartuptaskactivatedeventargs.taskid
 
 startuptaskactivatedeventargs <br> startuptaskactivatedeventargs.kind <br> startuptaskactivatedeventargs.previousexecutionstate <br> startuptaskactivatedeventargs.splashscreen <br> startuptaskactivatedeventargs.taskid <br> startuptaskactivatedeventargs.user
 
-### <a name="windowsapplicationmodelappointmentshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelappointments"></a>[windows.applicationmodel.appointments](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments)
+### <a name="windowsapplicationmodelappointmentshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelappointments"></a>[Windows.ApplicationModel.Appointments](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments)
 
 #### <a name="appointmentstorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelappointmentsappointmentstore"></a>[appointmentstore](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentstore)
 
@@ -52,13 +52,13 @@ appointmentstore.getchangetracker
 
 appointmentstorechangetracker.istracking
 
-### <a name="windowsapplicationmodelappservicehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelappservice"></a>[windows.applicationmodel.appservice](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice)
+### <a name="windowsapplicationmodelappservicehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelappservice"></a>[Windows.ApplicationModel.appservice](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice)
 
 #### <a name="appservicetriggerdetailshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelappserviceappservicetriggerdetails"></a>[appservicetriggerdetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appservicetriggerdetails)
 
 appservicetriggerdetails.checkcallerforcapabilityasync
 
-### <a name="windowsapplicationmodelbackgroundhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelbackground"></a>[windows.applicationmodel.background](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background)
+### <a name="windowsapplicationmodelbackgroundhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelbackground"></a>[Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background)
 
 #### <a name="geovisittriggerhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelbackgroundgeovisittrigger"></a>[geovisittrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.geovisittrigger)
 
@@ -68,7 +68,7 @@ geovisittrigger <br> geovisittrigger.geovisittrigger <br> geovisittrigger.monito
 
 paymentappcanmakepaymenttrigger <br> paymentappcanmakepaymenttrigger.paymentappcanmakepaymenttrigger
 
-### <a name="windowsapplicationmodelcallshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcalls"></a>[windows.applicationmodel.calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)
+### <a name="windowsapplicationmodelcallshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcalls"></a>[Windows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)
 
 #### <a name="voipcallcoordinatorhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcallsvoipcallcoordinator"></a>[voipcallcoordinator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.voipcallcoordinator)
 
@@ -78,7 +78,7 @@ voipcallcoordinator.setupnewacceptedcall
 
 voipphonecall.tryshowappui
 
-### <a name="windowsapplicationmodelcontactsdataproviderhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactsdataprovider"></a>[windows.applicationmodel.contacts.dataprovider](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider)
+### <a name="windowsapplicationmodelcontactsdataproviderhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactsdataprovider"></a>[Windows.ApplicationModel.contacts.dataProvider](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider)
 
 #### <a name="contactdataproviderconnectionhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactsdataprovidercontactdataproviderconnection"></a>[contactdataproviderconnection](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.dataprovider.contactdataproviderconnection)
 
@@ -100,13 +100,13 @@ contactlistdeletecontactrequest <br> contactlistdeletecontactrequest.contactid <
 
 contactlistdeletecontactrequesteventargs <br> contactlistdeletecontactrequesteventargs.getdeferral <br> contactlistdeletecontactrequesteventargs.request
 
-### <a name="windowsapplicationmodelcontactshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontacts"></a>[windows.applicationmodel.contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts)
+### <a name="windowsapplicationmodelcontactshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontacts"></a>[Windows.ApplicationModel.contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts)
 
 #### <a name="contactchangetrackerhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactchangetracker"></a>[contactchangetracker](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactchangetracker)
 
 contactchangetracker.istracking
 
-#### <a name="contactlisthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactlist"></a>[contactlist](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlist)
+#### <a name="contactlisthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcontactscontactlist"></a>[ContactList](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactlist)
 
 contactlist.getchangetracker <br> contactlist.limitedwriteoperations
 
@@ -118,7 +118,7 @@ contactlistlimitedwriteoperations <br> contactlistlimitedwriteoperations.trycrea
 
 contactstore.getchangetracker
 
-### <a name="windowsapplicationmodelcorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcore"></a>[windows.applicationmodel.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core)
+### <a name="windowsapplicationmodelcorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcore"></a>[Windows.ApplicationModel.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core)
 
 #### <a name="applistentryhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcoreapplistentry"></a>[applistentry](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.applistentry)
 
@@ -136,13 +136,13 @@ coreapplication.requestrestartasync <br> coreapplication.requestrestartforuseras
 
 coreapplicationview.dispatcherqueue
 
-### <a name="windowsapplicationmodeldatatransfersharetargethttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldatatransfersharetarget"></a>[windows.applicationmodel.datatransfer.sharetarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget)
+### <a name="windowsapplicationmodeldatatransfersharetargethttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldatatransfersharetarget"></a>[Windows.ApplicationModel.datatransfer.sharetarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget)
 
 #### <a name="shareoperationhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldatatransfersharetargetshareoperation"></a>[shareoperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation)
 
 shareoperation.contacts
 
-### <a name="windowsapplicationmodeldatatransferhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldatatransfer"></a>[windows.applicationmodel.datatransfer](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer)
+### <a name="windowsapplicationmodeldatatransferhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldatatransfer"></a>[Windows.ApplicationModel.datatransfer](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer)
 
 #### <a name="datatransfermanagerhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldatatransferdatatransfermanager"></a>[datatransfermanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)
 
@@ -156,19 +156,19 @@ shareuioptions <br> shareuioptions.selectionrect <br> shareuioptions.shareuiopti
 
 shareuitheme
 
-### <a name="windowsapplicationmodelemailhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelemail"></a>[windows.applicationmodel.email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email)
+### <a name="windowsapplicationmodelemailhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelemail"></a>[Windows.ApplicationModel.email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email)
 
 #### <a name="emailmailboxhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelemailemailmailbox"></a>[emailmailbox](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmailbox)
 
 emailmailbox.getchangetracker
 
-### <a name="windowsapplicationmodelpaymentsproviderhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpaymentsprovider"></a>[windows.applicationmodel.payments.provider](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments.provider)
+### <a name="windowsapplicationmodelpaymentsproviderhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpaymentsprovider"></a>[Windows.ApplicationModel.payments.Provider](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments.provider)
 
 #### <a name="paymentappcanmakepaymenttriggerdetailshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpaymentsproviderpaymentappcanmakepaymenttriggerdetails"></a>[paymentappcanmakepaymenttriggerdetails](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments.provider.paymentappcanmakepaymenttriggerdetails)
 
 paymentappcanmakepaymenttriggerdetails <br> paymentappcanmakepaymenttriggerdetails.reportcanmakepaymentresult <br> paymentappcanmakepaymenttriggerdetails.request
 
-### <a name="windowsapplicationmodelpaymentshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpayments"></a>[windows.applicationmodel.payments](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments)
+### <a name="windowsapplicationmodelpaymentshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpayments"></a>[Windows.ApplicationModel.payments](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments)
 
 #### <a name="paymentcanmakepaymentresulthttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpaymentspaymentcanmakepaymentresult"></a>[paymentcanmakepaymentresult](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments.paymentcanmakepaymentresult)
 
@@ -186,13 +186,13 @@ paymentmediator.canmakepaymentasync
 
 paymentrequest.id <br> paymentrequest.paymentrequest
 
-### <a name="windowsapplicationmodeluseractivitiescorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeluseractivitiescore"></a>[windows.applicationmodel.useractivities.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core)
+### <a name="windowsapplicationmodeluseractivitiescorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeluseractivitiescore"></a>[Windows.ApplicationModel.useractivities.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core)
 
 #### <a name="coreuseractivitymanagerhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeluseractivitiescorecoreuseractivitymanager"></a>[coreuseractivitymanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core.coreuseractivitymanager)
 
 coreuseractivitymanager <br> coreuseractivitymanager.createuseractivitysessioninbackground <br> coreuseractivitymanager.deleteuseractivitysessionsintimerangeasync
 
-### <a name="windowsapplicationmodeluseractivitieshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeluseractivities"></a>[windows.applicationmodel.useractivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+### <a name="windowsapplicationmodeluseractivitieshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeluseractivities"></a>[Windows.ApplicationModel.useractivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 #### <a name="iuseractivitycontentinfohttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeluseractivitiesiuseractivitycontentinfo"></a>[iuseractivitycontentinfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.iuseractivitycontentinfo)
 
@@ -226,9 +226,9 @@ useractivitystate
 
 useractivityvisualelements <br> useractivityvisualelements.attribution <br> useractivityvisualelements.backgroundcolor <br> useractivityvisualelements.content <br> useractivityvisualelements.description <br> useractivityvisualelements.displaytext
 
-### <a name="windowsapplicationmodelhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodel"></a>[windows.applicationmodel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
+### <a name="windowsapplicationmodelhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodel"></a>[Windows.ApplicationModel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
 
-#### <a name="designmodehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldesignmode"></a>[designmode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.designmode)
+#### <a name="designmodehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodeldesignmode"></a>[DesignMode](https://docs.microsoft.com/uwp/api/windows.applicationmodel.designmode)
 
 designmode.designmode2enabled
 
@@ -242,13 +242,13 @@ packagecatalogremoveoptionalpackagesresult <br> packagecatalogremoveoptionalpack
 
 ## <a name="windowsdevices"></a>windows.devices
 
-### <a name="windowsdevicesbluetoothgenericattributeprofilehttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetoothgenericattributeprofile"></a>[windows.devices.bluetooth.genericattributeprofile](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+### <a name="windowsdevicesbluetoothgenericattributeprofilehttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetoothgenericattributeprofile"></a>[Windows.Devices.Bluetooth.genericattributeprofile](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 
 #### <a name="gattclientnotificationresulthttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetoothgenericattributeprofilegattclientnotificationresult"></a>[gattclientnotificationresult](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattclientnotificationresult)
 
 gattclientnotificationresult.bytessent
 
-### <a name="windowsdevicesbluetoothhttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetooth"></a>[windows.devices.bluetooth](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth)
+### <a name="windowsdevicesbluetoothhttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetooth"></a>[Windows.Devices.Bluetooth](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth)
 
 #### <a name="bluetoothdevicehttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetoothbluetoothdevice"></a>[bluetoothdevice](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothdevice)
 
@@ -262,7 +262,7 @@ bluetoothdeviceid.fromid
 
 bluetoothledevice.bluetoothdeviceid
 
-### <a name="windowsdevicesgeolocationhttpsdocsmicrosoftcomuwpapiwindowsdevicesgeolocation"></a>[windows.devices.geolocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+### <a name="windowsdevicesgeolocationhttpsdocsmicrosoftcomuwpapiwindowsdevicesgeolocation"></a>[Windows.Devices.GeoLocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
 
 #### <a name="geovisithttpsdocsmicrosoftcomuwpapiwindowsdevicesgeolocationgeovisit"></a>[geovisit](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisit)
 
@@ -288,7 +288,7 @@ visitmonitoringscope
 
 visitstatechange
 
-### <a name="windowsdevicespointofservicehttpsdocsmicrosoftcomuwpapiwindowsdevicespointofservice"></a>[windows.devices.pointofservice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice)
+### <a name="windowsdevicespointofservicehttpsdocsmicrosoftcomuwpapiwindowsdevicespointofservice"></a>[Windows.Devices.pointofservice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice)
 
 #### <a name="claimedlinedisplayhttpsdocsmicrosoftcomuwpapiwindowsdevicespointofserviceclaimedlinedisplay"></a>[claimedlinedisplay](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay)
 
@@ -358,7 +358,7 @@ linedisplayverticalalignment
 
 linedisplaywindow.cursor <br> linedisplaywindow.marquee <br> linedisplaywindow.readcharacteratcursorasync <br> linedisplaywindow.trydisplaystoragefilebitmapatcursorasync <br> linedisplaywindow.trydisplaystoragefilebitmapatcursorasync <br> linedisplaywindow.trydisplaystoragefilebitmapatcursorasync <br> linedisplaywindow.trydisplaystoragefilebitmapatpointasync <br> linedisplaywindow.trydisplaystoragefilebitmapatpointasync <br> linedisplaywindow.trydisplaystoredbitmapatcursorasync
 
-### <a name="windowsdevicessensorscustomhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscustom"></a>[windows.devices.sensors.custom](https://docs.microsoft.com/uwp/api/windows.devices.sensors.custom)
+### <a name="windowsdevicessensorscustomhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscustom"></a>[Windows.Devices.sensors.Custom](https://docs.microsoft.com/uwp/api/windows.devices.sensors.custom)
 
 #### <a name="customsensorhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscustomcustomsensor"></a>[customsensor](https://docs.microsoft.com/uwp/api/windows.devices.sensors.custom.customsensor)
 
@@ -368,9 +368,9 @@ customsensor.maxbatchsize <br> customsensor.reportlatency
 
 customsensorreading.performancecount
 
-### <a name="windowsdevicessensorshttpsdocsmicrosoftcomuwpapiwindowsdevicessensors"></a>[windows.devices.sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
+### <a name="windowsdevicessensorshttpsdocsmicrosoftcomuwpapiwindowsdevicessensors"></a>[Windows.Devices.sensors](https://docs.microsoft.com/uwp/api/windows.devices.sensors)
 
-#### <a name="accelerometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaccelerometer"></a>[accelerometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
+#### <a name="accelerometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaccelerometer"></a>[Accéléromètre](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer)
 
 accelerometer.fromidasync <br> accelerometer.getdeviceselector
 
@@ -378,7 +378,7 @@ accelerometer.fromidasync <br> accelerometer.getdeviceselector
 
 accelerometerreading.performancecount <br> accelerometerreading.properties
 
-#### <a name="altimeterhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaltimeter"></a>[altimeter](https://docs.microsoft.com/uwp/api/windows.devices.sensors.altimeter)
+#### <a name="altimeterhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsaltimeter"></a>[Altimeter](https://docs.microsoft.com/uwp/api/windows.devices.sensors.altimeter)
 
 altimeter.maxbatchsize <br> altimeter.reportlatency
 
@@ -386,7 +386,7 @@ altimeter.maxbatchsize <br> altimeter.reportlatency
 
 altimeterreading.performancecount <br> altimeterreading.properties
 
-#### <a name="barometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsbarometer"></a>[barometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.barometer)
+#### <a name="barometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsbarometer"></a>[Baromètre](https://docs.microsoft.com/uwp/api/windows.devices.sensors.barometer)
 
 barometer.fromidasync <br> barometer.getdeviceselector <br> barometer.maxbatchsize <br> barometer.reportlatency
 
@@ -394,15 +394,15 @@ barometer.fromidasync <br> barometer.getdeviceselector <br> barometer.maxbatchsi
 
 barometerreading.performancecount <br> barometerreading.properties
 
-#### <a name="compasshttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscompass"></a>[compass](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compass)
+#### <a name="compasshttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscompass"></a>[Compass](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compass)
 
 compass.fromidasync <br> compass.getdeviceselector <br> compass.maxbatchsize <br> compass.reportlatency
 
-#### <a name="compassreadinghttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscompassreading"></a>[compassreading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compassreading)
+#### <a name="compassreadinghttpsdocsmicrosoftcomuwpapiwindowsdevicessensorscompassreading"></a>[CompassReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.compassreading)
 
 compassreading.performancecount <br> compassreading.properties
 
-#### <a name="gyrometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsgyrometer"></a>[gyrometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
+#### <a name="gyrometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsgyrometer"></a>[Gyromètre](https://docs.microsoft.com/uwp/api/windows.devices.sensors.gyrometer)
 
 gyrometer.fromidasync <br> gyrometer.getdeviceselector <br> gyrometer.maxbatchsize <br> gyrometer.reportlatency
 
@@ -410,7 +410,7 @@ gyrometer.fromidasync <br> gyrometer.getdeviceselector <br> gyrometer.maxbatchsi
 
 gyrometerreading.performancecount <br> gyrometerreading.properties
 
-#### <a name="inclinometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsinclinometer"></a>[inclinometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.inclinometer)
+#### <a name="inclinometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsinclinometer"></a>[Inclinomètre](https://docs.microsoft.com/uwp/api/windows.devices.sensors.inclinometer)
 
 inclinometer.fromidasync <br> inclinometer.getdeviceselector <br> inclinometer.maxbatchsize <br> inclinometer.reportlatency
 
@@ -426,11 +426,11 @@ lightsensor.fromidasync <br> lightsensor.getdeviceselector <br> lightsensor.maxb
 
 lightsensorreading.performancecount <br> lightsensorreading.properties
 
-#### <a name="magnetometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsmagnetometer"></a>[magnetometer](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometer)
+#### <a name="magnetometerhttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsmagnetometer"></a>[magnétomètre](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometer)
 
 magnetometer.fromidasync <br> magnetometer.getdeviceselector <br> magnetometer.maxbatchsize <br> magnetometer.reportlatency
 
-#### <a name="magnetometerreadinghttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsmagnetometerreading"></a>[magnetometerreading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometerreading)
+#### <a name="magnetometerreadinghttpsdocsmicrosoftcomuwpapiwindowsdevicessensorsmagnetometerreading"></a>[MagnetometerReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.magnetometerreading)
 
 magnetometerreading.performancecount <br> magnetometerreading.properties
 
@@ -442,7 +442,7 @@ orientationsensor.fromidasync <br> orientationsensor.getdeviceselector <br> orie
 
 orientationsensorreading.performancecount <br> orientationsensorreading.properties
 
-### <a name="windowsdevicessmartcardshttpsdocsmicrosoftcomuwpapiwindowsdevicessmartcards"></a>[windows.devices.smartcards](https://docs.microsoft.com/uwp/api/windows.devices.smartcards)
+### <a name="windowsdevicessmartcardshttpsdocsmicrosoftcomuwpapiwindowsdevicessmartcards"></a>[Windows.Devices.SmartCards](https://docs.microsoft.com/uwp/api/windows.devices.smartcards)
 
 #### <a name="smartcardcryptogramgeneratorhttpsdocsmicrosoftcomuwpapiwindowsdevicessmartcardssmartcardcryptogramgenerator"></a>[smartcardcryptogramgenerator](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardcryptogramgenerator)
 
@@ -452,7 +452,7 @@ smartcardcryptogramgenerator.issupported
 
 smartcardemulator.issupported
 
-### <a name="windowsdeviceswifihttpsdocsmicrosoftcomuwpapiwindowsdeviceswifi"></a>[windows.devices.wifi](https://docs.microsoft.com/uwp/api/windows.devices.wifi)
+### <a name="windowsdeviceswifihttpsdocsmicrosoftcomuwpapiwindowsdeviceswifi"></a>[Windows.Devices.WiFi](https://docs.microsoft.com/uwp/api/windows.devices.wifi)
 
 #### <a name="wifiadapterhttpsdocsmicrosoftcomuwpapiwindowsdeviceswifiwifiadapter"></a>[wifiadapter](https://docs.microsoft.com/uwp/api/windows.devices.wifi.wifiadapter)
 
@@ -476,13 +476,13 @@ wifiwpskind
 
 ## <a name="windowsgaming"></a>windows.gaming
 
-### <a name="windowsgaminginputhttpsdocsmicrosoftcomuwpapiwindowsgaminginput"></a>[windows.gaming.input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+### <a name="windowsgaminginputhttpsdocsmicrosoftcomuwpapiwindowsgaminginput"></a>[Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 
 #### <a name="rawgamecontrollerhttpsdocsmicrosoftcomuwpapiwindowsgaminginputrawgamecontroller"></a>[rawgamecontroller](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 
 rawgamecontroller.displayname <br> rawgamecontroller.nonroamableid <br> rawgamecontroller.simplehapticscontrollers
 
-### <a name="windowsgamingpreviewgamesenumerationhttpsdocsmicrosoftcomuwpapiwindowsgamingpreviewgamesenumeration"></a>[windows.gaming.preview.gamesenumeration](https://docs.microsoft.com/uwp/api/windows.gaming.preview.gamesenumeration)
+### <a name="windowsgamingpreviewgamesenumerationhttpsdocsmicrosoftcomuwpapiwindowsgamingpreviewgamesenumeration"></a>[Windows.Gaming.Preview.gamesenumeration](https://docs.microsoft.com/uwp/api/windows.gaming.preview.gamesenumeration)
 
 #### <a name="gamelisthttpsdocsmicrosoftcomuwpapiwindowsgamingpreviewgamesenumerationgamelist"></a>[gamelist](https://docs.microsoft.com/uwp/api/windows.gaming.preview.gamesenumeration.gamelist)
 
@@ -504,7 +504,7 @@ gamemodeconfiguration <br> gamemodeconfiguration.affinitizetoexclusivecpus <br> 
 
 gamemodeuserconfiguration <br> gamemodeuserconfiguration.gamingrelatedprocessnames <br> gamemodeuserconfiguration.getdefault <br> gamemodeuserconfiguration.saveasync
 
-### <a name="windowsgaminguihttpsdocsmicrosoftcomuwpapiwindowsgamingui"></a>[windows.gaming.ui](https://docs.microsoft.com/uwp/api/windows.gaming.ui)
+### <a name="windowsgaminguihttpsdocsmicrosoftcomuwpapiwindowsgamingui"></a>[Windows.Gaming.UI](https://docs.microsoft.com/uwp/api/windows.gaming.ui)
 
 #### <a name="gamechatmessageoriginhttpsdocsmicrosoftcomuwpapiwindowsgaminguigamechatmessageorigin"></a>[gamechatmessageorigin](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatmessageorigin)
 
@@ -540,7 +540,7 @@ gameuiprovideractivatedeventargs <br> gameuiprovideractivatedeventargs.gameuiarg
 
 ## <a name="windowsgraphics"></a>windows.graphics
 
-### <a name="windowsgraphicsholographichttpsdocsmicrosoftcomuwpapiwindowsgraphicsholographic"></a>[windows.graphics.holographic](https://docs.microsoft.com/uwp/api/windows.graphics.holographic)
+### <a name="windowsgraphicsholographichttpsdocsmicrosoftcomuwpapiwindowsgraphicsholographic"></a>[Windows.Graphics.Holographic](https://docs.microsoft.com/uwp/api/windows.graphics.holographic)
 
 #### <a name="holographiccamerahttpsdocsmicrosoftcomuwpapiwindowsgraphicsholographicholographiccamera"></a>[holographiccamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera)
 
@@ -570,7 +570,7 @@ holographicquadlayerupdateparameters <br> holographicquadlayerupdateparameters.a
 
 holographicspace.isconfigured
 
-### <a name="windowsgraphicsprintingprinttickethttpsdocsmicrosoftcomuwpapiwindowsgraphicsprintingprintticket"></a>[windows.graphics.printing.printticket](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket)
+### <a name="windowsgraphicsprintingprinttickethttpsdocsmicrosoftcomuwpapiwindowsgraphicsprintingprintticket"></a>[Windows.Graphics.Printing.PrintTicket](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket)
 
 #### <a name="printticketcapabilitieshttpsdocsmicrosoftcomuwpapiwindowsgraphicsprintingprintticketprintticketcapabilities"></a>[printticketcapabilities](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketcapabilities)
 
@@ -616,7 +616,7 @@ workflowprintticket <br> workflowprintticket.documentbindingfeature <br> workflo
 
 workflowprintticketvalidationresult <br> workflowprintticketvalidationresult.extendederror <br> workflowprintticketvalidationresult.validated
 
-### <a name="windowsgraphicsprintingworkflowhttpsdocsmicrosoftcomuwpapiwindowsgraphicsprintingworkflow"></a>[windows.graphics.printing.workflow](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
+### <a name="windowsgraphicsprintingworkflowhttpsdocsmicrosoftcomuwpapiwindowsgraphicsprintingworkflow"></a>[Windows.Graphics.Printing.workflow](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 
 #### <a name="printworkflowbackgroundsessionhttpsdocsmicrosoftcomuwpapiwindowsgraphicsprintingworkflowprintworkflowbackgroundsession"></a>[printworkflowbackgroundsession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)
 
@@ -690,7 +690,7 @@ printworkflowuiactivatedeventargs <br> printworkflowuiactivatedeventargs.kind <b
 
 printworkflowxpsdataavailableeventargs <br> printworkflowxpsdataavailableeventargs.getdeferral <br> printworkflowxpsdataavailableeventargs.operation
 
-### <a name="windowsgraphicsprinting3dhttpsdocsmicrosoftcomuwpapiwindowsgraphicsprinting3d"></a>[windows.graphics.printing3d](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
+### <a name="windowsgraphicsprinting3dhttpsdocsmicrosoftcomuwpapiwindowsgraphicsprinting3d"></a>[Windows.Graphics.printing3d](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 
 #### <a name="printing3d3mfpackagehttpsdocsmicrosoftcomuwpapiwindowsgraphicsprinting3dprinting3d3mfpackage"></a>[printing3d3mfpackage](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)
 
@@ -702,19 +702,19 @@ printing3dpackagecompression
 
 ## <a name="windowsmanagement"></a>windows.management
 
-### <a name="windowsmanagementdeploymenthttpsdocsmicrosoftcomuwpapiwindowsmanagementdeployment"></a>[windows.management.deployment](https://docs.microsoft.com/uwp/api/windows.management.deployment)
+### <a name="windowsmanagementdeploymenthttpsdocsmicrosoftcomuwpapiwindowsmanagementdeployment"></a>[Windows.Management.Deployment](https://docs.microsoft.com/uwp/api/windows.management.deployment)
 
 #### <a name="addpackagebyappinstalleroptionshttpsdocsmicrosoftcomuwpapiwindowsmanagementdeploymentaddpackagebyappinstalleroptions"></a>[addpackagebyappinstalleroptions](https://docs.microsoft.com/uwp/api/windows.management.deployment.addpackagebyappinstalleroptions)
 
 addpackagebyappinstalleroptions
 
-#### <a name="packagemanagerhttpsdocsmicrosoftcomuwpapiwindowsmanagementdeploymentpackagemanager"></a>[packagemanager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)
+#### <a name="packagemanagerhttpsdocsmicrosoftcomuwpapiwindowsmanagementdeploymentpackagemanager"></a>[PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)
 
 packagemanager.addpackageasync <br> packagemanager.addpackagebyappinstallerfileasync <br> packagemanager.provisionpackageforallusersasync <br> packagemanager.requestaddpackageasync <br> packagemanager.requestaddpackagebyappinstallerfileasync <br> packagemanager.stagepackageasync
 
 ## <a name="windowsmedia"></a>windows.media
 
-### <a name="windowsmediaappbroadcastinghttpsdocsmicrosoftcomuwpapiwindowsmediaappbroadcasting"></a>[windows.media.appbroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)
+### <a name="windowsmediaappbroadcastinghttpsdocsmicrosoftcomuwpapiwindowsmediaappbroadcasting"></a>[Windows.Media.appbroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)
 
 #### <a name="appbroadcastingmonitorhttpsdocsmicrosoftcomuwpapiwindowsmediaappbroadcastingappbroadcastingmonitor"></a>[appbroadcastingmonitor](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)
 
@@ -732,7 +732,7 @@ appbroadcastingstatusdetails <br> appbroadcastingstatusdetails.isanyappbroadcast
 
 appbroadcastingui <br> appbroadcastingui.getdefault <br> appbroadcastingui.getforuser <br> appbroadcastingui.getstatus <br> appbroadcastingui.showbroadcastui
 
-### <a name="windowsmediaapprecordinghttpsdocsmicrosoftcomuwpapiwindowsmediaapprecording"></a>[windows.media.apprecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)
+### <a name="windowsmediaapprecordinghttpsdocsmicrosoftcomuwpapiwindowsmediaapprecording"></a>[Windows.Media.apprecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)
 
 #### <a name="apprecordingmanagerhttpsdocsmicrosoftcomuwpapiwindowsmediaapprecordingapprecordingmanager"></a>[apprecordingmanager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)
 
@@ -762,7 +762,7 @@ apprecordingstatus <br> apprecordingstatus.canrecord <br> apprecordingstatus.can
 
 apprecordingstatusdetails <br> apprecordingstatusdetails.isanyappbroadcasting <br> apprecordingstatusdetails.isappinactive <br> apprecordingstatusdetails.isblockedforapp <br> apprecordingstatusdetails.iscaptureresourceunavailable <br> apprecordingstatusdetails.isdisabledbysystem <br> apprecordingstatusdetails.isdisabledbyuser <br> apprecordingstatusdetails.isgamestreaminprogress <br> apprecordingstatusdetails.isgpuconstrained <br> apprecordingstatusdetails.istimespanrecordingdisabled
 
-### <a name="windowsmediacaptureframeshttpsdocsmicrosoftcomuwpapiwindowsmediacaptureframes"></a>[windows.media.capture.frames](https://docs.microsoft.com/uwp/api/windows.media.capture.frames)
+### <a name="windowsmediacaptureframeshttpsdocsmicrosoftcomuwpapiwindowsmediacaptureframes"></a>[Windows.Media.capture.frames](https://docs.microsoft.com/uwp/api/windows.media.capture.frames)
 
 #### <a name="mediaframereaderhttpsdocsmicrosoftcomuwpapiwindowsmediacaptureframesmediaframereader"></a>[mediaframereader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)
 
@@ -776,7 +776,7 @@ mediaframereaderacquisitionmode
 
 multisourcemediaframereader.acquisitionmode
 
-### <a name="windowsmediacapturehttpsdocsmicrosoftcomuwpapiwindowsmediacapture"></a>[windows.media.capture](https://docs.microsoft.com/uwp/api/windows.media.capture)
+### <a name="windowsmediacapturehttpsdocsmicrosoftcomuwpapiwindowsmediacapture"></a>[Windows.Media.capture](https://docs.microsoft.com/uwp/api/windows.media.capture)
 
 #### <a name="appbroadcastbackgroundservicehttpsdocsmicrosoftcomuwpapiwindowsmediacaptureappbroadcastbackgroundservice"></a>[appbroadcastbackgroundservice](https://docs.microsoft.com/uwp/api/windows.media.capture.appbroadcastbackgroundservice)
 
@@ -802,7 +802,7 @@ appcapturemetadatapriority
 
 appcapturemetadatawriter <br> appcapturemetadatawriter.adddoubleevent <br> appcapturemetadatawriter.addint32event <br> appcapturemetadatawriter.addstringevent <br> appcapturemetadatawriter.appcapturemetadatawriter <br> appcapturemetadatawriter.close <br> appcapturemetadatawriter.metadatapurged <br> appcapturemetadatawriter.remainingstoragebytesavailable <br> appcapturemetadatawriter.startdoublestate <br> appcapturemetadatawriter.startint32state <br> appcapturemetadatawriter.startstringstate <br> appcapturemetadatawriter.stopallstates <br> appcapturemetadatawriter.stopstate
 
-### <a name="windowsmediacorehttpsdocsmicrosoftcomuwpapiwindowsmediacore"></a>[windows.media.core](https://docs.microsoft.com/uwp/api/windows.media.core)
+### <a name="windowsmediacorehttpsdocsmicrosoftcomuwpapiwindowsmediacore"></a>[Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)
 
 #### <a name="audiostreamdescriptorhttpsdocsmicrosoftcomuwpapiwindowsmediacoreaudiostreamdescriptor"></a>[audiostreamdescriptor](https://docs.microsoft.com/uwp/api/windows.media.core.audiostreamdescriptor)
 
@@ -824,7 +824,7 @@ lowlightfusion <br> lowlightfusion.fuseasync <br> lowlightfusion.maxsupportedfra
 
 lowlightfusionresult <br> lowlightfusionresult.close <br> lowlightfusionresult.frame
 
-#### <a name="mediasourcehttpsdocsmicrosoftcomuwpapiwindowsmediacoremediasource"></a>[mediasource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)
+#### <a name="mediasourcehttpsdocsmicrosoftcomuwpapiwindowsmediacoremediasource"></a>[mediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)
 
 mediaSource.createfrommediaframesource
 
@@ -832,7 +832,7 @@ mediaSource.createfrommediaframesource
 
 mediasourceappserviceconnection <br> mediasourceappserviceconnection.initializemediastreamsourcerequested <br> mediasourceappserviceconnection.mediasourceappserviceconnection <br> mediasourceappserviceconnection.start
 
-#### <a name="mediastreamsourcehttpsdocsmicrosoftcomuwpapiwindowsmediacoremediastreamsource"></a>[mediastreamsource](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource)
+#### <a name="mediastreamsourcehttpsdocsmicrosoftcomuwpapiwindowsmediacoremediastreamsource"></a>[MediaStreamSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource)
 
 mediastreamsource.islive
 
@@ -852,37 +852,37 @@ sceneanalysisrecommendation
 
 videostreamdescriptor.label
 
-### <a name="windowsmediadialprotocolhttpsdocsmicrosoftcomuwpapiwindowsmediadialprotocol"></a>[windows.media.dialprotocol](https://docs.microsoft.com/uwp/api/windows.media.dialprotocol)
+### <a name="windowsmediadialprotocolhttpsdocsmicrosoftcomuwpapiwindowsmediadialprotocol"></a>[Windows.Media.dialprotocol](https://docs.microsoft.com/uwp/api/windows.media.dialprotocol)
 
 #### <a name="dialreceiverapphttpsdocsmicrosoftcomuwpapiwindowsmediadialprotocoldialreceiverapp"></a>[dialreceiverapp](https://docs.microsoft.com/uwp/api/windows.media.dialprotocol.dialreceiverapp)
 
 dialreceiverapp <br> dialreceiverapp.current <br> dialreceiverapp.getadditionaldataasync <br> dialreceiverapp.setadditionaldataasync
 
-### <a name="windowsmediamediapropertieshttpsdocsmicrosoftcomuwpapiwindowsmediamediaproperties"></a>[windows.media.mediaproperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties)
+### <a name="windowsmediamediapropertieshttpsdocsmicrosoftcomuwpapiwindowsmediamediaproperties"></a>[Windows.Media.mediaproperties](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties)
 
 #### <a name="mediaencodingprofilehttpsdocsmicrosoftcomuwpapiwindowsmediamediapropertiesmediaencodingprofile"></a>[mediaencodingprofile](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile)
 
 mediaencodingprofile.getaudiotracks <br> mediaencodingprofile.getvideotracks <br> mediaencodingprofile.setaudiotracks <br> mediaencodingprofile.setvideotracks
 
-### <a name="windowsmediaplaybackhttpsdocsmicrosoftcomuwpapiwindowsmediaplayback"></a>[windows.media.playback](https://docs.microsoft.com/uwp/api/windows.media.playback)
+### <a name="windowsmediaplaybackhttpsdocsmicrosoftcomuwpapiwindowsmediaplayback"></a>[Windows.Media.Playback](https://docs.microsoft.com/uwp/api/windows.media.playback)
 
 #### <a name="mediaplaybacksessionbufferingstartedeventargshttpsdocsmicrosoftcomuwpapiwindowsmediaplaybackmediaplaybacksessionbufferingstartedeventargs"></a>[mediaplaybacksessionbufferingstartedeventargs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs)
 
 mediaplaybacksessionbufferingstartedeventargs <br> mediaplaybacksessionbufferingstartedeventargs.isplaybackinterruption
 
-#### <a name="mediaplayerhttpsdocsmicrosoftcomuwpapiwindowsmediaplaybackmediaplayer"></a>[mediaplayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)
+#### <a name="mediaplayerhttpsdocsmicrosoftcomuwpapiwindowsmediaplaybackmediaplayer"></a>[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)
 
 mediaplayer.rendersubtitlestosurface <br> mediaplayer.rendersubtitlestosurface <br> mediaplayer.subtitleframechanged
 
-### <a name="windowsmediaspeechrecognitionhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognition"></a>[windows.media.speechrecognition](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition)
+### <a name="windowsmediaspeechrecognitionhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognition"></a>[Windows.Media.speechrecognition](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition)
 
-#### <a name="speechrecognizerhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognitionspeechrecognizer"></a>[speechrecognizer](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer)
+#### <a name="speechrecognizerhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechrecognitionspeechrecognizer"></a>[SpeechRecognizer](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer)
 
 speechrecognizer.trysetsystemspeechlanguageasync
 
-### <a name="windowsmediaspeechsynthesishttpsdocsmicrosoftcomuwpapiwindowsmediaspeechsynthesis"></a>[windows.media.speechsynthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
+### <a name="windowsmediaspeechsynthesishttpsdocsmicrosoftcomuwpapiwindowsmediaspeechsynthesis"></a>[Windows.Media.speechsynthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
 
-#### <a name="speechsynthesizerhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechsynthesisspeechsynthesizer"></a>[speechsynthesizer](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis.speechsynthesizer)
+#### <a name="speechsynthesizerhttpsdocsmicrosoftcomuwpapiwindowsmediaspeechsynthesisspeechsynthesizer"></a>[SpeechSynthesizer](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis.speechsynthesizer)
 
 speechsynthesizer.trysetdefaultvoiceasync
 
@@ -890,7 +890,7 @@ speechsynthesizer.trysetdefaultvoiceasync
 
 speechsynthesizeroptions.audiopitch <br> speechsynthesizeroptions.audiovolume <br> speechsynthesizeroptions.speakingrate
 
-### <a name="windowsmediastreamingadaptivehttpsdocsmicrosoftcomuwpapiwindowsmediastreamingadaptive"></a>[windows.media.streaming.adaptive](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive)
+### <a name="windowsmediastreamingadaptivehttpsdocsmicrosoftcomuwpapiwindowsmediastreamingadaptive"></a>[Windows.Media.Streaming.Adaptive](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive)
 
 #### <a name="adaptivemediasourcediagnosticavailableeventargshttpsdocsmicrosoftcomuwpapiwindowsmediastreamingadaptiveadaptivemediasourcediagnosticavailableeventargs"></a>[adaptivemediasourcediagnosticavailableeventargs](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs)
 
@@ -898,7 +898,7 @@ adaptivemediasourcediagnosticavailableeventargs.extendederror
 
 ## <a name="windowsnetworking"></a>windows.networking
 
-### <a name="windowsnetworkingbackgroundtransferhttpsdocsmicrosoftcomuwpapiwindowsnetworkingbackgroundtransfer"></a>[windows.networking.backgroundtransfer](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer)
+### <a name="windowsnetworkingbackgroundtransferhttpsdocsmicrosoftcomuwpapiwindowsnetworkingbackgroundtransfer"></a>[Windows.Networking.backgroundtransfer](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer)
 
 #### <a name="backgroundtransferfilerangehttpsdocsmicrosoftcomuwpapiwindowsnetworkingbackgroundtransferbackgroundtransferfilerange"></a>[backgroundtransferfilerange](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgroundtransferfilerange)
 
@@ -912,7 +912,7 @@ backgroundtransferrangesdownloadedeventargs <br> backgroundtransferrangesdownloa
 
 downloadoperation.currentweberrorstatus <br> downloadoperation.getdownloadedranges <br> downloadoperation.getresultrandomaccessstreamreference <br> downloadoperation.israndomaccessrequired <br> downloadoperation.rangesdownloaded <br> downloadoperation.recoverableweberrorstatuses
 
-### <a name="windowsnetworkingconnectivityhttpsdocsmicrosoftcomuwpapiwindowsnetworkingconnectivity"></a>[windows.networking.connectivity](https://docs.microsoft.com/uwp/api/windows.networking.connectivity)
+### <a name="windowsnetworkingconnectivityhttpsdocsmicrosoftcomuwpapiwindowsnetworkingconnectivity"></a>[Windows.Networking.Connectivity](https://docs.microsoft.com/uwp/api/windows.networking.connectivity)
 
 #### <a name="connectionprofilehttpsdocsmicrosoftcomuwpapiwindowsnetworkingconnectivityconnectionprofile"></a>[connectionprofile](https://docs.microsoft.com/uwp/api/windows.networking.connectivity.connectionprofile)
 
@@ -922,7 +922,7 @@ connectionprofile.getprovidernetworkusageasync
 
 providernetworkusage <br> providernetworkusage.bytesreceived <br> providernetworkusage.bytessent <br> providernetworkusage.providerid
 
-### <a name="windowsnetworkingnetworkoperatorshttpsdocsmicrosoftcomuwpapiwindowsnetworkingnetworkoperators"></a>[windows.networking.networkoperators](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators)
+### <a name="windowsnetworkingnetworkoperatorshttpsdocsmicrosoftcomuwpapiwindowsnetworkingnetworkoperators"></a>[Windows.Networking.networkoperators](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators)
 
 #### <a name="mobilebroadbandantennasarhttpsdocsmicrosoftcomuwpapiwindowsnetworkingnetworkoperatorsmobilebroadbandantennasar"></a>[mobilebroadbandantennasar](https://docs.microsoft.com/uwp/api/windows.networking.networkoperators.mobilebroadbandantennasar)
 
@@ -976,7 +976,7 @@ mobilebroadbandsarmanager <br> mobilebroadbandsarmanager.antennas <br> mobilebro
 
 mobilebroadbandtransmissionstatechangedeventargs <br> mobilebroadbandtransmissionstatechangedeventargs.istransmitting
 
-### <a name="windowsnetworkingsocketshttpsdocsmicrosoftcomuwpapiwindowsnetworkingsockets"></a>[windows.networking.sockets](https://docs.microsoft.com/uwp/api/windows.networking.sockets)
+### <a name="windowsnetworkingsocketshttpsdocsmicrosoftcomuwpapiwindowsnetworkingsockets"></a>[Windows.Networking.Sockets](https://docs.microsoft.com/uwp/api/windows.networking.sockets)
 
 #### <a name="messagewebsocketcontrolhttpsdocsmicrosoftcomuwpapiwindowsnetworkingsocketsmessagewebsocketcontrol"></a>[messagewebsocketcontrol](https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocketcontrol)
 
@@ -1000,7 +1000,7 @@ streamwebsocketcontrol.actualunsolicitedponginterval <br> streamwebsocketcontrol
 
 ## <a name="windowsphone"></a>windows.phone
 
-### <a name="windowsphonenetworkingvoiphttpsdocsmicrosoftcomuwpapiwindowsphonenetworkingvoip"></a>[windows.phone.networking.voip](https://docs.microsoft.com/uwp/api/windows.phone.networking.voip)
+### <a name="windowsphonenetworkingvoiphttpsdocsmicrosoftcomuwpapiwindowsphonenetworkingvoip"></a>[Windows.Phone.Networking.VoIP](https://docs.microsoft.com/uwp/api/windows.phone.networking.voip)
 
 #### <a name="voipcallcoordinatorhttpsdocsmicrosoftcomuwpapiwindowsphonenetworkingvoipvoipcallcoordinator"></a>[voipcallcoordinator](https://docs.microsoft.com/uwp/api/windows.phone.networking.voip.voipcallcoordinator)
 
@@ -1012,13 +1012,13 @@ voipphonecall.tryshowappui
 
 ## <a name="windowssecurity"></a>windows.security
 
-### <a name="windowssecurityauthenticationwebproviderhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebprovider"></a>[windows.security.authentication.web.provider](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider)
+### <a name="windowssecurityauthenticationwebproviderhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebprovider"></a>[Windows.Security.Authentication.Web.Provider](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider)
 
-#### <a name="webaccountmanagerhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebproviderwebaccountmanager"></a>[webaccountmanager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider.webaccountmanager)
+#### <a name="webaccountmanagerhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebproviderwebaccountmanager"></a>[Gestionnaire de compte Web](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider.webaccountmanager)
 
 webaccountmanager.invalidateappcacheforaccountasync <br> webaccountmanager.invalidateappcacheforallaccountsasync
 
-### <a name="windowssecurityenterprisedatahttpsdocsmicrosoftcomuwpapiwindowssecurityenterprisedata"></a>[windows.security.enterprisedata](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata)
+### <a name="windowssecurityenterprisedatahttpsdocsmicrosoftcomuwpapiwindowssecurityenterprisedata"></a>[Windows.Security.enterprisedata](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata)
 
 #### <a name="fileprotectioninfohttpsdocsmicrosoftcomuwpapiwindowssecurityenterprisedatafileprotectioninfo"></a>[fileprotectioninfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectioninfo)
 
@@ -1026,21 +1026,21 @@ fileprotectioninfo.isprotectwhileopensupported
 
 ## <a name="windowsservices"></a>windows.services
 
-### <a name="windowsservicesmapsguidancehttpsdocsmicrosoftcomuwpapiwindowsservicesmapsguidance"></a>[windows.services.maps.guidance](https://docs.microsoft.com/uwp/api/windows.services.maps.guidance)
+### <a name="windowsservicesmapsguidancehttpsdocsmicrosoftcomuwpapiwindowsservicesmapsguidance"></a>[Windows.Services.Maps.Guidance](https://docs.microsoft.com/uwp/api/windows.services.maps.guidance)
 
 #### <a name="guidanceroadsegmenthttpsdocsmicrosoftcomuwpapiwindowsservicesmapsguidanceguidanceroadsegment"></a>[guidanceroadsegment](https://docs.microsoft.com/uwp/api/windows.services.maps.guidance.guidanceroadsegment)
 
 guidanceroadsegment.isscenic
 
-### <a name="windowsservicesmapslocalsearchhttpsdocsmicrosoftcomuwpapiwindowsservicesmapslocalsearch"></a>[windows.services.maps.localsearch](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch)
+### <a name="windowsservicesmapslocalsearchhttpsdocsmicrosoftcomuwpapiwindowsservicesmapslocalsearch"></a>[Windows.Services.Maps.localsearch](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch)
 
 #### <a name="placeinfohelperhttpsdocsmicrosoftcomuwpapiwindowsservicesmapslocalsearchplaceinfohelper"></a>[placeinfohelper](https://docs.microsoft.com/uwp/api/windows.services.maps.localsearch.placeinfohelper)
 
 placeinfohelper <br> placeinfohelper.createfromlocallocation
 
-### <a name="windowsservicesmapshttpsdocsmicrosoftcomuwpapiwindowsservicesmaps"></a>[windows.services.maps](https://docs.microsoft.com/uwp/api/windows.services.maps)
+### <a name="windowsservicesmapshttpsdocsmicrosoftcomuwpapiwindowsservicesmaps"></a>[Windows.Services.Maps](https://docs.microsoft.com/uwp/api/windows.services.maps)
 
-#### <a name="maproutehttpsdocsmicrosoftcomuwpapiwindowsservicesmapsmaproute"></a>[maproute](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute)
+#### <a name="maproutehttpsdocsmicrosoftcomuwpapiwindowsservicesmapsmaproute"></a>[MapRoute](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute)
 
 maproute.isscenic
 
@@ -1058,7 +1058,7 @@ placeinfocreateoptions <br> placeinfocreateoptions.displayaddress <br> placeinfo
 
 ## <a name="windowsstorage"></a>windows.storage
 
-### <a name="windowsstorageproviderhttpsdocsmicrosoftcomuwpapiwindowsstorageprovider"></a>[windows.storage.provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
+### <a name="windowsstorageproviderhttpsdocsmicrosoftcomuwpapiwindowsstorageprovider"></a>[Windows.Storage.Provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
 
 #### <a name="storageproviderhydrationpolicyhttpsdocsmicrosoftcomuwpapiwindowsstorageproviderstorageproviderhydrationpolicy"></a>[storageproviderhydrationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderhydrationpolicy)
 
@@ -1084,7 +1084,7 @@ istorageproviderpropertycapabilities <br> istorageproviderpropertycapabilities.i
 
 storageproviderpopulationpolicy
 
-#### <a name="protectionmodehttpsdocsmicrosoftcomuwpapiwindowsstorageproviderstorageproviderprotectionmode"></a>[protectionmode](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderprotectionmode)
+#### <a name="protectionmodehttpsdocsmicrosoftcomuwpapiwindowsstorageproviderstorageproviderprotectionmode"></a>[ProtectionMode](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderprotectionmode)
 
 storageproviderprotectionmode
 
@@ -1108,7 +1108,7 @@ storageprovidersyncrootinfo <br> storageprovidersyncrootinfo.allowpinning <br> s
 
 storageprovidersyncrootmanager <br> storageprovidersyncrootmanager.getcurrentsyncroots <br> storageprovidersyncrootmanager.getsyncrootinformationforfolder <br> storageprovidersyncrootmanager.getsyncrootinformationforid <br> storageprovidersyncrootmanager.register <br> storageprovidersyncrootmanager.unregister
 
-### <a name="windowsstoragestreamshttpsdocsmicrosoftcomuwpapiwindowsstoragestreams"></a>[windows.storage.streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)
+### <a name="windowsstoragestreamshttpsdocsmicrosoftcomuwpapiwindowsstoragestreams"></a>[Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)
 
 #### <a name="fileopendispositionhttpsdocsmicrosoftcomuwpapiwindowsstoragestreamsfileopendisposition"></a>[fileopendisposition](https://docs.microsoft.com/uwp/api/windows.storage.streams.fileopendisposition)
 
@@ -1118,7 +1118,7 @@ fileopendisposition
 
 filerandomaccessstream.openasync <br> filerandomaccessstream.openasync <br> filerandomaccessstream.openforuserasync <br> filerandomaccessstream.openforuserasync <br> filerandomaccessstream.opentransactedwriteasync <br> filerandomaccessstream.opentransactedwriteasync <br> filerandomaccessstream.opentransactedwriteforuserasync <br> filerandomaccessstream.opentransactedwriteforuserasync
 
-### <a name="windowsstoragehttpsdocsmicrosoftcomuwpapiwindowsstorage"></a>[windows.storage](https://docs.microsoft.com/uwp/api/windows.storage)
+### <a name="windowsstoragehttpsdocsmicrosoftcomuwpapiwindowsstorage"></a>[Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage)
 
 #### <a name="appdatapathshttpsdocsmicrosoftcomuwpapiwindowsstorageappdatapaths"></a>[appdatapaths](https://docs.microsoft.com/uwp/api/windows.storage.appdatapaths)
 
@@ -1142,7 +1142,7 @@ userdatapaths <br> userdatapaths.cameraroll <br> userdatapaths.cookies <br> user
 
 ## <a name="windowssystem"></a>windows.system
 
-### <a name="windowssystemdiagnosticshttpsdocsmicrosoftcomuwpapiwindowssystemdiagnostics"></a>[windows.system.diagnostics](https://docs.microsoft.com/uwp/api/windows.system.diagnostics)
+### <a name="windowssystemdiagnosticshttpsdocsmicrosoftcomuwpapiwindowssystemdiagnostics"></a>[Windows.System.Diagnostics](https://docs.microsoft.com/uwp/api/windows.system.diagnostics)
 
 #### <a name="diagnosticactionresulthttpsdocsmicrosoftcomuwpapiwindowssystemdiagnosticsdiagnosticactionresult"></a>[diagnosticactionresult](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.diagnosticactionresult)
 
@@ -1160,7 +1160,7 @@ diagnosticinvoker <br> diagnosticinvoker.getdefault <br> diagnosticinvoker.getfo
 
 processdiagnosticinfo.getappdiagnosticinfos <br> processdiagnosticinfo.ispackaged <br> processdiagnosticinfo.trygetforprocessid
 
-### <a name="windowssystemprofilesystemmanufacturershttpsdocsmicrosoftcomuwpapiwindowssystemprofilesystemmanufacturers"></a>[windows.system.profile.systemmanufacturers](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers)
+### <a name="windowssystemprofilesystemmanufacturershttpsdocsmicrosoftcomuwpapiwindowssystemprofilesystemmanufacturers"></a>[Windows.System.Profile.systemmanufacturers](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers)
 
 #### <a name="oemsupportinfohttpsdocsmicrosoftcomuwpapiwindowssystemprofilesystemmanufacturersoemsupportinfo"></a>[oemsupportinfo](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers.oemsupportinfo)
 
@@ -1170,7 +1170,7 @@ oemsupportinfo <br> oemsupportinfo.supportapplink <br> oemsupportinfo.supportlin
 
 systemsupportinfo <br> systemsupportinfo.localsystemedition <br> systemsupportinfo.oemsupportinfo
 
-### <a name="windowssystemremotesystemshttpsdocsmicrosoftcomuwpapiwindowssystemremotesystems"></a>[windows.system.remotesystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)
+### <a name="windowssystemremotesystemshttpsdocsmicrosoftcomuwpapiwindowssystemremotesystems"></a>[Windows.System.remotesystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)
 
 #### <a name="remotesystemhttpsdocsmicrosoftcomuwpapiwindowssystemremotesystemsremotesystem"></a>[remotesystem](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem)
 
@@ -1180,13 +1180,13 @@ remotesystem.manufacturerdisplayname <br> remotesystem.modeldisplayname
 
 remotesystemkinds.iot <br> remotesystemkinds.laptop <br> remotesystemkinds.tablet
 
-### <a name="windowssystemuserprofilehttpsdocsmicrosoftcomuwpapiwindowssystemuserprofile"></a>[windows.system.userprofile](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
+### <a name="windowssystemuserprofilehttpsdocsmicrosoftcomuwpapiwindowssystemuserprofile"></a>[Windows.System.USERPROFILE](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
 
 #### <a name="globalizationpreferenceshttpsdocsmicrosoftcomuwpapiwindowssystemuserprofileglobalizationpreferences"></a>[globalizationpreferences](https://docs.microsoft.com/uwp/api/windows.system.userprofile.globalizationpreferences)
 
 globalizationpreferences.trysethomegeographicregion <br> globalizationpreferences.trysetlanguages
 
-### <a name="windowssystemhttpsdocsmicrosoftcomuwpapiwindowssystem"></a>[windows.system](https://docs.microsoft.com/uwp/api/windows.system)
+### <a name="windowssystemhttpsdocsmicrosoftcomuwpapiwindowssystem"></a>[Windows.System](https://docs.microsoft.com/uwp/api/windows.system)
 
 #### <a name="appdiagnosticinfohttpsdocsmicrosoftcomuwpapiwindowssystemappdiagnosticinfo"></a>[appdiagnosticinfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo)
 
@@ -1256,7 +1256,7 @@ datetimesettings <br> datetimesettings.setsystemdatetime
 
 diagnosticaccessstatus
 
-#### <a name="dispatcherqueuehttpsdocsmicrosoftcomuwpapiwindowssystemdispatcherqueue"></a>[dispatcherqueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue)
+#### <a name="dispatcherqueuehttpsdocsmicrosoftcomuwpapiwindowssystemdispatcherqueue"></a>[DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue)
 
 dispatcherqueue <br> dispatcherqueue.createtimer <br> dispatcherqueue.getforcurrentthread <br> dispatcherqueue.shutdowncompleted <br> dispatcherqueue.shutdownstarting <br> dispatcherqueue.tryenqueue <br> dispatcherqueue.tryenqueue
 
@@ -1286,7 +1286,7 @@ memorymanager.expectedappmemoryusagelimit
 
 ## <a name="windowsui"></a>windows.ui
 
-### <a name="windowsuicompositioneffectshttpsdocsmicrosoftcomuwpapiwindowsuicompositioneffects"></a>[windows.ui.composition.effects](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects)
+### <a name="windowsuicompositioneffectshttpsdocsmicrosoftcomuwpapiwindowsuicompositioneffects"></a>[Windows.UI.Composition.Effects](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects)
 
 #### <a name="scenelightingeffecthttpsdocsmicrosoftcomuwpapiwindowsuicompositioneffectsscenelightingeffect"></a>[scenelightingeffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 
@@ -1296,7 +1296,7 @@ scenelightingeffect.reflectancemodel
 
 scenelightingeffectreflectancemodel
 
-### <a name="windowsuicompositioninteractionshttpsdocsmicrosoftcomuwpapiwindowsuicompositioninteractions"></a>[windows.ui.composition.interactions](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions)
+### <a name="windowsuicompositioninteractionshttpsdocsmicrosoftcomuwpapiwindowsuicompositioninteractions"></a>[Windows.UI.Composition.interactions](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions)
 
 #### <a name="interactiontrackerhttpsdocsmicrosoftcomuwpapiwindowsuicompositioninteractionsinteractiontracker"></a>[interactiontracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker)
 
@@ -1314,9 +1314,9 @@ interactiontrackervector2inertiamodifier
 
 interactiontrackervector2inertianaturalmotion <br> interactiontrackervector2inertianaturalmotion.condition <br> interactiontrackervector2inertianaturalmotion.create <br> interactiontrackervector2inertianaturalmotion.naturalmotion
 
-### <a name="windowsuicompositionhttpsdocsmicrosoftcomuwpapiwindowsuicomposition"></a>[windows.ui.composition](https://docs.microsoft.com/uwp/api/windows.ui.composition)
+### <a name="windowsuicompositionhttpsdocsmicrosoftcomuwpapiwindowsuicomposition"></a>[Windows.UI.Composition](https://docs.microsoft.com/uwp/api/windows.ui.composition)
 
-#### <a name="ambientlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionambientlight"></a>[ambientlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
+#### <a name="ambientlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionambientlight"></a>[AmbientLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
 
 ambientlight.intensity
 
@@ -1356,7 +1356,7 @@ compositionlineargradientbrush <br> compositionlineargradientbrush.endpoint <br>
 
 compositionobject.dispatcherqueue
 
-#### <a name="compositorhttpsdocsmicrosoftcomuwpapiwindowsuicompositioncompositor"></a>[compositor](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
+#### <a name="compositorhttpsdocsmicrosoftcomuwpapiwindowsuicompositioncompositor"></a>[compositeur](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositor)
 
 compositor.createcolorgradientstop <br> compositor.createcolorgradientstop <br> compositor.createlineargradientbrush <br> compositor.createspringscalaranimation <br> compositor.createspringvector2animation <br> compositor.createspringvector3animation
 
@@ -1364,7 +1364,7 @@ compositor.createcolorgradientstop <br> compositor.createcolorgradientstop <br> 
 
 distantlight.intensity
 
-#### <a name="dropshadowhttpsdocsmicrosoftcomuwpapiwindowsuicompositiondropshadow"></a>[dropshadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)
+#### <a name="dropshadowhttpsdocsmicrosoftcomuwpapiwindowsuicompositiondropshadow"></a>[DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)
 
 dropshadow.sourcepolicy
 
@@ -1380,7 +1380,7 @@ layervisual.shadow
 
 naturalmotionanimation <br> naturalmotionanimation.delaybehavior <br> naturalmotionanimation.delaytime <br> naturalmotionanimation.stopbehavior
 
-#### <a name="pointlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionpointlight"></a>[pointlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.pointlight)
+#### <a name="pointlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionpointlight"></a>[PointLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.pointlight)
 
 pointlight.intensity
 
@@ -1388,7 +1388,7 @@ pointlight.intensity
 
 scalarnaturalmotionanimation <br> scalarnaturalmotionanimation.finalvalue <br> scalarnaturalmotionanimation.initialvalue <br> scalarnaturalmotionanimation.initialvelocity
 
-#### <a name="spotlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionspotlight"></a>[spotlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
+#### <a name="spotlighthttpsdocsmicrosoftcomuwpapiwindowsuicompositionspotlight"></a>[Spotlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
 
 spotlight.innerconeintensity <br> spotlight.outerconeintensity
 
@@ -1412,7 +1412,7 @@ vector2naturalmotionanimation <br> vector2naturalmotionanimation.finalvalue <br>
 
 vector3naturalmotionanimation <br> vector3naturalmotionanimation.finalvalue <br> vector3naturalmotionanimation.initialvalue <br> vector3naturalmotionanimation.initialvelocity
 
-### <a name="windowsuicorehttpsdocsmicrosoftcomuwpapiwindowsuicore"></a>[windows.ui.core](https://docs.microsoft.com/uwp/api/windows.ui.core)
+### <a name="windowsuicorehttpsdocsmicrosoftcomuwpapiwindowsuicore"></a>[Windows.UI.Core](https://docs.microsoft.com/uwp/api/windows.ui.core)
 
 #### <a name="corewindowhttpsdocsmicrosoftcomuwpapiwindowsuicorecorewindow"></a>[corewindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)
 
@@ -1422,7 +1422,7 @@ corewindow.activationmode <br> corewindow.dispatcherqueue
 
 corewindowactivationmode
 
-### <a name="windowsuiinputinkingcorehttpsdocsmicrosoftcomuwpapiwindowsuiinputinkingcore"></a>[windows.ui.input.inking.core](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core)
+### <a name="windowsuiinputinkingcorehttpsdocsmicrosoftcomuwpapiwindowsuiinputinkingcore"></a>[Windows.UI.Input.inking.Core](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core)
 
 #### <a name="coreincrementalinkstrokehttpsdocsmicrosoftcomuwpapiwindowsuiinputinkingcorecoreincrementalinkstroke"></a>[coreincrementalinkstroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreincrementalinkstroke)
 
@@ -1432,7 +1432,7 @@ coreincrementalinkstroke <br> coreincrementalinkstroke.appendinkpoints <br> core
 
 coreinkpresenterhost <br> coreinkpresenterhost.coreinkpresenterhost <br> coreinkpresenterhost.inkpresenter <br> coreinkpresenterhost.rootvisual
 
-### <a name="windowsuiinputpreviewinjectionhttpsdocsmicrosoftcomuwpapiwindowsuiinputpreviewinjection"></a>[windows.ui.input.preview.injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+### <a name="windowsuiinputpreviewinjectionhttpsdocsmicrosoftcomuwpapiwindowsuiinputpreviewinjection"></a>[Windows.UI.Input.Preview.injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 #### <a name="injectedinputgamepadinfohttpsdocsmicrosoftcomuwpapiwindowsuiinputpreviewinjectioninjectedinputgamepadinfo"></a>[injectedinputgamepadinfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputgamepadinfo)
 
@@ -1442,7 +1442,7 @@ injectedinputgamepadinfo <br> injectedinputgamepadinfo.buttons <br> injectedinpu
 
 inputinjector.initializegamepadinjection <br> inputinjector.injectgamepadinput <br> inputinjector.trycreateforappbroadcastonly <br> inputinjector.uninitializegamepadinjection
 
-### <a name="windowsuiinputspatialhttpsdocsmicrosoftcomuwpapiwindowsuiinputspatial"></a>[windows.ui.input.spatial](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial)
+### <a name="windowsuiinputspatialhttpsdocsmicrosoftcomuwpapiwindowsuiinputspatial"></a>[Windows.UI.Input.spatial](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial)
 
 #### <a name="spatialinteractioncontrollerhttpsdocsmicrosoftcomuwpapiwindowsuiinputspatialspatialinteractioncontroller"></a>[spatialinteractioncontroller](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractioncontroller)
 
@@ -1468,13 +1468,13 @@ spatialinteractionsourcepositionaccuracy
 
 spatialpointerinteractionsourcepose.orientation <br> spatialpointerinteractionsourcepose.positionaccuracy
 
-### <a name="windowsuiinputhttpsdocsmicrosoftcomuwpapiwindowsuiinput"></a>[windows.ui.input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+### <a name="windowsuiinputhttpsdocsmicrosoftcomuwpapiwindowsuiinput"></a>[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
 
 #### <a name="radialcontrollerconfigurationhttpsdocsmicrosoftcomuwpapiwindowsuiinputradialcontrollerconfiguration"></a>[radialcontrollerconfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)
 
 radialcontrollerconfiguration.appcontroller <br> radialcontrollerconfiguration.isappcontrollerenabled
 
-### <a name="windowsuishellhttpsdocsmicrosoftcomuwpapiwindowsuishell"></a>[windows.ui.shell](https://docs.microsoft.com/uwp/api/windows.ui.shell)
+### <a name="windowsuishellhttpsdocsmicrosoftcomuwpapiwindowsuishell"></a>[Windows.UI.Shell](https://docs.microsoft.com/uwp/api/windows.ui.shell)
 
 #### <a name="adaptivecardbuilderhttpsdocsmicrosoftcomuwpapiwindowsuishelladaptivecardbuilder"></a>[adaptivecardbuilder](https://docs.microsoft.com/uwp/api/windows.ui.shell.adaptivecardbuilder)
 
@@ -1492,7 +1492,7 @@ iadaptivecardbuilderstatics <br> iadaptivecardbuilderstatics.createadaptivecardf
 
 taskbarmanager <br> taskbarmanager.getdefault <br> taskbarmanager.isapplistentrypinnedasync <br> taskbarmanager.iscurrentapppinnedasync <br> taskbarmanager.ispinningallowed <br> taskbarmanager.issupported <br> taskbarmanager.requestpinapplistentryasync <br> taskbarmanager.requestpincurrentappasync
 
-### <a name="windowsuistartscreenhttpsdocsmicrosoftcomuwpapiwindowsuistartscreen"></a>[windows.ui.startscreen](https://docs.microsoft.com/uwp/api/windows.ui.startscreen)
+### <a name="windowsuistartscreenhttpsdocsmicrosoftcomuwpapiwindowsuistartscreen"></a>[Windows.UI.startscreen](https://docs.microsoft.com/uwp/api/windows.ui.startscreen)
 
 #### <a name="secondarytilevisualelementshttpsdocsmicrosoftcomuwpapiwindowsuistartscreensecondarytilevisualelements"></a>[secondarytilevisualelements](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytilevisualelements)
 
@@ -1502,7 +1502,7 @@ secondarytilevisualelements.mixedrealitymodel
 
 tilemixedrealitymodel <br> tilemixedrealitymodel.boundingbox <br> tilemixedrealitymodel.uri
 
-### <a name="windowsuiviewmanagementcorehttpsdocsmicrosoftcomuwpapiwindowsuiviewmanagementcore"></a>[windows.ui.viewmanagement.core](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core)
+### <a name="windowsuiviewmanagementcorehttpsdocsmicrosoftcomuwpapiwindowsuiviewmanagementcore"></a>[Windows.UI.viewmanagement.Core](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core)
 
 #### <a name="coreinputviewhttpsdocsmicrosoftcomuwpapiwindowsuiviewmanagementcorecoreinputview"></a>[coreinputview](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.core.coreinputview)
 
@@ -1520,7 +1520,7 @@ coreinputviewocclusionkind
 
 coreinputviewocclusionschangedeventargs <br> coreinputviewocclusionschangedeventargs.handled <br> coreinputviewocclusionschangedeventargs.occlusions
 
-### <a name="windowsuiwebuihttpsdocsmicrosoftcomuwpapiwindowsuiwebui"></a>[windows.ui.webui](https://docs.microsoft.com/uwp/api/windows.ui.webui)
+### <a name="windowsuiwebuihttpsdocsmicrosoftcomuwpapiwindowsuiwebui"></a>[Windows.UI.WebUI](https://docs.microsoft.com/uwp/api/windows.ui.webui)
 
 #### <a name="webuiapplicationhttpsdocsmicrosoftcomuwpapiwindowsuiwebuiwebuiapplication"></a>[webuiapplication](https://docs.microsoft.com/uwp/api/windows.ui.webui.webuiapplication)
 
@@ -1534,7 +1534,7 @@ webuicommandlineactivatedeventargs <br> webuicommandlineactivatedeventargs.activ
 
 webuistartuptaskactivatedeventargs <br> webuistartuptaskactivatedeventargs.kind <br> webuistartuptaskactivatedeventargs.previousexecutionstate <br> webuistartuptaskactivatedeventargs.splashscreen <br> webuistartuptaskactivatedeventargs.taskid <br> webuistartuptaskactivatedeventargs.user
 
-### <a name="windowsuixamlautomationpeershttpsdocsmicrosoftcomuwpapiwindowsuixamlautomationpeers"></a>[windows.ui.xaml.automation.peers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers)
+### <a name="windowsuixamlautomationpeershttpsdocsmicrosoftcomuwpapiwindowsuixamlautomationpeers"></a>[Windows.UI.Xaml.Automation.Peers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers)
 
 #### <a name="automationnotificationkindhttpsdocsmicrosoftcomuwpapiwindowsuixamlautomationpeersautomationnotificationkind"></a>[automationnotificationkind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationnotificationkind)
 
@@ -1544,7 +1544,7 @@ automationnotificationkind
 
 automationnotificationprocessing
 
-#### <a name="automationpeerhttpsdocsmicrosoftcomuwpapiwindowsuixamlautomationpeersautomationpeer"></a>[automationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer)
+#### <a name="automationpeerhttpsdocsmicrosoftcomuwpapiwindowsuixamlautomationpeersautomationpeer"></a>[AutomationPeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer)
 
 automationpeer.raisenotificationevent
 
@@ -1568,7 +1568,7 @@ personpictureautomationpeer <br> personpictureautomationpeer.personpictureautoma
 
 ratingcontrolautomationpeer <br> ratingcontrolautomationpeer.ratingcontrolautomationpeer
 
-### <a name="windowsuixamlcontrolsmapshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmaps"></a>[windows.ui.xaml.controls.maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
+### <a name="windowsuixamlcontrolsmapshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmaps"></a>[Windows.UI.Xaml.Controls.Maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
 
 #### <a name="mapcontrolhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmapsmapcontrol"></a>[mapcontrol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)
 
@@ -1582,7 +1582,7 @@ mapcontroldatahelper.createmapcontrol
 
 mapelement3d <br> mapelement3d.heading <br> mapelement3d.headingproperty <br> mapelement3d.location <br> mapelement3d.locationproperty <br> mapelement3d.mapelement3d <br> mapelement3d.model <br> mapelement3d.pitch <br> mapelement3d.pitchproperty <br> mapelement3d.roll <br> mapelement3d.rollproperty <br> mapelement3d.scale <br> mapelement3d.scaleproperty
 
-#### <a name="mapelementhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmapsmapelement"></a>[mapelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)
+#### <a name="mapelementhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmapsmapelement"></a>[MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)
 
 mapelement.mapstylesheetentry <br> mapelement.mapstylesheetentryproperty <br> mapelement.mapstylesheetentrystate <br> mapelement.mapstylesheetentrystateproperty <br> mapelement.tag <br> mapelement.tagproperty
 
@@ -1626,7 +1626,7 @@ mapstylesheetentries <br> mapstylesheetentries.admindistrict <br> mapstylesheete
 
 mapstylesheetentrystates <br> mapstylesheetentrystates.disabled <br> mapstylesheetentrystates.hover <br> mapstylesheetentrystates.selected
 
-### <a name="windowsuixamlcontrolsprimitiveshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitives"></a>[windows.ui.xaml.controls.primitives](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives)
+### <a name="windowsuixamlcontrolsprimitiveshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitives"></a>[Windows.UI.Xaml.Controls.Primitives](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives)
 
 #### <a name="colorpickersliderhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitivescolorpickerslider"></a>[colorpickerslider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.colorpickerslider)
 
@@ -1640,7 +1640,7 @@ colorspectrum <br> colorspectrum.color <br> colorspectrum.colorchanged <br> colo
 
 flyoutbase.onprocesskeyboardaccelerators <br> flyoutbase.tryinvokekeyboardaccelerator
 
-#### <a name="layoutinformationhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitiveslayoutinformation"></a>[layoutinformation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.layoutinformation)
+#### <a name="layoutinformationhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitiveslayoutinformation"></a>[LayoutInformation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.layoutinformation)
 
 layoutinformation.getavailablesize
 
@@ -1648,13 +1648,13 @@ layoutinformation.getavailablesize
 
 listviewitempresenter.revealbackground <br> listviewitempresenter.revealbackgroundproperty <br> listviewitempresenter.revealbackgroundshowsabovecontent <br> listviewitempresenter.revealbackgroundshowsabovecontentproperty <br> listviewitempresenter.revealborderbrush <br> listviewitempresenter.revealborderbrushproperty <br> listviewitempresenter.revealborderthickness <br> listviewitempresenter.revealborderthicknessproperty
 
-### <a name="windowsuixamlcontrolshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrols"></a>[windows.ui.xaml.controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+### <a name="windowsuixamlcontrolshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrols"></a>[Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
 #### <a name="bitmapiconsourcehttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsbitmapiconsource"></a>[bitmapiconsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapiconsource)
 
 bitmapiconsource <br> bitmapiconsource.bitmapiconsource <br> bitmapiconsource.showasmonochrome <br> bitmapiconsource.showasmonochromeproperty <br> bitmapiconsource.urisource <br> bitmapiconsource.urisourceproperty
 
-#### <a name="charactercasinghttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscharactercasing"></a>[charactercasing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.charactercasing)
+#### <a name="charactercasinghttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscharactercasing"></a>[CharacterCasing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.charactercasing)
 
 charactercasing
 
@@ -1662,7 +1662,7 @@ charactercasing
 
 colorchangedeventargs <br> colorchangedeventargs.newcolor <br> colorchangedeventargs.oldcolor
 
-#### <a name="colorpickerhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscolorpicker"></a>[colorpicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)
+#### <a name="colorpickerhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscolorpicker"></a>[ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)
 
 colorpicker <br> colorpicker.color <br> colorpicker.colorchanged <br> colorpicker.colorpicker <br> colorpicker.colorproperty <br> colorpicker.colorspectrumcomponents <br> colorpicker.colorspectrumcomponentsproperty <br> colorpicker.colorspectrumshape <br> colorpicker.colorspectrumshapeproperty <br> colorpicker.isalphaenabled <br> colorpicker.isalphaenabledproperty <br> colorpicker.isalphaslidervisible <br> colorpicker.isalphaslidervisibleproperty <br> colorpicker.isalphatextinputvisible <br> colorpicker.isalphatextinputvisibleproperty <br> colorpicker.iscolorchanneltextinputvisible <br> colorpicker.iscolorchanneltextinputvisibleproperty <br> colorpicker.iscolorpreviewvisible <br> colorpicker.iscolorpreviewvisibleproperty <br> colorpicker.iscolorslidervisible <br> colorpicker.iscolorslidervisibleproperty <br> colorpicker.iscolorspectrumvisible <br> colorpicker.iscolorspectrumvisibleproperty <br> colorpicker.ishexinputvisible <br> colorpicker.ishexinputvisibleproperty <br> colorpicker.ismorebuttonvisible <br> colorpicker.ismorebuttonvisibleproperty <br> colorpicker.maxhue <br> colorpicker.maxhueproperty <br> colorpicker.maxsaturation <br> colorpicker.maxsaturationproperty <br> colorpicker.maxvalue <br> colorpicker.maxvalueproperty <br> colorpicker.minhue <br> colorpicker.minhueproperty <br> colorpicker.minsaturation <br> colorpicker.minsaturationproperty <br> colorpicker.minvalue <br> colorpicker.minvalueproperty <br> colorpicker.previouscolor <br> colorpicker.previouscolorproperty
 
@@ -1678,7 +1678,7 @@ colorspectrumcomponents
 
 colorspectrumshape
 
-#### <a name="comboboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscombobox"></a>[combobox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
+#### <a name="comboboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscombobox"></a>[zone de liste déroulante](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
 
 combobox.placeholderforeground <br> combobox.placeholderforegroundproperty
 
@@ -1690,7 +1690,7 @@ contentdialog.showasync
 
 contentdialogplacement
 
-#### <a name="controlhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrol"></a>[control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
+#### <a name="controlhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrol"></a>[Contrôle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
 
 control.oncharacterreceived <br> control.onpreviewkeydown <br> control.onpreviewkeyup
 
@@ -1702,7 +1702,7 @@ disabledformattingaccelerators
 
 fonticonsource <br> fonticonsource.fontfamily <br> fonticonsource.fontfamilyproperty <br> fonticonsource.fonticonsource <br> fonticonsource.fontsize <br> fonticonsource.fontsizeproperty <br> fonticonsource.fontstyle <br> fonticonsource.fontstyleproperty <br> fonticonsource.fontweight <br> fonticonsource.fontweightproperty <br> fonticonsource.glyph <br> fonticonsource.glyphproperty <br> fonticonsource.istextscalefactorenabled <br> fonticonsource.istextscalefactorenabledproperty <br> fonticonsource.mirroredwhenrighttoleft <br> fonticonsource.mirroredwhenrighttoleftproperty
 
-#### <a name="gridhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsgrid"></a>[grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
+#### <a name="gridhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsgrid"></a>[Grille](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)
 
 grid.columnspacing <br> grid.columnspacingproperty <br> grid.rowspacing <br> grid.rowspacingproperty
 
@@ -1766,7 +1766,7 @@ parallaxsourceoffsetkind
 
 parallaxview <br> parallaxview.child <br> parallaxview.childproperty <br> parallaxview.horizontalshift <br> parallaxview.horizontalshiftproperty <br> parallaxview.horizontalsourceendoffset <br> parallaxview.horizontalsourceendoffsetproperty <br> parallaxview.horizontalsourceoffsetkind <br> parallaxview.horizontalsourceoffsetkindproperty <br> parallaxview.horizontalsourcestartoffset <br> parallaxview.horizontalsourcestartoffsetproperty <br> parallaxview.ishorizontalshiftclamped <br> parallaxview.ishorizontalshiftclampedproperty <br> parallaxview.isverticalshiftclamped <br> parallaxview.isverticalshiftclampedproperty <br> parallaxview.maxhorizontalshiftratio <br> parallaxview.maxhorizontalshiftratioproperty <br> parallaxview.maxverticalshiftratio <br> parallaxview.maxverticalshiftratioproperty <br> parallaxview.parallaxview <br> parallaxview.refreshautomatichorizontaloffsets <br> parallaxview.refreshautomaticverticaloffsets <br> parallaxview.source <br> parallaxview.sourceproperty <br> parallaxview.verticalshift <br> parallaxview.verticalshiftproperty <br> parallaxview.verticalsourceendoffset <br> parallaxview.verticalsourceendoffsetproperty <br> parallaxview.verticalsourceoffsetkind <br> parallaxview.verticalsourceoffsetkindproperty <br> parallaxview.verticalsourcestartoffset <br> parallaxview.verticalsourcestartoffsetproperty
 
-#### <a name="passwordboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolspasswordbox"></a>[passwordbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)
+#### <a name="passwordboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolspasswordbox"></a>[PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)
 
 passwordbox.passwordchanging
 
@@ -1810,11 +1810,11 @@ richtextblock.horizontaltextalignment <br> richtextblock.horizontaltextalignment
 
 richtextblockoverflow.istexttrimmed <br> richtextblockoverflow.istexttrimmedchanged <br> richtextblockoverflow.istexttrimmedproperty
 
-#### <a name="splitviewhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolssplitview"></a>[splitview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+#### <a name="splitviewhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolssplitview"></a>[fractionnementaffichage des](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 splitview.paneopened <br> splitview.paneopening
 
-#### <a name="stackpanelhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsstackpanel"></a>[stackpanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+#### <a name="stackpanelhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsstackpanel"></a>[StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 stackpanel.spacing <br> stackpanel.spacingproperty
 
@@ -1846,11 +1846,11 @@ swipemode
 
 symboliconsource <br> symboliconsource.symbol <br> symboliconsource.symboliconsource <br> symboliconsource.symbolproperty
 
-#### <a name="textblockhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolstextblock"></a>[textblock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock)
+#### <a name="textblockhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolstextblock"></a>[TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock)
 
 textblock.horizontaltextalignment <br> textblock.horizontaltextalignmentproperty <br> textblock.istexttrimmed <br> textblock.istexttrimmedchanged <br> textblock.istexttrimmedproperty <br> textblock.texthighlighters
 
-#### <a name="textboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolstextbox"></a>[textbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
+#### <a name="textboxhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolstextbox"></a>[Zone de texte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)
 
 textbox.beforetextchanging <br> textbox.charactercasing <br> textbox.charactercasingproperty <br> textbox.copyingtoclipboard <br> textbox.cuttingtoclipboard <br> textbox.horizontaltextalignment <br> textbox.horizontaltextalignmentproperty <br> textbox.placeholderforeground <br> textbox.placeholderforegroundproperty
 
@@ -1866,13 +1866,13 @@ textcontrolcopyingtoclipboardeventargs <br> textcontrolcopyingtoclipboardeventar
 
 textcontrolcuttingtoclipboardeventargs <br> textcontrolcuttingtoclipboardeventargs.handled
 
-### <a name="windowsuixamldocumentshttpsdocsmicrosoftcomuwpapiwindowsuixamldocuments"></a>[windows.ui.xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
+### <a name="windowsuixamldocumentshttpsdocsmicrosoftcomuwpapiwindowsuixamldocuments"></a>[Windows.UI.Xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
 
-#### <a name="blockhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentsblock"></a>[block](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
+#### <a name="blockhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentsblock"></a>[Bloc](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
 
 block.horizontaltextalignment <br> block.horizontaltextalignmentproperty
 
-#### <a name="hyperlinkhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentshyperlink"></a>[hyperlink](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink)
+#### <a name="hyperlinkhttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentshyperlink"></a>[Lien hypertexte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink)
 
 hyperlink.istabstop <br> hyperlink.istabstopproperty <br> hyperlink.tabindex <br> hyperlink.tabindexproperty
 
@@ -1884,11 +1884,11 @@ texthighlighter <br> texthighlighter.background <br> texthighlighter.backgroundp
 
 texthighlighterbase
 
-#### <a name="textrangehttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentstextrange"></a>[textrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textrange)
+#### <a name="textrangehttpsdocsmicrosoftcomuwpapiwindowsuixamldocumentstextrange"></a>[TextRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textrange)
 
 textrange
 
-### <a name="windowsuixamlhostinghttpsdocsmicrosoftcomuwpapiwindowsuixamlhosting"></a>[windows.ui.xaml.hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)
+### <a name="windowsuixamlhostinghttpsdocsmicrosoftcomuwpapiwindowsuixamlhosting"></a>[Windows.UI.Xaml.Hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)
 
 #### <a name="designerappmanagerhttpsdocsmicrosoftcomuwpapiwindowsuixamlhostingdesignerappmanager"></a>[designerappmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappmanager)
 
@@ -1902,7 +1902,7 @@ designerappview <br> designerappview.applicationviewid <br> designerappview.appu
 
 designerappviewstate
 
-### <a name="windowsuixamlinputhttpsdocsmicrosoftcomuwpapiwindowsuixamlinput"></a>[windows.ui.xaml.input](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input)
+### <a name="windowsuixamlinputhttpsdocsmicrosoftcomuwpapiwindowsuixamlinput"></a>[Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input)
 
 #### <a name="characterreceivedroutedeventargshttpsdocsmicrosoftcomuwpapiwindowsuixamlinputcharacterreceivedroutedeventargs"></a>[characterreceivedroutedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.characterreceivedroutedeventargs)
 
@@ -1924,17 +1924,17 @@ pointerroutedeventargs.isgenerated
 
 processkeyboardacceleratoreventargs <br> processkeyboardacceleratoreventargs.handled <br> processkeyboardacceleratoreventargs.key <br> processkeyboardacceleratoreventargs.modifiers
 
-### <a name="windowsuixamlmarkuphttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkup"></a>[windows.ui.xaml.markup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup)
+### <a name="windowsuixamlmarkuphttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkup"></a>[Windows.UI.Xaml.Markup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup)
 
-#### <a name="markupextensionhttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextension"></a>[markupextension](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextension)
+#### <a name="markupextensionhttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextension"></a>[MarkupExtension](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextension)
 
 markupextension <br> markupextension.markupextension <br> markupextension.providevalue
 
-#### <a name="markupextensionreturntypeattributehttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextensionreturntypeattribute"></a>[markupextensionreturntypeattribute](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextensionreturntypeattribute)
+#### <a name="markupextensionreturntypeattributehttpsdocsmicrosoftcomuwpapiwindowsuixamlmarkupmarkupextensionreturntypeattribute"></a>[MarkupExtensionReturnTypeAttribute](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.markupextensionreturntypeattribute)
 
 markupextensionreturntypeattribute <br> markupextensionreturntypeattribute.markupextensionreturntypeattribute
 
-### <a name="windowsuixamlmediahttpsdocsmicrosoftcomuwpapiwindowsuixamlmedia"></a>[windows.ui.xaml.media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
+### <a name="windowsuixamlmediahttpsdocsmicrosoftcomuwpapiwindowsuixamlmedia"></a>[Windows.UI.Xaml.Media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
 
 #### <a name="acrylicbackgroundsourcehttpsdocsmicrosoftcomuwpapiwindowsuixamlmediaacrylicbackgroundsource"></a>[acrylicbackgroundsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbackgroundsource)
 
@@ -1960,12 +1960,12 @@ revealbrush <br> revealbrush.alwaysusefallback <br> revealbrush.alwaysusefallbac
 
 revealbrushstate
 
-### <a name="windowsuixamlhttpsdocsmicrosoftcomuwpapiwindowsuixaml"></a>[windows.ui.xaml](https://docs.microsoft.com/uwp/api/windows.ui.xaml)
+### <a name="windowsuixamlhttpsdocsmicrosoftcomuwpapiwindowsuixaml"></a>[Windows.UI.Xaml](https://docs.microsoft.com/uwp/api/windows.ui.xaml)
 
-#### <a name="frameworkelementhttpsdocsmicrosoftcomuwpapiwindowsuixamlframeworkelement"></a>[frameworkelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement)
+#### <a name="frameworkelementhttpsdocsmicrosoftcomuwpapiwindowsuixamlframeworkelement"></a>[FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement)
 
 frameworkelement.actualtheme <br> frameworkelement.actualthemechanged <br> frameworkelement.actualthemeproperty
 
-#### <a name="uielementhttpsdocsmicrosoftcomuwpapiwindowsuixamluielement"></a>[uielement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)
+#### <a name="uielementhttpsdocsmicrosoftcomuwpapiwindowsuixamluielement"></a>[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)
 
 uielement.characterreceived <br> uielement.characterreceivedevent <br> uielement.getchildrenintabfocusorder <br> uielement.keyboardaccelerators <br> uielement.onprocesskeyboardaccelerators <br> uielement.previewkeydown <br> uielement.previewkeydownevent <br> uielement.previewkeyup <br> uielement.previewkeyupevent <br> uielement.processkeyboardaccelerators <br> uielement.tryinvokekeyboardaccelerator

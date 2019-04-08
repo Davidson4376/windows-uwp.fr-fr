@@ -68,7 +68,7 @@ La partie visuelle des toasts contient les liaisons, qui contiennent le texte, l
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | La liaison de toast générique qui peut être affichée sur tous les périphériques. Cette liaison est obligatoire et ne peut pas avoir la valeur null. |
-| **BaseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
+| **baseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
 | **AddImageQuery** | bool? | false | Définissez sur « true » pour permettre à Windows d’ajouter une chaîne de requête à l’URL d’image fournie dans la notification toast. Utilisez cet attribut si votre serveur héberge des images et peut gérer les chaînes de requête, en récupérant une variante d’image avec les chaînes de requête, ou en ignorant la chaîne de requête et en retournant l’image comme spécifié sans la chaîne de requête. Cette chaîne de requête spécifie l’échelle, le paramètre de contraste et la langue ; par exemple, la valeur « www.siteweb.com/images/hello.png » fournie dans la notification devient « www.siteweb.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=fr-fr ». |
 | **Langue**| chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Ces paramètres régionaux sont remplacés par les paramètres régionaux spécifiés dans le texte ou la liaison. Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
@@ -78,11 +78,11 @@ La liaison générique est la liaison par défaut pour les notifications toast, 
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | Le contenu du corps de la notification toast, qui peut inclure du texte, des images et des groupes (ajouté dans la Mise à jour anniversaire). Les éléments de texte doivent être placés avant tout autre élément, et seuls 3 éléments de texte sont pris en charge. Si un élément de texte est placé après un autre élément, il est remonté tout en haut ou supprimé. Enfin, certaines propriétés de texte comme HintStyle ne sont pas prises en charge sur les éléments de texte racine enfants, et fonctionnent uniquement à l’intérieur de AdaptiveSubgroup. Si vous utilisez AdaptiveGroup sur des appareils qui ne disposent pas de la Mise à jour anniversaire, le contenu du groupe sera simplement ignoré. |
+| **Enfants** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | Le contenu du corps de la notification toast, qui peut inclure du texte, des images et des groupes (ajouté dans la Mise à jour anniversaire). Les éléments de texte doivent être placés avant tout autre élément, et seuls 3 éléments de texte sont pris en charge. Si un élément de texte est placé après un autre élément, il est remonté tout en haut ou supprimé. Enfin, certaines propriétés de texte comme HintStyle ne sont pas prises en charge sur les éléments de texte racine enfants, et fonctionnent uniquement à l’intérieur de AdaptiveSubgroup. Si vous utilisez AdaptiveGroup sur des appareils qui ne disposent pas de la Mise à jour anniversaire, le contenu du groupe sera simplement ignoré. |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | Un logo facultatif pour remplacer le logo de l’application. |
 | **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | Une image « Hero » recommandée facultative qui s’affiche sur la notification toast et dans le centre de notifications. |
 | **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Texte d’attribution facultatif qui s’affiche en bas de la notification toast. |
-| **BaseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
+| **baseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
 | **AddImageQuery** | bool? | false | Définissez sur « true » pour permettre à Windows d’ajouter une chaîne de requête à l’URL d’image fournie dans la notification toast. Utilisez cet attribut si votre serveur héberge des images et peut gérer les chaînes de requête, en récupérant une variante d’image avec les chaînes de requête, ou en ignorant la chaîne de requête et en retournant l’image comme spécifié sans la chaîne de requête. Cette chaîne de requête spécifie l’échelle, le paramètre de contraste et la langue ; par exemple, la valeur « www.siteweb.com/images/hello.png » fournie dans la notification devient « www.siteweb.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=fr-fr ». |
 | **Langue**| chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Ces paramètres régionaux sont remplacés par les paramètres régionaux spécifiés dans le texte ou la liaison. Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
@@ -117,7 +117,7 @@ Valeur de liaison des chaînes.
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **BindingName** | chaîne | true | Obtient ou définit le nom associé à votre valeur de données de liaison. |
+| **bindingName** | chaîne | true | Obtient ou définit le nom associé à votre valeur de données de liaison. |
 
 
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
@@ -126,23 +126,23 @@ Le style de texte contrôle la taille, l’épaisseur et l’opacité de la poli
 | Valeur | Signification |
 |---|---|
 | **Par défaut** | Valeur par défaut. Le style est déterminé par le convertisseur. |
-| **Caption** | Inférieur à la taille de police de paragraphe. |
-| **CaptionSubtle** | Identique à Caption, mais avec une opacité subtile. |
-| **Body** | Taille de police de paragraphe. |
-| **BodySubtle** | Identique à Body, mais avec une opacité subtile. |
-| **Base** | Taille de police de paragraphe, épaisseur « bold ». Essentiellement la version « bold » de Body. |
-| **BaseSubtle** | Identique à Base, mais avec une opacité subtile. |
+| **Légende** | Inférieur à la taille de police de paragraphe. |
+| **captionSubtle** | Identique à Caption, mais avec une opacité subtile. |
+| **Corps** | Taille de police de paragraphe. |
+| **bodySubtle** | Identique à Body, mais avec une opacité subtile. |
+| **base de** | Taille de police de paragraphe, épaisseur « bold ». Essentiellement la version « bold » de Body. |
+| **baseSubtle** | Identique à Base, mais avec une opacité subtile. |
 | **sous-titre** | Taille de police de H4. |
-| **SubtitleSubtle** | Identique à Subtitle, mais avec une opacité subtile. |
+| **subtitleSubtle** | Identique à Subtitle, mais avec une opacité subtile. |
 | **Titre** | Taille de police de H3. |
-| **TitleSubtle** | Identique à Title, mais avec une opacité subtile. |
-| **TitleNumeral** | Identique à Title, mais sans les marges intérieures supérieures/inférieures. |
-| **Subheader** | Taille de police de H2. |
-| **SubheaderSubtle** | Identique à Subheader, mais avec une opacité subtile. |
-| **SubheaderNumeral** | Identique à Subheader, mais sans les marges intérieures supérieures/inférieures. |
+| **titleSubtle** | Identique à Title, mais avec une opacité subtile. |
+| **titleNumeral** | Identique à Title, mais sans les marges intérieures supérieures/inférieures. |
+| **En-tête secondaire** | Taille de police de H2. |
+| **subheaderSubtle** | Identique à Subheader, mais avec une opacité subtile. |
+| **subheaderNumeral** | Identique à Subheader, mais sans les marges intérieures supérieures/inférieures. |
 | **En-tête** | Taille de police de H1. |
-| **HeaderSubtle** | Identique à Header, mais avec une opacité subtile. |
-| **HeaderNumeral** | Identique à Header, mais sans les marges intérieures supérieures/inférieures. |
+| **headerSubtle** | Identique à Header, mais avec une opacité subtile. |
+| **headerNumeral** | Identique à Header, mais sans les marges intérieures supérieures/inférieures. |
 
 
 ### <a name="adaptivetextalign"></a>AdaptiveTextAlign
@@ -152,9 +152,9 @@ Contrôle l’alignement horizontal du texte.
 |---|---|
 | **Par défaut** | Valeur par défaut. L’alignement est automatiquement déterminé par le convertisseur. |
 | **Auto** | L’alignement est déterminé en fonction des paramètres de langue et de culture actuels. |
-| **Left** | Aligner le texte à gauche. |
+| **Gauche** | Aligner le texte à gauche. |
 | **Centre** | Centrer le texte horizontalement. |
-| **Right** | Aligner le texte à droite. |
+| **Oui** | Aligner le texte à droite. |
 
 
 ## <a name="adaptiveimage"></a>AdaptiveImage
@@ -177,7 +177,7 @@ Spécifie le rognage désiré de l’image.
 |---|---|
 | **Par défaut** | Valeur par défaut. Le comportement de rognage est déterminé par le convertisseur. |
 | **Aucune** | L’image n’est pas rognée. |
-| **Circle** | L’image est rognée en forme de cercle. |
+| **Cercle** | L’image est rognée en forme de cercle. |
 
 
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
@@ -187,9 +187,9 @@ Spécifie l’alignement horizontal d’une image.
 |---|---|
 | **Par défaut** | Valeur par défaut. Le comportement d’alignement est déterminé par le convertisseur. |
 | **Stretch** | L’image s’étire pour remplir la largeur disponible (et potentiellement la hauteur disponible selon le positionnement de l’image). |
-| **Left** | Aligner l’image à gauche, en affichant l’image dans sa résolution native. |
+| **Gauche** | Aligner l’image à gauche, en affichant l’image dans sa résolution native. |
 | **Centre** | Centrer l’image horizontalement, en affichant l’image dans sa résolution native. |
-| **Right** | Aligner l’image à droite, en affichant l’image dans sa résolution native. |
+| **Oui** | Aligner l’image à droite, en affichant l’image dans sa résolution native. |
 
 
 ## <a name="adaptivegroup"></a>AdaptiveGroup
@@ -197,7 +197,7 @@ Nouveautés de la mise à jour anniversaire : Les groupes indiquent au niveau s
 
 | Propriété | Type | Obligatoire |Description |
 |---|---|---|---|
-| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
+| **Enfants** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
 
 
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
@@ -205,7 +205,7 @@ Nouveautés de la mise à jour anniversaire : Les sous-groupes sont des colonne
 
 | Propriété | Type | Obligatoire |Description |
 |---|---|---|---|
-| **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) et [AdaptiveImage](#adaptiveimage) sont des enfants valides de sous-groupes. |
+| **Enfants** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) et [AdaptiveImage](#adaptiveimage) sont des enfants valides de sous-groupes. |
 | **HintWeight** | int? | false | Contrôler la largeur de cette colonne de sous-groupe en spécifiant la pondération de l’espace relative aux autres sous-groupes. |
 | **HintTextStacking** | [AdaptiveSubgroupTextStacking](#adaptivesubgrouptextstacking) | false | Contrôler l’alignement vertical du contenu de ce sous-groupe. |
 
@@ -225,9 +225,9 @@ TextStacking spécifie l’alignement vertical du contenu.
 | Valeur | Signification |
 |---|---|
 | **Par défaut** | Valeur par défaut. Le convertisseur sélectionne automatiquement l’alignement vertical par défaut. |
-| **Top** | Aligner vers le haut. |
+| **Retour au début** | Aligner vers le haut. |
 | **Centre** | Centrer verticalement. |
-| **Bottom** | Aligner verticalement vers le bas. |
+| **en bas** | Aligner verticalement vers le bas. |
 
 
 ## <a name="adaptiveprogressbar"></a>AdaptiveProgressBar
@@ -255,7 +255,7 @@ Valeur de la barre de progression pouvant être liée.
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **BindingName** | chaîne | true | Obtient ou définit le nom associé à votre valeur de données de liaison. |
+| **bindingName** | chaîne | true | Obtient ou définit le nom associé à votre valeur de données de liaison. |
 
 
 ## <a name="toastgenericapplogo"></a>ToastGenericAppLogo
@@ -276,7 +276,7 @@ Contrôle le rognage de l’image du logo d’application.
 |---|---|
 | **Par défaut** | Le rognage utilise le comportement par défaut du convertisseur. |
 | **Aucune** | L’image n’est pas rognée, et s’affiche en carré. |
-| **Circle** | L’image est rognée pour former un cercle. |
+| **Cercle** | L’image est rognée pour former un cercle. |
 
 
 ## <a name="toastgenericheroimage"></a>ToastGenericHeroImage
@@ -335,7 +335,7 @@ Un contrôle de zone de texte dans lequel l’utilisateur peut taper du texte.
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Id** | chaîne | true | L’Id est obligatoire, et est utilisé pour mapper le texte saisi par l’utilisateur dans une paire clé-valeur d’id/valeur que votre application utilisera plus tard. |
+| **ID** | chaîne | true | L’Id est obligatoire, et est utilisé pour mapper le texte saisi par l’utilisateur dans une paire clé-valeur d’id/valeur que votre application utilisera plus tard. |
 | **Titre** | chaîne | false | Texte de titre qui s’affiche au-dessus de la zone de texte. |
 | **PlaceholderContent** | chaîne | false | Texte d’espace réservé qui s’affiche dans la zone de texte tant l’utilisateur n’a pas encore tapé de texte. |
 | **DefaultInput** | chaîne | false | Le texte initial à placer dans la zone de texte. Laissez cette valeur sur « null » pour une zone de texte vide. |
@@ -348,7 +348,7 @@ Un contrôle de zone de sélection, qui permet aux utilisateurs de choisir dans 
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Id** | chaîne | true | L’Id est obligatoire. Si l’utilisateur sélectionne cet élément, cet Id est transmis au code de votre application, en indiquant leur choix. |
+| **ID** | chaîne | true | L’Id est obligatoire. Si l’utilisateur sélectionne cet élément, cet Id est transmis au code de votre application, en indiquant leur choix. |
 | **Contenu** | chaîne | true | Content est obligatoire, et est la chaîne qui s’affiche sur l’élément de sélection. |
 
 
@@ -357,10 +357,10 @@ Un élément de zone de sélection (un élément que l’utilisateur peut sélec
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Id** | chaîne | true | L’Id est obligatoire, et est utilisé pour mapper le texte saisi par l’utilisateur dans une paire clé-valeur d’id/valeur que votre application utilisera plus tard. |
+| **ID** | chaîne | true | L’Id est obligatoire, et est utilisé pour mapper le texte saisi par l’utilisateur dans une paire clé-valeur d’id/valeur que votre application utilisera plus tard. |
 | **Titre** | chaîne | false | Texte de titre qui s’affiche au-dessus de la zone de sélection. |
 | **DefaultSelectionBoxItemId** | chaîne | false | Contrôle quel élément est sélectionné par défaut, et fait référence à la propriété Id du [ToastSelectionBoxItem](#toastselectionboxitem). Si vous ne spécifiez pas ce paramètre, la sélection par défaut sera vide (l’utilisateur ne verra rien). |
-| **Items** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | Les éléments de sélection que l’utilisateur peut sélectionner à partir de cette SelectionBox. Vous pouvez ajouter jusqu’à 5 éléments. |
+| **éléments** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | Les éléments de sélection que l’utilisateur peut sélectionner à partir de cette SelectionBox. Vous pouvez ajouter jusqu’à 5 éléments. |
 
 
 ## <a name="itoastbutton"></a>IToastButton
@@ -460,9 +460,9 @@ Spécifiez le son à lire à la réception de la notification toast.
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Src** | uri | false | Le fichier multimédia à lire à la place du son par défaut. Seuls ms-appx et ms-appdata sont pris en charge. |
+| **src** | uri | false | Le fichier multimédia à lire à la place du son par défaut. Seuls ms-appx et ms-appdata sont pris en charge. |
 | **Boucle** | booléen | false | Définissez sur « true » si le son doit être répété tant que la notification toast est affichée ; sur « false » pour lire une seule fois (par défaut). |
-| **Silent** | booléen | false | Définissez sur « true » pour désactiver le son ; sur « false » pour autoriser la lecture du son de la notification toast (par défaut). |
+| **En mode silencieux** | booléen | false | Définissez sur « true » pour désactiver le son ; sur « false » pour autoriser la lecture du son de la notification toast (par défaut). |
 
 
 ## <a name="toastheader"></a>ToastHeader
@@ -470,7 +470,7 @@ Nouveautés de la mise à jour Creators Update : Un en-tête personnalisé qui 
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Id** | chaîne | true | Un identificateur créé par un développeur qui identifie spécifiquement cet en-tête. Si deux notifications possèdent le même id d’en-tête, elles s’affichent sous le même en-tête dans le centre de notifications. |
+| **ID** | chaîne | true | Un identificateur créé par un développeur qui identifie spécifiquement cet en-tête. Si deux notifications possèdent le même id d’en-tête, elles s’affichent sous le même en-tête dans le centre de notifications. |
 | **Titre** | chaîne | true | Un titre pour l’en-tête. |
 | **Arguments**| chaîne | true | Obtient ou définit une chaîne d’arguments définie par le développeur qui est retournée à l’application lorsque l’utilisateur clique sur cet en-tête. Ne peut pas être null. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Obtient ou définit le type d’activation que cet en-tête utilise lorsque l’utilisateur clique dessus. La valeur par défaut est Foreground. Notez que seules les valeurs Foreground et Protocol sont prises en charge. |

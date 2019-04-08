@@ -46,7 +46,7 @@ L’exemple ci-après cherche à déterminer si un encodeur audio FLAC est insta
 
 * [Lecture de contenu multimédia](media-playback.md)
 * [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Transcodez les fichiers multimédias](transcode-media-files.md)
+* [Transcoder des fichiers multimédias](transcode-media-files.md)
 * [Codecs pris en charge](supported-codecs.md)
  
 

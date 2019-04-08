@@ -34,7 +34,7 @@ Il existe deux façons de spécifier intégralement la disposition (ou l’encom
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typé</p></td>
 <td align="left"><p>Spécifiez intégralement le type lors de la création de la ressource.</p></td>
 </tr>
 <tr class="even">
