@@ -67,7 +67,7 @@ Même si le modèle **Application vide (Windows universel)** est dépouillé, il
 
 Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**. 
 
-*default.css*
+*default.CSS*
 
 -  Feuille de style par défaut utilisée par l’application.
 
@@ -75,7 +75,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 - Fichier JavaScript par défaut. Il est référencé dans le fichier index.html.
 
-*index.html*
+*index.HTML*
 
 - Page de l’application web qui se charge et s'affiche lors du lancement de l’application.
 

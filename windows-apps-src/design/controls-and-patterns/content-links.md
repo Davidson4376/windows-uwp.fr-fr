@@ -23,7 +23,7 @@ Les liens de contenu offrent un moyen d'incorporer des données enrichies dans v
 
 Lorsque l’utilisateur préfixe une entrée avec un symbole esperluette (@) dans un contrôle RichEditBox, une liste de suggestions de personnes et/ou de lieux correspondant à l’entrée s'affiche. Si, par exemple, l’utilisateur sélectionne un lieu, un lien de type ContentLink vers ce lieu est inséré dans le texte. Si l’utilisateur appelle le lien de contenu dans le contrôle RichEditBox, un menu volant s’affiche avec une carte et des informations supplémentaires sur le lieu en question.
 
-> **API importantes**: [ContentLink class](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo class](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange class](/uwp/api/windows.ui.text.richedittextrange)
+> **API importantes** : [Classe de ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo classe](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange classe](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
 > Les API pour obtenir des liens de contenu sont réparties sur les espaces de noms suivants : Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents et Windows.UI.Text.

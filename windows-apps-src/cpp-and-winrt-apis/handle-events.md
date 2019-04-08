@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gé
 ms.localizationpriority: medium
 ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602424"
@@ -233,11 +233,11 @@ winrt::hstring f(ListView listview)
 Si vous gérez un événement avec la fonction de membre d’un objet, ou à partir de dans une fonction lambda à l’intérieur d’une fonction membre objet, vous devez réfléchir à la durée de vie relative au destinataire d’événement (l’objet gérant l’événement) et la source d’événement (l’objet déclenche l’événement). Pour plus d’informations et d’exemples de code, consultez [références fortes et faibles en C / c++ / WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 ## <a name="important-apis"></a>API importantes
-* [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
-* [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
+* [WinRT::auto_revoke_t marqueur struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [WinRT::Implements::get_weak (fonction)](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [WinRT::Implements::get_strong (fonction)](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Créer des événements en C / c++ / WinRT](author-events.md)
 * [Concurrence et des opérations asynchrones avec C / c++ / WinRT](concurrency.md)
-* [Les références fortes et faibles en C / c++ / WinRT](weak-references.md)
+* [Références fortes et faibles en C++/WinRT](weak-references.md)

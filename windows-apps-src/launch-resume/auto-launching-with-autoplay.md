@@ -227,7 +227,7 @@ Vous pouvez inscrire des applications en tant qu’options pour les événements
 
 Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un appareil photo est connecté à un PC. L’application s’inscrit en tant que gestionnaire pour le **WPD\\ImageSourceAutoPlay** événement. Il s’agit d’un événement courant que le système WPD (Windows Portable Device) déclenche lorsque des appareils photo et d’autres périphériques d’acquisition d’images l’avertissent qu’ils sont une source d’image (ImageSource) utilisant MTP. Pour plus d’informations, voir [Appareils mobiles Windows](https://msdn.microsoft.com/library/windows/hardware/ff597729).
 
-**Important**  le [**Windows.Devices.Portable.StorageDevice** ](https://msdn.microsoft.com/library/windows/apps/br225654) API font partie de la [famille de périphériques de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows 10 dans la famille de périphériques de bureau, tels que des PC.
+**Important**  le [ **Windows.Devices.Portable.StorageDevice** ](https://msdn.microsoft.com/library/windows/apps/br225654) API font partie de la [famille de périphériques de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows 10 dans la famille de périphériques de bureau, tels que des PC.
 
  
 

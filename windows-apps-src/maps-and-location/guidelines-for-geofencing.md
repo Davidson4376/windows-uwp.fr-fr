@@ -127,7 +127,7 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Configurer une clôture virtuelle seulement avoir](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [Configurer une limite géographique](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [Exemple d’emplacement UWP (géolocalisation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  

@@ -15,7 +15,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649304"
@@ -24,7 +24,7 @@ ms.locfileid: "57649304"
 
 Les barres de commandes permettent aux utilisateurs d'accéder facilement aux tâches les plus courantes de votre application. Les barres de commandes donnent accès à des commandes au niveau de l’application ou spécifiques à la page et peuvent être utilisées avec n’importe quel modèle de navigation.
 
-> **API importantes**: [Classe de CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), [AppBarButton classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), [AppBarSeparator classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
+> **API importantes** : [Classe de CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), [AppBarButton classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), [AppBarSeparator classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ![Exemple d’une barre de commandes contenant des icônes](images/controls_appbar_icons.png)
 
@@ -44,7 +44,7 @@ Le contrôle CommandBar est un contrôle à usage général, flexible et léger 
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CommandBar">ouvrir l’application et voir le contrôle CommandBar en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

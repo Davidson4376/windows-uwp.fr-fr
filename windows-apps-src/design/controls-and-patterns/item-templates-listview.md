@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593054"
@@ -130,7 +130,7 @@ Utilisez ce modèle pour afficher une liste d’éléments avec du texte dans de
 
 ## <a name="related-articles"></a>Articles connexes
 - [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
-- [Vue d’ensemble de liaison de données](../../data-binding/data-binding-quickstart.md)
+- [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md)
 - [Vue d’ensemble de Accessibililty](../accessibility/accessibility-overview.md)
 - [Exemple de ListView et GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Images miniatures](../../files/thumbnails.md)

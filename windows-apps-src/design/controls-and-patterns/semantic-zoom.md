@@ -29,7 +29,7 @@ Le zoom sémantique permet à l’utilisateur de basculer entre deux affichages 
 
 Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effectuer un zoom arrière pour accéder rapidement à la lettre « W » et effectuer un zoom avant sur cette lettre pour afficher les noms associés. 
 
-> **API importantes**: [Classe de SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601), [ListView classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
+> **API importantes** : [Classe de SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601), [ListView classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **Fonctionnalités** :
 
@@ -52,7 +52,7 @@ Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoo
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SemanticZoom">ouvrir l’application et voir l'objet SemanticZoom en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

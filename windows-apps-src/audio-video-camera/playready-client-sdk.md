@@ -69,13 +69,13 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 
 Les nouvelles interfaces, classes et énumérations suivantes ont été ajoutées à la gestion des droits numériques par PlayReady :
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) interface
--   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) interface
--   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
+-   [**IPlayReadyLicenseAcquisitionServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986077) interface
+-   [**IPlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986080) interface
+-   [**IPlayReadySecureStopServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
 -   [**PlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986309) classe
 -   [**PlayReadySecureStopIterable** ](https://msdn.microsoft.com/library/windows/apps/dn986371) classe
 -   [**PlayReadySecureStopIterator** ](https://msdn.microsoft.com/library/windows/apps/dn986375) classe
--   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumerator
+-   [**PlayReadyHardwareDRMFeatures** ](https://msdn.microsoft.com/library/windows/apps/dn986265) énumérateur
 
 Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fonctionnalités de la gestion des droits numériques par PlayReady. L’exemple peut être téléchargé à partir de [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 

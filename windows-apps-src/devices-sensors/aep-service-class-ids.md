@@ -89,7 +89,7 @@ En règle générale, tous les services UPnP ont leur nom haché dans un GUID à
 | Nom du service                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
 | Gestionnaire de connexions                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
-| Transport AV                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
+| Transport AV                       | **deeacb78-707a-52df-B1C6-6f945e7e25bf**  |
 | Contrôle de rendu                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Transfert de couche 3                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
 | Configuration d’interface commune WAN | **e4c1c624-c3c4-5104-b72e-ac425d9d157c**  |

@@ -24,7 +24,7 @@ ms.locfileid: "57654144"
 
 Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
-> **API importantes**: Propriété d’en-tête [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **API importantes** : Propriété d’en-tête [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles dépourvus de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
 

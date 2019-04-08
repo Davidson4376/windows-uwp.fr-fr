@@ -62,7 +62,7 @@ Une *primitive* 3D est un ensemble de vertex qui forme une entité 3D unique.
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
  
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57643984"
 ---
-# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Didacticiel : Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
+# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Tutoriel : Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
 
 ![Image de Surface Dial avec Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial avec Surface Studio et stylet Surface* (disponible à l’achat auprès de la [Boutique Microsoft](https://aka.ms/purchasesurfacedial)).

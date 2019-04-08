@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migre
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630744"
@@ -210,10 +210,10 @@ HRESULT __stdcall DllCanUnloadNow(void)
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [modèle de struct WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
 * [WinRT::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Présentation de C++ / c++ / WinRT](intro-to-using-cpp-with-winrt.md)
-* [Déplacer vers C + c++ / WinRT à partir de C++ / c++ / CX](move-to-winrt-from-cx.md)
-* [Windows Runtime bibliothèque de modèles C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+* [Présentation de C++/WinRT](intro-to-using-cpp-with-winrt.md)
+* [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)
+* [Bibliothèque de modèles C++ Windows Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

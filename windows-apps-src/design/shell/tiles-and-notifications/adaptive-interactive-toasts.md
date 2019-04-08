@@ -19,7 +19,7 @@ ms.locfileid: "57596824"
 
 Les notifications toast adaptatives et interactives vous permettent de créer des notifications flexibles dotées de texte, d’images et de boutons/entrées.
 
-> **API importantes**: [Package nuget de Notifications de kit de ressources de communauté UWP](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > Pour voir les modèles hérités à partir de Windows 8.1 et Windows Phone 8.1, consultez le [catalogue de modèles de toast hérité](https://msdn.microsoft.com/library/windows/apps/hh761494).

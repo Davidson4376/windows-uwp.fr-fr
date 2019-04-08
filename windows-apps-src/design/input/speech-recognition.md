@@ -10,7 +10,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608074"
@@ -20,7 +20,7 @@ ms.locfileid: "57608074"
 
 La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 
-> **API importantes**: [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
+> **API importantes** : [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API de reconnaissance vocale pour programmer le runtime, de grammaires prêtes à l’emploi pour la dictée et la recherche web, ainsi que d’une interface utilisateur système par défaut permettant aux utilisateurs de découvrir et d’utiliser les fonctionnalités de reconnaissance vocale.
 

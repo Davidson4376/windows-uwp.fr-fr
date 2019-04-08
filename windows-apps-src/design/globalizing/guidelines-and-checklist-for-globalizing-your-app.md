@@ -48,7 +48,7 @@ Concevez et développez votre application afin qu'elle fonctionne de manière ap
 * [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](manage-language-and-region.md)
 * [Balises de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Ressources d’application et le système de gestion de ressources](../../app-resources/index.md)
-* [Comment le système de gestion de ressources correspond aux balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
+* [Comment le système de gestion des ressources met en correspondance les balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
 * [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](adjust-layout-and-fonts--and-support-rtl.md)
 * [Polices internationales](loc-international-fonts.md)
 * [Rendez votre application localisable](prepare-your-app-for-localization.md)

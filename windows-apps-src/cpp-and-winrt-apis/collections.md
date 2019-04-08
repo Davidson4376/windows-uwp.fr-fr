@@ -1,5 +1,5 @@
 ---
-description: C++ / c++ / WinRT fournit des fonctions et classes de base qui vous faire gagner beaucoup de temps et d’efforts lorsque vous souhaitez implémenter et/ou de passer des collections.
+description: C++/WinRT fournit des fonctions et classes de base qui vous permettent d’économiser du temps et des efforts quand vous souhaitez implémenter et/ou transmettre des collections.
 title: Collections avec C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article
@@ -211,11 +211,11 @@ private:
 
 Il s’agit de la base de classes que C++ / c++ / WinRT fournit pour vous aider à implémenter des collections personnalisées.
 
-### <a name="winrtvectorviewbaseuwpcpp-ref-for-winrtvector-view-base"></a>[winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+### <a name="winrtvectorviewbaseuwpcpp-ref-for-winrtvector-view-base"></a>[WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 Consultez les exemples de code ci-dessus.
 
-### <a name="winrtvectorbaseuwpcpp-ref-for-winrtvector-base"></a>[winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+### <a name="winrtvectorbaseuwpcpp-ref-for-winrtvector-base"></a>[WinRT::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
 
 ```cppwinrt
 struct MyVector :
@@ -237,7 +237,7 @@ private:
 };
 ```
 
-### <a name="winrtobservablevectorbaseuwpcpp-ref-for-winrtobservable-vector-base"></a>[winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
+### <a name="winrtobservablevectorbaseuwpcpp-ref-for-winrtobservable-vector-base"></a>[WinRT::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
 
 ```cppwinrt
 struct MyObservableVector :
@@ -259,7 +259,7 @@ private:
 };
 ```
 
-### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[WinRT::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
 
 ```cppwinrt
 struct MyMapView :
@@ -278,7 +278,7 @@ private:
 };
 ```
 
-### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
+### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[WinRT::map_base](/uwp/cpp-ref-for-winrt/map-base)
 
 ```cppwinrt
 struct MyMap :
@@ -302,7 +302,7 @@ private:
 };
 ```
 
-### <a name="winrtobservablemapbaseuwpcpp-ref-for-winrtobservable-map-base"></a>[winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
+### <a name="winrtobservablemapbaseuwpcpp-ref-for-winrtobservable-map-base"></a>[WinRT::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
 
 ```cppwinrt
 struct MyObservableMap :
@@ -330,17 +330,17 @@ private:
 * [Propriété de ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
 * [Interface de IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
 * [Interface IVector](/uwp/api/windows.foundation.collections.ivector_t_)
-* [winrt::map_base struct template](/uwp/cpp-ref-for-winrt/map-base)
-* [winrt::map_view_base struct template](/uwp/cpp-ref-for-winrt/map-view-base)
+* [modèle de struct WinRT::map_base](/uwp/cpp-ref-for-winrt/map-base)
+* [modèle de struct WinRT::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
 * [modèle de struct WinRT::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
 * [modèle de struct WinRT::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
 * [modèle de fonction WinRT::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
 * [modèle de fonction WinRT::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
 * [modèle de fonction WinRT::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
 * [modèle de fonction WinRT::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
-* [winrt::vector_base struct template](/uwp/cpp-ref-for-winrt/vector-base)
-* [winrt::vector_view_base struct template](/uwp/cpp-ref-for-winrt/vector-view-base)
+* [modèle de struct WinRT::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+* [modèle de struct WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Catégories de valeur et les références à ceux-ci](cpp-value-categories.md)
-* [XAML des éléments des contrôles ; lier à C++ / c++ / WinRT collection](binding-collection.md)
+* [Catégories de valeurs et références à celles-ci](cpp-value-categories.md)
+* [Contrôles d’éléments XAML ; liaison à une collection C++/WinRT](binding-collection.md)

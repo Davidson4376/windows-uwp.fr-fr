@@ -201,20 +201,20 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 1.  Exécutez **regedit**.
 2.  Pour activer le chargement indépendant, définissez cette valeur DWORD sur 1 :
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\logiciel\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - - ou -
 
     Pour activer le mode développeur, définissez ces valeurs DWORD sur 1 :
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\logiciel\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **Utiliser PowerShell pour activer votre appareil**
 
 1.  Exécutez PowerShell avec des privilèges administrateur.
 2.  Pour activer le chargement indépendant, exécutez cette commande :
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    -   **PS c :\\WINDOWS\\system32&gt; reg ajouter « HKEY\_LOCAL\_MACHINE\\logiciel\\Microsoft\\Windows\\CurrentVersion\\ /T AppModelUnlock » REG\_DWORD /f /v « AllowAllTrustedApps » /d « 1 »**
 
     - - ou -
 

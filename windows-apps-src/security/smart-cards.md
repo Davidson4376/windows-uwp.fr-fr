@@ -4,7 +4,7 @@ description: Cette rubrique explique comment les applications de plateforme Wind
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

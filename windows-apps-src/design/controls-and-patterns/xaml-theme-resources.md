@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57634644"
@@ -402,7 +402,7 @@ Elle se présente comme suit :
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Bouton](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 Ce [Style](https://msdn.microsoft.com/library/windows/apps/br208849) fournit un modèle complet pour un [Button](https://msdn.microsoft.com/library/windows/apps/br209265) qui peut servir de bouton de navigation Précédent pour une application de navigation. Les dimensions par défaut sont de 40 × 40 pixels. Pour adapter le style, vous pouvez définir explicitement [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406) et d’autres propriétés sur votre **Button**, ou créer un style dérivé à l’aide de [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852).
 
@@ -418,7 +418,7 @@ Elle se présente comme suit :
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Bouton](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 Ce [Style](https://msdn.microsoft.com/library/windows/apps/br208849) fournit un modèle complet pour un [Button](https://msdn.microsoft.com/library/windows/apps/br209265) qui peut servir de bouton de navigation Précédent pour une application de navigation. Il est semblable à **NavigationBackButtonNormalStyle**, mais les dimensions sont de 30 x 30 pixels.
 

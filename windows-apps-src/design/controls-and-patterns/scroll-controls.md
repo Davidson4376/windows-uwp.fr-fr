@@ -25,7 +25,7 @@ ms.locfileid: "57656054"
 
 Utilisez les contrôles de la visionneuse à défilement lorsque la taille du contenu de l’interface utilisateur à afficher est supérieure à ce que vous pouvez adapter dans une zone.
 
-> **API importantes**: [Classe de ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527), [classe ScrollBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+> **API importantes** : [Classe de ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527), [classe ScrollBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
 Les visionneuses à défilement permettent d’étendre le contenu au-delà des limites de la fenêtre d’affichage (zone visible). Les utilisateurs accèdent à ce contenu en manipulant la surface de la visionneuse à défilement par interaction tactile, roulette de la souris, clavier ou boîtier de commande, ou à l’aide du pointeur de souris ou du stylet pour interagir avec la barre de défilement de la visionneuse à défilement. Cette image présente plusieurs exemples de contrôles de visionneuse à défilement.
 
@@ -60,7 +60,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ScrollViewer">ouvrir l’application et voir l'objet ScrollViewer en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

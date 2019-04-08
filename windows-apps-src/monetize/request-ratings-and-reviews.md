@@ -132,9 +132,9 @@ Le tableau ci-après décrit les champs qui figurent dans la chaîne de données
 
 | Champ          | Description                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | Une chaîne qui indique si le client a soumis avec succès une évaluation ou un avis. Les valeurs prises en charge sont  **success** et **aborted**. |
-| *data*         | Un objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou un avis existant(e). L'objet *data* est uniquement inclus dans les réponses de réussite. |
-| *errorDetails* | Une chaîne qui contient les détails de l’erreur relative à la demande.                                                                                     |
+| *État*       | Une chaîne qui indique si le client a soumis avec succès une évaluation ou un avis. Les valeurs prises en charge sont  **success** et **aborted**. |
+| *Données*         | Un objet qui contient une valeur booléenne unique nommée *updated*. Cette valeur indique si le client a mis à jour une évaluation ou un avis existant(e). L'objet *data* est uniquement inclus dans les réponses de réussite. |
+| *ErrorDetails* | Une chaîne qui contient les détails de l’erreur relative à la demande.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Lancer la page d'évaluations et d'avis pour votre app dans le Microsoft Store
 
@@ -155,5 +155,5 @@ Vous pouvez analyser les données d'évaluations et d’avis de vos clients de p
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer des demandes pour le Store](send-requests-to-the-store.md)
-* [Lancez l’application Microsoft Store](../launch-resume/launch-store-app.md)
+* [Lancer l’application du Microsoft Store](../launch-resume/launch-store-app.md)
 * [Rapport Avis](../publish/reviews-report.md)

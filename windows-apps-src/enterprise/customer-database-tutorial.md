@@ -1,5 +1,5 @@
 ---
-title: Créer une application de base de données client
+title: Créer une application de base de données de clients
 description: Créer une application de base de données client et découvrez comment implémenter des fonctions d’application de base d’entreprise.
 keywords: entreprise, didacticiel, données clients, créer la lecture de mise à jour, suppression, REST, l’authentification
 ms.date: 05/07/2018
@@ -7,12 +7,12 @@ ms.topic: article
 ms.localizationpriority: med
 ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623244"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>Didacticiel : Créer une application de base de données client
+# <a name="tutorial-create-a-customer-database-application"></a>Tutoriel : Créer une application de base de données de clients
 
 Ce didacticiel crée une application simple pour la gestion d’une liste de clients. Ce faisant, il introduit une sélection des concepts de base pour les applications d’entreprise dans UWP. Vous allez apprendre à effectuer les opérations suivantes :
 

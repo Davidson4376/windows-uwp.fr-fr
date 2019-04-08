@@ -28,7 +28,7 @@ Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en act
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">ouvrez l’application et consultez NavigationView en action</a> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -100,7 +100,7 @@ Contrôle qui répond à l’entrée utilisateur et déclenche un événement **
         Click="Button_Click" />
 ```
 
-Référence : [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
+Référence : [Bouton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
 
 Conception et procédures : [Guide du contrôle de boutons](buttons.md) 
 
@@ -117,7 +117,7 @@ Un bouton qui apparaît sous la forme d’un texte balisé et ouvre l’URI spé
                  NavigateUri="https://www.microsoft.com"/>
 ```
 
-Référence : [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
+Référence : [Contrôle HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
 Conception et procédures : [Guide du contrôle des liens hypertexte](hyperlinks.md)
 
@@ -286,14 +286,14 @@ Affiche temporairement une liste de commandes ou d’options liées à l’actio
 
 Référence : [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Conception et procédures : [Menus et des menus contextuels](menus.md) 
+Conception et procédures : [Menus et menus contextuels](menus.md) 
 
 Exemple de code : [Exemple de Menu contextuel de XAML](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>Menu contextuel
 Commandes de présentation de menu personnalisé que vous spécifiez.
 
-Référence : [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
+Référence : [Menu contextuel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
 Conception et procédures : [Boîtes de dialogue](dialogs-and-flyouts/dialogs.md) 
 
@@ -307,7 +307,7 @@ Fenêtre contextuelle qui affiche des informations pour un élément.
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-Référence : [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
+Référence : [Info-bulle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
 Conception et procédures : Recommandations en matière d’info-bulles 
 
@@ -373,7 +373,7 @@ Contrôle de conteneur qui dessine une bordure, un arrière-plan ou les deux, au
 </Border>
 ```
 
-Référence : [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
+Référence : [Bordure](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
 
 ### <a name="canvas"></a>Canevas
 Panneau de disposition qui prend en charge le positionnement absolu des éléments enfants par rapport au coin supérieur gauche de la zone de dessin.
@@ -389,7 +389,7 @@ Panneau de disposition qui prend en charge le positionnement absolu des élémen
 </Canvas>
 ```
 
-Référence : [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
+Référence : [Zone de dessin](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
 ### <a name="grid"></a>Grille
 Panneau de disposition qui prend en charge l’organisation des éléments enfants en lignes et colonnes.
@@ -413,7 +413,7 @@ Panneau de disposition qui prend en charge l’organisation des éléments enfan
 </Grid>
 ```
 
-Référence : [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
+Référence : [Grille](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
  
 ### <a name="panning-scroll-viewer"></a>Visionneuse à mouvement panoramique
 Voir Visionneuse à défilement.
@@ -435,7 +435,7 @@ Référence : [RelativePanel](https://msdn.microsoft.com/library/windows/apps/x
 ### <a name="scroll-bar"></a>Scroll bar
 Voir Visionneuse à défilement. (ScrollBar est un élément de ScrollViewer. En règle générale, il n’est pas utilisé en tant que contrôle autonome.)
 
-Référence : [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+Référence : [Barre de défilement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
 ### <a name="scroll-viewer"></a>Visionneuse à défilement
 Contrôle de conteneur qui permet à l’utilisateur d’appliquer une vue panoramique ou un zoom à son contenu.
@@ -574,7 +574,7 @@ Contrôle de conteneur avec deux vues : un affichage pour le contenu principal e
 </SplitView>
 ```
 
-Référence : [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
+Référence : [Fractionnementaffichage des](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
 
 Conception et procédures : [Guide du contrôle de mode fractionné](split-view.md)
 
@@ -731,7 +731,7 @@ Champ de texte brut sur une ou plusieurs lignes.
          TextChanged="TextBox_TextChanged"/>
 ```
 
-Référence : [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
+Référence : [Zone de texte](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
 Conception et procédures : [Contrôles de texte](text-controls.md), [guide de contrôle de zone de texte](text-box.md) 
 
@@ -749,7 +749,7 @@ Contrôle pouvant être activé ou désactivé.
           Checked="CheckBox_Checked"/>
 ```
 
-Référence : [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
+Référence : [Case à cocher](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
 Conception et procédures : [Guide du contrôle de case à cocher](checkbox.md) 
 
@@ -767,7 +767,7 @@ Liste déroulante dans laquelle un utilisateur peut sélectionner des éléments
 </ComboBox>
 ```
 
-Référence : [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
+Référence : [Zone de liste déroulante](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
 
 Conception et procédures : [Listes](lists.md) 
 
@@ -785,7 +785,7 @@ Contrôle qui présente une liste inline dans laquelle un utilisateur peut séle
 </ListBox>
 ```
 
-Référence : [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
+Référence : [Zone de liste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
 Conception et procédures : [Listes](lists.md) 
 
@@ -803,7 +803,7 @@ Contrôle qui autorise un utilisateur à sélectionner une seule option dans un 
              Checked="RadioButton_Checked"/>
 ```
 
-Référence : [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
+Référence : [Case d’option](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
 
 Conception et procédures : [Guide du contrôle de bouton radio](radio-button.md)
  

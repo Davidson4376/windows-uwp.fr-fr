@@ -454,11 +454,11 @@ Gérez les modifications qui se produisent lorsque l’utilisateur ou l’applic
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
-* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Obtenir l’emplacement actuel](get-location.md)
-* [Instructions de conception pour les applications de géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Recommandations de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Recommandations de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéo de la build 2015 : Utilisation de cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

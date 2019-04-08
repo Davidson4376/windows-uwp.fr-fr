@@ -23,7 +23,7 @@ ms.locfileid: "57649804"
 
 Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 
-> **API importantes**: [**ContentThemeTransition class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **API importantes** : [**Classe ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -44,7 +44,7 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animer des transitions de contenu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**ContentThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243104)
+* [**Classe de ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  
 

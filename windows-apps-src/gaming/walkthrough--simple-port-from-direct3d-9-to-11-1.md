@@ -81,6 +81,6 @@ Pour vous familiariser avec les concepts de programmation pour DirectX 11 et UW
 
 **Boutique Microsoft**
 
-* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+* [**Microsoft::wrl :: comptr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 * [**Handle de l’opérateur Object (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 

@@ -105,7 +105,7 @@ Vous trouverez les informations relatives à la mise à jour de Windows aux adre
 
 L’entrée Publisher dans le manifeste du package d’application Windows doit correspondre à l’objet du certificat avec lequel vous effectuez la signature.  Vous pouvez utiliser l’une des méthodes suivantes pour afficher l’objet du certificat.
 
-**Option 1 : Powershell**
+**Option 1 : PowerShell**
 
 Exécutez la commande PowerShell suivante. Il est possible d’utiliser le format .cer ou .pfx comme fichier de certificat, car ils ont les mêmes informations d’éditeur.
 

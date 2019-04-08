@@ -14,7 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639934"
@@ -25,7 +25,7 @@ ms.locfileid: "57639934"
 
 Les contrôles **ListView** et **GridView** gèrent la disposition de leurs éléments (horizontale, verticale, renvoi à la ligne, etc.) et l’interaction de l’utilisateur avec les éléments, mais pas l’affichage de chaque élément à l’écran. La visualisation de l’élément est gérée par les conteneurs d’éléments. Lorsque vous ajoutez des éléments à un affichage de liste, ils sont placés automatiquement dans un conteneur. Le conteneur d’éléments par défaut pour le contrôle ListView est [ListViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx) ; pour le contrôle GridView, il s’agit de [GridViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx).
 
-> **API importantes**: [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [propriété ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx), [ItemContainerStyle propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
+> **API importantes** : [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [propriété ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx), [ItemContainerStyle propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
 
 
 > [!NOTE]
@@ -430,13 +430,13 @@ Ce tableau indique les états visuels Common et Selection pour ListViewItem et l
 
 Nom de pinceau/d’état | Style Inline | Style Overlay
 ------------|--------------|--------------
-<b>Normal</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![Inline, sélection d’élément Normal](images/listview-item-normal.png) | ![Overlay, sélection d’élément Normal](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline, sélection d’élément PointerOver](images/listview-item-pointerover.png) | ![Overlay, sélection d’élément PointerOver](images/gridview-item-pointerover.png)
-<b>Enfoncé</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Inline, sélection d’élément Pressed](images/listview-item-pressed.png) | ![Overlay, sélection d’élément Pressed](images/gridview-item-pressed.png)
-<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (Inline uniquement)</li></ul> | ![Inline, sélection d’élément Selected](images/listview-item-selected.png) | ![Overlay, sélection d’élément Selected](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (Overlay uniquement)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (Inline uniquement)</li></ul> | ![Inline, sélection d’élément PointerOverSelected](images/listview-item-pointeroverselected.png) | ![Overlay, sélection d’élément PointerOverSelected](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (Overlay uniquement)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (Inline uniquement)</li></ul> | ![Inline, sélection d’élément PressedSelected](images/listview-item-pressedselected.png) | ![Overlay, sélection d’élément PressedSelected](images/gridview-item-pressedselected.png)
-<b>Focus</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline, sélection d’élément Focused](images/listview-item-focused.png) | ![Overlay, sélection d’élément Focused](images/gridview-item-focused.png)
+<b>Normal</b><ul><li><b>CheckBoxBrush = « Red »</b></li></ul> | ![Inline, sélection d’élément Normal](images/listview-item-normal.png) | ![Overlay, sélection d’élément Normal](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground = « DarkOrange »</b></li><li><b>PointerOverBackground = « MistyRose »</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline, sélection d’élément PointerOver](images/listview-item-pointerover.png) | ![Overlay, sélection d’élément PointerOver](images/gridview-item-pointerover.png)
+<b>Enfoncé</b><ul><li><b>PressedBackground = « LightCyan »</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Inline, sélection d’élément Pressed](images/listview-item-pressed.png) | ![Overlay, sélection d’élément Pressed](images/gridview-item-pressed.png)
+<b>sélectionné</b><ul><li><b>SelectedForeground = « Navy »</b></li><li><b>SelectedBackground = « Kaki »</b></li><li><b>CheckBrush = « Green »</b></li><li>CheckBoxBrush="Red" (Inline uniquement)</li></ul> | ![Inline, sélection d’élément Selected](images/listview-item-selected.png) | ![Overlay, sélection d’élément Selected](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground = « Lavande »</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (Overlay uniquement)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (Inline uniquement)</li></ul> | ![Inline, sélection d’élément PointerOverSelected](images/listview-item-pointeroverselected.png) | ![Overlay, sélection d’élément PointerOverSelected](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground = « MediumTurquoise »</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (Overlay uniquement)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (Inline uniquement)</li></ul> | ![Inline, sélection d’élément PressedSelected](images/listview-item-pressedselected.png) | ![Overlay, sélection d’élément PressedSelected](images/gridview-item-pressedselected.png)
+<b>Focus</b><ul><li><b>FocusBorderBrush = « Saumon clair »</b></li><li><b>FocusSecondaryBorderBrush = « Gold »</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline, sélection d’élément Focused](images/listview-item-focused.png) | ![Overlay, sélection d’élément Focused](images/gridview-item-focused.png)
 
 ListViewItemPresenter a d’autres propriétés de pinceau pour les espaces réservés de données et les états de glissement. Si vous utilisez le chargement incrémentiel ou le glisser-déposer dans votre affichage de liste, vous devez vous demander si ces propriétés de pinceaux supplémentaires doivent être modifiées. Consultez la classe ListViewItemPresenter pour obtenir la liste complète des propriétés que vous pouvez modifier. 
 

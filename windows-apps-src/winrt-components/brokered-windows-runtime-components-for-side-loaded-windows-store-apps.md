@@ -521,7 +521,7 @@ MyWinRTComponent.Proxies
 
 **C/C++ > définitions de préprocesseur > Ajouter**
 
-"WIN32;\_WINDOWS;REGISTER\_PROXY\_DLL"
+« WIN32 ; \_WINDOWS ; INSCRIRE\_PROXY\_DLL »
 
 **C/C++ > en-tête précompilé : Sélectionnez « Ne pas à l’aide d’en-tête précompilé »**
 
@@ -580,7 +580,7 @@ Lorsque vous souhaitez apporter des modifications au serveur, assurez-vous au pr
 Il est possible de trouver et d’arrêter le processus serveur via le Gestionnaire des tâches ou d’une autre application tierce. L’outil de ligne de commande **TaskList.exe **est également inclus et a une syntaxe flexible, par exemple :
 
   
- | **Command** | **Action** |
+ | **Commande** | **Action** |
  | ------------| ---------- |
  | tasklist | Affiche une liste de tous les processus en cours d’exécution dans l’ordre approximatif de leur date de création. Les derniers processus créés sont affichés vers le bas de la liste. |
  | tasklist /FI "IMAGENAME eq dllhost.exe" /M | Affiche des informations sur toutes les instances dllhost.exe. Le commutateur /M répertorie les modules ayant été chargés. |

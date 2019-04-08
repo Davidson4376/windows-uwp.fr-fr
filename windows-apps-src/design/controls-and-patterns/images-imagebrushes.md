@@ -19,7 +19,7 @@ ms.locfileid: "57622014"
 
 Pour afficher une image, vous pouvez utiliser l’objet **Image** ou l’objet **ImageBrush**. Un objet Image affiche une image, tandis qu’un objet ImageBrush peint un autre objet avec une image. 
 
-> **API importantes**: [Classe de l’image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [Source, propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx), [classe ImageBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx), [propriété ImageSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
+> **API importantes** : [Classe de l’image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [Source, propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx), [classe ImageBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx), [propriété ImageSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
 
 ## <a name="are-these-the-right-elements"></a>S’agit-il des éléments appropriés ?
 Utilisez un élément **Image** pour afficher une image autonome dans votre application.
@@ -35,7 +35,7 @@ Utilisez un élément **ImageBrush** pour appliquer une image à un autre objet.
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Image">ouvrir l’application et voir l'Image en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

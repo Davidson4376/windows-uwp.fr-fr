@@ -15,7 +15,7 @@ doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610494"
@@ -105,7 +105,7 @@ Lors de la création d’une application UWP qui pourra être potentiellement ut
 * Une application 2D reçoit automatiquement une [barre de l’application](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) pour permettre à l’utilisateur de la déplacer et la mettre à l’échelle dans l’environnement virtuel. Les vues peuvent être redimensionnées verticalement ou en conservant les mêmes proportions.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Considérations de conception d’application 2D : UI/UX
+## <a name="2d-app-design-considerations-uiux"></a>Considérations de conception d’application 2D : INTERFACE/EXPÉRIENCE UTILISATEUR
 
 * Les contrôles XAML qui implémentent le [système Fluent Design](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) tels que l’[affichage de navigation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) et les effets comme [Acrylique](https://docs.microsoft.com/windows/uwp/design/style/acrylic) fonctionnent tous particulièrement bien dans les applications 2D de réalité mixte.
 

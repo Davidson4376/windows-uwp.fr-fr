@@ -177,8 +177,8 @@ Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https
 
 ### <a name="tasks"></a>Tâches
 
-- [Lancez l’application par défaut pour un URI](launch-default-app.md)
-- [Gérer l’activation de fichier](handle-file-activation.md)
+- [Lancer l’application par défaut pour un URI](launch-default-app.md)
+- [Gérer l’activation des fichiers](handle-file-activation.md)
 
 ### <a name="guidelines"></a>Recommandations
 

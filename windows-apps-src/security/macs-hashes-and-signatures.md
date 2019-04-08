@@ -4,7 +4,7 @@ description: Cet article explique comment les codes d’authentification de mess
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

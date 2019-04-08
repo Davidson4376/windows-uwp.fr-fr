@@ -36,9 +36,9 @@ Windows fournit plusieurs options différentes pour le lancement du gestionnaire
 | Option | Méthode | Description |
 |--------|--------|-------------|
 | Lancement par défaut | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Lancer le fichier spécifié avec le gestionnaire par défaut. |
-| Ouvrir avec lancement | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié en laissant l’utilisateur choisir le gestionnaire dans la boîte de dialogue Ouvrir avec. |
-| Lancer avec une application de secours recommandée | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié avec le gestionnaire par défaut. Si aucun gestionnaire n’est installé sur le système, recommandez une application du Windows Store à l’utilisateur. |
-| Lancer avec un affichage restant souhaité | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille de périphériques mobiles. |
+| Ouvrir avec lancement | [**LaunchFileAsync (IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié en laissant l’utilisateur choisir le gestionnaire dans la boîte de dialogue Ouvrir avec. |
+| Lancer avec une application de secours recommandée | [**LaunchFileAsync (IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié avec le gestionnaire par défaut. Si aucun gestionnaire n’est installé sur le système, recommandez une application du Windows Store à l’utilisateur. |
+| Lancer avec un affichage restant souhaité | [**LaunchFileAsync (IStorageFile, LauncherOptions)** ](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows uniquement) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille de périphériques mobiles. |
 
 ### <a name="default-launch"></a>Lancement par défaut
 
@@ -554,8 +554,8 @@ Si vous essayez de lancer un type de fichier restreint, le lancement se soldera 
 
 ### <a name="tasks"></a>Tâches
 
-* [Lancez l’application par défaut pour un URI](launch-default-app.md)
-* [Gérer l’activation de fichier](handle-file-activation.md)
+* [Lancer l’application par défaut pour un URI](launch-default-app.md)
+* [Gérer l’activation des fichiers](handle-file-activation.md)
 
 ### <a name="guidelines"></a>Recommandations
 

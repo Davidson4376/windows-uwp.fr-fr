@@ -16,7 +16,7 @@ ms.locfileid: "57633914"
 
 Une fois que votre application se trouve dans le Microsoft Store, il est temps d’obtenir devant les clients autant que possible. [Partenaires](https://partner.microsoft.com/dashboard) offre de nombreuses fonctionnalités qui vous aident à promouvoir vos produits et développement votre clientèle, y compris les campagnes de publicité, codes de promotion, prix de vente et bien plus encore.
 
--   [Générer un code promotionnel](generate-promotional-codes.md)
+-   [Générer des codes promotionnels](generate-promotional-codes.md)
 -   [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 -   [Créer une campagne de promotion d’application personnalisée](create-a-custom-app-promotion-campaign.md)
 -   [Commercialiser des applications et composants additionnels](put-apps-and-add-ons-on-sale.md)

@@ -22,7 +22,7 @@ Concevez votre application en partant du principe que l’entrée tactile sera l
 
 Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
 
-> **API importantes**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+> **API importantes** : [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 
 
 De nombreux appareils sont équipés d’écrans à interaction tactile multipoint qui prennent en charge l’utilisation de plusieurs doigts (ou contacts tactiles) en tant qu’entrée. Les contacts tactiles et leurs déplacements, sont interprétés comme des mouvements et des manipulations tactiles pour prendre en charge diverses interactions utilisateur.

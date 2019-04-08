@@ -47,7 +47,7 @@ Voici la liste des informations que vous fournissez quand vous créez la soumiss
 | [**Période d’abonnement**](enter-add-on-properties.md#subscription-period)          | Obligatoire si le type de produit est **Abonnement**. Non applicable à d’autres types de produit.       |  
 | [**Version d’évaluation gratuite**](enter-add-on-properties.md#free-trial)          | Obligatoire si le type de produit est **Abonnement**. Non applicable à d’autres types de produit.       |
 | [**Type de contenu**](enter-add-on-properties.md#content-type)          | Obligatoire    |               
-| [**Keywords**](enter-add-on-properties.md#keywords)                  | Facultatif (jusqu’à 10 mots clés d’un maximum de 30 caractères chacun) |
+| [**Mots clés**](enter-add-on-properties.md#keywords)                  | Facultatif (jusqu’à 10 mots clés d’un maximum de 30 caractères chacun) |
 | [**Données de développement personnalisé**](enter-add-on-properties.md#custom-developer-data)   | Facultatif (3 000 caractères maximum)            |
 
 
@@ -55,8 +55,8 @@ Voici la liste des informations que vous fournissez quand vous créez la soumiss
 
 | Nom du champ                    | Remarques                                       |
 |-------------------------------|---------------------------------------------|
-| [**Markets**](set-add-on-pricing-and-availability.md#markets)  | Default : Tous les marchés possible |
-| [**Visibility**](set-add-on-pricing-and-availability.md#visibility)   | Default : Disponible à l’achat. Affichable dans la description de votre application |
+| [**Marchés**](set-add-on-pricing-and-availability.md#markets)  | Default : Tous les marchés possible |
+| [**Visibilité**](set-add-on-pricing-and-availability.md#visibility)   | Default : Disponible à l’achat. Affichable dans la description de votre application |
 | [**Planification**](set-add-on-pricing-and-availability.md#schedule)    | Default : Version dès que possible
 | [**Tarification**](set-add-on-pricing-and-availability.md#pricing)                | Obligatoire                                    |
 | [**Prix de vente**](put-apps-and-add-ons-on-sale.md)               | Facultatif                    |
@@ -70,7 +70,7 @@ Une description est requise dans le Windows Store. Nous vous recommandons de fou
 |-------------------------------|---------------------------------------------|
 | [**Titre**](create-add-on-store-listings.md#title)                    | Obligatoire (100 caractères maximum)           |
 | [**Description**](create-add-on-store-listings.md#description)       | Facultatif (200 caractères maximum)            |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | Facultatif (fichier .png, 300 x 300 pixels)            |
+| [**Icône**](create-add-on-store-listings.md#icon)                    | Facultatif (fichier .png, 300 x 300 pixels)            |
 
 
 Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au Windows Store**. Dans la plupart des cas, le processus de certification prend environ une heure. Au terme de ce processus, votre module complémentaire est publié sur le Windows Store et devient aussitôt disponible à l’achat par les clients.

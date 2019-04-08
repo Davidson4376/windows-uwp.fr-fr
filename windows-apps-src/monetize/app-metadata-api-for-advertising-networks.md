@@ -142,7 +142,7 @@ Pour plus d’informations sur les valeurs figurant dans le corps de réponse, v
 | iconUrls           | tableau  |  Un tableau d’une ou de plusieurs chaînes qui contiennent les chemins d’accès relatifs aux URL d’icônes associées à l’application. Pour récupérer les icônes, faites précéder les URL de *http* ou *https*.  |
 | type           | chaîne  | Une des chaînes suivantes : **Application** ou **jeu**.  |
 | appareils           |  tableau  | Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les types de périphérique qui prend en charge de l’application : **PC**, **téléphone**, **Xbox**, **IoT**, **Server**, et **HOLOGRAPHIQUE**.  |
-| platformVersions           | tableau  |  Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les plateformes qui prend en charge de l’application : **Windows.Universal**, **Windows.Windows8x**, and **Windows.WindowsPhone8x**.  |
+| platformVersions           | tableau  |  Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les plateformes qui prend en charge de l’application : **Windows.Universal**, **Windows.Windows8x**, et **Windows.WindowsPhone8x**.  |
 | screenshotUrls           | tableau  | Un tableau d’une ou plusieurs chaînes qui contiennent les chemins d’accès relatifs à l’URL de la capture d’écran pour cette application. Pour récupérer les captures d’écran, faites précéder les URL de *http* ou *https*.  |
 
 <span/>

@@ -19,5 +19,5 @@ Cette section montre comment configurer le démarrage de votre application à l�
 
 | Rubrique | Description |
 |-------|-------------|
-| [Lancez l’application par défaut pour un fichier](launch-the-default-app-for-a-file.md) | Découvrez comment lancer l’application par défaut d’un fichier. |
-| [Gérer l’activation de fichier](handle-file-activation.md) | Découvrez comment inscrire votre application comme gestionnaire par défaut d’un type de fichier. |
+| [Lancer l’application par défaut pour un fichier](launch-the-default-app-for-a-file.md) | Découvrez comment lancer l’application par défaut d’un fichier. |
+| [Gérer l’activation des fichiers](handle-file-activation.md) | Découvrez comment inscrire votre application comme gestionnaire par défaut d’un type de fichier. |

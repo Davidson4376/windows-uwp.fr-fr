@@ -22,7 +22,7 @@ Configurez une [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn
 
 **Conseil** Pour en savoir plus sur l’accès à l’emplacement dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
--   [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Exemple de carte pour UWP (plateforme Windows universelle)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Activer la fonctionnalité de localisation
 
@@ -483,4 +483,4 @@ Pour que votre application puisse accéder à l’emplacement, l’option **Loca
 
 * [Exemple de géolocalisation UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Instructions de conception pour gardiennage virtuel](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Instructions de conception pour les applications de géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Recommandations de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)

@@ -111,10 +111,10 @@ La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://msdn.micro
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Animations de storyboard](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [Extension de balisage {binding}](binding-markup-extension.md)
-* [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
+* [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**Liaison**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**Constructeur de liaison**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)

@@ -80,7 +80,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Accéder à un compte professionnel ou scolaire | ms-settings:workplace |
 | Adresse de messagerie et comptes  | ms-settings:emailandaccounts |
 | Famille et autres personnes | ms-settings:otherusers |
-| Configurer un kiosque | ms-settings:assignedaccess |
+| Configurer un kiosque | MS-paramètres : assignedaccess |
 | Options de connexion | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | Synchroniser vos paramètres | ms-settings:sync |
 | Configuration de Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -106,7 +106,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Autorisations & historique | ms-settings:cortana-permissions |
 | En savoir plus | ms-settings:cortana-moredetails |
 | Cortana sur mes appareils | ms-settings:cortana-notifications |
-| Parler à Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
+| Parler à Cortana | ms-settings:cortana-language<br/>MS-paramètres : cortana<br/>MS-paramètres : cortana-talktocortana |
 
 > [!NOTE] 
 > Cette section de paramètres sur le bureau sera appelée recherche lorsque le PC est défini sur les régions où Cortana n’est pas actuellement disponible ou Cortana a été désactivé. Les pages spécifiques à Cortana (Cortana sur mes appareils) et vous parler à Cortana figureront pas dans ce cas. 
@@ -135,8 +135,8 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Sous-titres | ms-settings:easeofaccess-closedcaptioning |
-| Filtres de couleur | ms-settings:easeofaccess-colorfilter |
-| Taille de curseur & pointeur | ms-settings:easeofaccess-cursorandpointersize |
+| Filtres de couleur | MS-paramètres : easeofaccess-colorfilter |
+| Taille de curseur & pointeur | MS-paramètres : easeofaccess-cursorandpointersize |
 | Écran | ms-settings:easeofaccess-display |
 | Contrôle visuel | ms-settings:easeofaccess-eyecontrol |
 | Polices | ms-settings:fonts |
@@ -188,7 +188,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Point d’accès sans fil mobile | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| État | ms-settings:network-status<br/>ms-settings:network |
+| État | ms-settings:network-status<br/>MS-paramètres : réseau |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (disponible uniquement si l’appareil dispose d’une carte Wi-Fi) |
 | Appels Wi-Fi | ms-settings:network-wificalling (disponible uniquement si les appels Wi-Fi sont activés) |
@@ -212,7 +212,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 |Page Paramètres| URI |
 |-------------|-----|
-| Votre téléphone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>MS-paramètres : mobile-appareils-addphone-direct (ouvre **votre téléphone** application) |
+| Votre téléphone | ms-settings:mobile-devices<br/>MS-paramètres : mobile-appareils-addphone<br/>MS-paramètres : mobile-appareils-addphone-direct (ouvre **votre téléphone** application) |
 
 ## <a name="privacy"></a>Confidentialité
 
@@ -267,7 +267,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Économiseur de batterie | ms-settings:batterysaver (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
 | Paramètres d'économiseur de batterie | ms-settings:batterysaver-settings (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
 | Utilisation de la batterie | ms-settings:batterysaver-usagedetails (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
-| Presse-papiers | ms-settings:clipboard |
+| Presse-papiers | MS-paramètres : le Presse-papiers |
 | Écran | ms-settings:display |
 | Localisations de sauvegarde par défaut | ms-settings:savelocations |
 | Écran | ms-settings:screenrotation |
@@ -298,7 +298,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |-------------|-----|
 | Date et heure | ms-settings:dateandtime |
 | Paramètres IME Japon | ms-settings:regionlanguage-jpnime (disponible si l’éditeur de méthode de saisie Microsoft Japon est installé) |
-| Langue | MS-paramètres : clavier<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
+| Langue | MS-paramètres : clavier<br/>ms-settings:regionlanguage<br/>MS-paramètres : regionlanguage-bpmfime<br/>MS-paramètres : regionlanguage-cangjieime<br/>MS-paramètres : regionlanguage-chsime-pinyin-domainlexicon<br/>MS-paramètres : regionlanguage-chsime-pinyin-keyconfig<br/>MS-paramètres : regionlanguage-chsime-pinyin-udp<br/>MS-paramètres : regionlanguage-chsime-wubi-udp<br/>MS-paramètres : regionlanguage-quickime |
 | Paramètres IME Pinyin | ms-settings:regionlanguage-chsime-pinyin (disponible si l’éditeur de méthode de saisie Microsoft Pinyin est installé) |
 | Fonctions vocales | ms-settings:speech |
 | Paramètres IME Wubi  | ms-settings:regionlanguage-chsime-wubi (disponible si l’éditeur de méthode de saisie Microsoft Wubi est installé) |
@@ -315,7 +315,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Récupération | ms-settings:recovery |
 | Résoudre les problèmes | ms-settings:troubleshoot |
 | Sécurité Windows | ms-settings:windowsdefender |
-| Programme Windows Insider | ms-settings:windowsinsider (présent uniquement si l’utilisateur est inscrit dans TEC)<br/>ms-settings:windowsinsider-optin |
+| Programme Windows Insider | ms-settings:windowsinsider (présent uniquement si l’utilisateur est inscrit dans TEC)<br/>MS-paramètres : windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update - Options avancées | ms-settings:windowsupdate-options |
 | Windows Update - Options de redémarrage | ms-settings:windowsupdate-restartoptions |

@@ -23,7 +23,7 @@ ms.locfileid: "57624194"
 
 ACRYLIQUE est un type de [pinceau](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush) qui crée une texture translucide. Vous pouvez appliquer l'acrylique à des surfaces d’application pour ajouter de la profondeur et créer une hiérarchie visuelle.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **API importantes**: [Classe de AcrylicBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background, propriété](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **API importantes** : [Classe de AcrylicBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background, propriété](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::

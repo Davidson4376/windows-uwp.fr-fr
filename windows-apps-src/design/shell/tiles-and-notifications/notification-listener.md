@@ -23,7 +23,7 @@ L'Écouteur de notification donne accès à toutes les notifications d'un utilis
 > **Requiert la mise à jour anniversaire**: Vous devez cibler le Kit de développement logiciel 14393 et être en cours d’exécution build 14393 ou ultérieure pour pouvoir utiliser l’écouteur de Notification.
 
 
-> **API importantes**: [Classe de UserNotificationListener](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger classe](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **API importantes** : [Classe de UserNotificationListener](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger classe](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Activer l'écouteur en ajoutant la fonctionnalité Notification à l'utilisateur 

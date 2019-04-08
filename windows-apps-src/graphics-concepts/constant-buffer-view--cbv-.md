@@ -26,7 +26,7 @@ La disposition de la mémoire tampon de constantes doit correspondre à la dispo
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

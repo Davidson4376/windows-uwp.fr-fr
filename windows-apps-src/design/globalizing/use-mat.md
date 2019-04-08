@@ -8,7 +8,7 @@ keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610114"
@@ -162,7 +162,7 @@ Avant de commencer le processus de certification du Microsoft Store, vous devez
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](../../app-resources/localize-strings-ui-manifest.md)
+* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md)
 * [Globalisation et localisation](globalizing-portal.md)
 * [Instructions pour la globalisation](guidelines-and-checklist-for-globalizing-your-app.md)
 * [Rendez votre application localisable](prepare-your-app-for-localization.md)

@@ -79,7 +79,7 @@ Voici quelques exemples d’objectifs d’efficacité mesurables :
 
 Vous pouvez désormais utiliser vos objectifs de performances pour déterminer la façon dont vous allez concevoir votre application. Reprenons l’exemple de l’application de cuisine et restauration. Lorsque l’utilisateur accède à la page d’une recette, vous pouvez décider de [mettre à jour les différents éléments de manière incrémentielle](optimize-gridview-and-listview.md#update-items-incrementally) de telle sorte que le nom de la recette s’affiche en premier, puis les ingrédients et enfin les photos du plat. Ce procédé permet de conserver la réactivité et la fluidité de l’interface utilisateur lors du panoramique/défilement, en affichant le rendu d’une totale fidélité après le ralentissement de l’interaction afin de permettre au thread de l’interface utilisateur de rattraper le retard. Voici quelques éléments à prendre en compte.
 
-**UI**
+**INTERFACE UTILISATEUR**
 
 -   Optimisez le temps d’analyse et de chargement ainsi que l’efficacité de la mémoire de chaque page de l'interface utilisateur de votre application (surtout la page d’accueil) en [optimisant votre balisage XAML](optimize-xaml-loading.md). Autrement dit, différez le chargement de l’interface utilisateur et du code jusqu’à ce que cela soit nécessaire.
 -   Pour [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), faites en sorte que tous les éléments aient la même taille et utilisez autant de [techniques d'optimisation des commandes ListView et GridView](optimize-gridview-and-listview.md) que possible.

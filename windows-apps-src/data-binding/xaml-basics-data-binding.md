@@ -595,5 +595,5 @@ Comme vous l'avez peut-être remarqué, si vous modifiez le niveau de zoom sur l
     
 Vous disposez normalement de toutes les informations nécessaires dans ce didacticiel, mais si vous avez besoin de plus de conseils, il suffit d'un clic pour accéder à la documentation sur la liaison de données. Commencez ici :
 
-+ [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Liaison de données en profondeur](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [extension de balisage {x : Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
++ [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

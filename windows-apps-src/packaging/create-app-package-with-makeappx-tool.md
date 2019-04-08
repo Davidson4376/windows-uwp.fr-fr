@@ -43,7 +43,7 @@ MakeAppx <command> [options]
 
 Le tableau suivant décrit les commandes de **MakeAppx.exe**.
 
-| **Command**   | **Description**                       |
+| **Commande**   | **Description**                       |
 |---------------|---------------------------------------|
 | pack          | Crée un package.                    |
 | unpack        | Extrait tous les fichiers du package spécifié dans le répertoire de sortie spécifié. |
@@ -71,7 +71,7 @@ Cette liste d’options s’applique à toutes les commandes :
 
 La liste suivante contient les arguments possibles :
 
-| **Argument**                          | **Description**                       |
+| **argument**                          | **Description**                       |
 |---------------------------------------|---------------------------------------|
 | &lt;Nom du package de sortie&gt;           | Nom du package créé. Il s’agit du nom de fichier ajouté avec .msix ou .appx. |
 | &lt;Nom du package de sortie chiffré&gt; | Nom du package chiffré créé. Il s’agit du nom de fichier ajouté avec .emsix ou .eappx. |

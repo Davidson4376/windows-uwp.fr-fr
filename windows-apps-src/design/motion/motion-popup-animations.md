@@ -21,7 +21,7 @@ ms.locfileid: "57635174"
 
 Utilisez les animations contextuelles pour afficher ou masquer l’interface utilisateur contextuelle de menus volants ou des éléments d’interface utilisateur contextuels personnalisés. Les éléments contextuels sont des conteneurs qui se superposent au contenu de l’application et qui disparaissent si l’utilisateur appuie ou clique en dehors de ces éléments contextuels.
 
-> **API importantes**: [**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383), [**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **API importantes** : [**Classe de PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383), [ **PopupThemeTransition classe**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -37,7 +37,7 @@ Utilisez les animations contextuelles pour afficher ou masquer l’interface uti
 * [Animation de l’interface utilisateur contextuelle](https://msdn.microsoft.com/library/windows/apps/xaml/jj649433)
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe de PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383)
-* [**PopOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210391)
+* [**Classe de PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210391)
 * [**Classe de PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
  

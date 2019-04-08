@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608624"
 ---
-# <a name="getting-started-animation"></a>Mise en route : Animation
+# <a name="getting-started-animation"></a>Bien démarrer : Animation
 
 
 ## <a name="adding-animations"></a>Ajout d’animations

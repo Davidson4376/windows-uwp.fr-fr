@@ -36,7 +36,7 @@ L’utilisateur du mouvement dans le système de conception Fluent est en consta
 Mises à jour visuelles et des modifications mineures ont été apportées pour les pages suivantes de la conception Fluent :
 
 * [Alignement, marges intérieures, des marges](../design/layout/alignment-margin-padding.md)
-* [Color](../design/style/color.md)
+* [Couleur](../design/style/color.md)
 * [Notions de base sur les commandes](../design/basics/commanding-basics.md)
 * [Fluent Design pour les applications de Windows](../design/fluent-design-system/index.md)
 * [Introduction à la conception de l’application](../design/basics/design-and-ui-intro.md)

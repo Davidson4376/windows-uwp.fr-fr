@@ -8,7 +8,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57661724"
@@ -57,7 +57,7 @@ Regardez la vidéo suivante pour une vue d’ensemble de l’implémentation des
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Versions d’évaluation et les achats dans l’application](in-app-purchases-and-trials.md)
+* [Achats dans l’application et essais](in-app-purchases-and-trials.md)
 * [Obtenir des informations sur les produits pour les applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
 * [Obtenir les informations de licence pour les applications et modules complémentaires](get-license-info-for-apps-and-add-ons.md)
 * [Activer les achats du module complémentaire consommables](enable-consumable-add-on-purchases.md)

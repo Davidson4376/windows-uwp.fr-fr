@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, imp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57626664"
@@ -393,15 +393,15 @@ Le constructeur de classe de base attend un **ToggleButton**. Et **MySpecialized
 Tant que vous n'aurez pas apporté les modifications décrites ci-dessus (pour transmettre ce paramètre de constructeur à la classe de base), le compilateur marquera votre constructeur et signalera qu’aucun constructeur par défaut approprié n’est disponible sur un type nommé (dans ce cas) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. C’est en fait la classe de base de la classe de base de votre type d’implémentation.
 
 ## <a name="important-apis"></a>API importantes
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
-* [winrt::from_abi function template](/uwp/cpp-ref-for-winrt/from-abi)
-* [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
+* [modèle de struct WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [WinRT::com_ptr::copy_from (fonction)](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [modèle de fonction WinRT::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
+* [modèle de fonction WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
 * [modèle de struct WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 * [modèle de fonction WinRT::Make](/uwp/cpp-ref-for-winrt/make)
 * [modèle de fonction WinRT::make_self](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [WinRT::Windows::Foundation::IUnknown :: comme (fonction)](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Consommer des API avec C / c++ / WinRT](consume-apis.md)
-* [Contrôles XAML ; lier à C++ / c++ / WinRT propriété](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Utiliser des API avec C++/WinRT](consume-apis.md)
+* [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

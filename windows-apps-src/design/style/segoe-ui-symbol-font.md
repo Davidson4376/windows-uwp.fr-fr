@@ -22,7 +22,7 @@ ms.locfileid: "57649054"
 
 Cet article répertorie les icônes fournies par la police Segoe MDL2 Assets. 
 
-> **API importantes**: [**Symbole enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon classe**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **API importantes** : [**Symbole enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon classe**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>À propos de la police Segoe MDL2 Assets
 
@@ -270,7 +270,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E731.png" width="32" height="32" alt="EMI" /></td>
   <td>E731</td>
-  <td>EMI</td>
+  <td>INTERFÉRENCES ÉLECTROMAGNÉTIQUES</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>
@@ -2382,7 +2382,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F9.png" width="32" height="32" alt="ReportDocument" /></td>
   <td>E9F9</td>
-  <td>ReportDocument</td>
+  <td>Objet ReportDocument</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA0C.png" width="32" height="32" alt="VideoSolid" /></td>
   <td>EA0C</td>
@@ -2690,7 +2690,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>Radar</td>
+  <td>En radar</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -5081,7 +5081,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
   <td>VerticalBatteryCharging2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F600.png" width="32" height="32" alt="VerticalBatteryCharging3" /></td>
-  <td>F600</td>
+  <td>RUBRIQUES F600</td>
   <td>VerticalBatteryCharging3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F601.png" width="32" height="32" alt="VerticalBatteryCharging4" /></td>

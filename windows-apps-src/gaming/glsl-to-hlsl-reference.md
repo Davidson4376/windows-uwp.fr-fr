@@ -133,19 +133,19 @@ Dans GLSL, vous appliquez des modificateurs (qualificateurs) à la déclaration 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform</strong></p>
+<td align="left"><p><strong>Glyphes de largeurs uniformes</strong></p>
 <p>Vous passez une variable uniform du code de l’application au nuanceur de vertex et/ou au nuanceur de fragments. Vous devez définir les valeurs de toutes les variables uniform avant de dessiner des triangles avec ces nuanceurs. Ainsi, les valeurs ne changeront pas lors du processus de dessin d’un maillage de triangles. Ces valeurs sont uniformes. Certaines sont définies pour la trame entière, d’autres uniquement pour une paire spécifique de nuanceurs de vertex/pixels.</p>
 <p>Les variables uniform s’appliquent au niveau de chaque polygone.</p></td>
 <td align="left"><p>Utilisez une mémoire tampon constante.</p>
 <p>Consultez <a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">Comment : Créer un mémoire tampon constante</a> et <a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">constantes de nuancier</a>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>varying</strong></p>
+<td align="left"><p><strong>variable</strong></p>
 <p>Vous initialisez une variable varying au sein du nuanceur de vertex, puis vous la passez à une variable varying de même nom dans le nuanceur de fragments. Le nuanceur de vertex définit la valeur des variables varying au niveau de chaque vertex. Par conséquent, le module de rastérisation effectue ensuite une interpolation de ces valeurs (en perspective) pour générer les valeurs de chaque fragment à passer au nuanceur de fragments. Ces variables diffèrent pour chaque triangle.</p></td>
 <td align="left">Utilisez la structure renvoyée par votre nuanceur de vertex comme structure d’entrée de votre nuanceur de pixels. Assurez-vous que les valeurs des sémantiques correspondent.</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>attribute</strong></p>
+<td align="left"><p><strong>Attribut</strong></p>
 <p>Un attribut est un élément de la description d’un vertex que vous passez du code de l’application au nuanceur de vertex (et seulement à lui). Contrairement à la variable uniform, vous définissez une variable attribute par vertex. Vous pouvez ainsi attribuer une valeur différente à chacun des vertex. Les variables attribute s’appliquent au niveau de chaque vertex.</p></td>
 <td align="left"><p>Définissez une mémoire tampon de vertex dans le code de votre application Direct3D, puis mappez-la à l’entrée de vertex que vous avez définie dans le nuanceur de vertex. Vous pouvez éventuellement définir une mémoire tampon d’index. Consultez <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">Comment : Créer une mémoire tampon Vertex</a> et <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">Comment : Créer un tampon d’Index</a>.</p>
 <p>Créez une disposition d’entrée dans le code de votre application Direct3D, puis mappez les valeurs de sémantiques à celles de l’entrée de vertex. Voir <a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">Créer la disposition d’entrée</a>.</p></td>
@@ -324,7 +324,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos variables globales p
 <p>par exemple, float4 couleur [4] : SV_Target ;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>gl_FragData[n]</strong></p>
+<td align="left"><p><strong>gl_FragData [n]</strong></p>
 <p>Variable du type <strong>vec4</strong>.</p>
 <p>Couleur du fragment pour l’association de couleur n</p></td>
 <td align="left"><p>SV_Target[n]</p>

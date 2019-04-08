@@ -1,5 +1,5 @@
 ---
-description: Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / c++ / WinRT pour consommer des classes et interfaces COM.
+description: Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++/WinRT pour consommer des classes et interfaces COM.
 title: Utiliser des composants COM avec C++/WinRT
 ms.date: 07/23/2018
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, composant, classe, i
 ms.localizationpriority: medium
 ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644804"
@@ -483,6 +483,6 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 Comme vous pouvez le voir, C++ / c++ / WinRT fournit la prise en charge pour les implémenter et appeler des interfaces COM. L’utilisation des types COM, tels que BSTR et VARIANT, il existe toujours la possibilité d’utiliser ceux dans leur forme brute (conjointement avec les API appropriées). Vous pouvez également utiliser les wrappers fournis par une infrastructure, tels que le [bibliothèque ATL (Active Template)](/cpp/atl/active-template-library-atl-concepts), ou par le compilateur Visual C++ [prise en charge COM](/cpp/cpp/compiler-com-support), ou même par vos propres wrappers.
 
 ## <a name="important-apis"></a>API importantes
-* [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [WinRT::check_hresult (fonction)](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [modèle de struct WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
 * [WinRT::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

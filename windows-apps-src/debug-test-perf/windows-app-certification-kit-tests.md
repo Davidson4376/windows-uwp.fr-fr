@@ -668,5 +668,5 @@ Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correcte
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Tests d’application de pont du bureau Windows](windows-desktop-bridge-app-tests.md)
-* [Stratégies de Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

@@ -58,7 +58,7 @@ La partie de Direct3D qui pousse la géométrie à travers le pipeline de géom�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
  
 

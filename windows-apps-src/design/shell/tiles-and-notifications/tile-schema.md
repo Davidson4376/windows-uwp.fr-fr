@@ -56,7 +56,7 @@ La partie visuelle des vignettes contient les spécifications visuelles de toute
 | **LockDetailedStatus1** | chaîne | false | Si vous spécifiez cette option, vous devez également fournir une liaison TileWide. Il s’agit de la première ligne de texte qui s’affiche sur l’écran de verrouillage si l’utilisateur a sélectionné votre vignette comme son application d’état détaillée. |
 | **LockDetailedStatus2** | chaîne | false | Si vous spécifiez cette option, vous devez également fournir une liaison TileWide. Il s’agit de la deuxième ligne de texte qui s’affiche sur l’écran de verrouillage si l’utilisateur a sélectionné votre vignette comme son application d’état détaillée. |
 | **LockDetailedStatus3** | chaîne | false | Si vous spécifiez cette option, vous devez également fournir une liaison TileWide. Il s’agit de la troisième ligne de texte qui s’affiche sur l’écran de verrouillage si l’utilisateur a sélectionné votre vignette comme son application d’état détaillée. |
-| **BaseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
+| **baseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
 | **AddImageQuery** | bool? | false | Définissez sur « true » pour permettre à Windows d’ajouter une chaîne de requête à l’URL d’image fournie dans la notification toast. Utilisez cet attribut si votre serveur héberge des images et peut gérer les chaînes de requête, en récupérant une variante d’image avec les chaînes de requête, ou en ignorant la chaîne de requête et en retournant l’image comme spécifié sans la chaîne de requête. Cette chaîne de requête spécifie l’échelle, le paramètre de contraste et la langue ; par exemple, la valeur « www.siteweb.com/images/hello.png » fournie dans la notification devient « www.siteweb.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=fr-fr ». |
 | **Langue**| chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Ces paramètres régionaux sont remplacés par les paramètres régionaux spécifiés dans le texte ou la liaison. Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
@@ -70,7 +70,7 @@ L’objet de liaison contient le contenu visuel pour une taille de vignette spé
 | **La marque** | TileBranding | false | La forme que la vignette doit utiliser pour afficher la marque de l’application. Par défaut, hérite de la personnalisation de la vignette par défaut. |
 | **DisplayName** | chaîne | false | Chaîne facultative pour remplacer le nom d’affichage de la vignette pour cette taille de vignette. |
 | **Arguments** | chaîne | false | Nouveautés de la mise à jour anniversaire : Données définies par l’application qui sont transmises à votre application via la propriété TileActivatedInfo sur LaunchActivatedEventArgs lorsque l’utilisateur lance votre application à partir de la vignette dynamique. Cela vous permet de savoir quelles sont les notifications de vignette que votre utilisateur a vues lorsqu'il a appuyé sur votre Vignette dynamique. Sur les appareils non équipés de la mise à jour anniversaire, cela sera simplement ignoré. |
-| **BaseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
+| **baseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
 | **AddImageQuery** | bool? | false | Définissez sur « true » pour permettre à Windows d’ajouter une chaîne de requête à l’URL d’image fournie dans la notification toast. Utilisez cet attribut si votre serveur héberge des images et peut gérer les chaînes de requête, en récupérant une variante d’image avec les chaînes de requête, ou en ignorant la chaîne de requête et en retournant l’image comme spécifié sans la chaîne de requête. Cette chaîne de requête spécifie l’échelle, le paramètre de contraste et la langue ; par exemple, la valeur « www.siteweb.com/images/hello.png » fournie dans la notification devient « www.siteweb.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=fr-fr ». |
 | **Langue**| chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Ces paramètres régionaux sont remplacés par les paramètres régionaux spécifiés dans le texte ou la liaison. Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
@@ -92,7 +92,7 @@ Pris en charge dans toutes les tailles. Il s’agit de la méthode recommandée 
 
 | Propriété | Type | Obligatoire | Description |
 |---|---|---|---|
-| **Children** | IList<ITileBindingContentAdaptiveChild> | false | Les éléments visuels en ligne. Des objets [AdaptiveText](#adaptivetext), [AdaptiveImage](#adaptiveimage) et [AdaptiveGroup](#adaptivegroup) peuvent être ajoutés. Les enfants sont affichés sous forme de StackPanel vertical. |
+| **Enfants** | IList<ITileBindingContentAdaptiveChild> | false | Les éléments visuels en ligne. Des objets [AdaptiveText](#adaptivetext), [AdaptiveImage](#adaptiveimage) et [AdaptiveGroup](#adaptivegroup) peuvent être ajoutés. Les enfants sont affichés sous forme de StackPanel vertical. |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | Une image d’arrière-plan facultatif qui est affichée derrière tout le contenu de la vignette, en pleine page. |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | Une image furtive facultative qui s'anime à partir du haut de la vignette. |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | Contrôle l’empilement de texte (alignement vertical) du contenu des enfants dans son intégralité. |
@@ -118,23 +118,23 @@ Le style de texte contrôle la taille, l’épaisseur et l’opacité de la poli
 | Valeur | Signification |
 |---|---|
 | **Par défaut** | Valeur par défaut. Le style est déterminé par le convertisseur. |
-| **Caption** | Inférieur à la taille de police de paragraphe. |
-| **CaptionSubtle** | Identique à Caption, mais avec une opacité subtile. |
-| **Body** | Taille de police de paragraphe. |
-| **BodySubtle** | Identique à Body, mais avec une opacité subtile. |
-| **Base** | Taille de police de paragraphe, épaisseur « bold ». Essentiellement la version « bold » de Body. |
-| **BaseSubtle** | Identique à Base, mais avec une opacité subtile. |
+| **Légende** | Inférieur à la taille de police de paragraphe. |
+| **captionSubtle** | Identique à Caption, mais avec une opacité subtile. |
+| **Corps** | Taille de police de paragraphe. |
+| **bodySubtle** | Identique à Body, mais avec une opacité subtile. |
+| **base de** | Taille de police de paragraphe, épaisseur « bold ». Essentiellement la version « bold » de Body. |
+| **baseSubtle** | Identique à Base, mais avec une opacité subtile. |
 | **sous-titre** | Taille de police de H4. |
-| **SubtitleSubtle** | Identique à Subtitle, mais avec une opacité subtile. |
+| **subtitleSubtle** | Identique à Subtitle, mais avec une opacité subtile. |
 | **Titre** | Taille de police de H3. |
-| **TitleSubtle** | Identique à Title, mais avec une opacité subtile. |
-| **TitleNumeral** | Identique à Title, mais sans les marges intérieures supérieures/inférieures. |
-| **Subheader** | Taille de police de H2. |
-| **SubheaderSubtle** | Identique à Subheader, mais avec une opacité subtile. |
-| **SubheaderNumeral** | Identique à Subheader, mais sans les marges intérieures supérieures/inférieures. |
+| **titleSubtle** | Identique à Title, mais avec une opacité subtile. |
+| **titleNumeral** | Identique à Title, mais sans les marges intérieures supérieures/inférieures. |
+| **En-tête secondaire** | Taille de police de H2. |
+| **subheaderSubtle** | Identique à Subheader, mais avec une opacité subtile. |
+| **subheaderNumeral** | Identique à Subheader, mais sans les marges intérieures supérieures/inférieures. |
 | **En-tête** | Taille de police de H1. |
-| **HeaderSubtle** | Identique à Header, mais avec une opacité subtile. |
-| **HeaderNumeral** | Identique à Header, mais sans les marges intérieures supérieures/inférieures. |
+| **headerSubtle** | Identique à Header, mais avec une opacité subtile. |
+| **headerNumeral** | Identique à Header, mais sans les marges intérieures supérieures/inférieures. |
 
 
 ### <a name="adaptivetextalign"></a>AdaptiveTextAlign
@@ -144,9 +144,9 @@ Contrôle l’alignement horizontal du texte.
 |---|---|
 | **Par défaut** | Valeur par défaut. L’alignement est automatiquement déterminé par le convertisseur. |
 | **Auto** | L’alignement est déterminé en fonction des paramètres de langue et de culture actuels. |
-| **Left** | Aligner le texte à gauche. |
+| **Gauche** | Aligner le texte à gauche. |
 | **Centre** | Centrer le texte horizontalement. |
-| **Right** | Aligner le texte à droite. |
+| **Oui** | Aligner le texte à droite. |
 
 
 ## <a name="adaptiveimage"></a>AdaptiveImage
@@ -169,7 +169,7 @@ Spécifie le rognage désiré de l’image.
 |---|---|
 | **Par défaut** | Valeur par défaut. Le comportement de rognage est déterminé par le convertisseur. |
 | **Aucune** | L’image n’est pas rognée. |
-| **Circle** | L’image est rognée en forme de cercle. |
+| **Cercle** | L’image est rognée en forme de cercle. |
 
 
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
@@ -179,9 +179,9 @@ Spécifie l’alignement horizontal d’une image.
 |---|---|
 | **Par défaut** | Valeur par défaut. Le comportement d’alignement est déterminé par le convertisseur. |
 | **Stretch** | L’image s’étire pour remplir la largeur disponible (et potentiellement la hauteur disponible selon le positionnement de l’image). |
-| **Left** | Aligner l’image à gauche, en affichant l’image dans sa résolution native. |
+| **Gauche** | Aligner l’image à gauche, en affichant l’image dans sa résolution native. |
 | **Centre** | Centrer l’image horizontalement, en affichant l’image dans sa résolution native. |
-| **Right** | Aligner l’image à droite, en affichant l’image dans sa résolution native. |
+| **Oui** | Aligner l’image à droite, en affichant l’image dans sa résolution native. |
 
 
 ## <a name="adaptivegroup"></a>AdaptiveGroup
@@ -189,7 +189,7 @@ Les groupes indiquent au niveau sémantique si le contenu du groupe doit s’aff
 
 | Propriété | Type | Obligatoire |Description |
 |---|---|---|---|
-| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
+| **Enfants** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
 
 
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
@@ -197,7 +197,7 @@ Les sous-groupes sont des colonnes verticales qui peuvent contenir du texte et d
 
 | Propriété | Type | Obligatoire |Description |
 |---|---|---|---|
-| **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) et [AdaptiveImage](#adaptiveimage) sont des enfants valides de sous-groupes. |
+| **Enfants** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) et [AdaptiveImage](#adaptiveimage) sont des enfants valides de sous-groupes. |
 | **HintWeight** | int? | false | Contrôler la largeur de cette colonne de sous-groupe en spécifiant la pondération de l’espace relative aux autres sous-groupes. |
 | **HintTextStacking** | [AdaptiveSubgroupTextStacking](#adaptivesubgrouptextstacking) | false | Contrôler l’alignement vertical du contenu de ce sous-groupe. |
 
@@ -217,9 +217,9 @@ TextStacking spécifie l’alignement vertical du contenu.
 | Valeur | Signification |
 |---|---|
 | **Par défaut** | Valeur par défaut. Le convertisseur sélectionne automatiquement l’alignement vertical par défaut. |
-| **Top** | Aligner vers le haut. |
+| **Retour au début** | Aligner vers le haut. |
 | **Centre** | Centrer verticalement. |
-| **Bottom** | Aligner verticalement vers le bas. |
+| **en bas** | Aligner verticalement vers le bas. |
 
 
 ## <a name="tilebackgroundimage"></a>TileBackgroundImage
@@ -241,7 +241,7 @@ Contrôle le rognage de l’image d'arrière-plan.
 |---|---|
 | **Par défaut** | Le rognage utilise le comportement par défaut du convertisseur. |
 | **Aucune** | L’image n’est pas rognée, et s’affiche en carré. |
-| **Circle** | L’image est rognée pour former un cercle. |
+| **Cercle** | L’image est rognée pour former un cercle. |
 
 
 ## <a name="tilepeekimage"></a>TilePeekImage
@@ -263,7 +263,7 @@ Contrôle le rognage de l’image furtive.
 |---|---|
 | **Par défaut** | Le rognage utilise le comportement par défaut du convertisseur. |
 | **Aucune** | L’image n’est pas rognée, et s’affiche en carré. |
-| **Circle** | L’image est rognée pour former un cercle. |
+| **Cercle** | L’image est rognée pour former un cercle. |
 
 
 ### <a name="tiletextstacking"></a>TileTextStacking
@@ -272,9 +272,9 @@ L'empilement de texte spécifie l’alignement vertical du contenu.
 | Valeur | Signification |
 |---|---|
 | **Par défaut** | Valeur par défaut. Le convertisseur sélectionne automatiquement l’alignement vertical par défaut. |
-| **Top** | Aligner vers le haut. |
+| **Retour au début** | Aligner vers le haut. |
 | **Centre** | Centrer verticalement. |
-| **Bottom** | Aligner verticalement vers le bas. |
+| **en bas** | Aligner verticalement vers le bas. |
 
 
 ## <a name="tilebindingcontenticonic"></a>TileBindingContentIconic
@@ -282,7 +282,7 @@ Pris en charge sur les petites et moyennes. Active un modèle de vignette Icône
 
 | Propriété | Type | Obligatoire |Description |
 |---|---|---|---|
-| **Icon** | [TileBasicImage](#tilebasicimage) | true | Au minimum, pour prendre en charge à la fois les vignettes Bureau et mobiles, petites et moyennes, fournissez une image de forme carrée d'une résolution de 200 x 200, au format PNG, transparente et sans autre couleur que le blanc. Pour plus d’informations, voir : [Modèles de vignette spéciale](../tiles-and-notifications/special-tile-templates-catalog.md). |
+| **Icône** | [TileBasicImage](#tilebasicimage) | true | Au minimum, pour prendre en charge à la fois les vignettes Bureau et mobiles, petites et moyennes, fournissez une image de forme carrée d'une résolution de 200 x 200, au format PNG, transparente et sans autre couleur que le blanc. Pour plus d’informations, voir : [Modèles de vignette spéciale](../tiles-and-notifications/special-tile-templates-catalog.md). |
 
 
 ## <a name="tilebindingcontentcontact"></a>TileBindingContentContact

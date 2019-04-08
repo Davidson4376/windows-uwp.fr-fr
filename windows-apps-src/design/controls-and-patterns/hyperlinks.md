@@ -25,7 +25,7 @@ ms.locfileid: "57606474"
 
 Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
-> **API importantes**: [Élément de texte de lien hypertexte](https://msdn.microsoft.com/library/windows/apps/dn279356), [contrôle HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **API importantes** : [Élément de texte de lien hypertexte](https://msdn.microsoft.com/library/windows/apps/dn279356), [contrôle HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
@@ -49,7 +49,7 @@ Choisissez le type de lien hypertexte approprié en fonction de vos besoins :
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/HyperlinkButton">ouvrir l’application et voir l'objet HyperlinkButton en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -138,7 +138,7 @@ Par défaut, les liens hypertexte sont soulignés. Ce trait de soulignement est 
 
 Vous pouvez définir la propriété [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) pour désactiver le trait de soulignement. Si vous le désactivez, pensez à utiliser [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) ou [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) pour différencier le texte du lien du reste du texte.
 
-**HyperlinkButton** 
+**Contrôle HyperlinkButton** 
 
 Par défaut, l’élément HyperlinkButton s’affiche sous forme de texte souligné lorsque vous définissez une chaîne comme valeur pour la propriété [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx).
 
@@ -184,4 +184,4 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 **Pour les développeurs (XAML)**
 - [Classe de Windows.UI.Xaml.Documents.Hyperlink](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [Windows.UI.Xaml.Controls.HyperlinkButton class](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Classe de Windows.UI.Xaml.Controls.HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)

@@ -25,7 +25,7 @@ Une info-bulle est une brève description qui est liée à un autre contrôle ou
 
 ![Info-bulle](images/controls/tool-tip.png)
 
-> **API importantes**: [Classe de l’info-bulle](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [les classes ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **API importantes** : [Classe de l’info-bulle](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [les classes ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -63,7 +63,7 @@ Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suiva
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ToolTip">ouvrir l’application et voir le contrôle ToolTip en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

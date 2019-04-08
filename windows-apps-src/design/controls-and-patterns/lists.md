@@ -30,7 +30,7 @@ Les listes affichent et activent l’interaction avec du contenu basé sur des c
 
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
-> **API importantes**: [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox (classe)](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **API importantes** : [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox (classe)](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">
@@ -265,7 +265,7 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [Maître/détails](master-details.md)
 - [Volet de navigation](navigationview.md)
 - [Zoom sémantique](semantic-zoom.md)
-- [Glisser -déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Glisser-déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Images miniatures](../../files/thumbnails.md)
 
 **pour les développeurs**

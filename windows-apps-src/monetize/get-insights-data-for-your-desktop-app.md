@@ -77,7 +77,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 |---------------------|--------|-------------------------------------------|
 | applicationId       | chaîne | L’ID de produit de l’application de bureau pour lequel vous avez récupéré des données insights.     |
 | insightDate                | chaîne | La date sur laquelle nous avons identifié la modification dans une mesure spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou diminuer dans une mesure par rapport à la semaine auparavant. |
-| dataType     | chaîne | Chaîne qui spécifie la zone analytique général qui informe cette information. Actuellement, cette méthode prend uniquement en charge **intégrité**.    |
+| Type de données     | chaîne | Chaîne qui spécifie la zone analytique général qui informe cette information. Actuellement, cette méthode prend uniquement en charge **intégrité**.    |
 | insightDetail          | tableau | Un ou plusieurs [InsightDetail valeurs](#insightdetail-values) qui représentent les détails pour obtenir des informations en cours.    |
 
 

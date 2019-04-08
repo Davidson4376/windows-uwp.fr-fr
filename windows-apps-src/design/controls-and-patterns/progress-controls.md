@@ -25,7 +25,7 @@ ms.locfileid: "57634424"
 
 Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours. Cela peut signifier que l’utilisateur ne peut pas interagir avec l’application lorsque l’indicateur de progression est visible et peut également indiquer le temps d’attente en fonction de l’indicateur utilisé.
 
-> **API importantes**: [Classe ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [IsIndeterminate propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [ProgressRing classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [propriété IsActive](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **API importantes** : [Classe ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [IsIndeterminate propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [ProgressRing classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [propriété IsActive](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
 ## <a name="types-of-progress"></a>Types de progression
 
@@ -54,7 +54,7 @@ De plus, un contrôle de progression est en lecture seule et n’est pas interac
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> ou <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> en action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -74,7 +74,7 @@ Il n’est pas toujours évident de savoir quel contrôle ou quel état (déterm
 
     Lorsqu’un contrôle ProgressBar est en cours d’utilisation, l’interaction est non modale, ce qui signifie généralement que l’utilisateur n’est pas bloqué tant que cette opération n’est pas terminée et peut continuer à utiliser les autres fonctionnalités de l’application dans l’intervalle.
 
--   **Keywords**
+-   **Mots clés**
 
     Si vous pensez que votre fonctionnement tourne autour de ces mots-clés ou si vous affichez du texte au cours de la progression qui correspond aux mots-clés suivants, envisagez d’utiliser un contrôle ProgressBar :
 
@@ -92,7 +92,7 @@ Il n’est pas toujours évident de savoir quel contrôle ou quel état (déterm
 
     Si tel est le cas, utilisez un contrôle ProgressRing, censé indiquer une durée d’attente inconnue pour l’utilisateur.
 
--   **Keywords**
+-   **Mots clés**
 
     Si vous pensez que votre fonctionnement tourne autour de ces mots-clés ou si vous affichez du texte au cours de la progression qui correspond aux mots-clés suivants, envisagez d’utiliser un contrôle ProgressRing :
 

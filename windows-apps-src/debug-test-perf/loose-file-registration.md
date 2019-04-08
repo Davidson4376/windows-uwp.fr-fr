@@ -1,6 +1,6 @@
 ---
 title: Déployer une application par le biais de l’inscription de fichiers libres
-description: Ce guide montre comment utiliser la disposition de fichier libre pour valider et partager des applications Windows 10 sans avoir à les empaqueter.
+description: Ce guide montre comment utiliser la disposition de fichiers libres pour valider et partager des applications Windows 10 sans avoir à les empaqueter.
 ms.date: 6/1/2018
 ms.topic: article
 keywords: Windows 10, uwp, portail de l’appareil, le Gestionnaire d’applications, déploiement, Kit de développement logiciel
@@ -14,7 +14,7 @@ ms.locfileid: "57635424"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Déployer une application par le biais de l’inscription de fichiers libres 
 
-Ce guide montre comment utiliser la disposition de fichier libre pour valider et partager des applications Windows 10 sans avoir à les empaqueter. L’inscription de dispositions de fichier libre permet aux développeurs de valider rapidement leurs applications sans avoir à empaqueter et installer les applications. 
+Ce guide montre comment utiliser la disposition de fichiers libres pour valider et partager des applications Windows 10 sans avoir à les empaqueter. L’inscription de dispositions de fichier libre permet aux développeurs de valider rapidement leurs applications sans avoir à empaqueter et installer les applications. 
 
 ## <a name="what-is-a-loose-file-layout"></a>Qu’est une disposition libre de fichier ?
 

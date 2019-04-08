@@ -20,7 +20,7 @@ ms.locfileid: "57610634"
 
 Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
 
-> **API importantes**: [Classe WebView](https://msdn.microsoft.com/library/windows/apps/br227702)
+> **API importantes** : [Classe WebView](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 

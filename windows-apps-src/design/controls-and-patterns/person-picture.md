@@ -22,7 +22,7 @@ ms.locfileid: "57638934"
 
 Le contrôle de photo de la personne affiche l’image d’avatar d’une personne, si celle-ci est disponible. Dans le cas contraire, il affiche les initiales de la personne ou un glyphe générique. Vous pouvez utiliser ce contrôle pour afficher un [objet Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), un objet qui gère les coordonnées d’une personne, ou vous pouvez fournir manuellement des coordonnées, par exemple un nom d’affichage et une photo de profil.  
 
-> **API importantes**: [Classe de PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [contacter classe](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager classe](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **API importantes** : [Classe de PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [contacter classe](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager classe](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 Cette illustration montre deux contrôles d’image de personnes associées à deux éléments [bloc de texte](text-block.md) qui affichent les noms des utilisateurs. 
 ![Le contrôle d’image de personne](images/person-picture/person-picture_hero.png)
@@ -47,7 +47,7 @@ L’illustration montre personne contrôle d’image dans une liste de contacts�
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/PersonPicture">ouvrir l’application et voir l'objet PersonPicture en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

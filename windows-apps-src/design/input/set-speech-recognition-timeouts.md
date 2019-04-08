@@ -20,7 +20,7 @@ ms.locfileid: "57627164"
 
 Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
 
-> **API importantes**: [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253), [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
+> **API importantes** : [**Délais d’expiration**](https://msdn.microsoft.com/library/windows/apps/dn653253), [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 ## <a name="set-a-timeout"></a>Définir un délai d’expiration
 

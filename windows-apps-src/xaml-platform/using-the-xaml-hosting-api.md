@@ -35,7 +35,7 @@ Le XAML UWP API d’hébergement fournit l’infrastructure de bas niveau pour l
 
 Vous utilisez le XAML UWP API d’hébergement dans votre code dépend de votre type d’application, la conception de votre application et d’autres facteurs. Pour illustrer l’utilisation de cette API dans le contexte d’une application complète, cet article fait référence au code dans les exemples suivants.
 
-### <a name="c-win32"></a>C++ Win32
+### <a name="c-win32"></a>Win32 C++
 
 Il existe plusieurs exemples qui montrent comment utiliser le XAML UWP API d’hébergement dans une application Win32 C++ sur GitHub :
 
@@ -77,7 +77,7 @@ Lorsque vous créez un îlot de XAML à l’aide de l’API d’hébergement dan
 
 Le diagramme suivant illustre la hiérarchie des objets dans un îlot de XAML.
 
-![DesktopWindowXamlSource architecture](images/xaml-hosting-api-rev2.png)
+![Architecture de DesktopWindowXamlSource](images/xaml-hosting-api-rev2.png)
 
 ## <a name="how-to-host-uwp-xaml-controls"></a>Comment héberger les contrôles UWP XAML
 

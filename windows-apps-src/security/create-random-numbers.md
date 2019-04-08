@@ -4,7 +4,7 @@ description: Cet exemple de code indique comment créer un nombre aléatoire ou 
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: f36e50f2de36df39177370d688b9add5591403e1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

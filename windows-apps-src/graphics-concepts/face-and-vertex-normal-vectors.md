@@ -88,7 +88,7 @@ Une autre solution consiste à opter pour un ombrage constant lors du rendu d’
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
  
 

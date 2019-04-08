@@ -4,7 +4,7 @@ description: Cet article explique comment ajouter des empreintes digitales biom�
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

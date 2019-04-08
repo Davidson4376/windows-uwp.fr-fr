@@ -161,6 +161,6 @@ Par défaut, les classes dans le composant qui peut être activé sont agiles. T
 Concernant les objets qui s’exécutent sur l’interface utilisateur de thread et qui lèvent des exceptions lorsqu’ils sont appelés à partir d’un thread autre que le thread d’interface utilisateur, vous pouvez utiliser l'objet [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) du thread d’interface utilisateur pour distribuer l’appel.
 
 ## <a name="see-also"></a>Voir aussi
-[C#Guide](/dotnet/csharp/)
+[Guide C#](/dotnet/csharp/)
 
 [Guide Visual Basic](/dotnet/visual-basic/)

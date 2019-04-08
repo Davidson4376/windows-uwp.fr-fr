@@ -62,7 +62,7 @@ Les fonctions de requête sont disponibles dans les versions de Direct3D, pour v
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Diffusion en continu de ressources](streaming-resources.md)
+[Ressources de streaming](streaming-resources.md)
 
  
 

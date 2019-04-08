@@ -23,7 +23,7 @@ ms.locfileid: "57628664"
 
 Révéler la que mise en surbrillance est un effet d’éclairage qui met en évidence des éléments interactifs, tels que des barres de commande, lorsque l’utilisateur déplace le pointeur près d’eux. 
 
-> **API importantes**: [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState classe](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **API importantes** : [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState classe](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Fonctionnement
 Révéler l’attention d’appels de mise en surbrillance pour les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme le montre l’illustration suivante :
@@ -41,7 +41,7 @@ L'outil Révéler expose les bordures masquées qui se trouvent autour des objet
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Reveal">ouvrez l’application et voir Révéler en action </a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -287,7 +287,7 @@ Lorsque vous activez révèlent sur un contrôle personnalisé ou re-basé sur u
 ## <a name="related-articles"></a>Articles connexes
 
 - [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [Acrylic](acrylic.md)
+- [ACRYLIQUE](acrylic.md)
 - [Effets de composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Conception Fluent pour UWP](../fluent-design-system/index.md)
 - [Science dans le système : Profondeur et conception Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

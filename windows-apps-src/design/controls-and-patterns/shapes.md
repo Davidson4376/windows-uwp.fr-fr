@@ -17,7 +17,7 @@ ms.locfileid: "57610674"
 
 Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier.
 
-> **API importantes**: [Classe de chemin d’accès](/uwp/api/Windows.UI.Xaml.Shapes.Path), [espace de noms Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [espace de noms Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
+> **API importantes** : [Classe de chemin d’accès](/uwp/api/Windows.UI.Xaml.Shapes.Path), [espace de noms Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [espace de noms Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
 
 
 Deux ensembles de classes définissent une région d’espace dans XAML UI : [**Forme** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) classes et [ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry) classes. Leur principale différence réside dans le fait qu’un pinceau est associé à la classe **Shape** et que son rendu peut s’effectuer à l’écran. La classe **Geometry**, quant à elle, définit simplement une région d’espace sans rendu, sauf si elle concourt à donner des informations sur une autre propriété de l’interface utilisateur. Imaginez le jeu **Shape** comme un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) dont la limite est définie par un jeu **Geometry**. Cette rubrique traite principalement des classes **Shape**.

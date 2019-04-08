@@ -24,7 +24,7 @@ Les affichages ordonnés du rastériseur permettent d’appliquer les algorithme
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

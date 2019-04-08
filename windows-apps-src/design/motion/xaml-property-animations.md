@@ -37,13 +37,13 @@ Ce tableau présente les propriétés que vous pouvez utiliser pour modifier le 
 
 | Propriété | Type | Description |
 | -- | -- | -- |
-| [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Le degré d’opacité de l’objet |
-| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Décaler la position X/Y/Z de l’élément |
+| [Opacité](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Le degré d’opacité de l’objet |
+| [traduction](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Décaler la position X/Y/Z de l’élément |
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | La matrice de transformation à appliquer à l’élément |
 | [Mettre à l’échelle](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Mettre à l’échelle de l’élément, centrée sur le point central |
 | [Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | Flottante | Faire pivoter l’élément autour de le RotationAxis et le point central |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | L’axe de rotation |
-| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Le point central de la mise à l’échelle et rotation |
+| [Point central](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Le point central de la mise à l’échelle et rotation |
 
 La valeur de propriété TransformMatrix est combinée avec les propriétés de mise à l’échelle, de Rotation et de traduction dans l’ordre suivant :  TransformMatrix, Scale, Rotation, Translation.
 

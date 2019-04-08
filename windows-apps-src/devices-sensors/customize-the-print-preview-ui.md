@@ -34,13 +34,13 @@ Cette section décrit comment personnaliser les options d’impression et les pa
 Par défaut, l’interface utilisateur d’aperçu avant impression affiche les options d’impression [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) et [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486). Outre ces options, Windows fournit plusieurs autres options d’imprimante que vous pouvez ajouter à l’interface utilisateur d’aperçu avant impression.
 
 -   [**Liaison**](https://msdn.microsoft.com/library/windows/apps/BR226476)
--   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
+-   [**classement**](https://msdn.microsoft.com/library/windows/apps/BR226477)
 -   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
 -   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
 -   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
--   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
+-   [**Nettoyage**](https://msdn.microsoft.com/library/windows/apps/BR226485)
 -   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
 -   [**Élément de base**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 

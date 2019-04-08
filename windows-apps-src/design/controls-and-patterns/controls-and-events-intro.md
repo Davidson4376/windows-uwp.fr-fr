@@ -19,7 +19,7 @@ ms.locfileid: "57630794"
 
 Dans le développement d’applications UWP, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur.
 
-> **API importantes**: [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **API importantes** : [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
 Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le [maître/détails](master-details.md) modèle est une façon que vous pouvez utiliser un [fractionnementaffichage des](split-view.md) contrôle pour la navigation de l’application. De même, vous pouvez personnaliser le modèle d’un [NavigationView](navigationview.md) contrôle pour implémenter le modèle de l’onglet.
 

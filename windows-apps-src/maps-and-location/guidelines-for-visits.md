@@ -269,6 +269,6 @@ Cela établit qu’une classe de tâche en arrière-plan appelée `VisitBackgrou
 Votre application doit maintenant être capable d’inscrire la tâche en arrière-plan de gestion des visites, et cette tâche doit être activée chaque fois que l’appareil consigne un changement d’état lié à la visite. Vous devrez renseigner la logique dans votre classe de tâche en arrière-plan afin de déterminer ce qu'il faut faire avec ces informations de changement d’état.
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Créer et inscrire une tâche en arrière-plan out-of-process](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [Obtenir l’emplacement de l’utilisateur](get-location.md)
 * [Espace de noms Windows.Devices.Geolocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

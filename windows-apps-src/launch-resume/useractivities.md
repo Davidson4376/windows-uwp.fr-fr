@@ -170,6 +170,6 @@ Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/win
 * [Activités de l’utilisateur (documents de Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Cartes adaptatives](https://docs.microsoft.com/adaptive-cards/)
 * [Visualiseur de cartes adaptatives, exemples](https://adaptivecards.io/)
-* [Gérer l’activation d’URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [Gérer l’activation d’un URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Le contact avec vos clients sur n’importe quelle plateforme à l’aide de la Microsoft Graph, flux d’activité et des cartes adaptatives](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

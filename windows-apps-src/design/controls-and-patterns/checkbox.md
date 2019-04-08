@@ -25,7 +25,7 @@ ms.locfileid: "57648894"
 
 Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection : l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
 
-> **API importantes**: [Classe de la case à cocher](https://msdn.microsoft.com/library/windows/apps/br209316), [événement activé](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [propriété IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **API importantes** : [Classe de la case à cocher](https://msdn.microsoft.com/library/windows/apps/br209316), [événement activé](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [propriété IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
 
@@ -58,7 +58,7 @@ Les deux contrôles **case à cocher** et **case d’option** permettent à l’
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CheckBox">ouvrir l’application et voir l'objet CheckBox en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -189,7 +189,7 @@ Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/libra
 ------|----------|------
 checked | IsChecked | **true** 
 unchecked | IsChecked | **false** 
-indeterminate | IsChecked | **null** 
+indeterminate | IsChecked | **valeur null** 
 
 Pour que la case à cocher indique l’état indéterminé, vous devez définir la propriété [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) sur **true**. 
 

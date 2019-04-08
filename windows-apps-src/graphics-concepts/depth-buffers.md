@@ -50,7 +50,7 @@ L’interprétation réelle d’une valeur de profondeur est propre au renderer.
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Mémoires tampons de profondeur et gabarit](depth-and-stencil-buffers.md)
+[Tampons de profondeur et stencil buffer](depth-and-stencil-buffers.md)
 
  
 

@@ -10,7 +10,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57633744"
@@ -19,7 +19,7 @@ ms.locfileid: "57633744"
 
 Convertissez les traits d’encre en texte et formes grâce aux fonctionnalités de reconnaissance intégrées à Windows Ink.
 
-> **API importantes**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **API importantes** : [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>Reconnaissance des formes libres grâce à l’analyse des entrées manuscrites

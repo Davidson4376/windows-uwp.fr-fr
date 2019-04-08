@@ -31,7 +31,7 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
 | 4.3.2.4.  EXT-X-KEY |1|0|FACULTATIVE|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp; (MÉTHODE)|1|0|Attribut|« NONE, AES-128 »|« NONE, AES-128 »|« NONE, AES-128, SAMPLE-AES »|
 |&nbsp;&nbsp;&nbsp; URI|1|0|Attribut|Prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp; IV|2|3|Attribut|Prise en charge|Prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp; VECTEUR D’INITIALISATION|2|3|Attribut|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
 |&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
 | 4.3.2.5.  EXT-X-MAP |5|9|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
@@ -49,24 +49,24 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
 | 4.3.4.1.  EXT-X-MEDIA |4|7|FACULTATIVE|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  TYPE|4|7|Attribut|« AUDIO, VIDEO »|« AUDIO, VIDEO »|« AUDIO, VIDEO, SUBTITLES »|
 |&nbsp;&nbsp;&nbsp;  URI|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  ID DE GROUPE|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  LANGAGE|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  NAME|4|7|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  FORCED|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  NOM|4|7|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  PAR DÉFAUT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  SÉLECTION AUTOMATIQUE|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  FORCÉ|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  ID DE MESSAGES|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
 |&nbsp;&nbsp;&nbsp;  CARACTÉRISTIQUES|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
 | 4.3.4.2.  EXT-X-STREAM-INF  |1|0|OBLIGATOIRE|Prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|Attribut|Prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|Attribut|N/A|N/A|N/A|
+|&nbsp;&nbsp;&nbsp;  BANDE PASSANTE|1|0|Attribut|Prise en charge|Prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  ID DE PROGRAMME|1|0|Attribut|N/A|N/A|N/A|
 |&nbsp;&nbsp;&nbsp;  BANDE PASSANTE MOYENNE|7|14|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
 |&nbsp;&nbsp;&nbsp;  CODECS|1|0|Attribut|Prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|Attribut|Prise en charge|Prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  RÉSOLUTION|2|3|Attribut|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  FRÉQUENCE D’IMAGES|7|15|Attribut|N/A|N/A|N/A|
 |&nbsp;&nbsp;&nbsp;  AUDIO|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  VIDÉO|4|7|Attribut|Prise en charge|Prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  SOUS-TITRES|5|9|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  LÉGENDES FERMÉES|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
@@ -76,7 +76,7 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
 | 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|FACULTATIVE|Non prise en charge|Prise en charge|Prise en charge|
 | 4.3.5.2.  EXT-X-START  |6|12|FACULTATIVE|Non prise en charge|Prise en charge partielle|Prise en charge partielle|
 |&nbsp;&nbsp;&nbsp;  OFFSET D’HEURE|6|12|Attribut|Non prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|Attribut|Non prise en charge|Valeur « NON » par défaut prise en charge|Valeur « NON » par défaut prise en charge|
+|&nbsp;&nbsp;&nbsp;  PRÉCISE|6|12|Attribut|Non prise en charge|Valeur « NON » par défaut prise en charge|Valeur « NON » par défaut prise en charge|
 
 
 

@@ -113,19 +113,19 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 **Tâche en arrière-plan détaillées des rubriques d’instruction**
 
 * [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan out-of-process](create-and-register-a-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Lire des médias dans l’arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
-* [Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)
-* [Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
-* [Exécuter une tâche en arrière-plan sur un minuteur](run-a-background-task-on-a-timer-.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 
 **Conseils sur les tâches en arrière-plan**
 
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 

@@ -4,7 +4,7 @@ description: Cet article décrit la nouvelle technologie Windows Hello intégré
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

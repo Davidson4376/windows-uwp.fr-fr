@@ -1,5 +1,5 @@
 ---
-description: Cette rubrique vous guide tout au long des étapes de création d’un contrôle personnalisé simple à l’aide de C++ / c++ / WinRT. Vous pouvez créer sur les informations ici pour créer vos propres contrôles d’interface utilisateur riche et personnalisables.
+description: Cette rubrique vous guide tout au long des étapes de création d’un contrôle personnalisé simple à l’aide de C++/WinRT. Vous pouvez vous baser sur les informations présentées ici pour créer vos propres contrôles d’interface utilisateur riches en fonctionnalités et personnalisables.
 title: Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article

@@ -67,4 +67,4 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Sélectionnez des contacts](selecting-contacts.md)
+* [Sélectionner des contacts](selecting-contacts.md)

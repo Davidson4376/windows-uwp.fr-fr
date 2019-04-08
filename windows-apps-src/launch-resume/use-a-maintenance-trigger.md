@@ -118,15 +118,15 @@ Pour vous assurer que votre application Windows universelle continue de s’exé
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
-* [Créer et inscrire une tâche en arrière-plan out-of-process](create-and-register-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste d’application](declare-background-tasks-in-the-application-manifest.md)
-* [Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)
-* [Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Mettre à jour d’une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
-* [Exécuter une tâche en arrière-plan sur un minuteur](run-a-background-task-on-a-timer-.md)
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)

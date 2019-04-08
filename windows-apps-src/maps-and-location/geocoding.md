@@ -121,11 +121,11 @@ town = Redmond
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Recommandations de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéo : Utilisation de cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
 * [**MapLocationFinder** classe](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync** (méthode)](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync** (méthode)](https://msdn.microsoft.com/library/windows/apps/dn636928)

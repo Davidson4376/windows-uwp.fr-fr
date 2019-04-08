@@ -112,7 +112,7 @@ Les articles suivants vous aident à ajouter des fonctionnalités réseau et à 
 -   [Connexion avec des sockets (applications UWP à l’aide de C#/VB/C++ et XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
 -   [Connexion avec les WebSockets (applications UWP à l’aide de C#/VB/C++ et XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
 -   [Connexion aux services web (applications UWP à l’aide de C#/VB/C++ et XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
--   [Principes de base de mise en réseau](https://msdn.microsoft.com/library/windows/apps/mt280233)
+-   [Notions de base relatives aux réseaux](https://msdn.microsoft.com/library/windows/apps/mt280233)
 
 Notez que toutes les applications pour UWP (y compris les jeux) utilisent des types spécifiques de tâches en arrière-plan pour maintenir la connectivité pendant la suspension de l’application. Si votre jeu doit rester en état de connexion pendant sa suspension, voir [Notions de base en matière de réseau](https://msdn.microsoft.com/library/windows/apps/mt280233).
 
@@ -216,7 +216,7 @@ Aidez-vous du tableau suivant pour convertir du code Direct3D 9 en Direct3D 11. 
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174373">IDirect3DDevice9:DrawRectPatch</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174374">IDirect3DDevice9:DrawTriPatch</a></p>
-<p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174421">IDirect3DDevice9:LightEnable</a></p>
+<p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174421">IDirect3DDevice9 : LightEnable</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174422">IDirect3DDevice9:MultiplyTransform</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb205798">IDirect3DDevice9:SetLight</a></p>
 <p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174437">IDirect3DDevice9:SetMaterial</a></p>

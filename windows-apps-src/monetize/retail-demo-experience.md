@@ -8,14 +8,14 @@ keywords: windows 10, uwp, application de démonstration commerciale
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596754"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application
 
-Les clients qui essaient de PC et appareils sur le sol ventes peuvent se rendre directement dans inclut un mode de démonstration de vente au détail dans votre application Windows.
+Incluez un mode de version de démonstration commerciale dans votre application Windows pour que les clients qui essaient des ordinateurs et des appareils sur le point de vente puissent y accéder.
 
 Lorsque les clients se trouvent dans un magasin de vente au détail, ils s’attendent à pouvoir essayer les démonstrations de PC et appareils. Ils passent souvent une partie considérable de leur temps à toucher à des applications via le [démonstration expérience (RDX) de la vente au détail](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience).
 

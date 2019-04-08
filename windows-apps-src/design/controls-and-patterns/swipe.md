@@ -22,7 +22,7 @@ ms.locfileid: "57626654"
 
 Les commandes de balayage sont des accélérateurs de menus contextuels qui permettent aux utilisateurs d'accéder facilement aux actions courantes des menus sans avoir à modifier les états au sein de l’application.
 
-> **API importantes**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [classe de ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **API importantes** : [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [classe de ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Exécuter et afficher le thème de luminosité](images/LightThemeSwipe.png)
 
@@ -46,7 +46,7 @@ Vous devez utiliser les commandes de balayage lorsque vous disposez d’un group
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SwipeControl">ouvrir l’application et voir l'objet SwipeControl en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

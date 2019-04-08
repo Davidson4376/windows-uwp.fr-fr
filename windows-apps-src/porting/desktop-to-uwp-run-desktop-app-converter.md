@@ -246,7 +246,7 @@ Voici la liste complète des paramètres (organisés par catégorie) que vous po
 * [Conversion](#conversion-params)
 * [Identité du package](#identity-params)
 * [Manifeste du package](#manifest-params)
-* [Cleanup](#cleanup-params)
+* [Nettoyage](#cleanup-params)
 * [Architecture](#architecture-params)
 * [Divers](#other-params)
 
@@ -267,7 +267,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-InstallerArguments &lt;chaîne&gt; |Facultatif |Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès &lt;log_folder&gt;, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE** : Indicateurs de sans assistance/en mode silencieux et des arguments de journal varient entre les technologies de programme d’installation. <br><br>Un exemple d’utilisation pour ce paramètre : InstallerArguments-« /silent/log &lt;dossier_journal&gt;\install.log » peut ressembler à un autre exemple qui ne produit pas un fichier journal : ```-InstallerArguments "/quiet", "/norestart"``` Là encore, vous devez diriger littéralement tous les journaux pour le chemin d’accès de jeton &lt;dossier_journal&gt; si vous souhaitez que le convertisseur à capturer et placez-le dans le dossier de journal final.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Facultatif |Une liste séparée par des virgules de codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple : 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script pour empaqueter la sortie en tant que MSIX Package. |
+|-MakeMSIX [&lt;Paramètre_booléen&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script pour empaqueter la sortie en tant que MSIX Package. |
 |<a id="identity-params" /><strong>Paramètres d’identité de package</strong>||
 |-PackageName &lt;chaîne&gt; |Obligatoire |Le nom de votre package d’application Windows universelle. Si les partenaires assigne une identité à votre package commence par un nombre, assurez-vous que vous transmettez également dans le <i>- AppId</i> paramètre et utiliser uniquement le suffixe de chaîne (après le point de séparation) en tant que la valeur de ce paramètre. |
 |-Éditeur &lt;chaîne&gt; |Obligatoire |L’éditeur de votre package d’application Windows universelle |

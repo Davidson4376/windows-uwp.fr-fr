@@ -22,7 +22,7 @@ Les affichages de sortie de flux activent les informations de vertex fournies pa
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

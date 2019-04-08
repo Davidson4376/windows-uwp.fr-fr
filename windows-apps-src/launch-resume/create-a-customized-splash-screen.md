@@ -417,7 +417,7 @@ namespace SplashScreenExample
 }
 ```
 
-### <a name="appxamlcs"></a>App.xaml.cs
+### <a name="appxamlcs"></a>App.Xaml.cs
 
 Ce projet a été créé à l’aide de l’application UWP **application vide (XAML)** modèle de projet dans Visual Studio. Les gestionnaires d’événements `OnNavigationFailed` et `OnSuspending` sont générés automatiquement et n’ont pas besoin d’être modifiés pour l’implémentation d’un écran de démarrage étendu. Cette rubrique modifie uniquement `OnLaunched`.
 
@@ -541,7 +541,7 @@ namespace SplashScreenExample
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Cycle de vie](app-lifecycle.md)
+* [Cycle de vie de l’application](app-lifecycle.md)
 
 **Référence**
 

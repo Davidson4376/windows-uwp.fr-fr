@@ -24,7 +24,7 @@ Un menu volant est un conteneur d’abandon interactif capable d’afficher l’
 
 ![Menu contextuel imbriqué dans un menu volant](../images/flyout-nested.png)
 
-> **API importantes**: [Classe de menu volant](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **API importantes** : [Classe de menu volant](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -39,16 +39,16 @@ Pour obtenir des recommandations sur quand utiliser un menu volant et quand util
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l’objet <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> ou <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> en action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>Comment créer un menu volant
+##  <a name="how-to-create-a-flyout"></a>Procédure pour créer un menu volant
 
 
 Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) propriété pour spécifier l’emplacement d’un menu volant : Haut, gauche, bas, à droite ou intégral. Si vous sélectionnez le [mode de placement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).

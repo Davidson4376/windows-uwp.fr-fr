@@ -151,7 +151,7 @@ Le bouton figurant dans l’aire de conception est alors mis à jour pour prése
 
 Par défaut, l’application s’exécute sur l’ordinateur local. Le menu des périphériques cibles vous offre plusieurs options pour le débogage de votre application sur des périphériques de la famille des ordinateurs de bureau.
 
--   **Simulator**
+-   **Simulateur**
 -   **Ordinateur local**
 -   **Ordinateur distant**
 

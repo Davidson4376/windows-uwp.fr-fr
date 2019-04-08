@@ -22,10 +22,10 @@ Pour configurer cette infrastructure, procurez-vous tout d’abord un fournisseu
 L’objet fournisseur d’affichage implémente l’interface __IFrameworkView__, qui se compose d’une série de méthodes qui doit être configurée pour créer cet exemple de jeu.
 
 Vous devez implémenter les cinq méthodes suivantes appelées par le singleton de l’application :
-* [__Initialize__](#initialize-the-view-provider)
+* [__initialiser__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Charge__](#load-method-of-the-view-provider)
-* [__Run__](#run-method-of-the-view-provider)
+* [__exécuter__](#run-method-of-the-view-provider)
 * [__Annuler l’initialisation__](#uninitialize-method-of-the-view-provider)
 
 La méthode __Initialize__ est appelée lors du lancement de l’application. La méthode __SetWindow__ est appelée après __Initialize__. La méthode __Load__ est ensuite appelée. La méthode __Run__ est exécutée quand le jeu est en cours d’exécution. Lorsque le jeu se termine, la méthode __Uninitialize__ est appelée. Pour plus d’informations, consultez la documentation de référence de l’API [__IFrameworkView__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview). 

@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646334"
 ---
-# <a name="getting-started-getting-around-in-visual-studio"></a>Mise en route : Savoir maîtriser Visual Studio
+# <a name="getting-started-getting-around-in-visual-studio"></a>Bien démarrer : Savoir maîtriser Visual Studio
 
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>Savoir maîtriser Microsoft Visual Studio

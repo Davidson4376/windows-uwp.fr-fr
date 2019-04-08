@@ -204,7 +204,7 @@ Les aspects relatifs aux threads de [**DependencyObject**](https://msdn.microsof
 
 - [Propriétés de dépendance personnalisées](custom-dependency-properties.md)
 - [Vue d’ensemble des propriétés jointes](attached-properties-overview.md)
-- [Liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [Animations de storyboard](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 - [Utilisateur XAML et des exemples de contrôles personnalisés](https://go.microsoft.com/fwlink/p/?linkid=238581)

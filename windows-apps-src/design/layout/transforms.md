@@ -50,7 +50,7 @@ Pour les besoins des tests de positionnement, un objet auquel une transformation
 
 ## <a name="span-idothertransformpropertiesspanspan-idothertransformpropertiesspanspan-idothertransformpropertiesspanother-transform-properties"></a><span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>Autres propriétés de transformation
 
--   [**Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082), [**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080): Ces influence comment un [ **pinceau** ](/uwp/api/Windows.UI.Xaml.Media.Brush) utilise espace de coordonnées dans la zone qui le **pinceau** est appliqué pour définir les propriétés visuelles telles que les arrière-plans et colorier. Ces transformations ne sont pas pertinentes pour les pinceaux les plus courants (qui définissent généralement des couleurs unies avec [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)), mais peuvent parfois être utiles quand vous peignez une zone avec un objet [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) ou [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108).
+-   [**Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082), [ **Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080): Ces influence comment un [ **pinceau** ](/uwp/api/Windows.UI.Xaml.Media.Brush) utilise espace de coordonnées dans la zone qui le **pinceau** est appliqué pour définir les propriétés visuelles telles que les arrière-plans et colorier. Ces transformations ne sont pas pertinentes pour les pinceaux les plus courants (qui définissent généralement des couleurs unies avec [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)), mais peuvent parfois être utiles quand vous peignez une zone avec un objet [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) ou [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108).
 -   [**Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066): Vous pouvez utiliser cette propriété pour appliquer une transformation à une géométrie avant d’utiliser cette géométrie pour un [ **Path.Data** ](https://msdn.microsoft.com/library/windows/apps/BR243356) valeur de propriété.
 
 ## <a name="span-idanimatingatransformspanspan-idanimatingatransformspanspan-idanimatingatransformspananimating-a-transform"></a><span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>Animer une transformation
@@ -109,7 +109,7 @@ La description mathématique d’une transformation peut vous être utile si vou
 |---------------------------------------------|---------------------------------------------|-----|
 | [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | 0   |
 | [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
-| [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
+| [**offsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**offsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
 
  
 
@@ -127,7 +127,7 @@ Dans Windows 10, XAML a introduit une nouvelle propriété, [**UIElement.Transf
 
 * [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)
 * [Effets de perspective 3D pour XAML UI](3-d-perspective-effects.md)
-* [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)
+* [**Transformation**](https://msdn.microsoft.com/library/windows/apps/BR243006)
  
 
  

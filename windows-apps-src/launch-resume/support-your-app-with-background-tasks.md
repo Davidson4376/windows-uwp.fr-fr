@@ -163,8 +163,8 @@ Certaines opérations d’appareil critiques, comme les longues mises à jour de
 
 Les tâches en arrière-plan peuvent signaler leur progression, leur annulation et leur achèvement à votre application par le biais d’événements et du stockage local. Votre application peut également intercepter les exceptions levées par une tâche en arrière-plan et gérer l’inscription des tâches en arrière-plan lors des mises à jour des applications. Pour plus d’informations, voir :
 
-[Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)  
-[Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
+[Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)  
+[Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 
 Vérifiez l’inscription des tâches en arrière-plan pendant le lancement de l’application. Assurez-vous que les tâches en arrière-plan dissociées de votre application sont présentes dans BackgroundTaskBuilder.AllTasks. Réinscrivez celles qui ne sont pas présentes. Annulez l’inscription de toutes les tâches qui ne sont plus nécessaires. Cela garantit que toutes les inscriptions des tâches en arrière-plan sont à jour à chaque lancement de l’application.
 
@@ -176,24 +176,24 @@ Vérifiez l’inscription des tâches en arrière-plan pendant le lancement de l
 
 **Conseils de tâche en arrière-plan connexes**
 
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Capteurs de l’accès et des appareils à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan en cours](create-and-register-an-inproc-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan out-of-process](create-and-register-a-background-task.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste d’application](declare-background-tasks-in-the-application-manifest.md)
-* [Inscription de la tâche en arrière-plan groupe](group-background-tasks.md)
-* [Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Regrouper l’inscription de tâches en arrière-plan](group-background-tasks.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
+* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Lire des médias dans l’arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
-* [Exécuter une tâche en arrière-plan sur un minuteur](run-a-background-task-on-a-timer-.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Exécuter une tâche en arrière-plan lorsque votre application UWP est mis à jour](run-a-background-task-during-updatetask.md)
 * [Exécuter en arrière-plan indéfiniment](run-in-the-background-indefinetly.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Déclencher une tâche en arrière-plan à partir de votre application](trigger-background-task-from-app.md)
-* [Mettre à jour d’une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)

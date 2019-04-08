@@ -236,7 +236,7 @@ Comme nous l’avons mentionné dans la section précédente, pour éviter une e
 
    *« Local » onglet comportement de navigation*
 
-- **Once**  
+- **Fois**  
   Le conteneur et tous les éléments enfants reçoivent une fois le focus. Dans cet exemple, l’ordre de tabulation est B1, B2, B7, B1 (la navigation interne avec la touche de direction est également illustrée).
 
    ![Comportement de navigation par tabulation « Once »](images/keyboard/tabnav-once.gif)

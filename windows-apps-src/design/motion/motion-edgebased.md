@@ -23,7 +23,7 @@ ms.locfileid: "57610204"
 
 Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran. L’utilisateur ou l’application peut initier les actions d’affichage ou de masquage. L’interface utilisateur peut se superposer à l’application ou intégrer sa surface principale. Si l’élément d’interface utilisateur fait partie de la surface principale, un redimensionnement du reste de l’application peut être nécessaire pour l’accueillir.
 
-> **API importantes**: [**Classe de EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **API importantes** : [**Classe de EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées

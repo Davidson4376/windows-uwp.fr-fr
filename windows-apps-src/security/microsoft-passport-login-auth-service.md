@@ -4,7 +4,7 @@ description: Voici la deuxième partie de la procédure complète sur l’utilis
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
