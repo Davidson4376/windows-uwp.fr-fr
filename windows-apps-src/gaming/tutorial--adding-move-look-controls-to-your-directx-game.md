@@ -181,8 +181,8 @@ Enfin, nous utilisons les méthodes et propriétés suivantes pour accéder aux 
 -   **Initialize**. Notre application appelle ce gestionnaire d’événements pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui décrit notre fenêtre d’affichage.
 -   **SetPosition**. Notre application appelle cette méthode pour définir les coordonnées (x, y et z) de nos contrôles dans l’espace de scène.
 -   **SetOrientation**. Notre application appelle cette méthode pour définir les tangage et lacet de la caméra.
--   **get\_Position**. Notre application accède à cette propriété pour obtenir la position actuelle de la caméra dans l’espace de scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
--   **get\_LookPoint**. Notre application accède à cette propriété pour obtenir le point actuel vers lequel la caméra du contrôleur est orientée.
+-   **obtenir\_Position**. Notre application accède à cette propriété pour obtenir la position actuelle de la caméra dans l’espace de scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
+-   **obtenir\_LookPoint**. Notre application accède à cette propriété pour obtenir le point actuel vers lequel la caméra du contrôleur est orientée.
 -   **Update**. Lit l’état des contrôleurs de déplacement et de vue, et met à jour la position de la caméra. Vous appelez continuellement cette méthode à partir de la boucle principale de l’application pour actualiser les données de contrôleur de la caméra et la position de la caméra dans l’espace de scène.
 
 Vous disposez à présent ici de tous les composants nécessaires pour implémenter vos contrôles de déplacement/vue. Rassemblons tous ces éléments.
@@ -384,7 +384,7 @@ Lorsque la touche est relâchée, ce gestionnaire d’événements lui réaffect
 
 Rassemblons à présent les événements et initialisons tous les champs des états du contrôleur.
 
-**Initialize**
+**initialiser**
 
 ```cpp
 void MoveLookController::Initialize( _In_ CoreWindow^ window )

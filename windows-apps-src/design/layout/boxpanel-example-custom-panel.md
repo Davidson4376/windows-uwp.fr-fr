@@ -25,7 +25,7 @@ ms.locfileid: "57620124"
 
 Apprenez à écrire du code pour une classe [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) personnalisée, en implémentant les méthodes [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) et [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730), et en utilisant la propriété [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514). 
 
-> **API importantes**: [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
+> **API importantes** : [**Panneau**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
 
 L’exemple de code illustre une implémentation de panneau personnalisé, mais nous ne consacrons pas beaucoup de temps à expliquer les concepts de disposition qui influencent la façon dont vous pouvez personnaliser un panneau pour différents scénarios de disposition. Pour plus d’informations sur ces concepts de disposition et sur la manière dont ils peuvent s’appliquer à votre propre scénario de disposition, voir [Vue d’ensemble des panneaux personnalisés XAML](custom-panels-overview.md).
 
@@ -225,7 +225,7 @@ Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un r
 
 * [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 * [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**Panneau de configuration**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **Concepts**
 

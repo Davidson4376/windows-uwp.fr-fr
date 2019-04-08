@@ -20,7 +20,7 @@ ms.locfileid: "57593834"
 
 Découvrez comment sélectionner une langue installée à utiliser pour la reconnaissance vocale.
 
-> **API importantes**: [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
+> **API importantes** : [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [ **langage**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 Nous avons répertorié les langues installées sur un système. Identifiez la langue par défaut et sélectionnez une autre langue pour la reconnaissance.

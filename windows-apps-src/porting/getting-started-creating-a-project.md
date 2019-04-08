@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601444"
 ---
-# <a name="getting-started-creating-a-project"></a>Mise en route : Création d’un projet
+# <a name="getting-started-creating-a-project"></a>Bien démarrer : Création d’un projet
 
 ## <a name="creating-a-project"></a>Création d’un projet
 

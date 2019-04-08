@@ -19,7 +19,7 @@ ms.locfileid: "57598234"
 # <a name="streaming-resources"></a>Ressources de diffusion en continu
 
 
-Les *ressources de diffusion en continu* sont de grandes ressources logiques utilisant de petites quantités de mémoire physique. En lieu et place de l’affichage d’une grande ressource dans son intégralité, de petites portions de la ressource sont diffusées en continu. Les ressources de diffusion en continu étaient auparavant appelées des *ressources sous forme de vignettes*.
+Les *ressources de diffusion en continu* sont de grandes ressources logiques utilisant de petites quantités de mémoire physique. Pour éviter le passage d’une grande ressource dans son intégralité, de petites parties de cette ressource font l’objet d’un streaming selon les besoins. Les ressources de diffusion en continu étaient auparavant appelées des *ressources sous forme de vignettes*.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 

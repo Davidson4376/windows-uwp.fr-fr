@@ -8,7 +8,7 @@ ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: f60780186256e7f78a9596c979c79bfc704ae4c2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660164"
@@ -99,7 +99,7 @@ Notez que cette méthode invalide le canal utilisé pour les notifications et do
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Envoyer des notifications push pour les clients de votre application](../publish/send-push-notifications-to-your-apps-customers.md)
-* [Vue d’ensemble des Services de Notification Push Windows (WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
+* [Envoyer des notifications Push aux clients de votre application](../publish/send-push-notifications-to-your-apps-customers.md)
+* [Vue d’ensemble des services de notifications Push Windows (WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 * [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868221(v=win.10))
 * [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

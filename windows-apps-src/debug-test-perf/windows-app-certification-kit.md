@@ -1,7 +1,7 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Kit de certification des applications Windows
-description: Pour donner à votre application les meilleures chances d’être publiée sur le Microsoft Store, ou pour réussir la certification de Windows, valider et tester localement avant de le soumettre pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
+description: Pour maximiser les chances de publication sur le Microsoft Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
@@ -93,7 +93,7 @@ Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Tests du Kit de Certification des applications Windows](windows-app-certification-kit-tests.md)
-* [Stratégies de Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  

@@ -21,7 +21,7 @@ ms.locfileid: "57642834"
 
 Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
 
-> **API importantes**: [**Classe de AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **API importantes** : [**Classe de AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -41,7 +41,7 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animer la liste des ajouts et suppressions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
+* [**Classe de AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  
 

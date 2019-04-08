@@ -59,7 +59,7 @@ Pour plus d’informations, consultez [Gérer les droits sur les produits à par
 | modifiedAfter     | DateHeure     | Si ce paramètre est spécifié, le service retourne uniquement les produits qui ont été modifiés après cette date.        | Non       |
 | parentProductId   | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les extensions correspondant à l’application spécifiée.      | Non       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Si ce paramètre est spécifié, le service retourne uniquement les produits applicables aux paires produit/référence fournies. Pour plus d’informations, voir le tableau ci-dessous.      | Non       |
-| productTypes      | list&lt;string&gt;       | Spécifie les types de produits à retourner dans les résultats de requête. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.     | Oui       |
+| productTypes      | liste&lt;chaîne&gt;       | Spécifie les types de produits à retourner dans les résultats de requête. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.     | Oui       |
 | validityType      | chaîne       | Si ce paramètre est défini sur **All**, tous les produits d’un utilisateur sont retournés, y compris les articles arrivés à expiration. S’il est défini sur **Valid**, seuls les produits qui sont valides à ce stade sont retournés (autrement dit, ils ont un état actif, une date de début &lt; maintenant et une date de fin &gt; maintenant). | Non       |
 
 

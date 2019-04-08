@@ -90,9 +90,9 @@ Une fois cette requête soumise, la propriété [réponse](https://docs.microsof
 
 |  Champ  |  Description  |
 |----------------------|---------------|
-|  *anonymous*                   |  Valeur booléenne, où **true** (vrai) indique que l’identité de l’utilisateur ou du périphérique n’était pas présente dans la demande, et **false** (faux) indique que l’identité de l’utilisateur ou du périphérique était contenue dans la demande.  |
+|  *Anonyme*                   |  Valeur booléenne, où **true** (vrai) indique que l’identité de l’utilisateur ou du périphérique n’était pas présente dans la demande, et **false** (faux) indique que l’identité de l’utilisateur ou du périphérique était contenue dans la demande.  |
 |  *name*                   |  Une chaîne contenant le nom du groupe de versions d’évaluation le plus élevé auquel appartient l’appareil ou l’utilisateur.  |
-|  *settings*                   |  Un dictionnaire de paires clé/valeur contenant le nom et la valeur des variables distantes que le développeur a configurées pour le groupe de versions d’évaluation.  |
+|  *Paramètres*                   |  Un dictionnaire de paires clé/valeur contenant le nom et la valeur des variables distantes que le développeur a configurées pour le groupe de versions d’évaluation.  |
 
 L’exemple qui suit montre une valeur de retour pour cette demande.
 

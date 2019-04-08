@@ -25,7 +25,7 @@ Les contrôles de texte comprennent les zones de saisie de texte, les zones de m
 - Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
 - Les contrôles pour l’entrée de texte et la modification sont : [Zone de texte](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), et [PasswordBox](password-box.md).
 
-> **API importantes**: [Classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [classe TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [RichEditBox classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+> **API importantes** : [Classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [classe TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [RichEditBox classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -79,7 +79,7 @@ Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/category/Text">ouvrir l’application et voir les contrôles de texte en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -107,7 +107,7 @@ Pour plus d’informations et d’exemples propres à chaque contrôle de texte,
 -   [RichEditBox](rich-edit-box.md)
 -   [RichTextBlock](rich-text-block.md)
 -   [TextBlock](text-block.md)
--   [TextBox](text-box.md)
+-   [Zone de texte](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>Recommandations en matière de polices et de styles
 Pour découvrir les recommandations concernant les polices, voir les articles suivants :
@@ -117,7 +117,7 @@ Pour découvrir les recommandations concernant les polices, voir les articles su
 
 ## <a name="pen-input"></a>Saisie effectuée à l’aide du stylet
 
-**S’applique à :** TextBox, RichEditBox, AutoSuggestBox
+**S’applique à :** Zone de texte, RichEditBox, AutoSuggestBox
 
 À partir de Windows 10, version 1803, les zones de saisie de texte XAML présentent une prise en charge intégrée de saisie effectuée à l'aide du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Quand un utilisateur appuie sur une zone de texte à l’aide d’un stylet Windows, la zone de texte se transforme pour permettre à l’utilisateur d’écrire dedans directement à l'aide d'un stylet, au lieu d’ouvrir un panneau de saisie distinct.
 
@@ -127,7 +127,7 @@ Pour plus d’informations, consultez [Text input avec la vue de l’écriture m
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Choisir le clavier adapté à votre contrôle de texte
 
-**S’applique à :** TextBox, PasswordBox RichEditBox
+**S’applique à :** Zone de texte, PasswordBox RichEditBox
 
 Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur.
 
@@ -144,7 +144,7 @@ Pour plus d’informations, voir l’article [Utiliser l’étendue des entrées
 
 ## <a name="color-fonts"></a>Polices en couleur
 
-**S’applique à :** TextBlock, RichTextBlock, TextBox, RichEditBox
+**S’applique à :** TextBlock, RichTextBlock, zone de texte, RichEditBox
 
 Les polices Windows peuvent inclure plusieurs couches colorées pour chaque glyphe. Par exemple, la police Segoe UI Emoji définit les versions de couleur des émoticônes et des autres caractères Emoji.
 
@@ -162,7 +162,7 @@ Pour plus d’informations, voir la propriété [IsColorFontEnabled](https://msd
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>Recommandations en matière de séparateurs de lignes et de paragraphes
 
-**S’applique à :** TextBlock, RichTextBlock, multi-line TextBox, RichEditBox
+**S’applique à :** TextBox multiligne de TextBlock, RichTextBlock, RichEditBox
 
 Pour diviser un texte brut, utilisez le caractère séparateur de lignes (0x2028) et le caractère séparateur de paragraphes (0x2029). Une ligne est créée après chaque séparateur de lignes. Un paragraphe est créé après chaque séparateur de paragraphes.
 
@@ -174,7 +174,7 @@ Votre application peut insérer un séparateur de paragraphes entre les paragrap
 
 ## <a name="guidelines-for-spell-checking"></a>Recommandations en matière de vérification orthographique
 
-**S’applique à :** TextBox, RichEditBox
+**S’applique à :** Zone de texte, RichEditBox
 
 Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
 

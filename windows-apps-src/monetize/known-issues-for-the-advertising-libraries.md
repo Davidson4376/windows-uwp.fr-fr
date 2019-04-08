@@ -67,7 +67,7 @@ Lorsqu’une unité d’annonce en ligne affiche des publicités de test, d’é
 
 Lorsque vous utilisez le SDK Microsoft Advertising, vous ne pouvez pas cibler **Toute UC** dans votre projet. Si votre projet cible la plateforme **Toute UC**, un message d’avertissement peut s’afficher après que vous avez ajouté une référence semblable à ce qui suit.
 
-![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![ReferenceError\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Utilisez le **Gestionnaire de configurations** pour définir les cibles de plateforme pour déboguer et publier les configurations.
 

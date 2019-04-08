@@ -514,7 +514,7 @@ Lorsque le `Slider` nécessite une activation du focus, l’utilisateur peut acc
 
 Outre le contrôle [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider), il existe d’autres contrôles que vous souhaiterez peut-être activer :
 
-- [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [Zone de liste](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
 - [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [FlipView]https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)

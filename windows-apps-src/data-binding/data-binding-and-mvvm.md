@@ -53,8 +53,8 @@ Pour obtenir des conseils supplémentaires sur l’utilisation de base, out-of-t
 
 ### <a name="topics"></a>Rubriques
 
-[Liaison de données en profondeur](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
-[{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
+[Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
+[extension de balisage {x : Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
 
 ### <a name="samples"></a>Exemples
 

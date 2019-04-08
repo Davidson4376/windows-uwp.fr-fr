@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57599284"
@@ -61,7 +61,7 @@ L’exemple de code ci-dessous montre comment rendre cette bande de triangles da
 d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
 ```
 
-## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygons
+## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygones
 
 
 Souvent, des triangles sont utilisés pour générer des polygones. Un polygone est une figure 3D fermée délimitée par au moins trois sommets. Le polygone le plus simple est un triangle. Microsoft Direct3D utilise les triangles pour composer la plupart de ses polygones, car les trois sommets d'un triangle sont systématiquement coplanaires. Le rendu de sommets non planaires n’est pas efficace. Vous pouvez combiner des triangles pour former des maillages et des polygones larges et complexes.

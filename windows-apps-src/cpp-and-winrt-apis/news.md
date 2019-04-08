@@ -1,5 +1,5 @@
 ---
-description: Nouveautés et modifications apportées à C++ / c++ / WinRT.
+description: Nouveautés et modifications apportées à C++/WinRT.
 title: Quelles sont les nouveautés en C / c++ / WinRT
 ms.date: 01/29/2019
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb624a93a010dfe9784cf8c26beed12c6cf2f77d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639954"

@@ -21,7 +21,7 @@ ms.locfileid: "57601254"
 
 Le modèle Maître/Détails possède un volet principal (généralement avec un [affichage Liste](lists.md)) et un volet d’informations correspondant au contenu. Lorsqu’un élément de la liste principale est sélectionné, le volet d’informations est mis à jour. Ce modèle est souvent utilisé pour le courrier électronique et les carnets d’adresses.
 
-> **API importantes**: [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [fractionnementaffichage des classes](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **API importantes** : [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [fractionnementaffichage des classes](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
 

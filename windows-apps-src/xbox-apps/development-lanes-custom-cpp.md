@@ -28,6 +28,6 @@ Pour découvrir comment faire de votre console un kit de développement et comme
 
 
 ## <a name="see-also"></a>Voir également
-- [Commercialisation de jeux existants Xbox](development-lanes-landing.md)
+- [Intégration de jeux existants dans Xbox](development-lanes-landing.md)
 - [UWP sur Xbox One](index.md)
 

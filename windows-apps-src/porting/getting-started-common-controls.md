@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610624"
 ---
-# <a name="getting-started-common-controls"></a>Mise en route : Contrôles communs
+# <a name="getting-started-common-controls"></a>Bien démarrer : Contrôles communs
 
 
 ## <a name="common-controls-list"></a>Liste des contrôles courants
@@ -25,15 +25,15 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Contrôle iOS (classe/protocole) | Contrôles UWP équivalente |
 |------------------------------|--------------------------------------|
 | Indicateur d’activité (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> Voir aussi [Démarrage rapide : ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Vue bannière publicitaire (**ADBannerView**) et vue déléguée bannière publicitaire (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> Voir aussi [Afficher des publicités dans votre application](../monetize/display-ads-in-your-app.md) |
-| Bouton (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> Voir aussi [Guide de démarrage rapide : Ajout de contrôles de bouton](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
+| Vue bannière publicitaire (**ADBannerView**) et vue déléguée bannière publicitaire (**ADBannerViewDelegate**) | [Classe AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> Voir aussi [Afficher des publicités dans votre application](../monetize/display-ads-in-your-app.md) |
+| Bouton (UIButton) | [Bouton](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> Voir aussi [Guide de démarrage rapide : Ajout de contrôles de bouton](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | Sélecteur de dates (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Vue image (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> Voir également [Image et ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Libellé (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> Voir aussi [Démarrage rapide : affichage de texte](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
 | Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Consultez [Bing Maps pour les applications UWP](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Contrôleur de navigation (UINavigationController) et contrôleur de navigation délégué (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Contrôle de page (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Vue sélecteur (UIPickerView) et vue déléguée sélecteur (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> Voir aussi [Ajout de zones de liste déroulante et de zones de liste](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
+| Vue sélecteur (UIPickerView) et vue déléguée sélecteur (UIPickerViewDelegate) | [Zone de liste déroulante](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> Voir aussi [Ajout de zones de liste déroulante et de zones de liste](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
 | Barre de progression (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> Voir aussi [Démarrage rapide : ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Vue de défilement (UIScrollView) et vue déléguée de défilement (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  Voir aussi [Exemple de zoom, panoramique et défilement XAML (Extensible Application Markup Language)](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
 | Barre de recherche (UISearchBar) et barre de recherche déléguée (UISearchBarDelegate) | Voir [Ajout d’une fonctionnalité de recherche à une application](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  Voir aussi [Guide de démarrage rapide : Ajout de la recherche à une application](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
@@ -43,7 +43,7 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Switch (UISwitch) | [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/br209712) <br/>  Voir aussi [Comment ajouter un bouton bascule](https://msdn.microsoft.com/library/windows/apps/xaml/hh868198) |
 | Contrôleur de barre d’onglets (UITabBarController) et contrôleur de barre d’onglets délégué (UITabBarControllerDelegate) | Aucune |
 | Contrôleur de vue de table (UITableViewController), vue de table (UITableView), vue de table déléguée (UITableViewDelegate) et cellule de table (UITableViewCell) | [ListView](https://msdn.microsoft.com/library/windows/apps/br242878) <br/>  Voir aussi [Démarrage rapide : ajout des contrôles ListView et GridView](https://msdn.microsoft.com/library/windows/apps/xaml/hh780650) |
-| Champ de texte (UITextField) et champ de texte délégué (UITextFieldDelegate) | [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  Voir aussi [Afficher et modifier du texte](https://msdn.microsoft.com/library/windows/apps/mt280218) |
+| Champ de texte (UITextField) et champ de texte délégué (UITextFieldDelegate) | [Zone de texte](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  Voir aussi [Afficher et modifier du texte](https://msdn.microsoft.com/library/windows/apps/mt280218) |
 | Vue de texte (UITextView) et vue de texte déléguée (UITextViewDelegate) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  Voir aussi [Démarrage rapide : affichage de texte](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
 | Vue (UIView) et contrôleur de vue (UIViewController) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Vue Web (UIWebView) et vue Web déléguée (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  Voir aussi [Exemple de contrôle d’affichage Web XAML](https://go.microsoft.com/fwlink/p/?LinkId=238582) |

@@ -249,7 +249,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 **Remarque :** 
 
 ## <a name="see-also"></a>Voir également
-+ [Mon partage de personnes](my-people-sharing.md)
++ [Partage de Mes Contacts](my-people-sharing.md)
 + [Mes notifications de personnes](my-people-notifications.md)
 + [Vidéo Channel 9 sur l’ajout de personnes de mon prennent en charge à une application](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [Mon exemple d’intégration de personnes](https://aka.ms/mypeoplebuild2017)

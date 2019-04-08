@@ -32,5 +32,5 @@ Cette vidéo approfondit les applications web empaquetées et les applications w
 Pour commencer, téléchargez le moteur de votre choix et recherchez les instructions sur les applications Windows 10. Veillez également à lire le [guide de prise en main](getting-started.md) pour découvrir comment faire de votre console un kit de développement et comment effectuer des déploiements à partir de Visual Studio.
 
 ## <a name="see-also"></a>Voir également
-- [Commercialisation de jeux existants Xbox](development-lanes-landing.md)
+- [Intégration de jeux existants dans Xbox](development-lanes-landing.md)
 - [UWP sur Xbox One](index.md)

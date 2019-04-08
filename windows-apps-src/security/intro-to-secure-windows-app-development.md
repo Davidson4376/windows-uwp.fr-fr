@@ -4,7 +4,7 @@ description: Cet article d’introduction aide les architectes d’application e
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -464,17 +464,17 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [Authentification et identité des utilisateurs](authentication-and-user-identity.md)
 -   [Windows Hello](microsoft-passport.md)
 -   [Stockage sécurisé des informations d’identification](credential-locker.md)
--   [Service broker d’authentification Web](web-authentication-broker.md)
+-   [Service Broker d’authentification web](web-authentication-broker.md)
 -   [Biométrie : empreintes digitales](fingerprint-biometrics.md)
 -   [Cartes à puce](smart-cards.md)
 -   [Certificats partagés](share-certificates.md)
--   [Cryptographie](cryptography.md)
+-   [Chiffrement](cryptography.md)
 -   [Certificats](certificates.md)
 -   [Clés de chiffrement](cryptographic-keys.md)
 -   [Protection des données](data-protection.md)
--   [Les ordinateurs Mac, les hachages et les signatures](macs-hashes-and-signatures.md)
--   [Restrictions sur la cryptographie à l’exportation](export-restrictions-on-cryptography.md)
--   [Tâches courantes de cryptographie](common-cryptography-tasks.md)
+-   [Codes d’authentification des messages, codes de hachage et signatures](macs-hashes-and-signatures.md)
+-   [Restrictions à l’exportation pour le chiffrement](export-restrictions-on-cryptography.md)
+-   [Tâches courantes de chiffrement](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2 Exemples de code
 

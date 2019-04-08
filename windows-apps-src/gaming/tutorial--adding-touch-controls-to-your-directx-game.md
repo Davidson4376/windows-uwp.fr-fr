@@ -212,7 +212,7 @@ void CameraPanController::OnPointerReleased(
 
 Rassemblons les événements et initialisons tous les champs des états de base du contrôleur de la caméra.
 
-**Initialize**
+**initialiser**
 
 ```cpp
 void CameraPanController::Initialize( _In_ CoreWindow^ window )

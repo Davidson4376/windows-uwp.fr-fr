@@ -23,7 +23,7 @@ ms.locfileid: "57646464"
 
 Un contrôle de mode Fractionné inclut un volet pouvant être développé/réduit ainsi qu’une zone de contenu.
 
-> **API importantes**: [Classe de fractionnementaffichage des](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **API importantes** : [Classe de fractionnementaffichage des](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 Voici un exemple de l’application Microsoft Edge utilisant SplitView pour afficher son Hub.
 
@@ -63,7 +63,7 @@ Si vous souhaitez créer un menu de navigation avec un bouton développer/rédui
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SplitView">ouvrir l’application et voir l'objet SplitView en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

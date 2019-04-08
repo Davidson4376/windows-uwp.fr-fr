@@ -1,5 +1,5 @@
 ---
-Description: Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, avec plus ou moins d’exactitude, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à renvoyer. Cette rubrique décrit ce processus en détail et donne des exemples.
+Description: Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, avec plus ou moins d’exactitude, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à retourner. Cette rubrique décrit ce processus en détail et donne des exemples.
 title: Comment le système de gestion des ressources met en correspondance et sélectionne les ressources
 template: detail.hbs
 ms.date: 10/23/2017

@@ -23,7 +23,7 @@ L’utilisation d’une barre de progression dans votre notification toast vous 
 
 Une barre de progression à l’intérieur d’un toast peut être « indéterminée » (aucune valeur spécifique, animées points indiquent une opération est en cours) ou « déterminée » (un pourcentage spécifique de la barre est rempli, telles que 60 %).
 
-> **API importantes**: [Classe de NotificationData](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update méthode](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification classe](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **API importantes** : [Classe de NotificationData](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update méthode](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification classe](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > Seuls les appareils de bureau prennent en charge les barres de progression dans les notifications toast. Sur les autres appareils, la barre de progression est supprimée de votre notification.

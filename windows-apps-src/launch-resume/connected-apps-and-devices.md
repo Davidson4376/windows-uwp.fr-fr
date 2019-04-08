@@ -31,9 +31,9 @@ Pour plus d’informations sur le projet Rome en général, y compris les ressou
 
 | Rubrique | Description |
 |-------|-------------|
-| [Lancer une application sur un périphérique distant](launch-a-remote-app.md) | Découvrez comment lancer une application sur un appareil distant. Cette rubrique décrit le cas d'utilisation le plus simple et la configuration préliminaire.  |
-| [Découvrir les périphériques distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
-| [Communiquer avec un service d’application à distance](communicate-with-a-remote-app-service.md) | Découvrez comment interagir avec une application sur un appareil distant. |
+| [Lancer une application sur un appareil distant](launch-a-remote-app.md) | Découvrez comment lancer une application sur un appareil distant. Cette rubrique décrit le cas d'utilisation le plus simple et la configuration préliminaire.  |
+| [Découvrir des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
+| [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment interagir avec une application sur un appareil distant. |
 | [Connecter des appareils via des sessions à distance](remote-sessions.md) | Créez des expériences partagées sur plusieurs appareils en les rejoignant dans une session à distance. |
-| [Continuer les activités des utilisateurs, même sur des appareils](useractivities.md)| Aider les utilisateurs à reprendre ce que leur faisiez dans votre application, même sur plusieurs appareils.|
+| [Poursuivre l’activité utilisateur, même sur différents appareils](useractivities.md)| Aider les utilisateurs à reprendre ce que leur faisiez dans votre application, même sur plusieurs appareils.|
 | [Meilleures pratiques d’activités utilisateur](useractivities-best-practices.md)| Découvrez les pratiques recommandées pour la création et la mise à jour des activités de l’utilisateur.|

@@ -52,7 +52,7 @@ Obtenez l’état antérieur de votre application grâce à [LaunchActivatedEven
 |-------|-------------|----------------|
 | **NotRunning** | Une application peut être dans cet état, si elle n’a pas été lancée depuis le dernier redémarrage de l’ordinateur ou la dernière ouverture de session. Elle peut également être dans cet état si une erreur d’exécution l’a bloquée ou si l’utilisateur l’a fermée auparavant.| Initialisez l’application comme si elle s’exécutait pour la première fois dans la session utilisateur active. |
 |**Suspendu** | L’utilisateur a réduit l’application ou activé une autre application et n’est pas revenu à la première après quelques secondes. | Lorsque l’application est suspendue, son état est conservé en mémoire. Il vous suffit de vous réapproprier les descripteurs de fichiers ou d’autres ressources qui ont été libérés lorsque l’application a été suspendue. |
-| **Terminated** | L’application a été suspendue puis arrêtée, car le système a dû libérer de la mémoire. | Restaurez l’application dans l’état qui était le sien lorsque l’utilisateur a basculé vers une autre application.|
+| **S’est arrêté** | L’application a été suspendue puis arrêtée, car le système a dû libérer de la mémoire. | Restaurez l’application dans l’état qui était le sien lorsque l’utilisateur a basculé vers une autre application.|
 |**ClosedByUser** | L’utilisateur a fermé l’application en effectuant le mouvement de fermeture en mode tablette ou en appuyant sur Alt + F4. Lorsque l’utilisateur ferme l’application, celle-ci est suspendue puis arrêtée. | Comme l’application a suivi les mêmes étapes qui aboutissent à l’état Terminated, gérez cette situation comme l’état Terminated.|
 |**En cours d’exécution** | L’application était déjà ouverte lorsque l’utilisateur a essayé de la relancer. | Aucune. Notez qu’aucune autre instance de votre application n’est lancée. L’instance en cours d’exécution est simplement activée. |
 
@@ -77,7 +77,7 @@ La classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/w
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)  [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -205,20 +205,20 @@ Le code de base approprié au cycle de vie de l’application est fourni dans le
 
 ## <a name="key-application-lifecycle-apis"></a>Principales API du cycle de vie d’une application
 
--   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
--   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
--   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
--   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class (XAML)
--   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) class (XAML)
+-   [**Windows.ApplicationModel** ](https://msdn.microsoft.com/library/windows/apps/br224691) espace de noms
+-   [**Windows.ApplicationModel.Activation** ](https://msdn.microsoft.com/library/windows/apps/br224766) espace de noms
+-   [**Windows.ApplicationModel.Core** ](https://msdn.microsoft.com/library/windows/apps/br205865) espace de noms
+-   [**Windows.UI.Xaml.Application** ](https://msdn.microsoft.com/library/windows/apps/br242324) classe (XAML)
+-   [**Windows.UI.Xaml.Window** ](https://msdn.microsoft.com/library/windows/apps/br209041) classe (XAML)
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [Instructions pour l’application interrompre et reprendre](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Gérer le prélancement d’application](handle-app-prelaunch.md)
-* [Gérer l’activation d’application](activate-an-app.md)
-* [Interruption des applications de handle](suspend-an-app.md)
-* [Gérer la reprise de l’application](resume-an-app.md)
+* [Gérer le prélancement d’une application](handle-app-prelaunch.md)
+* [Gérer l’activation d’une application](activate-an-app.md)
+* [Gérer l’interruption d’une application](suspend-an-app.md)
+* [Gérer la reprise d’une application](resume-an-app.md)
 * [Activité en arrière-plan avec le modèle de processus](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Lire des médias dans l’arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 

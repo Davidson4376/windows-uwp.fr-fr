@@ -131,7 +131,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [ **ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
@@ -202,9 +202,9 @@ Voici quelques mappages d’intrinsèques de nuanceur courants d’OpenGL ES 2.0
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GL\_Position        | POSITION(n) pour les données de tampon de vertex. SV\_POSITION fournit une position de pixel au nuanceur de pixels et ne peuvent pas être écrits par votre application.                                        |
 | GL\_Normal          | NORMAL(n) pour des données normales fournies par le tampon de vertex.                                                                                                                 |
-| gl\_TexCoord\[n\]   | TEXCOORD(n) pour des données de coordonnées de texture UV (ST dans certaines documentations OpenGL) fournies à un nuanceur.                                                                       |
-| gl\_FragColor       | COLOR(n) pour des données de couleur RVBA fournies à un nuanceur. Notez qu’elles sont traitées de la même façon que les données de coordonnées. La sémantique vous aide simplement à identifier qu’il s’agit de données de couleur. |
-| gl\_FragData\[n\]   | SV\_cible\[n\] en écriture à partir d’un nuanceur de pixels à une texture de cible ou autre mémoire tampon de pixels.                                                                               |
+| GL\_valeur TexCoord\[n\]   | TEXCOORD(n) pour des données de coordonnées de texture UV (ST dans certaines documentations OpenGL) fournies à un nuanceur.                                                                       |
+| GL\_FragColor       | COLOR(n) pour des données de couleur RVBA fournies à un nuanceur. Notez qu’elles sont traitées de la même façon que les données de coordonnées. La sémantique vous aide simplement à identifier qu’il s’agit de données de couleur. |
+| GL\_FragData\[n\]   | SV\_cible\[n\] en écriture à partir d’un nuanceur de pixels à une texture de cible ou autre mémoire tampon de pixels.                                                                               |
 
  
 

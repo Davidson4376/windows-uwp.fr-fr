@@ -242,5 +242,5 @@ Contrairement à Visual Studio, WinDbg a pour principale fonctionnalité de four
 Pour obtenir la liste complète de toutes les commandes de WinDbg, consultez [Commandes du débogueur](https://msdn.microsoft.com/library/ff540507).
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Test et outils de débogage pour la gestion durée de vie des processus (PLM)](testing-debugging-plm.md)
+- [Outils de test et de débogage pour la PLM](testing-debugging-plm.md)
 - [Débogage, tests et analyse des performances](index.md)

@@ -296,5 +296,5 @@ Voici quelques exemples de condition d’erreur et le message d’erreur corresp
 
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Options de ligne de commande MakePri.exe&mdash;createconfig commande](makepri-exe-command-options.md#createconfig-command)
-* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
 * [Système de gestion des ressources&mdash;ResourceContext](resource-management-system.md#resourcecontext)

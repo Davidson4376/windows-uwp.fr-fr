@@ -1,6 +1,6 @@
 ---
 Description: Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous.
-title: Informations fiscales
+title: Détails des taxes
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.date: 01/31/2019
 ms.topic: article
@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, taxes, taxes sur les applications, exigences fiscale
 ms.localizationpriority: medium
 ms.openlocfilehash: e5ada027b835e852d1db728ef124a798540abdf7
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607664"

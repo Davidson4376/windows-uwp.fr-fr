@@ -240,8 +240,8 @@ Vous pouvez également envoyer des notifications Push en exécutant une tâche p
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Vue d’ensemble des Services de Notification Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
-* [Vue d’ensemble de notification brute](raw-notification-overview.md)
+* [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
+* [Vue d’ensemble des notifications brutes](raw-notification-overview.md)
 * [Connexion à Windows Azure Mobile Services (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
 * [Connexion à Windows Azure Mobile Services (C#/C+ c++ / VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
 * [Démarrage rapide : Ajout de notifications push pour un service mobile (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)

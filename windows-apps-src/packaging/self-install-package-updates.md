@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Création de jeu associé et de packages facultatifs](optional-packages.md)
+* [Création de packages facultatifs et d’ensembles associés](optional-packages.md)

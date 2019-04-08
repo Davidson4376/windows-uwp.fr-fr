@@ -7,7 +7,7 @@ keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app c
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57597014"
@@ -787,4 +787,4 @@ Cela produira un fichier `.appxbundle` signé qui contiendra le package principa
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)

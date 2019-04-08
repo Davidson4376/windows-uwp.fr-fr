@@ -41,7 +41,7 @@ L'[étape Pixel Shader (PS)](pixel-shader-stage--ps-.md) ne dispose pas d'entré
 
 Il n’existe aucune prise en charge pour générer automatiquement un ID de primitive pour les primitives adjacentes. Pour les types de primitives avec voisinage (par exemple, une bande de triangles avec voisinage), un ID de primitive est conservé uniquement pour les primitives intérieures (les primitives non adjacentes), comme pour un ensemble des primitives dans une bande de triangles sans voisinage.
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>ID d’instance
 
 
 Un ID d’instance est utilisé par chaque étape du nuanceur pour identifier l’instance de la géométrie en cours de traitement. Il s'agit d'un entier non signé 32 bits dont la valeur par défaut est 0.
@@ -62,7 +62,7 @@ Les tableaux suivants indiquent les valeurs générées par le système pour l�
 | Données de vertex    | C,U | D,U | E,U | F,U | G,U | H,U | I,U | J,U | K,U | L,U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **ID d’instance** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ L'instance de bande de triangles U a 3 primitives de triangle, avec les valeurs
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **InstanceID**  | 0   | 0   | 0   |
+| **ID d’instance**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ Les tableaux suivants indiquent les valeurs générées par le système pour l�
 | Données de vertex    | C,V | D,V | E,V | F,V | G,V | H,V | I,V | J,V | K,V | L,V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **ID d’instance** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ L'instance de bande de triangles V a 3 primitives de triangle, avec les valeurs
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **InstanceID**  | 1   | 1   | 1   |
+| **ID d’instance**  | 1   | 1   | 1   |
 
  
 

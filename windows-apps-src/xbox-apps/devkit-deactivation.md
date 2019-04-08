@@ -85,5 +85,5 @@ Si vous ne parvenez pas à accéder à votre console pour une raison quelconque,
 Si vous n’avez pas encore basculé votre console Xbox One en Mode commercial, faites-le maintenant tel que décrit dans [Basculer en mode commercial](#switch-to-retail-mode).
 
 ## <a name="see-also"></a>Voir également
-- [Activation d’un Mode de développement Xbox](devkit-activation.md)
+- [Activation du mode développeur Xbox One](devkit-activation.md)
 - [UWP sur Xbox One](index.md)

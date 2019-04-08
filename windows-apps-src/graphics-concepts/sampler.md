@@ -26,7 +26,7 @@ Un autre problème se produit lorsque la zone de rendu est située à un angle t
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

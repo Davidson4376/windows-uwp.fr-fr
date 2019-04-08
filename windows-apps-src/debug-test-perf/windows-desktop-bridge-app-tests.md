@@ -286,4 +286,4 @@ Supprimez du package toute clé de signature de code privé (par exemple, les fi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Stratégies de Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)

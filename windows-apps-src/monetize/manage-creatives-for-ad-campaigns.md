@@ -122,7 +122,7 @@ Les corps de requête et de réponse associés à ces méthodes comportent les c
 |  largeur   |  Entier   |  La largeur du contenu créatif.     |  Non    |     |    Oui   |       
 |  landingUrl   |  chaîne   |  Si vous utilisez un service de suivi de campagne comme Kochava, AppsFlyer ou Tune pour mesurer les données d'analyse d’installation de votre application, entrez votre URL de suivi dans ce champ lorsque vous appelez la méthode POST (si cela est spécifié, cette valeur doit être une URI valide). Si vous n’utilisez pas de service de suivi de campagne, omettez cette valeur lorsque vous appelez la méthode POST (dans ce cas, cette URL est créée automatiquement).   |  Non    |     |   Oui    |       
 |  Format   |  chaîne   |   Le format d’annonce. Actuellement, la seule valeur prise en charge est  **Banner**.    |   Non    |  Bannière   |  Non     |       
-|  imageAttributes   | [ImageAttributes](#image-attributes)    |   Fournit des attributs pour l’élément de contenu.     |   Non    |      |   Oui    |       
+|  imageAttributes   | [imageAttributes](#image-attributes)    |   Fournit des attributs pour l’élément de contenu.     |   Non    |      |   Oui    |       
 |  storeProductId   |  chaîne   |   L' [ID Store](in-app-purchases-and-trials.md#store-ids) de l’application à laquelle est associée cette campagne publicitaire. Un produit peut par exemple présenter l’ID 9nblggh42cfd du Windows Store.    |   Non    |    |  Non     |   |  
 
 

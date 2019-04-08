@@ -63,7 +63,7 @@ L’étape Tessellator (TS) se compose de deux phases :
 
     | Type de partitionnement | Plage                       |
     |----------------------|-----------------------------|
-    | Fractions de seconde\_impair      | \[1...63\]                  |
+    | Fractions de seconde\_impair      | \[1... 63\]                  |
     | Fractions de seconde\_même     | Plage de TessFactor : \[2..64\] |
     | Entier              | Plage de TessFactor : \[1..64\] |
     | Pow2                 | Plage de TessFactor : \[1..64\] |

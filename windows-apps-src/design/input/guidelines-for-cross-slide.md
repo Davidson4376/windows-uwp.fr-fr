@@ -123,7 +123,7 @@ C’est la raison pour laquelle l’interaction de sélection par glisser transv
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Drag**
+**Faites glisser**
 
 Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un emplacement à l’autre.
 

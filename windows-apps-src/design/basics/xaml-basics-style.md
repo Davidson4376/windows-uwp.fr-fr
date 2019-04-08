@@ -12,7 +12,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592954"
 ---
-# <a name="tutorial-create-custom-styles"></a>Didacticiel : Créer des styles personnalisés
+# <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
 Ce didacticiel vous montre comment personnaliser l’interface utilisateur de notre application XAML. Avertissement : ce didacticiel peut impliquer ou non une licorne. (Ce n'est pas une blague !)  
 

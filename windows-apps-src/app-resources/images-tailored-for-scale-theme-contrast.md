@@ -8,7 +8,7 @@ keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592024"
@@ -196,7 +196,7 @@ private void RefreshUIImages()
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
-* [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](localize-strings-ui-manifest.md)
+* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
 * [Store et de récupérer les paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
 * [La prise en charge de vignette et toast de langage, de mise à l’échelle et de contraste élevé](tile-toast-language-scale-contrast.md)
 * [Éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)

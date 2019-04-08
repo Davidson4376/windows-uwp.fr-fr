@@ -95,4 +95,4 @@ Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’applica
 
 ## <a name="see-also"></a>Voir également
 
-[Créer et inscrire une tâche en arrière-plan out-of-process](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

@@ -80,7 +80,7 @@ Vous pouvez utiliser un objet [**AudioFrame**](https://docs.microsoft.com/uwp/ap
 * [Appareil photo](camera.md)
 * [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Exemple de trames de la caméra](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Graphiques audio](audio-graphs.md)
+* [Graphes audio](audio-graphs.md)
  
 
 

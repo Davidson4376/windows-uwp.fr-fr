@@ -556,4 +556,4 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 
 ## <a name="see-also"></a>Voir également
 
-- [Meilleures pratiques pour l’écriture dans des fichiers](best-practices-for-writing-to-files.md)
+- [Bonnes pratiques pour l’écriture dans les fichiers](best-practices-for-writing-to-files.md)

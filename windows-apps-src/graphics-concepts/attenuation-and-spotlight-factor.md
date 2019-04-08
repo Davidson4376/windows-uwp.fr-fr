@@ -19,12 +19,12 @@ ms.locfileid: "57659294"
 
 Les composants d’éclairage diffus et spéculaire de l’équation d'illumination globale contiennent des termes qui décrivent l’atténuation de lumière et le cône de point lumineux. Ces termes sont décrits ci-après.
 
-## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>Attenuation
+## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>Atténuation
 
 
 L’atténuation de lumière varie selon le type de lumière et la distance entre la lumière et la position du vertex. Pour calculer l’atténuation, utilisez l'une des équations suivantes.
 
-Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
+Atten = 1 / (att0<sub>je</sub> + att1<sub>je</sub> \* d + att2<sub>je</sub> \* d²)
 
 Où :
 
@@ -68,7 +68,7 @@ L’équation suivante spécifie le facteur de point lumineux.
 | Paramètre         | Valeur par défaut | Type           | Description                              | Plage                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
 | rho<sub>i</sub>   | Non applicable           | Virgule flottante | cosinus (angle) du point lumineux i            | Non applicable                      |
-| phi<sub>i</sub>   | 0,0           | Virgule flottante | Angle de pénombre du point lumineux i en radians | \[theta<sub>i</sub>, pi) |
+| phi<sub>i</sub>   | 0,0           | Virgule flottante | Angle de pénombre du point lumineux i en radians | \[thêta<sub>je</sub>, pi) |
 | theta<sub>i</sub> | 0,0           | Virgule flottante | Angle d'ombre du point lumineux i en radians    | \[0, pi)                 |
 | atténuation           | 0,0           | Virgule flottante | Facteur d’atténuation                           | (-infini, +infini)   |
 

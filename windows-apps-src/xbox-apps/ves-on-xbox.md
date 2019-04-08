@@ -69,9 +69,9 @@ VES considère qu’un contrôle est actionnable si elle implémente un des mod�
 
 - **TogglePattern** (par exemple). Case à cocher) - représente un contrôle qui peut parcourir un ensemble d’états et conserver un état une fois défini.
 
-- **SelectionItemPattern** (eg. Zone de liste déroulante) - représente un contrôle qui agit comme un conteneur pour une collection d’éléments enfants sélectionnables.
+- **SelectionItemPattern** (par exemple). Zone de liste déroulante) - représente un contrôle qui agit comme un conteneur pour une collection d’éléments enfants sélectionnables.
 
-- **ExpandCollapsePattern** (eg. Zone de liste déroulante) - représente les contrôles qui visuellement développés pour afficher le contenu et réduisent pour masquer le contenu.
+- **ExpandCollapsePattern** (par exemple). Zone de liste déroulante) - représente les contrôles qui visuellement développés pour afficher le contenu et réduisent pour masquer le contenu.
 
 - **ScrollPattern** (par exemple). Liste) - représente des contrôles qui agissent comme des conteneurs à défilement pour une collection d’éléments enfants.
 
@@ -148,7 +148,7 @@ Pour les contrôles à défilement, les conseils de la voix pour les commandes d
 
 ![](images/ves_scroll.png) 
 
-## <a name="disambiguation"></a>Disambiguation ##
+## <a name="disambiguation"></a>Levée d’ambiguïté ##
 Lorsque plusieurs éléments d’interface utilisateur ont le même nom ou le module de reconnaissance vocale mis en correspondance plusieurs candidats, VES bascule en mode de levée d’ambiguïté.  Dans cette info-bulle de la voix mode étiquettes seront affichera pour les éléments impliqués afin que l’utilisateur peut sélectionner celui qui convient. L’utilisateur peut annuler hors du mode de levée d’ambiguïté en disant « Annuler ».
 
 Exemple :

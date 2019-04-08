@@ -21,7 +21,7 @@ ms.locfileid: "57620414"
 
 Utilisez les animations en fondu pour faire apparaître ou disparaître des éléments. Les deux animations en fondu les plus courantes sont l’apparition en fondu et la disparition en fondu.
 
-> **API importantes**: [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298), [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **API importantes** : [**Classe de FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298), [ **FadeOutThemeAnimation classe**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -37,8 +37,8 @@ Utilisez les animations en fondu pour faire apparaître ou disparaître des él�
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de fondu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
+* [**Classe de FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
+* [**Classe de FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
  
 

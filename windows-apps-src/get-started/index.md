@@ -91,7 +91,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Tutoriels</h3>
+                    <h3>Didacticiels</h3>
                     <p>Vous recherchez une expérience de formation interactive ? Ces tutoriels vont vous aider.</p>
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Notions de base relatives à l’IU</a></p>

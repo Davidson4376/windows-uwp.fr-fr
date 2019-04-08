@@ -25,7 +25,7 @@ ms.locfileid: "57658594"
 
 De nombreuses applications contiennent des regroupements de contenu sous forme de listes, de grilles et d’arborescences que les utilisateurs peuvent manipuler. Les utilisateurs peuvent par exemple supprimer, renommer, marquer ou actualiser des éléments. Cet article vous montre comment utiliser des commandes contextuelles pour implémenter ces types d’actions d’une manière qui optimise l’expérience pour tous les types d’entrée.  
 
-> **API importantes**: [Interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout propriété](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [interface INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **API importantes** : [Interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout propriété](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [interface INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Utiliser différentes entrées pour exécuter la commande FavoriteCommand](images/ContextualCommand_AddFavorites.png)
 
@@ -453,7 +453,7 @@ Afin d’optimiser votre application pour une entrée à l’aide d’un stylet,
 ## <a name="related-topics"></a>Rubriques connexes
 * [Interface ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [Menus et des Menus contextuels](menus.md)
-* [Swipe](swipe.md)
+* [Effectuez un balayage](swipe.md)
 * [Pour actualiser](pull-to-refresh.md)
 * [Interaction de stylet et du stylet](../input/pen-and-stylus-interactions.md)
 * [Adaptez votre application pour gamepad et Xbox](../devices/designing-for-tv.md)

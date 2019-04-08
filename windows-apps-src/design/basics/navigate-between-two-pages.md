@@ -24,7 +24,7 @@ ms.locfileid: "57616204"
 
 Découvrez comment utiliser une trame et les pages pour activer une navigation pair à pair de base dans votre application. 
 
-> **API importantes**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class, [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class, [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) namespace
+> **API importantes** : [**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682) (classe), [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503) (classe), [ **Windows.UI.Xaml.Navigation** ](https://msdn.microsoft.com/library/windows/apps/br243300) espace de noms
 
 ![Navigation pair à pair](images/peertopeer.png)
 

@@ -169,7 +169,7 @@ Vous pouvez faire en sorte que l’animation exécute plusieurs itérations. Par
 
 Pour plus d’informations sur les valeurs [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) et la syntaxe XAML, voir [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411).
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior = « Stop »**
 
 Par défaut, lorsqu’une animation se termine, l’animation conserve la valeur finale de **To** ou modifiée de **By** pour sa propriété de durée, même une fois celle-ci dépassée. Cependant, si vous définissez la valeur de la propriété [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) sur [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306), la valeur de la valeur animée avant que l’animation ait été appliquée est rétablie, ou plus précisément, la valeur effective déterminée par le système de propriétés de dépendance (pour plus d’informations sur cette distinction, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583)).
 
@@ -239,7 +239,7 @@ Une animation est indépendante si elle a les caractéristiques suivantes :
 
 -   La propriété [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) de l’animation est de 0 seconde (voir Avertissement).
 -   L’animation cible [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity).
--   L’animation cible d’une valeur de la sous-propriété de ces [ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/BR208911) propriétés : [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+-   L’animation cible d’une valeur de la sous-propriété de ces [ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/BR208911) propriétés : [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), [ **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), [ **Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [ **Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 -   L’animation cible [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) ou [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772).
 -   L’animation cible une valeur [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) et utilise un [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) pour animer sa propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color).
 -   L’animation est de type [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320).

@@ -23,7 +23,7 @@ Utiliser une zone de liste déroulante (également appelé une liste déroulante
 
 Lorsque la zone de liste déroulante est fermée, il affiche la sélection actuelle, ou est vide s’il n’existe aucun élément sélectionné. Lorsque l’utilisateur développe la zone de liste modifiable, il affiche la liste d’éléments sélectionnables.
 
-> **API importantes**: [Classe de zone de liste déroulante](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable propriété](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [propriété Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted événement](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **API importantes** : [Classe de zone de liste déroulante](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable propriété](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [propriété Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted événement](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 Une zone de liste déroulante dans son état compact avec un en-tête.
 
@@ -45,7 +45,7 @@ Une zone de liste déroulante dans son état compact avec un en-tête.
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ComboBox">ouvrez l’application et consultez la zone de liste déroulante en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -178,7 +178,7 @@ Avant le Kit de développement logiciel 17763, la valeur de la propriété Selec
 Dans le Kit de développement logiciel 17763 et versions ultérieur, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) n’est pas requis pour se trouver dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, paramètre `colorComboBox.SelectedItem = "Pink"` entraîne :
 
 - SelectedItem = rose
-- SelectedValue = Pink
+- SelectedValue = rose
 - SelectedIndex = -1
 
 ### <a name="text-search"></a>Recherche en texte

@@ -170,7 +170,7 @@ void Audio::CreateDeviceIndependentResources()
 
 Dans l’exemple de jeu, le code pour la lecture des fichiers de format audio est défini dans [MediaReader.h](#mediareaderh)/cpp__.  Pour lire un fichier audio .wav encodé, appelez [MediaReader::LoadMedia](#mediareaderloadmedia-method), en passant le nom de fichier de la .wav comme paramètre d’entrée.
 
-### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia method
+### <a name="mediareaderloadmedia-method"></a>MediaReader::LoadMedia (méthode)
 
 Cette méthode utilise les API [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) pour la lecture du fichier audio .wav en tant que tampon de modulation par impulsions codées (PCM).
 
@@ -461,7 +461,7 @@ Pour le développement de jeux Windows 10, utilisez XAudio2 version 2.9. Cette v
 
 __AudioX2__ est une API de bas niveau qui fournit le traitement des signaux et en combinant foundation. Pour plus d’informations, consultez [XAudio2 Key Concepts](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx).
 
-### <a name="xaudio2-voices"></a>XAudio2 voices
+### <a name="xaudio2-voices"></a>XAudio2 voix
 
 Il existe trois types d’objets de voix XAudio2 : source, le mixage secondaire et la maîtrise de voix. Voix est que les objets XAudio2 utilisent pour traiter, manipuler et lire des données audio. 
 * Les voix source opèrent sur les données audio fournies par le client. 

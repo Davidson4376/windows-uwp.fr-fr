@@ -75,7 +75,7 @@ La scène du jeu doit restituer le rendu lorsque le jeu est lancé. Les instruct
 
 Le flux simple est le suivant :
 1. __Mise à jour__
-2. __Render__
+2. __Rendu__
 3. __Heure actuelle__
 
 ### <a name="gamemainrun-method"></a>Méthode GameMain::Run
@@ -537,7 +537,7 @@ Direct3D 11 est un ensemble d’API qui peuvent créer des graphiques pour les a
 
 Si vous débutez, vous pouvez considérer les ressources (également appelées ressources de l'appareil) comme des informations permettant de rendre un objet comme une texture, une position ou une couleur. Les ressources fournissent des données au pipeline et définissent ce qui est rendu au cours de votre scène. Les ressources peuvent être chargées à partir de vos jeux ou créées dynamiquement au moment de l’exécution.
 
-Une ressource est en fait une zone de la mémoire accessible par le [pipeline](#rendering-pipeline) Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe 2 types de ressources à partir desquelles l’ensemble des ressources Direct3D dérivent : une mémoire tampon et une texture. Jusqu’à 128 ressources peuvent être actives à chaque étape du pipeline. Pour plus d'informations, voir [Resources](../graphics-concepts/resources.md).
+Une ressource est en fait une zone de la mémoire accessible par le [pipeline](#rendering-pipeline) Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe deux types de ressource dont dérivent l’ensemble des ressources Direct3D : la mémoire tampon et la texture. Jusqu’à 128 ressources peuvent être actives à chaque étape du pipeline. Pour plus d'informations, voir [Resources](../graphics-concepts/resources.md).
 
 #### <a name="subresource"></a>Sous-ressource
 

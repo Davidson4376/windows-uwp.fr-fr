@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, présentation
 ms.localizationpriority: medium
 ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649694"
@@ -124,12 +124,12 @@ Dans votre C + c++ / WinRT de programmation, vous pouvez utiliser les fonctionna
 
 ## <a name="important-apis"></a>API importantes
 * [WinRT::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
-* [espace de noms WinRT](/uwp/cpp-ref-for-winrt/winrt)
+* [Espace de noms winrt](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C++ / c++ / WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)
-* [Bien démarrer avec C / c++ / WinRT](get-started.md)
-* [Les types de données C++ standard et C / c++ / WinRT](std-cpp-data-types.md)
+* [Prise en main de C++/WinRT](get-started.md)
+* [Types de données C++ standard et C++/WinRT](std-cpp-data-types.md)
 * [Chaîne gère en C / c++ / WinRT](strings.md)
 * [Windows API UWP](https://docs.microsoft.com/uwp/api/)

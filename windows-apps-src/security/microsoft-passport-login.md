@@ -4,7 +4,7 @@ description: Voici la première partie de la procédure complète sur la créati
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

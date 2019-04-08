@@ -24,7 +24,7 @@ items:
 - name: Soumissions d’application
   href: ../publish/app-submissions.md
   items:
-  - name: Définir les prix et la disponibilité d’une application
+  - name: Définir la tarification et la disponibilité d’une application
     href: ../publish/set-app-pricing-and-availability.md
     items:
     - name: Définir la sélection du marché

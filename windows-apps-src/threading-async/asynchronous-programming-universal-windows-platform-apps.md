@@ -70,6 +70,6 @@ Un objet promise représente une valeur qui sera traitée dans le futur. Dans l�
 Dans de nombreux cas, il est presque aussi simple d’appeler une fonction asynchrone que d’appeler une fonction conventionnelle. La seule différence tient au fait que vous utilisez la méthode [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) ou [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079) pour assigner les gestionnaires des résultats ou des erreurs et pour démarrer l’opération.
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Appeler des API asynchrones dans C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
+* [Appeler des API asynchrones en C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Programmation asynchrone avec Async et Await (c# et Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Scénarios de fonctionnalité exemple Reversi : code asynchrone](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

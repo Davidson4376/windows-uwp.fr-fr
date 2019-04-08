@@ -21,7 +21,7 @@ ms.locfileid: "57644924"
 
 Le contrôle d'évaluation permet aux utilisateurs de visualiser et de définir des évaluations qui reflètent le degré de satisfaction vis-à-vis du contenu et des services. Les utilisateurs peuvent interagir avec le contrôle d'évaluation avec des mouvements tactiles, un stylet, une souris, un boîtier de commande ou un clavier. Les instructions de suivi montre comment utiliser les fonctionnalités du contrôle de l’évaluation pour fournir la flexibilité et la personnalisation.
 
-> **API importantes**: [Classe de RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **API importantes** : [Classe de RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![Exemple de contrôle d'évaluation](images/rating_rs2_doc_ratings_intro.png)
 
@@ -34,7 +34,7 @@ Le contrôle d'évaluation permet aux utilisateurs de visualiser et de définir 
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RatingControl">ouvrir l’application et voir l'objet RatingControl en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

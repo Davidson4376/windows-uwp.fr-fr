@@ -17,7 +17,7 @@ ms.locfileid: "57631474"
 # <a name="resources"></a>Ressources
 
 
-Une ressource est une zone de mémoire accessible par le pipeline Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe 2 types de ressources à partir desquelles l’ensemble des ressources Direct3D dérivent : une mémoire tampon et une texture. Jusqu’à 128 ressources peuvent être actives à chaque étape du pipeline.
+Une ressource est une zone de mémoire accessible par le pipeline Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe deux types de ressource dont dérivent l’ensemble des ressources Direct3D : la mémoire tampon et la texture. Jusqu’à 128 ressources peuvent être actives à chaque étape du pipeline.
 
 Chaque application crée généralement un grand nombre de ressources. Exemples de ressources : tampons de sommet, tampon d’index, tampon de constante textures et ressources de nuanceur. La façon dont les ressources peuvent être utilisées est déterminée par plusieurs options. Vous pouvez créer des ressources plus ou moins typées, contrôler si les ressources disposent d’un accès en lecture et écriture, et rendre des ressources accessibles à l’UC, au processeur graphique ou aux deux. Naturellement, vous devrez faire des compromis entre vitesse et fonctionnalité : plus vous accordez de ressources à une fonctionnalité, moins les performances sont optimales.
 

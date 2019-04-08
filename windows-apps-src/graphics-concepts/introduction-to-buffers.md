@@ -84,7 +84,7 @@ Pour lire une mémoire tampon constante de nuanceur à partir d’un nuanceur, u
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Mémoires tampons de vertex et d’index](vertex-and-index-buffers.md)
+[Tampons vertex et tampons d’index](vertex-and-index-buffers.md)
 
  
 

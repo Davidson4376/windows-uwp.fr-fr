@@ -70,7 +70,7 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Diffusion en continu de ressources](streaming-resources.md)
+[Ressources de streaming](streaming-resources.md)
 
  
 

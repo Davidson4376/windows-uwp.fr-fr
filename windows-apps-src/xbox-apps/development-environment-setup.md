@@ -121,7 +121,7 @@ Avant de pouvoir déployer une application sur votre Xbox One, un utilisateur d
 Félicitations, vous avez correctement créé et déployé votre première application UWP sur Xbox !
 
 ## <a name="see-also"></a>Voir également
-- [Activation d’un Mode de développement Xbox](devkit-activation.md)  
+- [Activation du mode développeur Xbox One](devkit-activation.md)  
 - [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads)  
 - [Programme Windows Insider](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Introduction aux outils de Xbox One](introduction-to-xbox-tools.md) 

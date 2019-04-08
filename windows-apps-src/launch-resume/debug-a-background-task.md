@@ -105,11 +105,11 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan out-of-process](create-and-register-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan en cours](create-and-register-an-inproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste d’application](declare-background-tasks-in-the-application-manifest.md)
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 

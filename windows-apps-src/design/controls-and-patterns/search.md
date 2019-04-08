@@ -24,7 +24,7 @@ ms.locfileid: "57631004"
 
 L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 
-> **API importantes**: [Classe de AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **API importantes** : [Classe de AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>Aspects de l’expérience de recherche
 

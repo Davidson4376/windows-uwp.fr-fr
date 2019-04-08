@@ -30,7 +30,7 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 ![Graphique de l’apprentissage de Windows](images/winml-graphic.png)
 
-### <a name="windows-ui-library"></a>Bibliothèque d’interface utilisateur Windows
+### <a name="windows-ui-library"></a>Bibliothèque d’IU Windows
 
 [La bibliothèque d’interface utilisateur Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres utilisateurs des éléments d’interface pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
 

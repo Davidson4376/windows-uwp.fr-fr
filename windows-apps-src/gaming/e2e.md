@@ -8,7 +8,7 @@ keywords: windows 10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57652324"
@@ -186,7 +186,7 @@ De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour
     </tr>
     <tr>
         <td>Exemples de graphiques Direct3D 11</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">exemples du sdk DirectX</a></td>
     </tr>
     <tr>
         <td>Exemple de jeu à la première personne Direct3D 11</td>
@@ -428,7 +428,7 @@ Les fonctionnalités complètes et la solide intégration à la plateforme de Di
         <td><a href="directx-programming.md">Programmation de DirectX</a></td>
     </tr>
     <tr>
-        <td>Didacticiel : Comment créer un jeu UWP DirectX</td>
+        <td>Tutoriel : Comment créer un jeu UWP DirectX</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></td>
     </tr>
     <tr>
@@ -874,7 +874,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </colgroup>
     <tr>
         <td>Portage d’une application Windows 8 vers une application de plateforme Windows universelle</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Passer de Windows Runtime 8.x à UWP</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Passer de Windows Runtime 8.x à UWP</a></td>
     </tr>
     <tr>
         <td>Portage d’une application Windows 8 vers une application de plateforme Windows universelle (vidéo)</td>
@@ -1046,7 +1046,7 @@ La gestion de la durée de vie des processus, ou cycle de vie des applications, 
     </colgroup>
     <tr>
         <td>Gestion des transitions du cycle de vie des applications</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt243287">Cycle de vie</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt243287">Cycle de vie de l’application</a></td>
     </tr>
     <tr>
         <td>Utilisation de Microsoft Visual Studio pour déclencher des transitions d’application</td>
@@ -1098,7 +1098,7 @@ Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte 
     </colgroup>
     <tr>
         <td>Guide des couleurs</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : Color</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : Couleur</a></td>
     </tr>
 </table>
  
@@ -1183,7 +1183,7 @@ Guides et références pour le développement de jeux DirectX.
         <td><a href="directx-programming.md">Programmation de DirectX</a></td>
     </tr>
     <tr>
-        <td>Didacticiel : Comment créer un jeu UWP DirectX</td>
+        <td>Tutoriel : Comment créer un jeu UWP DirectX</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Créez un jeu UWP simple avec DirectX</a></td>
     </tr>
     <tr>
@@ -1343,7 +1343,7 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
     </tr>
     <tr>
         <td>Application Windows 10 pour le développement interactif des modèles de vignette dynamique</td>
-        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Visualiseur de notifications</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Notifications Visualizer</a></td>
     </tr>
     <tr>
         <td>Extension UWP Tile Generator pour Visual Studio</td>
@@ -1375,7 +1375,7 @@ Un module complémentaire (produit dans l’application) est un article supplém
     </tr>
     <tr>
         <td>Envoi et les détails du module complémentaire</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">Soumissions de module complémentaire</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">Soumissions de modules complémentaires</a></td>
     </tr>
     <tr>
         <td>Surveiller les ventes supplémentaires et des données démographiques pour votre jeu</td>
@@ -1563,7 +1563,7 @@ Vous allez utiliser [partenaires](https://partner.microsoft.com/dashboard) pour 
     </tr>
     <tr>
         <td>Créer des packages facultatifs comme du contenu de jeu DLC</td>
-        <td><a href="../packaging/optional-packages.md">Création de jeu associé et de packages facultatifs</a></td>
+        <td><a href="../packaging/optional-packages.md">Création de packages facultatifs et d’ensembles associés</a></td>
     </tr>
     <tr>
         <td>Créer un package de votre jeu UWP</td>
@@ -1607,7 +1607,7 @@ Ne laissez pas les problèmes de certification retarder la publication de votre 
     </tr>
     <tr>
         <td>Stratégies pour la publication d’applications dans le Microsoft Store</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn764944">Stratégies de Microsoft Store</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn764944">Politiques du Microsoft Store</a></td>
     </tr>
     <tr>
         <td>Comment faire pour éviter certains problèmes de certification d’application courants</td>

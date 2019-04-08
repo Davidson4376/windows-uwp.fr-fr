@@ -37,7 +37,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 
     Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
--   [Ouvrir des fichiers et dossiers avec un sélecteur](quickstart-using-file-and-folder-pickers.md)
+-   [Ouvrir des fichiers et des dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md)
 
     Les fichiers sélectionnés sont souvent ceux auxquels les utilisateurs reviennent inlassablement.
 

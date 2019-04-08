@@ -207,5 +207,5 @@ Si votre application WinJS utilise une version antérieure de Windows 10, vous 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Cycle de vie](app-lifecycle.md)
+* [Cycle de vie de l’application](app-lifecycle.md)
 * [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)

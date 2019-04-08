@@ -20,7 +20,7 @@ ms.locfileid: "57663794"
 Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un utilisateur appuie sur un élément. L’animation de pointeur vers le bas réduit et incline légèrement l’élément sélectionné. Elle est lue lorsque l’utilisateur appuie pour la première fois sur un élément. L’animation de pointeur vers le haut, qui restaure l’élément à sa position d’origine, est lue quand l’utilisateur relâche le pointeur.
 
 
-> **API importantes**: [**PointerUpThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969168), [**PointerDownThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+> **API importantes** : [**Classe de PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969168), [ **PointerDownThemeAnimation classe**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -33,7 +33,7 @@ Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un ut
 * [Animation clics de pointeur](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe de PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969168)
-* [**PointerDownThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+* [**Classe de PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
  
 

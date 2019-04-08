@@ -25,9 +25,9 @@ Pour consulter ces informations, accédez à l’une de vos applications, puis d
 
 Les valeurs suivantes doivent être inclus dans votre manifeste du package. Si vous [utilisez Microsoft Visual Studio pour générer vos packages](../packaging/packaging-uwp-apps.md), et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces éléments :
 
--   **Package/Identity/Name**
+-   **/ Identity/nom du package**
 -   **Package/Identity/serveur de publication**
--   **Package/Properties/PublisherDisplayName**
+-   **Package/propriétés/PublisherDisplayName**
 
 Pour plus d'informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans la [référence du schéma de manifeste de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 

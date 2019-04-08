@@ -148,9 +148,9 @@ Un report n’augmente pas le temps d’exécution nécessaire de votre code ava
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Cycle de vie](app-lifecycle.md)
-* [Gérer l’activation d’application](activate-an-app.md)
-* [Gérer la reprise de l’application](resume-an-app.md)
+* [Cycle de vie de l’application](app-lifecycle.md)
+* [Gérer l’activation d’une application](activate-an-app.md)
+* [Gérer la reprise d’une application](resume-an-app.md)
 * [Les instructions de l’expérience utilisateur pour le lancement, suspendre et reprendre](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [Exécution étendue](run-minimized-with-extended-execution.md)
 

@@ -53,5 +53,5 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 
 
 * [Créer un élément de travail périodique](create-a-periodic-work-item.md)
-* [Soumettre un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Utiliser un minuteur pour soumettre un élément de travail](use-a-timer-to-submit-a-work-item.md)
+* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)

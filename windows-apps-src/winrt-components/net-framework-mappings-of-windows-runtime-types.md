@@ -83,4 +83,4 @@ Tableau 2 : UWP types qui correspondent aux types .NET Framework avec les même
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Création de composants Windows Runtime en c# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

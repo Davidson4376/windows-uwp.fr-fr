@@ -152,6 +152,6 @@ Votre notification sera automatiquement traduite dans les langues que vous avez 
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Vignettes pour les applications UWP](../design/shell/tiles-and-notifications/creating-tiles.md)
-- [Vue d’ensemble des Services de Notification Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
+- [Vue d’ensemble des services de notifications Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Application de visualiseur de notifications](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() (méthode)](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)

@@ -84,5 +84,5 @@ où `Game` est le nom du processus et `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.
 Notez que chaque appel à **/enableDebug** doit ensuite être associé à un autre appel PLMDebug avec le commutateur **/disableDebug**. En outre, le chemin d’accès à un débogueur doit être absolu (les chemins d’accès relatifs ne sont pas pris en charge).
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Déployer et déboguer des applications UWP](deploying-and-debugging-uwp-apps.md)
+- [Déploiement et débogage des applications UWP](deploying-and-debugging-uwp-apps.md)
 - [Débogage, tests et analyse des performances](index.md)

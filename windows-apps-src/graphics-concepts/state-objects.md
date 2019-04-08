@@ -62,7 +62,7 @@ Sinon, vous pouvez choisir d’utiliser le système d’effet qui gère automati
 
 [Pipeline graphique](graphics-pipeline.md)
 
-[Affichage](views.md)
+[Vues](views.md)
 
  
 

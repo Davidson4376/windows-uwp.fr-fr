@@ -12,7 +12,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593074"
 ---
-# <a name="tutorial-create-adaptive-layouts"></a>Didacticiel : Créer des dispositions adaptatives
+# <a name="tutorial-create-adaptive-layouts"></a>Tutoriel : Créer des dispositions adaptatives
 
 Ce didacticiel décrit les principes fondamentaux de l’utilisation des fonctionnalités de dispositions adaptatives et personnalisées du code XAML. Celles-ci vous permettent de créer des applications qui s'adaptent à n'importe quel appareil. Vous allez apprendre à créer un nouveau DataTemplate, à ajouter des points d’ancrage de fenêtre et à adapter la disposition de votre application à l’aide des éléments VisualStateManager et AdaptiveTrigger. Nous allons utiliser ces outils pour optimiser un programme d’édition d’images pour les appareils à petit écran. 
 

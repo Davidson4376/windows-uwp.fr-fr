@@ -126,6 +126,6 @@ Dans les applications du Windows Phone Store, l’événement [**Resuming**](htt
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Cycle de vie](app-lifecycle.md)
-* [Gérer l’activation d’application](activate-an-app.md)
-* [Interruption des applications de handle](suspend-an-app.md)
+* [Cycle de vie de l’application](app-lifecycle.md)
+* [Gérer l’activation d’une application](activate-an-app.md)
+* [Gérer l’interruption d’une application](suspend-an-app.md)

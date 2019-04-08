@@ -255,9 +255,9 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ## <a name="important-apis"></a>API importantes
 * [Interface IUnknown](https://msdn.microsoft.com/library/windows/desktop/ms680509)
 * [QueryInterface (fonction)](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
+* [WinRT::get_abi (fonction)](/uwp/cpp-ref-for-winrt/get-abi)
+* [WinRT::put_abi (fonction)](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Déplacer vers C + c++ / WinRT à partir de C++ / c++ / CX](move-to-winrt-from-cx.md)
+* [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)

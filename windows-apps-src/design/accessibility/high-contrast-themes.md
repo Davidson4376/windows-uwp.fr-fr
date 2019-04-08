@@ -114,7 +114,7 @@ Il est souvent utile d’examiner les applications, menus Démarrer ou contrôle
 * Testez l’ensemble des 4 thèmes à contraste élevé pendant l’exécution de votre application. Lorsqu’il change de thème, l’utilisateur ne devrait pas avoir à redémarrer votre application.
 * Soyez cohérent.
 
-**Don't**
+**Ne pas**
 
 * Codez en dur une couleur dans le thème **HighContrast** ; utilisez les ressources **SystemColor*Color**.
 * Choisissez une ressource de couleur à des fins esthétiques. N’oubliez pas que la couleur change avec le thème !

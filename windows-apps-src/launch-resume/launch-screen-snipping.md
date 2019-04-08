@@ -40,7 +40,7 @@ Le **ms-screensketch :** URI permet de lancer l’application capture & ébauch
 | sharedAccessToken | chaîne | non | Un jeton qui identifie le fichier à ouvrir dans l’application capture & ébauche de projet. Récupéré à partir de [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Si ce paramètre est omis, l’application est lancée sans avoir ouvert un fichier. |
 | secondarySharedAccessToken | chaîne | non | Chaîne identifiant un fichier JSON avec métadonnées relatives à la capture. Les métadonnées peuvent inclure un **clipPoints** champ avec un tableau de coordonnées x, y, et/ou un [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | Source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| isTemporary | bool | non | Si la valeur est True, écran croquis va tenter de supprimer le fichier après son ouverture. |
+| IsTemporary | bool | non | Si la valeur est True, écran croquis va tenter de supprimer le fichier après son ouverture. |
 
 L’exemple suivant appelle la [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) méthode pour envoyer une image de capture & ébauche de projet à partir de l’application de l’utilisateur.
 

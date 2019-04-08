@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, utiliser rapi
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602234"
@@ -166,8 +166,8 @@ Vous pouvez maintenant compiler et lier et ajouter C + c++ / code de WinRT à vo
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Gestion des erreurs avec C++ / c++ / WinRT](error-handling.md)
-* [Interopérabilité entre C++ / c++ / WinRT et C / c++ / CX](interop-winrt-cx.md)
-* [Interopérabilité entre C++ / c++ / WinRT et l’ABI](interop-winrt-abi.md)
-* [Déplacer vers C + c++ / WinRT à partir de C++ / c++ / CX](move-to-winrt-from-cx.md)
+* [Gestion des erreurs avec C++/WinRT](error-handling.md)
+* [Interopérabilité entre C++/WinRT et C++/CX](interop-winrt-cx.md)
+* [Interopérabilité entre C++/WinRT et ABI](interop-winrt-abi.md)
+* [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)
 * [Chaîne gère en C / c++ / WinRT](strings.md)

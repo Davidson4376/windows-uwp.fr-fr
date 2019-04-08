@@ -78,7 +78,7 @@ Dans cet exemple, le **TextBlock.Text** prend la valeur de propriété **Button.
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Démarrage rapide : Modèles de contrôle](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [Liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)

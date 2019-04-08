@@ -110,7 +110,7 @@ Les contrôles d’entrée sont les éléments d’interface utilisateur qui per
 ### <a name="text-input"></a>Saisie de texte
 Commande | Utilisez | Exemple
  - | - | -
-[TextBox](text-box.md) | Capturer une ou plusieurs lignes de texte | Les noms, les réponses de forme libre ou des commentaires
+[Zone de texte](text-box.md) | Capturer une ou plusieurs lignes de texte | Les noms, les réponses de forme libre ou des commentaires
 [PasswordBox](password-box.md) | Collecter des données privées en dissimuler les caractères | Mots de passe, les numéros de sécurité sociale (SSN), les codes confidentiels, les informations de carte de crédit 
 [AutoSuggestBox](auto-suggest-box.md) | Afficher les utilisateurs à une liste de suggestions à partir d’un jeu de données correspondant en tapant | Recherche de base de données, de messagerie dans : ligne, les requêtes précédentes
 [RichEditBox](rich-edit-box.md) | Modifier des fichiers texte avec texte mis en forme, liens hypertexte et images | Chargement du fichier, version préliminaire et modifier dans l’application
@@ -118,8 +118,8 @@ Commande | Utilisez | Exemple
 ### <a name="selection"></a>d’un certificat SSTP
 Commande | Utilisez | Exemple
 - | - | - 
-| [CheckBox](checkbox.md) | Sélectionnez ou désélectionnez un ou plusieurs éléments d’action | Acceptez les termes et conditions, ajouter des éléments facultatifs, sélectionnez toutes les réponses applicables
-[RadioButton](radio-button.md) | Sélectionnez une option à partir de deux ou plusieurs choix | Choisissez le type, méthode, etc. de livraison.
+| [Case à cocher](checkbox.md) | Sélectionnez ou désélectionnez un ou plusieurs éléments d’action | Acceptez les termes et conditions, ajouter des éléments facultatifs, sélectionnez toutes les réponses applicables
+[Case d’option](radio-button.md) | Sélectionnez une option à partir de deux ou plusieurs choix | Choisissez le type, méthode, etc. de livraison.
 [ToggleSwitch](toggles.md) | Choisissez une des deux options qui s’excluent mutuellement | Activé/désactivé
 
 > **Remarque** : S’il existe cinq ou plusieurs éléments de sélection, utilisez un contrôle de liste.
@@ -127,7 +127,7 @@ Commande | Utilisez | Exemple
 ### <a name="lists"></a>Listes
 Commande | Utilisez | Exemple
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Démarrer dans un état compact et se développent pour afficher la liste d’éléments sélectionnables | Sélectionnez à partir d’une longue liste d’éléments, tels que des États ou des pays
+[Zone de liste déroulante](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Démarrer dans un état compact et se développent pour afficher la liste d’éléments sélectionnables | Sélectionnez à partir d’une longue liste d’éléments, tels que des États ou des pays
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Classement des éléments affecter des en-têtes de groupe, faites glisser et déplacer des éléments, organiser le contenu et réorganiser les éléments | Options de classement
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Organiser et parcourir des collections basées sur l’image | Choisissez une photo, couleur, afficher le thème
 

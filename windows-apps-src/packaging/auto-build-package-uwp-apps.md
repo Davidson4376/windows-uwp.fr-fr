@@ -123,7 +123,7 @@ VSTS utilise le dossier `$(Build.ArtifactStagingDirectory)\AppxPackages` que nou
 
 Ensuite, vous devez générer la définition de build pour créer une build automatisée. Le tableau suivant décrit chaque type de build automatisée que vous pouvez créer.
 
-|**Type de Build**|**Artifact**|**Fréquence recommandée**|**Description**|
+|**Type de Build**|**Artefact**|**Fréquence recommandée**|**Description**|
 |-----------------|------------|-------------------------|---------------|
 |Intégration continue|Journal de génération, Résultats des tests|Chaque validation|Ce type de build est rapide et s’exécute plusieurs fois par jour.|
 |Build de déploiement continu pour le chargement indépendant|Packages de déploiement|Quotidienne |Ce type de build peut inclure des tests unitaires, mais cela prend un peu plus de temps. Cela permet d’effectuer des tests manuels et vous pouvez l’intégrer avec d’autres outils comme HockeyApp.|
@@ -213,7 +213,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 Cette erreur s’affiche car l’application qui doit apparaître dans l’offre groupée n’est pas clairement définie au niveau de la solution.
 Pour résoudre ce problème, ouvrez chaque fichier de projet et ajoutez les propriétés suivantes à la fin du premier élément `<PropertyGroup>` :
 
-|**Project**|**Propriétés**|
+|**projet**|**Propriétés**|
 |-------|----------|
 |App|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|

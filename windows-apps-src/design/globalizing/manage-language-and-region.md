@@ -210,10 +210,10 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 ## <a name="related-topics"></a>Rubriques connexes
 * [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Registre de sous-balises de langage IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Langues prises en charge](../../publish/supported-languages.md)
 * [Globaliser vos formats de date/heure/nombre](use-global-ready-formats.md)
-* [Comment le système de gestion de ressources correspond aux balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
+* [Comment le système de gestion des ressources met en correspondance les balises de langue](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>Exemples
 * [Exemple de localisation et de ressources d’application](https://go.microsoft.com/fwlink/p/?linkid=231501)

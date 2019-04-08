@@ -4,7 +4,7 @@ description: Les applications de plateforme Windows universelle (UWP) qui néces
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

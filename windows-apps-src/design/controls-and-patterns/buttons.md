@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57593024"
@@ -30,9 +30,9 @@ L’infrastructure XAML fournit un contrôle de bouton standard, ainsi que plusi
 
 Commande | Description
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement de clic ou de la liaison de commande.
+[Bouton](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement de clic ou de la liaison de commande.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Un bouton qui déclenche un événement Click en continu pendant enfoncé.
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a une mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+[Contrôle HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a une mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Bouton avec un chevron pour ouvrir un menu volant attaché.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Bouton avec les deux côtés. Côté « un » lance une action, et l’autre côté ouvre un menu.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Un bouton bascule avec deux côtés. Active ou désactive du côté « un » activé/désactivé, et l’autre côté ouvre un menu.
@@ -67,7 +67,7 @@ Utilisez un **SplitButton** lorsque vous souhaitez que l’utilisateur pour pouv
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Button">ouvrir l’application et voir le bouton en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

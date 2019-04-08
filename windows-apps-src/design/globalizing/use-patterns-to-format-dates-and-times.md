@@ -137,7 +137,7 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 * [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
+* [Date/heure](/uwp/api/windows.foundation.datetime?branch=live)
 
 ## <a name="related-topics"></a>Rubriques connexes
 

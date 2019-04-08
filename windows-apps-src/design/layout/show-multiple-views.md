@@ -18,7 +18,7 @@ ms.locfileid: "57607624"
 
 Aidez les utilisateurs à accroître leur productivité en leur permettant d’afficher des parties indépendantes de votre application dans des fenêtres distinctes. Quand vous créez plusieurs fenêtres pour une application, chacune d’elles se comporte de manière indépendante. La barre des tâches répertorie chaque fenêtre séparément. Les utilisateurs peuvent déplacer, redimensionner, afficher et masquer des fenêtres d’application indépendamment et ils peuvent basculer d’une fenêtre à une autre comme s’il s’agissait d’applications distinctes. Chaque fenêtre opère dans son propre thread.
 
-> **API importantes**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+> **API importantes** : [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>Quand une application doit-elle utiliser plusieurs vues ?
 Il existe de nombreux scénarios qui peuvent bénéficier de plusieurs vues. Voici quelques exemples :

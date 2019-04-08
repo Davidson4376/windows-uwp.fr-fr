@@ -102,6 +102,6 @@ Enregistrez et fermez-le, puis générez une nouvelle fois votre projet.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Adapter vos ressources de langue, mise à l’échelle, contraste élevé et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
 * [Balise de langue de BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)

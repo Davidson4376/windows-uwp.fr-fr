@@ -47,4 +47,4 @@ Vous pouvez détecter la fermeture d’un objet pour une raison quelconque avec 
 > Reportez-vous aux rubriques suivantes pour plus d’informations sur le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows 10 :
 > - [Cycle de vie des applications plateforme Windows universelle (UWP) de Windows 10](../launch-resume/app-lifecycle.md)
 > - [Gérer la suspension d’application](../launch-resume/suspend-an-app.md)
-> - [Gérer la reprise de l’application](../launch-resume/resume-an-app.md)
+> - [Gérer la reprise d’une application](../launch-resume/resume-an-app.md)

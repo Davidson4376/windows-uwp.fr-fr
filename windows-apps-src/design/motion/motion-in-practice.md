@@ -88,10 +88,10 @@ Animations implicites sont un moyen simple d’atteindre le mouvement Fluent par
 Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes :
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacity**
+  - **Opacité**
   - **Rotation**
   - **Mettre à l’échelle**
-  - **Translation**
+  - **traduction**
 
 - [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
   - **Arrière-plan**

@@ -12,7 +12,7 @@ dev_langs:
 - cpp
 ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592164"
@@ -451,15 +451,15 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
-* [Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)
-* [Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
-* [Exécuter une tâche en arrière-plan sur un minuteur](run-a-background-task-on-a-timer-.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 * [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)  
 
 **Conseils sur les tâches en arrière-plan**
 
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 

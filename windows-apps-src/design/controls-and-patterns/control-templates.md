@@ -22,7 +22,7 @@ ms.locfileid: "57613514"
 
 Vous pouvez personnaliser la structure et le comportement visuels d’un contrôle en créant un modèle de contrôle dans l’infrastructure XAML. Les contrôles sont dotés de plusieurs propriétés, telles que [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) et [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404) que vous pouvez définir en spécifiant les différents aspects de l’apparence du contrôle. Cependant, les modifications que vous apportez en définissant ces propriétés sont limitées. Vous pouvez spécifier des personnalisations supplémentaires en créant un modèle à l’aide de la classe [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Voici comment créer une classe **ControlTemplate** pour personnaliser l’apparence d’un contrôle [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316).
 
-> **API importantes**: [**Classe de ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391), [ **Control.Template propriété**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+> **API importantes** : [**Classe de ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391), [ **Control.Template propriété**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
 ## <a name="custom-control-template-example"></a>Exemple de modèle de contrôle personnalisé
 
@@ -100,7 +100,7 @@ Le tableau suivant comporte les valeurs [**IsChecked**](https://msdn.microsoft.c
 | Valeur de **IsChecked** | État de **CheckBox** | Apparence de **CheckBox** |
 | **true**            | `Checked`          | Contient un « X ».        |
 | **false**           | `Unchecked`        | Vide.                  |
-| **null**            | `Indeterminate`    | Contient un cercle.      |
+| **valeur null**            | `Indeterminate`    | Contient un cercle.      |
 
 
 Vous spécifiez l’apparence d’un contrôle lorsqu’il se trouve dans un état spécifique à l’aide d’objets [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007). Un objet **VisualState** contient un élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) ou [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053) changeant l’apparence des éléments dans le modèle [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Lorsque l’état du contrôle devient celui spécifié par la propriété [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031), les modifications de propriété de l’élément **Setter** ou [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) sont appliquées. Lorsque le contrôle quitte cet état, les modifications sont supprimées. Vous ajoutez des objets **VisualState** à des objets [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014). Vous ajoutez des objets **VisualStateGroup** à la propriété [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) associée, que vous définissez sur l’élément [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) racine du modèle **ControlTemplate**.

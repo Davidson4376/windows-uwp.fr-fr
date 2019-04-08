@@ -14,7 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653574"
@@ -23,7 +23,7 @@ ms.locfileid: "57653574"
 
 La plupart des applications manipulent et affichent des jeux de données, par exemple, une galerie d’image ou un ensemble d’e-mails. L’infrastructure IU XAML fournit les contrôles ListView et GridView qui facilitent l’affichage et la manipulation des données dans votre application.  
 
-> **API importantes**: [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [propriété ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [propriété des éléments](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **API importantes** : [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [propriété ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [propriété des éléments](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
 Les contrôles ListView et GridView proviennent de la classe ListViewBase ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe « List » peut être remplacé par « Grid » pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
 
@@ -48,7 +48,7 @@ Pour une comparaison et des recommandations plus détaillées sur le contrôle �
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ListView">ListView</a> ou <a href="xamlcontrolsgallery:/item/GridView">GridView</a> en action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -527,4 +527,4 @@ Les contrôles ListView et GridView prennent en charge le glisser-déplacer des 
 
 - [Listes](lists.md)
 - [Modèles et des conteneurs d’éléments](item-containers-templates.md)
-- [Glisser -déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Glisser-déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

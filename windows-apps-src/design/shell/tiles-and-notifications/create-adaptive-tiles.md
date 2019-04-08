@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | Hauteur de police               | Épaisseur de police |
+| &lt;indicateur de style texte = «\*» /&gt; | Hauteur de police               | Épaisseur de police |
 | caption                        | 12 pixels effectifs (epx) | Normale     |
 | corps                           | 15 epx                    | Normale     |
 | base                           | 15 epx                    | Semibold    |

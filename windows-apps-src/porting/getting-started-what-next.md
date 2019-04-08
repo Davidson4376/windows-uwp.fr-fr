@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603274"
 ---
-# <a name="getting-started-what-next"></a>Mise en route : Quelle est l'étape suivante ?
+# <a name="getting-started-what-next"></a>Bien démarrer : Quelle est l'étape suivante ?
 
 
 ## <a name="next-steps"></a>Étapes suivantes

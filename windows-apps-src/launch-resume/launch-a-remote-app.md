@@ -76,5 +76,5 @@ L’objet [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows
 
 [Référence de l’API de systèmes à distance](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Vue d’ensemble des (Project Rome) applications et des appareils connecté](connected-apps-and-devices.md)  
-[Découvrir les périphériques distants](discover-remote-devices.md)  
+[Découvrir des appareils distants](discover-remote-devices.md)  
 L’[exemple Systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) montre comment détecter un système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages avec des applications qui s’exécutent sur deux systèmes.

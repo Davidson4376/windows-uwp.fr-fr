@@ -49,7 +49,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | applicationId | chaîne | Le [Store ID](in-app-purchases-and-trials.md#store-ids) de l’application pour laquelle vous souhaitez récupérer des données insights. Si vous ne spécifiez pas ce paramètre, le corps de réponse contiennent des données insights pour toutes les applications inscrites à votre compte.  |  Non  |
 | startDate | date | La date de début dans la plage de dates des données insights à récupérer. La valeur par défaut est de 30 jours avant la date actuelle. |  Non  |
 | endDate | date | La date de fin dans la plage de dates des données insights à récupérer. La valeur par défaut est la date actuelle. |  Non  |
-| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filtre = eq 'd’acquisition de type de données'*. <p/><p/>Vous pouvez spécifier les champs de filtre suivants :<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul> | Non   |
+| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filtre = eq 'd’acquisition de type de données'*. <p/><p/>Vous pouvez spécifier les champs de filtre suivants :<p/><ul><li><strong>Acquisition</strong></li><li><strong>Contrôle d’intégrité</strong></li><li><strong>Utilisation</strong></li></ul> | Non   |
 
 ### <a name="request-example"></a>Exemple de requête
 
@@ -78,7 +78,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 |---------------------|--------|-------------------------------------------|
 | applicationId       | chaîne | ID de l’application pour laquelle vous récupérez des données insights Store.     |
 | insightDate                | chaîne | La date sur laquelle nous avons identifié la modification dans une mesure spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou diminuer dans une mesure par rapport à la semaine auparavant. |
-| dataType     | chaîne | Une des chaînes suivantes qui spécifie la zone analytique général qui décrit cet insight :<p/><ul><li><strong>acquisition</strong></li><li><strong>health</strong></li><li><strong>usage</strong></li></ul>   |
+| Type de données     | chaîne | Une des chaînes suivantes qui spécifie la zone analytique général qui décrit cet insight :<p/><ul><li><strong>Acquisition</strong></li><li><strong>Contrôle d’intégrité</strong></li><li><strong>Utilisation</strong></li></ul>   |
 | insightDetail          | tableau | Un ou plusieurs [InsightDetail valeurs](#insightdetail-values) qui représentent les détails pour obtenir des informations en cours.    |
 
 
@@ -86,7 +86,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | chaîne | Une des valeurs suivantes qui indique la mesure décrivant l’insight actuelle ou la dimension actuelle, basée sur le **dataType** valeur.<ul><li>Pour **intégrité**, cette valeur est toujours **Comptetoucher**.</li><li>Pour **acquisition**, cette valeur est toujours **AcquisitionQuantity**.</li><li>Pour **utilisation**, cette valeur peut être une des chaînes suivantes :<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| FactName           | chaîne | Une des valeurs suivantes qui indique la mesure décrivant l’insight actuelle ou la dimension actuelle, basée sur le **dataType** valeur.<ul><li>Pour **intégrité**, cette valeur est toujours **Comptetoucher**.</li><li>Pour **acquisition**, cette valeur est toujours **AcquisitionQuantity**.</li><li>Pour **utilisation**, cette valeur peut être une des chaînes suivantes :<ul><li><strong>dailyActiveUsers</strong></li><li><strong>engagementDurationMinutes</strong></li><li><strong>dailyActiveDevices</strong></li><li><strong>dailyNewUsers</strong></li><li><strong>dailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | tableau |  Un ou plusieurs objets qui décrivent une mesure unique pour l’analyse.   |
 | ChangementPourcentage            | chaîne |  Pourcentage de la métrique ont changé dans votre base de clients complète.  |
 | DimensionName           | chaîne |  Le nom de la mesure décrit dans la dimension actuelle. Exemples **EventType**, **marché**, **DeviceType**, **PackageVersion**, **AcquisitionType**, **AgeGroup** et **sexe**.   |

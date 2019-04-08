@@ -8,7 +8,7 @@ keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.Applic
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605724"
@@ -129,8 +129,8 @@ L’élément **AppReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Id**  |    Identifie l’achat.           |
-|  **AppId**  |     Nom de la famille de packages, utilisé par le système d’exploitation pour l’application.           |
+|  **ID**  |    Identifie l’achat.           |
+|  **ID d’application**  |     Nom de la famille de packages, utilisé par le système d’exploitation pour l’application.           |
 |  **LicenseType**  |    **Full**, si l’utilisateur a acheté la version complète de l’application. **Trial**, si l’utilisateur a téléchargé une version d’évaluation de l’application.           |  
 |  **PurchaseDate**  |    Date d’acquisition de l’application.          |  |
 
@@ -144,10 +144,10 @@ L’élément **ProductReceipt** a les attributs suivants :
 
 |  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Id**  |    Identifie l’achat.           |
-|  **AppId**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
+|  **ID**  |    Identifie l’achat.           |
+|  **ID d’application**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
 |  **ProductId**  |     Identifie le produit acheté.           |
-|  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  
+|  **productType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  
 |  **PurchaseDate**  |    Date à laquelle l’achat a eu lieu.          |  |
 
  

@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635714"

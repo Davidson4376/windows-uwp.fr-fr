@@ -22,7 +22,7 @@ ms.locfileid: "57654474"
 
 Un sélecteur de couleur permet de parcourir et sélectionner des couleurs. Par défaut, il permet à un utilisateur de parcourir les couleurs sur une gamme de couleurs, ou de spécifier une couleur dans les zones de saisie RVB (Rouge, Vert, Bleu), HSV (Valeur de saturation de la teinte) ou Hexadécimal.
 
-> **API importantes**: [Classe ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [propriété de couleur](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged événement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **API importantes** : [Classe ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [propriété de couleur](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged événement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![Un sélecteur de couleur par défaut](images/color-picker-default.png)
 
@@ -42,7 +42,7 @@ Si votre application est destinée au dessin ou à des tâches similaires à l�
 <td>
     <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ColorPicker">ouvrir l’application et voir l'objet ColorPicker en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

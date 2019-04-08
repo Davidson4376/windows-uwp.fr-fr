@@ -320,7 +320,7 @@ Vous pouvez envisager la prise en charge pour la navigation de clé flèche lors
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>Boutons de la boîte de dialogue</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>RadioButtons</sup></p>     
+      <p><sup>Cases d’option</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>

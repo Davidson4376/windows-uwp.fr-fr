@@ -14,11 +14,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646534"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Didacticiel : Permet de créer une application simple météo Grid et StackPanel
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutoriel : Permet de créer une application simple météo Grid et StackPanel
 
 Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
 
-> **API importantes**: [Classe de grille](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel classe](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **API importantes** : [Classe de grille](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel classe](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Conditions préalables
 - Windows 10 et Microsoft Visual Studio 2015 ou version ultérieure. (Plus récente de Visual Studio pour le développement en cours et de sécurité mises à jour recommandées) [Cliquez ici pour savoir comment configurer Visual Studio](../../get-started/get-set-up.md).

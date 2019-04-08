@@ -7,7 +7,7 @@ keywords: windows 10, uwp, ExtendedJsonData, produits du Microsoft Store, sché
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57656104"
@@ -71,7 +71,7 @@ Le schéma suivant décrit la chaîne au format JSON renvoyée par [StorePurchas
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Versions d’évaluation et les achats dans l’application](in-app-purchases-and-trials.md)
+* [Achats dans l’application et essais](in-app-purchases-and-trials.md)
 * [Obtenir des informations sur les produits pour les applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
 * [Obtenir les informations de licence pour les applications et modules complémentaires](get-license-info-for-apps-and-add-ons.md)
 * [Activer les achats dans l’application des applications et des modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)

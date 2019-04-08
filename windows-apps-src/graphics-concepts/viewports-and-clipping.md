@@ -82,7 +82,7 @@ Où : x, y, z et w représentent le vertex des coordonnées après l'applicatio
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Systèmes de coordonnées et geometry](coordinate-systems-and-geometry.md)
+[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
  
 

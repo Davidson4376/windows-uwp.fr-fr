@@ -22,7 +22,7 @@ ms.locfileid: "57605454"
 
 Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
 
-> **API importantes**: [**Classe de DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **API importantes** : [**Classe de DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -60,9 +60,9 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animer des séquences de glisser-déplacer](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243180)
+* [**Classe de DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
+* [**Classe de DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
+* [**Classe de DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)
 
 
  

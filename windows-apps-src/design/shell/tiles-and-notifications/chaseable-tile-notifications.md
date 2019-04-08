@@ -10,7 +10,7 @@ keywords: windows 10, uwp, vignettes pouvant être suivies, vignettes dynamique
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592644"
@@ -24,7 +24,7 @@ Par exemple, une application d’actualités peut utiliser cette fonctionnalité
 > **Requiert la mise à jour anniversaire**: Utiliser les notifications de vignette chaseable avec C#, C++ ou UWP en VB, les applications doivent cibler le Kit de développement logiciel 14393 et d’être en cours d’exécution build 14393 ou une version ultérieure. Pour les applications UWP en JavaScript, vous devez cibler le Kit de développement logiciel (SDK) 17134 et exécuter la Build 17134 ou une version supérieure. 
 
 
-> **API importantes**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **API importantes** : [Propriété de LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo classe](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>Fonctionnement
@@ -178,5 +178,5 @@ Si vous utilisez du code XML brut au lieu de la bibliothèque Notifications, voi
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [Propriété de LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [Classe de TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

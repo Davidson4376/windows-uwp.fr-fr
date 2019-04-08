@@ -8,7 +8,7 @@ keywords: windows 10, uwp, bande-annonce, vidéo, capture d’écran, image, ic
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610184"

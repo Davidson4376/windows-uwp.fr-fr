@@ -33,9 +33,9 @@ Il existe deux types de données d’application : les fichiers et les paramèt
     Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
 
     -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-    -   **Boolean**
+    -   **Valeur booléenne**
     -   **Char16**, **String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**Date/heure**](https://msdn.microsoft.com/library/windows/apps/br206576), [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
     -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): Un ensemble de paramètres d’application connexes qui doit être sérialisé et désérialisé de manière atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
 -   **Fichiers**

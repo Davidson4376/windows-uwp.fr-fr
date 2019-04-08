@@ -8,7 +8,7 @@ ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594804"
@@ -32,8 +32,8 @@ Pour en savoir plus sur la signature de code et les certificats en général, vo
 
 - **SignTool.exe**  
     Selon votre chemin d’installation du Kit de développement logiciel (SDK), c’est là où **SignTool** se trouve sur votre PC Windows 10 :
-    - x86 : C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64 : C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86 : C:\Program fichiers (x86) \Windows Kits\10\bin\x86\SignTool.exe
+    - x64 : C:\Program fichiers (x86) \Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>À l’aide de SignTool
 

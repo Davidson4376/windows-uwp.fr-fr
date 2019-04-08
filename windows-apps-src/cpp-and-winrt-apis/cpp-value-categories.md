@@ -1,5 +1,5 @@
 ---
-description: Cette rubrique décrit les différentes catégories de valeurs qui existent dans C++. Vous serez sans doute avez-vous entendu parler de lvalues et rvalues, mais il existe d’autres types, trop.
+description: Cette rubrique décrit les différentes catégories de valeurs qui existent dans C++. Vous aurez sans doute entendu parler de lvalues et rvalues, mais il existe aussi d’autres types.
 title: Catégories de valeur et les références à ceux-ci
 ms.date: 08/11/2018
 ms.topic: article
@@ -153,7 +153,7 @@ void bar(A&& a) // a is a named rvalue reference; it's an lvalue.
 A&& get_by_rvalue_ref() { ... } // This unnamed rvalue reference is an xvalue.
 ```
 
-### <a name="im"></a>\!i\&\!m
+### <a name="im"></a>\!J’ai\&\!m
 Le type de valeur qui n’a pas identité et n’est pas mobile est l’un combinaison que nous n’avons pas encore abordé. Mais nous pouvons ignorer, car cette catégorie n’est pas une idée utile dans le langage C++.
 
 ## <a name="reference-collapsing-rules"></a>Règles de réduction de référence

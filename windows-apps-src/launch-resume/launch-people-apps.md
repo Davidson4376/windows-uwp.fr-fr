@@ -58,7 +58,7 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 </div>
 <div> 
 </div></td>
-<td align="left">ms-people:viewcontact?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
+<td align="left">MS-personnes : viewcontact ? ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;E-mail =&lt;e-mail &gt; &amp;ContactName =&lt;nom&gt;&amp;Contact =&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">Ouvre une page d’enregistrement de contact dans l’application Contacts, permettant d’enregistrer le contact donné avec le numéro de téléphone ou l’adresse électronique fournis.
@@ -127,13 +127,13 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>ContactId</b></td>
+<td align="left"><b>ID de contact</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>ID de contact du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
-<td align="left"><b>PhoneNumber</b></td>
+<td align="left"><b>Numéro de téléphone</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Numéro de téléphone du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
@@ -176,7 +176,7 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>PhoneNumber</b></td>
+<td align="left"><b>Numéro de téléphone</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Numéro de téléphone du contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
@@ -219,7 +219,7 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 
 </tr>
 <tr class="even">
-<td align="left"><b>FirstName</b></td>
+<td align="left"><b>firstName</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Prénom du contact.</p></td>
 </tr>
@@ -255,7 +255,7 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 
 </tr>
 <tr class="even">
-<td align="left"><b>HomePhone</b></td>
+<td align="left"><b>homePhone</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Numéro de téléphone personnel du contact.</p></td>
 </tr>
@@ -267,13 +267,13 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 </tr>
 
 <tr class="even">
-<td align="left"><b>LastName</b></td>
+<td align="left"><b>lastName</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Nom du contact.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>MiddleName</b></td>
+<td align="left"><b>middleName</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Deuxième prénom du contact.</p></td>
 </tr>
@@ -309,7 +309,7 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Suffix</b></td>
+<td align="left"><b>Suffixe</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Suffixe du contact.</p></td>
 </tr>
@@ -363,7 +363,7 @@ Cette rubrique décrit la **ms-personnes :** Schéma d’URI. Votre application
 </tr>
 
 <tr class="even">
-<td align="left"><b>WorkPhone</b></td>
+<td align="left"><b>TéléphoneBureau</b></td>
 <td align="left"><p>Facultatif.</p>
 <p>Numéro de téléphone professionnel du contact.</p></td>
 </tr>

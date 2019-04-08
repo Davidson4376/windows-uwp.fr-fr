@@ -4,7 +4,7 @@ description: Cet article explique comment connecter votre application UWP à un 
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

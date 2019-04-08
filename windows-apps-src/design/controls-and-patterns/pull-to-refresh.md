@@ -23,7 +23,7 @@ ms.locfileid: "57659254"
 
 La commande Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile afin de récupérer des données supplémentaires. Tirer pour actualiser est largement utilisé sur les appareils avec un écran tactile. Vous pouvez utiliser les API indiquées ici afin d'implémenter le modèle Tirer pour actualiser dans votre application.
 
-> **API importantes**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **API importantes** : [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![gif tirer pour actualiser](images/Pull-To-Refresh.gif)
 

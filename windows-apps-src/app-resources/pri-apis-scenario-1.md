@@ -234,4 +234,4 @@ Dans ce scénario, nous vous avons montré comment utiliser les [API d’indexat
 * [Ressource de package que l’indexation de référence de (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Ressource de package indexation personnalisés et les API (PRI) créer des systèmes](pri-apis-custom-build-systems.md)
+* [API d’indexation de ressources de package (IRP) et systèmes de génération personnalisés](pri-apis-custom-build-systems.md)

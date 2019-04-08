@@ -63,6 +63,6 @@ Veillez à tester votre application sur des appareils réels pour tous les scén
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan out-of-process](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [Planification des performances](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

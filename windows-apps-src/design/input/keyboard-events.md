@@ -96,7 +96,7 @@ Tous les événements de clavier utilisent [**KeyRoutedEventArgs**](https://msdn
 
 -   [**Clé**](https://msdn.microsoft.com/library/windows/apps/hh943074)
 -   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
--   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
+-   [**Géré**](https://msdn.microsoft.com/library/windows/apps/hh943073)
 -   [**OriginalSource** ](https://msdn.microsoft.com/library/windows/apps/br208810) (héritée de [ **RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
 
 ### <a name="key"></a>Clé

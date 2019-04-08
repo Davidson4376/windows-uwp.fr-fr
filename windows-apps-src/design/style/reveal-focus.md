@@ -25,7 +25,7 @@ Révéler le Focus est un effet d’éclairage pour [10-foot expériences](/wind
 (Pour l’effet de faire apparaître la mettre en surbrillance, un effet d’éclairage qui met en évidence les éléments interactifs, consultez le [révéler la mettre en surbrillance un article](/windows/uwp/design/style/reveal).)
 
 
-> **API importantes**: [Propriété de Application.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals propriété](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **API importantes** : [Propriété de Application.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals propriété](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>Fonctionnement
 Révéler les appels aux éléments ayant le focus attirer l’attention en ajoutant un éclat animée autour de bordure de l’élément :
@@ -43,7 +43,7 @@ Ceci est particulièrement utile dans les scénarios de 10-foot où l’utilisat
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/RevealFocus">ouvrez l’application et voir le Focus de révéler en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

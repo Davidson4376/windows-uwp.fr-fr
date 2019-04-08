@@ -57,7 +57,7 @@ Les API TreeView prennent en charge les fonctionnalités suivantes :
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/TreeView">ouvrez l’application et voir l’arborescence en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application de la galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -177,7 +177,7 @@ Ces API sont disponibles pour la gestion de la hiérarchie de données de votre 
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Ajoutez des objets TreeViewNode à la collection Children d’un nœud parent pour créer votre hiérarchie de nœuds. Un nœud est le **Parent** de tous les nœuds de sa collection **Children**. |
+| [Enfants](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Ajoutez des objets TreeViewNode à la collection Children d’un nœud parent pour créer votre hiérarchie de nœuds. Un nœud est le **Parent** de tous les nœuds de sa collection **Children**. |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | **true** si le nœud a réalisé des enfants. **false** indique un dossier ou un élément vide. |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Utilisez cette propriété si vous remplissez des nœuds lorsqu'ils sont développés. Voir _Remplir un nœud lorsqu’il est développé_ plus loin dans cet article. |
 | [profondeur](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | Indique la distance entre le nœud racine et un nœud enfant. |

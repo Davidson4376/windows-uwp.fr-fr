@@ -7,7 +7,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57589984"
@@ -131,5 +131,5 @@ Les scénarios suivants ne sont actuellement pas pris en charge pour les extensi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Versions d’évaluation et les achats dans l’application](in-app-purchases-and-trials.md)
+* [Achats dans l’application et essais](in-app-purchases-and-trials.md)
 * [Obtenir des informations sur les produits pour les applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)

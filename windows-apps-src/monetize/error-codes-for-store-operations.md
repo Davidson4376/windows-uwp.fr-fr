@@ -74,7 +74,7 @@ Les codes d’erreur suivants sont liés aux [mises à jour des packages à inst
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Versions d’évaluation et les achats dans l’application](in-app-purchases-and-trials.md)
+* [Achats dans l’application et essais](in-app-purchases-and-trials.md)
 * [Obtenir des informations sur les produits pour les applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
 * [Obtenir les informations de licence pour les applications et modules complémentaires](get-license-info-for-apps-and-add-ons.md)
 * [Activer les achats dans l’application des applications et des modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)

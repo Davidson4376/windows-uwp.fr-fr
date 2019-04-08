@@ -53,13 +53,13 @@ Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètr
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local.
 + **spritesheet-src**
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local. Requis uniquement pour les animations Spritesheet.
-+ **spritesheet-height**
++ **hauteur de spritesheet**
     + La hauteur de l’image (en pixels). Requis uniquement pour les animations Spritesheet.
-+ **spritesheet-fps**
++ **spritesheet-i/s**
     + Images par seconde (FPS). Requis uniquement pour les animations Spritesheet. Seules les valeurs de 1 à 120 sont prises en charge.
 + **spritesheet-startingFrame**
     + Numéro de l’image pour commencer l’animation. Uniquement utilisé pour les animations Spritesheet et a pour valeur par défaut 0 si le numéro n’est pas indiqué.
-+ **alt**
++ **ALT**
     + Chaîne de texte utilisée pour la narration du lecteur d’écran.
 
 > [!NOTE]

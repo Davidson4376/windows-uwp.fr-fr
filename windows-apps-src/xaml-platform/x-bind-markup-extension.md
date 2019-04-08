@@ -28,7 +28,7 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 
 **Exemples d’applications qui illustrent {x : Bind}**
 
--   [{x:Bind} sample](https://go.microsoft.com/fwlink/p/?linkid=619989)
+-   [exemple de {x : Bind}](https://go.microsoft.com/fwlink/p/?linkid=619989)
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
 -   [Exemple de principes de base de l’interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
@@ -50,9 +50,9 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 |------|-------------|
 | _propertyPath_ | Chaîne qui spécifie le chemin de propriété pour la liaison. Pour plus d’informations, voir la section [Chemin de propriété](#property-path) ci-dessous. |
 | _bindingProperties_ |
-| _propName_=_value_\[, _propName_=_value_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
+| _propName_=_valeur_\[, _propName_=_valeur_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
 | _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, « Convertisseur ». |
-| _value_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-that-you-can-set-with-xbind) ci-dessous. |
+| _Valeur_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-that-you-can-set-with-xbind) ci-dessous. |
 
 ## <a name="examples"></a>Exemples
 
@@ -115,7 +115,7 @@ _Remarque : Le C#-syntaxe de cast de style est plus flexible que la syntaxe de 
 
 ## <a name="event-binding"></a>Liaison d’événement
 
-La liaison d’événement est une fonctionnalité unique pour une liaison compilée. Elle vous permet de spécifier le gestionnaire pour un événement à l’aide d’une liaison, au lieu d’une méthode dans le code-behind. Exemple : **Click="{x:Bind rootFrame.GoForward}"**.
+La liaison d’événement est une fonctionnalité unique pour une liaison compilée. Elle vous permet de spécifier le gestionnaire pour un événement à l’aide d’une liaison, au lieu d’une méthode dans le code-behind. Exemple : **Cliquez sur = « {x : Bind rootFrame.GoForward} »**.
 
 Pour des événements, la méthode cible ne doit pas être surchargée et doit :
 
@@ -135,14 +135,14 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 
 | Propriété | Description |
 |----------|-------------|
-| **Path** | Voir la section [Chemin de propriété](#property-path) ci-dessus. |
+| **Chemin d’accès** | Voir la section [Chemin de propriété](#property-path) ci-dessus. |
 | **Convertisseur** | Spécifie l’objet convertisseur appelé par le moteur de liaison. Le convertisseur peut être défini en XAML, mais uniquement si vous faites référence à une instance d’objet que vous avez assignée dans une référence d’[extension de balisage {StaticResource}](staticresource-markup-extension.md) à cet objet dans le dictionnaire de ressources. |
 | **ConverterLanguage** | Spécifie la culture que doit utiliser le convertisseur. (Si vous définissez **ConverterLanguage** vous devez également définir des **convertisseur**.) La culture est définie comme un identificateur basée sur des normes. Pour plus d’informations, voir [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880). |
-| **ConverterParameter** | Spécifie le paramètre de convertisseur qui peut être utilisé dans la logique du convertisseur. (Si vous définissez **ConverterParameter** vous devez également définir des **convertisseur**.) La plupart des convertisseurs utiliser une logique simple permettant d’obtenir toutes les informations dont ils ont besoin à partir de la valeur passée à convertir, et vous n’avez pas besoin un **ConverterParameter** valeur. Le paramètre **ConverterParameter** est destiné aux implémentations de convertisseur moyennement avancées qui comprennent plusieurs logiques basées sur ce qui est transmis dans **ConverterParameter**. Vous pouvez écrire un convertisseur qui utilise des valeurs qui ne sont pas des chaînes, mais il s’agit d’un scénario peu courant. Pour plus d’informations, voir la section Remarques dans [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827). |
-| **FallbackValue** | Spécifie une valeur à afficher quand la source ou le chemin ne peuvent pas être résolus. |
+| **converterParameter** | Spécifie le paramètre de convertisseur qui peut être utilisé dans la logique du convertisseur. (Si vous définissez **ConverterParameter** vous devez également définir des **convertisseur**.) La plupart des convertisseurs utiliser une logique simple permettant d’obtenir toutes les informations dont ils ont besoin à partir de la valeur passée à convertir, et vous n’avez pas besoin un **ConverterParameter** valeur. Le paramètre **ConverterParameter** est destiné aux implémentations de convertisseur moyennement avancées qui comprennent plusieurs logiques basées sur ce qui est transmis dans **ConverterParameter**. Vous pouvez écrire un convertisseur qui utilise des valeurs qui ne sont pas des chaînes, mais il s’agit d’un scénario peu courant. Pour plus d’informations, voir la section Remarques dans [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827). |
+| **fallbackValue** | Spécifie une valeur à afficher quand la source ou le chemin ne peuvent pas être résolus. |
 | **Mode** | Spécifie le mode de liaison, comme une des chaînes suivantes : « OneTime », « OneWay » ou « TwoWay ». La valeur par défaut est « OneTime ». Notez qu’elle diffère de la valeur par défaut **{Binding}**, qui est « OneWay » dans la plupart des cas. |
 | **TargetNullValue** | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. |
-| **BindBack** | Spécifie une fonction à utiliser pour le sens inverse d’une liaison bidirectionnelle. |
+| **Liaison retour** | Spécifie une fonction à utiliser pour le sens inverse d’une liaison bidirectionnelle. |
 | **UpdateSourceTrigger** | Spécifie à quel moment renvoyer les modifications du contrôle vers le modèle dans les liaisons TwoWay. La valeur par défaut pour toutes les propriétés à l’exception TextBox.Text est PropertyChanged ; TextBox.Text est LostFocus.|
 
 > [!NOTE]

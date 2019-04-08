@@ -147,19 +147,19 @@ Une tâche en arrière-plan s’exécutera à l’aide d’un **ApplicationTrigg
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Exemple de code de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
-* [Créer et inscrire une tâche en arrière-plan out-of-process](create-and-register-a-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste d’application](declare-background-tasks-in-the-application-manifest.md)
-* [Mémoire disponible si votre application est déplacée vers l’arrière-plan](reduce-memory-usage.md)
-* [Gérer une tâche en arrière-plan annulé](handle-a-cancelled-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Libérer de la mémoire quand l’application passe en arrière-plan](reduce-memory-usage.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Surveiller la progression des tâches en arrière-plan et saisie semi-automatique](monitor-background-task-progress-and-completion.md)
-* [Reporter la suspension d’application avec l’exécution étendue](run-minimized-with-extended-execution.md)
+* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Reporter la suspension d’une application avec l’exécution étendue](run-minimized-with-extended-execution.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Mettre à jour d’une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)

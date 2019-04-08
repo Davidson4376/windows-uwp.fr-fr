@@ -27,7 +27,7 @@ Ce article présente les quatre options de notification (locale, planifiée, pé
 
 Une application peut utiliser quatre méthodes pour remettre une notification :
 
--   **Local**
+-   **local**
 -   **Planifiée**
 -   **Périodiques**
 -   **push**
@@ -111,7 +111,7 @@ Par défaut, les notifications toast locales ont une durée de vie de trois jou
 Pour plus d’informations, consultez les rubriques suivantes :
 
 -   [Envoyer une notification de vignette local](sending-a-local-tile-notification.md)
--   [Envoyer une notification toast local](send-local-toast.md)
+-   [Envoyer une notification toast locale](send-local-toast.md)
 -   [Exemples de code de notifications d’Universal Windows Platform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>Notifications planifiées
@@ -152,7 +152,7 @@ Par défaut, les notifications Push expirent trois jours après leur réception
 
 Pour plus d’informations, consultez :
 
--   [Vue d’ensemble des Services de Notification Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
+-   [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
 -   [Instructions pour les notifications push](https://msdn.microsoft.com/library/windows/apps/hh761462)
 -   [Exemples de code de notifications d’Universal Windows Platform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
@@ -161,11 +161,11 @@ Pour plus d’informations, consultez :
 
 
 * [Envoyer une notification de vignette local](sending-a-local-tile-notification.md)
-* [Envoyer une notification toast local](send-local-toast.md)
+* [Envoyer une notification toast locale](send-local-toast.md)
 * [Instructions pour les notifications push](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Instructions pour les notifications de toast](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [Vue d’ensemble des notifications périodiques](periodic-notification-overview.md)
-* [Vue d’ensemble des Services de Notification Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
+* [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Notifications d’Universal Windows Platform (UWP) Exemples de code sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 

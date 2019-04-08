@@ -73,7 +73,7 @@ Concept | Détails
 --- | ---
 **Lumière ambiante** | Ajout d’une lumière non ambiante à votre scène désactiver tous les lumière existante.  Les éléments n’est ciblés par une lumière non ambiante seront affiche en noirs.  Pour éclairer environnantes visuels n’est ciblés par la lumière de façon naturelle, utilisez une lumière ambiante conjointement avec d’autres lumières.
 **Nombre de lumières** | Vous pouvez utiliser des deux voyants composition non ambiante dans n’importe quelle combinaison de cibler votre interface utilisateur. Éclairage ambiant n’est pas limitées ; repérer, point et que les lumières distantes sont.
-**Lifetime** | CompositionLight peut rencontrer des conditions de durée de vie (exemple : le garbage collector peut recycler l’objet lumière avant d’être utilisée).  Nous vous recommandons de conserver une référence à vos lumières en ajoutant des lumières en tant que membre pour aider à l’application de gérer la durée de vie.
+**durée de vie** | CompositionLight peut rencontrer des conditions de durée de vie (exemple : le garbage collector peut recycler l’objet lumière avant d’être utilisée).  Nous vous recommandons de conserver une référence à vos lumières en ajoutant des lumières en tant que membre pour aider à l’application de gérer la durée de vie.
 **Transformations** | Lumières doivent être placés dans un nœud situé au-dessus de l’interface utilisateur qui utilise des effets tels que [perspective transformations](/windows/uwp/design/layout/3-d-perspective-effects) dans votre structure visuelle à dessiner correctement.
 **Cibles et l’espace de coordonnées** | CoordinateSpace est alors utilisée est l’espace visual dans laquelle toutes les propriétés de lumières doivent être définies. CompositionLight.Targets doit figurer dans l’arborescence CoordinateSpace est alors utilisée.
 
@@ -83,11 +83,11 @@ Selon le type de la lumière utilisée, une lumière peut avoir des propriétés
 
 Propriété | Description
 --- | ---
-**Color** | Le [couleur](/uwp/api/windows.ui.color) de la lumière. Valeurs de couleur d’éclairage sont définies par [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) diffusion ambiant et spéculaire qui définit la couleur qui est émise. Éclairage utilise différentes valeurs RVBA pour lumières ; le composant de couleur alpha n’est pas utilisé.
+**Couleur** | Le [couleur](/uwp/api/windows.ui.color) de la lumière. Valeurs de couleur d’éclairage sont définies par [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) diffusion ambiant et spéculaire qui définit la couleur qui est émise. Éclairage utilise différentes valeurs RVBA pour lumières ; le composant de couleur alpha n’est pas utilisé.
 **Direction** | La direction de la lumière. La direction dans laquelle la lumière pointe est spécifiée relatif à son [CoordinateSpace est alors utilisée](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual.
 **Espace de coordonnées** | Chaque visuel a un espace de coordonnées 3D implicit. Axe X est de gauche à droite. Direction Y est de haut en bas. Direction Z est un point hors du plan. Le point d’origine de cette coordonnée est l’angle supérieur gauche de l’élément visuel, et l’unité est le Pixel indépendant de périphérique (DIP). Décalage d’une lumière défini dans ces coordonnées.
 **Cônes internes et externes** | Les projecteurs émettent un cône de lumière en 2 portions : un cône interne lumineux et un cône externe. COMPOSITION permet le que contrôle sur les couleurs et les angles du cône interne et externe.
-**Offset** | Décalage de la source de lumière par rapport à son espace de coordonnées Visual.
+**Décalage** | Décalage de la source de lumière par rapport à son espace de coordonnées Visual.
 
 > [!NOTE]
 > Lorsque plusieurs lumières atteint le même élément visuel, ou chaque fois que la valeur de couleur d’une lumière obtient suffisamment importante pour dépasser 1.0, la couleur de la lumière peut changer en raison d’un canal de couleur lumières de serrage.
@@ -97,7 +97,7 @@ Propriété | Description
 Propriété | Description
 --- | ---
 **Intensité** | Contrôle la luminosité de la lumière.
-**Attenuation** | Les contrôles d’atténuation définissent la manière dont l’intensité de la lumière décroît jusqu’à la distance maximale spécifiée par la propriété d’étendue.  Constante, les propriétés d’atténuation Quadradic et linéaires peuvent être utilisées.
+**Atténuation** | Les contrôles d’atténuation définissent la manière dont l’intensité de la lumière décroît jusqu’à la distance maximale spécifiée par la propriété d’étendue.  Constante, les propriétés d’atténuation Quadradic et linéaires peuvent être utilisées.
 
 ## <a name="getting-started-with-lighting"></a>Prise en main d’éclairage
 

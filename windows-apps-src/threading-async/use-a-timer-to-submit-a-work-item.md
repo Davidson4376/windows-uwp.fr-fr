@@ -227,9 +227,9 @@ Pour plus d’informations sur la répétition de minuteurs, voir [Créer un él
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Soumettre un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Meilleures pratiques pour utiliser le pool de threads](best-practices-for-using-the-thread-pool.md)
-* [Utiliser un minuteur pour soumettre un élément de travail](use-a-timer-to-submit-a-work-item.md)
+* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Bonnes pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
+* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
  
 
  

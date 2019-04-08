@@ -99,7 +99,7 @@ Vous pouvez déplacer le centre de rotation à l’aide des propriétés [**Cent
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY = « 0,5 » (valeur par défaut)**
 
 ![CenterOfRotationY égal à 0.5](images/3drotatexminus35.png)
 ```xml
@@ -110,7 +110,7 @@ Vous pouvez déplacer le centre de rotation à l’aide des propriétés [**Cent
 </Image>
 ```
 
-**CenterOfRotationY = "0.1"**
+**CenterOfRotationY = « 0.1 »**
 
 ![CenterOfRotationY égal à 0.1](images/3dcenterofrotationy0point1.png)
 
@@ -124,7 +124,7 @@ Comme vous pouvez le constater, l’image pivote autour du centre lorsque la pro
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX = « 0,5 » (valeur par défaut)**
 
 ![CenterOfRotationX égal 0.5](images/3drotateyminus35.png)
 ```xml
@@ -135,7 +135,7 @@ Comme vous pouvez le constater, l’image pivote autour du centre lorsque la pro
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (right-hand edge)**
+**CenterOfRotationX = « 0.9 » (côté droit)**
 
 ![CenterOfRotationX égal à 0.9](images/3dcenterofrotationx0point9.png)
 

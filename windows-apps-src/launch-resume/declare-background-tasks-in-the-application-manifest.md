@@ -236,4 +236,4 @@ Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouvea
 
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Instructions pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)

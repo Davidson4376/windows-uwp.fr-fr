@@ -1,5 +1,5 @@
 ---
-title: Meilleures pratiques pour l’écriture dans des fichiers
+title: Bonnes pratiques concernant l’écriture de données dans des fichiers
 description: Découvrez les meilleures pratiques pour l’utilisation de fichier différents, écrire des méthodes des classes FileIO et PathIO.
 ms.date: 02/06/2019
 ms.topic: article
@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605834"
 ---
-# <a name="best-practices-for-writing-to-files"></a>Meilleures pratiques pour l’écriture dans des fichiers
+# <a name="best-practices-for-writing-to-files"></a>Bonnes pratiques concernant l’écriture de données dans des fichiers
 
 **API importantes**
 
@@ -75,12 +75,12 @@ Ce tableau présente les codes d’erreur courants que les développeurs d’app
 
 |  Nom de l’erreur (valeur)  |  Étapes  |  Causes  |  Solutions  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  Le fichier d’origine peut être marqué pour suppression, peut-être à partir d’une opération précédente.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
-|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  Le fichier d’origine est ouvert par une autre écriture exclusive.   |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  Le fichier d’origine (file.txt) n’a pas pu être remplacé, car il est en cours d’utilisation. Un autre processus ou une opération obtenu un accès au fichier avant qu’il peut être remplacé.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
+|  ERROR_ACCESS_DENIED (0 X 80070005)  |  5  |  Le fichier d’origine peut être marqué pour suppression, peut-être à partir d’une opération précédente.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
+|  ERROR_SHARING_VIOLATION (0 X 80070020)  |  5  |  Le fichier d’origine est ouvert par une autre écriture exclusive.   |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  les 19 et 20  |  Le fichier d’origine (file.txt) n’a pas pu être remplacé, car il est en cours d’utilisation. Un autre processus ou une opération obtenu un accès au fichier avant qu’il peut être remplacé.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
 |  ERROR_DISK_FULL (0 X 80070070)  |  7, 14, 16, 20  |  Le modèle transactionnel crée un fichier supplémentaire, et cela consomme d’espace de stockage supplémentaire.  |    |
-|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Cela peut se produire en raison de plusieurs opérations d’e/s en attente ou de fichiers volumineux.  |  Une approche plus granulaire en contrôlant le flux peut résoudre l’erreur.  |
-|  E_FAIL (0x80004005) |  Indéfini  |  Divers  |  Recommencez l'opération. Si elle échoue encore, il peut être une erreur de la plateforme et l’application doit s’arrêter, car il se trouve dans un état incohérent. |
+|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  Cela peut se produire en raison de plusieurs opérations d’e/s en attente ou de fichiers volumineux.  |  Une approche plus granulaire en contrôlant le flux peut résoudre l’erreur.  |
+|  E_FAIL (0 X 80004005) |  Indéfini  |  Divers  |  Recommencez l'opération. Si elle échoue encore, il peut être une erreur de la plateforme et l’application doit s’arrêter, car il se trouve dans un état incohérent. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Autres considérations pour les États de fichier qui peuvent entraîner des erreurs
 

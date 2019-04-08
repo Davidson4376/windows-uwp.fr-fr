@@ -78,7 +78,7 @@ Ne confondez pas ce concept avec la notion de mappage d’une ressource Direct3D
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Diffusion en continu de ressources](streaming-resources.md)
+[Ressources de streaming](streaming-resources.md)
 
  
 

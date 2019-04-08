@@ -59,5 +59,5 @@ Si des modifications sont apportées à des éléments ne figurant pas dans le s
 Il existe quelques situations courantes où l’ajout de parties de ce répertoire UWP nouvellement créé à la gestion de version devient nécessaire. Par exemple, si vous ajoutez une nouvelle dépendance au projet UWP (par exemple, le Kit SDK Xbox Live).  Cet exemple est étudié en détail dans [Unity : Gestion de version de votre projet UWP](development-lanes-unity-versioning.md).
 
 ## <a name="see-also"></a>Voir également
-- [Commercialisation de jeux existants Xbox](development-lanes-landing.md)
+- [Intégration de jeux existants dans Xbox](development-lanes-landing.md)
 - [UWP sur Xbox One](index.md)

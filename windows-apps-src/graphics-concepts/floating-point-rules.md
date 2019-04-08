@@ -108,10 +108,10 @@ Format :
 Une valeur float16 (v) respecte les règles suivantes :
 
 -   Si e == 31 et f != 0, alors v est égal à NaN, quel que soit s.
--   if e == 31 and f == 0, then v = (-1)s\*infinity (signed infinity)
+-   Si e == 31 et f == 0, v = (-1) s\*infinity (infini signé)
 -   Si e est entre 0 et 31, v = (-1) s\*2(e-15)\*(1.f ne le)
 -   Si e == 0 et f ! = 0, v = (-1) s\*2(e-14)\*(0.f) (nombres dénormalisés)
--   if e == 0 and f == 0, then v = (-1)s\*0 (signed zero)
+-   Si e == 0 et f == 0, v = (-1) s\*0 (zéro signé)
 
 Les règles en matière de virgule flottante 32 bits s’appliquent également aux nombres en virgule flottante 16 bits, et sont ajustées pour la disposition binaire précédemment décrite. Les exceptions à cette règle sont les suivantes :
 

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, évé
 ms.localizationpriority: medium
 ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644484"
@@ -283,6 +283,6 @@ La signature pour un délégué de gestionnaire d’événements doit être comp
 Notez que ces instructions ne s’appliquent obligatoirement si vous concevez une API interne. Bien que les API internes souvent de devenir public au fil du temps.
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Créer des API avec C / c++ / WinRT](author-apis.md)
-* [Consommer des API avec C / c++ / WinRT](consume-apis.md)
+* [Créer des API avec C++/WinRT](author-apis.md)
+* [Utiliser des API avec C++/WinRT](consume-apis.md)
 * [Gérer les événements à l’aide de délégués en C / c++ / WinRT](handle-events.md)

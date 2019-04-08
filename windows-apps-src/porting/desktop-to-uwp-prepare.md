@@ -14,7 +14,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57600894"
 ---
-# <a name="prepare-to-package-a-desktop-application"></a>Préparer empaqueter une application de bureau
+# <a name="prepare-to-package-a-desktop-application"></a>Préparer l’empaquetage d’une application de bureau
 
 Cet article rappelle les points à connaître avant de créer un package d'application de bureau. Vous ne disposez pas grand-chose à faire pour préparer votre application pour le processus d’empaquetage, mais si les éléments ci-dessous s’applique à votre application, vous devez résoudre avant la mise en package. N’oubliez pas que le Microsoft Store se charge pour vous de la prise en charge du Gestionnaire de licences et des mises à jour automatiques, par conséquent, vous pouvez supprimer les fonctionnalités relatives à ces tâches de votre code de base.
 

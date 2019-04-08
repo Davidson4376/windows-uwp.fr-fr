@@ -7,7 +7,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, imp
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645144"
@@ -259,12 +259,12 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 * [Interface de QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance (fonction)](https://msdn.microsoft.com/library/br224646)
 * [Classe de Windows::Foundation::URI](/uwp/api/windows.foundation.uri)
-* [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [modèle de fonction WinRT::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [modèle de fonction WinRT::Make](/uwp/cpp-ref-for-winrt/make)
 * [WinRT::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Créer des événements en C / c++ / WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [Interopérabilité entre C++ / c++ / WinRT et l’ABI](interop-winrt-abi.md)
-* [Présentation de C++ / c++ / WinRT](intro-to-using-cpp-with-winrt.md)
-* [Contrôles XAML ; lier à C++ / c++ / WinRT propriété](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Interopérabilité entre C++/WinRT et ABI](interop-winrt-abi.md)
+* [Présentation de C++/WinRT](intro-to-using-cpp-with-winrt.md)
+* [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

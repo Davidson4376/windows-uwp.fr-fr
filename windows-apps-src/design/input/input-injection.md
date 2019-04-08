@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602324"
@@ -18,7 +18,7 @@ ms.locfileid: "57602324"
 
 Simulez et automatisez une entrée utilisateur à partir d’appareils tels qu'un clavier, une souris, une interaction tactile, un stylet ou un boîtier de commande dans vos applications UWP.
 
-> **API importantes**: [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **API importantes** : [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>Vue d’ensemble
 

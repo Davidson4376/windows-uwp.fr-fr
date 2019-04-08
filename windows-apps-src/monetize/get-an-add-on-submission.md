@@ -8,7 +8,7 @@ keywords: windows 10, uwp, API de soumission au MicrosoftÂ Store, soumission dâ€
 ms.localizationpriority: medium
 ms.openlocfilehash: a87f0e694434774db215f3f5323588f94ec0465b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57599814"

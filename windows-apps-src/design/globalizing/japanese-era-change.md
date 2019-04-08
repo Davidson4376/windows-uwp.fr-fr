@@ -29,7 +29,7 @@ Il est important de tester les problèmes de compatibilité avant le changement 
 1. Accédez à **Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras**.
 2. Sélectionnez **Édition > Nouveau > Valeur de chaîne**et donnez-lui le nom **2019 05 01**.
 3. Cliquez avec le bouton droit sur la clé, puis sélectionnez **Modifier**.
-4. Dans le **données de la valeur** , entrez **?？\_？\_??????\_?** (Vous pouvez faire un copier-coller à partir d’ici pour faciliter la tâche).
+4. Dans le **données de la valeur** , entrez **??\_?\_?????? \_?** (Vous pouvez faire un copier-coller à partir d’ici pour faciliter la tâche).
 
 Voir [Gestion des ères pour le calendrier japonais](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar) pour en savoir plus sur le format de ces clés de Registre.
 
@@ -69,11 +69,11 @@ Pour vérifier que votre application fonctionne avec la nouvelle ère, vous deve
 
 ## <a name="test-your-application"></a>Tester votre application
 
-Maintenant, testez la façon dont votre application gère la nouvelle ère. Vérifiez les emplacements où s’affiche la date, comme les horodatages et les sélecteurs de date. Assurez-vous que l’ère est correcte avant le 1 mai 2019 (Heisei, 平成) et après ( ?？).
+Maintenant, testez la façon dont votre application gère la nouvelle ère. Vérifiez les emplacements où s’affiche la date, comme les horodatages et les sélecteurs de date. Assurez-vous que l’ère est correcte avant le 1 mai 2019 (Heisei, 平成) et après ( ?( ?).
 
 ### <a name="gannen-"></a>*Gannen* (元年)
 
-Le format pour le calendrier japonais est généralement  **&lt;nom de l’ère&gt; &lt;année d’ère&gt;**. Par exemple, l’année 2018 correspond à **Heisei 30** (平成30年).  Toutefois, la première année d’une ère est spéciale ; au lieu d’être **&lt;Nom de l’ère&gt; 1**, elle correspond à **&lt;Nom de l’ère&gt; 元年** (*gannen*). Par conséquent, la première année de l’ère Heisei serait 平成元年 (*Heisei gannen*). Assurez-vous que votre application gère correctement la première année de la nouvelle ère et renvoie correctement ?？元年.
+Le format pour le calendrier japonais est généralement  **&lt;nom de l’ère&gt; &lt;année d’ère&gt;**. Par exemple, l’année 2018 correspond à **Heisei 30** (平成30年).  Toutefois, la première année d’une ère est spéciale ; au lieu d’être **&lt;Nom de l’ère&gt; 1**, elle correspond à **&lt;Nom de l’ère&gt; 元年** (*gannen*). Par conséquent, la première année de l’ère Heisei serait 平成元年 (*Heisei gannen*). Assurez-vous que votre application gère correctement la première année de la nouvelle ère et renvoie correctement ?? 元年.
 
 ## <a name="related-apis"></a>API associées
 
@@ -102,7 +102,7 @@ Les API suivantes seront impactées :
         * [Propriété de FirstYearInThisEra](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.firstyearinthisera)
         * [Propriété de LastEra](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.lastera)
         * [Propriété de LastYearInThisEra](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.lastyearinthisera)
-        * [NumberOfYearsInThisEra Property](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.numberofyearsinthisera)     
+        * [Propriété de NumberOfYearsInThisEra](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.numberofyearsinthisera)     
 * [Windows.Globalization.DateTimeFormatting Namespace](https://docs.microsoft.com/uwp/api/windows.globalization.datetimeformatting)
     * [Classe de DateTimeFormatter](https://docs.microsoft.com/uwp/api/windows.globalization.datetimeformatting.datetimeformatter)
         * [Format (méthode)](https://docs.microsoft.com/uwp/api/windows.globalization.datetimeformatting.datetimeformatter.format)
@@ -120,15 +120,15 @@ Les API suivantes seront impactées :
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
+* [en-tête de datetimeapi.h](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
     * [GetDateFormatA (fonction)](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
     * [GetDateFormatEx (fonction)](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
     * [GetDateFormatW (fonction)](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)
-* [winnls.h header](https://docs.microsoft.com/windows/desktop/api/winnls/)
-    * [EnumDateFormatsA function](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsa)
+* [en-tête de winnls.h](https://docs.microsoft.com/windows/desktop/api/winnls/)
+    * [EnumDateFormatsA (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsa)
     * [EnumDateFormatsExA (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexa)
     * [EnumDateFormatsExEx (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexex)
-    * [EnumDateFormatsExW function](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexw)
+    * [EnumDateFormatsExW (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexw)
     * [EnumDateFormatsW (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsw)
     * [GetCalendarInfoA (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoa)
     * [GetCalendarInfoEx (fonction)](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex)

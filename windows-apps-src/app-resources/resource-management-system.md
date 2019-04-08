@@ -66,5 +66,5 @@ Les ressources potentielles sont choisies en fonction d’un [**ResourceContext*
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Localiser les chaînes dans votre manifeste de package d’application et de l’interface utilisateur](localize-strings-ui-manifest.md)
-* [Charger des images et des ressources adaptées à la mise à l’échelle, thème, contraste élevé et d’autres utilisateurs](images-tailored-for-scale-theme-contrast.md)
+* [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
+* [Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres](images-tailored-for-scale-theme-contrast.md)

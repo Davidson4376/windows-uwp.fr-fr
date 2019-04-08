@@ -205,7 +205,7 @@ Voici l’ordre d’exécution des événements de focus :
 1.  [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) Si le focus est réinitialisé sur l’élément perdant le focus ou [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) a réussi, aucun événement supplémentaire n’est déclenché.
 2.  [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) Si le focus est réinitialisé sur l’élément perdant le focus ou [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) a réussi, aucun événement supplémentaire n’est déclenché.
 3.  [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+4.  [Réception focus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 L’image suivante montre comment, lors du déplacement vers la droite à partir de A, XYFocus choisit B4 comme candidat. Puis, B4 déclenche l’événement GettingFocus dans le cadre duquel ListView dispose de la possibilité de replacer le focus sur B3.
 

@@ -37,10 +37,10 @@ En plus des applications UWP, Windows 10 sur ARM peut également exécuter votre
 ## <a name="in-this-section"></a>Dans cette section
 |Rubrique | Description |
 |-----|-----|
-|[Comment fonctionne l’émulation sur ARM de x86](apps-on-arm-x86-emulation.md)|Une présentation détaillée du mode d'émulation es applications x86 sur ARM.|
-|[Résolution des problèmes de x86 applications sur ARM](apps-on-arm-troubleshooting-x86.md)|Problèmes courants avec les applications x86 lors de l'exécution sur ARM, et comment les résoudre. |
+|[Fonctionnement de l’émulation x86 sur ARM](apps-on-arm-x86-emulation.md)|Une présentation détaillée du mode d'émulation es applications x86 sur ARM.|
+|[Résolution des problèmes relatifs aux applications x86 sur ARM](apps-on-arm-troubleshooting-x86.md)|Problèmes courants avec les applications x86 lors de l'exécution sur ARM, et comment les résoudre. |
 |[Dépannage des applications ARM sur ARM](apps-on-arm-troubleshooting-arm32.md)|Problèmes courants avec les applications ARM32 et ARM64 lors de l’exécution sur ARM et comment les résoudre. |
-|[Résolution des problèmes de compatibilité de programme sur ARM](apps-on-arm-program-compat-troubleshooter.md)|Conseils de réglage des paramètres de compatibilité si votre application ne fonctionne pas correctement sur ARM. |
+|[Utilitaire de résolution de problèmes de compatibilité des programmes sur ARM](apps-on-arm-program-compat-troubleshooter.md)|Conseils de réglage des paramètres de compatibilité si votre application ne fonctionne pas correctement sur ARM. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 |Rubrique | Description |

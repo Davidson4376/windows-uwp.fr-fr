@@ -188,7 +188,7 @@ L’anglais requiert une attention particulière. Si une application ajoute la l
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Comment le système de gestion de ressources correspond à et choisit les ressources](how-rms-matches-and-chooses-resources.md)
+* [Comment le système de gestion des ressources met en correspondance et sélectionne les ressources](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Comprendre les langues de profil utilisateur et les langues de manifeste d’application](../design/globalizing/manage-language-and-region.md)
 * [Composition de macro (continental) à des régions géographiques, sous-régions géographiques et sélectionné les regroupements économiques et autres](https://go.microsoft.com/fwlink/p/?LinkId=247929)

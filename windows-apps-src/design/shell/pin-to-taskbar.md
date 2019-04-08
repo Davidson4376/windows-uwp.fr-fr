@@ -22,7 +22,7 @@ Vous pouvez épingler par programme votre propre application à la barre des tâ
 > [!IMPORTANT]
 > **Nécessite Fall Creators Update**: Vous devez cibler le Kit de développement logiciel 16299 et être en cours d’exécution build 16299 ou ultérieure pour utiliser l’API de la barre des tâches.
 
-> **API importantes**: [Classe de TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **API importantes** : [Classe de TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Quand demander à l’utilisateur d’épingler votre application à la barre des tâches ? 

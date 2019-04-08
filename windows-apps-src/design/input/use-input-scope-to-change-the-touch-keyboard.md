@@ -22,7 +22,7 @@ Pour faciliter la saisie de données par les utilisateurs au moyen du clavier ta
 
 ### <a name="important-apis"></a>API importantes
 - [InputScope](https://msdn.microsoft.com/library/windows/apps/hh702632)
-- [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
+- [inputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
 
 
 Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un élément **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)** ou **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)**. Vous pouvez considérablement faciliter et accélérer la saisie de données par les utilisateurs dans votre application en définissant l’*étendue des entrées* du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.

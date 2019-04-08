@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57629264"
@@ -157,7 +157,7 @@ Utilisez ce modèle pour afficher une collection multimédia avec une superposit
 
 ## <a name="related-articles"></a>Articles connexes
 - [Classe de GridView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [Vue d’ensemble de liaison de données](../../data-binding/data-binding-quickstart.md)
+- [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md)
 - [Vue d’ensemble de Accessibililty](../accessibility/accessibility-overview.md)
 - [Exemple de ListView et GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Images miniatures](../../files/thumbnails.md)

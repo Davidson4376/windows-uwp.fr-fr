@@ -10,7 +10,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596564"
@@ -127,7 +127,7 @@ La commande et le contrôle représentent l’utilisation de commandes verbales 
 
 Ce sont des aspects essentiels d’une expérience utilisateur réussie. Par conséquent, il n’est pas recommandé de prévoir un seul type d’entrée. Les fonctions vocales sont généralement proposées en complément d’autres options d’entrée, selon les préférences de l’utilisateur ou les fonctionnalités matérielles.
 
-**Dictation**
+**Dictée**
 
 La méthode d’entrée vocale la plus simple. Chaque énoncé est converti en texte.
 

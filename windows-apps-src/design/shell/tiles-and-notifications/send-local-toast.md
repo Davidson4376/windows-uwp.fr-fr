@@ -39,7 +39,7 @@ Nous allons examiner les étapes suivantes :
 * Gestion de l’activation au premier plan
 * Gestion de l’activation en arrière-plan
 
-> **API importantes**: [Classe de ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs classe](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **API importantes** : [Classe de ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs classe](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>Conditions préalables

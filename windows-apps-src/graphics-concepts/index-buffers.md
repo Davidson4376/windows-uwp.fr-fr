@@ -40,7 +40,7 @@ L’application peut écrire directement les index sur une mémoire tampon d’i
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Mémoires tampons de vertex et d’index](vertex-and-index-buffers.md)
+[Tampons vertex et tampons d’index](vertex-and-index-buffers.md)
 
  
 

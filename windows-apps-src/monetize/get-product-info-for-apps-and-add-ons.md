@@ -8,7 +8,7 @@ keywords: windows 10, uwp, achats dans l’application, extensions, Windows.Ser
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623094"
@@ -83,7 +83,7 @@ L’exemple suivant récupère les informations concernant les modules compléme
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Versions d’évaluation et les achats dans l’application](in-app-purchases-and-trials.md)
+* [Achats dans l’application et essais](in-app-purchases-and-trials.md)
 * [Obtenir les informations de licence pour les applications et modules complémentaires](get-license-info-for-apps-and-add-ons.md)
 * [Activer les achats dans l’application des applications et des modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Activer les achats du module complémentaire consommables](enable-consumable-add-on-purchases.md)

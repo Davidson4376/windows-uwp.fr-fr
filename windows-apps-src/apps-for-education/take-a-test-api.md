@@ -4,7 +4,7 @@ title: API JavaScript Examen.
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-keywords: Windows 10, uwp, l’enseignement
+keywords: windows 10, uwp, éducation
 ms.localizationpriority: medium
 ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -32,11 +32,11 @@ L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérif
 
 | Méthode | Description   |
 |--------|---------------|
-|[lockDown](#lockDown) | Verrouille l’appareil pour le test. |
+|[Verrouillage](#lockDown) | Verrouille l’appareil pour le test. |
 |[isEnvironmentSecure](#isEnvironmentSecure) | Détermine si le contexte de verrouillage est toujours appliqué à l’appareil. |
 |[getDeviceInfo](#getDeviceInfo) | Obtient des informations sur la plateforme sur laquelle l’application de test est en cours d’exécution. |
 |[examineProcessList](#examineProcessList)|Obtient la liste des processus utilisateur et système en cours d’exécution.|
-|[close](#close) | Ferme le navigateur et déverrouille l’appareil. |
+|[Fermer](#close) | Ferme le navigateur et déverrouille l’appareil. |
 |[getPermissiveMode](#getPermissiveMode)|Vérifie si le mode permissif est activé ou désactivé.|
 |[setPermissiveMode](#setPermissiveMode)|Active/désactive le mode permissif.|
 |[emptyClipBoard](#emptyClipBoard)|Efface le contenu du presse-papiers du système.|
@@ -100,7 +100,7 @@ Obtient des informations sur la plateforme sur laquelle l’application de test 
 
 **Paramètres**  
 * `callback` -La fonction à appeler lorsque cette fonction est terminée. Elle doit être au format `Function(String infoObj)` où `infoObj` est une chaîne JSON contenant plusieurs champs. Les champs suivants doivent être pris en charge :
-    * `os` représente le type de système d’exploitation (par exemple : Windows, macOS, Linux, iOS, Android, etc.)
+    * `os` représente le type de système d’exploitation (par exemple : Windows, macOS, Linux, iOS, Android, etc..)
     * `name` représente le nom de la version du système d’exploitation, le cas échéant (par exemple : Sierra Ubuntu).
     * `version` représente la version du système d’exploitation (par exemple : 10.1, 10 pro, etc..)
     * `brand` représente la personnalisation du navigateur sécurisé (par exemple : OAKS, autorité de certification, SmarterApp, etc.)

@@ -3,7 +3,7 @@ title: Déverrouillage Windows avec les appareils (IoT) complémentaires
 description: Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure du dispositif complémentaire Windows Hello, un dispositif complémentaire peut enrichir considérablement l’expérience Windows Hello même en l’absence de biométrie (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, sécurité
+keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
@@ -201,7 +201,7 @@ Le processus global de l’API se déroule comme suit :
     * S’assurer que l’application du dispositif complémentaire Windows Hello stocke des clés HMAC (si elles sont prises en charge) et qu’elle en supprime les copies
 2. Inscrire votre tâche en arrière-plan
 3. Attendre l’événement approprié dans la tâche en arrière-plan
-    * WaitingForUserConfirmation: Attendez que cet événement si l’action/mouvement utilisateur sur le côté du périphérique Windows Hello Compagnon est nécessaire pour démarrer le flux d’authentification
+    * WaitingForUserConfirmation : Attendez que cet événement si l’action/mouvement utilisateur sur le côté du périphérique Windows Hello Compagnon est nécessaire pour démarrer le flux d’authentification
     * CollectingCredential : Attendez que cet événement si l’appareil mobile Windows Hello s’appuie sur le mouvement d’action/utilisateur sur le PC pour démarrer le flux d’authentification (par exemple, en atteignant la barre d’espace)
     * Autre déclencheur, comme une carte à puce : Veillez à interroger pour l’état actuel de l’authentification appeler l’API de droite.
 4. Tenir l’utilisateur informé des messages d’erreur ou des étapes suivantes nécessaires en appelant la méthode ShowNotificationMessageAsync. Appeler uniquement cette API une fois qu’un signal d’intention est capturé.
@@ -634,7 +634,7 @@ Les messages d’erreur s’affichent systématiquement et apparaissent après l
 
 Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est un paramètre transmis par l’application du dispositif complémentaire dans le cadre de la méthode ShowNotificationMessageAsync.
 
-**Guidance**
+**Conseils**
 
 - « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
 - « Configuration de votre appareil compagnon. Veuillez patienter ou utilisez une autre option de connexion. »

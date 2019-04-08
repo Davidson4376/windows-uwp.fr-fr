@@ -37,7 +37,7 @@ Lₚ = Lₚ \* vMatrix
 
 La direction de la lumière dans l'espace de caméra, dans le cas d'une lumière directionnelle, est calculée en multipliant la direction de la source de lumière par la matrice globale, puis en normalisant et en inversant le résultat.
 
-L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
+L<sub>dir</sub> - Norm (L<sub>dir</sub> \* wvMatrix)
 
 Pour une lumière ponctuelle et un projecteur, la direction par rapport à la lumière est calculée comme suit :
 

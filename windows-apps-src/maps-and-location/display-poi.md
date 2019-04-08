@@ -473,11 +473,11 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Centre de développement Bing Maps](https://www.bingmapsportal.com/)
-* [Exemple de mappage UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Instructions de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 vidéo : En tirant parti des cartes et emplacement sur les téléphones, tablettes et PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Exemple d’application UWP du trafic](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Recommandations de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéo de la build 2015 : Utilisation de cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
-* [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
+* [**Polyligne de carte**](https://msdn.microsoft.com/library/windows/apps/dn637114)

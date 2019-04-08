@@ -139,8 +139,8 @@ Les corps de requête et de réponse associés à ces méthodes comportent les c
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  Entier   |  L’ID de la chaîne de distribution.     |   Oui    |      |  Non      |    
 |  name   |  chaîne   |   Nom de la chaîne de distribution.    |    Non   |      |  POST     |     
-|  configuredStatus   |  chaîne   |  L’une des valeurs suivantes qui spécifie le statut de la chaîne de distribution définie par le développeur : <ul><li>**Active**</li><li>**Inactive**</li></ul>     |  Non     |      |   POST    |       
-|  effectiveStatus   |  chaîne   |   L’une des valeurs suivantes qui spécifie le statut effectif de la chaîne de distribution, suivant la validation du système : <ul><li>**Active**</li><li>**Inactive**</li><li>**Traitement**</li><li>**Échec**</li></ul>    |    Oui   |      |  Non      |      
+|  configuredStatus   |  chaîne   |  L’une des valeurs suivantes qui spécifie le statut de la chaîne de distribution définie par le développeur : <ul><li>**Active**</li><li>**inactif**</li></ul>     |  Non     |      |   POST    |       
+|  effectiveStatus   |  chaîne   |   L’une des valeurs suivantes qui spécifie le statut effectif de la chaîne de distribution, suivant la validation du système : <ul><li>**Active**</li><li>**inactif**</li><li>**Traitement**</li><li>**Échec**</li></ul>    |    Oui   |      |  Non      |      
 |  effectiveStatusReasons   |  tableau   |  L’une ou plusieurs des valeurs suivantes qui spécifient le motif du statut effectif de la chaîne de distribution : <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  Oui     |     |    Non    |           
 |  startDatetime   |  chaîne   |  L’heure et la date de début de la chaîne de distribution, au format ISO 8601. Cette valeur ne peut pas être modifiée si elle se situe dans le passé.     |    Non   |      |    POST, PUT     |
 |  endDatetime   |  chaîne   |  L’heure et la date de fin de la chaîne de distribution, au format ISO 8601. Cette valeur ne peut pas être modifiée si elle se situe dans le passé.     |   Non    |      |  POST, PUT     |
