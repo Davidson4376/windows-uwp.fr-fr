@@ -6,12 +6,12 @@ keywords: windows 10, uwp, consommable, extensions, achats dans l’application
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 142c9f90161f4fd61946ccb7452af7ee91f66baa
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636724"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334817"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats de modules complémentaires consommables
 
@@ -41,7 +41,7 @@ Pour offrir un module complémentaire consommable à un utilisateur, suivez cett
 
 À tout moment, vous pouvez également [consulter le solde restant](enable-consumable-add-on-purchases.md#get_balance) d’un consommable géré par le Windows Store.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Les conditions préalables de ces exemples sont les suivantes :
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure.
@@ -73,7 +73,7 @@ Lorsque l’utilisateur [achète le module complémentaire](enable-in-app-purcha
 Cet exemple montre comment signaler un consommable géré par le Windows Store comme épuisé.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
 
 <span id="get_balance" />
 
@@ -82,7 +82,7 @@ Cet exemple montre comment signaler un consommable géré par le Windows Store 
 Cet exemple montre comment utiliser la méthode [GetConsumableBalanceRemainingAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) pour obtenir le solde restant d’un consommable géré par le Windows Store.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 

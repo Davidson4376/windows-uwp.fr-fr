@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bd59c1d32b4f09b58b7e78281e468fbb00a777d9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629464"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291877"
 ---
 # <a name="stencil-buffers"></a>Mémoires tampons de gabarits
-
 
 Un *tampon stencil buffer* est utilisé pour masquer les pixels d’une image afin de produire des effets spéciaux. Le masque permet de contrôler si le pixel est ou non dessiné. Ces effets spéciaux comprennent notamment la composition, le transfert, la dissolution, le fondu et le balayage, le contour et la silhouette, ainsi que le stencil recto verso. Certains des effets les plus courants sont présentés ci-dessous.
 
@@ -25,7 +24,6 @@ Les informations sur les mémoire tampon de gabarit sont intégrées dans les do
 
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>Fonctionne de la mémoire tampon du stencil
 
-
 Direct3D procède à un test sur les contenus de la mémoire tampon de gabarit sur une base pixel par pixel. Pour chaque pixel de la surface cible, il procède à un test à l’aide de la valeur correspondante dans la mémoire tampon de gabarit, d'une valeur de référence du gabarit et d'une valeur de masque du gabarit. Si le test réussit, Direct3D exécute une action. Le test est réalisé en suivant les étapes suivantes :
 
 1.  Exécutez une opération AND au niveau du bit de la valeur de référence du gabarit avec le masque de gabarit.
@@ -34,7 +32,7 @@ Direct3D procède à un test sur les contenus de la mémoire tampon de gabarit s
 
 Les étapes ci-dessus sont présentées dans la ligne de code suivante :
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

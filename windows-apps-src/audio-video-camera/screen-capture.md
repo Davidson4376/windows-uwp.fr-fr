@@ -4,14 +4,17 @@ description: L’espace de noms Windows.Graphics.Capture fournit des API pour l�
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.date: 11/30/2018
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 keywords: windows 10, uwp, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bbe52de6e148ff86f492ee2c490e5dda388ffa1
+ms.sourcegitcommit: 703f23f0cd2037997b6540335d32d344d5604974
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592964"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58867885"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -48,6 +51,14 @@ public void OnInitialization()
 }
 ```
 
+```vb
+Public Sub OnInitialization()
+    If Not GraphicsCaptureSession.IsSupported Then
+        CaptureButton.Visibility = Visibility.Collapsed
+    End If
+End Sub
+```
+
 Une fois que vous avez vérifié que la capture d’écran est prise en charge, utilisez la classe [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) pour appeler l’interface utilisateur système du sélecteur. L’utilisateur final utilise cette interface utilisateur pour sélectionner la fenêtre d’affichage ou d’application à capturer. Le sélecteur retourne un objet [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem) qui est utilisé pour créer un objet **GraphicsCaptureSession** :
 
 ```cs
@@ -68,6 +79,21 @@ public async Task StartCaptureAsync()
 }
 ```
 
+```vb
+Public Async Function StartCaptureAsync() As Task
+    ' The GraphicsCapturePicker follows the same pattern the
+    ' file pickers do. 
+    Dim picker As New GraphicsCapturePicker
+    Dim item As GraphicsCaptureItem = Await picker.PickSingleItemAsync()
+
+    ' The item may be null if the user dismissed the
+    ' control without making a selection or hit Cancel.
+    If item IsNot Nothing Then
+        StartCaptureInternal(item)
+    End If
+End Function
+```
+
 Comme il s’agit de code d’interface utilisateur, il doit être appelée sur le thread d’interface utilisateur. Si vous êtes l’appel à partir de code-behind pour une page de votre application (comme **MainPage.xaml.cs**) cela se fait automatiquement pour vous, mais dans le cas contraire, vous pouvez le forcer à s’exécuter sur le thread d’interface utilisateur avec le code suivant :
 
 ```cs
@@ -77,6 +103,12 @@ await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
 {
     await StartCaptureAsync();
 });
+```
+
+```vb
+Dim window As CoreWindow = CoreApplication.MainView.CoreWindow
+Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                                 Async Sub() Await StartCaptureAsync())
 ```
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Créer un pool d’images de capture et une session de capture
@@ -101,10 +133,31 @@ public void StartCaptureInternal(GraphicsCaptureItem item)
 } 
 ```
 
+```vb
+WithEvents CaptureItem As GraphicsCaptureItem
+WithEvents FramePool As Direct3D11CaptureFramePool
+Private _canvasDevice As CanvasDevice
+Private _session As GraphicsCaptureSession
+
+Private Sub StartCaptureInternal(item As GraphicsCaptureItem)
+    CaptureItem = item
+
+    FramePool = Direct3D11CaptureFramePool.Create(
+        _canvasDevice, ' D3D device 
+        DirectXPixelFormat.B8G8R8A8UIntNormalized, ' Pixel format 
+        2, '  Number of frames
+        CaptureItem.Size) ' Size of the buffers 
+End Sub
+```
+
 Ensuite, obtenez une instance de la classe **GraphicsCaptureSession** pour votre **Direct3D11CaptureFramePool** en passant l’objet **GraphicsCaptureItem** à la méthode **CreateCaptureSession** :
 
 ```cs
 _session = _framePool.CreateCaptureSession(_item);
+```
+
+```vb
+_session = FramePool.CreateCaptureSession(CaptureItem)
 ```
 
 Une fois que l’utilisateur a explicitement autorisé la capture d’une fenêtre d’application ou d’affichage dans l’interface utilisateur du système, l’objet **GraphicsCaptureItem** peut être associé à plusieurs objets **CaptureSession**. De cette façon, votre application peut choisir de capturer le même élément pour plusieurs expériences.
@@ -117,6 +170,10 @@ Une fois votre pool d’images et votre session de capture créés, appelez la m
 
 ```cs
 _session.StartCapture();
+```
+
+```vb
+_session.StartCapture()
 ```
 
 Pour acquérir ces images de capture, qui sont des objets [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe), vous pouvez utiliser l’événement **Direct3D11CaptureFramePool.FrameArrived** :
@@ -137,6 +194,22 @@ _framePool.FrameArrived += (s, a) =>
         ProcessFrame(frame); 
     }  
 }; 
+```
+
+```vb
+Private Sub FramePool_FrameArrived(sender As Direct3D11CaptureFramePool, args As Object) Handles FramePool.FrameArrived
+    ' The FrameArrived event is raised for every frame on the thread
+    ' that created the Direct3D11CaptureFramePool. This means we 
+    ' don't have to do a null-check here, as we know we're the only 
+    ' one dequeueing frames in our application.  
+
+    ' NOTE Disposing the frame retires it And returns  
+    ' the buffer to the pool.
+
+    Using frame = FramePool.TryGetNextFrame()
+        ProcessFrame(frame)
+    End Using
+End Sub
 ```
 
 Il est recommandé de ne pas utiliser si possible le thread d’interface utilisateur pour **FrameArrived**, car cet événement est déclenché chaque fois qu’une nouvelle image est disponible, ce qui arrive souvent. Si vous choisissez d’écouter **FrameArrived** sur le thread d’interface utilisateur, prenez en compte la quantité de travail que vous effectuez chaque fois que l’événement est déclenché.
@@ -384,10 +457,185 @@ namespace WindowsGraphicsCapture
 }
 ```
 
+```vb
+Imports System.Numerics
+Imports Microsoft.Graphics.Canvas
+Imports Microsoft.Graphics.Canvas.UI.Composition
+Imports Windows.Graphics
+Imports Windows.Graphics.Capture
+Imports Windows.Graphics.DirectX
+Imports Windows.UI
+Imports Windows.UI.Composition
+Imports Windows.UI.Xaml.Hosting
+
+Partial Public NotInheritable Class MainPage
+    Inherits Page
+    
+    ' Capture API objects.
+    WithEvents CaptureItem As GraphicsCaptureItem
+    WithEvents FramePool As Direct3D11CaptureFramePool
+
+    Private _lastSize As SizeInt32
+    Private _session As GraphicsCaptureSession
+
+    ' Non-API related members.
+    Private _canvasDevice As CanvasDevice
+    Private _compositionGraphicsDevice As CompositionGraphicsDevice
+    Private _compositor As Compositor
+    Private _surface As CompositionDrawingSurface
+
+    Sub New()
+        InitializeComponent()
+        Setup()
+    End Sub
+
+    Private Sub Setup()
+        _canvasDevice = New CanvasDevice()
+        _compositionGraphicsDevice = CanvasComposition.CreateCompositionGraphicsDevice(Window.Current.Compositor, _canvasDevice)
+        _compositor = Window.Current.Compositor
+        _surface = _compositionGraphicsDevice.CreateDrawingSurface(
+            New Size(400, 400), DirectXPixelFormat.B8G8R8A8UIntNormalized, DirectXAlphaMode.Premultiplied)
+        Dim visual = _compositor.CreateSpriteVisual()
+        visual.RelativeSizeAdjustment = Vector2.One
+        Dim brush = _compositor.CreateSurfaceBrush(_surface)
+        brush.HorizontalAlignmentRatio = 0.5F
+        brush.VerticalAlignmentRatio = 0.5F
+        brush.Stretch = CompositionStretch.Uniform
+        visual.Brush = brush
+        ElementCompositionPreview.SetElementChildVisual(Me, visual)
+    End Sub
+
+    Public Async Function StartCaptureAsync() As Task
+        ' The GraphicsCapturePicker follows the same pattern the
+        ' file pickers do. 
+        Dim picker As New GraphicsCapturePicker
+        Dim item As GraphicsCaptureItem = Await picker.PickSingleItemAsync()
+
+        ' The item may be null if the user dismissed the
+        ' control without making a selection or hit Cancel.
+        If item IsNot Nothing Then
+            StartCaptureInternal(item)
+        End If
+    End Function
+
+    Private Sub StartCaptureInternal(item As GraphicsCaptureItem)
+        ' Stop the previous capture if we had one.
+        StopCapture()
+
+        CaptureItem = item
+        _lastSize = CaptureItem.Size
+
+        FramePool = Direct3D11CaptureFramePool.Create(
+            _canvasDevice, ' D3D device 
+            DirectXPixelFormat.B8G8R8A8UIntNormalized, ' Pixel format 
+            2, '  Number of frames
+            CaptureItem.Size) ' Size of the buffers 
+
+        _session = FramePool.CreateCaptureSession(CaptureItem)
+        _session.StartCapture()
+    End Sub
+
+    Private Sub FramePool_FrameArrived(sender As Direct3D11CaptureFramePool, args As Object) Handles FramePool.FrameArrived
+        ' The FrameArrived event is raised for every frame on the thread
+        ' that created the Direct3D11CaptureFramePool. This means we 
+        ' don't have to do a null-check here, as we know we're the only 
+        ' one dequeueing frames in our application.  
+
+        ' NOTE Disposing the frame retires it And returns  
+        ' the buffer to the pool.
+
+        Using frame = FramePool.TryGetNextFrame()
+            ProcessFrame(frame)
+        End Using
+    End Sub
+
+    Private Sub CaptureItem_Closed(sender As GraphicsCaptureItem, args As Object) Handles CaptureItem.Closed
+        StopCapture()
+    End Sub
+
+    Public Sub StopCapture()
+        _session?.Dispose()
+        FramePool?.Dispose()
+        CaptureItem = Nothing
+        _session = Nothing
+        FramePool = Nothing
+    End Sub
+
+    Private Sub ProcessFrame(frame As Direct3D11CaptureFrame)
+        ' Resize and device-lost leverage the same function on the
+        ' Direct3D11CaptureFramePool. Refactoring it this way avoids 
+        ' throwing in the catch block below (device creation could always 
+        ' fail) along with ensuring that resize completes successfully And 
+        ' isn't vulnerable to device-lost.
+
+        Dim needsReset As Boolean = False
+        Dim recreateDevice As Boolean = False
+
+        If (frame.ContentSize.Width <> _lastSize.Width) OrElse
+            (frame.ContentSize.Height <> _lastSize.Height) Then
+            needsReset = True
+            _lastSize = frame.ContentSize
+        End If
+
+        Try
+            ' Take the D3D11 surface and draw it into a  
+            ' Composition surface.
+
+            ' Convert our D3D11 surface into a Win2D object.
+            Dim bitmap = CanvasBitmap.CreateFromDirect3D11Surface(
+                _canvasDevice,
+                frame.Surface)
+
+            ' Helper that handles the drawing for us.
+            FillSurfaceWithBitmap(bitmap)
+            ' This is the device-lost convention for Win2D.
+        Catch e As Exception When _canvasDevice.IsDeviceLost(e.HResult)
+            ' We lost our graphics device. Recreate it and reset 
+            ' our Direct3D11CaptureFramePool.  
+            needsReset = True
+            recreateDevice = True
+        End Try
+
+        If needsReset Then
+            ResetFramePool(frame.ContentSize, recreateDevice)
+        End If
+    End Sub
+
+    Private Sub FillSurfaceWithBitmap(canvasBitmap As CanvasBitmap)
+        CanvasComposition.Resize(_surface, canvasBitmap.Size)
+
+        Using session = CanvasComposition.CreateDrawingSession(_surface)
+            session.Clear(Colors.Transparent)
+            session.DrawImage(canvasBitmap)
+        End Using
+    End Sub
+
+    Private Sub ResetFramePool(size As SizeInt32, recreateDevice As Boolean)
+        Do
+            Try
+                If recreateDevice Then
+                    _canvasDevice = New CanvasDevice()
+                End If
+                FramePool.Recreate(_canvasDevice, DirectXPixelFormat.B8G8R8A8UIntNormalized, 2, size)
+                ' This is the device-lost convention for Win2D.
+            Catch e As Exception When _canvasDevice.IsDeviceLost(e.HResult)
+                _canvasDevice = Nothing
+                recreateDevice = True
+            End Try
+        Loop While _canvasDevice Is Nothing
+    End Sub
+
+    Private Async Sub Button_ClickAsync(sender As Object, e As RoutedEventArgs) Handles CaptureButton.Click
+        Await StartCaptureAsync()
+    End Sub
+
+End Class
+```
+
 ## <a name="record-a-video"></a>Enregistrer une vidéo
 
 Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le faire plus facilement avec les [espace de noms Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Cela fait partie du Kit de développement logiciel, l’extension de bureau pour qu’elle fonctionne uniquement sur le bureau et nécessite que vous ajoutez une référence à celui-ci à partir de votre projet. Consultez [vue d’ensemble des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) pour plus d’informations.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
-* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Espace de noms Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

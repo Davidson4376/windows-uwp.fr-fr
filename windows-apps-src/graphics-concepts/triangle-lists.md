@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aae797db890c6bee141c3b4a79a6a85a55a6b512
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 53fd2b132fda018030b7555a9cdac718ec1f1cc4
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653744"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291557"
 ---
 # <a name="triangle-lists"></a>Listes de triangles
-
 
 Une liste de triangles est une liste de triangles isolés. Les triangles isolés peuvent être proches ou non. Une liste de triangles doit avoir au moins trois vertex et le nombre total de vertex doit être divisible par trois.
 
@@ -32,7 +31,7 @@ L’illustration suivante représente une liste de triangles rendue.
 
 Le code suivant montre comment créer des sommets pour cette liste de triangles.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -52,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 L’exemple de code ci-dessous montre comment rendre cette liste de triangles dans Direct3D.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

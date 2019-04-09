@@ -1,16 +1,16 @@
 ---
 Description: Une fois vos packages correctement chargés, vous verrez un tableau indiquant les packages offerts aux familles d’appareils Windows 10 spécifiques (et aux versions antérieures du système d’exploitation, le cas échéant), classés par ordre.
 title: Disponibilité de la famille d’appareils
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, packages, télécharger, disponibilité famille d’appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 516339b33ac4cf8e29e320f442791402b64c6a94
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605354"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334626"
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
@@ -34,7 +34,7 @@ Si votre application les prend en charge, nous vous recommandons de conserver to
 
 <span id="xbox" />
 
-La seule famille d’appareils Windows 10 qui n’est pas activée par défaut pour les packages Windows.Universal est **Xbox Windows 10**. Si votre application n’est pas un jeu (ou s’il s’agit d’un jeu et que vous avez activé le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou que vous êtes passé par le processus d’[approbation de concept](../gaming/concept-approval.md)), et que votre soumission comprend des packages UWP neutres et/ou x64 compilés à l’aide de la version 14393 du SDK Windows 10 ou une version ultérieure, vous pouvez cocher la case **Xbox Windows 10** afin de proposer l'application aux clients sur Xbox One.
+La seule famille d’appareils Windows 10 qui n’est pas activée par défaut pour les packages Windows.Universal est **Xbox Windows 10**. Si votre application n’est pas un jeu (ou s’il s’agit d’un jeu et que vous avez activé le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) ou que vous êtes passé par le processus d’[approbation de concept](../gaming/concept-approval.md)), et que votre soumission comprend des packages UWP neutres et/ou x64 compilés à l’aide de la version 14393 du SDK Windows 10 ou une version ultérieure, vous pouvez cocher la case **Xbox Windows 10** afin de proposer l'application aux clients sur Xbox One.
 
 > [!IMPORTANT]
 > Pour que votre application se lance sur les appareils Xbox, vous devez inclure un package neutre ou x64 compilé avec la version 14393 du SDK Windows ou une version ultérieure. Toutefois, si vous cochez la case **Xbox Windows 10**, votre package présentant la version la plus élevée applicable à Xbox (un package neutre ou x64 ciblant la famille d’appareils universelle ou Xbox) sera toujours proposé aux clients sur Xbox, même s’il est compilé avec une version antérieure du SDK. Pour cette raison, il est essentiel de vous assurer que le package présentant la version la plus élevée applicable à Xbox soit compilé avec la version 14393 du SDK Windows ou une version supérieure. Si ce n’est pas le cas, vous verrez un message d’erreur indiquant que les clients Xbox ne seront pas en mesure de lancer votre application. 

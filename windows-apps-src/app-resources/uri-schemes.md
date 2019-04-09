@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632054"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320582"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -98,9 +98,11 @@ ms-appx:///images/logo.png
 
 L’URI ci-dessus peut en fait récupérer un fichier dans le package de l’application en cours avec le nom de fichier physique suivant.
 
-```
+<blockquote>
+<pre>
 \Images\fr-FR\logo.scale-100_contrast-white.png
-```
+</blockquote>
+</pre>
 
 Vous pouvez bien entendu récupérer également ce même fichier physique en y faisant référence directement à l’aide de son nom complet.
 

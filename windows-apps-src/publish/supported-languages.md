@@ -2,16 +2,16 @@
 Description: Vous pouvez proposer des applications dans le Microsoft Store dans plus de 100 langues.
 title: Langues prises en charge
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657754"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244285"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
@@ -35,7 +35,7 @@ Les codes de langue qui ne sont pas incluses ici ne sont pas pris en charge par 
 | Amharique               | am, am-et                                                                                                                                                                                             |
 | Arménien              | hy, hy-am                                                                                                                                                                                             |
 | Assamais              | as, as-in                                                                                                                                                                                             |
-| Azerbaïdjanais           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Azerbaïdjanais           | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
 | Basque (Basque)       | eu, eu-es                                                                                                                                                                                             |
 | Bélarusse            | be, be-by                                                                                                                                                                                             |
 | Bengali                | bn, bn-bd, bn-in                                                                                                                                                                                      |

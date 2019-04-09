@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 437650883b4782ca02c0daf24cc8ebed01d954f6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e76aeceafa3f75c78bd7078f57fa9a3b1edee2f
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651254"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291657"
 ---
 # <a name="bilinear-texture-filtering"></a>Filtrage de textures bilinéaires
-
 
 Le *filtrage bilinéaire* calcule la moyenne pondérée des 4 éléments de texture les plus proches du point d’échantillonnage. Cette approche de filtrage est plus précise et courante que le filtrage des points les plus proches. Cette approche est efficace car elle est implémentée dans le matériel graphique moderne.
 
@@ -37,13 +36,13 @@ L'approche la plus simple consiste à demander à l’échantillonneur de retour
 
 Une approche de filtrage plus précise et courante consiste à calculer la moyenne pondérée des 4 texels les plus proches du point d’échantillonnage ; c'est ce que l'on appelle le *filtrage bilinéaire*. Les coûts de calcul supplémentaires associés au filtrage bilinéaire sont généralement négligeables car cette routine est implémentée dans le matériel graphique moderne. Voici les couleurs que nous obtenons à quelques points d’échantillonnage différents à l’aide d'un filtrage bilinéaire :
 
-```
+```cpp
 UV: (0.5, 0.5)
 ```
 
 Ce point se trouve à la frontière exacte entre les texels rouge, vert, bleu et blanc. L'échantillonneur retourne la couleur grise :
 
-```
+```cpp
   0.25 * (255, 0, 0)
   0.25 * (0, 255, 0) 
   0.25 * (0, 0, 255) 
@@ -52,13 +51,13 @@ Ce point se trouve à la frontière exacte entre les texels rouge, vert, bleu et
 = (128, 128, 128)
 ```
 
-```
+```cpp
 UV: (0.5, 0.375)
 ```
 
 Ce point se trouve au milieu de la frontière entre les texels rouge et vert. L’échantillonneur retourne la couleur jaune-gris (notez que les contributions des texels bleu et blanc sont mises à l’échelle de 0) :
 
-```
+```cpp
   0.5 * (255, 0, 0)
   0.5 * (0, 255, 0) 
   0.0 * (0, 0, 255) 
@@ -67,13 +66,13 @@ Ce point se trouve au milieu de la frontière entre les texels rouge et vert. L�
 = (128, 128, 0)
 ```
 
-```
+```cpp
 UV: (0.375, 0.375)
 ```
 
 Il s'agit de l’adresse du texel rouge, qui est la couleur retournée (tous les autres texels du calcul de filtrage sont pondérés 0) :
 
-```
+```cpp
   1.0 * (255, 0, 0)
   0.0 * (0, 255, 0) 
   0.0 * (0, 0, 255) 

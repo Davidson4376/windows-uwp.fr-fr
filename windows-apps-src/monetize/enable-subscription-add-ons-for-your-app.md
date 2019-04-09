@@ -5,12 +5,12 @@ keywords: windows 10, uwp, abonnements, extensions, achats dans l’application
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b937ca61110452e233061179c398cae0d047686e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589984"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335057"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -88,14 +88,14 @@ Cet exemple montre comment demander l’achat d’une extension d’abonnement c
 4. Enfin, le code appelle la méthode [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) pour demander l'achat de l'abonnement. Si une version d’évaluation est disponible pour l’abonnement, celle-ci sera proposée au client à l’achat. Dans le cas contraire, l’abonnement complet sera proposé à l’achat.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>Obtenir des informations sur les extensions d'abonnement de l’application en cours
 
 Cet exemple de code démontre comment obtenir des informations sur toutes les extensions d'abonnement disponibles dans votre app. Pour obtenir ces informations, utilisez tout d’abord la méthode [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) pour obtenir la collection d'objets [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) qui représentent chaque extension disponible pour l’application. Obtenez ensuite le [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) pour chaque produit et utilisez les propriétés [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) et [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) pour accéder aux informations de l’abonnement.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
 

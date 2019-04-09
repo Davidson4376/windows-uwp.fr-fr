@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cbf94420b8ed7a2e030ccb2799a8636f56bef2f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635714"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162925"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -43,17 +43,17 @@ Les étapes suivantes montrent comment activer le portail d’appareil Xbox, qu
 
 Le portail d’appareil Xbox fournit un ensemble de pages standard similaires à ce qui est disponible sur le portail d’appareil Windows, ainsi que plusieurs pages uniques. Pour en obtenir une description détaillée, voir [Vue d’ensemble du portail d’appareil Windows](device-portal.md). Les sections suivantes décrivent les pages qui sont propres au portail d’appareil Xbox.
 
-### <a name="home"></a>Accueil
+### <a name="home"></a>Dossier de base
 
 Similaire à la page **Apps manager** (Gestionnaire d’applications) du portail d’appareil Windows, la page **Accueil** du portail d’appareil Xbox répertorie les applications et les jeux installés sous **Mes jeux et applications**. Vous pouvez cliquer sur le nom d’un jeu ou d’une application pour afficher plus d’informations à son sujet, comme le **nom de la famille de packages**. Dans le menu déroulant **Actions**, vous pouvez agir sur le jeu ou sur l’application, notamment en la **lançant**.
 
 Sous **Xbox Live test accounts** (Comptes de test Xbox Live), vous pouvez gérer les comptes associés à votre Xbox. Vous pouvez ajouter des comptes utilisateurs et invités, créer des utilisateurs, connecter et déconnecter des utilisateurs, et supprimer des comptes.
 
-![Accueil](images/device-portal-xbox-16.png)
+![Dossier de base](images/device-portal-xbox-16.png)
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (Enregistrements de jeux)
 
-Les portails d’appareil Windows et Xbox possèdent tous deux une page **Xbox Live**. Toutefois, le portail d’appareil Xbox comporte une section unique, **Xbox Live game saves** (Enregistrements de jeux Xbox Live), où vous pouvez enregistrer des données pour les jeux installés sur votre Xbox. Entrez l’**ID de configuration du service (SCID)** (voir [Configuration du service Xbox Live](../xbox-live/xbox-live-service-configuration.md#get-your-ids) pour plus d’informations), le **nom de membre (MSA)** et le **nom de la famille de packages (PFN)** associés au titre et à l’enregistrement du jeu. Ensuite, recherchez le **fichier d’entrée (.json ou .xml)**, puis sélectionnez l’un des boutons suivants (**Réinitialiser**, **Importer**, **Exporter** et **Supprimer**) pour exploiter les données enregistrées.
+Les portails d’appareil Windows et Xbox possèdent tous deux une page **Xbox Live**. Toutefois, le portail d’appareil Xbox comporte une section unique, **Xbox Live game saves** (Enregistrements de jeux Xbox Live), où vous pouvez enregistrer des données pour les jeux installés sur votre Xbox. Entrez l’**ID de configuration du service (SCID)** (voir [Configuration du service Xbox Live](https://docs.microsoft.com/gaming/xbox-live//xbox-live-service-configuration.md#get-your-ids) pour plus d’informations), le **nom de membre (MSA)** et le **nom de la famille de packages (PFN)** associés au titre et à l’enregistrement du jeu. Ensuite, recherchez le **fichier d’entrée (.json ou .xml)**, puis sélectionnez l’un des boutons suivants (**Réinitialiser**, **Importer**, **Exporter** et **Supprimer**) pour exploiter les données enregistrées.
 
 Dans la section **Générer**, vous pouvez générer des données factices et les enregistrer dans le fichier d’entrée spécifié. Entrez simplement les **conteneurs (par défaut 2)**, les **objets BLOB (par défaut 3)** et la **taille de l’objet BLOB (par défaut 1024)**, puis sélectionnez **Générer**.
 
@@ -199,7 +199,7 @@ Sur le **jeux de données d’événement** , vous pouvez afficher un graphique 
 
 ![Données d’événement de jeu](images/device-portal-xbox-22.PNG)
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de Windows Device Portal](device-portal.md)
 * [Core de portail appareil référence de l’API](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -9,18 +9,18 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638824"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913979"
 ---
 # <a name="contact-card"></a>Carte de visite
 
-La carte de visite affiche des coordonnées, telles que le nom, le numéro de téléphone et l’adresse, pour un [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (mécanisme utilisé par UWP pour représenter les personnes et les entreprises).  La carte de visite permet également à l’utilisateur de modifier des coordonnées. Vous pouvez choisir d’afficher une carte de visite compacte ou une carte de visite complète contenant des informations supplémentaires.
+La carte de visite affiche des coordonnées, telles que le nom, le numéro de téléphone et l’adresse, pour un [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (mécanisme utilisé par UWP pour représenter les personnes et les entreprises).  La carte de visite permet également à l’utilisateur de modifier des coordonnées. Vous pouvez choisir d’afficher une carte de visite compacte ou une carte de visite complète contenant des informations supplémentaires.
 
-> **API importantes** : [Méthode de ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard méthode](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [IsShowContactCardSupported méthode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [contactez classe](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **API importantes** : [Méthode de ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard méthode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [IsShowContactCardSupported méthode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [contactez classe](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Vous pouvez afficher la carte de visite de deux façons :  
 * sous forme de carte de visite standard s’affichant dans un menu volant à fermeture de type abandon interactif : la carte de visite disparaît lorsque l’utilisateur clique en dehors de la carte ; 
@@ -146,7 +146,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-full-contact-card"></a>Afficher une carte de visite complète
 
-Pour afficher la carte de visite complète, appelez la méthode [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) au lieu de [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard).
+Pour afficher la carte de visite complète, appelez la méthode [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard) au lieu de [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard).
 
 ```csharp
 private void onUserClickShowContactCard() 
@@ -181,5 +181,5 @@ Les exemples de cet article créent un contact simple. Dans une application rée
 
 ## <a name="related-articles"></a>Articles connexes
 - [Contacts et calendriers](/windows/uwp/contacts-and-calendar/)
-- [Exemple de cartes de contact](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [Contrôle d’image de personnes](/windows/uwp/controls-and-patterns/person-picture/)
+- [Exemples de cartes de visite](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Contrôle de photo de personne](/windows/uwp/controls-and-patterns/person-picture/)

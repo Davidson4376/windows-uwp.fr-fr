@@ -5,12 +5,12 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
-ms.openlocfilehash: 4033327fa51b0801583a518a0dea055f59e57fc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616624"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921725"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML ; liaison avec une propriété C++/WinRT
 Une propriété qui peut être efficacement liée à un contrôle XAML est appelée « propriété *observable* ». Ce concept est basé sur le modèle de conception logicielle appelé « *modèle observateur* ». Cette rubrique montre comment implémenter des propriétés observables dans [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)et comment lier des contrôles XAML à eux.
@@ -24,7 +24,7 @@ Supposons qu’une classe runtime nommée **BookSku** a une propriété nommée 
 Un élément de texte XAML, ou contrôle, peut lier et gérer ces événements en récupérant la ou les valeur(s) mise(s) à jour et en se mettant à jour lui-même pour afficher la nouvelle valeur.
 
 > [!NOTE]
-> Pour plus d’informations sur l’installation et à l’aide de C++ / c++ / WinRT Extension Visual Studio (VSIX) (qui fournit la prise en charge des modèles de projet) consultez [prise en charge de Visual Studio pour C / c++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Pour plus d’informations sur l’installation et à l’aide de la C++Extension WinRT Visual Studio (VSIX) et le package NuGet (qui ensemble fournissent le modèle de projet et créez prise en charge), consultez [prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="create-a-blank-app-bookstore"></a>Créer une application vide (Bookstore)
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **application vide (C++ / c++ / WinRT)** de projet et nommez-le *Bookstore*.
@@ -53,7 +53,7 @@ namespace Bookstore
 
 Enregistrez le fichier et générez le projet. Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer un fichier de métadonnées Windows Runtime (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) décrivant la classe runtime. Puis, l’outil `cppwinrt.exe` est exécuté pour générer les fichiers de code source et vous aider à créer et utiliser votre classe runtime. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BookSku** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` et `BookSku.cpp`.
 
-Cliquez sur le nœud de projet et cliquez sur **ouvrir le dossier dans l’Explorateur de fichiers**. Le dossier du projet s’ouvre dans l’Explorateur de fichiers. Là, copiez les fichiers de stub `BookSku.h` et `BookSku.cpp` à partir de la `\Bookstore\Bookstore\Generated Files\sources\` dossier et dans le dossier du projet, qui est `\Bookstore\Bookstore\`. Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
+Cliquez sur le nœud de projet et cliquez sur **ouvrir le dossier dans l’Explorateur de fichiers**. Le dossier du projet s’ouvre dans l’Explorateur de fichiers. Là, copiez les fichiers de stub `BookSku.h` et `BookSku.cpp` à partir de la `\Bookstore\Bookstore\Generated Files\sources\` dossier et dans le dossier du projet, qui est `\Bookstore\Bookstore\`. Dans **l’Explorateur de solutions**, avec le nœud de projet sélectionné, assurez-vous que **afficher tous les fichiers** est activé. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
 
 ## <a name="implement-booksku"></a>Implémenter **BookSku**
 Maintenant, nous allons ouvrir `\Bookstore\Bookstore\BookSku.h` et `BookSku.cpp`, et implémenter notre classe runtime. Dans `BookSku.h`, ajoutez un constructeur qui prend un [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), un membre privé pour stocker la chaîne de titre, et un autre pour l’événement que nous allons générer lorsque le titre change. Après avoir apporté ces modifications, votre `BookSku.h` se présentera comme suit.
@@ -278,7 +278,7 @@ Pour la version actuellement publiée de C / c++ / WinRT, afin d’être en mesu
 
 ## <a name="important-apis"></a>API importantes
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [modèle de fonction WinRT::Make](/uwp/cpp-ref-for-winrt/make)
+* [Modèle de fonction winrt::make](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Utiliser des API avec C++/WinRT](consume-apis.md)

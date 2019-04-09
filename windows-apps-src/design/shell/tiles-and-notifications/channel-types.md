@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616414"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067834"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Choisir le type de canal de notification Push adapté
 
@@ -20,11 +20,11 @@ Cet article couvre les trois les types de canaux de notification Push UWP (princ
 
 ## <a name="types-of-push-channels"></a>Types de canaux Push 
 
-Il existe trois types de canaux Push qui peuvent être utilisés pour envoyer des notifications à une application UWP. Ils sont les suivants : 
+Il existe trois types de canaux Push qui peuvent être utilisés pour envoyer des notifications à une application UWP. Celles-ci sont les suivantes : 
 
-[Canal principal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) : le canal Push « classique ». Peut être utilisé par n’importe quelle application du Windows store pour envoyer des notifications toast, par vignette, brutes ou par badge (lien vers les descriptions des notifications par vignette/toast/par badge)
+[Canal principal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) : le canal Push « classique ». Peut être utilisé par n’importe quelle application dans le magasin pour envoi toast, vignette, raw ou les notifications de badge. [Plus d'informations ici](windows-push-notification-services--wns--overview.md).
 
-[Canal de vignette secondaire](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) : utilisé pour transférer des mises à jour de vignette pour une vignette secondaire. Peut être utilisé uniquement pour envoyer des notifications par vignette ou par badge à une vignette secondaire épinglée sur l’écran de démarrage de l’utilisateur
+[Canal de vignette secondaire](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - permet d’envoyer des mises à jour de vignette à une vignette secondaire. Peut être utilisé uniquement pour envoyer des notifications par vignette ou par badge à une vignette secondaire épinglée sur l’écran de démarrage de l’utilisateur
 
 [Autre canal](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) : nouveau type de canal ajouté dans Creators Update. Il permet l’envoi de notifications brutes à n’importe quelle application UWP, y compris celles qui ne sont pas inscrites dans le Windows Store. 
 
@@ -38,10 +38,10 @@ Ces canaux sont les plus couramment utilisés sur Windows actuellement et sont a
 
 ### <a name="what-do-primary-channels-enable"></a>Fonctionnalités des canaux principaux ?
 
--   **Envoi de mises à jour de vignette ou un badge à la vignette principale.** Si l’utilisateur a choisi d’épingler votre vignette à l’écran de démarrage, c’est l’occasion de la présenter. Envoi de mises à jour avec des informations utiles ou des rappels d’expériences au sein de votre application. 
--   **Envoi de notifications de toast.** Les notifications toast sont l’occasion d’obtenir des informations de la part de l’utilisateur immédiatement. Elles sont affichées par l’interpréteur de commandes au-dessus de la plupart des applications et en direct dans le centre de notifications afin que l’utilisateur puisse y revenir et interagir avec celles-ci ultérieurement. 
+-   **Envoi de mises à jour de vignette ou de badge à la vignette principale.** Si l’utilisateur a choisi d’épingler votre vignette à l’écran de démarrage, c’est l’occasion de la présenter. Envoi de mises à jour avec des informations utiles ou des rappels d’expériences au sein de votre application. 
+-   **Envoi de notifications toast.** Les notifications toast sont l’occasion d’obtenir des informations de la part de l’utilisateur immédiatement. Elles sont affichées par l’interpréteur de commandes au-dessus de la plupart des applications et en direct dans le centre de notifications afin que l’utilisateur puisse y revenir et interagir avec celles-ci ultérieurement. 
 -   **Envoi de notifications brutes pour déclencher une tâche en arrière-plan.** Parfois, vous souhaitez effectuer un travail pour le compte de l’utilisateur en vous basant sur une notification. Les notifications brutes permettent l’exécution des tâches en arrière-plan de votre application 
--   **Chiffrement de messages en transit fourni par Windows à l’aide de TLS.** Les messages sont chiffrés sur le réseau à la fois arrivant dans WNS et en accédant à l’appareil de l’utilisateur.  
+-   **Chiffrement des messages en transit proposé par Windows à l’aide de TLS.** Les messages sont chiffrés sur le réseau à la fois arrivant dans WNS et en accédant à l’appareil de l’utilisateur.  
 
 ### <a name="limitations-of-primary-channels"></a>Limitations des canaux principaux
 
@@ -84,21 +84,21 @@ PushNotificationChannel channel =
 Les autres canaux permettent aux applications d’envoyer des notifications Push sans enregistrement dans le Microsoft Store ou création de canaux Push en dehors du canal principal utilisé pour l’application. 
  
 ### <a name="what-do-alternate-channels-enable"></a>Fonctionnalités des autres canaux ?
--   Envoi de notifications Push brutes à un UWP s’exécutant sur n’importe quel appareil Windows. Les autres canaux autorisent uniquement les notifications brutes.
+-   Envoi de notifications Push brutes à un UWP s’exécutant sur n’importe quel appareil Windows. Autre canaux autorisent uniquement les notifications brutes (toutefois vous pourrez toujours l’activer une tâche en arrière-plan pour afficher le toast localement ou de notifications par vignette).
 -   Permet aux applications de créer plusieurs canaux Push bruts pour différentes fonctionnalités au sein de l’application. Une application peut créer jusqu’à 1 000 autres canaux, et chacun d’eux est valide pendant 30 jours. Chacun de ces canaux peut être géré ou révoqué séparément par l’application.
 -   Les autres canaux Push peuvent être créés sans enregistrer d’application dans le Microsoft Store. Si votre application doit être installée sur des appareils sans l’enregistrer dans le Microsoft Store, elle sera toujours en mesure de recevoir des notifications Push.
 -   Les serveurs peuvent transférer des notifications à l’aide des API REST standard W3C et du protocole VAPID. Les autres canaux utilisent le protocole standard W3C, ce qui vous permet de simplifier la logique du serveur qui doit être gérée.
 -   Chiffrement complet de bout en bout des messages. Le canal principal assure le chiffrement en cours de transit. Toutefois, si vous souhaitez un niveau de sécurité supplémentaire, les autres canaux permettent à votre application de passer à travers des en-têtes de chiffrement pour protéger un message. 
 
 ### <a name="limitations-of-alternate-channels"></a>Limitations des autres canaux
--   Les applications ne peuvent pas envoyer de notifications toast, par vignette ou par badge. L’autre canal limite la possibilité d’envoyer d’autres types de notifications. Votre application est toujours en mesure d’envoyer des notifications locales à partir de votre tâche en arrière-plan. 
+-   Le serveur de votre application ne peut pas envoyer des notifications push toast, la vignette ou le badge des notifications de type. Vous pouvez uniquement envoyer push notifications brutes. Votre application est toujours en mesure d’envoyer des notifications locales à partir de votre tâche en arrière-plan. 
 -   Nécessite une API REST différente des canaux de vignette principaux ou secondaires. L’utilisation de l’API REST W3C standard signifie que votre application devra avoir une logique différente pour l’envoi de mises à jour de notifications Push toast ou par vignette
 
 ### <a name="creating-an-alternate-channel"></a>Création d’un autre canal 
 
 ```csharp
 PushNotificationChannel webChannel = 
-    await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
+    await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
 ```
 
 ## <a name="channel-type-comparison"></a>Comparaison des types de canaux
@@ -108,19 +108,19 @@ Voici une comparaison rapide des différents types de canaux :
 
 <tr class="header">
 <th align="left"><b>Type</b></th>
-<th align="left"><b>Push toast ?</b></th>
-<th align="left"><b>Push de vignette/badge ?</b></th>
-<th align="left"><b>Brutes des notifications Push ?</b></th>
+<th align="left"><b>Notifications Push toast ?</b></th>
+<th align="left"><b>Notifications Push par vignette/badge ?</b></th>
+<th align="left"><b>Notifications Push brutes ?</b></th>
 <th align="left"><b>Authentification</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>Inscription du Store requise ?</b></th>
+<th align="left"><b>Enregistrement dans le Windows Store requis ?</b></th>
 <th align="left"><b>Canaux</b></th>
 <th align="left"><b>Chiffrement</b></th>
 </tr>
 
 
 <tr class="odd">
-<td align="left">Principal</td>
+<td align="left">Principale</td>
 <td align="left">Oui</td>
 <td align="left">Oui - vignette principale uniquement</td>
 <td align="left">Oui</td>
@@ -165,13 +165,13 @@ En règle générale, nous vous recommandons d’utiliser le canal principal dan
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Envoyer une notification de vignette local](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Envoyer une notification par vignette locale](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Notifications toast adaptatives et interactives](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [Démarrage rapide : Envoyer une notification push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Comment mettre à jour d’un badge via des notifications push](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [Comment mettre à jour un badge via des notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465450)
 * [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Comment intercepter des notifications pour les applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Comment s’authentifier avec Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Envoyer des en-têtes de demande et de réponse de service de notification](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Instructions et liste de vérification pour les notifications push](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Comment intercepter les notifications pour les applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [Comment s’authentifier auprès des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [En-têtes des demandes et des réponses du service de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [Recommandations et liste de vérification sur les notifications Push](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Notifications brutes](raw-notification-overview.md)

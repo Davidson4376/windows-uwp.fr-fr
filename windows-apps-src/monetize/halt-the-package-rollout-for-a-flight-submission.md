@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du package, soumission d’évaluation de package, arrêter
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 259520910e33b901de4fb7126b69300417555859
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650824"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334727"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>Arrêter le lancement d’une version d’évaluation
 
@@ -20,7 +20,7 @@ Appliquez cette méthode dans l’API de soumission au Microsoft Store pour [ar
 > [!NOTE]
 > Si vous interrompez le déploiement d’une soumission d'une version d’évaluation du package, puis [créez une nouvelle soumission de version d’évaluation du package](create-a-flight-submission.md), la nouvelle soumission sera un clone de la soumission interrompue.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -29,18 +29,18 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * Créer une soumission pour l’une de vos applications. Vous pouvez le faire dans le centre de partenaires, ou vous pouvez le faire à l’aide de la [créer une soumission de l’application](create-an-app-submission.md) (méthode).
 * Autorisez un lancement de package progressif pour la soumission. Vous pouvez le faire [dans partenaires](../publish/gradual-package-rollout.md), ou vous pouvez faire [à l’aide de l’API de soumission de Microsoft Store](manage-flight-submissions.md#manage-gradual-package-rollout).
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et des paramètres de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout``` |
+| PUBLIER   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -62,7 +62,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment arrêter le lancement du package d’une soumission de version d’évaluation de package.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243680/haltpackagerollout HTTP/1.1
 Authorization: Bearer <your access token>
 ```

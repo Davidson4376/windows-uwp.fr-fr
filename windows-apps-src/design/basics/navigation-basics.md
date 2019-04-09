@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
+ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636094"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362949"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -197,6 +197,21 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+    [**Pivot**](../controls-and-patterns/pivot.md)
+    
+    Semblable à [mode Navigation](../controls-and-patterns/navigationview.md), mais avec une prise en charge supplémentaire des fonctionnalités tactiles et de comportement de navigation légèrement différente.
+    
+    Utiliser un tableau croisé dynamique lorsque :-vous souhaitez que votre application pour permettre le balayage tactile entre les catégories
+        - Vous souhaitez que les options de navigation à carrousel infintely
+        - Il est inutile de contrôle étendu sur le comportement de navigation entre les catégories
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -207,9 +222,9 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
         - Les pages se trouvent au niveau supérieur.
         - Il existe de nombreux éléments de navigation (plus de 5)
         - Vous ne pensez pas que les utilisateurs passeront fréquemment d’une page à l’autre.
-        
-:::row-end:::
 
+:::row-end:::
+        
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)

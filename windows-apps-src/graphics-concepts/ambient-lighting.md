@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ac958a93fcafbb33a9025196b49398e2e3269e55
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663644"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291837"
 ---
 # <a name="ambient-lighting"></a>Éclairage ambiant
-
 
 L'éclairage ambiant permet de donner à une scène un éclairage constant. Cette fonction permet d'éclairer tous les vertex d'objets de la même manière car elle ne dépend pas des autres facteurs d'éclairage, comme les normales de vertex, la direction de la lumière, la position de la lumière, la plage ou l'atténuation. L'éclairage ambiant est constant dans toutes les directions et colore tous les pixels d’un objet de la même façon. Il présente une grande rapidité de calcul, mais donne aux objets un aspect plat et irréaliste.
 
@@ -25,7 +24,7 @@ L’éclairage ambiant pour une scène est décrit par l’équation suivante.
 
 Éclairage ambiant = Cₐ\*\[Gₐ + sum (Atten<sub>je</sub>\*place<sub>je</sub>\*L<sub>ai</sub>)\]
 
-Où :
+Où :
 
 | Paramètre         | Valeur par défaut | Type          | Description                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
@@ -33,7 +32,7 @@ Où :
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | Couleur ambiante globale                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | Atténuation lumineuse de la lumière ith. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md). |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | Facteur de point lumineux de la lumière ith. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md).  |
-| sum               | Non applicable           | Non applicable           | Somme de la lumière ambiante                                                                                          |
+| sum               | N/A           | N/A           | Somme de la lumière ambiante                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | Couleur ambiante lumineuse de la lumière ith                                                                              |
 
  
@@ -59,7 +58,7 @@ L<sub>ai</sub> est la couleur ambiante de la lumière ith dans la scène. Chaque
 
 Dans cet exemple, la couleur de l'objet est définie à partir de la lumière ambiante de la scène et d'une couleur ambiante de matériau.
 
-```
+```cpp
 #define GRAY_COLOR  0x00bfbfbf
 
 Ambient.r = 0.75f;

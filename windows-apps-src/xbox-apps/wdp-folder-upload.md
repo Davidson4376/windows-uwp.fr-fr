@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 870d203271cb75ecf5531106bb2c10b3736db9b9
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617604"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244045"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>Télécharger un dossier dans le répertoire de développement
 
@@ -21,8 +21,8 @@ Vous pouvez charger un dossier complet en une fois vers l’ID de dossier connu 
 
 Méthode      | URI de requête
 :------     | :------
-POST | /api/app/packagemanager/upload 
-<br />
+PUBLIER | /api/app/packagemanager/upload 
+
 **Paramètres d’URI**
 
 Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
@@ -30,13 +30,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 Paramètre d’URI      | Description
 :------     | :-----
 destinationFolder (obligatoire) | Le nom du dossier de destination du dossier à charger. Ce dossier sera placé sous d:\developmentfiles\LooseApps sur la console. Ce nom de dossier doit être codé en base 64, dans la mesure où il peut contenir des séparateurs de chemin d’accès si le dossier est un sous-dossier de LooseApps.
-<br />
 
-**En-têtes de demande**
+
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**
+**Corps de la requête**
 
 - Corps HTTP à parties multiples conforme du contenu du répertoire.
 
@@ -48,11 +48,11 @@ Cette API comporte les codes d’état attendus suivants.
 
 Code d’état HTTP      | Description
 :------     | :-----
-200 | Réussite
+200 | Opération réussie
 4XX | Codes d’erreur
 5XX | Codes d’erreur
-<br />
-**Familles de périphériques disponibles**
+
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 

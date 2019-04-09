@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1a75c854d413f4681960c890691d99dd2529cc97
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651474"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291687"
 ---
 # <a name="textures-with-alpha-channels"></a>Textures avec canaux alpha
-
 
 Il existe deux façons de coder les mappages de texture qui présentent une transparence plus complexe. Dans chaque cas, un bloc décrivant la transparence précède le bloc de 64 bits déjà décrit. La transparence est représentée sous forme d’un bitmap 4 x 4 avec 4 bits par pixel (codage explicite) ou avec moins de bits et une interpolation linéaire similaire à ce qui est utilisé pour le codage de couleurs.
 
@@ -25,8 +24,6 @@ Le bloc de transparence et le bloc de couleurs sont organisés comme indiqué da
 |--------------|-----------------------------------|
 | 3:0          | Bloc de transparence                |
 | 7:4          | Bloc de 64 bits décrit précédemment |
-
- 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Encodage de texture explicite
 
@@ -98,7 +95,7 @@ Le codage de transparence pour le format BC3 est basé sur un concept similaire 
 
 L’exemple de code suivant illustre cet algorithme.
 
-```
+```cpp
 // 8-alpha or 6-alpha block?    
 if (alpha_0 > alpha_1) {    
     // 8-alpha block:  derive the other six alphas.    

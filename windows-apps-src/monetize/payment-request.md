@@ -4,17 +4,17 @@ title: Simplifier les paiements avec l’API de demande de paiement
 ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, demande de paiement
-ms.openlocfilehash: e5fb5cead7833b8cc213c6633cae6cee0da3466b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607864"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334587"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>Simplifier les paiements avec l’API de demande de paiement
 L’API de demande de paiement pour les applications UWP est basé sur le [spécifications de l’API de demande de paiement W3C](https://w3c.github.io/browser-payment-api/). Elle vous permet de rationaliser le processus de validation dans vos applications UWP. Les utilisateurs peuvent accélérer Finalisation de l’achat par à l’aide des options de paiement et de distribuer des adresses déjà enregistrés avec leur compte Microsoft. Vous pouvez augmenter votre taux de conversion et réduire le risque de violations de données, car les informations de paiement sont sous forme de jetons. À compter de Windows 10 Creators Update, les utilisateurs peuvent utiliser leurs options de paiement enregistré pour payer facilement différentes expériences dans les applications UWP.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 Avant de commencer à l’aide de l’API de demande de paiement, il existe quelques éléments, vous devez faire ou être conscient.
 
 ### <a name="getting-a-merchant-id"></a>Obtention d’un ID de marchand
@@ -30,37 +30,37 @@ Cette section montre comment utiliser le [API de demande de paiement UWP](https:
 > [!Note]
 > Remplacez le **merchant id de vendeur portail** texte avec le marchand ID que vous avez reçu à partir du centre du vendeur.
 
-[!code-cs[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
+[!code-csharp[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
 
 ### <a name="2-pull-the-payment-details-together"></a>2. Rassembler les informations de paiement. 
 
 Ces détails seront affichera à l’utilisateur dans l’application de paiement. 
 
-[!code-cs[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
+[!code-csharp[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
 
 ### <a name="3-include-the-sales-tax"></a>3. Inclure les taxes sur les ventes. 
 
 > [!Important]
 > L’API de ne pas ajouter les éléments ou calculer la taxe pour vous. N’oubliez pas que les taux d’imposition varie selon la juridiction. Pour plus de clarté, nous utilisons un taux d’imposition de 9,5 % hypothétique.
 
-[!code-cs[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
+[!code-csharp[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
 
 ### <a name="4-optional--add-discounts-or-other-modifiers-to-the-total"></a>4. (Facultatif)  Ajoutez les remises ou autres modificateurs au total. 
 
 Voici un exemple d’ajout d’une remise pour l’utilisation d’une carte de crédit Contoso spécifique pour les éléments d’affichage. (*Contoso* est un nom fictif.)
 
-[!code-cs[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
+[!code-csharp[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
 
 ### <a name="5-assemble-all-the-payment-details"></a>5. Assembler tous les détails de paiement.
 
-[!code-cs[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
-[!code-cs[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
+[!code-csharp[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
+[!code-csharp[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
 
 ### <a name="6-submit-the-payment-request"></a>6. Envoyer la demande de paiement. 
 
 Appelez le **SubmitPaymentRequestAsync** méthode pour envoyer votre demande de paiement. Ceci fait apparaître l’application de paiement montrant les options de paiement disponibles.
 
-[!code-cs[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
+[!code-csharp[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
 
 L’utilisateur est invité à vous connecter avec leur compte Microsoft.
 
@@ -70,13 +70,13 @@ Une fois que l’utilisateur se connecte, ils peuvent sélectionner les options 
 
 Votre application attend que l’utilisateur d’appuyer sur **payer**, puis termine l’ordre.
 
-[!code-cs[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
+[!code-csharp[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
 
 Une fois que le paiement est terminé, l’utilisateur est présenté avec un **commande confirmée** écran.
 
 ![Commande confirmée](./images/44.png "commande confirmée ")
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Documentation de référence Windows.ApplicationModel.Payments](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)
 - [Exemple d’application d’achat UWP sur GitHub](https://github.com/Microsoft/Windows-appsample-shopping)
 - [Spécification de l’API de demande de paiement de W3C](https://www.w3.org/TR/payment-request/)

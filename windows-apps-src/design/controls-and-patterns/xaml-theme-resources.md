@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7cae075b0d71925eb35ac2362aef291994b29801
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634644"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244405"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -65,7 +65,7 @@ L’infrastructure XAML fournit un ensemble de ressources [Color](/uwp/api/Windo
 
 Ce tableau répertorie la clé, un nom simple et une représentation sous forme de chaîne de la couleur (à l’aide de la \#aarrggbb format) pour les ressources « Light » et « Sombre » fournis par l’infrastructure XAML. La clé sert à référencer la ressource dans une application. Le « nom simple Light/Dark » est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard.
 
-| Clé                             | Nom Simple light/dark | Maigre      | Sombre       |
+| Touche                             | Nom Simple light/dark | Maigre      | Sombre       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -151,7 +151,7 @@ Outre l’ensemble des ressources fournies par l’infrastructure XAML, il exist
 
 Le tableau suivant répertorie les couleurs système fournies par l’infrastructure XAML en tant qu’objets de ressources dérivés de la palette du système Windows. La colonne « Nom d’options d’ergonomie » indique le nom porté par la couleur dans les paramètres Windows. La colonne « Nom simple HighContrast » fournit une description en un mot de la façon dont la couleur est appliquée dans les contrôles XAML courants. Ce nom est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard. La colonne « Valeur initiale par défaut » indique les valeurs que vous obtenez si le système ne s’exécute pas du tout en mode de contraste élevé.
 
-| Clé                           | Nom d’options d’ergonomie            | Nom simple ContrasteÉlevé | Valeur initiale par défaut |
+| Touche                           | Nom d’options d’ergonomie            | Nom simple ContrasteÉlevé | Valeur initiale par défaut |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **Texte du bouton** (arrière-plan)   | Arrière-plan               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Texte du bouton** (premier plan)   | Premier plan               | \#FF000000      |
@@ -160,7 +160,7 @@ Le tableau suivant répertorie les couleurs système fournies par l’infrastruc
 | SystemColorHighlightTextColor | **Texte sélectionné** (premier plan) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **Liens hypertexte**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **Arrière-plan**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **Texte**                       | PageText                 | \#FF000000      |
+| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
 Windows propose différents thèmes à contraste élevé, et permet à l’utilisateur de définir les couleurs spécifiques pour les paramètres de contraste élevé par l’intermédiaire des Options d’ergonomie, comme indiqué ici. Par conséquent, il n’est pas possible de fournir une liste exhaustive des valeurs de couleur à contraste élevé.
 
@@ -177,7 +177,7 @@ En plus des couleurs de thème à contraste élevé du système, la couleur d’
 
 ### <a name="theme-dependent-brushes"></a>Pinceaux dépendants du thème
 
-Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) des ressources [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Exemple : `SystemControlBackroundAltHighBrush`.
+Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) des ressources [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Par exemple, `SystemControlBackroundAltHighBrush`.
 
 Examinons à présent comment la valeur de couleur de ce pinceau est déterminée au moment de l’exécution. Dans les dictionnaires de ressources « Light » et « Dark », ce pinceau est défini comme ceci :
 
@@ -240,7 +240,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [TextBl
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -318,7 +318,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [TextBl
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
        BasedOn="{StaticResource BaseTextBlockStyle}">
     <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
 </Style>
 ```
 
@@ -352,7 +352,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [RichTe
 <Style x:Key="BaseRichTextBlockStyle" TargetType="RichTextBlock">
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
@@ -375,7 +375,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [RichTe
 </Style>
 ```
 
-**Remarque** :  Le [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) styles n’ont pas tout le texte qui définit le style de dégradé [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) est le cas, principalement parce que l’objet de document en fonction du bloc de modèle pour **RichTextBlock** rend plus faciles à définir des attributs sur les différents éléments de texte. Par ailleurs, si vous définissez [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
+**Remarque**:  Le [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) styles n’ont pas tout le texte qui définit le style de dégradé [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) est le cas, principalement parce que l’objet de document en fonction du bloc de modèle pour **RichTextBlock** rend plus faciles à définir des attributs sur les différents éléments de texte. Par ailleurs, si vous définissez [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
 
 ## <a name="miscellaneous-named-styles"></a>Divers styles nommés
 
@@ -402,7 +402,7 @@ Elle se présente comme suit :
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Bouton](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 Ce [Style](https://msdn.microsoft.com/library/windows/apps/br208849) fournit un modèle complet pour un [Button](https://msdn.microsoft.com/library/windows/apps/br209265) qui peut servir de bouton de navigation Précédent pour une application de navigation. Les dimensions par défaut sont de 40 × 40 pixels. Pour adapter le style, vous pouvez définir explicitement [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406) et d’autres propriétés sur votre **Button**, ou créer un style dérivé à l’aide de [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852).
 
@@ -418,7 +418,7 @@ Elle se présente comme suit :
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Bouton](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 Ce [Style](https://msdn.microsoft.com/library/windows/apps/br208849) fournit un modèle complet pour un [Button](https://msdn.microsoft.com/library/windows/apps/br209265) qui peut servir de bouton de navigation Précédent pour une application de navigation. Il est semblable à **NavigationBackButtonNormalStyle**, mais les dimensions sont de 30 x 30 pixels.
 

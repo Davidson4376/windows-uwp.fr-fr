@@ -2,16 +2,16 @@
 Description: Gérer et afficher les détails relatifs à chacune de vos applications dans le centre de partenaires et configurer des services tels que A / B, test et mappe.
 title: Gestion des applications et services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610004"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334577"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -27,7 +27,7 @@ La section **Services** vous permet de gérer les différents services pour vos 
 
 Si vous publiez un jeu, vous pouvez activer le [programme Xbox Live Creators](https://xbox.com/developers/creators-program) sur cette page. Cela vous permet de démarrer la configuration et tests des fonctionnalités Xbox Live et finalement publier votre jeu de programme Xbox Live Creators.
 
-Pour plus d’informations, consultez [prise en main du programme Xbox Live Creators](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créer un nouveau titre de programme Xbox Live Creators et publier dans l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Pour plus d’informations, consultez [prise en main du programme Xbox Live Creators](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) et [créer un nouveau titre de programme Xbox Live Creators et publier dans l’environnement de test](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
 ## <a name="experimentation"></a>Expérimentation
 

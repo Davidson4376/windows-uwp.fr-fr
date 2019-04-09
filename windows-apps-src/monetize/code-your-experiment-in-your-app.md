@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
-ms.openlocfilehash: edd0fbcf841dc9d8fa43873da95dc08b276a5418
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2e00c3f8d7f1f41d6b44743ebb663b09575fb21a
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636744"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334947"
 ---
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 
@@ -46,43 +46,43 @@ Dans le projet, recherchez le code de la fonctionnalité que vous souhaitez modi
 
 Le code spécifique requis dépendra de votre application, mais l’exemple suivant illustre le processus de base. Pour obtenir un exemple de code complet, consultez [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-[!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#ExperimentCodeSample)]
+[!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#ExperimentCodeSample)]
 
 Les étapes suivantes décrivent les éléments importants de ce processus en détail.
 
 1. Déclarez un [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) objet qui représente l’assignation de variation actuel et un [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) objet que vous utiliserez pour l’affichage du journal et de conversion événements de partenaires.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 2. Déclarez une variable de chaîne affectée à l’[ID de projet](run-app-experiments-with-a-b-testing.md#terms) de l’expérience que vous souhaitez récupérer.
     > [!NOTE]
     > Vous obtenez un projet ID lorsque vous [créer un projet dans l’espace partenaires](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
 3. Obtenez l’affectation de variante mise en cache actuelle de votre expérience en appelant la méthode statique [GetCachedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getcachedvariationasync) et transmettez l’ID de projet de votre expérience à la méthode. Cette méthode renvoie un objet [StoreServicesExperimentVariationResult](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariationresult) qui donne accès à l’affectation de variante via la propriété [ExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariationresult.experimentvariation).
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
 
 4. Vérifiez la propriété [IsStale](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) pour déterminer si l’affectation de variante mise en cache doit être actualisée avec une affectation de variante distante à partir du serveur. Si tel n’est pas le cas, appelez la méthode statique [GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) pour rechercher une affectation de variante mise à jour sur le serveur et actualiser la variante mise en cache locale.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
 5. Utilisez les méthodes [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean), [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble), [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) ou [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) de l’objet [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) pour obtenir les valeurs de l’affectation de variante. Dans chaque méthode, le premier paramètre est le nom de la modification que vous souhaitez récupérer (Ceci est le même nom d’une variation que vous entrez dans l’espace partenaires). Le deuxième paramètre est la valeur par défaut que la méthode doit retourner si elle n’est pas en mesure de récupérer la valeur spécifiée à partir du centre de partenaires (par exemple, s’il n’existe aucune connectivité réseau), et une version mise en cache de la variante n’est pas disponible.
 
     L’exemple suivant utilise [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) pour obtenir une variable nommée *buttonText* et spécifie la valeur par défaut **Grey Button** à cette variable.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
 
 6. Dans votre code, utilisez les valeurs de variable pour modifier le comportement de la fonctionnalité que vous testez. Par exemple, le code suivant affecte la valeur *buttonText* au contenu d’un bouton dans votre application. Cet exemple suppose que vous avez déjà défini ce bouton ailleurs dans votre projet.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
 7. Enfin, ouvrez une session le [d’événements d’affichage](run-app-experiments-with-a-b-testing.md#terms) pour votre expérience l’A test a / B service Centre de partenaires. Initialisez le champ ```logger``` sur un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) et appelez la méthode [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Passer le [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) de l’objet qui représente l’assignation de variation actuel (cet objet fournit le contexte de l’événement pour les partenaires) et le nom de l’événement d’affichage pour votre expérience. Il doit correspondre le nom d’événement de vue que vous entrez pour votre expérience dans l’espace partenaires. Votre code doit consigner l’événement d’affichage lorsque l’utilisateur commence à visualiser une variante faisant partie intégrante de votre expérience.
 
     L’exemple suivant montre comment consigner un événement d’affichage nommé **userViewedButton**. Dans cet exemple, l’objectif est d’inciter l’utilisateur à cliquer sur un bouton dans l’application, afin de consigner l’événement d’affichage une fois que l’application a récupéré les données de variante (en l’occurrence, le texte du bouton) et lui a attribué le contenu du bouton.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
 
 ## <a name="log-conversion-events-to-partner-center"></a>Journaliser les événements de conversion pour les partenaires
 
@@ -92,7 +92,7 @@ Ensuite, ajoutez le code qui se connecte [événements de conversions](run-app-e
 
     L’exemple suivant consigne un événement de conversion nommé **userClickedButton** à partir du gestionnaire d’événements **Click** pour un bouton. Dans cet exemple, l’objectif de l’expérience est d’obtenir de l’utilisateur qu’il clique sur le bouton.
 
-    [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
+    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
 
 ## <a name="next-steps"></a>Étapes suivantes
 

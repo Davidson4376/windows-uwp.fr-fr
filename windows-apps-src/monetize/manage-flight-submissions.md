@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions de version d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74d93c700ecbfe3db39bf1ffc4c90e107b80f5a5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662724"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335072"
 ---
 # <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation de package
 
@@ -51,7 +51,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de ver
 <td align="left"><a href="get-status-for-a-flight-submission.md">Obtenir l’état d’une soumission de vol de package existant</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions</td>
 <td align="left"><a href="create-a-flight-submission.md">Créer une nouvelle soumission de vol de package</a></td>
 </tr>
@@ -61,12 +61,12 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de ver
 <td align="left"><a href="update-a-flight-submission.md">Mettre à jour une soumission de vol de package existant</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit</td>
 <td align="left"><a href="commit-a-flight-submission.md">Valider l’envoi de vol d’un package nouveau ou mis à jour</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Suppression</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-a-flight-submission.md">Supprimer l’envoi de vol d’un package</a></td>
 </tr>
@@ -85,7 +85,7 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
 
 3. [Créez une soumission de version d’évaluation de package](create-a-flight-submission.md) en exécutant la méthode suivante dans l’API de soumission au Microsoft Store. Cette méthode crée une soumission en cours, qui est une copie de votre dernière soumission publiée.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
     ```
 
@@ -98,7 +98,7 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
 
 5. Révisez les données de la [soumission de version d'évaluation](#flight-submission-object) en tenant compte de toutes les modifications requises avant de recommencer et exécutez la méthode suivante pour mettre à jour la [soumission de version d’évaluation du package](update-a-flight-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
 
 5. [Validez la soumission de la version d’évaluation du package](commit-a-flight-submission.md) en exécutant la méthode suivante. Cela génère une alerte partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent désormais être appliquées à votre compte.
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
 6. Vérifiez l’état de la validation en exécutant la méthode suivante pour [récupérer le statut de la soumission de la version d’évaluation du package](get-status-for-a-flight-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 
@@ -185,17 +185,17 @@ Après avoir activé un lancement de packages progressif pour une soumission de 
 <td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Obtenir les informations de lancement progressif pour envoi de vol d’un package</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
 <td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Mettre à jour le pourcentage de lancement progressif pour l’envoi de vol d’un package</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout</td>
 <td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Arrêter le lancement progressif pour l’envoi de vol d’un package</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout</td>
 <td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Finaliser le lancement progressif pour l’envoi de vol d’un package</a></td>
 </tr>
@@ -255,7 +255,7 @@ Cette ressource décrit une soumission de version d’évaluation du package.
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur      | Type   | Description              |
+| Value      | Type   | Description              |
 |------------|--------|------------------------------|
 | id            | chaîne  | ID de la soumission.  |
 | flightId           | chaîne  |  ID de la version d’évaluation du package auquel la soumission est associée.  |  
@@ -274,7 +274,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des détails supplémentaires sur l’état d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description                   |
+| Value           | Type    | Description                   |
 |-----------------|---------|------|
 |  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
 |  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
@@ -287,10 +287,10 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 Cette ressource contient des informations supplémentaires sur les éventuels erreurs ou avertissements pour une soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description       |
+| Value           | Type    | Description       |
 |-----------------|---------|------|
 |  code               |    chaîne     |   [Code d’état de soumission](#submission-status-code) qui décrit le type d’erreur ou d’avertissement. |  
-|  details               |     chaîne    |  Message contenant des détails sur le problème.     |
+|  détails               |     chaîne    |  Message contenant des détails sur le problème.     |
 
 
 <span id="certification-report-object" />
@@ -299,7 +299,7 @@ Cette ressource contient des informations supplémentaires sur les éventuels er
 
 Cette ressource donne accès aux données du rapport de certification d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description         |
+| Value           | Type    | Description         |
 |-----------------|---------|------|
 |     date            |    chaîne     |  Date et heure de que la génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
@@ -333,7 +333,7 @@ Cette ressource a les valeurs suivantes.
 > [!NOTE]
 > Quand vous appelez la méthode de [mise à jour d’une soumission de version d’évaluation du package](update-a-flight-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont nécessaires dans le corps de la requête. Les autres valeurs sont remplies par les partenaires.
 
-| Valeur           | Type    | Description              |
+| Value           | Type    | Description              |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
 | fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
@@ -369,7 +369,7 @@ Cette ressource contient les paramètres de déploiement de package progressif e
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|------|
 | packageRollout   |   objet      |   [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.    |  
 | isMandatoryUpdate    | booléen    |  Indique si vous souhaitez traiter les packages de cette soumission comme obligatoires pour l’installation automatique des mises à jour de l’application. Pour plus d’informations sur les packages obligatoires pour l’installation automatique des mises à jour de l’application, consultez [Télécharger et installer les mises à jour de package pour votre application](../packaging/self-install-package-updates.md).    |  
@@ -381,7 +381,7 @@ Cette ressource a les valeurs suivantes.
 
 Contient les [paramètres de déploiement de package](#manage-gradual-package-rollout) de la soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|------|
 | isPackageRollout   |   booléen      |  Indique si le déploiement de package progressif est activé pour la soumission.    |  
 | packageRolloutPercentage    | flottant    |  Pourcentage d’utilisateurs qui recevront les packages de déploiement progressif.    |  
@@ -393,7 +393,7 @@ Contient les [paramètres de déploiement de package](#manage-gradual-package-ro
 
 <span/>
 
-## <a name="enums"></a>Énumérations
+## <a name="enums"></a>Enums
 
 Ces méthodes utilisent les énumérations suivantes.
 

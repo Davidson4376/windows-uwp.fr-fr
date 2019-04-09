@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d50554baf412c7329521df68eb19f58340387f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c899334b43353fbc69c3080cfd329df0ef9e0797
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658654"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913969"
 ---
 # <a name="calendar-date-picker"></a>Sélecteur de dates du calendrier
 
@@ -91,7 +91,7 @@ Lorsque vous définissez la date dans le code, la valeur est limitée par les pr
 Vous pouvez gérer l’événement [DateChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) pour être averti lorsque la valeur Date a changé.
 
 > [!NOTE]
-Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
+> Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
 ### <a name="setting-a-header-and-placeholder-text"></a>Définition d’un texte d’en-tête et d’espace réservé
 
@@ -111,6 +111,6 @@ Le texte d’espace réservé par défaut est « sélectionner une date ». Vo
 ## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de date et d’heure](date-and-time.md)
-- [Affichage du calendrier](calendar-view.md)
+- [Affichage Calendrier](calendar-view.md)
 - [Sélecteur de dates](date-picker.md)
 - [Sélecteur d’heure](time-picker.md)

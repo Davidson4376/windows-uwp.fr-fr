@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du package, soumission de version d’évaluation, mise à jour, pourcentage
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
-ms.openlocfilehash: 025db5cb0beb36a5b4a3ca1b765b5da3434c9d7a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5f7a388eed193e780fe2b7be9cafa5d249f6653
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638974"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334806"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>Met à jour le pourcentage de lancement d’une soumission de version d’évaluation
 
 
 Utilisez cette méthode dans l’API de soumission au Microsoft Store pour [mettre à jour le pourcentage de déploiement](../publish/gradual-package-rollout.md#setting-the-rollout-percentage) pour une soumission de version d’évaluation du package. Pour plus d’informations sur le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission au Microsoft Store, voir [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -27,18 +27,18 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * Créer une soumission pour l’une de vos applications. Vous pouvez le faire dans le centre de partenaires, ou vous pouvez le faire à l’aide de la [créer une soumission de l’application](create-an-app-submission.md) (méthode).
 * Autorisez un lancement de package progressif pour la soumission. Vous pouvez le faire [dans partenaires](../publish/gradual-package-rollout.md), ou vous pouvez faire [à l’aide de l’API de soumission de Microsoft Store](manage-flight-submissions.md#manage-gradual-package-rollout).
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et des paramètres de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage``` |
+| PUBLIER   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -61,7 +61,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment mettre à jour le pourcentage de déploiement du package d’une soumission de version d’évaluation de package.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243680/updatepackagerolloutpercentage?percentage=25 HTTP/1.1
 Authorization: Bearer <your access token>
 ```

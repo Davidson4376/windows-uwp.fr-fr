@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, publicités, publicité, AdControl, résolution des problèmes, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615914"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334657"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Guide de résolution des problèmes pour XAML et C#
 
@@ -171,7 +171,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 2.  Vérifiez que le contrôle **AdControl** est instancié. Si le contrôle **AdControl** n’est pas instancié, il ne sera pas disponible.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
 3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doit correspondre à l’ID d’application et l’ID d’unité ad que vous avez obtenue dans l’espace partenaires. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
@@ -236,7 +236,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     Ce code C# récupère le message d’erreur et l’affiche dans le **TextBlock**.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
@@ -253,7 +253,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     L’exemple suivant montre comment appeler la méthode **Refresh**.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 

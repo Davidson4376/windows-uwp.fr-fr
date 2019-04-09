@@ -6,36 +6,36 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, version d’évaluation, version d'évaluation du package
 ms.localizationpriority: medium
-ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e4f96d503d52abe71cff6fcdd1295c862e551e09
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646034"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334387"
 ---
 # <a name="get-a-package-flight"></a>Obtient une version d’évaluation du package
 
 Utilisez cette méthode dans l’API de soumission de Microsoft Store pour obtenir des données pour un vol de package pour une application qui est inscrit pour votre compte espace partenaires.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -56,7 +56,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment récupérer les informations sur un version d’évaluation du dont l’ID est 43e448df-97c9-4a43-a0bc-2a445e736bcd pour une application dont la valeur de l’IS Windows Store est 9WZDNCRD91MD.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -86,7 +86,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par les partenaires.  |
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |  
@@ -102,10 +102,10 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Les valeurs *lastPublishedFlightSubmission* et *pendingFlightSubmission* dans le corps de la réponse contiennent des objets qui fournissent des informations sur les ressources d’une soumission de version d’évaluation du package. Ces objets ont les valeurs suivantes.
 
-| Valeur           | Type    | Description                                                                                                                                                                                                                          |
+| Value           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | chaîne  | ID de la soumission.    |
-| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.               |
+| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour récupérer les données complètes de la soumission.               |
 
 
 ## <a name="error-codes"></a>Codes d’erreur

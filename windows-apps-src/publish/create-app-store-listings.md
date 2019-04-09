@@ -2,16 +2,16 @@
 Description: La section annonces Store le processus de soumission d’application est dans laquelle vous permet de fournir le texte et des images pour les clients qui seront affiche que lorsque vous affichez votre application de liste dans le Microsoft Store.
 title: Créer des annonces d’application dans le Windows Store
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.date: 10/31/2018
+ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
-ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cc0c257be2343244872945de17d8c90a23d736ae
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601854"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57977452"
 ---
 # <a name="create-app-store-listings"></a>Créer des annonces d’application dans le Windows Store
 
@@ -130,7 +130,7 @@ Une description plus courte et plus accrocheuse peut être utilisé dans la part
 
 Concernant les jeux, la brève description peut également apparaître dans la section Informations du Hub de jeux sur Xbox One.
 
-Pour de meilleurs résultats, gardez la brève description sous 270 caractères. Le champ a une limite de 500 caractères, mais dans certains affichages, seuls les 270 tout d’abord caractères seront affiche (avec un lien disponible pour afficher le reste de la description courte).
+Pour de meilleurs résultats, gardez la brève description sous 270 caractères. Le champ a une limite de 1000 caractères, mais dans certains affichages, seuls les 270 tout d’abord caractères seront affiche (avec un lien disponible pour afficher le reste de la description courte).
 
 
 ### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise

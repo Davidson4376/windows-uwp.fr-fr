@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610024"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244385"
 ---
 # <a name="typography"></a>Typographie
 
@@ -72,7 +72,7 @@ En raison du mode de fonctionnement du système de mise à l’échelle, la conc
 
 La gamme de caractères UWP établit des relations cruciales entre les styles de caractère sur une page, afin d’aider les utilisateurs à lire facilement le contenu. Toutes les tailles sont exprimées en pixels effectifs et sont optimisées pour les applications UWP s’exécutant sur tous les appareils.
 
-![Gamme de caractères](images/type/type-ramp.svg)
+![Gamme de caractères](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>Utilisation de la gamme de caractères
 
@@ -154,7 +154,7 @@ Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous
     :::column-end:::
 :::row-end:::
 
-**Remarque** : Si les conteneurs ne sont pas bien définis (par exemple, aucune différenciation couleur d’arrière-plan), ou lorsqu’il existe un lien pour afficher plus de texte, puis utiliser des points de suspension.
+**Remarque**: Si les conteneurs ne sont pas bien définis (par exemple, aucune différenciation couleur d’arrière-plan), ou lorsqu’il existe un lien pour afficher plus de texte, puis utiliser des points de suspension.
 
 ## <a name="languages"></a>Langues 
 
@@ -171,7 +171,7 @@ Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Remarques</th>
+<th align="left">Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Les polices sans-serif sont un excellent choix pour les titres et les éléments
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Remarques</th>
+<th align="left">Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -287,7 +287,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Remarques</th>
+<th align="left">Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Remarques</th>
+<th align="left">Notes</th>
 </tr>
 </thead>
 <tbody>

@@ -6,12 +6,12 @@ keywords: uwp, extensions, achats dans l'application, PIA, Windows.ApplicationMo
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a203ef79fc6ebb45107cd9ac9d79cadf330f7a5d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9be40d78e00e583988ba8c6b318e7a8941d7f971
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604364"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334977"
 ---
 # <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
@@ -23,7 +23,7 @@ Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’a
 > [!NOTE]
 > Les produits dans l’application ne peuvent pas être offerts dans le cadre d’une version d’évaluation d’une application. Les clients qui utilisent une version d’évaluation de votre application ne peuvent acheter un produit in-app que s’ils achètent une version complète de votre application.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 -   Application Windows dans laquelle ajouter des fonctionnalités que les clients peuvent acheter.
 -   Lorsque vous codez et testez de nouveaux produits in-app pour la première fois, vous devez utiliser l’objet [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de l’objet [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Cela vous permet de vérifier votre logique de licence à l’aide d’appels simulés au serveur de licences au lieu d’appels au serveur Windows Live. Pour ce faire, vous devez personnaliser le fichier nommé WindowsStoreProxy.xml dans % UserProfile%\\AppData\\local\\packages\\&lt;nom_package&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Le simulateur Microsoft Visual Studio crée ce fichier quand vous exécutez votre application pour la première fois. Vous pouvez également charger un fichier personnalisé au moment de l’exécution. Pour plus d’informations, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
@@ -34,7 +34,7 @@ Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’a
 Lors de l’initialisation de votre application, obtenez l’objet [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) de votre application en initialisant l’élément [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) ou [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) pour activer les achats d’un produit in-app.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
 
 ## <a name="step-2-add-the-in-app-offers-to-your-app"></a>Étape 2 : Ajoutez les offres dans l’application à votre application
 
@@ -61,7 +61,7 @@ Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit
     Voici un exemple indiquant comment vous pouvez coder une fonctionnalité de produit nommée **featureName** dans le bloc conditionnel propre à une licence. La chaîne **featureName** correspond au jeton qui identifie ce produit de manière unique dans l’application et dans le Windows Store.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
 
 3.  **Ajouter l’achat de l’interface utilisateur pour cette fonctionnalité**
 
@@ -70,7 +70,7 @@ Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit
     Voici comment vérifier si votre client possède déjà un produit dans l’application et, si tel n’est pas le cas, comment afficher la boîte de dialogue d’achat lui permettant de l’acheter. Remplacez le commentaire « Afficher la boîte de dialogue d’achat » par votre code personnalisé pour la boîte de dialogue d’achat (par exemple, une page présentant un bouton « Acheter cette application » convivial).
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Étape 3 : Modifier le code de test pour les appels finales
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a8d94f43edbdc3ec410ae7f878b38d41cddf5145
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591544"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358604"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Créer un certificat de signature de package
 
@@ -21,7 +21,7 @@ Cet article explique comment créer et exporter un certificat de signature de pa
 > [!IMPORTANT] 
 > Si vous avez utilisé Visual Studio pour développer votre application, nous vous recommandons d’utiliser l’Assistant Visual Studio pour importer un certificat et signer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 - **Une application empaquetée ou décompressée**  
 Une application contenant un fichier AppxManifest.xml. Vous devrez référencer le fichier manifeste pendant la création d’un certificat qui sera utilisé pour signer le package d’applications final. Pour plus d’informations sur l'empaquetage manuel d'une application, voir [Créer un package d’application avec l’outil MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
@@ -29,39 +29,53 @@ Une application contenant un fichier AppxManifest.xml. Vous devrez référencer 
 - **Applets de commande Infrastructure à clé publique (PKI)**  
 Vous avez besoin d’applets de commande PKI pour créer et exporter votre certificat de signature. Pour plus d’informations, voir [Applets de commande d'infrastructure à clé publique](https://docs.microsoft.com/powershell/module/pkiclient/).
 
-## <a name="create-a-self-signed-certificate"></a>Créer un certificat auto-signé
+## <a name="create-a-self-signed-certificate"></a>Create a self-signed certificate
 
-Un certificat auto-signé vous permet de tester votre application avant de la publier dans le Windows Store. Suivez les étapes décrites dans cette section pour créer un certificat auto-signé.
+Un certificat auto-signé est utile pour tester votre application avant que vous êtes prêt à publier sur le Store. Suivez les étapes décrites dans cette section pour créer un certificat auto-signé.
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>Déterminer l’objet de votre application empaquetée  
 
 Pour utiliser un certificat de signature de votre package d’applications, « l'objet » contenu dans le certificat **doit** correspondre à la section « Publisher » du manifeste de votre application.
 
 Par exemple, la section « Identity » dans le fichier AppxManifest.xml de votre application doit ressembler à ceci :
-```
+
+```xml
   <Identity Name="Contoso.AssetTracker" 
     Version="1.0.0.0" 
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-L'entité « Publisher », dans ce cas, est « CN = Contoso Software, O = Contoso Corporation, C = US » ; c'est cette entité que vous devez utiliser pour la création de votre certificat. 
+L'entité « Publisher », dans ce cas, est « CN = Contoso Software, O = Contoso Corporation, C = US » ; c'est cette entité que vous devez utiliser pour la création de votre certificat.
 
 ### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>Utiliser **New-SelfSignedCertificate** pour créer un certificat
+
 Utilisez l'applet de commande PowerShell **New-SelfSignedCertificate** pour créer un certificat auto-signé. L'applet de commande **New-SelfSignedCertificate** comporte plusieurs paramètres de personnalisation, mais dans le cadre de cet article, nous allons créer un simple certificat qui fonctionne avec **SignTool**. Pour plus d’exemples et d’utilisations de cette applet de commande, voir [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate).
 
 À partir du fichier AppxManifest.xml de l’exemple précédent, vous devez utiliser la syntaxe suivante pour créer un certificat. Dans une invite PowerShell avec élévation de privilèges :
+
+```powershell
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
-```
+
+Notez les détails suivants sur certains des paramètres :
+
+- **Utilisation de clé**: Ce paramètre définit ce que le certificat peut être utilisé pour. Pour un certificat d’auto-signature, ce paramètre doit être défini sur **DigitalSignature**.
+
+- **Valeur TextExtension**: Ce paramètre inclut des paramètres pour les extensions suivantes :
+
+  - Utilisation avancée de la clé (EKU) : Cette extension indique d’autres usages pour lequel la clé publique certifiée peut être utilisée. Pour un certificat d’auto-signature, ce paramètre doit inclure la chaîne d’extension **« 2.5.29.37={text}1.3.6.1.5.5.7.3.3 »**, ce qui indique que le certificat doit être utilisé pour la signature de code.
+
+  - Contraintes de base : Cette extension indique si le certificat est une autorité de certification (CA). Pour un certificat d’auto-signature, ce paramètre doit inclure la chaîne d’extension **« 2.5.29.19={text} »**, ce qui indique que le certificat est une entité de fin (pas une autorité de certification).
 
 Après avoir exécuté cette commande, le certificat sera ajouté au magasin de certificats local, tel qu’indiqué dans le paramètre « -CertStoreLocation ». Le résultat de la commande génère également l’empreinte du certificat.  
 
-**Remarque**  
 Vous pouvez afficher votre certificat dans une fenêtre PowerShell en utilisant les commandes suivantes :
-```
+
+```powershell
 Set-Location Cert:\LocalMachine\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
+
 Cela affichera tous les certificats contenus dans votre magasin local.
 
 ## <a name="export-a-certificate"></a>Exporter un certificat 
@@ -70,18 +84,21 @@ Pour exporter le certificat du magasin local dans un fichier Personal Informatio
 
 Lorsque vous utilisez **Export-PfxCertificate**, vous devez créer et utiliser un mot de passe ou utiliser le paramètre « -ProtectTo » pour spécifier les utilisateurs ou groupes qui peuvent accéder au fichier sans mot de passe. Notez qu’une erreur s’affiche si vous n’utilisez pas le paramètre « -Password » ou «-ProtectTo ».
 
-- **Utilisation du mot de passe**
-```
+### <a name="password-usage"></a>Utilisation du paramètre « Password »
+
+```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **Utilisation de ProtectTo**
-```
+### <a name="protectto-usage"></a>Utilisation du paramètre « ProtectTo »
+
+```powershell
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 Après avoir créé et exporté votre certificat, vous êtes prêt à signer votre package d’applications avec **SignTool**. Pour l’étape suivante du processus d'empaquetage manuel, consultez [Signer un package d'application à l'aide de SignTool](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
 
-## <a name="security-considerations"></a>Considérations de sécurité 
+## <a name="security-considerations"></a>Considérations relatives à la sécurité
+
 En ajoutant un certificat à des [magasins de certificats d'un ordinateur local](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores), vous affectez la fiabilité du certificat pour tous les utilisateurs de l’ordinateur. Il est recommandé de supprimer ces certificats lorsque vous n'en avez plus besoin, ce afin d'éviter qu'ils ne soient utilisés pour compromettre la fiabilité du système.

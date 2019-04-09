@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608014"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291667"
 ---
 # <a name="rectangles"></a>Rectangles
-
 
 Dans la programmation Direct3D et Windows, les objets à l'écran sont appelés « rectangles englobants ». Les côtés d'un rectangle englobant sont toujours parallèles aux côtés de l'écran, ce qui signifie que le rectangle peut être décrit par deux points : l'angle supérieur gauche et l'angle inférieur droit.
 
@@ -24,7 +23,7 @@ Dans la programmation Direct3D et Windows, les objets à l'écran sont appelés
 
 La plupart des applications utilisent la structure [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) (ou un alias typedef’d) pour acheminer les informations relatives à un rectangle englobant à utiliser lors du rendu à l’écran par blitting ou lors de la détection des correspondances. En langage C++, la structure **RECT** a la définition suivante.
 
-```
+```cpp
 typedef struct tagRECT { 
     LONG    left;    // This is the upper-left corner x-coordinate.
     LONG    top;     // The upper-left corner y-coordinate.

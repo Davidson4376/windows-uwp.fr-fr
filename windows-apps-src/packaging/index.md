@@ -2,16 +2,16 @@
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: Empaquetage d’applications
 description: Cette section contient ou associe des articles sur la création de packages d’application de plateforme Windows universelle (UWP).
-ms.date: 09/30/2018
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp, création de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8eb0fa1eef5b859de561407a91215d5b75624030
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582868"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173005"
 ---
 # <a name="packaging-apps"></a>Empaquetage d’applications
 
@@ -28,7 +28,7 @@ Cette section contient ou associe des articles sur la création de packages d’
 | [Installation par streaming d’application UWP](streaming-install.md) | L’installation par streaming d’application UWP vous permet de spécifier les parties de votre application que vous souhaitez voir téléchargées en premier sur le Microsoft Store. Quand les fichiers essentiels de l’application sont téléchargés en premier, l’utilisateur peut lancer l’application et interagir avec elle pendant que le reste du téléchargement s’achève en arrière-plan. |
 | [Création de packages facultatifs et d’ensembles associés](optional-packages.md) | Les packages facultatifs ont un contenu qui peut être inclus dans un package principal. Ils sont utiles pour le contenu téléchargeable (DLC), pour diviser une application volumineuse en cas de restrictions de taille, ou pour distribuer du contenu supplémentaire indépendamment de votre application d’origine. |
 | [Packages facultatifs avec code exécutable](optional-packages-with-executable-code.md) | Découvrez comment utiliser Visual Studio pour créer un package facultatif avec du code exécutable. |
-| [Installer des applications UWP avec le Programme d’installation d’application](appinstaller-root.md) | Le Programme d’installation d’application permet d’installer des applications UWP en double-cliquant sur le package d’application. |
+| [Installer des applications Windows 10 avec le Programme d’installation d’application](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) | Le Programme d’installation d’application permet d’installer des applications Windows 10 en double-cliquant sur le package d’application. |
 | [Installer des applications avec l’outil WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Le déploiement d’applications Windows s’effectue via WinAppDeployCmd.exe, un outil en ligne de commande qui permet de déployer une application UWP à partir d’une machine Windows 10 vers un appareil Windows 10 Mobile. Vous pouvez utiliser cet outil pour déployer un package d’application quand l’appareil Windows 10 Mobile est connecté via un port USB ou est disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ni de la solution liée à cette application. Cet article décrit comment installer des applications UWP à l’aide de cet outil. |
 | [Configurer des builds automatisées pour votre application UWP](auto-build-package-uwp-apps.md) | Cette rubrique vous montre comment utiliser Visual Studio Team Services (VSTS) pour empaqueter votre application dans le cadre d’un processus automatisé de génération, le cas échéant. |
 | [Déclarations des fonctionnalités d’application](app-capability-declarations.md) | Pour pouvoir accéder à certaines API, à certaines ressources (images ou musique) ou à certains appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le [manifeste du package](https://msdn.microsoft.com/library/windows/apps/BR211474) de votre application UWP. |

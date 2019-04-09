@@ -5,19 +5,19 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c410d209972a0221928548901f79bd599c67eae
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644484"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921695"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
 Cette rubrique montre comment créer un composant Windows Runtime qui contient une classe runtime représentant un compte bancaire, qui déclenche un événement lorsque son solde devient débiteur. Elle montre également une application de base qui utilise la classe runtime de compte bancaire, appelle une fonction pour ajuster le solde et gère tous les événements résultants.
 
 > [!NOTE]
-> Pour plus d’informations sur l’installation et à l’aide de la [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) voir Extension Visual Studio (VSIX) (qui fournit la prise en charge des modèles de projet) [prise en charge de Visual Studio pour C / c++ / WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Pour plus d’informations sur l’installation et à l’aide de la [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Extension Visual Studio (VSIX) et le package NuGet (qui ensemble fournissent le modèle de projet et créez prise en charge), consultez [prise en charge de Visual Studio pour C++/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 > [!IMPORTANT]
 > Pour obtenir les principaux concepts et termes facilitant votre compréhension pour utiliser et créer des classes runtime avec C++/WinRT, voir [Utiliser des API avec C++/WinRT](consume-apis.md) et [Créer des API avec C++/WinRT](author-apis.md).
@@ -285,4 +285,4 @@ Notez que ces instructions ne s’appliquent obligatoirement si vous concevez un
 ## <a name="related-topics"></a>Rubriques connexes
 * [Créer des API avec C++/WinRT](author-apis.md)
 * [Utiliser des API avec C++/WinRT](consume-apis.md)
-* [Gérer les événements à l’aide de délégués en C / c++ / WinRT](handle-events.md)
+* [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md)

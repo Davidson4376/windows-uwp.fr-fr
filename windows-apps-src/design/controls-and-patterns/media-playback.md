@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a39faf77237596179486eb6c1a0a59a40049155c
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640024"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58914009"
 ---
 # <a name="media-player"></a>Lecteur multimédia
 
@@ -87,7 +87,7 @@ La disposition des contrôles sur deux lignes (voir ci-dessous) est recommandée
 
 ![Exemple de contrôles MTC sur téléphone répartis sur deux lignes](images/controls/mtc_double_inprod.png)
 
-**Contrôles de transport de supports de système**
+**Contrôles de transport de média système**
 
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) est automatiquement intégré aux contrôles de transport de média système. Les contrôles de transport de média système sont les contrôles qui s’affichent quand l’utilisateur appuie sur une touche de média matériel, comme les boutons de média d’un clavier. Pour plus d’informations, voir [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677).
 
@@ -173,7 +173,7 @@ Si votre application a besoin d’accéder aux dossiers **Musique** ou **Vidéo*
 
 Le contrôle [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) ne nécessite pas de fonctionnalités spéciales pour accéder aux fichiers résidant sur le système de fichiers local, comme les dossiers **Musique** ou **Vidéo** de l’utilisateur, car ce dernier bénéficie d’un contrôle total sur l’accès aux fichiers. Du point de vue de la sécurité et de la confidentialité, il est préférable de limiter le nombre de fonctionnalités utilisées par votre application.
 
-**Pour ouvrir le média local à l’aide de la classe FileOpenPicker**
+**Pour ouvrir un média local à l’aide de FileOpenPicker**
 
 1.  Appelez [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) pour permettre à l’utilisateur de choisir un fichier multimédia.
 
@@ -246,7 +246,7 @@ Voici quelques situations où vous devez libérer la demande d’affichage :
 
 > **Remarque**&nbsp;&nbsp; Si [MediaPlayerElement.IsFullWindow](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) a la valeur true et que le contenu multimédia est en cours de lecture, la désactivation de l’affichage est automatiquement empêchée.
 
-**Pour conserver l’écran actif**
+**Pour maintenir l’écran actif**
 
 1.  Créez une variable [DisplayRequest](https://msdn.microsoft.com/library/windows/apps/br241816) globale. Initialisez-la sur la valeur Null.
 ```csharp
@@ -259,8 +259,9 @@ private DisplayRequest appDisplayRequest = null;
 3.  Appelez [RequestRelease](https://msdn.microsoft.com/library/windows/apps/br241819) pour supprimer la demande d’affichage chaque fois que la lecture vidéo est arrêtée, suspendue ou interrompue par une erreur de lecture. Quand votre application n’a plus de demande d’affichage active, Windows préserve l’autonomie de la batterie en estompant l’affichage (et finit par le désactiver) quand l’appareil n’est pas utilisé.
 
     Chaque [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) a un [PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) de type [MediaPlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx) qui contrôle divers aspects de la lecture multimédia comme [PlaybackRate](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx), [PlaybackState](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) et [Position](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx). Ici, vous utilisez l’événement [PlaybackStateChanged](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) sur [MediaPlayer.PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) pour détecter les situations où vous devez libérer la demande d’affichage. Utilisez ensuite la propriété [NaturalVideoHeight](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) pour déterminer si un fichier audio ou vidéo est en cours de lecture, et maintenez l’écran actif uniquement si une vidéo est en cours de lecture.
+
     ```xaml
-<MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
 
     ```csharp
@@ -395,5 +396,5 @@ Les contrôles par défaut ont été optimisés pour la lecture multimédia, tou
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Principes fondamentaux de conception de commande pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
-- [Principes fondamentaux de création de contenu pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)
+- [Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
+- [Informations de base relatives à la conception de contenu pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)

@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a4eadb82de2035b931d75ff2eefa6f8bd6652c94
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608074"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343268"
 ---
 # <a name="speech-recognition"></a>Reconnaissance vocale
 
@@ -275,7 +275,7 @@ Contrairement à une contrainte de liste de programmation, une grammaire SRGS (S
 
 ### <a name="voice-command-constraints"></a>Contraintes de commandes vocales
 
-Utilisez un fichier XML VCD (Voice Command Definition) pour définir les commandes que l’utilisateur peut prononcer pour lancer des actions au moment de l’activation de votre application. Pour plus d’informations, voir [Lancer une application au premier plan avec les commandes vocales de Cortana](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana).
+Utilisez un fichier XML VCD (Voice Command Definition) pour définir les commandes que l’utilisateur peut prononcer pour lancer des actions au moment de l’activation de votre application. Pour plus d’informations, consultez [activer une application de premier plan avec les commandes vocales via Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
 Consultez [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 

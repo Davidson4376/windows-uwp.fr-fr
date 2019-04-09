@@ -2,28 +2,31 @@
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Configurer le Portail d’appareil avec un certificat SSL personnalisé
 description: À déterminer
-ms.date: 07/11/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cbe813a58124b1cd80f352ae11e9dcff59b21da4
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616694"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244335"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Configurer le Portail d’appareil avec un certificat SSL personnalisé
-Dans la mise à jour Windows 10 Creators Update, Windows Device Portal a ajouté un moyen qui permet aux administrateurs de périphériques d'installer un certificat personnalisé pour l'utiliser dans les communications HTTPS. 
+
+Dans la mise à jour Windows 10 Creators Update, Windows Device Portal a ajouté un moyen qui permet aux administrateurs de périphériques d'installer un certificat personnalisé pour l'utiliser dans les communications HTTPS.
 
 Bien que vous puissiez le faire sur votre propre PC, cette fonctionnalité est principalement destinée aux entreprises qui ont déjà mis en place une infrastructure de certificat.  
 
-Par exemple, une entreprise peut utiliser une autorité de confiance (AC) pour signer des certificats pour les sites Web intranet pris en charge via le protocole HTTPS. Cette fonctionnalité s'ajoute à cette infrastructure. 
+Par exemple, une entreprise peut utiliser une autorité de confiance (AC) pour signer des certificats pour les sites Web intranet pris en charge via le protocole HTTPS. Cette fonctionnalité s'ajoute à cette infrastructure.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
+
 Par défaut, Device Portal génère une autorité de confiance racine auto-signée, puis l'utilise pour signer des certificats SSL pour chaque point de terminaison détecté. Cela inclut `localhost`, `127.0.0.1` et `::1` (localhost IPv6).
 
-Le nom d’hôte de l’appareil (par exemple, `https://LivingRoomPC`) et chaque adresse IP de liaison locale attribuée à l’appareil sont également inclus (jusqu'à deux [IPv4, IPv6] par carte réseau). Vous pouvez voir les adresses IP de liaison locale d'un appareil en examinant l’outil Mise en réseau dans Device Portal. Elles commencent par `10.` ou `192.` pour IPv4, ou `fe80:` pour IPv6. 
+Le nom d’hôte de l’appareil (par exemple, `https://LivingRoomPC`) et chaque adresse IP de liaison locale attribuée à l’appareil sont également inclus (jusqu'à deux [IPv4, IPv6] par carte réseau).
+Vous pouvez voir les adresses IP de liaison locale d'un appareil en examinant l’outil Mise en réseau dans Device Portal. Elles commencent par `10.` ou `192.` pour IPv4, ou `fe80:` pour IPv6.
 
 Dans la configuration par défaut, un avertissement de certificat peut apparaître dans votre navigateur en raison de l'AC racine non approuvée. Plus précisément, le certificat SSL fourni par Device Portal est signé par une AC racine que le navigateur ou le PC n’approuve pas. Cela peut être résolu en créant une AC racine approuvée.
 
@@ -42,7 +45,7 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-Une fois qu'il est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ pour signer des certificats SSL. 
+Une fois qu'il est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ pour signer des certificats SSL.
 
 ## <a name="create-an-ssl-certificate-with-the-root-ca"></a>Créer un certificat SSL avec l’AC racine
 
@@ -66,18 +69,19 @@ $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (Con
 
 Si vous avez plusieurs appareils, vous pouvez réutiliser les fichiers .pfx de localhost, mais vous devez toujours créer des certificats d'adresse IP et de nom d’hôte pour chaque périphérique séparément.
 
-Lorsque le groupe des fichiers .pfx est généré, vous devez charger ces derniers dans Windows Device Portal. 
+Lorsque le groupe des fichiers .pfx est généré, vous devez charger ces derniers dans Windows Device Portal.
 
 ## <a name="provision-device-portal-with-the-certifications"></a>Configurer Device Portal avec la ou les certifications
 
 Pour chaque fichier .pfx créé pour un périphérique, vous devez exécuter la commande suivante à partir d’une invite de commandes avec élévation de privilèges.
 
-```
-WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
+```cmd
+WebManagement.exe -SetCert <Path to .pfx file> <password for pfx>
 ```
 
 Voir l'exemple d’utilisation ci-dessous :
-```
+
+```cmd
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
@@ -85,7 +89,7 @@ WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 
 Une fois que vous avez installé les certificats, il vous suffit de redémarrer le service pour que les modifications prennent effet :
 
-```
+```cmd
 sc stop webmanagement
 sc start webmanagement
 ```

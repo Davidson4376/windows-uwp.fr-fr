@@ -2,16 +2,16 @@
 Description: Si votre application affiche des publicités à l’aide de Microsoft Advertising SDK, utilisez la page de publicités de In-app de partenaires pour gérer votre utilisation des publicités.
 title: Publicités dans l’application
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 10/31/2018
+ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4b8fc913818d5abe3317582cc18d5cb676a7a2fe
+ms.sourcegitcommit: 9f23bc9265c13f7ccedbc826261ceed2aff5ab83
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658024"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417055"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -110,14 +110,14 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 
 |  Réseau publicitaire  |  Description  |  Types de publicités pris en charge  |
 |--------------|---------------|---------------------|
-| Oath et AppNexus |  Il s’agit d’un réseau ad gérés par Microsoft qui sert de publicités via notre partenaire réseaux, Oath et AppNexus.<p/>**Remarque** : Oath et AppNexus figure toujours parmi tout d’abord le **payé réseaux publicitaires** liste d’unités d’ad bannière et il ne peut pas devenir un classement plus faible pour ces types de publicités. | Bannière, spot vidéo |
+| Oath et AppNexus |  Il s’agit d’un réseau ad gérés par Microsoft qui sert de publicités via notre partenaire réseaux, Oath et AppNexus.<p/>**Remarque**: Oath et AppNexus figure toujours parmi tout d’abord le **payé réseaux publicitaires** liste d’unités d’ad bannière et il ne peut pas devenir un classement plus faible pour ces types de publicités. | Bannière, spot vidéo |
 | AppNexus (direct) | Sélectionnez cette option pour faire de la publicité de [AppNexus](https://www.appnexus.com). | Spot vidéo, native  |
 | Publicités pour l’installation d’applications Microsoft | Sélectionnez cette option pour proposer des publicités pour l’installation d’applications ou des publicités pour la réactivation d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes de publicité pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, spot bannière, native  |
 | Recommandations de contenu MSN |  Sélectionnez cette option pour faire de la publicité des recommandations de contenu MSN. |  Bannière, spot bannière  |
 | Outbrain |  Sélectionnez cette option pour proposer des publicités à partir de [Outbrain](https://www.outbrain.com/). |  Bannière, spot bannière  |
 | Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](https://www.revcontent.com/). |  Bannière, native  |
 | Smaato |  Sélectionnez cette option pour proposer des publicités à partir de [Smaato](https://www.smaato.com/). |  Bannière  |
-| smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](https://www.smartclip.com/). |  Spot vidéo  |
+| smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](http://www.smartclip.com/). |  Spot vidéo  |
 | SpotX |  Sélectionnez cette option pour proposer des publicités à partir de [SpotX](https://www.spotx.tv/). |  Spot vidéo  |
 | Taboola |  Sélectionnez cette option pour proposer des publicités à partir de [Taboola](https://www.taboola.com/). |  Bannière  |
 | Undertone | Sélectionnez cette option pour faire de la publicité de [Undertone](https://www.undertone.com/). | Bannière INTERSTITIELLE |

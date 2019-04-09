@@ -6,19 +6,19 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e07c0b2730da258126465fbeea917b32ef9d23e6
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645874"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320602"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Indexeurs spécifiques au format de MakePri.exe
 
 Cette rubrique décrit les indexeurs spécifiques au format utilisés par l’outil [MakePri.exe](compile-resources-manually-with-makepri.md) pour générer son index de ressources.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Par exemple, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe est généralement utilisé avec les commandes `new`, `versioned` ou `resourcepack`. Voir [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md). Dans ces cas, il indexe les fichiers sources pour générer un index des ressources. MakePri.exe utilise plusieurs indexeurs individuels pour lire les fichiers de ressources sources ou les conteneurs pour les ressources. L’indexeur de base est l’indexeur de dossier. Il indexe le contenu d’un dossier, par exemple des images `.jpg` ou `.png`.
 
@@ -284,12 +284,14 @@ L’indexeur ResFiles est identifié par un attribut `type` RESFILES. Il indexe 
 
 Un fichier `.resfiles` est un fichier texte contenant une liste plate de chemins d’accès de fichiers. Un fichier `.resfiles` peut contenir des commentaires « // ». Voici un exemple :
 
-```
+<blockquote>
+<pre>
 Strings\component1\fr\elements.resjson
 Images\logo.scale-100.png
 Images\logo.scale-140.png
 Images\logo.scale-180.png
-```
+</pre>
+</blockquote>
 
 ## <a name="resjson"></a>ResJSON
 

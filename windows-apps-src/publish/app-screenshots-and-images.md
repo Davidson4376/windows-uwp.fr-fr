@@ -2,16 +2,16 @@
 Description: Vous pouvez sélectionner les captures d’écran, les logos et d'autres ressources d'illustration (par exemple, des bandes-annonces et des images publicitaires) à inclure dans votre description de l’application dans le Windows Store.
 title: Captures d’écran, images et bandes-annonces de l’application
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610184"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244305"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -128,7 +128,7 @@ Pour concevoir des bandes-annonces efficaces, appliquez les recommandations suiv
 
 Vous devez également respecter la configuration requise répertoriée ci-dessous.
 
-**Pour ajouter des codes de fin à votre annonce :**
+**Pour ajouter les bandes-annonces à votre liste :**
 1. Chargez le **fichier vidéo** de votre bande-annonce dans la case indiquée. Une zone de liste déroulante s’affiche également au cas où vous souhaiteriez réutiliser une bande-annonce que vous avez déjà chargée (par exemple, pour une description dans le Store dans une autre langue).
 2. Après avoir chargé la bande-annonce, vous devez charger une **image miniature** pour l’accompagner. Il doit s'agir d'un fichier .png de 1920 x 1080 pixels, et généralement d'une image fixe extraite de la bande-annonce.
 3. Cliquez sur l’icône de crayon pour ajouter un **titre** à votre bande-annonce (255 caractères au maximum).
@@ -144,7 +144,7 @@ Pour supprimer une bande-annonce d'une liste, cliquez sur le **X** en regard de 
 
 Lorsque vous fournissez vos bandes-annonces, veillez à respecter ces exigences :
 
-- Le format vidéo doit être MOV ou MP4. 
+- Le format vidéo doit être MOV ou MP4. Si vous téléchargez des vidéo 4K, MP4 uniquement est pris en charge.
 - La durée de la vidéo ne doit pas dépasser 60 secondes.
 - La taille du fichier de la bande-annonce ne doit pas dépasser 2 Go. 
 - La résolution vidéo doit être 1920 x 1080 pixels ou 3840 x 2160 pixels.
@@ -158,61 +158,19 @@ Il existe des exigences supplémentaires en fonction du type de fichier.
 
 #### <a name="mov"></a>MOV
 
-<table>
-<tr>
-<td>
+| Vidéo | Audio | 
+| --- | --- | 
+| <ul><li>ProRes 1080p (HQ le cas échéant)</li><li>Fréquence d’images native ; 29,97 ips de préférence</li></ul> | <ul><li>Stéréo obligatoire</li><li>Niveau Audio recommandé : -16 LKFS/LUFS</li></ul> |
 
-**Vidéo :**
-
-<ul>
-<li>ProRes 1080p (HQ le cas échéant)</li>
-<li>Fréquence d’images native ; 29,97 ips de préférence</li>
-</ul>
-</td>
-<td>
-
-**Audio :**
-
-<ul>
-<li>Stéréo obligatoire</li>
-<li>Niveau Audio recommandé : -16 LKFS/LUFS</li>
-</ul> 
-</td>
-</tr>
-</table>
 
 #### <a name="mp4"></a>MP4
 
-<table>
-<tr>
-<td>
+| Vidéo | Audio |
+| --- | --- |
+| <ul><li>Codec : [H.264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Balayage progressif (pas d'entrelacement)</li><li>High Profile</li><li>2 images B consécutives</li><li>GOP fermé. GOP de la moitié de la fréquence d’images</li><li>CABAC</li><li>50 Mo/s </li><li>Espace de couleurs : 4.2.0</li></ul> | <ul><li>Codec : AAC-LC</li><li>Canaux : Stéréo ou son à effet surround</li><li>Taux d’échantillonnage : 48 kHz</li><li>Vitesse de transmission audio : 384 Ko/s pour la stéréo, 512 Ko/s pour son à effet surround</li></ul> |
 
-**Vidéo :**
-
-<ul>
-<li>Codec : H.264</li>
-<li>Balayage progressif (pas d'entrelacement)</li>
-<li>High Profile</li>
-<li>2 images B consécutives</li>
-<li>GOP fermé. GOP de la moitié de la fréquence d’images</li>
-<li>CABAC</li>
-<li>50 Mo/s </li>
-<li>Espace de couleurs : 4.2.0</li>
-</ul>
-</td>
-<td>
-
-**Audio :**
-
-<ul>
-<li>Codec : AAC-LC</li>
-<li>Canaux : Stéréo ou son à effet surround</li>
-<li>Taux d’échantillonnage : 48 kHz</li>
-<li>Vitesse de transmission audio : 384 Ko/s pour la stéréo, 512 Ko/s pour son à effet surround</li>
-</ul>
-</td>
-</tr>
-</table>
+> [!WARNING]
+> Les clients ne peuvent pas entendre l’audio pour les fichiers MP4 encodés avec des codecs autre que AVC1.
 
 Pour les fichiers Mezzanine H.264, nous recommandons les éléments suivants :
 - Conteneur : MP4

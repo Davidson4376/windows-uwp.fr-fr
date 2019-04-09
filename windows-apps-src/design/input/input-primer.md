@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596564"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343288"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -82,11 +82,11 @@ Dans Windows 10, **Cortana** extensibilité vous permet de gérer les commandes 
 
 Une commande vocale est un énoncé, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana**. L’application peut être lancée au premier plan ou en arrière-plan en fonction du niveau et de la complexité de l’interaction. Par exemple, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaire sont mieux gérées au premier plan, tandis que les commandes de base peuvent être gérées en arrière-plan.
 
-L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233).
+L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines).
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233)
+[Recommandations relatives à la conception de Cortana](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
 
 ## <a name="speech"></a>Fonctions vocales
@@ -127,7 +127,7 @@ La commande et le contrôle représentent l’utilisation de commandes verbales 
 
 Ce sont des aspects essentiels d’une expérience utilisateur réussie. Par conséquent, il n’est pas recommandé de prévoir un seul type d’entrée. Les fonctions vocales sont généralement proposées en complément d’autres options d’entrée, selon les préférences de l’utilisateur ou les fonctionnalités matérielles.
 
-**Dictée**
+**Dictation**
 
 La méthode d’entrée vocale la plus simple. Chaque énoncé est converti en texte.
 

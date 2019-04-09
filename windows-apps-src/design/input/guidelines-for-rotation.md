@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d58587c8a7e391c51dc3267dd6ebb069170604a4
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617204"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244275"
 ---
 # <a name="rotation"></a>Rotation
 
 
 Cet article décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application UWP.
 
-> **API importantes** : [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **API importantes** : [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -29,7 +29,7 @@ Cet article décrit la nouvelle interface utilisateur Windows pour la rotation e
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
 
-**Vue d’ensemble de rotation**
+**Vue d’ensemble de la rotation**
 
 La rotation est une technique optimisée pour l’interaction tactile utilisée par les applications UWP pour permettre aux utilisateurs de faire tourner un objet dans une direction circulaire (dans le sens des aiguilles d’une montre ou contraire).
 
@@ -48,20 +48,20 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 
 Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles : l’index touche un arbre et le pouce touche un rondin de bois.
 
-![image montrant les deux points tactiles initial pour le mouvement de rotation.](images/ux-rotate-points1.png)
+![image des deux premiers points tactiles du geste de rotation.](images/ux-rotate-points1.png)
 Dans ce deuxième dessin, la rotation s’effectue autour du premier point tactile (le pouce). Après la rotation, l’index touche encore le tronc de l’arbre et le pouce touche encore le rondin de bois (le point de rotation).
 
-![image montrant une image pivotée avec le point de rotation est limitée à un des deux points tactiles initiale.](images/ux-rotate-points2.png)
+![image du dessin pivoté avec le point de rotation contraint à l’un des deux premiers points tactiles.](images/ux-rotate-points2.png)
 Dans ce troisième dessin, le centre de la rotation a été défini par l’application (ou par l’utilisateur) comme devant être le point central du dessin. Après la rotation, étant donné que le dessin n’a pas pivoté autour de l’un des doigts, l’illusion de manipulation directe est rompue (à moins que cela ne soit la décision de l’utilisateur).
 
-![image montrant une image pivotée avec le point de rotation limitées pour le centre de l’image plutôt qu’une des deux points tactiles initiale.](images/ux-rotate-points3.png)
+![image du dessin pivoté avec le point de rotation contraint au centre du dessin et non à l’un des deux premiers points tactiles.](images/ux-rotate-points3.png)
 Dans ce dernier dessin, le centre de la rotation a été défini par l’application (ou par l’utilisateur) comme devant être un point situé au milieu du bord gauche du dessin. Là encore, à moins que cela ne soit la décision de l’utilisateur, l’illusion de manipulation directe a été rompue.
 
 ![image du dessin pivoté avec le point de rotation contraint au centre le plus à gauche du dessin et non à l’un des deux premiers points tactiles.](images/ux-rotate-points4.png)
 
  
 
-Windows 8 prend en charge trois types de rotation : gratuite, limitée et combiné.
+Windows 10 prend en charge trois types de rotation : gratuite, limitée et combiné.
 
 <table>
 <colgroup>
@@ -106,17 +106,17 @@ Windows 8 prend en charge trois types de rotation : gratuite, limitée et combi
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
 * [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
 * [Entrée : Mouvements et des manipulations avec GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

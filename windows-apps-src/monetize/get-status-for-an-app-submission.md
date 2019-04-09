@@ -6,36 +6,36 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’app, état
 ms.localizationpriority: medium
-ms.openlocfilehash: 97070136f9e1f926a275185d2b4c222513aa49d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6fc7a3316cacf1ab6cbe246f7868096b75c538e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607804"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334437"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>Obtenir l’état d’une soumission d’application
 
 Utilisez cette méthode dans l’API de soumission au Microsoft Store pour obtenir l’état d’une soumission d’app. Pour plus d’informations sur le processus de création d’une soumission d’applications à l’aide de l’API de soumission au Microsoft Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status``` |
+| GET   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -56,7 +56,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment obtenir l’état d’une soumission d’application.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243610/status HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -78,7 +78,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir [Ressource des détails d’état](manage-app-submissions.md#status-details-object). |

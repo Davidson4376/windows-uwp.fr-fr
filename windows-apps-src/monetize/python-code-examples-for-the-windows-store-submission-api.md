@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, exemples de code, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bc3959b4e26bd54542edc3f69666f6d97cddba26
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634404"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334827"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Python : soumissions d'applications, d'extensions et de versions d’évaluation
 
@@ -30,7 +30,7 @@ Cet article fournit des exemples de code Python qui décrivent comment utiliser 
 
 L’exemple suivant indique comment [obtenir un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) que vous pouvez utiliser pour appeler des méthodes dans l’API de soumission au Microsoft Store. Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API de soumission au Microsoft Store avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en générer un autre.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
 
@@ -38,7 +38,7 @@ L’exemple suivant indique comment [obtenir un jeton d’accès Azure AD](crea
 
 L’exemple suivant indique comment [créer](create-an-add-on.md) et [supprimer](delete-an-add-on.md) une extension.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
 
@@ -46,7 +46,7 @@ L’exemple suivant indique comment [créer](create-an-add-on.md) et [supprimer]
 
 L’exemple suivant indique comment [créer](create-a-flight.md) et [supprimer](delete-a-flight.md) une version d’évaluation du package.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
 
@@ -61,7 +61,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 5. Ensuite, il [mises à jour](update-an-app-submission.md) , puis [valide](commit-an-app-submission.md) la nouvelle soumission de partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md) jusqu’à ce que celle-ci soit validée.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
 
@@ -76,7 +76,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 5. Ensuite, il [mises à jour](update-an-add-on-submission.md) , puis [valide](commit-an-add-on-submission.md) la nouvelle soumission de partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que celle-ci soit validée.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
 
@@ -91,7 +91,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 5. Ensuite, il [mises à jour](update-a-flight-submission.md) , puis [valide](commit-a-flight-submission.md) la nouvelle soumission de partenaires.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
 
-[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
+[!code-python[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 

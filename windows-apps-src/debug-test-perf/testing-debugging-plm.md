@@ -1,17 +1,17 @@
 ---
 description: Outils et techniques pour le débogage et le test de fonctionnement de votre application avec la Gestion de la durée de vie des processus.
 title: Outils de test et de débogage pour la PLM
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94cbad6e497ea2f5b36a07a6b039bfc293175c4c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244345"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Outils de test et de débogage pour la PLM
 
@@ -25,11 +25,11 @@ Le débogueur intégré à Visual Studio 2015 peut vous aider à résoudre les
 
 ## <a name="the-plmdebug-tool"></a>L’outil PLMDebug
 
-PLMDebug.exe est un outil de ligne de commande qui vous permet de contrôler l’état PLM d’un package d’application ; l’outil est inclus dans le SDK Windows. Après son installation, l’outil se trouve à l’emplacement *C:\Program Files (x86) \Windows Kits\10\Debuggers\x64* par défaut. 
+PLMDebug.exe est un outil de ligne de commande qui vous permet de contrôler l’état PLM d’un package d’application ; l’outil est inclus dans le SDK Windows. Après son installation, l’outil se trouve à l’emplacement *C:\Program Files (x86) \Windows Kits\10\Debuggers\x64* par défaut.
 
 PLMDebug vous permet également de désactiver les PLM pour un quelconque package d’application installé, ce qui est nécessaire pour certains débogueurs. La désactivation de la Gestion de la durée de vie des processus empêche le service Runtime Broker d’arrêter votre application avant que vous puissiez la déboguer. Pour désactiver la Gestion de la durée de vie des processus, utilisez le commutateur **/enableDebug**, suivi par le *nom complet du package* de votre application UWP (le nom court, le nom de famille ou l’AUMID du package ne fonctionneront pas) :
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -41,7 +41,7 @@ Vous pouvez éventuellement spécifier un chemin d’accès absolu à un débogu
 
 Vous pouvez contourner cette limitation en écrivant un script ou un outil qui identifie le processus de votre jeu ; l’interpréteur de commandes exécute ensuite VSJITDebugger.exe, en passant le PID de votre application UWP. L’exemple de code C# suivant illustre une approche simple pour y parvenir.
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -76,13 +76,15 @@ namespace VSJITLauncher
 
 Exemple d’utilisation, conjointement avec PLMDebug :
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 où `Game` est le nom du processus et `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` est le nom complet du package de l’exemple de package d’application UWP.
 
 Notez que chaque appel à **/enableDebug** doit ensuite être associé à un autre appel PLMDebug avec le commutateur **/disableDebug**. En outre, le chemin d’accès à un débogueur doit être absolu (les chemins d’accès relatifs ne sont pas pris en charge).
 
 ## <a name="related-topics"></a>Rubriques connexes
+
 - [Déploiement et débogage des applications UWP](deploying-and-debugging-uwp-apps.md)
 - [Débogage, tests et analyse des performances](index.md)

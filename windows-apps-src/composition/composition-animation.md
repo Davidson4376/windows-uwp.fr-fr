@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 18208986d7d07e4d437e52dce844deecc03cf1f6
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616704"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240027"
 ---
 # <a name="composition-animations"></a>Animations de composition
 
@@ -37,7 +37,7 @@ Ici, un effet parallaxe visuel déplace les objets à différentes vitesses lors
 
 ## <a name="using-compositionanimations-to-create-motion"></a>Pour créer un mouvement à l’aide de CompositionAnimations
 
-Pour générer le mouvement dans l’interface utilisateur, les développeurs peuvent accéder des animations en XAML (lien vers des animations ici) ou la couche visuelle. Animations sur la couche visuelle offrent aux développeurs une série d’avantages :
+Pour générer le mouvement dans l’interface utilisateur, les développeurs peuvent accéder des animations en XAML ou la couche visuelle. Animations sur la couche visuelle offrent aux développeurs une série d’avantages :
 
 - Performances – au lieu de l’animation lié aux threads d’interface utilisateur traditionnelle, animations sur la plateforme de l’interface utilisateur de Windows fonctionnent sur un thread indépendant à 60 FPS, l’activation des expériences de mouvement lisse.
 - Modèle de création de modèles – animations dans la couche d’interface utilisateur de Windows sont des modèles, signification peut utiliser une seule animation sur plusieurs objets et modifier les propriétés ou paramètres sans se préoccuper d’obstruction précédente utilise.

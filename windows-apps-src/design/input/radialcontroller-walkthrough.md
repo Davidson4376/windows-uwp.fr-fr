@@ -3,15 +3,15 @@ ms.assetid: ''
 title: Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
 description: Un didacticiel détaillé qui explique comment ajouter la prise en charge de Surface Dial (et autres périphériques à molette) à votre application UWP.
 keywords: radial, dial, didacticiel
-ms.date: 01/25/2018
+ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c8042bbe3ad8a37802b592e4e638a7c42e79a6d
+ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643984"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58221465"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Tutoriel : Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
 
@@ -38,7 +38,7 @@ Surface Dial prend en charge trois mouvements de base :
 - Faire pivoter pour mettre en surbrillance un élément de menu (si le menu est actif) ou pour modifier l’action en cours dans l’application (si le menu n’est pas actif).
 - Cliquez pour sélectionner l’élément de menu en surbrillance (si le menu est actif) ou pour invoquer une commande dans l’application (si le menu n’est pas actif).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 * Un ordinateur (ou une machine virtuelle) exécutant Windows 10 Creators Update ou une version ultérieure
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
@@ -609,6 +609,38 @@ Pour voir cela en action (vous aurez besoin d’un Surface Studio), procédez co
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Félicitations, vous avez terminé la *obtenir un didacticiel de prise en main : Prise en charge de la Surface Dial (et autres appareils roulette) dans votre application UWP*! Nous vous avons présenté le code de base requis pour prendre en charge un appareil à molette dans vos applications UWP et comment fournir une expérience utilisateur enrichie prise en charge par les API **RadialController**.
+
+## <a name="related-articles"></a>Articles connexes
+
+[Interactions de surface Dial](windows-wheel-interactions.md)
+
+### <a name="api-reference"></a>Informations de référence sur les API
+
+- [**RadialController** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** classe](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+
+### <a name="samples"></a>Exemples
+
+#### <a name="topic-samples"></a>Exemples de la rubrique
+
+[Personnalisation de RadialController](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### <a name="other-samples"></a>Autres exemples
+[Coloration du carnet d’exemple](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[Exemples de plate-forme de Windows universels (C# et C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+
+[Exemple de bureau classique Windows](https://aka.ms/radialcontrollerclassicsample)

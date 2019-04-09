@@ -2,16 +2,16 @@
 title: Données de Registre pour les contrôleurs de jeu
 description: En savoir plus sur les données qu’il est possible d’ajouter au Registre de l’ordinateur afin de pouvoir utiliser votre contrôleur dans les jeux UWP.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, uwp, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633604"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244395"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 
@@ -545,7 +545,7 @@ Le tableau ci-dessous répertorie les sous-clés obligatoires et facultatives so
 
 Pour plus d’informations sur les contrôleurs de navigation de l’interface utilisateur et les commandes ci-dessus, voir [contrôleur de navigation de l’interface utilisateur](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller).
 
-## <a name="keys"></a>Clés
+## <a name="keys"></a>Keys
 
 Les sections suivantes expliquent le contenu de chaque sous-clé figurant sous les clés **Gamepad**, **RacingWheel**, **ArcadeStick**, **FlightStick**, et **UINavigation**.
 
@@ -562,7 +562,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td>Button</td>
+        <td>Bouton</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -597,7 +597,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -610,7 +610,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
         <td>
             <p>Indique la position de commutateur qui entraîne le signalement par le bouton mappé de son état « enfoncé ». Les valeurs de position peuvent être une des chaînes suivantes :</p>
             <ul>
-                <li>Up (Haut)</li> 
+                <li>Up (Haut)</li>
                 <li>UpRight</li>
                 <li>Droit</li>
                 <li>DownRight</li>
@@ -642,7 +642,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Button</td>
+        <td rowspan="2" style="vertical-align: middle;">Bouton</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -713,7 +713,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
         <td>Indique que la valeur de l’axe mappé doit être inversée avant d’être renvoyée.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Oui</td>
@@ -812,7 +812,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
         <th>Informations sur la valeur</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Button</td>
+        <td rowspan="10" style="vertical-align: middle;">Bouton</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4 ou 8</td>
@@ -820,7 +820,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b>, ou <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b> ou <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,7 +898,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Basculer</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Index du tableau des commutateurs du <b>RawGameController</b>.
@@ -1121,10 +1121,10 @@ La clé **Axes** mappe chacune des positions de l’axe du tableau des axes de *
 
 ### <a name="switch-labels"></a>Libellés de commutateurs
 
-La clé **Switches** mappe les positions de commutateur avec les libellés. Les valeurs suivent cette convention d’affectation de noms : pour libeller la position d’un commutateur, dont l’index est *x* dans le tableau des commutateurs du **RawGameController**, ajoutez ces valeurs sous la sous-clé **Switches** : 
+La clé **Switches** mappe les positions de commutateur avec les libellés. Les valeurs suivent cette convention d’affectation de noms : pour libeller la position d’un commutateur, dont l’index est *x* dans le tableau des commutateurs du **RawGameController**, ajoutez ces valeurs sous la sous-clé **Switches** :
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1132,7 +1132,7 @@ La clé **Switches** mappe les positions de commutateur avec les libellés. Les 
 * SwitchxUpLeft
 * SwitchxLeft
 
-Le tableau suivant présente un exemple d’ensemble de libellés pour les postes de commutateur d’un commutateur à 4 voies qui s’affiche à l’index 0 dans le **RawGameController** : 
+Le tableau suivant présente un exemple d’ensemble de libellés pour les postes de commutateur d’un commutateur à 4 voies qui s’affiche à l’index 0 dans le **RawGameController** :
 
 <table>
     <tr>
@@ -1232,7 +1232,7 @@ Le tableau suivant présente un exemple d’ensemble de libellés pour les poste
 
 Pour afficher la manière dont l’ensemble de ces mappages et valeurs s’associent, voici un exemple de fichier de Registre pour un **RacingWheel** spécifique :
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
-* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Espace de noms Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [Fichiers INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

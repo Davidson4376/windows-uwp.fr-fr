@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6283c4d69a511e4dd4aa342b547c18624952be29
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603914"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335117"
 ---
 # <a name="interstitial-ads"></a>Spots publicitaires
 
@@ -34,7 +34,7 @@ Nous proposons deux types de spots publicitaires à utiliser dans vos applicatio
 > [!NOTE]
 > L’API pour les spots ne gère pas d’interface utilisateur sauf au moment de la lecture vidéo. Reportez-vous aux [meilleures pratiques Spots](ui-and-user-experience-guidelines.md#interstitialbestpractices10) pour obtenir des recommandations sur les choses à faire et à ne pas faire, si vous envisagez d’intégrer des spots publicitaires dans votre application.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 * Installer le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
@@ -66,22 +66,22 @@ Cette section fournit des exemples en C#, mais Visual Basic et C++ sont égalem
 
 3.  Dans le fichier de code approprié de votre application (par exemple, dans MainPage.xaml.cs ou dans un fichier de code d’une autre page), ajoutez la référence d’espace de noms ci-dessous.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
 4.  À un emplacement approprié de votre application (par exemple, dans ```MainPage``` ou dans une autre page), déclarez un objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) et plusieurs champs de chaîne représentant l’ID de l’application et l’ID d’unité publicitaire de votre spot publicitaire. L’exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des spots publicitaires.
 
     > [!NOTE]
     > Chaque **InterstitialAd** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
 5.  Dans le code exécuté au démarrage (par exemple, dans le constructeur de la page), instanciez l’objet **InterstitialAd** et connectez les gestionnaires d’événements correspondant aux événements de l’objet.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
 6.  Si vous souhaitez afficher un *vidéo INTERSTITIELLE* ad : Environ 30 à 60 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType.Video** pour le type d’annonce.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
     Si vous souhaitez afficher un *bannière INTERSTITIELLE* ad : Environ 5 à 8 secondes avant que vous avez besoin de la publicité, utilisez le [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) méthode pré-extrait la publicité. Cela laisse suffisamment de temps pour demander et préparer la publicité avant qu’elle ne soit affichée. Veillez à spécifier **AdType.Display** pour le type d’annonce.
 
@@ -91,11 +91,11 @@ Cette section fournit des exemples en C#, mais Visual Basic et C++ sont égalem
 
 6.  Dans votre code, là où vous souhaitez afficher le spot vidéo ou la bannière publicitaire, vérifiez que l’objet **InterstitialAd** est prêt à être affiché, puis affichez-le à l’aide de la méthode [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
 7.  Définissez les gestionnaires d’événements pour l’objet **InterstitialAd**.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
 8.  Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
 

@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, valider une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c748d2e8544a27e8cca58fd8aa96154319f77b47
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608214"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334607"
 ---
 # <a name="commit-an-add-on-submission"></a>Valider une soumission d’extension
 
@@ -19,7 +19,7 @@ Utilisez cette méthode dans l’API de soumission de Microsoft Store pour valid
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une extension à l’aide de l’API de soumission au Microsoft Store, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -27,18 +27,18 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * [Créez une soumission d’extension](create-an-add-on-submission.md), puis [mettez à jour cette soumission](update-an-add-on-submission.md) avec les éventuelles modifications nécessaires apportées aux données de soumission.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit``` |
+| PUBLIER    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -59,7 +59,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment valider une soumission d’extension.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -76,10 +76,9 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
-
 
 ## <a name="error-codes"></a>Codes d’erreur
 
@@ -90,7 +89,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 400  | Les paramètres de la requête ne sont pas valides. |
 | 404  | La soumission spécifiée est introuvable. |
 | 409  | La soumission spécifiée a été trouvée, mais il ne peut pas être validée dans son état actuel, ou le module complémentaire utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
-
 
 ## <a name="related-topics"></a>Rubriques connexes
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603334"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240017"
 ---
 # <a name="fiddler-settings-api-reference"></a>Informations de référence sur les API des paramètres Fiddler   
 Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
@@ -25,16 +25,17 @@ La requête suivante vous permet de vérifier si le suivi de Fiddler est activé
 Méthode      | URI de requête
 :------     | :-----
 GET | /ext/fiddler
-<br />
+
+
 **Paramètres d’URI**
 
 - Aucune
 
-**En-têtes de demande**
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**   
+**Corps de la requête**   
 
 - Aucune
 
@@ -48,7 +49,7 @@ Cette API comporte les codes d’état attendus suivants.
 
 Code d’état HTTP      | Description
 :------     | :-----
-200 | Réussite
+200 | Opération réussie
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
@@ -60,8 +61,8 @@ Vous pouvez activer le suivi de Fiddler pour le kit de développement à l’aid
 
 Méthode      | URI de requête
 :------     | :-----
-POST | /ext/fiddler
-<br />
+PUBLIER | /ext/fiddler
+
 **Paramètres d’URI**
 
 Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
@@ -71,13 +72,13 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | proxyAddress       | L’adresse IP ou le nom d’hôte de l’appareil exécutant Fiddler |
 | proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut : 8888 |
 | updateCert (facultatif)| Une valeur booléenne indiquant si le certificat Fiddler racine est fourni. Cette valeur doit être true si Fiddler n’a jamais été configuré sur ce kit de développement ou a été configuré pour un autre hôte.  |
-<br>
 
-**En-têtes de demande**
+
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**
+**Corps de la requête**
 
 - Aucun si updateCert est false ou n’est pas fourni. Corps HTTP à parties multiples conforme contenant le fichier FiddlerRoot.cer dans le cas contraire.
 
@@ -103,17 +104,17 @@ Vous pouvez désactiver le suivi de Fiddler sur l’appareil à l’aide de la d
 
 Méthode      | URI de requête
 :------     | :-----
-DELETE | /ext/fiddler
-<br />
+Suppression | /ext/fiddler
+
 **Paramètres d’URI**
 
 - Aucune
 
-**En-têtes de demande**
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**   
+**Corps de la requête**   
 
 - Aucune
 
@@ -131,11 +132,11 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-<br />
-**Familles de périphériques disponibles**
+
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Configuration de Fiddler pour UWP sur Xbox](uwp-fiddler.md)
 

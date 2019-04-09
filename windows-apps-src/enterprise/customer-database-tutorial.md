@@ -5,12 +5,12 @@ keywords: entreprise, didacticiel, données clients, créer la lecture de mise �
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
+ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623244"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808297"
 ---
 # <a name="tutorial-create-a-customer-database-application"></a>Tutoriel : Créer une application de base de données de clients
 
@@ -24,7 +24,7 @@ Le point de départ pour ce didacticiel est une application à page unique avec 
 
 ![La page principale de l’application de travail](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 * [Assurez-vous de qu'avoir la dernière version de Visual Studio et le SDK Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [Cloner ou télécharger l’exemple de didacticiel de base de données client](https://aka.ms/customer-database-tutorial)
@@ -38,7 +38,7 @@ Une fois que vous avez cloné/téléchargé le référentiel, vous pouvez modifi
 
 Si vous exécutez votre application immédiatement après son ouverture, vous verrez quelques boutons en haut d’un écran vide. S’il n’est pas visible par vous, l’application comprend déjà une base de données SQLite local doté de quelques clients de test. À ce stade, vous commencez par implémenter un contrôle d’interface utilisateur pour afficher les clients et ensuite passer à l’ajout d’opérations par rapport à la base de données. Avant de commencer, voici où vous allez travailler.
 
-### <a name="views"></a>Vues
+### <a name="views"></a>Affichages
 
 **CustomerListPage.xaml** est la vue de l’application, qui définit l’interface utilisateur de la page unique dans ce didacticiel. Chaque fois que vous avez besoin pour ajouter ou modifier un élément visuel dans l’interface utilisateur, vous effectuerez cela dans ce fichier. Ce didacticiel vous guidera d’ajout de ces éléments :
 
@@ -247,7 +247,7 @@ Ajout d’un nouveau client un défi, car le client s’affiche comme une ligne 
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();

@@ -8,19 +8,18 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c7bcb66396ca2731de1ccb2237bb982bf9b541df
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633744"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334957"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Reconnaître les traits Windows Ink en tant que texte et formes
 
 Convertissez les traits d’encre en texte et formes grâce aux fonctionnalités de reconnaissance intégrées à Windows Ink.
 
-> **API importantes** : [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
-
+> **API importantes** : [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>Reconnaissance des formes libres grâce à l’analyse des entrées manuscrites
 
@@ -33,9 +32,10 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
 
 **Télécharger cet exemple à partir de [exemple analyse de l’encre (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
-1.  Tout d’abord, nous configurons l’interface utilisateur (MainPage.xaml). 
+1. Tout d’abord, nous configurons l’interface utilisateur (MainPage.xaml). 
 
     L’interface utilisateur inclut un bouton « Reconnaître », une classe [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)et un [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) de base. Lorsque le bouton « Reconnaître » est activé, tous les traits d’encre sur le canevas d’encre sont analysés et (si reconnus) les formes et les textes correspondants sont tracés sur le canevas de base. Les traits d’encre d’origine sont supprimés du canevas d’encre.
+
 ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -63,21 +63,25 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
         </Grid>
     </Grid>
 ```
+
 2. Dans le fichier code-behind de l’interface utilisateur (MainPage.xaml.cs), nous ajoutons les références de type espace de noms requises pour notre entrée manuscrite et notre fonctionnalité d’analyse des entrées manuscrites :
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
     - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
     - [Windows.UI.Xaml.Shapes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
 
 3. Puis nous spécifions nos variables globales :
+
 ```csharp
     InkAnalyzer inkAnalyzer = new InkAnalyzer();
     IReadOnlyList<InkStroke> inkStrokes = null;
     InkAnalysisResult inkAnalysisResults = null;
 ```
-4.  Nous définissons ensuite certains comportements de base d’entrées manuscrites :
+
+4. Nous définissons ensuite certains comportements de base d’entrées manuscrites :
     - L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrées de stylet, de souris et d’interactions tactiles, sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). 
     - Les traits d’encre sont restitués sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) à l’aide de l’élément [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) spécifié. 
     - Un écouteur de l’événement Click est également déclaré sur le bouton « Reconnaître ».
+
 ```csharp
 /// <summary>
 /// Initialize the UI page.
@@ -103,7 +107,8 @@ public MainPage()
         recognize.Click += RecognizeStrokes_Click;
     }
 ```
-5.  Dans cet exemple, nous utilisons l’analyse des entrées manuscrites dans le gestionnaire d’événements Click du bouton « Reconnaître ».
+
+5. Dans cet exemple, nous utilisons l’analyse des entrées manuscrites dans le gestionnaire d’événements Click du bouton « Reconnaître ».
     - Tout d’abord, appelez [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer.GetStrokes) sur le [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.StrokeContainer) de la [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) pour obtenir la collection de tous les traits d’encre en cours.
     - Si des traits d’encre sont présents, transmettez-les dans un appel à [**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) de l’InkAnalyzer.
     - Nous essayons de reconnaître des dessins et du texte, mais vous pouvez utiliser la méthode [**SetStrokeDataKind**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.setstrokedatakind) pour indiquer si vous êtes intéressé uniquement par le texte (y compris la structure du document et les listes à puces) ou par les dessins (y compris la reconnaissance de formes).
@@ -111,6 +116,7 @@ public MainPage()
     - Si [**État**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) renvoie à l’état **Mis à jour**, appelez [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) pour les deux [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) et [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Itérez à travers tous les ensembles de types de nœuds et tracez le texte ou la forme respectifs sur le canevas de reconnaissance (sous le canevas d’encre).
     - Enfin, supprimez les nœuds reconnus de l’InkAnalyzer et les traits d’encre correspondants du canevas d’encre.
+
 ```csharp
 /// <summary>
 /// The "Analyze" button click handler.
@@ -208,7 +214,9 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
         }
     }
 ```
+
 6. Voici la fonction pour tracer un TextBlock sur notre canevas de reconnaissance. Nous utilisons le rectangle englobant le trait associé sur le canevas de l’encre pour définir la position et la taille de police de TextBlock.
+
 ```csharp
 /// <summary>
 /// Draw ink recognition text string on the recognitionCanvas.
@@ -227,7 +235,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
+
 7. Voici les fonctions qui permettent de tracer des ellipses et des polygones sur notre canevas de reconnaissance. Nous utilisons le rectangle englobant le trait associé sur le canevas de l’encre pour définir la position et la taille de police des formes.
+
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
@@ -271,7 +281,6 @@ Voici un exemple en contexte :
 | --- | --- |
 | ![Avant l’analyse](images/ink/ink-analysis-raw2-small.png) | ![Après l’analyse](images/ink/ink-analysis-analyzed2-small.png) |
 
----
 ## <a name="constrained-handwriting-recognition"></a>Reconnaissance de l’écriture manuscrite contrainte
 
 Dans la section précédente ([Reconnaissance des formes libres avec analyse des entrées manuscrites](#free-form-recognition-with-ink-analysis)), nous avons montré comment utiliser les [API d’analyse d’entrées manuscrites](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) pour analyser et reconnaître les traits d’encre arbitraires dans une zone InkCanvas.
@@ -285,11 +294,11 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
 
 **Télécharger cet exemple à partir de [exemple de reconnaissance de l’écriture manuscrite d’encre](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
 
-1.  Tout d’abord, nous configurons l’interface utilisateur.
+1. Tout d’abord, nous configurons l’interface utilisateur.
 
     L’interface utilisateur inclut un bouton Reconnaître, [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) et une zone d’affichage des résultats de la reconnaissance.    
 
-    ```    XAML
+    ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -324,8 +333,7 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
 
-
-3.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+3. Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
     L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Les traits d’encre sont restitués sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) à l’aide de l’élément [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) spécifié. Un écouteur de l’événement Click est également déclaré sur le bouton « Reconnaître ».
 
@@ -351,7 +359,7 @@ Dans cet exemple, l’utilisateur lance la reconnaissance en cliquant sur un bou
         }
     ```
 
-4.  Enfin, nous procédons à la reconnaissance de l’écriture manuscrite de base. Pour cet exemple, nous utilisons le gestionnaire d’événements Click du bouton « Reconnaître » pour procéder à la reconnaissance de l’écriture manuscrite.
+4. Enfin, nous procédons à la reconnaissance de l’écriture manuscrite de base. Pour cet exemple, nous utilisons le gestionnaire d’événements Click du bouton « Reconnaître » pour procéder à la reconnaissance de l’écriture manuscrite.
 
     Un élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stocke tous les traits d’encre dans un objet [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Les traits sont exposés par le biais de la propriété [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) de l’élément **InkPresenter** et récupérés à l’aide de la méthode [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
 
@@ -479,22 +487,21 @@ Votre application peut interroger l’ensemble des moteurs de reconnaissance de 
 
 Pour installer de nouveaux modules linguistiques et activer la reconnaissance de l’écriture manuscrite pour cette langue, procédez comme suit :
 
-1.  Accédez à **Paramètres &gt; Heure et langue &gt; Région et langue**.
-2.  Cliquez sur **Ajouter une langue**.
-3.  Sélectionnez une langue de la liste, puis choisissez la version de la région. La langue est désormais répertoriée dans la page **Région et langue**.
-4.  Cliquez sur la langue et sélectionnez **Options**.
-5.  Dans la page **Options de langue**, téléchargez le **moteur de reconnaissance de l’écriture manuscrite** (vous pouvez également télécharger le module linguistique dans son intégralité, le moteur de reconnaissance vocale et la disposition du clavier ici).
-
- 
+1. Accédez à **Paramètres &gt; Heure et langue &gt; Région et langue**.
+2. Cliquez sur **Ajouter une langue**.
+3. Sélectionnez une langue de la liste, puis choisissez la version de la région. La langue est désormais répertoriée dans la page **Région et langue**.
+4. Cliquez sur la langue et sélectionnez **Options**.
+5. Dans la page **Options de langue**, téléchargez le **moteur de reconnaissance de l’écriture manuscrite** (vous pouvez également télécharger le module linguistique dans son intégralité, le moteur de reconnaissance vocale et la disposition du clavier ici).
 
 Nous montrons ici comment utiliser le moteur de reconnaissance de l’écriture manuscrite pour interpréter un ensemble de traits sur un élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) basé sur le module de reconnaissance sélectionné.
 
 L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’il a terminé d’écrire.
 
-1.  Tout d’abord, nous configurons l’interface utilisateur.
+1. Tout d’abord, nous configurons l’interface utilisateur.
 
     L’interface utilisateur inclut un bouton Reconnaître, une zone de liste modifiable qui répertorie toutes les modules de reconnaissance de l’écriture manuscrite installés, l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), et une zone d’affichage des résultats de reconnaissance.
-```    XAML
+
+```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -536,13 +543,14 @@ L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2. Nous définissons ensuite certains comportements d’entrée manuscrite de base.
 
     L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Les traits d’encre sont restitués sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) à l’aide de l’élément [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) spécifié.
 
     Nous appelons une fonction `InitializeRecognizerList` pour remplir la zone de liste modifiable du module de reconnaissance avec une liste des modules de reconnaissance de l’écriture manuscrite installés.
 
     Nous déclarons également des écouteurs pour l’événement Click sur le bouton Reconnaître et l’événement modifié de la sélection sur la zone de liste modifiable du module de reconnaissance.
+
 ```csharp
  public MainPage()
      {
@@ -572,9 +580,10 @@ L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’
      }
 ```
 
-3.  Nous remplissons la zone de liste modifiable du module de reconnaissance avec une liste des modules de reconnaissance de l’écriture manuscrite installés.
+3. Nous remplissons la zone de liste modifiable du module de reconnaissance avec une liste des modules de reconnaissance de l’écriture manuscrite installés.
 
     Un élément [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) est créé pour gérer le processus de reconnaissance manuscrite. Utilisez cet objet pour appeler [**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480) et récupérer la liste des modules de reconnaissance installés pour remplir la zone de liste modifiable du module de reconnaissance.
+
 ```csharp
 // Populate the recognizer combo box with installed recognizers.
     private void InitializeRecognizerList()
@@ -593,9 +602,10 @@ L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’
     }
 ```
 
-4.  Mettez à jour le module de reconnaissance de l’écriture manuscrite en cas de modification de la sélection de la zone de liste modifiable.
+4. Mettez à jour le module de reconnaissance de l’écriture manuscrite en cas de modification de la sélection de la zone de liste modifiable.
 
     Utilisez [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) pour appeler [**SetDefaultRecognizer**](https://msdn.microsoft.com/library/windows/apps/hh920328) en fonction du module de reconnaissance sélectionné à partir de la zone de liste modifiable correspondante.
+
 ```csharp
 // Handle recognizer change.
     private void comboInstalledRecognizers_SelectionChanged(
@@ -606,9 +616,10 @@ L’utilisateur lance la reconnaissance en cliquant sur un bouton une fois qu’
     }
 ```
 
-5.  Enfin, nous effectuons la reconnaissance de l’écriture manuscrite en fonction du module de reconnaissance sélectionné. Pour cet exemple, nous utilisons le gestionnaire d’événements Click du bouton « Reconnaître » pour procéder à la reconnaissance de l’écriture manuscrite.
+5. Enfin, nous effectuons la reconnaissance de l’écriture manuscrite en fonction du module de reconnaissance sélectionné. Pour cet exemple, nous utilisons le gestionnaire d’événements Click du bouton « Reconnaître » pour procéder à la reconnaissance de l’écriture manuscrite.
 
     Un élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stocke tous les traits d’encre dans un objet [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Les traits sont exposés par le biais de la propriété [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) de l’élément **InkPresenter** et récupérés à l’aide de la méthode [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499).
+
 ```csharp
 // Get all strokes on the InkCanvas.
     IReadOnlyList<InkStroke> currentStrokes =
@@ -652,7 +663,7 @@ string str = "Recognition result\n";
 ```
 
     Here's the click handler example, in full.
-    
+
 ```csharp
 // Handle button click to initiate recognition.
     private async void Recognize_Click(object sender, RoutedEventArgs e)
@@ -719,14 +730,16 @@ Alors que les deux exemples précédents exigent l’utilisateur appuie sur un b
 
 Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’interface utilisateur que l’exemple de reconnaissance internationale précédent.
 
-1. Ces objets globaux ([InkAnalyzer](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer), [InkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstroke), [InkAnalysisResult](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult), [DispatcherTimer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer)) sont utilisés dans l’ensemble de notre application.    
+1. Ces objets globaux ([InkAnalyzer](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer), [InkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstroke), [InkAnalysisResult](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult), [DispatcherTimer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer)) sont utilisés dans l’ensemble de notre application.
+
 ```csharp
     // Stroke recognition globals.
     InkAnalyzer inkAnalyzer;
     DispatcherTimer recoTimer;
 ```
 
-2.  Au lieu d’un bouton pour lancer la reconnaissance, nous ajoutons des écouteurs pour deux événements de traits [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) et [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)) et configurons un minuteur de base ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) avec un intervalle [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) d’une seconde.    
+2. Au lieu d’un bouton pour lancer la reconnaissance, nous ajoutons des écouteurs pour deux événements de traits [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) et [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)) et configurons un minuteur de base ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) avec un intervalle [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) d’une seconde.
+
 ```csharp
     public MainPage()
     {
@@ -755,7 +768,7 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
     }
 ```
 
-3.  Nous définissons ensuite des gestionnaires pour les événements InkPresenter que nous avons déclarés lors de la première étape (nous avons également remplacé l’événement de page [**OnNavigatingFrom**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) pour gérer le minuteur).
+3. Nous définissons ensuite des gestionnaires pour les événements InkPresenter que nous avons déclarés lors de la première étape (nous avons également remplacé l’événement de page [**OnNavigatingFrom**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.onnavigatingfrom) pour gérer le minuteur).
 
     - [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
     Ajoutez des traits d’encre ([**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.adddataforstrokes)) au InkAnalyzer et démarrez le minuteur de reconnaissance dès que l’utilisateur arrête l’entrée manuscrite (en levant son stylet ou un doigt ou en relâchant le bouton de souris). La reconnaissance est lancée dès que l’utilisateur arrête d’écrire pendant plus d’une seconde.  
@@ -764,6 +777,7 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
 
     - [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
     Arrête la minuterie sachant que le nouveau trait est probablement la suite d’une entrée manuscrite unique, si un nouveau trait commence avant le prochain battement d’horloge.
+
 ```csharp
     // Handler for the InkPresenter StrokeStarted event.
     // Don't perform analysis while a stroke is in progress.
@@ -802,11 +816,12 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
     } 
 ```
 
-4.  Enfin, nous procédons à la reconnaissance de l’écriture manuscrite. Pour cet exemple, nous utilisons le gestionnaire d’événements [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) d’un élément [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) pour lancer la reconnaissance de l’écriture manuscrite.
+4. Enfin, nous procédons à la reconnaissance de l’écriture manuscrite. Pour cet exemple, nous utilisons le gestionnaire d’événements [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) d’un élément [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) pour lancer la reconnaissance de l’écriture manuscrite.
     - Appelez [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer.AnalyzeAsync) pour lancer l’analyse des entrées manuscrites et obtenir le [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
     - Si [**État**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult.Status) renvoie à l’état **Mis à jour**, appelez [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot.findnodes) pour les types de nœuds de [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Parcourez les nœuds et affichez le texte reconnu.
     - Enfin, supprimez les nœuds reconnus de l’InkAnalyzer et les traits d’encre correspondants du canevas d’encre.
+
 ```csharp
     private async void recoTimer_TickAsync(object sender, object e)
     {
@@ -855,19 +870,18 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions de stylet et du stylet](pen-and-stylus-interactions.md)
+- [Interactions de stylet et du stylet](pen-and-stylus-interactions.md)
 
-**Exemples de la rubrique**
-* [Exemple d’analyse de l’encre (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [Exemple de reconnaissance de l’écriture manuscrite d’encre (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+### <a name="topic-samples"></a>Exemples de la rubrique
 
-**Autres exemples**
-* [Exemple d’entrée manuscrite simple (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Exemple de l’encre complexes (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Exemple de l’encre (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Prise en main didacticiel : Prise en charge de l’encre dans votre application UWP](https://aka.ms/appsample-ink)
-* [Coloration du carnet d’exemple](https://aka.ms/cpubsample-coloringbook)
-* [Exemple de la famille de notes](https://aka.ms/cpubsample-familynotessample)
+- [Exemple d’analyse de l’encre (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [Exemple de reconnaissance de l’écriture manuscrite d’encre (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
+### <a name="other-samples"></a>Autres exemples
 
- 
+- [Exemple d’entrée manuscrite simple (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+- [Exemple de l’encre complexes (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+- [Exemple de l’encre (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Prise en main didacticiel : Prise en charge de l’encre dans votre application UWP](https://aka.ms/appsample-ink)
+- [Coloration du carnet d’exemple](https://aka.ms/cpubsample-coloringbook)
+- [Exemple de la famille de notes](https://aka.ms/cpubsample-familynotessample)

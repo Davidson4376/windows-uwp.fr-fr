@@ -5,12 +5,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, pub, publicité, contrôle de publicités, publicité native
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cb77f7f2622a06334ee35ec61e18b3b01f98bdb
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628064"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335017"
 ---
 # <a name="native-ads"></a>Publicités natives
 
@@ -21,7 +21,7 @@ Pour les annonceurs, les publicités natives offrent des emplacements de hautes 
 > [!NOTE]
 > Les publicités natives ne sont actuellement prises en charge que pour les applications UWP basées sur XAML pour Windows 10. La prise en charge pour les applications UWP écrites en HTML et JavaScript est prévue pour une future version du SDK Microsoft Advertising.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 * Installer le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp) avec Visual Studio 2015 ou une version ultérieure de Visual Studio. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
@@ -43,21 +43,21 @@ Suivez ces instructions pour intégrer une publicité native dans votre applicat
 
 4. Dans le fichier de code approprié de votre application (par exemple, dans MainPage.xaml.cs ou un fichier de code d’une autre page), ajoutez les références d’espace de noms suivantes.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
 5.  À un emplacement approprié de votre application (par exemple, dans ```MainPage``` ou dans une autre page), déclarez un objet [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) et plusieurs champs de chaîne représentant l’ID d'application et l’ID d’unité publicitaire de votre publicité native. L’exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des publicités natives.
     > [!NOTE]
     > Chaque **NativeAdsManagerV2** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle de publicités natives, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre application dans le Store, vous devez [remplacer ces valeurs avec les valeurs en direct de test](#release) à partir du centre de partenaires.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
 6.  Dans le code exécuté au démarrage (par exemple, dans le constructeur de la page), instanciez l’objet **NativeAdsManagerV2** et connectez les gestionnaires d’événements correspondant aux événements de l’objet **AdReady** et **ErrorOccurred**.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
 7.  Lorsque vous êtes prêt à afficher une publicité native, appelez la méthode **RequestAd** pour extraire une publicité.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
 8.  Quand une publicité native est prête pour votre application, votre gestionnaire d’événements [AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) est appelé et un objet [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) qui représente la publicité native est transmis au paramètre *e*. Utilisez les propriétés **NativeAdV2** pour récupérer chaque élément de la publicité native et afficher ces éléments sur votre page. Veillez à appeler également la méthode **RegisterAdContainer** pour inscrire l’élément d’interface utilisateur qui agit comme un conteneur pour la publicité native. C'est indispensable pour suivre correctement les expositions publicitaires et les clics.
     > [!NOTE]
@@ -93,11 +93,11 @@ Suivez ces instructions pour intégrer une publicité native dans votre applicat
 
     L’exemple de code suivant montre un gestionnaire d’événements **AdReady** qui affiche chaque élément de la publicité native dans les contrôles du **StackPanel**, puis appelle la méthode **RegisterAdContainer** pour inscrire le **StackPanel**. Ce code part du principe qu’il est exécuté à partir du fichier code-behind de la page qui contient le **StackPanel**.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
 9.  Définir un gestionnaire d’événements pour l'événement **ErrorOccurred** afin de gérer les erreurs liées à la publicité native. L’exemple suivant écrit les informations d’erreur dans la fenêtre **Sortie** de Visual Studio au cours du test.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
 10.  Compilez et exécutez l’app pour la voir avec une publicité de test.
 

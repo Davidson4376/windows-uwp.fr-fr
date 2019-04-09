@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Création de packages d’application UWP
 description: Pour distribuer ou vendre votre application de plateforme Windows universelle (UWP), vous devez créer un package d’application pour elle.
-ms.date: 01/02/2019
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599134"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58173025"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Package d’une application UWP avec Visual Studio
 
@@ -149,12 +149,12 @@ Chargement de version test votre application sur un appareil Windows 10 Mobile, 
 
 ### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>Chargement de version test de votre application package sur la mise à jour anniversaire de Windows 10 ou version ultérieure
 
-Introduits dans la mise à jour anniversaire Windows 10, les packages d’application peuvent être installés simplement en double-cliquant sur le fichier du package d’application. Pour utiliser cela, accédez à votre package d’application ou d’un fichier de groupement d’application et double-cliquez dessus. Le programme d’installation de l’application se lance et fournit les informations essentielles de l’application, ainsi qu'un bouton Installer, une barre de progression de l’installation et des messages d’erreur appropriés.
+Introduite dans Windows 10 mise à jour anniversaire (Windows 10, version 1607), des packages d’application peuvent être installés simplement en double-cliquant sur le fichier de package d’application. Pour utiliser cela, accédez à votre package d’application ou d’un fichier de groupement d’application et double-cliquez dessus. [Programme d’installation de l’application](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) lance et fournit les informations de l’application de base mais aussi un bouton Installer, barre de progression d’installation et les messages d’erreur pertinentes.
 
 ![Affichage d'un programme d’installation d'application pour l’installation d’un exemple d’application appelée Contoso](images/appinstaller-screen.png)
 
 > [!NOTE]
-> Le programme d’installation de l’application suppose que l’application est approuvée par l’appareil. Si vous chargez de manière indépendante une application de développeur ou d’entreprise, vous devez installer le certificat de signature dans le magasin de personnes autorisées ou d'éditeurs autorisés sur l'appareil. Si vous ne savez pas comment procéder, voir [Installation de certificats de test](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
+> Programme d’installation de l’application part du principe que l’application est approuvée par l’appareil. Si vous chargez de manière indépendante une application de développeur ou d’entreprise, vous devez installer le certificat de signature dans le magasin de personnes autorisées ou d'éditeurs autorisés sur l'appareil. Si vous ne savez pas comment procéder, voir [Installation de certificats de test](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
 
 ### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>Chargement indépendant de votre application du package sur les versions précédentes de Windows
 

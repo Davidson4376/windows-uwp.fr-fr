@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, application de démonstration commerciale
 ms.localizationpriority: medium
-ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596754"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334877"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application
 
@@ -158,7 +158,7 @@ console.log(pro.retailInfo.properties[pro.KnownRetailInfoProperties.price);
 
 #### <a name="idl"></a>IDL
 
-```
+```cpp
 //  Copyright (c) Microsoft Corporation. All rights reserved.
 //
 //  WindowsRuntimeAPISet
@@ -237,7 +237,7 @@ Nettoyage commence à deux minutes après le blocage d’un client interagissant
 * Les états d’itinérance non structurés et structurés sont supprimés
 * Les états locaux structurés sont supprimés
 
-Étape 2 :  Configurer
+Étape 2 :  Installation
 * Pour les appareils hors connexion : Les dossiers sont vides
 * Pour les appareils en ligne : Ressources de démonstration de vente au détail peuvent être transmises à l’appareil à partir du Microsoft Store
 

@@ -4,12 +4,12 @@ description: Découvrez comment accéder au trafic HTTP depuis l'application foc
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645674"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244095"
 ---
 # <a name="http-monitor-api-reference"></a>Référence API du moniteur HTTP   
 Vous pouvez accéder au trafic HTTP en temps réel pour les applications focalisées à l'aide de cet API si le moniteur HTTP a été activé sur la console Xbox en cochant la case dans l'accueil du développeur.
@@ -23,16 +23,16 @@ Vous pouvez découvrir si le moniteur HTTP est activé dans l'accueil du dévelo
 Méthode      | URI de requête
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
+
 **Paramètres d’URI**
 
 - Aucune
 
-**En-têtes de demande**
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**
+**Corps de la requête**
 
 - Aucune
 
@@ -52,6 +52,7 @@ Code d’état HTTP      | Description
 5XX | Codes d’erreur
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>Obtenir le trafic HTTP à partir de l'application focalisée
+
 **Demande**
 
 Obtenez le trafic HTTP à partir de l'application focalisée tant qu'il ne s'agit pas d'une application système, en temps réel, si le moniteur HTTP a été activé depuis l'accueil du développeur.
@@ -59,16 +60,16 @@ Obtenez le trafic HTTP à partir de l'application focalisée tant qu'il ne s'agi
 Méthode      | URI de requête
 :------     | :-----
 Websocket | /ext/httpmonitor/sessions
-<br />
+
 **Paramètres d’URI**
 
 - Aucune
 
-**En-têtes de demande**
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**
+**Corps de la requête**
 
 - Aucune
 
@@ -98,7 +99,7 @@ Code d’état HTTP      | Description
 403 | Moniteur HTTP désactivé, doit être activé dans l'accueil du développeur
 5XX | Codes d’erreur
 
-<br />
-**Familles de périphériques disponibles**
+
+**Familles d’appareils disponibles**
 
 * Windows Xbox

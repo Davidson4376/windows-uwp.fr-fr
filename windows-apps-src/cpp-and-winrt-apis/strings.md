@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
-ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b6f1e12b82ec3ee41cdacc86fcc5f41d664262be
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649634"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618396"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
 
@@ -26,7 +26,7 @@ public:
     Uri(winrt::hstring uri) const;
 ```
 
-Mais **hstring** a des [constructeurs de conversion](/uwp/api/windows.foundation.uri#hstringhstring-constructor) qui vous permettent de l’utiliser sans avoir besoin d’en tenir compte. Voici un exemple de code illustrant comment créer un **Uri** à partir d’un littéral de chaîne étendue, à partir d’une vue de chaîne étendue et à partir d’un **std::wstring**.
+Mais **hstring** a des [constructeurs de conversion](/uwp/cpp-ref-for-winrt/hstring#hstringhstring-constructor) qui vous permettent de l’utiliser sans avoir besoin d’en tenir compte. Voici un exemple de code illustrant comment créer un **Uri** à partir d’un littéral de chaîne étendue, à partir d’une vue de chaîne étendue et à partir d’un **std::wstring**.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -60,7 +60,7 @@ public:
     winrt::hstring Domain();
 ```
 
-Mais, là encore, vous devez prendre conscience que ce détail est optionnel grâce à l’[opérateur de conversion vers **std::wstring_view**](/uwp/api/hstring#hstringoperator-stdwstringview) de **hstring**
+Mais, là encore, vous devez prendre conscience que ce détail est optionnel grâce à l’[opérateur de conversion vers **std::wstring_view**](/uwp/cpp-ref-for-winrt/hstring#hstringoperator-stdwstring_view) de **hstring**
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -91,7 +91,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-Vous pouvez utiliser la fonction [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) pour obtenir une chaîne étendue standard à partir d’un **hstring** (comme à partir d’un **std::wstring**).
+Vous pouvez utiliser la fonction [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) pour obtenir une chaîne étendue standard à partir d’un **hstring** (comme à partir d’un **std::wstring**).
 
 ```cppwinrt
 #include <iostream>
@@ -156,7 +156,7 @@ Vous pouvez remarquer que les paramètres d’entrée C++/WinRT qui doivent acce
 
 Le résultat est que vous pouvez ignorer les spécificités de la gestion des chaînes Windows Runtime, et travailler efficacement avec ce que vous connaissez. Et c’est important étant donné l’utilisation intensive des chaînes dans Windows Runtime.
 
-# <a name="formatting-strings"></a>Mise en forme des chaînes
+## <a name="formatting-strings"></a>Mise en forme des chaînes
 Une des options de mise en forme des chaînes est **std::wstringstream**. Voici un exemple qui met en forme et affiche un message de suivi de débogage simple.
 
 ```cppwinrt
@@ -173,5 +173,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>API importantes
 * [WinRT::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
-* [WinRT::to_hstring (fonction)](/uwp/cpp-ref-for-winrt/to-hstring)
-* [WinRT::to_string (fonction)](/uwp/cpp-ref-for-winrt/to-string)
+* [winrt::to_hstring function](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_string function](/uwp/cpp-ref-for-winrt/to-string)

@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605834"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334897"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bonnes pratiques concernant l’écriture de données dans des fichiers
 
@@ -21,7 +21,9 @@ ms.locfileid: "57605834"
 
 Les développeurs rencontrent parfois en un ensemble de problèmes courants lors de l’utilisation du **écrire** méthodes de la [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) et [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes pour effectuer des opérations d’e/s de système de fichiers. Par exemple, les problèmes courants sont les suivantes :
 
-• Un fichier est écrit partiellement • l’application reçoit une exception lors de l’appel d’une des méthodes. • Les opérations épargner. Fichiers TMP avec un nom de fichier similaire au nom de fichier cible.
+* Un fichier est partiellement écrit.
+* L’application reçoit une exception lors de l’appel d’une des méthodes.
+* Les opérations épargner. Fichiers TMP avec un nom de fichier similaire au nom de fichier cible.
 
 Le **écrire** méthodes de la [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) et [ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio) classes incluent les éléments suivants :
 
@@ -35,7 +37,7 @@ Le **écrire** méthodes de la [ **FileIO** ](https://docs.microsoft.com/uwp/api
 > [!NOTE]
 > Cet article se concentre sur la **FileIO** méthodes dans les exemples et des discussions. Toutefois, le **PathIO** méthodes suivent un modèle similaire et la plupart des conseils dans cet article s’applique également à ces méthodes. 
 
-## <a name="conveience-vs-control"></a>Conveience et contrôle
+## <a name="convenience-vs-control"></a>Plus de commodité et contrôle
 
 Un [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) objet n’est pas un descripteur de fichier, comme le modèle de programmation Win32 natif. Au lieu de cela, un [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) est une représentation sous forme d’un fichier avec des méthodes pour manipuler son contenu.
 
@@ -75,12 +77,12 @@ Ce tableau présente les codes d’erreur courants que les développeurs d’app
 
 |  Nom de l’erreur (valeur)  |  Étapes  |  Causes  |  Solutions  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0 X 80070005)  |  5  |  Le fichier d’origine peut être marqué pour suppression, peut-être à partir d’une opération précédente.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
-|  ERROR_SHARING_VIOLATION (0 X 80070020)  |  5  |  Le fichier d’origine est ouvert par une autre écriture exclusive.   |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  les 19 et 20  |  Le fichier d’origine (file.txt) n’a pas pu être remplacé, car il est en cours d’utilisation. Un autre processus ou une opération obtenu un accès au fichier avant qu’il peut être remplacé.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
+|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  Le fichier d’origine peut être marqué pour suppression, peut-être à partir d’une opération précédente.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  Le fichier d’origine est ouvert par une autre écriture exclusive.   |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  Le fichier d’origine (file.txt) n’a pas pu être remplacé, car il est en cours d’utilisation. Un autre processus ou une opération obtenu un accès au fichier avant qu’il peut être remplacé.  |  Recommencez l'opération.</br>Vérifiez que l’accès au fichier est synchronisé.  |
 |  ERROR_DISK_FULL (0 X 80070070)  |  7, 14, 16, 20  |  Le modèle transactionnel crée un fichier supplémentaire, et cela consomme d’espace de stockage supplémentaire.  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14, 16  |  Cela peut se produire en raison de plusieurs opérations d’e/s en attente ou de fichiers volumineux.  |  Une approche plus granulaire en contrôlant le flux peut résoudre l’erreur.  |
-|  E_FAIL (0 X 80004005) |  Indéfini  |  Divers  |  Recommencez l'opération. Si elle échoue encore, il peut être une erreur de la plateforme et l’application doit s’arrêter, car il se trouve dans un état incohérent. |
+|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Cela peut se produire en raison de plusieurs opérations d’e/s en attente ou de fichiers volumineux.  |  Une approche plus granulaire en contrôlant le flux peut résoudre l’erreur.  |
+|  E_FAIL (0x80004005) |  Indéfini  |  Divers  |  Recommencez l'opération. Si elle échoue encore, il peut être une erreur de la plateforme et l’application doit s’arrêter, car il se trouve dans un état incohérent. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Autres considérations pour les États de fichier qui peuvent entraîner des erreurs
 
@@ -192,6 +194,6 @@ else
 
 Le [.NET blog programmation parallèle avec](https://blogs.msdn.microsoft.com/pfxteam/) est une ressource précieuse pour obtenir des conseils sur la programmation parallèle. En particulier, le [concernant AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) décrit comment mettre à jour d’un accès exclusif à un fichier pour les écritures tout en autorisant un accès en lecture simultané. N’oubliez pas qu’e/s aura un impact sur la sérialisation performances.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 * [Créer, écrire et lire un fichier](quickstart-reading-and-writing-files.md)

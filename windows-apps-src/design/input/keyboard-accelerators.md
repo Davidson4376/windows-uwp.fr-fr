@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590734"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822884"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -28,7 +28,7 @@ Consultez la rubrique [Touches d'accès rapide](access-keys.md) pour plus d’in
 > [!NOTE]
 > Un clavier est indispensable pour les utilisateurs qui souffrent d’un handicap (voir [Accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)). C’est aussi un outil important pour les utilisateurs qui préfèrent se servir d’un clavier, voyant cet outil comme un moyen d’interaction avec une application efficace.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Les raccourcis incluent généralement les touches de fonction F1 à F12 ou une combinaison d’une touche standard avec une plusieurs touches de modification (CTRL, Maj).
 
@@ -146,7 +146,7 @@ Par exemple, Microsoft Outlook inclut les raccourcis suivants :
 -   Ctrl + B, Ctrl + I et Échap fonctionnent uniquement sur l’étendue relative à l’envoi d’un formulaire de courrier électronique
 -   Ctrl + 1 et Ctrl + 2 fonctionnent dans toute l’application
 
-### <a name="context-menus"></a>Les menus contextuels :
+### <a name="context-menus"></a>Menus contextuels
 
 Les actions des menus contextuels affectent uniquement des zones ou des éléments spécifiques, comme les caractères sélectionnés dans un éditeur de texte ou un morceau de musique dans une playlist. Pour cette raison, nous vous recommandons de définir l’étendue des raccourcis clavier pour les éléments de menu contextuel sur le parent du menu contextuel.
 
@@ -618,12 +618,9 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions de clavier](keyboard-interactions.md)
-* [Clés d’accès](access-keys.md)
+- [Interactions de clavier](keyboard-interactions.md)
+- [Clés d’accès](access-keys.md)
 
-**Exemples**
-* [Galerie de contrôles XAML (également appelé XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+### <a name="samples"></a>Exemples
 
-
- 
-
+- [Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)

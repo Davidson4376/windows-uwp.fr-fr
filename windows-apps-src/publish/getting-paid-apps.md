@@ -2,16 +2,16 @@
 Description: Découvrez comment recevoir des paiements pour vos applications, les modules complémentaires (produits dans l’application) et la publication des bénéfices.
 title: Rémunération
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 10/31/2018
+ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 293f24122129e56fbb1521a0d3dd7e2ff51e4923
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244105"
 ---
 # <a name="getting-paid"></a>Rémunération
 Voici quelques informations importantes concernant la réception du paiement pour vos applications, les modules complémentaires et les bénéfices de la publicité.
@@ -23,7 +23,7 @@ Voici quelques informations importantes concernant la réception du paiement pou
 
 Quand vous [créez un compte de développeur](https://go.microsoft.com/fwlink/p/?LinkID=615100), vous acceptez le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Ce contrat détaille la relation qui vous unit à Microsoft en ce qui concerne la vente d'applications dans le Microsoft Store, notamment les frais facturés par Microsoft pour chaque vente réalisée par le biais du Store.
 
-Dans la plupart des cas, les frais du Windows Store sont de 30 %. Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Pour toute question, reportez-vous à ce document.
+Ces frais sont officiellement définis dans le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Pour toute question, reportez-vous à ce document.
 
 Les frais d’utilisation du Store s’appliquent à toutes les ventes d’application collectées par le Microsoft Store, y compris aux ventes d'extensions.
 

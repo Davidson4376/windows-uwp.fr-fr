@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593054"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913939"
 ---
 # <a name="item-templates-for-list-view"></a>Modèles d’éléments d'affichage Liste
 
@@ -19,13 +19,13 @@ Cette section contient des modèles d’éléments que vous pouvez utiliser avec
 Pour illustrer la liaison de données, ces modèles liés **ListViewItems** à l’exemple de classe de l’enregistrement à partir de la [vue d’ensemble de liaison de données](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-Actuellement, quand un **DataTemplate** contient plusieurs contrôles (par exemple, plusieurs **TextBlock**), le nom accessible par défaut pour les lecteurs d’écran est issu de .ToString() sur l’élément. Par commodité, vous pouvez plutôt définir l'[**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) sur l’élément racine du **DataTemplate**. Pour en savoir plus sur l’accessibilité, voir [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md).
+> Actuellement, quand un **DataTemplate** contient plusieurs contrôles (par exemple, plusieurs **TextBlock**), le nom accessible par défaut pour les lecteurs d’écran est issu de .ToString() sur l’élément. Par commodité, vous pouvez plutôt définir l'[**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) sur l’élément racine du **DataTemplate**. Pour en savoir plus sur l’accessibilité, voir [Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Élément de liste à ligne unique
 Utilisez ce modèle pour afficher une liste d’éléments avec une image et une seule ligne de texte.
 
-![exemple d’élément de liste de ligne unique](images/listitems/singlelineexample.png)
-![élément de liste de ligne unique](images/listitems/singlelineicon.png)
+![Exemple d’élément de liste à ligne unique](images/listitems/singlelineexample.png)
+![élément de liste à ligne unique](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.ItemTemplate>
@@ -42,8 +42,8 @@ Utilisez ce modèle pour afficher une liste d’éléments avec une image et une
 ## <a name="double-line-list-item"></a>Élément de liste à deux lignes 
 Utilisez ce modèle pour afficher une liste d’éléments avec une image et deux lignes de texte.
 
-![élément de liste de double trait avec un exemple d’icône](images/listitems/doublelineexample.png) 
-![élément de liste de double trait avec icône](images/listitems/doublelineicon.png)
+![Exemple d'élément de liste à deux lignes avec une icône](images/listitems/doublelineexample.png) 
+![élément de liste à deux lignes avec une icône](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -68,8 +68,8 @@ Utilisez ce modèle pour afficher une liste d’éléments avec une image et deu
 ## <a name="triple-line-list-item"></a>Élément de liste à trois lignes
 Utilisez ce modèle pour afficher une liste d’éléments avec trois lignes de texte.
 
-![exemple d’élément de liste de ligne triple](images/listitems/triplelineexample.png)
-![élément de liste ligne triple](images/listitems/tripleline.png)
+![Exemple d’élément de liste à trois lignes](images/listitems/triplelineexample.png)
+![élément de liste à trois lignes](images/listitems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -129,8 +129,8 @@ Utilisez ce modèle pour afficher une liste d’éléments avec du texte dans de
 ```
 
 ## <a name="related-articles"></a>Articles connexes
-- [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
+- [Classe ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [Vue d’ensemble de la liaison de données](../../data-binding/data-binding-quickstart.md)
-- [Vue d’ensemble de Accessibililty](../accessibility/accessibility-overview.md)
-- [Exemple de ListView et GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Vue d'ensemble de l'accessibilité](../accessibility/accessibility-overview.md)
+- [Exemple de ListView et GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Images miniatures](../../files/thumbnails.md)

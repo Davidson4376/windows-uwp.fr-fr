@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, API WinRT, WNS
 localizationpriority: medium
-ms.openlocfilehash: ba8630a2e877345adeac7eb443dd3e418d3ed277
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bf224b6c0997ce8af86ab2919a1d0513f619a8a3
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639524"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067824"
 ---
 # <a name="alternate-push-channels-using-webpush-and-vapid-in-uwp"></a>Canaux de push autre à l’aide de Webpush et VAPID dans UWP 
 À partir de Fall Creators Update, les applications UWP peuvent utiliser des push de web avec l’authentification VAPID pour envoyer des notifications push.  
@@ -45,7 +45,7 @@ private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer appli
     //               The resulting key is an uncompressed point in ANSI X9.62 format             
     // ChannelId is an app provided value for it to identify the channel later.  
     // case of this app it is from the set { "Football", "News", "Baseball" } 
-    PushNotificationChannel webChannel = await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
+    PushNotificationChannel webChannel = await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
  
     //Save the channel  
     AppUpdateChannelMapping(appChannelId, webChannel); 

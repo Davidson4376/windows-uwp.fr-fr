@@ -7,20 +7,18 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 62ad93fa480f0515c4ed6df2d73a745454197ac6
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599284"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291637"
 ---
 # <a name="triangle-strips"></a>Bandes de triangles
-
 
 Une bande de triangles est une série de triangles connectés. Les triangles étant connectés, l'application n'a pas besoin de spécifier plusieurs fois les trois vertex pour chaque triangle. Par exemple, il suffit de sept vertex pour définir la bande de triangles suivantes.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
-
 
 ![Illustration d’une bande de triangles à sept vertex](images/tristrip.png)
 
@@ -34,7 +32,7 @@ L’illustration suivante représente une bande de triangles rendue.
 
 Le code suivant montre comment créer des vertex pour cette bande de triangles.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
 float x,y,z;
@@ -53,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 L’exemple de code ci-dessous montre comment rendre cette bande de triangles dans Direct3D.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.
@@ -61,7 +59,7 @@ L’exemple de code ci-dessous montre comment rendre cette bande de triangles da
 d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
 ```
 
-## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygones
+## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>Polygons
 
 
 Souvent, des triangles sont utilisés pour générer des polygones. Un polygone est une figure 3D fermée délimitée par au moins trois sommets. Le polygone le plus simple est un triangle. Microsoft Direct3D utilise les triangles pour composer la plupart de ses polygones, car les trois sommets d'un triangle sont systématiquement coplanaires. Le rendu de sommets non planaires n’est pas efficace. Vous pouvez combiner des triangles pour former des maillages et des polygones larges et complexes.

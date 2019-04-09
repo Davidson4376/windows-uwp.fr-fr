@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, vignettes pouvant être suivies, vignettes dynamiques, notifications par vignette pouvant être suivies
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6e27dec0e7256cfc035ecc3150bd976f69743fe3
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592644"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358614"
 ---
 # <a name="chaseable-tile-notifications"></a>Notifications par vignette pouvant être suivies
 
@@ -24,7 +24,7 @@ Par exemple, une application d’actualités peut utiliser cette fonctionnalité
 > **Requiert la mise à jour anniversaire**: Utiliser les notifications de vignette chaseable avec C#, C++ ou UWP en VB, les applications doivent cibler le Kit de développement logiciel 14393 et d’être en cours d’exécution build 14393 ou une version ultérieure. Pour les applications UWP en JavaScript, vous devez cibler le Kit de développement logiciel (SDK) 17134 et exécuter la Build 17134 ou une version supérieure. 
 
 
-> **API importantes** : [Propriété de LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo classe](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **API importantes** : [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>Fonctionnement
@@ -140,6 +140,49 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
+### <a name="accessing-onlaunched-from-desktop-applications"></a>OnLaunched l’accès aux applications de bureau
+
+Applications de bureau (telles que Win32, WPF, etc.) à l’aide de la [pont du bureau](https://developer.microsoft.com/windows/bridges/desktop), peuvent utiliser les vignettes chaseable trop ! La seule différence est l’accès aux arguments OnLaunched. Notez que vous devez tout d’abord [empaqueter votre application avec le pont du bureau](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root).
+
+> [!IMPORTANT]
+> **Requiert la mise à jour d’octobre 2018**: Pour utiliser le `AppInstance.GetActivatedEventArgs()` API, vous doivent cibler le Kit de développement logiciel 17763 et être en cours d’exécution build 17763 ou une version ultérieure.
+
+Pour les applications de bureau, pour accéder aux arguments de lancement, procédez comme suit...
+
+```csharp
+
+static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    // API only available on build 17763 or higher
+    var args = AppInstance.GetActivatedEventArgs();
+    switch (args.Kind)
+    {
+        case ActivationKind.Launch:
+
+            var launchArgs = args as LaunchActivatedEventArgs;
+
+            // If clicked on from tile
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
+    
+            break;
+```
+
+
 ## <a name="raw-xml-example"></a>Exemple de code XML brut
 
 Si vous utilisez du code XML brut au lieu de la bibliothèque Notifications, voici le code XML.
@@ -178,5 +221,5 @@ Si vous utilisez du code XML brut au lieu de la bibliothèque Notifications, voi
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Propriété de LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [Classe de TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

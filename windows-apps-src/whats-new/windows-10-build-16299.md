@@ -5,12 +5,12 @@ keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e0749ba30dc4c4e8d2791aa2d6699581b48fb8e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5179b4615d1b7ada40e064c21991fee3d9dbb60e
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626514"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162694"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Nouveautés pour les développeurs dans Windows 10, build 16299
 
@@ -43,7 +43,7 @@ Informations sur l’appareil de jeu | En raison des différentes fonctionnalit�
 Mode jeu | Les API [mode jeu](https://msdn.microsoft.com/library/windows/desktop/mt808808) pour la plateforme Windows universelle (UWP) vous permettent de créer une expérience de jeu optimale, en tirant parti du mode jeu de Windows 10. Ces API sont situées dans l’en-tête **&lt;expandedresources.h&gt;**.
 Analyse du jeu | La [classe GameMonitor](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor) permet à une application d'obtenir l'état d’autorisation d'analyse du jeu de l’appareil et, potentiellement, invite l’utilisateur à activer l’analyse du jeu.
 TruePlay | [TruePlay](https://aka.ms/trueplay) fournit aux développeurs un nouvel ensemble d’outils pour lutter contre la tricherie dans leurs jeux sur PC. Un jeu inscrit dans TruePlay s'exécute au sein d'un processus protégé, ce qui réduit la probabilité d'une classe d’attaques courantes. Les API TruePlay pour la plateforme Windows universelle (UWP) autorisent des interactions limitées entre les jeux et le système de surveillance de jeu sur les PC Windows 10. Ces API sont situées dans l’en-tête **&lt;gamemonitor.h&gt;**.
-Xbox Live | Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP). </br>* Consultez le [Guide du développeur Xbox Live](../xbox-live/index.md) pour savoir comment utiliser les API Xbox Live pour connecter votre jeu au réseau social de jeux Xbox Live. </br>* Avec le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md), tout développeur de jeux UWP peut développer et publier un jeu Xbox Live à la fois sur PC et sur Xbox One. </br>* Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](../xbox-live/developer-program-overview.md) pour plus d’informations sur les programmes et les fonctionnalités disponibles pour les développeurs Xbox Live.
+Xbox Live | Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP). </br>* Consultez le [Guide du développeur Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) pour savoir comment utiliser les API Xbox Live pour connecter votre jeu au réseau social de jeux Xbox Live. </br>* Avec le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md), tout développeur de jeux UWP peut développer et publier un jeu Xbox Live à la fois sur PC et sur Xbox One. </br>* Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md) pour plus d’informations sur les programmes et les fonctionnalités disponibles pour les développeurs Xbox Live.
 
 ## <a name="develop-windows-apps"></a>Développer des applications Windows
 

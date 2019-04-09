@@ -2,7 +2,7 @@
 title: Créer et inscrire une tâche en arrière-plan hors processus
 description: Créez une classe de tâche en arrière-plan hors processus et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.date: 07/02/2018
+ms.date: 2/27/2019
 ms.topic: article
 keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.localizationpriority: medium
@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1420b41ef48123e302b546c45669a75545927d89
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592164"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240047"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
@@ -150,7 +150,7 @@ L’exemple de code suivant obtient le report, enregistre et il libère lorsque 
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
 public async void Run(IBackgroundTaskInstance taskInstance)
 {
-    _deferral = taskInstance.GetDeferral()
+    _deferral = taskInstance.GetDeferral();
     //
     // TODO: Insert code to start one or more asynchronous methods using the
     //       await keyword, for example:
@@ -445,24 +445,24 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-**Tâche en arrière-plan détaillées des rubriques d’instruction**
+**Rubriques d’instructions détaillées sur les tâches en arrière-plan**
 
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
+* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
-* [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)  
+* [Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process](convert-out-of-process-background-task.md)  
 
-**Conseils sur les tâches en arrière-plan**
+**Recommandations en matière de tâches en arrière-plan**
 
-* [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
+* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Référence API des tâches en arrière-plan**
+**Informations de référence d’API de tâche en arrière-plan**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

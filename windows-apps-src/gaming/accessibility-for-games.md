@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, accessibilité, jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592934"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162777"
 ---
 #  <a name="making-games-accessible"></a>Proposer des jeux accessibles
 
@@ -196,7 +196,7 @@ Si le jeu permet aux joueurs de communiquer verbalement et de s’envoyer des SM
 
 Les personnes qui n’ont pas de microphones connectés à leur périphérique de jeu peuvent toujours avoir une conversation avec une personne qui parle. Elles peuvent saisir du texte dans la fenêtre de conversation et le convertir en messages vocaux. Cela permet aussi aux personnes qui n’entendent pas très bien de lire les messages texte retranscrits de la personne avec qu’ils ont une conversation vocale.
 
-Pour les partenaires et les développeurs gérés dans le programme ID@Xbox, les fonctionnalités de reconnaissance vocale et de synthèse vocale sont disponibles en tant que [fonctionnalités d’accessibilité Game Chat 2](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) dans le service Xbox Live. Pour plus d’informations, voir [Game Chat 2 Overview](../xbox-live/multiplayer/chat/game-chat-2-overview.md).
+Pour les partenaires et les développeurs gérés dans le programme ID@Xbox, les fonctionnalités de reconnaissance vocale et de synthèse vocale sont disponibles en tant que [fonctionnalités d’accessibilité Game Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility) dans le service Xbox Live. Pour plus d’informations, voir [Game Chat 2 Overview](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md).
 
 ### <a name="sound-feedback"></a>Retour audio
 

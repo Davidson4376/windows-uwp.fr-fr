@@ -5,39 +5,39 @@ ms.date: 11/072017
 ms.topic: article
 keywords: Windows 10, uwp, xbox, du portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7aa8b11bc439266d36fbb27a7eaa7b07e924a17c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244035"
 ---
 # <a name="xbox-info-api-reference"></a>Informations de référence sur les API Xbox   
 Cette API vous permet d’accéder aux informations des périphériques Xbox One.
 
 ## <a name="get-xbox-one-device-information"></a>Obtenir les informations des périphériques Xbox One
 
-**Demande**
+## <a name="request"></a>Demande
 
 Vous pouvez obtenir des informations relatives à votre périphérique Xbox One.
 
 Méthode      | URI de requête
 :------     | :-----
 GET | /ext/xbox/info
-<br />
+
 **Paramètres d’URI**
 
 - Aucune
 
-**En-têtes de demande**
+**En-têtes de requête**
 
 - Aucune
 
-**Corps de la demande**
+**Corps de la requête**
 
 - Aucune
 
-**Réponse**   
+## <a name="response"></a>Réponse
 Un objet JSON avec les champs suivants :
 
 * OsVersion - (chaîne) version du système d’exploitation.
@@ -59,7 +59,6 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-<br />
-**Familles de périphériques disponibles**
+**Familles d’appareils disponibles**
 
 * Windows Xbox

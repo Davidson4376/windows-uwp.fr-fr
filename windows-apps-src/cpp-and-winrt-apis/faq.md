@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd051ffe3af9e18370666f5c6c772b7f188e54a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635574"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291887"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Des réponses aux questions que vous êtes susceptible d’avoir sur la création et utilisation de Windows Runtime APIs avec [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -22,7 +22,7 @@ Des réponses aux questions que vous êtes susceptible d’avoir sur la créatio
 Consultez [comment recibler votre C + c++ / projet WinRT vers une version ultérieure du SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Pourquoi mon nouveau projet n’est pas compilé ? J’utilise Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et le SDK version 17134
-Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et de ciblage du SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + c++ / WinRT projet risque de ne pas compiler avec l’erreur «*erreur C3861 : 'from_abi' : Identificateur introuvable*» et à d’autres erreurs provenant de *base.h*. La solution consiste à une cible une version ultérieure (conforme plus) version du Kit de développement logiciel Windows ou de la propriété de projet de jeu **C/C++** > **langage** > **mode de conformité : Ne** (en outre, si **/ permissive-** apparaît dans la propriété de projet **C/C++** > **ligne de commande** sous **des Options supplémentaires** , puis le supprimer).
+Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et ciblant le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis nouvellement créés C++/WinRT projet risque de ne pas compiler avec l’erreur «*erreur C3861 : 'from_abi' : Identificateur introuvable*» et à d’autres erreurs provenant de *base.h*. La solution consiste à une cible une version ultérieure (conforme plus) version du Kit de développement logiciel Windows ou de la propriété de projet de jeu **C/C++** > **langage** > **mode de conformité : Ne** (en outre, si **/ permissive-** apparaît dans la propriété de projet **C/C++** > **ligne de commande** sous **des Options supplémentaires** , puis le supprimer).
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Comment pour résoudre l’erreur de build « C + c++ / WinRT VSIX ne fournit plus de prise en charge de génération de projet.  Ajoutez une référence de projet au package Nuget de Microsoft.Windows.CppWinRT » ?
 Installer le **Microsoft.Windows.CppWinRT** package NuGet dans votre projet. Pour plus d’informations, consultez [les versions antérieures de l’extension VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
@@ -63,7 +63,7 @@ Nous ne prenons pas en charge la chaîne d’outils LLVM et Clang pour C++/WinRT
 
 Accédez à la [LLVM Download Page](https://releases.llvm.org/download.html), recherchez **Download LLVM 6.0.0** > **Pre-Built Binaries**et téléchargez **Clang for Windows (64-bit)**. Pendant l’installation, choisissez d’ajouter LLVM à la variable système PATH afin de pouvoir l'appeler à partir d’une invite de commandes. Dans le cadre de cette expérience, vous pouvez ignorer les erreurs « Failed to find MSBuild toolsets directory » (Impossible de trouver le répertoire des jeux d’outils MSBuild) ou MSVC integration install failed (Échec d'installation de l’intégration MSVC), si vous les voyez. Il existe plusieurs façons d’appeler LLVM/Clang ; l’exemple ci-dessous illustre une seule méthode.
 
-```
+```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
 // main.cpp
 #pragma comment(lib, "windowsapp")
@@ -121,7 +121,7 @@ int main()
 
 Pour l’appel à **ToString** ci-dessus, le **atteindre la déclaration** commande dans Visual Studio montre que la projection du Runtime Windows **IStringable::ToString** dans C++ / c++ / WinRT ressemble à ceci.
 
-```
+```cppwinrt
 winrt::hstring ToString() const;
 ```
 

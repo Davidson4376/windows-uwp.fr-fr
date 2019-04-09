@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640144"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291767"
 ---
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
-
 
 Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques 3D.
 
@@ -63,7 +62,7 @@ Les matrices s'écrivent dans l’ordre rangée-colonne. Une matrice qui s’ada
 
 En langage C++, Direct3D déclare les matrices sous forme de tableau à deux dimensions à l’aide d’une structure de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) pour qu'elle agisse comme une mise à l’échelle uniforme de matrice (facteur d’échelle « s »).
 
-```
+```cpp
 D3DMATRIX scale = {
     5.0f,            0.0f,            0.0f,            0.0f,
     0.0f,            5.0f,            0.0f,            0.0f,
@@ -81,7 +80,7 @@ L’équation suivante convertit le point (x, y, z) en un nouveau point (x », 
 
 Vous pouvez créer manuellement une matrice de translation en C++. L’exemple suivant montre le code source d'une fonction qui crée une matrice pour opérer une translation de vertex.
 
-```
+```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
@@ -100,7 +99,7 @@ L’équation suivante met à l'échelle le point (x, y, z) à l'aide de valeurs
 
 ![équation d’une matrice de mise à l'échelle pour un nouveau point](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>faire pivoter
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
 
 
 Les transformations décrites ici conviennent à des systèmes de coordonnées pour gaucher et peuvent donc différer des matrices de transformation que vous avez vues ailleurs.
@@ -121,7 +120,7 @@ Dans ces exemples de matrices, la lettre grecque thêta symbolise l’angle de r
 
 Le code suivant montre une fonction permettant de gérer la rotation autour de l’axe X.
 
-```
+```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
     sincosf(angle, &sin, &cos);  // Determine sin and cos of angle

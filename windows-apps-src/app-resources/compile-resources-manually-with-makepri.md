@@ -6,19 +6,19 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6674fc38d41e3a18709dcb81edc95d164f9f86c
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645764"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320592"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Compiler des ressources manuellement avec MakePri.exe
 
 MakePri.exe est un outil de ligne de commande que vous pouvez utiliser pour créer et vider des fichiers PRI. Il est intégré en tant qu’élément de MSBuild dans Microsoft Visual Studio, mais il peut aussi être utilisé pour la création de packages manuellement ou à l’aide d’un système de génération personnalisé.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Par exemple, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 La limite de taille d’un fichier PRI est 64 kilo-octets.
 
@@ -43,17 +43,13 @@ MakePri.exe est généralement utilisé avec les options `new`, `versioned` et `
 
 ## <a name="makepriexe-warnings-and-error-messages"></a>Avertissements et messages d’erreur de MakePri.exe
 
-```
-Resources found for language(s) '<language(s)>' but no resources found for default language(s): '<language(s)>'. Change the default language or qualify resources with the default language.
-```
+### <a name="resources-found-for-languages-languages-but-no-resources-found-for-default-languages-languages-change-the-default-language-or-qualify-resources-with-the-default-language"></a>Ressource a été trouvée pour l’ou les langues '< langue >', mais aucune ressource trouvée pour les langues par défaut : '< langue >'. Modifier la langue par défaut ou de qualifier des ressources avec la langue par défaut.
 
-L’avertissement ci-dessus s’affiche lorsque MakePri.exe ou MSBuild détecte des fichiers ou des ressources de chaîne pour une ressource nommée spécifique qui semblent être marqués à l’aide de qualificateurs de langue, alors qu’aucun candidat n’est trouvé pour la langue par défaut. La méthode d’utilisation des qualificateurs dans les noms de fichiers et de dossiers est décrite dans [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md). Un fichier ou un dossier peut contenir un nom de langue, mais aucune ressource qualifiée pour la langue par défaut exacte n’est détectée. Par exemple, si un projet utilise « en-US » comme langue par défaut et qu’il inclut un fichier nommé « de/logo.png », mais aucun fichier marqué avec la langue par défaut « en-US », cet avertissement s’affiche. Pour supprimer cet avertissement, les fichiers ou les ressources de chaîne doivent être qualifiés avec la langue par défaut, ou la langue par défaut doit être modifiée. Pour modifier la langue par défaut, dans votre solution ouverte dans Visual Studio, ouvrez `Package.appxmanifest`. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, « en » ou « en-US »).
+Cet avertissement s’affiche lorsque MakePri.exe ou MSBuild découvre des fichiers ou des ressources de type chaîne pour une ressource nommée donnée qui semblent être marquée avec les qualificateurs de langage, mais aucun candidat n’est trouvée pour une langue par défaut. La méthode d’utilisation des qualificateurs dans les noms de fichiers et de dossiers est décrite dans [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md). Un fichier ou un dossier peut contenir un nom de langue, mais aucune ressource qualifiée pour la langue par défaut exacte n’est détectée. Par exemple, si un projet utilise « en-US » comme langue par défaut et qu’il inclut un fichier nommé « de/logo.png », mais aucun fichier marqué avec la langue par défaut « en-US », cet avertissement s’affiche. Pour supprimer cet avertissement, les fichiers ou les ressources de chaîne doivent être qualifiés avec la langue par défaut, ou la langue par défaut doit être modifiée. Pour modifier la langue par défaut, dans votre solution ouverte dans Visual Studio, ouvrez `Package.appxmanifest`. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, « en » ou « en-US »).
 
-```
-No default or neutral resource given for '<resource identifier>'. The application may throw an exception for certain user configurations when retrieving the resources.
-```
+### <a name="no-default-or-neutral-resource-given-for-resource-identifier-the-application-may-throw-an-exception-for-certain-user-configurations-when-retrieving-the-resources"></a>Aucun par défaut ou la ressource neutre donnée pour '<resource identifier>'. L’application peut lever une exception pour certaines configurations de l’utilisateur lors de la récupération des ressources.
 
-L’avertissement ci-dessus s’affiche lorsque MakePri.exe ou MSBuild détecte des fichiers ou des ressources qui semblent être marqués avec des qualificateurs de langue pour lesquels les ressources ne sont pas évidentes. Il existe des qualificateurs, mais il n’est pas certain qu’une ressource potentielle spécifique puisse être renvoyée pour cet identificateur de ressource lors de l’exécution. Cet avertissement s’affiche s’il n’est pas possible de trouver une ressource potentielle pour une langue ou un lieu de résidence spécifique, ou un autre qualificateur qui est une ressource par défaut ou qui correspondra toujours au contexte d’un utilisateur. Lors de l’exécution, pour des configurations utilisateur particulières telles que les préférences de langue ou le lieu de résidence d’un utilisateur (**Paramètres** > **Heure et langue** > **Région et langue**), les API utilisées pour récupérer la ressource peuvent lever une exception inattendue. Pour supprimer cet avertissement, des ressources par défaut doivent être fournies, par exemple, une ressource dans la langue par défaut ou le lieu de résidence global du projet (homeregion-001).
+Cet avertissement s’affiche lorsque MakePri.exe ou MSBuild découvre des fichiers ou des ressources qui semblent être marquée avec les qualificateurs de langage pour lequel les ressources ne sont pas claires. Il existe des qualificateurs, mais il n’est pas certain qu’une ressource potentielle spécifique puisse être renvoyée pour cet identificateur de ressource lors de l’exécution. Cet avertissement s’affiche s’il n’est pas possible de trouver une ressource potentielle pour une langue ou un lieu de résidence spécifique, ou un autre qualificateur qui est une ressource par défaut ou qui correspondra toujours au contexte d’un utilisateur. Lors de l’exécution, pour des configurations utilisateur particulières telles que les préférences de langue ou le lieu de résidence d’un utilisateur (**Paramètres** > **Heure et langue** > **Région et langue**), les API utilisées pour récupérer la ressource peuvent lever une exception inattendue. Pour supprimer cet avertissement, des ressources par défaut doivent être fournies, par exemple, une ressource dans la langue par défaut ou le lieu de résidence global du projet (homeregion-001).
 
 ## <a name="using-makepriexe-in-a-build-system"></a>Utilisation de MakePri.exe dans un système de génération
 

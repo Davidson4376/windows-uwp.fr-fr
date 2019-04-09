@@ -2,16 +2,16 @@
 Description: Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d'en savoir plus sur elle.
 title: Tableau des catégories et sous-catégories
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, catégorie, sous-catégorie, genre, catégories, genres
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4ff9cf72ce293c81065659472652715669eeeecd
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653644"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334787"
 ---
 # <a name="category-and-subcategory-table"></a>Tableau des catégories et sous-catégories
 
@@ -20,7 +20,7 @@ Le classement de votre application dans la catégorie et la sous-catégorie adé
 
 Vous devez choisir la catégorie qui correspond le mieux à votre application. Si vous le souhaitez, vous pouvez choisir une sous-catégorie, le cas échéant. Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, ou que vous n’en trouvez aucune qui corresponde à votre application, choisissez celle que, selon vous, les clients vont très certainement examiner lorsqu’ils rechercheront des applications comme la vôtre.
 
-Si vous choisissez **jeux** pour votre catégorie, vous devez sélectionner au moins une sous-catégorie (appelé *genre* pour les jeux). Vous pouvez choisir autant de genres que nécessaires pour votre jeu. Notez que pour publier un jeu pour les clients sur Xbox, vous devez activer le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou passer par le processus d’[approbation de concept](../gaming/concept-approval.md). 
+Si vous choisissez **jeux** pour votre catégorie, vous devez sélectionner au moins une sous-catégorie (appelé *genre* pour les jeux). Vous pouvez choisir autant de genres que nécessaires pour votre jeu. Notez que pour publier un jeu pour les clients sur Xbox, vous devez activer le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators) ou passer par le processus d’[approbation de concept](../gaming/concept-approval.md). 
 
 > [!IMPORTANT] 
 > Si vous publiez l’application dans la catégorie **Jeux**, vous ne serez pas en mesure de sélectionner une autre catégorie dans une nouvelle soumission. Il faudra continuer à la publier dans la catégorie **Jeux** (bien que vous puissiez modifier les genres sélectionnés dans une nouvelle soumission). De même, vous ne pouvez pas sélectionner la catégorie **Jeux** lors de la mise à jour d’une application que vous avez précédemment publiée dans une catégorie différente.

@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, exemples de code, options de jeu, bandes-annonces, listes avancées, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8ffb11c020eacd687ab72274b04f41406c3df2af
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594074"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334637"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\# exemple : soumission de l’application avec les options de jeu et codes de fin
 
@@ -24,7 +24,7 @@ Cet article fournit des exemples de code C# expliquant l’utilisation de l’[A
 
 Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu’elle illustre, ou vous pouvez générer tous les exemples de code de cet article dans une application console. Pour générer les exemples, créez une application console C# nommée **DevCenterApiSample** dans Visual Studio, copiez chaque exemple dans un fichier de code distinct dans le projet et générez le projet.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 La configuration requise pour ces exemples est la suivante :
 
@@ -41,7 +41,7 @@ La catégorie ```CreateAndSubmitSubmissionExample``` définit une méthode ```Ex
 * Affectez la variable ```applicationId``` à l'[ID Store](in-app-purchases-and-trials.md#store-ids) de l’application pour laquelle vous voulez créer une soumission.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
 
 <span id="token" />
 
@@ -50,7 +50,7 @@ La catégorie ```CreateAndSubmitSubmissionExample``` définit une méthode ```Ex
 La classe ```DevCenterAccessTokenClient``` définit une méthode d’assistance qui utilise vos valeurs ```tenantId```, ```clientId``` et ```clientSecret``` pour créer un jeton d’accès Azure AD à utiliser avec l’API de soumission au Microsoft Store.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
 
 <span id="utilities" />
 
@@ -59,7 +59,7 @@ La classe ```DevCenterAccessTokenClient``` définit une méthode d’assistance 
 La classe ```DevCenterClient``` définit des méthodes d’assistance qui appellent plusieurs méthodes dans l’API de soumission au Microsoft Store et chargent le fichier ZIP contenant les packages, les images de description et les fichiers de bande-annonce pour la soumission d’apps.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterClient.cs#DevCenterClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterClient.cs#DevCenterClient)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 

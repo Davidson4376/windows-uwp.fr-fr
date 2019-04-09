@@ -13,18 +13,18 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610494"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244115"
 ---
 # <a name="designing-for-mixed-reality"></a>Conception pour la réalité mixte
 
 Concevez une application qui s’affiche correctement dans la réalité mixte et tirez parti des nouvelles méthodes d’entrée.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 La [réalité mixte](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) est le résultat de la fusion du monde physique avec le monde numérique. L’éventail des expériences de réalité mixte inclut à une extrémité les appareils de type HoloLens (appareil qui associe du contenu généré par ordinateur avec le monde réel), et à l’autre, une vue complètement immersive de réalité virtuelle (telle qu’affichée avec un casque Windows Mixed Reality). Voir [Types d’applications de réalité mixte](https://developer.microsoft.com/en-us/windows/mixed-reality/types_of_mixed_reality_apps) pour des exemples illustrant les différentes expériences.
 
@@ -92,7 +92,7 @@ Ces contrôleurs rendent l’interaction avec des objets virtuels naturelle et p
 > En résumé : le principe directeur doit être de toujours fournir à l’utilisateur une méthode d’entrée aussi naturelle et fluide que possible.
 
 
-## <a name="2d-app-design-considerations-functionality"></a>Considérations relatives à la conception d’applications 2D : Fonctionnalités
+## <a name="2d-app-design-considerations-functionality"></a>Considérations relatives à la conception d’applications 2D : Fonctionnalité
 
 Lors de la création d’une application UWP qui pourra être potentiellement utilisée sur une plateforme de réalité mixte, voici plusieurs points à prendre en considération.
 
@@ -105,7 +105,7 @@ Lors de la création d’une application UWP qui pourra être potentiellement ut
 * Une application 2D reçoit automatiquement une [barre de l’application](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) pour permettre à l’utilisateur de la déplacer et la mettre à l’échelle dans l’environnement virtuel. Les vues peuvent être redimensionnées verticalement ou en conservant les mêmes proportions.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Considérations de conception d’application 2D : INTERFACE/EXPÉRIENCE UTILISATEUR
+## <a name="2d-app-design-considerations-uiux"></a>Considérations de conception d’application 2D : UI/UX
 
 * Les contrôles XAML qui implémentent le [système Fluent Design](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) tels que l’[affichage de navigation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) et les effets comme [Acrylique](https://docs.microsoft.com/windows/uwp/design/style/acrylic) fonctionnent tous particulièrement bien dans les applications 2D de réalité mixte.
 
@@ -151,7 +151,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
             {
                 // Running on desktop
                 textBlock.Text = "I'm running on the desktop.";
-                textBlock.FontSize = 16;
+                textBlock.FontSize = 14;
             }
 
 ```
@@ -163,8 +163,8 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>Articles connexes
 
 
-* [Limitations actuelles pour les applications à l’aide des API à partir de l’interpréteur de commandes](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Création d’applications 2D](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [Limitations actuelles pour les applications utilisant des API à partir du shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Création d’applications 2D](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens : Création d’applications 2D UWP pour Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
 * [XAML conditionnel](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 

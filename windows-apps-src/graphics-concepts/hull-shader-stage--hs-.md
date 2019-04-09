@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ec132ccb3099f7b5c9f4763a2b276bf6270da859
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601054"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291647"
 ---
 # <a name="hull-shader-hs-stage"></a>Étape Hull Shader (HS)
-
 
 L’étape du nuanceur de coque (HS, Hull Shader) constitue l’une des étapes de pavage qui décomposent efficacement une surface unique d’un modèle en un grand nombre de triangles. L’étape du nuanceur de coque (HS) génère un patch de géométrie (et des constantes de patch) qui correspondent à chaque patch d’entrée (quad, triangle ou ligne). Un nuanceur de coque est invoqué une fois par patch et transforme les points de contrôle d’entrée qui définissent une surface d’ordre bas en points de contrôle constituant un patch. Ce nuanceur effectue également certains calculs par patch afin de fournir des données pour l’[étape du paveur (TS)](tessellator-stage--ts-.md) et l’[étape du nuanceur de domaine (DS)](domain-shader-stage--ds-.md).
 
@@ -52,7 +51,7 @@ Entre 1 et 32 points de contrôle de sortie, qui composent un patch.
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
 
-```
+```hlsl
 [patchsize(12)]
 [patchconstantfunc(MyPatchConstantFunc)]
 MyOutPoint main(uint Id : SV_ControlPointID,

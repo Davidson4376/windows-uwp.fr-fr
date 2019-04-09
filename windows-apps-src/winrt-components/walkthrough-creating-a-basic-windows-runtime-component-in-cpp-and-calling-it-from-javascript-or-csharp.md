@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1f147d98b8d88e912cc9fec40d5e29c34748167
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625034"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291897"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>Démonstration : Création d’un composant Windows Runtime en C++/CX et appel de ce composant à partir de JavaScript ou C#
 > [!NOTE]
@@ -421,7 +421,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Ajoutez du code pour ajouter les détecteurs d’événements en remplaçant l’appel existant à WinJS.UI.processAll dans app.onactivated dans le fichier default.js par le code suivant, qui implémente l’inscription d’événements dans un bloc then. Pour obtenir une explication détaillée, consultez l’article Créer une application « Hello World » (JS).
+Ajoutez du code pour ajouter les détecteurs d’événements en remplaçant l’appel existant à WinJS.UI.processAll dans app.onactivated dans le fichier default.js par le code suivant, qui implémente l’inscription d’événements dans un bloc then. Pour obtenir une explication détaillée de cela, consultez [créer une application « Hello, World » (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {

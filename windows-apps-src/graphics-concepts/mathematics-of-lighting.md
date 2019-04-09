@@ -7,22 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d21f60694c55edacc7a5723e7ed470c37af992ab
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636304"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618426"
 ---
 # <a name="mathematics-of-lighting"></a>Formules mathématiques d’éclairage
-
 
 Le modèle d’éclairage Direct3D prend en charge les éclairages ambiant, diffus, spéculaire et émissif. La souplesse de la configuration permet de résoudre de nombreuses situations d’éclairage. Dans une scène, la quantité globale d’éclairage s’appelle l’*illumination globale*.
 
 L’illumination globale est calculée comme suit :
 
-```
-Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive Light 
+```cpp
+global_illumination = ambient_lighting + diffuse_lighting + specular_lighting + emissive_lighting;
 ```
 
 L’[éclairage ambiant](ambient-lighting.md) est une valeur constante. L'éclairage ambiant est constant dans toutes les directions et colore tous les pixels d’un objet de la même façon. Il présente une grande rapidité de calcul, mais donne aux objets un aspect plat et irréaliste.

@@ -6,12 +6,12 @@ ms.date: 12/04/2017
 ms.topic: article
 keywords: windows 10, uwp, licences, applications, extensions, achats dans l’application, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7aede57db3ba727445b1ff01f46e00d6be7abdfd
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641914"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334597"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Obtenir les informations de licence des applications et des modules complémentaires
 
@@ -20,7 +20,7 @@ Cet article explique comment utiliser les méthodes de la classe [StoreContext](
 > [!NOTE]
 > L'espace de noms **Windows.Services.Store** a été introduit dans Windows 10, version 1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio. Si votre application cible une version antérieure de Windows 10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, consultez [cet article](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 La configuration requise pour cet exemple est la suivante :
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure.
@@ -42,7 +42,7 @@ Pour récupérer les informations de licence pour l’application actuelle, util
 Pour accéder aux licences des modules complémentaires durables de l’app pour laquelle l’utilisateur possède actuellement des droits d'utilisation, utilisez la propriété [AddOnLicenses](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.addonlicenses) de l'objet [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx). Cette propriété renvoie une collection d’objets [StoreLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storelicense.aspx) qui représentent les licences des extensions.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
+[!code-csharp[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
 
 Pour obtenir un exemple d’application complète, consultez [Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 

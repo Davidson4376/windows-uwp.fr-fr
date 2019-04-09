@@ -5,28 +5,28 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de Microsoft Store, API d'analyse du Microsoft Store, analyse Xbox Live, clubs
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: aef7f17a2c6371a13a2eeb57b5f3dc4ee4889435
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633174"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162669"
 ---
 # <a name="get-xbox-live-club-data"></a>Obtenir des données de club Xbox Live
 
-Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir les données de club pour votre  [jeu compatible Xbox Live](../xbox-live/index.md). Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir les données de club pour votre  [jeu compatible Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md). Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](../xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
@@ -38,7 +38,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -67,9 +67,9 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Réponse
 
-| Valeur      | Type   | Description                  |
+| Value      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | tableau  | Un tableau qui contient un objet [ProductData](#productdata) avec les données de clubs associées à votre jeu et un objet [XboxwideData](#xboxwidedata) qui contient les données de club pour tous les clients Xbox Live. Ces données permettent d'établir des comparaisons avec les données de votre jeu.  |
+| Value      | tableau  | Un tableau qui contient un objet [ProductData](#productdata) avec les données de clubs associées à votre jeu et un objet [XboxwideData](#xboxwidedata) qui contient les données de club pour tous les clients Xbox Live. Ces données permettent d'établir des comparaisons avec les données de votre jeu.  |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que la requête présente plus de 10000 rangées de données. |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de la requête. |
 
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
 
 Cette ressource contient des données de club pour votre jeu.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|------|
 | date            |  chaîne |   La date pour les données de club.   |
 |  applicationId               |    chaîne     |  L'[ID Store](in-app-purchases-and-trials.md#store-ids) du jeu dont vous souhaitez récupérer des données de club.   |
@@ -91,7 +91,7 @@ Cette ressource contient des données de club pour votre jeu.
 
 Cette ressource contient des données de club moyennes sur tous les clients Xbox Live.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|------|
 | date            |  chaîne |   La date pour les données de club.   |
 |  applicationId  |    chaîne     |   Dans l'objet **XboxwideData**, cette chaîne est toujours la valeur **XBOXWIDE**.  |
@@ -104,7 +104,7 @@ Cette ressource contient des données de club moyennes sur tous les clients Xbox
 
 Dans l'objet **ProductData**, cet objet contient des données relatives à un club spécifique, dont les activités sont liées à votre jeu. Cet objet n’a aucune signification dans le contexte de l'objet **XboxwideData** et comporte des valeurs par défaut.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|--------------------|
 |  name            |  chaîne  |   Dans l'objet **ProductData**, il s'agit du nom de la club. Dans l'objet **XboxwideData**, cet élément comporte toujours la valeur **XBOXWIDE**.           |
 |  memberCount               |    entier     | Dans l'objet **ProductData**, il s’agit du nombre de membres dans le club ; les utilisateurs qui visitent simplement le club sans en être membre ne sont pas comptabilisés. Dans l'objet **XboxwideData**, la valeur est toujours 0.    |

@@ -1,4 +1,6 @@
 items:
+- name: Vue d’ensemble
+  href: index.md
 - name: Types d’applications
   items:
   - name: Applications pour l’éducation
@@ -482,15 +484,19 @@ items:
       - name: Accéder aux données d’analyse
         href: ../monetize/access-analytics-data-using-windows-store-services.md
         items:
+        - name: Obtenir des données d’acquisitions pour vos applications et vos jeux
+          href: ../monetize/acquisitions-data.md
+        - name: Obtenir des données d’acquisitions d’extension pour vos applications et vos jeux
+          href: ../monetize/add-on-acquisitions-data.md
         - name: Applications UWP
           items:
           - name: Obtenir les acquisitions et installer les données
             items:
-            - name: Obtenir des acquisitions d’applications
+            - name: Obtenir les acquisitions d’applications (héritées)
               href: ../monetize/get-app-acquisitions.md
             - name: Obtenir les installations d’applications
               href: ../monetize/get-app-installs.md
-            - name: Obtenir les données d’entonnoir d’acquisition d’applications
+            - name: Obtenir les données d’entonnoir d’acquisition d’applications (héritées)
               href: ../monetize/get-acquisition-funnel-data.md
             - name: Obtenir les conversions d’applications par canal
               href: ../monetize/get-app-conversions-by-channel.md
@@ -762,23 +768,6 @@ items:
       items:
       - name: Packages facultatifs avec code exécutable
         href: ../packaging/optional-packages-with-executable-code.md
-    - name: Installer des applications UWP avec le programme d’installation d’application
-      href: ../packaging/appinstaller-root.md
-      items:
-      - name: Créer un fichier de programme d’installation d’application avec Visual Studio
-        href: ../packaging/create-appinstallerfile-vs.md
-      - name: Installer des applications UWP à partir d’une page web
-        href: ../packaging/installing-UWP-apps-web.md
-      - name: Installer un ensemble connexe à l’aide d’un fichier de programme d’installation d’application
-        href: ../packaging/install-related-set.md
-      - name: Résoudre les problèmes d’installation avec le fichier du programme d’installation d’application
-        href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: Installer une application UWP à partir d’une application web Azure
-        href: ../packaging/web-install-azure.md
-      - name: Installer une application UWP à partir d’un serveur IIS
-        href: ../packaging/web-install-iis.md
-      - name: Hébergement de packages d’application UWP sur AWS pour l’installation web
-        href: ../packaging/web-install-aws.md
     - name: Installer des applications avec l’outil WinAppDeployCmd.exe
       href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
     - name: Déclarations des fonctionnalités d’application
@@ -949,11 +938,20 @@ items:
       href: ../composition/composition-native-interop.md
     - name: Personnalisation de votre interface utilisateur
       href: ../composition/composition-tailoring.md
-    - name: Utilisation de XAML
+    - name: Utilisation d’UWP XAML
       href: ../composition/using-the-visual-layer-with-xaml.md
       items:
       - name: Éclairage XAML
         href: ../composition/xaml-lighting.md
+    - name: Moderniser les applications de bureau
+      href: ../composition/visual-layer-in-desktop-apps.md
+      items:
+      - name: Utilisation de WPF
+        href: ../composition/using-the-visual-layer-with-wpf.md
+      - name: Utilisation de Windows Forms
+        href: ../composition/using-the-visual-layer-with-windows-forms.md
+      - name: Utilisation de Win32
+        href: ../composition/using-the-visual-layer-with-win32.md
   - name: Windows as a service
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Composants Windows Runtime
@@ -1515,9 +1513,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: Utilisation des objets Windows Runtime dans un environnement multithread
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582917"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822934"

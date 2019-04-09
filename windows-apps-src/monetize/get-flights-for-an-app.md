@@ -6,36 +6,36 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, versions d’évaluation, versions d’évaluation de package
 ms.localizationpriority: medium
-ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6f55a218c0cb4f4964fe12eb8e2eeb5b504f6405
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659874"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334777"
 ---
 # <a name="get-package-flights-for-an-app"></a>Obtenir des versions d’évaluation du package pour une application
 
 Utilisez cette méthode dans l’API de soumission de Microsoft Store pour répertorier les vols de package pour une application qui est inscrit pour votre compte espace partenaires. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -57,14 +57,14 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment répertorier toutes les versions d’évaluation du package pour une application.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
 L’exemple suivant montre comment répertorier la première version d’évaluation du package pour une application.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights?top=1 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -99,10 +99,10 @@ L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description       |
+| Value      | Type   | Description       |
 |------------|--------|---------------------|
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 2, mais qu’il existe 4 versions d’évaluation du package pour l’application, le corps de réponse comprendra une valeur @nextLink```applications/{applicationid}/listflights/?skip=2&top=2```, ce qui indique que vous pouvez appeler ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` pour solliciter les 2 versions d’évaluation du package suivantes. |
-| value      | tableau  | Tableau d’objets qui fournissent des informations sur les versions d’évaluation du package pour l’application spécifiée. Pour plus d’informations sur les données incluses dans chaque objet, voir [Ressource de version d’évaluation du package ](get-app-data.md#flight-object).               |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 2, mais qu’il existe 4 versions d’évaluation du package pour l’application, le corps de réponse comprendra une valeur @nextLink`applications/{applicationid}/listflights/?skip=2&top=2`, ce qui indique que vous pouvez appeler `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` pour solliciter les 2 versions d’évaluation du package suivantes. |
+| valeur      | tableau  | Tableau d’objets qui fournissent des informations sur les versions d’évaluation du package pour l’application spécifiée. Pour plus d’informations sur les données incluses dans chaque objet, voir [Ressource de version d’évaluation du package ](get-app-data.md#flight-object).               |
 | totalCount | entier    | Nombre total de lignes dans les résultats de données pour la requête (autrement dit, nombre total de versions d’évaluation du package pour l’application spécifiée).   |
 
 

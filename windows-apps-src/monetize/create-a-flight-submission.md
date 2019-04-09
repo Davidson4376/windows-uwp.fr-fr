@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, créer une soumission de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c7a60de3440106e446f6c3e896cd747741e4db2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636864"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334687"
 ---
 # <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation du package
 
@@ -22,7 +22,7 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 > [!NOTE]
 > Cette méthode permet de créer une soumission pour une version d’évaluation de package existante. Pour créer une version d’évaluation de package, utilisez la méthode [Créer une version d’évaluation de package](create-a-flight.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -30,18 +30,18 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créer un vol de package pour une application. Vous pouvez le faire dans le centre de partenaires, ou vous pouvez le faire à l’aide de la [créer un package de vol](create-a-flight.md) (méthode).
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
+| PUBLIER    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -62,7 +62,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment créer une soumission de version d’évaluation de package pour une application ayant l’ID Windows Store 9WZDNCRD91MD.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -118,7 +118,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 |--------|------------------|
 | 400  | Impossible de créer la soumission de version d’évaluation de package, car la requête n’est pas valide. |
 | 409  | L’envoi de vol de package n’a pas pu être créé en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
 
 ## <a name="related-topics"></a>Rubriques connexes
 

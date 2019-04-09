@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 286b278d0c41edfbc5c008f31e5a8e28fa30f93a
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593024"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901637"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -32,7 +32,7 @@ Commande | Description
 ------- | -----------
 [Bouton](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement de clic ou de la liaison de commande.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Un bouton qui déclenche un événement Click en continu pendant enfoncé.
-[Contrôle HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a une mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a une mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Bouton avec un chevron pour ouvrir un menu volant attaché.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Bouton avec les deux côtés. Côté « un » lance une action, et l’autre côté ouvre un menu.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Un bouton bascule avec deux côtés. Active ou désactive du côté « un » activé/désactivé, et l’autre côté ouvre un menu.
@@ -140,7 +140,7 @@ Le contenu d’un bouton correspond généralement à du texte. Voici des recomm
 
 <table>
 <tr>
-<td> <b>Devoir résoudre :</b><br> corriger les boutons dont le texte déborde. </td>
+<td> <b>Vous devez :</b><br> corriger les boutons dont le texte déborde. </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ Le contenu d’un bouton correspond généralement à du texte. Voici des recomm
 <td> <img src="images/button-wraptext1.png"> </td>
 </tr>
 <tr>
-<td> <b>Option 2 :</b><br> Augmentez la hauteur du bouton et ajustez le texte avec un renvoi à la ligne. </td>
+<td> <b>Option 2 :</b><br> Augmentez la hauteur du bouton et ajustez le texte avec un renvoi à la ligne. </td>
 <td> <img src="images/button-wraptext2.png"> </td>
 </tr>
 </table>
@@ -211,7 +211,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 Un [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) est un bouton qui affiche un chevron comme un indicateur visuel qu’il possède un menu volant attaché qui contient davantage d’options. Il a le même comportement comme un bouton standard avec un menu volant ; seule l’apparence est différente.
 
-La liste déroulante bouton hérite de l’événement Click, mais vous ne l’utilisez généralement. Au lieu de cela, vous utilisez la propriété de menu volant pour attacher un menu volant et appeler des actions à l’aide des options de menu dans le menu volant. Le menu volant s’ouvre automatiquement lorsque le bouton est activé.
+La liste déroulante bouton hérite de l’événement Click, mais vous ne l’utilisez généralement. Au lieu de cela, vous utilisez la propriété de menu volant pour attacher un menu volant et appeler des actions à l’aide des options de menu dans le menu volant. Le menu volant s’ouvre automatiquement lorsque le bouton est activé. Veillez à spécifier le [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) propriété de votre menu volant pour vous assurer de l’emplacement souhaité en relation avec le bouton. L’algorithme de sélection élective par défaut peuvent ne pas produire l’emplacement prévu dans toutes les situations.
 
 > [!TIP]
 > Pour plus d’informations sur les menus volants, consultez [Menus et des menus contextuels](menus.md).
@@ -224,7 +224,7 @@ Cet exemple montre comment créer un bouton déroulant avec un menu volant qui c
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E4;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8E4;"/>
     <DropDownButton.Flyout>
         <MenuFlyout Placement="BottomEdgeAlignedLeft">
             <MenuFlyoutItem Text="Left" Icon="AlignLeft" Tag="left"
@@ -284,6 +284,7 @@ Le comportement par défaut pour un bouton partagé est :
 ### <a name="example---split-button"></a>Exemple - bouton partagé
 
 Cet exemple montre comment créer un bouton partagé qui est utilisé pour modifier la couleur de premier plan du texte sélectionné dans un RichEditBox. (Pour plus d’informations et de code, consultez [zone d’édition enrichie](rich-edit-box.md)).
+Fractionner les utilisations du menu volant du bouton [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) comme valeur par défaut pour son [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) propriété. Vous ne pouvez pas remplacer cette valeur.
 
 ![Un bouton partagé pour la sélection de couleur de premier plan](images/split-button-rtb.png)
 
@@ -292,7 +293,7 @@ Cet exemple montre comment créer un bouton partagé qui est utilisé pour modif
              Click="BrushButtonClick">
     <Border x:Name="SelectedColorBorder" Width="20" Height="20"/>
     <SplitButton.Flyout>
-        <Flyout x:Name="BrushFlyout" Placement="BottomEdgeAlignedLeft">
+        <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
             <GridView ItemsSource="{x:Bind ColorOptions}" 
@@ -380,7 +381,7 @@ Un [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) comp
 Un bouton de fractionnement bascule sert généralement à activer ou désactiver une fonctionnalité lorsque la fonctionnalité a plusieurs options que l’utilisateur peut choisir. Par exemple, dans un éditeur de document, il peut servir à activer ou désactiver, les listes tandis que la liste déroulante permet de choisir le style de la liste.
 
 > [!NOTE]
-> Lorsqu’elle est appelée avec touch, le bouton partagé se comporte comme un bouton déroulant. Avec d’autres méthodes d’entrée, un utilisateur peut appeler moitié du bouton séparément. Avec touch, les deux moitiés du bouton appeler le menu volant. Par conséquent, vous devez inclure une option dans le contenu de votre menu volant pour activer / désactiver le bouton.
+> Lorsqu’elle est appelée avec touch, le bouton de fractionnement bascule se comporte comme un bouton déroulant. Avec d’autres méthodes d’entrée, un utilisateur peut activer/désactiver et appeler les deux moitiés du bouton séparément. Avec touch, les deux moitiés du bouton appeler le menu volant. Par conséquent, vous devez inclure une option dans le contenu de votre menu volant pour activer / désactiver le bouton.
 
 ### <a name="differences-with-togglebutton"></a>Différences avec ToggleButton
 
@@ -393,6 +394,7 @@ Contrairement aux [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.to
 ### <a name="example---toggle-split-button"></a>Exemple - bascule de bouton partagé
 
 L’exemple suivant montre comment une bascule de bouton partagé peut être utilisée pour activer ou désactiver la mise en forme de liste et modifier le style de la liste, dans un RichEditBox. (Pour plus d’informations et de code, consultez [zone d’édition enrichie](rich-edit-box.md)).
+Activer/désactiver fractionner utilise du menu volant du bouton [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) comme valeur par défaut pour son [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) propriété. Vous ne pouvez pas remplacer cette valeur.
 
 ![Un bouton de fractionnement de bascule pour sélectionner des styles de liste](images/toggle-split-button-open.png)
 
@@ -401,9 +403,9 @@ L’exemple suivant montre comment une bascule de bouton partagé peut être uti
                    ToolTipService.ToolTip="List style"
                    Click="ListButton_Click"
                    IsCheckedChanged="ListStyleButton_IsCheckedChanged">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8FD;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8FD;"/>
     <ToggleSplitButton.Flyout>
-        <Flyout Placement="BottomEdgeAlignedLeft">
+        <Flyout>
             <ListView x:Name="ListStylesListView"
                       SelectionChanged="ListStylesListView_SelectionChanged" 
                       SingleSelectionFollowsFocus="False">
@@ -536,4 +538,4 @@ Le bouton Précédent est un élément de l’interface utilisateur fournie par 
 - [Classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 - [Cases d’option](radio-button.md)
 - [Cases à cocher](checkbox.md)
-- [Activer/désactiver commutateurs](toggles.md)
+- [Boutons bascule](toggles.md)

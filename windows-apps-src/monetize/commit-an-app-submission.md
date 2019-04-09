@@ -6,21 +6,20 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, valider une soumission d'applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9e44f5672c817f9e1ab00df341a2fd78b23f2944
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594274"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334147"
 ---
 # <a name="commit-an-app-submission"></a>Valider une soumission d’application
-
 
 Utilisez cette méthode dans l’API de soumission de Microsoft Store pour valider une soumission d’application nouvelle ou mise à jour pour les partenaires. La validation alertes partenaire centre de maintenance que les données de soumission a été chargées (y compris les packages associés et des images). En réponse, partenaires valide les modifications de données de soumission pour l’ingestion et la publication. Une fois l’opération de validation réussit, les modifications apportées à la soumission figurent dans les partenaires.
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une app à l’aide de l’API de soumission au Microsoft Store, voir [Gérer les soumissions d’apps](manage-app-submissions.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -28,18 +27,18 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * [Créez une soumission d’application](create-an-app-submission.md), puis [mettez à jour cette soumission](update-an-app-submission.md) avec les éventuelles modifications nécessaires apportées aux données de soumission.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit``` |
+| PUBLIER    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -51,7 +50,6 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à valider. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 
-
 ### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
@@ -60,7 +58,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment valider une soumission de requête.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243610/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -77,10 +75,9 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
-
 
 ## <a name="error-codes"></a>Codes d’erreur
 
@@ -91,7 +88,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 400  | Les paramètres de la requête ne sont pas valides. |
 | 404  | La soumission spécifiée est introuvable. |
 | 409  | La soumission spécifiée a été trouvée, mais il ne peut pas être validée dans son état actuel, ou l’application utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
-
 
 ## <a name="related-topics"></a>Rubriques connexes
 

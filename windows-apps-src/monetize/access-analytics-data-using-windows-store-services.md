@@ -2,17 +2,17 @@
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Utiliser l’API d’analytique Microsoft Store pour récupérer par programme des données d’analytique pour les applications qui sont inscrits pour vous ou votre organisation '' s compte espace partenaires Windows.
 title: Accéder aux données d’analyse à l’aide des services du Windows Store
-ms.date: 06/04/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: windows 10, uwp, services du Microsoft Store, API d'analyse du Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592654"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334857"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -54,7 +54,7 @@ Avant d’appeler l’une des méthodes dans l’API d’analyse du Microsoft S
 
 Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -75,13 +75,19 @@ Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualise
 
 Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler l’API d’analyse du Microsoft Store. Vous devez transmettre le jeton d’accès à l’en-tête **Authorization** de chaque méthode.
 
-### <a name="methods-for-uwp-apps"></a>Méthodes d'analyse des apps UWP
+### <a name="methods-for-uwp-apps-and-games"></a>Méthodes pour les applications UWP et jeux
+Les méthodes suivantes sont disponibles pour les acquisitions d’applications et des jeux et les acquisitions de module complémentaire : 
+
+* [Obtenir des données d’acquisitions pour vos applications et jeux](acquisitions-data.md)
+* [Obtenir des données d’acquisitions de module complémentaire pour vos applications et jeux](add-on-acquisitions-data.md)
+
+### <a name="methods-for-uwp-apps"></a>Méthodes d'analyse des apps UWP 
 
 Méthodes analytique suivantes sont disponibles pour les applications UWP dans Partner Center.
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|
-| Acquisitions, les conversions, les installations et l’utilisation |  <ul><li>[Obtenir des acquisitions d’applications](get-app-acquisitions.md)</li><li>[Obtenir l’application d’acquisition d’entonnoir des données](get-acquisition-funnel-data.md)</li><li>[Obtenir des conversions de l’application par canal](get-app-conversions-by-channel.md)</li><li>[Obtenir les acquisitions de module complémentaire](get-in-app-acquisitions.md)</li><li>[Obtenir abonnement acquisitions de module complémentaire](get-subscription-acquisitions.md)</li><li>[Obtenir des conversions de module complémentaire par canal](get-add-on-conversions-by-channel.md)</li><li>[Obtenir des installations d’application](get-app-installs.md)</li><li>[Obtenir l’utilisation quotidienne des applications](get-app-usage-daily.md)</li><li>[Obtenir l’utilisation des applications mensuel](get-app-usage-monthly.md)</li></ul> |
+| Acquisitions, les conversions, les installations et l’utilisation |  <ul><li>[Obtenir des acquisitions d’applications](get-app-acquisitions.md) (hérité)</li><li>[Obtenir l’application d’acquisition d’entonnoir des données](get-acquisition-funnel-data.md) (hérité)</li><li>[Obtenir des conversions de l’application par canal](get-app-conversions-by-channel.md)</li><li>[Obtenir les acquisitions de module complémentaire](get-in-app-acquisitions.md)</li><li>[Obtenir abonnement acquisitions de module complémentaire](get-subscription-acquisitions.md)</li><li>[Obtenir des conversions de module complémentaire par canal](get-add-on-conversions-by-channel.md)</li><li>[Obtenir des installations d’application](get-app-installs.md)</li><li>[Obtenir l’utilisation quotidienne des applications](get-app-usage-daily.md)</li><li>[Obtenir l’utilisation des applications mensuel](get-app-usage-monthly.md)</li></ul> |
 | Erreurs d’application | <ul><li>[Obtenir des données de signalement d’erreurs](get-error-reporting-data.md)</li><li>[Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md)</li><li>[Obtenir la trace de pile pour une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Télécharger le fichier CAB pour une erreur dans votre application](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | Insights | <ul><li>[Obtenir des données insights pour votre application](get-insights-data-for-your-app.md)</li></ul>  |
 | Évaluations et avis | <ul><li>[Obtenez les évaluations de l’application](get-app-ratings.md)</li><li>[Obtenir les révisions d’application](get-app-reviews.md)</li></ul> |
@@ -100,7 +106,7 @@ Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de d�
 
 ### <a name="methods-for-xbox-live-services"></a>Méthodes pour les services Xbox Live
 
-Les méthodes supplémentaires suivantes sont disponibles pour les comptes de développeur, avec les jeux utilisant les [services Xbox Live ](../xbox-live/developer-program-overview.md).
+Les méthodes supplémentaires suivantes sont disponibles pour les comptes de développeur, avec les jeux utilisant les [services Xbox Live ](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|
@@ -126,7 +132,7 @@ Les comptes de développeurs qui appartiennent à la [programme de tableau de bo
 L’exemple de code suivant montre comment obtenir un jeton d’accès Azure AD et appeler l’API d’analyse du Microsoft Store à partir d’une app de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](https://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du Microsoft Store.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+[!code-csharp[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
 ## <a name="error-responses"></a>Réponses d’erreur
 

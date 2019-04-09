@@ -8,35 +8,30 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a83cbc547ede1977f0222298bf451611905fad50
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631724"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343258"
 ---
 # <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
 
-
-
 Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
 
-> **API importantes** : [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
-
+> **API importantes** : [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, la grammaire de dictée prédéfinie des applications Windows universelles est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 
-
 ## <a name="add-constraints"></a>Ajouter des contraintes
-
 
 Utilisez la propriété [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) pour ajouter des contraintes à un moteur de reconnaissance vocale.
 
-Nous abordons ici les trois types de contraintes de reconnaissance vocale utilisés à partir d’une application. (Pour plus d’informations sur les contraintes de commandes vocales, voir [Lancer une application au premier plan avec les commandes vocales de Cortana](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana).)
+Nous abordons ici les trois types de contraintes de reconnaissance vocale utilisés à partir d’une application. (Pour les contraintes de commande de voix de Cortana, consultez [lancer une application de premier plan avec les commandes vocales dans Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— une contrainte selon une grammaire prédéfinie (recherche de la dictée ou web).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— une contrainte basée sur une liste de mots ou expressions.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— une contrainte définie dans un fichier Speech Recognition Grammar Specification (SRGS).
+- [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)— une contrainte selon une grammaire prédéfinie (recherche de la dictée ou web).
+- [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)— une contrainte basée sur une liste de mots ou expressions.
+- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)— une contrainte définie dans un fichier Speech Recognition Grammar Specification (SRGS).
 
 Chaque moteur de reconnaissance vocale possède sa propre collection de contraintes. Seules les combinaisons de contraintes suivantes sont valides :
 
@@ -88,13 +83,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>Spécifier une contrainte de liste de programmation (SpeechRecognitionListConstraint)
 
-
 Les contraintes de liste doivent être ajoutées à la collection de contraintes d’un moteur de reconnaissance vocale.
 
 Gardez à l’esprit les points suivants :
 
--   Vous pouvez ajouter plusieurs contraintes de liste à une collection de contraintes.
--   Vous pouvez utiliser toute collection implémentant **IIterable&lt;String&gt;** pour les valeurs de chaîne.
+- Vous pouvez ajouter plusieurs contraintes de liste à une collection de contraintes.
+- Vous pouvez utiliser toute collection implémentant **IIterable&lt;String&gt;** pour les valeurs de chaîne.
 
 Ici, nous spécifions par programmation un tableau de mots sous la forme d’une contrainte de liste et nous l’ajoutons à la collection de contraintes d’un moteur de reconnaissance vocale.
 
@@ -128,28 +122,27 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 
 ## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>Spécifier une contrainte de grammaire SRGS (SpeechRecognitionGrammarFileConstraint)
 
-
 Les fichiers de grammaire SRGS doivent être ajoutés à la collection de contraintes d’un moteur de reconnaissance vocale.
 
 La norme SRGS version 1.0 définit le langage de balisage standard à l’aide duquel vous pouvez créer des grammaires au format XML pour la reconnaissance vocale. Les applications Windows universelles proposent plusieurs méthodes pour créer des grammaires de reconnaissance vocale. Toutefois, comme vous le constaterez peut-être, la norme SRGS permet de créer des grammaires qui donnent les meilleurs résultats, en particulier dans les scénarios de reconnaissance vocale plus élaborés.
 
 Les grammaires SRGS offrent un ensemble complet de fonctionnalités pour vous aider à établir une interaction vocale complexe pour vos applications. Les grammaires SRGS vous permettent notamment d’effectuer les tâches suivantes :
 
--   spécifier l’ordre dans lequel les mots et les expressions doivent être prononcés pour qu’ils soient reconnus ;
--   combiner des mots issus de plusieurs listes et expressions ;
--   créer des liens vers d’autres grammaires ;
--   affecter une valeur à un mot ou à une expression de remplacement pour augmenter ou diminuer ses chances d’être associé à une saisie vocale ;
--   inclure des mots ou des expressions facultatifs ;
--   utiliser des règles spéciales permettant de filtrer des saisies vocales non spécifiées ou imprévues, comme des paroles aléatoires qui ne correspondent pas à la grammaire, ou le bruit de fond ;
--   utiliser la sémantique pour définir ce que la reconnaissance vocale signifie pour votre application ;
--   spécifier des prononciations (soit intégrées à une grammaire, soit via un lien vers un lexique).
+- spécifier l’ordre dans lequel les mots et les expressions doivent être prononcés pour qu’ils soient reconnus ;
+- combiner des mots issus de plusieurs listes et expressions ;
+- créer des liens vers d’autres grammaires ;
+- affecter une valeur à un mot ou à une expression de remplacement pour augmenter ou diminuer ses chances d’être associé à une saisie vocale ;
+- inclure des mots ou des expressions facultatifs ;
+- utiliser des règles spéciales permettant de filtrer des saisies vocales non spécifiées ou imprévues, comme des paroles aléatoires qui ne correspondent pas à la grammaire, ou le bruit de fond ;
+- utiliser la sémantique pour définir ce que la reconnaissance vocale signifie pour votre application ;
+- spécifier des prononciations (soit intégrées à une grammaire, soit via un lien vers un lexique).
 
 Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](https://go.microsoft.com/fwlink/p/?LinkID=269886). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](https://go.microsoft.com/fwlink/p/?LinkID=269887).
 
 Gardez à l’esprit les points suivants :
 
--   Vous pouvez ajouter plusieurs contraintes de fichier de grammaire à une collection de contraintes.
--   Utilisez l’extension de fichier .grxml pour les documents de grammaire XML qui sont conformes aux règles SRGS.
+- Vous pouvez ajouter plusieurs contraintes de fichier de grammaire à une collection de contraintes.
+- Utilisez l’extension de fichier .grxml pour les documents de grammaire XML qui sont conformes aux règles SRGS.
 
 L’exemple suivant utilise une grammaire SRGS définie dans un fichier nommé srgs.grxml (décrit ultérieurement). Dans les propriétés du fichier, l’option **Action de package** a la valeur **Contenu**, avec l’option **Copier dans le répertoire de sortie** définie sur **Toujours copier** :
 
@@ -219,7 +212,6 @@ Ici, nous écoutons des variantes de « yes » et « no ».
 
 ## <a name="manage-constraints"></a>Gérer les contraintes
 
-
 Quand une collection de contraintes est chargée pour la reconnaissance vocale, votre application peut gérer les contraintes qui sont activées pour les opérations de reconnaissance vocale en affectant à la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) d’une contrainte la valeur **true** ou **false**. Le paramètre par défaut est **true**.
 
 Plutôt que de charger, décharger et compiler des contraintes pour chaque opération de reconnaissance vocale, il est généralement plus efficace de charger les contraintes une fois, et de les activer ou désactiver en fonction des besoins. Utilisez la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402), si nécessaire.
@@ -232,15 +224,8 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
 
 ## <a name="related-articles"></a>Articles connexes
 
+- [Interactions vocales](speech-interactions.md)
 
-* [Interactions vocales](speech-interactions.md)
+### <a name="samples"></a>Exemples
 
-**Exemples**
-* [La reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
-
-
-
-
+- [La reconnaissance vocale et exemple de synthèse vocale](https://go.microsoft.com/fwlink/p/?LinkID=619897)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a382fd879ce656a81e1de4ae2d91180f622cd730
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647324"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334740"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Ressources système pour les applications UWP et les jeux sur Xbox One
 
@@ -52,8 +52,8 @@ Pour plus d'informations sur les ressources système pour les applications UWP 
 </br>
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [UWP sur Xbox One](index.md)
-- [Bien démarrer avec le programme Xbox Live Creators](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [Bien démarrer avec le programme Xbox Live Creators](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-program)
 - [DirectX et UWP sur Xbox One](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
 

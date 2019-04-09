@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594004"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291807"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Opaques et 1 bits textures alphabétiques
-
 
 Le format BC1 est dédié aux structures opaques ou présentant une couleur transparente unique.
 
@@ -29,7 +28,7 @@ Dans le codage à 3 couleurs, vous trouvez une couleur dérivée. Le 4e code à
 
 L’exemple de code suivant illustre l’algorithme utilisé pour la sélection du codage à 3 ou 4 couleurs :
 
-```
+```cpp
 if (color_0 > color_1) 
 {
     // Four-color block: derive the other two colors. 
@@ -117,7 +116,7 @@ Bitmap Word\_1 est disposé comme suit :
 
 Dans cet exemple de codage opaque, supposons que les couleurs rouge et noire sont situées aux extrêmes. La couleur rouge est la couleur\_0 et le noir est la couleur\_1. Quatre couleurs interpolées forment le dégradé uniformément distribué les séparant. Pour déterminer les valeurs de l’image bitmap 4x4, les calculs suivants sont appliqués :
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 2/3 color_0 + 1/3 color_1
@@ -149,7 +148,7 @@ Quand l’image s’affiche en blanc, le texel est codé comme transparent. Les 
 
 Le codage bitmap de ces couleurs et la transparence sont définis au moyen des calculs suivants.
 
-```
+```cpp
 00 ? color_0
 01 ? color_1
 10 ? 1/2 color_0 + 1/2 color_1

@@ -6,12 +6,12 @@ keywords: windows 10, uwp, évaluation, achats dans l’application, Windows.Se
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 49d57f32961726507c0114aed648787dd7f6bd1f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646164"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334707"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>Implémenter une version d’évaluation de votre application
 
@@ -57,7 +57,7 @@ Pour la plupart des applications qui ne sont pas des jeux, la définition d’un
 
 Prenez soin d’expliquer à vos clients comment votre application se comportera pendant et après la période d’évaluation gratuite afin qu’ils ne soient pas surpris. Pour plus d’informations sur la description de votre application, voir [Créer des descriptions d’application](https://msdn.microsoft.com/library/windows/apps/mt148529).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 La configuration requise pour cet exemple est la suivante :
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure.
@@ -78,7 +78,7 @@ Lors du lancement de votre application, obtenez l’objet [StoreAppLicense](http
 À ce stade, si un utilisateur a acheté l’application, il est de bonne pratique de lui indiquer que l’état de sa licence a été modifié. Demandez à l’utilisateur de redémarrer l’application si vous avez conçu votre application ainsi. Rendez cependant cette transition aussi simple que possible.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
+[!code-csharp[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
 Pour obtenir un exemple d’application complète, consultez [Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 

@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: bcdb8ca6843d126bc245e48f0b50209890740819
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3456742c4dbb3ca2ab146217763e8f7475c79df2
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639614"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822924"
 ---
 # <a name="surface-dial-interactions"></a>Interactions avec Surface Dial
 
 ![Image de Surface Dial avec Surface Studio](images/windows-wheel/dial-pen-studio-600px.png)  
 *Surface Dial avec Surface Studio et stylet* (disponible à l’achat auprès de la [Boutique Microsoft](https://aka.ms/purchasesurfacedial)).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Les appareils Windows wheel, tels que Surface Dial, sont une nouvelle catégorie d’appareils d’entrée permettant un éventail d’expériences d’interaction uniques et attrayantes pour Windows et les applications Windows. 
 
@@ -85,7 +85,7 @@ Durant la personnalisation de l’expérience utilisateur Surface Dial, vous dev
 
 Ici, nous abordons des recommandations en matière d’expérience utilisateur et des conseils aux développeurs afin de personnaliser les outils exposés dans le menu Surface Dial.
 
-### <a name="ux-guidance"></a>Recommandations en matière d’expérience utilisateur
+### <a name="ux-guidance-for-custom-tools"></a>Guide de l’expérience utilisateur pour les outils personnalisés
 
 **S’assurer que vos outils correspondent au contexte actuel** Lorsque les fonctions d’un outil sont claires et intuitives pour vous et que vous comprenez le fonctionnement de l’interaction Surface Dial, vous aidez les utilisateurs à apprendre rapidement et à rester concentrés sur leur tâche.
 
@@ -132,6 +132,8 @@ Vous pouvez personnaliser l’expérience Surface Dial pour compléter les fonct
 Comme indiqué précédemment, le menu Surface Dial par défaut est prérempli avec un ensemble d’outils intégrés couvrant un large éventail de fonctionnalités de base du système (volume du système, luminosité du système, défilement, zoom, fonction Annuler et contrôle multimédia lorsque le système détecte des données une lecture audio ou vidéo en cours). Toutefois, ces outils par défaut peuvent ne pas offrir les fonctionnalités requises par votre application. 
 
 Dans les sections suivantes, nous décrivons comment ajouter un outil personnalisé au menu Surface Dial, et comment spécifier les outils intégrés exposés.
+
+Téléchargez une version plus robuste de cet exemple à partir de [RadialController personnalisation](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip).
 
 **Ajouter un outil personnalisé**
 
@@ -298,7 +300,7 @@ L’appareil peut être pivoté dans le sens des aiguilles d’une montre et dan
 > [!NOTE]
 > Le retour haptique peut être désactivé par l’utilisateur à la page **Paramètres Windows -&gt; Appareils -&gt; Wheel**.
 
-#### <a name="ux-guidance"></a>Recommandations en matière d’expérience utilisateur
+#### <a name="ux-guidance-for-custom-interactions"></a>Guide de l’expérience utilisateur pour les interactions personnalisées
 
 **Outils avec respect de la rotation continue ou élevé doivent désactiver le retour haptique**
 
@@ -391,12 +393,13 @@ Lorsqu’un clic est effectué sur Surface Dial, un événement [**RadialControl
 Comme indiqué précédemment, Surface Dial peut être utilisé en association avec Surface Studio pour afficher le menu Surface Dial dans un mode spécial à l’écran. 
 
 Lorsque ce mode est actif, vous pouvez intégrer et personnaliser plus avant vos expériences d’interaction entre Surface Dial et vos applications. Exemples d’expériences uniques seulement possibles avec Surface Dial et Surface Studio :
+
 - Affichage d’outils contextuels (par exemple, une palette de couleurs) basé sur la position de Surface Dial, qui facilite la recherche et l’utilisation des outils
 - Définition de l’outil actif en fonction de l’interface utilisateur sur laquelle Surface Dial est placé
 - Agrandissement d’une zone de l’écran en fonction de l’emplacement de Surface Dial
 - Interactions de jeu uniques en fonction de l’emplacement à l’écran
 
-#### <a name="ux-guidance"></a>Recommandations en matière d’expérience utilisateur
+#### <a name="ux-guidance-for-on-screen-interactions"></a>Guide de l’expérience utilisateur pour l’écran interactions
 
 **Applications doivent répondre lors de la Surface Dial est détecté à l’écran**
 
@@ -408,7 +411,7 @@ L’appareil (et le corps de l’utilisateur) peut masquer l’interface utilisa
 
 **Adapter l’interface utilisateur liés à la Surface Dial a basés sur l’interaction utilisateur**
 
-Outre l’occlusion matérielle, la main et le bras d’un utilisateur peuvent masquer une partie de l’écran pendant l’utilisation de l’appareil. 
+Outre l’occlusion matérielle, la main et le bras d’un utilisateur peuvent masquer une partie de l’écran pendant l’utilisation de l’appareil.
 
 La zone masquée dépend de la main utilisée avec l’appareil. Comme l’appareil est conçu pour être utilisé principalement avec la main non dominante, l’interface utilisateur liée à Surface Dial doit s’ajuster pour la main opposée spécifiée par l’utilisateur (**Paramètres Windows &gt; Appareils &gt; Stylet et Windows Ink &gt; Indiquer avec quelle main vous écrivez**).
 
@@ -635,7 +638,7 @@ Lorsque nous exécutons l’application, nous utilisons Surface Dial pour intera
 ![Image de l’exemple d’application activée à l’aide de l’outil personnalisé de Surface Dial UI](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *L’exemple d’application activée à l’aide de l’outil personnalisé de Surface Dial UI*
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette rubrique fournit une vue d’ensemble de l’appareil d’entrée Surface Dial, assortie de recommandations en matière d’expérience utilisateur et de conseils aux développeurs sur la manière de personnaliser l’expérience utilisateur pour des scénarios hors écran et sur l’écran, lors de l’utilisation avec Surface Studio.
 
@@ -644,6 +647,8 @@ Cette rubrique fournit une vue d’ensemble de l’appareil d’entrée Surface 
 Veuillez envoyer vos questions, suggestions et commentaires à l'adresse [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com).
 
 ## <a name="related-articles"></a>Articles connexes
+
+[Didacticiel : Prise en charge de la Surface Dial (et autres appareils roulette) dans votre application UWP](radialcontroller-walkthrough.md)
 
 ### <a name="api-reference"></a>Informations de référence sur les API
 
@@ -661,6 +666,16 @@ Veuillez envoyer vos questions, suggestions et commentaires à l'adresse [radial
 - [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>Exemples
+
+#### <a name="topic-samples"></a>Exemples de la rubrique
+
+[Personnalisation de RadialController](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### <a name="other-samples"></a>Autres exemples
+
+[Coloration du carnet d’exemple](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[Prise en main didacticiel : Prise en charge de la Surface Dial (et autres appareils roulette) dans votre application UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
 [Exemples de plate-forme de Windows universels (C# et C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 

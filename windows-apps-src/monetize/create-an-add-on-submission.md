@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, créer une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cbb093576badf5cd84b132cfb139db9da7d31991
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661704"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334927"
 ---
 # <a name="create-an-add-on-submission"></a>Créer une soumission d’extension
-
 
 Utilisez cette méthode dans l’API de soumission de Microsoft Store pour créer une nouvelle soumission de module complémentaire (également appelés dans l’application produit ou produits) pour une application qui est inscrit pour votre compte espace partenaires. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-an-add-on-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-an-add-on-submission.md) pour permettre son intégration et sa publication.
 
@@ -23,7 +22,7 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 > [!NOTE]
 > Cette méthode permet de créer une soumission pour une extension existante. Pour créer une extension, utilisez la méthode [Créer une extension](create-an-add-on.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -31,28 +30,25 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créer un module complémentaire pour l’une de vos applications. Vous pouvez le faire dans le centre de partenaires, ou vous pouvez le faire à l’aide de la [créer un module complémentaire](create-an-add-on.md) (méthode).
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
-
+| PUBLIER    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions` |
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
-
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension pour laquelle vous voulez créer une soumission. L’ID de Store est disponible dans le centre de partenaires, et il est inclus dans les données de réponse pour les demandes au [créer un module complémentaire](create-an-add-on.md) ou [obtenir les détails du module complémentaire](get-all-add-ons.md).  |
-
 
 ### <a name="request-body"></a>Corps de la requête
 
@@ -62,7 +58,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment créer une soumission pour une extension.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -152,7 +148,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 |--------|------------------|
 | 400  | Impossible de créer la soumission, car la requête n’est pas valide. |
 | 409  | L’envoi n’a pas pu être créé en raison de l’état actuel de l’application, ou l’application utilise une fonctionnalité de partenaires est [actuellement ne pas pris en charge par l’API de soumission de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
 
 ## <a name="related-topics"></a>Rubriques connexes
 

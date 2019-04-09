@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1d11d0dcdf13982e0754a84de00f22c02090e822
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630744"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618386"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Transférer vers C++/WinRT à partir de WRL
 Cette rubrique montre comment porter [bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code en son équivalent dans [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -28,7 +28,7 @@ Dans votre fichier d’en-tête précompilé (généralement `pch.h`), incluez `
 Si vous incluez des en-têtes d'API Windows projetées en C++/WinRT (par exemple, `winrt/Windows.Foundation.h`), vous n’avez pas besoin d’inclure `winrt/base.h` explicitement ainsi, car il sera automatiquement inclus pour vous.
 
 ## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>Portage des pointeurs intelligents COM WRL ([Microsoft::WRL::ComPtr](/cpp/windows/comptr-class))
-Tout code qui utilise le port **Microsoft::wrl :: comptr\<T\>**  à utiliser [ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Voici un exemple de code avant et après. Dans la version *après*, la fonction membre [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) récupère le pointeur brut sous-jacent afin qu’il puisse être défini.
+Tout code qui utilise le port **Microsoft::wrl :: comptr\<T\>**  à utiliser [ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Voici un exemple de code avant et après. Dans la version *après*, la fonction membre [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) récupère le pointeur brut sous-jacent afin qu’il puisse être défini.
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -41,7 +41,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> Si vous avez un [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous souhaitez remettre en place qu’il pointe vers un autre objet, vous devez tout d’abord affecter `nullptr` à ce dernier&mdash;comme indiqué dans l’exemple de code ci-dessous. Si vous n’est pas, puis un déjà-assis **com_ptr** Dessine le problème à votre attention (lorsque vous appelez [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [ **com_ptr :: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
+> Si vous avez un [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous souhaitez remettre en place qu’il pointe vers un autre objet, vous devez tout d’abord affecter `nullptr` à ce dernier&mdash;comme indiqué dans l’exemple de code ci-dessous. Si vous n’est pas, puis un déjà-assis **com_ptr** Dessine le problème à votre attention (lorsque vous appelez [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput-function) ou [ **com_ptr :: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)) en déclarant que son pointeur interne n’est pas null.
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
@@ -59,7 +59,7 @@ winrt::check_hresult(
 );
 ```
 
-Dans l’exemple suivant (dans la version *après*), la fonction membre [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) récupère le pointeur brut sous-jacent sous la forme d’un pointeur vers un pointeur sur void.
+Dans l’exemple suivant (dans la version *après*), la fonction membre [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) récupère le pointeur brut sous-jacent sous la forme d’un pointeur vers un pointeur sur void.
 
 ```cpp
 ComPtr<ID3D12Debug> debugController;
@@ -77,7 +77,7 @@ if (SUCCEEDED(D3D12GetDebugInterface(__uuidof(debugController), debugController.
 }
 ```
 
-Remplacez **ComPtr::Get** par [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function).
+Remplacez **ComPtr::Get** par [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function).
 
 ```cpp
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-Lorsque vous souhaitez passer le pointeur brut sous-jacent à une fonction qui attend un pointeur vers **IUnknown**, utilisez le [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) gratuit (fonction), comme indiqué dans cette prochaine exemple.
+Lorsque vous souhaitez passer le pointeur brut sous-jacent à une fonction qui attend un pointeur vers **IUnknown**, utilisez le [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) gratuit (fonction), comme indiqué dans cette prochaine exemple.
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -210,7 +210,7 @@ HRESULT __stdcall DllCanUnloadNow(void)
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [modèle de struct WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [WinRT::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Rubriques connexes

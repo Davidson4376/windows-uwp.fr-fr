@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du package, soumission de version d’évaluation, finaliser
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
-ms.openlocfilehash: 29ac212e0549e754c0865aab5d497fa6d51f075f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c2864dae721d572ef9e340eddfed0149aa0b621f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642254"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334647"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>Finalise le lancement d’une soumission de version d’évaluation du package
 
@@ -19,7 +19,7 @@ ms.locfileid: "57642254"
 Utilisez cette méthode dans l’API de soumission au Microsoft Store pour [finaliser le lancement du package](../publish/gradual-package-rollout.md#completing-the-rollout) pour une soumission de version d’évaluation du package. Pour plus d’informations sur le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission au Microsoft Store, voir [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md).
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -28,18 +28,18 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * Créer une soumission pour une application dans le centre de partenaires. Vous pouvez le faire dans le centre de partenaires, ou vous pouvez le faire à l’aide de la [créer une soumission de l’application](create-an-app-submission.md) (méthode).
 * Autorisez un lancement de package progressif pour la soumission. Vous pouvez le faire dans [partenaires](../publish/gradual-package-rollout.md), ou vous pouvez faire [à l’aide de l’API de soumission de Microsoft Store](manage-flight-submissions.md#manage-gradual-package-rollout).
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et des paramètres de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout``` |
+| PUBLIER   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -61,7 +61,7 @@ Ne fournissez pas de corps de requête pour cette méthode.
 
 L’exemple suivant montre comment finaliser le lancement du package d’une soumission de version d’évaluation de package.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243680/finalizepackagerollout HTTP/1.1
 Authorization: Bearer <your access token>
 ```

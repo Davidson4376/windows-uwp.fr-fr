@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645194"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162885"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2017
 
@@ -24,7 +24,7 @@ Bien entendu, la mise à jour Fall Creators Update est imminente. Par conséquen
 
 ### <a name="xbox-live-creators-program"></a>Programme Créateurs Xbox Live
 
-Le programme Créateurs Xbox Live est désormais lancé. Il vous permet de créer et de publier facilement des jeux UWP pouvant s’exécuter à la fois sur les consoles Xbox One et les PC sous Windows 10. Pour plus d’informations, voir [Prise en main du programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+Le programme Créateurs Xbox Live est désormais lancé. Il vous permet de créer et de publier facilement des jeux UWP pouvant s’exécuter à la fois sur les consoles Xbox One et les PC sous Windows 10. Pour plus d’informations, voir [Prise en main du programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 

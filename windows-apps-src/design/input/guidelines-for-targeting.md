@@ -4,170 +4,97 @@ title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
+ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646054"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59247177"
 ---
-# <a name="guidelines-for-targeting"></a>Recommandations en matière de ciblage
+# <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles de tactile
 
+Tous les éléments d’interface utilisateur interactives dans votre application de plateforme universelle Windows (UWP) doivent être suffisamment grands pour les utilisateurs à accéder et l’utiliser, quel que soit le périphérique type ou méthode d’entrée avec précision.
 
-Le ciblage tactile dans Windows utilise la zone de contact entière de chaque doigt détecté par un numériseur tactile. Le jeu de données d’entrée plus grand et plus complexe généré par le numériseur est utilisé pour accroître la précision lors de la détermination de la cible souhaitée (ou la plus probable) de l’utilisateur.
+Prise en charge d’entrée tactile (ainsi que la nature relativement imprécise de la zone de contact tactile) nécessite une optimisation supplémentaire par rapport à la disposition de taille et le contrôle cible comme le jeu plus vastes et plus complexe de données d’entrée signalés par le digitaliseur tactile est utilisé pour déterminer le cible prévue (ou le plus probable) de l’utilisateur.
 
-> **API importantes** : [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+Tous les contrôles UWP ont été conçus avec des tailles de cible par défaut tactiles et les dispositions qui vous permettent de créer des applications visuellement à charge équilibrée et attrayantes qui sont à l’aise, facile à utiliser et inspirent confiance.
 
-Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications UWP.
+Dans cette rubrique, nous décrivons ces comportements par défaut afin de vous pouvez concevoir votre application de facilité d’utilisation maximale à l’aide de contrôles de la plateforme et des contrôles personnalisés (doit votre application ont besoin).
 
-## <a name="measurements-and-scaling"></a>Mesures et mise à l’échelle
+> **API importantes** : [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
+## <a name="fluent-standard-sizing"></a>Fluent dimensionnement Standard
 
-Pour conserver la cohérence des différentes tailles d’écran et densités de pixels, toutes les tailles de cibles sont représentées en unités physiques (millimètres). Pour convertir les unités physiques en pixels, utilisez l’équation suivante :
+*Dimensionnement Standard Fluent* a été créé pour fournir un équilibre entre le confort de densité et l’utilisateur des informations. En effet, tous les éléments sur l’écran alignent à une cible de pixels effective de 40 x 40 (epx), ce qui permet d’éléments d’interface utilisateur alignent sur une grille et l’échelle de manière appropriée en fonction de la mise à l’échelle au niveau du système.
 
-Pixels = densité de pixels × mesure
+> [!NOTE]
+>Pour plus d’informations sur les pixels efficaces et la mise à l’échelle, consultez [Introduction à la conception d’application UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>
+> Pour plus d’informations sur la mise à l’échelle au niveau du système, consultez [alignement, marge, remplissage](../layout/alignment-margin-padding.md).
 
-L’exemple suivant utilise cette formule pour calculer la taille des pixels d’une cible de 9 mm sur un affichage de 135 ppp (pixels par pouce) avec un plateau d’échelle de 1x :
+## <a name="fluent-compact-sizing"></a>Dimensionnement Compact Fluent
 
-Pixels = 135 ppp × 9 mm
+Les applications peuvent afficher un haut niveau de densité d’informations avec *dimensionnement Fluent Compact*. Dimensionnement compact aligne les éléments d’interface utilisateur à une cible epx de 32 x 32, ce qui permet des éléments d’interface utilisateur pour l’aligner sur une grille plus étroite et d’une échelle de façon appropriée en fonction de la mise à l’échelle au niveau du système.
 
-Pixels = 135 ppp × (0,03937 pouces/mm × 9 mm)
+### <a name="examples"></a>Exemples
 
-Pixels = 135 ppp × 0,35433 pouces
+Dimensionnement Compact peut être appliqué au niveau de la page ou de la grille.
 
-Pixels = 48 pixels
+### <a name="page-level"></a>Niveau page
 
-Ce résultat doit être ajusté en fonction de chaque plateau d’échelle défini par le système.
+```xaml
+<Page.Resources>
+    <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+</Page.Resources>
+```
 
-## <a name="thresholds"></a>Seuils
+### <a name="grid-level"></a>Niveau de la grille
 
+```xaml
+<Grid>
+    <Grid.Resources>
+        <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+    </Grid.Resources>
+</Grid>
+```
 
-Des seuils de distance et de temps peuvent être utilisés pour déterminer le résultat d’une interaction.
+## <a name="target-size"></a>Taille de la cible
 
-Par exemple, lorsqu’un appui est détecté, il est enregistré si l’objet est glissé de moins de 2,7 mm par rapport au point d’appui et que le doigt est levé dans les 0,1 seconde suivant l’appui. Le fait de déplacer le doigt sur l’écran au-delà de ce seuil de 2,7 mm entraîne un glissement de l’objet et sa sélection ou son déplacement (pour plus d’informations, voir [Recommandations en matière de glisser transversal](guidelines-for-cross-slide.md)). En fonction de votre application, le fait de maintenir appuyé le doigt pendant plus de 0,1 seconde peut provoquer de la part du système une interaction d’auto-révélation (pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md)).
+En général, définissez votre taille de cible tactile à plage carré de 7,5 mm (40 x 40 pixels sur un écran de PPP 135 à un 1.0 x mise à l’échelle de plateau). En règle générale, les contrôles UWP alignent cible tactile à 7,5 mm (Cela peut varier en fonction du contrôle spécifique et les modes d’utilisation courants). Consultez [contrôler la taille et la densité](../style/spacing.md) pour plus de détails.
 
-## <a name="target-sizes"></a>Taille des cibles
+Vous pouvez modifier ces recommandations en matière de tailles de cibles en fonction du scénario particulier de votre application. Voici quelques éléments à prendre en compte :
 
-
-En général, vous devez définir votre cible tactile sur une taille de 9 mm carrés ou plus (48x48 pixels sur un affichage de 135 PPP pour un plateau de mise à l’échelle de 1.0x). Évitez d’utiliser des cibles tactiles inférieures à 7 mm carrés.
-
-Le schéma suivant montre comment la taille de la cible est généralement une combinaison de la cible visuelle, de la taille réelle de la cible et de l’éventuel espacement entre la cible réelle et d’autres cibles potentielles.
-
-![schéma des tailles recommandées pour la cible visuelle, la cible réelle et l’espacement.](images/targeting-size.png)
-
-Le tableau suivant montre les tailles minimales et recommandées pour les composants d’une cible tactile.
-
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Composant de cible</th>
-<th align="left">Taille minimale</th>
-<th align="left">Taille recommandée</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Espacement</td>
-<td align="left">2 mm</td>
-<td align="left">Non applicable.</td>
-</tr>
-<tr class="even">
-<td align="left">Taille visuelle de la cible</td>
-<td align="left">&lt;60 % de la taille réelle</td>
-<td align="left">90 à 100 % de la taille réelle
-<p>La plupart des utilisateurs ne se rendront pas compte qu’une cible visuelle est tactile si elle fait moins de 4,2 mm carrés (60 % de la taille de cible minimale recommandée, 7 mm).</p></td>
-</tr>
-<tr class="odd">
-<td align="left">Taille réelle de la cible</td>
-<td align="left">7 mm carrés</td>
-<td align="left">Supérieure ou égale à 9 mm carrés (48 x 48 px @ 1x)</td>
-</tr>
-<tr class="even">
-<td align="left">Taille totale de la cible</td>
-<td align="left">11 x 11 mm (environ 60 px : trois unités de grille de 20 px à 1x)</td>
-<td align="left">13,5 x 13,5 mm (72 x 72 px à 1x)
-<p>Ceci implique que la taille combinée de la cible réelle et de l’espacement soit supérieure à leurs valeurs minimales respectives.</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-Vous pouvez modifier ces recommandations en matière de tailles de cibles en fonction du scénario particulier de votre application. Certaines des remarques suivantes liées à ces recommandations doivent être prises en compte :
-
--   Fréquence des fonctions tactiles : Envisagez de faire des cibles à plusieurs reprises ou fréquemment enfoncées supérieure à la taille minimale.
--   Conséquence de l’erreur : Les cibles qui ont des conséquences graves si couvertes dans l’erreur doivent avoir une plus grande marge intérieure et être placées plus loin du bord de la zone de contenu. Ceci concerne tout particulièrement les cibles fréquemment utilisées.
--   Position dans la zone de contenu
--   Facteur de forme et taille d’écran
--   Position des doigts
--   Visualisations tactiles
--   Digitaliseurs matériel et tactile
-
-## <a name="targeting-assistance"></a>Aide au ciblage
-
-
-Windows offre une aide au ciblage pour prendre en charge les scénarios dans lesquels les recommandations en matière de taille ou d’espacement minimal présentées ici ne peuvent pas s’appliquer ; par exemple, des liens hypertexte sur une page web, des contrôles de calendrier, des listes déroulantes et des zones de liste modifiable ou une sélection de texte.
-
-Ces améliorations de la plateforme de ciblage et les comportement de l’interface utilisateur fonctionnent ensemble avec le retour visuel (interface utilisateur de résolution des ambiguïtés) afin d’améliorer la précision et la confiance de l’utilisateur. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
-
-Si la taille d’un élément tactile doit être inférieure à la taille de cible minimale recommandée, vous pouvez utiliser les techniques suivantes pour réduire les problèmes de ciblage qui en découlent.
-
-## <a name="tethering"></a>Connexion
-
-
-La connexion est un signal visuel (un connecteur situé entre un point de contact et le rectangle englobant d’un objet) qui sert à indiquer à l’utilisateur qu’il est connecté à un objet et qu’il interagit avec celui-ci, même si le contact d’entrée ne touche pas directement l’objet. Ceci peut se produire dans les cas suivants :
-
--   Un contact tactile a été détecté pour la première fois dans un certain seuil de proximité d’un objet et cet objet a été identifié comme la cible la plus probable du contact.
--   Un contact tactile a été éloigné d’un objet, mais il reste encore dans un seuil de proximité.
-
-Cette fonctionnalité n’est pas exposée aux développeurs d’applications UWP en JavaScript.
-
-## <a name="scrubbing"></a>Frottement
-
-
-Le frottement consiste à toucher n’importe où dans un champ de cibles et de laisser glisser le doigt pour sélectionner la cible souhaitée sans le lever tant qu’il n’est pas sur la cible souhaitée. Avec cette technique, également appelée « activation par décollage », l’objet qui est activé, est celui qui a été touché en dernier lorsque l’utilisateur a levé le doigt de l’écran.
-
-Pour concevoir des interactions de frottement, tenez compte des recommandations suivantes :
-
--   Le frottement est utilisé conjointement avec l’interface utilisateur de résolution des ambiguïtés. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
--   La taille minimale recommandée pour une cible tactile de frottement est de 20 px (3,75 mm à 1x).
--   Le frottement est prioritaire lorsqu’il est effectué sur une surface de mouvement panoramique, telle qu’une page Web.
--   Les cibles de frottement doivent être placées à proximité les unes des autres.
--   L’action est annulée si l’utilisateur cesse de faire glisser son doigt sur la cible de frottement.
--   La connexion à une cible de frottement est spécifiée si les actions effectuées par la cible sont sans danger ; par exemple, passer d’une date à une autre dans un calendrier.
--   La connexion est spécifiée dans une seule direction, horizontalement ou verticalement.
+- Fréquence de touche - effectuez également les cibles à plusieurs reprises ou fréquemment enfoncées supérieure à la taille minimale.
+- Conséquence de l’erreur - cibles qui ont des conséquences graves si couvertes dans l’erreur doit avoir une plus grande marge intérieure et être placée plus loin du bord de la zone de contenu. Ceci concerne tout particulièrement les cibles fréquemment utilisées.
+- Position dans la zone de contenu.
+- Taille de facteur et écran de formulaire.
+- Position du doigt.
+- Touch visualisations.
 
 ## <a name="related-articles"></a>Articles connexes
 
+- [Présentation de la conception des applications UWP](../basics/design-and-ui-intro.md)
+- [Taille du contrôle et la densité](../style/spacing.md)
+- [Alignement, marge, remplissage](../layout/alignment-margin-padding.md)
 
-**Exemples**
-* [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+### <a name="samples"></a>Exemples
 
-**Exemples d’archive**
-* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+- [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+- [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
- 
+### <a name="archive-samples"></a>Exemples d’archive
 
-
-
-
+- [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+- [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
+- [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
+- [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+- [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+- [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)

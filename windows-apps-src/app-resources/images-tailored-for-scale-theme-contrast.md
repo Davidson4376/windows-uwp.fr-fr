@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592024"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320612"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié, correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
@@ -23,21 +23,27 @@ Les qualificateurs courants utilisés pour les images sont notamment [scale](tai
 ## <a name="qualify-an-image-resource-for-scale-theme-and-contrast"></a>Appliquer des qualificateurs de mise à l’échelle, de thème et de contraste à une image
 La valeur par défaut du qualificateur `scale` est `scale-100`. Par conséquent, ces deux variantes sont équivalentes (elles fournissent toutes les deux une image à l’échelle 100, ou avec le facteur d’échelle 1).
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\logo.scale-100.png
-```
+</pre>
+</blockquote>
+
 
 Vous pouvez utiliser des qualificateurs dans les noms de dossiers au lieu des noms de fichiers. Cette stratégie est recommandée si vous disposez de plusieurs fichiers de ressources par qualificateur. À des fins d’exemple, ces deux variantes sont équivalentes aux deux variantes ci-dessus.
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
-```
+</pre>
+</blockquote>
 
 Voici maintenant une illustration de la façon dont vous pouvez fournir des variantes d’une ressource d’image &mdash; nommée `/Assets/Images/logo.png`&mdash; pour différents paramètres d’échelle de l’affichage, de thème et de contraste élevé. Cet exemple utilise des noms de dossiers.
 
-```
+<blockquote>
+<pre>
 \Assets\Images\contrast-standard\theme-dark
     \scale-100\logo.png
     \scale-200\logo.png
@@ -47,7 +53,8 @@ Voici maintenant une illustration de la façon dont vous pouvez fournir des vari
 \Assets\Images\contrast-high
     \scale-100\logo.png
     \scale-200\logo.png
-```
+</pre>
+</blockquote>
 
 ## <a name="reference-an-image-or-other-asset-from-xaml-markup-and-code"></a>Faire référence à une image ou une autre ressource à partir du code et du balisage XAML
 Le nom &mdash;ou identificateur&mdash; d'une ressource d’image correspond à son chemin d'accès et son nom de fichier avec tous les qualificateurs supprimés. Si vous nommez les dossiers et/ou fichiers comme dans l’un des exemples de la section précédente, vous disposez d’une ressource d’image unique et son nom (en tant que chemin d’accès absolu) est `/Assets/Images/logo.png`. Voici comment utiliser ce nom dans le balisage XAML.
@@ -83,7 +90,8 @@ Pour tous les scénarios illustrés dans ces exemples, utilisez la surcharge de 
 
 Notez comment dans ces exemples d’URI, le schéma (« `ms-appx` » ou « `ms-appx-web` ») est suivi de « `://` », lui-même suivi d’un chemin d’accès absolu. Dans un chemin d’accès absolu, le caractère « `/` » de début indique que le chemin d’accès doit être interprété à partir de la racine du package.
 
-**Remarque :** Les schémas d’URI `ms-resource` (pour les [ressources de chaînes](localize-strings-ui-manifest.md)) et `ms-appx(-web)` (pour les images et autres ressources) effectuent une mise en correspondance automatique des schémas d’URI pour trouver la ressource la plus appropriée pour le contexte actuel. Le schéma d’URI `ms-appdata` (qui est utilisé pour charger les données de l’application) n’effectue pas cette mise en correspondance automatique, mais vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger explicitement les ressources appropriées à partir des données de l’application à l’aide de leur nom de fichier physique complet dans l’URI. Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md). Les schémas d’URI web (par exemple, `http`, `https` et `ftp`) n’effectuent pas de mise en correspondance automatique non plus. Pour savoir comment procéder dans ce cas, voir [Hébergement et chargement d’images dans le cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+> [!NOTE]
+> Le `ms-resource` (pour [ressources de type chaîne](localize-strings-ui-manifest.md)) et `ms-appx(-web)` (pour les images et autres ressources) modèles URI effectuer la correspondance d’un qualificateur de nom automatique pour rechercher la ressource qui convient le mieux pour le contexte actuel. Le schéma d’URI `ms-appdata` (qui est utilisé pour charger les données de l’application) n’effectue pas cette mise en correspondance automatique, mais vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger explicitement les ressources appropriées à partir des données de l’application à l’aide de leur nom de fichier physique complet dans l’URI. Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md). Les schémas d’URI web (par exemple, `http`, `https` et `ftp`) n’effectuent pas de mise en correspondance automatique non plus. Pour savoir comment procéder dans ce cas, voir [Hébergement et chargement d’images dans le cloud](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
 Les chemins d’accès absolus constituent un bon choix si vos fichiers d’image restent où ils se trouvent dans la structure du projet. Si vous voulez être en mesure de déplacer un fichier image, mais souhaitez qu’il reste dans le même emplacement par rapport à son fichier de balisage XAML de référence, alors au lieu d’utiliser un chemin d’accès absolu, vous pouvez envisager d’utiliser un chemin d’accès relatif au fichier de balisage le contenant. Si vous procédez ainsi, il n’est pas nécessaire d’utiliser un schéma d’URI. Vous pourrez toujours bénéficier de la mise en correspondance automatique des qualificateurs dans ce cas, mais uniquement parce que vous utilisez le chemin d’accès relatif dans le balisage XAML.
 
@@ -96,23 +104,29 @@ Voir aussi [Prise en charge des vignettes et toasts pour la langue, la mise à l
 ## <a name="qualify-an-image-resource-for-targetsize"></a>Appliquer le qualificateur targetsize à une ressource d’image
 Vous pouvez utiliser les qualificateurs `scale` et `targetsize` sur différentes variantes de la même ressource d’image, mais vous ne pouvez pas les utiliser tous les deux sur une seule variante d’une ressource. Vous devez également définir au moins une variante sans qualificateur `TargetSize`. Cette variante doit définir une valeur pour `scale`, ou lui laisser la valeur par défaut `scale-100`. Par conséquent, ces deux variantes de la ressource `/Assets/Square44x44Logo.png` sont valides.
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200.png
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 Et ces deux variantes sont également valides. 
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.png // defaults to scale-100
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 Mais cette variante n’est pas valide.
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200_targetsize-24.png
-```
+</pre>
+</blockquote>
 
 ## <a name="refer-to-an-image-file-from-your-app-package-manifest"></a>Référencer un fichier image à partir du manifeste de votre package d’application
 Si vous nommez les dossiers et/ou fichiers comme dans l’un des deux exemples valides de la section précédente, vous disposez d’une ressource d’image unique d’icône d’application et son nom (en tant que chemin relatif) est `Assets\Square44x44Logo.png`. Dans le manifeste de votre package d’application, référencez simplement la ressource à l’aide de son nom. Il est inutile d’utiliser un schéma d’URI.

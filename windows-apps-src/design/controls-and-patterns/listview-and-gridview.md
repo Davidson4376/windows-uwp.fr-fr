@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 786c9bc4962d26c58950e06a82140e524b967db1
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653574"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240057"
 ---
 # <a name="list-view-and-grid-view"></a>Affichage Liste et affichage Grille
 
@@ -182,7 +182,7 @@ Dans cet exemple, l’élément de données est une chaîne simple. Vous utilise
                 <Image Source="Assets/placeholder.png" Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="15" Grid.Column="1"/>
+                           FontSize="14" Grid.Column="1"/>
             </Grid> 
         </DataTemplate>
     </ListView.ItemTemplate>
@@ -290,11 +290,11 @@ Le tableau suivant montre les moyens dont un utilisateur dispose pour interagir 
 
 Pour activer cette interaction : | Utilisez ces paramètres : | Gérez cet événement : | Utilisez cette propriété pour obtenir l’élément sélectionné :
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Aucune interaction | [SelectionMode ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **Aucun**, [IsItemClickEnabledFalse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Non applicable | Non applicable 
+Aucune interaction | [SelectionMode ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **Aucun**, [IsItemClickEnabledFalse](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | N/A | N/A 
 Sélection unique | SelectionMode = **Simple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
 Sélection multiple | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
 Sélection étendue | SelectionMode = **Étendu**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Cliquer | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Non applicable 
+Cliquer | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | N/A 
 
 > **Remarque**&nbsp;&nbsp;À compter de Windows 10, vous pouvez activer IsItemClickEnabled pour déclencher un événement ItemClick pendant que SelectionMode est également défini sur Simple, Multiple ou Étendu. De cette façon, l’événement ItemClick est déclenché en premier suivi de l’événement SelectionChanged. Dans certains cas, par exemple, si vous accédez à une autre page dans le gestionnaire d’événements ItemClick, l’événement SelectionChanged n’est pas déclenché et l’élément n’est pas sélectionné.
 

@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de Microsoft Store, API d'analyse du Microsoft Store, analyse Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 74c898630641e8b0d53a181d1874c6df62baaa78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: dd10fadea415bd769061e198fcf29f8edf0f3124
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637084"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162668"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Obtenir des données d’analyse Xbox Live
 
-Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir des données analytiques générales sur les 30 derniers pour les clients jouant à votre [jeu Xbox Live](../xbox-live/index.md), y compris concernant l’utilisation des accessoires de l'appareil, le type de connexion Internet, la distribution des gamerscores, les statistiques de jeu et les données sur les amis et abonnés. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir des données analytiques générales sur les 30 derniers pour les clients jouant à votre [jeu Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md), y compris concernant l’utilisation des accessoires de l'appareil, le type de connexion Internet, la distribution des gamerscores, les statistiques de jeu et les données sur les amis et abonnés. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](../xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 Des données analytique supplémentaires pour les jeux Xbox Live sont disponibles via les méthodes suivantes :
 * [Obtenir des données de primes Xbox Live](get-xbox-live-achievements-data.md)
@@ -27,14 +27,14 @@ Des données analytique supplémentaires pour les jeux Xbox Live sont disponible
 * [Obtenir des données de multijoueur Xbox Live](get-xbox-live-multiplayer-data.md)
 * [Obtenir des données de l’utilisation simultanée Xbox Live](get-xbox-live-concurrent-usage-data.md)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
@@ -46,7 +46,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -82,7 +82,7 @@ Cette méthode renvoie un tableau *Value* contenant les objets suivants.
 
 Cette ressource contient des données d’utilisation des périphériques pour votre jeu ou des données d'utilisation en moyenne des périphériques pour tous les clients Xbox Live au cours des 30 derniers jours.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|------|
 |  applicationId               |    chaîne     |  L'[ID Store](in-app-purchases-and-trials.md#store-ids) du jeu dont vous souhaitez récupérer des données analytiques.   |
 |  connectionTypeDistribution               |    tableau     |   Contient des objets qui indiquent le nombre de clients utilisant une connexion internet câblée par rapport à une connexion internet sans fil sur Xbox. Chaque objet comprend deux champs de chaîne : <ul><li>**conType**: Spécifie le type de connexion.</li><li>**deviceCount**: Dans le **ProductData** objet, ce champ spécifie le nombre de clients de votre jeu qui utilisent le type de connexion. Dans l'objet **XboxwideData**, ce champ indique le pourcentage de tous les clients Xbox Live qui utilisent ce type de connexion.</li></ul>   |     
@@ -95,7 +95,7 @@ Cette ressource contient des données d’utilisation des périphériques pour v
 
 Cette ressource contient des données utilisateur pour votre jeu ou des données d'utilisateur en moyenne pour tous les clients Xbox Live au cours des 30 derniers jours.
 
-| Valeur           | Type    | Description        |
+| Value           | Type    | Description        |
 |-----------------|---------|------|
 |  applicationId               |    chaîne     |   L'[ID Store](in-app-purchases-and-trials.md#store-ids) du jeu dont vous souhaitez récupérer des données analytiques.  |
 |  userCount               |    chaîne     |   Dans l'objet **ProductData**, ce champ indique le nombre de clients ayant joué à votre jeu au cours des 30 derniers jours. Dans l'objet **XboxwideData**, ce champ est toujours 1, ce qui indique un pourcentage de départ de 100 % concernant les données pour tous les clients Xbox Live.   |     

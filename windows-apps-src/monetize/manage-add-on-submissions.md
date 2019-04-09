@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions d'extension, produit dans l'app, FAI
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647214"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335127"
 ---
 # <a name="manage-add-on-submissions"></a>Gérer les soumissions d’extensions
 
@@ -51,7 +51,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 <td align="left"><a href="get-status-for-an-add-on-submission.md">Obtenir l’état d’une soumission de module complémentaire existant</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions</td>
 <td align="left"><a href="create-an-add-on-submission.md">Créer une nouvelle soumission de module complémentaire</a></td>
 </tr>
@@ -61,12 +61,12 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 <td align="left"><a href="update-an-add-on-submission.md">Mettre à jour une soumission de module complémentaire existant</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">PUBLIER</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit</td>
 <td align="left"><a href="commit-an-add-on-submission.md">Valider l’envoi d’un module complémentaire de nouveau ou mis à jour</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Suppression</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-add-on-submission.md">Supprimer un dépôt de module complémentaire</a></td>
 </tr>
@@ -85,7 +85,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
 
 3. Exécutez la méthode suivante de l’API de soumission au Microsoft Store. Cette méthode crée une soumission en cours, qui est une copie de votre dernière soumission publiée. Pour plus d’informations, voir [Créer une soumission d’extension](create-an-add-on-submission.md).
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
     ```
 
@@ -98,7 +98,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
 
 5. Mettez à jour les données de la [soumission d'extension](#add-on-submission-object) avec toutes les modifications requises pour la nouvelle soumission et lancez la méthode suivante pour mettre à jour la soumission. Pour plus d’informations, voir [Mettre à jour une soumission d’extension](update-an-add-on-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ Pour créer une soumission pour une extension, suivez ce processus.
 
 5. Validez la soumission en exécutant la méthode suivante. Cela génère une alerte partenaires que vous avez terminé avec votre soumission et que vos mises à jour doivent désormais être appliquées à votre compte. Pour plus d’informations, voir [Valider une soumission d’extension](commit-an-add-on-submission.md).
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
     ```
 
 6. Vérifiez l’état de validation en exécutant la méthode suivante. Pour plus d’informations, voir [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
     ```
 
@@ -228,7 +228,7 @@ Cette ressource décrit une soumission d’extension.
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur      | Type   | Description        |
+| Value      | Type   | Description        |
 |------------|--------|----------------------|
 | id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md), [obtenir toutes les extensions](get-all-add-ons.md) et [obtenir une extension](get-an-add-on.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 | contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes : <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
@@ -251,7 +251,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des  [informations de référencement pour une extension](../publish/create-add-on-store-listings.md). Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description       |
+| Value           | Type    | Description       |
 |-----------------|---------|------|
 |  description               |    chaîne     |   Description du listing d’extensions.   |     
 |  icon               |   objet      |[Ressource d’icône](#icon-object) qui contient les données de l’icône du listing d’extensions.    |
@@ -263,7 +263,7 @@ Cette ressource contient des  [informations de référencement pour une extensio
 
 Cette ressource contient les données d’icône du listing d’extensions. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description     |
+| Value           | Type    | Description     |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier d’icône dans l’archive ZIP que vous avez chargé pour la soumission. L'icône doit prendre la forme d’un fichier PNG de 300 x 300 pixels exactement.   |     
 |  fileStatus               |   chaîne      |  État du fichier d’icône. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -274,7 +274,7 @@ Cette ressource contient les données d’icône du listing d’extensions. Cett
 
 Cette ressource contient des informations de tarification pour l’extension. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description    |
+| Value           | Type    | Description    |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
 |  sales               |   tableau      |  **Deprecated**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’extension.     |     
@@ -295,7 +295,7 @@ Cette ressource contient des informations commerciales sur une extension.
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description           |
+| Value           | Type    | Description           |
 |-----------------|---------|------|
 |  name               |    chaîne     |   Nom de la vente.    |     
 |  basePriceId               |   chaîne      |  [Niveau de prix](#price-tiers) à utiliser pour le prix de base de la vente.    |     
@@ -309,7 +309,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des détails supplémentaires sur l’état d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description       |
+| Value           | Type    | Description       |
 |-----------------|---------|------|
 |  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
 |  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
@@ -321,10 +321,10 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 Cette ressource contient des informations supplémentaires sur les éventuels erreurs ou avertissements pour une soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description    |
+| Value           | Type    | Description    |
 |-----------------|---------|------|
 |  code               |    chaîne     |   [Code d’état de soumission](#submission-status-code) qui décrit le type d’erreur ou d’avertissement.   |     
-|  details               |     chaîne    |  Message contenant des détails sur le problème.     |
+|  détails               |     chaîne    |  Message contenant des détails sur le problème.     |
 
 <span id="certification-report-object" />
 
@@ -332,12 +332,12 @@ Cette ressource contient des informations supplémentaires sur les éventuels er
 
 Cette ressource donne accès aux données du rapport de certification d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description               |
+| Value           | Type    | Description               |
 |-----------------|---------|------|
 |     date            |    chaîne     |  Date et heure de que la génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
-## <a name="enums"></a>Énumérations
+## <a name="enums"></a>Enums
 
 Ces méthodes utilisent les énumérations suivantes.
 
@@ -347,7 +347,7 @@ Ces méthodes utilisent les énumérations suivantes.
 
 Les valeurs suivantes représentent les niveaux de prix disponibles dans la [ressource de tarification](#pricing-object) d’une soumission d’extension.
 
-| Valeur           | Description       |
+| Value           | Description       |
 |-----------------|------|
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’extension.      |     
 |  NotAvailable              |   L’extension n’est pas disponible dans la région spécifiée.    |     
@@ -360,7 +360,7 @@ Les valeurs suivantes représentent les niveaux de prix disponibles dans la [res
 
 Les valeurs suivantes représentent le code d’état d’une soumission.
 
-| Valeur           |  Description      |
+| Value           |  Description      |
 |-----------------|---------------|
 |  Aucune            |     Aucun code n’a été spécifié.         |     
 |      InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |

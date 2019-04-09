@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, exemples de code, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b3073e2a5ffa445a39bdf6d54dd288be97c88207
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627514"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334967"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# exemple : envois pour les applications, les modules complémentaires et les vols
 
@@ -24,7 +24,7 @@ Cet article fournit des exemples de code C# expliquant l’utilisation de l’[A
 
 Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu’elle illustre, ou vous pouvez générer tous les exemples de code de cet article dans une application console. Pour générer les exemples, créez une application console C# nommée **DeveloperApiCSharpSample** dans Visual Studio, copiez chaque exemple dans un fichier de code distinct dans le projet et générez le projet.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Ces exemples utilisent les bibliothèques suivantes :
 
@@ -39,7 +39,7 @@ L’exemple suivant implémente un programme de ligne de commande qui appelle le
 * Affectez les propriétés ```ClientId``` et ```ClientSecret``` à l’ID client et à la clé de votre application, et remplacez la chaîne *tenantid* dans l’URL ```TokenEndpoint``` par l’ID de locataire pour votre application. Pour plus d’informations, consultez [comment associer une application Azure AD à votre compte espace partenaires](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
 
 <span id="clientconfiguration" />
 
@@ -48,7 +48,7 @@ L’exemple suivant implémente un programme de ligne de commande qui appelle le
 L’exemple d’app utilise la classe d’assistance ```ClientConfiguration``` pour passer des données Azure Active Directory et des données d’app à chaque autre exemple de méthode qui utilise l’API de soumission au Microsoft Store.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
 <span id="create-app-submission" />
 
@@ -64,7 +64,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md) jusqu’à ce que celle-ci soit validée.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
 
@@ -79,7 +79,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 5. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que celle-ci soit validée.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
 
 <span id="update-add-on-submission" />
 
@@ -94,7 +94,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que celle-ci soit validée.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
 <span id="create-flight-submission" />
 
@@ -110,7 +110,7 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
 
 <span id="ingestionclient" />
 
@@ -123,7 +123,7 @@ La classe ```IngestionClient``` fournit des méthodes d’assistance qui sont ut
 * Traiter les demandes HTTP pour l’API de soumission au Microsoft Store.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
+[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 

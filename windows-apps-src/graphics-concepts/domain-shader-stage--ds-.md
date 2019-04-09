@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c38259c303673c3c3c5494470d721856fcaaf6c9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620494"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291717"
 ---
 # <a name="domain-shader-ds-stage"></a>Étape Domain Shader (DS)
-
 
 L’étape du nuanceur de domaine (DS, Domain Shader) calcule la position de vertex d’un point subdivisé dans le patch de sortie ; ce calcul porte sur la position de vertex correspondant à chaque échantillon de domaine. Un nuanceur de domaine est exécuté une fois par point de sortie de l’étape du paveur et dispose d’un accès en lecture seule au patch de sortie et aux constantes de patch de sortie du nuanceur de coque, ainsi qu’aux coordonnées UV de sortie de l’étape du paveur.
 
@@ -45,7 +44,7 @@ Une fois le nuanceur de domaine exécuté, le pavage prend fin, et les données 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
 
-```
+```hlsl
 void main( out    MyDSOutput result, 
            float2 myInputUV : SV_DomainPoint, 
            MyDSInput DSInputs,

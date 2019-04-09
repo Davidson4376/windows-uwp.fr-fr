@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604234"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334757"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’Espace partenaires
 
@@ -22,7 +22,7 @@ Pour consigner un événement à partir de votre application, passez la chaîne 
 > [!NOTE]
 > Événements personnalisés que vous vous connectez à des partenaires ne sont pas liées à [les événements Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), et ils n’apparaissent pas dans **Observateur d’événements**.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Avant de pouvoir examiner les événements de journalisation personnalisée dans le **rapport d’utilisation** pour votre application dans le centre de partenaires, votre application doit être publiée dans le Store.
 
@@ -39,10 +39,10 @@ Avant de pouvoir examiner les événements de journalisation personnalisée dans
 5. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
 
 6. Ajoutez l’instruction suivante en haut de chaque fichier de code dans lequel vous souhaitez consigner des événements personnalisés.
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
 7. Dans chaque section de votre code où vous souhaitez consigner un événement personnalisé, récupérez un objet [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), puis appelez la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log). Transmettez votre chaîne d’événements personnalisés à la méthode.
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
     > Le [Rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) peut prendre un certain temps pour se charger si votre application enregistre un grand nombre d’événements personnalisés avec des noms longs. Nous vous recommandons d’utiliser des noms brefs pour vos événements personnalisés. 

@@ -6,12 +6,12 @@ keywords: windows 10, uwp, extensions, achats dans l’application, Windows.Ser
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 240cd4e0cdd9b95aa1c281504c7b666786abb293
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661724"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334487"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Activer les achats in-app d’applications et de modules complémentaires
 
@@ -26,7 +26,7 @@ Chaque méthode présente une interface utilisateur d’achat standard à l’ut
 > [!NOTE]
 > L'espace de noms **Windows.Services.Store** a été introduit dans Windows 10, version 1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio. Si votre application cible une version antérieure de Windows 10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, consultez [cet article](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 La configuration requise pour cet exemple est la suivante :
 * Un projet Visual Studio pour une application de plateforme Windows universelle (UWP) qui cible **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure.
@@ -46,9 +46,9 @@ Le code de cet exemple se base sur les hypothèses suivantes :
 Cet exemple montre comment utiliser la méthode [RequestPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestpurchaseasync) de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) pour acheter une application ou une extension avec un [ID Windows Store](in-app-purchases-and-trials.md#store-ids) connu. Pour obtenir un exemple d’application complète, consultez [Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
+[!code-csharp[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
 
-## <a name="video"></a>Video
+## <a name="video"></a>Vidéo
 
 Regardez la vidéo suivante pour une vue d’ensemble de l’implémentation des achats in-app dans votre application.
 <br/>

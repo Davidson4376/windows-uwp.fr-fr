@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 461d6d135838a5141e6606d4c77ce21972a45fe1
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649304"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901647"
 ---
 # <a name="command-bar"></a>Barre de commandes
 
@@ -121,8 +121,8 @@ Vous pouvez également ajouter des commandes à la collection **SecondaryCommand
 
 Vous pouvez déplacer par programme les commandes entre les propriétés PrimaryCommands et SecondaryCommands en fonction des besoins.
 
-- *S’il existe une commande qui apparaîtrait de manière cohérente sur plusieurs pages, il est préférable de conserver cette commande dans un emplacement similaire.*
-- *Nous vous recommandons de placer les accepter, Oui, et les commandes OK à gauche de refuser, non et annulent. Cohérence offre aux utilisateurs la confiance nécessaire pour déplacer le système et leur permet de transférer leurs connaissances de navigation de l’application à partir d’une application à l’application.*
+- *S’il existe une commande qui s’affiche de façon cohérente sur plusieurs pages, il est préférable de la laisser à un emplacement cohérent.*
+- *Nous recommandons de placer les commandes Accepter, Oui et OK à gauche des commandes Rejeter, Non et Annuler. La cohérence permet aux utilisateurs de se déplacer en toute confiance dans le système et de réutiliser leur connaissance de navigation d’une application à l’autre.*
 
 ### <a name="app-bar-buttons"></a>Boutons de la barre de l’application
 
@@ -177,7 +177,8 @@ Lorsque [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml
 
 ## <a name="open-and-closed-states"></a>États ouvert et fermé
 
-La barre de commandes peut être ouverte ou fermée. Lorsque la barre de commandes est ouverte, les boutons de commandes principales s’affichent avec les libellés et le menu de dépassement s'ouvre en présence de commandes secondaires.
+La barre de commandes peut être ouverte ou fermée. Lorsqu’il est ouvert, il affiche les boutons de commande principal avec des étiquettes de texte et il ouvre le menu de dépassement de capacité (le cas des commandes secondaire).
+La barre de commandes ouvre le menu de dépassement de capacité vers le haut (au-dessus de commandes principales) ou vers le bas (voir ci-dessous les commandes principales). La direction par défaut est opérationnel, mais si vous ne comporte pas suffisamment d’espace pour ouvrir le menu de dépassement de capacité vers le haut, la barre de commandes s’ouvre vers le bas. 
 
 Un utilisateur peut basculer entre ces États en appuyant sur la « voir » \[•••\] bouton. Vous pouvez basculer d’un état à l’autre par programme en définissant la propriété [IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx). 
 
@@ -216,7 +217,7 @@ private void CommandBar_Closing(object sender, object e)
 
 Si un utilisateur interagit avec d’autres parties d’une application lorsqu’une barre de commandes est ouverte, cette dernière se ferme automatiquement. Cela s'appelle un *abandon interactif*. Vous pouvez contrôler le comportement d’abandon interactif en définissant la propriété [IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx). Lorsque `IsSticky="true"`, la barre reste ouverte jusqu'à ce que l’utilisateur appuie sur le « voir » \[•••\] bouton ou sélectionne un élément dans le menu de dépassement de capacité. 
 
-Nous vous recommandons d’éviter les barres de commande rémanentes, car elles ne répondent pas aux attentes des utilisateurs en matière d’abandon interactif.
+Nous recommandons d’éviter les barres de commandes rémanentes, car elles ne sont conformes aux attentes des utilisateurs pour [light ignorer et comportement de focus du clavier](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#light-dismiss).
 
 ### <a name="display-mode"></a>Mode d’affichage
 
@@ -277,9 +278,9 @@ Les barres de commandes peuvent être placées dans les zones d’écran suivant
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
-- [Exemples de commandes de XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Exemple de commandes XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Principes fondamentaux de conception de commande pour les applications UWP](../basics/commanding-basics.md)
-* [Classe de CommandBar](https://msdn.microsoft.com/library/windows/apps/dn279427)
+* [Informations de base relatives à la conception des commandes pour les applications UWP](../basics/commanding-basics.md)
+* [Classe CommandBar](https://msdn.microsoft.com/library/windows/apps/dn279427)
