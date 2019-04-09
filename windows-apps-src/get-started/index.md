@@ -6,18 +6,17 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0401c049b6e1789e4f5a43ad8d88c23b5e28000a
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582953"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162935"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10 
  
-Générez des applications qui fonctionnent sur tous les appareils Windows 10, ou améliorez vos applications existantes avec des fonctionnalités nouvelles et mises à jour.  
-<br>
-<ul id="cardtypes-K" class="cardsK panelContent">
+<p>Générez des applications qui fonctionnent sur tous les appareils Windows 10, ou améliorez vos applications existantes avec des fonctionnalités nouvelles et mises à jour.</p>  
+<ul class="cardsK panelContent">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -79,7 +78,6 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
         </div>
     </li>
 </ul>
-
 <ul class="panelContent cardsF">
   <li>
     <div class="cardSize">
@@ -145,9 +143,6 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
     </div>
   </li>
 </ul>
-
-
-<div class="container">
     <ul class="cardsY panelContent featuredContent">
        <li>
             <a href="//developer.microsoft.com/windows/apps/design">
@@ -205,8 +200,7 @@ Générez des applications qui fonctionnent sur tous les appareils Windows 10, 
         </li>
     </ul>
 </div>
-
----
+<hr />
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
