@@ -164,7 +164,7 @@ Les utilisateurs peuvent supprimer un dispositif complémentaire Windows Hello d
 Les entreprises disposent de deux options pour contrôler l’infrastructure du dispositif complémentaire Windows Hello :
 
 - L’activation/désactivation de la fonctionnalité
-- L’établissement d’une liste blanche de dispositifs complémentaires Windows Hello autorisés à l’aide de Windows AppLocker
+- L’établissement d’une liste verte de dispositifs complémentaires Windows Hello autorisés à l’aide de Windows AppLocker
 
 L’infrastructure du dispositif complémentaire Windows Hello ne tient pas d’inventaire centralisé des dispositifs complémentaires disponibles, et ne prend en charge aucune méthode pour définir quelles instances d’un type de dispositif complémentaire Windows Hello sont autorisées (par exemple, seul un dispositif complémentaire dont le numéro de série est compris entre X et Y est autorisé). Les développeurs d’applications peuvent, cependant, créer un service pour fournir cette fonctionnalité. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
 

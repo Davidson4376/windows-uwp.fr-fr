@@ -264,7 +264,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Mexique *</td>
     <td>Micronésie</td>
-    <td>République de Moldavie</td>
+    <td>République de Moldova</td>
     <td>Monaco</td>
   </tr>
   <tr>
@@ -445,7 +445,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | France               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Allemagne              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Grèce               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hong Kong            | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Hong-Kong (R.A.S.)            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Hongrie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Inde                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Irlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -630,7 +630,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   <tr>
     <td>Mayotte</td>
     <td>Micronésie</td>
-    <td>République de Moldavie</td>
+    <td>République de Moldova</td>
     <td>Monaco</td>
   </tr>
   <tr>
