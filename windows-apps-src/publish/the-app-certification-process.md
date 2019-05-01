@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, publication, prétraitement, certification, mise en production en attente, envoyer, publier, état, heure
 ms.localizationpriority: medium
-ms.openlocfilehash: 733d5ff882d7ed7c574f6fe6fedd28b79c3913d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597074"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790586"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 

@@ -2,16 +2,17 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Informations de référence sur les API principales Device Portal
 description: Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
-ms.date: 4/8/2019
+ms.custom: 19H1
+ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244135"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798184"
 ---
 # <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
 
@@ -37,11 +38,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | package   | (**requis**) Nom de fichier du package à installer. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Fichier .appx ou .appxbundle, ainsi que toutes les dépendances dont l’application a besoin. 
 - Certificat utilisé pour signer l’application, s’il s’agit d’un appareil IoT ou de bureau Windows. Les autres plateformes n’exigent pas le certificat. 
@@ -58,7 +59,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -67,7 +68,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Installer un ensemble connexe
+
+### <a name="install-a-related-set"></a>Installer un ensemble connexe
 
 **Demande**
 
@@ -85,11 +87,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | package   | (**requis**) Noms de fichiers des packages à installer. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête** 
+**Corps de la demande** 
 - Ajoutez « .opt » aux noms des fichiers de packages facultatifs lorsque vous les spécifiez en tant que paramètre, comme suit : « foo.appx.opt » ou « bar.appxbundle.opt ». 
 - Fichier .appx ou .appxbundle, ainsi que toutes les dépendances dont l’application a besoin. 
 - Certificat utilisé pour signer l’application, s’il s’agit d’un appareil IoT ou de bureau Windows. Les autres plateformes n’exigent pas le certificat. 
@@ -106,7 +108,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -115,7 +117,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Inscrire une application dans un dossier isolé
+
+### <a name="register-an-app-in-a-loose-folder"></a>Inscrire une application dans un dossier isolé
 
 **Demande**
 
@@ -129,11 +132,11 @@ Vous pouvez inscrire une application dans un dossier isolé en utilisant le form
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 ```json
 {
@@ -158,7 +161,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * Xbox
@@ -166,7 +169,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Inscrire un ensemble connexe dans des dossiers de fichiers isolés
+
+### <a name="register-a-related-set-in-loose-file-folders"></a>Inscrire un ensemble connexe dans des dossiers de fichiers isolés
 
 **Demande**
 
@@ -180,11 +184,11 @@ Vous pouvez enregistrer un [ensemble connexe](https://blogs.msdn.microsoft.com/a
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 ```json
 {
@@ -218,7 +222,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * Xbox
@@ -226,7 +230,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir l’état de l’installation de l’application
+
+### <a name="get-app-installation-status"></a>Obtenir l’état de l’installation de l’application
 
 **Demande**
 
@@ -240,11 +245,11 @@ Vous pouvez obtenir l’état d’installation d’une application actuellement 
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -260,7 +265,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 204 | L’installation est en cours d’exécution |
 | 404 | Aucune action d’installation n’a été détectée |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -269,7 +274,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Désinstaller une application
+
+### <a name="uninstall-an-app"></a>Désinstaller une application
 
 **Demande**
 
@@ -285,11 +291,11 @@ Vous pouvez désinstaller une application en utilisant le format de requête sui
 | :------          | :------ |
 | package   | (**obligatoire**) PackageFullName (à partir de GET /api/app/packagemanager/packages) de l’application cible |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -305,7 +311,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -314,7 +320,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir des applications installées
+
+### <a name="get-installed-apps"></a>Obtenir des applications installées
 
 **Demande**
 
@@ -329,11 +336,11 @@ Vous pouvez obtenir une liste des applications installées sur le système en ut
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -374,7 +381,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -383,7 +390,9 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Bluetooth
+
+## <a name="bluetooth"></a>Bluetooth
+
 <hr>
 
 ### <a name="get-the-bluetooth-radios-on-the-machine"></a>Obtenir les adaptateurs Bluetooth sur l’ordinateur
@@ -402,11 +411,11 @@ Vous pouvez obtenir une liste des adaptateurs Bluetooth installés sur l’ordin
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -436,14 +445,15 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX              | Codes d’erreur |
 | 5XX              | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-### Activer ou désactiver l'adaptateur Bluetooth
+
+### <a name="turn-the-bluetooth-radio-on-or-off"></a>Activer ou désactiver l'adaptateur Bluetooth
 
 **Demande**
 
@@ -462,11 +472,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | ID            | (**requis**) ID de l'appareil de l'adaptateur Bluetooth ; il doit être codé en base 64. |
 | État         | (**requis**) il peut s’agir `"On"` ou `"Off"`. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -482,16 +492,178 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX              | Codes d’erreur |
 | 5XX              | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
+---
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>Obtenir la liste des appareils Bluetooth appariés
+
+**Demande**
+
+Vous pouvez obtenir une liste des périphériques Bluetooth actuellement associés à l’aide du format de demande suivant. Cela peut être mis à niveau vers une connexion WebSocket avec les mêmes données JSON. Pendant la durée de vie de la connexion WebSocket, la liste des appareils peut changer. Une liste complète des périphériques sera envoyée via la connexion WebSocket chaque fois qu’il existe une mise à jour.
+
+| Méthode        | URI de requête       |
+| :---          | :---              |
+| GET           | /API/BT/getpaired |
+| GET/WebSocket | /API/BT/getpaired |
+
+**Paramètres d’URI**
+
+- Aucune
+
+**En-têtes de demande**
+
+- Aucune
+
+**Corps de la demande**
+
+- Aucune
+
+**Réponse**
+
+La réponse inclut un tableau JSON des périphériques Bluetooth qui sont actuellement associés.
+```json
+{"PairedDevices": [
+    {
+        "Name" : string,
+        "ID" : string,
+        "AudioConnectionStatus" : string
+    },...
+]}
+```
+Le *AudioConnectionStatus* champ sera présent si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et des composants facultatifs peuvent affecter cela.) *AudioConnectionStatus* sera « Connecté » ou « Déconnecté ».
+
+---
+### <a name="get-a-list-of-available-bluetooth-devices"></a>Obtenir la liste des périphériques Bluetooth disponibles
+
+**Demande**
+
+Vous pouvez obtenir une liste des périphériques Bluetooth disponibles pour l’appairage en utilisant le format de demande suivant. Cela peut être mis à niveau vers une connexion WebSocket avec les mêmes données JSON. Pendant la durée de vie de la connexion WebSocket, la liste des appareils peut changer. Une liste complète des périphériques sera envoyée via la connexion WebSocket chaque fois qu’il existe une mise à jour.
+
+| Méthode        | URI de requête          |
+| :---          | :---                 |
+| GET           | /api/bt/getavailable |
+| GET/WebSocket | /api/bt/getavailable |
+
+**Paramètres d’URI**
+
+- Aucune
+
+**En-têtes de demande**
+
+- Aucune
+
+**Corps de la demande**
+
+- Aucune
+
+**Réponse**
+
+La réponse inclut un tableau JSON des périphériques Bluetooth qui sont actuellement disponibles pour l’appairage.
+```json
+{"AvailableDevices": [
+    {
+        "Name" : string,
+        "ID" : string
+    },...
+]}
+```
+
+---
+### <a name="connect-a-bluetooth-device"></a>Connecter un appareil Bluetooth
+
+**Demande**
+
+Se connecte à l’appareil si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et des composants facultatifs peuvent affecter cela.)
+
+| Méthode       | URI de requête           |
+| :---         | :---                  |
+| PUBLIER         | /API/BT/connectdevice |
+
+**Paramètres d’URI**
+
+| Paramètre d’URI | Description |
+| :---          | :--- |
+| ID            | (**requis**) l’ID de point de terminaison d’Association pour le périphérique Bluetooth et doit être codée en Base64. |
+
+**En-têtes de demande**
+
+- Aucune
+
+**Corps de la demande**
+
+- Aucune
+
+**Réponse**
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+| Code d’état HTTP | Description |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Codes d’erreur |
+| 5XX              | Codes d’erreur |
+
+**Familles de périphériques disponibles**
+
+* Bureau Windows
+* HoloLens
+* IoT
+
+
+---
+### <a name="disconnect-a-bluetooth-device"></a>Déconnecter un périphérique Bluetooth
+
+**Demande**
+
+Déconnectera l’appareil si l’appareil peut être utilisé pour l’audio sur ce système. (Les stratégies et des composants facultatifs peuvent affecter cela.)
+
+| Méthode       | URI de requête              |
+| :---         | :---                     |
+| PUBLIER         | /api/bt/disconnectdevice |
+
+**Paramètres d’URI**
+
+| Paramètre d’URI | Description |
+| :---          | :--- |
+| ID            | (**requis**) l’ID de point de terminaison d’Association pour le périphérique Bluetooth et doit être codée en Base64. |
+
+**En-têtes de demande**
+
+- Aucune
+
+**Corps de la demande**
+
+- Aucune
+
+**Réponse**
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+| Code d’état HTTP | Description |
+| :---             | :--- |
+| 200              | OK |
+| 4XX              | Codes d’erreur |
+| 5XX              | Codes d’erreur |
+
+**Familles de périphériques disponibles**
+
+* Bureau Windows
+* HoloLens
+* IoT
+
+---
+## <a name="device-manager"></a>Gestionnaire de périphériques
 <hr>
-## Gestionnaire de périphériques
-<hr>
-### Obtenir les périphériques installés sur l’ordinateur
+
+### <a name="get-the-installed-devices-on-the-machine"></a>Obtenir les périphériques installés sur l’ordinateur
 
 **Demande**
 
@@ -505,11 +677,11 @@ Vous pouvez obtenir une liste des périphériques installés sur l’ordinateur 
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -540,14 +712,15 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir des données sur des périphériques/hubs USB connectés
+
+### <a name="get-data-on-connected-usb-deviceshubs"></a>Obtenir des données sur des périphériques/hubs USB connectés
 
 **Demande**
 
@@ -562,11 +735,11 @@ Vous pouvez obtenir la liste des descripteurs USB des hubs et appareils USB en
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -589,7 +762,7 @@ La réponse est JSON. Elle inclut des ID de périphérique pour le périphériqu
 }
 ```
 
-**Exemple de données renvoyées**
+**Exemples de données retournés**
 ```json
 {
     "DeviceList": [{
@@ -625,15 +798,18 @@ Cette API comporte les codes d’état attendus suivants.
 |  200 | OK | 
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-## Collection de vidages
+
+## <a name="dump-collection"></a>Collection de vidages
+
 <hr>
-### Obtenir la liste de tous les vidages sur incident pour les applications
+
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Obtenir la liste de tous les vidages sur incident pour les applications
 
 **Demande**
 
@@ -648,11 +824,11 @@ Vous pouvez obtenir la liste de tous les vidages sur incident disponibles pour t
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -670,7 +846,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -678,7 +854,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir les paramètres de collection de vidage sur incident pour une application
+
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>Obtenir les paramètres de collection de vidage sur incident pour une application
 
 **Demande**
 
@@ -697,11 +874,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -722,7 +899,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -730,7 +907,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Supprimer un vidage sur incident pour une application chargée de manière indépendante
+
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>Supprimer un vidage sur incident pour une application chargée de manière indépendante
 
 **Demande**
 
@@ -750,11 +928,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante. |
 | fileName   | (**requis**) Nom du fichier de vidage à supprimer. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -770,7 +948,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -778,7 +956,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Désactiver les vidages sur incident pour une application chargée de manière indépendante
+
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>Désactiver les vidages sur incident pour une application chargée de manière indépendante
 
 **Demande**
 
@@ -797,11 +976,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :---          | :--- |
 | packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -817,7 +996,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -825,7 +1004,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Télécharger le vidage sur incident pour une application chargée de manière indépendante
+
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>Télécharger le vidage sur incident pour une application chargée de manière indépendante
 
 **Demande**
 
@@ -845,11 +1025,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante. |
 | fileName   | (**requis**) Nom du fichier de vidage à télécharger. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -867,7 +1047,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -875,7 +1055,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Désactiver les vidages sur incident pour une application chargée de manière indépendante
+
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>Désactiver les vidages sur incident pour une application chargée de manière indépendante
 
 **Demande**
 
@@ -894,11 +1075,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :---          | :--- |
 | packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -912,7 +1093,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 |  200 | OK | 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile (dans le programme Windows Insider)
 * Bureau Windows
@@ -920,7 +1101,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir la liste des fichiers de vérification d’erreur
+
+### <a name="get-the-list-of-bugcheck-files"></a>Obtenir la liste des fichiers de vérification d’erreur
 
 **Demande**
 
@@ -935,11 +1117,11 @@ Vous pouvez obtenir la liste des fichiers minidump de vérification d’erreur e
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -963,13 +1145,14 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 |  200 | OK | 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Télécharger un fichier de vidage de vérification d’erreur
+
+### <a name="download-a-bugcheck-dump-file"></a>Télécharger un fichier de vidage de vérification d’erreur
 
 **Demande**
 
@@ -989,11 +1172,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | filename   | (**requis**) Nom du fichier de vidage. Vous pouvez le rechercher à l’aide de l’API pour obtenir la liste de vidage. |
 
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1011,13 +1194,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
+
+### <a name="get-the-bugcheck-crash-control-settings"></a>Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
 
 **Demande**
 
@@ -1032,11 +1216,11 @@ Vous pouvez obtenir la liste des paramètres de contrôle d’incident de la vé
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1052,7 +1236,7 @@ La réponse comprend les paramètres de contrôle d’incident. Pour plus d’in
 }
 ```
 
-**Types de vidage**
+**Types d’images**
 
 0: Désactivée
 
@@ -1072,13 +1256,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir un vidage du noyau dynamique
+
+### <a name="get-a-live-kernel-dump"></a>Obtenir un vidage du noyau dynamique
 
 **Demande**
 
@@ -1093,11 +1278,11 @@ Vous pouvez obtenir un vidage du noyau dynamique en utilisant le format de requ�
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1115,13 +1300,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir un vidage à partir d’un processus utilisateur dynamique
+
+### <a name="get-a-dump-from-a-live-user-process"></a>Obtenir un vidage à partir d’un processus utilisateur dynamique
 
 **Demande**
 
@@ -1140,11 +1326,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | pid   | (**requis**) Id unique du processus qui vous intéresse. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1162,13 +1348,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
+
+### <a name="set-the-bugcheck-crash-control-settings"></a>Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
 
 **Demande**
 
@@ -1190,11 +1377,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | maxdumpcount   | (**facultatif**) Le nombre maximal de vidages à enregistrer. |
 | overwrite   | (**facultatif**) True ou false. Cela indique s’il convient d’écraser ou non les anciens vidages lorsque le seuil du nombre de vidages défini par *maxdumpcount* est atteint. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1210,15 +1397,18 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-## ETW
+
+## <a name="etw"></a>ETW
+
 <hr>
-### Créer une session ETW en temps réel via un websocket
+
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>Créer une session ETW en temps réel via un websocket
 
 **Demande**
 
@@ -1233,11 +1423,11 @@ Vous pouvez créer une session ETW en temps réel en utilisant le format de requ
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1255,7 +1445,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1312,7 +1502,8 @@ Exemple :
 ```
 
 <hr>
-### Énumérer les fournisseurs ETW enregistrés
+
+### <a name="enumerate-the-registered-etw-providers"></a>Énumérer les fournisseurs ETW enregistrés
 
 **Demande**
 
@@ -1327,11 +1518,11 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1355,7 +1546,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 |  200 | OK | 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1363,7 +1554,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Énumérez les fournisseurs ETW personnalisés exposés par la plate-forme.
+
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>Énumérez les fournisseurs ETW personnalisés exposés par la plate-forme.
 
 **Demande**
 
@@ -1378,11 +1570,11 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1403,7 +1595,7 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 
 - Codes d’état standard.
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1411,7 +1603,9 @@ Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de r
 * IoT
 
 <hr>
-## Emplacement
+
+## <a name="location"></a>Location
+
 <hr>
 
 ### <a name="get-location-override-mode"></a>Obtenir le mode remplacement de l’emplacement
@@ -1429,11 +1623,11 @@ Vous pouvez obtenir l'état de remplacement de la pile d'emplacements de l'appar
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1455,7 +1649,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1478,11 +1672,11 @@ Vous pouvez définir l'état de remplacement de la pile d'emplacements de l'appa
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 ```json
 {"Override" : bool}
@@ -1506,7 +1700,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1529,11 +1723,11 @@ Vous pouvez obtenir l'emplacement injecté (falsifié) de l'appareil en utilisan
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1558,7 +1752,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1581,11 +1775,11 @@ Vous pouvez définir l'emplacement injecté (falsifié) de l'appareil en utilisa
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 ```json
 {
@@ -1615,7 +1809,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1624,9 +1818,12 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Informations sur le système d’exploitation
+
+## <a name="os-information"></a>Informations sur le système d’exploitation
+
 <hr>
-### Obtenir le nom de l’ordinateur
+
+### <a name="get-the-machine-name"></a>Obtenir le nom de l’ordinateur
 
 **Demande**
 
@@ -1641,11 +1838,11 @@ Vous pouvez obtenir le nom d’un ordinateur en utilisant le format de requête 
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1667,7 +1864,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1676,7 +1873,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir les informations du système d’exploitation
+
+### <a name="get-the-operating-system-information"></a>Obtenir les informations du système d’exploitation
 
 **Demande**
 
@@ -1691,11 +1889,11 @@ Vous pouvez obtenir les informations du système d’exploitation pour un ordina
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1723,7 +1921,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1732,7 +1930,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir la famille d’appareils 
+
+### <a name="get-the-device-family"></a>Obtenir la famille d’appareils 
 
 **Demande**
 
@@ -1747,11 +1946,11 @@ Vous pouvez obtenir la famille d’appareils (Xbox, téléphone, ordinateur de b
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1777,7 +1976,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1786,7 +1985,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir le nom de l’ordinateur
+
+### <a name="set-the-machine-name"></a>Obtenir le nom de l’ordinateur
 
 **Demande**
 
@@ -1805,11 +2005,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | name | (**requis**) Nouveau nom de l’ordinateur. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1823,7 +2023,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1832,9 +2032,12 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Informations utilisateur
+
+## <a name="user-information"></a>Informations utilisateur
+
 <hr>
-### Obtenir l’utilisateur actif
+
+### <a name="get-the-active-user"></a>Obtenir l’utilisateur actif
 
 **Demande**
 
@@ -1849,11 +2052,11 @@ Vous pouvez obtenir le nom de l'utilisateur actif en utilisant le format de requ
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1888,16 +2091,19 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-## Données relatives aux performances
+
+## <a name="performance-data"></a>Données relatives aux performances
+
 <hr>
-### Obtenir la liste des processus en cours d’exécution
+
+### <a name="get-the-list-of-running-processes"></a>Obtenir la liste des processus en cours d’exécution
 
 **Demande**
 
@@ -1913,11 +2119,11 @@ Vous pouvez obtenir la liste des processus en cours d’exécution en utilisant 
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -1950,7 +2156,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -1958,7 +2164,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir les statistiques des performances du système
+
+### <a name="get-the-system-performance-statistics"></a>Obtenir les statistiques des performances du système
 
 **Demande**
 
@@ -1975,11 +2182,11 @@ Ce format peut être mis à niveau vers une connexion WebSocket.  Il fournit les
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2028,7 +2235,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2037,9 +2244,12 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Alimentation
+
+## <a name="power"></a>Alimentation
+
 <hr>
-### Obtenir l’état actuel de la batterie
+
+### <a name="get-the-current-battery-state"></a>Obtenir l’état actuel de la batterie
 
 **Demande**
 
@@ -2054,11 +2264,11 @@ Vous pouvez obtenir l’état actuel de la batterie en utilisant le format de re
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2088,7 +2298,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2096,7 +2306,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir le schéma d’alimentation actif
+
+### <a name="get-the-active-power-scheme"></a>Obtenir le schéma d’alimentation actif
 
 **Demande**
 
@@ -2111,11 +2322,11 @@ Vous pouvez obtenir le schéma d’alimentation actif en utilisant le format de 
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2136,13 +2347,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir la sous-valeur pour un schéma d’alimentation
+
+### <a name="get-the-sub-value-for-a-power-scheme"></a>Obtenir la sous-valeur pour un schéma d’alimentation
 
 **Demande**
 
@@ -2159,11 +2371,11 @@ Options :
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 Liste complète des états d’alimentation disponibles déterminée par application et paramètres de marquage des différents états d’alimentation comme le niveau faible ou critique de la batterie. 
 
@@ -2179,13 +2391,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir l’état d’alimentation du système
+
+### <a name="get-the-power-state-of-the-system"></a>Obtenir l’état d’alimentation du système
 
 **Demande**
 
@@ -2200,11 +2413,11 @@ Vous pouvez obtenir l’état d’alimentation du système en utilisant le forma
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2225,14 +2438,15 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-### Définir le schéma d’alimentation actif
+
+### <a name="set-the-active-power-scheme"></a>Définir le schéma d’alimentation actif
 
 **Demande**
 
@@ -2251,11 +2465,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :---          | :--- |
 | scheme | (**requis**) GUID du schéma que vous voulez définir en tant que schéma d’alimentation actif pour le système. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2271,13 +2485,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir la sous-valeur pour un schéma d’alimentation
+
+### <a name="set-the-sub-value-for-a-power-scheme"></a>Obtenir la sous-valeur pour un schéma d’alimentation
 
 **Demande**
 
@@ -2297,11 +2512,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | valueAC | (**requis**) Valeur à utiliser pour l’alimentation secteur. |
 | valueDC | (**requis**) Valeur à utiliser pour l’alimentation de la batterie. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2315,13 +2530,14 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir un rapport d’étude sur la suspension d’activité
+
+### <a name="get-a-sleep-study-report"></a>Obtenir un rapport d’étude sur la suspension d’activité
 
 **Demande**
 
@@ -2336,11 +2552,11 @@ Vous pouvez obtenir un rapport d’étude sur la suspension d’activité en uti
 | :------          | :------ |
 | FileName | (**requis**) Nom complet du fichier que vous voulez télécharger. Cette valeur doit être codée en hex64. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2358,13 +2574,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Énumérer les rapports d’étude sur la suspension d’activité disponibles
+
+### <a name="enumerate-the-available-sleep-study-reports"></a>Énumérer les rapports d’étude sur la suspension d’activité disponibles
 
 **Demande**
 
@@ -2379,11 +2596,11 @@ Vous pouvez obtenir les rapports d’étude sur la suspension d’activité disp
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2409,13 +2626,14 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-### Obtenir la transformation de l’étude sur la suspension d’activité
+
+### <a name="get-the-sleep-study-transform"></a>Obtenir la transformation de l’étude sur la suspension d’activité
 
 **Demande**
 
@@ -2430,11 +2648,11 @@ Vous pouvez obtenir la transformation de l’étude sur la suspension d’activi
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2452,15 +2670,18 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * IoT
 
 <hr>
-## Télécommande
+
+## <a name="remote-control"></a>Télécommande
+
 <hr>
-### Redémarrer l’ordinateur cible.
+
+### <a name="restart-the-target-computer"></a>Redémarrer l’ordinateur cible.
 
 **Demande**
 
@@ -2475,11 +2696,11 @@ Vous pouvez redémarrer l’ordinateur cible en utilisant le format de requête 
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2493,7 +2714,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2502,7 +2723,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Arrêter l’ordinateur cible
+
+### <a name="shut-down-the-target-computer"></a>Arrêter l’ordinateur cible
 
 **Demande**
 
@@ -2517,11 +2739,11 @@ Vous pouvez éteindre l’ordinateur cible en utilisant le format de requête su
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2537,7 +2759,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2546,9 +2768,12 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Gestionnaire des tâches
+
+## <a name="task-manager"></a>Gestionnaire des tâches
+
 <hr>
-### Démarrer une application moderne
+
+### <a name="start-a-modern-app"></a>Démarrer une application moderne
 
 **Demande**
 
@@ -2568,11 +2793,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | appid   | (**requis**) PRAID de l’application que vous voulez démarrer. Cette valeur doit être codée en hex64. |
 | package   | (**requis**)Nom complet du package d’application que vous voulez démarrer. Cette valeur doit être codée en hex64. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2588,7 +2813,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2597,7 +2822,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Arrêter une application moderne
+
+### <a name="stop-a-modern-app"></a>Arrêter une application moderne
 
 **Demande**
 
@@ -2617,11 +2843,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | package   | (**requis**) Nom complet du package d’application que vous voulez arrêter. Cette valeur doit être codée en hex64. |
 | forcestop   | (**facultatif**) La valeur **yes** indique que le système doit forcer tous les processus à s’arrêter. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2637,7 +2863,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2646,7 +2872,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Arrêter le processus par PID
+
+### <a name="kill-process-by-pid"></a>Arrêter le processus par PID
 
 **Demande**
 
@@ -2665,11 +2892,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | pid   | (**requis**) ID unique du processus à arrêter. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2685,16 +2912,19 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-## Mise en réseau
+
+## <a name="networking"></a>Mise en réseau
+
 <hr>
-### Obtenir la configuration IP actuelle
+
+### <a name="get-the-current-ip-configuration"></a>Obtenir la configuration IP actuelle
 
 **Demande**
 
@@ -2709,11 +2939,11 @@ Vous pouvez obtenir la configuration IP actuelle en utilisant le format de requ�
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2771,7 +3001,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2780,7 +3010,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Définir une adresse IP statique (configuration IPV4)
+
+### <a name="set-a-static-ip-address-ipv4-configuration"></a>Définir une adresse IP statique (configuration IPV4)
 
 **Demande**
 
@@ -2810,11 +3041,11 @@ Pour plus de clarté, pour définir une interface pour DHCP, sérialiser uniquem
 }
 ```
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2830,15 +3061,17 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
 * Xbox
 * HoloLens
 * IoT
+
 <hr>
-### Énumérer les interfaces réseau sans fil
+
+### <a name="enumerate-wireless-network-interfaces"></a>Énumérer les interfaces réseau sans fil
 
 **Demande**
 
@@ -2853,11 +3086,11 @@ Vous pouvez énumérer les interfaces sans fil disponibles en utilisant le forma
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2891,7 +3124,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2900,7 +3133,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Énumérer les réseaux sans fil
+
+### <a name="enumerate-wireless-networks"></a>Énumérer les réseaux sans fil
 
 **Demande**
 
@@ -2919,11 +3153,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | interface   | (**requis**) GUID de l’interface réseau à utiliser pour rechercher des réseaux sans fil, sans crochets. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -2961,7 +3195,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -2970,7 +3204,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Se connecter à un réseau Wi-Fi et se déconnecter
+
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>Se connecter à un réseau Wi-Fi et se déconnecter
 
 **Demande**
 
@@ -2993,11 +3228,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | Clé   | (**requis si *op* == connect et que le réseau exige une authentification**) Clé partagée. |
 | createprofile | (**requis**) Créez un profil pour le réseau sur l’appareil.  Cela obligera l’appareil à se connecter automatiquement au réseau à l’avenir. Cela peut être **yes** ou **no**. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3011,7 +3246,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3020,7 +3255,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Supprimer un profil Wi-Fi
+
+### <a name="delete-a-wi-fi-profile"></a>Supprimer un profil Wi-Fi
 
 **Demande**
 
@@ -3040,11 +3276,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | interface   | (**requis**) GUID de l’interface réseau associée au profil à supprimer. |
 | profile   | (**requis**) Nom du profil à supprimer. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3058,7 +3294,7 @@ Cette API comporte les codes d’état attendus suivants.
 | :------     | :----- |
 | 200 | OK |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3067,9 +3303,12 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Rapport d’erreurs Windows
+
+## <a name="windows-error-reporting-wer"></a>Rapport d’erreurs Windows
+
 <hr>
-### Télécharger un fichier de rapport d’erreurs Windows
+
+### <a name="download-a-windows-error-reporting-wer-file"></a>Télécharger un fichier de rapport d’erreurs Windows
 
 **Demande**
 
@@ -3087,15 +3326,15 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | Paramètre d’URI | Description |
 | :------          | :------ |
 | user   | (**requis**) Nom d’utilisateur associé au rapport. |
-| Type   | (**requis**) Type de rapport. Il peut s’agir du type **queried** ou **archived**. |
+| type   | (**requis**) Type de rapport. Il peut s’agir du type **queried** ou **archived**. |
 | name   | (**requis**) Nom du rapport. Doit être codé en base64. |
 | fichier   | (**requis**) Nom du fichier à télécharger à partir du rapport. Doit être codé en base64. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3113,14 +3352,15 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-### Énumérer les fichiers dans un rapport d’erreurs Windows
+
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>Énumérer les fichiers dans un rapport d’erreurs Windows
 
 **Demande**
 
@@ -3138,14 +3378,14 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | Paramètre d’URI | Description |
 | :------          | :------ |
 | user   | (**requis**) Utilisateur associé au rapport. |
-| Type   | (**requis**) Type de rapport. Il peut s’agir du type **queried** ou **archived**. |
+| type   | (**requis**) Type de rapport. Il peut s’agir du type **queried** ou **archived**. |
 | name   | (**requis**) Nom du rapport. Doit être codé en base64. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 ```json
 {"Files": [
@@ -3168,14 +3408,15 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-### Répertorier les rapports d’erreurs Windows
+
+### <a name="list-the-windows-error-reporting-wer-reports"></a>Répertorier les rapports d’erreurs Windows
 
 **Demande**
 
@@ -3190,11 +3431,11 @@ Vous pouvez obtenir les rapports d’erreurs Windows en utilisant le format de r
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3226,16 +3467,19 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Bureau Windows
 * HoloLens
 * IoT
 
 <hr>
-## Enregistreur de performance Windows (WPR) 
+
+## <a name="windows-performance-recorder-wpr"></a>Enregistreur de performance Windows (WPR) 
+
 <hr>
-### Démarrer le suivi avec un profil personnalisé
+
+### <a name="start-tracing-with-a-custom-profile"></a>Démarrer le suivi avec un profil personnalisé
 
 **Demande**
 
@@ -3250,11 +3494,11 @@ Vous pouvez charger un profil WPR et démarrer le suivi à l’aide de ce profil
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Corps HTTP à parties multiples conforme contenant le profil WPR personnalisé.
 
@@ -3279,7 +3523,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3287,7 +3531,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Démarrer une session de suivi des performances de démarrage
+
+### <a name="start-a-boot-performance-tracing-session"></a>Démarrer une session de suivi des performances de démarrage
 
 **Demande**
 
@@ -3306,11 +3551,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | profile   | (**requis**) Ce paramètre est requis au démarrage. Nom du profil devant démarrer une session de suivi des performances. Les profils possibles sont stockés dans perfprofiles/profiles.json. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3335,7 +3580,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3343,7 +3588,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Arrêter une session de suivi des performances de démarrage
+
+### <a name="stop-a-boot-performance-tracing-session"></a>Arrêter une session de suivi des performances de démarrage
 
 **Demande**
 
@@ -3358,11 +3604,11 @@ Vous pouvez arrêter une session de suivi WPR en utilisant le format de requête
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3380,7 +3626,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3388,7 +3634,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Démarrer une session de suivi des performances
+
+### <a name="start-a-performance-tracing-session"></a>Démarrer une session de suivi des performances
 
 **Demande**
 
@@ -3407,11 +3654,11 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | :------          | :------ |
 | profile   | (**requis**) Nom du profil devant démarrer une session de suivi des performances. Les profils possibles sont stockés dans perfprofiles/profiles.json. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3436,7 +3683,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3444,7 +3691,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Arrêter une session de suivi des performances
+
+### <a name="stop-a-performance-tracing-session"></a>Arrêter une session de suivi des performances
 
 **Demande**
 
@@ -3459,11 +3707,11 @@ Vous pouvez arrêter une session de suivi WPR en utilisant le format de requête
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3481,7 +3729,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3489,7 +3737,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Récupérer l’état d’une session de suivi
+
+### <a name="retrieve-the-status-of-a-tracing-session"></a>Récupérer l’état d’une session de suivi
 
 **Demande**
 
@@ -3504,11 +3753,11 @@ Vous pouvez récupérer l’état de la session WPR actuelle en utilisant le for
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3533,7 +3782,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3541,7 +3790,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Répertorier les sessions de suivi terminées (ETL)
+
+### <a name="list-completed-tracing-sessions-etls"></a>Répertorier les sessions de suivi terminées (ETL)
 
 **Demande**
 
@@ -3556,11 +3806,11 @@ Vous pouvez obtenir une liste des traces ETL sur l’appareil en utilisant le fo
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3590,7 +3840,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3598,7 +3848,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Télécharger une session de suivi (ETL)
+
+### <a name="download-a-tracing-session-etl"></a>Télécharger une session de suivi (ETL)
 
 **Demande**
 
@@ -3617,11 +3868,11 @@ Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de req
 | :------          | :------ |
 | filename   | (**requis**) Nom de la trace ETL à télécharger.  Les traces ETL se trouvent dans /api/wpr/tracefiles. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3639,7 +3890,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3647,7 +3898,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Supprimer une session de suivi (ETL)
+
+### <a name="delete-a-tracing-session-etl"></a>Supprimer une session de suivi (ETL)
 
 **Demande**
 
@@ -3666,11 +3918,11 @@ Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de req
 | :------          | :------ |
 | filename   | (**requis**) Nom de la trace ETL à supprimer.  Les traces ETL se trouvent dans /api/wpr/tracefiles. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3688,7 +3940,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3696,9 +3948,12 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-## Balises DNS-SD 
+
+## <a name="dns-sd-tags"></a>Balises DNS-SD 
+
 <hr>
-### Afficher les balises
+
+### <a name="view-tags"></a>Afficher les balises
 
 **Demande**
 
@@ -3713,11 +3968,11 @@ Affichez les balises actuellement appliquées pour l’appareil.  Ces balises so
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3742,7 +3997,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 5XX | Erreur de serveur |
 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3751,7 +4006,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Supprimer des balises
+
+### <a name="delete-tags"></a>Supprimer des balises
 
 **Demande**
 
@@ -3766,11 +4022,11 @@ Supprimez toutes les balises actuellement signalées par DNS-SD.
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3787,7 +4043,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 5XX | Erreur de serveur |
 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3796,7 +4052,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Supprimer une balise
+
+### <a name="delete-tag"></a>Supprimer une balise
 
 **Demande**
 
@@ -3813,11 +4070,11 @@ Supprimez une balise actuellement signalée par DNS-SD.
 | :------     | :----- |
 | tagValue | (**requis**) Balise à supprimer. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3833,7 +4090,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 200 | OK |
 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3842,7 +4099,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
  
 <hr>
-### Ajouter une balise
+
+### <a name="add-a-tag"></a>Ajouter une balise
 
 **Demande**
 
@@ -3859,11 +4117,11 @@ Ajoutez une balise à l’annonce DNS-SD.
 | :------     | :----- |
 | tagValue | (**requis**) Balise à ajouter. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3880,7 +4138,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de service DNS-SD résultant. |
 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3891,7 +4149,8 @@ Cette API comporte les codes d’état attendus suivants.
 ## <a name="app-file-explorer"></a>Explorateur de fichiers de l’application
 
 <hr>
-### Obtenir les dossiers connus
+
+### <a name="get-known-folders"></a>Obtenir les dossiers connus
 
 **Demande**
 
@@ -3906,11 +4165,11 @@ Obtenez la liste des dossiers de niveau supérieur accessibles.
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3932,7 +4191,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 5XX | Codes d’erreur |
 
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -3941,7 +4200,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Obtenir des fichiers
+
+### <a name="get-files"></a>Obtenir des fichiers
 
 **Demande**
 
@@ -3960,11 +4220,11 @@ Obtenez la liste des fichiers d’un dossier.
 | packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. |
 | path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -3992,7 +4252,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4001,7 +4261,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Télécharger un fichier
+
+### <a name="download-a-file"></a>Télécharger un fichier
 
 **Demande**
 
@@ -4020,11 +4281,11 @@ Obtenir un fichier à partir d’un dossier connu ou d’appLocalData.
 | packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package qui vous intéresse. |
 | path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Fichier demandé, le cas échéant
 
@@ -4040,7 +4301,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 404 | Fichier introuvable |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4049,7 +4310,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Renommer un fichier
+
+### <a name="rename-a-file"></a>Renommer un fichier
 
 **Demande**
 
@@ -4070,11 +4332,11 @@ Renommez un fichier dans un dossier.
 | packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. |
 | path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -4092,7 +4354,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 404 | Fichier introuvable |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4101,7 +4363,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Supprimer un fichier
+
+### <a name="delete-a-file"></a>Supprimer un fichier
 
 **Demande**
 
@@ -4120,11 +4383,11 @@ Supprimez un fichier dans un dossier.
 | packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. |
 | path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -4142,7 +4405,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 404 | Fichier introuvable |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows
@@ -4151,7 +4414,8 @@ Cette API comporte les codes d’état attendus suivants.
 * IoT
 
 <hr>
-### Charger un fichier
+
+### <a name="upload-a-file"></a>Charger un fichier
 
 **Demande**
 
@@ -4169,11 +4433,11 @@ Chargez un fichier dans un dossier.  Ce fichier remplace un fichier existant du 
 | packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. |
 | path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. |
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -4189,7 +4453,7 @@ Cette API comporte les codes d’état attendus suivants.
 | 4XX | Codes d’erreur |
 | 5XX | Codes d’erreur |
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Mobile
 * Bureau Windows

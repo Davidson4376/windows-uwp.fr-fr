@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: acc39dfecaf4360f9f5b7db9f3c1fe34021f35c0
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610814"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788223"
 ---
 # <a name="view-app-identity-details"></a>Affichage des détails d’identité de l’application
 
@@ -25,9 +25,9 @@ Pour consulter ces informations, accédez à l’une de vos applications, puis d
 
 Les valeurs suivantes doivent être inclus dans votre manifeste du package. Si vous [utilisez Microsoft Visual Studio pour générer vos packages](../packaging/packaging-uwp-apps.md), et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces éléments :
 
--   **/ Identity/nom du package**
+-   **Package/Identity/Name**
 -   **Package/Identity/serveur de publication**
--   **Package/propriétés/PublisherDisplayName**
+-   **Package/Properties/PublisherDisplayName**
 
 Pour plus d'informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans la [référence du schéma de manifeste de package](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 

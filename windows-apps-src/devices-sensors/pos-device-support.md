@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 865c95fe5453a038a73b397fdcf32f77f9e8defb
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663094"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63828076"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Appareils de point de service pris en charge
 
@@ -25,45 +25,45 @@ ms.locfileid: "57663094"
 
 | Fabricant  | Modèle                          | Fonctionnalité | Connexion    | Type         | Mode                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
-| Code          | Reader™ 950                    | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Code          | Reader™ 1021                   | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Code          | Reader™ 1421                   | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
+| Code          | Reader™ 950                    | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Code          | Reader™ 1021                   | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Code          | Reader™ 1421                   | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
 | Code          | Reader™ 5000                   | 2D         | USB          | Présentation | Scanneur de PDV HID           |
 | Honeywell     | Genesis 7580g                  | 2D         | USB          | Présentation | Scanneur de PDV HID           |
-| Honeywell     | Granit 198Xi                   | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Granit 191Xi                   | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
+| Honeywell     | Granit 198Xi                   | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Granit 191Xi                   | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
 | Honeywell     | N5680                          | 2D         | Interne     | Component    | Scanneur de PDV HID           |
 | Honeywell     | N3680                          | 2D         | Interne     | Component    | Scanneur de PDV HID           |
 | Honeywell     | Orbite 7190g                    | 2D         | USB          | Présentation | Scanneur de PDV HID           |
 | Honeywell     | Stratos 2700                   | 2D         | USB          | Dans le compteur   | Scanneur de PDV HID           |
-| Honeywell     | Voyager 1200g                  | 1D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Voyager 1202g                  | 1D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Voyager 1202-bf                | 1D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Voyager 145Xg                  | D 1 / 2D ¹   | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Voyager 1602g                  | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Xénon 1900g                    | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Xénon 1902g                    | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Xénon 1902g-bf                 | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Xénon 1900h                    | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Honeywell     | Xénon 1902h                    | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| HP            | Scanneur de codes-barres de valeur (HR2150) | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Intermec      | SG20                           | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | CHS 7Mi                        | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | DuraScan D740                  | 2D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Ordinateur de poche     | Profil de Port série (SPP) |
-| Zebra         | DS2208²                        | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Zebra         | DS2278                         | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
-| Zebra         | DS8108³                        | 2D         | USB          | Ordinateur de poche     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D¹   | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Xénon 1900g                    | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Xénon 1902g                    | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Xénon 1902g-bf                 | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Xénon 1900h                    | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Honeywell     | Xenon 1902h                    | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| HP            | Scanneur de codes-barres de valeur (HR2150) | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Intermec      | SG20                           | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 7Mi                        | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | DuraScan D740                  | 2D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Handheld     | Profil de Port série (SPP) |
+| Zebra         | DS2208²                        | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Zebra         | DS2278                         | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
+| Zebra         | DS8108³                        | 2D         | USB          | Handheld     | Scanneur de PDV HID           |
 |
 
 

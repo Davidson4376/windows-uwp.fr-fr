@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions d’app
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5b5a62348a36f7758468a86e19b744cdde8754
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335083"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63789673"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 
@@ -499,7 +499,7 @@ Cette ressource a les valeurs suivantes.
 |  localCooperativeMaxPlayers               |   entier      |   Spécifie le nombre maximal de joueurs que le jeu prend en charge pour le mode coopération local.  |     
 |  isBroadcastingPrivilegeGranted               |   booléen      |  Indique si le jeu prend en charge la diffusion.   |     
 |  isCrossPlayEnabled               |   booléen      |   Indique si le jeu prend en charge des sessions multijoueurs entre joueurs sur PC Windows 10 et Xbox.  |     
-|  kinectDataForExternal               |   chaîne      |  Une des valeurs de chaîne suivantes qui indique si le jeu peut collecter des données de Kinect et les envoyer à des services externes : <ul><li>NotSet</li><li>Inconnu</li><li>Activé</li><li>Désactivée</li></ul>   |
+|  kinectDataForExternal               |   chaîne      |  Une des valeurs de chaîne suivantes qui indique si le jeu peut collecter des données de Kinect et les envoyer à des services externes : <ul><li>NotSet</li><li>Inconnu</li><li>Enabled</li><li>Désactivée</li></ul>   |
 
 > [!NOTE]
 > La ressource *gamingOptions* a été ajoutée en mai 2017, après que l'API de soumission au Microsoft Store a été diffusée pour la première fois auprès des développeurs. Si vous avez créé une soumission pour une app via l’API de soumission avant l'introduction de cette ressource et que cette soumission est toujours en cours, cette ressource sera nulle pour la soumission de l'app tant que vous n'aurez pas validé correctement ou supprimé la soumission. Si la ressource *gamingOptions* n'est pas disponible pour les soumissions d'une app, le champ *hasAdvancedListingPermission* de la [ressource de l'application](get-app-data.md#application_object) retourné par la méthode [obtenir une app](get-an-app.md) sera false.

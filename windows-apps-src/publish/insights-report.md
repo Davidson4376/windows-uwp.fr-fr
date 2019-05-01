@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, insight, tendance, anomalies, des anomalies, les modifications de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 95cb43c45731c88ec758806aef91c3d7d8f36ad6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ddd2238d8b3df51d5227e8027adac2a97fdbd52c
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661524"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63807388"
 ---
 # <a name="insights-report"></a>Rapport de perspectives
 

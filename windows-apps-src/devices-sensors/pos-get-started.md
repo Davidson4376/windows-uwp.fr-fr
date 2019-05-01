@@ -5,12 +5,12 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661154"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63772732"
 ---
 # <a name="getting-started-with-point-of-service"></a>Prise en main de la technologie de point de service
 
@@ -207,7 +207,7 @@ if (claimedBarcodeScanner != null)
 > [!NOTE]
 > Les classes de périphériques de point de service revendiquées et non revendiquées implémentent l'[interface IClosable](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable). Si un périphérique est connecté à une application via le réseau ou Bluetooth, les objets revendiqués et non revendiqués doivent être supprimés avant qu'une autre application puisse s'y connecter.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 + [Exemple de scanneur de codes-barres](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
 + [Exemple de tiroir de trésorerie]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [Exemple d’affichage de ligne](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)

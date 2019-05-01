@@ -2,16 +2,17 @@
 Description: Améliorez votre application de bureau pour les utilisateurs de Windows 10 à l’aide de plateforme Windows universelle (UWP) API.
 Search.Product: eADQiWindows 10XVcnh
 title: Améliorer votre application de bureau pour Windows 10
-ms.date: 10/15/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 55e91c96b7a978f0c90365073aa655553d4a658a
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628034"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63805657"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Améliorer votre application de bureau pour Windows 10
 
@@ -31,13 +32,14 @@ Ouvrez la boîte de dialogue **Gestionnaire de références**, choisissez le bou
 
 Ensuite, ajoutez une référence à ces fichiers.
 
-|Fichier|Emplacement|
+|Fichier|Location|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program fichiers (x86) \Windows Kits\10\References\<*version_sdk*> \Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program fichiers (x86) \Windows Kits\10\References\<*version_sdk*> \Windows.Foundation.FoundationContract\<*version*>|
+|windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program fichiers (x86) \Windows Kits\10\References\\<*version_sdk*> \Windows.Foundation.UniversalApiContract\<*version*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program fichiers (x86) \Windows Kits\10\References\\<*version_sdk*> \Windows.Foundation.FoundationContract\<*version*>|
 
 Dans la fenêtre **Propriétés**, réglez le champ **Copie locale** de chaque fichier *.winmd* sur **False**.
 

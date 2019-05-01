@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, notifications ciblées, notifications push, toast, vignette
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 9858665eaf36f5cd261dd1098b23aeecccf9179c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1c9a2f4a7dfd7af1eb0e0f74496e71f738b65b63
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653214"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788305"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 

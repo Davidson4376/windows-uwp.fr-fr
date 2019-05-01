@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641074"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63770370"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
 
@@ -46,7 +46,7 @@ Par exemple, si l’adresse de votre site web est « msn.com », vous devez sa
 </Applications>
 ```
 
-La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site web comporte plusieurs adresses (par exemple : m.example.com www.example.com et example.com), ajoutez une autre entrée `<uap3:Host Name=... />` dans `<uap3:AppUriHandler>` pour chaque adresse.
+La déclaration ci-dessus inscrit votre application afin qu’elle puisse gérer des liens à partir de l’hôte spécifié. Si votre site Web a plusieurs adresses (par exemple : m.example.com, www\.example.com et example.com) puis ajoutez un distinct `<uap3:Host Name=... />` entrée à l’intérieur de la `<uap3:AppUriHandler>` pour chaque adresse.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Associer votre application et votre site web à un fichier JSON
 
@@ -71,7 +71,7 @@ Windows utilisera une connexion https vers votre site web et recherchera le fich
 
 L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères génériques. Les caractères génériques vous permettent de prendre en charge une grande diversité de liens, avec moins de lignes de code. La liaison application-site web prend en charge deux types de caractères génériques dans le fichier JSON :
 
-| **Caractère générique** | **Description**               |
+| **Wildcard** | **Description**               |
 |--------------|-------------------------------|
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
@@ -186,14 +186,14 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 ## <a name="appurihandlers-tips"></a>Conseils concernant AppUriHandlers :
 
 - Veillez à spécifier uniquement les liens que votre application peut gérer.
-- Répertoriez tous les hôtes que vous allez prendre en charge.  Notez que www.example.com et example.com sont des hôtes différents.
+- Répertoriez tous les hôtes que vous allez prendre en charge.  Notez que www\.example.com et example.com sont des hôtes différents.
 - Les utilisateurs peuvent utiliser le menu Paramètres pour choisir l’application qu’ils préfèrent pour la gestion des sites web.
 - Votre fichier JSON doit être téléchargé sur un serveur https.
 - Si vous devez modifier les chemins d’accès que vous souhaitez prendre en charge, vous pouvez republier votre fichier JSON sans avoir à republier votre application. Les utilisateurs verront ces modifications dans un délai de 1 à 8 jours.
 - Toutes les applications chargées de manière indépendante avec AppUriHandlers auront des liens validés pour l’hôte au moment de l’installation. Il est inutile de charger un fichier JSON pour tester la fonctionnalité.
 - Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 [Exemple de projet Application-site web](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [Inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)

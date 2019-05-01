@@ -2,16 +2,17 @@
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: Énumérer les appareils sur un réseau
 description: Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau.
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e80d16b3338291c756b543018812e9db1370a4ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 2011bf0ed1e0f1536c0863729ee99415059641a6
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630414"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63772778"
 ---
 # <a name="enumerate-devices-over-a-network"></a>Énumérer les appareils sur un réseau
 
@@ -46,6 +47,7 @@ Lorsque vous créez votre propre sélecteur, il est fortement recommandé de lim
 | Approvisionnement Wi-Fi pour imprimantes HP           | **{c85ef710-f344-4792-bb6d-85a4346f1e69}** |
 | Bluetooth                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
 | Bluetooth LE                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
+| Caméra réseau                               | **{b8238652-b500-41eb-b4f3-4234f7f5ae99}** |
 
  
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e17fbd81c84ca4ce72d36dbabf9991fe8c6d75d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2bab1d6bd629aa85351e28a907d4b5ad705fb377
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611784"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788371"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 

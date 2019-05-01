@@ -4,12 +4,12 @@ title: Simplifier les paiements avec l’API de demande de paiement
 ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, demande de paiement
-ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a40b8265e3445319bd7baa530df0f9e9eaae0f31
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334587"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63804502"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>Simplifier les paiements avec l’API de demande de paiement
 L’API de demande de paiement pour les applications UWP est basé sur le [spécifications de l’API de demande de paiement W3C](https://w3c.github.io/browser-payment-api/). Elle vous permet de rationaliser le processus de validation dans vos applications UWP. Les utilisateurs peuvent accélérer Finalisation de l’achat par à l’aide des options de paiement et de distribuer des adresses déjà enregistrés avec leur compte Microsoft. Vous pouvez augmenter votre taux de conversion et réduire le risque de violations de données, car les informations de paiement sont sous forme de jetons. À compter de Windows 10 Creators Update, les utilisateurs peuvent utiliser leurs options de paiement enregistré pour payer facilement différentes expériences dans les applications UWP.

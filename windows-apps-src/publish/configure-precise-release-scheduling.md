@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, planification, date de publication, dates, lancement
 ms.localizationpriority: medium
-ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e247d59253d24fd309b26aebc450dcc7b5e9051d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597204"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787140"
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
