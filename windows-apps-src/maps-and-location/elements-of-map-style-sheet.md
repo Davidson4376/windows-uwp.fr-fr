@@ -7,12 +7,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: f199e08f74ace4e6c8b123a701af19469b029aed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5f59775de8d86b5a0bae77d8c84e08e0328896f4
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608414"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63816681"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
@@ -152,7 +152,7 @@ Ce tableau utilise des caractères « > » pour représenter les différents n
 
 <a id="properties" />
 
-## <a name="properties"></a>Propriétés
+## <a name="properties"></a>Properties
 
 Cette section décrit les propriétés que vous pouvez utiliser pour chaque entrée.
 
