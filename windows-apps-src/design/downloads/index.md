@@ -7,16 +7,17 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24e994435a2ff7a01e5c77a0043e7a3fb8bc3f33
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582862"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065411"
 ---
+![Notions de base de la conception](../images/downloads-2x.png)
+
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
-
 Téléchargements relatifs à la conception et à l’interface utilisateur des applications Fluent Design/UWP. Pour obtenir des outils supplémentaires, tels que Visual Studio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
 
 

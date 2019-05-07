@@ -7,12 +7,12 @@ keywords: périphérique, numériseur, entrée, interaction, injection
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 2ff3150d4c1ed713451669b8918906141daa9659
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343238"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065243"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simuler une entrée utilisateur par une injection d’entrée
 
@@ -50,7 +50,8 @@ Dans cet exemple, nous montrons comment utiliser les API d’injection d’entr�
 1. Tout d’abord, nous configurons l’interface utilisateur (MainPage.xaml).
 
     Nous disposons de deux zones de grille (une pour les entrées de souris et une pour l’entrée tactile injectée), chacune avec quatre boutons.
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] 
+      > Une valeur doit être affectée à l’arrière-plan de la grille (`Transparent`, dans ce cas), sinon les événements de pointeur ne sont pas détectés.
 
     Lorsque les clics de souris sont détectés dans la zone d’entrée, un événement d'interaction tactile correspondant est injecté dans la zone d’injection d’entrée. Les clics de bouton provenant d'une entrée d’injectée sont signalés dans la zone de titre.
 
