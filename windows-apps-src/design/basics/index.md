@@ -5,16 +5,16 @@ keywords: disposition d’application uwp, plateforme windows universelle, conce
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582591"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065425"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Informations de base relatives à la conception pour les applications UWP
 
-![Image Hero](images/header-design-basics.svg)
+![Icône des notions de base de la conception](../images/basics-2x.png)
 
 Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir et générer de belles applications abouties. Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre système Fluent Design ainsi qu’aux besoins de notre communauté de développement d’applications. 
 

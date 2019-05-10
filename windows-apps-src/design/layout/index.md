@@ -6,16 +6,16 @@ ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b223c53e0bd2dd52aafac82df1719e8bdecaf0
-ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
+ms.openlocfilehash: 33bb7aa6a5a244f1d7b9dcd178b036ac571032f8
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58221395"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065278"
 ---
 # <a name="layout"></a>Disposition
 
-![Image Hero](images/header-layout2.jpg)
+![Icône de disposition](../images/layout-2x.png)
 
 Grâce à ces articles, vous pourrez créer une interface utilisateur flexible, qui s’adapte à différentes tailles d’écran et de fenêtre, résolutions et orientations.
 
