@@ -12,18 +12,33 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582793"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444168"
 ---
 # <a name="motion-for-uwp-apps"></a>Animations pour les applications UWP
 
-![Image Hero](images/header-motion2.svg)
+![Icône de mouvement](../images/motion-2x.png)
 
 Le mouvement Fluent a une fonction spécifique dans votre application. Il fournit des commentaires intelligents basés sur le comportement de l’utilisateur, garde l’interface utilisateur active et guide la navigation de l’utilisateur dans votre application. Le mouvement Fluent suscite un lien émotionnel entre un utilisateur et son expérience numérique. Nous nous appuyons sur les principes du mouvement naturel que l’utilisateur connaît déjà dans le monde physique et nous avons étendu notre système à partir de là.
+
+## <a name="examples"></a>Exemples
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/category/Motion">ouvrir l’application et voir Mouvement en action </a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-motion-principles"></a>Principes du mouvement Fluent
 
@@ -53,7 +68,7 @@ Un mouvement fluide d’un point à un autre attire naturellement l’œil et gu
 Un mouvement intelligent fournit des commentaires à l’utilisateur en relation avec la façon dont il a manipulé l’interface utilisateur. L’interaction est centrée sur l’utilisateur. Le mouvement semble approprié au facteur de forme et conçu en fonction du scénario. Il doit être confortable pour chaque utilisateur.
 
 ![Exemple d’interface utilisateur de mouvement contextuel](images/Contextual.gif)
-> L’animation doit être reliée à l’interaction utilisateur. Un menu contextuel est déployé là où l’utilisateur l’a activé. 
+> L’animation doit être reliée à l’interaction utilisateur. Un menu contextuel est déployé là où l’utilisateur l’a activé.
 
 ## <a name="motion-articles"></a>Articles sur le mouvement
 
