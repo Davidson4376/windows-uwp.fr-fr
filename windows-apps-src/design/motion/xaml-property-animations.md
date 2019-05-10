@@ -8,12 +8,12 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 81da1e769ab171e47a4f4046e8ec7e7c84ecf2d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 183a5433553ff6fdfcb09f6960f6a642f2c8bc08
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630354"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444152"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Animer des éléments XAML avec des animations de composition
 
@@ -31,19 +31,35 @@ Avant Windows 10, version 1809, vous aviez 2 choices afin de créer des animatio
 > [!NOTE]
 > Pour utiliser ces propriétés sur UIElement, votre version cible du projet UWP doit être 1809 ou version ultérieure. Pour plus d’informations sur la version de votre projet de configuration, consultez [Version des applications flexibles](../../debug-test-perf/version-adaptive-apps.md).
 
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/XamlCompInterop">ouvrez l’application et consultez interop Animation en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>Nouvelles propriétés de rendu remplacement les anciennes propriétés de rendu
 
 Ce tableau présente les propriétés que vous pouvez utiliser pour modifier le rendu d’un UIElement, qui peut également être animé avec un [CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation).
 
 | Propriété | Type | Description |
 | -- | -- | -- |
-| [Opacité](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Le degré d’opacité de l’objet |
-| [traduction](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Décaler la position X/Y/Z de l’élément |
+| [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Le degré d’opacité de l’objet |
+| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Décaler la position X/Y/Z de l’élément |
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | La matrice de transformation à appliquer à l’élément |
-| [Mettre à l’échelle](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Mettre à l’échelle de l’élément, centrée sur le point central |
+| [Échelle](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Mettre à l’échelle de l’élément, centrée sur le point central |
 | [Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | Flottante | Faire pivoter l’élément autour de le RotationAxis et le point central |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | L’axe de rotation |
-| [Point central](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Le point central de la mise à l’échelle et rotation |
+| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Le point central de la mise à l’échelle et rotation |
 
 La valeur de propriété TransformMatrix est combinée avec les propriétés de mise à l’échelle, de Rotation et de traduction dans l’ordre suivant :  TransformMatrix, Scale, Rotation, Translation.
 

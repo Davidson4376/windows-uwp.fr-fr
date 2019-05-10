@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7272abca9862eaf5ed7ceb161e433849497369a2
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599404"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444213"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -78,20 +78,34 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
     :::column-end:::
 :::row-end:::
 
+## <a name="examples"></a>Exemples
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ImplicitTransition">ouvrez l’application et voir les Transitions implicites en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="implicit-animations"></a>Animations implicites
 
 > Animations implicites requièrent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure.
-
 
 Animations implicites sont un moyen simple d’atteindre le mouvement Fluent par l’interpolation automatiquement entre les valeurs anciennes et nouvelles pendant un changement de paramètre.
 
 Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes :
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacité**
+  - **Opacity**
   - **Rotation**
-  - **Mettre à l’échelle**
-  - **traduction**
+  - **Échelle**
+  - **Translation**
 
 - [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
   - **Arrière-plan**

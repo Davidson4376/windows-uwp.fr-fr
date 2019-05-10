@@ -8,18 +8,34 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b3244c24ff4fa8e3c85ee9970536b1b35d8efd5
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646454"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444194"
 ---
 # <a name="page-transitions"></a>Transitions de page
 
 Les transitions de page dirigent les utilisateurs entre les pages d’une application, en fournissant des commentaires comme la relation entre les pages. Les transitions de page aident les utilisateurs à comprendre s’ils se trouvent en haut d’une hiérarchie de navigation, se déplacent entre des pages sœur ou naviguent plus profondément dans la hiérarchie de pages.
 
 Deux animations différentes sont fournies pour la navigation entre les pages dans une application : *Actualisation de la page* et *Exploration*, et sont représentées par des sous-classes de [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/PageTransition">ouvrez l’application et voir les Transitions de Page en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="page-refresh"></a>Actualisation de la page
 
@@ -37,7 +53,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Remarque** : Un [ **Frame** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) utilise automatiquement [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) pour animer la navigation entre les deux pages. Par défaut, l’animation est l'actualisation de la page.
+**Remarque**: Un [ **Frame** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) utilise automatiquement [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) pour animer la navigation entre les deux pages. Par défaut, l’animation est l'actualisation de la page.
 
 ## <a name="drill"></a>Exploration
 
@@ -56,16 +72,16 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>Diapositive horizontal
 
-Utilisez diapositive horizontal pour montrer que les pages sœurs s’affichent en regard de chacun des autres. Le [NavigationView](../controls-and-patterns/navigationview.md) contrôle utilise automatiquement cette animation de navigation supérieure, mais si vous générez votre propre expérience de navigation horizontale, vous pouvez implémenter une diapositive horizontal avec SlideNavigationTransitionInfo.
+Utilisez diapositive horizontal pour montrer que les pages sœurs s’affichent en regard de chacun des autres. Le [NavigationView](../controls-and-patterns/navigationview.md) contrôle utilise automatiquement cette animation de navigation supérieure, mais si vous générez votre propre expérience de navigation horizontale, vous pouvez implémenter une diapositive horizontale avec SlideNavigationTransitionInfo.
 
 Le sentiment souhaité est que l’utilisateur navigue entre les pages qui se trouvent en regard de chacun des autres. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
-myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromRight } );
 
 // Navigate to the left, ie. from RightPage to LeftPage
-myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## <a name="suppress"></a>Suppression

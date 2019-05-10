@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a205fb151d1c9e6614dc97ccde639e43720aa8a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 901aa1fa5c37c18a815e5e70becdf15001ed74c4
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618194"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444240"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Animation connectée pour les applications UWP
 
@@ -24,7 +24,22 @@ Une animation connectée, un élément apparaît « continuer » entre deux vu
 
 > **API importantes** :  [Classe de ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService classe](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
-## <a name="see-it-in-action"></a>Regardez-le en pleine action
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ConnectedAnimation">ouvrez l’application et voir Animation connectés en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 Dans cette vidéo, une application utilise une animation connectée pour animer une image de l’élément comme il « continue » fera partie de l’en-tête de la page suivante. L’effet aide à conserver le contexte de l’utilisateur pendant toute la transition.
 
@@ -318,10 +333,6 @@ void OnNavigatedTo(NavigationEventArgs e)
 - Utilisez [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) pour sauvegarder la navigation.
 - N’attendez pas sur les demandes du réseau ou autres opérations asynchrones longue entre la préparation et le démarrage d’une animation connectée. Vous devrez peut-être charger au préalable les informations nécessaires pour exécuter la transition à l'avance, ou utiliser une image d'espace réservé basse résolution pendant le chargement d’une image haute résolution dans l’affichage de destination.
 - Utilisez [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) pour empêcher une animation de transition dans un **Frame** si vous utilisez **ConnectedAnimationService**, depuis les animations connectées ne sont pas destinées à être utilisée simultanément avec les transitions de navigation par défaut. Consultez [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) pour en savoir plus sur l’utilisation des transitions de navigation.
-
-## <a name="download-the-code-samples"></a>Télécharger des exemples de code
-
-Consultez l'[exemple d'animation connectée](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample) dans la galerie d'exemples [WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs).
 
 ## <a name="related-articles"></a>Articles connexes
 
