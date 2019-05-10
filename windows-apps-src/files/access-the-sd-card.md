@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, carte sd, stockage
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625514"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63800231"
 ---
 # <a name="access-the-sd-card"></a>Accéder à la carte SD
 
 
 
-Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité et qui disposent d’un emplacement pour les cartes de ce type.
+Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles bon marché dont le stockage interne est limité et qui disposent d’un emplacement pour les cartes de ce type.
 
 Dans la plupart des cas, vous devez spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour que votre application puisse stocker des fichiers sur la carte SD et y accéder. En général, vous devez également inscrire les types de fichier stockés et accessibles que votre application peut gérer.
 
@@ -86,7 +86,7 @@ else
 ```
 
 > [!NOTE]
-> Si votre lecteur de carte SD est intégré (emplacement dans l’ordinateur portable ou le PC), il peut ne pas être accessible via KnownFolders.RemovableDevices.
+> Si votre lecteur de carte SD est intégré (emplacement sur l’ordinateur portable ou le PC), il peut ne pas être accessible via KnownFolders.RemovableDevices.
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>Interrogation du contenu de la carte SD
 
