@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
+ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630564"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535188"
 ---
 # <a name="my-people-notifications"></a>Notifications de mes contacts
 
@@ -53,13 +53,13 @@ Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètr
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local.
 + **spritesheet-src**
     + L’URI de la ressource. Il peut s’agir d’un URI web HTTP/HTTPS, d’un URI msappx ou d’un chemin d’accès à un fichier local. Requis uniquement pour les animations Spritesheet.
-+ **hauteur de spritesheet**
++ **spritesheet-height**
     + La hauteur de l’image (en pixels). Requis uniquement pour les animations Spritesheet.
-+ **spritesheet-i/s**
++ **spritesheet-fps**
     + Images par seconde (FPS). Requis uniquement pour les animations Spritesheet. Seules les valeurs de 1 à 120 sont prises en charge.
 + **spritesheet-startingFrame**
     + Numéro de l’image pour commencer l’animation. Uniquement utilisé pour les animations Spritesheet et a pour valeur par défaut 0 si le numéro n’est pas indiqué.
-+ **ALT**
++ **alt**
     + Chaîne de texte utilisée pour la narration du lecteur d’écran.
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Le nœud de l’image à l’intérieur de la liaison doit inclure les paramètr
 En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-people** pour spécifier le contact d’envoi. Ce paramètre peut prendre les valeurs suivantes :
 
 + **Adresse de messagerie** 
-    + Exemple mailto:johndoe@mydomain.com
+    + Exemple ` mailto:johndoe@mydomain.com `
 + **Numéro de téléphone** 
     + Exemple tél : 888-888-8888
 + **ID distant** 
@@ -150,7 +150,7 @@ Il existe certains cas dans lesquels une notification de mes contacts s’affich
 
 Si une notification de mes contacts remplace une notification toast, la deuxième liaison spécifique de mes contacts est ignorée, et seule la première liaison est utilisée pour afficher la notification toast. C’est pourquoi il est essentiel de fournir une charge utile de secours dans la première liaison toast.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 + [Mon exemple de Notifications de personnes](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Ajout de personnes mes prennent en charge](my-people-support.md)
 + [Notifications toast ADAPTATIF](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
