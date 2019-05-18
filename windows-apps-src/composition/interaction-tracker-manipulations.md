@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 89b393120657b7c02ccfe10ce6aca16be80118aa
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653844"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852262"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>Expériences personnalisées de manipulation avec InteractionTracker
 
 Dans cet article, nous vous montrons comment utiliser InteractionTracker pour créer des expériences personnalisées de manipulation.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
@@ -151,7 +151,7 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
     tracker.MinPosition = new Vector3(-1000f);
     tracker.MaxPosition = new Vector3(1000f);
 
-    // #3 Setup the VisualInteractionSourc
+    // #3 Setup the VisualInteractionSource
     var source = VisualInteractionSource.Create(hitTestRoot);
 
     // #4 Set the properties for the VisualInteractionSource
