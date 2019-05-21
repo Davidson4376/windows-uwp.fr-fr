@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
-ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
+ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649614"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933162"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Écouteur de notification : Accéder à toutes les notifications
 
@@ -277,17 +277,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Événement en arrière-plan pour une notification ajoutée/ignorée
 
 > [!IMPORTANT] 
-> Problème connu : L’événement de premier plan provoque une boucle de l’UC sur les versions récentes de Windows et précédemment n’a pas fonctionné avant cela. N’utilisez pas l’événement de premier plan. Dans une prochaine mise à jour Windows, nous allons résoudre cela.
+> Problème connu : Dans les builds avant de générer des 17763 / octobre 2018 mise à jour / 1809 de Version, l’événement de premier plan provoque une boucle de processeur et/ou n’a pas fonctionné. Si vous avez besoin de la prise en charge sur ces versions antérieures, utilisez à la place la tâche en arrière-plan.
 
-Au lieu d’utiliser l’événement de premier plan, utilisez le code indiqué plus haut pour un [modèle de processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md) tâche en arrière-plan. La tâche en arrière-plan vous permet également de recevoir des notifications d’événement de modification à la fois pendant que votre application est fermée ou en cours d’exécution.
+Vous pouvez également écouter les notifications à partir d’un gestionnaire d’événements de mémoire...
 
 ```csharp
-// Subscribe to foreground event (DON'T USE THIS)
+// Subscribe to foreground event
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
+    // Your code for handling the notification
 }
 ```
 

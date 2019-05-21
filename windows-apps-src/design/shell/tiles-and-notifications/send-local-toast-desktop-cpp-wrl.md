@@ -7,12 +7,12 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, bureau, notifications toast, envoyer un toast, envoyer un toast local, pont du bureau, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: af6c4392d97bdbf06c3e185b8a1c0235225bfe5a
+ms.sourcegitcommit: 81021b7930905beb67383a08b09520cf95c68fd9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609844"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940315"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 
@@ -62,7 +62,7 @@ using namespace Microsoft::WRL;
 
 ## <a name="step-4-implement-the-activator"></a>Étape 4 : Implémenter l’activateur
 
-Vous devez implémenter un gestionnaire pour l’activation des toasts de manière à ce que votre application puisse effectuer une action lorsque l’utilisateur clique sur votre toast. Cela est nécessaire pour que votre toast soit conservé dans le centre de notifications (car l’utilisateur peut cliquer sur le toast des jours plus tard lorsque votre application est fermée). Cette classe peut être placée n’importe où dans votre projet.
+Vous devez implémenter un gestionnaire pour l’activation de toast, afin que lorsque l’utilisateur clique sur votre toast, votre application peut faire quelque chose. Cela est nécessaire pour que votre toast soit conservé dans le centre de notifications (car l’utilisateur peut cliquer sur le toast des jours plus tard lorsque votre application est fermée). Cette classe peut être placée n’importe où dans votre projet.
 
 Implémentez l’interface **INotificationActivationCallback** comme illustré ci-dessous, y compris un UUID, et appelez également **CoCreatableClass** pour marquer votre classe comme pouvant être créée par COM. Pour votre UUID, créez un GUID unique à l’aide de l’un des nombreux générateurs GUID en ligne. Ce CLSID GUID (identificateur de classe) permet au centre de notifications de savoir quelle classe activer par COM.
 
@@ -421,8 +421,8 @@ Windows 8 a introduit les notifications toast, mais a utilisé les [modèles de
 | Système d’exploitation | ToastGeneric | Activateur COM | Modèles de toast hérités |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | Prise en charge | Prise en charge | Pris en charge (mais n’active pas le serveur COM) |
-| Windows 8.1 / 8 | Non applicable | Non applicable | Prise en charge |
-| Windows 7 et versions inférieures | Non applicable | Non applicable | Non applicable |
+| Windows 8.1 / 8 | N/A | N/A | Prise en charge |
+| Windows 7 et versions inférieures | N/A | N/A | N/A |
 
 Pour vérifier si vous exécutez Windows 10, incluez l’en-tête `<VersionHelpers.h>` et vérifiez la méthode **IsWindows10OrGreater**. Si elle retourne true, continuez à appeler les méthodes décrites dans cette documentation ! 
 
