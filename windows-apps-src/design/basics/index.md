@@ -5,12 +5,12 @@ keywords: disposition d’application uwp, plateforme windows universelle, conce
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 78462d5d29ebcc31792aa46da7657c57fb960e13
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065425"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984115"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Informations de base relatives à la conception pour les applications UWP
 
@@ -24,7 +24,7 @@ Le guide de conception pour la plateforme Windows universelle (UWP) est une ress
 
 Présentation des fonctionnalités UWP combinées à de bonnes pratiques pour créer des applications qui se mettent à l’échelle parfaitement sur tous les types d’appareils exécutant Windows.
 
-[**Système Fluent Design**](../fluent-design-system/index.md)
+[**Système Fluent Design**](/windows/apps/fluent-design-system)
 
 Le système Fluent Design présente nos objectifs et nos principes de création d’interfaces utilisateur adaptatives, empathiques et esthétiques.
 

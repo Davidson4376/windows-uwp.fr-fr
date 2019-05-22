@@ -1,31 +1,46 @@
 ---
 Description: Partager du code entre une application de bureau et une application UWP
-Search.Product: eADQiWindows 10XVcnh
 title: Partager du code entre une application de bureau et une application UWP
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644344"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984166"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Partager du code entre une application de bureau et une application UWP
+# <a name="move-from-a-desktop-application-to-uwp"></a>Déplacer à partir d’une application de bureau vers UWP
 
-Vous pouvez déplacer votre code dans des bibliothèques .NET Standard et créer ensuite une application de plateforme Windows universelle (UWP) pour toucher tous les appareils Windows 10. Il n’existe aucun outil qui puisse convertir une application de bureau vers une application UWP, mais vous pouvez réutiliser une grande partie de votre code existant, ce qui réduit le coût de création. Ce guide vous explique comment procéder.
+Si vous avez une application de bureau existante qui a été créée à l’aide de .NET Framework (y compris WPF et Windows Forms) ou C++ API Win32, vous avez plusieurs options pour déplacer vers la plateforme universelle Windows (UWP) Windows 10.
 
-## <a name="share-code-in-a-net-standard-20-library"></a>Partager du code dans une bibliothèque .NET Standard 2.0
+## <a name="package-your-desktop-application-in-an-msix-package"></a>Empaqueter votre application de bureau dans un package MSIX
 
-Placez autant de code que vous pouvez dans les bibliothèques de classes .NET Standard 2.0.  Tant que votre code utilise des API qui sont définies dans la norme, vous pouvez le réutiliser dans une application UWP. Il est plus facile que jamais de partager du code dans une bibliothèque .NET Standard, car .NET Standard 2.0 inclut un nombre beaucoup plus important d’API.
+Vous pouvez empaqueter votre application de bureau dans un package MSIX pour accéder à beaucoup d’autres fonctionnalités Windows 10. MSIX est un format de package d’une application de Windows modern qui fournit une expérience d’empaquetage universelle pour toutes les applications Windows, y compris les applications UWP, WPF, Windows Forms et Win32. Empaquetage de vos applications de bureau Windows dans les packages MSIX obtient vous accéder à une installation robuste et de mise à jour d’expérience, une sécurité gérée de modèle avec un système de capacité flexible, la prise en charge pour le Microsoft Store, gestion d’entreprise et nombreuses personnalisée modèles de distribution. Vous pouvez empaqueter votre application si vous avez le code source ou si vous disposez uniquement d’un fichier programme d’installation (par exemple, un programme d’installation MSI ou App-V). Une fois que vous empaquetez votre application, vous pouvez intégrer des fonctionnalités UWP telles que les extensions de package et d’autres composants UWP.
 
-Voici une excellente vidéo qui vous en apprend davantage à ce sujet.
-&nbsp;
+Pour plus d’informations, consultez [empaqueter des applications de bureau (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) et [fonctionnalités qui nécessitent l’identité du package](/windows/apps/desktop/modernize/modernize-packaged-apps).
+
+## <a name="use-uwp-apis"></a>Utiliser les API UWP
+
+Vous pouvez appeler de nombreuses API UWP directement dans votre WPF, Windows Forms, ou C++ application de bureau Win32 à intégrer des expériences modernes autrement clair pour les utilisateurs de Windows 10. Par exemple, vous pouvez appeler des API UWP pour ajouter des notifications toast à votre application de bureau.
+
+Pour plus d’informations, consultez [utilisez des API UWP dans les applications de bureau](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+
+## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>Migrer un .NET Application Framework à une application UWP
+
+Si votre application s’exécute sur le .NET Framework, vous pouvez le migrer vers une application UWP en tirant parti de .NET Standard 2.0. Déplacer autant de code que vous pouvez dans les bibliothèques de classes .NET Standard 2.0, puis créez une application UWP qui fait référence à des bibliothèques .NET Standard 2.0. 
+
+### <a name="share-code-in-a-net-standard-20-library"></a>Partager du code dans une bibliothèque .NET Standard 2.0
+
+Si votre application s’exécute sur le .NET Framework, placer autant de code que vous pouvez dans .NET Standard 2.0 bibliothèques de classes. Tant que votre code utilise des API qui sont définies dans la norme, vous pouvez le réutiliser dans une application UWP. Il est plus facile que jamais de partager du code dans une bibliothèque .NET Standard, car .NET Standard 2.0 inclut un nombre beaucoup plus important d’API.
+
+Voici une vidéo qui vous en dit davantage à ce sujet.
+
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
-### <a name="add-net-standard-libraries"></a>Ajouter des bibliothèques .NET Standard
+#### <a name="add-net-standard-libraries"></a>Ajouter des bibliothèques .NET Standard
 
 Tout d’abord, ajoutez une ou plusieurs bibliothèques de classes .NET Standard à votre solution.  
 
@@ -45,7 +60,7 @@ Vous pouvez trouver ce paramètre dans les pages de propriétés du projet de bi
 
 Ensuite, utilisez les outils pour déterminer la quantité de votre code qui est conforme à la norme. De cette façon, avant de déplacer du code dans la bibliothèque, vous pouvez choisir les parties que vous pouvez réutiliser, les parties qui nécessitent des modifications minimales et les parties qui resteront spécifiques à l’application.
 
-### <a name="check-library-and-code-compatibility"></a>Vérifier la compatibilité de la bibliothèque et du code
+#### <a name="check-library-and-code-compatibility"></a>Vérifier la compatibilité de la bibliothèque et du code
 
 Nous allons commencer par les Packages Nuget et autres fichiers dll que vous avez obtenus d’un tiers.
 
@@ -61,7 +76,7 @@ Si votre code n’est pas compatible avec la norme, envisagez d’autres façons
 
 Une partie de votre code sera spécifique à la plateforme et devra rester dans votre projet d’application de bureau.
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Exemple : Migration code d’accès aux données dans une bibliothèque .NET Standard 2.0
+#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Exemple : Migration code d’accès aux données dans une bibliothèque .NET Standard 2.0
 
 Supposons que nous avons une application Windows Forms très simple qui affiche les clients à partir de notre base de données Northwind.
 
@@ -151,7 +166,7 @@ public partial class Customers : Form
 }
 ```
 
-## <a name="reach-all-windows-devices"></a>Toucher tous les appareils Windows
+### <a name="create-a-uwp-app"></a>Créer une application UWP
 
 Vous êtes maintenant prêt à ajouter une application UWP à votre solution.
 
@@ -163,7 +178,7 @@ Votre application répondra aux mécanismes d'entrée autres que via un clavier 
 
 Voici quelques-unes des fonctionnalités fournies avec UWP. Pour en savoir plus, voir [Créez des expériences exceptionnelles avec Windows](https://developer.microsoft.com/windows/why-build-for-uwp).
 
-### <a name="add-a-uwp-project"></a>Ajouter un projet UWP
+#### <a name="add-a-uwp-project"></a>Ajouter un projet UWP
 
 Tout d'abord, ajoutez un projet UWP à votre solution.
 
@@ -173,7 +188,7 @@ Ensuite, à partir de votre projet UWP, ajoutez une référence au projet de bib
 
 ![Référence de la bibliothèque de classes](images/desktop-to-uwp/class-library-reference2.png)
 
-### <a name="build-your-pages"></a>Générer vos pages
+#### <a name="build-your-pages"></a>Générer vos pages
 
 Ajoutez des pages XAML et appelez le code dans votre bibliothèque .NET Standard 2.0.
 
@@ -201,10 +216,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-
 Pour découvrir la prise en main avec UWP, consultez [Qu'est-ce qu'une application UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-## <a name="reach-ios-and-android-devices"></a>Toucher les appareils iOS et Android
+### <a name="reach-ios-and-android-devices"></a>Toucher les appareils iOS et Android
 
 Vous pouvez toucher les appareils iOS et Android en ajoutant des projets Xamarin.  
 
@@ -216,7 +230,7 @@ Elles ont accès à la gamme complète des fonctionnalités exposées par la pla
 
 Tout comme les applications UWP, le coût d’ajout d’une application Android ou iOS est inférieur, car vous pouvez réutiliser la logique métier dans une bibliothèque de classes .NET Standard 2.0. Vous devrez concevoir vos pages d’interface utilisateur en XAML et écrire tout code spécifique à l'appareil ou à la plateforme.
 
-### <a name="add-a-xamarin-project"></a>Ajouter un projet Xamarin
+#### <a name="add-a-xamarin-project"></a>Ajouter un projet Xamarin
 
 Tout d’abord, ajoutez un **Android**, **iOS** ou **interplateforme** à votre solution.
 
@@ -231,7 +245,7 @@ Ensuite, à partir de votre projet Android, iOS ou interplateforme, ajoutez une 
 
 ![Référence de la bibliothèque de classes](images/desktop-to-uwp/class-library-reference3.png)
 
-### <a name="build-your-pages"></a>Générer vos pages
+#### <a name="build-your-pages"></a>Générer vos pages
 
 Notre exemple affiche une liste de clients dans une application Android.
 

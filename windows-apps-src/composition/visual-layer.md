@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626404"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984099"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
@@ -61,6 +61,12 @@ Pour plus d’informations, consultez la vue d’ensemble [Animations de composi
 Vous pouvez accéder à un élément visuel créé par l’infrastructure XAML, et soutenant un élément FrameworkElement visible, à l’aide de la classe [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) de [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908). Notez que les éléments visuels créés pour vous par l’infrastructure présentent certaines limites de personnalisation. Cela tient au fait que l’infrastructure gère les décalages, les transformations et les durées de vie. Vous pouvez toutefois créer vos propres éléments visuels et les associer à un élément XAML existant via ElementCompositionPreview, ou en l’ajoutant à un élément ContainerVisual existant quelque part dans la structure de l’arborescence des éléments visuels.
 
 Pour plus d’informations, consultez la vue d’ensemble [Utilisation de la couche visuelle avec XAML](using-the-visual-layer-with-xaml.md).
+
+### <a name="working-with-your-desktop-app"></a>Utilisation de votre application de bureau
+
+Vous pouvez utiliser la couche visuelle pour améliorer l’apparence et les fonctionnalités de votre WPF, Windows Forms, et C++ des applications de bureau Win32. Vous pouvez migrer des îlots de contenu à utiliser la couche visuelle et de conserver le reste de votre interface utilisateur dans son infrastructure existante. Cela signifie que vous pouvez rendre mises à jour importantes et améliorations à l’interface utilisateur de votre application sans avoir à apporter des modifications importantes à votre code existant base.
+
+Pour plus d’informations, consultez [moderniser votre application de bureau à l’aide de la couche visuelle](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

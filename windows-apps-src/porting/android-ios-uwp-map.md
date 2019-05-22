@@ -1,18 +1,17 @@
 ---
 Description: Comparez les fonctionnalités de la plateforme sous iOS, Android et Windows 10.
-Search.Product: eADQiWindows 10XVcnh
 title: Mappage de concepts d’applications Windows pour développeurs iOS et Android
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 737e169e2502076f370eaed91658eae59be84a0b
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641334"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984251"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 

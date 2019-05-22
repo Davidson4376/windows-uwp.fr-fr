@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 953a92cdb8cc3168a2cbeae9a1f3610f771c6339
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 5feea95245a7e3ff6deefe73617b050f89243a90
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444189"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984132"
 ---
 # <a name="parallax"></a>Parallaxe
 
@@ -43,7 +43,7 @@ Le parallaxe est un effet visuel où les objets proches de l'observateur se dép
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Le parallaxe et le système Fluent Design
 
- Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Le parallaxe est un composant du système Fluent Design qui ajoute du mouvement, de la profondeur et la notion d'échelle à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](../fluent-design-system/index.md).
+ Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Le parallaxe est un composant du système Fluent Design qui ajoute du mouvement, de la profondeur et la notion d'échelle à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Fonctionnement dans une interface utilisateur
 
@@ -122,5 +122,5 @@ Pour obtenir la liste complète des méthodes de personnalisation de l'effet par
 ## <a name="related-articles"></a>Articles connexes
 
 - [Classe de ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
-- [Conception Fluent pour UWP](../fluent-design-system/index.md)
+- [Conception Fluent pour UWP](/windows/apps/fluent-design-system)
 - [Science dans le système : Profondeur et conception Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
