@@ -5,14 +5,16 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3c90fa95db94eaeab2cd5432634a3ad1855cda5c
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 81382705f2be25fbc48efc2b91fcaee0537173b2
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984469"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214924"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
 

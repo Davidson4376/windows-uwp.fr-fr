@@ -4,14 +4,16 @@ title: Contrôles UWP dans les applications de bureau
 ms.date: 04/16/2019
 ms.topic: article
 keywords: Windows 10, uwp, WinForms, wpf, xaml (îles)
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: fd4f92e543b224e617e1990e5761d534c87ce6fb
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 62dc89b9e17f1ae9c2394629100e0bd54606594b
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984929"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215125"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Contrôle de l’hôte UWP XAML dans les applications de bureau (îles XAML)
 

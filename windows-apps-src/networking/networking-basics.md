@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc2f31b52e7913905c7d64ab797b2939cfb313d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8ed003fbae285f003724e5f540612d86902ee2d4
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651654"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852253"
 ---
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 Ce que vous devez faire pour toute application réseau.
@@ -31,9 +31,9 @@ D’autres fonctionnalités peuvent être nécessaires pour votre application da
 
 | Fonctionnalité | Description |
 |------------|-------------|
-| **EnterpriseAuthentication** | Permet à une application de se connecter aux ressources réseau qui nécessitent des informations d’identification de domaine. Un administrateur de domaine devra activer cette fonctionnalité pour toutes les applications. Il peut s’agir, par exemple, d’une application qui récupère des données à partir de serveurs Sharepoint sur un intranet privé. <br/> Avec cette fonctionnalité, vos informations d’identification peuvent être utilisées pour accéder aux ressources réseau sur un réseau nécessitant des informations d’identification. Une application disposant de cette fonctionnalité peut emprunter votre identité sur le réseau. <br/> Cette fonctionnalité n’est pas obligatoire pour autoriser une application à accéder à Internet par le biais d’un proxy d’authentification. |
-| **Proximité** | Requis pour la communication de proximité en champ proche avec des appareils à proximité immédiate de l’ordinateur. La proximité en champ proche peut être utilisée pour envoyer des fichiers ou communiquer avec une application sur l’appareil proche. <br/> Cette fonctionnalité permet à une application d’accéder au réseau pour se connecter à un appareil à proximité immédiate. L’utilisateur doit confirmer l’envoi d’une invitation ou l’acceptation d’une invitation. |
-| **SharedUserCertificates** | Cette fonctionnalité permet à une application d’accéder aux certificats logiciels et matériels, tels que les certificats de carte à puce. Lorsque cette fonctionnalité est appelée au moment de l’exécution, l’utilisateur doit entreprendre une action, comme insérer une carte ou sélectionner un certificat. <br/> Avec cette fonctionnalité, vos certificats matériels et logiciels ou une carte à puce sont utilisés pour l’identification dans l’application. Cette fonctionnalité peut être utilisée par votre employeur, votre banque ou les services publics pour l’identification. |
+| **enterpriseAuthentication** | Permet à une application de se connecter aux ressources réseau qui nécessitent des informations d’identification de domaine. Par exemple, une application qui Récupère des données à partir de serveurs SharePoint sur un Intranet privé. Avec cette fonctionnalité, vos informations d’identification peuvent être utilisées pour accéder aux ressources réseau sur un réseau nécessitant des informations d’identification. Une application disposant de cette fonctionnalité peut emprunter votre identité sur le réseau. Vous n’avez pas besoin cette fonctionnalité afin de permettre à votre application à accéder à Internet via un proxy d’authentification.<br/><br/>Pour plus d’informations, consultez la documentation pour le *Enterprise* scénario de fonctionnalité dans [des capacités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities). |
+| **proximity** | Requis pour la communication de proximité en champ proche avec des appareils à proximité immédiate de l’ordinateur. La proximité en champ proche peut être utilisée pour envoyer des fichiers ou communiquer avec une application sur l’appareil proche. <br/><br/> Cette fonctionnalité permet à une application d’accéder au réseau pour se connecter à un appareil à proximité immédiate. L’utilisateur doit confirmer l’envoi d’une invitation ou l’acceptation d’une invitation. |
+| **sharedUserCertificates** | Cette fonctionnalité permet à une application d’accéder aux certificats logiciels et matériels, tels que les certificats de carte à puce. Lorsque cette fonctionnalité est appelée au moment de l’exécution, l’utilisateur doit entreprendre une action, comme insérer une carte ou sélectionner un certificat. <br/><br/> Avec cette fonctionnalité, vos certificats matériels et logiciels ou une carte à puce sont utilisés pour l’identification dans l’application. Cette fonctionnalité peut être utilisée par votre employeur, votre banque ou les services publics pour l’identification. |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>Communication lorsque votre application n’est pas au premier plan
 [Prise en charge de votre application avec des tâches en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt299103) contient des informations générales sur l’utilisation des tâches en arrière-plan pour effectuer des tâches lorsque votre application n’est pas au premier plan. Plus précisément, votre code doit prévoir des mesures spéciales pour que votre application soit notifiée quand elle n’est pas au premier plan et que des données qui lui sont destinées arrivent sur le réseau. Vous avez utilisé des déclencheurs de canal de contrôle à cet effet dans Windows 8, et ils sont toujours pris en charge dans Windows 10. Pour des informations complètes sur l’utilisation de déclencheurs de canal de contrôle, voir [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). Une nouvelle technologie de Windows 10 fournit de meilleures fonctionnalités avec moins de traitement pour certains scénarios, tels que les sockets de flux prenant en charge les push : le service broker de socket et les déclencheurs d’activité de socket.

@@ -4,20 +4,22 @@ title: Moderniser les applications de bureau empaquetées
 ms.date: 04/22/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6d71233bc7b96af9d9b261406d6b149f36f65f29
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 191a8b8a007a866f37780a7c52cd40047dc9817f
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985289"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215200"
 ---
-# <a name="features-that-require-package-identity"></a>Fonctionnalités qui nécessitent l’identité du package
+# <a name="features-that-require-package-identity"></a>Fonctionnalités nécessitant l’identité du package
 
 Si vous souhaitez mettre à jour de votre application de bureau avec [expériences modernes Windows 10](index.md), de nombreuses fonctionnalités sont disponibles uniquement dans les applications de bureau qui sont empaquetées dans un package MSIX.
 
-MSIX est un format de package d’une application de Windows modern qui fournit une expérience de l’empaquetage universelle pour toutes les applications de Windows, WPF, Windows Forms et applications Win32. Empaquetage de vos applications de bureau Windows vous permet d’intégrer des expériences Windows 10 modernes tels que les vignettes dynamiques et des notifications dans vos applications. Il obtient également accès à une installation robuste et d’une expérience mise à jour, d’un modèle de sécurité gérée avec un système flexible de fonctionnalité, prise en charge pour le Microsoft Store, de gestion d’entreprise et de nombreux modèles de distribution personnalisée. Pour plus d’informations, consultez [empaqueter des applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) dans la documentation MSIX.
+MSIX est un format de package d’une application de Windows modern qui fournit une expérience de l’empaquetage universelle pour toutes les applications de Windows, WPF, Windows Forms et applications Win32. Empaquetage de vos applications de bureau Windows vous permet d’intégrer des expériences Windows 10 modernes tels que les vignettes dynamiques et des notifications dans vos applications. Il obtient également accès à une installation robuste et d’une expérience mise à jour, d’un modèle de sécurité gérée avec un système flexible de fonctionnalité, prise en charge pour le Microsoft Store, de gestion d’entreprise et de nombreux modèles de distribution personnalisée. Pour plus d’informations, consultez [Empaqueter des applications de bureau](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) dans la documentation MSIX.
 
 Si vous empaquetez votre application de bureau, vous pouvez ensuite utiliser les API UWP qui nécessitent l’identité du package, les extensions de package et les composants UWP dans votre application empaquetée. Pour plus d’informations, consultez ces articles.
 
@@ -33,7 +35,7 @@ Si votre application doit intégrer le système (par exemple : établir des rè
 
 Pour plus d’informations, consultez [intégrer votre application de bureau avec des extensions de package](desktop-to-uwp-extensions.md).
 
-## <a name="extend-with-uwp-components"></a>Étendre à l’aide des composants UWP
+## <a name="extend-with-uwp-components"></a>Étendre à l’aide de composants UWP
 
 Certaines expériences Windows 10 (par exemple: une page d'interface utilisateur tactile) doivent s'exécuter à l'intérieur d'un conteneur d'application moderne. En règle générale, vous devez d’abord déterminer si vous pouvez ajouter votre expérience en [amélioration](desktop-to-uwp-enhance.md) votre application de bureau existante avec les API UWP. Si vous devez utiliser un composant UWP, pour obtenir de l’expérience, vous pouvez ajouter un projet UWP à votre solution et utiliser des services d’application pour la communication entre votre application de bureau et le composant UWP.
 

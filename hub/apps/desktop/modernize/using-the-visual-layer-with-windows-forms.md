@@ -4,13 +4,15 @@ description: Découvrez des techniques pour l’utilisation de l’API de couche
 ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a3aff0bee68b971accd96f895601343726024d0
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 23515f8254b026b255491a90c1c8b3a2a8ab12ba
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985029"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215162"
 ---
 # <a name="using-the-visual-layer-with-windows-forms"></a>À l’aide de la couche visuelle avec Windows Forms
 

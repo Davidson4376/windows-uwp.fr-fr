@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a396377eb332052ae7f238a23865f2b7dc0aa16
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642224"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984180"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -226,7 +226,7 @@ Vous pouvez placer libre contenu dans le volet en l’ajoutant à la [PaneCustom
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a>En-tête
+### <a name="header"></a>Header
 
 Vous pouvez ajouter un titre de page en définissant le [en-tête](/uwp/api/windows.ui.xaml.controls.navigationview.header) propriété.
 
@@ -250,7 +250,7 @@ Nous vous recommandons de marges 12px pour votre zone de contenu lorsque Navigat
 
 Par défaut, la vue navigation modifie automatiquement son mode d’affichage selon la quantité d’espace d’écran à sa disposition. Le [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) et [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) propriétés spécifient les points d’arrêt, le mode d’affichage des modifications apportées. Vous pouvez modifier ces valeurs pour personnaliser le comportement de mode d’affichage adaptatif.
 
-### <a name="default"></a>Default
+### <a name="default"></a>Par défaut
 
 Quand PaneDisplayMode est définie sur sa valeur par défaut **automatique**, le comportement ADAPTATIF consiste à afficher :
 
@@ -624,7 +624,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
-Voici un [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/index) version de la **NavView_ItemInvoked** gestionnaire à partir de la C# exemple de code ci-dessus. La technique en C / c++ / WinRT Gestionnaire implique que vous consiste à stocker (dans la balise de la [ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) le nom de type complet de la page à laquelle vous souhaitez accéder. Dans le gestionnaire, vous effectuer une conversion unboxing à cette valeur, convertir en un [ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename) de l’objet et l’utiliser pour accéder à la page de destination. Il n’est pas nécessaire pour la variable de mappage nommée `_pages` que vous voyez dans le C# exemple ; et vous serez en mesure de créer des tests unitaires confirmant que les valeurs à l’intérieur de vos balises sont d’un type valide. Consultez également [Boxing et unboxing des valeurs scalaires à IInspectable avec C / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+Voici un [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) version de la **NavView_ItemInvoked** gestionnaire à partir de la C# exemple de code ci-dessus. La technique en C / c++ / WinRT Gestionnaire implique que vous consiste à stocker (dans la balise de la [ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) le nom de type complet de la page à laquelle vous souhaitez accéder. Dans le gestionnaire, vous effectuer une conversion unboxing à cette valeur, convertir en un [ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename) de l’objet et l’utiliser pour accéder à la page de destination. Il n’est pas nécessaire pour la variable de mappage nommée `_pages` que vous voyez dans le C# exemple ; et vous serez en mesure de créer des tests unitaires confirmant que les valeurs à l’intérieur de vos balises sont d’un type valide. Consultez également [Boxing et unboxing des valeurs scalaires à IInspectable avec C / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
@@ -715,4 +715,4 @@ Cet exemple montre comment remplacer les ressources de thème dans App.xaml. Lor
 - [Classe de NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Maître/détails](master-details.md)
 - [Notions de base sur la navigation](../basics/navigation-basics.md)
-- [Fluent Design pour une vue d’ensemble UWP](../fluent-design-system/index.md)
+- [Fluent Design pour une vue d’ensemble UWP](/windows/apps/fluent-design-system)

@@ -8,7 +8,7 @@ keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603394"
@@ -115,7 +115,7 @@ Help:
 La commande `dump` génère un fichier xml vidé contenant la liste de toutes les ressources d’un fichier PRI spécifié. Exécutez `MakePri.exe dump /?` pour afficher l’aide détaillée de cette commande.
 
 > [!NOTE]
-> Un pack de ressources sans schéma a été créé avec le commutateur *omitSchemaFromResourcePacks* dans le fichier de configuration IRP. Pour vider un pack de ressources sans schéma, utilisez le commutateur `/es <main_package_PRI_file>`. Si vous ne spécifiez pas le fichier principal, vous verrez le message d’erreur «*le resources.pri dans le package a été endommagée afin de chiffrement a échoué (erreur PRI222 : 0xdef0000f - erreur non spécifiée s’est produite)*».
+> Un pack de ressources sans schéma a été créé avec le commutateur *omitSchemaFromResourcePacks* dans le fichier de configuration IRP. Pour vider un pack de ressources sans schéma, utilisez le commutateur `/es <main_package_PRI_file>`. Si vous ne spécifiez pas le fichier principal, vous verrez le message d’erreur « *le resources.pri dans le package a été endommagée afin de chiffrement a échoué (erreur PRI222 : 0xdef0000f - erreur non spécifiée s’est produite)* ».
 
 ```console
 C:\>makepri dump /?

@@ -4,13 +4,15 @@ description: Découvrez des techniques pour l’utilisation de l’API de couche
 ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: e4b1074bbc3e98df3bb7138f906053d95dcd0fd5
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: a2f30ba67acc12d622acd09f9fae872ee2058a2f
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985109"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215154"
 ---
 # <a name="using-the-visual-layer-with-wpf"></a>À l’aide de la couche visuelle avec WPF
 

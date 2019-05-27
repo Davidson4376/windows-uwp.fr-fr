@@ -4,13 +4,15 @@ description: Utiliser la couche visuelle pour améliorer l’interface utilisate
 ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: jimwalk
+author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 042e34b8d09c2bae5cefb4227ef2a104a43861a6
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 249291c59a31036fa967ac338209404557b57503
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984969"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215173"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>À l’aide de la couche visuelle dans les applications de bureau
 

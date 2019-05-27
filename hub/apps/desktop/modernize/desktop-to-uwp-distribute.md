@@ -5,17 +5,19 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 274f69c71890423d9962efe67cca81646a1e8e68
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984479"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215010"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Distribuer votre application de bureau empaquetée
 
-Si vous décidez de [empaqueter votre application de bureau dans un package MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), vous pouvez publier votre application empaquetée dans le Microsoft Store ou le chargement de version test sur un ou plusieurs appareils.
+Si vous décidez de [empaqueter votre application de bureau dans un package MSIX](/windows/msix/desktop/desktop-to-uwp-root), vous pouvez publier votre application empaquetée dans le Microsoft Store ou le chargement de version test sur un ou plusieurs appareils.
 
 > [!NOTE]
 > Avez-vous un plan pour comment vous pouvez transférer les utilisateurs à votre application empaquetée ? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
@@ -26,12 +28,12 @@ Le [Microsoft Store](https://www.microsoft.com/store/apps) est une méthode pra
 
 Publier votre application sur le Microsoft Store pour atteindre l’audience plus large. En outre, les clients d’organisation peuvent acquérir votre application pour distribuer en interne à leur organisation via le [Microsoft Store pour entreprises](https://www.microsoft.com/business-store).
 
-Si vous envisagez de publier dans le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez plus d’informations sur cette exigence ici : [Des capacités restreintes](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Si vous envisagez de publier dans le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez plus d’informations sur cette exigence ici : [Des capacités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Vous n’êtes pas obligé de vous connecter à votre application avant son envoi vers le Store.
 
 >[!IMPORTANT]
-> Si vous envisagez de publier votre application sur le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence de Store. Consultez [Tester votre application pour Windows 10 S](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> Si vous envisagez de publier votre application sur le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence de Store. Consultez [Tester votre application pour Windows 10 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load" />
 
@@ -43,7 +45,7 @@ Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de 
 
 Pour distribuer votre application avec d’autres appareils sans le placer dans le Store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger une version test à votre application sur ces appareils.
 
-Vous pouvez [créer un certificat](/windows/uwp/packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
+Vous pouvez [créer un certificat](/windows/uwp/packaging/create-certificate-package-signing) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
 
 Si vous prévoyez de distribuer votre application sur les appareils qui exécutent Windows 10 S, votre application doit être signée par le Microsoft Store, vous devez donc passer par le processus de soumission Store avant de pouvoir distribuer votre application sur ces appareils.
 
@@ -52,9 +54,9 @@ Si vous créez un certificat, vous devez l’installer dans le magasin de certif
 > [!IMPORTANT]
 > Assurez-vous que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.
 
-Pour vous connecter à votre application à l’aide d’un certificat, consultez [signer un package d’application à l’aide de SignTool](/windows/uwp/packaging/sign-app-package-using-signtool.md).
+Pour vous connecter à votre application à l’aide d’un certificat, consultez [signer un package d’application à l’aide de SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
-Chargement de version test, votre application sur d’autres appareils, consultez [LOB de chargement de version test des applications dans Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+Chargement de version test, votre application sur d’autres appareils, consultez [LOB de chargement de version test des applications dans Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
 **Vidéos**
 

@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 464aa35aa8362049042ad23a6816c4de21b25634
+ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770370"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66184521"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
 
@@ -76,7 +76,7 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, avec la ligne `"excludePaths" : [ "/news/*", "/blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
+Par exemple, avec la ligne `"excludePaths" : [ "/news/*", "/blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **MSN.com/Weather.HTML** sera être pris en charge, mais pas **msn.com/news/topnews.html**.
 
 ### <a name="multiple-apps"></a>Applications multiples
 

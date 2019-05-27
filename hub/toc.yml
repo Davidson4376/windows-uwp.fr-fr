@@ -1,0 +1,51 @@
+- name: Créer des applications pour Windows
+  href: apps/index.md
+  items:
+    - name: Créer des applications de bureau
+      items:
+        - name: Vue d’ensemble
+          href: apps/desktop/index.md
+        - name: Choisir votre plateforme d’application
+          href: apps/desktop/choose-your-platform.md
+    - name: Moderniser vos applications de bureau
+      items:
+        - name: Vue d’ensemble
+          href: apps/desktop/modernize/index.md
+        - name: Appeler des API UWP
+          items:
+            - name: Vue d’ensemble
+              href: apps/desktop/modernize/desktop-to-uwp-enhance.md
+            - name: API UWP disponibles
+              href: apps/desktop/modernize/desktop-to-uwp-supported-api.md
+        - name: Héberger des contrôles XAML UWP (XAML Islands)
+          items:
+            - name: Vue d’ensemble
+              href: apps/desktop/modernize/xaml-islands.md
+            - name: Utilisation de l’API d’hébergement XAML UWP
+              href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+        - name: Utilisation de la couche Visuel (Windows.UI.Composition)
+          items:
+            - name: Vue d’ensemble
+              href: apps/desktop/modernize/visual-layer-in-desktop-apps.md
+            - name: WPF
+              href: apps/desktop/modernize/using-the-visual-layer-with-wpf.md
+            - name: "Windows\_Forms"
+              href: apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md
+            - name: Win32
+              href: apps/desktop/modernize/using-the-visual-layer-with-win32.md
+        - name: Fonctionnalités nécessitant l’identité du package
+          items:
+            - name: Vue d’ensemble
+              href: apps/desktop/modernize/modernize-packaged-apps.md
+            - name: Intégrer avec des extensions de package
+              href: apps/desktop/modernize/desktop-to-uwp-extensions.md
+            - name: Étendre à l’aide de composants UWP
+              href: apps/desktop/modernize/desktop-to-uwp-extend.md
+            - name: Distribuer votre application empaquetée
+              href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+    - name: Système de conception Fluent
+      href: apps/fluent-design-system.md
+    - name: Accessibilité
+      href: apps/accessibility.md
+    - name: Fonctionnalités et technologies
+      href: apps/features-and-technologies.md

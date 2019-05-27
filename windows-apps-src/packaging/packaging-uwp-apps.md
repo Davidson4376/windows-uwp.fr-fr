@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ed75cb79488eb994135dcfef74483ec078a32e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 8a7a34846cbadfa9e133976695239b98294a0dd2
+ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58173025"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66184575"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Package d’une application UWP avec Visual Studio
 
@@ -99,9 +99,10 @@ Pour distribuer une application via Microsoft Store, vous devez créer un packag
 6.  Veillez à sélectionner les trois configurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Generate app bundle**, sélectionnez **Always**. Un lot d’applications (.appxbundle ou .msixbundle) est préféré sur un fichier de package d’application unique, car elle contient une collection de packages d’applications configuré pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer le bundle d’applications, le bundle d’applications sera inclus dans l’application finale téléchargement (.appxupload ou .msixupload) fichier de package, ainsi que les informations de débogage et d’analyse de cas d’incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
     ![Créer la fenêtre de Packages d’application avec la configuration de package indiquée](images/packaging-screen5.jpg)
 7.  Inclure les fichiers de symboles PDB complets à [analyser les performances de l’application](https://docs.microsoft.com/windows/uwp/publish/analytics) à partir du centre de partenaires une fois que votre application a été publiée. Configurez tous les détails supplémentaires, notamment la numérotation de version ou l'emplacement de sortie de l'application.
-9.  Cliquez sur **Créer** pour générer le package d'application. Si vous avez sélectionné une de la **je souhaite créer des packages à télécharger dans le Microsoft Store** options dans l’étape 3 et créent un package pour la soumission des partenaires, l’Assistant va créer un fichier de chargement de package (.appxupload ou .msixupload). Si vous avez sélectionné **je souhaite créer des packages pour le chargement indépendant** à l’étape 3, l’Assistant va créer un package d’application unique ou un lot d’applications en fonction de vos sélections à l’étape 6.
-10. Lorsque votre application est empaquetée, cette boîte de dialogue s’affiche et vous pouvez récupérer votre téléchargement de fichier de package d’application à partir de l’emplacement de sortie spécifié. À ce stade, vous pouvez [valider votre package d’application sur l’ordinateur local ou un ordinateur distant](#validate-your-app-package).
+8.  Cliquez sur **Créer** pour générer le package d'application. Si vous avez sélectionné une de la **je souhaite créer des packages à télécharger dans le Microsoft Store** options dans l’étape 3 et créent un package pour la soumission des partenaires, l’Assistant va créer un fichier de chargement de package (.appxupload ou .msixupload). Si vous avez sélectionné **je souhaite créer des packages pour le chargement indépendant** à l’étape 3, l’Assistant va créer un package d’application unique ou un lot d’applications en fonction de vos sélections à l’étape 6.
+9. Lorsque votre application est empaquetée, cette boîte de dialogue s’affiche et vous pouvez récupérer votre téléchargement de fichier de package d’application à partir de l’emplacement de sortie spécifié. À ce stade, vous pouvez [valider votre package d’application sur l’ordinateur local ou un ordinateur distant](#validate-your-app-package) et [automatiser envoyer au Windows store](#automate-store-submission).
     ![Création de package terminée fenêtre avec les options de validation affichées](images/packaging-screen6.jpg)
+
 
 ### <a name="to-create-your-app-package-upload-file-manually"></a>Pour créer votre téléchargement de fichier de package d’application manuellement
 
@@ -138,6 +139,23 @@ Validez votre application avant de le soumettre à des partenaires pour la certi
 5.  Spécifiez une forme d’appareil dans votre sous-réseau, ou fournissez le nom de serveur de nom de domaine (DNS, Domain Name System) ou l’adresse IP d’un appareil en dehors de votre sous-réseau.
 6.  Dans la liste **Authentication Mode**, choisissez **None** si votre appareil ne requiert pas d’authentification avec vos informations d’identification Windows.
 7.  Choisissez le bouton **Select**, puis le bouton **Launch Windows App Certification Kit**. Si les outils à distance sont en cours d’exécution sur cet appareil, Visual Studio s’y connecte, puis effectue les tests de validation. Voir [Tests du kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186450).
+
+### <a name="automate-store-submission"></a>Automatiser les envoyer au Windows store
+
+À partir de Visual Studio 2019, vous pouvez envoyer le fichier .appxupload généré pour le Microsoft Store directement à partir de l’IDE d’en sélectionnant le **envoyer automatiquement pour le Microsoft Store, après la validation du Kit de Certification des applications Windows** option. Vous devez spécifier les informations d’identification utilisées pour l’envoi. Ces informations d’identification sont constituées de trois parties : le **ID de locataire Azure**, le **ID Client** et **clé secrète Client**. Suivez ces étapes pour les obtenir :
+
+1. Dans le centre de partenaires, accédez à votre **les paramètres du développeur**, cliquez sur **utilisateurs**et associer le compte du centre de développement de votre organisation avec un annuaire Azure AD de votre organisation. Pour obtenir des instructions détaillées, voir [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+2. Dans le **utilisateurs** , cliquez sur **ajouter des applications Azure AD**, ajouter l’application Azure AD qui représente l’application ou service que vous utiliserez pour accéder aux soumissions pour votre compte Centre de développement et lui attribuer le Rôle de gestionnaire. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez le sélectionner dans la page d’applications ajouter Azure AD pour l’ajouter à votre compte Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**. Pour plus d’informations, consultez [ajouter des utilisateurs, groupes et applications Azure AD pour votre compte espace partenaires](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
+3. Retour à la **gérer les utilisateurs** , cliquez sur le nom de votre application Azure AD pour accéder aux paramètres d’application et copie le **ID de locataire** et **ID Client** valeurs.
+4. Cliquez sur **Ajouter une clé**. Sur l’écran suivant, copiez la valeur de clé, qui correspond à la clé secrète Client. Vous ne serez pas en mesure d’accéder à ces informations à nouveau une fois que vous quittez cette page, veillez à ne pas le perdre. Pour plus d’informations, consultez les informations sur la gestion des clés dans [ajouter des utilisateurs, groupes et applications Azure AD pour votre compte espace partenaires](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
+    ![Vérifier et la progression de la publication](images/packaging-screen8.jpg)
+    > [!Important] 
+    > Vos informations d’identification peuvent être enregistrées dans votre profil à utiliser dans les soumissions futures
+5. Cliquez sur **OK**.
+
+L’envoi démarre une fois le test kit ont terminé. Vous pouvez suivre la progression de la soumission dans le **vérifier et publier** fenêtre.
+
+![Vérifier et la progression de la publication](images/packaging-screen9.jpg)
 
 ## <a name="sideload-your-app-package"></a>Charger de manière indépendante votre package d’application
 

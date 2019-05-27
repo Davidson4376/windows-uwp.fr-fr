@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2089f9fcd54989234b52f95eb3ee9535f9b3ede3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603114"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214734"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Contribution à la documentation conceptuelle UWP
 
@@ -34,7 +34,7 @@ Les ou les réviseurs attribués peuvent approuver ou rejeter la demande de tira
 
 ## <a name="internal-contributions"></a>Contributions internes
 
-Si vous êtes un employé de Microsoft, vous pouvez contribuer à la [référentiel de contenu privé](https://cpubwin.visualstudio.com/_git/windows-uwp). Vous trouverez des conseils sur l’utilisation de ce référentiel dans le [Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation sur les fonctionnalités à venir doit être fournie via le référentiel privé uniquement.
+Si vous êtes un employé de Microsoft, vous pouvez contribuer à la [référentiel de contenu privé](https://github.com/microsoftdocs/windows-uwp-pr). Vous trouverez des conseils sur l’utilisation de ce référentiel dans le [Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation sur les fonctionnalités à venir doit être fournie via le référentiel privé uniquement.
 
 ### <a name="editing-a-file"></a>Modification d’un fichier
 

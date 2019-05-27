@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e22a10e74a834daf4d256313f0e353a6829911c0
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582789"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984239"
 ---
 # <a name="xaml-platform"></a>Plateforme XAML
 
@@ -26,4 +26,4 @@ Cette section inclut des rubriques qui décrivent les concepts de programmation 
 | [Vue d’ensemble des propriétés jointes](attached-properties-overview.md) | Explique le concept de propriété jointe en XAML et fournit quelques exemples. |
 | [Propriétés jointes personnalisées](custom-attached-properties.md) | Explique comment implémenter une propriété jointe XAML en tant que propriété de dépendance et comment définir la convention d’accesseur nécessaire pour que votre propriété jointe soit utilisable en XAML. |
 | [Vue d’ensemble des événements et des événements routés](events-and-routed-events-overview.md) | Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les **événements routés** : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition. |
-|[Hébergez des contrôles UWP dans les applications WPF et Windows Forms](xaml-host-controls.md)| Explique comment utiliser les contrôles XAML UWP pour améliorer l’IU d’une application Windows Forms ou d’une application de bureau WPF.|
+|[Contrôles UWP dans les applications de bureau (XAML Islands)](/windows/apps/desktop/modernize/xaml-islands)| Explique comment utiliser les contrôles XAML UWP pour améliorer l’interface utilisateur d’une application de bureau Windows Forms, WPF ou Win32.|

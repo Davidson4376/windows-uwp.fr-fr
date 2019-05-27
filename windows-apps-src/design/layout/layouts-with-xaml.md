@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 53a69393d945be1640f733b47410f88631fc7714
+ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58081871"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66221050"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -27,7 +27,7 @@ Dans la pratique, vous utilisez une combinaison d’éléments statiques et flui
 Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour créer une disposition fluide.
 
 ### <a name="layout-properties"></a>Propriétés de disposition
-Les propriétés de disposition contrôlent la taille et la position d’un élément. Pour créer une disposition fluide, utilisez le dimensionnement proportionnel ou automatique pour les éléments, et laissez les panneaux de disposition positionner eux-mêmes leurs enfants selon les besoins. 
+Les propriétés de disposition contrôlent la taille et la position d’un élément. Pour créer une mise en page fluide, utilisez le dimensionnement automatique ou proportionnelle pour les éléments, et autoriser des panneaux de disposition positionner ses enfants en fonction des besoins. 
 
 Voici certaines propriétés de disposition courantes et comment les utiliser pour créer des dispositions fluides.
 
@@ -348,7 +348,7 @@ Vous pouvez ajouter le qualificateur au nom de fichier, ou ajouter le fichier à
 
 **Utiliser le nom de fichier**
 
-Pour utiliser le nom du qualificateur avec le fichier, utilisez ce format : *[pageName]*.DeviceFamily-*[qualifierString]*.xaml.
+Pour utiliser le nom du qualificateur avec le fichier, utilisez ce format : *[pageName]* .DeviceFamily- *[qualifierString]* .xaml.
 
 Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, nommez la vue XAML MainPage.DeviceFamily-Tablet.xaml. Pour créer une vue pour les appareils PC, nommez la vue MainPage.DeviceFamily-Desktop.xaml. Voici à quoi ressemble la solution dans Microsoft Visual Studio.
 
@@ -356,7 +356,7 @@ Examinons un exemple de fichier nommé MainPage.xaml. Pour créer une vue pour l
 
 **Utiliser le nom de dossier**
 
-Pour organiser les vues dans votre projet Visual Studio à l’aide de dossiers, vous pouvez utiliser le nom de qualificateur avec le dossier. Pour ce faire, nommez votre dossier comme suit : DeviceFamily -*[qualifierString]*. Dans ce cas, chaque fichier de la vue XAML a le même nom. N’incluez pas le qualificateur dans le nom de fichier.
+Pour organiser les vues dans votre projet Visual Studio à l’aide de dossiers, vous pouvez utiliser le nom de qualificateur avec le dossier. Pour ce faire, nommez votre dossier comme suit : DeviceFamily - *[qualifierString]* . Dans ce cas, chaque fichier de la vue XAML a le même nom. N’incluez pas le qualificateur dans le nom de fichier.
 
 Voici un exemple, pour un fichier nommé MainPage.xaml. Pour créer une vue pour les tablettes, créez un dossier nommé DeviceFamily-Tablet et placez dedans une vue XAML nommée MainPage.xaml. Pour créer une vue pour les PC, créez un dossier nommé DeviceFamily-Desktop, et placez dedans une autre vue XAML nommée MainPage.xaml. Voici à quoi ressemble la solution dans Visual Studio.
 

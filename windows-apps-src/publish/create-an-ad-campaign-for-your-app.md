@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, Active Directory, de campagne, promouvoir
 ms.localizationpriority: medium
-ms.openlocfilehash: d442792cb2b4175294ea8da053784ef0a99d18e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 0d38d47c1b5e228e984faa4657cd12735e98bcf9
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63811835"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215234"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Création d’une campagne de publicité pour votre application
 
@@ -20,7 +20,7 @@ Vous pouvez créer des campagnes de publicité dans [partenaires](https://partne
 Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
 
 > [!NOTE]
-> Cette section de la documentation décrit comment créer une campagne de publicité dans Partner Center. Vous pouvez également utiliser l’[API de promotions du Microsoft Store](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
+> Cette section de la documentation décrit comment créer une campagne de publicité dans Partner Center. Autres options de campagne pour créer et gérer des campagnes de publicité par programmation incluent [Vungle](https://vungle.com/) et [promotions Microsoft Store API](../monetize/run-ad-campaigns-using-windows-store-services.md).
 
 ## <a name="instructions"></a>Instructions
 
@@ -36,8 +36,8 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
 5.  Dans le champ **Nom de la campagne**, examinez le nom fourni pour votre campagne et modifiez-le si vous le souhaitez.
 6.  Sous **Type de campagne**, choisissez l’une des options suivantes :
     * **Ad payant**: Ces annonces seront exécutera dans n’importe quelle application qui correspond à l’appareil et la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier 2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés Premium de Microsoft sont appelés campagnes *universelles*.
-    * **Annonce de la Communauté (gratuit)**: Ces annonces seront exécute dans les applications publiées par d’autres développeurs qui créent également des campagnes de publicité de communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
-    * **Publicité maison (gratuite)**: Ces annonces ne seront exécute dans vos applications qui correspond au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
+    * **Annonce de la Communauté (gratuit)** : Ces annonces seront exécute dans les applications publiées par d’autres développeurs qui créent également des campagnes de publicité de communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
+    * **Publicité maison (gratuite)** : Ces annonces ne seront exécute dans vos applications qui correspond au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
 
 7.  Pour les campagnes de publicité payées, vérifiez l’option sélectionnée dans **Durée de la campagne** (période pendant laquelle le budget de votre campagne sera dépensé). L’option par défaut est **Mensuelle**, ce qui signifie que votre budget de campagne sera utilisé tous les mois de manière récurrente jusqu’à l’arrêt de la campagne. Si vous disposez d’un compte Premium, vous pouvez éventuellement choisir l’option **Personnalisée** pour spécifier une date personnalisée et un intervalle de temps pendant lequel votre budget de campagne sera dépensé. Pour plus d’informations sur les comptes premium, consultez [Questions courantes sur les campagnes de publicité](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
 
@@ -90,7 +90,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
 
 12.  Si vous avez un [compte premium](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), vous pouvez utiliser la zone **URL de destination** pour contrôler ce qui se passe quand un client clique sur votre annonce.
     * Si vous laissez la zone vide, quand un client clique sur votre annonce, la liste de vos applications dans le Windows Store s’affiche.
-    * Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le Microsoft Store. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](https://support.kochava.com/) et de [Tune](https://help.tune.com/).
+    * Si vous utilisez Adjust, Kochava, régler ou Vungle pour mesurer l’analytique de l’installation de votre application, entrez votre URL de suivi d’installation. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le Microsoft Store. Pour plus d’informations sur le suivi d’installation avec ces services, consultez le [Adjust](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [paramétrer](https://help.tune.com/), et [Vungle](https://support.vungle.com/) documentation .
     * Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez spécifier un [URI de lien ciblé](../launch-resume/handle-uri-activation.md) pour rediriger les clients du segment sélectionné vers une page spécifique de votre application.
     * Si vous spécifiez une destination qui n’est pas la page de description de votre application ni une page interne à votre application, votre campagne est automatiquement suspendue.
 

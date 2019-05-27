@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0f6a4fef72206058874edf845d5fbbe0768c53ec
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628664"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984221"
 ---
 # <a name="reveal-highlight"></a>Révéler la mise en surbrillance
 
@@ -78,7 +78,7 @@ Ces contrôles n’utilisent pas Révéler par défaut car il s'agit de contrôl
 
 | Nom du contrôle   | Nom de ressource |
 |----------|:-------------:|
-| Button |  ButtonRevealStyle |
+| Bouton |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
@@ -282,13 +282,13 @@ Lorsque vous activez révèlent sur un contrôle personnalisé ou re-basé sur u
 
 ## <a name="reveal-and-the-fluent-design-system"></a>Révéler et Fluent Design System
 
- Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Révéler est un composant de Fluent Design System qui ajoute de la lumière à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](../fluent-design-system/index.md).
+ Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Révéler est un composant de Fluent Design System qui ajoute de la lumière à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [ACRYLIQUE](acrylic.md)
+- [Acrylic](acrylic.md)
 - [Effets de composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [Conception Fluent pour UWP](../fluent-design-system/index.md)
+- [Conception Fluent pour UWP](/windows/apps/fluent-design-system)
 - [Science dans le système : Profondeur et conception Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science dans le système : Clair et conception Fluent](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

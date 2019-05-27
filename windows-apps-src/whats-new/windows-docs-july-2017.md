@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595034"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984202"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en juillet 2017
 
@@ -112,7 +112,7 @@ Une étendue « UWP » a été ajoutée à la [documentation conceptuelle UWP]
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>Tester votre application Windows pour Windows 10 S
 
-Testez votre application Windows afin de vous assurer qu’elle fonctionnera correctement sur les appareils qui exécutent Windows S. Utilisez [ce nouveau guide](../porting/desktop-to-uwp-test-windows-s.md) pour savoir comment procéder. 
+Testez votre application Windows afin de vous assurer qu’elle fonctionnera correctement sur les appareils qui exécutent Windows S. Utilisez [ce nouveau guide](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s) pour savoir comment procéder.
 
 ## <a name="samples"></a>Exemples
 

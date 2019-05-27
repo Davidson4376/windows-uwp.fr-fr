@@ -1,17 +1,17 @@
 ---
 description: L’environnement Windows Runtime est un système avec décompte des références ; dans un tel système, il est important de connaître la signification des références fortes et faibles, et de faire la distinction entre elles.
 title: Références faibles en C++/WinRT
-ms.date: 10/03/2018
+ms.date: 05/16/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, fort, faible, référence
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c9fb112c6f83fa7bd9a3612916efd2527d821c29
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291827"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821071"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Les références fortes et faibles en C / c++ / WinRT
 
@@ -19,12 +19,13 @@ Le Runtime de Windows est un système contenant des références ; et dans un t
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>En toute sécurité l’accès à la *cela* pointeur dans une coroutine de membre de classe
 
-Le code ci-dessous montre un exemple typique d’une coroutine qui est une fonction membre d’une classe.
+Le code ci-dessous montre un exemple typique d’une coroutine qui est une fonction membre d’une classe. Vous pouvez copier-coller cet exemple dans les fichiers spécifiés dans une nouvelle **Application de Console Windows (C++/WinRT)** projet.
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.
@@ -101,11 +102,14 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Étant donné qu’un C++/WinRT objet dérive directement ou indirectement le [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) modèle, le C++/objet de WinRT peut appeler son [  **Implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protégé par la fonction membre pour récupérer une référence forte à son *cela* pointeur. Notez qu’il est inutile d’utiliser réellement le `strong_this` variable ; simplement l’appeler **get_strong** incrémente le décompte de références et conserve votre implicite *cela* pointeur valide.
+Un C++/WinRT classe dérive directement ou indirectement le [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) modèle. Pour cette raison, le C++/objet de WinRT peut appeler son [ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protégé par la fonction membre pour récupérer une référence forte à son *cela* pointeur. Notez qu’il est inutile d’utiliser réellement le `strong_this` variable dans l’exemple de code ci-dessus ; il vous suffit d’appeler **get_strong** incrémente le C++/WinRT objet du décompte de références et conserve son implicite *cette* pointeur valide.
+
+> [!IMPORTANT]
+> Étant donné que **get_strong** est une fonction membre de la **winrt::implements** modèle struct, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement **winrt::implements**, comme un C++/WinRT classe. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et obtenir des exemples, consultez [API auteur avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 Cela résout le problème que nous avions précédemment quand nous sommes à l’étape 4. Même si toutes les autres références à l’instance de classe disparaissent, la coroutine a pris la précaution de garantir que ses dépendances sont stables.
 
-Si une référence forte n’est pas appropriée, vous pouvez appeler à la place [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) pour récupérer une référence faible à *cela*. Il suffit de confirmer que vous pouvez récupérer une référence forte avant d’accéder à *cela*.
+Si une référence forte n’est pas appropriée, vous pouvez appeler à la place [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) pour récupérer une référence faible à *cela*. Il suffit de confirmer que vous pouvez récupérer une référence forte avant d’accéder à *cela*. Là encore, **get_weak** est une fonction membre de la **winrt::implements** modèle de struct.
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -244,6 +248,9 @@ Dans les deux cas, nous allons simplement capturer brut *cela* pointeur. Et qui 
 ### <a name="the-solution"></a>La solution
 
 La solution consiste à capturer une référence forte. Une référence forte *est* incrémenter le décompte de références et il *est* maintenir l’objet actuel. Vous déclarez une variable de capture (appelé `strong_this` dans cet exemple) et l’initialiser avec un appel à [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), qui Récupère une référence forte à notre  *Cela* pointeur.
+
+> [!IMPORTANT]
+> Étant donné que **get_strong** est une fonction membre de la **winrt::implements** modèle struct, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement **winrt::implements**, comme un C++/WinRT classe. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et obtenir des exemples, consultez [API auteur avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

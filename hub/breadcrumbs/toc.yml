@@ -1,0 +1,18 @@
+- name: Docs
+  tocHref: /
+  topicHref: /
+  items:
+    - name: Windows
+      tocHref: /windows/
+      topicHref: /windows/
+      items:
+        - name: Applications
+          tocHref: /windows/apps/
+          topicHref: /windows/apps/
+          items:
+            - name: Créer des applications de bureau
+              tocHref: /windows/apps/desktop/
+              topicHref: /windows/apps/desktop/
+            - name: Moderniser les applications de bureau
+              tocHref: /windows/apps/desktop/modernize/
+              topicHref: /windows/apps/desktop/modernize/

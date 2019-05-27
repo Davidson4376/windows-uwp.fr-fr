@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624194"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984261"
 ---
 # <a name="acrylic-material"></a>Matière acrylique
 
@@ -38,7 +38,7 @@ ACRYLIQUE est un type de [pinceau](https://docs.microsoft.com/en-us/uwp/api/Wind
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acrylique et Fluent Design System
 
- Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Acrylique est un composant de Fluent Design System qui permet d'ajouter des textures physiques (matières) et de la profondeur à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](../fluent-design-system/index.md).
+ Le système de conception Fluent vous aide à créer une interface utilisateur moderne et audacieuse qui incorpore la lumière, la profondeur, le mouvement, les matières et la notion d'échelle. Acrylique est un composant de Fluent Design System qui permet d'ajouter des textures physiques (matières) et de la profondeur à votre application. Pour plus d’informations, voir [Présentation de Fluent Design pour UWP](/windows/apps/fluent-design-system).
 
  ## <a name="video-summary"></a>Résumé de la vidéo
 
@@ -48,14 +48,14 @@ ACRYLIQUE est un type de [pinceau](https://docs.microsoft.com/en-us/uwp/api/Wind
 
 :::row:::
     :::column span:::
-        ![Some image](images/XAML-controls-gallery-app-icon.png)
+![Une image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-        **XAML Controls Gallery**<br>
-        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**Galerie de contrôles XAML**<br>
+Si vous avez installé l’application de galerie de contrôles XAML, cliquez sur <a href="xamlcontrolsgallery:/item/Acrylic">ici</a> pour ouvrir l’application et consultez ACRYLIQUE en action.
 
-        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -73,7 +73,7 @@ La caractéristique d’acrylique la plus remarquable est sa transparence. Il ex
 ## <a name="when-to-use-acrylic"></a>Quand utiliser l'acrylique
 
 * Utiliser dans l’application ACRYLIQUE pour prendre en charge l’interface utilisateur, tels que sur les surfaces qui peuvent se chevaucher contenu si le défilement ou interagi avec.
-* Utilisez ACRYLIQUE d’arrière-plan pour les éléments d’interface utilisateur temporaires, tels que des menus contextuels, menus volants et l’interface utilisateur dimsissable de lumière.<br />À l’aide d’ACRYLIQUE dans les scénarios temporaires permet de maintenir une relation visuelle avec le contenu qui a déclenché l’interface utilisateur temporaire.
+* Utilisez ACRYLIQUE d’arrière-plan pour les éléments d’interface utilisateur temporaires, tels que des menus contextuels, menus volants et l’interface utilisateur dismissable de lumière.<br />À l’aide d’ACRYLIQUE dans les scénarios temporaires permet de maintenir une relation visuelle avec le contenu qui a déclenché l’interface utilisateur temporaire.
 
 Si vous utilisez dans l’application ACRYLIQUE sur des surfaces de navigation, envisager d’étendre le contenu sous le volet ACRYLIQUE pour améliorer le flux sur votre application. À l’aide de NavigationView fait pour vous automatiquement. Toutefois, pour éviter de créer un effet d’entrelacement, essayer de ne pas placer plusieurs éléments de bord à bord ACRYLIQUE - cela peut créer une indésirables à la limite entre les deux surfaces floues. ACRYLIQUE est un outil de proposer visual harmonie à vos conceptions, mais lorsqu’il est utilisé de manière incorrecte, vous risquez bruit visuel.
 
@@ -98,7 +98,7 @@ Pour les applications avec les menus volants, menus contextuels non modale, ou l
 
 ![Modèle d’application de messagerie à l’aide d’un menu volant d’information](images/Mail_TransientContextMenu.png)
 
-La plupart de nos contrôles utilisent ACRYLIQUE par défaut. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et contrôles similaires avec des fenêtres contextuelles light-dimiss utiliseront tous l’ACRYLIQUE temporaire lorsqu’elles sont appelées.
+La plupart de nos contrôles utilisent ACRYLIQUE par défaut. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et contrôles similaires avec light-faire disparaître les fenêtres contextuelles utiliseront tous l’ACRYLIQUE temporaire lorsqu’elles sont appelées.
 
 > [!Note]
 > Rendu des surfaces ACRYLIQUES consomme des GPU, ce qui peut augmenter la consommation d’énergie appareil et raccourcir la durée de la batterie. Effets ACRYLIQUES sont automatiquement désactivés lorsque les appareils entrer en mode économiseur de batterie, et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils choisissent.
@@ -141,7 +141,7 @@ Nous avons créé une collection de ressources de thème de pinceaux pour les ty
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowMediumHighBrush, SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush, SystemControlBaseHighAcrylicElementMediumHighBrush </td>
-        <td align="center"> 70 % </td>
+        <td align="center"> 70% </td>
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
@@ -166,7 +166,7 @@ En plus d’une acrylique de couleur neutre, nous avons également ajouté des r
     </tr>
     <tr>
         <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
-        <td align="center"> 70 % </td>
+        <td align="center"> 70% </td>
         <td> SystemAccentColor </td>
     </tr>
     <tr>
@@ -176,7 +176,7 @@ En plus d’une acrylique de couleur neutre, nous avons également ajouté des r
     </tr>
     <tr>
         <td> SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush, SystemControlAccentDark2AcrylicElementAccentDark2MediumHighBrush  </td>
-        <td align="center"> 70 % </td>
+        <td align="center"> 70% </td>
         <td> SystemAccentColorDark2 </td>
     </tr>
 </table>
@@ -319,7 +319,7 @@ En outre, vous devrez dessiner le titre de votre application, lequel apparaît n
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 * Utilisez l'acrylique en tant que support d'arrière-plan des surfaces des applications non principales, comme les volets de navigation.
 * Étendez l'acrylique vers au moins un bord de votre application pour fournir une expérience fluide, en la mélangeant de manière subtile à l’environnement de l’application.
-* Ne placez pas de bureau arylic sur des surfaces d’arrière-plan volumineux de votre application, cela interrompt le modèle mental d’ACRYLIQUE utilisé principalement pour les surfaces temporaires.
+* Ne placez pas de bureau ACRYLIQUE sur les surfaces d’arrière-plan volumineux de votre application, cela interrompt le modèle mental d’ACRYLIQUE utilisé principalement pour les surfaces temporaires.
 * Ne placez pas des acryliques dans l’application et en arrière-plan directement côte à côte pour éviter toute fatigue visuelle au niveau des lignes.
 * Ne placez pas plusieurs volets acryliques avec la même teinte et la même opacité côte à côte, car cela entraîne une jointure visible indésirable.
 * Ne placez pas du texte coloré sur les surfaces acryliques.

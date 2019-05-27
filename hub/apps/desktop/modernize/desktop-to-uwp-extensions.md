@@ -5,13 +5,15 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a7815639c8dafa555be6d4f0eac0eb07b43dba98
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984449"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214949"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau empaquetée avec Windows 10 et UWP
 
@@ -406,9 +408,9 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>Placer vos fichiers DLL dans n'importe quel dossier du package
 
-Utilisez une extension pour identifier ces dossiers. Ainsi, le système est en mesure de trouver et de charger les fichiers que vous avez placés dans ces dossiers. Considérez cette extension comme le remplacement de la variable d'environnement _%PATH%_.
+Utilisez une extension pour identifier ces dossiers. Ainsi, le système est en mesure de trouver et de charger les fichiers que vous avez placés dans ces dossiers. Considérez cette extension comme le remplacement de la variable d'environnement _%PATH%_ .
 
-Si vous n'utilisez pas cette extension, le système recherche le graphique de dépendance de package de ce processus, le dossier racine du package, puis le répertoire système (_%SystemRoot%\system32_) dans cet ordre. Pour plus d’informations, consultez [Ordre de recherche des applications Windows](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
+Si vous n'utilisez pas cette extension, le système recherche le graphique de dépendance de package de ce processus, le dossier racine du package, puis le répertoire système ( _%SystemRoot%\system32_) dans cet ordre. Pour plus d’informations, consultez [Ordre de recherche des applications Windows](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
 
 Chaque package peut contenir uniquement l'une de ces extensions. En d'autres termes, vous pouvez ajouter l'une d'elles à votre package principale, puis en ajouter une à chacun de vos [packages facultatifs et ensembles relatifs](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
 

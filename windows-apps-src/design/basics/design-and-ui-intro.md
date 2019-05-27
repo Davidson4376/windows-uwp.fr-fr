@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611754"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983916"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applications UWP
 
@@ -20,7 +20,7 @@ ms.locfileid: "57611754"
 
 Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir des applications belles et élégantes.
 
-Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre [système Fluent Design](../fluent-design-system/index.md) ainsi qu’aux besoins de notre communauté de développement d’applications.
+Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre [système Fluent Design](/windows/apps/fluent-design-system) ainsi qu’aux besoins de notre communauté de développement d’applications.
 
 Cette nouvelle introduction présente une vue d’ensemble des fonctionnalités de conception universelle qui sont incluses dans chaque application UWP. Elle vous aide à créer des interfaces utilisateur (UI) qui s’adaptent parfaitement à toute une gamme d’appareils.
 
@@ -56,7 +56,7 @@ Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle l
     :::column-end:::
 :::row-end:::
 
-## <a name="layout"></a>Disposition
+## <a name="layout"></a>Mise en page
 
 Puisque les applications UWP s'adaptent automatiquement à tous les appareils, la conception d’une application UWP présentera la même structure quel que soit l'appareil. Commençons par le début de l’interface utilisateur de votre application UWP.
 
@@ -98,7 +98,7 @@ Vous pouvez également utiliser [Windows Template Studio](https://github.com/Mic
 
 ## <a name="controls"></a>Contrôles
 
-La plateforme de conception UWP fournit un ensemble de contrôles courants qui sont garantis pour fonctionner correctement sur tous les appareils fonctionnant sous Windows, et qui respectent nos principes de [Système Fluent Design](../fluent-design-system/index.md). Ces contrôles incluent tous les éléments de contrôle, qu’ils soient simples comme les boutons et les éléments de texte, ou plus complexes et capables de générer des listes à partir d’un ensemble de données et d’un modèle.
+La plateforme de conception UWP fournit un ensemble de contrôles courants qui sont garantis pour fonctionner correctement sur tous les appareils fonctionnant sous Windows, et qui respectent nos principes de [Système Fluent Design](/windows/apps/fluent-design-system). Ces contrôles incluent tous les éléments de contrôle, qu’ils soient simples comme les boutons et les éléments de texte, ou plus complexes et capables de générer des listes à partir d’un ensemble de données et d’un modèle.
 
 ![Contrôles UWP](../style/images/color/windows-controls.svg)
 
@@ -172,10 +172,10 @@ Nous proposons divers outils pour vous aider à réaliser votre conception :
 
 ## <a name="next-fluent-design-system"></a>prochain : Système de conception Fluent
 
-Si vous souhaitez en savoir plus sur les principes sous-jacents de Fluent Design (système de conception de Microsoft) et voir plus de fonctionnalités pouvant être incorporées dans votre application UWP, accédez à [Système Fluent Design](../fluent-design-system/index.md).
+Si vous souhaitez en savoir plus sur les principes sous-jacents de Fluent Design (système de conception de Microsoft) et voir plus de fonctionnalités pouvant être incorporées dans votre application UWP, accédez à [Système Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Qu’est-ce qu’une application UWP ?](../../get-started/universal-application-platform-guide.md)
-- [Système de conception Fluent](../fluent-design-system/index.md)
+- [Système de conception Fluent](/windows/apps/fluent-design-system)
 - [Présentation de la plateforme XAML](../../xaml-platform/index.md)
