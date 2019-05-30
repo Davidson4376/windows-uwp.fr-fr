@@ -6,27 +6,27 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, achats dans l’application, extensions, versions d’évaluation, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7053f75ee4081de18fe004d4af905afe5e00587b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628534"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361901"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats in-app à l’aide de l’espace de noms Windows.ApplicationModel.Store
 
-Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour ajouter des achats in-app, et la fonctionnalité d’évaluation dans votre application de plateforme Windows universelle (UWP) pour monétiser votre application. Ces API offrent également l’accès aux informations de licence de votre application.
+Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) pour ajouter des achats in-app, et la fonctionnalité d’évaluation dans votre application de plateforme Windows universelle (UWP) pour monétiser votre application. Ces API offrent également l’accès aux informations de licence de votre application.
 
 Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md). Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version 10.0 ; Build 14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows 10, version 1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). Le **Windows.ApplicationModel.Store** espace de noms n’est pas pris en charge dans les applications de bureau Windows qui utilisent la [pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans les applications ou les jeux qui utilisent un bac à sable de développement dans le centre de partenaires (pour exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
+> L'espace de noms **Windows.ApplicationModel.Store** n'est plus mis à jour avec de nouvelles fonctionnalités. Si votre projet d’app cible **Windows 10 Anniversary Edition (version 10.0 ; Build 14393)** ou une version ultérieure dans Visual Studio (ce qui correspond à Windows 10, version 1607 ou versions ultérieures), nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) à la place. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). Le **Windows.ApplicationModel.Store** espace de noms n’est pas pris en charge dans les applications de bureau Windows qui utilisent la [pont du bureau](https://developer.microsoft.com/windows/bridges/desktop) ou dans les applications ou les jeux qui utilisent un bac à sable de développement dans le centre de partenaires (pour exemple, c’est le cas pour les jeux qui s’intègre à Xbox Live). Ces produits doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Prise en main des classes CurrentApp et CurrentAppSimulator
 
-Le point d’entrée principal de l’espace de noms **Windows.ApplicationModel.Store** est la classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx). Cette classe fournit des propriétés et des méthodes statiques que vous pouvez utiliser, entre autres, pour obtenir des informations sur l’application active et ses extensions disponibles, acheter une application ou une extension pour l’utilisateur actuel, et obtenir des informations sur la licence de l’application en cours ou de ses extensions.
+Le point d’entrée principal de l’espace de noms **Windows.ApplicationModel.Store** est la classe [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp). Cette classe fournit des propriétés et des méthodes statiques que vous pouvez utiliser, entre autres, pour obtenir des informations sur l’application active et ses extensions disponibles, acheter une application ou une extension pour l’utilisateur actuel, et obtenir des informations sur la licence de l’application en cours ou de ses extensions.
 
-La classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) obtient ses données à partir du Microsoft Store. Vous devez donc disposer d’un compte de développeur et l’app doit être publiée dans le Store pour que vous puissiez utiliser cette classe dans votre app. Avant de soumettre votre application au Windows Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). Après avoir testé votre app et avant de la soumettre au Microsoft Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
+La classe [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) obtient ses données à partir du Microsoft Store. Vous devez donc disposer d’un compte de développeur et l’app doit être publiée dans le Store pour que vous puissiez utiliser cette classe dans votre app. Avant de soumettre votre application au Windows Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator). Après avoir testé votre app et avant de la soumettre au Microsoft Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
 
 Lorsque **CurrentAppSimulator** est utilisé, l’état initial des produits in-app et de licence de votre application est décrit dans un fichier local nommé WindowsStoreProxy.xml, situé sur votre ordinateur de développement. Pour plus d’informations sur ce fichier, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](#proxy).
 
@@ -360,7 +360,7 @@ L’élément racine de ce fichier est l’élément **CurrentApp** qui représe
 |  [ListingInformation](#listinginformation)  |    Oui        |  1  |  Contient les données de la liste de l’application.            |
 |  [LicenseInformation](#licenseinformation)  |     Oui       |   1    |   Décrit les licences disponibles pour cette application et ses modules complémentaires durables.     |
 |  [ConsumableInformation](#consumableinformation)  |      Non      |   0 ou 1   |   Décrit les modules complémentaires consommables disponibles pour cette application.      |
-|  [Simulation](#simulation)  |     Non       |      0 ou 1      |   Décrit le fonctionnement des appels à plusieurs méthodes [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) dans l’application lors du test.    |
+|  [Simulation](#simulation)  |     Non       |      0 ou 1      |   Décrit le fonctionnement des appels à plusieurs méthodes [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) dans l’application lors du test.    |
 
 <span id="listinginformation" />
 
@@ -372,7 +372,7 @@ Cet élément contient les données de la liste de l’application. **ListingInf
 
 |  Élément  |  Obligatoire  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [Application](#app-child-of-listinginformation)  |    Oui   |  1   |    Fournit des données sur l’application.         |
+|  [App](#app-child-of-listinginformation)  |    Oui   |  1   |    Fournit des données sur l’application.         |
 |  [Produit](#product-child-of-listinginformation)  |    Non  |  0 ou davantage   |      Décrit un module complémentaire de l’application.     |     |
 
 <span id="app-child-of-listinginformation"/>
@@ -385,7 +385,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 
 |  Élément  |  Obligatoire  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **ID d’application**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows Store. Cela peut être le GUID utilisé pour le test.        |
+|  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows Store. Cela peut être le GUID utilisé pour le test.        |
 |  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windows store. Cela peut être n’importe quel URL valide pour le test.         |
 |  **CurrentMarket**  |    Oui  |  1   |    Pays/région du client.         |
 |  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans partenaires lorsque vous soumettez l’application. Les valeurs utilisées par le Store sont : 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
@@ -405,13 +405,13 @@ Cet élément fournit des informations sur l’application pour un pays/une rég
 |  **Description**  |    Oui  |  1   |      Description de l’application dans ce pays/cette région.       |
 |  **Prix**  |    Oui  |  1   |     Prix de l’application dans ce pays/cette région.        |
 |  **CurrencySymbol**  |    Oui  |  1   |     Symbole de devise utilisé dans ce pays/cette région.        |
-|  **currencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  |
+|  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  |
 
 **MarketData** a les attributs suivants.
 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
-|  **XML : lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
+|  **xml:lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -425,7 +425,7 @@ Cet élément décrit un module complémentaire de l’application. **Product** 
 |-------------|------------|----------------|
 |  **ProductId**  |    Oui        |    Contient la chaîne utilisée par l’application pour identifier le module complémentaire.           |
 |  **LicenseDuration**  |    Non        |    Indique le nombre de jours pendant lesquels la licence reste valide, une fois l’élément acheté. La date d’expiration de la nouvelle licence créée par un achat de produit correspond à la date d’achat avec la durée de la licence. Cet attribut n’est utilisé que si l’attribut **ProductType** a pour valeur **Durable**. Il est ignoré pour les modules complémentaires consommables.           |
-|  **productType**  |    Non        |    Contient une valeur permettant d’identifier la persistance du produit in-app. Les valeurs prises en charge sont **Durable** (valeur par défaut) et **Consumable**. Pour les types durables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-licenseinformation) sous [LicenseInformation](#licenseinformation). Pour les types consommables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-consumableinformation) sous [ConsumableInformation](#consumableinformation).           |  |
+|  **ProductType**  |    Non        |    Contient une valeur permettant d’identifier la persistance du produit in-app. Les valeurs prises en charge sont **Durable** (valeur par défaut) et **Consumable**. Pour les types durables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-licenseinformation) sous [LicenseInformation](#licenseinformation). Pour les types consommables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-consumableinformation) sous [ConsumableInformation](#consumableinformation).           |  |
 
 <span id="marketdata-child-of-product"/>
 
@@ -440,17 +440,17 @@ Cet élément fournit des informations sur le module complémentaire pour un pay
 |  **Nom**  |    Oui   |  1   |   Nom du module complémentaire dans ce pays/cette région.        |
 |  **Prix**  |    Oui  |  1   |     Prix du module complémentaire dans ce pays/cette région.        |
 |  **CurrencySymbol**  |    Oui  |  1   |     Symbole de devise utilisé dans ce pays/cette région.        |
-|  **currencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  
+|  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  
 |  **Description**  |    Non  |   0 ou 1   |      Description du module complémentaire pour ce pays/cette région.       |
-|  **Balise**  |    Non  |   0 ou 1   |      [Données personnalisées du développeur](../publish/enter-add-on-properties.md#custom-developer-data) (également appelées balise) du module complémentaire.       |
-|  **Mots clés**  |    Non  |   0 ou 1   |      Contient jusqu’à 10 éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
-|  **imageUri**  |    Non  |   0 ou 1   |      [URI de l’image](../publish/create-add-on-store-listings.md#icon) dans la liste du module complémentaire.           |  |
+|  **Tag**  |    Non  |   0 ou 1   |      [Données personnalisées du développeur](../publish/enter-add-on-properties.md#custom-developer-data) (également appelées balise) du module complémentaire.       |
+|  **Keywords**  |    Non  |   0 ou 1   |      Contient jusqu’à 10 éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
+|  **ImageUri**  |    Non  |   0 ou 1   |      [URI de l’image](../publish/create-add-on-store-listings.md#icon) dans la liste du module complémentaire.           |  |
 
 **MarketData** a les attributs suivants.
 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
-|  **XML : lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
+|  **xml:lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
 <span id="licenseinformation"/>
 
@@ -462,7 +462,7 @@ Cet élément décrit les licences disponibles pour cette application et ses pro
 
 |  Élément  |  Obligatoire  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  [Application](#app-child-of-licenseinformation)  |    Oui   |  1   |    Décrit la licence de l’application.         |
+|  [App](#app-child-of-licenseinformation)  |    Oui   |  1   |    Décrit la licence de l’application.         |
 |  [Produit](#product-child-of-licenseinformation)  |    Non  |  0 ou davantage   |      Décrit l’état de la licence d’un module complémentaire durable dans l’application.         |   |
 
 Le tableau suivant montre comment simuler certaines conditions courantes en combinant les valeurs des éléments **App** et **Product**.
@@ -485,7 +485,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 |  Élément  |  Obligatoire  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Oui   |  1   |    Décrit l’état actuel de la licence de cette application. La valeur **true** indique que la licence est valide. La valeur **false** indique une licence non valide. Normalement, cette valeur est **true**, que l’application ait un mode d’évaluation ou non.  Réglez cette valeur sur **false** pour tester le comportement de votre application quand sa licence n’est pas valide.           |
-|  **isTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
+|  **IsTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
 |  **ExpirationDate**  |    Non  |  0 ou 1       |     Date à laquelle la période d’évaluation de cette application expire, en temps universel coordonné (UTC). La date doit se présenter comme suit : aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19 janvier 2015 à 05:00 correspond à 2015-01-19T05:00:00.00Z. Cet élément est requis lorsque **IsTrial** est **true**. Sinon, il est facultatif.          |  |
 
 <span id="product-child-of-licenseinformation"/>
@@ -512,7 +512,7 @@ Cet élément décrit l’état de la licence d’un module complémentaire dura
 
 #### <a name="simulation-element"></a>Élément de simulation
 
-Cet élément décrit le fonctionnement des appels à plusieurs méthodes [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) dans l’application lors du test. **Simulation** est un enfant facultatif de l’élément **CurrentApp** et contient zéro, un ou plusieurs éléments [DefaultResponse](#defaultresponse).
+Cet élément décrit le fonctionnement des appels à plusieurs méthodes [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) dans l’application lors du test. **Simulation** est un enfant facultatif de l’élément **CurrentApp** et contient zéro, un ou plusieurs éléments [DefaultResponse](#defaultresponse).
 
 **Simulation** a les attributs suivants.
 
@@ -530,7 +530,7 @@ Cet élément décrit le code d’erreur par défaut renvoyé par une méthode *
 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
-|  **methodName**  |    Oui        |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **StoreMethodName** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente une méthode **CurrentAppSimulator** pour laquelle vous voulez simuler la valeur de retour du code d’erreur dans votre application au cours du test. Par exemple, la valeur **RequestAppPurchaseAsync_GetResult** indique que vous voulez simuler la valeur de retour du code d’erreur de la méthode [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync).            |
+|  **MethodName**  |    Oui        |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **StoreMethodName** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente une méthode **CurrentAppSimulator** pour laquelle vous voulez simuler la valeur de retour du code d’erreur dans votre application au cours du test. Par exemple, la valeur **RequestAppPurchaseAsync_GetResult** indique que vous voulez simuler la valeur de retour du code d’erreur de la méthode [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync).            |
 |  **HResult**  |     Oui       |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **ResponseCodes** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente le code d’erreur que vous voulez renvoyer pour la méthode affectée à l’attribut **MethodName** de cet élément **DefaultResponse**.           |
 
 <span id="consumableinformation"/>
@@ -550,6 +550,6 @@ Cet élément décrit un module complémentaire consommable. **Product** est un 
 |  Attribut  |  Obligatoire  |  Description   |
 |-------------|------------|----------------|
 |  **ProductId**  |    Oui        |   Contient la chaîne utilisée par l’application pour identifier le module complémentaire consommable.            |
-|  **transactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |
+|  **TransactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |
 |  **Statut**  |      Oui      |  Contient la chaîne utilisée par l’application pour indiquer l’état d’acquisition d’un consommable. La valeur peut être **Active**, **PurchaseReverted**, **PurchasePending** ou **ServerError**.             |
 |  **OfferId**  |     Non       |    Contient la chaîne utilisée par l’application pour identifier la catégorie à laquelle appartient le consommable. Il permet de prendre en charge des catalogues volumineux, comme indiqué dans [Gérer un vaste catalogue de produits intégrés à l'application](manage-a-large-catalog-of-in-app-products.md).           |

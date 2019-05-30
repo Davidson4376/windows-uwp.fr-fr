@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, projection, actualités, ce qui de, les nouveaux
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
-ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
+ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65626216"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360136"
 ---
 # <a name="whats-new-in-cwinrt"></a>Quelles sont les nouveautés en C / c++ / WinRT
 
@@ -302,7 +302,7 @@ Si vous avez précédemment le laissé à C++ / c++ / WinRT pour inclure tous le
 
 Actuellement, les seules exceptions à l’isolation de fichier d’en-tête Windows SDK concernent les fonctions intrinsèques et les valeurs numériques. Il n’existe aucun problème connu avec ces dépendances de la dernière.
 
-Dans votre projet, vous pouvez réactiver l’interopérabilité avec les en-têtes Windows SDK si vous avez besoin. Peut, par exemple, voulez-vous implémenter une interface COM (enraciné dans [ **IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)). Pour cet exemple, inclure `unknwn.h` avant d’inclure n’importe quel C + c++ / WinRT en-têtes. Ainsi, le C + c++ / WinRT les bibliothèque de base pour activer des hooks prendre en charge les interfaces du COM classique. Pour obtenir un exemple de code, consultez [composants COM de l’auteur avec C / c++ / WinRT](author-coclasses.md). De même, incluez explicitement tous les autres en-têtes Windows SDK qui déclarent des types et/ou les fonctions que vous souhaitez appeler.
+Dans votre projet, vous pouvez réactiver l’interopérabilité avec les en-têtes Windows SDK si vous avez besoin. Peut, par exemple, voulez-vous implémenter une interface COM (enraciné dans [ **IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)). Pour cet exemple, inclure `unknwn.h` avant d’inclure n’importe quel C + c++ / WinRT en-têtes. Ainsi, le C + c++ / WinRT les bibliothèque de base pour activer des hooks prendre en charge les interfaces du COM classique. Pour obtenir un exemple de code, consultez [composants COM de l’auteur avec C / c++ / WinRT](author-coclasses.md). De même, incluez explicitement tous les autres en-têtes Windows SDK qui déclarent des types et/ou les fonctions que vous souhaitez appeler.
 
 ### <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Comment recibler votre C + c++ / projet WinRT vers une version ultérieure du SDK Windows
 
@@ -315,7 +315,7 @@ Toutefois, il existe deux autres façons de recibler votre projet dans Visual St
 
 Si vous rencontrez n’importe quel compilateur ou des erreurs de l’éditeur de liens après avoir utilisé une de ces deux méthodes, vous pouvez essayer la solution de nettoyage (**Build** > **nettoyer la Solution** et/ou supprimez manuellement tous les fichiers et dossiers temporaires) avant d’essayer de générer une nouvelle fois.
 
-Si le compilateur C++ génère «*erreur C2039 : « IUnknown » : n’est pas un membre de '\`espace de noms global''*», puis ajoutez `#include <unknwn.h>` vers le haut de votre `pch.h` fichier (avant d’inclure n’importe quel C + c++ / WinRT en-têtes).
+Si le compilateur C++ génère «*erreur C2039 : « IUnknown » : n’est pas un membre de '\`espace de noms global''* », puis ajoutez `#include <unknwn.h>` vers le haut de votre `pch.h` fichier (avant d’inclure n’importe quel C + c++ / WinRT en-têtes).
 
 Vous devrez peut-être également ajouter `#include <hstring.h>` après cela.
 

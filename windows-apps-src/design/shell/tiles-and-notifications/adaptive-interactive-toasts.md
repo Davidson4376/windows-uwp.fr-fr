@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, notifications toast, toasts interactifs, toasts adaptatifs, contenu des toasts, charge utile des toasts
 ms.localizationpriority: medium
-ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596824"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366875"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 
@@ -22,7 +22,7 @@ Les notifications toast adaptatives et interactives vous permettent de créer de
 > **API importantes** : [Package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Pour voir les modèles hérités à partir de Windows 8.1 et Windows Phone 8.1, consultez le [catalogue de modèles de toast hérité](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> Pour voir les modèles hérités à partir de Windows 8.1 et Windows Phone 8.1, consultez le [catalogue de modèles de toast hérité](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## <a name="getting-started"></a>Prise en main

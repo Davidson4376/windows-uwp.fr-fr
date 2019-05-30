@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 882ee548754b9fa498697a8d75a12a23f86fc9de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 956e4050e3077ac827cf8107470698b42878a5e1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616884"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370872"
 ---
 # <a name="add-a-splash-screen"></a>Ajouter un écran de démarrage
 
@@ -29,7 +29,7 @@ Quand vous utilisez un modèle Visual Studio pour créer votre application, une 
 
     ![une capture d’écran de la fenêtre Package.appxmanifest dans Visual Studio 2017.](images/appmanifest.png)
 
-    Si vous ouvrez le fichier Package.appxmanifest dans un éditeur de texte, l’élément [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) s’affiche en tant qu’enfant de l’élément [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471). Le balisage de l’écran de démarrage par défaut dans le fichier manifeste ressemble à ceci dans un éditeur de texte :
+    Si vous ouvrez le fichier Package.appxmanifest dans un éditeur de texte, l’élément [**SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen) s’affiche en tant qu’enfant de l’élément [**VisualElements**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements). Le balisage de l’écran de démarrage par défaut dans le fichier manifeste ressemble à ceci dans un éditeur de texte :
 
     ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -43,7 +43,7 @@ Quand vous utilisez un modèle Visual Studio pour créer votre application, une 
 
     **Important**  l’image d’écran de démarrage que vous choisissez doit être 1152 x 1920 pixels qui est la taille correcte pour une 2.4 x facteur d’échelle. Si c’est la seule ressource que vous fournissez, elle sera réduite pour les facteurs d’échelle de 1,4x et 1x.
 
-6. Dans le champ **Couleur d’arrière-plan** de la section **Écran de démarrage**, définissez la couleur d’arrière-plan affichée avec l’image d’écran de démarrage. Vous pouvez entrer le nom d’une couleur ou '\#' et la valeur hexadécimale d’une couleur. Pour obtenir la liste des noms de couleurs disponibles, voir [**Élément SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467). La définition d’une couleur d’arrière-plan d’écran de démarrage est facultative. Si vous ne spécifiez pas une couleur pour une application UWP, couleur d’arrière-plan de l’écran de démarrage par défaut est un gris clair (valeur hexadécimale \#464646). Il s’agit de la même couleur que la couleur d’arrière-plan par défaut de la **vignette** (voir le champ **Couleur d’arrière-plan** de la section **Mosaïque et logos** de l’onglet **Ressources visuelles**). Si vous ne spécifiez pas de couleur pour un Windows Phone ou si vous la définissez sur « transparent », la couleur d’arrière-plan de l’écran de démarrage sera transparente.
+6. Dans le champ **Couleur d’arrière-plan** de la section **Écran de démarrage**, définissez la couleur d’arrière-plan affichée avec l’image d’écran de démarrage. Vous pouvez entrer le nom d’une couleur ou '\#' et la valeur hexadécimale d’une couleur. Pour obtenir la liste des noms de couleurs disponibles, voir [**Élément SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen). La définition d’une couleur d’arrière-plan d’écran de démarrage est facultative. Si vous ne spécifiez pas une couleur pour une application UWP, couleur d’arrière-plan de l’écran de démarrage par défaut est un gris clair (valeur hexadécimale \#464646). Il s’agit de la même couleur que la couleur d’arrière-plan par défaut de la **vignette** (voir le champ **Couleur d’arrière-plan** de la section **Mosaïque et logos** de l’onglet **Ressources visuelles**). Si vous ne spécifiez pas de couleur pour un Windows Phone ou si vous la définissez sur « transparent », la couleur d’arrière-plan de l’écran de démarrage sera transparente.
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
@@ -52,5 +52,5 @@ Si votre application met un certain temps à se charger, ajoutez un écran de d�
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer un écran de démarrage personnalisée](create-a-customized-splash-screen.md)
-* [Référence du schéma de manifeste de package : Élément de l’écran de démarrage](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [Classe de Windows.ApplicationModel.Activation.SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [Référence du schéma de manifeste de package : Élément de l’écran de démarrage](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)
+* [Classe de Windows.ApplicationModel.Activation.SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)

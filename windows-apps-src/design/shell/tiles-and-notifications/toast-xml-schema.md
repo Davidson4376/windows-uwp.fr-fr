@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612774"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363362"
 ---
 # <a name="toast-content-xml-schema"></a>Schéma XML du contenu du toast
 
@@ -79,15 +79,15 @@ scenario?
 
 lang?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 baseUri?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 addImageQuery?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 **Attributs dans &lt;liaison&gt;**
 
@@ -99,27 +99,27 @@ template?
 
 lang?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 baseUri?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 addImageQuery?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 **Attributs dans &lt;texte&gt;**
 
 lang?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 **Attributs dans &lt;image&gt;**
 
 src
 
--   Pour plus de détails sur cet attribut obligatoire, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230844).
+-   Pour plus de détails sur cet attribut obligatoire, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230844).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
 
 addImageQuery?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230844).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
 
 hint-crop?
 
@@ -148,15 +148,15 @@ hint-crop?
 
 src?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
 
 loop?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
 
 silent?
 
--   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
 
 ## <a name="schemas-ltactiongt"></a>Schémas : &lt;action&gt;
 

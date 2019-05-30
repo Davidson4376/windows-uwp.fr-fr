@@ -10,28 +10,28 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: de8d585d7178a277d1df248858f69a5a5705fb1d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b19d5056e924c58f4896804756b0637ead934ee0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634854"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371494"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>Répondre aux événements système avec des tâches en arrière-plan
 
 **API importantes**
 
-- [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
-- [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-- [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838)
+- [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+- [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+- [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger)
 
-Découvrez comment créer une tâche en arrière-plan qui répond aux événements [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
+Découvrez comment créer une tâche en arrière-plan qui répond aux événements [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType).
 
-Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite pour votre application et que cette tâche s’exécute en réponse à un événement déclenché par le système (par exemple lorsqu’Internet devient accessible/inaccessible ou que l’utilisateur se connecte). Cette rubrique porte sur la classe [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
+Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite pour votre application et que cette tâche s’exécute en réponse à un événement déclenché par le système (par exemple lorsqu’Internet devient accessible/inaccessible ou que l’utilisateur se connecte). Cette rubrique porte sur la classe [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType). Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 ## <a name="create-a-systemtrigger-object"></a>Créer un objet SystemTrigger
 
-Dans le code de votre application, créez un objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838). Le premier paramètre, *triggerType*, indique le type d’événement de déclencheur système qui activera cette tâche en arrière-plan. Pour obtenir la liste des types d’événements, voir [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839).
+Dans le code de votre application, créez un objet [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger). Le premier paramètre, *triggerType*, indique le type d’événement de déclencheur système qui activera cette tâche en arrière-plan. Pour obtenir la liste des types d’événements, voir [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType).
 
 Le deuxième paramètre, *OneShot*, indique si la tâche en arrière-plan sera exécutée une seule fois la prochaine fois que l’événement système survient ou bien chaque fois que l’événement système survient jusqu’à ce que la tâche soit désinscrite.
 
@@ -79,9 +79,9 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 ```
 
 > [!NOTE]
-> Les applications universelles Windows Platform doivent appeler [ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire les types de déclencheur en arrière-plan.
+> Les applications universelles Windows Platform doivent appeler [ **RequestAccessAsync** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) avant d’inscrire les types de déclencheur en arrière-plan.
 
-Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
+Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), puis [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
 > [!NOTE]
 > Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
@@ -90,9 +90,9 @@ Pour vous assurer que votre application Windows universelle continue de s’exé
 
 Pour voir une inscription de tâche en arrière-plan en action, téléchargez l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-Les tâches en arrière-plan peuvent s’exécuter en réponse à des événements [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) et [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), mais vous devez toujours [déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md). Vous devez également appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de tâche en arrière-plan.
+Les tâches en arrière-plan peuvent s’exécuter en réponse à des événements [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) et [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger), mais vous devez toujours [déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md). Vous devez également appeler [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) avant d’inscrire tout type de tâche en arrière-plan.
 
-Les applications peuvent inscrire des tâches en arrière-plan qui répondent aux événements [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) et [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831), ce qui leur permet d’assurer une communication en temps réel avec l’utilisateur même lorsque l’application n’est pas au premier plan. Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+Les applications peuvent inscrire des tâches en arrière-plan qui répondent aux événements [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger), [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) et [**NetworkOperatorNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger), ce qui leur permet d’assurer une communication en temps réel avec l’utilisateur même lorsque l’application n’est pas au premier plan. Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

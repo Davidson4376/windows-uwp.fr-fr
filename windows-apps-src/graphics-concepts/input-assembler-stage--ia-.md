@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 70957cbce10da25943b3c6347ccbbc81aafb5739
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646284"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370774"
 ---
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 
@@ -22,7 +22,7 @@ L’étape de l’assembleur d’entrée (IA, Input Assembler) fournit au pipeli
 ## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Rôle et les utilisations
 
 
-L’étape de l’assembleur d’entrée a pour vocation de lire les données de primitives (points, lignes et triangles) des mémoires tampons renseignées par les utilisateurs et d’assembler les données en primitives utilisées par d’autres étapes de pipelines, avant d’enfin associer les [valeurs générées par le système](https://msdn.microsoft.com/library/windows/desktop/bb509647) pour accroître l’efficacité des nuanceurs. Les valeurs générées par le système sont des chaînes textuelles, également appelées sémantiques. Les étapes programmables de nuanceur sont développées à partir d’un noyau de nuanceur commun, qui utilise les valeurs générées par le système (comme des ID de primitive, d’instance ou de vertex). De cette manière, l’étape de nuanceur peut dédier le traitement uniquement à ces primitives, instances ou vertex non encore traités.
+L’étape de l’assembleur d’entrée a pour vocation de lire les données de primitives (points, lignes et triangles) des mémoires tampons renseignées par les utilisateurs et d’assembler les données en primitives utilisées par d’autres étapes de pipelines, avant d’enfin associer les [valeurs générées par le système](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) pour accroître l’efficacité des nuanceurs. Les valeurs générées par le système sont des chaînes textuelles, également appelées sémantiques. Les étapes programmables de nuanceur sont développées à partir d’un noyau de nuanceur commun, qui utilise les valeurs générées par le système (comme des ID de primitive, d’instance ou de vertex). De cette manière, l’étape de nuanceur peut dédier le traitement uniquement à ces primitives, instances ou vertex non encore traités.
 
 L’étape IA peut assembler des vertex en différents [types de primitives](primitive-topologies.md) (comme des listes de lignes, des triangles ou des primitives avec voisinage). Les types de primitives tels qu’une liste de triangles avec voisinage et une liste de lignes avec voisinage prennent en charge l’[étape du nuanceur de géométrie](geometry-shader-stage--gs-.md).
 
@@ -61,7 +61,7 @@ L’étape IA assemble les données en primitives et associe les valeurs génér
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">À l’aide des valeurs générées par le système</a></p></td>
-<td align="left"><p>Les valeurs générées par le système sont produites par l’étape d’assembleur d’entrée (reposant sur les <a href="https://msdn.microsoft.com/library/windows/desktop/bb509647">sémantiques</a> d’entrée fournies par l’utilisateur) afin d’accroître l’efficacité des opérations du nuanceur. L’association des données, comme un ID d’instance (visible par l’<a href="vertex-shader-stage--vs-.md">étape du nuanceur de vertex</a>), un ID de vertex (visible par le nuanceur de vertex) ou un ID de primitive (visible par l’<a href="geometry-shader-stage--gs-.md">étape du nuanceur de vertex</a>/<a href="pixel-shader-stage--ps-.md">du nuanceur de pixel</a>) permet à une étape ultérieure de nuanceur de rechercher ces valeurs système afin d’optimiser son traitement.</p></td>
+<td align="left"><p>Les valeurs générées par le système sont produites par l’étape d’assembleur d’entrée (reposant sur les <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">sémantiques</a> d’entrée fournies par l’utilisateur) afin d’accroître l’efficacité des opérations du nuanceur. L’association des données, comme un ID d’instance (visible par l’<a href="vertex-shader-stage--vs-.md">étape du nuanceur de vertex</a>), un ID de vertex (visible par le nuanceur de vertex) ou un ID de primitive (visible par l’<a href="geometry-shader-stage--gs-.md">étape du nuanceur de vertex</a>/<a href="pixel-shader-stage--ps-.md">du nuanceur de pixel</a>) permet à une étape ultérieure de nuanceur de rechercher ces valeurs système afin d’optimiser son traitement.</p></td>
 </tr>
 </tbody>
 </table>

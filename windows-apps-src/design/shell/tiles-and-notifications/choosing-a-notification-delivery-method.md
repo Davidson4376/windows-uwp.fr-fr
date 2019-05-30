@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606284"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365945"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Choisir une méthode de remise de notification
 
@@ -27,7 +27,7 @@ Ce article présente les quatre options de notification (locale, planifiée, pé
 
 Une application peut utiliser quatre méthodes pour remettre une notification :
 
--   **local**
+-   **Local**
 -   **Planifiée**
 -   **Périodiques**
 -   **push**
@@ -150,10 +150,10 @@ Les notifications Push requièrent un service cloud qui gère des canaux de noti
 
 Par défaut, les notifications Push expirent trois jours après leur réception par l’appareil. Si nécessaire, vous pouvez remplacer cette valeur par défaut par un délai d’expiration explicite (durée de vie maximale des notifications Toast : 3 jours).
 
-Pour plus d’informations, consultez :
+Pour plus d'informations, consultez :
 
 -   [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
--   [Instructions pour les notifications push](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [Instructions pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 -   [Exemples de code de notifications d’Universal Windows Platform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -162,8 +162,8 @@ Pour plus d’informations, consultez :
 
 * [Envoyer une notification de vignette local](sending-a-local-tile-notification.md)
 * [Envoyer une notification toast locale](send-local-toast.md)
-* [Instructions pour les notifications push](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Instructions pour les notifications de toast](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [Instructions pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Instructions pour les notifications de toast](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [Vue d’ensemble des notifications périodiques](periodic-notification-overview.md)
 * [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Notifications d’Universal Windows Platform (UWP) Exemples de code sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)

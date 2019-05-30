@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614864"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371914"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en août 2017
 
@@ -32,7 +32,7 @@ Vous pouvez désormais afficher un aperçu du code [XAML conditionnel](../debug-
 
 ### <a name="game-mode"></a>Mode jeu
 
-Les API [mode jeu](https://msdn.microsoft.com/library/windows/desktop/mt808808) pour la plateforme Windows universelle (UWP) vous permettent de créer une expérience de jeu optimale, en tirant parti du mode jeu de Windows 10. Ces API sont situées dans l’en-tête **&lt;expandedresources.h&gt;**.
+Les API [mode jeu](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) pour la plateforme Windows universelle (UWP) vous permettent de créer une expérience de jeu optimale, en tirant parti du mode jeu de Windows 10. Ces API sont situées dans l’en-tête **&lt;expandedresources.h&gt;** .
 
 ![Mode jeu](images/game-mode.png)
 
@@ -45,7 +45,7 @@ L'[API de soumission au Microsoft Store](../monetize/create-and-manage-submissi
 
 ### <a name="data-schemas-for-store-products"></a>Schémas de données des produits du Windows Store
 
-Nous avons ajouté l'article [Schémas de données des produits du Windows Store](../monetize/data-schemas-for-store-products.md). Cet article fournit des schémas pour les données relatives au Windows Store disponibles pour plusieurs objets dans l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), y compris [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) et [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+Nous avons ajouté l'article [Schémas de données des produits du Windows Store](../monetize/data-schemas-for-store-products.md). Cet article fournit des schémas pour les données relatives au Windows Store disponibles pour plusieurs objets dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), y compris [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) et [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
 
 ### <a name="desktop-bridge"></a>Pont du bureau
 

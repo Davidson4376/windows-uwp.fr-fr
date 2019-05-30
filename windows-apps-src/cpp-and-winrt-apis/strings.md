@@ -1,16 +1,16 @@
 ---
 description: Avec C++/WinRT, vous pouvez appeler des API Windows Runtime à l’aide de types de chaînes étendues C++ standard, ou vous pouvez utiliser le type winrt::hstring.
 title: Gestion des chaînes en C++/WinRT
-ms.date: 10/03/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f1e12b82ec3ee41cdacc86fcc5f41d664262be
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: d66cdcff8eff8c620d58a5948cbcf081acea2f45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618396"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360180"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
 
@@ -72,14 +72,14 @@ hstring domainHstring{ contosoUri.Domain() }; // L"contoso.com"
 domainHstring = awUri.Domain(); // L"adventure-works.com"
 ```
 
-De même, [**IStringable::ToString**](https://msdn.microsoft.com/library/windows/desktop/dn302136) renvoie hstring.
+De même, [**IStringable::ToString**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) renvoie hstring.
 
 ```cppwinrt
 public:
     hstring ToString() const;
 ```
 
-**Uri** implémente l’interface [**IStringable**](https://msdn.microsoft.com/library/windows/desktop/dn302135).
+**Uri** implémente l’interface [**IStringable**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-istringable).
 
 ```cppwinrt
 // Access hstring's IStringable::ToString, via a conversion operator to a standard type.
@@ -150,7 +150,7 @@ WINRT_ASSERT(w == L"Hello, World!");
 Pour obtenir plus d’informations et des exemples sur les fonctions et opérateurs **hstring**, consultez la rubrique sur les informations de référence API [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>Logique pour **winrt::hstring** et **winrt::param::hstring**
-Windows Runtime est implémenté en termes de caractères **wchar_t**, mais l’interface binaire d’application (ABI) de Windows Runtime n’est pas un sous-ensemble de ce que fournit **std::wstring** ou **std::wstring_view**. L’utilisation de ceux-ci entraînerait des inefficacités importantes. Au lieu de cela, C++/WinRT fournit **winrt::hstring**, qui représente une chaîne immuable cohérente avec le [HSTRING](https://msdn.microsoft.com/library/windows/desktop/br205775) sous-jacent et implémenté derrière une interface similaire à celle de **std::wstring**. 
+Windows Runtime est implémenté en termes de caractères **wchar_t**, mais l’interface binaire d’application (ABI) de Windows Runtime n’est pas un sous-ensemble de ce que fournit **std::wstring** ou **std::wstring_view**. L’utilisation de ceux-ci entraînerait des inefficacités importantes. Au lieu de cela, C++/WinRT fournit **winrt::hstring**, qui représente une chaîne immuable cohérente avec le [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) sous-jacent et implémenté derrière une interface similaire à celle de **std::wstring**. 
 
 Vous pouvez remarquer que les paramètres d’entrée C++/WinRT qui doivent accepter logiquement **winrt::hstring** attendent en fait **winrt::param::hstring**. L’espace de nom **param** contient un ensemble de types utilisés exclusivement pour optimiser les paramètres d’entrée afin d’effectuer la liaison naturelle aux types de la bibliothèque C++ standard et d’éviter des copies et autres inefficacités. Vous ne devez pas utiliser ces types directement. Si vous voulez utiliser une optimisation pour vos propres fonctions, utilisez **std::wstring_view**.
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a280d07ab7d715adaa7da941be641cd54e24443
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617314"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371014"
 ---
 # <a name="lost-devices"></a>Appareils perdus
 
@@ -21,7 +21,7 @@ Un périphérique Direct3D peut présenter l’état opérationnel ou perdu. L�
 
 Par conception, l’ensemble complet de scénarios pouvant entraîner la perte d’un périphérique n’est pas spécifié. Parmi les configurations possibles, citons tout de même la perte de focus, quand l’utilisateur active la combinaison ALT+TAB ou lors de l’initialisation d’une boîte de dialogue système. Les périphériques peuvent également être perdus suite à un événement de gestion de l’alimentation, ou lorsqu’une autre application fonctionne en plein écran. Par ailleurs, toute défaillance intervenant après la réinitialisation d’un périphérique définit ce dernier sur l’état de perte.
 
-Toutes les méthodes dérivant de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) fonctionnent obligatoirement après la perte d’un périphérique. Après la perte d’un périphérique, chaque fonction présente généralement les 3 options suivantes :
+Toutes les méthodes dérivant de [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) fonctionnent obligatoirement après la perte d’un périphérique. Après la perte d’un périphérique, chaque fonction présente généralement les 3 options suivantes :
 
 -   Défaillance après une erreur de « périphérique perdu » - L’application doit reconnaître que le périphérique a été perdu, afin qu’elle enregistre un événement inattendu.
 -   Échouer en mode silencieux, en retournant S\_OK ou tout autre code de retour - si une fonction échoue en mode silencieux, l’application générale ne peut pas faire la distinction entre le résultat de « success » et « échec en mode silencieux ».

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd23938387b40c8ce268c65209d1fb11d5da529c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656184"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370628"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Configuration de la fonctionnalité du stencil de profondeur
 
@@ -24,7 +24,7 @@ Dès lors que vous savez comment utiliser la mémoire tampon de profondeur-gabar
 ## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>Créer l’état du Stencil de profondeur
 
 
-L'état de profondeur-gabarit indique à l’étape de fusion/sortie comment effectuer le [test de profondeur-gabarit](https://msdn.microsoft.com/library/windows/desktop/bb205120). Le test de profondeur-gabarit détermine s'il convient ou non d'écrire un pixel donné.
+L'état de profondeur-gabarit indique à l’étape de fusion/sortie comment effectuer le [test de profondeur-gabarit](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). Le test de profondeur-gabarit détermine s'il convient ou non d'écrire un pixel donné.
 
 ## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>Lier des données de Stencil de profondeur à l’étape OM
 
@@ -77,7 +77,7 @@ Si votre application effectue deux passes de rendu (l'une pour générer le masq
 
 Si le masque de gabarit est de la même taille et possède la même forme que la primitive que vous rendez, l’image résultante contient un trou où doit se trouver la primitive. Votre application peut ensuite remplir le trou avec du noir afin de produire une silhouette de la primitive.
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>Gabarit recto-verso
+### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">Gabarit recto-verso
 
 Les volumes d’ombre sont utilisés pour dessiner des ombres avec la mémoire tampon de gabarit. L’application calcule les volumes d’ombre castés en masquant la géométrie, en calculant les bords de la silhouette et en les extrudant hors de la lumière dans un ensemble de volumes 3D. Ces volumes sont ensuite rendus deux fois dans la mémoire tampon de gabarit.
 
@@ -98,4 +98,4 @@ Une mémoire tampon de profondeur-gabarit peut être lue par un nuanceur en tant
 
 [Pipeline graphique](graphics-pipeline.md)
 
-[Étape de fusion de sortie](https://msdn.microsoft.com/library/windows/desktop/bb205120)
+[Étape de fusion de sortie](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

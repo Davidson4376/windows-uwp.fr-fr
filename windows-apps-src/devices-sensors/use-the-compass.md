@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2c7fadaf902b4aa543234bc8d43fbc1595a54219
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632884"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369683"
 ---
 # <a name="use-the-compass"></a>Utiliser le compas
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Exemple**
 
@@ -29,7 +29,7 @@ Découvrez comment utiliser la boussole pour déterminer l’orientation actuell
 
 Une application peut récupérer l’orientation actuelle par rapport au nord magnétique ou géographique. Les applications de navigation utilisent la boussole pour déterminer la direction à laquelle un appareil fait face, puis pour orienter la carte de façon appropriée.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ### <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 

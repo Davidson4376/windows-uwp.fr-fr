@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4c8def5d1a220fe0458dd5c244d875b991b2b76c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605924"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365931"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
@@ -42,7 +42,7 @@ Nous allons examiner les étapes suivantes :
 > **API importantes** : [Classe de ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs classe](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour bien comprendre cette rubrique, il est utile de disposer de ce qui suit...
 
@@ -54,7 +54,7 @@ Pour bien comprendre cette rubrique, il est utile de disposer de ce qui suit...
 > Contrairement à Windows 8/8.1, vous n’avez plus besoin de déclarer dans le manifeste de votre application que celle-ci peut afficher les notifications toast. Toutes les applications sont en mesure d’envoyer et d’afficher des notifications toast.
 
 > [!NOTE]
-> **Les applications Windows 8/8.1**: Utilisez le [documentation archivée](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx).
+> **Les applications Windows 8/8.1**: Utilisez le [documentation archivée](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
 ## <a name="install-nuget-packages"></a>Installer des packages NuGet
@@ -238,7 +238,7 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 Si vous voulez supprimer ou remplacer la notification que vous envoyez par programme, vous devez utiliser la propriété Tag (et éventuellement la propriété Group) pour fournir une clé primaire pour votre notification. Vous pouvez alors utiliser cette clé primaire à l’avenir pour supprimer ou remplacer la notification.
 
-Pour afficher plus d’informations sur le remplacement/suppression déjà remis notifications toast, consultez [Guide de démarrage rapide : Gestion des notifications de toast dans le centre de maintenance (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Pour afficher plus d’informations sur le remplacement/suppression déjà remis notifications toast, consultez [Guide de démarrage rapide : Gestion des notifications de toast dans le centre de maintenance (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Les propriétés Tag et Group combinées font office de clé primaire composite. Groupe est l’identificateur plus générique, où vous pouvez affecter des groupes tels que « wallPosts », « messages », « friendRequests », etc. Et puis balise doit identifier de manière unique la notification lui-même à partir d’au sein du groupe. En utilisant un groupe générique, vous pouvez ensuite supprimer toutes les notifications de ce groupe à l’aide de l’[API RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
@@ -270,7 +270,7 @@ Voici un exemple de ce que doit faire une application de messagerie…
 3. L’application ouvre la conversation, puis efface tous les toasts correspondant à cette conversation (à l’aide de [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) dans le groupe fourni par l’application pour cette conversation).
 4. Le centre de notifications de l’utilisateur reflète à présent correctement l’état des notifications, puisqu’il ne reste pas de notifications obsolètes pour cette conversation dans le centre de notifications.
 
-Pour en savoir plus sur l’effacement de toutes les notifications ou la suppression de notifications spécifiques, consultez [Guide de démarrage rapide : Gestion des notifications de toast dans le centre de maintenance (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Pour en savoir plus sur l’effacement de toutes les notifications ou la suppression de notifications spécifiques, consultez [Guide de démarrage rapide : Gestion des notifications de toast dans le centre de maintenance (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
 ## <a name="handling-activation"></a>Gestion de l’activation

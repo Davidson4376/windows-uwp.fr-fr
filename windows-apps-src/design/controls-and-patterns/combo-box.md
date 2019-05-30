@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a6c698fa0e07587e2c25ae827dc6654a8ced9d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 297b907191dfa07084e5e4ada0e3468733e47090
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618624"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363130"
 ---
 # <a name="combo-box"></a>Combo box
 
@@ -178,7 +178,7 @@ Avant le Kit de développement logiciel 17763, la valeur de la propriété Selec
 Dans le Kit de développement logiciel 17763 et versions ultérieur, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) n’est pas requis pour se trouver dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, paramètre `colorComboBox.SelectedItem = "Pink"` entraîne :
 
 - SelectedItem = rose
-- SelectedValue = rose
+- SelectedValue = Pink
 - SelectedIndex = -1
 
 ### <a name="text-search"></a>Recherche en texte
@@ -305,6 +305,6 @@ bool IsValid(string Text)
 - [Contrôles de texte](text-controls.md)
 - [Vérification orthographique](text-controls.md)
 - [Recherche](search.md)
-- [Classe de zone de texte](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length, propriété](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx 11, périphérique perdu
 ms.localizationpriority: medium
-ms.openlocfilehash: c11bbf7657644fbf616590f50d75d93f62ed993e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 949da8d7577a6ca376d7de745ebc2fc5b3538cb1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646604"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368678"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Gérer les scénarios d’appareil supprimé dans Direct3D 11
 
@@ -19,7 +19,7 @@ ms.locfileid: "57646604"
 
 Cette rubrique explique comment recréer la chaîne d’interface d’appareils Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée.
 
-Dans DirectX 9, les applications peuvent présenter un état de type « [périphérique perdu](https://msdn.microsoft.com/library/windows/desktop/bb174714) » quand un périphérique D3D passe à un état non opérationnel. Par exemple, lorsqu’une application Direct3D 9 en mode plein écran perd le focus, le périphérique Direct3D est « perdu ». Toute tentative de dessin avec un périphérique perdu entraîne un échec sans avertissement. Direct3D 11 utilise des interfaces GDI (Graphics Device Interface) virtuelles, ce qui permet à plusieurs programmes de partager le même périphérique graphique physique et d’éviter les situations où les applications perdent le contrôle du périphérique Direct3D. Cependant, la disponibilité de la carte graphique peut toujours changer. Exemple :
+Dans DirectX 9, les applications peuvent présenter un état de type « [périphérique perdu](https://docs.microsoft.com/windows/desktop/direct3d9/lost-devices) » quand un périphérique D3D passe à un état non opérationnel. Par exemple, lorsqu’une application Direct3D 9 en mode plein écran perd le focus, le périphérique Direct3D est « perdu ». Toute tentative de dessin avec un périphérique perdu entraîne un échec sans avertissement. Direct3D 11 utilise des interfaces GDI (Graphics Device Interface) virtuelles, ce qui permet à plusieurs programmes de partager le même périphérique graphique physique et d’éviter les situations où les applications perdent le contrôle du périphérique Direct3D. Cependant, la disponibilité de la carte graphique peut toujours changer. Exemple :
 
 -   Le pilote graphique est mis à jour.
 -   Le système passe d’une carte graphique axée sur l’économie d’énergie à une carte graphique axée sur les performances.
@@ -32,7 +32,7 @@ Dans ces circonstances, DXGI retourne un code d’erreur indiquant que le périp
 
 ### <a name="spanspanstep-1"></a><span></span>Étape 1 :
 
-Incluez une recherche de l’erreur relative à une suppression d’appareil dans la boucle de rendu. Présentez l’image en appelant [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (ou [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797), etc.). Ensuite, vérifiez si elle est retournée [ **DXGI\_erreur\_appareil\_supprimé** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) ou **DXGI\_erreur\_appareil \_Réinitialiser**.
+Incluez une recherche de l’erreur relative à une suppression d’appareil dans la boucle de rendu. Présentez l’image en appelant [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) (ou [**Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1), etc.). Ensuite, vérifiez si elle est retournée [ **DXGI\_erreur\_appareil\_supprimé** ](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) ou **DXGI\_erreur\_appareil \_Réinitialiser**.
 
 Tout d’abord, le modèle stocke le HRESULT retourné par la chaîne de permutation DXGI :
 
@@ -57,13 +57,13 @@ else
 
 ### <a name="step-2"></a>Étape 2 :
 
-Incluez également une recherche de l’erreur relative à une suppression de périphérique en réponse aux changements de taille de fenêtre. Il s’agit d’un bon emplacement pour rechercher les [ **DXGI\_erreur\_appareil\_supprimé** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) ou **DXGI\_erreur\_appareil\_ RÉINITIALISER** pour plusieurs raisons :
+Incluez également une recherche de l’erreur relative à une suppression de périphérique en réponse aux changements de taille de fenêtre. Il s’agit d’un bon emplacement pour rechercher les [ **DXGI\_erreur\_appareil\_supprimé** ](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) ou **DXGI\_erreur\_appareil\_ RÉINITIALISER** pour plusieurs raisons :
 
 -   Le redimensionnement de la chaîne de permutation nécessite un appel à l’adaptateur DXGI sous-jacent, ce qui peut retourner l’erreur relative à une suppression de périphérique.
 -   L’application peut avoir été déplacée vers un moniteur attaché à un autre périphérique graphique.
 -   Quand un appareil graphique est supprimé ou réinitialisé, la résolution du Bureau change le plus souvent, ce qui entraîne un changement de taille de fenêtre.
 
-Le modèle vérifie le HRESULT retourné par [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) :
+Le modèle vérifie le HRESULT retourné par [**ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers) :
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -92,7 +92,7 @@ else
 
 ### <a name="step-3"></a>Étape 3 :
 
-N’importe quel moment votre application reçoit le [ **DXGI\_erreur\_appareil\_supprimé** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) erreur, il doit réinitialiser le périphérique Direct3D et recréer tout dépendant du périphérique ressources. Libérez les références aux ressources d’appareil graphique créées avec le précédent appareil Direct3D. Ces ressources ne sont plus valides. Toutes les références à la chaîne de permutation doivent être libérées pour en permettre la création d’une autre.
+N’importe quel moment votre application reçoit le [ **DXGI\_erreur\_appareil\_supprimé** ](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) erreur, il doit réinitialiser le périphérique Direct3D et recréer tout dépendant du périphérique ressources. Libérez les références aux ressources d’appareil graphique créées avec le précédent appareil Direct3D. Ces ressources ne sont plus valides. Toutes les références à la chaîne de permutation doivent être libérées pour en permettre la création d’une autre.
 
 La méthode HandleDeviceLost libère la chaîne d’échange et indique aux composants d’application de libérer les ressources de périphérique :
 
@@ -138,16 +138,16 @@ if (m_deviceNotify != nullptr)
 
 ### <a name="investigating-the-cause-of-device-removed-errors"></a>Recherche de l’origine des erreurs relatives à une suppression de périphérique
 
-La répétition d’erreurs relatives à une suppression de périphérique DXGI peut indiquer que votre code graphique crée des conditions non valides durant une routine de dessin. Elle peut également indiquer une défaillance matérielle ou un bogue dans le pilote graphique. Pour rechercher l’origine des erreurs relatives à une suppression de périphérique, appelez [**ID3D11Device::GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) avant de libérer le périphérique Direct3D. Cette méthode retourne l’un des six codes d’erreur DXGI possibles qui indiquent l’origine de l’erreur relative à une suppression de périphérique :
+La répétition d’erreurs relatives à une suppression de périphérique DXGI peut indiquer que votre code graphique crée des conditions non valides durant une routine de dessin. Elle peut également indiquer une défaillance matérielle ou un bogue dans le pilote graphique. Pour rechercher l’origine des erreurs relatives à une suppression de périphérique, appelez [**ID3D11Device::GetDeviceRemovedReason**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-getdeviceremovedreason) avant de libérer le périphérique Direct3D. Cette méthode retourne l’un des six codes d’erreur DXGI possibles qui indiquent l’origine de l’erreur relative à une suppression de périphérique :
 
 -   **DXGI\_ERREUR\_APPAREIL\_BLOQUÉS**: Le pilote graphique a cessé de répondre en raison d’une combinaison non valide de commandes graphiques envoyés par l’application. Si vous obtenez cette erreur à plusieurs reprises, cela indique que votre application est probablement à l’origine de la défaillance du périphérique et qu’elle doit être déboguée.
 -   **DXGI\_ERREUR\_APPAREIL\_SUPPRIMÉ**: Le périphérique graphique a été supprimé physiquement, désactivé, ou une mise à niveau du pilote s’est produite. Cela arrive parfois et c’est une situation normale. Votre application ou votre jeu doit recréer les ressources de périphérique, comme cela est décrit dans cette rubrique.
 -   **DXGI\_ERREUR\_APPAREIL\_RÉINITIALISER**: Le périphérique graphique a échoué en raison d’une commande formée de manière incorrecte. Si vous obtenez cette erreur à plusieurs reprises, cela peut signifier que votre code envoie des commandes de dessin non valides.
 -   **DXGI\_ERREUR\_PILOTE\_INTERNE\_ERREUR**: Le pilote graphique a rencontré une erreur et réinitialise l’appareil.
 -   **DXGI\_ERREUR\_NON VALIDE\_APPELER**: L’application a fourni les données de paramètre non valide. Si vous obtenez cette erreur, même une seule fois, cela signifie que votre code est à l’origine de l’état de suppression du périphérique et qu’il doit être débogué.
--   **S\_OK**: Retourné lorsqu’un périphérique graphique a été activé, désactivé ou réinitialiser sans invalider le périphérique d’affichage actuel. Par exemple, ce code d’erreur peut être retourné si une application utilise [WARP (Windows Advanced Rasterization Platform)](https://msdn.microsoft.com/library/windows/desktop/gg615082) et si un adaptateur matériel est disponible.
+-   **S\_OK**: Retourné lorsqu’un périphérique graphique a été activé, désactivé ou réinitialiser sans invalider le périphérique d’affichage actuel. Par exemple, ce code d’erreur peut être retourné si une application utilise [WARP (Windows Advanced Rasterization Platform)](https://docs.microsoft.com/windows/desktop/direct3darticles/directx-warp) et si un adaptateur matériel est disponible.
 
-Le code suivant récupère la [ **DXGI\_erreur\_appareil\_supprimé** ](https://msdn.microsoft.com/library/windows/desktop/bb509553) erreur de code et l’imprimer à la console de débogage. Insérez ce code au début de la méthode HandleDeviceLost :
+Le code suivant récupère la [ **DXGI\_erreur\_appareil\_supprimé** ](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error) erreur de code et l’imprimer à la console de débogage. Insérez ce code au début de la méthode HandleDeviceLost :
 
 ```cpp
     HRESULT reason = m_d3dDevice->GetDeviceRemovedReason();
@@ -160,7 +160,7 @@ Le code suivant récupère la [ **DXGI\_erreur\_appareil\_supprimé** ](https://
 #endif
 ```
 
-Pour plus d’informations, consultez [ **GetDeviceRemovedReason** ](https://msdn.microsoft.com/library/windows/desktop/ff476526) et [ **DXGI\_erreur**](https://msdn.microsoft.com/library/windows/desktop/bb509553).
+Pour plus d’informations, consultez [ **GetDeviceRemovedReason** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-getdeviceremovedreason) et [ **DXGI\_erreur**](https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error).
 
 ### <a name="testing-device-removed-handling"></a>Gestion de l’appareil de test supprimé
 

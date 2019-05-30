@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: caf0e8e63716f6ba140ef9346257687f0e7293bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631004"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364480"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 
@@ -24,7 +24,7 @@ ms.locfileid: "57631004"
 
 L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 
-> **API importantes** : [Classe de AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **API importantes** : [Classe de AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## <a name="elements-of-the-search-experience"></a>Aspects de l’expérience de recherche
 

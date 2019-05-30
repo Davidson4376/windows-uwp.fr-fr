@@ -6,12 +6,12 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, carte, emplacement, clics-infos
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb307093889c5a40a452d2d406f02224ab5eab1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2aca8f4daea39a190af4dd1007a6b961198994dd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659274"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370543"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
@@ -19,22 +19,22 @@ Ajoutez des points d’intérêt à une carte à l’aide des punaises, des imag
 
 Pour en savoir plus sur l’affichage POI sur votre application, téléchargez l’exemple suivant à partir de la [référentiel de Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub : [Exemple de mappage Universal Windows Platform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
 
-Affichez des punaises, des images et des formes sur la carte en ajoutant des objets [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) et [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) à une collection **MapElements** d'un objet [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ensuite, ajoutez cet objet de couche à la collection **Couches** d’un contrôle de carte.
+Affichez des punaises, des images et des formes sur la carte en ajoutant des objets [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) et [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) à une collection **MapElements** d'un objet [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Ensuite, ajoutez cet objet de couche à la collection **Couches** d’un contrôle de carte.
 
 >[!NOTE]
 > Dans les versions précédentes, ce guide vous a montré comment ajouter des éléments de carte à la collection [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements). Vous pouvez continuer d'utiliser cette approche, mais vous ne profiterez pas des avantage du nouveau modèle de couche de carte. Pour plus d’informations, consultez la section [Utilisation des couches](#layers) de ce guide.
 
-Vous pouvez également afficher les éléments de l'interface utilisateur XAML, tels que [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), ou [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) sur la carte, en les ajoutant à [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) ou en tant qu'éléments [**enfants**](https://msdn.microsoft.com/library/windows/apps/dn637008) de [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Vous pouvez également afficher les éléments de l'interface utilisateur XAML, tels que [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), ou [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) sur la carte, en les ajoutant à [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) ou en tant qu'éléments [**enfants**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) de [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
 Si vous avez un grand nombre d’éléments à placer sur la carte, songez à [superposer des images sous forme de vignettes à la carte](overlay-tiled-images.md). Pour afficher des routes sur la carte, voir [Afficher des itinéraires et indications](routes-and-directions.md)
 
 ## <a name="add-a-pushpin"></a>Ajoutez une punaise
 
-Affichez une image comme une punaise, avec un texte facultatif, sur la carte à l’aide de la classe [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077). Vous pouvez accepter l’image par défaut ou fournir une image personnalisée à l’aide de la propriété [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078). L’image suivante affiche l’image par défaut pour un élément **MapIcon**, sans qu’aucune valeur ne soit spécifiée pour la propriété [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088), avec un titre court, un autre long et un autre très long.
+Affichez une image comme une punaise, avec un texte facultatif, sur la carte à l’aide de la classe [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon). Vous pouvez accepter l’image par défaut ou fournir une image personnalisée à l’aide de la propriété [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image). L’image suivante affiche l’image par défaut pour un élément **MapIcon**, sans qu’aucune valeur ne soit spécifiée pour la propriété [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title), avec un titre court, un autre long et un autre très long.
 
 ![exemple de classe MapIcon présentant des titres de différentes longueurs.](images/mapctrl-mapicons.png)
 
-L’exemple suivant représente une carte de la ville de Seattle et ajoute une classe [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) avec l’image par défaut et un titre facultatif pour indiquer l’emplacement de l’Aiguille de l’espace de Seattle. Il centre également la carte sur l’icône et effectue un zoom avant. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md).
+L’exemple suivant représente une carte de la ville de Seattle et ajoute une classe [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) avec l’image par défaut et un titre facultatif pour indiquer l’emplacement de l’Aiguille de l’espace de Seattle. Il centre également la carte sur l’icône et effectue un zoom avant. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md).
 
 ```csharp
 public void AddSpaceNeedleIcon()
@@ -72,23 +72,23 @@ Cet exemple affiche le point d’intérêt suivant sur la carte (l’image par d
 
 ![carte avec l’élément MapIcon](images/displaypoidefault.png)
 
-La ligne de code suivante affiche la classe [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) avec une image personnalisée enregistrée dans le dossier Assets du projet. La propriété [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) de la classe **MapIcon** attend une valeur de type [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). Ce type nécessite une instruction **using** pour l’espace de noms [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791).
+La ligne de code suivante affiche la classe [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) avec une image personnalisée enregistrée dans le dossier Assets du projet. La propriété [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) de la classe **MapIcon** attend une valeur de type [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Ce type nécessite une instruction **using** pour l’espace de noms [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams).
 
 >[!NOTE]
->Si vous utilisez la même image pour plusieurs icônes de carte, déclarez l’élément [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) au niveau de la page ou de l’application pour optimiser les performances.
+>Si vous utilisez la même image pour plusieurs icônes de carte, déclarez l’élément [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) au niveau de la page ou de l’application pour optimiser les performances.
 
 ```csharp
     MapIcon1.Image =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/customicon.png"));
 ```
 
-Gardez à l’esprit les considérations suivantes lorsque vous travaillez avec la classe [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) :
+Gardez à l’esprit les considérations suivantes lorsque vous travaillez avec la classe [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) :
 
--   Le propriété [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) prend en charge une taille d’image maximale de 2 048 x 2 048 pixels.
--   Par défaut, il n’est pas garanti que l’image de l’icône de carte s’affiche. Cette classe peut être masquée quand elle cache d’autres éléments ou étiquettes sur la carte. Pour la garder visible, définissez la propriété [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) de l’icône de carte sur [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314).
--   Il n’est pas garanti non plus que le [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) facultatif de [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) s’affiche. Si le texte n’est pas visible, effectuez un zoom arrière en réduisant la valeur de la propriété [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
--   Quand vous affichez une image [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) qui pointe vers un emplacement spécifique sur la carte, par exemple une punaise ou une flèche, envisagez d’affecter à la valeur de la propriété [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) l’emplacement approximatif du pointeur sur l’image. Si vous conservez la valeur par défaut (0, 0) de **NormalizedAnchorPoint**, qui représente le coin supérieur gauche de l’image, des modifications de la propriété [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) de la carte peuvent laisser l’image pointer vers un autre emplacement.
--   Si vous ne définissez pas explicitement les éléments [Altitude](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.basicgeoposition) et [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem), le [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) sera placé sur la surface.
+-   Le propriété [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) prend en charge une taille d’image maximale de 2 048 x 2 048 pixels.
+-   Par défaut, il n’est pas garanti que l’image de l’icône de carte s’affiche. Cette classe peut être masquée quand elle cache d’autres éléments ou étiquettes sur la carte. Pour la garder visible, définissez la propriété [**CollisionBehaviorDesired**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.collisionbehaviordesired) de l’icône de carte sur [**MapElementCollisionBehavior.RemainVisible**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior).
+-   Il n’est pas garanti non plus que le [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) facultatif de [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) s’affiche. Si le texte n’est pas visible, effectuez un zoom arrière en réduisant la valeur de la propriété [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) de la classe [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
+-   Quand vous affichez une image [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) qui pointe vers un emplacement spécifique sur la carte, par exemple une punaise ou une flèche, envisagez d’affecter à la valeur de la propriété [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint) l’emplacement approximatif du pointeur sur l’image. Si vous conservez la valeur par défaut (0, 0) de **NormalizedAnchorPoint**, qui représente le coin supérieur gauche de l’image, des modifications de la propriété [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) de la carte peuvent laisser l’image pointer vers un autre emplacement.
+-   Si vous ne définissez pas explicitement les éléments [Altitude](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.basicgeoposition) et [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem), le [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) sera placé sur la surface.
 
 ## <a name="add-a-3d-pushpin"></a>Ajoutez une punaise 3D
 
@@ -126,7 +126,7 @@ public async void Add3DMapModel()
 
 ## <a name="add-an-image"></a>Ajouter une image
 
-Afficher les images grand format associées à des emplacements sur la carte, comme l'image d’un restaurant ou d’un point de repère. Quand les utilisateurs effectuent un zoom arrière, la taille de l'image diminue proportionnellement afin que l’utilisateur puisse voir davantage de zones de la carte. C’est un peu différent d'un [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) qui marque un emplacement spécifique, est généralement petit et reste à la même taille quand les utilisateurs agrandissent une carte.
+Afficher les images grand format associées à des emplacements sur la carte, comme l'image d’un restaurant ou d’un point de repère. Quand les utilisateurs effectuent un zoom arrière, la taille de l'image diminue proportionnellement afin que l’utilisateur puisse voir davantage de zones de la carte. C’est un peu différent d'un [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) qui marque un emplacement spécifique, est généralement petit et reste à la même taille quand les utilisateurs agrandissent une carte.
 
 ![image de MapBillboard](images/map-billboard.png)
 
@@ -167,10 +167,10 @@ Il existe trois parties de ce code intéressant d’examiner plus attentivement�
 
 ### <a name="image"></a>Image
 
-Cet exemple montre une image personnalisée enregistrée dans le dossier **Ressources** du projet. La propriété [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) de la classe [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) attend une valeur de type [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). Ce type nécessite une instruction **using** pour l’espace de noms [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791).
+Cet exemple montre une image personnalisée enregistrée dans le dossier **Ressources** du projet. La propriété [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) de la classe [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) attend une valeur de type [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Ce type nécessite une instruction **using** pour l’espace de noms [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams).
 
 >[!NOTE]
->Si vous utilisez la même image pour plusieurs icônes de carte, déclarez l’élément [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) au niveau de la page ou de l’application pour optimiser les performances.
+>Si vous utilisez la même image pour plusieurs icônes de carte, déclarez l’élément [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) au niveau de la page ou de l’application pour optimiser les performances.
 
 ### <a name="reference-camera"></a>Caméra de référence
 
@@ -186,7 +186,7 @@ L'élément [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windo
 
 ## <a name="add-a-shape"></a>Ajoutez une forme.
 
-Utilisez la classe [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) pour afficher une forme multipoint sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une zone rouge bordée de bleu sur la carte.
+Utilisez la classe [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) pour afficher une forme multipoint sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une zone rouge bordée de bleu sur la carte.
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>Ajouter un ligne
 
 
-Utilisez la classe [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) pour afficher une ligne sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une ligne en pointillé sur la carte.
+Utilisez la classe [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) pour afficher une ligne sur la carte. L’exemple suivant, tiré de l’[exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977), affiche une ligne en pointillé sur la carte.
 
 ```csharp
 public void DrawLineOnMap()
@@ -270,10 +270,10 @@ public void DrawLineOnMap()
 
 Utilisez du code XAML pour afficher des éléments d’interface utilisateur personnalisés sur la carte. Positionnez le code XAML sur la carte en spécifiant son emplacement et son point d’ancrage normalisé.
 
--   Appelez [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) pour définir l’emplacement du code XAML sur la carte.
--   Appelez [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) pour définir l’emplacement relatif du code XAML correspondant à l’emplacement spécifié.
+-   Appelez [**SetLocation**](https://docs.microsoft.com/windows/desktop/tablet/icontextnode-setlocation) pour définir l’emplacement du code XAML sur la carte.
+-   Appelez [**SetNormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setnormalizedanchorpoint) pour définir l’emplacement relatif du code XAML correspondant à l’emplacement spécifié.
 
-L’exemple suivant affiche une carte de la ville de Seattle et ajoute un contrôle [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) en code XAML pour indiquer l’emplacement de la Space Needle. Il centre également la carte sur la zone et effectue un zoom avant. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md).
+L’exemple suivant affiche une carte de la ville de Seattle et ajoute un contrôle [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) en code XAML pour indiquer l’emplacement de la Space Needle. Il centre également la carte sur la zone et effectue un zoom avant. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md).
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -306,9 +306,9 @@ Cet exemple affiche une bordure bleue sur la carte.
 
 ![Capture d’écran d’un balisage XAML à l’emplacement du point d’intérêt sur la carte](images/displaypoixaml.png)
 
-Les exemples suivants montrent comment ajouter des éléments d’interface utilisateur en code XAML directement dans le balisage XAML de la page à l’aide de la liaison de données. Comme pour d’autres éléments XAML qui affichent du contenu, la propriété [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) est la propriété de contenu par défaut de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et n’a pas besoin d’être spécifiée explicitement dans le balisage XAML.
+Les exemples suivants montrent comment ajouter des éléments d’interface utilisateur en code XAML directement dans le balisage XAML de la page à l’aide de la liaison de données. Comme pour d’autres éléments XAML qui affichent du contenu, la propriété [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) est la propriété de contenu par défaut de la classe [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) et n’a pas besoin d’être spécifiée explicitement dans le balisage XAML.
 
-Cet exemple montre comment afficher deux contrôles XAML en tant qu’enfants implicites du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Ces contrôles apparaissent sur la carte aux emplacements associés aux données.
+Cet exemple montre comment afficher deux contrôles XAML en tant qu’enfants implicites du [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). Ces contrôles apparaissent sur la carte aux emplacements associés aux données.
 
 ```xml
 <maps:MapControl>
@@ -324,7 +324,7 @@ public Geopoint SeattleLocation { get; set; }
 public Geopoint BellevueLocation { get; set; }
 ```
 
-Cet exemple montre comment afficher deux contrôles XAML contenus dans un [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094). Ces contrôles apparaissent sur la carte aux emplacements associés aux données.
+Cet exemple montre comment afficher deux contrôles XAML contenus dans un [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl). Ces contrôles apparaissent sur la carte aux emplacements associés aux données.
 
 ```xml
 <maps:MapControl>
@@ -335,7 +335,7 @@ Cet exemple montre comment afficher deux contrôles XAML contenus dans un [**Map
 </maps:MapControl>
 ```
 
-Cet exemple affiche une collection d’éléments XAML liés à un [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).
+Cet exemple affiche une collection d’éléments XAML liés à un [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl).
 
 ```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
@@ -475,9 +475,9 @@ Dans votre page XAML, associez la propriété dans votre classe de modèle d’a
 
 * [Espace partenaires Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Recommandations de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Recommandations de conception pour les cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Vidéo de la build 2015 : Utilisation de cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](https://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
-* [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
-* [**Polyligne de carte**](https://msdn.microsoft.com/library/windows/apps/dn637114)
+* [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
+* [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
+* [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

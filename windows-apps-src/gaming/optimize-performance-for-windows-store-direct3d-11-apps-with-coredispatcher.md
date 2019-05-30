@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, latence d’entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a74e2e24810dee058aa166800091af91d55cdef4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601744"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368455"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimiser la latence d’entrée pour les jeux UWP DirectX
 
@@ -65,7 +65,7 @@ Nous montrerons l’implémentation de la boucle de jeu pour chacun des scénari
 
 La première itération du jeu de puzzle ne met à jour l’écran qu’au moment où l’utilisateur déplace une pièce de puzzle. Un utilisateur peut faire glisser une pièce de puzzle vers son emplacement ou l’ancrer à son emplacement en la sélectionnant, puis en appuyant sur la destination appropriée. Dans le second cas, la pièce de puzzle saute vers sa destination sans animations, ni effets d’aucune sorte.
 
-Le code a une boucle de jeu à thread unique dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) qui utilise **CoreProcessEventsOption::ProcessOneAndAllPending**. L’utilisation de cette option envoie tous les événements actuellement disponibles en file d’attente. Si aucun événement n’est en attente, la boucle de jeu attend leur apparition.
+Le code a une boucle de jeu à thread unique dans la méthode [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run) qui utilise **CoreProcessEventsOption::ProcessOneAndAllPending**. L’utilisation de cette option envoie tous les événements actuellement disponibles en file d’attente. Si aucun événement n’est en attente, la boucle de jeu attend leur apparition.
 
 ``` syntax
 void App::Run()
@@ -96,7 +96,7 @@ void App::Run()
 
 Dans la deuxième itération, le jeu est modifié afin qu’au moment où l’utilisateur sélectionne une pièce de puzzle et appuie sur sa destination, la pièce s’anime à l’écran jusqu’à ce qu’elle atteigne sa destination.
 
-Comme précédemment, le code a une boucle de jeu à thread unique qui utilise **ProcessOneAndAllPending** pour répartir les événements d’entrée en file d’attente. La différence est la suivante : durant une animation, la boucle utilise **CoreProcessEventsOption::ProcessAllIfPresent** afin de ne pas attendre de nouveaux événements d’entrée. Si aucun événement n’est en attente, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) est immédiatement retourné et permet à l’application de présenter l’image suivante de l’animation. Quand l’animation est terminée, la boucle revient à **ProcessOneAndAllPending** pour limiter les mises à jour de l’écran.
+Comme précédemment, le code a une boucle de jeu à thread unique qui utilise **ProcessOneAndAllPending** pour répartir les événements d’entrée en file d’attente. La différence est la suivante : durant une animation, la boucle utilise **CoreProcessEventsOption::ProcessAllIfPresent** afin de ne pas attendre de nouveaux événements d’entrée. Si aucun événement n’est en attente, [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) est immédiatement retourné et permet à l’application de présenter l’image suivante de l’animation. Quand l’animation est terminée, la boucle revient à **ProcessOneAndAllPending** pour limiter les mises à jour de l’écran.
 
 ``` syntax
 void App::Run()
@@ -182,7 +182,7 @@ Toutefois, cette facilité de développement a un prix. Le rendu à 60 images p
 
 Certains jeux peuvent ignorer ou compenser l’augmentation de la latence d’entrée décrite au scénario 3. Toutefois, si une faible latence d’entrée est essentielle pour l’expérience du jeu et les sensations des joueurs, les jeux qui affichent 60 images par seconde doivent traiter les entrées sur un thread distinct.
 
-La quatrième itération du jeu de puzzle se fonde sur le scénario 3 en séparant le traitement des entrées et le rendu graphique de la boucle de jeu en threads distincts. Avec des threads distincts, chaque entrée est assurée de ne jamais être retardée par la sortie graphique. Cependant, il en résulte un code plus complexe. Dans le scénario 4, le thread d’entrée appelle [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) avec [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), qui attend les nouveaux événements et répartit tous les événements disponibles. Il garde ce comportement jusqu’à ce que la fenêtre soit fermée ou que le jeu appelle [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
+La quatrième itération du jeu de puzzle se fonde sur le scénario 3 en séparant le traitement des entrées et le rendu graphique de la boucle de jeu en threads distincts. Avec des threads distincts, chaque entrée est assurée de ne jamais être retardée par la sortie graphique. Cependant, il en résulte un code plus complexe. Dans le scénario 4, le thread d’entrée appelle [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) avec [**CoreProcessEventsOption::ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption), qui attend les nouveaux événements et répartit tous les événements disponibles. Il garde ce comportement jusqu’à ce que la fenêtre soit fermée ou que le jeu appelle [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close).
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Le **DirectX 11 et XAML application (Windows universel)** modèle dans Microsoft Visual Studio 2015 fractionne la boucle du jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
+Le **DirectX 11 et XAML application (Windows universel)** modèle dans Microsoft Visual Studio 2015 fractionne la boucle du jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreIndependentInputSource) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Autres façons de réduire la latence d’entrée
 

@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de4b51687e152ef5d25a583f949cdd108f2f029
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984206"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370475"
 ---
 # <a name="reveal-focus"></a>Révéler le Focus
 
@@ -176,6 +176,6 @@ Révéler que le Focus est un composant de Fluent Design System qui ajoute de la
 - [Conception pour Xbox et TV](/windows/uwp/design/devices/designing-for-tv)
 - [Interactions GamePad et de contrôle à distance](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
-- [Effets de composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Effets de composition](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Science dans le système : Profondeur et conception Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science dans le système : Clair et conception Fluent](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

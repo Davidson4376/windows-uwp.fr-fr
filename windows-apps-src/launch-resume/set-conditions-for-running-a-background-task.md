@@ -10,38 +10,38 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8740829ab95b804afba564110f38116f2c90b416
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650934"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371845"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
 **API importantes**
 
-- [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
-- [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
-- [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+- [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
+- [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
+- [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera.
 
-Parfois, les tâches en arrière-plan doivent remplir certaines conditions pour réussir. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition sera vérifiée une fois le déclencheur déclenché. La tâche en arrière-plan sera ensuite placée en file d’attente, mais elle ne s’exécutera que quand toutes les conditions requises auront été remplies.
+Parfois, les tâches en arrière-plan doivent remplir certaines conditions pour réussir. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) au moment d’inscrire votre tâche en arrière-plan. La condition sera vérifiée une fois le déclencheur déclenché. La tâche en arrière-plan sera ensuite placée en file d’attente, mais elle ne s’exécutera que quand toutes les conditions requises auront été remplies.
 
-L’affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et le processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
+L’affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et le processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
 
-Il est également possible de combiner plusieurs conditions en appelant **AddCondition** plusieurs fois sur le même [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Veillez à ne pas ajouter de conditions conflictuelles, telles que **UserPresent** et **UserNotPresent**.
+Il est également possible de combiner plusieurs conditions en appelant **AddCondition** plusieurs fois sur le même [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Veillez à ne pas ajouter de conditions conflictuelles, telles que **UserPresent** et **UserNotPresent**.
 
 ## <a name="create-a-systemcondition-object"></a>Créer un objet SystemCondition
 
-Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) nommé **taskBuilder**.  Consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) si vous devez commencer par créer une tâche en arrière-plan.
+Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) nommé **taskBuilder**.  Consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) si vous devez commencer par créer une tâche en arrière-plan.
 
 Cette rubrique concerne aussi bien les tâches en arrière-plan qui s’exécutent hors processus que celles qui s’exécutent dans le même processus que l’application au premier plan.
 
-Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) pour représenter la condition à remplir pour qu’une tâche en arrière-plan soit exécutée. Dans le constructeur, spécifiez la condition à remplir en fournissant une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) pour représenter la condition à remplir pour qu’une tâche en arrière-plan soit exécutée. Dans le constructeur, spécifiez la condition à remplir en fournissant une valeur d’énumération [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
-Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie la condition **InternetAvailable** :
+Le code suivant crée un objet [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) qui spécifie la condition **InternetAvailable** :
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -58,7 +58,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ## <a name="add-the-systemcondition-object-to-your-background-task"></a>Ajouter l’objet SystemCondition à votre tâche en arrière-plan
 
-Pour ajouter la condition, appelez la méthode [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) sur l’objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) et transmettez-lui l’objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
+Pour ajouter la condition, appelez la méthode [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) sur l’objet [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) et transmettez-lui l’objet [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition).
 
 Le code suivant utilise **taskBuilder** pour ajouter la condition **InternetAvailable**.
 
@@ -76,7 +76,7 @@ taskBuilder->AddCondition(internetCondition);
 
 ## <a name="register-your-background-task"></a>Inscrire votre tâche en arrière-plan
 
-Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772). Elle ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
+Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register). Elle ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
 
 Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration obtenu :
 
@@ -93,16 +93,16 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 ```
 
 > [!NOTE]
-> Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
+> Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
 
-Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
+Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), puis [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
 > [!NOTE]
 > Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
 ## <a name="place-multiple-conditions-on-your-background-task"></a>Placer plusieurs conditions dans la tâche en arrière-plan
 
-Pour ajouter plusieurs conditions, votre application effectue plusieurs appels à la méthode [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769). Pour être effectifs, ces appels doivent intervenir avant l’inscription de la tâche.
+Pour ajouter plusieurs conditions, votre application effectue plusieurs appels à la méthode [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition). Pour être effectifs, ces appels doivent intervenir avant l’inscription de la tâche.
 
 > [!NOTE]
 > Vous ne devez ne pas pour ajouter des conditions en conflit pour une tâche en arrière-plan.
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Notes
 
 > [!NOTE]
-> Choisissez les conditions pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsqu’il est nécessaire et ne s’exécute pas lorsqu’il ne devrait pas. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
+> Choisissez les conditions pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsqu’il est nécessaire et ne s’exécute pas lorsqu’il ne devrait pas. Voir [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

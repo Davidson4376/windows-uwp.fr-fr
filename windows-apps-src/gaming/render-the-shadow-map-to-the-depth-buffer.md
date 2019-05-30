@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a8ae67df457d4abafc8fb689a747139f62ca0e0e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621334"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368073"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Restituer le plan d’ombres dans le tampon
 
@@ -37,7 +37,7 @@ Pour la passe de rendu d’ombre, spécifiez un tampon de profondeur mais ne sp�
 
 Spécifiez la fenêtre d’affichage de la lumière, un nuanceur de vertex et définissez les tampons constants de l’espace lumineux. Utilisez l’élimination de la face avant pour cette passe pour optimiser les valeurs de profondeur placées dans le tampon de l’ombre.
 
-Notez que sur la plupart des périphériques, vous pouvez spécifier nullptr pour le nuanceur de pixels (ou évitez totalement de spécifier un nuanceur de pixels). Mais certains pilotes risquent de lever une exception quand vous appelez le dessin sur le périphérique Direct3D avec un jeu de nuanceurs de pixels null. Pour éviter cette exception, vous pouvez définir un nuanceur de pixels minimal pour la passe de rendu d’ombre. La sortie de ce nuanceur est rejetée ; il peut appeler [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) sur chaque pixel.
+Notez que sur la plupart des périphériques, vous pouvez spécifier nullptr pour le nuanceur de pixels (ou évitez totalement de spécifier un nuanceur de pixels). Mais certains pilotes risquent de lever une exception quand vous appelez le dessin sur le périphérique Direct3D avec un jeu de nuanceurs de pixels null. Pour éviter cette exception, vous pouvez définir un nuanceur de pixels minimal pour la passe de rendu d’ombre. La sortie de ce nuanceur est rejetée ; il peut appeler [**discard**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard) sur chaque pixel.
 
 Générez le rendu des objets pouvant projeter des ombres, mais ne vous embêtez pas à générer le rendu de la géométrie qui ne peut pas en projeter (comme un sol dans une salle ou des objets supprimés de la passe d’ombre pour des raisons d’optimisation).
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimiser le frustum vue :**  Assurez-vous que votre implémentation calcule un frustum vue étroite afin que vous obtenez le plus précis en dehors de votre mémoire tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
+**Optimiser le frustum vue :**  Assurez-vous que votre implémentation calcule un frustum vue étroite afin que vous obtenez le plus précis en dehors de votre mémoire tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps) pour obtenir plus de conseils sur la technique d’ombrage.
 
 ## <a name="vertex-shader-for-shadow-pass"></a>Nuanceur de vertex pour la passe d’ombre
 

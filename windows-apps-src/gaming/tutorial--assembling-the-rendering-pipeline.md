@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, rendu
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0eeb515f07d9bc2e48ba97f6ef4d71afd0226ace
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604854"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367732"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Framework de rendu i : Présentation du rendu
 
@@ -75,7 +75,7 @@ La scène du jeu doit restituer le rendu lorsque le jeu est lancé. Les instruct
 
 Le flux simple est le suivant :
 1. __Mise à jour__
-2. __Rendu__
+2. __Render__
 3. __Heure actuelle__
 
 ### <a name="gamemainrun-method"></a>Méthode GameMain::Run
@@ -496,11 +496,11 @@ Pour créer ce pipeline, vous devez connaître :
 * [Étapes du nuanceur](#shader-stages)
 * [Divers formats de fichier de nuanceur](#various-shader-file-formats)
 
-Pour plus d’informations, voir [Comprendre le pipeline de rendu Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx) et [Pipeline graphique](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).
+Pour plus d’informations, voir [Comprendre le pipeline de rendu Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3dgetstarted/understand-the-directx-11-2-graphics-pipeline) et [Pipeline graphique](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline).
 
 #### <a name="hlsl"></a>HLSL
 
-HLSL est le langage HLSL pour DirectX. À l’aide du langage HLSL, vous pouvez créer des nuanceurs programmables de type C pour le pipeline Direct3D. Pour plus d'informations, consultez la page [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561.aspx).
+HLSL est le langage HLSL pour DirectX. À l’aide du langage HLSL, vous pouvez créer des nuanceurs programmables de type C pour le pipeline Direct3D. Pour plus d'informations, consultez la page [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl).
 
 #### <a name="shaders"></a>Nuanceurs
 
@@ -516,7 +516,7 @@ Les nuanceurs de vertex traitent les vertex, notamment en effectuant des opérat
 
 #### <a name="shader-stages"></a>Étapes du nuanceur
 
-Une séquence de ces différents nuanceurs définis pour traiter ce flux de primitives correspond aux étapes de nuanceur dans un pipeline de rendu. Les étapes réelles dépendent de la version de Direct3D, mais elles incluent généralement les étapes de vertex, de géométrie et de pixels. Il existe également d'autres étapes, telles que les nuanceurs de coque et de domaine pour le pavage et le nuanceur de calcul. Toutes ces étapes sont complètement programmables à l’aide de [HLSL])(#hlsl). Pour plus d’informations, consultez [Pipeline graphique](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).
+Une séquence de ces différents nuanceurs définis pour traiter ce flux de primitives correspond aux étapes de nuanceur dans un pipeline de rendu. Les étapes réelles dépendent de la version de Direct3D, mais elles incluent généralement les étapes de vertex, de géométrie et de pixels. Il existe également d'autres étapes, telles que les nuanceurs de coque et de domaine pour le pavage et le nuanceur de calcul. Toutes ces étapes sont complètement programmables à l’aide de [HLSL])(#hlsl). Pour plus d’informations, consultez [Pipeline graphique](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline).
 
 #### <a name="various-shader-file-formats"></a>Différents formats de fichier de nuanceur
 
@@ -545,17 +545,17 @@ Le terme « sous-ressource » fait référence à un sous-ensemble d’une res
 
 #### <a name="depth-stencil"></a>Gabarit-profondeur
 
-Une ressource de gabarit-profondeur contient le format et la mémoire tampon permettant de contenir les informations de profondeur et de gabarit. Elle est créée à l’aide d’une ressource de texture. Pour plus d’informations sur la création d’une ressource de gabarit-profondeur, voir [Configuration de la fonctionnalité de profondeur-gabarit](https://msdn.microsoft.com/library/windows/desktop/bb205074.aspx). Nous pouvons accéder à la ressource de profondeur-gabarit par le biais de la vue de profondeur-gabarit implémentée à l’aide de l'interface [ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377.aspx).
+Une ressource de gabarit-profondeur contient le format et la mémoire tampon permettant de contenir les informations de profondeur et de gabarit. Elle est créée à l’aide d’une ressource de texture. Pour plus d’informations sur la création d’une ressource de gabarit-profondeur, voir [Configuration de la fonctionnalité de profondeur-gabarit](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-depth-stencil). Nous pouvons accéder à la ressource de profondeur-gabarit par le biais de la vue de profondeur-gabarit implémentée à l’aide de l'interface [ID3D11DepthStencilView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview).
 
 Les informations de profondeur nous indiquent les zones de polygones à afficher, plutôt que celles à masquer. Les informations de gabarit indiquent quels pixels sont masqués. Elle peut être utilisée pour produire des effets spéciaux dans la mesure où elle détermine si un pixel est dessiné ou non ; définit le bit 1 ou le bit 0. 
 
-Pour plus d’informations, consultez : [Vue du stencil de profondeur](../graphics-concepts/depth-stencil-view--dsv-.md), [tampon de profondeur](../graphics-concepts/depth-buffers.md), et [tampon stencil buffer](../graphics-concepts/stencil-buffers.md).
+Pour plus d'informations, consultez : [Vue du stencil de profondeur](../graphics-concepts/depth-stencil-view--dsv-.md), [tampon de profondeur](../graphics-concepts/depth-buffers.md), et [tampon stencil buffer](../graphics-concepts/stencil-buffers.md).
 
 #### <a name="render-target"></a>Cible de rendu
 
-Une cible de rendu est une ressource qui nous pouvons écrire à la fin d’une passe de rendu. Elle est généralement créée à l’aide de la méthode [ID3D11Device::CreateRenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476517.aspx) en utilisant la chaîne d'échange de tampon d’arrière-plan (qui est également une ressource) en tant que paramètre d’entrée. 
+Une cible de rendu est une ressource qui nous pouvons écrire à la fin d’une passe de rendu. Elle est généralement créée à l’aide de la méthode [ID3D11Device::CreateRenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview) en utilisant la chaîne d'échange de tampon d’arrière-plan (qui est également une ressource) en tant que paramètre d’entrée. 
 
-Chaque cible de rendu doit également avoir une vue de profondeur-gabarit correspondante, car lorsque nous utilisons [OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464.aspx) pour définir la cible de rendu avant de l’utiliser, il requiert également une vue de profondeur-gabarit. Nous pouvons accéder à la ressource de cible de rendu par le biais de l’affichage de cible de rendu implémenté à l’aide de l'interface [ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582.aspx). 
+Chaque cible de rendu doit également avoir une vue de profondeur-gabarit correspondante, car lorsque nous utilisons [OMSetRenderTargets](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) pour définir la cible de rendu avant de l’utiliser, il requiert également une vue de profondeur-gabarit. Nous pouvons accéder à la ressource de cible de rendu par le biais de l’affichage de cible de rendu implémenté à l’aide de l'interface [ID3D11RenderTargetView](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview). 
 
 #### <a name="device"></a>Appareil
 
@@ -563,25 +563,25 @@ Pour ceux qui débutent avec Direct3D 11, vous pouvez considérer un appareil c
 
 Plus précisément, un appareil Direct3D est le composant de rendu de Direct3D. Un appareil encapsule et stocke l’état de rendu, exécute des transformations et des opérations d’éclairage, et rastérise une image sur une surface. Pour plus d’informations, voir [Appareils](../graphics-concepts/devices.md).
 
-Un appareil est représenté par l'interface [ID3D11Device](https://msdn.microsoft.com/library/windows/desktop/ff476379.aspx). En d’autres termes, l’interface ID3D11Device représente une carte graphique virtuelle et est utilisée pour créer les ressources qui appartiennent à un appareil. 
+Un appareil est représenté par l'interface [ID3D11Device](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device). En d’autres termes, l’interface ID3D11Device représente une carte graphique virtuelle et est utilisée pour créer les ressources qui appartiennent à un appareil. 
 
-Notez qu’il existe différentes versions de ID3D11Device, [ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx) est la version la plus récente et ajoute de nouvelles méthodes à celles de ID3D11Device4. Pour plus d’informations sur la façon dont Direct3D communique avec le matériel sous-jacent, voir [Architecture du modèle de pilote de périphérique Windows (WDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).
+Notez qu’il existe différentes versions de ID3D11Device, [ID3D11Device5](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11device5) est la version la plus récente et ajoute de nouvelles méthodes à celles de ID3D11Device4. Pour plus d’informations sur la façon dont Direct3D communique avec le matériel sous-jacent, voir [Architecture du modèle de pilote de périphérique Windows (WDDM)](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).
 
-Chaque application doit avoir au moins un appareil, la plupart des applications créent uniquement un appareil. Créer un appareil pour un des pilotes de matériel installés sur votre ordinateur en appelant __D3D11CreateDevice__ ou __D3D11CreateDeviceAndSwapChain__ et en spécifiant le type de pilote avec la D3D\_ PILOTE\_indicateur TYPE. Chaque appareil peut utiliser un ou plusieurs contextes d'appareil, en fonction de la fonctionnalité souhaitée. Pour plus d’information, voir [Fonction D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx).
+Chaque application doit avoir au moins un appareil, la plupart des applications créent uniquement un appareil. Créer un appareil pour un des pilotes de matériel installés sur votre ordinateur en appelant __D3D11CreateDevice__ ou __D3D11CreateDeviceAndSwapChain__ et en spécifiant le type de pilote avec la D3D\_ PILOTE\_indicateur TYPE. Chaque appareil peut utiliser un ou plusieurs contextes d'appareil, en fonction de la fonctionnalité souhaitée. Pour plus d’information, voir [Fonction D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice).
 
 #### <a name="device-context"></a>Contexte d'appareil
 
 Un contexte d'appareil sert à définir l’état du [pipeline](#rendering-pipeline) et à générer des commandes de rendu à l'aide des [ressources](#resource) appartenant à un [appareil](#device). 
 
-Direct3D 11 implémente deux types de contextes d'appareil, un pour le rendu immédiat et l’autre pour le rendu différé. Les deux contextes sont représentés par une interface [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476385.aspx).  
+Direct3D 11 implémente deux types de contextes d'appareil, un pour le rendu immédiat et l’autre pour le rendu différé. Les deux contextes sont représentés par une interface [ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext).  
 
 Les interfaces __ID3D11DeviceContext__ ont des versions différentes ; __ID3D11DeviceContext4__ ajoute de nouvelles méthodes à celles de __ID3D11DeviceContext3__.
 
-Remarque: __ID3D11DeviceContext4__ est introduite dans Windows 10 Creators Update et est la dernière version de la __ID3D11DeviceContext__ interface. Les applications ciblant Windows 10 Creators Update doivent utiliser cette interface au lieu des versions antérieures. Pour plus d’informations, voir [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx).
+Remarque: __ID3D11DeviceContext4__ est introduite dans Windows 10 Creators Update et est la dernière version de la __ID3D11DeviceContext__ interface. Les applications ciblant Windows 10 Creators Update doivent utiliser cette interface au lieu des versions antérieures. Pour plus d’informations, voir [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4).
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
-La classe __DX::DeviceResources__ se trouve dans les fichiers __DeviceResources.cpp__/__.h__ et gère l’ensemble des ressources de l'appareil DirectX. Dans l’exemple de projet de jeu et le projet de modèle d'application DirectX 11, ces fichiers se trouvent dans le dossier __Commons__. Vous pouvez obtenir la dernière version de ces fichiers lorsque vous créez un nouveau projet de modèle application DirectX 11 dans Visual Studio 2015 ou les versions ultérieures.
+La classe __DX::DeviceResources__ se trouve dans les fichiers __DeviceResources.cpp__/ __.h__ et gère l’ensemble des ressources de l'appareil DirectX. Dans l’exemple de projet de jeu et le projet de modèle d'application DirectX 11, ces fichiers se trouvent dans le dossier __Commons__. Vous pouvez obtenir la dernière version de ces fichiers lorsque vous créez un nouveau projet de modèle application DirectX 11 dans Visual Studio 2015 ou les versions ultérieures.
 
 ### <a name="buffer"></a>Mémoire tampon
 
@@ -612,11 +612,11 @@ Liez les mémoires tampons pour :
     * L'étape de la sortie du flux en appelant __ID3D11DeviceContext::SOSetTargets__
     * L'étape du nuanceur en appelant les méthodes de nuanceur, comme __ID3D11DeviceContext::VSSetConstantBuffers__
 
-Pour plus d’informations, voir [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx).
+Pour plus d’informations, voir [Présentation des mémoires tampons dans Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-intro).
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) est un nouveau sous-système qui a été introduit avec Windows Vista qui encapsule certains des tâches de bas niveau qui sont requises par Direct3D 10, 10.1, 11 et 11.1. Il convient de faire attention lorsque vous utilisez DXGI dans une application multithread, afin d’éviter les blocages. Pour plus d’informations, consultez [DirectX Graphics Infrastructure (DXGI) : Meilleures pratiques-le Multithreading](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX Graphics Infrastructure (DXGI) est un nouveau sous-système qui a été introduit avec Windows Vista qui encapsule certains des tâches de bas niveau qui sont requises par Direct3D 10, 10.1, 11 et 11.1. Il convient de faire attention lorsque vous utilisez DXGI dans une application multithread, afin d’éviter les blocages. Pour plus d’informations, consultez [DirectX Graphics Infrastructure (DXGI) : Meilleures pratiques-le Multithreading](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
 
 ### <a name="feature-level"></a>Niveau de fonctionnalité
 
@@ -624,9 +624,9 @@ Le niveau de fonctionnalité est un concept introduit dans Direct3D 11 pour gér
 
 Chaque carte vidéo implémente un certain niveau de fonctionnalité DirectX en fonction des GPU installés. Dans les versions antérieures de Microsoft Direct3D, vous pouviez avoir la version de Direct3D, la carte vidéo implémentée et ensuite votre application en conséquence. 
 
-Avec le niveau de fonctionnalité, lorsque vous créez un appareil, vous pouvez tenter de créer un appareil pour le niveau de fonctionnalité que vous souhaitez demander. Si la création d'appareil fonctionne, ce niveau de fonctionnalité existe, si ce n’est pas, le matériel ne prend pas en charge ce niveau de fonctionnalité. Vous pouvez essayer de recréer un appareil avec un niveau de fonctionnalité inférieur ou vous pouvez choisir de quitter l’application. Par exemple, le 12\_nécessite de niveau de fonctionnalité 0 Direct3D 11.3 ou Direct3D 12 et le modèle de nuanceur 5.1. Pour plus d’informations, consultez [niveaux de fonctionnalité Direct3D : Vue d’ensemble pour chaque niveau de fonctionnalité](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).
+Avec le niveau de fonctionnalité, lorsque vous créez un appareil, vous pouvez tenter de créer un appareil pour le niveau de fonctionnalité que vous souhaitez demander. Si la création d'appareil fonctionne, ce niveau de fonctionnalité existe, si ce n’est pas, le matériel ne prend pas en charge ce niveau de fonctionnalité. Vous pouvez essayer de recréer un appareil avec un niveau de fonctionnalité inférieur ou vous pouvez choisir de quitter l’application. Par exemple, le 12\_nécessite de niveau de fonctionnalité 0 Direct3D 11.3 ou Direct3D 12 et le modèle de nuanceur 5.1. Pour plus d’informations, consultez [niveaux de fonctionnalité Direct3D : Vue d’ensemble pour chaque niveau de fonctionnalité](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
 
-À l’aide des niveaux de fonctionnalité, vous pouvez développer une application Direct3D 9, Microsoft Direct3D 10 ou Direct3D 11 et puis l’exécuter sur 9, 10 ou 11 matériel (avec quelques exceptions près). Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
+À l’aide des niveaux de fonctionnalité, vous pouvez développer une application Direct3D 9, Microsoft Direct3D 10 ou Direct3D 11 et puis l’exécuter sur 9, 10 ou 11 matériel (avec quelques exceptions près). Pour plus d’informations, voir [Niveaux de fonctionnalité Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
 
 ### <a name="stereo-rendering"></a>Rendu stéréo
 

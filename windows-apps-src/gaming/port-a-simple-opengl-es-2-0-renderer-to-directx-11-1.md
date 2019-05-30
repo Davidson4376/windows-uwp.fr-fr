@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, opengl, direct3d 11 , portage
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c17e0b8ceb5938b7ca224f4a67198929a37a7f4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594214"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368359"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGL ES 2.0 simple vers Direct3D 11
 
@@ -27,7 +27,7 @@ Cet exercice de portage permet de mettre en pratique une notion de base : porte
 
 Cette rubrique suppose que vous avez déjà créé votre projet DirectX 11. Pour savoir comment créer un projet DirectX 11, voir [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md).
 
-Si vous avez créé votre projet à partir d’un de ces liens, ce projet contient tout le code requis pour l’infrastructure [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345). Vous pouvez donc commencer immédiatement le processus de portage de votre convertisseur d’Open GL ES 2.0 sur Direct3D 11.
+Si vous avez créé votre projet à partir d’un de ces liens, ce projet contient tout le code requis pour l’infrastructure [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews). Vous pouvez donc commencer immédiatement le processus de portage de votre convertisseur d’Open GL ES 2.0 sur Direct3D 11.
 
 Cette rubrique examine deux chemins de code qui effectuent la même tâche graphique de base : afficher un cube en forme de vertex qui tourne dans une fenêtre. Dans les deux cas, le code couvre le processus suivant :
 
@@ -89,10 +89,10 @@ Cette structure n’a qu’une seule instance ; elle contient tous les élémen
 
 ### <a name="technologies"></a>Technologies
 
--   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 -   Facultatif. Consultez la rubrique [Comparer le code EGL avec DXGI et Direct3D](moving-from-egl-to-dxgi.md). Cette rubrique vous explique plus en détail le fonctionnement de l’interface graphique fournie par DirectX.
 

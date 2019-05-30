@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ec132ccb3099f7b5c9f4763a2b276bf6270da859
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: dd45408c484534009bf632eb81be11e6ef4d58b7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291647"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370578"
 ---
 # <a name="hull-shader-hs-stage"></a>Étape Hull Shader (HS)
 
@@ -67,7 +67,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-Consultez [Comment : Créer un nuanceur de coque](https://msdn.microsoft.com/library/windows/desktop/ff476338).
+Consultez [Comment : Créer un nuanceur de coque](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-hull-shader-create).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7146fe6489d61c641b7104e8c7c25728550c1c54
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636554"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370664"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Vecteurs normaux à une face ou un sommet
 
@@ -31,7 +31,7 @@ La figure ci-après illustre un vecteur normal d’une face avant :
 ## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Élimination de retour est confrontée
 
 
-Toute face autre qu’une face avant est une face arrière. Direct3D ne procède pas systématiquement au rendu des faces arrière ; dans ce cas, on parle d’élimination des faces arrière. L’élimination des faces arrière consiste à supprimer les faces arrière du rendu. Si vous le souhaitez, vous pouvez modifier le mode d’élimination de façon à obtenir le rendu des faces arrière. Pour plus d’informations, consultez l’article [État d’élimination](https://msdn.microsoft.com/library/windows/desktop/bb204882).
+Toute face autre qu’une face avant est une face arrière. Direct3D ne procède pas systématiquement au rendu des faces arrière ; dans ce cas, on parle d’élimination des faces arrière. L’élimination des faces arrière consiste à supprimer les faces arrière du rendu. Si vous le souhaitez, vous pouvez modifier le mode d’élimination de façon à obtenir le rendu des faces arrière. Pour plus d’informations, consultez l’article [État d’élimination](https://docs.microsoft.com/windows/desktop/direct3d9/culling-state).
 
 ## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Normales des sommets unité
 

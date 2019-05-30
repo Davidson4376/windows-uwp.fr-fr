@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, tactile, contrôles, directx, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618734"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367767"
 ---
 # <a name="touch-controls-for-games"></a>Contrôles tactiles pour les jeux
 
@@ -119,7 +119,7 @@ Nous utilisons ces 3 gestionnaires d’événements pour mettre à jour les inf
 
 Enfin, nous utilisons les méthodes et propriétés suivantes pour accéder aux informations sur l’état du contrôleur de la caméra, les initialiser et les mettre à jour.
 
--   **Initialize** est un gestionnaire d’événements que notre application appelle pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui décrit la fenêtre d’affichage.
+-   **Initialize** est un gestionnaire d’événements que notre application appelle pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui décrit la fenêtre d’affichage.
 -   **SetPosition** est une méthode que notre application appelle pour définir les coordonnées (x, y et z) des contrôles dans l’espace de scène. Notez que la coordonnée z présente la valeur 0 tout au long de ce didacticiel.
 -   **obtenir\_Position** est une propriété qui accède à notre application pour obtenir la position actuelle de l’appareil photo dans l’espace de la scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
 -   **obtenir\_FixedLookPoint** est une propriété qui accède à notre application pour obtenir le point actuel vers laquelle l’appareil photo de contrôleur est face. Dans cet exemple, il est verrouillé perpendiculairement au plan x-y.
@@ -134,15 +134,15 @@ Rassemblons maintenant tous ces éléments.
 
 Le répartiteur d’événements Windows Runtime fournit 3 événements qui doivent être gérés par notre application :
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-Ces événements sont implémentés sur le type [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Pour plus d’informations, voir [Configuration d’une application UWP en C++ pour afficher une vue DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
+Ces événements sont implémentés sur le type [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Pour plus d’informations, voir [Configuration d’une application UWP en C++ pour afficher une vue DirectX](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Comme ces événements sont déclenchés pendant que notre application est en cours d’exécution, les gestionnaires mettent à jour les informations sur l’état du contrôleur de la caméra définies dans nos champs privés.
 
-Commençons par remplir les gestionnaires d’événements de pointeur tactile. Dans le premier gestionnaire d’événements (**OnPointerPressed**), nous obtenons les coordonnées x-y du pointeur de la part de l’élément [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui gère notre affichage lorsque l’utilisateur clique avec la souris ou touche l’écran.
+Commençons par remplir les gestionnaires d’événements de pointeur tactile. Dans le premier gestionnaire d’événements (**OnPointerPressed**), nous obtenons les coordonnées x-y du pointeur de la part de l’élément [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui gère notre affichage lorsque l’utilisateur clique avec la souris ou touche l’écran.
 
 **OnPointerPressed**
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché pour définir **m\_panInUse** sur FALSE et désactiver le mouvement panoramique de caméra et l’ID du pointeur la valeur est 0.
+Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) est déclenché pour définir **m\_panInUse** sur FALSE et désactiver le mouvement panoramique de caméra et l’ID du pointeur la valeur est 0.
 
 **OnPointerReleased**
 
@@ -212,7 +212,7 @@ void CameraPanController::OnPointerReleased(
 
 Rassemblons les événements et initialisons tous les champs des états de base du contrôleur de la caméra.
 
-**initialiser**
+**Initialize**
 
 ```cpp
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** fait référence à l’instance [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**.
+**Initialize** fait référence à l’instance [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**.
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>Obtention et définition de la position du contrôleur de la caméra
 

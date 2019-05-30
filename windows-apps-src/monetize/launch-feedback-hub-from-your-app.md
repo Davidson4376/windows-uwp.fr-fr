@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Hub de commentaires, lancer
 ms.localizationpriority: medium
-ms.openlocfilehash: bfce2ed245a3bf4e9b1c8b1a70c8de905d7034a3
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4190c8af5c8cb7db6b80b1149dff631a8454015b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334798"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371070"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Lancer le Hub de commentaires à partir de votre application
 
@@ -20,7 +20,7 @@ Vous pouvez encourager vos clients à laisser des commentaires en ajoutant à vo
 Pour lancer le Hub de commentaires à partir de votre application, utilisez une API fournie par [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). Nous vous recommandons d’utiliser cette API pour lancer le Hub de commentaires à partir d’un élément d’interface utilisateur de votre application qui respecte nos recommandations en matière de conception.
 
 > [!NOTE]
-> Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families) mobiles et de bureau. Nous vous recommandons de n’afficher un contrôle de commentaires dans votre application que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le code de cette rubrique illustre comment procéder.
+> Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) mobiles et de bureau. Nous vous recommandons de n’afficher un contrôle de commentaires dans votre application que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le code de cette rubrique illustre comment procéder.
 
 ## <a name="how-to-launch-feedback-hub-from-your-app"></a>Lancement du Hub de commentaires à partir de votre application
 
@@ -44,9 +44,9 @@ Pour lancer le Hub de commentaires à partir de votre application :
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. Dans votre code de lancement de la page d’application qui héberge votre contrôle de commentaires, utilisez la méthode [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) de la classe [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) pour déterminer si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families) mobiles et de bureau.
+7. Dans votre code de lancement de la page d’application qui héberge votre contrôle de commentaires, utilisez la méthode [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) de la classe [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) pour déterminer si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) mobiles et de bureau.
 
-    Si cette propriété renvoie la valeur **true**, définissez le contrôle comme étant visible. Le code suivant montre comment procéder pour un élément [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+    Si cette propriété renvoie la valeur **true**, définissez le contrôle comme étant visible. Le code suivant montre comment procéder pour un élément [Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button).
 
     [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]

@@ -10,18 +10,18 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9e13138ca634c075eba0c9b1331f6af4176de1eb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654534"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360429"
 ---
 # <a name="xaml-lighting"></a>Éclairage XAML
 
 [**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight) objets sont utilisés conjointement avec [ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) pour simuler l’éclairage dynamique et réflectivité.
 
-Vous pouvez appliquer des éclairages aux [**éléments visuels**](https://msdn.microsoft.com/library/windows/apps/Dn706858) et aux [**éléments UIElements**](/uwp/api/Windows.UI.Xaml.UIElement) XAML.
+Vous pouvez appliquer des éclairages aux [**éléments visuels**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) et aux [**éléments UIElements**](/uwp/api/Windows.UI.Xaml.UIElement) XAML.
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Application d’éclairages aux éléments UIElements XAML
 

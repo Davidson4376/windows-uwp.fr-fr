@@ -6,19 +6,19 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, création de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d90307560c315741751a5ab58ccdf0eaf35d97fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658194"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372794"
 ---
 # <a name="manual-app-packaging"></a>Packages d'application manuel
 
 Si vous souhaitez créer et signer un package d’application mais n’avez pas utilisé Visual Studio pour développer votre application, il vous faudra utiliser les outils de création manuelle de packages d’application.
 
 > [!IMPORTANT] 
-> Si vous avez utilisé Visual Studio pour développer votre application, nous vous recommandons d’utiliser l’Assistant Visual Studio pour créer et signer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> Si vous avez utilisé Visual Studio pour développer votre application, nous vous recommandons d’utiliser l’Assistant Visual Studio pour créer et signer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec Visual Studio](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 ## <a name="purpose"></a>Objectif
 

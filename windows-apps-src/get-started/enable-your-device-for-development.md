@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Activer votre appareil pour le développement
 description: Configurez votre appareil Windows 10 pour le développement et le débogage.
 keywords: Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée
-ms.date: 05/30/2018
+ms.date: 4/9/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618954"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367019"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -93,11 +93,11 @@ Cette image montre les fonctionnalités du mode développeur pour Windows 10 :
 Pour en savoir plus sur Device Portal, consultez [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md).
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
-- [Portail des appareils pour Desktop](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [Portail des appareils pour Desktop](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Portail de l’appareil pour HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Portail de périphérique pour IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Portail des appareils mobiles](../debug-test-perf/device-portal-mobile.md)
-- [Portail des appareils pour Xbox](../debug-test-perf/device-portal-xbox.md)
+- [Portail des appareils pour Xbox](../xbox-apps/device-portal-xbox.md)
 
 Si vous rencontrez des difficultés pour activer le Mode développeur ou Device Portal, consultez le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour chercher des solutions à ces problèmes, ou visitez [Échec de l’installation du package Mode développeur ou du lancement de Device Portal](#failure-to-install-developer-mode-package) pour plus d’informations et savoir quelles bases de connaissances WSUS autoriser pour débloquer le package Mode développeur.
 
@@ -128,12 +128,12 @@ N’activer la découverte d’appareils que si vous envisagez de faire de l’a
  Pour la famille d’appareils de bureau, la page de paramètres **Pour les développeurs** propose des raccourcis vers les paramètres qui vous permettent d’optimiser votre PC pour les tâches de développement. Pour chaque paramètre, vous pouvez cocher la case correspondante et cliquer sur **Appliquer**, ou cliquez sur le lien **Afficher les paramètres** pour ouvrir la page de paramètres de cette option.
 
 
-## <a name="notes"></a>Remarques
+## <a name="notes"></a>Notes
 Dans les versions antérieures de Windows 10 Mobile, une option de vidages sur incident était présente dans le menu Paramètres de développeur.  Elle a été déplacée vers [Portail d’appareil](../debug-test-perf/device-portal.md) afin de pouvoir être utilisée à distance, plutôt que simplement via USB.  
 
 Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows 10 sur un appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans les deux cas, seul le package d’application (.appx/.appxbundle) est installé, et non les certificats.
 
--   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
+-   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140)).
 -   Vous pouvez utiliser [Portail d’appareil](../debug-test-perf/device-portal.md) pour effectuer un déploiement de votre navigateur vers un appareil mobile exécutant Windows 10 version 1511 ou ultérieure. Utilisez la page **[Applications](../debug-test-perf/device-portal.md#apps-manager)** dans Device Portal pour charger un package d’application (.appx) sur le serveur et l’installer sur l’appareil.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Échec de l’installation du package Mode développeur
@@ -201,20 +201,20 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 1.  Exécutez **regedit**.
 2.  Pour activer le chargement indépendant, définissez cette valeur DWORD sur 1 :
 
-    -   **HKLM\\logiciel\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - - ou -
 
     Pour activer le mode développeur, définissez ces valeurs DWORD sur 1 :
 
-    -   **HKLM\\logiciel\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **Utiliser PowerShell pour activer votre appareil**
 
 1.  Exécutez PowerShell avec des privilèges administrateur.
 2.  Pour activer le chargement indépendant, exécutez cette commande :
 
-    -   **PS c :\\WINDOWS\\system32&gt; reg ajouter « HKEY\_LOCAL\_MACHINE\\logiciel\\Microsoft\\Windows\\CurrentVersion\\ /T AppModelUnlock » REG\_DWORD /f /v « AllowAllTrustedApps » /d « 1 »**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
     - - ou -
 

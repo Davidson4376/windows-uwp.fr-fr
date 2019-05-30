@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, programmation
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d5068c2f474af22d789dea6428f911087f9ff0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b855bc9adc79b3ae5dd5ab7128be7035a78a4aa0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639214"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369107"
 ---
 # <a name="game-programming-resources"></a>Ressources de programmation de jeux
 
@@ -23,13 +23,13 @@ Pour plus d’informations sur la programmation des jeux sur Windows, consultez 
 ## <a name="game-programming-reference"></a>Informations de référence sur la programmation de jeux
 
 
--   [Graphiques et jeux](https://msdn.microsoft.com/library/windows/desktop/ee663279)
+-   [Graphiques et jeux](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
 -   [Référence de OpenGL](https://go.microsoft.com/fwlink/p/?LinkID=288875)
 
 ## <a name="game-design-guidance"></a>Guide de conception de jeux
 
 
--   [Recommandations d’index de l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [Recommandations d’index de l’expérience utilisateur pour les applications UWP](https://developer.microsoft.com/windows/design)
 
 ## <a name="blogs"></a>Blogs
 
@@ -43,7 +43,7 @@ Pour plus d’informations sur la programmation des jeux sur Windows, consultez 
 
 -   [DirectX Tool Kit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
 -   [Bibliothèque de traitement des textures DirectXTex](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
--   [Diagnostics des graphiques](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) Microsoft Visual Studio
+-   [Diagnostics des graphiques](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015) Microsoft Visual Studio
 -   [Win2D](https://github.com/Microsoft/Win2D) : API Windows Runtime facile à utiliser pour le rendu d’éléments graphiques 2D en mode immédiat avec accélération GPU.
 -   [ANGLE pour Microsoft Store](https://go.microsoft.com/fwlink/p/?linkid=618387) -contenu exécutions OpenGL ES sur Windows en traduisant OpenGL ES API appelle aux appels d’API de DirectX 11.
 

@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, pont de bureau, vignettes secondaires, épingler, code confidentiel, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7ca6471122ee1870a94ef0834a5eed8f83a4d4a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609624"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362620"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Épingler des vignettes secondaires à partir d’une application de bureau
 
@@ -34,7 +34,7 @@ Si vous n’avez pas créé de package de votre application avec le Pont du bure
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>Permettre l’accès à l’interface IInitializeWithWindow
 
-Si votre application est écrite dans un langage géré comme C# ou Visual Basic, déclarez l’interface IInitializeWithWindow dans le code de votre application avec l’attribut [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) et Guid comme indiqué dans l’exemple suivant en C#. Cet exemple suppose que votre fichier de code présente une instruction using pour l’espace de noms System.Runtime.InteropServices.
+Si votre application est écrite dans un langage géré comme C# ou Visual Basic, déclarez l’interface IInitializeWithWindow dans le code de votre application avec l’attribut [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) et Guid comme indiqué dans l’exemple suivant en C#. Cet exemple suppose que votre fichier de code présente une instruction using pour l’espace de noms System.Runtime.InteropServices.
 
 ```csharp
 [ComImport]
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>Affecter le handle de fenêtre
 
-Il s’agit d’une étape essentielle pour les applications de bureau. Effectuez un cast de l’objet sur un objet [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx). Ensuite, appelez la méthode [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx), puis transmettez le handle de la fenêtre que vous souhaitez configurer comme propriétaire pour la boîte de dialogue modale. L’exemple suivant en C# vous explique comment transmettre le handle de la fenêtre principale de votre application à la méthode.
+Il s’agit d’une étape essentielle pour les applications de bureau. Effectuez un cast de l’objet sur un objet [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow). Ensuite, appelez la méthode [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize), puis transmettez le handle de la fenêtre que vous souhaitez configurer comme propriétaire pour la boîte de dialogue modale. L’exemple suivant en C# vous explique comment transmettre le handle de la fenêtre principale de votre application à la méthode.
 
 ```csharp
 // Assign the window handle

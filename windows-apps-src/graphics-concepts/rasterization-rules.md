@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28376f6e96cc490c7c44f4ed60093591e873300e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660864"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371004"
 ---
 # <a name="rasterization-rules"></a>Règles de rastérisation
 
@@ -97,7 +97,7 @@ Les règles de rastérisation pour les primitives ne sont pas, en règle génér
 
 -   Pour un point, un test de couverture est réalisé pour chaque emplacement d’échantillon (et non pour un centre de pixel).
 
-Les formats d’échantillonnage multiple peuvent être utilisés dans les cibles de rendu, qui peuvent être lues a posteriori dans les nuanceurs à l’aide du [chargement](https://msdn.microsoft.com/library/windows/desktop/bb509694), car aucune résolution n’est requise pour les échantillons individuels auxquels accède le nuanceur. Les formats de profondeur ne sont pas pris en charge pour les ressources à échantillonnage multiple, par conséquent, ils sont limités uniquement aux cibles de rendu.
+Les formats d’échantillonnage multiple peuvent être utilisés dans les cibles de rendu, qui peuvent être lues a posteriori dans les nuanceurs à l’aide du [chargement](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load), car aucune résolution n’est requise pour les échantillons individuels auxquels accède le nuanceur. Les formats de profondeur ne sont pas pris en charge pour les ressources à échantillonnage multiple, par conséquent, ils sont limités uniquement aux cibles de rendu.
 
 Les formats sans type prennent en charge l’échantillonnage multiple pour permettre à une vue de ressource d’interpréter les données de différentes manières. Par exemple, vous pouvez créer une ressource d’échantillonnage multiple à l’aide de R8G8B8A8\_TYPELESS, rendu à l’aide d’une ressource de l’affichage de cible de rendu avec un R8G8B8A8\_UINT mettre en forme, puis résoudre le contenu à une autre ressource avec un R8G8B8A8\_Format de données UNORM.
 

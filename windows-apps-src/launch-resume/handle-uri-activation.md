@@ -6,23 +6,23 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8cbb3d7e245b747a7637726df9559f5fa87a6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 568863969dc4b5bc028301d37a02c64b25244cde
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625594"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371522"
 ---
 # <a name="handle-uri-activation"></a>Gérer l’activation des URI
 
 **API importantes**
 
--   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
--   [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+-   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)
 
 Découvrez comment inscrire une application afin qu’elle devienne le gestionnaire par défaut d’un nom de schéma d’URI (Uniform Resource Identifier). Tant les applications de bureau Windows que les applications de plateforme Windows universelle (UWP) peuvent s’inscrire pour devenir gestionnaire par défaut pour un nom de schéma d’URI. Si l’utilisateur choisit votre application en tant que gestionnaire par défaut pour un nom de schéma d’URI, celle-ci sera activée à chaque lancement de ce type d’URI.
 
-Nous vous recommandons de vous inscrire pour un nom de schéma d’URI uniquement si vous pensez gérer tous les lancements d’URI pour ce type de schéma d’URI. Si vous choisissez de vous inscrire pour un nom de schéma d’URI, vous devez fournir à l’utilisateur final la fonctionnalité attendue lorsque votre application est activée pour ce schéma d’URI. Par exemple, une application qui s’inscrit pour le protocole mailto : Nom du schéma URI doit s’ouvrir sur un nouveau message électronique afin que l’utilisateur peut composer un nouveau message électronique. Pour plus d’informations sur les associations d’URI, voir [Recommandations et liste de vérification des types de fichier et des URI](https://msdn.microsoft.com/library/windows/apps/hh700321).
+Nous vous recommandons de vous inscrire pour un nom de schéma d’URI uniquement si vous pensez gérer tous les lancements d’URI pour ce type de schéma d’URI. Si vous choisissez de vous inscrire pour un nom de schéma d’URI, vous devez fournir à l’utilisateur final la fonctionnalité attendue lorsque votre application est activée pour ce schéma d’URI. Par exemple, une application qui s’inscrit pour le protocole mailto : Nom du schéma URI doit s’ouvrir sur un nouveau message électronique afin que l’utilisateur peut composer un nouveau message électronique. Pour plus d’informations sur les associations d’URI, voir [Recommandations et liste de vérification des types de fichier et des URI](https://docs.microsoft.com/windows/uwp/files/index).
 
 Ces étapes montrent comment s’inscrire pour un nom de schéma d’URI personnalisé, `alsdk://`, et comment activer votre application quand l’utilisateur lance un URI `alsdk://`.
 
@@ -35,12 +35,12 @@ L’application reçoit des événements d’activation uniquement pour les noms
 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Protocole**, puis cliquez sur **Ajouter**.
 
-    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste pour le protocole (voir [**Manifeste du package AppX**](https://msdn.microsoft.com/library/windows/apps/dn934791) pour plus de détails) :
+    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste pour le protocole (voir [**Manifeste du package AppX**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-extension) pour plus de détails) :
 
 | Champ | Description |
 |-------|-------------|
-| **Logo** | Spécifiez le logo qui est utilisé pour identifier le nom de schéma d’URI dans [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. Si aucune valeur n’est spécifiée pour Logo, le petit logo de l’application est utilisé. |
-| **Nom d’affichage** | Spécifiez le nom d’affichage pour identifier le nom de schéma d’URI dans [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. |
+| **Logo** | Spécifiez le logo qui est utilisé pour identifier le nom de schéma d’URI dans [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. Si aucune valeur n’est spécifiée pour Logo, le petit logo de l’application est utilisé. |
+| **Nom d’affichage** | Spécifiez le nom d’affichage pour identifier le nom de schéma d’URI dans [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. |
 | **Nom** | Choisissez le nom du schéma d’URI. |
 |  | **Remarque**  Le nom doit être indiqué entièrement en minuscules. |
 |  | **Types de fichier réservé et interdit** Pour obtenir la liste alphabétique des schémas d’URI que vous ne pouvez pas inscrire pour vos applications UWP parce qu’ils sont réservés ou interdits, voir [Noms de schéma d’URI réservé et types de fichier](reserved-uri-scheme-names.md). |
@@ -55,7 +55,7 @@ L’application reçoit des événements d’activation uniquement pour les noms
 4. Entrez `alsdk` dans **Nom**.
 5. Appuyez sur Ctrl+S pour enregistrer la modification dans package.appxmanifest.
 
-    Cette opération ajoute un élément [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) tel que celui-ci dans le manifeste du package. La catégorie **windows.protocol** indique que l’application gère le nom de schéma d’URI `alsdk`.
+    Cette opération ajoute un élément [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) tel que celui-ci dans le manifeste du package. La catégorie **windows.protocol** indique que l’application gère le nom de schéma d’URI `alsdk`.
 
 ```xml
     <Applications>
@@ -75,11 +75,11 @@ L’application reçoit des événements d’activation uniquement pour les noms
 
 ## <a name="step-2-add-the-proper-icons"></a>Étape 2 : Ajouter des icônes correctes
 
-Les applications qui deviennent la valeur par défaut d’un nom de schéma d’URI ont leurs icônes affichées à différents emplacements dans l’ensemble du système, par exemple dans l’applet Programmes par défaut du Panneau de configuration. Incluez une icône 44 x 44 dans votre projet à cet effet. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Voir [Recommandations en matière de ressources de vignette et d’icône](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets) pour plus d’informations sur les icônes.
+Les applications qui deviennent la valeur par défaut d’un nom de schéma d’URI ont leurs icônes affichées à différents emplacements dans l’ensemble du système, par exemple dans l’applet Programmes par défaut du Panneau de configuration. Incluez une icône 44 x 44 dans votre projet à cet effet. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Consultez [icônes d’application et les logos](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos) pour plus d’informations sur les icônes.
 
 ## <a name="step-3-handle-the-activated-event"></a>Étape 3 : Gérer l’événement activé
 
-Le gestionnaire d’événements [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) reçoit tous les événements d’activation. La propriété **Kind** indique le type d’événement d’activation. Cet exemple est défini pour gérer les événements d’activation [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol).
+Le gestionnaire d’événements [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) reçoit tous les événements d’activation. La propriété **Kind** indique le type d’événement d’activation. Cet exemple est défini pour gérer les événements d’activation [**Protocol**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind).
 
 ```csharp
 public partial class App
@@ -146,7 +146,7 @@ Le code suivant lance par programmation l’application via son URI :
 
 Pour plus de détails sur le lancement d’une application via un URI, voir [Lancer l’application par défaut pour un URI](launch-default-app.md).
 
-Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, la pile arrière (« backstack ») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Les applications qui décident d’utiliser un seul **Frame** XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
+Nous recommandons que les applications créent un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, la pile arrière (« backstack ») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Les applications qui décident d’utiliser un seul **Frame** XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page.
 
 En cas de lancement via l’activation de protocole, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
 
@@ -160,9 +160,9 @@ N’importe quelle application ou n’importe quel site web peut utiliser votre 
 > [!NOTE]
 > Une fois lancé par le biais de contrat de protocole, assurez-vous que ce bouton Précédent ramène l’utilisateur à l’écran qui a lancé l’application et pas au contenu précédent de l’application.
 
-Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI. De cette façon, la pile arrière (« backstack ») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
+Nous recommandons que les applications créent un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI. De cette façon, la pile arrière (« backstack ») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
 
-Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour le lancement et les contrats de protocole, effacez les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page. En cas de lancement via le contrat de protocole, envisagez d’inclure une interface utilisateur permettant à l’utilisateur de revenir en haut de l’application.
+Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) XAML pour le lancement et les contrats de protocole, effacez les pages du journal de navigation du **Frame** avant de naviguer vers une nouvelle page. En cas de lancement via le contrat de protocole, envisagez d’inclure une interface utilisateur permettant à l’utilisateur de revenir en haut de l’application.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -172,8 +172,8 @@ Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https
 
 ### <a name="concepts"></a>Concepts
 
-- [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-- [Type de fichier et le modèle d’Associations URI](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+- [Programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs)
+- [Type de fichier et le modèle d’Associations URI](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
 ### <a name="tasks"></a>Tâches
 
@@ -182,10 +182,10 @@ Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https
 
 ### <a name="guidelines"></a>Recommandations
 
-- [Instructions pour les types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
+- [Instructions pour les types de fichiers et d’URI](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### <a name="reference"></a>Référence
 
-- [Manifeste de Package AppX](https://msdn.microsoft.com/library/windows/apps/dn934791)
-- [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
-- [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)
+- [Manifeste de Package AppX](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-extension)
+- [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
+- [Windows.UI.Xaml.Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)

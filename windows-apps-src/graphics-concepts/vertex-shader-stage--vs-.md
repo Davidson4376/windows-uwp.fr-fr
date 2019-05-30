@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5893719e43314eb15c684948a31de5a025a926fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598154"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370828"
 ---
 # <a name="vertex-shader-vs-stage"></a>Étape Vertex Shader (VS)
 
@@ -29,7 +29,7 @@ L’étape Vertex Shader (VS) est utilisée pour des traitements par vertex indi
 -   Morphose
 -   Éclairage par vertex
 
-L’étape Vertex Shader est une étape de nuanceur programmable ; elle s’affiche sous la forme d'un bloc arrondi dans le diagramme du [pipeline graphique](graphics-pipeline.md). Cette étape du nuanceur utilise le modèle de nuanceur 4.0 [nuanceur common core](https://msdn.microsoft.com/library/windows/desktop/bb509580).
+L’étape Vertex Shader est une étape de nuanceur programmable ; elle s’affiche sous la forme d'un bloc arrondi dans le diagramme du [pipeline graphique](graphics-pipeline.md). Cette étape du nuanceur utilise le modèle de nuanceur 4.0 [nuanceur common core](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core).
 
 L’étape Vertex Shader (VS) traite les sommets à partir de l’assembleur d’entrée. Les nuanceurs de vertex opèrent toujours sur un seul vertex d’entrée et produisent un seul vertex de sortie. L’étape du nuanceur de vertex doit toujours être active pour l'exécution du pipeline. Si aucune modification de vertex ni de transformation n’est nécessaire, un nuanceur de vertex direct doit être créé et défini sur le pipeline.
 
@@ -39,7 +39,7 @@ L’étape de nuanceur de sommets peut consommer des deux valeurs générées pa
 
 Les nuanceurs de vertex sont toujours exécutés sur tous les sommets, y compris les sommets adjacents dans des topologies de primitive d’entrée avec voisinage. Le nombre d'exécution du nuanceur de vertex peut être interrogé à partir de l’UC à l’aide de la statistique de pipeline VSInvocations.
 
-Un nuanceur de sommets peut effectuer les opérations de l’échantillonnage de texture et de charge où les dérivés de l’espace à l’écran ne sont pas requises (à l’aide de fonctions intrinsèques HLSL : [Exemple (objet de Texture DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (objet de Texture DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509697), et [SampleGrad (objet de Texture DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
+Un nuanceur de sommets peut effectuer les opérations de l’échantillonnage de texture et de charge où les dérivés de l’espace à l’écran ne sont pas requises (à l’aide de fonctions intrinsèques HLSL : [Exemple (objet de Texture DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample), [SampleCmpLevelZero (objet de Texture DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero), et [SampleGrad (objet de Texture DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplegrad)).
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>entrée
 

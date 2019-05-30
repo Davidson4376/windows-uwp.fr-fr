@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, maillage, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b5aa00b5beb7c80a903fbf17d432f73f16561a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595644"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368986"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 
@@ -28,9 +28,9 @@ Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement de
 
 ### <a name="technologies"></a>Technologies
 
--   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
+-   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 -   Notions de base d’algèbre linéaire et de systèmes de coordonnées 3D
 -   Un Visual Studio 2015 ou un modèle de Direct3D ultérieure
@@ -77,7 +77,7 @@ Par conséquent, vous avez 8 vertex, chacun avec une couleur spécifique. Chaque
 
 ### <a name="step-2-set-up-the-input-layout"></a>Étape 2 : Définissez la disposition d’entrée
 
-Les vertex figurent à présent dans la mémoire. Toutefois, votre périphérique graphique dispose de sa propre mémoire, et vous utilisez Direct3D pour y accéder. Pour entrer vos données vertex dans le périphérique graphique à des fins de traitement, vous devez ouvrir la voie, pour ainsi dire, en déclarant la façon dont les données vertex sont disposées pour que le périphérique graphique puisse les interpréter lorsqu’il les obtient à partir de votre jeu. Pour ce faire, vous devez utiliser [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
+Les vertex figurent à présent dans la mémoire. Toutefois, votre périphérique graphique dispose de sa propre mémoire, et vous utilisez Direct3D pour y accéder. Pour entrer vos données vertex dans le périphérique graphique à des fins de traitement, vous devez ouvrir la voie, pour ainsi dire, en déclarant la façon dont les données vertex sont disposées pour que le périphérique graphique puisse les interpréter lorsqu’il les obtient à partir de votre jeu. Pour ce faire, vous devez utiliser [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout).
 
 Déclarez et définissez le schéma d’entrée pour la mémoire tampon de vertex.
 
@@ -110,17 +110,17 @@ Dans ce code, vous spécifiez un schéma pour les vertex, en particulier, les do
 
     Les valeurs **COLOR** sont généralement renvoyées comme valeur RVBA à 4 composantes en sortie du pipeline nuanceur. Pour cet exemple, vous définirez la valeur alpha A sur 1,0 (opacité maximale) dans le pipeline nuanceur pour tous les pixels.
 
-Pour obtenir une liste complète des formats, consultez [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). Pour consulter la liste complète des sémantiques HLSL, voir [Sémantique](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Pour obtenir une liste complète des formats, consultez [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format). Pour consulter la liste complète des sémantiques HLSL, voir [Sémantique](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
-Appelez [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) et créez la disposition d’entrée sur le périphérique Direct3D. Maintenant, vous devez créer une mémoire tampon qui puisse réellement contenir les données !
+Appelez [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) et créez la disposition d’entrée sur le périphérique Direct3D. Maintenant, vous devez créer une mémoire tampon qui puisse réellement contenir les données !
 
 ### <a name="step-3-populate-the-vertex-buffers"></a>Étape 3 : Remplir les mémoires tampons de vertex
 
 Les mémoires tampon de vertex contiennent la liste des vertex de chaque triangle du maillage. Chaque vertex doit être unique dans cette liste. Dans notre exemple, il y a 8 vertex pour le cube. Le nuanceur de vertex s’exécute sur le périphérique graphique et lit la mémoire tampon de vertex ; il interprète les données en fonction du schéma d’entrée spécifié à l’étape précédente.
 
-Dans l’exemple suivant, vous fournissez une description et une sous-ressource pour la mémoire tampon, qui donne à Direct3D un certain nombre d’indications sur le mappage physique des données de vertex et la façon de les traiter en mémoire sur le périphérique graphique. Cela est nécessaire, car vous utilisez un [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) générique, qui peut contenir n’importe quoi. Le [ **D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220)structures sont fournis pour vous assurer que Direct3D comprend la disposition de mémoire physique de la mémoire tampon, y compris la taille de chaque élément du vertex dans la mémoire tampon, ainsi que la taille maximale de la liste de vertex. Vous pouvez également contrôler l’accès à la mémoire tampon ici et la façon de la parcourir, mais ce n’est pas vraiment l’objet de ce didacticiel.
+Dans l’exemple suivant, vous fournissez une description et une sous-ressource pour la mémoire tampon, qui donne à Direct3D un certain nombre d’indications sur le mappage physique des données de vertex et la façon de les traiter en mémoire sur le périphérique graphique. Cela est nécessaire, car vous utilisez un [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) générique, qui peut contenir n’importe quoi. Le [ **D3D11\_tampon\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) et [ **D3D11\_SUBRESOURCE\_données** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)structures sont fournis pour vous assurer que Direct3D comprend la disposition de mémoire physique de la mémoire tampon, y compris la taille de chaque élément du vertex dans la mémoire tampon, ainsi que la taille maximale de la liste de vertex. Vous pouvez également contrôler l’accès à la mémoire tampon ici et la façon de la parcourir, mais ce n’est pas vraiment l’objet de ce didacticiel.
 
-Après avoir configuré la mémoire tampon, vous appelez [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) pour la créer effectivement. Évidemment, si vous avez plusieurs objets, créez des tampons pour chaque modèle unique.
+Après avoir configuré la mémoire tampon, vous appelez [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) pour la créer effectivement. Évidemment, si vous avez plusieurs objets, créez des tampons pour chaque modèle unique.
 
 Déclarez et créez la mémoire tampon de vertex.
 
@@ -187,9 +187,9 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-La redondance est élevée avec 36 éléments indexés dans le tampon pour 8 vertex seulement ! Si vous choisissez d’éliminer certains des redondances et utiliser un type de liste de vertex différents, comme une bande ou d’un ventilateur, vous devez spécifier ce type lorsque vous fournissez un spécifique [ **D3D11\_PRIMITIFS\_topologie** ](https://msdn.microsoft.com/library/windows/desktop/ff476189) valeur pour le [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) (méthode).
+La redondance est élevée avec 36 éléments indexés dans le tampon pour 8 vertex seulement ! Si vous choisissez d’éliminer certains des redondances et utiliser un type de liste de vertex différents, comme une bande ou d’un ventilateur, vous devez spécifier ce type lorsque vous fournissez un spécifique [ **D3D11\_PRIMITIFS\_topologie** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) valeur pour le [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) (méthode).
 
-Pour plus d’informations sur les différentes techniques de listage d’index, voir [Topologies primitives](https://msdn.microsoft.com/library/windows/desktop/bb205124).
+Pour plus d’informations sur les différentes techniques de listage d’index, voir [Topologies primitives](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies).
 
 ### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>Étape 5 : Créer une mémoire tampon constante pour votre matrices de transformation
 
@@ -289,7 +289,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-Définissez ici les tampons de vertex et d’index dans le contexte [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149), ainsi que la topologie que vous utilisez.
+Définissez ici les tampons de vertex et d’index dans le contexte [ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context), ainsi que la topologie que vous utilisez.
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -412,7 +412,7 @@ Placez ce code dans un fichier HLSL distinct du code HLSL du nuanceur de vertex 
 
 ### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>Étape 8 : Rastérisation et affichage de la maille
 
-Nous allons exécuter le pipeline. C’est simple : appelez [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
+Nous allons exécuter le pipeline. C’est simple : appelez [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed).
 
 Dessinez ce cube !
 

@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, versions d’évaluation, versions d’évaluation de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f55a218c0cb4f4964fe12eb8e2eeb5b504f6405
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 66e64f2c499835a345bb9563fd005b86a926a4d2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334777"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372012"
 ---
 # <a name="get-package-flights-for-an-app"></a>Obtenir des versions d’évaluation du package pour une application
 
-Utilisez cette méthode dans l’API de soumission de Microsoft Store pour répertorier les vols de package pour une application qui est inscrit pour votre compte espace partenaires. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Utilisez cette méthode dans l’API de soumission de Microsoft Store pour répertorier les vols de package pour une application qui est inscrit pour votre compte espace partenaires. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://docs.microsoft.com/windows/uwp/publish/package-flights).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -35,16 +35,16 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-|  Nom  |  Type  |  Description  |  Obligatoire  |
+|  Nom  |  type  |  Description  |  Obligatoire  |
 |------|------|------|------|
-|  applicationId  |  chaîne  |  ID Windows Store de l’application pour laquelle vous voulez récupérer les versions d’évaluation du package. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
+|  applicationId  |  chaîne  |  ID Windows Store de l’application pour laquelle vous voulez récupérer les versions d’évaluation du package. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
 |  top  |  entier  |  Nombre d’éléments à retourner dans la requête (autrement dit, nombre de versions d’évaluation du package à retourner). Si votre compte comporte plus de versions d’évaluation du package que la valeur que vous spécifiez dans la requête, le corps de la réponse comprend un chemin d’URI relatif que vous pouvez ajouter à l’URI de la méthode pour solliciter la page suivante de données.  |  Non  |
 |  skip  |  entier  |  Nombre d’éléments à ignorer dans la requête avant de retourner les éléments restants. Utilisez ce paramètre pour parcourir des ensembles de données. Par exemple, top=10 et skip=0 permettent de récupérer les éléments 1 à 10, top=10 et skip=10 permettent de récupérer les éléments 11 à 20, et ainsi de suite.  |  Non  |
 
@@ -99,7 +99,7 @@ L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type   | Description       |
+| Value      | type   | Description       |
 |------------|--------|---------------------|
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 2, mais qu’il existe 4 versions d’évaluation du package pour l’application, le corps de réponse comprendra une valeur @nextLink`applications/{applicationid}/listflights/?skip=2&top=2`, ce qui indique que vous pouvez appeler `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2` pour solliciter les 2 versions d’évaluation du package suivantes. |
 | valeur      | tableau  | Tableau d’objets qui fournissent des informations sur les versions d’évaluation du package pour l’application spécifiée. Pour plus d’informations sur les données incluses dans chaque objet, voir [Ressource de version d’évaluation du package ](get-app-data.md#flight-object).               |

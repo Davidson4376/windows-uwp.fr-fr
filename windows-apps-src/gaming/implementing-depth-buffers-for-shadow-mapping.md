@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, volumes d’ombre, tampons de profondeur, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ce0cbd310ea89c5fa7b5c68033402f559768a24
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622274"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368511"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Démonstration : Implémenter des volumes de clichés instantanés à l’aide des tampons de profondeur dans Direct3D 11
 
@@ -65,7 +65,7 @@ Windows 8 adde la fonctionnalité de comparaison profondeur d pour le niveau de 
 
 À la fin de cette procédure pas à pas, vous devez être familiarisé avec l’implémentation d’une technique de volume de clichés instantanés compatible base dans Direct3D 11, qui est compatible avec le niveau de fonctionnalité 9\_1 et versions ultérieures.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Vous devez [préparer votre environnement au développement de jeux de plateforme Windows universelle (UWP) DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas encore un modèle, mais vous aurez besoin de Microsoft Visual Studio 2015 pour générer l’exemple de code pour cette procédure pas à pas.
@@ -75,13 +75,13 @@ Vous devez [préparer votre environnement au développement de jeux de plateform
 
 **Direct3D**
 
-* [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Écriture de nuanceurs HLSL dans Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [Créer un nouveau projet de DirectX 11 pour UWP](user-interface.md)
 
 **Articles techniques de mappage de clichés instantanés**
 
-* [Techniques courantes pour améliorer les cartes de profondeur de clichés instantanés](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [Mappages de clichés instantanés en cascade](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Techniques courantes pour améliorer les cartes de profondeur de clichés instantanés](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)
+* [Mappages de clichés instantanés en cascade](https://docs.microsoft.com/windows/desktop/DxTechArts/cascaded-shadow-maps)
 
  
 

@@ -6,21 +6,21 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e45b14daf6951142cb0d0ed8714e981eb6a55628
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334757"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371038"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Consigner des événements personnalisés pour l’Espace partenaires
 
-Le [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans permet de partenaires vous obtenez des informations sur les événements personnalisés que vous avez définies dans votre application de plateforme universelle Windows (UWP). Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
+Le [rapport d’utilisation](https://docs.microsoft.com/windows/uwp/publish/usage-report) dans permet de partenaires vous obtenez des informations sur les événements personnalisés que vous avez définies dans votre application de plateforme universelle Windows (UWP). Un événement personnalisé est une chaîne arbitraire qui représente un événement ou une activité dans votre application. Par exemple, un jeu peut définir des événements personnalisés nommés *firstLevelPassed*, *secondLevelPassed*, etc., qui sont consignés lors de chaque passage au niveau supérieur de l’utilisateur.
 
-Pour consigner un événement à partir de votre application, passez la chaîne d’événement à la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) fournie par le Microsoft Store Services SDK. Vous pouvez consulter le nombre total d’occurrences pour vos événements personnalisés dans le **événements personnalisés** section de la [rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) dans Partner Center.
+Pour consigner un événement à partir de votre application, passez la chaîne d’événement à la méthode [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) fournie par le Microsoft Store Services SDK. Vous pouvez consulter le nombre total d’occurrences pour vos événements personnalisés dans le **événements personnalisés** section de la [rapport d’utilisation](https://docs.microsoft.com/windows/uwp/publish/usage-report) dans Partner Center.
 
 > [!NOTE]
-> Événements personnalisés que vous vous connectez à des partenaires ne sont pas liées à [les événements Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), et ils n’apparaissent pas dans **Observateur d’événements**.
+> Événements personnalisés que vous vous connectez à des partenaires ne sont pas liées à [les événements Windows](https://docs.microsoft.com/windows/desktop/Events/windows-events), et ils n’apparaissent pas dans **Observateur d’événements**.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -45,10 +45,10 @@ Avant de pouvoir examiner les événements de journalisation personnalisée dans
     [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
-    > Le [Rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report) peut prendre un certain temps pour se charger si votre application enregistre un grand nombre d’événements personnalisés avec des noms longs. Nous vous recommandons d’utiliser des noms brefs pour vos événements personnalisés. 
+    > Le [Rapport d’utilisation](https://docs.microsoft.com/windows/uwp/publish/usage-report) peut prendre un certain temps pour se charger si votre application enregistre un grand nombre d’événements personnalisés avec des noms longs. Nous vous recommandons d’utiliser des noms brefs pour vos événements personnalisés. 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Rapport d’utilisation](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [Rapport d’utilisation](https://docs.microsoft.com/windows/uwp/publish/usage-report)
 * [Méthode de journalisation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
-* [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
+* [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 940de8c00dc2639785ae82e87d63f4994b1b6b2e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620554"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367740"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Définir l’infrastructure d’application UWP
 
@@ -22,10 +22,10 @@ Pour configurer cette infrastructure, procurez-vous tout d’abord un fournisseu
 L’objet fournisseur d’affichage implémente l’interface __IFrameworkView__, qui se compose d’une série de méthodes qui doit être configurée pour créer cet exemple de jeu.
 
 Vous devez implémenter les cinq méthodes suivantes appelées par le singleton de l’application :
-* [__initialiser__](#initialize-the-view-provider)
+* [__Initialize__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Charge__](#load-method-of-the-view-provider)
-* [__exécuter__](#run-method-of-the-view-provider)
+* [__Run__](#run-method-of-the-view-provider)
 * [__Annuler l’initialisation__](#uninitialize-method-of-the-view-provider)
 
 La méthode __Initialize__ est appelée lors du lancement de l’application. La méthode __SetWindow__ est appelée après __Initialize__. La méthode __Load__ est ensuite appelée. La méthode __Run__ est exécutée quand le jeu est en cours d’exécution. Lorsque le jeu se termine, la méthode __Uninitialize__ est appelée. Pour plus d’informations, consultez la documentation de référence de l’API [__IFrameworkView__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview). 
@@ -71,7 +71,7 @@ IFrameworkView^ DirectXApplicationSource::CreateView()
 
 ## <a name="initialize-the-view-provider"></a>Initialiser le fournisseur d’affichage
 
-Une fois l’objet fournisseur d’affichage créé, le singleton de l’application appelle la méthode [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) lors du lancement de l’application. Par conséquent, cette méthode doit gérer les comportements les plus fondamentaux d’un jeu UWP, comme la gestion de l’activation de la fenêtre principale et l’assurance que ce jeu peut gérer un événement de pause subite (et une possible reprise par la suite).
+Une fois l’objet fournisseur d’affichage créé, le singleton de l’application appelle la méthode [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) lors du lancement de l’application. Par conséquent, cette méthode doit gérer les comportements les plus fondamentaux d’un jeu UWP, comme la gestion de l’activation de la fenêtre principale et l’assurance que ce jeu peut gérer un événement de pause subite (et une possible reprise par la suite).
 
 À ce stade, l’application de jeu peut gérer un message de pause (ou de reprise). Cependant, il n’existe toujours pas de fenêtre à utiliser et le jeu n’est pas initialisé. Quelques éléments supplémentaires sont nécessaires !
 
@@ -105,11 +105,11 @@ void App::Initialize(
 
 ## <a name="configure-the-window-and-display-behaviors"></a>Configurer la fenêtre et afficher les comportements
 
-À présent, examinons l’implémentation de [__SetWindow__](https://msdn.microsoft.com/library/windows/apps/hh700509). Dans la méthode __SetWindow__, vous configurez la fenêtre et affichez les comportements.
+À présent, examinons l’implémentation de [__SetWindow__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow). Dans la méthode __SetWindow__, vous configurez la fenêtre et affichez les comportements.
 
 ### <a name="appsetwindow-method"></a>Méthode App::SetWindow
 
-Le singleton de l’application fournit un objet [__CoreWindow__](https://msdn.microsoft.com/library/windows/apps/br208225) qui représente la fenêtre principale du jeu et met ses ressources et événements à la disposition du jeu. Avec l’existence d’une fenêtre à utiliser, le jeu peut maintenant commencer à ajouter à l’interface utilisateur de base des composants et événements.
+Le singleton de l’application fournit un objet [__CoreWindow__](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui représente la fenêtre principale du jeu et met ses ressources et événements à la disposition du jeu. Avec l’existence d’une fenêtre à utiliser, le jeu peut maintenant commencer à ajouter à l’interface utilisateur de base des composants et événements.
 
 Créez ensuite un pointeur à l’aide de la méthode __CoreCursor__ qui peut être utilisé à la fois par les contrôles tactiles et de souris.
 
@@ -162,7 +162,7 @@ void App::SetWindow(
 
 ## <a name="load-method-of-the-view-provider"></a>Méthode Load du fournisseur d’affichage
 
-Une fois la fenêtre principale définie, le singleton de l’application appelle [__Load__](https://msdn.microsoft.com/library/windows/apps/hh700501). Cette méthode utilise un ensemble de tâches asynchrones pour créer les objets jeu, charger les ressources graphiques et initialiser la machine à états du jeu. Si vous voulez commencer par récupérer des données ou des composants du jeu, faites-le ici plutôt que dans **SetWindow** ou **Initialize**. 
+Une fois la fenêtre principale définie, le singleton de l’application appelle [__Load__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load). Cette méthode utilise un ensemble de tâches asynchrones pour créer les objets jeu, charger les ressources graphiques et initialiser la machine à états du jeu. Si vous voulez commencer par récupérer des données ou des composants du jeu, faites-le ici plutôt que dans **SetWindow** ou **Initialize**. 
 
 Comme Windows impose des restrictions sur le temps que peut prendre le jeu avant de commencer à traiter les entrées, avec le modèle de tâche asynchrone, vous devez effectuer la conception pour que la méthode __Load__ se termine rapidement afin de pouvoir commencer le traitement des entrées. Si le chargement dure un certain temps ou qu’il existe un grand nombre de ressources, octroyez à vos utilisateurs une barre de progression régulièrement mise à jour. Cette méthode est également utilisée pour effectuer toutes les préparations nécessaires avant le début du jeu, comme la définition des états de départ ou des valeurs globales.
 
@@ -308,9 +308,9 @@ L’exemple de code passe dans l’un des deux états de la machine à états du
     * __Désactivé__: La fenêtre de jeu est désactivée (perd le focus) ou ancrée. Lorsque cette situation se produit, le jeu interrompt le traitement des événements et attend que la fenêtre ait de nouveau le focus ou ne soit plus ancrée.
     * __TooSmall__: Le jeu met à jour son propre état et restitue les graphiques pour l’affichage.
 
-Lorsque votre jeu a le focus, vous devez gérer chaque événement qui arrive dans la file d’attente de messages, et vous devez donc appeler [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) avec l’option **ProcessAllIfPresent**. D’autres options peuvent provoquer des retards dans le traitement des événements de message, ce qui peut donner la sensation que votre jeu ne répond pas ou que les comportements tactiles sont au ralenti au lieu d’être réactifs.
+Lorsque votre jeu a le focus, vous devez gérer chaque événement qui arrive dans la file d’attente de messages, et vous devez donc appeler [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) avec l’option **ProcessAllIfPresent**. D’autres options peuvent provoquer des retards dans le traitement des événements de message, ce qui peut donner la sensation que votre jeu ne répond pas ou que les comportements tactiles sont au ralenti au lieu d’être réactifs.
 
-Quand le jeu est invisible, suspendu ou ancré, vous ne voulez pas qu’il utilise des ressources qui tournent en boucle pour envoyer des messages qui n’arriveront jamais. Dans ce cas, votre jeu doit utiliser **ProcessOneAndAllPending**, qui opère un blocage tant qu’il ne reçoit pas d‘événement, puis traite cet événement et tous les autres qui arrivent dans la file d’attente de traitement pendant le traitement du premier. [**ProcessEvents** ](https://msdn.microsoft.com/library/windows/apps/br208215) renvoie alors immédiatement après le traitement de la file d’attente.
+Quand le jeu est invisible, suspendu ou ancré, vous ne voulez pas qu’il utilise des ressources qui tournent en boucle pour envoyer des messages qui n’arriveront jamais. Dans ce cas, votre jeu doit utiliser **ProcessOneAndAllPending**, qui opère un blocage tant qu’il ne reçoit pas d‘événement, puis traite cet événement et tous les autres qui arrivent dans la file d’attente de traitement pendant le traitement du premier. [**ProcessEvents** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) renvoie alors immédiatement après le traitement de la file d’attente.
 
 ```cpp
 void App::Run()

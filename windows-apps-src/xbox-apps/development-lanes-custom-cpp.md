@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 585289fdc66b8730036f3d14faeafce8c22c09a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613874"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371360"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Intégrer des jeux C++ personnalisés à la plateforme UWP sur Xbox
 
@@ -19,7 +19,7 @@ Si vous écrivez un moteur C++ personnalisé, Xbox One prend entièrement en ch
 
 Les jeux en C++ sur la plateforme Windows universelle (UWP) utilisent DirectX pour le rendu. Pour plus d’information, voir [Jeux et graphiques DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx).
 
-Vous pouvez écrire du [C++ avec extensions des composants](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx) (C++ / CX) ou du [C++ standard](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx) (Win32 et COM).
+Vous pouvez écrire du [C++ avec extensions des composants](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) (C++ / CX) ou du [C++ standard](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) (Win32 et COM).
 
 Pour découvrir comment faire de votre console un kit de développement et comment effectuer des déploiements à partir de Visual Studio, voir [Jeux et DirectX](../gaming/index.md) et le guide [Prise en main](getting-started.md).
 
@@ -27,7 +27,7 @@ Pour découvrir comment faire de votre console un kit de développement et comme
 > Xbox One ne prend pas en charge DirectX 12 à ce stade.
 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Intégration de jeux existants dans Xbox](development-lanes-landing.md)
 - [UWP sur Xbox One](index.md)
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612884"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370860"
 ---
 # <a name="tier-2"></a>Niveau 2
 
@@ -42,7 +42,7 @@ Les écritures dans les tuiles non mappées ne sont plus enregistrées dans la m
 
 Le filtrage de textures avec un encombrement qui superpose des tuiles **NULL** et non-**NULL** contribue à la valeur 0 (avec des valeurs par défaut pour les composants de format manquants) pour les texels sur les tuiles **NULL** dans l’opération de filtre globale. Certains matériels antérieurs ne répondent pas à cette exigence et renvoient la valeur 0 (avec des valeurs par défaut pour les composants de format manquants) pour le résultat du filtre complet si des texels (avec une pondération différente de zéro) se trouvent sur une tuile **NULL**. Aucun autre matériel n’est autorisé à manquer à cette exigence d’inclure tous les texels (pondérés et différents de zéro) dans l’opération de filtre.
 
-Des accès aux texels **NULL** entraînent une réponse False à l’opération [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) sur les commentaires sur l’état pour une lecture de texture. Cette réponse est indépendante de la façon dont le résultat d’accès à la texture est écrit en masqué dans le nuanceur et du nombre de composants dans le format de la texture (cette combinaison peut révéler qu’un accès à la texture n’est pas nécessaire).
+Des accès aux texels **NULL** entraînent une réponse False à l’opération [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) sur les commentaires sur l’état pour une lecture de texture. Cette réponse est indépendante de la façon dont le résultat d’accès à la texture est écrit en masqué dans le nuanceur et du nombre de composants dans le format de la texture (cette combinaison peut révéler qu’un accès à la texture n’est pas nécessaire).
 
 ## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>Contraintes d’alignement
 

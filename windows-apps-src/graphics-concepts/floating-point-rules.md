@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662354"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370627"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Règles à virgule flottante
 
@@ -82,13 +82,13 @@ Certaines de ces règles constituent une simple option dans laquelle IEEE-754 pr
 -   x +/- 0.0f produit toujours x (à l’exception du vidage des nombres dénormalisés). Mais -0 + 0 = +0.
 -   Les opérations fusionnées (telles que mad, dp3) produisent des résultats aussi précis que le pire ordre séquentiel d’évaluation possible du développement non fusionné de l’opération. La définition du pire ordre possible, pour les besoins de tolérance, n’est pas une définition fixe pour une opération fusionne donnée ; elle dépend des valeurs spécifiques des entrées. Une tolérance de 1 ULP est autorisée pour chacune des étapes du développement non fusionné (dans le cas des instructions appelées par Direct3D avec une tolérance plus souple que 1 ULP, cette tolérance plus souple est autorisée).
 -   Les opérations fusionnées respectent les mêmes règles en matière de valeurs NaN que les opérations non fusionnées.
--   Les opérations sqrt et rcp présentent une tolérance de 1 ULP. Les instructions de réciproque de nuanceur et de racine carrée réciproque, [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) et [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221), présentent leur propre exigence distincte assouplie en matière de précision.
+-   Les opérations sqrt et rcp présentent une tolérance de 1 ULP. Les instructions de réciproque de nuanceur et de racine carrée réciproque, [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) et [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-), présentent leur propre exigence distincte assouplie en matière de précision.
 -   Les multiplications et les divisions opèrent chacune au niveau de précision des nombres en virgule flottante 32 bits (niveau de précision de 0,5 ULP pour les multiplication, et de 1,0 ULP pour la réciproque). Si x/y est implémenté directement, les résultats doivent présenter une précision supérieure ou égale à celle d’une méthode à deux étapes.
 
 ## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64 bits (double précision) flottante des règles de point
 
 
-Les pilotes matériels et d’affichage prennent en charge en option les nombres en virgule flottante double précision. Pour indiquer la prise en charge, lorsque vous appelez [ **ID3D11Device::CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) avec [ **D3D11\_fonctionnalité\_DOUBLES** ](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles), les jeux de pilote **DoublePrecisionFloatShaderOps** de [ **D3D11\_fonctionnalité\_données\_DOUBLES** ](https://msdn.microsoft.com/library/windows/desktop/ff476127) sur TRUE. Le pilote et le matériel doivent alors prendre en charge toutes les instructions en virgule flottante double précision.
+Les pilotes matériels et d’affichage prennent en charge en option les nombres en virgule flottante double précision. Pour indiquer la prise en charge, lorsque vous appelez [ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) avec [ **D3D11\_fonctionnalité\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), les jeux de pilote **DoublePrecisionFloatShaderOps** de [ **D3D11\_fonctionnalité\_données\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) sur TRUE. Le pilote et le matériel doivent alors prendre en charge toutes les instructions en virgule flottante double précision.
 
 Les instructions double précision respectent les exigences de comportement stipulées par la norme IEEE 754R.
 
@@ -108,10 +108,10 @@ Format :
 Une valeur float16 (v) respecte les règles suivantes :
 
 -   Si e == 31 et f != 0, alors v est égal à NaN, quel que soit s.
--   Si e == 31 et f == 0, v = (-1) s\*infinity (infini signé)
+-   if e == 31 and f == 0, then v = (-1)s\*infinity (signed infinity)
 -   Si e est entre 0 et 31, v = (-1) s\*2(e-15)\*(1.f ne le)
 -   Si e == 0 et f ! = 0, v = (-1) s\*2(e-14)\*(0.f) (nombres dénormalisés)
--   Si e == 0 et f == 0, v = (-1) s\*0 (zéro signé)
+-   if e == 0 and f == 0, then v = (-1)s\*0 (signed zero)
 
 Les règles en matière de virgule flottante 32 bits s’appliquent également aux nombres en virgule flottante 16 bits, et sont ajustées pour la disposition binaire précédemment décrite. Les exceptions à cette règle sont les suivantes :
 
@@ -148,9 +148,9 @@ Les règles en matière de virgule flottante 32 bits s’appliquent également 
 
 [Annexes](appendix.md)
 
-[Ressources](https://msdn.microsoft.com/library/windows/desktop/ff476894)
+[Ressources](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[Textures](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Textures](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

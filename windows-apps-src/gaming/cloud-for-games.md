@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, uwp, jeux, services cloud
 ms.localizationpriority: medium
-ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637684"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368991"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -91,7 +91,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
             <ul>
                 <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Création de jeux avec Service Fabric : Âge de jeu Ascent MMO (vidéo)</a>
                 <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Gérer les composants de jeu en tant que microservices à l’aide d’Azure Service Fabric (vidéo)</a> 
-                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Un entretien avec les développeurs de Age of Ascent (vidéo)</a>
+                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Un entretien avec les développeurs de Age of Ascent (vidéo)</a>
             </ul>
         </td>
     </tr>
@@ -177,7 +177,7 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
 | Faible latence               | Effectuer une mise en cache pour créer des jeux rapides et évolutifs, avec plus de contrôle et de garantie d’isolation des données ; peut également être utilisé pour améliorer la fonctionnalité de matchmaking | [Cache Redis Azure](https://azure.microsoft.com/services/cache/) | Débit élevé et accès aux données cohérent et à faible latence pour alimenter rapidement les applications Azure évolutives  |
 | Évolutivité élevée, faible latence | Gère les fluctuations du nombre d’utilisateurs du jeu avec des lectures et des écritures à faible latence | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | Possibilité d’alimenter les scénarios les plus complexes à faible latence avec volumes importants de données et d’assurer une mise à l’échelle fiable pour gérer un plus grand nombre d’utilisateurs à la fois Service Fabric vous permet de développer des jeux sans avoir à créer un magasin ou un cache séparé, tel que cela est demandé pour les applications sans état |
 | Capacité à collecter des millions d’événements par seconde depuis les appareils                         | Consigner des millions d’événements par seconde depuis les appareils | [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) | Ingestion de télémétrie à l’échelle du cloud depuis les jeux, les sites web, les applications et les appareils  |
-| Traitement des données de jeu en temps réel  | Effectuer une analyse en temps réel des données des joueurs pour améliorer l’expérience de jeu| [Stream Azure Analytique](https://azure.microsoft.com/services/stream-analytics/) | Traitement du flux en temps réel dans le cloud  |
+| Traitement des données de jeu en temps réel  | Effectuer une analyse en temps réel des données des joueurs pour améliorer l’expérience de jeu| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | Traitement du flux en temps réel dans le cloud  |
 | Développement d’une expérience de jeu prédictive         | Créer une expérience de jeu dynamique et personnalisée en fonction des données du joueur  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | Service cloud entièrement géré qui vous permet de facilement développer, déployer et partager des solutions d’analyse prédictive  |
 | Collecte et analyse des données de jeu| Traitement parallèle massif des données à partir de bases de données relationnelles et non relationnelles | [Entrepôt de données Azure](https://azure.microsoft.com/services/sql-data-warehouse/)| Entrepôt de données élastique en tant que service doté de fonctionnalités adaptées aux besoins des entreprises   |
 | Inciter les utilisateurs à accroître leur utilisation et leur fidélisation| Envoyer des notifications Push ciblées à n'importe quelle plateforme à partir de n'importe quel système principal pour susciter l’intérêt et encourager des actions de jeu spécifiques | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Diffusion rapide en mode Push pour toucher des millions d’appareils mobiles sur toutes les plateformes principales &mdash; iOS, Android, Windows, Kindle, Baidu. Votre jeu peut être hébergé sur n’importe quel serveur principal &mdash; cloud ou local.|
@@ -221,7 +221,7 @@ Nous cherchons constamment à innover et à ajouter de nouvelles fonctionnalité
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Guide de développement de jeux Windows 10](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Guide de développement de jeux Windows 10](https://docs.microsoft.com/windows/uwp/gaming/e2e)
 * [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

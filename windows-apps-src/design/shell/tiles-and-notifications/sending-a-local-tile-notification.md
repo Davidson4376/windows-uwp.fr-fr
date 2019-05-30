@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a6b61463204b4ae60fbb853cd00a10c7185a084
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636104"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362701"
 ---
 # <a name="send-a-local-tile-notification"></a>Envoyer une notification par vignette locale
  
@@ -204,7 +204,7 @@ Les notifications périodiques ou Push peuvent uniquement ajouter de nouvelles n
 
 **À l’aide de la file d’attente de notification**
 
-Maintenant que vous avez réalisé votre première mise à jour de vignette, vous pouvez développer les fonctionnalités de la vignette en activant une [file d’attente de notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
+Maintenant que vous avez réalisé votre première mise à jour de vignette, vous pouvez développer les fonctionnalités de la vignette en activant une [file d’attente de notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10)).
 
 **Autres méthodes de remise de notification**
 
@@ -291,7 +291,7 @@ var notification = new TileNotification(doc);
 * [Bibliothèque de notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Espace de noms Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [L’utilisation de la file d’attente de notification (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [L’utilisation de la file d’attente de notification (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))
 * [Remise de notifications](choosing-a-notification-delivery-method.md)
  
 

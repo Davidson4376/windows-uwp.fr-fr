@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291767"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370933"
 ---
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
 
@@ -60,7 +60,7 @@ Les matrices s'écrivent dans l’ordre rangée-colonne. Une matrice qui s’ada
 
 ![équation d’une matrice de mise à l’échelle uniforme](images/matrix.png)
 
-En langage C++, Direct3D déclare les matrices sous forme de tableau à deux dimensions à l’aide d’une structure de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) pour qu'elle agisse comme une mise à l’échelle uniforme de matrice (facteur d’échelle « s »).
+En langage C++, Direct3D déclare les matrices sous forme de tableau à deux dimensions à l’aide d’une structure de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) pour qu'elle agisse comme une mise à l’échelle uniforme de matrice (facteur d’échelle « s »).
 
 ```cpp
 D3DMATRIX scale = {

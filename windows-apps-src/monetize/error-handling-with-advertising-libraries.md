@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, annonces, publicités, gestion des erreurs, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e7b98dc583b8f7d77aa582b4c69b87c726a83129
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617754"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371810"
 ---
 # <a name="handle-ad-errors"></a>Gérer des erreurs dans les publicités
 
@@ -67,9 +67,9 @@ Voici un exemple qui affecte un gestionnaire d'événement nommé **errorLogger*
 </div>
 ```
 
-La fonction de gestion des erreurs est déclarative et doit être incorporée à la fonction [markSupportedForProcessing](https://msdn.microsoft.com/library/windows/apps/Hh967819.aspx).
+La fonction de gestion des erreurs est déclarative et doit être incorporée à la fonction [markSupportedForProcessing](https://docs.microsoft.com/previous-versions/windows/apps/hh967819(v=win.10)).
 
-Le gestionnaire d’erreurs intercepte l’objet erreur JavaScript quand une erreur se produit. Cet objet fournit deux arguments au gestionnaire d’erreurs. Pour plus d’informations, voir [Propriétés d’erreur particulières des méthodes Windows Runtime asynchrones](https://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
+Le gestionnaire d’erreurs intercepte l’objet erreur JavaScript quand une erreur se produit. Cet objet fournit deux arguments au gestionnaire d’erreurs. Pour plus d’informations, voir [Propriétés d’erreur particulières des méthodes Windows Runtime asynchrones](https://docs.microsoft.com/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods).
 
 Voici un exemple de fonction de gestion des erreurs nommé **errorLogger** qui gère l’événement **onErrorOccurred**.
 

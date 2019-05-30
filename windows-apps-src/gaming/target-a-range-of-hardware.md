@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, les mappages d’ombre, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e661065f86ac173a6ce323281c80fc964d0a4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1087a063fa19bea716b86143c10097711cef9205
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646364"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367905"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Prendre en charge les mappages d’ombre sur une gamme de matériel
 
@@ -108,7 +108,7 @@ return float4(input.color * (light + shadow), 1.f);
 ## <a name="shadow-buffer-size"></a>Taille du tampon de l’ombre
 
 
-Les mappages d’ombre plus larges ne semblent pas plus pixellisés mais ils occupent davantage d’espace dans la mémoire graphique. Testez différentes tailles de mappages d’ombre dans votre jeu et observez les résultats dans différents types de périphériques et différentes tailles d’affichage. Envisagez une optimisation comme des mappages d’ombre en cascade pour obtenir de meilleurs résultats avec moins de mémoire graphique. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+Les mappages d’ombre plus larges ne semblent pas plus pixellisés mais ils occupent davantage d’espace dans la mémoire graphique. Testez différentes tailles de mappages d’ombre dans votre jeu et observez les résultats dans différents types de périphériques et différentes tailles d’affichage. Envisagez une optimisation comme des mappages d’ombre en cascade pour obtenir de meilleurs résultats avec moins de mémoire graphique. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
 
 ## <a name="shadow-buffer-depth"></a>Profondeur du tampon de l’ombre
 

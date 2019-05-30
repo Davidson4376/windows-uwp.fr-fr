@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624624"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366983"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 
@@ -22,7 +22,7 @@ Ce didacticiel en deux parties offre une présentation rapide des technologies d
 
 Nous allons utiliser certaines des technologies Web les plus populaires, y compris l'exécution [Node.js](https://nodejs.org/en/) et [Express](https://expressjs.com/) pour le développement côté serveur, l'infrastructure d'interface utilisateur [Bootstrap](https://getbootstrap.com/), le modèle de moteur [Pug](https://www.npmjs.com/package/pug) et [Swagger](https://swagger.io/tools/) pour la création des API RESTful. Vous gagnerez également en expérience au niveau du [portail Azure](https://ms.portal.azure.com/) pour l’hébergement dans le cloud et l’utilisation de l'éditeur [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Si vous ne disposez pas encore de ces ressources sur votre ordinateur, suivez ces liens de téléchargement :
 
@@ -115,7 +115,7 @@ Nous allons utiliser [Swagger](https://swagger.io/) pour transformer la structur
 
 1. Créez un nouveau dossier (dans votre répertoire local *GitHub*, par exemple) et téléchargez le fichier [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) contenant nos définitions d’API du jeu la mémoire. Assurez-vous que le nom de votre dossier ne contient pas d’espaces.
 
-2. Ouvrez votre interpréteur de commandes favori ([ou utilisez le terminal intégré de Visual Studio Code](https://code.visualstudio.com/docs/editor/integrated-terminal)) pour ce dossier et exécutez la commande NPM (Node Package Manager) suivante pour installer l'outil de génération de code [Yeoman](https://yeoman.io/) (yo) et le générateur Swagger pour votre environnement Node global (**-g**) :
+2. Ouvrez votre interpréteur de commandes favori ([ou utilisez le terminal intégré de Visual Studio Code](https://code.visualstudio.com/docs/editor/integrated-terminal)) pour ce dossier et exécutez la commande NPM (Node Package Manager) suivante pour installer l'outil de génération de code [Yeoman](https://yeoman.io/) (yo) et le générateur Swagger pour votre environnement Node global ( **-g**) :
 
     ```
     npm install -g yo
@@ -626,7 +626,7 @@ Félicitations ! Vous avez terminé de créer l’application Web ! Testons-la
 
     Vous pouvez également comparer votre code à celui fourni dans le dossier Final.
 
-4. Pour arrêter le jeu, dans l’invite de commandes, tapez : **CTRL + C**, **Y**. 
+4. Pour arrêter le jeu, dans l’invite de commandes, tapez : **Ctrl + C**, **Y**. 
 
 ### <a name="going-further"></a>Aller plus loin
 
@@ -636,7 +636,7 @@ La procédure de base pour la publication dans le Microsoft Store est la suivant
 
  1. Créer un compte [Développeur Windows](https://developer.microsoft.com/en-us/store/register)
  2. Utiliser la [liste de vérification](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions) de soumission d'applications
- 3. Soumettre votre application en vue d'une [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 3. Soumettre votre application en vue d'une [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 Voici quelques ressources utiles pour aller plus loin :
 

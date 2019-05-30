@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58d3b59d8fdd1587a0bec8369a78863d0c3d4557
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646334"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358811"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Bien démarrer : Savoir maîtriser Visual Studio
 
@@ -44,7 +44,7 @@ Faites de même avec le contrôle **TextBlock**, afin qu’il se présente comme
 
 ![conception de l’interface utilisateur dans visual studio](images/ios-to-uwp/vs-add-button-label.png)
 
-Contrairement à Xcode, qui masque les informations de disposition et de liaison à l’intérieur d’un fichier .xib ou d’une table de montage séquentiel, Visual Studio vous incite à modifier les fichiers XAML utilisés pour stocker ces détails. Il s’agit d’un langage riche, modifiable et déclaratif de type XML. Pour plus d’informations sur le langage XAML (Extensible Application Markup Language), voir [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/mt185595). Pour l’instant, sachez que tous les éléments affichés dans le volet **Conception** sont définis dans le volet **XAML**. Le volet **XAML** permet un contrôle précis si nécessaire et, quand vous en saurez davantage à ce sujet, vous pourrez rapidement développer manuellement un code d’interface utilisateur. Quoi qu’il en soit, pour le moment, concentrons-nous simplement sur les volets **Conception** et **Propriétés**.
+Contrairement à Xcode, qui masque les informations de disposition et de liaison à l’intérieur d’un fichier .xib ou d’une table de montage séquentiel, Visual Studio vous incite à modifier les fichiers XAML utilisés pour stocker ces détails. Il s’agit d’un langage riche, modifiable et déclaratif de type XML. Pour plus d’informations sur le langage XAML (Extensible Application Markup Language), voir [Vue d’ensemble du langage XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview). Pour l’instant, sachez que tous les éléments affichés dans le volet **Conception** sont définis dans le volet **XAML**. Le volet **XAML** permet un contrôle précis si nécessaire et, quand vous en saurez davantage à ce sujet, vous pourrez rapidement développer manuellement un code d’interface utilisateur. Quoi qu’il en soit, pour le moment, concentrons-nous simplement sur les volets **Conception** et **Propriétés**.
 
 Modifions les détails du bouton. Comme vous le savez, pour modifier le nom du bouton dans Xcode, vous devez modifier la valeur du champ **Titre** dans son panneau de propriétés.
 

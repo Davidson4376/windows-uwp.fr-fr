@@ -6,36 +6,36 @@ ms.topic: article
 keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f37ffe21795fc68ff72b4e6f1de591c96d2f8b90
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615794"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366216"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Créer et inscrire une tâche en arrière-plan in-process
 
 **API importantes**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 Cette rubrique explique comment créer et inscrire une tâche en arrière-plan qui s’exécute dans le même processus que votre application.
 
-Les tâches en arrière-plan in-process sont plus faciles à implémenter que les tâches en arrière-plan hors processus. Toutefois, elles sont moins résilientes. Un blocage du code en cours d’exécution dans une tâche en arrière-plan in-process entraînera le blocage de votre application. Notez également que les déclencheurs [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) et **IoTStartupTask** ne peuvent pas être utilisés avec le modèle in-process. Vous ne pourrez pas non plus activer une tâche VoIP en arrière-plan au sein de votre application. Ces tâches et ces déclencheurs peuvent néanmoins être utilisés avec le modèle de tâche en arrière-plan hors processus.
+Les tâches en arrière-plan in-process sont plus faciles à implémenter que les tâches en arrière-plan hors processus. Toutefois, elles sont moins résilientes. Un blocage du code en cours d’exécution dans une tâche en arrière-plan in-process entraînera le blocage de votre application. Notez également que les déclencheurs [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger), [DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) et **IoTStartupTask** ne peuvent pas être utilisés avec le modèle in-process. Vous ne pourrez pas non plus activer une tâche VoIP en arrière-plan au sein de votre application. Ces tâches et ces déclencheurs peuvent néanmoins être utilisés avec le modèle de tâche en arrière-plan hors processus.
 
 N’oubliez pas que l’activité en arrière-plan peut être arrêtée, même en cas d’exécution au sein du processus au premier plan de l’application, si elle s’exécute au-delà des limites de durée d’exécution. La résilience obtenue grâce à la répartition des tâches dans une tâche en arrière-plan qui s’exécute dans un processus distinct reste utile pour plusieurs raisons. Dissocier la tâche en arrière-plan de l’application au premier plan peut être la meilleure option pour les tâches pour lesquelles aucune communication avec l’application au premier plan n’est requise.
 
 ## <a name="fundamentals"></a>Principes de base
 
-Le modèle in-process améliore le cycle de vie de l’application grâce à des notifications avancées qui vous indiquent quand votre application est au premier plan ou en arrière-plan. Deux nouveaux événements sont disponibles à partir de l’objet d’Application pour ces transitions : [**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Ces événements s’intègrent au cycle de vie de l’application en fonction de l’état de visibilité de votre application. Pour en savoir plus sur ces événements et comment ils affectent le cycle de vie de l’application, consultez la rubrique [Cycle de vie de l’application](app-lifecycle.md).
+Le modèle in-process améliore le cycle de vie de l’application grâce à des notifications avancées qui vous indiquent quand votre application est au premier plan ou en arrière-plan. Deux nouveaux événements sont disponibles à partir de l’objet d’Application pour ces transitions : [**EnteredBackground** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) et [ **LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground). Ces événements s’intègrent au cycle de vie de l’application en fonction de l’état de visibilité de votre application. Pour en savoir plus sur ces événements et comment ils affectent le cycle de vie de l’application, consultez la rubrique [Cycle de vie de l’application](app-lifecycle.md).
 
 En règle générale, vous gérerez l’événement **EnteredBackground** pour exécuter le code lorsque votre application s’exécute en arrière-plan, et l’événement **LeavingBackground** pour savoir quand votre application est passée au premier plan.
 
 ## <a name="register-your-background-task-trigger"></a>Inscrire votre déclencheur de tâche en arrière-plan
 
-L’inscription d’une activité en arrière-plan in-process est similaire à celle d’une activité en arrière-plan hors processus. Pour tous les déclencheurs en arrière-plan, l’inscription fait appel à l’élément [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). Le générateur permet d’inscrire facilement une tâche en arrière-plan en définissant toutes les valeurs requises au même endroit :
+L’inscription d’une activité en arrière-plan in-process est similaire à celle d’une activité en arrière-plan hors processus. Pour tous les déclencheurs en arrière-plan, l’inscription fait appel à l’élément [BackgroundTaskBuilder](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder?f=255&MSPPError=-2147217396). Le générateur permet d’inscrire facilement une tâche en arrière-plan en définissant toutes les valeurs requises au même endroit :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -48,16 +48,16 @@ L’inscription d’une activité en arrière-plan in-process est similaire à c
 > ```
 
 > [!NOTE]
-> Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
-> Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
+> Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
+> Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), puis [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
-Pour les activités en arrière-plan in-process, vous ne définissez pas `TaskEntryPoint.`. En laissant ce champ vide, vous activez le point d’entrée par défaut, une nouvelle méthode protégée sur l’objet Application appelé [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
+Pour les activités en arrière-plan in-process, vous ne définissez pas `TaskEntryPoint.`. En laissant ce champ vide, vous activez le point d’entrée par défaut, une nouvelle méthode protégée sur l’objet Application appelé [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).
 
-Une fois le déclencheur inscrit, il se déclenchera en fonction du type de déclencheur défini dans la méthode [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx). L’exemple ci-dessus utilise un déclencheur [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx) qui se déclenchera quinze minutes après son inscription.
+Une fois le déclencheur inscrit, il se déclenchera en fonction du type de déclencheur défini dans la méthode [SetTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.settrigger). L’exemple ci-dessus utilise un déclencheur [TimeTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.timetrigger) qui se déclenchera quinze minutes après son inscription.
 
 ## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>Ajouter une condition pour définir à quel moment votre tâche sera exécutée (facultatif)
 
-Vous pouvez ajouter une condition pour définir à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu. Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que l’utilisateur n’est pas présent, appliquez la condition **UserPresent**. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+Vous pouvez ajouter une condition pour définir à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu. Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que l’utilisateur n’est pas présent, appliquez la condition **UserPresent**. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur :
 
@@ -68,7 +68,7 @@ L’exemple de code suivant affecte une condition qui exige la présence de l’
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Placer votre code d’activité en arrière-plan dans OnBackgroundActivated()
 
-Placez votre code d’activité d’arrière-plan dans [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) pour répondre à votre déclencheur en arrière-plan lorsqu’elle se déclenche. **OnBackgroundActivated** peut être traité de la même manière que [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). La méthode a un [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) paramètre, qui contient tous les éléments qui le **exécuter** offre de la méthode. Par exemple, dans App.xaml.cs :
+Placez votre code d’activité d’arrière-plan dans [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) pour répondre à votre déclencheur en arrière-plan lorsqu’elle se déclenche. **OnBackgroundActivated** peut être traité de la même manière que [IBackgroundTask.Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run?f=255&MSPPError=-2147217396). La méthode a un [BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs) paramètre, qui contient tous les éléments qui le **exécuter** offre de la méthode. Par exemple, dans App.xaml.cs :
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -114,7 +114,7 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 
 * [Convertir une tâche en arrière-plan out-of-process à une tâche en arrière-plan dans le processus](convert-out-of-process-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
-* [Lire des médias dans l’arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Lire des médias dans l’arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Définir des conditions pour l’exécution d’une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
@@ -131,4 +131,4 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 
 **Référence API des tâches en arrière-plan**
 
-* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

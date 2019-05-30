@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07d94f5b11acfe14bf55392c5cbf2c1b7bcfbeef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613894"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369397"
 ---
 # <a name="accessing-homegroup-content"></a>Accès au contenu Groupement résidentiel
 
@@ -19,15 +19,15 @@ ms.locfileid: "57613894"
 
 **API importantes**
 
--   [**Classe de Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Classe de Windows.Storage.KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)
 
 Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Déclarations Betacam d’application**
 
@@ -50,7 +50,7 @@ Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet
 
 1.  **Créer et personnaliser le sélecteur de fichiers**
 
-    Utilisez [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour créer le sélecteur de fichiers, puis définissez le paramètre [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) du sélecteur sur [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Ou définissez les autres propriétés qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des directives susceptibles de vous aider à choisir comment personnaliser le sélecteur de fichiers, voir [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465182).
+    Utilisez [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) pour créer le sélecteur de fichiers, puis définissez le paramètre [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) du sélecteur sur [**PickerLocationId.HomeGroup**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId). Ou définissez les autres propriétés qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des directives susceptibles de vous aider à choisir comment personnaliser le sélecteur de fichiers, voir [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers).
 
     Cet exemple crée un sélecteur de fichiers qui s’ouvre au Groupement résidentiel, inclut des fichiers de tous types et affiche les fichiers sous forme d’images miniatures :
     ```cs
@@ -63,7 +63,7 @@ Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet
 
 2.  **Afficher le sélecteur de fichiers et traiter le fichier sélectionnée.**
 
-    Une fois que vous avez créé et personnalisé le sélecteur de fichiers, offrez à l’utilisateur la possibilité de choisir un fichier en appelant [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), ou plusieurs fichiers en appelant [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
+    Une fois que vous avez créé et personnalisé le sélecteur de fichiers, offrez à l’utilisateur la possibilité de choisir un fichier en appelant [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync), ou plusieurs fichiers en appelant [**FileOpenPicker.PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync).
 
     Cet exemple affiche le sélecteur de fichiers pour permettre à l’utilisateur de sélectionner un fichier :
     ```cs
@@ -85,7 +85,7 @@ Cette sélection illustre comment trouver des éléments du Groupement résident
 
 1.  **Obtenir le terme de requête de l’utilisateur.**
 
-    Nous obtenons ici un terme de requête que l’utilisateur a entré dans un contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) appelé `searchQueryTextBox` :
+    Nous obtenons ici un terme de requête que l’utilisateur a entré dans un contrôle [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) appelé `searchQueryTextBox` :
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -128,7 +128,7 @@ Cette section vous montre comment trouver les fichiers du Groupement résidentie
 
 1.  **Obtenir une collection d’utilisateurs du groupe résidentiel.**
 
-    Chacun des dossiers de premier niveau du Groupement résidentiel représente un utilisateur individuel. Ainsi, pour obtenir la collection d’utilisateurs du Groupement résidentiel, appelez [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) pour récupérer les dossiers du Groupement résidentiel du niveau supérieur.
+    Chacun des dossiers de premier niveau du Groupement résidentiel représente un utilisateur individuel. Ainsi, pour obtenir la collection d’utilisateurs du Groupement résidentiel, appelez [**GetFoldersAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) pour récupérer les dossiers du Groupement résidentiel du niveau supérieur.
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
@@ -173,7 +173,7 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
 
 1.  **Incluez un MediaElement dans votre application.**
 
-    Un [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) vous permet de lire des contenus audio et vidéo dans votre application. Pour plus d’informations sur la lecture audio et vidéo, voir [Créer des contrôles de transport personnalisés](https://msdn.microsoft.com/library/windows/apps/mt187271) et [Audio, vidéo et appareil photo](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    Un [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) vous permet de lire des contenus audio et vidéo dans votre application. Pour plus d’informations sur la lecture audio et vidéo, voir [Créer des contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) et [Audio, vidéo et appareil photo](https://docs.microsoft.com/windows/uwp/audio-video-camera/index).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -193,7 +193,7 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Ouvrir la sélection de fichier de l’utilisateur pour un accès en lecture et définir le flux de fichier comme source pour le** [ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), puis lancez le fichier.
+3.  **Ouvrir la sélection de fichier de l’utilisateur pour un accès en lecture et définir le flux de fichier comme source pour le** [ **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement), puis lancez le fichier.
     ```cs
     if (file != null)
     {

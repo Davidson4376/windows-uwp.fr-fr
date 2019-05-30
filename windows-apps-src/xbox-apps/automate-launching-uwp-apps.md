@@ -4,12 +4,12 @@ description: Les développeurs peuvent utiliser l’activation de protocole et d
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f61fcfcef549295b8f3c9004572a74043a2917a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618304"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365829"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Automatisation du lancement des applications UWP Windows 10
 
@@ -48,7 +48,7 @@ L’application peut être activée par protocole à l’aide de la ligne de com
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
+L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri). 
 
 Exemples :
 
@@ -207,9 +207,9 @@ void OnActivated(IActivatedEventArgs^ args)
 }
 ```
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 En résumé, vous pouvez utiliser différentes méthodes pour lancer l’application UWP. Selon la configuration requise et les cas d’usage, certaines méthodes peuvent être mieux adaptées que d’autres. 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [UWP sur Xbox One](index.md)
 

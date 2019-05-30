@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636364"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364721"
 ---
 # <a name="lists"></a>Listes
 
@@ -30,7 +30,7 @@ Les listes affichent et activent l’interaction avec du contenu basé sur des c
 
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
-> **API importantes** : [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox (classe)](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **API importantes** : [Classe de ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [ComboBox (classe)](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 
 > <div id="main">
@@ -265,11 +265,11 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [Maître/détails](master-details.md)
 - [Volet de navigation](navigationview.md)
 - [Zoom sémantique](semantic-zoom.md)
-- [Glisser-déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Glisser-déplacer](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Images miniatures](../../files/thumbnails.md)
 
 **pour les développeurs**
-- [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [Classe de GridView](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [ComboBox (classe)](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [Classe de zone de liste](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [Classe de ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [Classe de GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox (classe)](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [Classe de zone de liste](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)

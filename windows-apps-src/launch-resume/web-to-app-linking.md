@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 464aa35aa8362049042ad23a6816c4de21b25634
-ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
+ms.openlocfilehash: c638eb843528cc17a3f02233ef5f238264eb58a0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66184521"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370525"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
 
@@ -100,7 +100,7 @@ Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Gérer les liens à l’activation pour créer un lien vers le contenu
 
-Accédez au fichier **App.xaml.cs** dans la solution Visual Studio de votre application puis, dans **OnActivated()**, ajoutez la gestion des contenus liés. Dans l’exemple suivant, la page ouverte ouvert dans l’application dépend du chemin d’accès de l’URI :
+Accédez au fichier **App.xaml.cs** dans la solution Visual Studio de votre application puis, dans **OnActivated()** , ajoutez la gestion des contenus liés. Dans l’exemple suivant, la page ouverte ouvert dans l’application dépend du chemin d’accès de l’URI :
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -179,7 +179,7 @@ Fermez votre application pour vérifier que l’application est activée lorsque
 
 Vérifiez que votre application est fermée. Appuyez sur la **touche Windows + R** pour ouvrir la boîte de dialogue **Exécuter**, puis collez le lien dans la fenêtre. Votre application doit alors démarrer à la place du navigateur web.
 
-Vous pouvez aussi tester votre application en la démarrant à partir d’une autre application à l’aide de l’API [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx). Vous pouvez utiliser cette API pour tester également votre application sur des téléphones.
+Vous pouvez aussi tester votre application en la démarrant à partir d’une autre application à l’aide de l’API [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Vous pouvez utiliser cette API pour tester également votre application sur des téléphones.
 
 Si vous souhaitez suivre la logique d’activation du protocole, définissez un point d’arrêt dans le gestionnaire d’événements **OnActivated**.
 
@@ -191,11 +191,11 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 - Votre fichier JSON doit être téléchargé sur un serveur https.
 - Si vous devez modifier les chemins d’accès que vous souhaitez prendre en charge, vous pouvez republier votre fichier JSON sans avoir à republier votre application. Les utilisateurs verront ces modifications dans un délai de 1 à 8 jours.
 - Toutes les applications chargées de manière indépendante avec AppUriHandlers auront des liens validés pour l’hôte au moment de l’installation. Il est inutile de charger un fichier JSON pour tester la fonctionnalité.
-- Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
+- Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
 
 ## <a name="see-also"></a>Voir aussi
 
 [Exemple de projet Application-site web](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[Inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[Gérer l’activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[Inscription de windows.protocol](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
+[Gérer l’activation des URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 [L'exemple de lancement d'association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) explique comment utiliser l'API LaunchUriAsync().

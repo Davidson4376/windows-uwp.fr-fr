@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661434"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369332"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
 
@@ -19,12 +19,12 @@ Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothè
 
 Une bibliothèque est une collection virtuelle de dossiers, qui comprend un dossier connu par défaut, ainsi que d’autres dossiers que l’utilisateur a ajouté à la bibliothèque à l’aide de votre application ou d’une des applications intégrées. Par exemple, la bibliothèque d’images inclut le dossier connu d’images par défaut. L’utilisateur peut ajouter ou supprimer des dossiers dans la bibliothèque d’images à l’aide de votre application ou de l’application Photos intégrée.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 -   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Autorisations d’accès à l’emplacement**
 
@@ -42,11 +42,11 @@ Une bibliothèque est une collection virtuelle de dossiers, qui comprend un doss
 > N’oubliez pas de déclarer la fonctionnalité appropriée. Pour plus d’informations, voir [Déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
  
 
-Pour obtenir une référence à la bibliothèque Musique, Images ou Vidéo de l’utilisateur, appelez la méthode [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725). Indiquez la valeur correspondante de l’énumération [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399).
+Pour obtenir une référence à la bibliothèque Musique, Images ou Vidéo de l’utilisateur, appelez la méthode [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync). Indiquez la valeur correspondante de l’énumération [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId).
 
--   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
--   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
--   [**KnownLibraryId.Videos**](https://msdn.microsoft.com/library/windows/apps/br227159)
+-   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary)
+-   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary)
+-   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary)
 
 ```cs
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
@@ -55,7 +55,7 @@ var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.St
 ## <a name="get-the-list-of-folders-in-a-library"></a>Obtenir la liste des dossiers d’une bibliothèque
 
 
-Pour obtenir la liste des dossiers d’une bibliothèque, obtenez la valeur de la propriété [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724).
+Pour obtenir la liste des dossiers d’une bibliothèque, obtenez la valeur de la propriété [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders).
 
 ```cs
 using Windows.Foundation.Collections;
@@ -65,7 +65,7 @@ IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.F
 ## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>Obtenir le dossier contenu dans une bibliothèque où les nouveaux fichiers sont enregistrés par défaut
 
 
-Pour obtenir le dossier d’une bibliothèque où les nouveaux fichiers sont enregistrés par défaut, obtenez la valeur de la propriété [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728).
+Pour obtenir le dossier d’une bibliothèque où les nouveaux fichiers sont enregistrés par défaut, obtenez la valeur de la propriété [**StorageLibrary.SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder).
 
 ```cs
 Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
@@ -73,7 +73,7 @@ Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 
 ## <a name="add-an-existing-folder-to-a-library"></a>Ajouter un dossier existant à une bibliothèque
 
-Pour ajouter un dossier à une bibliothèque, vous appelez la méthode [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). En prenant l’exemple de la bibliothèque Images, l’appel de cette méthode entraîne l’affichage d’un sélecteur de dossiers avec un bouton **Ajouter ce dossier à Images**. Si l’utilisateur sélectionne un dossier, celui-ci reste à son emplacement d’origine sur le disque et devient un élément dans la propriété [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) (et dans l’application Photos intégrée), mais le dossier n’apparaît pas en tant qu’enfant du dossier Images dans l’Explorateur de fichiers.
+Pour ajouter un dossier à une bibliothèque, vous appelez la méthode [**StorageLibrary.RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync). En prenant l’exemple de la bibliothèque Images, l’appel de cette méthode entraîne l’affichage d’un sélecteur de dossiers avec un bouton **Ajouter ce dossier à Images**. Si l’utilisateur sélectionne un dossier, celui-ci reste à son emplacement d’origine sur le disque et devient un élément dans la propriété [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) (et dans l’application Photos intégrée), mais le dossier n’apparaît pas en tant qu’enfant du dossier Images dans l’Explorateur de fichiers.
 
 
 ```cs
@@ -82,11 +82,11 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## <a name="remove-a-folder-from-a-library"></a>Supprimer un dossier d’une bibliothèque
 
-Pour supprimer un dossier d’une bibliothèque, appelez la méthode [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) et spécifiez le dossier à supprimer. Vous pouvez utiliser [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) et un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) (ou similaire) pour permettre à l’utilisateur de sélectionner un dossier à supprimer.
+Pour supprimer un dossier d’une bibliothèque, appelez la méthode [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) et spécifiez le dossier à supprimer. Vous pouvez utiliser [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) et un contrôle [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) (ou similaire) pour permettre à l’utilisateur de sélectionner un dossier à supprimer.
 
-Lorsque vous appelez la méthode [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727), l’utilisateur voit une boîte de dialogue de confirmation indiquant que le dossier n’apparaîtra plus dans le dossier Images, mais ne sera pas supprimé. Cela signifie que le dossier reste dans son emplacement d’origine sur le disque, est supprimé de la propriété [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) et n’est plus inclus dans l’application Photos intégrée.
+Lorsque vous appelez la méthode [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync), l’utilisateur voit une boîte de dialogue de confirmation indiquant que le dossier n’apparaîtra plus dans le dossier Images, mais ne sera pas supprimé. Cela signifie que le dossier reste dans son emplacement d’origine sur le disque, est supprimé de la propriété [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) et n’est plus inclus dans l’application Photos intégrée.
 
-L’exemple suivant suppose que l’utilisateur a sélectionné le dossier à supprimer d’un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) nommé **lvPictureFolders**.
+L’exemple suivant suppose que l’utilisateur a sélectionné le dossier à supprimer d’un contrôle [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) nommé **lvPictureFolders**.
 
 
 ```cs
@@ -96,7 +96,7 @@ bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>Recevoir des notifications de modifications apportées à la liste des dossiers d’une bibliothèque
 
 
-Pour être averti des modifications apportées à la liste des dossiers d’une bibliothèque, inscrivez un gestionnaire pour l’événement [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) de la bibliothèque.
+Pour être averti des modifications apportées à la liste des dossiers d’une bibliothèque, inscrivez un gestionnaire pour l’événement [**StorageLibrary.DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) de la bibliothèque.
 
 
 ```cs
@@ -158,7 +158,7 @@ private async void getSongs()
 
 Par défaut, les utilisateurs peuvent choisir de stocker les fichiers sur la carte SD en option. Les applications, en revanche, peuvent choisir de ne pas autoriser le stockage des fichiers sur la carte SD. Par conséquent, les bibliothèques multimédias peuvent se partager entre le stockage interne de l’appareil et la carte SD.
 
-Il n’est pas nécessaire d’écrire d’autre code pour gérer cette possibilité. Les méthodes de l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) qui interrogent les dossiers connus combinent en toute transparence les résultats de requête issus de ces deux emplacements. De même, vous n’avez pas à spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour obtenir ces résultats combinés.
+Il n’est pas nécessaire d’écrire d’autre code pour gérer cette possibilité. Les méthodes de l’espace de noms [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) qui interrogent les dossiers connus combinent en toute transparence les résultats de requête issus de ces deux emplacements. De même, vous n’avez pas à spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour obtenir ces résultats combinés.
 
 Examinons l’état du stockage de l’appareil illustré dans l’image suivante :
 
@@ -175,7 +175,7 @@ Les dossiers Pellicule et Images enregistrées ne prennent pas en charge les req
 
 **Ouverture d’une photo dans l’application qui capturée**
 
-Si vous voulez laisser l’utilisateur rouvrir une photo dans l’application qui l’a capturée, vous pouvez enregistrer le **CreatorAppId** avec les métadonnées de la photo en utilisant du code similaire à celui de l’exemple suivant. Dans cet exemple, **testPhoto** est un [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+Si vous voulez laisser l’utilisateur rouvrir une photo dans l’application qui l’a capturée, vous pouvez enregistrer le **CreatorAppId** avec les métadonnées de la photo en utilisant du code similaire à celui de l’exemple suivant. Dans cet exemple, **testPhoto** est un [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
 ```cs
 IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, direct3d 11, initialisation, portage, direct3d 9
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c5a7f33ddbc6d70af5293b92165892c2098e452d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604184"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368033"
 ---
 # <a name="initialize-direct3d-11"></a>Initialiser Direct3D 11
 
@@ -29,7 +29,7 @@ Montre comment convertir du code d’initialisation Direct3D 9 en Direct3D 11,
 ## <a name="initialize-the-direct3d-device"></a>Initialiser le périphérique Direct3D
 
 
-Dans Direct3D 9, nous avons créé un handle vers le périphérique Direct3D en appelant la méthode [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). Nous avons commencé en obtenant un pointeur vers l’[**interface IDirect3D9**](https://msdn.microsoft.com/library/windows/desktop/bb174300) et nous avons spécifié plusieurs paramètres pour contrôler la configuration du périphérique Direct3D et de la chaîne d’échange. Avant cela, nous avons appelé la fonction [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) pour vérifier que nous n’étions pas en train de demander au périphérique quelque chose qu’il ne pourrait pas faire.
+Dans Direct3D 9, nous avons créé un handle vers le périphérique Direct3D en appelant la méthode [**IDirect3D9::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice). Nous avons commencé en obtenant un pointeur vers l’[**interface IDirect3D9**](https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) et nous avons spécifié plusieurs paramètres pour contrôler la configuration du périphérique Direct3D et de la chaîne d’échange. Avant cela, nous avons appelé la fonction [**GetDeviceCaps**](https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps) pour vérifier que nous n’étions pas en train de demander au périphérique quelque chose qu’il ne pourrait pas faire.
 
 Direct3D 9
 
@@ -69,7 +69,7 @@ m_pD3D->CreateDevice(
 
 Dans Direct3D 11, le contexte de périphérique et l’infrastructure graphique est considérée comme étant distincte du périphérique lui-même. L’initialisation se divise en plusieurs étapes.
 
-Pour commencer, nous créons le périphérique. Nous obtenons la liste des niveaux de fonctionnalité que le périphérique prend en charge : celle-ci nous informe de presque tout ce que nous devons savoir sur l’unité de traitement graphique (GPU). En outre, nous n’avons pas besoin de créer une interface juste pour accéder à Direct3D. Nous utilisons plutôt l’API principale [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Cela nous permet d’obtenir un handle vers le périphérique et le contexte immédiat de périphérique. Le contexte de périphérique sert à définir l’état du pipeline et à générer des commandes de rendu.
+Pour commencer, nous créons le périphérique. Nous obtenons la liste des niveaux de fonctionnalité que le périphérique prend en charge : celle-ci nous informe de presque tout ce que nous devons savoir sur l’unité de traitement graphique (GPU). En outre, nous n’avons pas besoin de créer une interface juste pour accéder à Direct3D. Nous utilisons plutôt l’API principale [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice). Cela nous permet d’obtenir un handle vers le périphérique et le contexte immédiat de périphérique. Le contexte de périphérique sert à définir l’état du pipeline et à générer des commandes de rendu.
 
 Après avoir créé le périphérique Direct3D 11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
 
@@ -125,7 +125,7 @@ Direct3D 11 inclut une API de périphérique appelée DXGI (infrastructure Direc
 
 Le périphérique Direct3D implémente une interface COM pour DXGI. Tout d’abord, nous avons besoin d’obtenir cette interface, puis de l’utiliser pour demander la carte DXGI hébergeant le périphérique. Ensuite, nous utilisons la carte DXGI pour créer une fabrique DXGI.
 
-> **Remarque**    il s’agit des interfaces COM pour votre première réponse peut consister à utiliser [ **QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) à la place. Ensuite, il suffit d’appeler la méthode [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) en fournissant un pointeur COM vide du type d’interface correct.
+> **Remarque**    il s’agit des interfaces COM pour votre première réponse peut consister à utiliser [ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) à la place. Ensuite, il suffit d’appeler la méthode [**As()** ](https://docs.microsoft.com/previous-versions/br230426(v=vs.140)) en fournissant un pointeur COM vide du type d’interface correct.
 
  
 
@@ -147,7 +147,7 @@ dxgiAdapter->GetParent(
     );
 ```
 
-Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour créer la chaîne d’échange. Définissons à présent les paramètres de cette chaîne d’échange. Nous devons spécifier le format de surface ; Nous allons choisir [ **DXGI\_FORMAT\_B8G8R8A8\_UNORM** ](https://msdn.microsoft.com/library/windows/desktop/bb173059) , car il est compatible avec Direct2D. Nous désactivons l’échelle d’affichage, l’échantillonnage multiple et le rendu stéréo car ils ne sont pas utilisés dans cet exemple. Étant donné que l’exécution est directement effectuée dans un CoreWindow, nous pouvons laisser les valeurs 0 de la largeur et de la hauteur et obtenir automatiquement les valeurs de plein écran.
+Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour créer la chaîne d’échange. Définissons à présent les paramètres de cette chaîne d’échange. Nous devons spécifier le format de surface ; Nous allons choisir [ **DXGI\_FORMAT\_B8G8R8A8\_UNORM** ](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format) , car il est compatible avec Direct2D. Nous désactivons l’échelle d’affichage, l’échantillonnage multiple et le rendu stéréo car ils ne sont pas utilisés dans cet exemple. Étant donné que l’exécution est directement effectuée dans un CoreWindow, nous pouvons laisser les valeurs 0 de la largeur et de la hauteur et obtenir automatiquement les valeurs de plein écran.
 
 > **Remarque**    toujours ensemble la *SDKVersion* paramètre D3D11\_SDK\_VERSION pour les applications UWP.
 
@@ -167,9 +167,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-Pour garantir que nous ne rendu plus souvent que l’écran peut s’afficher en fait, nous définissons la latence de trame à 1 et utilisez [ **DXGI\_échange\_effet\_FLIP\_séquentiel** ](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie 2 de cette procédure pas à pas.
+Pour garantir que nous ne rendu plus souvent que l’écran peut s’afficher en fait, nous définissons la latence de trame à 1 et utilisez [ **DXGI\_échange\_effet\_FLIP\_séquentiel** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie 2 de cette procédure pas à pas.
 
-> **Remarque**    vous pouvez utiliser le multithreading (par exemple, [ **ThreadPool** ](https://msdn.microsoft.com/library/windows/apps/br229642) des éléments de travail) pour continuer d’autres tâches pendant que le thread de rendu est bloqué.
+> **Remarque**    vous pouvez utiliser le multithreading (par exemple, [ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading) des éléments de travail) pour continuer d’autres tâches pendant que le thread de rendu est bloqué.
 
  
 

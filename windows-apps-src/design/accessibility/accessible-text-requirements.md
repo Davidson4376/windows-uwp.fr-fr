@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8dda866c877eb166c38949cfff5cec504103fd30
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653334"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359601"
 ---
 # <a name="accessible-text-requirements"></a>Exigences de texte accessible  
 
@@ -46,21 +46,21 @@ Utilisez des outils de contraste des couleurs pour vérifier que le coefficient 
 ## <a name="text-element-roles"></a>Rôles d’éléments de texte  
 Une application UWP peut utiliser les éléments par défaut suivants (couramment appelés *éléments de texte* ou *contrôles d’édition de texte*) :
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): rôle est [ **texte**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**Zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683): rôle est [ **modifier**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR227565) (et overflow classe [ **RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)) : le rôle est [ **texte**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): rôle est [ **modifier**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock): rôle est [ **texte**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**Zone de texte**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox): rôle est [ **modifier**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**RichTextBlock** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (et overflow classe [ **RichTextBlockOverflow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblockoverflow)) : le rôle est [ **texte**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox): rôle est [ **modifier**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 
-Quand un contrôle signale qu’il a le rôle [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182), les technologies d’assistance supposent qu’il existe un ou plusieurs moyens pour l’utilisateur de modifier les valeurs. Par conséquent, si vous placez du texte statique dans un objet [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), vous signalez de manière incorrecte le rôle et donc la structure de votre application à l’utilisateur d’accessibilité.
+Quand un contrôle signale qu’il a le rôle [**Edit**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType), les technologies d’assistance supposent qu’il existe un ou plusieurs moyens pour l’utilisateur de modifier les valeurs. Par conséquent, si vous placez du texte statique dans un objet [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), vous signalez de manière incorrecte le rôle et donc la structure de votre application à l’utilisateur d’accessibilité.
 
-Dans les modèles de texte pour XAML, deux éléments sont principalement utilisés pour le texte statique : [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) et [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565). Comme aucun de ces éléments n’est une sous-classe [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390), aucun des deux ne peut être actif via le clavier ou apparaître dans l’ordre de tabulation. Toutefois, cela ne signifie pas que les technologies d’assistance ne peuvent pas ou ne veulent pas les lire. Les lecteurs d’écran sont généralement conçus pour prendre en charge plusieurs modes de lecture du contenu dans une application, notamment un mode de lecture dédié ou des modèles de navigation qui vont au-delà du focus et de l’ordre de tabulation, comme un « curseur virtuel ». Par conséquent, ne placez pas votre texte statique dans des conteneurs pouvant être actifs simplement pour que l’ordre de tabulation y amène l’utilisateur. Les utilisateurs des technologies d’assistance s’attendent à ce que tous les éléments inclus dans l’ordre de tabulation soient interactifs. Par conséquent, le fait d’y rencontrer du texte statique peut s’avérer plus déroutant qu’utile. Nous vous recommandons de tester cette fonction vous-même, via le Narrateur, afin de vous faire une idée de l’expérience utilisateur liée à votre application lorsque vous utilisez le lecteur d’écran pour examiner le texte statique de cette dernière.
+Dans les modèles de texte pour XAML, deux éléments sont principalement utilisés pour le texte statique : [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Comme aucun de ces éléments n’est une sous-classe [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control), aucun des deux ne peut être actif via le clavier ou apparaître dans l’ordre de tabulation. Toutefois, cela ne signifie pas que les technologies d’assistance ne peuvent pas ou ne veulent pas les lire. Les lecteurs d’écran sont généralement conçus pour prendre en charge plusieurs modes de lecture du contenu dans une application, notamment un mode de lecture dédié ou des modèles de navigation qui vont au-delà du focus et de l’ordre de tabulation, comme un « curseur virtuel ». Par conséquent, ne placez pas votre texte statique dans des conteneurs pouvant être actifs simplement pour que l’ordre de tabulation y amène l’utilisateur. Les utilisateurs des technologies d’assistance s’attendent à ce que tous les éléments inclus dans l’ordre de tabulation soient interactifs. Par conséquent, le fait d’y rencontrer du texte statique peut s’avérer plus déroutant qu’utile. Nous vous recommandons de tester cette fonction vous-même, via le Narrateur, afin de vous faire une idée de l’expérience utilisateur liée à votre application lorsque vous utilisez le lecteur d’écran pour examiner le texte statique de cette dernière.
 
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 
 ## <a name="auto-suggest-accessibility"></a>Accessibilité de suggestion automatique  
-Lorsqu’un utilisateur effectue une saisie dans un champ d’entrée et qu’une liste de suggestions potentielles apparaît, il s’agit d’une suggestion automatique. Ce scénario est courant dans le champ **À :** d’un message, dans la zone de recherche Cortana de Windows, dans le champ d’entrée d’URL de Microsoft Edge, dans le champ d’entrée de situation géographique de l’application Météo, etc. Si vous utilisez la fonction XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) ou les commandes intrinsèques HTML, cette expérience est d’ores et déjà raccordée par défaut. Pour la rendre accessible, le champ d’entrée et la liste doivent être associés. Cette procédure est expliquée dans la section [Implémentation de la suggestion automatique](#implementing_auto-suggest).
+Lorsqu’un utilisateur effectue une saisie dans un champ d’entrée et qu’une liste de suggestions potentielles apparaît, il s’agit d’une suggestion automatique. Ce scénario est courant dans le champ **À :** d’un message, dans la zone de recherche Cortana de Windows, dans le champ d’entrée d’URL de Microsoft Edge, dans le champ d’entrée de situation géographique de l’application Météo, etc. Si vous utilisez la fonction XAML [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) ou les commandes intrinsèques HTML, cette expérience est d’ores et déjà raccordée par défaut. Pour la rendre accessible, le champ d’entrée et la liste doivent être associés. Cette procédure est expliquée dans la section [Implémentation de la suggestion automatique](#implementing_auto-suggest).
 
 La Narrateur a été mis à jour pour rendre cette expérience accessible avec un mode spécial de suggestions. À un niveau élevé, quand le champ d’entrée et la liste sont associés de manière appropriée, l’utilisateur final :
 
@@ -78,24 +78,24 @@ _Exemple d’une liste de suggestions_
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
 
 ### <a name="implementing-auto-suggest"></a>Implémentation de la suggestion automatique  
-Pour rendre cette expérience accessible, le champ d’entrée et la liste doivent être associés dans l’arborescence UIA. Cette association est effectuée avec la propriété [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) des applications de bureau ou la propriété [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) des applications UWP.
+Pour rendre cette expérience accessible, le champ d’entrée et la liste doivent être associés dans l’arborescence UIA. Cette association est effectuée avec la propriété [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) des applications de bureau ou la propriété [ControlledPeers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) des applications UWP.
 
 À un niveau élevé, il existe 2 types d’expériences de suggestion automatique.
 
 **Sélection par défaut**  
-Si une sélection par défaut est effectuée dans la liste, le Narrateur recherche un événement [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) dans l’application de bureau, ou l’événement [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) à déclencher dans une application UWP. Chaque fois que la sélection est modifiée, quand un utilisateur saisit une autre lettre et que les suggestions ont été mises à jour et quand un utilisateur parcourt la liste, l’événement **ElementSelected** doit être déclenché.
+Si une sélection par défaut est effectuée dans la liste, le Narrateur recherche un événement [**UIA_SelectionItem_ElementSelectedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids) dans l’application de bureau, ou l’événement [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) à déclencher dans une application UWP. Chaque fois que la sélection est modifiée, quand un utilisateur saisit une autre lettre et que les suggestions ont été mises à jour et quand un utilisateur parcourt la liste, l’événement **ElementSelected** doit être déclenché.
 
 ![Liste avec une sélection par défaut](images/autosuggest-default-selection.png)<br/>
 _Exemple où il existe une sélection par défaut_
 
 **Aucune sélection par défaut**  
-En cas d’absence de sélection par défaut, comme dans la zone de situation géographique de l’application Météo, le Narrateur recherche l’événement [**UIA_LayoutInvalidatedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223 ) de bureau ou l’événement UWP [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) à déclencher sur la liste à chaque mise à jour de cette dernière.
+En cas d’absence de sélection par défaut, comme dans la zone de situation géographique de l’application Météo, le Narrateur recherche l’événement [**UIA_LayoutInvalidatedEventId**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-event-ids) de bureau ou l’événement UWP [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) à déclencher sur la liste à chaque mise à jour de cette dernière.
 
 ![Liste sans aucune sélection par défaut](images/autosuggest-no-default-selection.png)<br/>
 _Exemple où il n’existe aucune sélection par défaut_
 
 ### <a name="xaml-implementation"></a>Implémentation XAML  
-Si vous utilisez la fonction XAML par défaut [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox), l’ensemble des connexions sont déjà effectuées. Si vous développez votre propre expérience de suggestion automatique à l’aide d’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) et d’une liste, vous devrez définir la liste en tant que [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) sur l’élément **TextBox**. Vous devez déclencher l’événement **AutomationPropertyChanged** de la propriété [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) chaque fois que vous ajoutez ou supprimez cette propriété, mais également déclencher vos propres événements [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) ou [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) en fonction de votre type de scénario, tel qu’expliqué plus haut dans cet article.
+Si vous utilisez la fonction XAML par défaut [**AutosuggestBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox), l’ensemble des connexions sont déjà effectuées. Si vous développez votre propre expérience de suggestion automatique à l’aide d’un élément [**TextBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) et d’une liste, vous devrez définir la liste en tant que [**AutomationProperties.ControlledPeers**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) sur l’élément **TextBox**. Vous devez déclencher l’événement **AutomationPropertyChanged** de la propriété [**ControlledPeers**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) chaque fois que vous ajoutez ou supprimez cette propriété, mais également déclencher vos propres événements [**SelectionItemPatternOnElementSelected**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) ou [**LayoutInvalidated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationevents) en fonction de votre type de scénario, tel qu’expliqué plus haut dans cet article.
 
 ### <a name="html-implementation"></a>Implémentation HTML  
 Si vous utilisez les contrôles intrinsèques du format HTML, l’implémentation UIA a d’ores et déjà été mappée. Vous trouverez ci-dessous un exemple d’une implémentation déjà connectée :
@@ -116,7 +116,7 @@ Si vous utilisez les contrôles intrinsèques du format HTML, l’implémentatio
 
 ## <a name="text-in-graphics"></a>Texte dans les graphiques
 
-Dans la mesure du possible, évitez d’inclure du texte dans un graphique. Par exemple, tout texte que vous placez dans le fichier source d’image et qui est affiché dans l’application en tant qu’élément [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) n’est pas automatiquement accessible ou lisible par les technologies d’assistance. Si vous devez utiliser du texte dans des graphiques, assurez-vous que la valeur [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) que vous fournissez comme équivalent de alt text comprend ce texte ou un résumé de la signification du texte. Des considérations semblables s’appliquent si vous créez des caractères texte à partir de vecteurs dans le cadre d’un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) ou à l’aide de [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921).
+Dans la mesure du possible, évitez d’inclure du texte dans un graphique. Par exemple, tout texte que vous placez dans le fichier source d’image et qui est affiché dans l’application en tant qu’élément [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) n’est pas automatiquement accessible ou lisible par les technologies d’assistance. Si vous devez utiliser du texte dans des graphiques, assurez-vous que la valeur [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) que vous fournissez comme équivalent de alt text comprend ce texte ou un résumé de la signification du texte. Des considérations semblables s’appliquent si vous créez des caractères texte à partir de vecteurs dans le cadre d’un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) ou à l’aide de [**Glyphs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Glyphs).
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
@@ -172,12 +172,12 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 La valeur de **TextScaleFactor** est un double de la plage \[1,2.25\]. Le texte le plus petit subit un agrandissement de cette ampleur. Vous pouvez par exemple utiliser la valeur pour adapter des éléments graphiques au texte. Gardez toutefois à l’esprit que tout le texte n’est pas mis à l’échelle selon le même facteur. En règle générale, plus la taille du texte initial est élevée, moins le texte est affecté par la mise à l’échelle.
 
 Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :  
-* [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [**Contrôle** ](https://msdn.microsoft.com/library/windows/apps/BR209390) et classes dérivées
-* [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [**TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967) et classes dérivées
+* [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
+* [**Contrôle** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) et classes dérivées
+* [**FontIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon)
+* [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+* [**TextElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.TextElement) et classes dérivées
 
 <span id="related_topics"/>
 

@@ -5,20 +5,20 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, services du Store, API d’analyse du Microsoft Store, trace de pile, erreur, application de bureau
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4aaa71c431a9dac6ad6650d05f71df897f0884fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659894"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372682"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Obtenir la trace de pile concernant une erreur dans votre application de bureau
 
-Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir la trace de pile d'une erreur dans une application de bureau que vous avez ajoutée au [Programme pour applications de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Cette méthode ne peut télécharger que la trace de pile concernant une erreur survenue dans les 30 derniers jours. Traces de pile sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans l’espace partenaires.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir la trace de pile d'une erreur dans une application de bureau que vous avez ajoutée au [Programme pour applications de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Cette méthode ne peut télécharger que la trace de pile concernant une erreur survenue dans les 30 derniers jours. Traces de pile sont également disponibles dans le [rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) pour les applications de bureau dans l’espace partenaires.
 
 Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer le hachage d'ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
@@ -27,7 +27,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Obtenez le hachage d’ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
@@ -39,16 +39,16 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
  
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Paramètre        | Type   |  Description      |  Obligatoire  |
+| Paramètre        | type   |  Description      |  Obligatoire  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L'ID produit de l’application de bureau dont vous souhaitez obtenir une trace de pile. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [analytique de rapports pour votre application de bureau partenaires](https://msdn.microsoft.com/library/windows/desktop/mt826504) (telles que la **rapport d’intégrité**) et récupérer l’ID de produit dans l’URL. |  Oui  |
+| applicationId | chaîne | L'ID produit de l’application de bureau dont vous souhaitez obtenir une trace de pile. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [analytique de rapports pour votre application de bureau partenaires](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (telles que la **rapport d’intégrité**) et récupérer l’ID de produit dans l’URL. |  Oui  |
 | cabIdHash | chaîne | Le hachage d'ID unique du fichier CAB associé à l’erreur dont vous souhaitez récupérer la trace de pile. Pour obtenir cette valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse. |  Oui  |
 
  
@@ -66,20 +66,20 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type    | Description                  |
+| Value      | type    | Description                  |
 |------------|---------|--------------------------------|
-| Valeur      | tableau   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
+| Value      | tableau   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10, mais que plus de 10 lignes d’erreur sont associées à la requête. |
-| TotalCount | Entier | Nombre total de lignes dans les résultats de la requête.          |
+| TotalCount | entier | Nombre total de lignes dans les résultats de la requête.          |
 
 
 ### <a name="stack-trace-values"></a>Valeurs de la trace de pile
 
 Les éléments du tableau *Value* comportent les valeurs suivantes :
 
-| Valeur           | Type    | Description      |
+| Value           | type    | Description      |
 |-----------------|---------|----------------|
-| level            | chaîne  |  Numéro de l’image représentant cet élément dans la pile d’appels.  |
+| niveau            | chaîne  |  Numéro de l’image représentant cet élément dans la pile d’appels.  |
 | image   | chaîne  |   Nom du fichier exécutable ou de l’image de bibliothèque qui contient la fonction appelée dans cette image de pile.           |
 | function | chaîne  |  Nom de la fonction appelée dans cette image de pile. Cette fonctionnalité n’est disponible que si votre application contient des symboles pour le fichier exécutable ou la bibliothèque.              |
 | offset     | chaîne  |  Décalage d’octet de l’instruction actuelle par rapport au début de la fonction.      |

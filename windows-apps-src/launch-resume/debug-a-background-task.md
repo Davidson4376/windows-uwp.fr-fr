@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ae12bbb2bad1fbcd663f5be8f26656d640afc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599204"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366204"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
 
 **API importantes**
--   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [Windows.ApplicationModel.Background](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.
 
@@ -36,16 +36,16 @@ Cette rubrique part du principe que vous disposez d’une application avec une t
 
 Les tâches en arrière-plan peuvent être déclenchées manuellement par le biais de Microsoft Visual Studio. Vous pouvez ensuite exécuter pas à pas le code et le déboguer.
 
-1.  En C#, insérez un point d’arrêt dans la méthode Run de la classe en arrière-plan (pour les tâches en arrière-plan in-process, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
+1.  En C#, insérez un point d’arrêt dans la méthode Run de la classe en arrière-plan (pour les tâches en arrière-plan in-process, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**System.Diagnostics**](https://docs.microsoft.com/dotnet/api/system.diagnostics?view=netframework-4.7.2).
 
-    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan (pour les tâches en arrière-plan in-process, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
+    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan (pour les tâches en arrière-plan in-process, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**OutputDebugString**](https://docs.microsoft.com/windows/desktop/api/debugapi/nf-debugapi-outputdebugstringw).
 
 2.  Exécutez votre application dans le débogueur, puis déclenchez la tâche en arrière-plan à l’aide de la barre d’outils **Événements de cycle de vie**. Ce menu déroulant affiche le nom des tâches en arrière-plan qu’il est possible d’activer à l’aide de Visual Studio.
 
     Pour que cette opération fonctionne, la tâche en arrière-plan, doit déjà être inscrite et doit toujours attendre le déclencheur. Par exemple, si une tâche en arrière-plan a été inscrite avec un TimeTrigger à déclenchement unique qui a déjà été déclenché, le lancement de la tâche via Visual Studio n’aura aucun effet.
 
 > [!Note]
-> Impossible d’activer les tâches en arrière-plan en utilisant les déclencheurs suivants de cette manière : [**Déclencheur d’application**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [ **MediaProcessing déclencheur**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx), [ **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), [ **PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)et les tâches en arrière-plan à l’aide un [ **SystemTrigger** ](https://msdn.microsoft.com/library/windows/apps/br224838) avec la [  **SmsReceived** ](https://msdn.microsoft.com/library/windows/apps/br224839) déclencher type.  
+> Impossible d’activer les tâches en arrière-plan en utilisant les déclencheurs suivants de cette manière : [**Déclencheur d’application**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [ **MediaProcessing déclencheur**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [ **PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)et les tâches en arrière-plan à l’aide un [ **SystemTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) avec la [  **SmsReceived** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) déclencher type.  
 > Les déclencheurs **ApplicationTrigger** et **MediaProcessingTrigger** peuvent être déclarés manuellement dans le code avec `trigger.RequestAsync()`.
 
 ![Débogage de tâches en arrière-plan](images/debugging-activation.png)
@@ -71,7 +71,7 @@ L’activation de la tâche en arrière-plan dépend de trois éléments :
 
     -   En C# et C++, l’attribut de point d’entrée doit correspondre à l’espace de noms de la tâche en arrière-plan suivi du nom de la classe. Exemple : RuntimeComponent1.MyBackgroundTask.
     -   Tous les types de déclencheurs utilisés avec la tâche doivent également être indiqués.
-    -   Le fichier exécutable NE doit PAS être spécifié sauf si vous utilisez l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) ou [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).
+    -   Le fichier exécutable NE doit PAS être spécifié sauf si vous utilisez l’objet [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) ou [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger).
 
 3.  Windows uniquement. Pour afficher le point d’entrée utilisé par Windows afin d’activer la tâche en arrière-plan, activez le suivi de débogage et utilisez le journal des événements Windows.
 
@@ -101,7 +101,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, consultez [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 -   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, consultez [comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, consultez [comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -110,8 +110,8 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

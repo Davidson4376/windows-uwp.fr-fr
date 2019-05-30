@@ -11,23 +11,23 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28188acfd3999c0b384326f013a0ba1bdf71a34f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642174"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370752"
 ---
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
 **API importantes**
 
--   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
--   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
+-   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+-   [**Windows.UI.Xaml.Application.OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)
 
 Votre application peut s’inscrire pour qu’il devienne le gestionnaire par défaut pour un certain type de fichier. Tant les applications de plateforme Windows classique (CWP) que les applications de plateforme Windows universelle (UWP) peuvent s’inscrire pour devenir gestionnaire de fichiers par défaut. Si l’utilisateur choisit votre application en tant que gestionnaire par défaut pour un certain type de fichier, celle-ci sera activée lors du lancement de ce type de fichier.
 
-Nous vous recommandons de vous inscrire uniquement pour un type de fichier si vous pensez gérer tous les lancements de fichiers pour ce type. Si votre application nécessite uniquement d’utiliser ce type de fichier en interne, vous ne devez pas vous inscrire pour devenir le gestionnaire par défaut. Si vous choisissez de vous inscrire pour un type de fichier, vous devez fournir à l’utilisateur final la fonctionnalité attendue lorsque votre application est activée pour ce type de fichier. Par exemple, une visionneuse d’images doit s’inscrire pour afficher un fichier .jpg. Pour plus d’informations sur les associations de fichiers, voir [Recommandations en matière de types de fichier et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321).
+Nous vous recommandons de vous inscrire uniquement pour un type de fichier si vous pensez gérer tous les lancements de fichiers pour ce type. Si votre application nécessite uniquement d’utiliser ce type de fichier en interne, vous ne devez pas vous inscrire pour devenir le gestionnaire par défaut. Si vous choisissez de vous inscrire pour un type de fichier, vous devez fournir à l’utilisateur final la fonctionnalité attendue lorsque votre application est activée pour ce type de fichier. Par exemple, une visionneuse d’images doit s’inscrire pour afficher un fichier .jpg. Pour plus d’informations sur les associations de fichiers, voir [Recommandations en matière de types de fichier et d’URI](https://docs.microsoft.com/windows/uwp/files/index).
 
 Ces étapes montrent comment s’inscrire pour un type de fichier personnalisé, alsdk, et comment activer votre application quand l’utilisateur lance un fichier alsdk.
 
@@ -37,15 +37,15 @@ Ces étapes montrent comment s’inscrire pour un type de fichier personnalisé,
 
 L’application reçoit des événements d’activation uniquement pour les extensions de fichiers répertoriées dans le manifeste du package. Procédez comme suit pour indiquer que votre application gère les fichiers portant l’extension `.alsdk`.
 
-1.  Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichier**, puis cliquez sur **Ajouter**. Pour plus d’informations sur les identificateurs utilisés par les associations de fichiers, voir [Identificateurs programmatiques](https://msdn.microsoft.com/library/windows/desktop/cc144152).
+1.  Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichier**, puis cliquez sur **Ajouter**. Pour plus d’informations sur les identificateurs utilisés par les associations de fichiers, voir [Identificateurs programmatiques](https://docs.microsoft.com/windows/desktop/shell/fa-progids).
 
     Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste :
 
 | Champ | Description |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Nom d’affichage** | Spécifiez le nom complet d’un groupe de types de fichiers. Le nom d’affichage sert à identifier le type de fichier dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. |
-| **Logo** | Spécifiez le logo utilisé pour identifier le type de fichier sur le Bureau et dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. Si aucun logo n’est spécifié, le petit logo de l’application est utilisé. |
-| **Info-bulle** | Spécifiez l’[info-bulle](https://msdn.microsoft.com/library/windows/desktop/cc144152) d’un groupe de types de fichier. Cette info-bulle s’affiche quand l’utilisateur pointe sur l’icône d’un fichier de ce type avec la souris. |
+| **Nom d’affichage** | Spécifiez le nom complet d’un groupe de types de fichiers. Le nom d’affichage sert à identifier le type de fichier dans l’option [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. |
+| **Logo** | Spécifiez le logo utilisé pour identifier le type de fichier sur le Bureau et dans l’option [Définir les programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs) du **Panneau de configuration**. Si aucun logo n’est spécifié, le petit logo de l’application est utilisé. |
+| **Info-bulle** | Spécifiez l’[info-bulle](https://docs.microsoft.com/windows/desktop/shell/fa-progids) d’un groupe de types de fichier. Cette info-bulle s’affiche quand l’utilisateur pointe sur l’icône d’un fichier de ce type avec la souris. |
 | **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque**  Le nom doit être indiqué entièrement en minuscules. |
 | **Type de contenu** | Spécifiez le type de contenu MIME, par exemple **image/jpeg**, pour un type de fichier particulier. **Remarque importante à propos des types de contenu autorisés :** Voici une liste alphabétique des types de contenu MIME que vous ne pouvez pas entrer dans le manifeste du package, car elles sont réservées ou interdits : **application/force-téléchargement**, **application/octet-stream**, **application/inconnu**, **application/x-msdownload**. |
 | **Type de fichier** | Indiquez le type de fichier à inscrire, précédé d’un point (par exemple, « .jpeg »). **Types de fichiers interdits et non réservés :** Consultez [les types de fichiers et les noms de schéma URI réservé](reserved-uri-scheme-names.md) pour obtenir une liste alphabétique des types de fichiers pour les applications intégrées que vous ne pouvez pas inscrire pour vos applications UWP, car ils sont réservés ou interdits. |
@@ -55,7 +55,7 @@ L’application reçoit des événements d’activation uniquement pour les exte
 4.  Entrez « images\\Icon.png » en tant que le Logo.
 5.  Appuyez sur Ctrl+S pour enregistrer la modification dans package.appxmanifest.
 
-Les étapes ci-dessus ajoutent un élément [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) tel que celui-ci dans le manifeste du package. La catégorie **windows.fileTypeAssociation** indique que l’application gère les fichiers portant l’extension `.alsdk`.
+Les étapes ci-dessus ajoutent un élément [**Extension**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension) tel que celui-ci dans le manifeste du package. La catégorie **windows.fileTypeAssociation** indique que l’application gère les fichiers portant l’extension `.alsdk`.
 
 ```xml
       <Extensions>
@@ -83,7 +83,7 @@ Incluez une icône 44 x 44 de votre projet, afin que votre logo puisse appara�
 
 ## <a name="step-3-handle-the-activated-event"></a>Étape 3 : Gérer l’événement activé
 
-Le gestionnaire d’événements [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) reçoit tous les événements d’activation des fichiers.
+Le gestionnaire d’événements [**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated) reçoit tous les événements d’activation des fichiers.
 
 ```csharp
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -129,7 +129,7 @@ Lorsque votre application est lancée par le biais de l’activation du fichier,
 
 ## <a name="remarks"></a>Notes
 
-Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](https://go.microsoft.com/fwlink/p/?LinkID=142053).
+Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -139,8 +139,8 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 ### <a name="concepts"></a>Concepts
 
-* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Type de fichier et le modèle d’Associations de protocole](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [Programmes par défaut](https://docs.microsoft.com/windows/desktop/shell/default-programs)
+* [Type de fichier et le modèle d’Associations de protocole](https://docs.microsoft.com/windows/desktop/w8cookbook/file-type-and-protocol-associations-model)
 
 ### <a name="tasks"></a>Tâches
 
@@ -149,8 +149,8 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 ### <a name="guidelines"></a>Recommandations
 
-* [Instructions pour les types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Instructions pour les types de fichiers et d’URI](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### <a name="reference"></a>Référence
-* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [Windows.UI.Xaml.Application.OnFileActivated](https://msdn.microsoft.com/library/windows/apps/br242331)
+* [Windows.ApplicationModel.Activation.FileActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+* [Windows.UI.Xaml.Application.OnFileActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

@@ -1,16 +1,16 @@
 ---
 description: Un objet agile est un objet qui est accessible à partir de n’importe quel thread. Vos types C++/WinRT sont agiles par défaut, mais vous pouvez le refuser.
 title: Objets agiles avec C++/WinRT
-ms.date: 10/20/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291778"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360332"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C / c++ / WinRT
 
@@ -19,7 +19,7 @@ Dans la grande majorité des cas, une instance d’une classe Windows Runtime es
 Mais vous pouvez le refuser. Une bonne raison pour exiger un objet de votre type réside, par exemple, dans un thread unique cloisonné donné peut avoir. Cela est généralement lié aux exigences de réentrance. Mais, de plus en plus, même les API d’interface utilisateur proposent des objets agiles. En règle générale, l’agilité est l’option la plus simple et la plus performante. En outre, lorsque vous implémentez une usine d’activation, elle doit être agile même si votre classe runtime correspondante ne l’est pas.
 
 > [!NOTE]
-> Windows Runtime est basé sur COM. En termes COM, une classe agile est inscrite avec `ThreadingModel` = *Both*. Pour plus d’informations sur les modèles et les cloisonnements de thread COM, consultez [compréhension et Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).
+> Windows Runtime est basé sur COM. En termes COM, une classe agile est inscrite avec `ThreadingModel` = *Both*. Pour plus d’informations sur les modèles et les cloisonnements de thread COM, consultez [compréhension et Using COM Threading Models](/previous-versions/ms809971(v=msdn.10)).
 
 ## <a name="code-examples"></a>Exemples de code
 
@@ -37,7 +37,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-Étant donné que nous ne l’avons pas refusé, cette implémentation est agile. La structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) implémente [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) et [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). L’implémentation **IMarshal** utilise **CoCreateFreeThreadedMarshaler** pour faire ce qu’il convient pour le code hérité qui ne connaît pas **IAgileObject**.
+Étant donné que nous ne l’avons pas refusé, cette implémentation est agile. La structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) implémente [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) et [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). L’implémentation **IMarshal** utilise **CoCreateFreeThreadedMarshaler** pour faire ce qu’il convient pour le code hérité qui ne connaît pas **IAgileObject**.
 
 Ce code vérifie l’agilité d’un objet. L’appel à [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) lève une exception si `myimpl` n’est pas agile.
 
@@ -115,7 +115,7 @@ L’appel [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-fun
 
 ## <a name="important-apis"></a>API importantes
 
-* [Interface de IAgileObject](https://msdn.microsoft.com/library/windows/desktop/hh802476)
+* [Interface de IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal (interface)](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [winrt::agile_ref struct template](/uwp/cpp-ref-for-winrt/agile-ref)
 * [modèle de struct WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
@@ -126,4 +126,4 @@ L’appel [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-fun
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Comprendre et utiliser des modèles de thread COM.](https://msdn.microsoft.com/library/ms809971)
+* [Comprendre et utiliser des modèles de thread COM.](/previous-versions/ms809971(v=msdn.10))

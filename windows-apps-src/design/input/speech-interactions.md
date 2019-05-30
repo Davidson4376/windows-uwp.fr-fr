@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637074"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365297"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
@@ -23,7 +23,7 @@ Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocal
 
 **Conversion de texte par synthèse vocale (TTS)** La conversion de texte par synthèse vocale (TTS) utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
 
-**Autres composants de reconnaissance vocale :**
+**Autres composants de reconnaissance vocale :** 
 **Cortana** dans les applications Windows utilise des commandes vocales personnalisées (parlées ou écrites) pour lancer votre application au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou l’activer en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application). Consultez les [Recommandations en matière de commandes vocales Cortana (VCD)](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd) si vous proposez des fonctionnalités d’application dans l’interface utilisateur **Cortana**.
 
 ## <a name="speech-interaction-design"></a>Conception de l’interaction vocale
@@ -164,7 +164,7 @@ Une grammaire personnalisée est conçue et créée par vous-même, et installé
     -   Limitez chaque grammaire. Les grammaires qui contiennent peu d’expressions ont tendance à offrir une reconnaissance plus précise que les grammaires complexes qui contiennent de nombreuses expressions. Il est préférable d’utiliser plusieurs grammaires de taille réduite pour les différents scénarios plutôt qu’une seule grammaire pour la totalité de l’application.
     -   Indiquez aux utilisateurs ce qu’ils doivent dire pour chaque contexte d’application, et activez et désactivez les grammaires selon les besoins.
     -   Concevez chaque grammaire de manière à ce que les utilisateurs puissent prononcer une commande de différentes manières. Par exemple, vous pouvez utiliser la règle **GARBAGE** pour accepter la saisie vocale que votre grammaire ne définit pas. Cela permet aux utilisateurs de prononcer des mots supplémentaires qui n’ont aucune signification pour votre application. Par exemple, « donnez-moi », « et », « euh », « peut-être », etc.
-    -   Utilisez l’élément [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
+    -   Utilisez l’élément [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
     -   Évitez de définir des expressions dans votre grammaire qui ne contiennent qu’une seule syllabe. La reconnaissance tend à être plus précise pour les expressions contenant au moins deux syllabes.
     -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que « matin », « châtain » et « latin » peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
 
@@ -175,9 +175,9 @@ Une grammaire personnalisée est conçue et créée par vous-même, et installé
 
 Si votre application contient un vocabulaire spécialisé avec des mots inhabituels, fictifs ou dont la prononciation est particulière, vous pouvez améliorer leur reconnaissance en définissant des prononciations personnalisées.
 
-Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx).
+Pour une petite liste de mots et d’expressions, ou une liste de mots et d’expressions rarement utilisés, vous pouvez créer des prononciations personnalisées dans une grammaire SRGS. Pour plus d’informations, voir [Élément token](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)).
 
-Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx).
+Pour les listes de mots et d’expressions plus conséquentes, ou pour les mots et les expressions fréquemment utilisés, vous pouvez créer des documents de lexique de prononciation distincte. Pour plus d’informations, voir [À propos des lexiques et des alphabets phonétiques](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
 ## <a name="testing"></a>Test
 
@@ -200,7 +200,7 @@ Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elle
 -   En reliant une séquence de mots inhabituels ou en prononçant des numéros de référence ou des signes de ponctuation, l’expression risque de devenir incompréhensible.
 -   La parole peut manquer de naturel lorsque la prosodie ou l’intonation est différente de la façon dont un locuteur natif prononcerait une expression.
 
-Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section 
 
@@ -215,8 +215,8 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions vocales](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Interactions avec Cortana](https://msdn.microsoft.com/library/windows/apps/mt185598)
+* [Interactions vocales](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+* [Interactions avec Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
 
  **Exemples**
 

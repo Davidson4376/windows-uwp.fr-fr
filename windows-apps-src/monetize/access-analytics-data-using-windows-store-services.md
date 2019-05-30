@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, services du Microsoft Store, API d'analyse du Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334857"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371998"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -95,7 +95,7 @@ Méthodes analytique suivantes sont disponibles pour les applications UWP dans P
 
 ### <a name="methods-for-desktop-applications"></a>Méthodes pour les applications de bureau
 
-Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de développeur appartenant au [programme d'application de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504).
+Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de développeur appartenant au [programme d'application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program).
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|
@@ -125,7 +125,7 @@ Les méthodes supplémentaires suivantes sont disponibles pour une utilisation p
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
-Les comptes de développeurs qui appartiennent à la [programme de tableau de bord de matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un jeu supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, consultez [tableau de bord de matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Les comptes de développeurs qui appartiennent à la [programme de tableau de bord de matériel Windows](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un jeu supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, consultez [tableau de bord de matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Exemple de code
 

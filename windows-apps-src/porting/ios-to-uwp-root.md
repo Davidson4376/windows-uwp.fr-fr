@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ddcb64aed8205f18b17706e987cbd9981bb8044
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d3f72e563f6463d55af40acae74d061b5030aa9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655464"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371610"
 ---
 # <a name="move-from-ios-to-uwp"></a>Migrer d’iOS vers UWP
 
@@ -34,4 +34,4 @@ Aujourd’hui, Windows est exécuté sur un nombre considérable d’appareils. 
 
 **Pour les concepteurs et les développeurs**
 * [Création d’applications Windows universelles pour tous les appareils Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Télécharger des ressources de conception pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+* [Télécharger des ressources de conception pour les applications UWP](https://dev.windows.com/design/assets)

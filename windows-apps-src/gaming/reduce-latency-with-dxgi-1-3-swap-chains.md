@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, latence, dxgi, chaînes d’échange
 ms.localizationpriority: medium
-ms.openlocfilehash: acb5c58eebafa53fe140442550356f7eb7534efe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dbf4935abc543b1c11fbbee32812a7702298cd79
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594914"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368181"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Réduire la latence avec des chaînes d’échange DXGI 1.3
 
@@ -22,20 +22,20 @@ Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que 
 ## <a name="how-does-waiting-on-the-back-buffer-reduce-latency"></a>Comment la mise en file d’attente en mémoire tampon d’arrière-plan peut-elle réduire la latence ?
 
 
-Avec la chaîne de permutation de modèle de retournement, les « retournements » de la mémoire tampon d’arrière-plan sont placés en file d’attente chaque fois que votre jeu appelle [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Quand la boucle de rendu appelle Present(), le système bloque le thread jusqu’à ce qu’il ait fini de présenter une image précédente, ce qui libère de l’espace pour la mise en file d’attente de la nouvelle image, avant la présentation réelle. Cela entraîne une latence supplémentaire entre le moment où le jeu dessine une image et le moment où le système lui permet d’afficher cette image. Bien souvent, le système atteint un état d’équilibre quand le jeu attend une image supplémentaire complète entre le moment du rendu et la présentation de chaque image. Il est préférable d’attendre que le système soit prêt à accepter une nouvelle image, puis d’effectuer le rendu en fonction des données actuelles et de mettre immédiatement l’image en file d’attente.
+Avec la chaîne de permutation de modèle de retournement, les « retournements » de la mémoire tampon d’arrière-plan sont placés en file d’attente chaque fois que votre jeu appelle [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present). Quand la boucle de rendu appelle Present(), le système bloque le thread jusqu’à ce qu’il ait fini de présenter une image précédente, ce qui libère de l’espace pour la mise en file d’attente de la nouvelle image, avant la présentation réelle. Cela entraîne une latence supplémentaire entre le moment où le jeu dessine une image et le moment où le système lui permet d’afficher cette image. Bien souvent, le système atteint un état d’équilibre quand le jeu attend une image supplémentaire complète entre le moment du rendu et la présentation de chaque image. Il est préférable d’attendre que le système soit prêt à accepter une nouvelle image, puis d’effectuer le rendu en fonction des données actuelles et de mettre immédiatement l’image en file d’attente.
 
-Créer une chaîne de permutation pouvant être attendu avec la [ **DXGI\_échange\_chaîne\_indicateur\_FRAME\_latence\_WAITABLE\_objet** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) indicateur. Les chaînes d’échange créées de cette manière peuvent informer votre boucle de rendu, une fois que le système est prêt à accepter une nouvelle image. Cela permet à votre jeu d’effectuer le rendu en fonction des données actuelles, puis de placer le résultat immédiatement en file d’attente de présentation.
+Créer une chaîne de permutation pouvant être attendu avec la [ **DXGI\_échange\_chaîne\_indicateur\_FRAME\_latence\_WAITABLE\_objet** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) indicateur. Les chaînes d’échange créées de cette manière peuvent informer votre boucle de rendu, une fois que le système est prêt à accepter une nouvelle image. Cela permet à votre jeu d’effectuer le rendu en fonction des données actuelles, puis de placer le résultat immédiatement en file d’attente de présentation.
 
 ## <a name="step-1-create-a-waitable-swap-chain"></a>Étape 1 : Créer une chaîne de permutation pouvant être attendu
 
 
-Spécifiez le [ **DXGI\_échange\_chaîne\_indicateur\_FRAME\_latence\_WAITABLE\_objet** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) indicateur lorsque vous appelez [ **CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).
+Spécifiez le [ **DXGI\_échange\_chaîne\_indicateur\_FRAME\_latence\_WAITABLE\_objet** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) indicateur lorsque vous appelez [ **CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Remarque**    Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou supprimés à l’aide de [ **ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
+> **Remarque**    Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou supprimés à l’aide de [ **ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
 
  
 
@@ -53,7 +53,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 ## <a name="step-2-set-the-frame-latency"></a>Étape 2 : Définir la latence de frame
 
 
-Définissez la latence d’image avec l’API [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313), au lieu d’appeler [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334).
+Définissez la latence d’image avec l’API [**IDXGISwapChain2::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-setmaximumframelatency), au lieu d’appeler [**IDXGIDevice1::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency).
 
 Par défaut, la valeur de latence d’image pour les chaînes d’échange d’attente est égale à 1, ce qui correspond à la latence la plus faible. Toutefois, cela réduit également le parallélisme entre l’UC et le processeur graphique. Si vous avez besoin d’un parallélisme plus important entre l’UC et le processeur graphique afin d’atteindre 60 FPS (en d’autres termes, si l’UC et le processeur graphique consacrent chacun moins de 16,7 ms au rendu d’une image, mais qu’ils consacrent à eux deux plus de 16,7 ms), affectez la valeur 2 à la latence d’image. Cela permet au processeur graphique de traiter les travaux mis en file d’attente par l’UC durant le traitement de l’image précédente, tout en permettant à l’UC d’envoyer les commandes de rendu de l’image actuelle de façon indépendante.
 
@@ -71,7 +71,7 @@ Par défaut, la valeur de latence d’image pour les chaînes d’échange d’a
 ## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Étape 3 : Obtenir l’objet pouvant être attendu à partir de la chaîne de permutation
 
 
-Appelez [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) pour récupérer le handle d’attente. Le handle d’attente est un pointeur vers l’objet d’attente. Conservez ce handle afin qu’il soit utilisé par votre boucle de rendu.
+Appelez [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject) pour récupérer le handle d’attente. Le handle d’attente est un pointeur vers l’objet d’attente. Conservez ce handle afin qu’il soit utilisé par votre boucle de rendu.
 
 ```cpp
 // Get the frame latency waitable object, which is used by the WaitOnSwapChain method. This
@@ -83,7 +83,7 @@ m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ## <a name="step-4-wait-before-rendering-each-frame"></a>Étape 4 : Attente avant le rendu de chaque image
 
 
-Votre boucle de rendu doit attendre le signal de la chaîne de permutation via l’objet d’attente avant de commencer à effectuer le rendu de chaque image. Cela inclut la première image rendue avec la chaîne d’échange. Utilisez [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036), en fournissant le handle d’attente récupéré à l’étape 2, pour signaler le début de chaque image.
+Votre boucle de rendu doit attendre le signal de la chaîne de permutation via l’objet d’attente avant de commencer à effectuer le rendu de chaque image. Cela inclut la première image rendue avec la chaîne d’échange. Utilisez [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex), en fournissant le handle d’attente récupéré à l’étape 2, pour signaler le début de chaque image.
 
 L’exemple ci-après illustre la boucle de rendu de l’exemple DirectXLatency :
 
@@ -148,13 +148,13 @@ Pour plus d’informations sur la programmation multithread dans Windows, voir l
 
 
 * [Exemple de DirectXLatency](https://go.microsoft.com/fwlink/p/?LinkID=317361)
-* [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
-* [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
-* [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)
-* [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334)
-* [Processus et Threads](https://msdn.microsoft.com/library/windows/desktop/ms684841)
-* [Synchronisation](https://msdn.microsoft.com/library/windows/desktop/ms686353)
-* [À l’aide des objets d’événements (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
+* [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
+* [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
+* [**Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+* [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [Processus et Threads](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
+* [Synchronisation](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
+* [À l’aide des objets d’événements (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
 
  
 

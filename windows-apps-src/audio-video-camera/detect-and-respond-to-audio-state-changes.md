@@ -6,17 +6,17 @@ ms.date: 04/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69eeb82fd9a1e043e99b7fe0d635ca750779eda5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a680347e9d1a749cc6e1d86ef1f02da280b4b74
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631674"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361779"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>Détecter les changements d’état audio et y répondre
 À partir de Windows 10, version 1803, votre application peut détecter quand le système baisse ou désactive le niveau audio d’un flux audio utilisé par votre application. Vous pouvez recevoir des notifications pour les flux de capture et de rendu, pour un périphérique audio et une catégorie audio spécifiques, ou pour un objet [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) que votre application utilise pour la lecture multimédia. Par exemple, le système peut baisser, ou « atténuer », le niveau de lecture audio lorsqu’une alarme sonne. Le système désactive votre application lorsqu’elle passe à l’arrière-plan si la fonctionnalité *backgroundMediaPlayback* n’a pas été déclarée dans le manifeste de l’application. 
 
-Le modèle de gestion des changements d’état audio est identique pour tous les flux audio pris en charge. Tout d’abord, créez une instance de la classe [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor). Dans l’exemple suivant, l’application utilise la classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) pour capturer le contenu audio des conversations de jeu. Une méthode de fabrique est appelée pour obtenir une analyse de l’état audio associée au flux de capture audio des conversations de jeu de l’appareil de communication par défaut.  Ensuite, un gestionnaire est enregistré pour l’événement [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) qui est déclenché lorsque le niveau audio du flux associé est modifié par le système.
+Le modèle de gestion des changements d’état audio est identique pour tous les flux audio pris en charge. Tout d’abord, créez une instance de la classe [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor). Dans l’exemple suivant, l’application utilise la classe [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) pour capturer le contenu audio des conversations de jeu. Une méthode de fabrique est appelée pour obtenir une analyse de l’état audio associée au flux de capture audio des conversations de jeu de l’appareil de communication par défaut.  Ensuite, un gestionnaire est enregistré pour l’événement [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) qui est déclenché lorsque le niveau audio du flux associé est modifié par le système.
 
 [!code-cs[DeviceIdCategoryVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeviceIdCategoryVars)]
 
@@ -28,7 +28,7 @@ Dans le **SoundLevelChanged** Gestionnaire d’événements, vérifiez le [ **So
 
 Pour plus d’informations sur la capture audio avec **MediaCapture**, voir [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
-Chaque instance de la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) a un objet **AudioStateMonitor** associé que vous pouvez utiliser pour détecter quand le système change le niveau de volume du contenu en cours de lecture. Vous pouvez décider de gérer les changements d’état audio différemment selon le type de contenu en cours de lecture. Par exemple, vous pouvez décider de suspendre la lecture d’un podcast lorsque le volume est baissé, mais de continuer la lecture si le contenu est de la musique. 
+Chaque instance de la classe [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) a un objet **AudioStateMonitor** associé que vous pouvez utiliser pour détecter quand le système change le niveau de volume du contenu en cours de lecture. Vous pouvez décider de gérer les changements d’état audio différemment selon le type de contenu en cours de lecture. Par exemple, vous pouvez décider de suspendre la lecture d’un podcast lorsque le volume est baissé, mais de continuer la lecture si le contenu est de la musique. 
 
 [!code-cs[AudioStateVars](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
 

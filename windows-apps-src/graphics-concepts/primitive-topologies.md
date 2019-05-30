@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d1c41fc10f509f3872fb1e4a0af5fa1e1e7c30
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0b7a60b3eba8545eeeea4cf477a40e044578c166
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631394"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371244"
 ---
 # <a name="primitive-topologies"></a>Topologies de primitive
 
@@ -69,7 +69,7 @@ Les symboles contenus dans l’illustration précédente sont décrits dans le t
 ## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Génération de plusieurs bandes
 
 
-La fonction de coupe par bandes permet de générer plusieurs bandes. Vous pouvez effectuer une coupe par bandes en appelant explicitement la fonction HLSL[RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660), ou encore en insérant une valeur d’index spéciale dans le tampon d’index. Cette valeur est -1, qui correspond à 0xffffffff pour les index de 32 bits ou à 0xffff pour les index de 16 bits.
+La fonction de coupe par bandes permet de générer plusieurs bandes. Vous pouvez effectuer une coupe par bandes en appelant explicitement la fonction HLSL[RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip), ou encore en insérant une valeur d’index spéciale dans le tampon d’index. Cette valeur est -1, qui correspond à 0xffffffff pour les index de 32 bits ou à 0xffff pour les index de 16 bits.
 
 Un index de – 1 indique une fonction explicite ’cut’ ou ’restart’ de la bande actuelle. L’index précédent termine la primitive ou la bande précédente, et l’index suivant démarre une nouvelle primitive ou une nouvelle bande.
 

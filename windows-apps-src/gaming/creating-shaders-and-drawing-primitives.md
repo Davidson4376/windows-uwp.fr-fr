@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, nuanceurs, primitives, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 5173adc26e0730ccb80f93fe0c12af286b0c1a49
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fecce6237d08f9ffa89bc7503412a357b17c641d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589764"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368954"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>Créer des nuanceurs et tracer des primitives
 
@@ -23,7 +23,7 @@ Nous créons et traçons un triangle jaune à l’aide de nuanceurs de vertex et
 
 **Objectif :** Pour créer des nuanceurs et dessiner des primitives.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
@@ -36,7 +36,7 @@ Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : con
 
 ### <a name="1-compiling-hlsl-source-files"></a>1. Compilation des fichiers sources HLSL
 
-Microsoft Visual Studio utilise le compilateur de code HLSL [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) pour compiler les fichiers sources .hlsl (SimpleVertexShader.hlsl et SimplePixelShader.hlsl) en fichiers objets .cso de nuanceur binaire (SimpleVertexShader.cso et SimplePixelShader.cso). Pour plus d’informations sur le compilateur de code HLSL, voir Outil compilateur d’effet. Pour plus d’informations sur la compilation de code de nuanceurs, voir [Compilation de nuanceurs](https://msdn.microsoft.com/library/windows/desktop/bb509633).
+Microsoft Visual Studio utilise le compilateur de code HLSL [fxc.exe](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc) pour compiler les fichiers sources .hlsl (SimpleVertexShader.hlsl et SimplePixelShader.hlsl) en fichiers objets .cso de nuanceur binaire (SimpleVertexShader.cso et SimplePixelShader.cso). Pour plus d’informations sur le compilateur de code HLSL, voir Outil compilateur d’effet. Pour plus d’informations sur la compilation de code de nuanceurs, voir [Compilation de nuanceurs](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1).
 
 Le code suivant correspond au fichier SimpleVertexShader.hlsl :
 
@@ -83,9 +83,9 @@ Nous utilisons la fonction DX::ReadDataAsync de DirectXHelper.h dans le modèle 
 
 ### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Création des nuanceurs de sommets et de pixels
 
-Nous effectuons la lecture des données du fichier SimpleVertexShader.cso et les attribuons au tableau d’octets *vertexShaderBytecode*. Nous appelons [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) avec un tableau d’octets pour créer le nuanceur de vertex ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). Nous attribuons la valeur 0,5 à la profondeur du vertex dans le code source SimpleVertexShader.hlsl pour nous assurer que notre triangle se trace bien. Nous remplir un tableau de [ **D3D11\_entrée\_élément\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures pour décrire la disposition du code du nuanceur de sommets, puis appelez [ **ID3D11Device::CreateInputLayout** ](https://msdn.microsoft.com/library/windows/desktop/ff476512) pour créer la disposition. Le tableau possède un élément de disposition qui définit la position du vertex. Nous effectuons la lecture des données du fichier SimplePixelShader.cso et les attribuons au tableau d’octets *pixelShaderBytecode*. Nous appelons [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) avec un tableau d’octets pour créer le nuanceur de pixels ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). Nous définissons la valeur de pixel sur (1,1,1,1) dans le code source SimplePixelShader.hlsl pour changer la couleur de notre triangle au jaune. Vous pouvez changer la couleur en modifiant cette valeur.
+Nous effectuons la lecture des données du fichier SimpleVertexShader.cso et les attribuons au tableau d’octets *vertexShaderBytecode*. Nous appelons [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) avec un tableau d’octets pour créer le nuanceur de vertex ([**ID3D11VertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11vertexshader)). Nous attribuons la valeur 0,5 à la profondeur du vertex dans le code source SimpleVertexShader.hlsl pour nous assurer que notre triangle se trace bien. Nous remplir un tableau de [ **D3D11\_entrée\_élément\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structures pour décrire la disposition du code du nuanceur de sommets, puis appelez [ **ID3D11Device::CreateInputLayout** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) pour créer la disposition. Le tableau possède un élément de disposition qui définit la position du vertex. Nous effectuons la lecture des données du fichier SimplePixelShader.cso et les attribuons au tableau d’octets *pixelShaderBytecode*. Nous appelons [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) avec un tableau d’octets pour créer le nuanceur de pixels ([**ID3D11PixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11pixelshader)). Nous définissons la valeur de pixel sur (1,1,1,1) dans le code source SimplePixelShader.hlsl pour changer la couleur de notre triangle au jaune. Vous pouvez changer la couleur en modifiant cette valeur.
 
-Nous créons des tampons de vertex et d’index qui définissent un simple triangle. Pour ce faire, nous avons tout d’abord définir le triangle, décrivons les mémoires tampons de vertex et d’index ([**D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) et [ **D3D11\_ SUBRESOURCE\_données**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) à l’aide de la définition du triangle et enfin appeler [ **ID3D11Device::CreateBuffer** ](https://msdn.microsoft.com/library/windows/desktop/ff476501) une fois pour chaque mémoire tampon.
+Nous créons des tampons de vertex et d’index qui définissent un simple triangle. Pour ce faire, nous avons tout d’abord définir le triangle, décrivons les mémoires tampons de vertex et d’index ([**D3D11\_tampon\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) et [ **D3D11\_ SUBRESOURCE\_données**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) à l’aide de la définition du triangle et enfin appeler [ **ID3D11Device::CreateBuffer** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) une fois pour chaque mémoire tampon.
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -202,19 +202,19 @@ Nous faisons appel aux nuanceurs de vertex et aux nuanceurs de pixels, à la dis
 
 ### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Le triangle de dessin et la présentation de l’image rendue
 
-L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) avec { 0.071f, 0.04f, 0.561f, 1.0f } pour remplacer la cible de rendu par une couleur bleue unie.
+L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) pour préciser que la cible de sortie correspond à la cible de rendu. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) avec { 0.071f, 0.04f, 0.561f, 1.0f } pour remplacer la cible de rendu par une couleur bleue unie.
 
 Dans la boucle sans fin, nous traçons un triangle jaune sur la surface bleue.
 
 **Pour dessiner un triangle jaune**
 
-1.  Tout d’abord, nous appelons [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) pour décrire le flux des données du tampon vertex à l’étape de l’assembleur d’entrée.
-2.  Ensuite, nous appelons [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) et [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) pour lier les tampons de vertex et d’index à l’étape de l’assembleur/entrée.
-3.  Ensuite, nous appelons [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) avec la [ **D3D11\_PRIMITIFS\_topologie\_ TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) valeur à spécifier pour la phase d’assembleur d’entrée interpréter les données de vertex comme une bande de triangles.
-4.  Nous appelons [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) pour initialiser l’étape du nuanceur de vertex avec son code, et [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) pour initialiser l’étape du nuanceur de pixels avec le code correspondant.
-5.  Enfin, nous appelons [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) pour tracer le triangle et l’envoyer au pipeline de rendu.
+1.  Tout d’abord, nous appelons [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) pour décrire le flux des données du tampon vertex à l’étape de l’assembleur d’entrée.
+2.  Ensuite, nous appelons [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) et [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) pour lier les tampons de vertex et d’index à l’étape de l’assembleur/entrée.
+3.  Ensuite, nous appelons [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) avec la [ **D3D11\_PRIMITIFS\_topologie\_ TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) valeur à spécifier pour la phase d’assembleur d’entrée interpréter les données de vertex comme une bande de triangles.
+4.  Nous appelons [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) pour initialiser l’étape du nuanceur de vertex avec son code, et [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) pour initialiser l’étape du nuanceur de pixels avec le code correspondant.
+5.  Enfin, nous appelons [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) pour tracer le triangle et l’envoyer au pipeline de rendu.
 
-Nous appelons [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) pour présenter l’image rendue dans la fenêtre.
+Nous appelons [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) pour présenter l’image rendue dans la fenêtre.
 
 ```cpp
             // Specify the render target we created as the output target.

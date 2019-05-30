@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 80591abb1e3130540ea94bc1f8d2602b90edc590
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613664"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364031"
 ---
 # <a name="tooltips"></a>Info-bulles
 
@@ -25,7 +25,7 @@ Une info-bulle est une brève description qui est liée à un autre contrôle ou
 
 ![Info-bulle](images/controls/tool-tip.png)
 
-> **API importantes** : [Classe de l’info-bulle](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [les classes ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **API importantes** : [Classe de l’info-bulle](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [les classes ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -153,4 +153,4 @@ Si une info-bulle masque le contenu auquel il fait référence, vous pouvez ajus
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe de l’info-bulle](https://msdn.microsoft.com/library/windows/apps/br227608)
+- [Classe de l’info-bulle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)

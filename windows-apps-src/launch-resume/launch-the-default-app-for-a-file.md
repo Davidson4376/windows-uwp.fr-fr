@@ -6,28 +6,28 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 475c7b98e33b78ac3bea4ddecc8414a8e3aa07b3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594524"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370800"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>Lancer l’application par défaut pour un fichier
 
 **API importantes**
 
--   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+-   [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)
 
-Découvrez comment lancer l’application par défaut d’un fichier. De nombreuses applications doivent utiliser des fichiers qu’elles ne peuvent pas gérer elles-mêmes. Par exemple, les applications de courrier électronique reçoivent une grande variété de types de fichiers, et ont besoin d’un moyen de lancer ces fichiers dans leurs gestionnaires par défaut. Ces étapes montrent comment utiliser l’API [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) pour lancer le gestionnaire par défaut d’un fichier que votre application ne peut pas gérer elle-même.
+Découvrez comment lancer l’application par défaut d’un fichier. De nombreuses applications doivent utiliser des fichiers qu’elles ne peuvent pas gérer elles-mêmes. Par exemple, les applications de courrier électronique reçoivent une grande variété de types de fichiers, et ont besoin d’un moyen de lancer ces fichiers dans leurs gestionnaires par défaut. Ces étapes montrent comment utiliser l’API [**Windows.System.Launcher**](https://docs.microsoft.com/uwp/api/Windows.System.Launcher) pour lancer le gestionnaire par défaut d’un fichier que votre application ne peut pas gérer elle-même.
 
 ## <a name="get-the-file-object"></a>Obtenir l’objet fichier
 
-Tout d’abord, obtenez un objet [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) pour le fichier.
+Tout d’abord, obtenez un objet [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) pour le fichier.
 
-Si le fichier est inclus dans le package de votre application, vous pouvez utiliser la propriété [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) pour obtenir un objet [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) et la méthode [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) pour obtenir l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+Si le fichier est inclus dans le package de votre application, vous pouvez utiliser la propriété [**Package.InstalledLocation**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation) pour obtenir un objet [**Windows.Storage.StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) et la méthode [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) pour obtenir l’objet [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
-Si le fichier se trouve dans un dossier connu, vous pouvez utiliser les propriétés de la classe [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) pour obtenir un élément [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) et la méthode [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) pour obtenir l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+Si le fichier se trouve dans un dossier connu, vous pouvez utiliser les propriétés de la classe [**Windows.Storage.KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) pour obtenir un élément [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) et la méthode [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) pour obtenir l’objet [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
 ## <a name="launch-the-file"></a>Lancer le fichier
 
@@ -35,14 +35,14 @@ Windows fournit plusieurs options différentes pour le lancement du gestionnaire
 
 | Option | Méthode | Description |
 |--------|--------|-------------|
-| Lancement par défaut | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Lancer le fichier spécifié avec le gestionnaire par défaut. |
-| Ouvrir avec lancement | [**LaunchFileAsync (IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié en laissant l’utilisateur choisir le gestionnaire dans la boîte de dialogue Ouvrir avec. |
-| Lancer avec une application de secours recommandée | [**LaunchFileAsync (IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié avec le gestionnaire par défaut. Si aucun gestionnaire n’est installé sur le système, recommandez une application du Windows Store à l’utilisateur. |
-| Lancer avec un affichage restant souhaité | [**LaunchFileAsync (IStorageFile, LauncherOptions)** ](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows uniquement) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille de périphériques mobiles. |
+| Lancement par défaut | [**LaunchFileAsync(IStorageFile)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) | Lancer le fichier spécifié avec le gestionnaire par défaut. |
+| Ouvrir avec lancement | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | Lancer le fichier spécifié en laissant l’utilisateur choisir le gestionnaire dans la boîte de dialogue Ouvrir avec. |
+| Lancer avec une application de secours recommandée | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | Lancer le fichier spécifié avec le gestionnaire par défaut. Si aucun gestionnaire n’est installé sur le système, recommandez une application du Windows Store à l’utilisateur. |
+| Lancer avec un affichage restant souhaité | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) (Windows-only) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. [**LauncherOptions.DesiredRemainingView** ](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) n’est pas pris en charge sur la famille de périphériques mobiles. |
 
 ### <a name="default-launch"></a>Lancement par défaut
 
-Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) pour lancer l’application par défaut. Cet exemple utilise la méthode [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) pour lancer un fichier d’image, test.png, inclus dans le package de l’application.
+Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) pour lancer l’application par défaut. Cet exemple utilise la méthode [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) pour lancer un fichier d’image, test.png, inclus dans le package de l’application.
 
 ```csharp
 async void DefaultLaunch()
@@ -155,7 +155,7 @@ void MainPage::DefaultLaunch()
 
 ### <a name="open-with-launch"></a>Ouvrir avec lancement
 
-Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) avec [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) défini sur **true** pour lancer l’application que l’utilisateur sélectionne dans la boîte de dialogue **Ouvrir avec**.
+Appelez la méthode [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) avec [**LauncherOptions.DisplayApplicationPicker**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.displayapplicationpicker) défini sur **true** pour lancer l’application que l’utilisateur sélectionne dans la boîte de dialogue **Ouvrir avec**.
 
 Nous vous recommandons d’utiliser la boîte de dialogue **Ouvrir avec** lorsque l’utilisateur souhaite sélectionner une application qui n’est pas l’application par défaut pour un fichier particulier. Par exemple, si votre application permet à l’utilisateur de lancer un fichier image, le gestionnaire par défaut sera probablement une visionneuse. Dans certains cas, l’utilisateur peut vouloir modifier l’image au lieu de la visualiser. Utilisez l’option **Ouvrir avec** au moyen d’une autre commande dans **AppBar** ou dans un menu contextuel afin de permettre à l’utilisateur d’afficher la boîte de dialogue **Ouvrir avec** et de sélectionner l’éditeur dans ces types de scénarios.
 
@@ -289,7 +289,7 @@ void MainPage::DefaultLaunch()
 
 **Démarrer avec une application recommandée de secours**
 
-Dans certains cas, l’utilisateur ne dispose pas forcément d’une application installée pour gérer le fichier que vous lancez. Par défaut, Windows gèrera ces cas en fournissant à l’utilisateur un lien pour rechercher une application appropriée dans le Windows Store. Si vous voulez recommander à l’utilisateur l’acquisition d’une application spécifique dans ce scénario, vous pouvez passer cette recommandation avec le fichier que vous lancez. Pour ce faire, appelez la méthode [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) avec [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) ayant pour valeur le nom de famille du package de l’application que vous voulez recommander dans le Windows Store. Affectez ensuite à [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) le nom de cette application. Windows utilisera cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
+Dans certains cas, l’utilisateur ne dispose pas forcément d’une application installée pour gérer le fichier que vous lancez. Par défaut, Windows gèrera ces cas en fournissant à l’utilisateur un lien pour rechercher une application appropriée dans le Windows Store. Si vous voulez recommander à l’utilisateur l’acquisition d’une application spécifique dans ce scénario, vous pouvez passer cette recommandation avec le fichier que vous lancez. Pour ce faire, appelez la méthode [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) avec [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) ayant pour valeur le nom de famille du package de l’application que vous voulez recommander dans le Windows Store. Affectez ensuite à [**LauncherOptions.PreferredApplicationDisplayName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationdisplayname) le nom de cette application. Windows utilisera cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
 
 > [!NOTE]
 > Vous devez définir ces deux options pour recommander une application. La définition de l’une sans l’autre conduit à un échec.
@@ -434,12 +434,12 @@ void MainPage::DefaultLaunch()
 
 ### <a name="launch-with-a-desired-remaining-view-windows-only"></a>Lancer avec un affichage restant souhaité (Windows uniquement)
 
-Les applications sources qui appellent la méthode [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) peuvent demander à rester à l’écran après le lancement d’un fichier. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère le fichier. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe une plus grande ou plus petite partie de l’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement du fichier et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
+Les applications sources qui appellent la méthode [**LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.) peuvent demander à rester à l’écran après le lancement d’un fichier. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère le fichier. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe une plus grande ou plus petite partie de l’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement du fichier et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
 
 > [!NOTE]
-> Windows prend en compte plusieurs facteurs différents lorsqu’il détermine la taille de l’application de source de la fenêtre finale, par exemple, la préférence de l’application source, le nombre d’applications sur l’écran, l’orientation de l’écran et ainsi de suite. La définition de la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) ne garantit pas un comportement de fenêtrage spécifique pour l’application source.
+> Windows prend en compte plusieurs facteurs différents lorsqu’il détermine la taille de l’application de source de la fenêtre finale, par exemple, la préférence de l’application source, le nombre d’applications sur l’écran, l’orientation de l’écran et ainsi de suite. La définition de la propriété [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) ne garantit pas un comportement de fenêtrage spécifique pour l’application source.
 
-**Famille de périphériques mobiles :  **[**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille de périphériques mobiles.
+**Famille de périphériques mobiles :  **[**LauncherOptions.DesiredRemainingView** ](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) n’est pas pris en charge sur la famille de périphériques mobiles.
 
 ```csharp
 async void DefaultLaunch()
@@ -559,9 +559,9 @@ Si vous essayez de lancer un type de fichier restreint, le lancement se soldera 
 
 ### <a name="guidelines"></a>Recommandations
 
-* [Instructions pour les types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Instructions pour les types de fichiers et d’URI](https://docs.microsoft.com/windows/uwp/files/index)
 
 ### <a name="reference"></a>Référence
 
-* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+* [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+* [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, rendu, scène, test de profondeur, direct3d, ombres
 ms.localizationpriority: medium
-ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d1c2c4e5d45b28c318085f4ce257b587f23f1426
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630454"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368107"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Générer le rendu de la scène avec un test de profondeur
 
@@ -67,7 +67,7 @@ Ensuite, le nuanceur de pixels utilise la position de l’espace lumineux interp
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>Tester si la position est dans le tronc de cône lumineux
 
 
-Tout d’abord, vérifiez que le pixel se trouve dans le tronc de cône de l’affichage de la lumière en normalisant les coordonnées X et Y. Si elles sont toutes deux dans la plage \[0, 1\] il est possible pour le pixel dans l’ombre. Sinon, vous pouvez ignorer le test de profondeur. Un nuanceur peut le tester rapidement en appelant [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) et en comparant le résultat à la valeur d’origine.
+Tout d’abord, vérifiez que le pixel se trouve dans le tronc de cône de l’affichage de la lumière en normalisant les coordonnées X et Y. Si elles sont toutes deux dans la plage \[0, 1\] il est possible pour le pixel dans l’ombre. Sinon, vous pouvez ignorer le test de profondeur. Un nuanceur peut le tester rapidement en appelant [Saturate](https://docs.microsoft.com/windows/desktop/direct3dhlsl/saturate) et en comparant le résultat à la valeur d’origine.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -89,7 +89,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## <a name="depth-test-against-the-shadow-map"></a>Test de profondeur par rapport au mappage d’ombre
 
 
-Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696), soit [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant ; cela indique que le pixel est dans l’ombre.
+Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp), soit [SampleCmpLevelZero](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant ; cela indique que le pixel est dans l’ombre.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 

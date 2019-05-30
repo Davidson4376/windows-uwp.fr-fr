@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 471c2851f72027c364fdd0c9c295c8c9babe17c5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615674"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366181"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -20,8 +20,8 @@ ms.locfileid: "57615674"
 
 **API importantes**
 
--   [**Schéma de BackgroundTasks**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [**Schéma de BackgroundTasks**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 
@@ -90,7 +90,7 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
 2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
 
-    **Remarque**  Assurez-vous pour répertorier chacun des types de déclencheurs que vous utilisez, ou la tâche en arrière-plan n’inscrira pas avec les types de déclencheur non déclaré (le [ **inscrire** ](https://msdn.microsoft.com/library/windows/apps/br224772) sera (méthode) échouer et lever une exception).
+    **Remarque**  Assurez-vous pour répertorier chacun des types de déclencheurs que vous utilisez, ou la tâche en arrière-plan n’inscrira pas avec les types de déclencheur non déclaré (le [ **inscrire** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) sera (méthode) échouer et lever une exception).
 
     Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés :
 
@@ -171,7 +171,7 @@ Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exé
 </Extensions>
 ```
 
-Lorsque vous spécifiez le paramètre **EntryPoint**, votre application reçoit un rappel vers la méthode spécifiée lorsque le déclencheur se déclenche. Si vous ne spécifiez aucun paramètre **EntryPoint**, votre application reçoit le rappel via [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).  Pour plus d’informations, consultez l’article [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+Lorsque vous spécifiez le paramètre **EntryPoint**, votre application reçoit un rappel vers la méthode spécifiée lorsque le déclencheur se déclenche. Si vous ne spécifiez aucun paramètre **EntryPoint**, votre application reçoit le rappel via [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).  Pour plus d’informations, consultez l’article [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>Utilisez l’attribut ResourceGroup pour spécifier l’emplacement où votre tâche en arrière-plan s’exécutera.
 

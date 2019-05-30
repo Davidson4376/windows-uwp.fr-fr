@@ -8,18 +8,18 @@ keywords: retour visuel, retour de focus, retour tactile, visualisation de conta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b043ec71eb7d5883a1b22c4f0d8f43824034d454
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1f716b930a4d8b96a55a5741e5a520be624526fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640784"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363539"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
 Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interactions sont détectées, interprétées et gérées. Le retour visuel peut aider les utilisateurs en encourageant l’interaction. Il indique le succès d’une interaction et améliore ainsi le sentiment de contrôle de l’utilisateur. Il transmet également l’état du système et réduit les erreurs.
 
-> **API importantes** :  [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **API importantes** :  [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -27,7 +27,7 @@ Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interaction
     - Voir [Styles XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) pour plus d’informations sur la personnalisation des propriétés d’un contrôle, notamment les propriétés de l’état visuel.
     - Voir la [classe UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) pour plus d’informations sur les modifications apportées à un modèle de contrôle
     - Envisagez de créer votre propre contrôle basé sur un modèle personnalisé si vous avez besoin d’apporter des modifications importantes à un modèle de contrôle. Pour obtenir un exemple de contrôle basé sur un modèle personnalisé, voir [Exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-- N’utilisez pas les visualisations tactiles dans des situations où elles risquent d’interférer avec l’utilisation de l’application. Pour plus d’informations, voir [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
+- N’utilisez pas les visualisations tactiles dans des situations où elles risquent d’interférer avec l’utilisation de l’application. Pour plus d’informations, voir [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
 - N’affichez pas de retour à moins que ce soit absolument nécessaire. Veillez à ce que l’interface utilisateur soit propre et aérée en n’affichant pas de retour visuel, à moins que cela ajoute une valeur non disponible ailleurs.
 - Ne personnalisez pas les comportements de retour visuel des mouvements intégrés de Windows de manière radicale, car cela peut créer une expérience utilisateur incohérente et confuse.
 
@@ -44,7 +44,7 @@ L’utilisation des contrôles de la plateforme XAML disponibles permet de garan
 
 Le retour visuel dépend généralement du périphérique d’entrée (entrée tactile, pavé tactile, souris, stylo/stylet, clavier, etc.). Par exemple, le retour intégré pour une souris implique habituellement le déplacement et le changement du curseur, l’entrée tactile et le stylo nécessitent des visualisations de contact, et l’entrée et la navigation au clavier utilisent la mise en surbrillance et des rectangles de sélection.
 
-La propriété [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) vous sert à définir le comportement de retour pour les mouvements de la plateforme.
+La propriété [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) vous sert à définir le comportement de retour pour les mouvements de la plateforme.
 
 Si vous personnalisez l’interface utilisateur de retour, veillez à fournir un retour d’interaction prenant en charge tous les modes d’entrée et approprié à tous ces modes.
 
@@ -73,7 +73,7 @@ Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez l
 ```
 ![Épaisseurs des marges des visuels du focus à haute visibilité](images/FocusMargin.png)
 
-La marge est une propriété de type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) ; par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous : ![Haute visibilité focus marge visual épaisseur bas uniquement](images/FocusThicknessSide.png)
+La marge est une propriété de type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN) ; par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous : ![Haute visibilité focus marge visual épaisseur bas uniquement](images/FocusThicknessSide.png)
 
 La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la *bordure secondaire* des visuels du focus. La marge par défaut est à **1px** des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété **FocusVisualMargin** :
 ```XAML
@@ -112,7 +112,7 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 * [Instructions pour l’affichage panoramique](guidelines-for-panning.md)
 
 **pour les développeurs**
-* [Interactions de l’utilisateur personnalisé](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Interactions de l’utilisateur personnalisé](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, directx, graphismes
 ms.localizationpriority: medium
-ms.openlocfilehash: fc93111d48f71a6ca8acad8191a2afb535fad2f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 68d2c6ec250286b9820ff218f9b35637f49f3b97
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660934"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368748"
 ---
 # <a name="draw-to-the-screen"></a>Dessiner à l’écran
 
@@ -20,24 +20,24 @@ ms.locfileid: "57660934"
 
 **API importantes**
 
--   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
+-   [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)
 
 Pour finir, nous portons le code qui trace le cube tournant à l’écran.
 
 Dans OpenGL ES 2.0, votre contexte de dessin est défini par le type EGLContext. Ce type contient les paramètres de fenêtre et de surface, ainsi que les ressources nécessaires pour dessiner dans les cibles de rendu qui seront utilisées pour composer l’image finale affichée dans la fenêtre. Vous utilisez ce contexte pour configurer les ressources graphiques et afficher correctement les résultats de votre pipeline nuanceur à l’écran. L’une des principales ressources est le « tampon d’arrière-plan » (ou « objet tampon de trame ») qui contient les cibles de rendu composées finales, prêtes pour la présentation à l’écran.
 
-Avec Direct3D, le processus de configuration des ressources graphiques pour le dessin à l’écran est plus didactique et requiert quelques API supplémentaires. (Un modèle Microsoft Visual Studio Direct3D peut considérablement simplifier ce processus, cependant !) Pour obtenir un contexte (appelé un contexte de périphérique Direct3D), vous devez d’abord obtenir un [ **ID3D11Device1** ](https://msdn.microsoft.com/library/windows/desktop/hh404575) de l’objet et l’utiliser pour créer et configurer un [ **ID3D11DeviceContext1**  ](https://msdn.microsoft.com/library/windows/desktop/hh404598) objet. Ces deux objets servent ensemble à configurer les ressources spécifiques dont vous avez besoin pour le dessin à l’écran.
+Avec Direct3D, le processus de configuration des ressources graphiques pour le dessin à l’écran est plus didactique et requiert quelques API supplémentaires. (Un modèle Microsoft Visual Studio Direct3D peut considérablement simplifier ce processus, cependant !) Pour obtenir un contexte (appelé un contexte de périphérique Direct3D), vous devez d’abord obtenir un [ **ID3D11Device1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) de l’objet et l’utiliser pour créer et configurer un [ **ID3D11DeviceContext1**  ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) objet. Ces deux objets servent ensemble à configurer les ressources spécifiques dont vous avez besoin pour le dessin à l’écran.
 
 Pour résumer, les API DXGI contiennent principalement des API pour gérer les ressources qui appartiennent directement à la carte graphique et Direct3D contient les API qui servent d’interface entre le processeur graphique et le programme principal qui s’exécute sur le processeur.
 
 Pour établir une comparaison dans le cadre de cet exemple, voici les types pertinents de chaque API :
 
--   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): fournit une représentation virtuelle de l’appareil de graphiques et de ses ressources.
--   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): fournit l’interface pour configurer les mémoires tampons et émettre des commandes de rendu.
--   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): la chaîne de permutation est analogue à la mémoire tampon d’arrière-plan dans OpenGL ES 2.0. Il s’agit de la zone de mémoire de la carte graphique qui contient la ou les images de rendu final à afficher. Elle est appelée « chaîne de permutation », car elle contient plusieurs tampons modifiables et « permutables » pour présenter le dernier rendu à l’écran.
--   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): contient la mémoire tampon de bitmap 2D que le contexte de périphérique Direct3D dessine dans, et qui est présentée par la chaîne de permutation. Comme dans OpenGL ES 2.0, vous pouvez avoir plusieurs cibles de rendu, dont certaines ne sont pas liées à la chaîne de permutation mais utilisées pour les techniques d’ombrage multipasse.
+-   [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1): fournit une représentation virtuelle de l’appareil de graphiques et de ses ressources.
+-   [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1): fournit l’interface pour configurer les mémoires tampons et émettre des commandes de rendu.
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1): la chaîne de permutation est analogue à la mémoire tampon d’arrière-plan dans OpenGL ES 2.0. Il s’agit de la zone de mémoire de la carte graphique qui contient la ou les images de rendu final à afficher. Elle est appelée « chaîne de permutation », car elle contient plusieurs tampons modifiables et « permutables » pour présenter le dernier rendu à l’écran.
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview): contient la mémoire tampon de bitmap 2D que le contexte de périphérique Direct3D dessine dans, et qui est présentée par la chaîne de permutation. Comme dans OpenGL ES 2.0, vous pouvez avoir plusieurs cibles de rendu, dont certaines ne sont pas liées à la chaîne de permutation mais utilisées pour les techniques d’ombrage multipasse.
 
 Dans le modèle, l’objet de rendu contient les champs suivants :
 
@@ -63,7 +63,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-Le runtime Direct3D crée implicitement une interface [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) pour l’interface [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), qui représente la texture sous forme de « tampon d’arrière-plan » utilisé par la chaîne de permutation pour l’affichage.
+Le runtime Direct3D crée implicitement une interface [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) pour l’interface [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d), qui représente la texture sous forme de « tampon d’arrière-plan » utilisé par la chaîne de permutation pour l’affichage.
 
 L’initialisation et la configuration du périphérique et du contexte de périphérique Direct3D, de même que les cibles de rendu, figurent dans les méthodes personnalisées **CreateDeviceResources** et **CreateWindowSizeDependentResources** du modèle Direct3D.
 
@@ -123,15 +123,15 @@ void Render(GraphicsContext *drawContext)
 
 Dans Direct3D 11, le processus est très similaire. (Nous supposons que vous utilisez la configuration de fenêtre d’affichage et de cible de rendu du modèle Direct3D).
 
--   Mettez à jour les tampons constants (la matrice projection-vue-modèle, dans cet exemple) en appelant [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
--   Définissez le tampon de vertex avec [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
--   Définissez le tampon d’index avec [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
--   Définissez la topologie de triangle spécifique (une liste de triangles) avec [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
--   Définissez le schéma d’entrée du tampon de vertex avec [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
--   Liez le nuanceur de vertex avec [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
--   Liez le nuanceur de fragments avec [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
--   Envoyez les vertex indexés dans les nuanceurs et publiez les résultats de couleur dans le tampon de cible de rendu avec [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
--   Affichez le tampon de cible de rendu avec [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
+-   Mettez à jour les tampons constants (la matrice projection-vue-modèle, dans cet exemple) en appelant [**ID3D11DeviceContext1::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-updatesubresource1).
+-   Définissez le tampon de vertex avec [**ID3D11DeviceContext1::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
+-   Définissez le tampon d’index avec [**ID3D11DeviceContext1::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer).
+-   Définissez la topologie de triangle spécifique (une liste de triangles) avec [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology).
+-   Définissez le schéma d’entrée du tampon de vertex avec [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout).
+-   Liez le nuanceur de vertex avec [**ID3D11DeviceContext1::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader).
+-   Liez le nuanceur de fragments avec [**ID3D11DeviceContext1::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader).
+-   Envoyez les vertex indexés dans les nuanceurs et publiez les résultats de couleur dans le tampon de cible de rendu avec [**ID3D11DeviceContext1::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed).
+-   Affichez le tampon de cible de rendu avec [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1).
 
 Direct3D 11 : Rendu d’un frame pour l’affichage
 
@@ -196,7 +196,7 @@ void RenderObject::Render()
 
 ```
 
-Dès que [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) est appelée, votre trame est envoyée à l’écran configuré.
+Dès que [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) est appelée, votre trame est envoyée à l’écran configuré.
 
 ## <a name="previous-step"></a>Étape précédente
 

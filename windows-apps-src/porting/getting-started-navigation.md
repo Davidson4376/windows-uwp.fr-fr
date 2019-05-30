@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 682a743e45626939242af963fba47ca82a13a90e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: de9c5261afb7b76b2409599c9c1f88814d1dd6a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636594"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371781"
 ---
 # <a name="getting-started-navigation"></a>Bien démarrer : Navigation
 
@@ -20,9 +20,9 @@ ms.locfileid: "57636594"
 
 iOS fournit la classe **UINavigationController** pour faciliter la navigation : vous pouvez pousser et faire apparaître des affichages pour créer une hiérarchie de **UIViewControllers** qui définissent votre application.
 
-En revanche, une application Windows 10 contenant plusieurs vues prend plus d’une approche de site web à la navigation. Vous pouvez imaginer vos utilisateurs passant de page en page en cliquant sur des contrôles tandis qu’ils explorent l’application. Pour plus d’informations, voir [Informations de base relatives à la conception de la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438).
+En revanche, une application Windows 10 contenant plusieurs vues prend plus d’une approche de site web à la navigation. Vous pouvez imaginer vos utilisateurs passant de page en page en cliquant sur des contrôles tandis qu’ils explorent l’application. Pour plus d’informations, voir [Informations de base relatives à la conception de la navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics).
 
-Une des façons de gérer cette navigation dans une application Windows 10 consiste à utiliser le [ **Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682) classe. La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération.
+Une des façons de gérer cette navigation dans une application Windows 10 consiste à utiliser le [ **Frame** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) classe. La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération.
 
 Sans quitter la solution commencée précédemment, ouvrez le fichier **MainPage.xaml**, puis ajoutez un bouton dans l’affichage **Conception**. Remplacez la valeur « Button » de la propriété **Content** du bouton par « Go To Page ». Créez ensuite un gestionnaire pour l’événement **Click** du bouton, comme illustré dans la figure ci-dessous. Si vous ne vous rappelez pas comment procéder, consultez la procédure pas à pas décrite dans la section précédente (conseil : double-cliquez sur le bouton dans le mode **Création**).
 
@@ -64,9 +64,9 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 Exécutez le programme à présent. Appuyez sur le bouton « Go To Page » (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
 
-La navigation entre les pages est gérée par la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Comme le **UINavigationController** classe dans iOS utilise **pushViewController** et **popViewController** méthodes, le **Frame** classe pour Fournit des applications UWP [ **Navigate** ](https://msdn.microsoft.com/library/windows/apps/br242694) et [ **GoBack** ](https://msdn.microsoft.com/library/windows/apps/dn996568) méthodes. La classe **Frame** possède également une méthode appelée [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), qui comblera vos attentes.
+La navigation entre les pages est gérée par la classe [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame). Comme le **UINavigationController** classe dans iOS utilise **pushViewController** et **popViewController** méthodes, le **Frame** classe pour Fournit des applications UWP [ **Navigate** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) et [ **GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) méthodes. La classe **Frame** possède également une méthode appelée [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward), qui comblera vos attentes.
 
-Cette procédure pas à pas crée une nouvelle instance de BlankPage chaque fois que vous y accédez (l’instance précédente sera automatiquement libérée, ou *publiée*). Si vous ne souhaitez pas qu’une nouvelle instance soit créée à chaque fois, ajoutez le code suivant au constructeur de la classe BlankPage dans le fichier BlankPage.xaml.cs. Le comportement [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) est ainsi activé.
+Cette procédure pas à pas crée une nouvelle instance de BlankPage chaque fois que vous y accédez (l’instance précédente sera automatiquement libérée, ou *publiée*). Si vous ne souhaitez pas qu’une nouvelle instance soit créée à chaque fois, ajoutez le code suivant au constructeur de la classe BlankPage dans le fichier BlankPage.xaml.cs. Le comportement [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) est ainsi activé.
 
 ```csharp
 public BlankPage()
@@ -77,11 +77,11 @@ public BlankPage()
 }
 ```
 
-Vous pouvez également vous procurer ou définir la propriété [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) de la classe **Frame** pour gérer le nombre de pages de l’historique de navigation qu’il est possible de mettre en cache.
+Vous pouvez également vous procurer ou définir la propriété [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) de la classe **Frame** pour gérer le nombre de pages de l’historique de navigation qu’il est possible de mettre en cache.
 
-Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) et [Exemple d’animations de personnages XAML](https://go.microsoft.com/fwlink/p/?LinkID=242401).
+Pour plus d’informations sur la navigation, voir [Navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) et [Exemple d’animations de personnages XAML](https://go.microsoft.com/fwlink/p/?LinkID=242401).
 
-**Remarque**  pour plus d’informations sur la navigation pour les applications UWP en JavaScript et HTML, consultez [Guide de démarrage rapide : À l’aide de la navigation de page unique](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**Remarque**  pour plus d’informations sur la navigation pour les applications UWP en JavaScript et HTML, consultez [Guide de démarrage rapide : À l’aide de la navigation de page unique](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10)).
  
 ### <a name="next-step"></a>Étape suivante
 

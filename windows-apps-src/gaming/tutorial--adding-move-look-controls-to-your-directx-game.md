@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, déplacement/vue, contrôles
 ms.localizationpriority: medium
-ms.openlocfilehash: 222f46bbda165442003aecea0bbd138bcb844a3b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f1516ada043ac5e9d5c059f7cd2b91cb69a5eab1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604374"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367855"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Présentation de déplacement des contrôles pour les jeux
 
@@ -178,11 +178,11 @@ Nous utilisons les 6 gestionnaires d’événements pour capturer les données 
 
 Enfin, nous utilisons les méthodes et propriétés suivantes pour accéder aux informations sur l’état des contrôleurs, les initialiser et les mettre à jour.
 
--   **Initialize**. Notre application appelle ce gestionnaire d’événements pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui décrit notre fenêtre d’affichage.
+-   **Initialize**. Notre application appelle ce gestionnaire d’événements pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui décrit notre fenêtre d’affichage.
 -   **SetPosition**. Notre application appelle cette méthode pour définir les coordonnées (x, y et z) de nos contrôles dans l’espace de scène.
 -   **SetOrientation**. Notre application appelle cette méthode pour définir les tangage et lacet de la caméra.
--   **obtenir\_Position**. Notre application accède à cette propriété pour obtenir la position actuelle de la caméra dans l’espace de scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
--   **obtenir\_LookPoint**. Notre application accède à cette propriété pour obtenir le point actuel vers lequel la caméra du contrôleur est orientée.
+-   **get\_Position**. Notre application accède à cette propriété pour obtenir la position actuelle de la caméra dans l’espace de scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
+-   **get\_LookPoint**. Notre application accède à cette propriété pour obtenir le point actuel vers lequel la caméra du contrôleur est orientée.
 -   **Update**. Lit l’état des contrôleurs de déplacement et de vue, et met à jour la position de la caméra. Vous appelez continuellement cette méthode à partir de la boucle principale de l’application pour actualiser les données de contrôleur de la caméra et la position de la caméra dans l’espace de scène.
 
 Vous disposez à présent ici de tous les composants nécessaires pour implémenter vos contrôles de déplacement/vue. Rassemblons tous ces éléments.
@@ -192,17 +192,17 @@ Vous disposez à présent ici de tous les composants nécessaires pour implémen
 
 Le répartiteur d’événements Windows Runtime fournit 5 événements qui doivent être gérés par les instances de la classe **MoveLookController** :
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup)
+-   [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)
 
-Ces événements sont implémentés sur le type [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Si vous ne savez pas comment en obtenir un, voir [Configuration de votre application de plateforme Windows universelle (UWP) en C++ pour afficher une vue DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
+Ces événements sont implémentés sur le type [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Si vous ne savez pas comment en obtenir un, voir [Configuration de votre application de plateforme Windows universelle (UWP) en C++ pour afficher une vue DirectX](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Comme ces événements sont déclenchés pendant que notre application est en cours d’exécution, les gestionnaires mettent à jour les informations sur l’état des contrôleurs définies dans nos champs privés.
 
-Commençons par remplir les gestionnaires d’événements de pointeur de souris et tactile. Dans le premier gestionnaire d’événements, **OnPointerPressed()**, nous obtenons les coordonnées x-y du pointeur à partir du [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui gère notre affichage lorsque l’utilisateur clique sur la souris ou touche l’écran dans la zone du contrôleur de vue.
+Commençons par remplir les gestionnaires d’événements de pointeur de souris et tactile. Dans le premier gestionnaire d’événements, **OnPointerPressed()** , nous obtenons les coordonnées x-y du pointeur à partir du [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) qui gère notre affichage lorsque l’utilisateur clique sur la souris ou touche l’écran dans la zone du contrôleur de vue.
 
 **OnPointerPressed**
 
@@ -299,11 +299,11 @@ void MoveLookController::OnPointerMoved(
 
 Le gestionnaire d’événements **OnPointerMoved** se déclenche à chaque mouvement du pointeur (dans ce cas, si le pointeur tactile est glissé sur l’écran ou que celui de la souris est déplacé avec le bouton gauche maintenu). Si l’ID de pointeur est le même que l’ID de pointeur du contrôleur de déplacement, il s’agit du pointeur de déplacement. Sinon, il convient de vérifier si le pointeur actif est le contrôleur de vue.
 
-S’il s’agit du contrôleur de déplacement, il nous suffit de mettre à jour la position du pointeur. La position est mise à jour tant que l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) continue de se déclencher, car nous voulons comparer la position finale à la première qui a été capturée à l’aide du gestionnaire d’événements **OnPointerPressed**.
+S’il s’agit du contrôleur de déplacement, il nous suffit de mettre à jour la position du pointeur. La position est mise à jour tant que l’événement [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) continue de se déclencher, car nous voulons comparer la position finale à la première qui a été capturée à l’aide du gestionnaire d’événements **OnPointerPressed**.
 
 S’il s’agit du contrôleur de vue, les choses sont un peu plus compliquées. Comme nous devons calculer un nouveau point de mire et centrer la caméra dessus, nous calculons le delta entre le dernier point de mire et la position à l’écran, puis le multiplions par le facteur d’échelle que nous pouvons modifier pour augmenter ou réduire les mouvements de vue par rapport à la distance du mouvement d’écran. Cette valeur nous permet de calculer les tangage et lacet.
 
-Enfin, nous devons désactiver les comportements du contrôleur de déplacement ou de vue lorsque le joueur cesse de déplacer la souris ou de toucher l’écran. Nous utilisons **OnPointerReleased**, que nous appelons lorsque [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché pour définir **m\_moveInUse** ou **m\_lookInUse** FALSE et désactivez l’option le mouvement panoramique de caméra et à zéro l’ID de pointeur.
+Enfin, nous devons désactiver les comportements du contrôleur de déplacement ou de vue lorsque le joueur cesse de déplacer la souris ou de toucher l’écran. Nous utilisons **OnPointerReleased**, que nous appelons lorsque [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) est déclenché pour définir **m\_moveInUse** ou **m\_lookInUse** FALSE et désactivez l’option le mouvement panoramique de caméra et à zéro l’ID de pointeur.
 
 **OnPointerReleased**
 
@@ -384,7 +384,7 @@ Lorsque la touche est relâchée, ce gestionnaire d’événements lui réaffect
 
 Rassemblons à présent les événements et initialisons tous les champs des états du contrôleur.
 
-**initialiser**
+**Initialize**
 
 ```cpp
 void MoveLookController::Initialize( _In_ CoreWindow^ window )
@@ -424,7 +424,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** fait référence à l’instance [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**. Il initialise les ID des pointeurs de déplacement et de vue, affecte la valeur zéro au vecteur de commande pour l’implémentation du contrôleur de déplacement d’écran tactile, puis définit la direction droit devant de la caméra au démarrage de l’application.
+**Initialize** fait référence à l’instance [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**. Il initialise les ID des pointeurs de déplacement et de vue, affecte la valeur zéro au vecteur de commande pour l’implémentation du contrôleur de déplacement d’écran tactile, puis définit la direction droit devant de la caméra au démarrage de l’application.
 
 ## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>Obtention et définition de la position et de l’orientation de la caméra
 
